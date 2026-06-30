@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for grounded generation.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/grounded_generation_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GroundedGenerationServiceGrpc {
 
@@ -95,6 +92,19 @@ public final class GroundedGenerationServiceGrpc {
           }
         };
     return GroundedGenerationServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static GroundedGenerationServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<GroundedGenerationServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<GroundedGenerationServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public GroundedGenerationServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new GroundedGenerationServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return GroundedGenerationServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -206,6 +216,42 @@ public final class GroundedGenerationServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service GroundedGenerationService.
+   *
+   * <pre>
+   * Service for grounded generation.
+   * </pre>
+   */
+  public static final class GroundedGenerationServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<GroundedGenerationServiceBlockingV2Stub> {
+    private GroundedGenerationServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected GroundedGenerationServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new GroundedGenerationServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs a grounding check.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.CheckGroundingResponse checkGrounding(
+        com.google.cloud.discoveryengine.v1alpha.CheckGroundingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCheckGroundingMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * GroundedGenerationService.
    *
    * <pre>
    * Service for grounded generation.

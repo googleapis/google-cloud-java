@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ public class GrpcExportServiceStub extends ExportServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListProfilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProfilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListProfilesRequest, ListProfilesResponse> listProfilesCallable;
@@ -107,6 +108,7 @@ public class GrpcExportServiceStub extends ExportServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.listProfilesCallable =

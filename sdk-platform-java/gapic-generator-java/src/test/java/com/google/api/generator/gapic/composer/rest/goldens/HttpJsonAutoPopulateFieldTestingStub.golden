@@ -1,0 +1,286 @@
+package com.google.auto.populate.field.stub;
+
+import com.google.api.core.InternalApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.httpjson.ApiMethodDescriptor;
+import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
+import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
+import com.google.api.gax.httpjson.ProtoMessageResponseParser;
+import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.rpc.BidiStreamingCallable;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ClientStreamingCallable;
+import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.auto.populate.field.AutoPopulateFieldTestingEchoRequest;
+import com.google.auto.populate.field.AutoPopulateFieldTestingEchoResponse;
+import com.google.auto.populate.field.AutoPopulateFieldTestingExpandRequest;
+import com.google.common.base.Strings;
+import com.google.protobuf.TypeRegistry;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * REST stub implementation for the AutoPopulateFieldTesting service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@Generated("by gapic-generator-java")
+public class HttpJsonAutoPopulateFieldTestingStub extends AutoPopulateFieldTestingStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
+  private static final ApiMethodDescriptor<
+          AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingEchoMethodDescriptor =
+          ApiMethodDescriptor
+              .<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.auto.populate.field.AutoPopulateFieldTesting/AutoPopulateFieldTestingEcho")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AutoPopulateFieldTestingEchoRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/AutoPopulateFieldTesting:echo",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AutoPopulateFieldTestingEchoRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AutoPopulateFieldTestingEchoRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AutoPopulateFieldTestingEchoResponse>newBuilder()
+                      .setDefaultInstance(AutoPopulateFieldTestingEchoResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          AutoPopulateFieldTestingExpandRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingExpandMethodDescriptor =
+          ApiMethodDescriptor
+              .<AutoPopulateFieldTestingExpandRequest, AutoPopulateFieldTestingEchoResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.auto.populate.field.AutoPopulateFieldTesting/AutoPopulateFieldTestingExpand")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.SERVER_STREAMING)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AutoPopulateFieldTestingExpandRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/AutoPopulateFieldTesting:expand",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AutoPopulateFieldTestingExpandRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AutoPopulateFieldTestingExpandRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AutoPopulateFieldTestingEchoResponse>newBuilder()
+                      .setDefaultInstance(AutoPopulateFieldTestingEchoResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private final UnaryCallable<
+          AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingEchoCallable;
+  private final ServerStreamingCallable<
+          AutoPopulateFieldTestingExpandRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingExpandCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final HttpJsonStubCallableFactory callableFactory;
+
+  public static final HttpJsonAutoPopulateFieldTestingStub create(
+      AutoPopulateFieldTestingStubSettings settings) throws IOException {
+    return new HttpJsonAutoPopulateFieldTestingStub(settings, ClientContext.create(settings));
+  }
+
+  public static final HttpJsonAutoPopulateFieldTestingStub create(ClientContext clientContext)
+      throws IOException {
+    return new HttpJsonAutoPopulateFieldTestingStub(
+        AutoPopulateFieldTestingStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final HttpJsonAutoPopulateFieldTestingStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonAutoPopulateFieldTestingStub(
+        AutoPopulateFieldTestingStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
+  /**
+   * Constructs an instance of HttpJsonAutoPopulateFieldTestingStub, using the given settings. This
+   * is protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected HttpJsonAutoPopulateFieldTestingStub(
+      AutoPopulateFieldTestingStubSettings settings, ClientContext clientContext)
+      throws IOException {
+    this(settings, clientContext, new HttpJsonAutoPopulateFieldTestingCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of HttpJsonAutoPopulateFieldTestingStub, using the given settings. This
+   * is protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected HttpJsonAutoPopulateFieldTestingStub(
+      AutoPopulateFieldTestingStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+
+    HttpJsonCallSettings<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+        autoPopulateFieldTestingEchoTransportSettings =
+            HttpJsonCallSettings
+                .<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+                    newBuilder()
+                .setMethodDescriptor(autoPopulateFieldTestingEchoMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setRequestMutator(
+                    request -> {
+                      AutoPopulateFieldTestingEchoRequest.Builder requestBuilder =
+                          request.toBuilder();
+                      if (Strings.isNullOrEmpty(request.getRequestId())) {
+                        requestBuilder.setRequestId(UUID.randomUUID().toString());
+                      }
+                      if (Strings.isNullOrEmpty(request.getSecondRequestId())) {
+                        requestBuilder.setSecondRequestId(UUID.randomUUID().toString());
+                      }
+                      return requestBuilder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            AutoPopulateFieldTestingExpandRequest, AutoPopulateFieldTestingEchoResponse>
+        autoPopulateFieldTestingExpandTransportSettings =
+            HttpJsonCallSettings
+                .<AutoPopulateFieldTestingExpandRequest, AutoPopulateFieldTestingEchoResponse>
+                    newBuilder()
+                .setMethodDescriptor(autoPopulateFieldTestingExpandMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+
+    this.autoPopulateFieldTestingEchoCallable =
+        callableFactory.createUnaryCallable(
+            autoPopulateFieldTestingEchoTransportSettings,
+            settings.autoPopulateFieldTestingEchoSettings(),
+            clientContext);
+    this.autoPopulateFieldTestingExpandCallable =
+        callableFactory.createServerStreamingCallable(
+            autoPopulateFieldTestingExpandTransportSettings,
+            settings.autoPopulateFieldTestingExpandSettings(),
+            clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(autoPopulateFieldTestingEchoMethodDescriptor);
+    methodDescriptors.add(autoPopulateFieldTestingExpandMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingEchoCallable() {
+    return autoPopulateFieldTestingEchoCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<
+          AutoPopulateFieldTestingExpandRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingExpandCallable() {
+    return autoPopulateFieldTestingExpandCallable;
+  }
+
+  @Override
+  public ClientStreamingCallable<
+          AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingCollectCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: autoPopulateFieldTestingCollectCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public BidiStreamingCallable<
+          AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingChatCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: autoPopulateFieldTestingChatCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

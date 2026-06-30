@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(Service.GetPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Resources.Policy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Service.UpdatePolicyRequest, Resources.Policy>
@@ -63,6 +64,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(Service.UpdatePolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Resources.Policy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Service.CreateAttestorRequest, Resources.Attestor>
@@ -74,6 +76,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(Service.CreateAttestorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Resources.Attestor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Service.GetAttestorRequest, Resources.Attestor>
@@ -85,6 +88,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(Service.GetAttestorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Resources.Attestor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Service.UpdateAttestorRequest, Resources.Attestor>
@@ -96,6 +100,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(Service.UpdateAttestorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Resources.Attestor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Service.ListAttestorsRequest, Service.ListAttestorsResponse>
@@ -108,6 +113,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
                   ProtoUtils.marshaller(Service.ListAttestorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(Service.ListAttestorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Service.DeleteAttestorRequest, Empty>
@@ -119,6 +125,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(Service.DeleteAttestorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<Service.GetPolicyRequest, Resources.Policy> getPolicyCallable;
@@ -190,6 +197,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<Service.UpdatePolicyRequest, Resources.Policy> updatePolicyTransportSettings =
         GrpcCallSettings.<Service.UpdatePolicyRequest, Resources.Policy>newBuilder()
@@ -211,6 +219,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<Service.GetAttestorRequest, Resources.Attestor> getAttestorTransportSettings =
         GrpcCallSettings.<Service.GetAttestorRequest, Resources.Attestor>newBuilder()
@@ -221,6 +230,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<Service.UpdateAttestorRequest, Resources.Attestor>
         updateAttestorTransportSettings =
@@ -244,6 +254,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<Service.DeleteAttestorRequest, Empty> deleteAttestorTransportSettings =
         GrpcCallSettings.<Service.DeleteAttestorRequest, Empty>newBuilder()
@@ -254,6 +265,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getPolicyCallable =

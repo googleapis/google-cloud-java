@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,7 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                       CreatePredictionApiKeyRegistrationRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PredictionApiKeyRegistration.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -78,6 +79,7 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListPredictionApiKeyRegistrationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePredictionApiKeyRegistrationRequest, Empty>
@@ -90,6 +92,7 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                   ProtoUtils.marshaller(
                       DeletePredictionApiKeyRegistrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<
@@ -161,6 +164,7 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse>
@@ -176,6 +180,7 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeletePredictionApiKeyRegistrationRequest, Empty>
         deletePredictionApiKeyRegistrationTransportSettings =
@@ -187,6 +192,7 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createPredictionApiKeyRegistrationCallable =

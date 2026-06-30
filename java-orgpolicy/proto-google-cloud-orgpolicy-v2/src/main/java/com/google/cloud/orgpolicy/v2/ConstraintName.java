@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -293,7 +293,8 @@ public class ConstraintName implements ResourceName {
     private Builder(ConstraintName constraintName) {
       Preconditions.checkArgument(
           Objects.equals(constraintName.pathTemplate, PROJECT_CONSTRAINT),
-          "toBuilder is only supported when ConstraintName has the pattern of projects/{project}/constraints/{constraint}");
+          "toBuilder is only supported when ConstraintName has the pattern of"
+              + " projects/{project}/constraints/{constraint}");
       this.project = constraintName.project;
       this.constraint = constraintName.constraint;
     }

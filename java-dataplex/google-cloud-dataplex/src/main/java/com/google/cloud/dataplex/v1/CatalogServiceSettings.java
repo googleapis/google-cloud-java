@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,9 @@ import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntriesPaged
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryGroupsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryTypesPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataFeedsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataJobsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.LookupEntryLinksPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.SearchEntriesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -41,6 +44,11 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -62,7 +70,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getEntryType to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getEntryType:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -79,9 +89,46 @@ import javax.annotation.Generated;
  *             .getEntryTypeSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * CatalogServiceSettings catalogServiceSettings = catalogServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createEntryType:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * CatalogServiceSettings.Builder catalogServiceSettingsBuilder =
+ *     CatalogServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * catalogServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -253,10 +300,120 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     return ((CatalogServiceStubSettings) getStubSettings()).lookupEntrySettings();
   }
 
+  /** Returns the object with the settings used for calls to modifyEntry. */
+  public UnaryCallSettings<ModifyEntryRequest, Entry> modifyEntrySettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).modifyEntrySettings();
+  }
+
   /** Returns the object with the settings used for calls to searchEntries. */
   public PagedCallSettings<SearchEntriesRequest, SearchEntriesResponse, SearchEntriesPagedResponse>
       searchEntriesSettings() {
     return ((CatalogServiceStubSettings) getStubSettings()).searchEntriesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMetadataJob. */
+  public UnaryCallSettings<CreateMetadataJobRequest, Operation> createMetadataJobSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).createMetadataJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMetadataJob. */
+  public OperationCallSettings<CreateMetadataJobRequest, MetadataJob, OperationMetadata>
+      createMetadataJobOperationSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).createMetadataJobOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMetadataJob. */
+  public UnaryCallSettings<GetMetadataJobRequest, MetadataJob> getMetadataJobSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).getMetadataJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMetadataJobs. */
+  public PagedCallSettings<
+          ListMetadataJobsRequest, ListMetadataJobsResponse, ListMetadataJobsPagedResponse>
+      listMetadataJobsSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).listMetadataJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelMetadataJob. */
+  public UnaryCallSettings<CancelMetadataJobRequest, Empty> cancelMetadataJobSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).cancelMetadataJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createEntryLink. */
+  public UnaryCallSettings<CreateEntryLinkRequest, EntryLink> createEntryLinkSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).createEntryLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateEntryLink. */
+  public UnaryCallSettings<UpdateEntryLinkRequest, EntryLink> updateEntryLinkSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).updateEntryLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteEntryLink. */
+  public UnaryCallSettings<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).deleteEntryLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to lookupEntryLinks. */
+  public PagedCallSettings<
+          LookupEntryLinksRequest, LookupEntryLinksResponse, LookupEntryLinksPagedResponse>
+      lookupEntryLinksSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).lookupEntryLinksSettings();
+  }
+
+  /** Returns the object with the settings used for calls to lookupContext. */
+  public UnaryCallSettings<LookupContextRequest, LookupContextResponse> lookupContextSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).lookupContextSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEntryLink. */
+  public UnaryCallSettings<GetEntryLinkRequest, EntryLink> getEntryLinkSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).getEntryLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMetadataFeed. */
+  public UnaryCallSettings<CreateMetadataFeedRequest, Operation> createMetadataFeedSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).createMetadataFeedSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMetadataFeed. */
+  public OperationCallSettings<CreateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      createMetadataFeedOperationSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).createMetadataFeedOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMetadataFeed. */
+  public UnaryCallSettings<GetMetadataFeedRequest, MetadataFeed> getMetadataFeedSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).getMetadataFeedSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMetadataFeeds. */
+  public PagedCallSettings<
+          ListMetadataFeedsRequest, ListMetadataFeedsResponse, ListMetadataFeedsPagedResponse>
+      listMetadataFeedsSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).listMetadataFeedsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteMetadataFeed. */
+  public UnaryCallSettings<DeleteMetadataFeedRequest, Operation> deleteMetadataFeedSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).deleteMetadataFeedSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteMetadataFeed. */
+  public OperationCallSettings<DeleteMetadataFeedRequest, Empty, OperationMetadata>
+      deleteMetadataFeedOperationSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).deleteMetadataFeedOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateMetadataFeed. */
+  public UnaryCallSettings<UpdateMetadataFeedRequest, Operation> updateMetadataFeedSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).updateMetadataFeedSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateMetadataFeed. */
+  public OperationCallSettings<UpdateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      updateMetadataFeedOperationSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).updateMetadataFeedOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -268,6 +425,22 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
   /** Returns the object with the settings used for calls to getLocation. */
   public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
     return ((CatalogServiceStubSettings) getStubSettings()).getLocationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final CatalogServiceSettings create(CatalogServiceStubSettings stub)
@@ -555,11 +728,127 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
       return getStubSettingsBuilder().lookupEntrySettings();
     }
 
+    /** Returns the builder for the settings used for calls to modifyEntry. */
+    public UnaryCallSettings.Builder<ModifyEntryRequest, Entry> modifyEntrySettings() {
+      return getStubSettingsBuilder().modifyEntrySettings();
+    }
+
     /** Returns the builder for the settings used for calls to searchEntries. */
     public PagedCallSettings.Builder<
             SearchEntriesRequest, SearchEntriesResponse, SearchEntriesPagedResponse>
         searchEntriesSettings() {
       return getStubSettingsBuilder().searchEntriesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMetadataJob. */
+    public UnaryCallSettings.Builder<CreateMetadataJobRequest, Operation>
+        createMetadataJobSettings() {
+      return getStubSettingsBuilder().createMetadataJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMetadataJob. */
+    public OperationCallSettings.Builder<CreateMetadataJobRequest, MetadataJob, OperationMetadata>
+        createMetadataJobOperationSettings() {
+      return getStubSettingsBuilder().createMetadataJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMetadataJob. */
+    public UnaryCallSettings.Builder<GetMetadataJobRequest, MetadataJob> getMetadataJobSettings() {
+      return getStubSettingsBuilder().getMetadataJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMetadataJobs. */
+    public PagedCallSettings.Builder<
+            ListMetadataJobsRequest, ListMetadataJobsResponse, ListMetadataJobsPagedResponse>
+        listMetadataJobsSettings() {
+      return getStubSettingsBuilder().listMetadataJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelMetadataJob. */
+    public UnaryCallSettings.Builder<CancelMetadataJobRequest, Empty> cancelMetadataJobSettings() {
+      return getStubSettingsBuilder().cancelMetadataJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createEntryLink. */
+    public UnaryCallSettings.Builder<CreateEntryLinkRequest, EntryLink> createEntryLinkSettings() {
+      return getStubSettingsBuilder().createEntryLinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateEntryLink. */
+    public UnaryCallSettings.Builder<UpdateEntryLinkRequest, EntryLink> updateEntryLinkSettings() {
+      return getStubSettingsBuilder().updateEntryLinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEntryLink. */
+    public UnaryCallSettings.Builder<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkSettings() {
+      return getStubSettingsBuilder().deleteEntryLinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to lookupEntryLinks. */
+    public PagedCallSettings.Builder<
+            LookupEntryLinksRequest, LookupEntryLinksResponse, LookupEntryLinksPagedResponse>
+        lookupEntryLinksSettings() {
+      return getStubSettingsBuilder().lookupEntryLinksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to lookupContext. */
+    public UnaryCallSettings.Builder<LookupContextRequest, LookupContextResponse>
+        lookupContextSettings() {
+      return getStubSettingsBuilder().lookupContextSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEntryLink. */
+    public UnaryCallSettings.Builder<GetEntryLinkRequest, EntryLink> getEntryLinkSettings() {
+      return getStubSettingsBuilder().getEntryLinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMetadataFeed. */
+    public UnaryCallSettings.Builder<CreateMetadataFeedRequest, Operation>
+        createMetadataFeedSettings() {
+      return getStubSettingsBuilder().createMetadataFeedSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMetadataFeed. */
+    public OperationCallSettings.Builder<CreateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+        createMetadataFeedOperationSettings() {
+      return getStubSettingsBuilder().createMetadataFeedOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMetadataFeed. */
+    public UnaryCallSettings.Builder<GetMetadataFeedRequest, MetadataFeed>
+        getMetadataFeedSettings() {
+      return getStubSettingsBuilder().getMetadataFeedSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMetadataFeeds. */
+    public PagedCallSettings.Builder<
+            ListMetadataFeedsRequest, ListMetadataFeedsResponse, ListMetadataFeedsPagedResponse>
+        listMetadataFeedsSettings() {
+      return getStubSettingsBuilder().listMetadataFeedsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMetadataFeed. */
+    public UnaryCallSettings.Builder<DeleteMetadataFeedRequest, Operation>
+        deleteMetadataFeedSettings() {
+      return getStubSettingsBuilder().deleteMetadataFeedSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMetadataFeed. */
+    public OperationCallSettings.Builder<DeleteMetadataFeedRequest, Empty, OperationMetadata>
+        deleteMetadataFeedOperationSettings() {
+      return getStubSettingsBuilder().deleteMetadataFeedOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMetadataFeed. */
+    public UnaryCallSettings.Builder<UpdateMetadataFeedRequest, Operation>
+        updateMetadataFeedSettings() {
+      return getStubSettingsBuilder().updateMetadataFeedSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMetadataFeed. */
+    public OperationCallSettings.Builder<UpdateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+        updateMetadataFeedOperationSettings() {
+      return getStubSettingsBuilder().updateMetadataFeedOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
@@ -572,6 +861,22 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getStubSettingsBuilder().getLocationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

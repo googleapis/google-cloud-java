@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,7 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataStoreRequest, DataStore>
@@ -73,6 +74,7 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
                   "google.cloud.discoveryengine.v1beta.DataStoreService/GetDataStore")
               .setRequestMarshaller(ProtoUtils.marshaller(GetDataStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataStore.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataStoresRequest, ListDataStoresResponse>
@@ -85,6 +87,7 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
                   ProtoUtils.marshaller(ListDataStoresRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataStoresResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataStoreRequest, Operation>
@@ -96,6 +99,7 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataStoreRequest, DataStore>
@@ -107,6 +111,7 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataStore.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateDataStoreRequest, Operation> createDataStoreCallable;
@@ -174,6 +179,7 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getCmekConfigName())
             .build();
     GrpcCallSettings<GetDataStoreRequest, DataStore> getDataStoreTransportSettings =
         GrpcCallSettings.<GetDataStoreRequest, DataStore>newBuilder()
@@ -184,6 +190,7 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDataStoresRequest, ListDataStoresResponse>
         listDataStoresTransportSettings =
@@ -195,6 +202,7 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteDataStoreRequest, Operation> deleteDataStoreTransportSettings =
         GrpcCallSettings.<DeleteDataStoreRequest, Operation>newBuilder()
@@ -205,6 +213,7 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDataStoreRequest, DataStore> updateDataStoreTransportSettings =
         GrpcCallSettings.<UpdateDataStoreRequest, DataStore>newBuilder()

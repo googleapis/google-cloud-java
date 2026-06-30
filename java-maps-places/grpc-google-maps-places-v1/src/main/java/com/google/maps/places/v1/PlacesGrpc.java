@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,15 +22,13 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * Service definition for the Places API.
- * Note: every request (except for Autocomplete requests) requires a field mask
- * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
- * can be set via the HTTP header `X-Goog-FieldMask`. See:
+ * Note: every request (except for Autocomplete and GetPhotoMedia requests)
+ * requires a field mask set outside of the request proto (`all/&#42;`, is not
+ * assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`.
+ * See:
  * https://developers.google.com/maps/documentation/places/web-service/choose-fields
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/maps/places/v1/places_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PlacesGrpc {
 
@@ -264,6 +262,19 @@ public final class PlacesGrpc {
     return PlacesStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static PlacesBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<PlacesBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PlacesBlockingV2Stub>() {
+          @java.lang.Override
+          public PlacesBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PlacesBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return PlacesBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -297,9 +308,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
-   * Note: every request (except for Autocomplete requests) requires a field mask
-   * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
-   * can be set via the HTTP header `X-Goog-FieldMask`. See:
+   * Note: every request (except for Autocomplete and GetPhotoMedia requests)
+   * requires a field mask set outside of the request proto (`all/&#42;`, is not
+   * assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`.
+   * See:
    * https://developers.google.com/maps/documentation/places/web-service/choose-fields
    * </pre>
    */
@@ -383,9 +395,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
-   * Note: every request (except for Autocomplete requests) requires a field mask
-   * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
-   * can be set via the HTTP header `X-Goog-FieldMask`. See:
+   * Note: every request (except for Autocomplete and GetPhotoMedia requests)
+   * requires a field mask set outside of the request proto (`all/&#42;`, is not
+   * assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`.
+   * See:
    * https://developers.google.com/maps/documentation/places/web-service/choose-fields
    * </pre>
    */
@@ -402,9 +415,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
-   * Note: every request (except for Autocomplete requests) requires a field mask
-   * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
-   * can be set via the HTTP header `X-Goog-FieldMask`. See:
+   * Note: every request (except for Autocomplete and GetPhotoMedia requests)
+   * requires a field mask set outside of the request proto (`all/&#42;`, is not
+   * assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`.
+   * See:
    * https://developers.google.com/maps/documentation/places/web-service/choose-fields
    * </pre>
    */
@@ -504,9 +518,101 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
-   * Note: every request (except for Autocomplete requests) requires a field mask
-   * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
-   * can be set via the HTTP header `X-Goog-FieldMask`. See:
+   * Note: every request (except for Autocomplete and GetPhotoMedia requests)
+   * requires a field mask set outside of the request proto (`all/&#42;`, is not
+   * assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`.
+   * See:
+   * https://developers.google.com/maps/documentation/places/web-service/choose-fields
+   * </pre>
+   */
+  public static final class PlacesBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<PlacesBlockingV2Stub> {
+    private PlacesBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected PlacesBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new PlacesBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Search for places near locations.
+     * </pre>
+     */
+    public com.google.maps.places.v1.SearchNearbyResponse searchNearby(
+        com.google.maps.places.v1.SearchNearbyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSearchNearbyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Text query based place search.
+     * </pre>
+     */
+    public com.google.maps.places.v1.SearchTextResponse searchText(
+        com.google.maps.places.v1.SearchTextRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSearchTextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a photo media with a photo reference string.
+     * </pre>
+     */
+    public com.google.maps.places.v1.PhotoMedia getPhotoMedia(
+        com.google.maps.places.v1.GetPhotoMediaRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetPhotoMediaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the details of a place based on its resource name, which is a string
+     * in the `places/{place_id}` format.
+     * </pre>
+     */
+    public com.google.maps.places.v1.Place getPlace(
+        com.google.maps.places.v1.GetPlaceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetPlaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns predictions for the given input.
+     * </pre>
+     */
+    public com.google.maps.places.v1.AutocompletePlacesResponse autocompletePlaces(
+        com.google.maps.places.v1.AutocompletePlacesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAutocompletePlacesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Places.
+   *
+   * <pre>
+   * Service definition for the Places API.
+   * Note: every request (except for Autocomplete and GetPhotoMedia requests)
+   * requires a field mask set outside of the request proto (`all/&#42;`, is not
+   * assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`.
+   * See:
    * https://developers.google.com/maps/documentation/places/web-service/choose-fields
    * </pre>
    */
@@ -593,9 +699,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
-   * Note: every request (except for Autocomplete requests) requires a field mask
-   * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
-   * can be set via the HTTP header `X-Goog-FieldMask`. See:
+   * Note: every request (except for Autocomplete and GetPhotoMedia requests)
+   * requires a field mask set outside of the request proto (`all/&#42;`, is not
+   * assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`.
+   * See:
    * https://developers.google.com/maps/documentation/places/web-service/choose-fields
    * </pre>
    */

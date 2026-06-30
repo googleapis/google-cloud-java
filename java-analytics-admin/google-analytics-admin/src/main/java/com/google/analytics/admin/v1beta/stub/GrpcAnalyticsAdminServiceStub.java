@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.List
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
+import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
@@ -40,6 +41,7 @@ import com.google.analytics.admin.v1beta.CreateCustomMetricRequest;
 import com.google.analytics.admin.v1beta.CreateDataStreamRequest;
 import com.google.analytics.admin.v1beta.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1beta.CreateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1beta.CreateKeyEventRequest;
 import com.google.analytics.admin.v1beta.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.CreatePropertyRequest;
 import com.google.analytics.admin.v1beta.CustomDimension;
@@ -52,6 +54,7 @@ import com.google.analytics.admin.v1beta.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1beta.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1beta.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1beta.DeleteGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1beta.DeleteKeyEventRequest;
 import com.google.analytics.admin.v1beta.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.DeletePropertyRequest;
 import com.google.analytics.admin.v1beta.FirebaseLink;
@@ -62,9 +65,11 @@ import com.google.analytics.admin.v1beta.GetCustomMetricRequest;
 import com.google.analytics.admin.v1beta.GetDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1beta.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1beta.GetDataStreamRequest;
+import com.google.analytics.admin.v1beta.GetKeyEventRequest;
 import com.google.analytics.admin.v1beta.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.GetPropertyRequest;
 import com.google.analytics.admin.v1beta.GoogleAdsLink;
+import com.google.analytics.admin.v1beta.KeyEvent;
 import com.google.analytics.admin.v1beta.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1beta.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1beta.ListAccountsRequest;
@@ -81,6 +86,8 @@ import com.google.analytics.admin.v1beta.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1beta.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1beta.ListGoogleAdsLinksRequest;
 import com.google.analytics.admin.v1beta.ListGoogleAdsLinksResponse;
+import com.google.analytics.admin.v1beta.ListKeyEventsRequest;
+import com.google.analytics.admin.v1beta.ListKeyEventsResponse;
 import com.google.analytics.admin.v1beta.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1beta.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1beta.ListPropertiesRequest;
@@ -100,6 +107,7 @@ import com.google.analytics.admin.v1beta.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1beta.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1beta.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1beta.UpdateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1beta.UpdateKeyEventRequest;
 import com.google.analytics.admin.v1beta.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.UpdatePropertyRequest;
 import com.google.api.core.BetaApi;
@@ -133,6 +141,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
           .setFullMethodName("google.analytics.admin.v1beta.AnalyticsAdminService/GetAccount")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAccountRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Account.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListAccountsRequest, ListAccountsResponse>
@@ -143,6 +152,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListAccountsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAccountsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAccountRequest, Empty> deleteAccountMethodDescriptor =
@@ -151,6 +161,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
           .setFullMethodName("google.analytics.admin.v1beta.AnalyticsAdminService/DeleteAccount")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteAccountRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateAccountRequest, Account>
@@ -162,6 +173,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Account.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -176,6 +188,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ProvisionAccountTicketRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ProvisionAccountTicketResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAccountSummariesRequest, ListAccountSummariesResponse>
@@ -188,6 +201,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListAccountSummariesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAccountSummariesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPropertyRequest, Property> getPropertyMethodDescriptor =
@@ -196,6 +210,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
           .setFullMethodName("google.analytics.admin.v1beta.AnalyticsAdminService/GetProperty")
           .setRequestMarshaller(ProtoUtils.marshaller(GetPropertyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Property.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListPropertiesRequest, ListPropertiesResponse>
@@ -208,6 +223,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListPropertiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPropertiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePropertyRequest, Property>
@@ -219,6 +235,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePropertyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Property.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePropertyRequest, Property>
@@ -230,6 +247,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePropertyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Property.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePropertyRequest, Property>
@@ -241,6 +259,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePropertyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Property.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFirebaseLinkRequest, FirebaseLink>
@@ -252,6 +271,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFirebaseLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FirebaseLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFirebaseLinkRequest, Empty>
@@ -263,6 +283,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFirebaseLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
@@ -275,6 +296,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListFirebaseLinksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFirebaseLinksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateGoogleAdsLinkRequest, GoogleAdsLink>
@@ -286,6 +308,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGoogleAdsLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GoogleAdsLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateGoogleAdsLinkRequest, GoogleAdsLink>
@@ -297,6 +320,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateGoogleAdsLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GoogleAdsLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteGoogleAdsLinkRequest, Empty>
@@ -308,6 +332,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteGoogleAdsLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse>
@@ -320,6 +345,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListGoogleAdsLinksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGoogleAdsLinksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataSharingSettingsRequest, DataSharingSettings>
@@ -332,6 +358,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(GetDataSharingSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DataSharingSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -346,6 +373,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(GetMeasurementProtocolSecretRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(MeasurementProtocolSecret.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -362,6 +390,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListMeasurementProtocolSecretsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -377,6 +406,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       CreateMeasurementProtocolSecretRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(MeasurementProtocolSecret.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMeasurementProtocolSecretRequest, Empty>
@@ -389,6 +419,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(
                       DeleteMeasurementProtocolSecretRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -404,6 +435,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       UpdateMeasurementProtocolSecretRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(MeasurementProtocolSecret.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -419,6 +451,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(AcknowledgeUserDataCollectionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AcknowledgeUserDataCollectionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -433,6 +466,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(SearchChangeHistoryEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchChangeHistoryEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateConversionEventRequest, ConversionEvent>
@@ -444,6 +478,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConversionEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConversionEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConversionEventRequest, ConversionEvent>
@@ -455,6 +490,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConversionEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConversionEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConversionEventRequest, ConversionEvent>
@@ -466,6 +502,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConversionEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConversionEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConversionEventRequest, Empty>
@@ -477,6 +514,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConversionEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListConversionEventsRequest, ListConversionEventsResponse>
@@ -489,6 +527,65 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListConversionEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConversionEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateKeyEventRequest, KeyEvent>
+      createKeyEventMethodDescriptor =
+          MethodDescriptor.<CreateKeyEventRequest, KeyEvent>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1beta.AnalyticsAdminService/CreateKeyEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateKeyEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(KeyEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateKeyEventRequest, KeyEvent>
+      updateKeyEventMethodDescriptor =
+          MethodDescriptor.<UpdateKeyEventRequest, KeyEvent>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1beta.AnalyticsAdminService/UpdateKeyEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateKeyEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(KeyEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetKeyEventRequest, KeyEvent> getKeyEventMethodDescriptor =
+      MethodDescriptor.<GetKeyEventRequest, KeyEvent>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.analytics.admin.v1beta.AnalyticsAdminService/GetKeyEvent")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetKeyEventRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(KeyEvent.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<DeleteKeyEventRequest, Empty>
+      deleteKeyEventMethodDescriptor =
+          MethodDescriptor.<DeleteKeyEventRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1beta.AnalyticsAdminService/DeleteKeyEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteKeyEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListKeyEventsRequest, ListKeyEventsResponse>
+      listKeyEventsMethodDescriptor =
+          MethodDescriptor.<ListKeyEventsRequest, ListKeyEventsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1beta.AnalyticsAdminService/ListKeyEvents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListKeyEventsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListKeyEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCustomDimensionRequest, CustomDimension>
@@ -500,6 +597,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCustomDimensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomDimension.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCustomDimensionRequest, CustomDimension>
@@ -511,6 +609,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCustomDimensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomDimension.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCustomDimensionsRequest, ListCustomDimensionsResponse>
@@ -523,6 +622,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListCustomDimensionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomDimensionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ArchiveCustomDimensionRequest, Empty>
@@ -534,6 +634,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ArchiveCustomDimensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomDimensionRequest, CustomDimension>
@@ -545,6 +646,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCustomDimensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomDimension.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCustomMetricRequest, CustomMetric>
@@ -556,6 +658,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCustomMetricRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomMetric.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCustomMetricRequest, CustomMetric>
@@ -567,6 +670,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCustomMetricRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomMetric.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCustomMetricsRequest, ListCustomMetricsResponse>
@@ -579,6 +683,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListCustomMetricsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomMetricsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ArchiveCustomMetricRequest, Empty>
@@ -590,6 +695,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ArchiveCustomMetricRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomMetricRequest, CustomMetric>
@@ -601,6 +707,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCustomMetricRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomMetric.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataRetentionSettingsRequest, DataRetentionSettings>
@@ -613,6 +720,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(GetDataRetentionSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DataRetentionSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
@@ -625,6 +733,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(UpdateDataRetentionSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DataRetentionSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDataStreamRequest, DataStream>
@@ -636,6 +745,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataStream.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataStreamRequest, Empty>
@@ -647,6 +757,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataStreamRequest, DataStream>
@@ -658,6 +769,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataStream.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataStreamsRequest, ListDataStreamsResponse>
@@ -670,6 +782,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListDataStreamsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataStreamsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataStreamRequest, DataStream>
@@ -681,6 +794,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataStream.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunAccessReportRequest, RunAccessReportResponse>
@@ -693,6 +807,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(RunAccessReportRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RunAccessReportResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
@@ -764,6 +879,13 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       listConversionEventsCallable;
   private final UnaryCallable<ListConversionEventsRequest, ListConversionEventsPagedResponse>
       listConversionEventsPagedCallable;
+  private final UnaryCallable<CreateKeyEventRequest, KeyEvent> createKeyEventCallable;
+  private final UnaryCallable<UpdateKeyEventRequest, KeyEvent> updateKeyEventCallable;
+  private final UnaryCallable<GetKeyEventRequest, KeyEvent> getKeyEventCallable;
+  private final UnaryCallable<DeleteKeyEventRequest, Empty> deleteKeyEventCallable;
+  private final UnaryCallable<ListKeyEventsRequest, ListKeyEventsResponse> listKeyEventsCallable;
+  private final UnaryCallable<ListKeyEventsRequest, ListKeyEventsPagedResponse>
+      listKeyEventsPagedCallable;
   private final UnaryCallable<CreateCustomDimensionRequest, CustomDimension>
       createCustomDimensionCallable;
   private final UnaryCallable<UpdateCustomDimensionRequest, CustomDimension>
@@ -851,6 +973,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAccountsRequest, ListAccountsResponse> listAccountsTransportSettings =
         GrpcCallSettings.<ListAccountsRequest, ListAccountsResponse>newBuilder()
@@ -865,6 +988,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateAccountRequest, Account> updateAccountTransportSettings =
         GrpcCallSettings.<UpdateAccountRequest, Account>newBuilder()
@@ -896,6 +1020,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListPropertiesRequest, ListPropertiesResponse>
         listPropertiesTransportSettings =
@@ -915,6 +1040,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdatePropertyRequest, Property> updatePropertyTransportSettings =
         GrpcCallSettings.<UpdatePropertyRequest, Property>newBuilder()
@@ -935,6 +1061,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkTransportSettings =
         GrpcCallSettings.<DeleteFirebaseLinkRequest, Empty>newBuilder()
@@ -945,6 +1072,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
         listFirebaseLinksTransportSettings =
@@ -956,6 +1084,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateGoogleAdsLinkRequest, GoogleAdsLink>
         createGoogleAdsLinkTransportSettings =
@@ -967,6 +1096,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateGoogleAdsLinkRequest, GoogleAdsLink>
         updateGoogleAdsLinkTransportSettings =
@@ -990,6 +1120,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse>
         listGoogleAdsLinksTransportSettings =
@@ -1001,6 +1132,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDataSharingSettingsRequest, DataSharingSettings>
         getDataSharingSettingsTransportSettings =
@@ -1012,6 +1144,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
         getMeasurementProtocolSecretTransportSettings =
@@ -1024,6 +1157,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsResponse>
         listMeasurementProtocolSecretsTransportSettings =
@@ -1037,6 +1171,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
         createMeasurementProtocolSecretTransportSettings =
@@ -1049,6 +1184,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteMeasurementProtocolSecretRequest, Empty>
         deleteMeasurementProtocolSecretTransportSettings =
@@ -1060,6 +1196,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
         updateMeasurementProtocolSecretTransportSettings =
@@ -1087,6 +1224,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("property", String.valueOf(request.getProperty()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProperty())
                 .build();
     GrpcCallSettings<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
         searchChangeHistoryEventsTransportSettings =
@@ -1099,6 +1237,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("account", String.valueOf(request.getAccount()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAccount())
                 .build();
     GrpcCallSettings<CreateConversionEventRequest, ConversionEvent>
         createConversionEventTransportSettings =
@@ -1110,6 +1249,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateConversionEventRequest, ConversionEvent>
         updateConversionEventTransportSettings =
@@ -1134,6 +1274,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteConversionEventRequest, Empty> deleteConversionEventTransportSettings =
         GrpcCallSettings.<DeleteConversionEventRequest, Empty>newBuilder()
@@ -1144,6 +1285,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListConversionEventsRequest, ListConversionEventsResponse>
         listConversionEventsTransportSettings =
@@ -1155,7 +1297,62 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<CreateKeyEventRequest, KeyEvent> createKeyEventTransportSettings =
+        GrpcCallSettings.<CreateKeyEventRequest, KeyEvent>newBuilder()
+            .setMethodDescriptor(createKeyEventMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<UpdateKeyEventRequest, KeyEvent> updateKeyEventTransportSettings =
+        GrpcCallSettings.<UpdateKeyEventRequest, KeyEvent>newBuilder()
+            .setMethodDescriptor(updateKeyEventMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("key_event.name", String.valueOf(request.getKeyEvent().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetKeyEventRequest, KeyEvent> getKeyEventTransportSettings =
+        GrpcCallSettings.<GetKeyEventRequest, KeyEvent>newBuilder()
+            .setMethodDescriptor(getKeyEventMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<DeleteKeyEventRequest, Empty> deleteKeyEventTransportSettings =
+        GrpcCallSettings.<DeleteKeyEventRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteKeyEventMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListKeyEventsRequest, ListKeyEventsResponse> listKeyEventsTransportSettings =
+        GrpcCallSettings.<ListKeyEventsRequest, ListKeyEventsResponse>newBuilder()
+            .setMethodDescriptor(listKeyEventsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
     GrpcCallSettings<CreateCustomDimensionRequest, CustomDimension>
         createCustomDimensionTransportSettings =
             GrpcCallSettings.<CreateCustomDimensionRequest, CustomDimension>newBuilder()
@@ -1166,6 +1363,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateCustomDimensionRequest, CustomDimension>
         updateCustomDimensionTransportSettings =
@@ -1190,6 +1388,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ArchiveCustomDimensionRequest, Empty> archiveCustomDimensionTransportSettings =
         GrpcCallSettings.<ArchiveCustomDimensionRequest, Empty>newBuilder()
@@ -1200,6 +1399,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetCustomDimensionRequest, CustomDimension>
         getCustomDimensionTransportSettings =
@@ -1211,6 +1411,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateCustomMetricRequest, CustomMetric> createCustomMetricTransportSettings =
         GrpcCallSettings.<CreateCustomMetricRequest, CustomMetric>newBuilder()
@@ -1221,6 +1422,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateCustomMetricRequest, CustomMetric> updateCustomMetricTransportSettings =
         GrpcCallSettings.<UpdateCustomMetricRequest, CustomMetric>newBuilder()
@@ -1243,6 +1445,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ArchiveCustomMetricRequest, Empty> archiveCustomMetricTransportSettings =
         GrpcCallSettings.<ArchiveCustomMetricRequest, Empty>newBuilder()
@@ -1253,6 +1456,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetCustomMetricRequest, CustomMetric> getCustomMetricTransportSettings =
         GrpcCallSettings.<GetCustomMetricRequest, CustomMetric>newBuilder()
@@ -1263,6 +1467,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetDataRetentionSettingsRequest, DataRetentionSettings>
         getDataRetentionSettingsTransportSettings =
@@ -1274,6 +1479,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
         updateDataRetentionSettingsTransportSettings =
@@ -1297,6 +1503,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteDataStreamRequest, Empty> deleteDataStreamTransportSettings =
         GrpcCallSettings.<DeleteDataStreamRequest, Empty>newBuilder()
@@ -1307,6 +1514,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDataStreamRequest, DataStream> updateDataStreamTransportSettings =
         GrpcCallSettings.<UpdateDataStreamRequest, DataStream>newBuilder()
@@ -1329,6 +1537,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDataStreamRequest, DataStream> getDataStreamTransportSettings =
         GrpcCallSettings.<GetDataStreamRequest, DataStream>newBuilder()
@@ -1339,6 +1548,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RunAccessReportRequest, RunAccessReportResponse>
         runAccessReportTransportSettings =
@@ -1525,6 +1735,24 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             listConversionEventsTransportSettings,
             settings.listConversionEventsSettings(),
             clientContext);
+    this.createKeyEventCallable =
+        callableFactory.createUnaryCallable(
+            createKeyEventTransportSettings, settings.createKeyEventSettings(), clientContext);
+    this.updateKeyEventCallable =
+        callableFactory.createUnaryCallable(
+            updateKeyEventTransportSettings, settings.updateKeyEventSettings(), clientContext);
+    this.getKeyEventCallable =
+        callableFactory.createUnaryCallable(
+            getKeyEventTransportSettings, settings.getKeyEventSettings(), clientContext);
+    this.deleteKeyEventCallable =
+        callableFactory.createUnaryCallable(
+            deleteKeyEventTransportSettings, settings.deleteKeyEventSettings(), clientContext);
+    this.listKeyEventsCallable =
+        callableFactory.createUnaryCallable(
+            listKeyEventsTransportSettings, settings.listKeyEventsSettings(), clientContext);
+    this.listKeyEventsPagedCallable =
+        callableFactory.createPagedCallable(
+            listKeyEventsTransportSettings, settings.listKeyEventsSettings(), clientContext);
     this.createCustomDimensionCallable =
         callableFactory.createUnaryCallable(
             createCustomDimensionTransportSettings,
@@ -1840,6 +2068,37 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<ListConversionEventsRequest, ListConversionEventsPagedResponse>
       listConversionEventsPagedCallable() {
     return listConversionEventsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateKeyEventRequest, KeyEvent> createKeyEventCallable() {
+    return createKeyEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateKeyEventRequest, KeyEvent> updateKeyEventCallable() {
+    return updateKeyEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetKeyEventRequest, KeyEvent> getKeyEventCallable() {
+    return getKeyEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteKeyEventRequest, Empty> deleteKeyEventCallable() {
+    return deleteKeyEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListKeyEventsRequest, ListKeyEventsResponse> listKeyEventsCallable() {
+    return listKeyEventsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListKeyEventsRequest, ListKeyEventsPagedResponse>
+      listKeyEventsPagedCallable() {
+    return listKeyEventsPagedCallable;
   }
 
   @Override

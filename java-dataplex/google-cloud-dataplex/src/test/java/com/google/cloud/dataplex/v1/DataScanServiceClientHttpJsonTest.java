@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,8 +35,17 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.GetPolicyOptions;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -105,6 +114,7 @@ public class DataScanServiceClientHttpJsonTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -169,6 +179,7 @@ public class DataScanServiceClientHttpJsonTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -233,6 +244,7 @@ public class DataScanServiceClientHttpJsonTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -256,6 +268,7 @@ public class DataScanServiceClientHttpJsonTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -299,6 +312,7 @@ public class DataScanServiceClientHttpJsonTest {
               .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
               .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
               .setType(DataScanType.forNumber(0))
+              .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataScanAsync(dataScan, updateMask).get();
@@ -413,6 +427,7 @@ public class DataScanServiceClientHttpJsonTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -468,6 +483,7 @@ public class DataScanServiceClientHttpJsonTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -698,6 +714,8 @@ public class DataScanServiceClientHttpJsonTest {
             .setName(
                 DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString())
             .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setPartialFailureMessage("partialFailureMessage-1000286466")
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setMessage("message954925063")
@@ -748,6 +766,8 @@ public class DataScanServiceClientHttpJsonTest {
             .setName(
                 DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString())
             .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setPartialFailureMessage("partialFailureMessage-1000286466")
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setMessage("message954925063")
@@ -887,6 +907,90 @@ public class DataScanServiceClientHttpJsonTest {
     try {
       String parent = "projects/project-881/locations/location-881/dataScans/dataScan-881";
       client.listDataScanJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelDataScanJobTest() throws Exception {
+    CancelDataScanJobResponse expectedResponse = CancelDataScanJobResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    DataScanJobName name = DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]");
+
+    CancelDataScanJobResponse actualResponse = client.cancelDataScanJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelDataScanJobExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataScanJobName name = DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]");
+      client.cancelDataScanJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelDataScanJobTest2() throws Exception {
+    CancelDataScanJobResponse expectedResponse = CancelDataScanJobResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-7138/locations/location-7138/dataScans/dataScan-7138/jobs/job-7138";
+
+    CancelDataScanJobResponse actualResponse = client.cancelDataScanJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelDataScanJobExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7138/locations/location-7138/dataScans/dataScan-7138/jobs/job-7138";
+      client.cancelDataScanJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -1047,6 +1151,168 @@ public class DataScanServiceClientHttpJsonTest {
               .setName("projects/project-9062/locations/location-9062")
               .build();
       client.getLocation(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+            .setPolicy(Policy.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.setIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SetIamPolicyRequest request =
+          SetIamPolicyRequest.newBuilder()
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+              .setPolicy(Policy.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.setIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+            .setOptions(GetPolicyOptions.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.getIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GetIamPolicyRequest request =
+          GetIamPolicyRequest.newBuilder()
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+              .setOptions(GetPolicyOptions.newBuilder().build())
+              .build();
+      client.getIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestIamPermissionsResponse expectedResponse =
+        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockService.addResponse(expectedResponse);
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+            .addAllPermissions(new ArrayList<String>())
+            .build();
+
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+              .addAllPermissions(new ArrayList<String>())
+              .build();
+      client.testIamPermissions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

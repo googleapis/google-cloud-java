@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * `PipelineJob` resources (used for Vertex AI Pipelines).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/pipeline_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PipelineServiceGrpc {
 
@@ -618,6 +615,19 @@ public final class PipelineServiceGrpc {
     return PipelineServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static PipelineServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<PipelineServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PipelineServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public PipelineServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PipelineServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return PipelineServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1135,6 +1145,231 @@ public final class PipelineServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service PipelineService.
+   *
+   * <pre>
+   * A service for creating and managing Vertex AI's pipelines. This includes both
+   * `TrainingPipeline` resources (used for AutoML and custom training) and
+   * `PipelineJob` resources (used for Vertex AI Pipelines).
+   * </pre>
+   */
+  public static final class PipelineServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<PipelineServiceBlockingV2Stub> {
+    private PipelineServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected PipelineServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new PipelineServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a TrainingPipeline. A created TrainingPipeline right away will be
+     * attempted to be run.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.TrainingPipeline createTrainingPipeline(
+        com.google.cloud.aiplatform.v1.CreateTrainingPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateTrainingPipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a TrainingPipeline.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.TrainingPipeline getTrainingPipeline(
+        com.google.cloud.aiplatform.v1.GetTrainingPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTrainingPipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TrainingPipelines in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListTrainingPipelinesResponse listTrainingPipelines(
+        com.google.cloud.aiplatform.v1.ListTrainingPipelinesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTrainingPipelinesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a TrainingPipeline.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTrainingPipeline(
+        com.google.cloud.aiplatform.v1.DeleteTrainingPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTrainingPipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a TrainingPipeline.
+     * Starts asynchronous cancellation on the TrainingPipeline. The server
+     * makes a best effort to cancel the pipeline, but success is not
+     * guaranteed. Clients can use
+     * [PipelineService.GetTrainingPipeline][google.cloud.aiplatform.v1.PipelineService.GetTrainingPipeline]
+     * or other methods to check whether the cancellation succeeded or whether the
+     * pipeline completed despite cancellation. On successful cancellation,
+     * the TrainingPipeline is not deleted; instead it becomes a pipeline with
+     * a
+     * [TrainingPipeline.error][google.cloud.aiplatform.v1.TrainingPipeline.error]
+     * value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`, and
+     * [TrainingPipeline.state][google.cloud.aiplatform.v1.TrainingPipeline.state]
+     * is set to `CANCELLED`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty cancelTrainingPipeline(
+        com.google.cloud.aiplatform.v1.CancelTrainingPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelTrainingPipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a PipelineJob. A PipelineJob will run immediately when created.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.PipelineJob createPipelineJob(
+        com.google.cloud.aiplatform.v1.CreatePipelineJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreatePipelineJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a PipelineJob.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.PipelineJob getPipelineJob(
+        com.google.cloud.aiplatform.v1.GetPipelineJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetPipelineJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists PipelineJobs in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListPipelineJobsResponse listPipelineJobs(
+        com.google.cloud.aiplatform.v1.ListPipelineJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListPipelineJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a PipelineJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePipelineJob(
+        com.google.cloud.aiplatform.v1.DeletePipelineJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeletePipelineJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch deletes PipelineJobs
+     * The Operation is atomic. If it fails, none of the PipelineJobs are deleted.
+     * If it succeeds, all of the PipelineJobs are deleted.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchDeletePipelineJobs(
+        com.google.cloud.aiplatform.v1.BatchDeletePipelineJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchDeletePipelineJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a PipelineJob.
+     * Starts asynchronous cancellation on the PipelineJob. The server
+     * makes a best effort to cancel the pipeline, but success is not
+     * guaranteed. Clients can use
+     * [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1.PipelineService.GetPipelineJob]
+     * or other methods to check whether the cancellation succeeded or whether the
+     * pipeline completed despite cancellation. On successful cancellation,
+     * the PipelineJob is not deleted; instead it becomes a pipeline with
+     * a [PipelineJob.error][google.cloud.aiplatform.v1.PipelineJob.error] value
+     * with a [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding
+     * to `Code.CANCELLED`, and
+     * [PipelineJob.state][google.cloud.aiplatform.v1.PipelineJob.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty cancelPipelineJob(
+        com.google.cloud.aiplatform.v1.CancelPipelineJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelPipelineJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch cancel PipelineJobs.
+     * Firstly the server will check if all the jobs are in non-terminal states,
+     * and skip the jobs that are already terminated.
+     * If the operation failed, none of the pipeline jobs are cancelled.
+     * The server will poll the states of all the pipeline jobs periodically
+     * to check the cancellation status.
+     * This operation will return an LRO.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCancelPipelineJobs(
+        com.google.cloud.aiplatform.v1.BatchCancelPipelineJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchCancelPipelineJobsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service PipelineService.
    *
    * <pre>
    * A service for creating and managing Vertex AI's pipelines. This includes both

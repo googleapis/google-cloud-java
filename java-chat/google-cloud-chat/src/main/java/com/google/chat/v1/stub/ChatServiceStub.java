@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,43 +16,84 @@
 
 package com.google.chat.v1.stub;
 
+import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.chat.v1.Attachment;
 import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
+import com.google.chat.v1.CreateCustomEmojiRequest;
 import com.google.chat.v1.CreateMembershipRequest;
 import com.google.chat.v1.CreateMessageRequest;
 import com.google.chat.v1.CreateReactionRequest;
+import com.google.chat.v1.CreateSectionRequest;
 import com.google.chat.v1.CreateSpaceRequest;
+import com.google.chat.v1.CustomEmoji;
+import com.google.chat.v1.DeleteCustomEmojiRequest;
 import com.google.chat.v1.DeleteMembershipRequest;
 import com.google.chat.v1.DeleteMessageRequest;
 import com.google.chat.v1.DeleteReactionRequest;
+import com.google.chat.v1.DeleteSectionRequest;
 import com.google.chat.v1.DeleteSpaceRequest;
 import com.google.chat.v1.FindDirectMessageRequest;
+import com.google.chat.v1.FindGroupChatsRequest;
+import com.google.chat.v1.FindGroupChatsResponse;
 import com.google.chat.v1.GetAttachmentRequest;
+import com.google.chat.v1.GetCustomEmojiRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
+import com.google.chat.v1.GetSpaceEventRequest;
+import com.google.chat.v1.GetSpaceNotificationSettingRequest;
+import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
+import com.google.chat.v1.GetThreadReadStateRequest;
+import com.google.chat.v1.ListCustomEmojisRequest;
+import com.google.chat.v1.ListCustomEmojisResponse;
 import com.google.chat.v1.ListMembershipsRequest;
 import com.google.chat.v1.ListMembershipsResponse;
 import com.google.chat.v1.ListMessagesRequest;
 import com.google.chat.v1.ListMessagesResponse;
 import com.google.chat.v1.ListReactionsRequest;
 import com.google.chat.v1.ListReactionsResponse;
+import com.google.chat.v1.ListSectionItemsRequest;
+import com.google.chat.v1.ListSectionItemsResponse;
+import com.google.chat.v1.ListSectionsRequest;
+import com.google.chat.v1.ListSectionsResponse;
+import com.google.chat.v1.ListSpaceEventsRequest;
+import com.google.chat.v1.ListSpaceEventsResponse;
 import com.google.chat.v1.ListSpacesRequest;
 import com.google.chat.v1.ListSpacesResponse;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
+import com.google.chat.v1.MoveSectionItemRequest;
+import com.google.chat.v1.MoveSectionItemResponse;
+import com.google.chat.v1.PositionSectionRequest;
+import com.google.chat.v1.PositionSectionResponse;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.SearchSpacesRequest;
+import com.google.chat.v1.SearchSpacesResponse;
+import com.google.chat.v1.Section;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
+import com.google.chat.v1.SpaceEvent;
+import com.google.chat.v1.SpaceNotificationSetting;
+import com.google.chat.v1.SpaceReadState;
+import com.google.chat.v1.ThreadReadState;
+import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
+import com.google.chat.v1.UpdateSectionRequest;
+import com.google.chat.v1.UpdateSpaceNotificationSettingRequest;
+import com.google.chat.v1.UpdateSpaceReadStateRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
 import com.google.chat.v1.UploadAttachmentResponse;
@@ -122,6 +163,14 @@ public abstract class ChatServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listSpacesCallable()");
   }
 
+  public UnaryCallable<SearchSpacesRequest, SearchSpacesPagedResponse> searchSpacesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchSpacesPagedCallable()");
+  }
+
+  public UnaryCallable<SearchSpacesRequest, SearchSpacesResponse> searchSpacesCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchSpacesCallable()");
+  }
+
   public UnaryCallable<GetSpaceRequest, Space> getSpaceCallable() {
     throw new UnsupportedOperationException("Not implemented: getSpaceCallable()");
   }
@@ -151,8 +200,21 @@ public abstract class ChatServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: findDirectMessageCallable()");
   }
 
+  public UnaryCallable<FindGroupChatsRequest, FindGroupChatsPagedResponse>
+      findGroupChatsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: findGroupChatsPagedCallable()");
+  }
+
+  public UnaryCallable<FindGroupChatsRequest, FindGroupChatsResponse> findGroupChatsCallable() {
+    throw new UnsupportedOperationException("Not implemented: findGroupChatsCallable()");
+  }
+
   public UnaryCallable<CreateMembershipRequest, Membership> createMembershipCallable() {
     throw new UnsupportedOperationException("Not implemented: createMembershipCallable()");
+  }
+
+  public UnaryCallable<UpdateMembershipRequest, Membership> updateMembershipCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateMembershipCallable()");
   }
 
   public UnaryCallable<DeleteMembershipRequest, Membership> deleteMembershipCallable() {
@@ -174,6 +236,103 @@ public abstract class ChatServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteReactionCallable()");
+  }
+
+  public UnaryCallable<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiCallable() {
+    throw new UnsupportedOperationException("Not implemented: createCustomEmojiCallable()");
+  }
+
+  public UnaryCallable<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiCallable() {
+    throw new UnsupportedOperationException("Not implemented: getCustomEmojiCallable()");
+  }
+
+  public UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisPagedResponse>
+      listCustomEmojisPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listCustomEmojisPagedCallable()");
+  }
+
+  public UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisResponse>
+      listCustomEmojisCallable() {
+    throw new UnsupportedOperationException("Not implemented: listCustomEmojisCallable()");
+  }
+
+  public UnaryCallable<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteCustomEmojiCallable()");
+  }
+
+  public UnaryCallable<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSpaceReadStateCallable()");
+  }
+
+  public UnaryCallable<UpdateSpaceReadStateRequest, SpaceReadState> updateSpaceReadStateCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSpaceReadStateCallable()");
+  }
+
+  public UnaryCallable<GetThreadReadStateRequest, ThreadReadState> getThreadReadStateCallable() {
+    throw new UnsupportedOperationException("Not implemented: getThreadReadStateCallable()");
+  }
+
+  public UnaryCallable<GetSpaceEventRequest, SpaceEvent> getSpaceEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSpaceEventCallable()");
+  }
+
+  public UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsPagedResponse>
+      listSpaceEventsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSpaceEventsPagedCallable()");
+  }
+
+  public UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse> listSpaceEventsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSpaceEventsCallable()");
+  }
+
+  public UnaryCallable<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getSpaceNotificationSettingCallable()");
+  }
+
+  public UnaryCallable<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateSpaceNotificationSettingCallable()");
+  }
+
+  public UnaryCallable<CreateSectionRequest, Section> createSectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSectionCallable()");
+  }
+
+  public UnaryCallable<DeleteSectionRequest, Empty> deleteSectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSectionCallable()");
+  }
+
+  public UnaryCallable<UpdateSectionRequest, Section> updateSectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSectionCallable()");
+  }
+
+  public UnaryCallable<ListSectionsRequest, ListSectionsPagedResponse> listSectionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSectionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListSectionsRequest, ListSectionsResponse> listSectionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSectionsCallable()");
+  }
+
+  public UnaryCallable<PositionSectionRequest, PositionSectionResponse> positionSectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: positionSectionCallable()");
+  }
+
+  public UnaryCallable<ListSectionItemsRequest, ListSectionItemsPagedResponse>
+      listSectionItemsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSectionItemsPagedCallable()");
+  }
+
+  public UnaryCallable<ListSectionItemsRequest, ListSectionItemsResponse>
+      listSectionItemsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSectionItemsCallable()");
+  }
+
+  public UnaryCallable<MoveSectionItemRequest, MoveSectionItemResponse> moveSectionItemCallable() {
+    throw new UnsupportedOperationException("Not implemented: moveSectionItemCallable()");
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,11 +38,13 @@ import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
 import com.google.cloudbuild.v1.CreateWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
+import com.google.cloudbuild.v1.DefaultServiceAccount;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
 import com.google.cloudbuild.v1.DeleteWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
+import com.google.cloudbuild.v1.GetDefaultServiceAccountRequest;
 import com.google.cloudbuild.v1.GetWorkerPoolRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersResponse;
@@ -81,6 +83,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
           .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/CreateBuild")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateBuildRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetBuildRequest, Build> getBuildMethodDescriptor =
@@ -89,6 +92,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
           .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/GetBuild")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBuildRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Build.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListBuildsRequest, ListBuildsResponse>
@@ -98,6 +102,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/ListBuilds")
               .setRequestMarshaller(ProtoUtils.marshaller(ListBuildsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListBuildsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelBuildRequest, Build> cancelBuildMethodDescriptor =
@@ -106,6 +111,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
           .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/CancelBuild")
           .setRequestMarshaller(ProtoUtils.marshaller(CancelBuildRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Build.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RetryBuildRequest, Operation> retryBuildMethodDescriptor =
@@ -114,6 +120,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
           .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/RetryBuild")
           .setRequestMarshaller(ProtoUtils.marshaller(RetryBuildRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ApproveBuildRequest, Operation>
@@ -123,6 +130,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/ApproveBuild")
               .setRequestMarshaller(ProtoUtils.marshaller(ApproveBuildRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBuildTriggerRequest, BuildTrigger>
@@ -133,6 +141,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBuildTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BuildTrigger.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBuildTriggerRequest, BuildTrigger>
@@ -143,6 +152,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBuildTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BuildTrigger.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBuildTriggersRequest, ListBuildTriggersResponse>
@@ -154,6 +164,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   ProtoUtils.marshaller(ListBuildTriggersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBuildTriggersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBuildTriggerRequest, Empty>
@@ -164,6 +175,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBuildTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBuildTriggerRequest, BuildTrigger>
@@ -174,6 +186,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBuildTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BuildTrigger.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunBuildTriggerRequest, Operation>
@@ -184,6 +197,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RunBuildTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
@@ -195,6 +209,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   ProtoUtils.marshaller(ReceiveTriggerWebhookRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReceiveTriggerWebhookResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateWorkerPoolRequest, Operation>
@@ -205,6 +220,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkerPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWorkerPoolRequest, WorkerPool>
@@ -215,6 +231,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetWorkerPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkerPool.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWorkerPoolRequest, Operation>
@@ -225,6 +242,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkerPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateWorkerPoolRequest, Operation>
@@ -235,6 +253,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWorkerPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
@@ -246,6 +265,20 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   ProtoUtils.marshaller(ListWorkerPoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkerPoolsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetDefaultServiceAccountRequest, DefaultServiceAccount>
+      getDefaultServiceAccountMethodDescriptor =
+          MethodDescriptor.<GetDefaultServiceAccountRequest, DefaultServiceAccount>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.cloudbuild.v1.CloudBuild/GetDefaultServiceAccount")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDefaultServiceAccountRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DefaultServiceAccount.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateBuildRequest, Operation> createBuildCallable;
@@ -290,6 +323,8 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
       listWorkerPoolsCallable;
   private final UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsPagedResponse>
       listWorkerPoolsPagedCallable;
+  private final UnaryCallable<GetDefaultServiceAccountRequest, DefaultServiceAccount>
+      getDefaultServiceAccountCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -329,6 +364,8 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
       PathTemplate.create("projects/*/locations/{location=*}/workerPools/*");
   private static final PathTemplate LIST_WORKER_POOLS_0_PATH_TEMPLATE =
       PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate GET_DEFAULT_SERVICE_ACCOUNT_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/defaultServiceAccount");
 
   public static final GrpcCloudBuildStub create(CloudBuildStubSettings settings)
       throws IOException {
@@ -377,6 +414,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getParent(), "location", CREATE_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBuildRequest, Build> getBuildTransportSettings =
         GrpcCallSettings.<GetBuildRequest, Build>newBuilder()
@@ -387,6 +425,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", GET_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBuildsRequest, ListBuildsResponse> listBuildsTransportSettings =
         GrpcCallSettings.<ListBuildsRequest, ListBuildsResponse>newBuilder()
@@ -397,6 +436,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getParent(), "location", LIST_BUILDS_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CancelBuildRequest, Build> cancelBuildTransportSettings =
         GrpcCallSettings.<CancelBuildRequest, Build>newBuilder()
@@ -407,6 +447,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", CANCEL_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RetryBuildRequest, Operation> retryBuildTransportSettings =
         GrpcCallSettings.<RetryBuildRequest, Operation>newBuilder()
@@ -417,6 +458,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", RETRY_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ApproveBuildRequest, Operation> approveBuildTransportSettings =
         GrpcCallSettings.<ApproveBuildRequest, Operation>newBuilder()
@@ -438,6 +480,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                       request.getParent(), "location", CREATE_BUILD_TRIGGER_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBuildTriggerRequest, BuildTrigger> getBuildTriggerTransportSettings =
         GrpcCallSettings.<GetBuildTriggerRequest, BuildTrigger>newBuilder()
@@ -448,6 +491,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", GET_BUILD_TRIGGER_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBuildTriggersRequest, ListBuildTriggersResponse>
         listBuildTriggersTransportSettings =
@@ -460,6 +504,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                           request.getParent(), "location", LIST_BUILD_TRIGGERS_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerTransportSettings =
         GrpcCallSettings.<DeleteBuildTriggerRequest, Empty>newBuilder()
@@ -470,6 +515,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", DELETE_BUILD_TRIGGER_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateBuildTriggerRequest, BuildTrigger> updateBuildTriggerTransportSettings =
         GrpcCallSettings.<UpdateBuildTriggerRequest, BuildTrigger>newBuilder()
@@ -495,6 +541,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", RUN_BUILD_TRIGGER_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
         receiveTriggerWebhookTransportSettings =
@@ -519,6 +566,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getParent(), "location", CREATE_WORKER_POOL_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetWorkerPoolRequest, WorkerPool> getWorkerPoolTransportSettings =
         GrpcCallSettings.<GetWorkerPoolRequest, WorkerPool>newBuilder()
@@ -529,6 +577,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", GET_WORKER_POOL_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteWorkerPoolRequest, Operation> deleteWorkerPoolTransportSettings =
         GrpcCallSettings.<DeleteWorkerPoolRequest, Operation>newBuilder()
@@ -539,6 +588,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", DELETE_WORKER_POOL_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateWorkerPoolRequest, Operation> updateWorkerPoolTransportSettings =
         GrpcCallSettings.<UpdateWorkerPoolRequest, Operation>newBuilder()
@@ -566,6 +616,22 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                           request.getParent(), "location", LIST_WORKER_POOLS_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetDefaultServiceAccountRequest, DefaultServiceAccount>
+        getDefaultServiceAccountTransportSettings =
+            GrpcCallSettings.<GetDefaultServiceAccountRequest, DefaultServiceAccount>newBuilder()
+                .setMethodDescriptor(getDefaultServiceAccountMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          request.getName(),
+                          "location",
+                          GET_DEFAULT_SERVICE_ACCOUNT_0_PATH_TEMPLATE);
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createBuildCallable =
@@ -685,6 +751,11 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
     this.listWorkerPoolsPagedCallable =
         callableFactory.createPagedCallable(
             listWorkerPoolsTransportSettings, settings.listWorkerPoolsSettings(), clientContext);
+    this.getDefaultServiceAccountCallable =
+        callableFactory.createUnaryCallable(
+            getDefaultServiceAccountTransportSettings,
+            settings.getDefaultServiceAccountSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -843,6 +914,12 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
   public UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsPagedResponse>
       listWorkerPoolsPagedCallable() {
     return listWorkerPoolsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDefaultServiceAccountRequest, DefaultServiceAccount>
+      getDefaultServiceAccountCallable() {
+    return getDefaultServiceAccountCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,6 +74,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   ProtoUtils.marshaller(ListFunctionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFunctionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFunctionRequest, CloudFunction>
@@ -83,6 +84,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
               .setFullMethodName("google.cloud.functions.v1.CloudFunctionsService/GetFunction")
               .setRequestMarshaller(ProtoUtils.marshaller(GetFunctionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CloudFunction.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFunctionRequest, Operation>
@@ -93,6 +95,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFunctionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFunctionRequest, Operation>
@@ -103,6 +106,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFunctionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFunctionRequest, Operation>
@@ -113,6 +117,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFunctionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CallFunctionRequest, CallFunctionResponse>
@@ -123,6 +128,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(CallFunctionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CallFunctionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GenerateUploadUrlRequest, GenerateUploadUrlResponse>
@@ -135,6 +141,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   ProtoUtils.marshaller(GenerateUploadUrlRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateUploadUrlResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GenerateDownloadUrlRequest, GenerateDownloadUrlResponse>
@@ -147,6 +154,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   ProtoUtils.marshaller(GenerateDownloadUrlRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateDownloadUrlResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -155,6 +163,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
           .setFullMethodName("google.cloud.functions.v1.CloudFunctionsService/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -163,6 +172,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
           .setFullMethodName("google.cloud.functions.v1.CloudFunctionsService/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -175,6 +185,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -186,6 +197,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListFunctionsRequest, ListFunctionsResponse> listFunctionsCallable;
@@ -267,6 +279,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetFunctionRequest, CloudFunction> getFunctionTransportSettings =
         GrpcCallSettings.<GetFunctionRequest, CloudFunction>newBuilder()
@@ -277,6 +290,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateFunctionRequest, Operation> createFunctionTransportSettings =
         GrpcCallSettings.<CreateFunctionRequest, Operation>newBuilder()
@@ -287,6 +301,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   builder.add("location", String.valueOf(request.getLocation()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getLocation())
             .build();
     GrpcCallSettings<UpdateFunctionRequest, Operation> updateFunctionTransportSettings =
         GrpcCallSettings.<UpdateFunctionRequest, Operation>newBuilder()
@@ -307,6 +322,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CallFunctionRequest, CallFunctionResponse> callFunctionTransportSettings =
         GrpcCallSettings.<CallFunctionRequest, CallFunctionResponse>newBuilder()
@@ -317,6 +333,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateUploadUrlRequest, GenerateUploadUrlResponse>
         generateUploadUrlTransportSettings =
@@ -328,6 +345,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getKmsKeyName())
                 .build();
     GrpcCallSettings<GenerateDownloadUrlRequest, GenerateDownloadUrlResponse>
         generateDownloadUrlTransportSettings =
@@ -349,6 +367,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -359,6 +378,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -370,6 +390,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

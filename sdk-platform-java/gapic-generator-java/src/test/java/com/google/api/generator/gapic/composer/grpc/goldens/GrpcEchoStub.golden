@@ -1,0 +1,422 @@
+package com.google.showcase.v1beta1.stub;
+
+import static com.google.showcase.v1beta1.EchoClient.PagedExpandPagedResponse;
+import static com.google.showcase.v1beta1.EchoClient.SimplePagedExpandPagedResponse;
+
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.BidiStreamingCallable;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ClientStreamingCallable;
+import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.showcase.v1beta1.BlockRequest;
+import com.google.showcase.v1beta1.BlockResponse;
+import com.google.showcase.v1beta1.EchoRequest;
+import com.google.showcase.v1beta1.EchoResponse;
+import com.google.showcase.v1beta1.ExpandRequest;
+import com.google.showcase.v1beta1.Object;
+import com.google.showcase.v1beta1.PagedExpandLegacyRequest;
+import com.google.showcase.v1beta1.PagedExpandRequest;
+import com.google.showcase.v1beta1.PagedExpandResponse;
+import com.google.showcase.v1beta1.WaitMetadata;
+import com.google.showcase.v1beta1.WaitRequest;
+import com.google.showcase.v1beta1.WaitResponse;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * gRPC stub implementation for the Echo service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@BetaApi
+@Generated("by gapic-generator-java")
+public class GrpcEchoStub extends EchoStub {
+  private static final MethodDescriptor<EchoRequest, EchoResponse> echoMethodDescriptor =
+      MethodDescriptor.<EchoRequest, EchoResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.showcase.v1beta1.Echo/Echo")
+          .setRequestMarshaller(ProtoUtils.marshaller(EchoRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(EchoResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<ExpandRequest, EchoResponse> expandMethodDescriptor =
+      MethodDescriptor.<ExpandRequest, EchoResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+          .setFullMethodName("google.showcase.v1beta1.Echo/Expand")
+          .setRequestMarshaller(ProtoUtils.marshaller(ExpandRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(EchoResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<EchoRequest, EchoResponse> collectMethodDescriptor =
+      MethodDescriptor.<EchoRequest, EchoResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.CLIENT_STREAMING)
+          .setFullMethodName("google.showcase.v1beta1.Echo/Collect")
+          .setRequestMarshaller(ProtoUtils.marshaller(EchoRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(EchoResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<EchoRequest, EchoResponse> chatMethodDescriptor =
+      MethodDescriptor.<EchoRequest, EchoResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+          .setFullMethodName("google.showcase.v1beta1.Echo/Chat")
+          .setRequestMarshaller(ProtoUtils.marshaller(EchoRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(EchoResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<EchoRequest, EchoResponse> chatAgainMethodDescriptor =
+      MethodDescriptor.<EchoRequest, EchoResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+          .setFullMethodName("google.showcase.v1beta1.Echo/ChatAgain")
+          .setRequestMarshaller(ProtoUtils.marshaller(EchoRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(EchoResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<PagedExpandRequest, PagedExpandResponse>
+      pagedExpandMethodDescriptor =
+          MethodDescriptor.<PagedExpandRequest, PagedExpandResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.showcase.v1beta1.Echo/PagedExpand")
+              .setRequestMarshaller(ProtoUtils.marshaller(PagedExpandRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PagedExpandResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<PagedExpandRequest, PagedExpandResponse>
+      simplePagedExpandMethodDescriptor =
+          MethodDescriptor.<PagedExpandRequest, PagedExpandResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.showcase.v1beta1.Echo/SimplePagedExpand")
+              .setRequestMarshaller(ProtoUtils.marshaller(PagedExpandRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PagedExpandResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<WaitRequest, Operation> waitMethodDescriptor =
+      MethodDescriptor.<WaitRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.showcase.v1beta1.Echo/Wait")
+          .setRequestMarshaller(ProtoUtils.marshaller(WaitRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<BlockRequest, BlockResponse> blockMethodDescriptor =
+      MethodDescriptor.<BlockRequest, BlockResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.showcase.v1beta1.Echo/Block")
+          .setRequestMarshaller(ProtoUtils.marshaller(BlockRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(BlockResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<EchoRequest, Object> collideNameMethodDescriptor =
+      MethodDescriptor.<EchoRequest, Object>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.showcase.v1beta1.Echo/CollideName")
+          .setRequestMarshaller(ProtoUtils.marshaller(EchoRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Object.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<PagedExpandLegacyRequest, PagedExpandResponse>
+      pagedExpandLegacyMethodDescriptor =
+          MethodDescriptor.<PagedExpandLegacyRequest, PagedExpandResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.showcase.v1beta1.Echo/PagedExpandLegacy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PagedExpandLegacyRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PagedExpandResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private final UnaryCallable<EchoRequest, EchoResponse> echoCallable;
+  private final ServerStreamingCallable<ExpandRequest, EchoResponse> expandCallable;
+  private final ClientStreamingCallable<EchoRequest, EchoResponse> collectCallable;
+  private final BidiStreamingCallable<EchoRequest, EchoResponse> chatCallable;
+  private final BidiStreamingCallable<EchoRequest, EchoResponse> chatAgainCallable;
+  private final UnaryCallable<PagedExpandRequest, PagedExpandResponse> pagedExpandCallable;
+  private final UnaryCallable<PagedExpandRequest, PagedExpandPagedResponse>
+      pagedExpandPagedCallable;
+  private final UnaryCallable<PagedExpandRequest, PagedExpandResponse> simplePagedExpandCallable;
+  private final UnaryCallable<PagedExpandRequest, SimplePagedExpandPagedResponse>
+      simplePagedExpandPagedCallable;
+  private final UnaryCallable<WaitRequest, Operation> waitCallable;
+  private final OperationCallable<WaitRequest, WaitResponse, WaitMetadata> waitOperationCallable;
+  private final UnaryCallable<BlockRequest, BlockResponse> blockCallable;
+  private final UnaryCallable<EchoRequest, Object> collideNameCallable;
+  private final UnaryCallable<PagedExpandLegacyRequest, PagedExpandResponse>
+      pagedExpandLegacyCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
+  private final GrpcStubCallableFactory callableFactory;
+
+  public static final GrpcEchoStub create(EchoStubSettings settings) throws IOException {
+    return new GrpcEchoStub(settings, ClientContext.create(settings));
+  }
+
+  public static final GrpcEchoStub create(ClientContext clientContext) throws IOException {
+    return new GrpcEchoStub(EchoStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final GrpcEchoStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcEchoStub(EchoStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
+  /**
+   * Constructs an instance of GrpcEchoStub, using the given settings. This is protected so that it
+   * is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected GrpcEchoStub(EchoStubSettings settings, ClientContext clientContext)
+      throws IOException {
+    this(settings, clientContext, new GrpcEchoCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcEchoStub, using the given settings. This is protected so that it
+   * is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected GrpcEchoStub(
+      EchoStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
+
+    GrpcCallSettings<EchoRequest, EchoResponse> echoTransportSettings =
+        GrpcCallSettings.<EchoRequest, EchoResponse>newBuilder()
+            .setMethodDescriptor(echoMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ExpandRequest, EchoResponse> expandTransportSettings =
+        GrpcCallSettings.<ExpandRequest, EchoResponse>newBuilder()
+            .setMethodDescriptor(expandMethodDescriptor)
+            .build();
+    GrpcCallSettings<EchoRequest, EchoResponse> collectTransportSettings =
+        GrpcCallSettings.<EchoRequest, EchoResponse>newBuilder()
+            .setMethodDescriptor(collectMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<EchoRequest, EchoResponse> chatTransportSettings =
+        GrpcCallSettings.<EchoRequest, EchoResponse>newBuilder()
+            .setMethodDescriptor(chatMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<EchoRequest, EchoResponse> chatAgainTransportSettings =
+        GrpcCallSettings.<EchoRequest, EchoResponse>newBuilder()
+            .setMethodDescriptor(chatAgainMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<PagedExpandRequest, PagedExpandResponse> pagedExpandTransportSettings =
+        GrpcCallSettings.<PagedExpandRequest, PagedExpandResponse>newBuilder()
+            .setMethodDescriptor(pagedExpandMethodDescriptor)
+            .build();
+    GrpcCallSettings<PagedExpandRequest, PagedExpandResponse> simplePagedExpandTransportSettings =
+        GrpcCallSettings.<PagedExpandRequest, PagedExpandResponse>newBuilder()
+            .setMethodDescriptor(simplePagedExpandMethodDescriptor)
+            .build();
+    GrpcCallSettings<WaitRequest, Operation> waitTransportSettings =
+        GrpcCallSettings.<WaitRequest, Operation>newBuilder()
+            .setMethodDescriptor(waitMethodDescriptor)
+            .build();
+    GrpcCallSettings<BlockRequest, BlockResponse> blockTransportSettings =
+        GrpcCallSettings.<BlockRequest, BlockResponse>newBuilder()
+            .setMethodDescriptor(blockMethodDescriptor)
+            .build();
+    GrpcCallSettings<EchoRequest, Object> collideNameTransportSettings =
+        GrpcCallSettings.<EchoRequest, Object>newBuilder()
+            .setMethodDescriptor(collideNameMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<PagedExpandLegacyRequest, PagedExpandResponse>
+        pagedExpandLegacyTransportSettings =
+            GrpcCallSettings.<PagedExpandLegacyRequest, PagedExpandResponse>newBuilder()
+                .setMethodDescriptor(pagedExpandLegacyMethodDescriptor)
+                .build();
+
+    this.echoCallable =
+        callableFactory.createUnaryCallable(
+            echoTransportSettings, settings.echoSettings(), clientContext);
+    this.expandCallable =
+        callableFactory.createServerStreamingCallable(
+            expandTransportSettings, settings.expandSettings(), clientContext);
+    this.collectCallable =
+        callableFactory.createClientStreamingCallable(
+            collectTransportSettings, settings.collectSettings(), clientContext);
+    this.chatCallable =
+        callableFactory.createBidiStreamingCallable(
+            chatTransportSettings, settings.chatSettings(), clientContext);
+    this.chatAgainCallable =
+        callableFactory.createBidiStreamingCallable(
+            chatAgainTransportSettings, settings.chatAgainSettings(), clientContext);
+    this.pagedExpandCallable =
+        callableFactory.createUnaryCallable(
+            pagedExpandTransportSettings, settings.pagedExpandSettings(), clientContext);
+    this.pagedExpandPagedCallable =
+        callableFactory.createPagedCallable(
+            pagedExpandTransportSettings, settings.pagedExpandSettings(), clientContext);
+    this.simplePagedExpandCallable =
+        callableFactory.createUnaryCallable(
+            simplePagedExpandTransportSettings,
+            settings.simplePagedExpandSettings(),
+            clientContext);
+    this.simplePagedExpandPagedCallable =
+        callableFactory.createPagedCallable(
+            simplePagedExpandTransportSettings,
+            settings.simplePagedExpandSettings(),
+            clientContext);
+    this.waitCallable =
+        callableFactory.createUnaryCallable(
+            waitTransportSettings, settings.waitSettings(), clientContext);
+    this.waitOperationCallable =
+        callableFactory.createOperationCallable(
+            waitTransportSettings, settings.waitOperationSettings(), clientContext, operationsStub);
+    this.blockCallable =
+        callableFactory.createUnaryCallable(
+            blockTransportSettings, settings.blockSettings(), clientContext);
+    this.collideNameCallable =
+        callableFactory.createUnaryCallable(
+            collideNameTransportSettings, settings.collideNameSettings(), clientContext);
+    this.pagedExpandLegacyCallable =
+        callableFactory.createUnaryCallable(
+            pagedExpandLegacyTransportSettings,
+            settings.pagedExpandLegacySettings(),
+            clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<EchoRequest, EchoResponse> echoCallable() {
+    return echoCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<ExpandRequest, EchoResponse> expandCallable() {
+    return expandCallable;
+  }
+
+  @Override
+  public ClientStreamingCallable<EchoRequest, EchoResponse> collectCallable() {
+    return collectCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<EchoRequest, EchoResponse> chatCallable() {
+    return chatCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<EchoRequest, EchoResponse> chatAgainCallable() {
+    return chatAgainCallable;
+  }
+
+  @Override
+  public UnaryCallable<PagedExpandRequest, PagedExpandResponse> pagedExpandCallable() {
+    return pagedExpandCallable;
+  }
+
+  @Override
+  public UnaryCallable<PagedExpandRequest, PagedExpandPagedResponse> pagedExpandPagedCallable() {
+    return pagedExpandPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<PagedExpandRequest, PagedExpandResponse> simplePagedExpandCallable() {
+    return simplePagedExpandCallable;
+  }
+
+  @Override
+  public UnaryCallable<PagedExpandRequest, SimplePagedExpandPagedResponse>
+      simplePagedExpandPagedCallable() {
+    return simplePagedExpandPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<WaitRequest, Operation> waitCallable() {
+    return waitCallable;
+  }
+
+  @Override
+  public OperationCallable<WaitRequest, WaitResponse, WaitMetadata> waitOperationCallable() {
+    return waitOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BlockRequest, BlockResponse> blockCallable() {
+    return blockCallable;
+  }
+
+  @Override
+  public UnaryCallable<EchoRequest, Object> collideNameCallable() {
+    return collideNameCallable;
+  }
+
+  @Override
+  public UnaryCallable<PagedExpandLegacyRequest, PagedExpandResponse> pagedExpandLegacyCallable() {
+    return pagedExpandLegacyCallable;
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

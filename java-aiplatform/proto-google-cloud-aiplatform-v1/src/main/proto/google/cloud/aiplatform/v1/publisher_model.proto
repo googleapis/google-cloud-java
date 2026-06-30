@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -115,6 +115,17 @@ message PublisherModel {
     // Model metadata that is needed for UploadModel or
     // DeployModel/CreateEndpoint requests.
     message Deploy {
+      // Metadata information about the deployment for managing deployment
+      // config.
+      message DeployMetadata {
+        // Optional. Labels for the deployment. For managing deployment config
+        // like verifying, source of deployment config, etc.
+        map<string, string> labels = 1 [(google.api.field_behavior) = OPTIONAL];
+
+        // Optional. Sample request for deployed endpoint.
+        string sample_request = 2 [(google.api.field_behavior) = OPTIONAL];
+      }
+
       // The prediction (for example, the machine) resources that the
       // DeployedModel uses.
       oneof prediction_resources {
@@ -148,6 +159,15 @@ message PublisherModel {
       // Optional. The path to the directory containing the Model artifact and
       // any of its supporting files.
       string artifact_uri = 4 [(google.api.field_behavior) = OPTIONAL];
+
+      // Optional. The name of the deploy task (e.g., "text to image
+      // generation").
+      optional string deploy_task_name = 10
+          [(google.api.field_behavior) = OPTIONAL];
+
+      // Optional. Metadata information about this deployment config.
+      optional DeployMetadata deploy_metadata = 11
+          [(google.api.field_behavior) = OPTIONAL];
 
       // Required. The title of the regional resource reference.
       string title = 8 [(google.api.field_behavior) = REQUIRED];

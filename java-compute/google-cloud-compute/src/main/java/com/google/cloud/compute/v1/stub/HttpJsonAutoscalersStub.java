@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListAutoscalersRequest;
 import com.google.cloud.compute.v1.Autoscaler;
 import com.google.cloud.compute.v1.AutoscalerAggregatedList;
@@ -44,6 +45,8 @@ import com.google.cloud.compute.v1.ListAutoscalersRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchAutoscalerRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsAutoscalerRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAutoscalerRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -379,6 +382,49 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Autoscalers/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsAutoscalerRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/autoscalers/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsAutoscalerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsAutoscalerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<UpdateAutoscalerRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateAutoscalerRequest, Operation>newBuilder()
@@ -453,6 +499,8 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
   private final UnaryCallable<PatchAutoscalerRequest, Operation> patchCallable;
   private final OperationCallable<PatchAutoscalerRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
   private final UnaryCallable<UpdateAutoscalerRequest, Operation> updateCallable;
   private final OperationCallable<UpdateAutoscalerRequest, Operation, Operation>
       updateOperationCallable;
@@ -460,6 +508,23 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/autoscalers/{autoscaler}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/autoscalers/{autoscaler}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/autoscalers/{resource}");
+  private static final PathTemplate UPDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
 
   public static final HttpJsonAutoscalersStub create(AutoscalersStubSettings settings)
       throws IOException {
@@ -512,6 +577,13 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteAutoscalerRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteAutoscalerRequest, Operation>newBuilder()
@@ -524,6 +596,14 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("autoscaler", String.valueOf(request.getAutoscaler()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetAutoscalerRequest, Autoscaler> getTransportSettings =
@@ -538,6 +618,14 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("autoscaler", String.valueOf(request.getAutoscaler()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertAutoscalerRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertAutoscalerRequest, Operation>newBuilder()
@@ -549,6 +637,13 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListAutoscalersRequest, AutoscalerList> listTransportSettings =
@@ -562,6 +657,13 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<PatchAutoscalerRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchAutoscalerRequest, Operation>newBuilder()
@@ -574,7 +676,38 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
+    HttpJsonCallSettings<TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
     HttpJsonCallSettings<UpdateAutoscalerRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateAutoscalerRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
@@ -585,6 +718,13 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return UPDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 
@@ -630,6 +770,11 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
@@ -653,6 +798,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
@@ -714,6 +860,12 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
   @Override
   public OperationCallable<PatchAutoscalerRequest, Operation, Operation> patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -120,6 +120,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTensorboardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTensorboardRequest, Tensorboard>
@@ -131,6 +132,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTensorboardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Tensorboard.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTensorboardRequest, Operation>
@@ -142,6 +144,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTensorboardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTensorboardsRequest, ListTensorboardsResponse>
@@ -154,6 +157,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ListTensorboardsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTensorboardsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTensorboardRequest, Operation>
@@ -165,6 +169,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTensorboardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
@@ -177,6 +182,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ReadTensorboardUsageRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReadTensorboardUsageResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
@@ -189,6 +195,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ReadTensorboardSizeRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReadTensorboardSizeResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTensorboardExperimentRequest, TensorboardExperiment>
@@ -201,6 +208,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(CreateTensorboardExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TensorboardExperiment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTensorboardExperimentRequest, TensorboardExperiment>
@@ -213,6 +221,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(GetTensorboardExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TensorboardExperiment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTensorboardExperimentRequest, TensorboardExperiment>
@@ -225,6 +234,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(UpdateTensorboardExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TensorboardExperiment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -239,6 +249,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ListTensorboardExperimentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTensorboardExperimentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTensorboardExperimentRequest, Operation>
@@ -250,6 +261,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTensorboardExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTensorboardRunRequest, TensorboardRun>
@@ -261,6 +273,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTensorboardRunRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TensorboardRun.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -275,6 +288,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(BatchCreateTensorboardRunsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchCreateTensorboardRunsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTensorboardRunRequest, TensorboardRun>
@@ -286,6 +300,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTensorboardRunRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TensorboardRun.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTensorboardRunRequest, TensorboardRun>
@@ -297,6 +312,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTensorboardRunRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TensorboardRun.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTensorboardRunsRequest, ListTensorboardRunsResponse>
@@ -309,6 +325,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ListTensorboardRunsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTensorboardRunsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTensorboardRunRequest, Operation>
@@ -320,6 +337,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTensorboardRunRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -337,6 +355,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       BatchCreateTensorboardTimeSeriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTensorboardTimeSeriesRequest, TensorboardTimeSeries>
@@ -349,6 +368,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(CreateTensorboardTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TensorboardTimeSeries.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTensorboardTimeSeriesRequest, TensorboardTimeSeries>
@@ -361,6 +381,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(GetTensorboardTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TensorboardTimeSeries.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTensorboardTimeSeriesRequest, TensorboardTimeSeries>
@@ -373,6 +394,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(UpdateTensorboardTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TensorboardTimeSeries.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -387,6 +409,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ListTensorboardTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTensorboardTimeSeriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTensorboardTimeSeriesRequest, Operation>
@@ -398,6 +421,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTensorboardTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -416,6 +440,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       BatchReadTensorboardTimeSeriesDataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -431,6 +456,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ReadTensorboardTimeSeriesDataRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReadTensorboardTimeSeriesDataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -445,6 +471,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ReadTensorboardBlobDataRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReadTensorboardBlobDataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -461,6 +488,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       WriteTensorboardExperimentDataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -475,6 +503,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(WriteTensorboardRunDataRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(WriteTensorboardRunDataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -492,6 +521,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ExportTensorboardTimeSeriesDataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -503,6 +533,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -511,6 +542,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -519,6 +551,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -527,6 +560,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -538,6 +572,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateTensorboardRequest, Operation> createTensorboardCallable;
@@ -691,6 +726,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTensorboardRequest, Tensorboard> getTensorboardTransportSettings =
         GrpcCallSettings.<GetTensorboardRequest, Tensorboard>newBuilder()
@@ -701,6 +737,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateTensorboardRequest, Operation> updateTensorboardTransportSettings =
         GrpcCallSettings.<UpdateTensorboardRequest, Operation>newBuilder()
@@ -723,6 +760,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteTensorboardRequest, Operation> deleteTensorboardTransportSettings =
         GrpcCallSettings.<DeleteTensorboardRequest, Operation>newBuilder()
@@ -733,6 +771,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
         readTensorboardUsageTransportSettings =
@@ -744,6 +783,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("tensorboard", String.valueOf(request.getTensorboard()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTensorboard())
                 .build();
     GrpcCallSettings<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
         readTensorboardSizeTransportSettings =
@@ -755,6 +795,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("tensorboard", String.valueOf(request.getTensorboard()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTensorboard())
                 .build();
     GrpcCallSettings<CreateTensorboardExperimentRequest, TensorboardExperiment>
         createTensorboardExperimentTransportSettings =
@@ -766,6 +807,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTensorboardExperimentRequest, TensorboardExperiment>
         getTensorboardExperimentTransportSettings =
@@ -777,6 +819,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateTensorboardExperimentRequest, TensorboardExperiment>
         updateTensorboardExperimentTransportSettings =
@@ -802,6 +845,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteTensorboardExperimentRequest, Operation>
         deleteTensorboardExperimentTransportSettings =
@@ -813,6 +857,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateTensorboardRunRequest, TensorboardRun>
         createTensorboardRunTransportSettings =
@@ -824,6 +869,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<BatchCreateTensorboardRunsRequest, BatchCreateTensorboardRunsResponse>
         batchCreateTensorboardRunsTransportSettings =
@@ -836,6 +882,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTensorboardRunRequest, TensorboardRun> getTensorboardRunTransportSettings =
         GrpcCallSettings.<GetTensorboardRunRequest, TensorboardRun>newBuilder()
@@ -846,6 +893,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateTensorboardRunRequest, TensorboardRun>
         updateTensorboardRunTransportSettings =
@@ -870,6 +918,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteTensorboardRunRequest, Operation> deleteTensorboardRunTransportSettings =
         GrpcCallSettings.<DeleteTensorboardRunRequest, Operation>newBuilder()
@@ -880,6 +929,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<
             BatchCreateTensorboardTimeSeriesRequest, BatchCreateTensorboardTimeSeriesResponse>
@@ -894,6 +944,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateTensorboardTimeSeriesRequest, TensorboardTimeSeries>
         createTensorboardTimeSeriesTransportSettings =
@@ -905,6 +956,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTensorboardTimeSeriesRequest, TensorboardTimeSeries>
         getTensorboardTimeSeriesTransportSettings =
@@ -916,6 +968,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateTensorboardTimeSeriesRequest, TensorboardTimeSeries>
         updateTensorboardTimeSeriesTransportSettings =
@@ -941,6 +994,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteTensorboardTimeSeriesRequest, Operation>
         deleteTensorboardTimeSeriesTransportSettings =
@@ -952,6 +1006,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             BatchReadTensorboardTimeSeriesDataRequest, BatchReadTensorboardTimeSeriesDataResponse>
@@ -967,6 +1022,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("tensorboard", String.valueOf(request.getTensorboard()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTensorboard())
                 .build();
     GrpcCallSettings<ReadTensorboardTimeSeriesDataRequest, ReadTensorboardTimeSeriesDataResponse>
         readTensorboardTimeSeriesDataTransportSettings =
@@ -982,6 +1038,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                           String.valueOf(request.getTensorboardTimeSeries()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTensorboardTimeSeries())
                 .build();
     GrpcCallSettings<ReadTensorboardBlobDataRequest, ReadTensorboardBlobDataResponse>
         readTensorboardBlobDataTransportSettings =
@@ -994,6 +1051,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("time_series", String.valueOf(request.getTimeSeries()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTimeSeries())
                 .build();
     GrpcCallSettings<WriteTensorboardExperimentDataRequest, WriteTensorboardExperimentDataResponse>
         writeTensorboardExperimentDataTransportSettings =
@@ -1009,6 +1067,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                           String.valueOf(request.getTensorboardExperiment()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTensorboardExperiment())
                 .build();
     GrpcCallSettings<WriteTensorboardRunDataRequest, WriteTensorboardRunDataResponse>
         writeTensorboardRunDataTransportSettings =
@@ -1021,6 +1080,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("tensorboard_run", String.valueOf(request.getTensorboardRun()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTensorboardRun())
                 .build();
     GrpcCallSettings<
             ExportTensorboardTimeSeriesDataRequest, ExportTensorboardTimeSeriesDataResponse>
@@ -1037,6 +1097,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                           String.valueOf(request.getTensorboardTimeSeries()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTensorboardTimeSeries())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1067,6 +1128,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1077,6 +1139,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1088,6 +1151,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createTensorboardCallable =

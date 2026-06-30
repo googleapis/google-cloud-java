@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,9 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service definition for the Places API. Note: every request (except for
- * Autocomplete requests) requires a field mask set outside of the request proto (`all/&#42;`, is
- * not assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`. See:
- * https://developers.google.com/maps/documentation/places/web-service/choose-fields
+ * Autocomplete and GetPhotoMedia requests) requires a field mask set outside of the request proto
+ * (`all/&#42;`, is not assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`.
+ * See: https://developers.google.com/maps/documentation/places/web-service/choose-fields
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -51,6 +51,8 @@ import javax.annotation.Generated;
  *           .addAllExcludedPrimaryTypes(new ArrayList<String>())
  *           .setMaxResultCount(-1736124056)
  *           .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
+ *           .setRoutingParameters(RoutingParameters.newBuilder().build())
+ *           .setIncludeFutureOpeningBusinesses(true)
  *           .build();
  *   SearchNearbyResponse response = placesClient.searchNearby(request);
  * }
@@ -270,6 +272,8 @@ public class PlacesClient implements BackgroundResource {
    *           .addAllExcludedPrimaryTypes(new ArrayList<String>())
    *           .setMaxResultCount(-1736124056)
    *           .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
+   *           .setRoutingParameters(RoutingParameters.newBuilder().build())
+   *           .setIncludeFutureOpeningBusinesses(true)
    *           .build();
    *   SearchNearbyResponse response = placesClient.searchNearby(request);
    * }
@@ -305,6 +309,8 @@ public class PlacesClient implements BackgroundResource {
    *           .addAllExcludedPrimaryTypes(new ArrayList<String>())
    *           .setMaxResultCount(-1736124056)
    *           .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
+   *           .setRoutingParameters(RoutingParameters.newBuilder().build())
+   *           .setIncludeFutureOpeningBusinesses(true)
    *           .build();
    *   ApiFuture<SearchNearbyResponse> future =
    *       placesClient.searchNearbyCallable().futureCall(request);
@@ -344,6 +350,11 @@ public class PlacesClient implements BackgroundResource {
    *           .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
    *           .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
    *           .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
+   *           .setRoutingParameters(RoutingParameters.newBuilder().build())
+   *           .setSearchAlongRouteParameters(
+   *               SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
+   *           .setIncludePureServiceAreaBusinesses(true)
+   *           .setIncludeFutureOpeningBusinesses(true)
    *           .build();
    *   SearchTextResponse response = placesClient.searchText(request);
    * }
@@ -383,6 +394,11 @@ public class PlacesClient implements BackgroundResource {
    *           .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
    *           .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
    *           .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
+   *           .setRoutingParameters(RoutingParameters.newBuilder().build())
+   *           .setSearchAlongRouteParameters(
+   *               SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
+   *           .setIncludePureServiceAreaBusinesses(true)
+   *           .setIncludeFutureOpeningBusinesses(true)
    *           .build();
    *   ApiFuture<SearchTextResponse> future = placesClient.searchTextCallable().futureCall(request);
    *   // Do something.
@@ -661,6 +677,8 @@ public class PlacesClient implements BackgroundResource {
    *           .setInputOffset(1010406056)
    *           .setIncludeQueryPredictions(true)
    *           .setSessionToken("sessionToken-696552189")
+   *           .setIncludePureServiceAreaBusinesses(true)
+   *           .setIncludeFutureOpeningBusinesses(true)
    *           .build();
    *   AutocompletePlacesResponse response = placesClient.autocompletePlaces(request);
    * }
@@ -700,6 +718,8 @@ public class PlacesClient implements BackgroundResource {
    *           .setInputOffset(1010406056)
    *           .setIncludeQueryPredictions(true)
    *           .setSessionToken("sessionToken-696552189")
+   *           .setIncludePureServiceAreaBusinesses(true)
+   *           .setIncludeFutureOpeningBusinesses(true)
    *           .build();
    *   ApiFuture<AutocompletePlacesResponse> future =
    *       placesClient.autocompletePlacesCallable().futureCall(request);

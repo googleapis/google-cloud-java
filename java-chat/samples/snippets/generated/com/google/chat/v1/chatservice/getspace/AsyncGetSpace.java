@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,10 @@ public class AsyncGetSpace {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
       GetSpaceRequest request =
-          GetSpaceRequest.newBuilder().setName(SpaceName.of("[SPACE]").toString()).build();
+          GetSpaceRequest.newBuilder()
+              .setName(SpaceName.of("[SPACE]").toString())
+              .setUseAdminAccess(true)
+              .build();
       ApiFuture<Space> future = chatServiceClient.getSpaceCallable().futureCall(request);
       // Do something.
       Space response = future.get();

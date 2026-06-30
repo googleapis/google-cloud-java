@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,6 +112,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setFullMethodName("google.cloud.apigeeregistry.v1.Registry/ListApis")
               .setRequestMarshaller(ProtoUtils.marshaller(ListApisRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListApisResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetApiRequest, Api> getApiMethodDescriptor =
@@ -120,6 +121,7 @@ public class GrpcRegistryStub extends RegistryStub {
           .setFullMethodName("google.cloud.apigeeregistry.v1.Registry/GetApi")
           .setRequestMarshaller(ProtoUtils.marshaller(GetApiRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Api.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateApiRequest, Api> createApiMethodDescriptor =
@@ -128,6 +130,7 @@ public class GrpcRegistryStub extends RegistryStub {
           .setFullMethodName("google.cloud.apigeeregistry.v1.Registry/CreateApi")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateApiRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Api.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateApiRequest, Api> updateApiMethodDescriptor =
@@ -136,6 +139,7 @@ public class GrpcRegistryStub extends RegistryStub {
           .setFullMethodName("google.cloud.apigeeregistry.v1.Registry/UpdateApi")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateApiRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Api.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteApiRequest, Empty> deleteApiMethodDescriptor =
@@ -144,6 +148,7 @@ public class GrpcRegistryStub extends RegistryStub {
           .setFullMethodName("google.cloud.apigeeregistry.v1.Registry/DeleteApi")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteApiRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListApiVersionsRequest, ListApiVersionsResponse>
@@ -155,6 +160,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   ProtoUtils.marshaller(ListApiVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListApiVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetApiVersionRequest, ApiVersion>
@@ -165,6 +171,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetApiVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApiVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateApiVersionRequest, ApiVersion>
@@ -175,6 +182,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateApiVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApiVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateApiVersionRequest, ApiVersion>
@@ -185,6 +193,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateApiVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApiVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteApiVersionRequest, Empty>
@@ -195,6 +204,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteApiVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListApiSpecsRequest, ListApiSpecsResponse>
@@ -205,6 +215,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListApiSpecsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListApiSpecsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetApiSpecRequest, ApiSpec> getApiSpecMethodDescriptor =
@@ -213,6 +224,7 @@ public class GrpcRegistryStub extends RegistryStub {
           .setFullMethodName("google.cloud.apigeeregistry.v1.Registry/GetApiSpec")
           .setRequestMarshaller(ProtoUtils.marshaller(GetApiSpecRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ApiSpec.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetApiSpecContentsRequest, HttpBody>
@@ -223,6 +235,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetApiSpecContentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateApiSpecRequest, ApiSpec>
@@ -233,6 +246,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateApiSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApiSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateApiSpecRequest, ApiSpec>
@@ -243,6 +257,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateApiSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApiSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteApiSpecRequest, Empty> deleteApiSpecMethodDescriptor =
@@ -251,6 +266,7 @@ public class GrpcRegistryStub extends RegistryStub {
           .setFullMethodName("google.cloud.apigeeregistry.v1.Registry/DeleteApiSpec")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteApiSpecRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TagApiSpecRevisionRequest, ApiSpec>
@@ -261,6 +277,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(TagApiSpecRevisionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApiSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListApiSpecRevisionsRequest, ListApiSpecRevisionsResponse>
@@ -272,6 +289,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   ProtoUtils.marshaller(ListApiSpecRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListApiSpecRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RollbackApiSpecRequest, ApiSpec>
@@ -282,6 +300,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RollbackApiSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApiSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteApiSpecRevisionRequest, ApiSpec>
@@ -292,6 +311,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteApiSpecRevisionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApiSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListApiDeploymentsRequest, ListApiDeploymentsResponse>
@@ -303,6 +323,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   ProtoUtils.marshaller(ListApiDeploymentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListApiDeploymentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetApiDeploymentRequest, ApiDeployment>
@@ -313,6 +334,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetApiDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApiDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateApiDeploymentRequest, ApiDeployment>
@@ -323,6 +345,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateApiDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApiDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateApiDeploymentRequest, ApiDeployment>
@@ -333,6 +356,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateApiDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApiDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteApiDeploymentRequest, Empty>
@@ -343,6 +367,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteApiDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TagApiDeploymentRevisionRequest, ApiDeployment>
@@ -353,6 +378,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(TagApiDeploymentRevisionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApiDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -367,6 +393,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   ProtoUtils.marshaller(ListApiDeploymentRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListApiDeploymentRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RollbackApiDeploymentRequest, ApiDeployment>
@@ -377,6 +404,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RollbackApiDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApiDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteApiDeploymentRevisionRequest, ApiDeployment>
@@ -388,6 +416,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteApiDeploymentRevisionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApiDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListArtifactsRequest, ListArtifactsResponse>
@@ -399,6 +428,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   ProtoUtils.marshaller(ListArtifactsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListArtifactsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetArtifactRequest, Artifact> getArtifactMethodDescriptor =
@@ -407,6 +437,7 @@ public class GrpcRegistryStub extends RegistryStub {
           .setFullMethodName("google.cloud.apigeeregistry.v1.Registry/GetArtifact")
           .setRequestMarshaller(ProtoUtils.marshaller(GetArtifactRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Artifact.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetArtifactContentsRequest, HttpBody>
@@ -417,6 +448,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetArtifactContentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateArtifactRequest, Artifact>
@@ -427,6 +459,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateArtifactRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Artifact.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReplaceArtifactRequest, Artifact>
@@ -437,6 +470,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReplaceArtifactRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Artifact.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteArtifactRequest, Empty>
@@ -447,6 +481,7 @@ public class GrpcRegistryStub extends RegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteArtifactRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -458,6 +493,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -466,6 +502,7 @@ public class GrpcRegistryStub extends RegistryStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -474,6 +511,7 @@ public class GrpcRegistryStub extends RegistryStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -482,6 +520,7 @@ public class GrpcRegistryStub extends RegistryStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -493,6 +532,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListApisRequest, ListApisResponse> listApisCallable;
@@ -610,6 +650,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetApiRequest, Api> getApiTransportSettings =
         GrpcCallSettings.<GetApiRequest, Api>newBuilder()
@@ -620,6 +661,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateApiRequest, Api> createApiTransportSettings =
         GrpcCallSettings.<CreateApiRequest, Api>newBuilder()
@@ -630,6 +672,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateApiRequest, Api> updateApiTransportSettings =
         GrpcCallSettings.<UpdateApiRequest, Api>newBuilder()
@@ -650,6 +693,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListApiVersionsRequest, ListApiVersionsResponse>
         listApiVersionsTransportSettings =
@@ -661,6 +705,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetApiVersionRequest, ApiVersion> getApiVersionTransportSettings =
         GrpcCallSettings.<GetApiVersionRequest, ApiVersion>newBuilder()
@@ -671,6 +716,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateApiVersionRequest, ApiVersion> createApiVersionTransportSettings =
         GrpcCallSettings.<CreateApiVersionRequest, ApiVersion>newBuilder()
@@ -681,6 +727,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateApiVersionRequest, ApiVersion> updateApiVersionTransportSettings =
         GrpcCallSettings.<UpdateApiVersionRequest, ApiVersion>newBuilder()
@@ -702,6 +749,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListApiSpecsRequest, ListApiSpecsResponse> listApiSpecsTransportSettings =
         GrpcCallSettings.<ListApiSpecsRequest, ListApiSpecsResponse>newBuilder()
@@ -712,6 +760,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetApiSpecRequest, ApiSpec> getApiSpecTransportSettings =
         GrpcCallSettings.<GetApiSpecRequest, ApiSpec>newBuilder()
@@ -722,6 +771,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetApiSpecContentsRequest, HttpBody> getApiSpecContentsTransportSettings =
         GrpcCallSettings.<GetApiSpecContentsRequest, HttpBody>newBuilder()
@@ -732,6 +782,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateApiSpecRequest, ApiSpec> createApiSpecTransportSettings =
         GrpcCallSettings.<CreateApiSpecRequest, ApiSpec>newBuilder()
@@ -742,6 +793,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateApiSpecRequest, ApiSpec> updateApiSpecTransportSettings =
         GrpcCallSettings.<UpdateApiSpecRequest, ApiSpec>newBuilder()
@@ -762,6 +814,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<TagApiSpecRevisionRequest, ApiSpec> tagApiSpecRevisionTransportSettings =
         GrpcCallSettings.<TagApiSpecRevisionRequest, ApiSpec>newBuilder()
@@ -772,6 +825,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListApiSpecRevisionsRequest, ListApiSpecRevisionsResponse>
         listApiSpecRevisionsTransportSettings =
@@ -783,6 +837,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RollbackApiSpecRequest, ApiSpec> rollbackApiSpecTransportSettings =
         GrpcCallSettings.<RollbackApiSpecRequest, ApiSpec>newBuilder()
@@ -793,6 +848,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteApiSpecRevisionRequest, ApiSpec> deleteApiSpecRevisionTransportSettings =
         GrpcCallSettings.<DeleteApiSpecRevisionRequest, ApiSpec>newBuilder()
@@ -803,6 +859,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListApiDeploymentsRequest, ListApiDeploymentsResponse>
         listApiDeploymentsTransportSettings =
@@ -814,6 +871,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetApiDeploymentRequest, ApiDeployment> getApiDeploymentTransportSettings =
         GrpcCallSettings.<GetApiDeploymentRequest, ApiDeployment>newBuilder()
@@ -824,6 +882,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateApiDeploymentRequest, ApiDeployment>
         createApiDeploymentTransportSettings =
@@ -835,6 +894,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateApiDeploymentRequest, ApiDeployment>
         updateApiDeploymentTransportSettings =
@@ -858,6 +918,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<TagApiDeploymentRevisionRequest, ApiDeployment>
         tagApiDeploymentRevisionTransportSettings =
@@ -869,6 +930,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListApiDeploymentRevisionsRequest, ListApiDeploymentRevisionsResponse>
         listApiDeploymentRevisionsTransportSettings =
@@ -881,6 +943,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RollbackApiDeploymentRequest, ApiDeployment>
         rollbackApiDeploymentTransportSettings =
@@ -892,6 +955,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteApiDeploymentRevisionRequest, ApiDeployment>
         deleteApiDeploymentRevisionTransportSettings =
@@ -903,6 +967,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListArtifactsRequest, ListArtifactsResponse> listArtifactsTransportSettings =
         GrpcCallSettings.<ListArtifactsRequest, ListArtifactsResponse>newBuilder()
@@ -913,6 +978,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetArtifactRequest, Artifact> getArtifactTransportSettings =
         GrpcCallSettings.<GetArtifactRequest, Artifact>newBuilder()
@@ -923,6 +989,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetArtifactContentsRequest, HttpBody> getArtifactContentsTransportSettings =
         GrpcCallSettings.<GetArtifactContentsRequest, HttpBody>newBuilder()
@@ -933,6 +1000,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateArtifactRequest, Artifact> createArtifactTransportSettings =
         GrpcCallSettings.<CreateArtifactRequest, Artifact>newBuilder()
@@ -943,6 +1011,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ReplaceArtifactRequest, Artifact> replaceArtifactTransportSettings =
         GrpcCallSettings.<ReplaceArtifactRequest, Artifact>newBuilder()
@@ -963,6 +1032,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -993,6 +1063,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1003,6 +1074,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1014,6 +1086,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listApisCallable =

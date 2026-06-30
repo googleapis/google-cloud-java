@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * TensorboardService
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/tensorboard_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TensorboardServiceGrpc {
 
@@ -1593,6 +1590,19 @@ public final class TensorboardServiceGrpc {
     return TensorboardServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TensorboardServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TensorboardServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TensorboardServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public TensorboardServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TensorboardServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TensorboardServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2667,6 +2677,472 @@ public final class TensorboardServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TensorboardService.
+   *
+   * <pre>
+   * TensorboardService
+   * </pre>
+   */
+  public static final class TensorboardServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TensorboardServiceBlockingV2Stub> {
+    private TensorboardServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TensorboardServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TensorboardServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Tensorboard.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTensorboard(
+        com.google.cloud.aiplatform.v1beta1.CreateTensorboardRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateTensorboardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Tensorboard.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Tensorboard getTensorboard(
+        com.google.cloud.aiplatform.v1beta1.GetTensorboardRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTensorboardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Tensorboard.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTensorboard(
+        com.google.cloud.aiplatform.v1beta1.UpdateTensorboardRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateTensorboardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Tensorboards in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListTensorboardsResponse listTensorboards(
+        com.google.cloud.aiplatform.v1beta1.ListTensorboardsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTensorboardsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Tensorboard.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTensorboard(
+        com.google.cloud.aiplatform.v1beta1.DeleteTensorboardRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTensorboardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of monthly active users for a given TensorBoard instance.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse readTensorboardUsage(
+        com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getReadTensorboardUsageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the storage size for a given TensorBoard instance.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ReadTensorboardSizeResponse readTensorboardSize(
+        com.google.cloud.aiplatform.v1beta1.ReadTensorboardSizeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getReadTensorboardSizeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a TensorboardExperiment.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TensorboardExperiment createTensorboardExperiment(
+        com.google.cloud.aiplatform.v1beta1.CreateTensorboardExperimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateTensorboardExperimentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a TensorboardExperiment.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TensorboardExperiment getTensorboardExperiment(
+        com.google.cloud.aiplatform.v1beta1.GetTensorboardExperimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTensorboardExperimentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a TensorboardExperiment.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TensorboardExperiment updateTensorboardExperiment(
+        com.google.cloud.aiplatform.v1beta1.UpdateTensorboardExperimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateTensorboardExperimentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TensorboardExperiments in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListTensorboardExperimentsResponse
+        listTensorboardExperiments(
+            com.google.cloud.aiplatform.v1beta1.ListTensorboardExperimentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTensorboardExperimentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a TensorboardExperiment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTensorboardExperiment(
+        com.google.cloud.aiplatform.v1beta1.DeleteTensorboardExperimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTensorboardExperimentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a TensorboardRun.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TensorboardRun createTensorboardRun(
+        com.google.cloud.aiplatform.v1beta1.CreateTensorboardRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateTensorboardRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch create TensorboardRuns.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse
+        batchCreateTensorboardRuns(
+            com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchCreateTensorboardRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a TensorboardRun.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TensorboardRun getTensorboardRun(
+        com.google.cloud.aiplatform.v1beta1.GetTensorboardRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTensorboardRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a TensorboardRun.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TensorboardRun updateTensorboardRun(
+        com.google.cloud.aiplatform.v1beta1.UpdateTensorboardRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateTensorboardRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TensorboardRuns in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListTensorboardRunsResponse listTensorboardRuns(
+        com.google.cloud.aiplatform.v1beta1.ListTensorboardRunsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTensorboardRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a TensorboardRun.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTensorboardRun(
+        com.google.cloud.aiplatform.v1beta1.DeleteTensorboardRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTensorboardRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch create TensorboardTimeSeries that belong to a TensorboardExperiment.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse
+        batchCreateTensorboardTimeSeries(
+            com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchCreateTensorboardTimeSeriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a TensorboardTimeSeries.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries createTensorboardTimeSeries(
+        com.google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateTensorboardTimeSeriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a TensorboardTimeSeries.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries getTensorboardTimeSeries(
+        com.google.cloud.aiplatform.v1beta1.GetTensorboardTimeSeriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTensorboardTimeSeriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a TensorboardTimeSeries.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries updateTensorboardTimeSeries(
+        com.google.cloud.aiplatform.v1beta1.UpdateTensorboardTimeSeriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateTensorboardTimeSeriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TensorboardTimeSeries in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListTensorboardTimeSeriesResponse
+        listTensorboardTimeSeries(
+            com.google.cloud.aiplatform.v1beta1.ListTensorboardTimeSeriesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTensorboardTimeSeriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a TensorboardTimeSeries.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTensorboardTimeSeries(
+        com.google.cloud.aiplatform.v1beta1.DeleteTensorboardTimeSeriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTensorboardTimeSeriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reads multiple TensorboardTimeSeries' data. The data point number limit is
+     * 1000 for scalars, 100 for tensors and blob references. If the number of
+     * data points stored is less than the limit, all data is returned.
+     * Otherwise, the number limit of data points is randomly selected from
+     * this time series and returned.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse
+        batchReadTensorboardTimeSeriesData(
+            com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchReadTensorboardTimeSeriesDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reads a TensorboardTimeSeries' data. By default, if the number of data
+     * points stored is less than 1000, all data is returned. Otherwise, 1000
+     * data points is randomly selected from this time series and returned.
+     * This value can be changed by changing max_data_points, which can't be
+     * greater than 10k.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse
+        readTensorboardTimeSeriesData(
+            com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getReadTensorboardTimeSeriesDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets bytes of TensorboardBlobs.
+     * This is to allow reading blob data stored in consumer project's Cloud
+     * Storage bucket without users having to obtain Cloud Storage access
+     * permission.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            ?, com.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataResponse>
+        readTensorboardBlobData(
+            com.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getReadTensorboardBlobDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Write time series data points of multiple TensorboardTimeSeries in multiple
+     * TensorboardRun's. If any data fail to be ingested, an error is returned.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse
+        writeTensorboardExperimentData(
+            com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getWriteTensorboardExperimentDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Write time series data points into multiple TensorboardTimeSeries under
+     * a TensorboardRun. If any data fail to be ingested, an error is returned.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataResponse
+        writeTensorboardRunData(
+            com.google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getWriteTensorboardRunDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a TensorboardTimeSeries' data. Data is returned in paginated
+     * responses.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ExportTensorboardTimeSeriesDataResponse
+        exportTensorboardTimeSeriesData(
+            com.google.cloud.aiplatform.v1beta1.ExportTensorboardTimeSeriesDataRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportTensorboardTimeSeriesDataMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service TensorboardService.
    *
    * <pre>
    * TensorboardService

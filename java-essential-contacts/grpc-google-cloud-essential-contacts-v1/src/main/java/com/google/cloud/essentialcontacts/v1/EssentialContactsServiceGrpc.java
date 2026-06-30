@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages contacts for important Google Cloud notifications.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/essentialcontacts/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EssentialContactsServiceGrpc {
 
@@ -374,6 +371,19 @@ public final class EssentialContactsServiceGrpc {
     return EssentialContactsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EssentialContactsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EssentialContactsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EssentialContactsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public EssentialContactsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EssentialContactsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EssentialContactsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -675,6 +685,130 @@ public final class EssentialContactsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service EssentialContactsService.
+   *
+   * <pre>
+   * Manages contacts for important Google Cloud notifications.
+   * </pre>
+   */
+  public static final class EssentialContactsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EssentialContactsServiceBlockingV2Stub> {
+    private EssentialContactsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EssentialContactsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EssentialContactsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a new contact for a resource.
+     * </pre>
+     */
+    public com.google.cloud.essentialcontacts.v1.Contact createContact(
+        com.google.cloud.essentialcontacts.v1.CreateContactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateContactMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a contact.
+     * Note: A contact's email address cannot be changed.
+     * </pre>
+     */
+    public com.google.cloud.essentialcontacts.v1.Contact updateContact(
+        com.google.cloud.essentialcontacts.v1.UpdateContactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateContactMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the contacts that have been set on a resource.
+     * </pre>
+     */
+    public com.google.cloud.essentialcontacts.v1.ListContactsResponse listContacts(
+        com.google.cloud.essentialcontacts.v1.ListContactsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListContactsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a single contact.
+     * </pre>
+     */
+    public com.google.cloud.essentialcontacts.v1.Contact getContact(
+        com.google.cloud.essentialcontacts.v1.GetContactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetContactMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a contact.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteContact(
+        com.google.cloud.essentialcontacts.v1.DeleteContactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteContactMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all contacts for the resource that are subscribed to the
+     * specified notification categories, including contacts inherited from
+     * any parent resources.
+     * </pre>
+     */
+    public com.google.cloud.essentialcontacts.v1.ComputeContactsResponse computeContacts(
+        com.google.cloud.essentialcontacts.v1.ComputeContactsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getComputeContactsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Allows a contact admin to send a test message to contact to verify that it
+     * has been configured correctly.
+     * </pre>
+     */
+    public com.google.protobuf.Empty sendTestMessage(
+        com.google.cloud.essentialcontacts.v1.SendTestMessageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSendTestMessageMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * EssentialContactsService.
    *
    * <pre>
    * Manages contacts for important Google Cloud notifications.

@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package google.cloud.dataplex.v1;
 
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
+import "google/cloud/dataplex/v1/datascans_common.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -53,6 +54,18 @@ message DiscoveryEvent {
 
     // An event representing a partition being deleted.
     PARTITION_DELETED = 7;
+
+    // An event representing a table being published.
+    TABLE_PUBLISHED = 10;
+
+    // An event representing a table being updated.
+    TABLE_UPDATED = 11;
+
+    // An event representing a table being skipped in publishing.
+    TABLE_IGNORED = 12;
+
+    // An event representing a table being deleted.
+    TABLE_DELETED = 13;
   }
 
   // The type of the entity.
@@ -65,6 +78,21 @@ message DiscoveryEvent {
 
     // Entities representing unstructured data.
     FILESET = 2;
+  }
+
+  // The type of the published table.
+  enum TableType {
+    // An unspecified table type.
+    TABLE_TYPE_UNSPECIFIED = 0;
+
+    // External table type.
+    EXTERNAL_TABLE = 1;
+
+    // BigLake table type.
+    BIGLAKE_TABLE = 2;
+
+    // Object table type for unstructured data.
+    OBJECT_TABLE = 3;
   }
 
   // Details about configuration events.
@@ -84,6 +112,15 @@ message DiscoveryEvent {
 
     // The type of the entity resource.
     EntityType type = 2;
+  }
+
+  // Details about the published table.
+  message TableDetails {
+    // The fully-qualified resource name of the table resource.
+    string table = 1;
+
+    // The type of the table resource.
+    TableType type = 2;
   }
 
   // Details about the partition.
@@ -109,6 +146,9 @@ message DiscoveryEvent {
     // The type of action.
     // Eg. IncompatibleDataSchema, InvalidDataFormat
     string type = 1;
+
+    // The human readable issue associated with the action.
+    string issue = 2;
   }
 
   // The log message.
@@ -126,6 +166,9 @@ message DiscoveryEvent {
   // The data location associated with the event.
   string data_location = 5;
 
+  // The id of the associated datascan for standalone discovery.
+  string datascan_id = 6;
+
   // The type of the event being logged.
   EventType type = 10;
 
@@ -142,6 +185,9 @@ message DiscoveryEvent {
 
     // Details about the action associated with the event.
     ActionDetails action = 23;
+
+    // Details about the BigQuery table publishing associated with the event.
+    TableDetails table = 24;
   }
 }
 
@@ -192,8 +238,8 @@ message JobEvent {
     // The job execution trigger is unspecified.
     EXECUTION_TRIGGER_UNSPECIFIED = 0;
 
-    // The job was triggered by Dataplex based on trigger spec from task
-    // definition.
+    // The job was triggered by Dataplex Universal Catalog based on trigger spec
+    // from task definition.
     TASK_CONFIG = 1;
 
     // The job was triggered by the explicit call of Task API.
@@ -410,7 +456,6 @@ message GovernanceEvent {
 
 // These messages contain information about the execution of a datascan.
 // The monitored resource is 'DataScan'
-// Next ID: 13
 message DataScanEvent {
   // The type of the data scan.
   enum ScanType {
@@ -422,6 +467,9 @@ message DataScanEvent {
 
     // Data scan for data quality.
     DATA_QUALITY = 2;
+
+    // Data scan for data discovery.
+    DATA_DISCOVERY = 4;
   }
 
   // The job state of the data scan.
@@ -441,7 +489,7 @@ message DataScanEvent {
     // Data scan job was cancelled.
     CANCELLED = 4;
 
-    // Data scan job was createed.
+    // Data scan job was created.
     CREATED = 5;
   }
 
@@ -455,6 +503,9 @@ message DataScanEvent {
 
     // Data scan triggers as per schedule.
     SCHEDULE = 2;
+
+    // Data scan is run one time on creation.
+    ONE_TIME = 3;
   }
 
   // The scope of job for the data scan.
@@ -624,6 +675,10 @@ message DataScanEvent {
 
   // The result of post scan actions.
   PostScanActionsResult post_scan_actions_result = 11;
+
+  // The status of publishing the data scan as Dataplex Universal Catalog
+  // metadata.
+  DataScanCatalogPublishingStatus catalog_publishing_status = 13;
 }
 
 // Information about the result of a data quality rule for data quality scan.
@@ -634,37 +689,45 @@ message DataQualityScanRuleResult {
     // An unspecified rule type.
     RULE_TYPE_UNSPECIFIED = 0;
 
-    // Please see
-    // https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#nonnullexpectation.
+    // See
+    // [DataQualityRule.NonNullExpectation][google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation].
     NON_NULL_EXPECTATION = 1;
 
-    // Please see
-    // https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#rangeexpectation.
+    // See
+    // [DataQualityRule.RangeExpectation][google.cloud.dataplex.v1.DataQualityRule.RangeExpectation].
     RANGE_EXPECTATION = 2;
 
-    // Please see
-    // https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#regexexpectation.
+    // See
+    // [DataQualityRule.RegexExpectation][google.cloud.dataplex.v1.DataQualityRule.RegexExpectation].
     REGEX_EXPECTATION = 3;
 
-    // Please see
-    // https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#rowconditionexpectation.
+    // See
+    // [DataQualityRule.RowConditionExpectation][google.cloud.dataplex.v1.DataQualityRule.RowConditionExpectation].
     ROW_CONDITION_EXPECTATION = 4;
 
-    // Please see
-    // https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#setexpectation.
+    // See
+    // [DataQualityRule.SetExpectation][google.cloud.dataplex.v1.DataQualityRule.SetExpectation].
     SET_EXPECTATION = 5;
 
-    // Please see
-    // https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#statisticrangeexpectation.
+    // See
+    // [DataQualityRule.StatisticRangeExpectation][google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation].
     STATISTIC_RANGE_EXPECTATION = 6;
 
-    // Please see
-    // https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#tableconditionexpectation.
+    // See
+    // [DataQualityRule.TableConditionExpectation][google.cloud.dataplex.v1.DataQualityRule.TableConditionExpectation].
     TABLE_CONDITION_EXPECTATION = 7;
 
-    // Please see
-    // https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#uniquenessexpectation.
+    // See
+    // [DataQualityRule.UniquenessExpectation][google.cloud.dataplex.v1.DataQualityRule.UniquenessExpectation].
     UNIQUENESS_EXPECTATION = 8;
+
+    // See
+    // [DataQualityRule.SqlAssertion][google.cloud.dataplex.v1.DataQualityRule.SqlAssertion].
+    SQL_ASSERTION = 9;
+
+    // See
+    // [DataQualityRule.TemplateReference][google.cloud.dataplex.v1.DataQualityRule.TemplateReference].
+    TEMPLATE_REFERENCE = 10;
   }
 
   // The evaluation type of the data quality rule.
@@ -728,4 +791,77 @@ message DataQualityScanRuleResult {
 
   // The number of rows with null values in the specified column.
   int64 null_row_count = 12;
+
+  // The number of rows returned by the SQL statement in a SQL assertion rule.
+  // This field is only valid for SQL assertion rules.
+  int64 assertion_row_count = 13;
+}
+
+// Payload associated with Business Glossary related log events.
+message BusinessGlossaryEvent {
+  // Type of glossary log event.
+  enum EventType {
+    // An unspecified event type.
+    EVENT_TYPE_UNSPECIFIED = 0;
+
+    // Glossary create event.
+    GLOSSARY_CREATE = 1;
+
+    // Glossary update event.
+    GLOSSARY_UPDATE = 2;
+
+    // Glossary delete event.
+    GLOSSARY_DELETE = 3;
+
+    // Glossary category create event.
+    GLOSSARY_CATEGORY_CREATE = 4;
+
+    // Glossary category update event.
+    GLOSSARY_CATEGORY_UPDATE = 5;
+
+    // Glossary category delete event.
+    GLOSSARY_CATEGORY_DELETE = 6;
+
+    // Glossary term create event.
+    GLOSSARY_TERM_CREATE = 7;
+
+    // Glossary term update event.
+    GLOSSARY_TERM_UPDATE = 8;
+
+    // Glossary term delete event.
+    GLOSSARY_TERM_DELETE = 9;
+  }
+
+  // The log message.
+  string message = 1;
+
+  // The type of the event.
+  EventType event_type = 2;
+
+  // Name of the resource.
+  string resource = 3;
+}
+
+// Payload associated with Entry related log events.
+message EntryLinkEvent {
+  // Type of entry link log event.
+  enum EventType {
+    // An unspecified event type.
+    EVENT_TYPE_UNSPECIFIED = 0;
+
+    // EntryLink create event.
+    ENTRY_LINK_CREATE = 1;
+
+    // EntryLink delete event.
+    ENTRY_LINK_DELETE = 2;
+  }
+
+  // The log message.
+  string message = 1;
+
+  // The type of the event.
+  EventType event_type = 2;
+
+  // Name of the resource.
+  string resource = 3;
 }

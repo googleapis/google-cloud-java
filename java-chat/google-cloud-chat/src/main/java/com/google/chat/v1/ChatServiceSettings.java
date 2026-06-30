@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,16 @@
 
 package com.google.chat.v1;
 
+import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -54,7 +60,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createMessage to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createMessage:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -70,10 +78,21 @@ import javax.annotation.Generated;
  *             .createMessageSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ChatServiceSettings chatServiceSettings = chatServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
@@ -133,6 +152,12 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     return ((ChatServiceStubSettings) getStubSettings()).listSpacesSettings();
   }
 
+  /** Returns the object with the settings used for calls to searchSpaces. */
+  public PagedCallSettings<SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+      searchSpacesSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).searchSpacesSettings();
+  }
+
   /** Returns the object with the settings used for calls to getSpace. */
   public UnaryCallSettings<GetSpaceRequest, Space> getSpaceSettings() {
     return ((ChatServiceStubSettings) getStubSettings()).getSpaceSettings();
@@ -169,9 +194,21 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     return ((ChatServiceStubSettings) getStubSettings()).findDirectMessageSettings();
   }
 
+  /** Returns the object with the settings used for calls to findGroupChats. */
+  public PagedCallSettings<
+          FindGroupChatsRequest, FindGroupChatsResponse, FindGroupChatsPagedResponse>
+      findGroupChatsSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).findGroupChatsSettings();
+  }
+
   /** Returns the object with the settings used for calls to createMembership. */
   public UnaryCallSettings<CreateMembershipRequest, Membership> createMembershipSettings() {
     return ((ChatServiceStubSettings) getStubSettings()).createMembershipSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateMembership. */
+  public UnaryCallSettings<UpdateMembershipRequest, Membership> updateMembershipSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).updateMembershipSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteMembership. */
@@ -193,6 +230,109 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
   /** Returns the object with the settings used for calls to deleteReaction. */
   public UnaryCallSettings<DeleteReactionRequest, Empty> deleteReactionSettings() {
     return ((ChatServiceStubSettings) getStubSettings()).deleteReactionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCustomEmoji. */
+  public UnaryCallSettings<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).createCustomEmojiSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getCustomEmoji. */
+  public UnaryCallSettings<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).getCustomEmojiSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listCustomEmojis. */
+  public PagedCallSettings<
+          ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>
+      listCustomEmojisSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).listCustomEmojisSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomEmoji. */
+  public UnaryCallSettings<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).deleteCustomEmojiSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSpaceReadState. */
+  public UnaryCallSettings<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).getSpaceReadStateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSpaceReadState. */
+  public UnaryCallSettings<UpdateSpaceReadStateRequest, SpaceReadState>
+      updateSpaceReadStateSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).updateSpaceReadStateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getThreadReadState. */
+  public UnaryCallSettings<GetThreadReadStateRequest, ThreadReadState>
+      getThreadReadStateSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).getThreadReadStateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSpaceEvent. */
+  public UnaryCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).getSpaceEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSpaceEvents. */
+  public PagedCallSettings<
+          ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
+      listSpaceEventsSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).listSpaceEventsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSpaceNotificationSetting. */
+  public UnaryCallSettings<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).getSpaceNotificationSettingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSpaceNotificationSetting. */
+  public UnaryCallSettings<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).updateSpaceNotificationSettingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSection. */
+  public UnaryCallSettings<CreateSectionRequest, Section> createSectionSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).createSectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSection. */
+  public UnaryCallSettings<DeleteSectionRequest, Empty> deleteSectionSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).deleteSectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSection. */
+  public UnaryCallSettings<UpdateSectionRequest, Section> updateSectionSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).updateSectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSections. */
+  public PagedCallSettings<ListSectionsRequest, ListSectionsResponse, ListSectionsPagedResponse>
+      listSectionsSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).listSectionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to positionSection. */
+  public UnaryCallSettings<PositionSectionRequest, PositionSectionResponse>
+      positionSectionSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).positionSectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSectionItems. */
+  public PagedCallSettings<
+          ListSectionItemsRequest, ListSectionItemsResponse, ListSectionItemsPagedResponse>
+      listSectionItemsSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).listSectionItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to moveSectionItem. */
+  public UnaryCallSettings<MoveSectionItemRequest, MoveSectionItemResponse>
+      moveSectionItemSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).moveSectionItemSettings();
   }
 
   public static final ChatServiceSettings create(ChatServiceStubSettings stub) throws IOException {
@@ -362,6 +502,13 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
       return getStubSettingsBuilder().listSpacesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to searchSpaces. */
+    public PagedCallSettings.Builder<
+            SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+        searchSpacesSettings() {
+      return getStubSettingsBuilder().searchSpacesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getSpace. */
     public UnaryCallSettings.Builder<GetSpaceRequest, Space> getSpaceSettings() {
       return getStubSettingsBuilder().getSpaceSettings();
@@ -398,10 +545,23 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
       return getStubSettingsBuilder().findDirectMessageSettings();
     }
 
+    /** Returns the builder for the settings used for calls to findGroupChats. */
+    public PagedCallSettings.Builder<
+            FindGroupChatsRequest, FindGroupChatsResponse, FindGroupChatsPagedResponse>
+        findGroupChatsSettings() {
+      return getStubSettingsBuilder().findGroupChatsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createMembership. */
     public UnaryCallSettings.Builder<CreateMembershipRequest, Membership>
         createMembershipSettings() {
       return getStubSettingsBuilder().createMembershipSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMembership. */
+    public UnaryCallSettings.Builder<UpdateMembershipRequest, Membership>
+        updateMembershipSettings() {
+      return getStubSettingsBuilder().updateMembershipSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteMembership. */
@@ -425,6 +585,113 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     /** Returns the builder for the settings used for calls to deleteReaction. */
     public UnaryCallSettings.Builder<DeleteReactionRequest, Empty> deleteReactionSettings() {
       return getStubSettingsBuilder().deleteReactionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomEmoji. */
+    public UnaryCallSettings.Builder<CreateCustomEmojiRequest, CustomEmoji>
+        createCustomEmojiSettings() {
+      return getStubSettingsBuilder().createCustomEmojiSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getCustomEmoji. */
+    public UnaryCallSettings.Builder<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiSettings() {
+      return getStubSettingsBuilder().getCustomEmojiSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomEmojis. */
+    public PagedCallSettings.Builder<
+            ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>
+        listCustomEmojisSettings() {
+      return getStubSettingsBuilder().listCustomEmojisSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCustomEmoji. */
+    public UnaryCallSettings.Builder<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiSettings() {
+      return getStubSettingsBuilder().deleteCustomEmojiSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSpaceReadState. */
+    public UnaryCallSettings.Builder<GetSpaceReadStateRequest, SpaceReadState>
+        getSpaceReadStateSettings() {
+      return getStubSettingsBuilder().getSpaceReadStateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSpaceReadState. */
+    public UnaryCallSettings.Builder<UpdateSpaceReadStateRequest, SpaceReadState>
+        updateSpaceReadStateSettings() {
+      return getStubSettingsBuilder().updateSpaceReadStateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getThreadReadState. */
+    public UnaryCallSettings.Builder<GetThreadReadStateRequest, ThreadReadState>
+        getThreadReadStateSettings() {
+      return getStubSettingsBuilder().getThreadReadStateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSpaceEvent. */
+    public UnaryCallSettings.Builder<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings() {
+      return getStubSettingsBuilder().getSpaceEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSpaceEvents. */
+    public PagedCallSettings.Builder<
+            ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
+        listSpaceEventsSettings() {
+      return getStubSettingsBuilder().listSpaceEventsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSpaceNotificationSetting. */
+    public UnaryCallSettings.Builder<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        getSpaceNotificationSettingSettings() {
+      return getStubSettingsBuilder().getSpaceNotificationSettingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSpaceNotificationSetting. */
+    public UnaryCallSettings.Builder<
+            UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        updateSpaceNotificationSettingSettings() {
+      return getStubSettingsBuilder().updateSpaceNotificationSettingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSection. */
+    public UnaryCallSettings.Builder<CreateSectionRequest, Section> createSectionSettings() {
+      return getStubSettingsBuilder().createSectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSection. */
+    public UnaryCallSettings.Builder<DeleteSectionRequest, Empty> deleteSectionSettings() {
+      return getStubSettingsBuilder().deleteSectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSection. */
+    public UnaryCallSettings.Builder<UpdateSectionRequest, Section> updateSectionSettings() {
+      return getStubSettingsBuilder().updateSectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSections. */
+    public PagedCallSettings.Builder<
+            ListSectionsRequest, ListSectionsResponse, ListSectionsPagedResponse>
+        listSectionsSettings() {
+      return getStubSettingsBuilder().listSectionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to positionSection. */
+    public UnaryCallSettings.Builder<PositionSectionRequest, PositionSectionResponse>
+        positionSectionSettings() {
+      return getStubSettingsBuilder().positionSectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSectionItems. */
+    public PagedCallSettings.Builder<
+            ListSectionItemsRequest, ListSectionItemsResponse, ListSectionItemsPagedResponse>
+        listSectionItemsSettings() {
+      return getStubSettingsBuilder().listSectionItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to moveSectionItem. */
+    public UnaryCallSettings.Builder<MoveSectionItemRequest, MoveSectionItemResponse>
+        moveSectionItemSettings() {
+      return getStubSettingsBuilder().moveSectionItemSettings();
     }
 
     @Override

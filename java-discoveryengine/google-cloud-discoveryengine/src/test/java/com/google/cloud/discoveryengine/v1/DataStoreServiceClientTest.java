@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,7 +102,20 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
+            .setNaturalLanguageQueryUnderstandingConfig(
+                NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setCmekConfig(CmekConfig.newBuilder().build())
+            .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setAclEnabled(true)
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setIdentityMappingStore(
+                IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -163,7 +176,20 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
+            .setNaturalLanguageQueryUnderstandingConfig(
+                NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setCmekConfig(CmekConfig.newBuilder().build())
+            .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setAclEnabled(true)
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setIdentityMappingStore(
+                IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -224,7 +250,20 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
+            .setNaturalLanguageQueryUnderstandingConfig(
+                NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setCmekConfig(CmekConfig.newBuilder().build())
+            .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setAclEnabled(true)
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setIdentityMappingStore(
+                IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                    .toString())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 
@@ -273,7 +312,20 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
+            .setNaturalLanguageQueryUnderstandingConfig(
+                NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setCmekConfig(CmekConfig.newBuilder().build())
+            .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setAclEnabled(true)
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setIdentityMappingStore(
+                IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                    .toString())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 
@@ -494,7 +546,20 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
+            .setNaturalLanguageQueryUnderstandingConfig(
+                NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setCmekConfig(CmekConfig.newBuilder().build())
+            .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setAclEnabled(true)
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setIdentityMappingStore(
+                IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                    .toString())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 

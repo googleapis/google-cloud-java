@@ -1,0 +1,58 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.aiplatform.v1beta1.samples;
+
+// [START aiplatform_v1beta1_generated_VertexRagDataService_BatchCreateRagDataSchemas_LRO_async]
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasResponse;
+import com.google.cloud.aiplatform.v1beta1.CreateRagDataSchemaRequest;
+import com.google.cloud.aiplatform.v1beta1.RagCorpusName;
+import com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient;
+import java.util.ArrayList;
+
+public class AsyncBatchCreateRagDataSchemasLRO {
+
+  public static void main(String[] args) throws Exception {
+    asyncBatchCreateRagDataSchemasLRO();
+  }
+
+  public static void asyncBatchCreateRagDataSchemasLRO() throws Exception {
+    // This snippet has been automatically generated and should be regarded as a code template only.
+    // It will require modifications to work:
+    // - It may require correct/in-range values for request initialization.
+    // - It may require specifying regional endpoints when creating the service client as shown in
+    // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+    try (VertexRagDataServiceClient vertexRagDataServiceClient =
+        VertexRagDataServiceClient.create()) {
+      BatchCreateRagDataSchemasRequest request =
+          BatchCreateRagDataSchemasRequest.newBuilder()
+              .setParent(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+              .addAllRequests(new ArrayList<CreateRagDataSchemaRequest>())
+              .build();
+      OperationFuture<BatchCreateRagDataSchemasResponse, BatchCreateRagDataSchemasOperationMetadata>
+          future =
+              vertexRagDataServiceClient
+                  .batchCreateRagDataSchemasOperationCallable()
+                  .futureCall(request);
+      // Do something.
+      BatchCreateRagDataSchemasResponse response = future.get();
+    }
+  }
+}
+// [END aiplatform_v1beta1_generated_VertexRagDataService_BatchCreateRagDataSchemas_LRO_async]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,11 +17,13 @@
 package com.google.cloud.dialogflow.cx.v3beta1.stub;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListLocationsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolVersionsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -38,6 +40,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -49,14 +52,22 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateToolRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteToolRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportToolsMetadata;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportToolsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportToolsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.GetToolRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.ListToolsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListToolsResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.Tool;
+import com.google.cloud.dialogflow.cx.v3beta1.ToolVersion;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateToolRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -69,9 +80,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -88,7 +99,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createTool to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createTool:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -104,13 +117,50 @@ import org.threeten.bp.Duration;
  *             .createToolSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ToolsStubSettings toolsSettings = toolsSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for exportTools:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ToolsStubSettings.Builder toolsSettingsBuilder = ToolsStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * toolsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -128,6 +178,14 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
   private final UnaryCallSettings<GetToolRequest, Tool> getToolSettings;
   private final UnaryCallSettings<UpdateToolRequest, Tool> updateToolSettings;
   private final UnaryCallSettings<DeleteToolRequest, Empty> deleteToolSettings;
+  private final PagedCallSettings<
+          ListToolVersionsRequest, ListToolVersionsResponse, ListToolVersionsPagedResponse>
+      listToolVersionsSettings;
+  private final UnaryCallSettings<CreateToolVersionRequest, ToolVersion> createToolVersionSettings;
+  private final UnaryCallSettings<GetToolVersionRequest, ToolVersion> getToolVersionSettings;
+  private final UnaryCallSettings<DeleteToolVersionRequest, Empty> deleteToolVersionSettings;
+  private final UnaryCallSettings<RestoreToolVersionRequest, RestoreToolVersionResponse>
+      restoreToolVersionSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -163,9 +221,45 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
 
             @Override
             public Iterable<Tool> extractResources(ListToolsResponse payload) {
-              return payload.getToolsList() == null
-                  ? ImmutableList.<Tool>of()
-                  : payload.getToolsList();
+              return payload.getToolsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion>
+      LIST_TOOL_VERSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListToolVersionsRequest injectToken(
+                ListToolVersionsRequest payload, String token) {
+              return ListToolVersionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListToolVersionsRequest injectPageSize(
+                ListToolVersionsRequest payload, int pageSize) {
+              return ListToolVersionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListToolVersionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListToolVersionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ToolVersion> extractResources(ListToolVersionsResponse payload) {
+              return payload.getToolVersionsList();
             }
           };
 
@@ -199,9 +293,7 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -219,6 +311,25 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
               PageContext<ListToolsRequest, ListToolsResponse, Tool> pageContext =
                   PageContext.create(callable, LIST_TOOLS_PAGE_STR_DESC, request, context);
               return ListToolsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListToolVersionsRequest, ListToolVersionsResponse, ListToolVersionsPagedResponse>
+      LIST_TOOL_VERSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListToolVersionsRequest, ListToolVersionsResponse, ListToolVersionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListToolVersionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListToolVersionsRequest, ListToolVersionsResponse> callable,
+                ListToolVersionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListToolVersionsResponse> futureResponse) {
+              PageContext<ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TOOL_VERSIONS_PAGE_STR_DESC, request, context);
+              return ListToolVersionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -276,6 +387,34 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
     return deleteToolSettings;
   }
 
+  /** Returns the object with the settings used for calls to listToolVersions. */
+  public PagedCallSettings<
+          ListToolVersionsRequest, ListToolVersionsResponse, ListToolVersionsPagedResponse>
+      listToolVersionsSettings() {
+    return listToolVersionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createToolVersion. */
+  public UnaryCallSettings<CreateToolVersionRequest, ToolVersion> createToolVersionSettings() {
+    return createToolVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getToolVersion. */
+  public UnaryCallSettings<GetToolVersionRequest, ToolVersion> getToolVersionSettings() {
+    return getToolVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteToolVersion. */
+  public UnaryCallSettings<DeleteToolVersionRequest, Empty> deleteToolVersionSettings() {
+    return deleteToolVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restoreToolVersion. */
+  public UnaryCallSettings<RestoreToolVersionRequest, RestoreToolVersionResponse>
+      restoreToolVersionSettings() {
+    return restoreToolVersionSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -303,15 +442,6 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -324,6 +454,7 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "dialogflow.googleapis.com:443";
   }
@@ -411,8 +542,22 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
     getToolSettings = settingsBuilder.getToolSettings().build();
     updateToolSettings = settingsBuilder.updateToolSettings().build();
     deleteToolSettings = settingsBuilder.deleteToolSettings().build();
+    listToolVersionsSettings = settingsBuilder.listToolVersionsSettings().build();
+    createToolVersionSettings = settingsBuilder.createToolVersionSettings().build();
+    getToolVersionSettings = settingsBuilder.getToolVersionSettings().build();
+    deleteToolVersionSettings = settingsBuilder.deleteToolVersionSettings().build();
+    restoreToolVersionSettings = settingsBuilder.restoreToolVersionSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-dialogflow-cx")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for ToolsStubSettings. */
@@ -429,6 +574,17 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
     private final UnaryCallSettings.Builder<GetToolRequest, Tool> getToolSettings;
     private final UnaryCallSettings.Builder<UpdateToolRequest, Tool> updateToolSettings;
     private final UnaryCallSettings.Builder<DeleteToolRequest, Empty> deleteToolSettings;
+    private final PagedCallSettings.Builder<
+            ListToolVersionsRequest, ListToolVersionsResponse, ListToolVersionsPagedResponse>
+        listToolVersionsSettings;
+    private final UnaryCallSettings.Builder<CreateToolVersionRequest, ToolVersion>
+        createToolVersionSettings;
+    private final UnaryCallSettings.Builder<GetToolVersionRequest, ToolVersion>
+        getToolVersionSettings;
+    private final UnaryCallSettings.Builder<DeleteToolVersionRequest, Empty>
+        deleteToolVersionSettings;
+    private final UnaryCallSettings.Builder<RestoreToolVersionRequest, RestoreToolVersionResponse>
+        restoreToolVersionSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -452,13 +608,13 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -478,6 +634,11 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
       getToolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateToolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteToolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listToolVersionsSettings = PagedCallSettings.newBuilder(LIST_TOOL_VERSIONS_PAGE_STR_FACT);
+      createToolVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getToolVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteToolVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      restoreToolVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -489,6 +650,11 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
               getToolSettings,
               updateToolSettings,
               deleteToolSettings,
+              listToolVersionsSettings,
+              createToolVersionSettings,
+              getToolVersionSettings,
+              deleteToolVersionSettings,
+              restoreToolVersionSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -504,6 +670,11 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
       getToolSettings = settings.getToolSettings.toBuilder();
       updateToolSettings = settings.updateToolSettings.toBuilder();
       deleteToolSettings = settings.deleteToolSettings.toBuilder();
+      listToolVersionsSettings = settings.listToolVersionsSettings.toBuilder();
+      createToolVersionSettings = settings.createToolVersionSettings.toBuilder();
+      getToolVersionSettings = settings.getToolVersionSettings.toBuilder();
+      deleteToolVersionSettings = settings.deleteToolVersionSettings.toBuilder();
+      restoreToolVersionSettings = settings.restoreToolVersionSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -515,6 +686,11 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
               getToolSettings,
               updateToolSettings,
               deleteToolSettings,
+              listToolVersionsSettings,
+              createToolVersionSettings,
+              getToolVersionSettings,
+              deleteToolVersionSettings,
+              restoreToolVersionSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -575,6 +751,31 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .listToolVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createToolVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getToolVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteToolVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .restoreToolVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -598,13 +799,13 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -663,6 +864,35 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
       return deleteToolSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listToolVersions. */
+    public PagedCallSettings.Builder<
+            ListToolVersionsRequest, ListToolVersionsResponse, ListToolVersionsPagedResponse>
+        listToolVersionsSettings() {
+      return listToolVersionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createToolVersion. */
+    public UnaryCallSettings.Builder<CreateToolVersionRequest, ToolVersion>
+        createToolVersionSettings() {
+      return createToolVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getToolVersion. */
+    public UnaryCallSettings.Builder<GetToolVersionRequest, ToolVersion> getToolVersionSettings() {
+      return getToolVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteToolVersion. */
+    public UnaryCallSettings.Builder<DeleteToolVersionRequest, Empty> deleteToolVersionSettings() {
+      return deleteToolVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restoreToolVersion. */
+    public UnaryCallSettings.Builder<RestoreToolVersionRequest, RestoreToolVersionResponse>
+        restoreToolVersionSettings() {
+      return restoreToolVersionSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listLocations. */
     public PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -673,15 +903,6 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getLocationSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

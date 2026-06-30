@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.dialogflow.cx.v3beta1.PlaybooksGrpc.PlaybooksImplBase;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
@@ -143,6 +144,48 @@ public class MockPlaybooksImpl extends PlaybooksImplBase {
   }
 
   @Override
+  public void exportPlaybook(
+      ExportPlaybookRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExportPlaybook, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void importPlaybook(
+      ImportPlaybookRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ImportPlaybook, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void updatePlaybook(
       UpdatePlaybookRequest request, StreamObserver<Playbook> responseObserver) {
     Object response = responses.poll();
@@ -177,7 +220,8 @@ public class MockPlaybooksImpl extends PlaybooksImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreatePlaybookVersion, expected %s or %s",
+                  "Unrecognized response type %s for method CreatePlaybookVersion, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   PlaybookVersion.class.getName(),
                   Exception.class.getName())));
@@ -206,6 +250,29 @@ public class MockPlaybooksImpl extends PlaybooksImplBase {
   }
 
   @Override
+  public void restorePlaybookVersion(
+      RestorePlaybookVersionRequest request,
+      StreamObserver<RestorePlaybookVersionResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RestorePlaybookVersionResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RestorePlaybookVersionResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RestorePlaybookVersion, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RestorePlaybookVersionResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listPlaybookVersions(
       ListPlaybookVersionsRequest request,
       StreamObserver<ListPlaybookVersionsResponse> responseObserver) {
@@ -220,7 +287,8 @@ public class MockPlaybooksImpl extends PlaybooksImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPlaybookVersions, expected %s or %s",
+                  "Unrecognized response type %s for method ListPlaybookVersions, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPlaybookVersionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -241,7 +309,8 @@ public class MockPlaybooksImpl extends PlaybooksImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeletePlaybookVersion, expected %s or %s",
+                  "Unrecognized response type %s for method DeletePlaybookVersion, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

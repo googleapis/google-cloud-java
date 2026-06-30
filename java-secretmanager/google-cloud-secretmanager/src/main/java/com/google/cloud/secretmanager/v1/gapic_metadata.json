@@ -17,7 +17,7 @@
               "methods": ["addSecretVersion", "addSecretVersion", "addSecretVersion", "addSecretVersionCallable"]
             },
             "CreateSecret": {
-              "methods": ["createSecret", "createSecret", "createSecret", "createSecretCallable"]
+              "methods": ["createSecret", "createSecret", "createSecret", "createSecret", "createSecretCallable"]
             },
             "DeleteSecret": {
               "methods": ["deleteSecret", "deleteSecret", "deleteSecret", "deleteSecretCallable"]
@@ -44,7 +44,7 @@
               "methods": ["listSecretVersions", "listSecretVersions", "listSecretVersions", "listSecretVersionsPagedCallable", "listSecretVersionsCallable"]
             },
             "ListSecrets": {
-              "methods": ["listSecrets", "listSecrets", "listSecrets", "listSecretsPagedCallable", "listSecretsCallable"]
+              "methods": ["listSecrets", "listSecrets", "listSecrets", "listSecrets", "listSecretsPagedCallable", "listSecretsCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]

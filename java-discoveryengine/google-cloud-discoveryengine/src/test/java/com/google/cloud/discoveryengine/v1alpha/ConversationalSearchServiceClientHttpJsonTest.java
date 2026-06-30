@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -667,6 +668,7 @@ public class ConversationalSearchServiceClientHttpJsonTest {
         AnswerQueryResponse.newBuilder()
             .setAnswer(Answer.newBuilder().build())
             .setSession(Session.newBuilder().build())
+            .setAnswerQueryToken("answerQueryToken758314095")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -689,6 +691,7 @@ public class ConversationalSearchServiceClientHttpJsonTest {
                 AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
             .setAsynchronousMode(true)
             .setUserPseudoId("userPseudoId-1155274652")
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
 
     AnswerQueryResponse actualResponse = client.answerQuery(request);
@@ -736,6 +739,7 @@ public class ConversationalSearchServiceClientHttpJsonTest {
                   AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
               .setAsynchronousMode(true)
               .setUserPseudoId("userPseudoId-1155274652")
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       client.answerQuery(request);
       Assert.fail("No exception raised");
@@ -870,10 +874,12 @@ public class ConversationalSearchServiceClientHttpJsonTest {
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -925,10 +931,12 @@ public class ConversationalSearchServiceClientHttpJsonTest {
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1064,10 +1072,12 @@ public class ConversationalSearchServiceClientHttpJsonTest {
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1077,10 +1087,12 @@ public class ConversationalSearchServiceClientHttpJsonTest {
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1116,10 +1128,12 @@ public class ConversationalSearchServiceClientHttpJsonTest {
                   SessionName.ofProjectLocationDataStoreSessionName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                       .toString())
+              .setDisplayName("displayName1714148973")
               .setUserPseudoId("userPseudoId-1155274652")
               .addAllTurns(new ArrayList<Session.Turn>())
               .setStartTime(Timestamp.newBuilder().build())
               .setEndTime(Timestamp.newBuilder().build())
+              .setIsPinned(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSession(session, updateMask);
@@ -1137,10 +1151,12 @@ public class ConversationalSearchServiceClientHttpJsonTest {
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1192,10 +1208,12 @@ public class ConversationalSearchServiceClientHttpJsonTest {
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
             .build();
     mockService.addResponse(expectedResponse);
 

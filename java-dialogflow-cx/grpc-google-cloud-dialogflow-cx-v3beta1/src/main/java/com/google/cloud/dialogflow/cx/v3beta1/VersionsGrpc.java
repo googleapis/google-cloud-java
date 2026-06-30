@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Versions][google.cloud.dialogflow.cx.v3beta1.Version].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3beta1/version.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class VersionsGrpc {
 
@@ -361,6 +358,19 @@ public final class VersionsGrpc {
     return VersionsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static VersionsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<VersionsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<VersionsBlockingV2Stub>() {
+          @java.lang.Override
+          public VersionsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new VersionsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return VersionsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -685,6 +695,142 @@ public final class VersionsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Versions.
+   *
+   * <pre>
+   * Service for managing [Versions][google.cloud.dialogflow.cx.v3beta1.Version].
+   * </pre>
+   */
+  public static final class VersionsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<VersionsBlockingV2Stub> {
+    private VersionsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected VersionsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new VersionsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all versions in the specified
+     * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ListVersionsResponse listVersions(
+        com.google.cloud.dialogflow.cx.v3beta1.ListVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Version getVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.GetVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the
+     * specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
+     * - `response`: [Version][google.cloud.dialogflow.cx.v3beta1.Version]
+     * </pre>
+     */
+    public com.google.longrunning.Operation createVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Version updateVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Loads resources in the specified version to the draft flow.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     * </pre>
+     */
+    public com.google.longrunning.Operation loadVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.LoadVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getLoadVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Compares the specified base version with target version.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.CompareVersionsResponse compareVersions(
+        com.google.cloud.dialogflow.cx.v3beta1.CompareVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCompareVersionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Versions.
    *
    * <pre>
    * Service for managing [Versions][google.cloud.dialogflow.cx.v3beta1.Version].

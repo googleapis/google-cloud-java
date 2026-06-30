@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,6 +66,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PhraseSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPhraseSetRequest, PhraseSet>
@@ -75,6 +76,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
               .setFullMethodName("google.cloud.speech.v1p1beta1.Adaptation/GetPhraseSet")
               .setRequestMarshaller(ProtoUtils.marshaller(GetPhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PhraseSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPhraseSetRequest, ListPhraseSetResponse>
@@ -86,6 +88,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   ProtoUtils.marshaller(ListPhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPhraseSetResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePhraseSetRequest, PhraseSet>
@@ -96,6 +99,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PhraseSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePhraseSetRequest, Empty>
@@ -106,6 +110,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCustomClassRequest, CustomClass>
@@ -116,6 +121,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomClass.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomClassRequest, CustomClass>
@@ -126,6 +132,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomClass.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCustomClassesRequest, ListCustomClassesResponse>
@@ -137,6 +144,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   ProtoUtils.marshaller(ListCustomClassesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomClassesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCustomClassRequest, CustomClass>
@@ -147,6 +155,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomClass.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCustomClassRequest, Empty>
@@ -157,6 +166,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreatePhraseSetRequest, PhraseSet> createPhraseSetCallable;
@@ -226,6 +236,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetPhraseSetRequest, PhraseSet> getPhraseSetTransportSettings =
         GrpcCallSettings.<GetPhraseSetRequest, PhraseSet>newBuilder()
@@ -236,6 +247,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListPhraseSetRequest, ListPhraseSetResponse> listPhraseSetTransportSettings =
         GrpcCallSettings.<ListPhraseSetRequest, ListPhraseSetResponse>newBuilder()
@@ -246,6 +258,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdatePhraseSetRequest, PhraseSet> updatePhraseSetTransportSettings =
         GrpcCallSettings.<UpdatePhraseSetRequest, PhraseSet>newBuilder()
@@ -266,6 +279,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateCustomClassRequest, CustomClass> createCustomClassTransportSettings =
         GrpcCallSettings.<CreateCustomClassRequest, CustomClass>newBuilder()
@@ -276,6 +290,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetCustomClassRequest, CustomClass> getCustomClassTransportSettings =
         GrpcCallSettings.<GetCustomClassRequest, CustomClass>newBuilder()
@@ -286,6 +301,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCustomClassesRequest, ListCustomClassesResponse>
         listCustomClassesTransportSettings =
@@ -297,6 +313,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateCustomClassRequest, CustomClass> updateCustomClassTransportSettings =
         GrpcCallSettings.<UpdateCustomClassRequest, CustomClass>newBuilder()
@@ -318,6 +335,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createPhraseSetCallable =

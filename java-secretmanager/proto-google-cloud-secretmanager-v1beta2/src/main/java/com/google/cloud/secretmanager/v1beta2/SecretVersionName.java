@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -305,7 +305,8 @@ public class SecretVersionName implements ResourceName {
     private Builder(SecretVersionName secretVersionName) {
       Preconditions.checkArgument(
           Objects.equals(secretVersionName.pathTemplate, PROJECT_SECRET_SECRET_VERSION),
-          "toBuilder is only supported when SecretVersionName has the pattern of projects/{project}/secrets/{secret}/versions/{secret_version}");
+          "toBuilder is only supported when SecretVersionName has the pattern of"
+              + " projects/{project}/secrets/{secret}/versions/{secret_version}");
       this.project = secretVersionName.project;
       this.secret = secretVersionName.secret;
       this.secretVersion = secretVersionName.secretVersion;

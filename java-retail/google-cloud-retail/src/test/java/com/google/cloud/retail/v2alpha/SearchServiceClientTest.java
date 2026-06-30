@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class SearchServiceClientTest {
+  private static MockLocations mockLocations;
   private static MockSearchService mockSearchService;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
@@ -52,9 +53,11 @@ public class SearchServiceClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockSearchService = new MockSearchService();
+    mockLocations = new MockLocations();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockSearchService));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockSearchService, mockLocations));
     mockServiceHelper.start();
   }
 
@@ -108,11 +111,19 @@ public class SearchServiceClientTest {
             .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
             .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
             .addAllVariantRollupKeys(new ArrayList<String>())
+            .setExperimentId("experimentId-404563464")
             .addAllPageCategories(new ArrayList<String>())
             .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
             .setEntity("entity-1298275357")
+            .setConversationalSearchSpec(
+                SearchRequest.ConversationalSearchSpec.newBuilder().build())
+            .setTileNavigationSpec(SearchRequest.TileNavigationSpec.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .setRegionCode("regionCode-1991004415")
+            .setPlaceId("placeId-494224254")
+            .putAllUserAttributes(new HashMap<String, StringList>())
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -145,12 +156,20 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getRelevanceThreshold(), actualRequest.getRelevanceThreshold());
     Assert.assertEquals(
         request.getVariantRollupKeysList(), actualRequest.getVariantRollupKeysList());
+    Assert.assertEquals(request.getExperimentId(), actualRequest.getExperimentId());
     Assert.assertEquals(request.getPageCategoriesList(), actualRequest.getPageCategoriesList());
     Assert.assertEquals(request.getSearchMode(), actualRequest.getSearchMode());
     Assert.assertEquals(request.getPersonalizationSpec(), actualRequest.getPersonalizationSpec());
     Assert.assertEquals(request.getLabelsMap(), actualRequest.getLabelsMap());
     Assert.assertEquals(request.getSpellCorrectionSpec(), actualRequest.getSpellCorrectionSpec());
     Assert.assertEquals(request.getEntity(), actualRequest.getEntity());
+    Assert.assertEquals(
+        request.getConversationalSearchSpec(), actualRequest.getConversationalSearchSpec());
+    Assert.assertEquals(request.getTileNavigationSpec(), actualRequest.getTileNavigationSpec());
+    Assert.assertEquals(request.getLanguageCode(), actualRequest.getLanguageCode());
+    Assert.assertEquals(request.getRegionCode(), actualRequest.getRegionCode());
+    Assert.assertEquals(request.getPlaceId(), actualRequest.getPlaceId());
+    Assert.assertEquals(request.getUserAttributesMap(), actualRequest.getUserAttributesMap());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -182,11 +201,19 @@ public class SearchServiceClientTest {
               .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
               .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
               .addAllVariantRollupKeys(new ArrayList<String>())
+              .setExperimentId("experimentId-404563464")
               .addAllPageCategories(new ArrayList<String>())
               .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
               .setEntity("entity-1298275357")
+              .setConversationalSearchSpec(
+                  SearchRequest.ConversationalSearchSpec.newBuilder().build())
+              .setTileNavigationSpec(SearchRequest.TileNavigationSpec.newBuilder().build())
+              .setLanguageCode("languageCode-2092349083")
+              .setRegionCode("regionCode-1991004415")
+              .setPlaceId("placeId-494224254")
+              .putAllUserAttributes(new HashMap<String, StringList>())
               .build();
       client.search(request);
       Assert.fail("No exception raised");

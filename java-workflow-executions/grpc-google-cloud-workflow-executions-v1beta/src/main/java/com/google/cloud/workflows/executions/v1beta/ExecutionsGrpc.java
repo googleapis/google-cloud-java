@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Workflows][google.cloud.workflows.v1beta.Workflow] called executions.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/workflows/executions/v1beta/executions.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ExecutionsGrpc {
 
@@ -233,6 +230,19 @@ public final class ExecutionsGrpc {
           }
         };
     return ExecutionsStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ExecutionsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ExecutionsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ExecutionsBlockingV2Stub>() {
+          @java.lang.Override
+          public ExecutionsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ExecutionsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ExecutionsBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -447,6 +457,86 @@ public final class ExecutionsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Executions.
+   *
+   * <pre>
+   * Executions is used to start and manage running instances of
+   * [Workflows][google.cloud.workflows.v1beta.Workflow] called executions.
+   * </pre>
+   */
+  public static final class ExecutionsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ExecutionsBlockingV2Stub> {
+    private ExecutionsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ExecutionsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ExecutionsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of executions which belong to the workflow with
+     * the given name. The method returns executions of all workflow
+     * revisions. Returned executions are ordered by their start time (newest
+     * first).
+     * </pre>
+     */
+    public com.google.cloud.workflows.executions.v1beta.ListExecutionsResponse listExecutions(
+        com.google.cloud.workflows.executions.v1beta.ListExecutionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListExecutionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new execution using the latest revision of the given workflow.
+     * </pre>
+     */
+    public com.google.cloud.workflows.executions.v1beta.Execution createExecution(
+        com.google.cloud.workflows.executions.v1beta.CreateExecutionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateExecutionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns an execution of the given name.
+     * </pre>
+     */
+    public com.google.cloud.workflows.executions.v1beta.Execution getExecution(
+        com.google.cloud.workflows.executions.v1beta.GetExecutionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetExecutionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an execution of the given name.
+     * </pre>
+     */
+    public com.google.cloud.workflows.executions.v1beta.Execution cancelExecution(
+        com.google.cloud.workflows.executions.v1beta.CancelExecutionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelExecutionMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Executions.
    *
    * <pre>
    * Executions is used to start and manage running instances of

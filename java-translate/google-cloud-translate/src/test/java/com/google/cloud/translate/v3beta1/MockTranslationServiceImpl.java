@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -115,7 +115,8 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetSupportedLanguages, expected %s or %s",
+                  "Unrecognized response type %s for method GetSupportedLanguages, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SupportedLanguages.class.getName(),
                   Exception.class.getName())));
@@ -179,7 +180,8 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchTranslateDocument, expected %s or %s",
+                  "Unrecognized response type %s for method BatchTranslateDocument, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -265,6 +267,27 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
                   "Unrecognized response type %s for method DeleteGlossary, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void refineText(
+      RefineTextRequest request, StreamObserver<RefineTextResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RefineTextResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RefineTextResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RefineText, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RefineTextResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

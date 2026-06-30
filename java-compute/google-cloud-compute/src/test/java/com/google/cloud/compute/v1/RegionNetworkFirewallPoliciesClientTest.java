@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,6 +87,7 @@ public class RegionNetworkFirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -170,6 +171,7 @@ public class RegionNetworkFirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -247,6 +249,7 @@ public class RegionNetworkFirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -321,6 +324,7 @@ public class RegionNetworkFirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -398,7 +402,9 @@ public class RegionNetworkFirewallPoliciesClientTest {
             .setId(3355)
             .setKind("kind3292052")
             .setName("name3373707")
+            .addAllPacketMirroringRules(new ArrayList<FirewallPolicyRule>())
             .setParent("parent-995424086")
+            .setPolicyType("policyType1593556876")
             .setRegion("region-934795532")
             .setRuleTupleCount(388342037)
             .addAllRules(new ArrayList<FirewallPolicyRule>())
@@ -561,7 +567,6 @@ public class RegionNetworkFirewallPoliciesClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -677,6 +682,7 @@ public class RegionNetworkFirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -803,6 +809,7 @@ public class RegionNetworkFirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -880,6 +887,7 @@ public class RegionNetworkFirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -957,6 +965,7 @@ public class RegionNetworkFirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -1031,6 +1040,7 @@ public class RegionNetworkFirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -1104,7 +1114,6 @@ public class RegionNetworkFirewallPoliciesClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);

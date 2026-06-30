@@ -1,0 +1,23 @@
+{
+  "api_shortname": "firestore",
+  "name_pretty": "Cloud Firestore",
+  "product_documentation": "https://cloud.google.com/firestore",
+  "api_description": "is a fully-managed NoSQL document database for mobile, web, and server development from Firebase and Google Cloud Platform.  It's backed by a multi-region replicated database that ensures once data is committed, it's durable even in the face of unexpected disasters. Not only that, but despite being a distributed database, it's also strongly consistent and offers seamless integration with other Firebase and Google Cloud Platform products, including Google Cloud Functions.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-firestore/latest/history",
+  "release_level": "stable",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-firestore",
+  "distribution_name": "com.google.cloud:google-cloud-firestore",
+  "api_id": "firestore.googleapis.com",
+  "library_type": "GAPIC_COMBO",
+  "requires_billing": true,
+  "codeowner_team": "@googleapis/firestore-team",
+  "excluded_poms": "google-cloud-firestore,google-cloud-firestore-bom",
+  "issue_tracker": "https://issuetracker.google.com/savedsearches/5337669",
+  "recommended_package": "com.google.cloud.firestore",
+  "library_path_overrides": {
+    "FirestoreAdminClient": "google-cloud-firestore-admin"
+  }
+}

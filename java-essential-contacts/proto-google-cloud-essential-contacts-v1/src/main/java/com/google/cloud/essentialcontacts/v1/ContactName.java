@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -287,7 +287,8 @@ public class ContactName implements ResourceName {
     private Builder(ContactName contactName) {
       Preconditions.checkArgument(
           Objects.equals(contactName.pathTemplate, PROJECT_CONTACT),
-          "toBuilder is only supported when ContactName has the pattern of projects/{project}/contacts/{contact}");
+          "toBuilder is only supported when ContactName has the pattern of"
+              + " projects/{project}/contacts/{contact}");
       this.project = contactName.project;
       this.contact = contactName.contact;
     }

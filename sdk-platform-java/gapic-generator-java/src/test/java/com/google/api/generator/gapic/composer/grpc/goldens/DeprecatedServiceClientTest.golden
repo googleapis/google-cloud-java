@@ -1,0 +1,130 @@
+package com.google.testdata.v1;
+
+import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
+import com.google.api.gax.grpc.testing.MockGrpcService;
+import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
+import io.grpc.StatusRuntimeException;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
+import javax.annotation.Generated;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+@Generated("by gapic-generator-java")
+public class DeprecatedServiceClientTest {
+  private static MockDeprecatedService mockDeprecatedService;
+  private static MockServiceHelper mockServiceHelper;
+  private LocalChannelProvider channelProvider;
+  private DeprecatedServiceClient client;
+
+  @BeforeClass
+  public static void startStaticServer() {
+    mockDeprecatedService = new MockDeprecatedService();
+    mockServiceHelper =
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockDeprecatedService));
+    mockServiceHelper.start();
+  }
+
+  @AfterClass
+  public static void stopServer() {
+    mockServiceHelper.stop();
+  }
+
+  @Before
+  public void setUp() throws IOException {
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
+    DeprecatedServiceSettings settings =
+        DeprecatedServiceSettings.newBuilder()
+            .setTransportChannelProvider(channelProvider)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    client = DeprecatedServiceClient.create(settings);
+  }
+
+  @After
+  public void tearDown() throws Exception {
+    client.close();
+  }
+
+  @Test
+  public void fastFibonacciTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDeprecatedService.addResponse(expectedResponse);
+
+    FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
+
+    client.fastFibonacci(request);
+
+    List<AbstractMessage> actualRequests = mockDeprecatedService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FibonacciRequest actualRequest = ((FibonacciRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getValue(), actualRequest.getValue());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fastFibonacciExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeprecatedService.addException(exception);
+
+    try {
+      FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
+      client.fastFibonacci(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void slowFibonacciTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDeprecatedService.addResponse(expectedResponse);
+
+    FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
+
+    client.slowFibonacci(request);
+
+    List<AbstractMessage> actualRequests = mockDeprecatedService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FibonacciRequest actualRequest = ((FibonacciRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getValue(), actualRequest.getValue());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void slowFibonacciExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeprecatedService.addException(exception);
+
+    try {
+      FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
+      client.slowFibonacci(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "api_shortname": "oracledatabase",
+  "name_pretty": "Oracle Database@Google Cloud API",
+  "product_documentation": "https://cloud.google.com/oracle/database/docs",
+  "api_description": "The Oracle Database@Google Cloud API provides a set of APIs to manage   Oracle database services, such as Exadata and Autonomous Databases.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-oracledatabase/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-oracledatabase",
+  "distribution_name": "com.google.cloud:google-cloud-oracledatabase",
+  "api_id": "oracledatabase.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import static com.google.cloud.compute.v1.InstanceGroupManagersClient.ListPerIns
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -37,6 +38,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -75,19 +77,22 @@ import com.google.cloud.compute.v1.PatchPerInstanceConfigsInstanceGroupManagerRe
 import com.google.cloud.compute.v1.PerInstanceConfig;
 import com.google.cloud.compute.v1.RecreateInstancesInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.ResizeInstanceGroupManagerRequest;
+import com.google.cloud.compute.v1.ResumeInstancesInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.SetTargetPoolsInstanceGroupManagerRequest;
+import com.google.cloud.compute.v1.StartInstancesInstanceGroupManagerRequest;
+import com.google.cloud.compute.v1.StopInstancesInstanceGroupManagerRequest;
+import com.google.cloud.compute.v1.SuspendInstancesInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.UpdatePerInstanceConfigsInstanceGroupManagerRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
-import java.util.Collections;
+import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -104,7 +109,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -121,13 +128,51 @@ import org.threeten.bp.Duration;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * InstanceGroupManagersStubSettings instanceGroupManagersSettings =
  *     instanceGroupManagersSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for abandonInstances:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * InstanceGroupManagersStubSettings.Builder instanceGroupManagersSettingsBuilder =
+ *     InstanceGroupManagersStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * instanceGroupManagersSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class InstanceGroupManagersStubSettings
     extends StubSettings<InstanceGroupManagersStubSettings> {
   /** The default scopes of the service. */
@@ -208,6 +253,11 @@ public class InstanceGroupManagersStubSettings
   private final UnaryCallSettings<ResizeInstanceGroupManagerRequest, Operation> resizeSettings;
   private final OperationCallSettings<ResizeInstanceGroupManagerRequest, Operation, Operation>
       resizeOperationSettings;
+  private final UnaryCallSettings<ResumeInstancesInstanceGroupManagerRequest, Operation>
+      resumeInstancesSettings;
+  private final OperationCallSettings<
+          ResumeInstancesInstanceGroupManagerRequest, Operation, Operation>
+      resumeInstancesOperationSettings;
   private final UnaryCallSettings<SetInstanceTemplateInstanceGroupManagerRequest, Operation>
       setInstanceTemplateSettings;
   private final OperationCallSettings<
@@ -218,6 +268,21 @@ public class InstanceGroupManagersStubSettings
   private final OperationCallSettings<
           SetTargetPoolsInstanceGroupManagerRequest, Operation, Operation>
       setTargetPoolsOperationSettings;
+  private final UnaryCallSettings<StartInstancesInstanceGroupManagerRequest, Operation>
+      startInstancesSettings;
+  private final OperationCallSettings<
+          StartInstancesInstanceGroupManagerRequest, Operation, Operation>
+      startInstancesOperationSettings;
+  private final UnaryCallSettings<StopInstancesInstanceGroupManagerRequest, Operation>
+      stopInstancesSettings;
+  private final OperationCallSettings<
+          StopInstancesInstanceGroupManagerRequest, Operation, Operation>
+      stopInstancesOperationSettings;
+  private final UnaryCallSettings<SuspendInstancesInstanceGroupManagerRequest, Operation>
+      suspendInstancesSettings;
+  private final OperationCallSettings<
+          SuspendInstancesInstanceGroupManagerRequest, Operation, Operation>
+      suspendInstancesOperationSettings;
   private final UnaryCallSettings<UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation>
       updatePerInstanceConfigsSettings;
   private final OperationCallSettings<
@@ -267,9 +332,7 @@ public class InstanceGroupManagersStubSettings
             @Override
             public Iterable<Map.Entry<String, InstanceGroupManagersScopedList>> extractResources(
                 InstanceGroupManagerAggregatedList payload) {
-              return payload.getItemsMap() == null
-                  ? Collections.<Map.Entry<String, InstanceGroupManagersScopedList>>emptySet()
-                  : payload.getItemsMap().entrySet();
+              return payload.getItemsMap().entrySet();
             }
           };
 
@@ -312,9 +375,7 @@ public class InstanceGroupManagersStubSettings
             @Override
             public Iterable<InstanceGroupManager> extractResources(
                 InstanceGroupManagerList payload) {
-              return payload.getItemsList() == null
-                  ? ImmutableList.<InstanceGroupManager>of()
-                  : payload.getItemsList();
+              return payload.getItemsList();
             }
           };
 
@@ -361,9 +422,7 @@ public class InstanceGroupManagersStubSettings
             @Override
             public Iterable<InstanceManagedByIgmError> extractResources(
                 InstanceGroupManagersListErrorsResponse payload) {
-              return payload.getItemsList() == null
-                  ? ImmutableList.<InstanceManagedByIgmError>of()
-                  : payload.getItemsList();
+              return payload.getItemsList();
             }
           };
 
@@ -412,9 +471,7 @@ public class InstanceGroupManagersStubSettings
             @Override
             public Iterable<ManagedInstance> extractResources(
                 InstanceGroupManagersListManagedInstancesResponse payload) {
-              return payload.getManagedInstancesList() == null
-                  ? ImmutableList.<ManagedInstance>of()
-                  : payload.getManagedInstancesList();
+              return payload.getManagedInstancesList();
             }
           };
 
@@ -463,9 +520,7 @@ public class InstanceGroupManagersStubSettings
             @Override
             public Iterable<PerInstanceConfig> extractResources(
                 InstanceGroupManagersListPerInstanceConfigsResp payload) {
-              return payload.getItemsList() == null
-                  ? ImmutableList.<PerInstanceConfig>of()
-                  : payload.getItemsList();
+              return payload.getItemsList();
             }
           };
 
@@ -782,6 +837,18 @@ public class InstanceGroupManagersStubSettings
     return resizeOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to resumeInstances. */
+  public UnaryCallSettings<ResumeInstancesInstanceGroupManagerRequest, Operation>
+      resumeInstancesSettings() {
+    return resumeInstancesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to resumeInstances. */
+  public OperationCallSettings<ResumeInstancesInstanceGroupManagerRequest, Operation, Operation>
+      resumeInstancesOperationSettings() {
+    return resumeInstancesOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setInstanceTemplate. */
   public UnaryCallSettings<SetInstanceTemplateInstanceGroupManagerRequest, Operation>
       setInstanceTemplateSettings() {
@@ -804,6 +871,42 @@ public class InstanceGroupManagersStubSettings
   public OperationCallSettings<SetTargetPoolsInstanceGroupManagerRequest, Operation, Operation>
       setTargetPoolsOperationSettings() {
     return setTargetPoolsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startInstances. */
+  public UnaryCallSettings<StartInstancesInstanceGroupManagerRequest, Operation>
+      startInstancesSettings() {
+    return startInstancesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startInstances. */
+  public OperationCallSettings<StartInstancesInstanceGroupManagerRequest, Operation, Operation>
+      startInstancesOperationSettings() {
+    return startInstancesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stopInstances. */
+  public UnaryCallSettings<StopInstancesInstanceGroupManagerRequest, Operation>
+      stopInstancesSettings() {
+    return stopInstancesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stopInstances. */
+  public OperationCallSettings<StopInstancesInstanceGroupManagerRequest, Operation, Operation>
+      stopInstancesOperationSettings() {
+    return stopInstancesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to suspendInstances. */
+  public UnaryCallSettings<SuspendInstancesInstanceGroupManagerRequest, Operation>
+      suspendInstancesSettings() {
+    return suspendInstancesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to suspendInstances. */
+  public OperationCallSettings<SuspendInstancesInstanceGroupManagerRequest, Operation, Operation>
+      suspendInstancesOperationSettings() {
+    return suspendInstancesOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to updatePerInstanceConfigs. */
@@ -830,15 +933,6 @@ public class InstanceGroupManagersStubSettings
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -851,6 +945,7 @@ public class InstanceGroupManagersStubSettings
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "compute.googleapis.com:443";
   }
@@ -941,14 +1036,31 @@ public class InstanceGroupManagersStubSettings
         settingsBuilder.recreateInstancesOperationSettings().build();
     resizeSettings = settingsBuilder.resizeSettings().build();
     resizeOperationSettings = settingsBuilder.resizeOperationSettings().build();
+    resumeInstancesSettings = settingsBuilder.resumeInstancesSettings().build();
+    resumeInstancesOperationSettings = settingsBuilder.resumeInstancesOperationSettings().build();
     setInstanceTemplateSettings = settingsBuilder.setInstanceTemplateSettings().build();
     setInstanceTemplateOperationSettings =
         settingsBuilder.setInstanceTemplateOperationSettings().build();
     setTargetPoolsSettings = settingsBuilder.setTargetPoolsSettings().build();
     setTargetPoolsOperationSettings = settingsBuilder.setTargetPoolsOperationSettings().build();
+    startInstancesSettings = settingsBuilder.startInstancesSettings().build();
+    startInstancesOperationSettings = settingsBuilder.startInstancesOperationSettings().build();
+    stopInstancesSettings = settingsBuilder.stopInstancesSettings().build();
+    stopInstancesOperationSettings = settingsBuilder.stopInstancesOperationSettings().build();
+    suspendInstancesSettings = settingsBuilder.suspendInstancesSettings().build();
+    suspendInstancesOperationSettings = settingsBuilder.suspendInstancesOperationSettings().build();
     updatePerInstanceConfigsSettings = settingsBuilder.updatePerInstanceConfigsSettings().build();
     updatePerInstanceConfigsOperationSettings =
         settingsBuilder.updatePerInstanceConfigsOperationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-compute")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for InstanceGroupManagersStubSettings. */
@@ -1038,6 +1150,11 @@ public class InstanceGroupManagersStubSettings
     private final OperationCallSettings.Builder<
             ResizeInstanceGroupManagerRequest, Operation, Operation>
         resizeOperationSettings;
+    private final UnaryCallSettings.Builder<ResumeInstancesInstanceGroupManagerRequest, Operation>
+        resumeInstancesSettings;
+    private final OperationCallSettings.Builder<
+            ResumeInstancesInstanceGroupManagerRequest, Operation, Operation>
+        resumeInstancesOperationSettings;
     private final UnaryCallSettings.Builder<
             SetInstanceTemplateInstanceGroupManagerRequest, Operation>
         setInstanceTemplateSettings;
@@ -1049,6 +1166,21 @@ public class InstanceGroupManagersStubSettings
     private final OperationCallSettings.Builder<
             SetTargetPoolsInstanceGroupManagerRequest, Operation, Operation>
         setTargetPoolsOperationSettings;
+    private final UnaryCallSettings.Builder<StartInstancesInstanceGroupManagerRequest, Operation>
+        startInstancesSettings;
+    private final OperationCallSettings.Builder<
+            StartInstancesInstanceGroupManagerRequest, Operation, Operation>
+        startInstancesOperationSettings;
+    private final UnaryCallSettings.Builder<StopInstancesInstanceGroupManagerRequest, Operation>
+        stopInstancesSettings;
+    private final OperationCallSettings.Builder<
+            StopInstancesInstanceGroupManagerRequest, Operation, Operation>
+        stopInstancesOperationSettings;
+    private final UnaryCallSettings.Builder<SuspendInstancesInstanceGroupManagerRequest, Operation>
+        suspendInstancesSettings;
+    private final OperationCallSettings.Builder<
+            SuspendInstancesInstanceGroupManagerRequest, Operation, Operation>
+        suspendInstancesOperationSettings;
     private final UnaryCallSettings.Builder<
             UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation>
         updatePerInstanceConfigsSettings;
@@ -1078,21 +1210,21 @@ public class InstanceGroupManagersStubSettings
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -1135,10 +1267,18 @@ public class InstanceGroupManagersStubSettings
       recreateInstancesOperationSettings = OperationCallSettings.newBuilder();
       resizeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       resizeOperationSettings = OperationCallSettings.newBuilder();
+      resumeInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      resumeInstancesOperationSettings = OperationCallSettings.newBuilder();
       setInstanceTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setInstanceTemplateOperationSettings = OperationCallSettings.newBuilder();
       setTargetPoolsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setTargetPoolsOperationSettings = OperationCallSettings.newBuilder();
+      startInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      startInstancesOperationSettings = OperationCallSettings.newBuilder();
+      stopInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      stopInstancesOperationSettings = OperationCallSettings.newBuilder();
+      suspendInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      suspendInstancesOperationSettings = OperationCallSettings.newBuilder();
       updatePerInstanceConfigsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updatePerInstanceConfigsOperationSettings = OperationCallSettings.newBuilder();
 
@@ -1161,8 +1301,12 @@ public class InstanceGroupManagersStubSettings
               patchPerInstanceConfigsSettings,
               recreateInstancesSettings,
               resizeSettings,
+              resumeInstancesSettings,
               setInstanceTemplateSettings,
               setTargetPoolsSettings,
+              startInstancesSettings,
+              stopInstancesSettings,
+              suspendInstancesSettings,
               updatePerInstanceConfigsSettings);
       initDefaults(this);
     }
@@ -1201,11 +1345,19 @@ public class InstanceGroupManagersStubSettings
       recreateInstancesOperationSettings = settings.recreateInstancesOperationSettings.toBuilder();
       resizeSettings = settings.resizeSettings.toBuilder();
       resizeOperationSettings = settings.resizeOperationSettings.toBuilder();
+      resumeInstancesSettings = settings.resumeInstancesSettings.toBuilder();
+      resumeInstancesOperationSettings = settings.resumeInstancesOperationSettings.toBuilder();
       setInstanceTemplateSettings = settings.setInstanceTemplateSettings.toBuilder();
       setInstanceTemplateOperationSettings =
           settings.setInstanceTemplateOperationSettings.toBuilder();
       setTargetPoolsSettings = settings.setTargetPoolsSettings.toBuilder();
       setTargetPoolsOperationSettings = settings.setTargetPoolsOperationSettings.toBuilder();
+      startInstancesSettings = settings.startInstancesSettings.toBuilder();
+      startInstancesOperationSettings = settings.startInstancesOperationSettings.toBuilder();
+      stopInstancesSettings = settings.stopInstancesSettings.toBuilder();
+      stopInstancesOperationSettings = settings.stopInstancesOperationSettings.toBuilder();
+      suspendInstancesSettings = settings.suspendInstancesSettings.toBuilder();
+      suspendInstancesOperationSettings = settings.suspendInstancesOperationSettings.toBuilder();
       updatePerInstanceConfigsSettings = settings.updatePerInstanceConfigsSettings.toBuilder();
       updatePerInstanceConfigsOperationSettings =
           settings.updatePerInstanceConfigsOperationSettings.toBuilder();
@@ -1229,8 +1381,12 @@ public class InstanceGroupManagersStubSettings
               patchPerInstanceConfigsSettings,
               recreateInstancesSettings,
               resizeSettings,
+              resumeInstancesSettings,
               setInstanceTemplateSettings,
               setTargetPoolsSettings,
+              startInstancesSettings,
+              stopInstancesSettings,
+              suspendInstancesSettings,
               updatePerInstanceConfigsSettings);
     }
 
@@ -1333,12 +1489,32 @@ public class InstanceGroupManagersStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .resumeInstancesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .setInstanceTemplateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .setTargetPoolsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .startInstancesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .stopInstancesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .suspendInstancesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1363,13 +1539,13 @@ public class InstanceGroupManagersStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -1388,13 +1564,13 @@ public class InstanceGroupManagersStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -1413,13 +1589,13 @@ public class InstanceGroupManagersStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -1438,13 +1614,13 @@ public class InstanceGroupManagersStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -1463,13 +1639,13 @@ public class InstanceGroupManagersStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -1488,13 +1664,13 @@ public class InstanceGroupManagersStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -1513,13 +1689,13 @@ public class InstanceGroupManagersStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -1538,13 +1714,13 @@ public class InstanceGroupManagersStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -1563,13 +1739,13 @@ public class InstanceGroupManagersStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -1588,13 +1764,13 @@ public class InstanceGroupManagersStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -1613,13 +1789,38 @@ public class InstanceGroupManagersStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .resumeInstancesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ResumeInstancesInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -1638,13 +1839,13 @@ public class InstanceGroupManagersStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -1663,13 +1864,88 @@ public class InstanceGroupManagersStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .startInstancesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StartInstancesInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .stopInstancesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StopInstancesInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .suspendInstancesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SuspendInstancesInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -1688,13 +1964,13 @@ public class InstanceGroupManagersStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       return builder;
@@ -1902,6 +2178,19 @@ public class InstanceGroupManagersStubSettings
       return resizeOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to resumeInstances. */
+    public UnaryCallSettings.Builder<ResumeInstancesInstanceGroupManagerRequest, Operation>
+        resumeInstancesSettings() {
+      return resumeInstancesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to resumeInstances. */
+    public OperationCallSettings.Builder<
+            ResumeInstancesInstanceGroupManagerRequest, Operation, Operation>
+        resumeInstancesOperationSettings() {
+      return resumeInstancesOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setInstanceTemplate. */
     public UnaryCallSettings.Builder<SetInstanceTemplateInstanceGroupManagerRequest, Operation>
         setInstanceTemplateSettings() {
@@ -1928,6 +2217,45 @@ public class InstanceGroupManagersStubSettings
       return setTargetPoolsOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to startInstances. */
+    public UnaryCallSettings.Builder<StartInstancesInstanceGroupManagerRequest, Operation>
+        startInstancesSettings() {
+      return startInstancesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startInstances. */
+    public OperationCallSettings.Builder<
+            StartInstancesInstanceGroupManagerRequest, Operation, Operation>
+        startInstancesOperationSettings() {
+      return startInstancesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopInstances. */
+    public UnaryCallSettings.Builder<StopInstancesInstanceGroupManagerRequest, Operation>
+        stopInstancesSettings() {
+      return stopInstancesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopInstances. */
+    public OperationCallSettings.Builder<
+            StopInstancesInstanceGroupManagerRequest, Operation, Operation>
+        stopInstancesOperationSettings() {
+      return stopInstancesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to suspendInstances. */
+    public UnaryCallSettings.Builder<SuspendInstancesInstanceGroupManagerRequest, Operation>
+        suspendInstancesSettings() {
+      return suspendInstancesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to suspendInstances. */
+    public OperationCallSettings.Builder<
+            SuspendInstancesInstanceGroupManagerRequest, Operation, Operation>
+        suspendInstancesOperationSettings() {
+      return suspendInstancesOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updatePerInstanceConfigs. */
     public UnaryCallSettings.Builder<UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation>
         updatePerInstanceConfigsSettings() {
@@ -1939,15 +2267,6 @@ public class InstanceGroupManagersStubSettings
             UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
         updatePerInstanceConfigsOperationSettings() {
       return updatePerInstanceConfigsOperationSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

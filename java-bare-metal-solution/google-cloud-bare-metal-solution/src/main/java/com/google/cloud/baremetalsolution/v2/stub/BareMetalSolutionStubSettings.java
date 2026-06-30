@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.List
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -46,6 +47,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -138,9 +140,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -158,7 +160,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getInstance to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getInstance:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -175,13 +179,51 @@ import org.threeten.bp.Duration;
  *             .getInstanceSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * BareMetalSolutionStubSettings bareMetalSolutionSettings =
  *     bareMetalSolutionSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for updateInstance:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * BareMetalSolutionStubSettings.Builder bareMetalSolutionSettingsBuilder =
+ *     BareMetalSolutionStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * bareMetalSolutionSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutionStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -334,9 +376,7 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
 
             @Override
             public Iterable<Instance> extractResources(ListInstancesResponse payload) {
-              return payload.getInstancesList() == null
-                  ? ImmutableList.<Instance>of()
-                  : payload.getInstancesList();
+              return payload.getInstancesList();
             }
           };
 
@@ -370,9 +410,7 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
 
             @Override
             public Iterable<SSHKey> extractResources(ListSSHKeysResponse payload) {
-              return payload.getSshKeysList() == null
-                  ? ImmutableList.<SSHKey>of()
-                  : payload.getSshKeysList();
+              return payload.getSshKeysList();
             }
           };
 
@@ -406,9 +444,7 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
 
             @Override
             public Iterable<Volume> extractResources(ListVolumesResponse payload) {
-              return payload.getVolumesList() == null
-                  ? ImmutableList.<Volume>of()
-                  : payload.getVolumesList();
+              return payload.getVolumesList();
             }
           };
 
@@ -442,9 +478,7 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
 
             @Override
             public Iterable<Network> extractResources(ListNetworksResponse payload) {
-              return payload.getNetworksList() == null
-                  ? ImmutableList.<Network>of()
-                  : payload.getNetworksList();
+              return payload.getNetworksList();
             }
           };
 
@@ -482,9 +516,7 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
 
             @Override
             public Iterable<VolumeSnapshot> extractResources(ListVolumeSnapshotsResponse payload) {
-              return payload.getVolumeSnapshotsList() == null
-                  ? ImmutableList.<VolumeSnapshot>of()
-                  : payload.getVolumeSnapshotsList();
+              return payload.getVolumeSnapshotsList();
             }
           };
 
@@ -518,9 +550,7 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
 
             @Override
             public Iterable<Lun> extractResources(ListLunsResponse payload) {
-              return payload.getLunsList() == null
-                  ? ImmutableList.<Lun>of()
-                  : payload.getLunsList();
+              return payload.getLunsList();
             }
           };
 
@@ -554,9 +584,7 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
 
             @Override
             public Iterable<NfsShare> extractResources(ListNfsSharesResponse payload) {
-              return payload.getNfsSharesList() == null
-                  ? ImmutableList.<NfsShare>of()
-                  : payload.getNfsSharesList();
+              return payload.getNfsSharesList();
             }
           };
 
@@ -597,9 +625,7 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
             @Override
             public Iterable<ProvisioningQuota> extractResources(
                 ListProvisioningQuotasResponse payload) {
-              return payload.getProvisioningQuotasList() == null
-                  ? ImmutableList.<ProvisioningQuota>of()
-                  : payload.getProvisioningQuotasList();
+              return payload.getProvisioningQuotasList();
             }
           };
 
@@ -633,9 +659,7 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
 
             @Override
             public Iterable<OSImage> extractResources(ListOSImagesResponse payload) {
-              return payload.getOsImagesList() == null
-                  ? ImmutableList.<OSImage>of()
-                  : payload.getOsImagesList();
+              return payload.getOsImagesList();
             }
           };
 
@@ -669,9 +693,7 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -1229,15 +1251,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -1250,6 +1263,7 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "baremetalsolution.googleapis.com:443";
   }
@@ -1401,6 +1415,15 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-bare-metal-solution")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
+  }
+
   /** Builder for BareMetalSolutionStubSettings. */
   public static class Builder extends StubSettings.Builder<BareMetalSolutionStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
@@ -1550,10 +1573,10 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -2073,13 +2096,13 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2097,13 +2120,13 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2121,13 +2144,13 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2145,13 +2168,13 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2171,13 +2194,13 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2197,13 +2220,13 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2220,13 +2243,13 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2244,13 +2267,13 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2267,13 +2290,13 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2291,13 +2314,13 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2315,13 +2338,13 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2339,13 +2362,13 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2362,13 +2385,13 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2386,13 +2409,13 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2410,13 +2433,13 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2434,13 +2457,13 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -2830,15 +2853,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getLocationSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

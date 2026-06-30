@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteLicenseRequest;
 import com.google.cloud.compute.v1.GetIamPolicyLicenseRequest;
 import com.google.cloud.compute.v1.GetLicenseRequest;
@@ -45,6 +46,7 @@ import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyLicenseRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsLicenseRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateLicenseRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -370,6 +372,60 @@ public class HttpJsonLicensesStub extends LicensesStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateLicenseRequest, Operation> updateMethodDescriptor =
+      ApiMethodDescriptor.<UpdateLicenseRequest, Operation>newBuilder()
+          .setFullMethodName("google.cloud.compute.v1.Licenses/Update")
+          .setHttpMethod("PATCH")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<UpdateLicenseRequest>newBuilder()
+                  .setPath(
+                      "/compute/v1/projects/{project}/global/licenses/{license}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateLicenseRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "license", request.getLicense());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateLicenseRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                        }
+                        if (request.hasUpdateMask()) {
+                          serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        }
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("licenseResource", request.getLicenseResource(), false))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Operation>newBuilder()
+                  .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .setOperationSnapshotFactory(
+              (UpdateLicenseRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
+          .build();
+
   private final UnaryCallable<DeleteLicenseRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteLicenseRequest, Operation, Operation>
       deleteOperationCallable;
@@ -383,10 +439,30 @@ public class HttpJsonLicensesStub extends LicensesStub {
   private final UnaryCallable<SetIamPolicyLicenseRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsLicenseRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<UpdateLicenseRequest, Operation> updateCallable;
+  private final OperationCallable<UpdateLicenseRequest, Operation, Operation>
+      updateOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/licenses/{license}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/licenses/{license}");
+  private static final PathTemplate GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/licenses/{resource}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/licenses/{resource}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/licenses/{resource}");
+  private static final PathTemplate UPDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/licenses/{license}");
 
   public static final HttpJsonLicensesStub create(LicensesStubSettings settings)
       throws IOException {
@@ -438,6 +514,13 @@ public class HttpJsonLicensesStub extends LicensesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("license", String.valueOf(request.getLicense()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetLicenseRequest, License> getTransportSettings =
         HttpJsonCallSettings.<GetLicenseRequest, License>newBuilder()
@@ -449,6 +532,13 @@ public class HttpJsonLicensesStub extends LicensesStub {
                   builder.add("license", String.valueOf(request.getLicense()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("license", String.valueOf(request.getLicense()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetIamPolicyLicenseRequest, Policy> getIamPolicyTransportSettings =
@@ -462,6 +552,13 @@ public class HttpJsonLicensesStub extends LicensesStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertLicenseRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertLicenseRequest, Operation>newBuilder()
@@ -472,6 +569,12 @@ public class HttpJsonLicensesStub extends LicensesStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListLicensesRequest, LicensesListResponse> listTransportSettings =
@@ -484,6 +587,12 @@ public class HttpJsonLicensesStub extends LicensesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyLicenseRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyLicenseRequest, Policy>newBuilder()
@@ -495,6 +604,13 @@ public class HttpJsonLicensesStub extends LicensesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<TestIamPermissionsLicenseRequest, TestPermissionsResponse>
@@ -510,7 +626,34 @@ public class HttpJsonLicensesStub extends LicensesStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
+    HttpJsonCallSettings<UpdateLicenseRequest, Operation> updateTransportSettings =
+        HttpJsonCallSettings.<UpdateLicenseRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("license", String.valueOf(request.getLicense()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("license", String.valueOf(request.getLicense()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return UPDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
@@ -550,6 +693,15 @@ public class HttpJsonLicensesStub extends LicensesStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.updateCallable =
+        callableFactory.createUnaryCallable(
+            updateTransportSettings, settings.updateSettings(), clientContext);
+    this.updateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTransportSettings,
+            settings.updateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -565,6 +717,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -617,6 +770,16 @@ public class HttpJsonLicensesStub extends LicensesStub {
   public UnaryCallable<TestIamPermissionsLicenseRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateLicenseRequest, Operation> updateCallable() {
+    return updateCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateLicenseRequest, Operation, Operation> updateOperationCallable() {
+    return updateOperationCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import com.google.api.core.BetaApi;
 import com.google.cloud.dataplex.v1.CatalogServiceGrpc.CatalogServiceImplBase;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -496,6 +497,26 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
   }
 
   @Override
+  public void modifyEntry(ModifyEntryRequest request, StreamObserver<Entry> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Entry) {
+      requests.add(request);
+      responseObserver.onNext(((Entry) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ModifyEntry, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Entry.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void searchEntries(
       SearchEntriesRequest request, StreamObserver<SearchEntriesResponse> responseObserver) {
     Object response = responses.poll();
@@ -512,6 +533,322 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
                   "Unrecognized response type %s for method SearchEntries, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchEntriesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createMetadataJob(
+      CreateMetadataJobRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateMetadataJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getMetadataJob(
+      GetMetadataJobRequest request, StreamObserver<MetadataJob> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MetadataJob) {
+      requests.add(request);
+      responseObserver.onNext(((MetadataJob) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMetadataJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MetadataJob.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listMetadataJobs(
+      ListMetadataJobsRequest request, StreamObserver<ListMetadataJobsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListMetadataJobsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListMetadataJobsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMetadataJobs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListMetadataJobsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void cancelMetadataJob(
+      CancelMetadataJobRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelMetadataJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createEntryLink(
+      CreateEntryLinkRequest request, StreamObserver<EntryLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EntryLink) {
+      requests.add(request);
+      responseObserver.onNext(((EntryLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateEntryLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EntryLink.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateEntryLink(
+      UpdateEntryLinkRequest request, StreamObserver<EntryLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EntryLink) {
+      requests.add(request);
+      responseObserver.onNext(((EntryLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateEntryLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EntryLink.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteEntryLink(
+      DeleteEntryLinkRequest request, StreamObserver<EntryLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EntryLink) {
+      requests.add(request);
+      responseObserver.onNext(((EntryLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteEntryLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EntryLink.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void lookupEntryLinks(
+      LookupEntryLinksRequest request, StreamObserver<LookupEntryLinksResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof LookupEntryLinksResponse) {
+      requests.add(request);
+      responseObserver.onNext(((LookupEntryLinksResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method LookupEntryLinks, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  LookupEntryLinksResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void lookupContext(
+      LookupContextRequest request, StreamObserver<LookupContextResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof LookupContextResponse) {
+      requests.add(request);
+      responseObserver.onNext(((LookupContextResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method LookupContext, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  LookupContextResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getEntryLink(
+      GetEntryLinkRequest request, StreamObserver<EntryLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EntryLink) {
+      requests.add(request);
+      responseObserver.onNext(((EntryLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEntryLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EntryLink.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createMetadataFeed(
+      CreateMetadataFeedRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateMetadataFeed, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getMetadataFeed(
+      GetMetadataFeedRequest request, StreamObserver<MetadataFeed> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MetadataFeed) {
+      requests.add(request);
+      responseObserver.onNext(((MetadataFeed) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMetadataFeed, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MetadataFeed.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listMetadataFeeds(
+      ListMetadataFeedsRequest request,
+      StreamObserver<ListMetadataFeedsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListMetadataFeedsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListMetadataFeedsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMetadataFeeds, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListMetadataFeedsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteMetadataFeed(
+      DeleteMetadataFeedRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteMetadataFeed, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateMetadataFeed(
+      UpdateMetadataFeedRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateMetadataFeed, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

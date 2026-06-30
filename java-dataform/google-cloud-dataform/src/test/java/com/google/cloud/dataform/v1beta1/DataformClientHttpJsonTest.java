@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,8 +26,13 @@ import static com.google.cloud.dataform.v1beta1.DataformClient.ListWorkflowInvoc
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListWorkspacesPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryCompilationResultActionsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryDirectoryContentsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.QueryFolderContentsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryRepositoryDirectoryContentsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.QueryTeamFolderContentsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.QueryUserRootContentsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryWorkflowInvocationActionsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.SearchFilesPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.SearchTeamFoldersPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -38,6 +43,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.dataform.v1beta1.stub.HttpJsonDataformStub;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -46,22 +52,23 @@ import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
-import com.google.iam.v1.GetIamPolicyRequest;
-import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import com.google.type.Interval;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -102,6 +109,1377 @@ public class DataformClientHttpJsonTest {
   @After
   public void tearDown() throws Exception {
     mockService.reset();
+  }
+
+  @Test
+  public void getTeamFolderTest() throws Exception {
+    TeamFolder expectedResponse =
+        TeamFolder.newBuilder()
+            .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+
+    TeamFolder actualResponse = client.getTeamFolder(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getTeamFolderExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+      client.getTeamFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTeamFolderTest2() throws Exception {
+    TeamFolder expectedResponse =
+        TeamFolder.newBuilder()
+            .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-1378/locations/location-1378/teamFolders/teamFolder-1378";
+
+    TeamFolder actualResponse = client.getTeamFolder(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getTeamFolderExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1378/locations/location-1378/teamFolders/teamFolder-1378";
+      client.getTeamFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createTeamFolderTest() throws Exception {
+    TeamFolder expectedResponse =
+        TeamFolder.newBuilder()
+            .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    TeamFolder teamFolder = TeamFolder.newBuilder().build();
+
+    TeamFolder actualResponse = client.createTeamFolder(parent, teamFolder);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createTeamFolderExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      TeamFolder teamFolder = TeamFolder.newBuilder().build();
+      client.createTeamFolder(parent, teamFolder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createTeamFolderTest2() throws Exception {
+    TeamFolder expectedResponse =
+        TeamFolder.newBuilder()
+            .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    TeamFolder teamFolder = TeamFolder.newBuilder().build();
+
+    TeamFolder actualResponse = client.createTeamFolder(parent, teamFolder);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createTeamFolderExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      TeamFolder teamFolder = TeamFolder.newBuilder().build();
+      client.createTeamFolder(parent, teamFolder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateTeamFolderTest() throws Exception {
+    TeamFolder expectedResponse =
+        TeamFolder.newBuilder()
+            .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TeamFolder teamFolder =
+        TeamFolder.newBuilder()
+            .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    TeamFolder actualResponse = client.updateTeamFolder(teamFolder, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateTeamFolderExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TeamFolder teamFolder =
+          TeamFolder.newBuilder()
+              .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+              .setDisplayName("displayName1714148973")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setInternalMetadata("internalMetadata6789388")
+              .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateTeamFolder(teamFolder, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteTeamFolderTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+
+    client.deleteTeamFolder(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTeamFolderExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+      client.deleteTeamFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteTeamFolderTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-1378/locations/location-1378/teamFolders/teamFolder-1378";
+
+    client.deleteTeamFolder(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTeamFolderExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1378/locations/location-1378/teamFolders/teamFolder-1378";
+      client.deleteTeamFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteTeamFolderTreeTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteTeamFolderTreeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+    boolean force = true;
+
+    client.deleteTeamFolderTreeAsync(name, force).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTeamFolderTreeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+      boolean force = true;
+      client.deleteTeamFolderTreeAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteTeamFolderTreeTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteTeamFolderTreeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-1378/locations/location-1378/teamFolders/teamFolder-1378";
+    boolean force = true;
+
+    client.deleteTeamFolderTreeAsync(name, force).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTeamFolderTreeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1378/locations/location-1378/teamFolders/teamFolder-1378";
+      boolean force = true;
+      client.deleteTeamFolderTreeAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void queryTeamFolderContentsTest() throws Exception {
+    QueryTeamFolderContentsResponse.TeamFolderContentsEntry responsesElement =
+        QueryTeamFolderContentsResponse.TeamFolderContentsEntry.newBuilder().build();
+    QueryTeamFolderContentsResponse expectedResponse =
+        QueryTeamFolderContentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntries(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TeamFolderName teamFolder = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+
+    QueryTeamFolderContentsPagedResponse pagedListResponse =
+        client.queryTeamFolderContents(teamFolder);
+
+    List<QueryTeamFolderContentsResponse.TeamFolderContentsEntry> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntriesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void queryTeamFolderContentsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TeamFolderName teamFolder = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+      client.queryTeamFolderContents(teamFolder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryTeamFolderContentsTest2() throws Exception {
+    QueryTeamFolderContentsResponse.TeamFolderContentsEntry responsesElement =
+        QueryTeamFolderContentsResponse.TeamFolderContentsEntry.newBuilder().build();
+    QueryTeamFolderContentsResponse expectedResponse =
+        QueryTeamFolderContentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntries(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String teamFolder = "projects/project-9842/locations/location-9842/teamFolders/teamFolder-9842";
+
+    QueryTeamFolderContentsPagedResponse pagedListResponse =
+        client.queryTeamFolderContents(teamFolder);
+
+    List<QueryTeamFolderContentsResponse.TeamFolderContentsEntry> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntriesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void queryTeamFolderContentsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String teamFolder =
+          "projects/project-9842/locations/location-9842/teamFolders/teamFolder-9842";
+      client.queryTeamFolderContents(teamFolder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchTeamFoldersTest() throws Exception {
+    SearchTeamFoldersResponse.TeamFolderSearchResult responsesElement =
+        SearchTeamFoldersResponse.TeamFolderSearchResult.newBuilder().build();
+    SearchTeamFoldersResponse expectedResponse =
+        SearchTeamFoldersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResults(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SearchTeamFoldersRequest request =
+        SearchTeamFoldersRequest.newBuilder()
+            .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .setOrderBy("orderBy-1207110587")
+            .setFilter("filter-1274492040")
+            .build();
+
+    SearchTeamFoldersPagedResponse pagedListResponse = client.searchTeamFolders(request);
+
+    List<SearchTeamFoldersResponse.TeamFolderSearchResult> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResultsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void searchTeamFoldersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SearchTeamFoldersRequest request =
+          SearchTeamFoldersRequest.newBuilder()
+              .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setOrderBy("orderBy-1207110587")
+              .setFilter("filter-1274492040")
+              .build();
+      client.searchTeamFolders(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFolderTest() throws Exception {
+    Folder expectedResponse =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+
+    Folder actualResponse = client.getFolder(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getFolderExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+      client.getFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFolderTest2() throws Exception {
+    Folder expectedResponse =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-6987/locations/location-6987/folders/folder-6987";
+
+    Folder actualResponse = client.getFolder(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getFolderExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6987/locations/location-6987/folders/folder-6987";
+      client.getFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createFolderTest() throws Exception {
+    Folder expectedResponse =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Folder folder = Folder.newBuilder().build();
+
+    Folder actualResponse = client.createFolder(parent, folder);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createFolderExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Folder folder = Folder.newBuilder().build();
+      client.createFolder(parent, folder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createFolderTest2() throws Exception {
+    Folder expectedResponse =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    Folder folder = Folder.newBuilder().build();
+
+    Folder actualResponse = client.createFolder(parent, folder);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createFolderExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      Folder folder = Folder.newBuilder().build();
+      client.createFolder(parent, folder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateFolderTest() throws Exception {
+    Folder expectedResponse =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Folder folder =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Folder actualResponse = client.updateFolder(folder, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateFolderExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Folder folder =
+          Folder.newBuilder()
+              .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+              .setDisplayName("displayName1714148973")
+              .setContainingFolder("containingFolder2132392092")
+              .setTeamFolderName("teamFolderName122991190")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setInternalMetadata("internalMetadata6789388")
+              .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateFolder(folder, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFolderTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+
+    client.deleteFolder(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteFolderExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+      client.deleteFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFolderTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-6987/locations/location-6987/folders/folder-6987";
+
+    client.deleteFolder(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteFolderExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6987/locations/location-6987/folders/folder-6987";
+      client.deleteFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFolderTreeTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteFolderTreeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+    boolean force = true;
+
+    client.deleteFolderTreeAsync(name, force).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteFolderTreeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+      boolean force = true;
+      client.deleteFolderTreeAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteFolderTreeTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteFolderTreeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-6987/locations/location-6987/folders/folder-6987";
+    boolean force = true;
+
+    client.deleteFolderTreeAsync(name, force).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteFolderTreeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6987/locations/location-6987/folders/folder-6987";
+      boolean force = true;
+      client.deleteFolderTreeAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void queryFolderContentsTest() throws Exception {
+    QueryFolderContentsResponse.FolderContentsEntry responsesElement =
+        QueryFolderContentsResponse.FolderContentsEntry.newBuilder().build();
+    QueryFolderContentsResponse expectedResponse =
+        QueryFolderContentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntries(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FolderName folder = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+
+    QueryFolderContentsPagedResponse pagedListResponse = client.queryFolderContents(folder);
+
+    List<QueryFolderContentsResponse.FolderContentsEntry> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntriesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void queryFolderContentsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FolderName folder = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+      client.queryFolderContents(folder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryFolderContentsTest2() throws Exception {
+    QueryFolderContentsResponse.FolderContentsEntry responsesElement =
+        QueryFolderContentsResponse.FolderContentsEntry.newBuilder().build();
+    QueryFolderContentsResponse expectedResponse =
+        QueryFolderContentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntries(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String folder = "projects/project-5950/locations/location-5950/folders/folder-5950";
+
+    QueryFolderContentsPagedResponse pagedListResponse = client.queryFolderContents(folder);
+
+    List<QueryFolderContentsResponse.FolderContentsEntry> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntriesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void queryFolderContentsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String folder = "projects/project-5950/locations/location-5950/folders/folder-5950";
+      client.queryFolderContents(folder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryUserRootContentsTest() throws Exception {
+    QueryUserRootContentsResponse.RootContentsEntry responsesElement =
+        QueryUserRootContentsResponse.RootContentsEntry.newBuilder().build();
+    QueryUserRootContentsResponse expectedResponse =
+        QueryUserRootContentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntries(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    QueryUserRootContentsPagedResponse pagedListResponse = client.queryUserRootContents(location);
+
+    List<QueryUserRootContentsResponse.RootContentsEntry> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntriesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void queryUserRootContentsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.queryUserRootContents(location);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryUserRootContentsTest2() throws Exception {
+    QueryUserRootContentsResponse.RootContentsEntry responsesElement =
+        QueryUserRootContentsResponse.RootContentsEntry.newBuilder().build();
+    QueryUserRootContentsResponse expectedResponse =
+        QueryUserRootContentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntries(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String location = "projects/project-7132/locations/location-7132";
+
+    QueryUserRootContentsPagedResponse pagedListResponse = client.queryUserRootContents(location);
+
+    List<QueryUserRootContentsResponse.RootContentsEntry> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntriesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void queryUserRootContentsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String location = "projects/project-7132/locations/location-7132";
+      client.queryUserRootContents(location);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void moveFolderTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("moveFolderTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+    String destinationContainingFolder = "destinationContainingFolder870737098";
+
+    client.moveFolderAsync(name, destinationContainingFolder).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void moveFolderExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+      String destinationContainingFolder = "destinationContainingFolder870737098";
+      client.moveFolderAsync(name, destinationContainingFolder).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void moveFolderTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("moveFolderTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-6987/locations/location-6987/folders/folder-6987";
+    String destinationContainingFolder = "destinationContainingFolder870737098";
+
+    client.moveFolderAsync(name, destinationContainingFolder).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void moveFolderExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6987/locations/location-6987/folders/folder-6987";
+      String destinationContainingFolder = "destinationContainingFolder870737098";
+      client.moveFolderAsync(name, destinationContainingFolder).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
   }
 
   @Test
@@ -209,6 +1587,9 @@ public class DataformClientHttpJsonTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
             .setNpmrcEnvironmentVariablesSecretVersion(
@@ -218,6 +1599,9 @@ public class DataformClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setSetAuthenticatedUserAdmin(true)
             .setServiceAccount("serviceAccount1079137720")
+            .setKmsKeyName("kmsKeyName412586233")
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -262,6 +1646,9 @@ public class DataformClientHttpJsonTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
             .setNpmrcEnvironmentVariablesSecretVersion(
@@ -271,6 +1658,9 @@ public class DataformClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setSetAuthenticatedUserAdmin(true)
             .setServiceAccount("serviceAccount1079137720")
+            .setKmsKeyName("kmsKeyName412586233")
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -315,6 +1705,9 @@ public class DataformClientHttpJsonTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
             .setNpmrcEnvironmentVariablesSecretVersion(
@@ -324,6 +1717,9 @@ public class DataformClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setSetAuthenticatedUserAdmin(true)
             .setServiceAccount("serviceAccount1079137720")
+            .setKmsKeyName("kmsKeyName412586233")
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -372,6 +1768,9 @@ public class DataformClientHttpJsonTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
             .setNpmrcEnvironmentVariablesSecretVersion(
@@ -381,6 +1780,9 @@ public class DataformClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setSetAuthenticatedUserAdmin(true)
             .setServiceAccount("serviceAccount1079137720")
+            .setKmsKeyName("kmsKeyName412586233")
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -429,6 +1831,9 @@ public class DataformClientHttpJsonTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
             .setNpmrcEnvironmentVariablesSecretVersion(
@@ -438,12 +1843,18 @@ public class DataformClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setSetAuthenticatedUserAdmin(true)
             .setServiceAccount("serviceAccount1079137720")
+            .setKmsKeyName("kmsKeyName412586233")
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockService.addResponse(expectedResponse);
 
     Repository repository =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
             .setNpmrcEnvironmentVariablesSecretVersion(
@@ -453,6 +1864,9 @@ public class DataformClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setSetAuthenticatedUserAdmin(true)
             .setServiceAccount("serviceAccount1079137720")
+            .setKmsKeyName("kmsKeyName412586233")
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -485,6 +1899,9 @@ public class DataformClientHttpJsonTest {
       Repository repository =
           Repository.newBuilder()
               .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setContainingFolder("containingFolder2132392092")
+              .setTeamFolderName("teamFolderName122991190")
+              .setCreateTime(Timestamp.newBuilder().build())
               .setDisplayName("displayName1714148973")
               .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
               .setNpmrcEnvironmentVariablesSecretVersion(
@@ -494,6 +1911,9 @@ public class DataformClientHttpJsonTest {
               .putAllLabels(new HashMap<String, String>())
               .setSetAuthenticatedUserAdmin(true)
               .setServiceAccount("serviceAccount1079137720")
+              .setKmsKeyName("kmsKeyName412586233")
+              .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+              .setInternalMetadata("internalMetadata6789388")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateRepository(repository, updateMask);
@@ -584,8 +2004,203 @@ public class DataformClientHttpJsonTest {
   }
 
   @Test
-  public void commitRepositoryChangesTest() throws Exception {
+  public void deleteRepositoryLongRunningTest() throws Exception {
+    DeleteRepositoryLongRunningResponse expectedResponse =
+        DeleteRepositoryLongRunningResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRepositoryLongRunningTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+    boolean force = true;
+
+    DeleteRepositoryLongRunningResponse actualResponse =
+        client.deleteRepositoryLongRunningAsync(name, force).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteRepositoryLongRunningExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      boolean force = true;
+      client.deleteRepositoryLongRunningAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteRepositoryLongRunningTest2() throws Exception {
+    DeleteRepositoryLongRunningResponse expectedResponse =
+        DeleteRepositoryLongRunningResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRepositoryLongRunningTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-4840/locations/location-4840/repositories/repositorie-4840";
+    boolean force = true;
+
+    DeleteRepositoryLongRunningResponse actualResponse =
+        client.deleteRepositoryLongRunningAsync(name, force).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteRepositoryLongRunningExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-4840/locations/location-4840/repositories/repositorie-4840";
+      boolean force = true;
+      client.deleteRepositoryLongRunningAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void moveRepositoryTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("moveRepositoryTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+    String destinationContainingFolder = "destinationContainingFolder870737098";
+
+    client.moveRepositoryAsync(name, destinationContainingFolder).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void moveRepositoryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      String destinationContainingFolder = "destinationContainingFolder870737098";
+      client.moveRepositoryAsync(name, destinationContainingFolder).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void moveRepositoryTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("moveRepositoryTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-4840/locations/location-4840/repositories/repositorie-4840";
+    String destinationContainingFolder = "destinationContainingFolder870737098";
+
+    client.moveRepositoryAsync(name, destinationContainingFolder).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void moveRepositoryExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-4840/locations/location-4840/repositories/repositorie-4840";
+      String destinationContainingFolder = "destinationContainingFolder870737098";
+      client.moveRepositoryAsync(name, destinationContainingFolder).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void commitRepositoryChangesTest() throws Exception {
+    CommitRepositoryChangesResponse expectedResponse =
+        CommitRepositoryChangesResponse.newBuilder().setCommitSha("commitSha-1491174411").build();
     mockService.addResponse(expectedResponse);
 
     CommitRepositoryChangesRequest request =
@@ -597,7 +2212,8 @@ public class DataformClientHttpJsonTest {
                 new HashMap<String, CommitRepositoryChangesRequest.FileOperation>())
             .build();
 
-    client.commitRepositoryChanges(request);
+    CommitRepositoryChangesResponse actualResponse = client.commitRepositoryChanges(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
@@ -1018,6 +2634,11 @@ public class DataformClientHttpJsonTest {
             .setName(
                 WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                     .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setDisableMoves(true)
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1065,6 +2686,11 @@ public class DataformClientHttpJsonTest {
             .setName(
                 WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                     .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setDisableMoves(true)
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1113,6 +2739,11 @@ public class DataformClientHttpJsonTest {
             .setName(
                 WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                     .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setDisableMoves(true)
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1163,6 +2794,11 @@ public class DataformClientHttpJsonTest {
             .setName(
                 WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                     .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setDisableMoves(true)
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1342,7 +2978,7 @@ public class DataformClientHttpJsonTest {
 
   @Test
   public void pullGitCommitsTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    PullGitCommitsResponse expectedResponse = PullGitCommitsResponse.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
     PullGitCommitsRequest request =
@@ -1354,7 +2990,8 @@ public class DataformClientHttpJsonTest {
             .setAuthor(CommitAuthor.newBuilder().build())
             .build();
 
-    client.pullGitCommits(request);
+    PullGitCommitsResponse actualResponse = client.pullGitCommits(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
@@ -1396,7 +3033,7 @@ public class DataformClientHttpJsonTest {
 
   @Test
   public void pushGitCommitsTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    PushGitCommitsResponse expectedResponse = PushGitCommitsResponse.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
     PushGitCommitsRequest request =
@@ -1407,7 +3044,8 @@ public class DataformClientHttpJsonTest {
             .setRemoteBranch("remoteBranch-533119608")
             .build();
 
-    client.pushGitCommits(request);
+    PushGitCommitsResponse actualResponse = client.pushGitCommits(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
@@ -1560,7 +3198,8 @@ public class DataformClientHttpJsonTest {
 
   @Test
   public void commitWorkspaceChangesTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    CommitWorkspaceChangesResponse expectedResponse =
+        CommitWorkspaceChangesResponse.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
     CommitWorkspaceChangesRequest request =
@@ -1573,7 +3212,8 @@ public class DataformClientHttpJsonTest {
             .addAllPaths(new ArrayList<String>())
             .build();
 
-    client.commitWorkspaceChanges(request);
+    CommitWorkspaceChangesResponse actualResponse = client.commitWorkspaceChanges(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
@@ -1616,7 +3256,8 @@ public class DataformClientHttpJsonTest {
 
   @Test
   public void resetWorkspaceChangesTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    ResetWorkspaceChangesResponse expectedResponse =
+        ResetWorkspaceChangesResponse.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
     ResetWorkspaceChangesRequest request =
@@ -1628,7 +3269,8 @@ public class DataformClientHttpJsonTest {
             .setClean(true)
             .build();
 
-    client.resetWorkspaceChanges(request);
+    ResetWorkspaceChangesResponse actualResponse = client.resetWorkspaceChanges(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
@@ -1740,6 +3382,7 @@ public class DataformClientHttpJsonTest {
             .setPath("path3433509")
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
+            .setView(DirectoryContentsView.forNumber(0))
             .build();
 
     QueryDirectoryContentsPagedResponse pagedListResponse = client.queryDirectoryContents(request);
@@ -1780,8 +3423,75 @@ public class DataformClientHttpJsonTest {
               .setPath("path3433509")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setView(DirectoryContentsView.forNumber(0))
               .build();
       client.queryDirectoryContents(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchFilesTest() throws Exception {
+    SearchResult responsesElement = SearchResult.newBuilder().build();
+    SearchFilesResponse expectedResponse =
+        SearchFilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSearchResults(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SearchFilesRequest request =
+        SearchFilesRequest.newBuilder()
+            .setWorkspace(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .setFilter("filter-1274492040")
+            .build();
+
+    SearchFilesPagedResponse pagedListResponse = client.searchFiles(request);
+
+    List<SearchResult> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSearchResultsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void searchFilesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SearchFilesRequest request =
+          SearchFilesRequest.newBuilder()
+              .setWorkspace(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
+              .build();
+      client.searchFiles(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -1843,7 +3553,7 @@ public class DataformClientHttpJsonTest {
 
   @Test
   public void removeDirectoryTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    RemoveDirectoryResponse expectedResponse = RemoveDirectoryResponse.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
     RemoveDirectoryRequest request =
@@ -1854,7 +3564,8 @@ public class DataformClientHttpJsonTest {
             .setPath("path3433509")
             .build();
 
-    client.removeDirectory(request);
+    RemoveDirectoryResponse actualResponse = client.removeDirectory(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
@@ -1960,6 +3671,7 @@ public class DataformClientHttpJsonTest {
                 WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                     .toString())
             .setPath("path3433509")
+            .setRevision("revision-260786213")
             .build();
 
     ReadFileResponse actualResponse = client.readFile(request);
@@ -1994,6 +3706,7 @@ public class DataformClientHttpJsonTest {
                   WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                       .toString())
               .setPath("path3433509")
+              .setRevision("revision-260786213")
               .build();
       client.readFile(request);
       Assert.fail("No exception raised");
@@ -2004,7 +3717,7 @@ public class DataformClientHttpJsonTest {
 
   @Test
   public void removeFileTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    RemoveFileResponse expectedResponse = RemoveFileResponse.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
     RemoveFileRequest request =
@@ -2015,7 +3728,8 @@ public class DataformClientHttpJsonTest {
             .setPath("path3433509")
             .build();
 
-    client.removeFile(request);
+    RemoveFileResponse actualResponse = client.removeFile(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
@@ -2281,6 +3995,8 @@ public class DataformClientHttpJsonTest {
                 CompilationResultName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
                     .toString())
+            .setDisabled(true)
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2339,6 +4055,8 @@ public class DataformClientHttpJsonTest {
                 CompilationResultName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
                     .toString())
+            .setDisabled(true)
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2397,6 +4115,8 @@ public class DataformClientHttpJsonTest {
                 CompilationResultName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
                     .toString())
+            .setDisabled(true)
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2458,6 +4178,8 @@ public class DataformClientHttpJsonTest {
                 CompilationResultName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
                     .toString())
+            .setDisabled(true)
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2519,6 +4241,8 @@ public class DataformClientHttpJsonTest {
                 CompilationResultName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
                     .toString())
+            .setDisabled(true)
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2537,6 +4261,8 @@ public class DataformClientHttpJsonTest {
                 CompilationResultName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
                     .toString())
+            .setDisabled(true)
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2582,6 +4308,8 @@ public class DataformClientHttpJsonTest {
                   CompilationResultName.of(
                           "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
                       .toString())
+              .setDisabled(true)
+              .setInternalMetadata("internalMetadata6789388")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateReleaseConfig(releaseConfig, updateMask);
@@ -2787,6 +4515,10 @@ public class DataformClientHttpJsonTest {
             .setResolvedGitCommitSha("resolvedGitCommitSha1908380763")
             .setDataformCoreVersion("dataformCoreVersion1859535851")
             .addAllCompilationErrors(new ArrayList<CompilationResult.CompilationError>())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2841,6 +4573,10 @@ public class DataformClientHttpJsonTest {
             .setResolvedGitCommitSha("resolvedGitCommitSha1908380763")
             .setDataformCoreVersion("dataformCoreVersion1859535851")
             .addAllCompilationErrors(new ArrayList<CompilationResult.CompilationError>())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2894,6 +4630,10 @@ public class DataformClientHttpJsonTest {
             .setResolvedGitCommitSha("resolvedGitCommitSha1908380763")
             .setDataformCoreVersion("dataformCoreVersion1859535851")
             .addAllCompilationErrors(new ArrayList<CompilationResult.CompilationError>())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2947,6 +4687,10 @@ public class DataformClientHttpJsonTest {
             .setResolvedGitCommitSha("resolvedGitCommitSha1908380763")
             .setDataformCoreVersion("dataformCoreVersion1859535851")
             .addAllCompilationErrors(new ArrayList<CompilationResult.CompilationError>())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3174,6 +4918,10 @@ public class DataformClientHttpJsonTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setDisabled(true)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3231,6 +4979,10 @@ public class DataformClientHttpJsonTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setDisabled(true)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3288,6 +5040,10 @@ public class DataformClientHttpJsonTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setDisabled(true)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3348,6 +5104,10 @@ public class DataformClientHttpJsonTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setDisabled(true)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3408,6 +5168,10 @@ public class DataformClientHttpJsonTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setDisabled(true)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3425,6 +5189,10 @@ public class DataformClientHttpJsonTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setDisabled(true)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -3469,6 +5237,10 @@ public class DataformClientHttpJsonTest {
               .setTimeZone("timeZone-2077180903")
               .addAllRecentScheduledExecutionRecords(
                   new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+              .setDisabled(true)
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setInternalMetadata("internalMetadata6789388")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateWorkflowConfig(workflowConfig, updateMask);
@@ -3672,6 +5444,13 @@ public class DataformClientHttpJsonTest {
                     .toString())
             .setInvocationConfig(InvocationConfig.newBuilder().build())
             .setInvocationTiming(Interval.newBuilder().build())
+            .setResolvedCompilationResult(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3725,6 +5504,13 @@ public class DataformClientHttpJsonTest {
                     .toString())
             .setInvocationConfig(InvocationConfig.newBuilder().build())
             .setInvocationTiming(Interval.newBuilder().build())
+            .setResolvedCompilationResult(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3776,6 +5562,13 @@ public class DataformClientHttpJsonTest {
                     .toString())
             .setInvocationConfig(InvocationConfig.newBuilder().build())
             .setInvocationTiming(Interval.newBuilder().build())
+            .setResolvedCompilationResult(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3827,6 +5620,13 @@ public class DataformClientHttpJsonTest {
                     .toString())
             .setInvocationConfig(InvocationConfig.newBuilder().build())
             .setInvocationTiming(Interval.newBuilder().build())
+            .setResolvedCompilationResult(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3956,7 +5756,8 @@ public class DataformClientHttpJsonTest {
 
   @Test
   public void cancelWorkflowInvocationTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    CancelWorkflowInvocationResponse expectedResponse =
+        CancelWorkflowInvocationResponse.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
     CancelWorkflowInvocationRequest request =
@@ -3967,7 +5768,8 @@ public class DataformClientHttpJsonTest {
                     .toString())
             .build();
 
-    client.cancelWorkflowInvocation(request);
+    CancelWorkflowInvocationResponse actualResponse = client.cancelWorkflowInvocation(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
@@ -4068,6 +5870,358 @@ public class DataformClientHttpJsonTest {
               .setPageToken("pageToken873572522")
               .build();
       client.queryWorkflowInvocationActions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getConfigTest() throws Exception {
+    Config expectedResponse =
+        Config.newBuilder()
+            .setName(ConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setDefaultKmsKeyName("defaultKmsKeyName725296666")
+            .setInternalMetadata("internalMetadata6789388")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ConfigName name = ConfigName.of("[PROJECT]", "[LOCATION]");
+
+    Config actualResponse = client.getConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ConfigName name = ConfigName.of("[PROJECT]", "[LOCATION]");
+      client.getConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getConfigTest2() throws Exception {
+    Config expectedResponse =
+        Config.newBuilder()
+            .setName(ConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setDefaultKmsKeyName("defaultKmsKeyName725296666")
+            .setInternalMetadata("internalMetadata6789388")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-505/locations/location-505/config";
+
+    Config actualResponse = client.getConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-505/locations/location-505/config";
+      client.getConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateConfigTest() throws Exception {
+    Config expectedResponse =
+        Config.newBuilder()
+            .setName(ConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setDefaultKmsKeyName("defaultKmsKeyName725296666")
+            .setInternalMetadata("internalMetadata6789388")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Config config =
+        Config.newBuilder()
+            .setName(ConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setDefaultKmsKeyName("defaultKmsKeyName725296666")
+            .setInternalMetadata("internalMetadata6789388")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Config actualResponse = client.updateConfig(config, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Config config =
+          Config.newBuilder()
+              .setName(ConfigName.of("[PROJECT]", "[LOCATION]").toString())
+              .setDefaultKmsKeyName("defaultKmsKeyName725296666")
+              .setInternalMetadata("internalMetadata6789388")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateConfig(config, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ResourceName resource = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+
+    Policy actualResponse = client.getIamPolicy(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceName resource = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+      client.getIamPolicy(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest2() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String resource = "projects/project-5173/locations/location-5173/repositories/repositorie-5173";
+
+    Policy actualResponse = client.getIamPolicy(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String resource =
+          "projects/project-5173/locations/location-5173/repositories/repositorie-5173";
+      client.getIamPolicy(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+            .setPolicy(Policy.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.setIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SetIamPolicyRequest request =
+          SetIamPolicyRequest.newBuilder()
+              .setResource(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+              .setPolicy(Policy.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.setIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestIamPermissionsResponse expectedResponse =
+        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockService.addResponse(expectedResponse);
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+            .addAllPermissions(new ArrayList<String>())
+            .build();
+
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+              .addAllPermissions(new ArrayList<String>())
+              .build();
+      client.testIamPermissions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -4184,168 +6338,6 @@ public class DataformClientHttpJsonTest {
               .setName("projects/project-9062/locations/location-9062")
               .build();
       client.getLocation(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void setIamPolicyTest() throws Exception {
-    Policy expectedResponse =
-        Policy.newBuilder()
-            .setVersion(351608024)
-            .addAllBindings(new ArrayList<Binding>())
-            .addAllAuditConfigs(new ArrayList<AuditConfig>())
-            .setEtag(ByteString.EMPTY)
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    SetIamPolicyRequest request =
-        SetIamPolicyRequest.newBuilder()
-            .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-            .setPolicy(Policy.newBuilder().build())
-            .setUpdateMask(FieldMask.newBuilder().build())
-            .build();
-
-    Policy actualResponse = client.setIamPolicy(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void setIamPolicyExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      SetIamPolicyRequest request =
-          SetIamPolicyRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-              .setPolicy(Policy.newBuilder().build())
-              .setUpdateMask(FieldMask.newBuilder().build())
-              .build();
-      client.setIamPolicy(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getIamPolicyTest() throws Exception {
-    Policy expectedResponse =
-        Policy.newBuilder()
-            .setVersion(351608024)
-            .addAllBindings(new ArrayList<Binding>())
-            .addAllAuditConfigs(new ArrayList<AuditConfig>())
-            .setEtag(ByteString.EMPTY)
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    GetIamPolicyRequest request =
-        GetIamPolicyRequest.newBuilder()
-            .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-            .setOptions(GetPolicyOptions.newBuilder().build())
-            .build();
-
-    Policy actualResponse = client.getIamPolicy(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void getIamPolicyExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      GetIamPolicyRequest request =
-          GetIamPolicyRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-              .setOptions(GetPolicyOptions.newBuilder().build())
-              .build();
-      client.getIamPolicy(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void testIamPermissionsTest() throws Exception {
-    TestIamPermissionsResponse expectedResponse =
-        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
-    mockService.addResponse(expectedResponse);
-
-    TestIamPermissionsRequest request =
-        TestIamPermissionsRequest.newBuilder()
-            .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-            .addAllPermissions(new ArrayList<String>())
-            .build();
-
-    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void testIamPermissionsExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      TestIamPermissionsRequest request =
-          TestIamPermissionsRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-              .addAllPermissions(new ArrayList<String>())
-              .build();
-      client.testIamPermissions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

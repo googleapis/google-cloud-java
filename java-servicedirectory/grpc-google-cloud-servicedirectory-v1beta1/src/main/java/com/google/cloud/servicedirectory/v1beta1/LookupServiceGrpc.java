@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service Directory API for looking up service data at runtime.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/servicedirectory/v1beta1/lookup_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LookupServiceGrpc {
 
@@ -94,6 +91,19 @@ public final class LookupServiceGrpc {
           }
         };
     return LookupServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static LookupServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<LookupServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LookupServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public LookupServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LookupServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return LookupServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -209,6 +219,42 @@ public final class LookupServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LookupService.
+   *
+   * <pre>
+   * Service Directory API for looking up service data at runtime.
+   * </pre>
+   */
+  public static final class LookupServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<LookupServiceBlockingV2Stub> {
+    private LookupServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected LookupServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new LookupServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a [service][google.cloud.servicedirectory.v1beta1.Service] and its
+     * associated endpoints.
+     * Resolving a service is not considered an active developer method.
+     * </pre>
+     */
+    public com.google.cloud.servicedirectory.v1beta1.ResolveServiceResponse resolveService(
+        com.google.cloud.servicedirectory.v1beta1.ResolveServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getResolveServiceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service LookupService.
    *
    * <pre>
    * Service Directory API for looking up service data at runtime.

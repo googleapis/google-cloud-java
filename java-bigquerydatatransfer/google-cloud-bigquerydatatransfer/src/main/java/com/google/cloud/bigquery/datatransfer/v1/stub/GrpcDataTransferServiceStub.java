@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataSource.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataSourcesRequest, ListDataSourcesResponse>
@@ -96,6 +97,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(ListDataSourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataSourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTransferConfigRequest, TransferConfig>
@@ -107,6 +109,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTransferConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TransferConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTransferConfigRequest, TransferConfig>
@@ -118,6 +121,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTransferConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TransferConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTransferConfigRequest, Empty>
@@ -129,6 +133,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTransferConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTransferConfigRequest, TransferConfig>
@@ -140,6 +145,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTransferConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TransferConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTransferConfigsRequest, ListTransferConfigsResponse>
@@ -152,6 +158,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(ListTransferConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTransferConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
@@ -164,6 +171,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(ScheduleTransferRunsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ScheduleTransferRunsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -178,6 +186,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(StartManualTransferRunsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StartManualTransferRunsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTransferRunRequest, TransferRun>
@@ -189,6 +198,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTransferRunRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TransferRun.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTransferRunRequest, Empty>
@@ -200,6 +210,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTransferRunRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTransferRunsRequest, ListTransferRunsResponse>
@@ -212,6 +223,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(ListTransferRunsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTransferRunsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTransferLogsRequest, ListTransferLogsResponse>
@@ -224,6 +236,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(ListTransferLogsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTransferLogsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CheckValidCredsRequest, CheckValidCredsResponse>
@@ -236,6 +249,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(CheckValidCredsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CheckValidCredsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EnrollDataSourcesRequest, Empty>
@@ -247,6 +261,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EnrollDataSourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UnenrollDataSourcesRequest, Empty>
@@ -258,6 +273,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UnenrollDataSourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -269,6 +285,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -277,6 +294,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<GetDataSourceRequest, DataSource> getDataSourceCallable;
@@ -370,6 +388,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDataSourcesRequest, ListDataSourcesResponse>
         listDataSourcesTransportSettings =
@@ -381,6 +400,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateTransferConfigRequest, TransferConfig>
         createTransferConfigTransportSettings =
@@ -392,6 +412,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateTransferConfigRequest, TransferConfig>
         updateTransferConfigTransportSettings =
@@ -415,6 +436,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetTransferConfigRequest, TransferConfig> getTransferConfigTransportSettings =
         GrpcCallSettings.<GetTransferConfigRequest, TransferConfig>newBuilder()
@@ -425,6 +447,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTransferConfigsRequest, ListTransferConfigsResponse>
         listTransferConfigsTransportSettings =
@@ -436,6 +459,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
         scheduleTransferRunsTransportSettings =
@@ -447,6 +471,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
         startManualTransferRunsTransportSettings =
@@ -459,6 +484,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTransferRunRequest, TransferRun> getTransferRunTransportSettings =
         GrpcCallSettings.<GetTransferRunRequest, TransferRun>newBuilder()
@@ -469,6 +495,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteTransferRunRequest, Empty> deleteTransferRunTransportSettings =
         GrpcCallSettings.<DeleteTransferRunRequest, Empty>newBuilder()
@@ -479,6 +506,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTransferRunsRequest, ListTransferRunsResponse>
         listTransferRunsTransportSettings =
@@ -490,6 +518,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListTransferLogsRequest, ListTransferLogsResponse>
         listTransferLogsTransportSettings =
@@ -501,6 +530,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
         checkValidCredsTransportSettings =
@@ -512,6 +542,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<EnrollDataSourcesRequest, Empty> enrollDataSourcesTransportSettings =
         GrpcCallSettings.<EnrollDataSourcesRequest, Empty>newBuilder()

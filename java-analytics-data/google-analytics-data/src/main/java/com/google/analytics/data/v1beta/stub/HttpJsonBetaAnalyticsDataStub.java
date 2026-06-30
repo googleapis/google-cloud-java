@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -617,6 +617,7 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RunRealtimeReportRequest, RunRealtimeReportResponse>
         runRealtimeReportTransportSettings =
@@ -653,6 +654,7 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<QueryAudienceExportRequest, QueryAudienceExportResponse>
         queryAudienceExportTransportSettings =
@@ -678,6 +680,7 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListAudienceExportsRequest, ListAudienceExportsResponse>
         listAudienceExportsTransportSettings =
@@ -691,6 +694,7 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.runReportCallable =

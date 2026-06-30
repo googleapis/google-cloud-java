@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,8 @@ import com.google.cloud.dialogflow.v2.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse;
+import com.google.cloud.dialogflow.v2.SuggestKnowledgeAssistRequest;
+import com.google.cloud.dialogflow.v2.SuggestKnowledgeAssistResponse;
 import com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest;
 import com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse;
 import com.google.cloud.dialogflow.v2.UpdateParticipantRequest;
@@ -70,6 +72,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateParticipantRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Participant.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetParticipantRequest, Participant>
@@ -80,6 +83,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetParticipantRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Participant.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListParticipantsRequest, ListParticipantsResponse>
@@ -91,6 +95,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(ListParticipantsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListParticipantsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateParticipantRequest, Participant>
@@ -101,6 +106,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateParticipantRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Participant.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AnalyzeContentRequest, AnalyzeContentResponse>
@@ -112,6 +118,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(AnalyzeContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnalyzeContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -125,6 +132,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(StreamingAnalyzeContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingAnalyzeContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SuggestArticlesRequest, SuggestArticlesResponse>
@@ -136,6 +144,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(SuggestArticlesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SuggestArticlesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
@@ -147,6 +156,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(SuggestFaqAnswersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SuggestFaqAnswersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
@@ -158,6 +168,21 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(SuggestSmartRepliesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SuggestSmartRepliesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistMethodDescriptor =
+          MethodDescriptor
+              .<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2.Participants/SuggestKnowledgeAssist")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SuggestKnowledgeAssistRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SuggestKnowledgeAssistResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -169,6 +194,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -177,6 +203,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateParticipantRequest, Participant> createParticipantCallable;
@@ -196,6 +223,8 @@ public class GrpcParticipantsStub extends ParticipantsStub {
       suggestFaqAnswersCallable;
   private final UnaryCallable<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
       suggestSmartRepliesCallable;
+  private final UnaryCallable<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -252,6 +281,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetParticipantRequest, Participant> getParticipantTransportSettings =
         GrpcCallSettings.<GetParticipantRequest, Participant>newBuilder()
@@ -262,6 +292,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListParticipantsRequest, ListParticipantsResponse>
         listParticipantsTransportSettings =
@@ -273,6 +304,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateParticipantRequest, Participant> updateParticipantTransportSettings =
         GrpcCallSettings.<UpdateParticipantRequest, Participant>newBuilder()
@@ -295,12 +327,14 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       builder.add("participant", String.valueOf(request.getParticipant()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParticipant())
                 .build();
     GrpcCallSettings<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
         streamingAnalyzeContentTransportSettings =
             GrpcCallSettings
                 .<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>newBuilder()
                 .setMethodDescriptor(streamingAnalyzeContentMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getParticipant())
                 .build();
     GrpcCallSettings<SuggestArticlesRequest, SuggestArticlesResponse>
         suggestArticlesTransportSettings =
@@ -312,6 +346,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
         suggestFaqAnswersTransportSettings =
@@ -323,6 +358,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
         suggestSmartRepliesTransportSettings =
@@ -334,6 +370,20 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+        suggestKnowledgeAssistTransportSettings =
+            GrpcCallSettings
+                .<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>newBuilder()
+                .setMethodDescriptor(suggestKnowledgeAssistMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -395,6 +445,11 @@ public class GrpcParticipantsStub extends ParticipantsStub {
         callableFactory.createUnaryCallable(
             suggestSmartRepliesTransportSettings,
             settings.suggestSmartRepliesSettings(),
+            clientContext);
+    this.suggestKnowledgeAssistCallable =
+        callableFactory.createUnaryCallable(
+            suggestKnowledgeAssistTransportSettings,
+            settings.suggestKnowledgeAssistSettings(),
             clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
@@ -467,6 +522,12 @@ public class GrpcParticipantsStub extends ParticipantsStub {
   public UnaryCallable<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
       suggestSmartRepliesCallable() {
     return suggestSmartRepliesCallable;
+  }
+
+  @Override
+  public UnaryCallable<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistCallable() {
+    return suggestKnowledgeAssistCallable;
   }
 
   @Override

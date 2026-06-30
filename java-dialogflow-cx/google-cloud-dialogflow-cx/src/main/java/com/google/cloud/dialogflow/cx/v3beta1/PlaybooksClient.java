@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,12 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.stub.PlaybooksStub;
@@ -32,8 +35,10 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -148,6 +153,37 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ExportPlaybook</td>
+ *      <td><p> Exports the specified playbook to a binary file.
+ * <p>  Note that resources (e.g. examples, tools) that the playbook references will also be exported.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportPlaybookAsync(ExportPlaybookRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportPlaybookOperationCallable()
+ *           <li><p> exportPlaybookCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ImportPlaybook</td>
+ *      <td><p> Imports the specified playbook to the specified agent from a binary file.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> importPlaybookAsync(ImportPlaybookRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> importPlaybookOperationCallable()
+ *           <li><p> importPlaybookCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> UpdatePlaybook</td>
  *      <td><p> Updates the specified Playbook.</td>
  *      <td>
@@ -204,6 +240,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> RestorePlaybookVersion</td>
+ *      <td><p> Retrieves the specified version of the Playbook and stores it as the current playbook draft, returning the playbook with resources updated.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> restorePlaybookVersion(RestorePlaybookVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> restorePlaybookVersion(PlaybookVersionName name)
+ *           <li><p> restorePlaybookVersion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> restorePlaybookVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListPlaybookVersions</td>
  *      <td><p> Lists versions for the specified Playbook.</td>
  *      <td>
@@ -244,7 +299,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -330,6 +387,8 @@ import javax.annotation.Generated;
 public class PlaybooksClient implements BackgroundResource {
   private final PlaybooksSettings settings;
   private final PlaybooksStub stub;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of PlaybooksClient with default settings. */
   public static final PlaybooksClient create() throws IOException {
@@ -359,11 +418,17 @@ public class PlaybooksClient implements BackgroundResource {
   protected PlaybooksClient(PlaybooksSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((PlaybooksStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected PlaybooksClient(PlaybooksStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final PlaybooksSettings getSettings() {
@@ -372,6 +437,23 @@ public class PlaybooksClient implements BackgroundResource {
 
   public PlaybooksStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
+    return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -393,8 +475,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create a playbook for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to create a playbook for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param playbook Required. The playbook to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -426,8 +508,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create a playbook for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to create a playbook for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param playbook Required. The playbook to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -512,9 +594,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the playbook to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;`.
+   * @param name Required. The name of the playbook to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deletePlaybook(PlaybookName name) {
@@ -541,9 +622,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the playbook to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;`.
+   * @param name Required. The name of the playbook to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deletePlaybook(String name) {
@@ -628,8 +708,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list playbooks from. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to list playbooks from. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPlaybooksPagedResponse listPlaybooks(AgentName parent) {
@@ -660,8 +740,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list playbooks from. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to list playbooks from. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPlaybooksPagedResponse listPlaybooks(String parent) {
@@ -789,9 +869,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the playbook. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;`.
+   * @param name Required. The name of the playbook. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Playbook getPlaybook(PlaybookName name) {
@@ -818,9 +897,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the playbook. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;`.
+   * @param name Required. The name of the playbook. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Playbook getPlaybook(String name) {
@@ -883,6 +961,194 @@ public class PlaybooksClient implements BackgroundResource {
    */
   public final UnaryCallable<GetPlaybookRequest, Playbook> getPlaybookCallable() {
     return stub.getPlaybookCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports the specified playbook to a binary file.
+   *
+   * <p>Note that resources (e.g. examples, tools) that the playbook references will also be
+   * exported.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlaybooksClient playbooksClient = PlaybooksClient.create()) {
+   *   ExportPlaybookRequest request =
+   *       ExportPlaybookRequest.newBuilder()
+   *           .setName(
+   *               PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
+   *           .setPlaybookUri("playbookUri2118184975")
+   *           .build();
+   *   ExportPlaybookResponse response = playbooksClient.exportPlaybookAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportPlaybookResponse, Struct> exportPlaybookAsync(
+      ExportPlaybookRequest request) {
+    return exportPlaybookOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports the specified playbook to a binary file.
+   *
+   * <p>Note that resources (e.g. examples, tools) that the playbook references will also be
+   * exported.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlaybooksClient playbooksClient = PlaybooksClient.create()) {
+   *   ExportPlaybookRequest request =
+   *       ExportPlaybookRequest.newBuilder()
+   *           .setName(
+   *               PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
+   *           .setPlaybookUri("playbookUri2118184975")
+   *           .build();
+   *   OperationFuture<ExportPlaybookResponse, Struct> future =
+   *       playbooksClient.exportPlaybookOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportPlaybookResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ExportPlaybookRequest, ExportPlaybookResponse, Struct>
+      exportPlaybookOperationCallable() {
+    return stub.exportPlaybookOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports the specified playbook to a binary file.
+   *
+   * <p>Note that resources (e.g. examples, tools) that the playbook references will also be
+   * exported.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlaybooksClient playbooksClient = PlaybooksClient.create()) {
+   *   ExportPlaybookRequest request =
+   *       ExportPlaybookRequest.newBuilder()
+   *           .setName(
+   *               PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
+   *           .setPlaybookUri("playbookUri2118184975")
+   *           .build();
+   *   ApiFuture<Operation> future = playbooksClient.exportPlaybookCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportPlaybookRequest, Operation> exportPlaybookCallable() {
+    return stub.exportPlaybookCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports the specified playbook to the specified agent from a binary file.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlaybooksClient playbooksClient = PlaybooksClient.create()) {
+   *   ImportPlaybookRequest request =
+   *       ImportPlaybookRequest.newBuilder()
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setImportStrategy(PlaybookImportStrategy.newBuilder().build())
+   *           .build();
+   *   ImportPlaybookResponse response = playbooksClient.importPlaybookAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportPlaybookResponse, Struct> importPlaybookAsync(
+      ImportPlaybookRequest request) {
+    return importPlaybookOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports the specified playbook to the specified agent from a binary file.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlaybooksClient playbooksClient = PlaybooksClient.create()) {
+   *   ImportPlaybookRequest request =
+   *       ImportPlaybookRequest.newBuilder()
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setImportStrategy(PlaybookImportStrategy.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ImportPlaybookResponse, Struct> future =
+   *       playbooksClient.importPlaybookOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ImportPlaybookResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ImportPlaybookRequest, ImportPlaybookResponse, Struct>
+      importPlaybookOperationCallable() {
+    return stub.importPlaybookOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports the specified playbook to the specified agent from a binary file.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlaybooksClient playbooksClient = PlaybooksClient.create()) {
+   *   ImportPlaybookRequest request =
+   *       ImportPlaybookRequest.newBuilder()
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setImportStrategy(PlaybookImportStrategy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = playbooksClient.importPlaybookCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportPlaybookRequest, Operation> importPlaybookCallable() {
+    return stub.importPlaybookCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -991,9 +1257,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The playbook to create a version for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;`.
+   * @param parent Required. The playbook to create a version for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @param playbookVersion Required. The playbook version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1027,9 +1292,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The playbook to create a version for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;`.
+   * @param parent Required. The playbook to create a version for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @param playbookVersion Required. The playbook version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1123,9 +1387,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the playbook version. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;/versions/&lt;Version ID&gt;`.
+   * @param name Required. The name of the playbook version. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PlaybookVersion getPlaybookVersion(PlaybookVersionName name) {
@@ -1156,9 +1419,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the playbook version. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;/versions/&lt;Version ID&gt;`.
+   * @param name Required. The name of the playbook version. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PlaybookVersion getPlaybookVersion(String name) {
@@ -1232,6 +1494,135 @@ public class PlaybooksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Retrieves the specified version of the Playbook and stores it as the current playbook draft,
+   * returning the playbook with resources updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlaybooksClient playbooksClient = PlaybooksClient.create()) {
+   *   PlaybookVersionName name =
+   *       PlaybookVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]", "[VERSION]");
+   *   RestorePlaybookVersionResponse response = playbooksClient.restorePlaybookVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the playbook version. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestorePlaybookVersionResponse restorePlaybookVersion(PlaybookVersionName name) {
+    RestorePlaybookVersionRequest request =
+        RestorePlaybookVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return restorePlaybookVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the specified version of the Playbook and stores it as the current playbook draft,
+   * returning the playbook with resources updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlaybooksClient playbooksClient = PlaybooksClient.create()) {
+   *   String name =
+   *       PlaybookVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]", "[VERSION]")
+   *           .toString();
+   *   RestorePlaybookVersionResponse response = playbooksClient.restorePlaybookVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the playbook version. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestorePlaybookVersionResponse restorePlaybookVersion(String name) {
+    RestorePlaybookVersionRequest request =
+        RestorePlaybookVersionRequest.newBuilder().setName(name).build();
+    return restorePlaybookVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the specified version of the Playbook and stores it as the current playbook draft,
+   * returning the playbook with resources updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlaybooksClient playbooksClient = PlaybooksClient.create()) {
+   *   RestorePlaybookVersionRequest request =
+   *       RestorePlaybookVersionRequest.newBuilder()
+   *           .setName(
+   *               PlaybookVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]", "[VERSION]")
+   *                   .toString())
+   *           .build();
+   *   RestorePlaybookVersionResponse response = playbooksClient.restorePlaybookVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestorePlaybookVersionResponse restorePlaybookVersion(
+      RestorePlaybookVersionRequest request) {
+    return restorePlaybookVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the specified version of the Playbook and stores it as the current playbook draft,
+   * returning the playbook with resources updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlaybooksClient playbooksClient = PlaybooksClient.create()) {
+   *   RestorePlaybookVersionRequest request =
+   *       RestorePlaybookVersionRequest.newBuilder()
+   *           .setName(
+   *               PlaybookVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]", "[VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<RestorePlaybookVersionResponse> future =
+   *       playbooksClient.restorePlaybookVersionCallable().futureCall(request);
+   *   // Do something.
+   *   RestorePlaybookVersionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
+      restorePlaybookVersionCallable() {
+    return stub.restorePlaybookVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists versions for the specified Playbook.
    *
    * <p>Sample code:
@@ -1250,9 +1641,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The playbook to list versions for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;`.
+   * @param parent Required. The playbook to list versions for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPlaybookVersionsPagedResponse listPlaybookVersions(PlaybookName parent) {
@@ -1284,9 +1674,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The playbook to list versions for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;`.
+   * @param parent Required. The playbook to list versions for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPlaybookVersionsPagedResponse listPlaybookVersions(String parent) {
@@ -1423,9 +1812,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the playbook version to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;/versions/&lt;Version ID&gt;`.
+   * @param name Required. The name of the playbook version to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deletePlaybookVersion(PlaybookVersionName name) {
@@ -1456,9 +1844,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the playbook version to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;/versions/&lt;Version ID&gt;`.
+   * @param name Required. The name of the playbook version to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deletePlaybookVersion(String name) {
@@ -1532,6 +1919,18 @@ public class PlaybooksClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1565,6 +1964,18 @@ public class PlaybooksClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1597,6 +2008,18 @@ public class PlaybooksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

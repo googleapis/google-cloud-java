@@ -19,6 +19,9 @@ deep-remove-regex:
 - "/java-analytics-data/google-.*/src"
 - "/java-analytics-data/samples/snippets/generated"
 
+deep-preserve-regex:
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+
 deep-copy-regex:
 - source: "/google/analytics/data/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-analytics-data/$1/proto-google-analytics-data-$1/src"

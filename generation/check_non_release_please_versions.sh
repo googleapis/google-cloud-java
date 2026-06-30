@@ -8,11 +8,39 @@ for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
       [[ "${pomFile}" =~ .*google-cloud-pom-parent.* ]] || \
       [[ "${pomFile}" =~ .*CoverageAggregator.* ]] || \
       [[ "${pomFile}" =~ .*java-shared-dependencies*. ]] || \
+      [[ "${pomFile}" =~ .*java-bigquerystorage.* ]] || \
+      [[ "${pomFile}" =~ .*java-datastore.* ]] || \
+      [[ "${pomFile}" =~ .*java-logging-logback.* ]] || \
+      [[ "${pomFile}" =~ .*java-bigquery.* ]] || \
+      [[ "${pomFile}" =~ .*sdk-platform-java.* ]] || \
+      [[ "${pomFile}" =~ .*java-common-protos.* ]] || \
+      [[ "${pomFile}" =~ .*java-showcase.* ]] || \
+      [[ "${pomFile}" =~ .*java-iam.* ]] || \
+      [[ "${pomFile}" =~ .*java-spanner.* ]] || \
+      [[ "${pomFile}" =~ .*java-spanner-jdbc.* ]] || \
+      [[ "${pomFile}" =~ .*google-auth-library-java.* ]] || \
+      [[ "${pomFile}" =~ .*grpc-gcp.* ]] || \
+      [[ "${pomFile}" =~ .*java-storage.* ]] || \
+      [[ "${pomFile}" =~ .*java-storage-nio.* ]] || \
+      [[ "${pomFile}" =~ .*java-pubsub.* ]] || \
+      [[ "${pomFile}" =~ .*java-bigtable.* ]] || \
+      [[ "${pomFile}" =~ .*java-firestore.* ]] || \
+      [[ "${pomFile}" =~ .*java-shared-config.* ]] || \
+      [[ "${pomFile}" =~ .*java-vertexai.* ]] || \
+      [[ "${pomFile}" =~ .*java-compute.* ]] || \
       [[ "${pomFile}" =~ .*.github*. ]]; then
     continue
   fi
   if [[ "${pomFile}" =~ .*owl-bot-postprocessor.* ]]; then
     # Skip the template files
+    continue
+  fi
+  if [[ "${pomFile}" =~ .*java-samples.* ]]; then
+    echo "Skipping version check for java-samples directory"
+    continue
+  fi
+  if [[ "${pomFile}" =~ .*/samples/.* ]]; then
+    echo "Skipping version check for samples directory"
     continue
   fi
 

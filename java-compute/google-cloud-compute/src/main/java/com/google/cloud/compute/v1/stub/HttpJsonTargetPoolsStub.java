@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AddHealthCheckTargetPoolRequest;
 import com.google.cloud.compute.v1.AddInstanceTargetPoolRequest;
 import com.google.cloud.compute.v1.AggregatedListTargetPoolsRequest;
@@ -51,6 +52,8 @@ import com.google.cloud.compute.v1.TargetPool;
 import com.google.cloud.compute.v1.TargetPoolAggregatedList;
 import com.google.cloud.compute.v1.TargetPoolInstanceHealth;
 import com.google.cloud.compute.v1.TargetPoolList;
+import com.google.cloud.compute.v1.TestIamPermissionsTargetPoolRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -714,6 +717,49 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.TargetPools/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsTargetPoolRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/targetPools/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<AddHealthCheckTargetPoolRequest, Operation> addHealthCheckCallable;
   private final OperationCallable<AddHealthCheckTargetPoolRequest, Operation, Operation>
       addHealthCheckOperationCallable;
@@ -749,10 +795,39 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
       setSecurityPolicyCallable;
   private final OperationCallable<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
       setSecurityPolicyOperationCallable;
+  private final UnaryCallable<TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate ADD_HEALTH_CHECK_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/targetPools/{target_pool}");
+  private static final PathTemplate ADD_INSTANCE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/targetPools/{target_pool}");
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/targetPools/{target_pool}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/targetPools/{target_pool}");
+  private static final PathTemplate GET_HEALTH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/targetPools/{target_pool}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate REMOVE_HEALTH_CHECK_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/targetPools/{target_pool}");
+  private static final PathTemplate REMOVE_INSTANCE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/targetPools/{target_pool}");
+  private static final PathTemplate SET_BACKUP_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/targetPools/{target_pool}");
+  private static final PathTemplate SET_SECURITY_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/targetPools/{target_pool}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/targetPools/{resource}");
 
   public static final HttpJsonTargetPoolsStub create(TargetPoolsStubSettings settings)
       throws IOException {
@@ -807,6 +882,16 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       builder.add("target_pool", String.valueOf(request.getTargetPool()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put(
+                          "target_pool", String.valueOf(request.getTargetPool()));
+                      return ADD_HEALTH_CHECK_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<AddInstanceTargetPoolRequest, Operation> addInstanceTransportSettings =
         HttpJsonCallSettings.<AddInstanceTargetPoolRequest, Operation>newBuilder()
@@ -819,6 +904,14 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("target_pool", String.valueOf(request.getTargetPool()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("target_pool", String.valueOf(request.getTargetPool()));
+                  return ADD_INSTANCE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<AggregatedListTargetPoolsRequest, TargetPoolAggregatedList>
@@ -833,6 +926,13 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteTargetPoolRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteTargetPoolRequest, Operation>newBuilder()
@@ -846,6 +946,14 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   builder.add("target_pool", String.valueOf(request.getTargetPool()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("target_pool", String.valueOf(request.getTargetPool()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetTargetPoolRequest, TargetPool> getTransportSettings =
         HttpJsonCallSettings.<GetTargetPoolRequest, TargetPool>newBuilder()
@@ -858,6 +966,14 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("target_pool", String.valueOf(request.getTargetPool()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("target_pool", String.valueOf(request.getTargetPool()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetHealthTargetPoolRequest, TargetPoolInstanceHealth>
@@ -873,6 +989,15 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       builder.add("target_pool", String.valueOf(request.getTargetPool()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put(
+                          "target_pool", String.valueOf(request.getTargetPool()));
+                      return GET_HEALTH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertTargetPoolRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertTargetPoolRequest, Operation>newBuilder()
@@ -885,6 +1010,13 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListTargetPoolsRequest, TargetPoolList> listTransportSettings =
         HttpJsonCallSettings.<ListTargetPoolsRequest, TargetPoolList>newBuilder()
@@ -896,6 +1028,13 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<RemoveHealthCheckTargetPoolRequest, Operation>
@@ -911,6 +1050,16 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       builder.add("target_pool", String.valueOf(request.getTargetPool()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put(
+                          "target_pool", String.valueOf(request.getTargetPool()));
+                      return REMOVE_HEALTH_CHECK_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<RemoveInstanceTargetPoolRequest, Operation>
         removeInstanceTransportSettings =
@@ -925,6 +1074,16 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       builder.add("target_pool", String.valueOf(request.getTargetPool()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put(
+                          "target_pool", String.valueOf(request.getTargetPool()));
+                      return REMOVE_INSTANCE_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetBackupTargetPoolRequest, Operation> setBackupTransportSettings =
         HttpJsonCallSettings.<SetBackupTargetPoolRequest, Operation>newBuilder()
@@ -937,6 +1096,14 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("target_pool", String.valueOf(request.getTargetPool()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("target_pool", String.valueOf(request.getTargetPool()));
+                  return SET_BACKUP_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetSecurityPolicyTargetPoolRequest, Operation>
@@ -951,6 +1118,40 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       builder.add("region", String.valueOf(request.getRegion()));
                       builder.add("target_pool", String.valueOf(request.getTargetPool()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put(
+                          "target_pool", String.valueOf(request.getTargetPool()));
+                      return SET_SECURITY_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
+    HttpJsonCallSettings<TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 
@@ -1048,6 +1249,11 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
             settings.setSecurityPolicyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1068,6 +1274,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
     methodDescriptors.add(removeInstanceMethodDescriptor);
     methodDescriptors.add(setBackupMethodDescriptor);
     methodDescriptors.add(setSecurityPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1189,6 +1396,12 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
   public OperationCallable<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
       setSecurityPolicyOperationCallable() {
     return setSecurityPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

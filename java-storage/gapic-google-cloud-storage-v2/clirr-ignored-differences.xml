@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <!-- Remove REGAPIC client which GCS does not support -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/storage/v2/StorageSettings</className>
+    <method>* *HttpJson*Builder()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/storage/v2/stub/StorageStubSettings</className>
+    <method>* *HttpJson*Builder()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/storage/v2/stub/StorageStubSettings</className>
+    <method>* defaultGrpcApiClientHeaderProviderBuilder()</method>
+  </difference>
+
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/storage/v2/stub/HttpJsonStorageCallableFactory</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/storage/v2/stub/HttpJsonStorageStub</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/storage/v2/StorageClient$ListHmacKeysFixedSizeCollection</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/storage/v2/StorageClient$ListHmacKeysPage</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/storage/v2/StorageClient$ListHmacKeysPagedResponse</className>
+  </difference>
+
+  <!-- Allow rename from Notification to NotificationConfig-->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/storage/v2/*</className>
+    <method>* *Notification*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/storage/v2/stub/*</className>
+    <method>* *Notification*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/storage/v2/*</className>
+    <method>* *Hmac*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/storage/v2/stub/*</className>
+    <method>* *Hmac*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/storage/v2/*</className>
+    <method>* *ServiceAccount*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/storage/v2/stub/*</className>
+    <method>* *ServiceAccount*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/storage/v2/StorageClient$ListNotification*</className>
+  </difference>
+
+  <!-- Allow more specific parent resource method parameters -->
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/storage/v2/StorageClient</className>
+    <method>* *(*Name*)</method>
+    <to>* *(*Name*)</to>
+  </difference>
+
+</differences>

@@ -49,11 +49,22 @@ function determineMavenOpts() {
 
 export MAVEN_OPTS=$(determineMavenOpts)
 
-# this should run maven enforcer
-retry_with_backoff 3 10 \
-  mvn install -B -V -ntp \
-    -DskipTests=true \
-    -Dmaven.javadoc.skip=true \
-    -Dclirr.skip=true
+if [[ -n "${BUILD_SUBDIR}" ]]
+then
+  echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+  install_modules "${BUILD_SUBDIR}"
+  echo "Running in subdir: ${BUILD_SUBDIR}"
+  pushd "${BUILD_SUBDIR}"
+fi
 
-mvn -B dependency:analyze -DfailOnWarning=true
+# this should run maven enforcer
+mvn install -B -V -ntp \
+  -Pquick-build -DskipTests=true -Dmaven.javadoc.skip=true -Denforcer.skip=false
+
+mvn -B dependency:analyze -Pquick-build -DfailOnWarning=true -Dmdep.analyze.skip=false
+
+if [[ -n "${BUILD_SUBDIR}" ]]
+then
+  echo "Leaving subdir: ${BUILD_SUBDIR}"
+  popd
+fi

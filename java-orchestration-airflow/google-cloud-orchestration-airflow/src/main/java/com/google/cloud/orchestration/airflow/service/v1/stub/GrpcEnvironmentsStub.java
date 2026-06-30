@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest;
+import com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeResponse;
 import com.google.cloud.orchestration.airflow.service.v1.CreateEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsConfigMapRequest;
 import com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest;
@@ -93,6 +95,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEnvironmentRequest, Environment>
@@ -104,6 +107,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Environment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEnvironmentsRequest, ListEnvironmentsResponse>
@@ -116,6 +120,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(ListEnvironmentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEnvironmentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEnvironmentRequest, Operation>
@@ -127,6 +132,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEnvironmentRequest, Operation>
@@ -138,6 +144,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>
@@ -150,6 +157,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(ExecuteAirflowCommandRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ExecuteAirflowCommandResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopAirflowCommandRequest, StopAirflowCommandResponse>
@@ -162,6 +170,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(StopAirflowCommandRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StopAirflowCommandResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PollAirflowCommandRequest, PollAirflowCommandResponse>
@@ -174,6 +183,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(PollAirflowCommandRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PollAirflowCommandResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListWorkloadsRequest, ListWorkloadsResponse>
@@ -186,6 +196,18 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(ListWorkloadsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkloadsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CheckUpgradeRequest, Operation>
+      checkUpgradeMethodDescriptor =
+          MethodDescriptor.<CheckUpgradeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/CheckUpgrade")
+              .setRequestMarshaller(ProtoUtils.marshaller(CheckUpgradeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
@@ -198,6 +220,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(CreateUserWorkloadsSecretRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UserWorkloadsSecret.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
@@ -210,6 +233,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(GetUserWorkloadsSecretRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UserWorkloadsSecret.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -224,6 +248,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(ListUserWorkloadsSecretsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUserWorkloadsSecretsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
@@ -236,6 +261,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(UpdateUserWorkloadsSecretRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UserWorkloadsSecret.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteUserWorkloadsSecretRequest, Empty>
@@ -247,6 +273,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteUserWorkloadsSecretRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
@@ -259,6 +286,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(CreateUserWorkloadsConfigMapRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UserWorkloadsConfigMap.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
@@ -271,6 +299,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(GetUserWorkloadsConfigMapRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UserWorkloadsConfigMap.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -285,6 +314,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(ListUserWorkloadsConfigMapsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUserWorkloadsConfigMapsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
@@ -297,6 +327,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(UpdateUserWorkloadsConfigMapRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UserWorkloadsConfigMap.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteUserWorkloadsConfigMapRequest, Empty>
@@ -308,6 +339,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteUserWorkloadsConfigMapRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SaveSnapshotRequest, Operation>
@@ -318,6 +350,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   "google.cloud.orchestration.airflow.service.v1.Environments/SaveSnapshot")
               .setRequestMarshaller(ProtoUtils.marshaller(SaveSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<LoadSnapshotRequest, Operation>
@@ -328,6 +361,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   "google.cloud.orchestration.airflow.service.v1.Environments/LoadSnapshot")
               .setRequestMarshaller(ProtoUtils.marshaller(LoadSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DatabaseFailoverRequest, Operation>
@@ -339,6 +373,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DatabaseFailoverRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -353,6 +388,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(FetchDatabasePropertiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchDatabasePropertiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable;
@@ -378,6 +414,9 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
   private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable;
   private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
       listWorkloadsPagedCallable;
+  private final UnaryCallable<CheckUpgradeRequest, Operation> checkUpgradeCallable;
+  private final OperationCallable<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+      checkUpgradeOperationCallable;
   private final UnaryCallable<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
       createUserWorkloadsSecretCallable;
   private final UnaryCallable<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
@@ -554,6 +593,17 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<CheckUpgradeRequest, Operation> checkUpgradeTransportSettings =
+        GrpcCallSettings.<CheckUpgradeRequest, Operation>newBuilder()
+            .setMethodDescriptor(checkUpgradeMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("environment", String.valueOf(request.getEnvironment()));
+                  return builder.build();
+                })
             .build();
     GrpcCallSettings<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
         createUserWorkloadsSecretTransportSettings =
@@ -565,6 +615,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
         getUserWorkloadsSecretTransportSettings =
@@ -576,6 +627,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>
         listUserWorkloadsSecretsTransportSettings =
@@ -588,6 +640,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
         updateUserWorkloadsSecretTransportSettings =
@@ -612,6 +665,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
         createUserWorkloadsConfigMapTransportSettings =
@@ -624,6 +678,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
         getUserWorkloadsConfigMapTransportSettings =
@@ -635,6 +690,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>
         listUserWorkloadsConfigMapsTransportSettings =
@@ -648,6 +704,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
         updateUserWorkloadsConfigMapTransportSettings =
@@ -673,6 +730,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SaveSnapshotRequest, Operation> saveSnapshotTransportSettings =
         GrpcCallSettings.<SaveSnapshotRequest, Operation>newBuilder()
@@ -715,6 +773,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("environment", String.valueOf(request.getEnvironment()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getEnvironment())
                 .build();
 
     this.createEnvironmentCallable =
@@ -780,6 +839,15 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
     this.listWorkloadsPagedCallable =
         callableFactory.createPagedCallable(
             listWorkloadsTransportSettings, settings.listWorkloadsSettings(), clientContext);
+    this.checkUpgradeCallable =
+        callableFactory.createUnaryCallable(
+            checkUpgradeTransportSettings, settings.checkUpgradeSettings(), clientContext);
+    this.checkUpgradeOperationCallable =
+        callableFactory.createOperationCallable(
+            checkUpgradeTransportSettings,
+            settings.checkUpgradeOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createUserWorkloadsSecretCallable =
         callableFactory.createUnaryCallable(
             createUserWorkloadsSecretTransportSettings,
@@ -958,6 +1026,17 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
   public UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
       listWorkloadsPagedCallable() {
     return listWorkloadsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CheckUpgradeRequest, Operation> checkUpgradeCallable() {
+    return checkUpgradeCallable;
+  }
+
+  @Override
+  public OperationCallable<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+      checkUpgradeOperationCallable() {
+    return checkUpgradeOperationCallable;
   }
 
   @Override

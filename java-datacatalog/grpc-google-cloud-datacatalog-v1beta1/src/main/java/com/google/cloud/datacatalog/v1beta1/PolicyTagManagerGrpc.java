@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * and policy tags.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/datacatalog/v1beta1/policytagmanager.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PolicyTagManagerGrpc {
 
@@ -628,6 +625,19 @@ public final class PolicyTagManagerGrpc {
     return PolicyTagManagerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static PolicyTagManagerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<PolicyTagManagerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PolicyTagManagerBlockingV2Stub>() {
+          @java.lang.Override
+          public PolicyTagManagerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PolicyTagManagerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return PolicyTagManagerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1120,6 +1130,210 @@ public final class PolicyTagManagerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service PolicyTagManager.
+   *
+   * <pre>
+   * The policy tag manager API service allows clients to manage their taxonomies
+   * and policy tags.
+   * </pre>
+   */
+  public static final class PolicyTagManagerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<PolicyTagManagerBlockingV2Stub> {
+    private PolicyTagManagerBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected PolicyTagManagerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new PolicyTagManagerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a taxonomy in the specified project.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1beta1.Taxonomy createTaxonomy(
+        com.google.cloud.datacatalog.v1beta1.CreateTaxonomyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateTaxonomyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a taxonomy. This operation will also delete all
+     * policy tags in this taxonomy along with their associated policies.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTaxonomy(
+        com.google.cloud.datacatalog.v1beta1.DeleteTaxonomyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTaxonomyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a taxonomy.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1beta1.Taxonomy updateTaxonomy(
+        com.google.cloud.datacatalog.v1beta1.UpdateTaxonomyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateTaxonomyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all taxonomies in a project in a particular location that the caller
+     * has permission to view.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1beta1.ListTaxonomiesResponse listTaxonomies(
+        com.google.cloud.datacatalog.v1beta1.ListTaxonomiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTaxonomiesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a taxonomy.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1beta1.Taxonomy getTaxonomy(
+        com.google.cloud.datacatalog.v1beta1.GetTaxonomyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTaxonomyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a policy tag in the specified taxonomy.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1beta1.PolicyTag createPolicyTag(
+        com.google.cloud.datacatalog.v1beta1.CreatePolicyTagRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreatePolicyTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a policy tag. Also deletes all of its descendant policy tags.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deletePolicyTag(
+        com.google.cloud.datacatalog.v1beta1.DeletePolicyTagRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeletePolicyTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a policy tag.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1beta1.PolicyTag updatePolicyTag(
+        com.google.cloud.datacatalog.v1beta1.UpdatePolicyTagRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdatePolicyTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all policy tags in a taxonomy.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1beta1.ListPolicyTagsResponse listPolicyTags(
+        com.google.cloud.datacatalog.v1beta1.ListPolicyTagsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListPolicyTagsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a policy tag.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1beta1.PolicyTag getPolicyTag(
+        com.google.cloud.datacatalog.v1beta1.GetPolicyTagRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetPolicyTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM policy for a taxonomy or a policy tag.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM policy for a taxonomy or a policy tag.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the permissions that a caller has on the specified taxonomy or
+     * policy tag.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service PolicyTagManager.
    *
    * <pre>
    * The policy tag manager API service allows clients to manage their taxonomies

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * API v1 service for Cloud AI Platform Notebooks.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/notebooks/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class NotebookServiceGrpc {
 
@@ -1594,6 +1591,19 @@ public final class NotebookServiceGrpc {
     return NotebookServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static NotebookServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<NotebookServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<NotebookServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public NotebookServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new NotebookServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return NotebookServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2719,6 +2729,503 @@ public final class NotebookServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service NotebookService.
+   *
+   * <pre>
+   * API v1 service for Cloud AI Platform Notebooks.
+   * </pre>
+   */
+  public static final class NotebookServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<NotebookServiceBlockingV2Stub> {
+    private NotebookServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected NotebookServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new NotebookServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists instances in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.notebooks.v1.ListInstancesResponse listInstances(
+        com.google.cloud.notebooks.v1.ListInstancesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListInstancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Instance.
+     * </pre>
+     */
+    public com.google.cloud.notebooks.v1.Instance getInstance(
+        com.google.cloud.notebooks.v1.GetInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Instance in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createInstance(
+        com.google.cloud.notebooks.v1.CreateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Registers an existing legacy notebook instance to the Notebooks API server.
+     * Legacy instances are instances created with the legacy Compute Engine
+     * calls. They are not manageable by the Notebooks API out of the box. This
+     * call makes these instances manageable by the Notebooks API.
+     * </pre>
+     */
+    public com.google.longrunning.Operation registerInstance(
+        com.google.cloud.notebooks.v1.RegisterInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRegisterInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the guest accelerators of a single Instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation setInstanceAccelerator(
+        com.google.cloud.notebooks.v1.SetInstanceAcceleratorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSetInstanceAcceleratorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the machine type of a single Instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation setInstanceMachineType(
+        com.google.cloud.notebooks.v1.SetInstanceMachineTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSetInstanceMachineTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update Notebook Instance configurations.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateInstanceConfig(
+        com.google.cloud.notebooks.v1.UpdateInstanceConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateInstanceConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Shielded instance configuration of a single Instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateShieldedInstanceConfig(
+        com.google.cloud.notebooks.v1.UpdateShieldedInstanceConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateShieldedInstanceConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Replaces all the labels of an Instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation setInstanceLabels(
+        com.google.cloud.notebooks.v1.SetInstanceLabelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSetInstanceLabelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add/update metadata items for an instance.
+     * </pre>
+     */
+    public com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse
+        updateInstanceMetadataItems(
+            com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateInstanceMetadataItemsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteInstance(
+        com.google.cloud.notebooks.v1.DeleteInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a notebook instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startInstance(
+        com.google.cloud.notebooks.v1.StartInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStartInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops a notebook instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation stopInstance(
+        com.google.cloud.notebooks.v1.StopInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStopInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resets a notebook instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation resetInstance(
+        com.google.cloud.notebooks.v1.ResetInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getResetInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Allows notebook instances to
+     * report their latest instance information to the Notebooks
+     * API server. The server will merge the reported information to
+     * the instance metadata store. Do not use this method directly.
+     * </pre>
+     */
+    public com.google.longrunning.Operation reportInstanceInfo(
+        com.google.cloud.notebooks.v1.ReportInstanceInfoRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getReportInstanceInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Check if a notebook instance is upgradable.
+     * </pre>
+     */
+    public com.google.cloud.notebooks.v1.IsInstanceUpgradeableResponse isInstanceUpgradeable(
+        com.google.cloud.notebooks.v1.IsInstanceUpgradeableRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getIsInstanceUpgradeableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Check if a notebook instance is healthy.
+     * </pre>
+     */
+    public com.google.cloud.notebooks.v1.GetInstanceHealthResponse getInstanceHealth(
+        com.google.cloud.notebooks.v1.GetInstanceHealthRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetInstanceHealthMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrades a notebook instance to the latest version.
+     * </pre>
+     */
+    public com.google.longrunning.Operation upgradeInstance(
+        com.google.cloud.notebooks.v1.UpgradeInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpgradeInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rollbacks a notebook instance to the previous version.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rollbackInstance(
+        com.google.cloud.notebooks.v1.RollbackInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRollbackInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Diagnostic File and runs Diagnostic Tool given an Instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation diagnoseInstance(
+        com.google.cloud.notebooks.v1.DiagnoseInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDiagnoseInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Allows notebook instances to
+     * call this endpoint to upgrade themselves. Do not use this method directly.
+     * </pre>
+     */
+    public com.google.longrunning.Operation upgradeInstanceInternal(
+        com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpgradeInstanceInternalMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists environments in a project.
+     * </pre>
+     */
+    public com.google.cloud.notebooks.v1.ListEnvironmentsResponse listEnvironments(
+        com.google.cloud.notebooks.v1.ListEnvironmentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListEnvironmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Environment.
+     * </pre>
+     */
+    public com.google.cloud.notebooks.v1.Environment getEnvironment(
+        com.google.cloud.notebooks.v1.GetEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Environment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEnvironment(
+        com.google.cloud.notebooks.v1.CreateEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Environment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteEnvironment(
+        com.google.cloud.notebooks.v1.DeleteEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists schedules in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.notebooks.v1.ListSchedulesResponse listSchedules(
+        com.google.cloud.notebooks.v1.ListSchedulesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListSchedulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of schedule
+     * </pre>
+     */
+    public com.google.cloud.notebooks.v1.Schedule getSchedule(
+        com.google.cloud.notebooks.v1.GetScheduleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes schedule and all underlying jobs
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSchedule(
+        com.google.cloud.notebooks.v1.DeleteScheduleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Scheduled Notebook in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSchedule(
+        com.google.cloud.notebooks.v1.CreateScheduleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers execution of an existing schedule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation triggerSchedule(
+        com.google.cloud.notebooks.v1.TriggerScheduleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTriggerScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists executions in a given project and location
+     * </pre>
+     */
+    public com.google.cloud.notebooks.v1.ListExecutionsResponse listExecutions(
+        com.google.cloud.notebooks.v1.ListExecutionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListExecutionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of executions
+     * </pre>
+     */
+    public com.google.cloud.notebooks.v1.Execution getExecution(
+        com.google.cloud.notebooks.v1.GetExecutionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetExecutionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes execution
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteExecution(
+        com.google.cloud.notebooks.v1.DeleteExecutionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteExecutionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Execution in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createExecution(
+        com.google.cloud.notebooks.v1.CreateExecutionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateExecutionMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service NotebookService.
    *
    * <pre>
    * API v1 service for Cloud AI Platform Notebooks.

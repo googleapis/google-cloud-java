@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public class GrpcOrganizationsStub extends OrganizationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetOrganizationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Organization.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchOrganizationsRequest, SearchOrganizationsResponse>
@@ -69,6 +70,7 @@ public class GrpcOrganizationsStub extends OrganizationsStub {
                   ProtoUtils.marshaller(SearchOrganizationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchOrganizationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -77,6 +79,7 @@ public class GrpcOrganizationsStub extends OrganizationsStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.Organizations/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -85,6 +88,7 @@ public class GrpcOrganizationsStub extends OrganizationsStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.Organizations/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -96,6 +100,7 @@ public class GrpcOrganizationsStub extends OrganizationsStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetOrganizationRequest, Organization> getOrganizationCallable;
@@ -159,6 +164,7 @@ public class GrpcOrganizationsStub extends OrganizationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SearchOrganizationsRequest, SearchOrganizationsResponse>
         searchOrganizationsTransportSettings =
@@ -174,6 +180,7 @@ public class GrpcOrganizationsStub extends OrganizationsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -184,6 +191,7 @@ public class GrpcOrganizationsStub extends OrganizationsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -195,6 +203,7 @@ public class GrpcOrganizationsStub extends OrganizationsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.getOrganizationCallable =

@@ -1,6 +1,6 @@
 on:
   pull_request:
-name: Unmanaged dependency check
+name: sdk-platform-java Unmanaged dependency check
 jobs:
   unmanaged_dependency_check:
     runs-on: ubuntu-latest
@@ -10,10 +10,12 @@ jobs:
       with:
         distribution: temurin
         java-version: 11
-    - name: Install modules
+    - name: Install all modules first
       shell: bash
-      run: mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip
+      run: .kokoro/build.sh
+      env:
+        JOB_TYPE: install
     - name: Unmanaged dependency check
-      uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v3.28.1
+      uses: ./sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check
       with:
         bom-path: gapic-libraries-bom/pom.xml

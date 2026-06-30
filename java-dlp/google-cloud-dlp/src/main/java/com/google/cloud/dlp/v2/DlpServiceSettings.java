@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,14 +17,17 @@
 package com.google.cloud.dlp.v2;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListColumnDataProfilesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListConnectionsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListFileStoreDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListProjectDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListStoredInfoTypesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListTableDataProfilesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.SearchConnectionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -42,6 +45,8 @@ import com.google.cloud.dlp.v2.stub.DlpServiceStubSettings;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.ColumnDataProfile;
+import com.google.privacy.dlp.v2.Connection;
+import com.google.privacy.dlp.v2.CreateConnectionRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -51,19 +56,25 @@ import com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
+import com.google.privacy.dlp.v2.DeleteConnectionRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
+import com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.DeleteTableDataProfileRequest;
 import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
+import com.google.privacy.dlp.v2.FileStoreDataProfile;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
+import com.google.privacy.dlp.v2.GetConnectionRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
+import com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
 import com.google.privacy.dlp.v2.GetProjectDataProfileRequest;
@@ -78,12 +89,16 @@ import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.ListColumnDataProfilesRequest;
 import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
+import com.google.privacy.dlp.v2.ListConnectionsRequest;
+import com.google.privacy.dlp.v2.ListConnectionsResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListInfoTypesResponse;
 import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
@@ -101,8 +116,11 @@ import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
+import com.google.privacy.dlp.v2.SearchConnectionsRequest;
+import com.google.privacy.dlp.v2.SearchConnectionsResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.TableDataProfile;
+import com.google.privacy.dlp.v2.UpdateConnectionRequest;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
@@ -128,7 +146,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of inspectContent to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of inspectContent:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -144,10 +164,21 @@ import javax.annotation.Generated;
  *             .inspectContentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * DlpServiceSettings dlpServiceSettings = dlpServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
@@ -402,6 +433,27 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
     return ((DlpServiceStubSettings) getStubSettings()).getProjectDataProfileSettings();
   }
 
+  /** Returns the object with the settings used for calls to listFileStoreDataProfiles. */
+  public PagedCallSettings<
+          ListFileStoreDataProfilesRequest,
+          ListFileStoreDataProfilesResponse,
+          ListFileStoreDataProfilesPagedResponse>
+      listFileStoreDataProfilesSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).listFileStoreDataProfilesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getFileStoreDataProfile. */
+  public UnaryCallSettings<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).getFileStoreDataProfileSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteFileStoreDataProfile. */
+  public UnaryCallSettings<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).deleteFileStoreDataProfileSettings();
+  }
+
   /** Returns the object with the settings used for calls to getTableDataProfile. */
   public UnaryCallSettings<GetTableDataProfileRequest, TableDataProfile>
       getTableDataProfileSettings() {
@@ -414,6 +466,11 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
     return ((DlpServiceStubSettings) getStubSettings()).getColumnDataProfileSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteTableDataProfile. */
+  public UnaryCallSettings<DeleteTableDataProfileRequest, Empty> deleteTableDataProfileSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).deleteTableDataProfileSettings();
+  }
+
   /** Returns the object with the settings used for calls to hybridInspectDlpJob. */
   public UnaryCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
       hybridInspectDlpJobSettings() {
@@ -423,6 +480,40 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
   /** Returns the object with the settings used for calls to finishDlpJob. */
   public UnaryCallSettings<FinishDlpJobRequest, Empty> finishDlpJobSettings() {
     return ((DlpServiceStubSettings) getStubSettings()).finishDlpJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createConnection. */
+  public UnaryCallSettings<CreateConnectionRequest, Connection> createConnectionSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).createConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getConnection. */
+  public UnaryCallSettings<GetConnectionRequest, Connection> getConnectionSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).getConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listConnections. */
+  public PagedCallSettings<
+          ListConnectionsRequest, ListConnectionsResponse, ListConnectionsPagedResponse>
+      listConnectionsSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).listConnectionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchConnections. */
+  public PagedCallSettings<
+          SearchConnectionsRequest, SearchConnectionsResponse, SearchConnectionsPagedResponse>
+      searchConnectionsSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).searchConnectionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteConnection. */
+  public UnaryCallSettings<DeleteConnectionRequest, Empty> deleteConnectionSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).deleteConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateConnection. */
+  public UnaryCallSettings<UpdateConnectionRequest, Connection> updateConnectionSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).updateConnectionSettings();
   }
 
   public static final DlpServiceSettings create(DlpServiceStubSettings stub) throws IOException {
@@ -799,6 +890,27 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
       return getStubSettingsBuilder().getProjectDataProfileSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listFileStoreDataProfiles. */
+    public PagedCallSettings.Builder<
+            ListFileStoreDataProfilesRequest,
+            ListFileStoreDataProfilesResponse,
+            ListFileStoreDataProfilesPagedResponse>
+        listFileStoreDataProfilesSettings() {
+      return getStubSettingsBuilder().listFileStoreDataProfilesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getFileStoreDataProfile. */
+    public UnaryCallSettings.Builder<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+        getFileStoreDataProfileSettings() {
+      return getStubSettingsBuilder().getFileStoreDataProfileSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFileStoreDataProfile. */
+    public UnaryCallSettings.Builder<DeleteFileStoreDataProfileRequest, Empty>
+        deleteFileStoreDataProfileSettings() {
+      return getStubSettingsBuilder().deleteFileStoreDataProfileSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getTableDataProfile. */
     public UnaryCallSettings.Builder<GetTableDataProfileRequest, TableDataProfile>
         getTableDataProfileSettings() {
@@ -811,6 +923,12 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
       return getStubSettingsBuilder().getColumnDataProfileSettings();
     }
 
+    /** Returns the builder for the settings used for calls to deleteTableDataProfile. */
+    public UnaryCallSettings.Builder<DeleteTableDataProfileRequest, Empty>
+        deleteTableDataProfileSettings() {
+      return getStubSettingsBuilder().deleteTableDataProfileSettings();
+    }
+
     /** Returns the builder for the settings used for calls to hybridInspectDlpJob. */
     public UnaryCallSettings.Builder<HybridInspectDlpJobRequest, HybridInspectResponse>
         hybridInspectDlpJobSettings() {
@@ -820,6 +938,42 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
     /** Returns the builder for the settings used for calls to finishDlpJob. */
     public UnaryCallSettings.Builder<FinishDlpJobRequest, Empty> finishDlpJobSettings() {
       return getStubSettingsBuilder().finishDlpJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createConnection. */
+    public UnaryCallSettings.Builder<CreateConnectionRequest, Connection>
+        createConnectionSettings() {
+      return getStubSettingsBuilder().createConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getConnection. */
+    public UnaryCallSettings.Builder<GetConnectionRequest, Connection> getConnectionSettings() {
+      return getStubSettingsBuilder().getConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listConnections. */
+    public PagedCallSettings.Builder<
+            ListConnectionsRequest, ListConnectionsResponse, ListConnectionsPagedResponse>
+        listConnectionsSettings() {
+      return getStubSettingsBuilder().listConnectionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchConnections. */
+    public PagedCallSettings.Builder<
+            SearchConnectionsRequest, SearchConnectionsResponse, SearchConnectionsPagedResponse>
+        searchConnectionsSettings() {
+      return getStubSettingsBuilder().searchConnectionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteConnection. */
+    public UnaryCallSettings.Builder<DeleteConnectionRequest, Empty> deleteConnectionSettings() {
+      return getStubSettingsBuilder().deleteConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateConnection. */
+    public UnaryCallSettings.Builder<UpdateConnectionRequest, Connection>
+        updateConnectionSettings() {
+      return getStubSettingsBuilder().updateConnectionSettings();
     }
 
     @Override

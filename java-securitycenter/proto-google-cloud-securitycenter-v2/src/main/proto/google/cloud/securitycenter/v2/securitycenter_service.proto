@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import "google/cloud/securitycenter/v2/external_system.proto";
 import "google/cloud/securitycenter/v2/finding.proto";
 import "google/cloud/securitycenter/v2/mute_config.proto";
 import "google/cloud/securitycenter/v2/notification_config.proto";
+import "google/cloud/securitycenter/v2/resource.proto";
 import "google/cloud/securitycenter/v2/resource_value_config.proto";
 import "google/cloud/securitycenter/v2/security_marks.proto";
 import "google/cloud/securitycenter/v2/simulation.proto";
@@ -38,6 +39,7 @@ import "google/longrunning/operations.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
 
 option csharp_namespace = "Google.Cloud.SecurityCenter.V2";
 option go_package = "cloud.google.com/go/securitycenter/apiv2/securitycenterpb;securitycenterpb";
@@ -54,6 +56,10 @@ option (google.api.resource_definition) = {
   type: "securitycenter.googleapis.com/FolderLocation"
   pattern: "folders/{folder}/locations/{location}"
 };
+option (google.api.resource_definition) = {
+  type: "securitycenter.googleapis.com/OrganizationValuedResource"
+  pattern: "organizations/{organization}/locations/{location}/simulations/{simulation}/valuedResources/{valued_resource}"
+};
 
 // V2 APIs for Security Center service.
 service SecurityCenter {
@@ -68,6 +74,10 @@ service SecurityCenter {
     option (google.api.http) = {
       post: "/v2/{parent=organizations/*}/resourceValueConfigs:batchCreate"
       body: "*"
+      additional_bindings {
+        post: "/v2/{parent=organizations/*/locations/*}/resourceValueConfigs:batchCreate"
+        body: "*"
+      }
     };
     option (google.api.method_signature) = "parent,requests";
   }
@@ -283,6 +293,9 @@ service SecurityCenter {
       returns (google.protobuf.Empty) {
     option (google.api.http) = {
       delete: "/v2/{name=organizations/*/resourceValueConfigs/*}"
+      additional_bindings {
+        delete: "/v2/{name=organizations/*/locations/*/resourceValueConfigs/*}"
+      }
     };
     option (google.api.method_signature) = "name";
   }
@@ -306,6 +319,9 @@ service SecurityCenter {
   rpc GetSimulation(GetSimulationRequest) returns (Simulation) {
     option (google.api.http) = {
       get: "/v2/{name=organizations/*/simulations/*}"
+      additional_bindings {
+        get: "/v2/{name=organizations/*/locations/*/simulations/*}"
+      }
     };
     option (google.api.method_signature) = "name";
   }
@@ -314,6 +330,9 @@ service SecurityCenter {
   rpc GetValuedResource(GetValuedResourceRequest) returns (ValuedResource) {
     option (google.api.http) = {
       get: "/v2/{name=organizations/*/simulations/*/valuedResources/*}"
+      additional_bindings {
+        get: "/v2/{name=organizations/*/locations/*/simulations/*/valuedResources/*}"
+      }
     };
     option (google.api.method_signature) = "name";
   }
@@ -382,6 +401,9 @@ service SecurityCenter {
       returns (ResourceValueConfig) {
     option (google.api.http) = {
       get: "/v2/{name=organizations/*/resourceValueConfigs/*}"
+      additional_bindings {
+        get: "/v2/{name=organizations/*/locations/*/resourceValueConfigs/*}"
+      }
     };
     option (google.api.method_signature) = "name";
   }
@@ -442,11 +464,18 @@ service SecurityCenter {
       returns (ListAttackPathsResponse) {
     option (google.api.http) = {
       get: "/v2/{parent=organizations/*/simulations/*}/attackPaths"
+      additional_bindings { get: "/v2/{parent=organizations/*}/attackPaths" }
       additional_bindings {
         get: "/v2/{parent=organizations/*/simulations/*/valuedResources/*}/attackPaths"
       }
       additional_bindings {
+        get: "/v2/{parent=organizations/*/locations/*/simulations/*/valuedResources/*}/attackPaths"
+      }
+      additional_bindings {
         get: "/v2/{parent=organizations/*/simulations/*/attackExposureResults/*}/attackPaths"
+      }
+      additional_bindings {
+        get: "/v2/{parent=organizations/*/locations/*/simulations/*/attackExposureResults/*}/attackPaths"
       }
     };
     option (google.api.method_signature) = "parent";
@@ -553,6 +582,9 @@ service SecurityCenter {
       returns (ListResourceValueConfigsResponse) {
     option (google.api.http) = {
       get: "/v2/{parent=organizations/*}/resourceValueConfigs"
+      additional_bindings {
+        get: "/v2/{parent=organizations/*/locations/*}/resourceValueConfigs"
+      }
     };
     option (google.api.method_signature) = "parent";
   }
@@ -574,6 +606,9 @@ service SecurityCenter {
       get: "/v2/{parent=organizations/*/simulations/*}/valuedResources"
       additional_bindings {
         get: "/v2/{parent=organizations/*/simulations/*/attackExposureResults/*}/valuedResources"
+      }
+      additional_bindings {
+        get: "/v2/{parent=organizations/*}/valuedResources"
       }
     };
     option (google.api.method_signature) = "parent";
@@ -808,6 +843,10 @@ service SecurityCenter {
     option (google.api.http) = {
       patch: "/v2/{resource_value_config.name=organizations/*/resourceValueConfigs/*}"
       body: "resource_value_config"
+      additional_bindings {
+        patch: "/v2/{resource_value_config.name=organizations/*/locations/*/resourceValueConfigs/*}"
+        body: "resource_value_config"
+      }
     };
     option (google.api.method_signature) = "resource_value_config,update_mask";
   }
@@ -895,6 +934,18 @@ message BatchCreateResourceValueConfigsResponse {
 // which they get executed is not defined.
 // 2. Once a bulk operation is started, there is no way to stop it.
 message BulkMuteFindingsRequest {
+  // The mute state.
+  enum MuteState {
+    // Unused.
+    MUTE_STATE_UNSPECIFIED = 0;
+
+    // Matching findings will be muted (default).
+    MUTED = 1;
+
+    // Matching findings will have their mute state cleared.
+    UNDEFINED = 2;
+  }
+
   // Required. The parent, at which bulk action needs to be applied. If no
   // location is specified, findings are updated in global. The following list
   // shows some examples:
@@ -931,6 +982,11 @@ message BulkMuteFindingsRequest {
   // * integer literals without quotes.
   // * boolean literals `true` and `false` without quotes.
   string filter = 2;
+
+  // Optional. All findings matching the given filter will have their mute state
+  // set to this value. The default value is `MUTED`. Setting this to
+  // `UNDEFINED` will clear the mute state on all matching findings.
+  MuteState mute_state = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // The response to a BulkMute request. Contains the LRO information.
@@ -939,9 +995,9 @@ message BulkMuteFindingsResponse {}
 // Request message for creating a BigQuery export.
 message CreateBigQueryExportRequest {
   // Required. The name of the parent resource of the new BigQuery export. Its
-  // format is "organizations/[organization_id]/locations/[location_id]",
-  // "folders/[folder_id]/locations/[location_id]", or
-  // "projects/[project_id]/locations/[location_id]".
+  // format is `organizations/[organization_id]/locations/[location_id]`,
+  // `folders/[folder_id]/locations/[location_id]`, or
+  // `projects/[project_id]/locations/[location_id]`.
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -987,9 +1043,9 @@ message CreateFindingRequest {
 // Request message for creating a mute config.
 message CreateMuteConfigRequest {
   // Required. Resource name of the new mute configs's parent. Its format is
-  // "organizations/[organization_id]/locations/[location_id]",
-  // "folders/[folder_id]/locations/[location_id]", or
-  // "projects/[project_id]/locations/[location_id]".
+  // `organizations/[organization_id]/locations/[location_id]`,
+  // `folders/[folder_id]/locations/[location_id]`, or
+  // `projects/[project_id]/locations/[location_id]`.
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1010,9 +1066,9 @@ message CreateMuteConfigRequest {
 // Request message for creating a notification config.
 message CreateNotificationConfigRequest {
   // Required. Resource name of the new notification config's parent. Its format
-  // is "organizations/[organization_id]/locations/[location_id]",
-  // "folders/[folder_id]/locations/[location_id]", or
-  // "projects/[project_id]/locations/[location_id]".
+  // is `organizations/[organization_id]/locations/[location_id]`,
+  // `folders/[folder_id]/locations/[location_id]`, or
+  // `projects/[project_id]/locations/[location_id]`.
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1051,7 +1107,7 @@ message CreateResourceValueConfigRequest {
 // Request message for creating a source.
 message CreateSourceRequest {
   // Required. Resource name of the new source's parent. Its format should be
-  // "organizations/[organization_id]".
+  // `organizations/[organization_id]`.
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1132,6 +1188,30 @@ message DeleteResourceValueConfigRequest {
   ];
 }
 
+// The destination big query dataset to export findings to.
+message BigQueryDestination {
+  // Required. The relative resource name of the destination dataset, in the
+  // form projects/{projectId}/datasets/{datasetId}.
+  string dataset = 1 [(google.api.field_behavior) = REQUIRED];
+}
+
+// The LRO metadata for a ExportFindings request.
+message ExportFindingsMetadata {
+  // Optional. Timestamp at which export was started
+  google.protobuf.Timestamp export_start_time = 1
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // The destination to export findings to.
+  oneof destination {
+    // Required. The destination big query dataset to export findings to.
+    BigQueryDestination big_query_destination = 2
+        [(google.api.field_behavior) = REQUIRED];
+  }
+}
+
+// The response to a ExportFindings request. Contains the LRO information.
+message ExportFindingsResponse {}
+
 // Request message for retrieving a BigQuery export.
 message GetBigQueryExportRequest {
   // Required. Name of the BigQuery export to retrieve. The following list shows
@@ -1204,7 +1284,7 @@ message GetResourceValueConfigRequest {
 // Request message for getting a source.
 message GetSourceRequest {
   // Required. Relative resource name of the source. Its format is
-  // "organizations/[organization_id]/source/[source_id]".
+  // `organizations/[organization_id]/source/[source_id]`.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1295,14 +1375,6 @@ message GroupFindingsRequest {
   // Required. Expression that defines what assets fields to use for grouping.
   // The string value should follow SQL syntax: comma separated list of fields.
   // For example: "parent,resource_name".
-  //
-  // The following fields are supported:
-  //
-  // * resource_name
-  // * category
-  // * state
-  // * parent
-  // * severity
   string group_by = 3 [(google.api.field_behavior) = REQUIRED];
 
   // The value returned by the last `GroupFindingsResponse`; indicates
@@ -1345,10 +1417,10 @@ message ListAttackPathsRequest {
   // Required. Name of parent to list attack paths.
   //
   // Valid formats:
-  // "organizations/{organization}",
-  // "organizations/{organization}/simulations/{simulation}"
-  // "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}"
-  // "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+  // `organizations/{organization}`,
+  // `organizations/{organization}/simulations/{simulation}`
+  // `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
+  // `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1390,8 +1462,8 @@ message GetSimulationRequest {
   // Required. The organization name or simulation name of this simulation
   //
   // Valid format:
-  // "organizations/{organization}/simulations/latest"
-  // "organizations/{organization}/simulations/{simulation}"
+  // `organizations/{organization}/simulations/latest`
+  // `organizations/{organization}/simulations/{simulation}`
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1405,7 +1477,7 @@ message GetValuedResourceRequest {
   // Required. The name of this valued resource
   //
   // Valid format:
-  // "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+  // `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1418,9 +1490,9 @@ message GetValuedResourceRequest {
 // organization, folder or project.
 message ListBigQueryExportsRequest {
   // Required. The parent, which owns the collection of BigQuery exports. Its
-  // format is "organizations/[organization_id]/locations/[location_id]",
-  // "folders/[folder_id]/locations/[location_id]", or
-  // "projects/[project_id]/locations/[location_id]".
+  // format is `organizations/[organization_id]/locations/[location_id]`,
+  // `folders/[folder_id]/locations/[location_id]`, or
+  // `projects/[project_id]/locations/[location_id]`.
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1580,6 +1652,42 @@ message ListFindingsResponse {
 
       // The full resource type of the resource.
       string type = 3;
+
+      // Indicates which cloud provider the finding is from.
+      CloudProvider cloud_provider = 4;
+
+      // The service or resource provider associated with the resource.
+      string service = 5;
+
+      // The region or location of the service (if applicable).
+      string location = 6;
+
+      // The metadata associated with the cloud provider.
+      oneof cloud_provider_metadata {
+        // The GCP metadata associated with the finding.
+        GcpMetadata gcp_metadata = 7;
+
+        // The AWS metadata associated with the finding.
+        AwsMetadata aws_metadata = 8;
+
+        // The Azure metadata associated with the finding.
+        AzureMetadata azure_metadata = 9;
+      }
+
+      // Provides the path to the resource within the resource hierarchy.
+      ResourcePath resource_path = 10;
+
+      // A string representation of the resource path.
+      // For Google Cloud, it has the format of
+      // `organizations/{organization_id}/folders/{folder_id}/folders/{folder_id}/projects/{project_id}`
+      // where there can be any number of folders.
+      // For AWS, it has the format of
+      // `org/{organization_id}/ou/{organizational_unit_id}/ou/{organizational_unit_id}/account/{account_id}`
+      // where there can be any number of organizational units.
+      // For Azure, it has the format of
+      // `mg/{management_group_id}/mg/{management_group_id}/subscription/{subscription_id}/rg/{resource_group_name}`
+      // where there can be any number of management groups.
+      string resource_path_string = 11;
     }
 
     // Finding matching the search request.
@@ -1605,11 +1713,11 @@ message ListFindingsResponse {
 // global.
 message ListMuteConfigsRequest {
   // Required. The parent, which owns the collection of mute configs. Its format
-  // is "organizations/[organization_id]", "folders/[folder_id]",
-  // "projects/[project_id]",
-  // "organizations/[organization_id]/locations/[location_id]",
-  // "folders/[folder_id]/locations/[location_id]",
-  // "projects/[project_id]/locations/[location_id]".
+  // is `organizations/[organization_id]", "folders/[folder_id]`,
+  // `projects/[project_id]`,
+  // `organizations/[organization_id]/locations/[location_id]`,
+  // `folders/[folder_id]/locations/[location_id]`,
+  // `projects/[project_id]/locations/[location_id]`.
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1679,7 +1787,7 @@ message ListNotificationConfigsResponse {
 message ListResourceValueConfigsRequest {
   // Required. The parent, which owns the collection of resource value configs.
   // Its format is
-  // "organizations/[organization_id]"
+  // `organizations/[organization_id]`
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1717,8 +1825,8 @@ message ListResourceValueConfigsResponse {
 // Request message for listing sources.
 message ListSourcesRequest {
   // Required. Resource name of the parent of sources to list. Its format should
-  // be "organizations/[organization_id]", "folders/[folder_id]", or
-  // "projects/[project_id]".
+  // be `organizations/[organization_id]`, `folders/[folder_id]`, or
+  // `projects/[project_id]`.
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1751,9 +1859,9 @@ message ListValuedResourcesRequest {
   // Required. Name of parent to list exposed resources.
   //
   // Valid formats:
-  // "organizations/{organization}",
-  // "organizations/{organization}/simulations/{simulation}"
-  // "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}"
+  // `organizations/{organization}`,
+  // `organizations/{organization}/simulations/{simulation}`
+  // `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1936,6 +2044,10 @@ message UpdateResourceValueConfigRequest {
 
   // The list of fields to be updated.
   // If empty all mutable fields will be updated.
+  //
+  // To update nested fields, include the top level field in the mask
+  // For example, to update gcp_metadata.resource_type, include the
+  // "gcp_metadata" field mask
   google.protobuf.FieldMask update_mask = 2;
 }
 

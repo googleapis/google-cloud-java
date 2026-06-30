@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -51,6 +51,19 @@ enum ResourceState {
 
   // The resource is under deletion.
   STATE_DELETING = 5;
+}
+
+// Defines the remote peering destination for the interface. It is required
+// when peering separation is enabled.
+enum RemotePeeringNetworkType {
+  // Unspecified.
+  REMOTE_PEERING_NETWORK_TYPE_UNSPECIFIED = 0;
+
+  // Customer's trusted internal network.
+  REMOTE_PEERING_NETWORK_TYPE_CUSTOMER_INTERNAL = 1;
+
+  // Customer's untrust network that has internet access.
+  REMOTE_PEERING_NETWORK_TYPE_CUSTOMER_INTERNET = 2;
 }
 
 // A Google Edge Cloud zone.
@@ -118,6 +131,22 @@ message Subnet {
     pattern: "projects/{project}/locations/{location}/zones/{zone}/subnets/{subnet}"
   };
 
+  // Bonding type in the subnet.
+  enum BondingType {
+    // Unspecified
+    // Bonding type will be unspecified by default and if the user chooses to
+    // not specify a bonding type at time of creating the VLAN. This will be
+    // treated as mixed bonding where the VLAN will have both bonded and
+    // non-bonded connectivity to machines.
+    BONDING_TYPE_UNSPECIFIED = 0;
+
+    // Multi homed.
+    BONDED = 1;
+
+    // Single homed.
+    NON_BONDED = 2;
+  }
+
   // Required. The canonical resource name of the subnet.
   string name = 1 [(google.api.field_behavior) = REQUIRED];
 
@@ -153,6 +182,13 @@ message Subnet {
   // Optional. VLAN id provided by user. If not specified we assign one
   // automatically.
   int32 vlan_id = 9 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. A bonding type in the subnet creation specifies whether a VLAN
+  // being created will be present on Bonded or Non-Bonded or Both port types.
+  // In addition, this flag is to be used to set the specific network
+  // configuration which clusters can then use for their workloads based on the
+  // bonding choice.
+  BondingType bonding_type = 11 [(google.api.field_behavior) = OPTIONAL];
 
   // Output only. Current stage of the resource to the device by config push.
   ResourceState state = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -208,6 +244,11 @@ message Interconnect {
   // interconnect.
   repeated string physical_ports = 9
       [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Optional. The remote peering network type of the interconnect. It is
+  // required when peering separation is enabled.
+  RemotePeeringNetworkType remote_peering_network_type = 10
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Message describing InterconnectAttachment object
@@ -264,6 +305,11 @@ message InterconnectAttachment {
 
   // Output only. Current stage of the resource to the device by config push.
   ResourceState state = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Optional. The remote peering network type of the underlying interconnect.
+  // It is required when peering separation is enabled.
+  RemotePeeringNetworkType peering_type = 12
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Message describing Router object

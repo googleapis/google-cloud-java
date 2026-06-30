@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -339,6 +339,7 @@ public class HttpJsonReachabilityServiceStub extends ReachabilityServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1beta1/{name=organizations/*}/locations")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -373,6 +374,7 @@ public class HttpJsonReachabilityServiceStub extends ReachabilityServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1beta1/{name=organizations/*/locations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -585,21 +587,41 @@ public class HttpJsonReachabilityServiceStub extends ReachabilityServiceStub {
                     "google.longrunning.Operations.CancelOperation",
                     HttpRule.newBuilder()
                         .setPost("/v1beta1/{name=projects/*/locations/global/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1beta1/{name=organizations/*/locations/global/operations/*}:cancel")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.DeleteOperation",
                     HttpRule.newBuilder()
                         .setDelete("/v1beta1/{name=projects/*/locations/global/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete(
+                                    "/v1beta1/{name=organizations/*/locations/global/operations/*}")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet("/v1beta1/{name=projects/*/locations/global/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta1/{name=organizations/*/locations/global/operations/*}")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.ListOperations",
                     HttpRule.newBuilder()
                         .setGet("/v1beta1/{name=projects/*/locations/global}/operations")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta1/{name=organizations/*/locations/global}/operations")
+                                .build())
                         .build())
                 .build());
 
@@ -615,6 +637,7 @@ public class HttpJsonReachabilityServiceStub extends ReachabilityServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetConnectivityTestRequest, ConnectivityTest>
         getConnectivityTestTransportSettings =
@@ -627,6 +650,7 @@ public class HttpJsonReachabilityServiceStub extends ReachabilityServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateConnectivityTestRequest, Operation>
         createConnectivityTestTransportSettings =
@@ -639,6 +663,7 @@ public class HttpJsonReachabilityServiceStub extends ReachabilityServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateConnectivityTestRequest, Operation>
         updateConnectivityTestTransportSettings =
@@ -663,6 +688,7 @@ public class HttpJsonReachabilityServiceStub extends ReachabilityServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteConnectivityTestRequest, Operation>
         deleteConnectivityTestTransportSettings =
@@ -675,6 +701,7 @@ public class HttpJsonReachabilityServiceStub extends ReachabilityServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -709,6 +736,7 @@ public class HttpJsonReachabilityServiceStub extends ReachabilityServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -720,6 +748,7 @@ public class HttpJsonReachabilityServiceStub extends ReachabilityServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -732,6 +761,7 @@ public class HttpJsonReachabilityServiceStub extends ReachabilityServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listConnectivityTestsCallable =

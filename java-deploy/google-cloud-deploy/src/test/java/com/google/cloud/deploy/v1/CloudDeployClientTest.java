@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPag
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeployPoliciesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListReleasesPagedResponse;
@@ -774,6 +775,7 @@ public class CloudDeployClientTest {
             .setRequireApproval(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAssociatedEntities(new HashMap<String, AssociatedEntities>())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
             .putAllDeployParameters(new HashMap<String, String>())
@@ -823,6 +825,7 @@ public class CloudDeployClientTest {
             .setRequireApproval(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAssociatedEntities(new HashMap<String, AssociatedEntities>())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
             .putAllDeployParameters(new HashMap<String, String>())
@@ -872,6 +875,7 @@ public class CloudDeployClientTest {
             .setRequireApproval(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAssociatedEntities(new HashMap<String, AssociatedEntities>())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
             .putAllDeployParameters(new HashMap<String, String>())
@@ -935,6 +939,7 @@ public class CloudDeployClientTest {
             .setRequireApproval(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAssociatedEntities(new HashMap<String, AssociatedEntities>())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
             .putAllDeployParameters(new HashMap<String, String>())
@@ -998,6 +1003,7 @@ public class CloudDeployClientTest {
             .setRequireApproval(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAssociatedEntities(new HashMap<String, AssociatedEntities>())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
             .putAllDeployParameters(new HashMap<String, String>())
@@ -2029,6 +2035,459 @@ public class CloudDeployClientTest {
   }
 
   @Test
+  public void createDeployPolicyTest() throws Exception {
+    DeployPolicy expectedResponse =
+        DeployPolicy.newBuilder()
+            .setName(DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]").toString())
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .putAllAnnotations(new HashMap<String, String>())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSuspended(true)
+            .addAllSelectors(new ArrayList<DeployPolicyResourceSelector>())
+            .addAllRules(new ArrayList<PolicyRule>())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDeployPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudDeploy.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    DeployPolicy deployPolicy = DeployPolicy.newBuilder().build();
+    String deployPolicyId = "deployPolicyId-1490278412";
+
+    DeployPolicy actualResponse =
+        client.createDeployPolicyAsync(parent, deployPolicy, deployPolicyId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDeployPolicyRequest actualRequest = ((CreateDeployPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(deployPolicy, actualRequest.getDeployPolicy());
+    Assert.assertEquals(deployPolicyId, actualRequest.getDeployPolicyId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDeployPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      DeployPolicy deployPolicy = DeployPolicy.newBuilder().build();
+      String deployPolicyId = "deployPolicyId-1490278412";
+      client.createDeployPolicyAsync(parent, deployPolicy, deployPolicyId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createDeployPolicyTest2() throws Exception {
+    DeployPolicy expectedResponse =
+        DeployPolicy.newBuilder()
+            .setName(DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]").toString())
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .putAllAnnotations(new HashMap<String, String>())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSuspended(true)
+            .addAllSelectors(new ArrayList<DeployPolicyResourceSelector>())
+            .addAllRules(new ArrayList<PolicyRule>())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDeployPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudDeploy.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    DeployPolicy deployPolicy = DeployPolicy.newBuilder().build();
+    String deployPolicyId = "deployPolicyId-1490278412";
+
+    DeployPolicy actualResponse =
+        client.createDeployPolicyAsync(parent, deployPolicy, deployPolicyId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDeployPolicyRequest actualRequest = ((CreateDeployPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(deployPolicy, actualRequest.getDeployPolicy());
+    Assert.assertEquals(deployPolicyId, actualRequest.getDeployPolicyId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDeployPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      DeployPolicy deployPolicy = DeployPolicy.newBuilder().build();
+      String deployPolicyId = "deployPolicyId-1490278412";
+      client.createDeployPolicyAsync(parent, deployPolicy, deployPolicyId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateDeployPolicyTest() throws Exception {
+    DeployPolicy expectedResponse =
+        DeployPolicy.newBuilder()
+            .setName(DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]").toString())
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .putAllAnnotations(new HashMap<String, String>())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSuspended(true)
+            .addAllSelectors(new ArrayList<DeployPolicyResourceSelector>())
+            .addAllRules(new ArrayList<PolicyRule>())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateDeployPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudDeploy.addResponse(resultOperation);
+
+    DeployPolicy deployPolicy = DeployPolicy.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DeployPolicy actualResponse = client.updateDeployPolicyAsync(deployPolicy, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDeployPolicyRequest actualRequest = ((UpdateDeployPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(deployPolicy, actualRequest.getDeployPolicy());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDeployPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      DeployPolicy deployPolicy = DeployPolicy.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDeployPolicyAsync(deployPolicy, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteDeployPolicyTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDeployPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudDeploy.addResponse(resultOperation);
+
+    DeployPolicyName name = DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]");
+
+    client.deleteDeployPolicyAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDeployPolicyRequest actualRequest = ((DeleteDeployPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDeployPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      DeployPolicyName name = DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]");
+      client.deleteDeployPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteDeployPolicyTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDeployPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudDeploy.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteDeployPolicyAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDeployPolicyRequest actualRequest = ((DeleteDeployPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDeployPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteDeployPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listDeployPoliciesTest() throws Exception {
+    DeployPolicy responsesElement = DeployPolicy.newBuilder().build();
+    ListDeployPoliciesResponse expectedResponse =
+        ListDeployPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDeployPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDeployPoliciesPagedResponse pagedListResponse = client.listDeployPolicies(parent);
+
+    List<DeployPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDeployPoliciesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDeployPoliciesRequest actualRequest = ((ListDeployPoliciesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDeployPoliciesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDeployPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDeployPoliciesTest2() throws Exception {
+    DeployPolicy responsesElement = DeployPolicy.newBuilder().build();
+    ListDeployPoliciesResponse expectedResponse =
+        ListDeployPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDeployPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDeployPoliciesPagedResponse pagedListResponse = client.listDeployPolicies(parent);
+
+    List<DeployPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDeployPoliciesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDeployPoliciesRequest actualRequest = ((ListDeployPoliciesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDeployPoliciesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDeployPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDeployPolicyTest() throws Exception {
+    DeployPolicy expectedResponse =
+        DeployPolicy.newBuilder()
+            .setName(DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]").toString())
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .putAllAnnotations(new HashMap<String, String>())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSuspended(true)
+            .addAllSelectors(new ArrayList<DeployPolicyResourceSelector>())
+            .addAllRules(new ArrayList<PolicyRule>())
+            .setEtag("etag3123477")
+            .build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    DeployPolicyName name = DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]");
+
+    DeployPolicy actualResponse = client.getDeployPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDeployPolicyRequest actualRequest = ((GetDeployPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDeployPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      DeployPolicyName name = DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]");
+      client.getDeployPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDeployPolicyTest2() throws Exception {
+    DeployPolicy expectedResponse =
+        DeployPolicy.newBuilder()
+            .setName(DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]").toString())
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .putAllAnnotations(new HashMap<String, String>())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSuspended(true)
+            .addAllSelectors(new ArrayList<DeployPolicyResourceSelector>())
+            .addAllRules(new ArrayList<PolicyRule>())
+            .setEtag("etag3123477")
+            .build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    DeployPolicy actualResponse = client.getDeployPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDeployPolicyRequest actualRequest = ((GetDeployPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDeployPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDeployPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void approveRolloutTest() throws Exception {
     ApproveRolloutResponse expectedResponse = ApproveRolloutResponse.newBuilder().build();
     mockCloudDeploy.addResponse(expectedResponse);
@@ -2369,6 +2828,7 @@ public class CloudDeployClientTest {
             .setControllerRollout("controllerRollout-685691275")
             .setRollbackOfRollout("rollbackOfRollout-1379582634")
             .addAllRolledBackByRollouts(new ArrayList<String>())
+            .setActiveRepairAutomationRun("activeRepairAutomationRun-834539903")
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -2431,6 +2891,7 @@ public class CloudDeployClientTest {
             .setControllerRollout("controllerRollout-685691275")
             .setRollbackOfRollout("rollbackOfRollout-1379582634")
             .addAllRolledBackByRollouts(new ArrayList<String>())
+            .setActiveRepairAutomationRun("activeRepairAutomationRun-834539903")
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -2490,6 +2951,7 @@ public class CloudDeployClientTest {
             .setControllerRollout("controllerRollout-685691275")
             .setRollbackOfRollout("rollbackOfRollout-1379582634")
             .addAllRolledBackByRollouts(new ArrayList<String>())
+            .setActiveRepairAutomationRun("activeRepairAutomationRun-834539903")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2565,6 +3027,7 @@ public class CloudDeployClientTest {
             .setControllerRollout("controllerRollout-685691275")
             .setRollbackOfRollout("rollbackOfRollout-1379582634")
             .addAllRolledBackByRollouts(new ArrayList<String>())
+            .setActiveRepairAutomationRun("activeRepairAutomationRun-834539903")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3648,6 +4111,7 @@ public class CloudDeployClientTest {
             .setAutomationSnapshot(Automation.newBuilder().build())
             .setTargetId("targetId-441951604")
             .setStateDescription("stateDescription-1173318997")
+            .setPolicyViolation(PolicyViolation.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .setRuleId("ruleId-919875273")
             .setAutomationId("automationId64173202")
@@ -3703,6 +4167,7 @@ public class CloudDeployClientTest {
             .setAutomationSnapshot(Automation.newBuilder().build())
             .setTargetId("targetId-441951604")
             .setStateDescription("stateDescription-1173318997")
+            .setPolicyViolation(PolicyViolation.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .setRuleId("ruleId-919875273")
             .setAutomationId("automationId64173202")
@@ -4018,7 +4483,7 @@ public class CloudDeployClientTest {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(
-                DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+                CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
                     .toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
@@ -4049,7 +4514,7 @@ public class CloudDeployClientTest {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+                  CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
@@ -4075,7 +4540,7 @@ public class CloudDeployClientTest {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(
-                DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+                CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
                     .toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
@@ -4104,7 +4569,7 @@ public class CloudDeployClientTest {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+                  CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
                       .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();

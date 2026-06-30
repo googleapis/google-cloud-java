@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,15 +31,19 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListEventCreateRulesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListEventEditRulesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListExpandedDataSetsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListReportingDataAnnotationsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertyEventFiltersPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertySyncConfigsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.stub.AnalyticsAdminServiceStubSettings;
@@ -76,7 +80,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getAccount to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getAccount:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -93,11 +99,22 @@ import javax.annotation.Generated;
  *             .getAccountSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * AnalyticsAdminServiceSettings analyticsAdminServiceSettings =
  *     analyticsAdminServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -337,36 +354,87 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
         .updateGoogleSignalsSettingsSettings();
   }
 
-  /** Returns the object with the settings used for calls to createConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to createConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateConversionEventRequest, ConversionEvent>
       createConversionEventSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createConversionEventSettings();
   }
 
-  /** Returns the object with the settings used for calls to updateConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to updateConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateConversionEventRequest, ConversionEvent>
       updateConversionEventSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateConversionEventSettings();
   }
 
-  /** Returns the object with the settings used for calls to getConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to getConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetConversionEventRequest, ConversionEvent>
       getConversionEventSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getConversionEventSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to deleteConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteConversionEventRequest, Empty> deleteConversionEventSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteConversionEventSettings();
   }
 
-  /** Returns the object with the settings used for calls to listConversionEvents. */
+  /**
+   * Returns the object with the settings used for calls to listConversionEvents.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListConversionEventsRequest,
           ListConversionEventsResponse,
           ListConversionEventsPagedResponse>
       listConversionEventsSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listConversionEventsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createKeyEvent. */
+  public UnaryCallSettings<CreateKeyEventRequest, KeyEvent> createKeyEventSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createKeyEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateKeyEvent. */
+  public UnaryCallSettings<UpdateKeyEventRequest, KeyEvent> updateKeyEventSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateKeyEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getKeyEvent. */
+  public UnaryCallSettings<GetKeyEventRequest, KeyEvent> getKeyEventSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getKeyEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteKeyEvent. */
+  public UnaryCallSettings<DeleteKeyEventRequest, Empty> deleteKeyEventSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteKeyEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listKeyEvents. */
+  public PagedCallSettings<ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+      listKeyEventsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listKeyEventsSettings();
   }
 
   /** Returns the object with the settings used for calls to getDisplayVideo360AdvertiserLink. */
@@ -769,22 +837,9 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteChannelGroupSettings();
   }
 
-  /** Returns the object with the settings used for calls to setAutomatedGa4ConfigurationOptOut. */
-  public UnaryCallSettings<
-          SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
-      setAutomatedGa4ConfigurationOptOutSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .setAutomatedGa4ConfigurationOptOutSettings();
-  }
-
-  /**
-   * Returns the object with the settings used for calls to fetchAutomatedGa4ConfigurationOptOut.
-   */
-  public UnaryCallSettings<
-          FetchAutomatedGa4ConfigurationOptOutRequest, FetchAutomatedGa4ConfigurationOptOutResponse>
-      fetchAutomatedGa4ConfigurationOptOutSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .fetchAutomatedGa4ConfigurationOptOutSettings();
+  /** Returns the object with the settings used for calls to createBigQueryLink. */
+  public UnaryCallSettings<CreateBigQueryLinkRequest, BigQueryLink> createBigQueryLinkSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createBigQueryLinkSettings();
   }
 
   /** Returns the object with the settings used for calls to getBigQueryLink. */
@@ -799,6 +854,16 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listBigQueryLinksSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteBigQueryLink. */
+  public UnaryCallSettings<DeleteBigQueryLinkRequest, Empty> deleteBigQueryLinkSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteBigQueryLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBigQueryLink. */
+  public UnaryCallSettings<UpdateBigQueryLinkRequest, BigQueryLink> updateBigQueryLinkSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateBigQueryLinkSettings();
+  }
+
   /** Returns the object with the settings used for calls to getEnhancedMeasurementSettings. */
   public UnaryCallSettings<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
       getEnhancedMeasurementSettingsSettings() {
@@ -811,30 +876,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       updateEnhancedMeasurementSettingsSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings())
         .updateEnhancedMeasurementSettingsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createConnectedSiteTag. */
-  public UnaryCallSettings<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
-      createConnectedSiteTagSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createConnectedSiteTagSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteConnectedSiteTag. */
-  public UnaryCallSettings<DeleteConnectedSiteTagRequest, Empty> deleteConnectedSiteTagSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteConnectedSiteTagSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listConnectedSiteTags. */
-  public UnaryCallSettings<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
-      listConnectedSiteTagsSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listConnectedSiteTagsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to fetchConnectedGa4Property. */
-  public UnaryCallSettings<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
-      fetchConnectedGa4PropertySettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .fetchConnectedGa4PropertySettings();
   }
 
   /** Returns the object with the settings used for calls to getAdSenseLink. */
@@ -889,6 +930,40 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
   /** Returns the object with the settings used for calls to deleteEventCreateRule. */
   public UnaryCallSettings<DeleteEventCreateRuleRequest, Empty> deleteEventCreateRuleSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteEventCreateRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEventEditRule. */
+  public UnaryCallSettings<GetEventEditRuleRequest, EventEditRule> getEventEditRuleSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getEventEditRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listEventEditRules. */
+  public PagedCallSettings<
+          ListEventEditRulesRequest, ListEventEditRulesResponse, ListEventEditRulesPagedResponse>
+      listEventEditRulesSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listEventEditRulesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createEventEditRule. */
+  public UnaryCallSettings<CreateEventEditRuleRequest, EventEditRule>
+      createEventEditRuleSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createEventEditRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateEventEditRule. */
+  public UnaryCallSettings<UpdateEventEditRuleRequest, EventEditRule>
+      updateEventEditRuleSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateEventEditRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteEventEditRule. */
+  public UnaryCallSettings<DeleteEventEditRuleRequest, Empty> deleteEventEditRuleSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteEventEditRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to reorderEventEditRules. */
+  public UnaryCallSettings<ReorderEventEditRulesRequest, Empty> reorderEventEditRulesSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).reorderEventEditRulesSettings();
   }
 
   /** Returns the object with the settings used for calls to updateDataRedactionSettings. */
@@ -974,10 +1049,10 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
         .deleteRollupPropertySourceLinkSettings();
   }
 
-  /** Returns the object with the settings used for calls to createSubproperty. */
-  public UnaryCallSettings<CreateSubpropertyRequest, CreateSubpropertyResponse>
-      createSubpropertySettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createSubpropertySettings();
+  /** Returns the object with the settings used for calls to provisionSubproperty. */
+  public UnaryCallSettings<ProvisionSubpropertyRequest, ProvisionSubpropertyResponse>
+      provisionSubpropertySettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).provisionSubpropertySettings();
   }
 
   /** Returns the object with the settings used for calls to createSubpropertyEventFilter. */
@@ -1016,6 +1091,95 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       deleteSubpropertyEventFilterSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings())
         .deleteSubpropertyEventFilterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createReportingDataAnnotation. */
+  public UnaryCallSettings<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      createReportingDataAnnotationSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .createReportingDataAnnotationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getReportingDataAnnotation. */
+  public UnaryCallSettings<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+      getReportingDataAnnotationSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .getReportingDataAnnotationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listReportingDataAnnotations. */
+  public PagedCallSettings<
+          ListReportingDataAnnotationsRequest,
+          ListReportingDataAnnotationsResponse,
+          ListReportingDataAnnotationsPagedResponse>
+      listReportingDataAnnotationsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .listReportingDataAnnotationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateReportingDataAnnotation. */
+  public UnaryCallSettings<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      updateReportingDataAnnotationSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .updateReportingDataAnnotationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteReportingDataAnnotation. */
+  public UnaryCallSettings<DeleteReportingDataAnnotationRequest, Empty>
+      deleteReportingDataAnnotationSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .deleteReportingDataAnnotationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to submitUserDeletion. */
+  public UnaryCallSettings<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+      submitUserDeletionSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).submitUserDeletionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSubpropertySyncConfigs. */
+  public PagedCallSettings<
+          ListSubpropertySyncConfigsRequest,
+          ListSubpropertySyncConfigsResponse,
+          ListSubpropertySyncConfigsPagedResponse>
+      listSubpropertySyncConfigsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .listSubpropertySyncConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSubpropertySyncConfig. */
+  public UnaryCallSettings<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      updateSubpropertySyncConfigSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .updateSubpropertySyncConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSubpropertySyncConfig. */
+  public UnaryCallSettings<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      getSubpropertySyncConfigSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .getSubpropertySyncConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getReportingIdentitySettings. */
+  public UnaryCallSettings<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
+      getReportingIdentitySettingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .getReportingIdentitySettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateReportingIdentitySettings. */
+  public UnaryCallSettings<UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+      updateReportingIdentitySettingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .updateReportingIdentitySettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getUserProvidedDataSettings. */
+  public UnaryCallSettings<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+      getUserProvidedDataSettingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .getUserProvidedDataSettingsSettings();
   }
 
   public static final AnalyticsAdminServiceSettings create(AnalyticsAdminServiceStubSettings stub)
@@ -1363,37 +1527,89 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       return getStubSettingsBuilder().updateGoogleSignalsSettingsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to createConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to createConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateConversionEventRequest, ConversionEvent>
         createConversionEventSettings() {
       return getStubSettingsBuilder().createConversionEventSettings();
     }
 
-    /** Returns the builder for the settings used for calls to updateConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to updateConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateConversionEventRequest, ConversionEvent>
         updateConversionEventSettings() {
       return getStubSettingsBuilder().updateConversionEventSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to getConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetConversionEventRequest, ConversionEvent>
         getConversionEventSettings() {
       return getStubSettingsBuilder().getConversionEventSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to deleteConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteConversionEventRequest, Empty>
         deleteConversionEventSettings() {
       return getStubSettingsBuilder().deleteConversionEventSettings();
     }
 
-    /** Returns the builder for the settings used for calls to listConversionEvents. */
+    /**
+     * Returns the builder for the settings used for calls to listConversionEvents.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListConversionEventsRequest,
             ListConversionEventsResponse,
             ListConversionEventsPagedResponse>
         listConversionEventsSettings() {
       return getStubSettingsBuilder().listConversionEventsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createKeyEvent. */
+    public UnaryCallSettings.Builder<CreateKeyEventRequest, KeyEvent> createKeyEventSettings() {
+      return getStubSettingsBuilder().createKeyEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateKeyEvent. */
+    public UnaryCallSettings.Builder<UpdateKeyEventRequest, KeyEvent> updateKeyEventSettings() {
+      return getStubSettingsBuilder().updateKeyEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getKeyEvent. */
+    public UnaryCallSettings.Builder<GetKeyEventRequest, KeyEvent> getKeyEventSettings() {
+      return getStubSettingsBuilder().getKeyEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteKeyEvent. */
+    public UnaryCallSettings.Builder<DeleteKeyEventRequest, Empty> deleteKeyEventSettings() {
+      return getStubSettingsBuilder().deleteKeyEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listKeyEvents. */
+    public PagedCallSettings.Builder<
+            ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+        listKeyEventsSettings() {
+      return getStubSettingsBuilder().listKeyEventsSettings();
     }
 
     /** Returns the builder for the settings used for calls to getDisplayVideo360AdvertiserLink. */
@@ -1808,23 +2024,10 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       return getStubSettingsBuilder().deleteChannelGroupSettings();
     }
 
-    /**
-     * Returns the builder for the settings used for calls to setAutomatedGa4ConfigurationOptOut.
-     */
-    public UnaryCallSettings.Builder<
-            SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
-        setAutomatedGa4ConfigurationOptOutSettings() {
-      return getStubSettingsBuilder().setAutomatedGa4ConfigurationOptOutSettings();
-    }
-
-    /**
-     * Returns the builder for the settings used for calls to fetchAutomatedGa4ConfigurationOptOut.
-     */
-    public UnaryCallSettings.Builder<
-            FetchAutomatedGa4ConfigurationOptOutRequest,
-            FetchAutomatedGa4ConfigurationOptOutResponse>
-        fetchAutomatedGa4ConfigurationOptOutSettings() {
-      return getStubSettingsBuilder().fetchAutomatedGa4ConfigurationOptOutSettings();
+    /** Returns the builder for the settings used for calls to createBigQueryLink. */
+    public UnaryCallSettings.Builder<CreateBigQueryLinkRequest, BigQueryLink>
+        createBigQueryLinkSettings() {
+      return getStubSettingsBuilder().createBigQueryLinkSettings();
     }
 
     /** Returns the builder for the settings used for calls to getBigQueryLink. */
@@ -1840,6 +2043,18 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       return getStubSettingsBuilder().listBigQueryLinksSettings();
     }
 
+    /** Returns the builder for the settings used for calls to deleteBigQueryLink. */
+    public UnaryCallSettings.Builder<DeleteBigQueryLinkRequest, Empty>
+        deleteBigQueryLinkSettings() {
+      return getStubSettingsBuilder().deleteBigQueryLinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBigQueryLink. */
+    public UnaryCallSettings.Builder<UpdateBigQueryLinkRequest, BigQueryLink>
+        updateBigQueryLinkSettings() {
+      return getStubSettingsBuilder().updateBigQueryLinkSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getEnhancedMeasurementSettings. */
     public UnaryCallSettings.Builder<
             GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
@@ -1852,31 +2067,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
             UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
         updateEnhancedMeasurementSettingsSettings() {
       return getStubSettingsBuilder().updateEnhancedMeasurementSettingsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createConnectedSiteTag. */
-    public UnaryCallSettings.Builder<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
-        createConnectedSiteTagSettings() {
-      return getStubSettingsBuilder().createConnectedSiteTagSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteConnectedSiteTag. */
-    public UnaryCallSettings.Builder<DeleteConnectedSiteTagRequest, Empty>
-        deleteConnectedSiteTagSettings() {
-      return getStubSettingsBuilder().deleteConnectedSiteTagSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listConnectedSiteTags. */
-    public UnaryCallSettings.Builder<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
-        listConnectedSiteTagsSettings() {
-      return getStubSettingsBuilder().listConnectedSiteTagsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to fetchConnectedGa4Property. */
-    public UnaryCallSettings.Builder<
-            FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
-        fetchConnectedGa4PropertySettings() {
-      return getStubSettingsBuilder().fetchConnectedGa4PropertySettings();
     }
 
     /** Returns the builder for the settings used for calls to getAdSenseLink. */
@@ -1933,6 +2123,43 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<DeleteEventCreateRuleRequest, Empty>
         deleteEventCreateRuleSettings() {
       return getStubSettingsBuilder().deleteEventCreateRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEventEditRule. */
+    public UnaryCallSettings.Builder<GetEventEditRuleRequest, EventEditRule>
+        getEventEditRuleSettings() {
+      return getStubSettingsBuilder().getEventEditRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listEventEditRules. */
+    public PagedCallSettings.Builder<
+            ListEventEditRulesRequest, ListEventEditRulesResponse, ListEventEditRulesPagedResponse>
+        listEventEditRulesSettings() {
+      return getStubSettingsBuilder().listEventEditRulesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createEventEditRule. */
+    public UnaryCallSettings.Builder<CreateEventEditRuleRequest, EventEditRule>
+        createEventEditRuleSettings() {
+      return getStubSettingsBuilder().createEventEditRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateEventEditRule. */
+    public UnaryCallSettings.Builder<UpdateEventEditRuleRequest, EventEditRule>
+        updateEventEditRuleSettings() {
+      return getStubSettingsBuilder().updateEventEditRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEventEditRule. */
+    public UnaryCallSettings.Builder<DeleteEventEditRuleRequest, Empty>
+        deleteEventEditRuleSettings() {
+      return getStubSettingsBuilder().deleteEventEditRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to reorderEventEditRules. */
+    public UnaryCallSettings.Builder<ReorderEventEditRulesRequest, Empty>
+        reorderEventEditRulesSettings() {
+      return getStubSettingsBuilder().reorderEventEditRulesSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateDataRedactionSettings. */
@@ -2014,10 +2241,10 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       return getStubSettingsBuilder().deleteRollupPropertySourceLinkSettings();
     }
 
-    /** Returns the builder for the settings used for calls to createSubproperty. */
-    public UnaryCallSettings.Builder<CreateSubpropertyRequest, CreateSubpropertyResponse>
-        createSubpropertySettings() {
-      return getStubSettingsBuilder().createSubpropertySettings();
+    /** Returns the builder for the settings used for calls to provisionSubproperty. */
+    public UnaryCallSettings.Builder<ProvisionSubpropertyRequest, ProvisionSubpropertyResponse>
+        provisionSubpropertySettings() {
+      return getStubSettingsBuilder().provisionSubpropertySettings();
     }
 
     /** Returns the builder for the settings used for calls to createSubpropertyEventFilter. */
@@ -2051,6 +2278,85 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<DeleteSubpropertyEventFilterRequest, Empty>
         deleteSubpropertyEventFilterSettings() {
       return getStubSettingsBuilder().deleteSubpropertyEventFilterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createReportingDataAnnotation. */
+    public UnaryCallSettings.Builder<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+        createReportingDataAnnotationSettings() {
+      return getStubSettingsBuilder().createReportingDataAnnotationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getReportingDataAnnotation. */
+    public UnaryCallSettings.Builder<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+        getReportingDataAnnotationSettings() {
+      return getStubSettingsBuilder().getReportingDataAnnotationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listReportingDataAnnotations. */
+    public PagedCallSettings.Builder<
+            ListReportingDataAnnotationsRequest,
+            ListReportingDataAnnotationsResponse,
+            ListReportingDataAnnotationsPagedResponse>
+        listReportingDataAnnotationsSettings() {
+      return getStubSettingsBuilder().listReportingDataAnnotationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateReportingDataAnnotation. */
+    public UnaryCallSettings.Builder<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+        updateReportingDataAnnotationSettings() {
+      return getStubSettingsBuilder().updateReportingDataAnnotationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteReportingDataAnnotation. */
+    public UnaryCallSettings.Builder<DeleteReportingDataAnnotationRequest, Empty>
+        deleteReportingDataAnnotationSettings() {
+      return getStubSettingsBuilder().deleteReportingDataAnnotationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to submitUserDeletion. */
+    public UnaryCallSettings.Builder<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+        submitUserDeletionSettings() {
+      return getStubSettingsBuilder().submitUserDeletionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSubpropertySyncConfigs. */
+    public PagedCallSettings.Builder<
+            ListSubpropertySyncConfigsRequest,
+            ListSubpropertySyncConfigsResponse,
+            ListSubpropertySyncConfigsPagedResponse>
+        listSubpropertySyncConfigsSettings() {
+      return getStubSettingsBuilder().listSubpropertySyncConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSubpropertySyncConfig. */
+    public UnaryCallSettings.Builder<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+        updateSubpropertySyncConfigSettings() {
+      return getStubSettingsBuilder().updateSubpropertySyncConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSubpropertySyncConfig. */
+    public UnaryCallSettings.Builder<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+        getSubpropertySyncConfigSettings() {
+      return getStubSettingsBuilder().getSubpropertySyncConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getReportingIdentitySettings. */
+    public UnaryCallSettings.Builder<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
+        getReportingIdentitySettingsSettings() {
+      return getStubSettingsBuilder().getReportingIdentitySettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateReportingIdentitySettings. */
+    public UnaryCallSettings.Builder<
+            UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+        updateReportingIdentitySettingsSettings() {
+      return getStubSettingsBuilder().updateReportingIdentitySettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getUserProvidedDataSettings. */
+    public UnaryCallSettings.Builder<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+        getUserProvidedDataSettingsSettings() {
+      return getStubSettingsBuilder().getUserProvidedDataSettingsSettings();
     }
 
     @Override

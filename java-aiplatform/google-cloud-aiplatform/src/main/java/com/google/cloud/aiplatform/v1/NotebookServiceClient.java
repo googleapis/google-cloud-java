@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -153,6 +154,24 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> deleteNotebookRuntimeTemplateOperationCallable()
  *           <li><p> deleteNotebookRuntimeTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateNotebookRuntimeTemplate</td>
+ *      <td><p> Updates a NotebookRuntimeTemplate.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateNotebookRuntimeTemplate(UpdateNotebookRuntimeTemplateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateNotebookRuntimeTemplate(NotebookRuntimeTemplate notebookRuntimeTemplate, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateNotebookRuntimeTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -274,6 +293,105 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> startNotebookRuntimeOperationCallable()
  *           <li><p> startNotebookRuntimeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StopNotebookRuntime</td>
+ *      <td><p> Stops a NotebookRuntime.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> stopNotebookRuntimeAsync(StopNotebookRuntimeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> stopNotebookRuntimeAsync(NotebookRuntimeName name)
+ *           <li><p> stopNotebookRuntimeAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> stopNotebookRuntimeOperationCallable()
+ *           <li><p> stopNotebookRuntimeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateNotebookExecutionJob</td>
+ *      <td><p> Creates a NotebookExecutionJob.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createNotebookExecutionJobAsync(CreateNotebookExecutionJobRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createNotebookExecutionJobAsync(LocationName parent, NotebookExecutionJob notebookExecutionJob, String notebookExecutionJobId)
+ *           <li><p> createNotebookExecutionJobAsync(String parent, NotebookExecutionJob notebookExecutionJob, String notebookExecutionJobId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createNotebookExecutionJobOperationCallable()
+ *           <li><p> createNotebookExecutionJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetNotebookExecutionJob</td>
+ *      <td><p> Gets a NotebookExecutionJob.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getNotebookExecutionJob(GetNotebookExecutionJobRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getNotebookExecutionJob(NotebookExecutionJobName name)
+ *           <li><p> getNotebookExecutionJob(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getNotebookExecutionJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListNotebookExecutionJobs</td>
+ *      <td><p> Lists NotebookExecutionJobs in a Location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listNotebookExecutionJobs(ListNotebookExecutionJobsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listNotebookExecutionJobs(LocationName parent)
+ *           <li><p> listNotebookExecutionJobs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listNotebookExecutionJobsPagedCallable()
+ *           <li><p> listNotebookExecutionJobsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteNotebookExecutionJob</td>
+ *      <td><p> Deletes a NotebookExecutionJob.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteNotebookExecutionJobAsync(DeleteNotebookExecutionJobRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteNotebookExecutionJobAsync(NotebookExecutionJobName name)
+ *           <li><p> deleteNotebookExecutionJobAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteNotebookExecutionJobOperationCallable()
+ *           <li><p> deleteNotebookExecutionJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1117,6 +1235,105 @@ public class NotebookServiceClient implements BackgroundResource {
   public final UnaryCallable<DeleteNotebookRuntimeTemplateRequest, Operation>
       deleteNotebookRuntimeTemplateCallable() {
     return stub.deleteNotebookRuntimeTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a NotebookRuntimeTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   NotebookRuntimeTemplate notebookRuntimeTemplate =
+   *       NotebookRuntimeTemplate.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   NotebookRuntimeTemplate response =
+   *       notebookServiceClient.updateNotebookRuntimeTemplate(notebookRuntimeTemplate, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param notebookRuntimeTemplate Required. The NotebookRuntimeTemplate to update.
+   * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
+   *     definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask]. Input format:
+   *     `{paths: "${updated_filed}"}` Updatable fields:
+   *     <p>&#42; `encryption_spec.kms_key_name`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotebookRuntimeTemplate updateNotebookRuntimeTemplate(
+      NotebookRuntimeTemplate notebookRuntimeTemplate, FieldMask updateMask) {
+    UpdateNotebookRuntimeTemplateRequest request =
+        UpdateNotebookRuntimeTemplateRequest.newBuilder()
+            .setNotebookRuntimeTemplate(notebookRuntimeTemplate)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateNotebookRuntimeTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a NotebookRuntimeTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   UpdateNotebookRuntimeTemplateRequest request =
+   *       UpdateNotebookRuntimeTemplateRequest.newBuilder()
+   *           .setNotebookRuntimeTemplate(NotebookRuntimeTemplate.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   NotebookRuntimeTemplate response =
+   *       notebookServiceClient.updateNotebookRuntimeTemplate(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotebookRuntimeTemplate updateNotebookRuntimeTemplate(
+      UpdateNotebookRuntimeTemplateRequest request) {
+    return updateNotebookRuntimeTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a NotebookRuntimeTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   UpdateNotebookRuntimeTemplateRequest request =
+   *       UpdateNotebookRuntimeTemplateRequest.newBuilder()
+   *           .setNotebookRuntimeTemplate(NotebookRuntimeTemplate.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<NotebookRuntimeTemplate> future =
+   *       notebookServiceClient.updateNotebookRuntimeTemplateCallable().futureCall(request);
+   *   // Do something.
+   *   NotebookRuntimeTemplate response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+      updateNotebookRuntimeTemplateCallable() {
+    return stub.updateNotebookRuntimeTemplateCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2232,6 +2449,808 @@ public class NotebookServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Stops a NotebookRuntime.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   NotebookRuntimeName name =
+   *       NotebookRuntimeName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_RUNTIME]");
+   *   StopNotebookRuntimeResponse response =
+   *       notebookServiceClient.stopNotebookRuntimeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NotebookRuntime resource to be stopped. Instead of
+   *     checking whether the name is in valid NotebookRuntime resource name format, directly throw
+   *     NotFound exception if there is no such NotebookRuntime in spanner.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<StopNotebookRuntimeResponse, StopNotebookRuntimeOperationMetadata>
+      stopNotebookRuntimeAsync(NotebookRuntimeName name) {
+    StopNotebookRuntimeRequest request =
+        StopNotebookRuntimeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return stopNotebookRuntimeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops a NotebookRuntime.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   String name =
+   *       NotebookRuntimeName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_RUNTIME]").toString();
+   *   StopNotebookRuntimeResponse response =
+   *       notebookServiceClient.stopNotebookRuntimeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NotebookRuntime resource to be stopped. Instead of
+   *     checking whether the name is in valid NotebookRuntime resource name format, directly throw
+   *     NotFound exception if there is no such NotebookRuntime in spanner.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<StopNotebookRuntimeResponse, StopNotebookRuntimeOperationMetadata>
+      stopNotebookRuntimeAsync(String name) {
+    StopNotebookRuntimeRequest request =
+        StopNotebookRuntimeRequest.newBuilder().setName(name).build();
+    return stopNotebookRuntimeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops a NotebookRuntime.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   StopNotebookRuntimeRequest request =
+   *       StopNotebookRuntimeRequest.newBuilder()
+   *           .setName(
+   *               NotebookRuntimeName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_RUNTIME]")
+   *                   .toString())
+   *           .build();
+   *   StopNotebookRuntimeResponse response =
+   *       notebookServiceClient.stopNotebookRuntimeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<StopNotebookRuntimeResponse, StopNotebookRuntimeOperationMetadata>
+      stopNotebookRuntimeAsync(StopNotebookRuntimeRequest request) {
+    return stopNotebookRuntimeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops a NotebookRuntime.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   StopNotebookRuntimeRequest request =
+   *       StopNotebookRuntimeRequest.newBuilder()
+   *           .setName(
+   *               NotebookRuntimeName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_RUNTIME]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<StopNotebookRuntimeResponse, StopNotebookRuntimeOperationMetadata> future =
+   *       notebookServiceClient.stopNotebookRuntimeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   StopNotebookRuntimeResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          StopNotebookRuntimeRequest,
+          StopNotebookRuntimeResponse,
+          StopNotebookRuntimeOperationMetadata>
+      stopNotebookRuntimeOperationCallable() {
+    return stub.stopNotebookRuntimeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops a NotebookRuntime.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   StopNotebookRuntimeRequest request =
+   *       StopNotebookRuntimeRequest.newBuilder()
+   *           .setName(
+   *               NotebookRuntimeName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_RUNTIME]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.stopNotebookRuntimeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StopNotebookRuntimeRequest, Operation> stopNotebookRuntimeCallable() {
+    return stub.stopNotebookRuntimeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a NotebookExecutionJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   NotebookExecutionJob notebookExecutionJob = NotebookExecutionJob.newBuilder().build();
+   *   String notebookExecutionJobId = "notebookExecutionJobId1598189627";
+   *   NotebookExecutionJob response =
+   *       notebookServiceClient
+   *           .createNotebookExecutionJobAsync(parent, notebookExecutionJob, notebookExecutionJobId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location to create the NotebookExecutionJob.
+   *     Format: `projects/{project}/locations/{location}`
+   * @param notebookExecutionJob Required. The NotebookExecutionJob to create.
+   * @param notebookExecutionJobId Optional. User specified ID for the NotebookExecutionJob.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<NotebookExecutionJob, CreateNotebookExecutionJobOperationMetadata>
+      createNotebookExecutionJobAsync(
+          LocationName parent,
+          NotebookExecutionJob notebookExecutionJob,
+          String notebookExecutionJobId) {
+    CreateNotebookExecutionJobRequest request =
+        CreateNotebookExecutionJobRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setNotebookExecutionJob(notebookExecutionJob)
+            .setNotebookExecutionJobId(notebookExecutionJobId)
+            .build();
+    return createNotebookExecutionJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a NotebookExecutionJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   NotebookExecutionJob notebookExecutionJob = NotebookExecutionJob.newBuilder().build();
+   *   String notebookExecutionJobId = "notebookExecutionJobId1598189627";
+   *   NotebookExecutionJob response =
+   *       notebookServiceClient
+   *           .createNotebookExecutionJobAsync(parent, notebookExecutionJob, notebookExecutionJobId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location to create the NotebookExecutionJob.
+   *     Format: `projects/{project}/locations/{location}`
+   * @param notebookExecutionJob Required. The NotebookExecutionJob to create.
+   * @param notebookExecutionJobId Optional. User specified ID for the NotebookExecutionJob.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<NotebookExecutionJob, CreateNotebookExecutionJobOperationMetadata>
+      createNotebookExecutionJobAsync(
+          String parent, NotebookExecutionJob notebookExecutionJob, String notebookExecutionJobId) {
+    CreateNotebookExecutionJobRequest request =
+        CreateNotebookExecutionJobRequest.newBuilder()
+            .setParent(parent)
+            .setNotebookExecutionJob(notebookExecutionJob)
+            .setNotebookExecutionJobId(notebookExecutionJobId)
+            .build();
+    return createNotebookExecutionJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a NotebookExecutionJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   CreateNotebookExecutionJobRequest request =
+   *       CreateNotebookExecutionJobRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setNotebookExecutionJob(NotebookExecutionJob.newBuilder().build())
+   *           .setNotebookExecutionJobId("notebookExecutionJobId1598189627")
+   *           .build();
+   *   NotebookExecutionJob response =
+   *       notebookServiceClient.createNotebookExecutionJobAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<NotebookExecutionJob, CreateNotebookExecutionJobOperationMetadata>
+      createNotebookExecutionJobAsync(CreateNotebookExecutionJobRequest request) {
+    return createNotebookExecutionJobOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a NotebookExecutionJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   CreateNotebookExecutionJobRequest request =
+   *       CreateNotebookExecutionJobRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setNotebookExecutionJob(NotebookExecutionJob.newBuilder().build())
+   *           .setNotebookExecutionJobId("notebookExecutionJobId1598189627")
+   *           .build();
+   *   OperationFuture<NotebookExecutionJob, CreateNotebookExecutionJobOperationMetadata> future =
+   *       notebookServiceClient.createNotebookExecutionJobOperationCallable().futureCall(request);
+   *   // Do something.
+   *   NotebookExecutionJob response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateNotebookExecutionJobRequest,
+          NotebookExecutionJob,
+          CreateNotebookExecutionJobOperationMetadata>
+      createNotebookExecutionJobOperationCallable() {
+    return stub.createNotebookExecutionJobOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a NotebookExecutionJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   CreateNotebookExecutionJobRequest request =
+   *       CreateNotebookExecutionJobRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setNotebookExecutionJob(NotebookExecutionJob.newBuilder().build())
+   *           .setNotebookExecutionJobId("notebookExecutionJobId1598189627")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.createNotebookExecutionJobCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateNotebookExecutionJobRequest, Operation>
+      createNotebookExecutionJobCallable() {
+    return stub.createNotebookExecutionJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a NotebookExecutionJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   NotebookExecutionJobName name =
+   *       NotebookExecutionJobName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_EXECUTION_JOB]");
+   *   NotebookExecutionJob response = notebookServiceClient.getNotebookExecutionJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NotebookExecutionJob resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotebookExecutionJob getNotebookExecutionJob(NotebookExecutionJobName name) {
+    GetNotebookExecutionJobRequest request =
+        GetNotebookExecutionJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getNotebookExecutionJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a NotebookExecutionJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   String name =
+   *       NotebookExecutionJobName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_EXECUTION_JOB]")
+   *           .toString();
+   *   NotebookExecutionJob response = notebookServiceClient.getNotebookExecutionJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NotebookExecutionJob resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotebookExecutionJob getNotebookExecutionJob(String name) {
+    GetNotebookExecutionJobRequest request =
+        GetNotebookExecutionJobRequest.newBuilder().setName(name).build();
+    return getNotebookExecutionJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a NotebookExecutionJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   GetNotebookExecutionJobRequest request =
+   *       GetNotebookExecutionJobRequest.newBuilder()
+   *           .setName(
+   *               NotebookExecutionJobName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_EXECUTION_JOB]")
+   *                   .toString())
+   *           .setView(NotebookExecutionJobView.forNumber(0))
+   *           .build();
+   *   NotebookExecutionJob response = notebookServiceClient.getNotebookExecutionJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotebookExecutionJob getNotebookExecutionJob(
+      GetNotebookExecutionJobRequest request) {
+    return getNotebookExecutionJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a NotebookExecutionJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   GetNotebookExecutionJobRequest request =
+   *       GetNotebookExecutionJobRequest.newBuilder()
+   *           .setName(
+   *               NotebookExecutionJobName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_EXECUTION_JOB]")
+   *                   .toString())
+   *           .setView(NotebookExecutionJobView.forNumber(0))
+   *           .build();
+   *   ApiFuture<NotebookExecutionJob> future =
+   *       notebookServiceClient.getNotebookExecutionJobCallable().futureCall(request);
+   *   // Do something.
+   *   NotebookExecutionJob response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetNotebookExecutionJobRequest, NotebookExecutionJob>
+      getNotebookExecutionJobCallable() {
+    return stub.getNotebookExecutionJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists NotebookExecutionJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (NotebookExecutionJob element :
+   *       notebookServiceClient.listNotebookExecutionJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location from which to list the
+   *     NotebookExecutionJobs. Format: `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNotebookExecutionJobsPagedResponse listNotebookExecutionJobs(
+      LocationName parent) {
+    ListNotebookExecutionJobsRequest request =
+        ListNotebookExecutionJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listNotebookExecutionJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists NotebookExecutionJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (NotebookExecutionJob element :
+   *       notebookServiceClient.listNotebookExecutionJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location from which to list the
+   *     NotebookExecutionJobs. Format: `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNotebookExecutionJobsPagedResponse listNotebookExecutionJobs(String parent) {
+    ListNotebookExecutionJobsRequest request =
+        ListNotebookExecutionJobsRequest.newBuilder().setParent(parent).build();
+    return listNotebookExecutionJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists NotebookExecutionJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   ListNotebookExecutionJobsRequest request =
+   *       ListNotebookExecutionJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setView(NotebookExecutionJobView.forNumber(0))
+   *           .build();
+   *   for (NotebookExecutionJob element :
+   *       notebookServiceClient.listNotebookExecutionJobs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNotebookExecutionJobsPagedResponse listNotebookExecutionJobs(
+      ListNotebookExecutionJobsRequest request) {
+    return listNotebookExecutionJobsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists NotebookExecutionJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   ListNotebookExecutionJobsRequest request =
+   *       ListNotebookExecutionJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setView(NotebookExecutionJobView.forNumber(0))
+   *           .build();
+   *   ApiFuture<NotebookExecutionJob> future =
+   *       notebookServiceClient.listNotebookExecutionJobsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (NotebookExecutionJob element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListNotebookExecutionJobsRequest, ListNotebookExecutionJobsPagedResponse>
+      listNotebookExecutionJobsPagedCallable() {
+    return stub.listNotebookExecutionJobsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists NotebookExecutionJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   ListNotebookExecutionJobsRequest request =
+   *       ListNotebookExecutionJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setView(NotebookExecutionJobView.forNumber(0))
+   *           .build();
+   *   while (true) {
+   *     ListNotebookExecutionJobsResponse response =
+   *         notebookServiceClient.listNotebookExecutionJobsCallable().call(request);
+   *     for (NotebookExecutionJob element : response.getNotebookExecutionJobsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNotebookExecutionJobsRequest, ListNotebookExecutionJobsResponse>
+      listNotebookExecutionJobsCallable() {
+    return stub.listNotebookExecutionJobsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a NotebookExecutionJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   NotebookExecutionJobName name =
+   *       NotebookExecutionJobName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_EXECUTION_JOB]");
+   *   notebookServiceClient.deleteNotebookExecutionJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NotebookExecutionJob resource to be deleted.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteNotebookExecutionJobAsync(
+      NotebookExecutionJobName name) {
+    DeleteNotebookExecutionJobRequest request =
+        DeleteNotebookExecutionJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteNotebookExecutionJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a NotebookExecutionJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   String name =
+   *       NotebookExecutionJobName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_EXECUTION_JOB]")
+   *           .toString();
+   *   notebookServiceClient.deleteNotebookExecutionJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NotebookExecutionJob resource to be deleted.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteNotebookExecutionJobAsync(
+      String name) {
+    DeleteNotebookExecutionJobRequest request =
+        DeleteNotebookExecutionJobRequest.newBuilder().setName(name).build();
+    return deleteNotebookExecutionJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a NotebookExecutionJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   DeleteNotebookExecutionJobRequest request =
+   *       DeleteNotebookExecutionJobRequest.newBuilder()
+   *           .setName(
+   *               NotebookExecutionJobName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_EXECUTION_JOB]")
+   *                   .toString())
+   *           .build();
+   *   notebookServiceClient.deleteNotebookExecutionJobAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteNotebookExecutionJobAsync(
+      DeleteNotebookExecutionJobRequest request) {
+    return deleteNotebookExecutionJobOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a NotebookExecutionJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   DeleteNotebookExecutionJobRequest request =
+   *       DeleteNotebookExecutionJobRequest.newBuilder()
+   *           .setName(
+   *               NotebookExecutionJobName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_EXECUTION_JOB]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, DeleteOperationMetadata> future =
+   *       notebookServiceClient.deleteNotebookExecutionJobOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteNotebookExecutionJobRequest, Empty, DeleteOperationMetadata>
+      deleteNotebookExecutionJobOperationCallable() {
+    return stub.deleteNotebookExecutionJobOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a NotebookExecutionJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   DeleteNotebookExecutionJobRequest request =
+   *       DeleteNotebookExecutionJobRequest.newBuilder()
+   *           .setName(
+   *               NotebookExecutionJobName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_EXECUTION_JOB]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.deleteNotebookExecutionJobCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteNotebookExecutionJobRequest, Operation>
+      deleteNotebookExecutionJobCallable() {
+    return stub.deleteNotebookExecutionJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -2803,6 +3822,102 @@ public class NotebookServiceClient implements BackgroundResource {
     protected ListNotebookRuntimesFixedSizeCollection createCollection(
         List<ListNotebookRuntimesPage> pages, int collectionSize) {
       return new ListNotebookRuntimesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListNotebookExecutionJobsPagedResponse
+      extends AbstractPagedListResponse<
+          ListNotebookExecutionJobsRequest,
+          ListNotebookExecutionJobsResponse,
+          NotebookExecutionJob,
+          ListNotebookExecutionJobsPage,
+          ListNotebookExecutionJobsFixedSizeCollection> {
+
+    public static ApiFuture<ListNotebookExecutionJobsPagedResponse> createAsync(
+        PageContext<
+                ListNotebookExecutionJobsRequest,
+                ListNotebookExecutionJobsResponse,
+                NotebookExecutionJob>
+            context,
+        ApiFuture<ListNotebookExecutionJobsResponse> futureResponse) {
+      ApiFuture<ListNotebookExecutionJobsPage> futurePage =
+          ListNotebookExecutionJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListNotebookExecutionJobsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListNotebookExecutionJobsPagedResponse(ListNotebookExecutionJobsPage page) {
+      super(page, ListNotebookExecutionJobsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListNotebookExecutionJobsPage
+      extends AbstractPage<
+          ListNotebookExecutionJobsRequest,
+          ListNotebookExecutionJobsResponse,
+          NotebookExecutionJob,
+          ListNotebookExecutionJobsPage> {
+
+    private ListNotebookExecutionJobsPage(
+        PageContext<
+                ListNotebookExecutionJobsRequest,
+                ListNotebookExecutionJobsResponse,
+                NotebookExecutionJob>
+            context,
+        ListNotebookExecutionJobsResponse response) {
+      super(context, response);
+    }
+
+    private static ListNotebookExecutionJobsPage createEmptyPage() {
+      return new ListNotebookExecutionJobsPage(null, null);
+    }
+
+    @Override
+    protected ListNotebookExecutionJobsPage createPage(
+        PageContext<
+                ListNotebookExecutionJobsRequest,
+                ListNotebookExecutionJobsResponse,
+                NotebookExecutionJob>
+            context,
+        ListNotebookExecutionJobsResponse response) {
+      return new ListNotebookExecutionJobsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListNotebookExecutionJobsPage> createPageAsync(
+        PageContext<
+                ListNotebookExecutionJobsRequest,
+                ListNotebookExecutionJobsResponse,
+                NotebookExecutionJob>
+            context,
+        ApiFuture<ListNotebookExecutionJobsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListNotebookExecutionJobsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListNotebookExecutionJobsRequest,
+          ListNotebookExecutionJobsResponse,
+          NotebookExecutionJob,
+          ListNotebookExecutionJobsPage,
+          ListNotebookExecutionJobsFixedSizeCollection> {
+
+    private ListNotebookExecutionJobsFixedSizeCollection(
+        List<ListNotebookExecutionJobsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListNotebookExecutionJobsFixedSizeCollection createEmptyCollection() {
+      return new ListNotebookExecutionJobsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListNotebookExecutionJobsFixedSizeCollection createCollection(
+        List<ListNotebookExecutionJobsPage> pages, int collectionSize) {
+      return new ListNotebookExecutionJobsFixedSizeCollection(pages, collectionSize);
     }
   }
 

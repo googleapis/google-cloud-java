@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Engine VM instances to run the jobs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/batch/v1alpha/batch.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BatchServiceGrpc {
 
@@ -158,6 +155,88 @@ public final class BatchServiceGrpc {
       }
     }
     return getDeleteJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.batch.v1alpha.CancelJobRequest, com.google.longrunning.Operation>
+      getCancelJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelJob",
+      requestType = com.google.cloud.batch.v1alpha.CancelJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.batch.v1alpha.CancelJobRequest, com.google.longrunning.Operation>
+      getCancelJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.batch.v1alpha.CancelJobRequest, com.google.longrunning.Operation>
+        getCancelJobMethod;
+    if ((getCancelJobMethod = BatchServiceGrpc.getCancelJobMethod) == null) {
+      synchronized (BatchServiceGrpc.class) {
+        if ((getCancelJobMethod = BatchServiceGrpc.getCancelJobMethod) == null) {
+          BatchServiceGrpc.getCancelJobMethod =
+              getCancelJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.batch.v1alpha.CancelJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CancelJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.batch.v1alpha.CancelJobRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new BatchServiceMethodDescriptorSupplier("CancelJob"))
+                      .build();
+        }
+      }
+    }
+    return getCancelJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.batch.v1alpha.UpdateJobRequest, com.google.cloud.batch.v1alpha.Job>
+      getUpdateJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateJob",
+      requestType = com.google.cloud.batch.v1alpha.UpdateJobRequest.class,
+      responseType = com.google.cloud.batch.v1alpha.Job.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.batch.v1alpha.UpdateJobRequest, com.google.cloud.batch.v1alpha.Job>
+      getUpdateJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.batch.v1alpha.UpdateJobRequest, com.google.cloud.batch.v1alpha.Job>
+        getUpdateJobMethod;
+    if ((getUpdateJobMethod = BatchServiceGrpc.getUpdateJobMethod) == null) {
+      synchronized (BatchServiceGrpc.class) {
+        if ((getUpdateJobMethod = BatchServiceGrpc.getUpdateJobMethod) == null) {
+          BatchServiceGrpc.getUpdateJobMethod =
+              getUpdateJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.batch.v1alpha.UpdateJobRequest,
+                          com.google.cloud.batch.v1alpha.Job>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.batch.v1alpha.UpdateJobRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.batch.v1alpha.Job.getDefaultInstance()))
+                      .setSchemaDescriptor(new BatchServiceMethodDescriptorSupplier("UpdateJob"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateJobMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -551,6 +630,19 @@ public final class BatchServiceGrpc {
     return BatchServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static BatchServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BatchServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BatchServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public BatchServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BatchServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return BatchServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -627,6 +719,32 @@ public final class BatchServiceGrpc {
         com.google.cloud.batch.v1alpha.DeleteJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancel a Job.
+     * </pre>
+     */
+    default void cancelJob(
+        com.google.cloud.batch.v1alpha.CancelJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCancelJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Job.
+     * </pre>
+     */
+    default void updateJob(
+        com.google.cloud.batch.v1alpha.UpdateJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.batch.v1alpha.Job> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateJobMethod(), responseObserver);
     }
 
     /**
@@ -829,6 +947,34 @@ public final class BatchServiceGrpc {
      *
      *
      * <pre>
+     * Cancel a Job.
+     * </pre>
+     */
+    public void cancelJob(
+        com.google.cloud.batch.v1alpha.CancelJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelJobMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Job.
+     * </pre>
+     */
+    public void updateJob(
+        com.google.cloud.batch.v1alpha.UpdateJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.batch.v1alpha.Job> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateJobMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * List all Jobs for a project within a region.
      * </pre>
      */
@@ -963,6 +1109,202 @@ public final class BatchServiceGrpc {
    * Engine VM instances to run the jobs.
    * </pre>
    */
+  public static final class BatchServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BatchServiceBlockingV2Stub> {
+    private BatchServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BatchServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BatchServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a Job.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.Job createJob(
+        com.google.cloud.batch.v1alpha.CreateJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a Job specified by its resource name.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.Job getJob(
+        com.google.cloud.batch.v1alpha.GetJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a Job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteJob(
+        com.google.cloud.batch.v1alpha.DeleteJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancel a Job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cancelJob(
+        com.google.cloud.batch.v1alpha.CancelJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Job.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.Job updateJob(
+        com.google.cloud.batch.v1alpha.UpdateJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Jobs for a project within a region.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.ListJobsResponse listJobs(
+        com.google.cloud.batch.v1alpha.ListJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Return a single Task.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.Task getTask(
+        com.google.cloud.batch.v1alpha.GetTaskRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List Tasks associated with a job.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.ListTasksResponse listTasks(
+        com.google.cloud.batch.v1alpha.ListTasksRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTasksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a Resource Allowance.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.ResourceAllowance createResourceAllowance(
+        com.google.cloud.batch.v1alpha.CreateResourceAllowanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateResourceAllowanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceAllowance specified by its resource name.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.ResourceAllowance getResourceAllowance(
+        com.google.cloud.batch.v1alpha.GetResourceAllowanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetResourceAllowanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a ResourceAllowance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteResourceAllowance(
+        com.google.cloud.batch.v1alpha.DeleteResourceAllowanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteResourceAllowanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all ResourceAllowances for a project within a region.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.ListResourceAllowancesResponse listResourceAllowances(
+        com.google.cloud.batch.v1alpha.ListResourceAllowancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListResourceAllowancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Resource Allowance.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.ResourceAllowance updateResourceAllowance(
+        com.google.cloud.batch.v1alpha.UpdateResourceAllowanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateResourceAllowanceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service BatchService.
+   *
+   * <pre>
+   * Google Batch Service.
+   * The service manages user submitted batch jobs and allocates Google Compute
+   * Engine VM instances to run the jobs.
+   * </pre>
+   */
   public static final class BatchServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<BatchServiceBlockingStub> {
     private BatchServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1012,6 +1354,32 @@ public final class BatchServiceGrpc {
         com.google.cloud.batch.v1alpha.DeleteJobRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancel a Job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cancelJob(
+        com.google.cloud.batch.v1alpha.CancelJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Job.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.Job updateJob(
+        com.google.cloud.batch.v1alpha.UpdateJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1183,6 +1551,32 @@ public final class BatchServiceGrpc {
      *
      *
      * <pre>
+     * Cancel a Job.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        cancelJob(com.google.cloud.batch.v1alpha.CancelJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Job.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.batch.v1alpha.Job>
+        updateJob(com.google.cloud.batch.v1alpha.UpdateJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * List all Jobs for a project within a region.
      * </pre>
      */
@@ -1297,14 +1691,16 @@ public final class BatchServiceGrpc {
   private static final int METHODID_CREATE_JOB = 0;
   private static final int METHODID_GET_JOB = 1;
   private static final int METHODID_DELETE_JOB = 2;
-  private static final int METHODID_LIST_JOBS = 3;
-  private static final int METHODID_GET_TASK = 4;
-  private static final int METHODID_LIST_TASKS = 5;
-  private static final int METHODID_CREATE_RESOURCE_ALLOWANCE = 6;
-  private static final int METHODID_GET_RESOURCE_ALLOWANCE = 7;
-  private static final int METHODID_DELETE_RESOURCE_ALLOWANCE = 8;
-  private static final int METHODID_LIST_RESOURCE_ALLOWANCES = 9;
-  private static final int METHODID_UPDATE_RESOURCE_ALLOWANCE = 10;
+  private static final int METHODID_CANCEL_JOB = 3;
+  private static final int METHODID_UPDATE_JOB = 4;
+  private static final int METHODID_LIST_JOBS = 5;
+  private static final int METHODID_GET_TASK = 6;
+  private static final int METHODID_LIST_TASKS = 7;
+  private static final int METHODID_CREATE_RESOURCE_ALLOWANCE = 8;
+  private static final int METHODID_GET_RESOURCE_ALLOWANCE = 9;
+  private static final int METHODID_DELETE_RESOURCE_ALLOWANCE = 10;
+  private static final int METHODID_LIST_RESOURCE_ALLOWANCES = 11;
+  private static final int METHODID_UPDATE_RESOURCE_ALLOWANCE = 12;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1337,6 +1733,16 @@ public final class BatchServiceGrpc {
           serviceImpl.deleteJob(
               (com.google.cloud.batch.v1alpha.DeleteJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CANCEL_JOB:
+          serviceImpl.cancelJob(
+              (com.google.cloud.batch.v1alpha.CancelJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_JOB:
+          serviceImpl.updateJob(
+              (com.google.cloud.batch.v1alpha.UpdateJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.batch.v1alpha.Job>) responseObserver);
           break;
         case METHODID_LIST_JOBS:
           serviceImpl.listJobs(
@@ -1421,6 +1827,18 @@ public final class BatchServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.batch.v1alpha.DeleteJobRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_JOB)))
+        .addMethod(
+            getCancelJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.batch.v1alpha.CancelJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CANCEL_JOB)))
+        .addMethod(
+            getUpdateJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.batch.v1alpha.UpdateJobRequest,
+                    com.google.cloud.batch.v1alpha.Job>(service, METHODID_UPDATE_JOB)))
         .addMethod(
             getListJobsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1528,6 +1946,8 @@ public final class BatchServiceGrpc {
                       .addMethod(getCreateJobMethod())
                       .addMethod(getGetJobMethod())
                       .addMethod(getDeleteJobMethod())
+                      .addMethod(getCancelJobMethod())
+                      .addMethod(getUpdateJobMethod())
                       .addMethod(getListJobsMethod())
                       .addMethod(getGetTaskMethod())
                       .addMethod(getListTasksMethod())

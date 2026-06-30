@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1.SchemaService/GetSchema")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSchemaRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Schema.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListSchemasRequest, ListSchemasResponse>
@@ -69,6 +70,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSchemasRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSchemasResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSchemaRequest, Operation>
@@ -78,6 +80,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
               .setFullMethodName("google.cloud.discoveryengine.v1.SchemaService/CreateSchema")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSchemaRequest, Operation>
@@ -87,6 +90,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
               .setFullMethodName("google.cloud.discoveryengine.v1.SchemaService/UpdateSchema")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSchemaRequest, Operation>
@@ -96,6 +100,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
               .setFullMethodName("google.cloud.discoveryengine.v1.SchemaService/DeleteSchema")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetSchemaRequest, Schema> getSchemaCallable;
@@ -163,6 +168,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSchemasRequest, ListSchemasResponse> listSchemasTransportSettings =
         GrpcCallSettings.<ListSchemasRequest, ListSchemasResponse>newBuilder()
@@ -173,6 +179,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateSchemaRequest, Operation> createSchemaTransportSettings =
         GrpcCallSettings.<CreateSchemaRequest, Operation>newBuilder()
@@ -183,6 +190,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateSchemaRequest, Operation> updateSchemaTransportSettings =
         GrpcCallSettings.<UpdateSchemaRequest, Operation>newBuilder()
@@ -203,6 +211,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getSchemaCallable =

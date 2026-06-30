@@ -1,0 +1,85 @@
+on:
+  pull_request:
+    # Changes to these directories do not directly affect the downstream libraries
+    paths-ignore:
+      - gapic-generator-java/**
+      - library_generation/**
+      - showcase/**
+      - test/**
+
+name: sdk-platform-java Downstream Check
+env:
+  BUILD_SUBDIR: sdk-platform-java
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'sdk-platform-java/**'
+            - 'google-auth-library-java/**'
+            - .kokoro/downstream-compatibility.sh
+            - .github/workflows/sdk-platform-java-downstream.yaml
+  downstream-compatibility:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        repo:
+          - java-bigtable
+          - java-firestore
+          - java-pubsub
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+      - run: mvn -version
+      - name: Install xmllint
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install libxml2-utils
+      - name: Test helper scripts
+        run: .kokoro/common_test.sh
+      - name: Perform downstream compatibility testing
+        run: REPOS_UNDER_TEST="${{ matrix.repo }}" .kokoro/downstream-compatibility.sh
+  downstream-compatibility-spring-generator:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    name: "downstream-compatibility (spring-cloud-gcp)"
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+      - run: mvn -version
+      - name: Install xmllint
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install libxml2-utils
+      - name: Perform downstream compatibility testing
+        run: .kokoro/downstream-compatibility-spring.sh
+  required:
+    needs: [ downstream-compatibility, downstream-compatibility-spring-generator ]
+    name: conditional-required-check
+    if: ${{ always() }} # Always run even if any "needs" jobs fail
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Fail if any previous failure
+        if: ${{ contains(needs.*.result, 'failure') }}
+        run: exit 1
+      - name: Success otherwise
+        run: echo "Success!"

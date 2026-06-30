@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ public class SyncCreateDataStore {
               .setDataStore(DataStore.newBuilder().build())
               .setDataStoreId("dataStoreId929489618")
               .setCreateAdvancedSiteSearch(true)
+              .setSkipDefaultSchemaCreation(true)
               .build();
       DataStore response = dataStoreServiceClient.createDataStoreAsync(request).get();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ import com.google.cloud.filestore.v1.ListInstancesRequest;
 import com.google.cloud.filestore.v1.ListInstancesResponse;
 import com.google.cloud.filestore.v1.ListSnapshotsRequest;
 import com.google.cloud.filestore.v1.ListSnapshotsResponse;
+import com.google.cloud.filestore.v1.PromoteReplicaRequest;
 import com.google.cloud.filestore.v1.RestoreInstanceRequest;
 import com.google.cloud.filestore.v1.RevertInstanceRequest;
 import com.google.cloud.filestore.v1.Snapshot;
@@ -204,6 +205,15 @@ public abstract class CloudFilestoreManagerStub implements BackgroundResource {
 
   public UnaryCallable<UpdateBackupRequest, Operation> updateBackupCallable() {
     throw new UnsupportedOperationException("Not implemented: updateBackupCallable()");
+  }
+
+  public OperationCallable<PromoteReplicaRequest, Instance, OperationMetadata>
+      promoteReplicaOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: promoteReplicaOperationCallable()");
+  }
+
+  public UnaryCallable<PromoteReplicaRequest, Operation> promoteReplicaCallable() {
+    throw new UnsupportedOperationException("Not implemented: promoteReplicaCallable()");
   }
 
   @Override

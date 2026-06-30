@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import static com.google.cloud.parallelstore.v1beta.ParallelstoreClient.ListLoca
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -38,6 +39,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -54,7 +56,13 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.parallelstore.v1beta.CreateInstanceRequest;
 import com.google.cloud.parallelstore.v1beta.DeleteInstanceRequest;
+import com.google.cloud.parallelstore.v1beta.ExportDataMetadata;
+import com.google.cloud.parallelstore.v1beta.ExportDataRequest;
+import com.google.cloud.parallelstore.v1beta.ExportDataResponse;
 import com.google.cloud.parallelstore.v1beta.GetInstanceRequest;
+import com.google.cloud.parallelstore.v1beta.ImportDataMetadata;
+import com.google.cloud.parallelstore.v1beta.ImportDataRequest;
+import com.google.cloud.parallelstore.v1beta.ImportDataResponse;
 import com.google.cloud.parallelstore.v1beta.Instance;
 import com.google.cloud.parallelstore.v1beta.ListInstancesRequest;
 import com.google.cloud.parallelstore.v1beta.ListInstancesResponse;
@@ -67,9 +75,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -86,7 +94,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getInstance to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getInstance:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -103,13 +113,51 @@ import org.threeten.bp.Duration;
  *             .getInstanceSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ParallelstoreStubSettings parallelstoreSettings = parallelstoreSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createInstance:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ParallelstoreStubSettings.Builder parallelstoreSettingsBuilder =
+ *     ParallelstoreStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * parallelstoreSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -128,6 +176,12 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
   private final UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings;
   private final OperationCallSettings<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationSettings;
+  private final UnaryCallSettings<ImportDataRequest, Operation> importDataSettings;
+  private final OperationCallSettings<ImportDataRequest, ImportDataResponse, ImportDataMetadata>
+      importDataOperationSettings;
+  private final UnaryCallSettings<ExportDataRequest, Operation> exportDataSettings;
+  private final OperationCallSettings<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
+      exportDataOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -163,9 +217,7 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
 
             @Override
             public Iterable<Instance> extractResources(ListInstancesResponse payload) {
-              return payload.getInstancesList() == null
-                  ? ImmutableList.<Instance>of()
-                  : payload.getInstancesList();
+              return payload.getInstancesList();
             }
           };
 
@@ -199,9 +251,7 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -283,6 +333,28 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
     return deleteInstanceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to importData. */
+  public UnaryCallSettings<ImportDataRequest, Operation> importDataSettings() {
+    return importDataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importData. */
+  public OperationCallSettings<ImportDataRequest, ImportDataResponse, ImportDataMetadata>
+      importDataOperationSettings() {
+    return importDataOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportData. */
+  public UnaryCallSettings<ExportDataRequest, Operation> exportDataSettings() {
+    return exportDataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportData. */
+  public OperationCallSettings<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
+      exportDataOperationSettings() {
+    return exportDataOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -310,15 +382,6 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -331,6 +394,7 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "parallelstore.googleapis.com:443";
   }
@@ -421,8 +485,21 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
     updateInstanceOperationSettings = settingsBuilder.updateInstanceOperationSettings().build();
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
+    importDataSettings = settingsBuilder.importDataSettings().build();
+    importDataOperationSettings = settingsBuilder.importDataOperationSettings().build();
+    exportDataSettings = settingsBuilder.exportDataSettings().build();
+    exportDataOperationSettings = settingsBuilder.exportDataOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-parallelstore")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for ParallelstoreStubSettings. */
@@ -444,6 +521,14 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
         deleteInstanceSettings;
     private final OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
         deleteInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<ImportDataRequest, Operation> importDataSettings;
+    private final OperationCallSettings.Builder<
+            ImportDataRequest, ImportDataResponse, ImportDataMetadata>
+        importDataOperationSettings;
+    private final UnaryCallSettings.Builder<ExportDataRequest, Operation> exportDataSettings;
+    private final OperationCallSettings.Builder<
+            ExportDataRequest, ExportDataResponse, ExportDataMetadata>
+        exportDataOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -483,6 +568,10 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
       updateInstanceOperationSettings = OperationCallSettings.newBuilder();
       deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteInstanceOperationSettings = OperationCallSettings.newBuilder();
+      importDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importDataOperationSettings = OperationCallSettings.newBuilder();
+      exportDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportDataOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -493,6 +582,8 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
               createInstanceSettings,
               updateInstanceSettings,
               deleteInstanceSettings,
+              importDataSettings,
+              exportDataSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -509,6 +600,10 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
       updateInstanceOperationSettings = settings.updateInstanceOperationSettings.toBuilder();
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
+      importDataSettings = settings.importDataSettings.toBuilder();
+      importDataOperationSettings = settings.importDataOperationSettings.toBuilder();
+      exportDataSettings = settings.exportDataSettings.toBuilder();
+      exportDataOperationSettings = settings.exportDataOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -519,6 +614,8 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
               createInstanceSettings,
               updateInstanceSettings,
               deleteInstanceSettings,
+              importDataSettings,
+              exportDataSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -574,6 +671,16 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .importDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .exportDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -598,13 +705,13 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -622,13 +729,13 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -646,13 +753,59 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .importDataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ImportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ImportDataResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(ImportDataMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportDataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ExportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExportDataResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(ExportDataMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -718,6 +871,28 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
       return deleteInstanceOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to importData. */
+    public UnaryCallSettings.Builder<ImportDataRequest, Operation> importDataSettings() {
+      return importDataSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importData. */
+    public OperationCallSettings.Builder<ImportDataRequest, ImportDataResponse, ImportDataMetadata>
+        importDataOperationSettings() {
+      return importDataOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportData. */
+    public UnaryCallSettings.Builder<ExportDataRequest, Operation> exportDataSettings() {
+      return exportDataSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportData. */
+    public OperationCallSettings.Builder<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
+        exportDataOperationSettings() {
+      return exportDataOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listLocations. */
     public PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -728,15 +903,6 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getLocationSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

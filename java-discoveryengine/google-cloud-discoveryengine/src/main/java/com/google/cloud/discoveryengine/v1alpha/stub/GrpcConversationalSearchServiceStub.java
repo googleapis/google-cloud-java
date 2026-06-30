@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,6 +74,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   ProtoUtils.marshaller(ConverseConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ConverseConversationResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateConversationRequest, Conversation>
@@ -85,6 +86,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Conversation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConversationRequest, Empty>
@@ -96,6 +98,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConversationRequest, Conversation>
@@ -107,6 +110,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Conversation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConversationRequest, Conversation>
@@ -118,6 +122,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Conversation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListConversationsRequest, ListConversationsResponse>
@@ -130,6 +135,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   ProtoUtils.marshaller(ListConversationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConversationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AnswerQueryRequest, AnswerQueryResponse>
@@ -141,6 +147,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setRequestMarshaller(ProtoUtils.marshaller(AnswerQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnswerQueryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAnswerRequest, Answer> getAnswerMethodDescriptor =
@@ -150,6 +157,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               "google.cloud.discoveryengine.v1alpha.ConversationalSearchService/GetAnswer")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAnswerRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Answer.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateSessionRequest, Session>
@@ -161,6 +169,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSessionRequest, Empty> deleteSessionMethodDescriptor =
@@ -170,6 +179,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               "google.cloud.discoveryengine.v1alpha.ConversationalSearchService/DeleteSession")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSessionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSessionRequest, Session>
@@ -181,6 +191,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSessionRequest, Session> getSessionMethodDescriptor =
@@ -190,6 +201,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               "google.cloud.discoveryengine.v1alpha.ConversationalSearchService/GetSession")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSessionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListSessionsRequest, ListSessionsResponse>
@@ -201,6 +213,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setRequestMarshaller(ProtoUtils.marshaller(ListSessionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSessionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ConverseConversationRequest, ConverseConversationResponse>
@@ -280,6 +293,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateConversationRequest, Conversation> createConversationTransportSettings =
         GrpcCallSettings.<CreateConversationRequest, Conversation>newBuilder()
@@ -290,6 +304,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteConversationRequest, Empty> deleteConversationTransportSettings =
         GrpcCallSettings.<DeleteConversationRequest, Empty>newBuilder()
@@ -300,6 +315,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateConversationRequest, Conversation> updateConversationTransportSettings =
         GrpcCallSettings.<UpdateConversationRequest, Conversation>newBuilder()
@@ -321,6 +337,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListConversationsRequest, ListConversationsResponse>
         listConversationsTransportSettings =
@@ -332,6 +349,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQueryTransportSettings =
         GrpcCallSettings.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
@@ -342,6 +360,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("serving_config", String.valueOf(request.getServingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
     GrpcCallSettings<GetAnswerRequest, Answer> getAnswerTransportSettings =
         GrpcCallSettings.<GetAnswerRequest, Answer>newBuilder()
@@ -352,6 +371,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateSessionRequest, Session> createSessionTransportSettings =
         GrpcCallSettings.<CreateSessionRequest, Session>newBuilder()
@@ -362,6 +382,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteSessionRequest, Empty> deleteSessionTransportSettings =
         GrpcCallSettings.<DeleteSessionRequest, Empty>newBuilder()
@@ -372,6 +393,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSessionRequest, Session> updateSessionTransportSettings =
         GrpcCallSettings.<UpdateSessionRequest, Session>newBuilder()
@@ -392,6 +414,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSessionsRequest, ListSessionsResponse> listSessionsTransportSettings =
         GrpcCallSettings.<ListSessionsRequest, ListSessionsResponse>newBuilder()
@@ -402,6 +425,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.converseConversationCallable =

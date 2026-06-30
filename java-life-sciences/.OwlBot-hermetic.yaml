@@ -19,6 +19,9 @@ deep-remove-regex:
 - "/java-life-sciences/proto-google-.*/src"
 - "/java-life-sciences/google-.*/src"
 
+deep-preserve-regex:
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+
 deep-copy-regex:
 - source: "/google/cloud/lifesciences/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-life-sciences/$1/proto-google-cloud-life-sciences-$1/src"

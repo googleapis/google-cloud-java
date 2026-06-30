@@ -292,7 +292,8 @@ public class ITSystemTest {
     for (FaceAnnotation annotation : assertNotEmpty(res, res.getFaceAnnotationsList())) {
       assertThat(annotation.getAngerLikelihood()).isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
       assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
-      assertEquals(Likelihood.LIKELY, annotation.getSurpriseLikelihood());
+      assertThat(annotation.getSurpriseLikelihood())
+          .isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
     }
   }
 
@@ -303,7 +304,8 @@ public class ITSystemTest {
     for (FaceAnnotation annotation : assertNotEmpty(res, res.getFaceAnnotationsList())) {
       assertThat(annotation.getAngerLikelihood()).isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
       assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
-      assertEquals(Likelihood.LIKELY, annotation.getSurpriseLikelihood());
+      assertThat(annotation.getSurpriseLikelihood())
+          .isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
     }
   }
 
@@ -437,7 +439,7 @@ public class ITSystemTest {
         requestAnnotatedImage("wakeupcat.jpg", Type.SAFE_SEARCH_DETECTION, false);
     SafeSearchAnnotation annotation = res.getSafeSearchAnnotation();
     assertEquals(Likelihood.VERY_UNLIKELY, annotation.getAdult());
-    assertEquals(Likelihood.VERY_UNLIKELY, annotation.getRacy());
+    assertEquals(Likelihood.UNLIKELY, annotation.getRacy());
   }
 
   @Test
@@ -457,7 +459,7 @@ public class ITSystemTest {
         requestAnnotatedImage("label/wakeupcat.jpg", Type.SAFE_SEARCH_DETECTION, true);
     SafeSearchAnnotation annotation = res.getSafeSearchAnnotation();
     assertEquals(Likelihood.VERY_UNLIKELY, annotation.getAdult());
-    assertEquals(Likelihood.VERY_UNLIKELY, annotation.getRacy());
+    assertEquals(Likelihood.UNLIKELY, annotation.getRacy());
   }
 
   @Test

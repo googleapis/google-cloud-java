@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -250,7 +250,8 @@ public class JobName implements ResourceName {
     private Builder(JobName jobName) {
       Preconditions.checkArgument(
           Objects.equals(jobName.pathTemplate, PROJECT_TENANT_JOB),
-          "toBuilder is only supported when JobName has the pattern of projects/{project}/tenants/{tenant}/jobs/{job}");
+          "toBuilder is only supported when JobName has the pattern of"
+              + " projects/{project}/tenants/{tenant}/jobs/{job}");
       this.project = jobName.project;
       this.tenant = jobName.tenant;
       this.job = jobName.job;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -566,6 +566,7 @@ public class HttpJsonCloudMemcacheStub extends CloudMemcacheStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         HttpJsonCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -577,6 +578,7 @@ public class HttpJsonCloudMemcacheStub extends CloudMemcacheStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         HttpJsonCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -588,6 +590,7 @@ public class HttpJsonCloudMemcacheStub extends CloudMemcacheStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         HttpJsonCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
@@ -610,6 +613,7 @@ public class HttpJsonCloudMemcacheStub extends CloudMemcacheStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         HttpJsonCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
@@ -621,6 +625,7 @@ public class HttpJsonCloudMemcacheStub extends CloudMemcacheStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ApplyParametersRequest, Operation> applyParametersTransportSettings =
         HttpJsonCallSettings.<ApplyParametersRequest, Operation>newBuilder()
@@ -632,6 +637,7 @@ public class HttpJsonCloudMemcacheStub extends CloudMemcacheStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RescheduleMaintenanceRequest, Operation>
         rescheduleMaintenanceTransportSettings =
@@ -644,6 +650,7 @@ public class HttpJsonCloudMemcacheStub extends CloudMemcacheStub {
                       builder.add("instance", String.valueOf(request.getInstance()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getInstance())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,6 +71,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   ProtoUtils.marshaller(ListEntityTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntityTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEntityTypeRequest, EntityType>
@@ -81,6 +82,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntityType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEntityTypeRequest, EntityType>
@@ -91,6 +93,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntityType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEntityTypeRequest, EntityType>
@@ -101,6 +104,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntityType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEntityTypeRequest, Empty>
@@ -111,6 +115,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchUpdateEntityTypesRequest, Operation>
@@ -121,6 +126,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchUpdateEntityTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchDeleteEntityTypesRequest, Operation>
@@ -131,6 +137,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchDeleteEntityTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchCreateEntitiesRequest, Operation>
@@ -141,6 +148,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchCreateEntitiesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchUpdateEntitiesRequest, Operation>
@@ -151,6 +159,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchUpdateEntitiesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchDeleteEntitiesRequest, Operation>
@@ -161,6 +170,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchDeleteEntitiesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -172,6 +182,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -180,6 +191,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse>
@@ -265,6 +277,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeTransportSettings =
         GrpcCallSettings.<GetEntityTypeRequest, EntityType>newBuilder()
@@ -275,6 +288,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEntityTypeRequest, EntityType> createEntityTypeTransportSettings =
         GrpcCallSettings.<CreateEntityTypeRequest, EntityType>newBuilder()
@@ -285,6 +299,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEntityTypeRequest, EntityType> updateEntityTypeTransportSettings =
         GrpcCallSettings.<UpdateEntityTypeRequest, EntityType>newBuilder()
@@ -306,6 +321,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchUpdateEntityTypesRequest, Operation>
         batchUpdateEntityTypesTransportSettings =
@@ -317,6 +333,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<BatchDeleteEntityTypesRequest, Operation>
         batchDeleteEntityTypesTransportSettings =
@@ -328,6 +345,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<BatchCreateEntitiesRequest, Operation> batchCreateEntitiesTransportSettings =
         GrpcCallSettings.<BatchCreateEntitiesRequest, Operation>newBuilder()
@@ -338,6 +356,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchUpdateEntitiesRequest, Operation> batchUpdateEntitiesTransportSettings =
         GrpcCallSettings.<BatchUpdateEntitiesRequest, Operation>newBuilder()
@@ -348,6 +367,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesTransportSettings =
         GrpcCallSettings.<BatchDeleteEntitiesRequest, Operation>newBuilder()
@@ -358,6 +378,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

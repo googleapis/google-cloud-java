@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest;
+import com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeResponse;
 import com.google.cloud.orchestration.airflow.service.v1.CreateEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsConfigMapRequest;
 import com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest;
@@ -103,6 +105,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
           .add(OperationMetadata.getDescriptor())
           .add(LoadSnapshotResponse.getDescriptor())
           .add(SaveSnapshotResponse.getDescriptor())
+          .add(CheckUpgradeResponse.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<CreateEnvironmentRequest, Operation>
@@ -456,6 +459,49 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       .setDefaultInstance(ListWorkloadsResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CheckUpgradeRequest, Operation>
+      checkUpgradeMethodDescriptor =
+          ApiMethodDescriptor.<CheckUpgradeRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/CheckUpgrade")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CheckUpgradeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{environment=projects/*/locations/*/environments/*}:checkUpgrade",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CheckUpgradeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "environment", request.getEnvironment());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CheckUpgradeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearEnvironment().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CheckUpgradeRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
@@ -1040,6 +1086,9 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
   private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable;
   private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
       listWorkloadsPagedCallable;
+  private final UnaryCallable<CheckUpgradeRequest, Operation> checkUpgradeCallable;
+  private final OperationCallable<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+      checkUpgradeOperationCallable;
   private final UnaryCallable<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
       createUserWorkloadsSecretCallable;
   private final UnaryCallable<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
@@ -1249,7 +1298,19 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<CheckUpgradeRequest, Operation> checkUpgradeTransportSettings =
+        HttpJsonCallSettings.<CheckUpgradeRequest, Operation>newBuilder()
+            .setMethodDescriptor(checkUpgradeMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("environment", String.valueOf(request.getEnvironment()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
         createUserWorkloadsSecretTransportSettings =
             HttpJsonCallSettings.<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>newBuilder()
@@ -1261,6 +1322,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
         getUserWorkloadsSecretTransportSettings =
@@ -1273,6 +1335,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>
         listUserWorkloadsSecretsTransportSettings =
@@ -1286,6 +1349,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
         updateUserWorkloadsSecretTransportSettings =
@@ -1312,6 +1376,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
         createUserWorkloadsConfigMapTransportSettings =
@@ -1325,6 +1390,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
         getUserWorkloadsConfigMapTransportSettings =
@@ -1338,6 +1404,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>
         listUserWorkloadsConfigMapsTransportSettings =
@@ -1352,6 +1419,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
         updateUserWorkloadsConfigMapTransportSettings =
@@ -1379,6 +1447,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SaveSnapshotRequest, Operation> saveSnapshotTransportSettings =
         HttpJsonCallSettings.<SaveSnapshotRequest, Operation>newBuilder()
@@ -1425,6 +1494,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("environment", String.valueOf(request.getEnvironment()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getEnvironment())
                 .build();
 
     this.createEnvironmentCallable =
@@ -1490,6 +1560,15 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
     this.listWorkloadsPagedCallable =
         callableFactory.createPagedCallable(
             listWorkloadsTransportSettings, settings.listWorkloadsSettings(), clientContext);
+    this.checkUpgradeCallable =
+        callableFactory.createUnaryCallable(
+            checkUpgradeTransportSettings, settings.checkUpgradeSettings(), clientContext);
+    this.checkUpgradeOperationCallable =
+        callableFactory.createOperationCallable(
+            checkUpgradeTransportSettings,
+            settings.checkUpgradeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.createUserWorkloadsSecretCallable =
         callableFactory.createUnaryCallable(
             createUserWorkloadsSecretTransportSettings,
@@ -1599,6 +1678,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
     methodDescriptors.add(stopAirflowCommandMethodDescriptor);
     methodDescriptors.add(pollAirflowCommandMethodDescriptor);
     methodDescriptors.add(listWorkloadsMethodDescriptor);
+    methodDescriptors.add(checkUpgradeMethodDescriptor);
     methodDescriptors.add(createUserWorkloadsSecretMethodDescriptor);
     methodDescriptors.add(getUserWorkloadsSecretMethodDescriptor);
     methodDescriptors.add(listUserWorkloadsSecretsMethodDescriptor);
@@ -1697,6 +1777,17 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
   public UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
       listWorkloadsPagedCallable() {
     return listWorkloadsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CheckUpgradeRequest, Operation> checkUpgradeCallable() {
+    return checkUpgradeCallable;
+  }
+
+  @Override
+  public OperationCallable<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+      checkUpgradeOperationCallable() {
+    return checkUpgradeOperationCallable;
   }
 
   @Override

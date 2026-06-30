@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,7 @@ import com.google.cloud.filestore.v1beta1.ListSharesRequest;
 import com.google.cloud.filestore.v1beta1.ListSharesResponse;
 import com.google.cloud.filestore.v1beta1.ListSnapshotsRequest;
 import com.google.cloud.filestore.v1beta1.ListSnapshotsResponse;
+import com.google.cloud.filestore.v1beta1.PromoteReplicaRequest;
 import com.google.cloud.filestore.v1beta1.RestoreInstanceRequest;
 import com.google.cloud.filestore.v1beta1.RevertInstanceRequest;
 import com.google.cloud.filestore.v1beta1.Share;
@@ -89,6 +90,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   ProtoUtils.marshaller(ListInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstancesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
@@ -97,6 +99,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
           .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/GetInstance")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateInstanceRequest, Operation>
@@ -108,6 +111,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateInstanceRequest, Operation>
@@ -119,6 +123,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RestoreInstanceRequest, Operation>
@@ -130,6 +135,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RestoreInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RevertInstanceRequest, Operation>
@@ -141,6 +147,19 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RevertInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<PromoteReplicaRequest, Operation>
+      promoteReplicaMethodDescriptor =
+          MethodDescriptor.<PromoteReplicaRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.filestore.v1beta1.CloudFilestoreManager/PromoteReplica")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PromoteReplicaRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteInstanceRequest, Operation>
@@ -152,6 +171,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSnapshotsRequest, ListSnapshotsResponse>
@@ -164,6 +184,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   ProtoUtils.marshaller(ListSnapshotsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSnapshotsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSnapshotRequest, Snapshot> getSnapshotMethodDescriptor =
@@ -172,6 +193,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
           .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/GetSnapshot")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSnapshotRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Snapshot.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateSnapshotRequest, Operation>
@@ -183,6 +205,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSnapshotRequest, Operation>
@@ -194,6 +217,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSnapshotRequest, Operation>
@@ -205,6 +229,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
@@ -215,6 +240,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListBackupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
@@ -223,6 +249,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
           .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/GetBackup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBackupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateBackupRequest, Operation>
@@ -233,6 +260,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   "google.cloud.filestore.v1beta1.CloudFilestoreManager/CreateBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupRequest, Operation>
@@ -243,6 +271,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   "google.cloud.filestore.v1beta1.CloudFilestoreManager/DeleteBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBackupRequest, Operation>
@@ -253,6 +282,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   "google.cloud.filestore.v1beta1.CloudFilestoreManager/UpdateBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSharesRequest, ListSharesResponse>
@@ -262,6 +292,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/ListShares")
               .setRequestMarshaller(ProtoUtils.marshaller(ListSharesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListSharesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetShareRequest, Share> getShareMethodDescriptor =
@@ -270,6 +301,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
           .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/GetShare")
           .setRequestMarshaller(ProtoUtils.marshaller(GetShareRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Share.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateShareRequest, Operation> createShareMethodDescriptor =
@@ -278,6 +310,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
           .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/CreateShare")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateShareRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteShareRequest, Operation> deleteShareMethodDescriptor =
@@ -286,6 +319,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
           .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/DeleteShare")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteShareRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateShareRequest, Operation> updateShareMethodDescriptor =
@@ -294,6 +328,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
           .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/UpdateShare")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateShareRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;
@@ -312,6 +347,9 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
   private final UnaryCallable<RevertInstanceRequest, Operation> revertInstanceCallable;
   private final OperationCallable<RevertInstanceRequest, Instance, OperationMetadata>
       revertInstanceOperationCallable;
+  private final UnaryCallable<PromoteReplicaRequest, Operation> promoteReplicaCallable;
+  private final OperationCallable<PromoteReplicaRequest, Instance, OperationMetadata>
+      promoteReplicaOperationCallable;
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable;
@@ -407,6 +445,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -417,6 +456,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         GrpcCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -427,6 +467,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         GrpcCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
@@ -447,6 +488,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RevertInstanceRequest, Operation> revertInstanceTransportSettings =
         GrpcCallSettings.<RevertInstanceRequest, Operation>newBuilder()
@@ -457,6 +499,18 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<PromoteReplicaRequest, Operation> promoteReplicaTransportSettings =
+        GrpcCallSettings.<PromoteReplicaRequest, Operation>newBuilder()
+            .setMethodDescriptor(promoteReplicaMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         GrpcCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
@@ -467,6 +521,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsTransportSettings =
         GrpcCallSettings.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
@@ -477,6 +532,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSnapshotRequest, Snapshot> getSnapshotTransportSettings =
         GrpcCallSettings.<GetSnapshotRequest, Snapshot>newBuilder()
@@ -487,6 +543,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateSnapshotRequest, Operation> createSnapshotTransportSettings =
         GrpcCallSettings.<CreateSnapshotRequest, Operation>newBuilder()
@@ -497,6 +554,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteSnapshotRequest, Operation> deleteSnapshotTransportSettings =
         GrpcCallSettings.<DeleteSnapshotRequest, Operation>newBuilder()
@@ -507,6 +565,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSnapshotRequest, Operation> updateSnapshotTransportSettings =
         GrpcCallSettings.<UpdateSnapshotRequest, Operation>newBuilder()
@@ -527,6 +586,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         GrpcCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -537,6 +597,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
         GrpcCallSettings.<CreateBackupRequest, Operation>newBuilder()
@@ -547,6 +608,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
         GrpcCallSettings.<DeleteBackupRequest, Operation>newBuilder()
@@ -557,6 +619,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateBackupRequest, Operation> updateBackupTransportSettings =
         GrpcCallSettings.<UpdateBackupRequest, Operation>newBuilder()
@@ -577,6 +640,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetShareRequest, Share> getShareTransportSettings =
         GrpcCallSettings.<GetShareRequest, Share>newBuilder()
@@ -587,6 +651,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateShareRequest, Operation> createShareTransportSettings =
         GrpcCallSettings.<CreateShareRequest, Operation>newBuilder()
@@ -597,6 +662,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteShareRequest, Operation> deleteShareTransportSettings =
         GrpcCallSettings.<DeleteShareRequest, Operation>newBuilder()
@@ -607,6 +673,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateShareRequest, Operation> updateShareTransportSettings =
         GrpcCallSettings.<UpdateShareRequest, Operation>newBuilder()
@@ -662,6 +729,15 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
         callableFactory.createOperationCallable(
             revertInstanceTransportSettings,
             settings.revertInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.promoteReplicaCallable =
+        callableFactory.createUnaryCallable(
+            promoteReplicaTransportSettings, settings.promoteReplicaSettings(), clientContext);
+    this.promoteReplicaOperationCallable =
+        callableFactory.createOperationCallable(
+            promoteReplicaTransportSettings,
+            settings.promoteReplicaOperationSettings(),
             clientContext,
             operationsStub);
     this.deleteInstanceCallable =
@@ -848,6 +924,17 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
   public OperationCallable<RevertInstanceRequest, Instance, OperationMetadata>
       revertInstanceOperationCallable() {
     return revertInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PromoteReplicaRequest, Operation> promoteReplicaCallable() {
+    return promoteReplicaCallable;
+  }
+
+  @Override
+  public OperationCallable<PromoteReplicaRequest, Instance, OperationMetadata>
+      promoteReplicaOperationCallable() {
+    return promoteReplicaOperationCallable;
   }
 
   @Override

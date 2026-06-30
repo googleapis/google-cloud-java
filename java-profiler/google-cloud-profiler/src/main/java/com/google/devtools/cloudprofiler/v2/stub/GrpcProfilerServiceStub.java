@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ public class GrpcProfilerServiceStub extends ProfilerServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Profile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateOfflineProfileRequest, Profile>
@@ -61,6 +62,7 @@ public class GrpcProfilerServiceStub extends ProfilerServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateOfflineProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Profile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateProfileRequest, Profile>
@@ -71,6 +73,7 @@ public class GrpcProfilerServiceStub extends ProfilerServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Profile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateProfileRequest, Profile> createProfileCallable;
@@ -130,6 +133,7 @@ public class GrpcProfilerServiceStub extends ProfilerServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateOfflineProfileRequest, Profile> createOfflineProfileTransportSettings =
         GrpcCallSettings.<CreateOfflineProfileRequest, Profile>newBuilder()
@@ -140,6 +144,7 @@ public class GrpcProfilerServiceStub extends ProfilerServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateProfileRequest, Profile> updateProfileTransportSettings =
         GrpcCallSettings.<UpdateProfileRequest, Profile>newBuilder()

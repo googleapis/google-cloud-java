@@ -1,0 +1,326 @@
+[
+  {
+    "name": "[B"
+  },
+  {
+    "name": "com.google.auth.Credentials",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "com.google.auth.appengine.AppEngineCredentials"
+  },
+  {
+    "name": "com.google.auth.oauth2.AccessToken",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "com.google.auth.oauth2.GoogleCredentials",
+    "allDeclaredFields": true,
+    "methods": [
+      {
+        "name": "getQuotaProjectId",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "com.google.auth.oauth2.OAuth2Credentials",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "com.google.auth.oauth2.OAuth2Credentials$OAuthValue",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "com.google.auth.oauth2.UserCredentials",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "com.google.protobuf.ExtensionRegistry",
+    "methods": [
+      {
+        "name": "getEmptyRegistry",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "com.sun.crypto.provider.TlsMasterSecretGenerator",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "com.sun.jndi.dns.DnsContextFactory"
+  },
+  {
+    "name": "io.grpc.internal.DnsNameResolverProvider"
+  },
+  {
+    "name": "io.grpc.internal.JndiResourceResolverFactory",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "io.grpc.internal.PickFirstLoadBalancerProvider"
+  },
+  {
+    "name": "io.grpc.util.SecretRoundRobinLoadBalancerProvider$Provider",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "java.io.FileDescriptor"
+  },
+  {
+    "name": "java.lang.Exception"
+  },
+  {
+    "name": "java.lang.IllegalArgumentException"
+  },
+  {
+    "name": "java.lang.NullPointerException"
+  },
+  {
+    "name": "java.lang.Object",
+    "allDeclaredFields": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name": "java.lang.OutOfMemoryError"
+  },
+  {
+    "name": "java.lang.String"
+  },
+  {
+    "name": "java.lang.Throwable",
+    "methods": [
+      {
+        "name": "addSuppressed",
+        "parameterTypes": [
+          "java.lang.Throwable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "java.nio.Bits",
+    "fields": [
+      {
+        "name": "UNALIGNED"
+      }
+    ]
+  },
+  {
+    "name": "java.nio.Buffer",
+    "fields": [
+      {
+        "name": "address"
+      }
+    ]
+  },
+  {
+    "name": "java.nio.ByteBuffer",
+    "methods": [
+      {
+        "name": "alignedSlice",
+        "parameterTypes": [
+          "int"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "java.nio.DirectByteBuffer",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "long",
+          "int"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "java.nio.channels.FileChannel"
+  },
+  {
+    "name": "java.security.AlgorithmParametersSpi"
+  },
+  {
+    "name": "java.security.KeyStoreSpi"
+  },
+  {
+    "name": "java.security.MessageDigestSpi"
+  },
+  {
+    "name": "java.security.SecureRandomParameters"
+  },
+  {
+    "name": "java.sql.Date"
+  },
+  {
+    "name": "java.time.Duration",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "java.util.AbstractMap",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "java.util.concurrent.atomic.LongAdder",
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      },
+      {
+        "name": "add",
+        "parameterTypes": [
+          "long"
+        ]
+      },
+      {
+        "name": "sum",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "javax.naming.directory.InitialDirContext"
+  },
+  {
+    "name": "javax.security.auth.x500.X500Principal",
+    "fields": [
+      {
+        "name": "thisX500Name"
+      }
+    ],
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "sun.security.x509.X500Name"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jdk.internal.misc.Unsafe",
+    "methods": [
+      {
+        "name": "getUnsafe",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "sun.misc.Unsafe",
+    "fields": [
+      {
+        "name": "theUnsafe"
+      }
+    ],
+    "methods": [
+      {
+        "name": "copyMemory",
+        "parameterTypes": [
+          "java.lang.Object",
+          "long",
+          "java.lang.Object",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "getAndAddLong",
+        "parameterTypes": [
+          "java.lang.Object",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "getAndSetObject",
+        "parameterTypes": [
+          "java.lang.Object",
+          "long",
+          "java.lang.Object"
+        ]
+      },
+      {
+        "name": "invokeCleaner",
+        "parameterTypes": [
+          "java.nio.ByteBuffer"
+        ]
+      },
+      {
+        "name": "storeFence",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "sun.nio.ch.SelectorImpl",
+    "fields": [
+      {
+        "name": "publicSelectedKeys"
+      },
+      {
+        "name": "selectedKeys"
+      }
+    ]
+  },
+  {
+    "name" : "com.google.auth.oauth2.ServiceAccountCredentials",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "allDeclaredFields" : true,
+    "allPublicFields" : true,
+    "queryAllPublicConstructors" : true,
+    "queryAllDeclaredConstructors" : true,
+    "queryAllPublicMethods" : true,
+    "queryAllDeclaredMethods" : true
+  },
+  {
+    "name" : "org.apache.commons.pool2.impl.DefaultEvictionPolicy",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "allDeclaredFields" : true,
+    "allPublicFields" : true,
+    "queryAllPublicConstructors" : true,
+    "queryAllDeclaredConstructors" : true,
+    "queryAllPublicMethods" : true,
+    "queryAllDeclaredMethods" : true
+  },
+  {
+    "name" : "java.nio.channels.spi.SelectorProvider",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "allDeclaredFields" : true,
+    "allPublicFields" : true,
+    "queryAllPublicConstructors" : true,
+    "queryAllDeclaredConstructors" : true,
+    "queryAllPublicMethods" : true,
+    "queryAllDeclaredMethods" : true
+  }
+]

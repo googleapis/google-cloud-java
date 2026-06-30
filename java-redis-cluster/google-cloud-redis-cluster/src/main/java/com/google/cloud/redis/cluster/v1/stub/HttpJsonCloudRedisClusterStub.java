@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 package com.google.cloud.redis.cluster.v1.stub;
 
+import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListBackupCollectionsPagedResponse;
+import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListBackupsPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListLocationsPagedResponse;
 
@@ -39,12 +41,28 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.redis.cluster.v1.Backup;
+import com.google.cloud.redis.cluster.v1.BackupClusterRequest;
+import com.google.cloud.redis.cluster.v1.BackupCollection;
+import com.google.cloud.redis.cluster.v1.CertificateAuthority;
 import com.google.cloud.redis.cluster.v1.Cluster;
 import com.google.cloud.redis.cluster.v1.CreateClusterRequest;
+import com.google.cloud.redis.cluster.v1.DeleteBackupRequest;
 import com.google.cloud.redis.cluster.v1.DeleteClusterRequest;
+import com.google.cloud.redis.cluster.v1.ExportBackupRequest;
+import com.google.cloud.redis.cluster.v1.GetBackupCollectionRequest;
+import com.google.cloud.redis.cluster.v1.GetBackupRequest;
+import com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterRequest;
+import com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest;
+import com.google.cloud.redis.cluster.v1.ListBackupCollectionsRequest;
+import com.google.cloud.redis.cluster.v1.ListBackupCollectionsResponse;
+import com.google.cloud.redis.cluster.v1.ListBackupsRequest;
+import com.google.cloud.redis.cluster.v1.ListBackupsResponse;
 import com.google.cloud.redis.cluster.v1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1.ListClustersResponse;
+import com.google.cloud.redis.cluster.v1.RescheduleClusterMaintenanceRequest;
+import com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority;
 import com.google.cloud.redis.cluster.v1.UpdateClusterRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -72,6 +90,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
           .add(Empty.getDescriptor())
           .add(Cluster.getDescriptor())
           .add(Any.getDescriptor())
+          .add(Backup.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<ListClustersRequest, ListClustersResponse>
@@ -266,6 +285,384 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<
+          GetClusterCertificateAuthorityRequest, CertificateAuthority>
+      getClusterCertificateAuthorityMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetClusterCertificateAuthorityRequest, CertificateAuthority>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1.CloudRedisCluster/GetClusterCertificateAuthority")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetClusterCertificateAuthorityRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/clusters/*/certificateAuthority}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetClusterCertificateAuthorityRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetClusterCertificateAuthorityRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CertificateAuthority>newBuilder()
+                      .setDefaultInstance(CertificateAuthority.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthorityMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1.CloudRedisCluster/GetSharedRegionalCertificateAuthority")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetSharedRegionalCertificateAuthorityRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/sharedRegionalCertificateAuthority}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSharedRegionalCertificateAuthorityRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSharedRegionalCertificateAuthorityRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SharedRegionalCertificateAuthority>newBuilder()
+                      .setDefaultInstance(SharedRegionalCertificateAuthority.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<RescheduleClusterMaintenanceRequest, Operation>
+      rescheduleClusterMaintenanceMethodDescriptor =
+          ApiMethodDescriptor.<RescheduleClusterMaintenanceRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1.CloudRedisCluster/RescheduleClusterMaintenance")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RescheduleClusterMaintenanceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/clusters/*}:rescheduleClusterMaintenance",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RescheduleClusterMaintenanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RescheduleClusterMaintenanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RescheduleClusterMaintenanceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListBackupCollectionsRequest, ListBackupCollectionsResponse>
+      listBackupCollectionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListBackupCollectionsRequest, ListBackupCollectionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1.CloudRedisCluster/ListBackupCollections")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBackupCollectionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/backupCollections",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupCollectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupCollectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBackupCollectionsResponse>newBuilder()
+                      .setDefaultInstance(ListBackupCollectionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetBackupCollectionRequest, BackupCollection>
+      getBackupCollectionMethodDescriptor =
+          ApiMethodDescriptor.<GetBackupCollectionRequest, BackupCollection>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1.CloudRedisCluster/GetBackupCollection")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetBackupCollectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupCollections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupCollectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupCollectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BackupCollection>newBuilder()
+                      .setDefaultInstance(BackupCollection.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListBackupsRequest, ListBackupsResponse>
+      listBackupsMethodDescriptor =
+          ApiMethodDescriptor.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/ListBackups")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBackupsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/backupCollections/*}/backups",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBackupsResponse>newBuilder()
+                      .setDefaultInstance(ListBackupsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
+      ApiMethodDescriptor.<GetBackupRequest, Backup>newBuilder()
+          .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/GetBackup")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetBackupRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/backupCollections/*/backups/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetBackupRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetBackupRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Backup>newBuilder()
+                  .setDefaultInstance(Backup.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<DeleteBackupRequest, Operation>
+      deleteBackupMethodDescriptor =
+          ApiMethodDescriptor.<DeleteBackupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/DeleteBackup")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteBackupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupCollections/*/backups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteBackupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ExportBackupRequest, Operation>
+      exportBackupMethodDescriptor =
+          ApiMethodDescriptor.<ExportBackupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/ExportBackup")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExportBackupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupCollections/*/backups/*}:export",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ExportBackupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<BackupClusterRequest, Operation>
+      backupClusterMethodDescriptor =
+          ApiMethodDescriptor.<BackupClusterRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/BackupCluster")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BackupClusterRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/clusters/*}:backup",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BackupClusterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BackupClusterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (BackupClusterRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -346,6 +743,32 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   private final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable;
   private final OperationCallable<CreateClusterRequest, Cluster, Any>
       createClusterOperationCallable;
+  private final UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+      getClusterCertificateAuthorityCallable;
+  private final UnaryCallable<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthorityCallable;
+  private final UnaryCallable<RescheduleClusterMaintenanceRequest, Operation>
+      rescheduleClusterMaintenanceCallable;
+  private final OperationCallable<RescheduleClusterMaintenanceRequest, Cluster, Any>
+      rescheduleClusterMaintenanceOperationCallable;
+  private final UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
+      listBackupCollectionsCallable;
+  private final UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsPagedResponse>
+      listBackupCollectionsPagedCallable;
+  private final UnaryCallable<GetBackupCollectionRequest, BackupCollection>
+      getBackupCollectionCallable;
+  private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
+  private final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
+      listBackupsPagedCallable;
+  private final UnaryCallable<GetBackupRequest, Backup> getBackupCallable;
+  private final UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable;
+  private final OperationCallable<DeleteBackupRequest, Empty, Any> deleteBackupOperationCallable;
+  private final UnaryCallable<ExportBackupRequest, Operation> exportBackupCallable;
+  private final OperationCallable<ExportBackupRequest, Backup, Any> exportBackupOperationCallable;
+  private final UnaryCallable<BackupClusterRequest, Operation> backupClusterCallable;
+  private final OperationCallable<BackupClusterRequest, Cluster, Any>
+      backupClusterOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -431,6 +854,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         HttpJsonCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -442,6 +866,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         HttpJsonCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -464,6 +889,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         HttpJsonCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -475,6 +901,137 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+        getClusterCertificateAuthorityTransportSettings =
+            HttpJsonCallSettings
+                .<GetClusterCertificateAuthorityRequest, CertificateAuthority>newBuilder()
+                .setMethodDescriptor(getClusterCertificateAuthorityMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<
+            GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+        getSharedRegionalCertificateAuthorityTransportSettings =
+            HttpJsonCallSettings
+                .<GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+                    newBuilder()
+                .setMethodDescriptor(getSharedRegionalCertificateAuthorityMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<RescheduleClusterMaintenanceRequest, Operation>
+        rescheduleClusterMaintenanceTransportSettings =
+            HttpJsonCallSettings.<RescheduleClusterMaintenanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(rescheduleClusterMaintenanceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
+        listBackupCollectionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListBackupCollectionsRequest, ListBackupCollectionsResponse>newBuilder()
+                .setMethodDescriptor(listBackupCollectionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetBackupCollectionRequest, BackupCollection>
+        getBackupCollectionTransportSettings =
+            HttpJsonCallSettings.<GetBackupCollectionRequest, BackupCollection>newBuilder()
+                .setMethodDescriptor(getBackupCollectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
+        HttpJsonCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+            .setMethodDescriptor(listBackupsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
+        HttpJsonCallSettings.<GetBackupRequest, Backup>newBuilder()
+            .setMethodDescriptor(getBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
+        HttpJsonCallSettings.<DeleteBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ExportBackupRequest, Operation> exportBackupTransportSettings =
+        HttpJsonCallSettings.<ExportBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<BackupClusterRequest, Operation> backupClusterTransportSettings =
+        HttpJsonCallSettings.<BackupClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(backupClusterMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -536,6 +1093,78 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
             settings.createClusterOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.getClusterCertificateAuthorityCallable =
+        callableFactory.createUnaryCallable(
+            getClusterCertificateAuthorityTransportSettings,
+            settings.getClusterCertificateAuthoritySettings(),
+            clientContext);
+    this.getSharedRegionalCertificateAuthorityCallable =
+        callableFactory.createUnaryCallable(
+            getSharedRegionalCertificateAuthorityTransportSettings,
+            settings.getSharedRegionalCertificateAuthoritySettings(),
+            clientContext);
+    this.rescheduleClusterMaintenanceCallable =
+        callableFactory.createUnaryCallable(
+            rescheduleClusterMaintenanceTransportSettings,
+            settings.rescheduleClusterMaintenanceSettings(),
+            clientContext);
+    this.rescheduleClusterMaintenanceOperationCallable =
+        callableFactory.createOperationCallable(
+            rescheduleClusterMaintenanceTransportSettings,
+            settings.rescheduleClusterMaintenanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listBackupCollectionsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupCollectionsTransportSettings,
+            settings.listBackupCollectionsSettings(),
+            clientContext);
+    this.listBackupCollectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupCollectionsTransportSettings,
+            settings.listBackupCollectionsSettings(),
+            clientContext);
+    this.getBackupCollectionCallable =
+        callableFactory.createUnaryCallable(
+            getBackupCollectionTransportSettings,
+            settings.getBackupCollectionSettings(),
+            clientContext);
+    this.listBackupsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.listBackupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.getBackupCallable =
+        callableFactory.createUnaryCallable(
+            getBackupTransportSettings, settings.getBackupSettings(), clientContext);
+    this.deleteBackupCallable =
+        callableFactory.createUnaryCallable(
+            deleteBackupTransportSettings, settings.deleteBackupSettings(), clientContext);
+    this.deleteBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteBackupTransportSettings,
+            settings.deleteBackupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.exportBackupCallable =
+        callableFactory.createUnaryCallable(
+            exportBackupTransportSettings, settings.exportBackupSettings(), clientContext);
+    this.exportBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            exportBackupTransportSettings,
+            settings.exportBackupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.backupClusterCallable =
+        callableFactory.createUnaryCallable(
+            backupClusterTransportSettings, settings.backupClusterSettings(), clientContext);
+    this.backupClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            backupClusterTransportSettings,
+            settings.backupClusterOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -558,6 +1187,16 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
     methodDescriptors.add(updateClusterMethodDescriptor);
     methodDescriptors.add(deleteClusterMethodDescriptor);
     methodDescriptors.add(createClusterMethodDescriptor);
+    methodDescriptors.add(getClusterCertificateAuthorityMethodDescriptor);
+    methodDescriptors.add(getSharedRegionalCertificateAuthorityMethodDescriptor);
+    methodDescriptors.add(rescheduleClusterMaintenanceMethodDescriptor);
+    methodDescriptors.add(listBackupCollectionsMethodDescriptor);
+    methodDescriptors.add(getBackupCollectionMethodDescriptor);
+    methodDescriptors.add(listBackupsMethodDescriptor);
+    methodDescriptors.add(getBackupMethodDescriptor);
+    methodDescriptors.add(deleteBackupMethodDescriptor);
+    methodDescriptors.add(exportBackupMethodDescriptor);
+    methodDescriptors.add(backupClusterMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -610,6 +1249,93 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   @Override
   public OperationCallable<CreateClusterRequest, Cluster, Any> createClusterOperationCallable() {
     return createClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+      getClusterCertificateAuthorityCallable() {
+    return getClusterCertificateAuthorityCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthorityCallable() {
+    return getSharedRegionalCertificateAuthorityCallable;
+  }
+
+  @Override
+  public UnaryCallable<RescheduleClusterMaintenanceRequest, Operation>
+      rescheduleClusterMaintenanceCallable() {
+    return rescheduleClusterMaintenanceCallable;
+  }
+
+  @Override
+  public OperationCallable<RescheduleClusterMaintenanceRequest, Cluster, Any>
+      rescheduleClusterMaintenanceOperationCallable() {
+    return rescheduleClusterMaintenanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
+      listBackupCollectionsCallable() {
+    return listBackupCollectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsPagedResponse>
+      listBackupCollectionsPagedCallable() {
+    return listBackupCollectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupCollectionRequest, BackupCollection> getBackupCollectionCallable() {
+    return getBackupCollectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    return listBackupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
+    return listBackupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    return getBackupCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable() {
+    return deleteBackupCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteBackupRequest, Empty, Any> deleteBackupOperationCallable() {
+    return deleteBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportBackupRequest, Operation> exportBackupCallable() {
+    return exportBackupCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportBackupRequest, Backup, Any> exportBackupOperationCallable() {
+    return exportBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BackupClusterRequest, Operation> backupClusterCallable() {
+    return backupClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<BackupClusterRequest, Cluster, Any> backupClusterOperationCallable() {
+    return backupClusterOperationCallable;
   }
 
   @Override

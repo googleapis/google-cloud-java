@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-kmsinventory</artifactId>
-  <version>0.31.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
+  <version>0.83.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
   <packaging>jar</packaging>
   <name>Google KMS Inventory API</name>
   <description>KMS Inventory API KMS Inventory API.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-kmsinventory-parent</artifactId>
-    <version>0.31.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
+    <version>0.83.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-kmsinventory</site.installationModule>
@@ -41,10 +41,12 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-kmsinventory-v1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -64,6 +66,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -72,6 +75,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>
@@ -85,11 +89,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-kmsinventory-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

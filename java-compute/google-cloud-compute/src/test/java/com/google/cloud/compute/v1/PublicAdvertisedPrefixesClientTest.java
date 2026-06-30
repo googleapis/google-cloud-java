@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,6 +87,7 @@ public class PublicAdvertisedPrefixesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -159,6 +160,7 @@ public class PublicAdvertisedPrefixesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -233,6 +235,7 @@ public class PublicAdvertisedPrefixesClientTest {
             .setFingerprint("fingerprint-1375934236")
             .setId(3355)
             .setIpCidrRange("ipCidrRange-866375486")
+            .setIpv6AccessType("ipv6AccessType606780421")
             .setKind("kind3292052")
             .setName("name3373707")
             .setPdpScope("pdpScope-531506504")
@@ -291,6 +294,7 @@ public class PublicAdvertisedPrefixesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -415,6 +419,7 @@ public class PublicAdvertisedPrefixesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -492,6 +497,7 @@ public class PublicAdvertisedPrefixesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)

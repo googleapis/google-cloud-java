@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,7 @@ public class GrpcServicesStub extends ServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceRequest, Service> getServiceMethodDescriptor =
@@ -71,6 +72,7 @@ public class GrpcServicesStub extends ServicesStub {
           .setFullMethodName("google.cloud.run.v2.Services/GetService")
           .setRequestMarshaller(ProtoUtils.marshaller(GetServiceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListServicesRequest, ListServicesResponse>
@@ -81,6 +83,7 @@ public class GrpcServicesStub extends ServicesStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateServiceRequest, Operation>
@@ -91,6 +94,7 @@ public class GrpcServicesStub extends ServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceRequest, Operation>
@@ -101,6 +105,7 @@ public class GrpcServicesStub extends ServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -109,6 +114,7 @@ public class GrpcServicesStub extends ServicesStub {
           .setFullMethodName("google.cloud.run.v2.Services/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -117,6 +123,7 @@ public class GrpcServicesStub extends ServicesStub {
           .setFullMethodName("google.cloud.run.v2.Services/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -128,6 +135,7 @@ public class GrpcServicesStub extends ServicesStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateServiceRequest, Operation> createServiceCallable;
@@ -207,6 +215,7 @@ public class GrpcServicesStub extends ServicesStub {
                   builder.add(request.getParent(), "location", CREATE_SERVICE_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
         GrpcCallSettings.<GetServiceRequest, Service>newBuilder()
@@ -217,6 +226,7 @@ public class GrpcServicesStub extends ServicesStub {
                   builder.add(request.getName(), "location", GET_SERVICE_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
         GrpcCallSettings.<ListServicesRequest, ListServicesResponse>newBuilder()
@@ -227,6 +237,7 @@ public class GrpcServicesStub extends ServicesStub {
                   builder.add(request.getParent(), "location", LIST_SERVICES_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateServiceRequest, Operation> updateServiceTransportSettings =
         GrpcCallSettings.<UpdateServiceRequest, Operation>newBuilder()
@@ -250,6 +261,7 @@ public class GrpcServicesStub extends ServicesStub {
                   builder.add(request.getName(), "location", DELETE_SERVICE_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -260,6 +272,7 @@ public class GrpcServicesStub extends ServicesStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -270,6 +283,7 @@ public class GrpcServicesStub extends ServicesStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -281,6 +295,7 @@ public class GrpcServicesStub extends ServicesStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createServiceCallable =

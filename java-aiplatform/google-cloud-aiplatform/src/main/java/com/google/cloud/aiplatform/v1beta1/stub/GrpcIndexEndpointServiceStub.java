@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,6 +82,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateIndexEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIndexEndpointRequest, IndexEndpoint>
@@ -93,6 +94,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetIndexEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(IndexEndpoint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListIndexEndpointsRequest, ListIndexEndpointsResponse>
@@ -105,6 +107,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   ProtoUtils.marshaller(ListIndexEndpointsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIndexEndpointsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateIndexEndpointRequest, IndexEndpoint>
@@ -116,6 +119,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateIndexEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(IndexEndpoint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteIndexEndpointRequest, Operation>
@@ -127,6 +131,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteIndexEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeployIndexRequest, Operation> deployIndexMethodDescriptor =
@@ -135,6 +140,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.IndexEndpointService/DeployIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(DeployIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UndeployIndexRequest, Operation>
@@ -146,6 +152,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeployIndexRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MutateDeployedIndexRequest, Operation>
@@ -157,6 +164,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MutateDeployedIndexRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -168,6 +176,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -176,6 +185,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -184,6 +194,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -192,6 +203,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -203,6 +215,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateIndexEndpointRequest, Operation> createIndexEndpointCallable;
@@ -295,6 +308,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetIndexEndpointRequest, IndexEndpoint> getIndexEndpointTransportSettings =
         GrpcCallSettings.<GetIndexEndpointRequest, IndexEndpoint>newBuilder()
@@ -305,6 +319,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListIndexEndpointsRequest, ListIndexEndpointsResponse>
         listIndexEndpointsTransportSettings =
@@ -316,6 +331,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateIndexEndpointRequest, IndexEndpoint>
         updateIndexEndpointTransportSettings =
@@ -339,6 +355,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeployIndexRequest, Operation> deployIndexTransportSettings =
         GrpcCallSettings.<DeployIndexRequest, Operation>newBuilder()
@@ -349,6 +366,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   builder.add("index_endpoint", String.valueOf(request.getIndexEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getIndexEndpoint())
             .build();
     GrpcCallSettings<UndeployIndexRequest, Operation> undeployIndexTransportSettings =
         GrpcCallSettings.<UndeployIndexRequest, Operation>newBuilder()
@@ -359,6 +377,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   builder.add("index_endpoint", String.valueOf(request.getIndexEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getIndexEndpoint())
             .build();
     GrpcCallSettings<MutateDeployedIndexRequest, Operation> mutateDeployedIndexTransportSettings =
         GrpcCallSettings.<MutateDeployedIndexRequest, Operation>newBuilder()
@@ -369,6 +388,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   builder.add("index_endpoint", String.valueOf(request.getIndexEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getIndexEndpoint())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -399,6 +419,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -409,6 +430,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -420,6 +442,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createIndexEndpointCallable =

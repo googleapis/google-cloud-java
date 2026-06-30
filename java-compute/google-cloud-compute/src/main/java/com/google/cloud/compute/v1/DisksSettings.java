@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -66,9 +68,45 @@ import javax.annotation.Generated;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * DisksSettings disksSettings = disksSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for addResourcePolicies:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * DisksSettings.Builder disksSettingsBuilder = DisksSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * disksSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -102,6 +140,17 @@ public class DisksSettings extends ClientSettings<DisksSettings> {
   public OperationCallSettings<BulkInsertDiskRequest, Operation, Operation>
       bulkInsertOperationSettings() {
     return ((DisksStubSettings) getStubSettings()).bulkInsertOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to bulkSetLabels. */
+  public UnaryCallSettings<BulkSetLabelsDiskRequest, Operation> bulkSetLabelsSettings() {
+    return ((DisksStubSettings) getStubSettings()).bulkSetLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to bulkSetLabels. */
+  public OperationCallSettings<BulkSetLabelsDiskRequest, Operation, Operation>
+      bulkSetLabelsOperationSettings() {
+    return ((DisksStubSettings) getStubSettings()).bulkSetLabelsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createSnapshot. */
@@ -240,6 +289,17 @@ public class DisksSettings extends ClientSettings<DisksSettings> {
     return ((DisksStubSettings) getStubSettings()).updateOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public UnaryCallSettings<UpdateKmsKeyDiskRequest, Operation> updateKmsKeySettings() {
+    return ((DisksStubSettings) getStubSettings()).updateKmsKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public OperationCallSettings<UpdateKmsKeyDiskRequest, Operation, Operation>
+      updateKmsKeyOperationSettings() {
+    return ((DisksStubSettings) getStubSettings()).updateKmsKeyOperationSettings();
+  }
+
   public static final DisksSettings create(DisksStubSettings stub) throws IOException {
     return new DisksSettings.Builder(stub.toBuilder()).build();
   }
@@ -364,6 +424,17 @@ public class DisksSettings extends ClientSettings<DisksSettings> {
     public OperationCallSettings.Builder<BulkInsertDiskRequest, Operation, Operation>
         bulkInsertOperationSettings() {
       return getStubSettingsBuilder().bulkInsertOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to bulkSetLabels. */
+    public UnaryCallSettings.Builder<BulkSetLabelsDiskRequest, Operation> bulkSetLabelsSettings() {
+      return getStubSettingsBuilder().bulkSetLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to bulkSetLabels. */
+    public OperationCallSettings.Builder<BulkSetLabelsDiskRequest, Operation, Operation>
+        bulkSetLabelsOperationSettings() {
+      return getStubSettingsBuilder().bulkSetLabelsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createSnapshot. */
@@ -505,6 +576,17 @@ public class DisksSettings extends ClientSettings<DisksSettings> {
     public OperationCallSettings.Builder<UpdateDiskRequest, Operation, Operation>
         updateOperationSettings() {
       return getStubSettingsBuilder().updateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public UnaryCallSettings.Builder<UpdateKmsKeyDiskRequest, Operation> updateKmsKeySettings() {
+      return getStubSettingsBuilder().updateKmsKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public OperationCallSettings.Builder<UpdateKmsKeyDiskRequest, Operation, Operation>
+        updateKmsKeyOperationSettings() {
+      return getStubSettingsBuilder().updateKmsKeyOperationSettings();
     }
 
     @Override

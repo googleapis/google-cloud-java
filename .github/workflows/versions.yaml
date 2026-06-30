@@ -27,12 +27,15 @@ jobs:
     - run: ./generation/check_non_release_please_versions.sh
 
   # For Release Please pull requests, the artifacts being published must not
-  # have the duplicate versions in Maven Central
+  # have the duplicate versions in Maven Central or "SNAPSHOT" versions.
+  # When Release Please switches non-SNAPSHOT versions to SNAPSHOT versions,
+  # this check should be skipped. Note that the "autorelease: snapshot" label
+  # was added after the pull request is created.
   existing-versions-check:
     runs-on: ubuntu-latest
     if: |
       github.repository_owner == 'googleapis' && github.head_ref == 'release-please--branches--main' &&
-      (github.event_name != 'pull_request' || !contains(github.event.pull_request.labels.*.name, 'autorelease: snapshot'))
+      !endsWith(github.event.pull_request.title, 'SNAPSHOT')
     steps:
     - run: sudo apt-get update -y
     - run: sudo apt-get install libxml2-utils

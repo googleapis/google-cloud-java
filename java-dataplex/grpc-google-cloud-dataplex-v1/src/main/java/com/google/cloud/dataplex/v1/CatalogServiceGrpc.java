@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,15 +22,12 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * The primary resources offered by this service are EntryGroups, EntryTypes,
- * AspectTypes, Entry and Aspect which collectively allow a data administrator
- * to organize, manage, secure and catalog data across their organization
- * located across cloud projects in a variety of storage systems including Cloud
- * Storage and BigQuery.
+ * AspectTypes, Entries and EntryLinks. They collectively let data
+ * administrators organize, manage, secure, and catalog data located across
+ * cloud projects in their organization in a variety of storage systems,
+ * including Cloud Storage and BigQuery.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataplex/v1/catalog.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CatalogServiceGrpc {
 
@@ -959,6 +956,48 @@ public final class CatalogServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.ModifyEntryRequest, com.google.cloud.dataplex.v1.Entry>
+      getModifyEntryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ModifyEntry",
+      requestType = com.google.cloud.dataplex.v1.ModifyEntryRequest.class,
+      responseType = com.google.cloud.dataplex.v1.Entry.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.ModifyEntryRequest, com.google.cloud.dataplex.v1.Entry>
+      getModifyEntryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.ModifyEntryRequest, com.google.cloud.dataplex.v1.Entry>
+        getModifyEntryMethod;
+    if ((getModifyEntryMethod = CatalogServiceGrpc.getModifyEntryMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getModifyEntryMethod = CatalogServiceGrpc.getModifyEntryMethod) == null) {
+          CatalogServiceGrpc.getModifyEntryMethod =
+              getModifyEntryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.ModifyEntryRequest,
+                          com.google.cloud.dataplex.v1.Entry>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ModifyEntry"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.ModifyEntryRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.Entry.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("ModifyEntry"))
+                      .build();
+        }
+      }
+    }
+    return getModifyEntryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataplex.v1.SearchEntriesRequest,
           com.google.cloud.dataplex.v1.SearchEntriesResponse>
       getSearchEntriesMethod;
@@ -1005,6 +1044,689 @@ public final class CatalogServiceGrpc {
     return getSearchEntriesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CreateMetadataJobRequest, com.google.longrunning.Operation>
+      getCreateMetadataJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateMetadataJob",
+      requestType = com.google.cloud.dataplex.v1.CreateMetadataJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CreateMetadataJobRequest, com.google.longrunning.Operation>
+      getCreateMetadataJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.CreateMetadataJobRequest, com.google.longrunning.Operation>
+        getCreateMetadataJobMethod;
+    if ((getCreateMetadataJobMethod = CatalogServiceGrpc.getCreateMetadataJobMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getCreateMetadataJobMethod = CatalogServiceGrpc.getCreateMetadataJobMethod) == null) {
+          CatalogServiceGrpc.getCreateMetadataJobMethod =
+              getCreateMetadataJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.CreateMetadataJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateMetadataJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.CreateMetadataJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("CreateMetadataJob"))
+                      .build();
+        }
+      }
+    }
+    return getCreateMetadataJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.GetMetadataJobRequest,
+          com.google.cloud.dataplex.v1.MetadataJob>
+      getGetMetadataJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMetadataJob",
+      requestType = com.google.cloud.dataplex.v1.GetMetadataJobRequest.class,
+      responseType = com.google.cloud.dataplex.v1.MetadataJob.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.GetMetadataJobRequest,
+          com.google.cloud.dataplex.v1.MetadataJob>
+      getGetMetadataJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.GetMetadataJobRequest,
+            com.google.cloud.dataplex.v1.MetadataJob>
+        getGetMetadataJobMethod;
+    if ((getGetMetadataJobMethod = CatalogServiceGrpc.getGetMetadataJobMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getGetMetadataJobMethod = CatalogServiceGrpc.getGetMetadataJobMethod) == null) {
+          CatalogServiceGrpc.getGetMetadataJobMethod =
+              getGetMetadataJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.GetMetadataJobRequest,
+                          com.google.cloud.dataplex.v1.MetadataJob>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMetadataJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.GetMetadataJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.MetadataJob.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("GetMetadataJob"))
+                      .build();
+        }
+      }
+    }
+    return getGetMetadataJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.ListMetadataJobsRequest,
+          com.google.cloud.dataplex.v1.ListMetadataJobsResponse>
+      getListMetadataJobsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMetadataJobs",
+      requestType = com.google.cloud.dataplex.v1.ListMetadataJobsRequest.class,
+      responseType = com.google.cloud.dataplex.v1.ListMetadataJobsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.ListMetadataJobsRequest,
+          com.google.cloud.dataplex.v1.ListMetadataJobsResponse>
+      getListMetadataJobsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.ListMetadataJobsRequest,
+            com.google.cloud.dataplex.v1.ListMetadataJobsResponse>
+        getListMetadataJobsMethod;
+    if ((getListMetadataJobsMethod = CatalogServiceGrpc.getListMetadataJobsMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getListMetadataJobsMethod = CatalogServiceGrpc.getListMetadataJobsMethod) == null) {
+          CatalogServiceGrpc.getListMetadataJobsMethod =
+              getListMetadataJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.ListMetadataJobsRequest,
+                          com.google.cloud.dataplex.v1.ListMetadataJobsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMetadataJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.ListMetadataJobsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.ListMetadataJobsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("ListMetadataJobs"))
+                      .build();
+        }
+      }
+    }
+    return getListMetadataJobsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CancelMetadataJobRequest, com.google.protobuf.Empty>
+      getCancelMetadataJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelMetadataJob",
+      requestType = com.google.cloud.dataplex.v1.CancelMetadataJobRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CancelMetadataJobRequest, com.google.protobuf.Empty>
+      getCancelMetadataJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.CancelMetadataJobRequest, com.google.protobuf.Empty>
+        getCancelMetadataJobMethod;
+    if ((getCancelMetadataJobMethod = CatalogServiceGrpc.getCancelMetadataJobMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getCancelMetadataJobMethod = CatalogServiceGrpc.getCancelMetadataJobMethod) == null) {
+          CatalogServiceGrpc.getCancelMetadataJobMethod =
+              getCancelMetadataJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.CancelMetadataJobRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CancelMetadataJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.CancelMetadataJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("CancelMetadataJob"))
+                      .build();
+        }
+      }
+    }
+    return getCancelMetadataJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CreateEntryLinkRequest,
+          com.google.cloud.dataplex.v1.EntryLink>
+      getCreateEntryLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateEntryLink",
+      requestType = com.google.cloud.dataplex.v1.CreateEntryLinkRequest.class,
+      responseType = com.google.cloud.dataplex.v1.EntryLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CreateEntryLinkRequest,
+          com.google.cloud.dataplex.v1.EntryLink>
+      getCreateEntryLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.CreateEntryLinkRequest,
+            com.google.cloud.dataplex.v1.EntryLink>
+        getCreateEntryLinkMethod;
+    if ((getCreateEntryLinkMethod = CatalogServiceGrpc.getCreateEntryLinkMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getCreateEntryLinkMethod = CatalogServiceGrpc.getCreateEntryLinkMethod) == null) {
+          CatalogServiceGrpc.getCreateEntryLinkMethod =
+              getCreateEntryLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.CreateEntryLinkRequest,
+                          com.google.cloud.dataplex.v1.EntryLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateEntryLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.CreateEntryLinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.EntryLink.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("CreateEntryLink"))
+                      .build();
+        }
+      }
+    }
+    return getCreateEntryLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.UpdateEntryLinkRequest,
+          com.google.cloud.dataplex.v1.EntryLink>
+      getUpdateEntryLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEntryLink",
+      requestType = com.google.cloud.dataplex.v1.UpdateEntryLinkRequest.class,
+      responseType = com.google.cloud.dataplex.v1.EntryLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.UpdateEntryLinkRequest,
+          com.google.cloud.dataplex.v1.EntryLink>
+      getUpdateEntryLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.UpdateEntryLinkRequest,
+            com.google.cloud.dataplex.v1.EntryLink>
+        getUpdateEntryLinkMethod;
+    if ((getUpdateEntryLinkMethod = CatalogServiceGrpc.getUpdateEntryLinkMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getUpdateEntryLinkMethod = CatalogServiceGrpc.getUpdateEntryLinkMethod) == null) {
+          CatalogServiceGrpc.getUpdateEntryLinkMethod =
+              getUpdateEntryLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.UpdateEntryLinkRequest,
+                          com.google.cloud.dataplex.v1.EntryLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEntryLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.UpdateEntryLinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.EntryLink.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("UpdateEntryLink"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateEntryLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.DeleteEntryLinkRequest,
+          com.google.cloud.dataplex.v1.EntryLink>
+      getDeleteEntryLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteEntryLink",
+      requestType = com.google.cloud.dataplex.v1.DeleteEntryLinkRequest.class,
+      responseType = com.google.cloud.dataplex.v1.EntryLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.DeleteEntryLinkRequest,
+          com.google.cloud.dataplex.v1.EntryLink>
+      getDeleteEntryLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.DeleteEntryLinkRequest,
+            com.google.cloud.dataplex.v1.EntryLink>
+        getDeleteEntryLinkMethod;
+    if ((getDeleteEntryLinkMethod = CatalogServiceGrpc.getDeleteEntryLinkMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getDeleteEntryLinkMethod = CatalogServiceGrpc.getDeleteEntryLinkMethod) == null) {
+          CatalogServiceGrpc.getDeleteEntryLinkMethod =
+              getDeleteEntryLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.DeleteEntryLinkRequest,
+                          com.google.cloud.dataplex.v1.EntryLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteEntryLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.DeleteEntryLinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.EntryLink.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("DeleteEntryLink"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteEntryLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.LookupEntryLinksRequest,
+          com.google.cloud.dataplex.v1.LookupEntryLinksResponse>
+      getLookupEntryLinksMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LookupEntryLinks",
+      requestType = com.google.cloud.dataplex.v1.LookupEntryLinksRequest.class,
+      responseType = com.google.cloud.dataplex.v1.LookupEntryLinksResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.LookupEntryLinksRequest,
+          com.google.cloud.dataplex.v1.LookupEntryLinksResponse>
+      getLookupEntryLinksMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.LookupEntryLinksRequest,
+            com.google.cloud.dataplex.v1.LookupEntryLinksResponse>
+        getLookupEntryLinksMethod;
+    if ((getLookupEntryLinksMethod = CatalogServiceGrpc.getLookupEntryLinksMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getLookupEntryLinksMethod = CatalogServiceGrpc.getLookupEntryLinksMethod) == null) {
+          CatalogServiceGrpc.getLookupEntryLinksMethod =
+              getLookupEntryLinksMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.LookupEntryLinksRequest,
+                          com.google.cloud.dataplex.v1.LookupEntryLinksResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LookupEntryLinks"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.LookupEntryLinksRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.LookupEntryLinksResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("LookupEntryLinks"))
+                      .build();
+        }
+      }
+    }
+    return getLookupEntryLinksMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.LookupContextRequest,
+          com.google.cloud.dataplex.v1.LookupContextResponse>
+      getLookupContextMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LookupContext",
+      requestType = com.google.cloud.dataplex.v1.LookupContextRequest.class,
+      responseType = com.google.cloud.dataplex.v1.LookupContextResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.LookupContextRequest,
+          com.google.cloud.dataplex.v1.LookupContextResponse>
+      getLookupContextMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.LookupContextRequest,
+            com.google.cloud.dataplex.v1.LookupContextResponse>
+        getLookupContextMethod;
+    if ((getLookupContextMethod = CatalogServiceGrpc.getLookupContextMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getLookupContextMethod = CatalogServiceGrpc.getLookupContextMethod) == null) {
+          CatalogServiceGrpc.getLookupContextMethod =
+              getLookupContextMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.LookupContextRequest,
+                          com.google.cloud.dataplex.v1.LookupContextResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LookupContext"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.LookupContextRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.LookupContextResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("LookupContext"))
+                      .build();
+        }
+      }
+    }
+    return getLookupContextMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.GetEntryLinkRequest, com.google.cloud.dataplex.v1.EntryLink>
+      getGetEntryLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEntryLink",
+      requestType = com.google.cloud.dataplex.v1.GetEntryLinkRequest.class,
+      responseType = com.google.cloud.dataplex.v1.EntryLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.GetEntryLinkRequest, com.google.cloud.dataplex.v1.EntryLink>
+      getGetEntryLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.GetEntryLinkRequest,
+            com.google.cloud.dataplex.v1.EntryLink>
+        getGetEntryLinkMethod;
+    if ((getGetEntryLinkMethod = CatalogServiceGrpc.getGetEntryLinkMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getGetEntryLinkMethod = CatalogServiceGrpc.getGetEntryLinkMethod) == null) {
+          CatalogServiceGrpc.getGetEntryLinkMethod =
+              getGetEntryLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.GetEntryLinkRequest,
+                          com.google.cloud.dataplex.v1.EntryLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEntryLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.GetEntryLinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.EntryLink.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("GetEntryLink"))
+                      .build();
+        }
+      }
+    }
+    return getGetEntryLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CreateMetadataFeedRequest, com.google.longrunning.Operation>
+      getCreateMetadataFeedMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateMetadataFeed",
+      requestType = com.google.cloud.dataplex.v1.CreateMetadataFeedRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CreateMetadataFeedRequest, com.google.longrunning.Operation>
+      getCreateMetadataFeedMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.CreateMetadataFeedRequest,
+            com.google.longrunning.Operation>
+        getCreateMetadataFeedMethod;
+    if ((getCreateMetadataFeedMethod = CatalogServiceGrpc.getCreateMetadataFeedMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getCreateMetadataFeedMethod = CatalogServiceGrpc.getCreateMetadataFeedMethod)
+            == null) {
+          CatalogServiceGrpc.getCreateMetadataFeedMethod =
+              getCreateMetadataFeedMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.CreateMetadataFeedRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateMetadataFeed"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.CreateMetadataFeedRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("CreateMetadataFeed"))
+                      .build();
+        }
+      }
+    }
+    return getCreateMetadataFeedMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.GetMetadataFeedRequest,
+          com.google.cloud.dataplex.v1.MetadataFeed>
+      getGetMetadataFeedMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMetadataFeed",
+      requestType = com.google.cloud.dataplex.v1.GetMetadataFeedRequest.class,
+      responseType = com.google.cloud.dataplex.v1.MetadataFeed.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.GetMetadataFeedRequest,
+          com.google.cloud.dataplex.v1.MetadataFeed>
+      getGetMetadataFeedMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.GetMetadataFeedRequest,
+            com.google.cloud.dataplex.v1.MetadataFeed>
+        getGetMetadataFeedMethod;
+    if ((getGetMetadataFeedMethod = CatalogServiceGrpc.getGetMetadataFeedMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getGetMetadataFeedMethod = CatalogServiceGrpc.getGetMetadataFeedMethod) == null) {
+          CatalogServiceGrpc.getGetMetadataFeedMethod =
+              getGetMetadataFeedMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.GetMetadataFeedRequest,
+                          com.google.cloud.dataplex.v1.MetadataFeed>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMetadataFeed"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.GetMetadataFeedRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.MetadataFeed.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("GetMetadataFeed"))
+                      .build();
+        }
+      }
+    }
+    return getGetMetadataFeedMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.ListMetadataFeedsRequest,
+          com.google.cloud.dataplex.v1.ListMetadataFeedsResponse>
+      getListMetadataFeedsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMetadataFeeds",
+      requestType = com.google.cloud.dataplex.v1.ListMetadataFeedsRequest.class,
+      responseType = com.google.cloud.dataplex.v1.ListMetadataFeedsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.ListMetadataFeedsRequest,
+          com.google.cloud.dataplex.v1.ListMetadataFeedsResponse>
+      getListMetadataFeedsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.ListMetadataFeedsRequest,
+            com.google.cloud.dataplex.v1.ListMetadataFeedsResponse>
+        getListMetadataFeedsMethod;
+    if ((getListMetadataFeedsMethod = CatalogServiceGrpc.getListMetadataFeedsMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getListMetadataFeedsMethod = CatalogServiceGrpc.getListMetadataFeedsMethod) == null) {
+          CatalogServiceGrpc.getListMetadataFeedsMethod =
+              getListMetadataFeedsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.ListMetadataFeedsRequest,
+                          com.google.cloud.dataplex.v1.ListMetadataFeedsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMetadataFeeds"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.ListMetadataFeedsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.ListMetadataFeedsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("ListMetadataFeeds"))
+                      .build();
+        }
+      }
+    }
+    return getListMetadataFeedsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest, com.google.longrunning.Operation>
+      getDeleteMetadataFeedMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteMetadataFeed",
+      requestType = com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest, com.google.longrunning.Operation>
+      getDeleteMetadataFeedMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest,
+            com.google.longrunning.Operation>
+        getDeleteMetadataFeedMethod;
+    if ((getDeleteMetadataFeedMethod = CatalogServiceGrpc.getDeleteMetadataFeedMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getDeleteMetadataFeedMethod = CatalogServiceGrpc.getDeleteMetadataFeedMethod)
+            == null) {
+          CatalogServiceGrpc.getDeleteMetadataFeedMethod =
+              getDeleteMetadataFeedMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteMetadataFeed"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("DeleteMetadataFeed"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteMetadataFeedMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest, com.google.longrunning.Operation>
+      getUpdateMetadataFeedMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateMetadataFeed",
+      requestType = com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest, com.google.longrunning.Operation>
+      getUpdateMetadataFeedMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest,
+            com.google.longrunning.Operation>
+        getUpdateMetadataFeedMethod;
+    if ((getUpdateMetadataFeedMethod = CatalogServiceGrpc.getUpdateMetadataFeedMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getUpdateMetadataFeedMethod = CatalogServiceGrpc.getUpdateMetadataFeedMethod)
+            == null) {
+          CatalogServiceGrpc.getUpdateMetadataFeedMethod =
+              getUpdateMetadataFeedMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateMetadataFeed"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("UpdateMetadataFeed"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateMetadataFeedMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CatalogServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CatalogServiceStub> factory =
@@ -1016,6 +1738,19 @@ public final class CatalogServiceGrpc {
           }
         };
     return CatalogServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CatalogServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CatalogServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CatalogServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public CatalogServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CatalogServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CatalogServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -1051,10 +1786,10 @@ public final class CatalogServiceGrpc {
    *
    * <pre>
    * The primary resources offered by this service are EntryGroups, EntryTypes,
-   * AspectTypes, Entry and Aspect which collectively allow a data administrator
-   * to organize, manage, secure and catalog data across their organization
-   * located across cloud projects in a variety of storage systems including Cloud
-   * Storage and BigQuery.
+   * AspectTypes, Entries and EntryLinks. They collectively let data
+   * administrators organize, manage, secure, and catalog data located across
+   * cloud projects in their organization in a variety of storage systems,
+   * including Cloud Storage and BigQuery.
    * </pre>
    */
   public interface AsyncService {
@@ -1063,7 +1798,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an EntryType
+     * Creates an EntryType.
      * </pre>
      */
     default void createEntryType(
@@ -1077,7 +1812,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a EntryType resource.
+     * Updates an EntryType.
      * </pre>
      */
     default void updateEntryType(
@@ -1091,7 +1826,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a EntryType resource.
+     * Deletes an EntryType.
      * </pre>
      */
     default void deleteEntryType(
@@ -1120,7 +1855,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a EntryType resource.
+     * Gets an EntryType.
      * </pre>
      */
     default void getEntryType(
@@ -1134,7 +1869,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an AspectType
+     * Creates an AspectType.
      * </pre>
      */
     default void createAspectType(
@@ -1148,7 +1883,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a AspectType resource.
+     * Updates an AspectType.
      * </pre>
      */
     default void updateAspectType(
@@ -1162,7 +1897,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a AspectType resource.
+     * Deletes an AspectType.
      * </pre>
      */
     default void deleteAspectType(
@@ -1191,7 +1926,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a AspectType resource.
+     * Gets an AspectType.
      * </pre>
      */
     default void getAspectType(
@@ -1205,7 +1940,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an EntryGroup
+     * Creates an EntryGroup.
      * </pre>
      */
     default void createEntryGroup(
@@ -1219,7 +1954,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a EntryGroup resource.
+     * Updates an EntryGroup.
      * </pre>
      */
     default void updateEntryGroup(
@@ -1233,7 +1968,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a EntryGroup resource.
+     * Deletes an EntryGroup.
      * </pre>
      */
     default void deleteEntryGroup(
@@ -1262,7 +1997,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a EntryGroup resource.
+     * Gets an EntryGroup.
      * </pre>
      */
     default void getEntryGroup(
@@ -1318,7 +2053,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Lists entries within an entry group.
+     * Lists Entries within an EntryGroup.
      * </pre>
      */
     default void listEntries(
@@ -1333,7 +2068,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single entry.
+     * Gets an Entry.
      * </pre>
      */
     default void getEntry(
@@ -1346,7 +2081,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Looks up a single entry.
+     * Looks up an entry by name using the permission on the source system.
      * </pre>
      */
     default void lookupEntry(
@@ -1360,7 +2095,21 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Searches for entries matching given query and scope.
+     * Modifies an entry using the permission on the source system.
+     * </pre>
+     */
+    default void modifyEntry(
+        com.google.cloud.dataplex.v1.ModifyEntryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entry> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getModifyEntryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches for Entries matching the given query and scope.
      * </pre>
      */
     default void searchEntries(
@@ -1370,6 +2119,225 @@ public final class CatalogServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSearchEntriesMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a metadata job. For example, use a metadata job to import metadata
+     * from a third-party system into Dataplex Universal Catalog.
+     * </pre>
+     */
+    default void createMetadataJob(
+        com.google.cloud.dataplex.v1.CreateMetadataJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateMetadataJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a metadata job.
+     * </pre>
+     */
+    default void getMetadataJob(
+        com.google.cloud.dataplex.v1.GetMetadataJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.MetadataJob> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetMetadataJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists metadata jobs.
+     * </pre>
+     */
+    default void listMetadataJobs(
+        com.google.cloud.dataplex.v1.ListMetadataJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListMetadataJobsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMetadataJobsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a metadata job.
+     * If you cancel a metadata import job that is in progress, the changes in the
+     * job might be partially applied. We recommend that you reset the state of
+     * the entry groups in your project by running another metadata job that
+     * reverts the changes from the canceled job.
+     * </pre>
+     */
+    default void cancelMetadataJob(
+        com.google.cloud.dataplex.v1.CancelMetadataJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCancelMetadataJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Entry Link.
+     * </pre>
+     */
+    default void createEntryLink(
+        com.google.cloud.dataplex.v1.CreateEntryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateEntryLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Entry Link.
+     * </pre>
+     */
+    default void updateEntryLink(
+        com.google.cloud.dataplex.v1.UpdateEntryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateEntryLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Entry Link.
+     * </pre>
+     */
+    default void deleteEntryLink(
+        com.google.cloud.dataplex.v1.DeleteEntryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteEntryLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up Entry Links referencing the specified Entry.
+     * </pre>
+     */
+    default void lookupEntryLinks(
+        com.google.cloud.dataplex.v1.LookupEntryLinksRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.LookupEntryLinksResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getLookupEntryLinksMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up LLM Context for the specified resources.
+     * </pre>
+     */
+    default void lookupContext(
+        com.google.cloud.dataplex.v1.LookupContextRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.LookupContextResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getLookupContextMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Entry Link.
+     * </pre>
+     */
+    default void getEntryLink(
+        com.google.cloud.dataplex.v1.GetEntryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetEntryLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a MetadataFeed.
+     * </pre>
+     */
+    default void createMetadataFeed(
+        com.google.cloud.dataplex.v1.CreateMetadataFeedRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateMetadataFeedMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a MetadataFeed.
+     * </pre>
+     */
+    default void getMetadataFeed(
+        com.google.cloud.dataplex.v1.GetMetadataFeedRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.MetadataFeed> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetMetadataFeedMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a list of MetadataFeeds.
+     * </pre>
+     */
+    default void listMetadataFeeds(
+        com.google.cloud.dataplex.v1.ListMetadataFeedsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListMetadataFeedsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMetadataFeedsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a MetadataFeed.
+     * </pre>
+     */
+    default void deleteMetadataFeed(
+        com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteMetadataFeedMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a MetadataFeed.
+     * </pre>
+     */
+    default void updateMetadataFeed(
+        com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateMetadataFeedMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1377,10 +2345,10 @@ public final class CatalogServiceGrpc {
    *
    * <pre>
    * The primary resources offered by this service are EntryGroups, EntryTypes,
-   * AspectTypes, Entry and Aspect which collectively allow a data administrator
-   * to organize, manage, secure and catalog data across their organization
-   * located across cloud projects in a variety of storage systems including Cloud
-   * Storage and BigQuery.
+   * AspectTypes, Entries and EntryLinks. They collectively let data
+   * administrators organize, manage, secure, and catalog data located across
+   * cloud projects in their organization in a variety of storage systems,
+   * including Cloud Storage and BigQuery.
    * </pre>
    */
   public abstract static class CatalogServiceImplBase
@@ -1397,10 +2365,10 @@ public final class CatalogServiceGrpc {
    *
    * <pre>
    * The primary resources offered by this service are EntryGroups, EntryTypes,
-   * AspectTypes, Entry and Aspect which collectively allow a data administrator
-   * to organize, manage, secure and catalog data across their organization
-   * located across cloud projects in a variety of storage systems including Cloud
-   * Storage and BigQuery.
+   * AspectTypes, Entries and EntryLinks. They collectively let data
+   * administrators organize, manage, secure, and catalog data located across
+   * cloud projects in their organization in a variety of storage systems,
+   * including Cloud Storage and BigQuery.
    * </pre>
    */
   public static final class CatalogServiceStub
@@ -1418,7 +2386,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an EntryType
+     * Creates an EntryType.
      * </pre>
      */
     public void createEntryType(
@@ -1434,7 +2402,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a EntryType resource.
+     * Updates an EntryType.
      * </pre>
      */
     public void updateEntryType(
@@ -1450,7 +2418,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a EntryType resource.
+     * Deletes an EntryType.
      * </pre>
      */
     public void deleteEntryType(
@@ -1483,7 +2451,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a EntryType resource.
+     * Gets an EntryType.
      * </pre>
      */
     public void getEntryType(
@@ -1499,7 +2467,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an AspectType
+     * Creates an AspectType.
      * </pre>
      */
     public void createAspectType(
@@ -1515,7 +2483,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a AspectType resource.
+     * Updates an AspectType.
      * </pre>
      */
     public void updateAspectType(
@@ -1531,7 +2499,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a AspectType resource.
+     * Deletes an AspectType.
      * </pre>
      */
     public void deleteAspectType(
@@ -1564,7 +2532,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a AspectType resource.
+     * Gets an AspectType.
      * </pre>
      */
     public void getAspectType(
@@ -1580,7 +2548,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an EntryGroup
+     * Creates an EntryGroup.
      * </pre>
      */
     public void createEntryGroup(
@@ -1596,7 +2564,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a EntryGroup resource.
+     * Updates an EntryGroup.
      * </pre>
      */
     public void updateEntryGroup(
@@ -1612,7 +2580,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a EntryGroup resource.
+     * Deletes an EntryGroup.
      * </pre>
      */
     public void deleteEntryGroup(
@@ -1645,7 +2613,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a EntryGroup resource.
+     * Gets an EntryGroup.
      * </pre>
      */
     public void getEntryGroup(
@@ -1709,7 +2677,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Lists entries within an entry group.
+     * Lists Entries within an EntryGroup.
      * </pre>
      */
     public void listEntries(
@@ -1726,7 +2694,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single entry.
+     * Gets an Entry.
      * </pre>
      */
     public void getEntry(
@@ -1740,7 +2708,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Looks up a single entry.
+     * Looks up an entry by name using the permission on the source system.
      * </pre>
      */
     public void lookupEntry(
@@ -1756,7 +2724,23 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Searches for entries matching given query and scope.
+     * Modifies an entry using the permission on the source system.
+     * </pre>
+     */
+    public void modifyEntry(
+        com.google.cloud.dataplex.v1.ModifyEntryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entry> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getModifyEntryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches for Entries matching the given query and scope.
      * </pre>
      */
     public void searchEntries(
@@ -1768,6 +2752,255 @@ public final class CatalogServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a metadata job. For example, use a metadata job to import metadata
+     * from a third-party system into Dataplex Universal Catalog.
+     * </pre>
+     */
+    public void createMetadataJob(
+        com.google.cloud.dataplex.v1.CreateMetadataJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateMetadataJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a metadata job.
+     * </pre>
+     */
+    public void getMetadataJob(
+        com.google.cloud.dataplex.v1.GetMetadataJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.MetadataJob> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMetadataJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists metadata jobs.
+     * </pre>
+     */
+    public void listMetadataJobs(
+        com.google.cloud.dataplex.v1.ListMetadataJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListMetadataJobsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMetadataJobsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a metadata job.
+     * If you cancel a metadata import job that is in progress, the changes in the
+     * job might be partially applied. We recommend that you reset the state of
+     * the entry groups in your project by running another metadata job that
+     * reverts the changes from the canceled job.
+     * </pre>
+     */
+    public void cancelMetadataJob(
+        com.google.cloud.dataplex.v1.CancelMetadataJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelMetadataJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Entry Link.
+     * </pre>
+     */
+    public void createEntryLink(
+        com.google.cloud.dataplex.v1.CreateEntryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateEntryLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Entry Link.
+     * </pre>
+     */
+    public void updateEntryLink(
+        com.google.cloud.dataplex.v1.UpdateEntryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateEntryLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Entry Link.
+     * </pre>
+     */
+    public void deleteEntryLink(
+        com.google.cloud.dataplex.v1.DeleteEntryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteEntryLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up Entry Links referencing the specified Entry.
+     * </pre>
+     */
+    public void lookupEntryLinks(
+        com.google.cloud.dataplex.v1.LookupEntryLinksRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.LookupEntryLinksResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLookupEntryLinksMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up LLM Context for the specified resources.
+     * </pre>
+     */
+    public void lookupContext(
+        com.google.cloud.dataplex.v1.LookupContextRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.LookupContextResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLookupContextMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Entry Link.
+     * </pre>
+     */
+    public void getEntryLink(
+        com.google.cloud.dataplex.v1.GetEntryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetEntryLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a MetadataFeed.
+     * </pre>
+     */
+    public void createMetadataFeed(
+        com.google.cloud.dataplex.v1.CreateMetadataFeedRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateMetadataFeedMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a MetadataFeed.
+     * </pre>
+     */
+    public void getMetadataFeed(
+        com.google.cloud.dataplex.v1.GetMetadataFeedRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.MetadataFeed> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMetadataFeedMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a list of MetadataFeeds.
+     * </pre>
+     */
+    public void listMetadataFeeds(
+        com.google.cloud.dataplex.v1.ListMetadataFeedsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListMetadataFeedsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMetadataFeedsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a MetadataFeed.
+     * </pre>
+     */
+    public void deleteMetadataFeed(
+        com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteMetadataFeedMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a MetadataFeed.
+     * </pre>
+     */
+    public void updateMetadataFeed(
+        com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateMetadataFeedMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1775,10 +3008,556 @@ public final class CatalogServiceGrpc {
    *
    * <pre>
    * The primary resources offered by this service are EntryGroups, EntryTypes,
-   * AspectTypes, Entry and Aspect which collectively allow a data administrator
-   * to organize, manage, secure and catalog data across their organization
-   * located across cloud projects in a variety of storage systems including Cloud
-   * Storage and BigQuery.
+   * AspectTypes, Entries and EntryLinks. They collectively let data
+   * administrators organize, manage, secure, and catalog data located across
+   * cloud projects in their organization in a variety of storage systems,
+   * including Cloud Storage and BigQuery.
+   * </pre>
+   */
+  public static final class CatalogServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CatalogServiceBlockingV2Stub> {
+    private CatalogServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CatalogServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CatalogServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an EntryType.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEntryType(
+        com.google.cloud.dataplex.v1.CreateEntryTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateEntryTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an EntryType.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateEntryType(
+        com.google.cloud.dataplex.v1.UpdateEntryTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateEntryTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an EntryType.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteEntryType(
+        com.google.cloud.dataplex.v1.DeleteEntryTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteEntryTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists EntryType resources in a project and location.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.ListEntryTypesResponse listEntryTypes(
+        com.google.cloud.dataplex.v1.ListEntryTypesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListEntryTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an EntryType.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.EntryType getEntryType(
+        com.google.cloud.dataplex.v1.GetEntryTypeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEntryTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an AspectType.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAspectType(
+        com.google.cloud.dataplex.v1.CreateAspectTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAspectTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an AspectType.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAspectType(
+        com.google.cloud.dataplex.v1.UpdateAspectTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAspectTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an AspectType.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAspectType(
+        com.google.cloud.dataplex.v1.DeleteAspectTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteAspectTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AspectType resources in a project and location.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.ListAspectTypesResponse listAspectTypes(
+        com.google.cloud.dataplex.v1.ListAspectTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAspectTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an AspectType.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.AspectType getAspectType(
+        com.google.cloud.dataplex.v1.GetAspectTypeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAspectTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an EntryGroup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEntryGroup(
+        com.google.cloud.dataplex.v1.CreateEntryGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateEntryGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an EntryGroup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateEntryGroup(
+        com.google.cloud.dataplex.v1.UpdateEntryGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateEntryGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an EntryGroup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteEntryGroup(
+        com.google.cloud.dataplex.v1.DeleteEntryGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteEntryGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists EntryGroup resources in a project and location.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.ListEntryGroupsResponse listEntryGroups(
+        com.google.cloud.dataplex.v1.ListEntryGroupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListEntryGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an EntryGroup.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.EntryGroup getEntryGroup(
+        com.google.cloud.dataplex.v1.GetEntryGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEntryGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Entry.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Entry createEntry(
+        com.google.cloud.dataplex.v1.CreateEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Entry.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Entry updateEntry(
+        com.google.cloud.dataplex.v1.UpdateEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Entry.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Entry deleteEntry(
+        com.google.cloud.dataplex.v1.DeleteEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Entries within an EntryGroup.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.ListEntriesResponse listEntries(
+        com.google.cloud.dataplex.v1.ListEntriesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Entry.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Entry getEntry(
+        com.google.cloud.dataplex.v1.GetEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up an entry by name using the permission on the source system.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Entry lookupEntry(
+        com.google.cloud.dataplex.v1.LookupEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getLookupEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies an entry using the permission on the source system.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Entry modifyEntry(
+        com.google.cloud.dataplex.v1.ModifyEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getModifyEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches for Entries matching the given query and scope.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.SearchEntriesResponse searchEntries(
+        com.google.cloud.dataplex.v1.SearchEntriesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSearchEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a metadata job. For example, use a metadata job to import metadata
+     * from a third-party system into Dataplex Universal Catalog.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMetadataJob(
+        com.google.cloud.dataplex.v1.CreateMetadataJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateMetadataJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a metadata job.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.MetadataJob getMetadataJob(
+        com.google.cloud.dataplex.v1.GetMetadataJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetMetadataJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists metadata jobs.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.ListMetadataJobsResponse listMetadataJobs(
+        com.google.cloud.dataplex.v1.ListMetadataJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListMetadataJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a metadata job.
+     * If you cancel a metadata import job that is in progress, the changes in the
+     * job might be partially applied. We recommend that you reset the state of
+     * the entry groups in your project by running another metadata job that
+     * reverts the changes from the canceled job.
+     * </pre>
+     */
+    public com.google.protobuf.Empty cancelMetadataJob(
+        com.google.cloud.dataplex.v1.CancelMetadataJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelMetadataJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Entry Link.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.EntryLink createEntryLink(
+        com.google.cloud.dataplex.v1.CreateEntryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateEntryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Entry Link.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.EntryLink updateEntryLink(
+        com.google.cloud.dataplex.v1.UpdateEntryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateEntryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Entry Link.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.EntryLink deleteEntryLink(
+        com.google.cloud.dataplex.v1.DeleteEntryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteEntryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up Entry Links referencing the specified Entry.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.LookupEntryLinksResponse lookupEntryLinks(
+        com.google.cloud.dataplex.v1.LookupEntryLinksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getLookupEntryLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up LLM Context for the specified resources.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.LookupContextResponse lookupContext(
+        com.google.cloud.dataplex.v1.LookupContextRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getLookupContextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Entry Link.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.EntryLink getEntryLink(
+        com.google.cloud.dataplex.v1.GetEntryLinkRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEntryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a MetadataFeed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMetadataFeed(
+        com.google.cloud.dataplex.v1.CreateMetadataFeedRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateMetadataFeedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a MetadataFeed.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.MetadataFeed getMetadataFeed(
+        com.google.cloud.dataplex.v1.GetMetadataFeedRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetMetadataFeedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a list of MetadataFeeds.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.ListMetadataFeedsResponse listMetadataFeeds(
+        com.google.cloud.dataplex.v1.ListMetadataFeedsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListMetadataFeedsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a MetadataFeed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteMetadataFeed(
+        com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteMetadataFeedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a MetadataFeed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMetadataFeed(
+        com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateMetadataFeedMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CatalogService.
+   *
+   * <pre>
+   * The primary resources offered by this service are EntryGroups, EntryTypes,
+   * AspectTypes, Entries and EntryLinks. They collectively let data
+   * administrators organize, manage, secure, and catalog data located across
+   * cloud projects in their organization in a variety of storage systems,
+   * including Cloud Storage and BigQuery.
    * </pre>
    */
   public static final class CatalogServiceBlockingStub
@@ -1797,7 +3576,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an EntryType
+     * Creates an EntryType.
      * </pre>
      */
     public com.google.longrunning.Operation createEntryType(
@@ -1810,7 +3589,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a EntryType resource.
+     * Updates an EntryType.
      * </pre>
      */
     public com.google.longrunning.Operation updateEntryType(
@@ -1823,7 +3602,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a EntryType resource.
+     * Deletes an EntryType.
      * </pre>
      */
     public com.google.longrunning.Operation deleteEntryType(
@@ -1849,7 +3628,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a EntryType resource.
+     * Gets an EntryType.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.EntryType getEntryType(
@@ -1862,7 +3641,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an AspectType
+     * Creates an AspectType.
      * </pre>
      */
     public com.google.longrunning.Operation createAspectType(
@@ -1875,7 +3654,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a AspectType resource.
+     * Updates an AspectType.
      * </pre>
      */
     public com.google.longrunning.Operation updateAspectType(
@@ -1888,7 +3667,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a AspectType resource.
+     * Deletes an AspectType.
      * </pre>
      */
     public com.google.longrunning.Operation deleteAspectType(
@@ -1914,7 +3693,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a AspectType resource.
+     * Gets an AspectType.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.AspectType getAspectType(
@@ -1927,7 +3706,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an EntryGroup
+     * Creates an EntryGroup.
      * </pre>
      */
     public com.google.longrunning.Operation createEntryGroup(
@@ -1940,7 +3719,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a EntryGroup resource.
+     * Updates an EntryGroup.
      * </pre>
      */
     public com.google.longrunning.Operation updateEntryGroup(
@@ -1953,7 +3732,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a EntryGroup resource.
+     * Deletes an EntryGroup.
      * </pre>
      */
     public com.google.longrunning.Operation deleteEntryGroup(
@@ -1979,7 +3758,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a EntryGroup resource.
+     * Gets an EntryGroup.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.EntryGroup getEntryGroup(
@@ -2031,7 +3810,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Lists entries within an entry group.
+     * Lists Entries within an EntryGroup.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListEntriesResponse listEntries(
@@ -2044,7 +3823,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single entry.
+     * Gets an Entry.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry getEntry(
@@ -2057,7 +3836,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Looks up a single entry.
+     * Looks up an entry by name using the permission on the source system.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry lookupEntry(
@@ -2070,13 +3849,226 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Searches for entries matching given query and scope.
+     * Modifies an entry using the permission on the source system.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Entry modifyEntry(
+        com.google.cloud.dataplex.v1.ModifyEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getModifyEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches for Entries matching the given query and scope.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.SearchEntriesResponse searchEntries(
         com.google.cloud.dataplex.v1.SearchEntriesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a metadata job. For example, use a metadata job to import metadata
+     * from a third-party system into Dataplex Universal Catalog.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMetadataJob(
+        com.google.cloud.dataplex.v1.CreateMetadataJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMetadataJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a metadata job.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.MetadataJob getMetadataJob(
+        com.google.cloud.dataplex.v1.GetMetadataJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMetadataJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists metadata jobs.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.ListMetadataJobsResponse listMetadataJobs(
+        com.google.cloud.dataplex.v1.ListMetadataJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMetadataJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a metadata job.
+     * If you cancel a metadata import job that is in progress, the changes in the
+     * job might be partially applied. We recommend that you reset the state of
+     * the entry groups in your project by running another metadata job that
+     * reverts the changes from the canceled job.
+     * </pre>
+     */
+    public com.google.protobuf.Empty cancelMetadataJob(
+        com.google.cloud.dataplex.v1.CancelMetadataJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelMetadataJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Entry Link.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.EntryLink createEntryLink(
+        com.google.cloud.dataplex.v1.CreateEntryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEntryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Entry Link.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.EntryLink updateEntryLink(
+        com.google.cloud.dataplex.v1.UpdateEntryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEntryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Entry Link.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.EntryLink deleteEntryLink(
+        com.google.cloud.dataplex.v1.DeleteEntryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEntryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up Entry Links referencing the specified Entry.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.LookupEntryLinksResponse lookupEntryLinks(
+        com.google.cloud.dataplex.v1.LookupEntryLinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLookupEntryLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up LLM Context for the specified resources.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.LookupContextResponse lookupContext(
+        com.google.cloud.dataplex.v1.LookupContextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLookupContextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Entry Link.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.EntryLink getEntryLink(
+        com.google.cloud.dataplex.v1.GetEntryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEntryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a MetadataFeed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMetadataFeed(
+        com.google.cloud.dataplex.v1.CreateMetadataFeedRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMetadataFeedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a MetadataFeed.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.MetadataFeed getMetadataFeed(
+        com.google.cloud.dataplex.v1.GetMetadataFeedRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMetadataFeedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a list of MetadataFeeds.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.ListMetadataFeedsResponse listMetadataFeeds(
+        com.google.cloud.dataplex.v1.ListMetadataFeedsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMetadataFeedsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a MetadataFeed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteMetadataFeed(
+        com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMetadataFeedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a MetadataFeed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMetadataFeed(
+        com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMetadataFeedMethod(), getCallOptions(), request);
     }
   }
 
@@ -2085,10 +4077,10 @@ public final class CatalogServiceGrpc {
    *
    * <pre>
    * The primary resources offered by this service are EntryGroups, EntryTypes,
-   * AspectTypes, Entry and Aspect which collectively allow a data administrator
-   * to organize, manage, secure and catalog data across their organization
-   * located across cloud projects in a variety of storage systems including Cloud
-   * Storage and BigQuery.
+   * AspectTypes, Entries and EntryLinks. They collectively let data
+   * administrators organize, manage, secure, and catalog data located across
+   * cloud projects in their organization in a variety of storage systems,
+   * including Cloud Storage and BigQuery.
    * </pre>
    */
   public static final class CatalogServiceFutureStub
@@ -2107,7 +4099,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an EntryType
+     * Creates an EntryType.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2120,7 +4112,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a EntryType resource.
+     * Updates an EntryType.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2133,7 +4125,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a EntryType resource.
+     * Deletes an EntryType.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2160,7 +4152,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a EntryType resource.
+     * Gets an EntryType.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2174,7 +4166,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an AspectType
+     * Creates an AspectType.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2187,7 +4179,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a AspectType resource.
+     * Updates an AspectType.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2200,7 +4192,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a AspectType resource.
+     * Deletes an AspectType.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2227,7 +4219,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a AspectType resource.
+     * Gets an AspectType.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2241,7 +4233,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an EntryGroup
+     * Creates an EntryGroup.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2254,7 +4246,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a EntryGroup resource.
+     * Updates an EntryGroup.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2267,7 +4259,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a EntryGroup resource.
+     * Deletes an EntryGroup.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2294,7 +4286,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a EntryGroup resource.
+     * Gets an EntryGroup.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2347,7 +4339,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Lists entries within an entry group.
+     * Lists Entries within an EntryGroup.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2361,7 +4353,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single entry.
+     * Gets an Entry.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataplex.v1.Entry>
@@ -2374,7 +4366,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Looks up a single entry.
+     * Looks up an entry by name using the permission on the source system.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataplex.v1.Entry>
@@ -2387,7 +4379,20 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Searches for entries matching given query and scope.
+     * Modifies an entry using the permission on the source system.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataplex.v1.Entry>
+        modifyEntry(com.google.cloud.dataplex.v1.ModifyEntryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getModifyEntryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches for Entries matching the given query and scope.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2395,6 +4400,216 @@ public final class CatalogServiceGrpc {
         searchEntries(com.google.cloud.dataplex.v1.SearchEntriesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchEntriesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a metadata job. For example, use a metadata job to import metadata
+     * from a third-party system into Dataplex Universal Catalog.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createMetadataJob(com.google.cloud.dataplex.v1.CreateMetadataJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateMetadataJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a metadata job.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.MetadataJob>
+        getMetadataJob(com.google.cloud.dataplex.v1.GetMetadataJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMetadataJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists metadata jobs.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.ListMetadataJobsResponse>
+        listMetadataJobs(com.google.cloud.dataplex.v1.ListMetadataJobsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMetadataJobsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a metadata job.
+     * If you cancel a metadata import job that is in progress, the changes in the
+     * job might be partially applied. We recommend that you reset the state of
+     * the entry groups in your project by running another metadata job that
+     * reverts the changes from the canceled job.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        cancelMetadataJob(com.google.cloud.dataplex.v1.CancelMetadataJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelMetadataJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Entry Link.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.EntryLink>
+        createEntryLink(com.google.cloud.dataplex.v1.CreateEntryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateEntryLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Entry Link.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.EntryLink>
+        updateEntryLink(com.google.cloud.dataplex.v1.UpdateEntryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateEntryLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Entry Link.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.EntryLink>
+        deleteEntryLink(com.google.cloud.dataplex.v1.DeleteEntryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteEntryLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up Entry Links referencing the specified Entry.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.LookupEntryLinksResponse>
+        lookupEntryLinks(com.google.cloud.dataplex.v1.LookupEntryLinksRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLookupEntryLinksMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up LLM Context for the specified resources.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.LookupContextResponse>
+        lookupContext(com.google.cloud.dataplex.v1.LookupContextRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLookupContextMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Entry Link.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.EntryLink>
+        getEntryLink(com.google.cloud.dataplex.v1.GetEntryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEntryLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a MetadataFeed.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createMetadataFeed(com.google.cloud.dataplex.v1.CreateMetadataFeedRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateMetadataFeedMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a MetadataFeed.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.MetadataFeed>
+        getMetadataFeed(com.google.cloud.dataplex.v1.GetMetadataFeedRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMetadataFeedMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a list of MetadataFeeds.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.ListMetadataFeedsResponse>
+        listMetadataFeeds(com.google.cloud.dataplex.v1.ListMetadataFeedsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMetadataFeedsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a MetadataFeed.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteMetadataFeed(com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteMetadataFeedMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a MetadataFeed.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateMetadataFeed(com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateMetadataFeedMethod(), getCallOptions()), request);
     }
   }
 
@@ -2419,7 +4634,23 @@ public final class CatalogServiceGrpc {
   private static final int METHODID_LIST_ENTRIES = 18;
   private static final int METHODID_GET_ENTRY = 19;
   private static final int METHODID_LOOKUP_ENTRY = 20;
-  private static final int METHODID_SEARCH_ENTRIES = 21;
+  private static final int METHODID_MODIFY_ENTRY = 21;
+  private static final int METHODID_SEARCH_ENTRIES = 22;
+  private static final int METHODID_CREATE_METADATA_JOB = 23;
+  private static final int METHODID_GET_METADATA_JOB = 24;
+  private static final int METHODID_LIST_METADATA_JOBS = 25;
+  private static final int METHODID_CANCEL_METADATA_JOB = 26;
+  private static final int METHODID_CREATE_ENTRY_LINK = 27;
+  private static final int METHODID_UPDATE_ENTRY_LINK = 28;
+  private static final int METHODID_DELETE_ENTRY_LINK = 29;
+  private static final int METHODID_LOOKUP_ENTRY_LINKS = 30;
+  private static final int METHODID_LOOKUP_CONTEXT = 31;
+  private static final int METHODID_GET_ENTRY_LINK = 32;
+  private static final int METHODID_CREATE_METADATA_FEED = 33;
+  private static final int METHODID_GET_METADATA_FEED = 34;
+  private static final int METHODID_LIST_METADATA_FEEDS = 35;
+  private static final int METHODID_DELETE_METADATA_FEED = 36;
+  private static final int METHODID_UPDATE_METADATA_FEED = 37;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2550,11 +4781,101 @@ public final class CatalogServiceGrpc {
               (com.google.cloud.dataplex.v1.LookupEntryRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entry>) responseObserver);
           break;
+        case METHODID_MODIFY_ENTRY:
+          serviceImpl.modifyEntry(
+              (com.google.cloud.dataplex.v1.ModifyEntryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entry>) responseObserver);
+          break;
         case METHODID_SEARCH_ENTRIES:
           serviceImpl.searchEntries(
               (com.google.cloud.dataplex.v1.SearchEntriesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.SearchEntriesResponse>)
                   responseObserver);
+          break;
+        case METHODID_CREATE_METADATA_JOB:
+          serviceImpl.createMetadataJob(
+              (com.google.cloud.dataplex.v1.CreateMetadataJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_METADATA_JOB:
+          serviceImpl.getMetadataJob(
+              (com.google.cloud.dataplex.v1.GetMetadataJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.MetadataJob>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_METADATA_JOBS:
+          serviceImpl.listMetadataJobs(
+              (com.google.cloud.dataplex.v1.ListMetadataJobsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListMetadataJobsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CANCEL_METADATA_JOB:
+          serviceImpl.cancelMetadataJob(
+              (com.google.cloud.dataplex.v1.CancelMetadataJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_ENTRY_LINK:
+          serviceImpl.createEntryLink(
+              (com.google.cloud.dataplex.v1.CreateEntryLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_ENTRY_LINK:
+          serviceImpl.updateEntryLink(
+              (com.google.cloud.dataplex.v1.UpdateEntryLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_ENTRY_LINK:
+          serviceImpl.deleteEntryLink(
+              (com.google.cloud.dataplex.v1.DeleteEntryLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink>)
+                  responseObserver);
+          break;
+        case METHODID_LOOKUP_ENTRY_LINKS:
+          serviceImpl.lookupEntryLinks(
+              (com.google.cloud.dataplex.v1.LookupEntryLinksRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.LookupEntryLinksResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LOOKUP_CONTEXT:
+          serviceImpl.lookupContext(
+              (com.google.cloud.dataplex.v1.LookupContextRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.LookupContextResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_ENTRY_LINK:
+          serviceImpl.getEntryLink(
+              (com.google.cloud.dataplex.v1.GetEntryLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_METADATA_FEED:
+          serviceImpl.createMetadataFeed(
+              (com.google.cloud.dataplex.v1.CreateMetadataFeedRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_METADATA_FEED:
+          serviceImpl.getMetadataFeed(
+              (com.google.cloud.dataplex.v1.GetMetadataFeedRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.MetadataFeed>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_METADATA_FEEDS:
+          serviceImpl.listMetadataFeeds(
+              (com.google.cloud.dataplex.v1.ListMetadataFeedsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListMetadataFeedsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_METADATA_FEED:
+          serviceImpl.deleteMetadataFeed(
+              (com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_METADATA_FEED:
+          serviceImpl.updateMetadataFeed(
+              (com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2705,12 +5026,113 @@ public final class CatalogServiceGrpc {
                     com.google.cloud.dataplex.v1.LookupEntryRequest,
                     com.google.cloud.dataplex.v1.Entry>(service, METHODID_LOOKUP_ENTRY)))
         .addMethod(
+            getModifyEntryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ModifyEntryRequest,
+                    com.google.cloud.dataplex.v1.Entry>(service, METHODID_MODIFY_ENTRY)))
+        .addMethod(
             getSearchEntriesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.dataplex.v1.SearchEntriesRequest,
                     com.google.cloud.dataplex.v1.SearchEntriesResponse>(
                     service, METHODID_SEARCH_ENTRIES)))
+        .addMethod(
+            getCreateMetadataJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CreateMetadataJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_METADATA_JOB)))
+        .addMethod(
+            getGetMetadataJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GetMetadataJobRequest,
+                    com.google.cloud.dataplex.v1.MetadataJob>(service, METHODID_GET_METADATA_JOB)))
+        .addMethod(
+            getListMetadataJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListMetadataJobsRequest,
+                    com.google.cloud.dataplex.v1.ListMetadataJobsResponse>(
+                    service, METHODID_LIST_METADATA_JOBS)))
+        .addMethod(
+            getCancelMetadataJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CancelMetadataJobRequest,
+                    com.google.protobuf.Empty>(service, METHODID_CANCEL_METADATA_JOB)))
+        .addMethod(
+            getCreateEntryLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CreateEntryLinkRequest,
+                    com.google.cloud.dataplex.v1.EntryLink>(service, METHODID_CREATE_ENTRY_LINK)))
+        .addMethod(
+            getUpdateEntryLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.UpdateEntryLinkRequest,
+                    com.google.cloud.dataplex.v1.EntryLink>(service, METHODID_UPDATE_ENTRY_LINK)))
+        .addMethod(
+            getDeleteEntryLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.DeleteEntryLinkRequest,
+                    com.google.cloud.dataplex.v1.EntryLink>(service, METHODID_DELETE_ENTRY_LINK)))
+        .addMethod(
+            getLookupEntryLinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.LookupEntryLinksRequest,
+                    com.google.cloud.dataplex.v1.LookupEntryLinksResponse>(
+                    service, METHODID_LOOKUP_ENTRY_LINKS)))
+        .addMethod(
+            getLookupContextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.LookupContextRequest,
+                    com.google.cloud.dataplex.v1.LookupContextResponse>(
+                    service, METHODID_LOOKUP_CONTEXT)))
+        .addMethod(
+            getGetEntryLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GetEntryLinkRequest,
+                    com.google.cloud.dataplex.v1.EntryLink>(service, METHODID_GET_ENTRY_LINK)))
+        .addMethod(
+            getCreateMetadataFeedMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CreateMetadataFeedRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_METADATA_FEED)))
+        .addMethod(
+            getGetMetadataFeedMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GetMetadataFeedRequest,
+                    com.google.cloud.dataplex.v1.MetadataFeed>(
+                    service, METHODID_GET_METADATA_FEED)))
+        .addMethod(
+            getListMetadataFeedsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListMetadataFeedsRequest,
+                    com.google.cloud.dataplex.v1.ListMetadataFeedsResponse>(
+                    service, METHODID_LIST_METADATA_FEEDS)))
+        .addMethod(
+            getDeleteMetadataFeedMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_METADATA_FEED)))
+        .addMethod(
+            getUpdateMetadataFeedMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_METADATA_FEED)))
         .build();
   }
 
@@ -2783,7 +5205,23 @@ public final class CatalogServiceGrpc {
                       .addMethod(getListEntriesMethod())
                       .addMethod(getGetEntryMethod())
                       .addMethod(getLookupEntryMethod())
+                      .addMethod(getModifyEntryMethod())
                       .addMethod(getSearchEntriesMethod())
+                      .addMethod(getCreateMetadataJobMethod())
+                      .addMethod(getGetMetadataJobMethod())
+                      .addMethod(getListMetadataJobsMethod())
+                      .addMethod(getCancelMetadataJobMethod())
+                      .addMethod(getCreateEntryLinkMethod())
+                      .addMethod(getUpdateEntryLinkMethod())
+                      .addMethod(getDeleteEntryLinkMethod())
+                      .addMethod(getLookupEntryLinksMethod())
+                      .addMethod(getLookupContextMethod())
+                      .addMethod(getGetEntryLinkMethod())
+                      .addMethod(getCreateMetadataFeedMethod())
+                      .addMethod(getGetMetadataFeedMethod())
+                      .addMethod(getListMetadataFeedsMethod())
+                      .addMethod(getDeleteMetadataFeedMethod())
+                      .addMethod(getUpdateMetadataFeedMethod())
                       .build();
         }
       }

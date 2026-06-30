@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -651,7 +651,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -890,8 +892,9 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * @param certificateId Optional. It must be unique within a location and match the regular
    *     expression `[a-zA-Z0-9_-]{1,63}`. This field is required when using a
    *     [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
-   *     Enterprise [CertificateAuthority.Tier][], but is optional and its value is ignored
-   *     otherwise.
+   *     Enterprise
+   *     [CertificateAuthority.tier][google.cloud.security.privateca.v1.CertificateAuthority.tier],
+   *     but is optional and its value is ignored otherwise.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Certificate createCertificate(
@@ -937,8 +940,9 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * @param certificateId Optional. It must be unique within a location and match the regular
    *     expression `[a-zA-Z0-9_-]{1,63}`. This field is required when using a
    *     [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
-   *     Enterprise [CertificateAuthority.Tier][], but is optional and its value is ignored
-   *     otherwise.
+   *     Enterprise
+   *     [CertificateAuthority.tier][google.cloud.security.privateca.v1.CertificateAuthority.tier],
+   *     but is optional and its value is ignored otherwise.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Certificate createCertificate(
@@ -1165,9 +1169,15 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the location associated with the
+   * @param parent Required. The resource name of the parent associated with the
    *     [Certificates][google.cloud.security.privateca.v1.Certificate], in the format
-   *     `projects/&#42;/locations/&#42;/caPools/&#42;`.
+   *     `projects/&#42;/locations/&#42;/caPools/&#42;`. The parent resource name can be in one of
+   *     two forms:
+   *     <p>1. &#42;&#42;Specific CA Pool:&#42;&#42; To list certificates within a single CA Pool:
+   *     `projects/&#42;/locations/&#42;/caPools/&#42;`
+   *     <p>2. &#42;&#42;All CA Pools in a Location:&#42;&#42; To list certificates across
+   *     &#42;all&#42; CA Pools in a given project and location, use the wildcard character (`-`) in
+   *     place of the CA Pool ID. Example: `projects/&#42;/locations/&#42;/caPools/-`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCertificatesPagedResponse listCertificates(CaPoolName parent) {
@@ -1200,9 +1210,15 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the location associated with the
+   * @param parent Required. The resource name of the parent associated with the
    *     [Certificates][google.cloud.security.privateca.v1.Certificate], in the format
-   *     `projects/&#42;/locations/&#42;/caPools/&#42;`.
+   *     `projects/&#42;/locations/&#42;/caPools/&#42;`. The parent resource name can be in one of
+   *     two forms:
+   *     <p>1. &#42;&#42;Specific CA Pool:&#42;&#42; To list certificates within a single CA Pool:
+   *     `projects/&#42;/locations/&#42;/caPools/&#42;`
+   *     <p>2. &#42;&#42;All CA Pools in a Location:&#42;&#42; To list certificates across
+   *     &#42;all&#42; CA Pools in a given project and location, use the wildcard character (`-`) in
+   *     place of the CA Pool ID. Example: `projects/&#42;/locations/&#42;/caPools/-`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCertificatesPagedResponse listCertificates(String parent) {
@@ -5600,6 +5616,18 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -5635,6 +5663,18 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -5669,6 +5709,18 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

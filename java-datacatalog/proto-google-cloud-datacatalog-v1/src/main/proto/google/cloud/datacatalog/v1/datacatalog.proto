@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -36,9 +36,9 @@ import "google/iam/v1/policy.proto";
 import "google/longrunning/operations.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
+import "google/protobuf/timestamp.proto";
 import "google/rpc/status.proto";
 
-option cc_enable_arenas = true;
 option csharp_namespace = "Google.Cloud.DataCatalog.V1";
 option go_package = "cloud.google.com/go/datacatalog/apiv1/datacatalogpb;datacatalogpb";
 option java_multiple_files = true;
@@ -50,9 +50,12 @@ option (google.api.resource_definition) = {
   pattern: "projects/{project}/locations/{location}/tagTemplates/{tag_template}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}"
 };
 
+// Deprecated: Please use Dataplex Catalog instead.
+//
 // Data Catalog API service allows you to discover, understand, and manage
 // your data.
 service DataCatalog {
+  option deprecated = true;
   option (google.api.default_host) = "datacatalog.googleapis.com";
   option (google.api.oauth_scopes) =
       "https://www.googleapis.com/auth/cloud-platform";
@@ -73,6 +76,7 @@ service DataCatalog {
   // For more information, see [Data Catalog search syntax]
   // (https://cloud.google.com/data-catalog/docs/how-to/search-reference).
   rpc SearchCatalog(SearchCatalogRequest) returns (SearchCatalogResponse) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/catalog:search"
       body: "*"
@@ -108,6 +112,7 @@ service DataCatalog {
   // the `parent` parameter. For more information, see [Data Catalog resource
   // project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
   rpc CreateEntryGroup(CreateEntryGroupRequest) returns (EntryGroup) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/{parent=projects/*/locations/*}/entryGroups"
       body: "entry_group"
@@ -117,6 +122,7 @@ service DataCatalog {
 
   // Gets an entry group.
   rpc GetEntryGroup(GetEntryGroupRequest) returns (EntryGroup) {
+    option deprecated = true;
     option (google.api.http) = {
       get: "/v1/{name=projects/*/locations/*/entryGroups/*}"
     };
@@ -131,6 +137,7 @@ service DataCatalog {
   // resource
   // project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
   rpc UpdateEntryGroup(UpdateEntryGroupRequest) returns (EntryGroup) {
+    option deprecated = true;
     option (google.api.http) = {
       patch: "/v1/{entry_group.name=projects/*/locations/*/entryGroups/*}"
       body: "entry_group"
@@ -147,6 +154,7 @@ service DataCatalog {
   // project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
   rpc DeleteEntryGroup(DeleteEntryGroupRequest)
       returns (google.protobuf.Empty) {
+    option deprecated = true;
     option (google.api.http) = {
       delete: "/v1/{name=projects/*/locations/*/entryGroups/*}"
     };
@@ -156,6 +164,7 @@ service DataCatalog {
   // Lists entry groups.
   rpc ListEntryGroups(ListEntryGroupsRequest)
       returns (ListEntryGroupsResponse) {
+    option deprecated = true;
     option (google.api.http) = {
       get: "/v1/{parent=projects/*/locations/*}/entryGroups"
     };
@@ -174,6 +183,7 @@ service DataCatalog {
   //
   // An entry group can have a maximum of 100,000 entries.
   rpc CreateEntry(CreateEntryRequest) returns (Entry) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/{parent=projects/*/locations/*/entryGroups/*}/entries"
       body: "entry"
@@ -188,6 +198,7 @@ service DataCatalog {
   // resource
   // project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
   rpc UpdateEntry(UpdateEntryRequest) returns (Entry) {
+    option deprecated = true;
     option (google.api.http) = {
       patch: "/v1/{entry.name=projects/*/locations/*/entryGroups/*/entries/*}"
       body: "entry"
@@ -207,6 +218,7 @@ service DataCatalog {
   // resource
   // project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
   rpc DeleteEntry(DeleteEntryRequest) returns (google.protobuf.Empty) {
+    option deprecated = true;
     option (google.api.http) = {
       delete: "/v1/{name=projects/*/locations/*/entryGroups/*/entries/*}"
     };
@@ -215,6 +227,7 @@ service DataCatalog {
 
   // Gets an entry.
   rpc GetEntry(GetEntryRequest) returns (Entry) {
+    option deprecated = true;
     option (google.api.http) = {
       get: "/v1/{name=projects/*/locations/*/entryGroups/*/entries/*}"
     };
@@ -225,6 +238,7 @@ service DataCatalog {
   //
   // The resource name comes from the source Google Cloud Platform service.
   rpc LookupEntry(LookupEntryRequest) returns (Entry) {
+    option deprecated = true;
     option (google.api.http) = {
       get: "/v1/entries:lookup"
     };
@@ -236,6 +250,7 @@ service DataCatalog {
   // To get a list of both custom and automatically created entries, use
   // [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
   rpc ListEntries(ListEntriesRequest) returns (ListEntriesResponse) {
+    option deprecated = true;
     option (google.api.http) = {
       get: "/v1/{parent=projects/*/locations/*/entryGroups/*}/entries"
     };
@@ -248,6 +263,7 @@ service DataCatalog {
   // To call this method, you must have the `datacatalog.entries.updateOverview`
   // IAM permission on the corresponding project.
   rpc ModifyEntryOverview(ModifyEntryOverviewRequest) returns (EntryOverview) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/{name=projects/*/locations/*/entryGroups/*/entries/*}:modifyEntryOverview"
       body: "*"
@@ -260,6 +276,7 @@ service DataCatalog {
   // To call this method, you must have the `datacatalog.entries.updateContacts`
   // IAM permission on the corresponding project.
   rpc ModifyEntryContacts(ModifyEntryContactsRequest) returns (Contacts) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/{name=projects/*/locations/*/entryGroups/*/entries/*}:modifyEntryContacts"
       body: "*"
@@ -273,6 +290,7 @@ service DataCatalog {
   // For more information, see [Data Catalog resource project]
   // (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
   rpc CreateTagTemplate(CreateTagTemplateRequest) returns (TagTemplate) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/{parent=projects/*/locations/*}/tagTemplates"
       body: "tag_template"
@@ -283,6 +301,7 @@ service DataCatalog {
 
   // Gets a tag template.
   rpc GetTagTemplate(GetTagTemplateRequest) returns (TagTemplate) {
+    option deprecated = true;
     option (google.api.http) = {
       get: "/v1/{name=projects/*/locations/*/tagTemplates/*}"
     };
@@ -299,6 +318,7 @@ service DataCatalog {
   // resource
   // project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
   rpc UpdateTagTemplate(UpdateTagTemplateRequest) returns (TagTemplate) {
+    option deprecated = true;
     option (google.api.http) = {
       patch: "/v1/{tag_template.name=projects/*/locations/*/tagTemplates/*}"
       body: "tag_template"
@@ -314,6 +334,7 @@ service DataCatalog {
   // project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
   rpc DeleteTagTemplate(DeleteTagTemplateRequest)
       returns (google.protobuf.Empty) {
+    option deprecated = true;
     option (google.api.http) = {
       delete: "/v1/{name=projects/*/locations/*/tagTemplates/*}"
     };
@@ -327,6 +348,7 @@ service DataCatalog {
   // project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
   rpc CreateTagTemplateField(CreateTagTemplateFieldRequest)
       returns (TagTemplateField) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/{parent=projects/*/locations/*/tagTemplates/*}/fields"
       body: "tag_template_field"
@@ -345,6 +367,7 @@ service DataCatalog {
   // project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
   rpc UpdateTagTemplateField(UpdateTagTemplateFieldRequest)
       returns (TagTemplateField) {
+    option deprecated = true;
     option (google.api.http) = {
       patch: "/v1/{name=projects/*/locations/*/tagTemplates/*/fields/*}"
       body: "tag_template_field"
@@ -361,6 +384,7 @@ service DataCatalog {
   // (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
   rpc RenameTagTemplateField(RenameTagTemplateFieldRequest)
       returns (TagTemplateField) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/{name=projects/*/locations/*/tagTemplates/*/fields/*}:rename"
       body: "*"
@@ -373,6 +397,7 @@ service DataCatalog {
   // Within a single enum field, enum values must be unique.
   rpc RenameTagTemplateFieldEnumValue(RenameTagTemplateFieldEnumValueRequest)
       returns (TagTemplateField) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/{name=projects/*/locations/*/tagTemplates/*/fields/*/enumValues/*}:rename"
       body: "*"
@@ -388,6 +413,7 @@ service DataCatalog {
   // project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
   rpc DeleteTagTemplateField(DeleteTagTemplateFieldRequest)
       returns (google.protobuf.Empty) {
+    option deprecated = true;
     option (google.api.http) = {
       delete: "/v1/{name=projects/*/locations/*/tagTemplates/*/fields/*}"
     };
@@ -407,6 +433,7 @@ service DataCatalog {
   // (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
   // used to create the tag must be in the same organization.
   rpc CreateTag(CreateTagRequest) returns (Tag) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/{parent=projects/*/locations/*/entryGroups/*/entries/*}/tags"
       body: "tag"
@@ -420,6 +447,7 @@ service DataCatalog {
 
   // Updates an existing tag.
   rpc UpdateTag(UpdateTagRequest) returns (Tag) {
+    option deprecated = true;
     option (google.api.http) = {
       patch: "/v1/{tag.name=projects/*/locations/*/entryGroups/*/entries/*/tags/*}"
       body: "tag"
@@ -434,6 +462,7 @@ service DataCatalog {
 
   // Deletes a tag.
   rpc DeleteTag(DeleteTagRequest) returns (google.protobuf.Empty) {
+    option deprecated = true;
     option (google.api.http) = {
       delete: "/v1/{name=projects/*/locations/*/entryGroups/*/entries/*/tags/*}"
       additional_bindings {
@@ -447,6 +476,7 @@ service DataCatalog {
   // The [columns][google.cloud.datacatalog.v1.Tag.column] in the response are
   // lowercased.
   rpc ListTags(ListTagsRequest) returns (ListTagsResponse) {
+    option deprecated = true;
     option (google.api.http) = {
       get: "/v1/{parent=projects/*/locations/*/entryGroups/*/entries/*}/tags"
       additional_bindings {
@@ -471,6 +501,7 @@ service DataCatalog {
   // [google.cloud.datacatalog.v1.ReconcileTagsResponse] message.
   rpc ReconcileTags(ReconcileTagsRequest)
       returns (google.longrunning.Operation) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/{parent=projects/*/locations/*/entryGroups/*/entries/*}/tags:reconcile"
       body: "*"
@@ -484,6 +515,7 @@ service DataCatalog {
   // Marks an [Entry][google.cloud.datacatalog.v1.Entry] as starred by
   // the current user. Starring information is private to each user.
   rpc StarEntry(StarEntryRequest) returns (StarEntryResponse) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/{name=projects/*/locations/*/entryGroups/*/entries/*}:star"
       body: "*"
@@ -494,6 +526,7 @@ service DataCatalog {
   // Marks an [Entry][google.cloud.datacatalog.v1.Entry] as NOT starred by
   // the current user. Starring information is private to each user.
   rpc UnstarEntry(UnstarEntryRequest) returns (UnstarEntryResponse) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/{name=projects/*/locations/*/entryGroups/*/entries/*}:unstar"
       body: "*"
@@ -520,6 +553,7 @@ service DataCatalog {
   // - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
   rpc SetIamPolicy(google.iam.v1.SetIamPolicyRequest)
       returns (google.iam.v1.Policy) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/{resource=projects/*/locations/*/tagTemplates/*}:setIamPolicy"
       body: "*"
@@ -554,6 +588,7 @@ service DataCatalog {
   // - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
   rpc GetIamPolicy(google.iam.v1.GetIamPolicyRequest)
       returns (google.iam.v1.Policy) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/{resource=projects/*/locations/*/tagTemplates/*}:getIamPolicy"
       body: "*"
@@ -585,6 +620,7 @@ service DataCatalog {
   // No Google IAM permissions are required to call this method.
   rpc TestIamPermissions(google.iam.v1.TestIamPermissionsRequest)
       returns (google.iam.v1.TestIamPermissionsResponse) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/{resource=projects/*/locations/*/tagTemplates/*}:testIamPermissions"
       body: "*"
@@ -619,6 +655,7 @@ service DataCatalog {
   // message.
   rpc ImportEntries(ImportEntriesRequest)
       returns (google.longrunning.Operation) {
+    option deprecated = true;
     option (google.api.http) = {
       post: "/v1/{parent=projects/*/locations/*/entryGroups/*}/entries:import"
       body: "*"
@@ -626,6 +663,46 @@ service DataCatalog {
     option (google.longrunning.operation_info) = {
       response_type: "ImportEntriesResponse"
       metadata_type: "ImportEntriesMetadata"
+    };
+  }
+
+  // Sets the configuration related to the migration to Dataplex for an
+  // organization or project.
+  rpc SetConfig(SetConfigRequest) returns (MigrationConfig) {
+    option deprecated = true;
+    option (google.api.http) = {
+      post: "/v1/{name=organizations/*/locations/*}:setConfig"
+      body: "*"
+      additional_bindings {
+        post: "/v1/{name=projects/*/locations/*}:setConfig"
+        body: "*"
+      }
+    };
+  }
+
+  // Retrieves the configuration related to the migration from Data Catalog to
+  // Dataplex for a specific organization, including all the projects under it
+  // which have a separate configuration set.
+  rpc RetrieveConfig(RetrieveConfigRequest) returns (OrganizationConfig) {
+    option deprecated = true;
+    option (google.api.http) = {
+      get: "/v1/{name=organizations/*/locations/*}:retrieveConfig"
+    };
+  }
+
+  // Retrieves the effective configuration related to the migration from Data
+  // Catalog to Dataplex for a specific organization or project. If there is no
+  // specific configuration set for the resource, the setting is checked
+  // hierarchicahlly through the ancestors of the resource, starting from the
+  // resource itself.
+  rpc RetrieveEffectiveConfig(RetrieveEffectiveConfigRequest)
+      returns (MigrationConfig) {
+    option deprecated = true;
+    option (google.api.http) = {
+      get: "/v1/{name=organizations/*/locations/*}:retrieveEffectiveConfig"
+      additional_bindings {
+        get: "/v1/{name=projects/*/locations/*}:retrieveEffectiveConfig"
+      }
     };
   }
 }
@@ -984,7 +1061,7 @@ message LookupEntryRequest {
     // * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
     //
     // Identifiers (`*_ID`) should comply with the
-    // [Lexical structure in Standard SQL]
+    // [Lexical structure in GoogleSQL]
     // (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
     string sql_resource = 3;
 
@@ -1035,12 +1112,13 @@ message Entry {
     pattern: "projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}"
   };
 
-  // Output only. The resource name of an entry in URL format.
+  // Output only. Identifier. The resource name of an entry in URL format.
   //
   // Note: The entry itself and its child resources might not be
   // stored in the location specified in its name.
   string name = 1 [
     (google.api.field_behavior) = OUTPUT_ONLY,
+    (google.api.field_behavior) = IDENTIFIER,
     (google.api.resource_reference) = {
       type: "datacatalog.googleapis.com/EntryGroup"
     }
@@ -1184,6 +1262,9 @@ message Entry {
 
     // Model specification.
     ModelSpec model_spec = 43;
+
+    // FeatureonlineStore spec for Vertex AI Feature Store.
+    FeatureOnlineStoreSpec feature_online_store_spec = 45;
   }
 
   // Display name of an entry.
@@ -1285,7 +1366,7 @@ message DatabaseTableSpec {
   DataplexTableSpec dataplex_table = 2
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Spec what aplies to tables that are actually views.
+  // Spec what applies to tables that are actually views.
   // Not set for "real" tables.
   DatabaseViewSpec database_view_spec = 3;
 }
@@ -1502,6 +1583,15 @@ message VertexModelSourceInfo {
 
     // The Model is saved or tuned from Model Garden.
     MODEL_GARDEN = 4;
+
+    // The Model is saved or tuned from Genie.
+    GENIE = 5;
+
+    // The Model is uploaded by text embedding finetuning pipeline.
+    CUSTOM_TEXT_EMBEDDING = 6;
+
+    // The Model is saved or tuned from Marketplace.
+    MARKETPLACE = 7;
   }
 
   // Type of the model source.
@@ -1599,6 +1689,25 @@ message ModelSpec {
   }
 }
 
+// Detail description of the source information of a Vertex Feature Online
+// Store.
+message FeatureOnlineStoreSpec {
+  // Type of underlying storage type.
+  enum StorageType {
+    // Should not be used.
+    STORAGE_TYPE_UNSPECIFIED = 0;
+
+    // Underlsying storgae is Bigtable.
+    BIGTABLE = 1;
+
+    // Underlying is optimized online server (Lightning).
+    OPTIMIZED = 2;
+  }
+
+  // Output only. Type of underlying storage for the FeatureOnlineStore.
+  StorageType storage_type = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
 // Business Context of the entry.
 message BusinessContext {
   // Entry overview fields for rich text descriptions of entries.
@@ -1638,19 +1747,19 @@ message Contacts {
 
 // Entry group metadata.
 //
-// An `EntryGroup` resource represents a logical grouping of zero or more
-// Data Catalog [Entry][google.cloud.datacatalog.v1.Entry] resources.
+//  An `EntryGroup` resource represents a logical grouping of zero or more
+//  Data Catalog [Entry][google.cloud.datacatalog.v1.Entry] resources.
 message EntryGroup {
   option (google.api.resource) = {
     type: "datacatalog.googleapis.com/EntryGroup"
     pattern: "projects/{project}/locations/{location}/entryGroups/{entry_group}"
   };
 
-  // The resource name of the entry group in URL format.
+  // Identifier. The resource name of the entry group in URL format.
   //
   // Note: The entry group itself and its child resources might not be
   // stored in the location specified in its name.
-  string name = 1;
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // A short name to identify the entry group, for example,
   // "analytics data - jan 2011". Default value is an empty string.
@@ -1664,6 +1773,13 @@ message EntryGroup {
   // Output only. Timestamps of the entry group. Default value is empty.
   SystemTimestamps data_catalog_timestamps = 4
       [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Optional. When set to [true], it means DataCatalog EntryGroup was
+  // transferred to Dataplex Catalog Service. It makes EntryGroup and its
+  // Entries to be read-only in DataCatalog. However, new Tags on EntryGroup and
+  // its Entries can be created. After setting the flag to [true] it cannot be
+  // unset.
+  bool transferred_to_dataplex = 9 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Request message for
@@ -2245,4 +2361,97 @@ enum EntryType {
   // For more information, see [Looker Look API]
   // (https://developers.looker.com/api/explorer/4.0/methods/Look).
   LOOK = 18;
+
+  // Feature Online Store resource in Vertex AI Feature Store.
+  FEATURE_ONLINE_STORE = 19;
+
+  // Feature View resource in Vertex AI Feature Store.
+  FEATURE_VIEW = 20;
+
+  // Feature Group resource in Vertex AI Feature Store.
+  FEATURE_GROUP = 21;
+}
+
+// Request message for
+// [SetConfig][google.cloud.datacatalog.v1.DataCatalog.SetConfig].
+message SetConfigRequest {
+  // Required. The organization or project whose config is being specified.
+  string name = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // The configuration field to set.
+  oneof configuration {
+    // Opt-in status for the migration of Tag Templates to Dataplex.
+    TagTemplateMigration tag_template_migration = 2;
+
+    // Opt-in status for the UI switch to Dataplex.
+    CatalogUIExperience catalog_ui_experience = 3;
+  }
+}
+
+// Request message for
+// [RetrieveConfig][google.cloud.datacatalog.v1.DataCatalog.RetrieveConfig].
+message RetrieveConfigRequest {
+  // Required. The organization whose config is being retrieved.
+  string name = 1 [(google.api.field_behavior) = REQUIRED];
+}
+
+// Request message for
+// [RetrieveEffectiveConfig][google.cloud.datacatalog.v1.DataCatalog.RetrieveEffectiveConfig].
+message RetrieveEffectiveConfigRequest {
+  // Required. The resource whose effective config is being retrieved.
+  string name = 1 [(google.api.field_behavior) = REQUIRED];
+}
+
+// Configuration related to the opt-in status for the migration of TagTemplates
+// to Dataplex.
+enum TagTemplateMigration {
+  // Default value. Migration of Tag Templates from Data Catalog to Dataplex is
+  // not performed.
+  TAG_TEMPLATE_MIGRATION_UNSPECIFIED = 0;
+
+  // Migration of Tag Templates from Data Catalog to Dataplex is enabled.
+  TAG_TEMPLATE_MIGRATION_ENABLED = 1;
+
+  // Migration of Tag Templates from Data Catalog to Dataplex is disabled.
+  TAG_TEMPLATE_MIGRATION_DISABLED = 2;
+}
+
+// Configuration related to the opt-in status for the UI switch to Dataplex.
+enum CatalogUIExperience {
+  // Default value. The default UI is Dataplex.
+  CATALOG_UI_EXPERIENCE_UNSPECIFIED = 0;
+
+  // The UI is Dataplex.
+  CATALOG_UI_EXPERIENCE_ENABLED = 1;
+
+  // The UI is Data Catalog.
+  CATALOG_UI_EXPERIENCE_DISABLED = 2;
+}
+
+// The configuration related to the migration from Data Catalog to Dataplex that
+// has been applied to an organization and any projects under it. It is the
+// response message for
+// [RetrieveConfig][google.cloud.datacatalog.v1.DataCatalog.RetrieveConfig].
+message OrganizationConfig {
+  // Map of organizations and project resource names and their configuration.
+  // The format for the map keys is `organizations/{organizationId}` or
+  // `projects/{projectId}`.
+  map<string, MigrationConfig> config = 1;
+}
+
+// The configuration related to the migration to Dataplex applied to an
+// organization or project.
+// It is the response message for
+// [SetConfig][google.cloud.datacatalog.v1.DataCatalog.SetConfig] and
+// [RetrieveEffectiveConfig][google.cloud.datacatalog.v1.DataCatalog.RetrieveEffectiveConfig].
+message MigrationConfig {
+  // Opt-in status for the migration of Tag Templates to Dataplex.
+  TagTemplateMigration tag_template_migration = 1;
+
+  // Opt-in status for the UI switch to Dataplex.
+  CatalogUIExperience catalog_ui_experience = 2;
+
+  // The time when the Tag Template migration was enabled.
+  // If the Tag Template migration is not enabled, this field is not set.
+  google.protobuf.Timestamp template_migration_enabled_time = 3;
 }

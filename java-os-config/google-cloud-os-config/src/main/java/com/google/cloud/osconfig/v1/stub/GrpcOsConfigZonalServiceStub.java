@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,6 +78,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateOSPolicyAssignmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateOSPolicyAssignmentRequest, Operation>
@@ -89,6 +90,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateOSPolicyAssignmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetOSPolicyAssignmentRequest, OSPolicyAssignment>
@@ -100,6 +102,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetOSPolicyAssignmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(OSPolicyAssignment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -114,6 +117,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                   ProtoUtils.marshaller(ListOSPolicyAssignmentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOSPolicyAssignmentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -131,6 +135,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListOSPolicyAssignmentRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteOSPolicyAssignmentRequest, Operation>
@@ -142,6 +147,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteOSPolicyAssignmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -156,6 +162,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                   ProtoUtils.marshaller(GetOSPolicyAssignmentReportRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OSPolicyAssignmentReport.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -171,6 +178,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                   ProtoUtils.marshaller(ListOSPolicyAssignmentReportsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOSPolicyAssignmentReportsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInventoryRequest, Inventory>
@@ -180,6 +188,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
               .setFullMethodName("google.cloud.osconfig.v1.OsConfigZonalService/GetInventory")
               .setRequestMarshaller(ProtoUtils.marshaller(GetInventoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Inventory.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListInventoriesRequest, ListInventoriesResponse>
@@ -191,6 +200,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                   ProtoUtils.marshaller(ListInventoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInventoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVulnerabilityReportRequest, VulnerabilityReport>
@@ -203,6 +213,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                   ProtoUtils.marshaller(GetVulnerabilityReportRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(VulnerabilityReport.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -217,6 +228,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                   ProtoUtils.marshaller(ListVulnerabilityReportsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVulnerabilityReportsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateOSPolicyAssignmentRequest, Operation>
@@ -321,6 +333,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateOSPolicyAssignmentRequest, Operation>
         updateOSPolicyAssignmentTransportSettings =
@@ -345,6 +358,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsResponse>
         listOSPolicyAssignmentsTransportSettings =
@@ -357,6 +371,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             ListOSPolicyAssignmentRevisionsRequest, ListOSPolicyAssignmentRevisionsResponse>
@@ -371,6 +386,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteOSPolicyAssignmentRequest, Operation>
         deleteOSPolicyAssignmentTransportSettings =
@@ -382,6 +398,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
         getOSPolicyAssignmentReportTransportSettings =
@@ -394,6 +411,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
         listOSPolicyAssignmentReportsTransportSettings =
@@ -407,6 +425,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetInventoryRequest, Inventory> getInventoryTransportSettings =
         GrpcCallSettings.<GetInventoryRequest, Inventory>newBuilder()
@@ -417,6 +436,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListInventoriesRequest, ListInventoriesResponse>
         listInventoriesTransportSettings =
@@ -428,6 +448,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetVulnerabilityReportRequest, VulnerabilityReport>
         getVulnerabilityReportTransportSettings =
@@ -439,6 +460,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListVulnerabilityReportsRequest, ListVulnerabilityReportsResponse>
         listVulnerabilityReportsTransportSettings =
@@ -451,6 +473,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createOSPolicyAssignmentCallable =

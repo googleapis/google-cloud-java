@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -179,7 +179,8 @@ public class MockAwsClustersImpl extends AwsClustersImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateAwsClusterAgentToken, expected %s or %s",
+                  "Unrecognized response type %s for method GenerateAwsClusterAgentToken, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateAwsClusterAgentTokenResponse.class.getName(),
                   Exception.class.getName())));
@@ -201,7 +202,8 @@ public class MockAwsClustersImpl extends AwsClustersImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateAwsAccessToken, expected %s or %s",
+                  "Unrecognized response type %s for method GenerateAwsAccessToken, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateAwsAccessTokenResponse.class.getName(),
                   Exception.class.getName())));
@@ -264,7 +266,8 @@ public class MockAwsClustersImpl extends AwsClustersImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RollbackAwsNodePoolUpdate, expected %s or %s",
+                  "Unrecognized response type %s for method RollbackAwsNodePoolUpdate, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

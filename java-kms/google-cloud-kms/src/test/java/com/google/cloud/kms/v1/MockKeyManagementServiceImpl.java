@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.kms.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.kms.v1.KeyManagementServiceGrpc.KeyManagementServiceImplBase;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -115,7 +116,8 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListCryptoKeyVersions, expected %s or %s",
+                  "Unrecognized response type %s for method ListCryptoKeyVersions, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListCryptoKeyVersionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -139,6 +141,29 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
                   "Unrecognized response type %s for method ListImportJobs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListImportJobsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRetiredResources(
+      ListRetiredResourcesRequest request,
+      StreamObserver<ListRetiredResourcesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRetiredResourcesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRetiredResourcesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRetiredResources, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRetiredResourcesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -248,6 +273,27 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
   }
 
   @Override
+  public void getRetiredResource(
+      GetRetiredResourceRequest request, StreamObserver<RetiredResource> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RetiredResource) {
+      requests.add(request);
+      responseObserver.onNext(((RetiredResource) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRetiredResource, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RetiredResource.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createKeyRing(
       CreateKeyRingRequest request, StreamObserver<KeyRing> responseObserver) {
     Object response = responses.poll();
@@ -303,9 +349,53 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateCryptoKeyVersion, expected %s or %s",
+                  "Unrecognized response type %s for method CreateCryptoKeyVersion, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   CryptoKeyVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteCryptoKey(
+      DeleteCryptoKeyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteCryptoKey, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteCryptoKeyVersion(
+      DeleteCryptoKeyVersionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteCryptoKeyVersion, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -324,7 +414,8 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ImportCryptoKeyVersion, expected %s or %s",
+                  "Unrecognized response type %s for method ImportCryptoKeyVersion, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   CryptoKeyVersion.class.getName(),
                   Exception.class.getName())));
@@ -387,7 +478,8 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateCryptoKeyVersion, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateCryptoKeyVersion, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   CryptoKeyVersion.class.getName(),
                   Exception.class.getName())));
@@ -408,7 +500,8 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateCryptoKeyPrimaryVersion, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateCryptoKeyPrimaryVersion, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CryptoKey.class.getName(),
                   Exception.class.getName())));
@@ -429,7 +522,8 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DestroyCryptoKeyVersion, expected %s or %s",
+                  "Unrecognized response type %s for method DestroyCryptoKeyVersion, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   CryptoKeyVersion.class.getName(),
                   Exception.class.getName())));
@@ -450,7 +544,8 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RestoreCryptoKeyVersion, expected %s or %s",
+                  "Unrecognized response type %s for method RestoreCryptoKeyVersion, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   CryptoKeyVersion.class.getName(),
                   Exception.class.getName())));
@@ -619,6 +714,27 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
                   "Unrecognized response type %s for method MacVerify, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   MacVerifyResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void decapsulate(
+      DecapsulateRequest request, StreamObserver<DecapsulateResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DecapsulateResponse) {
+      requests.add(request);
+      responseObserver.onNext(((DecapsulateResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method Decapsulate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DecapsulateResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,8 @@ import com.google.cloud.dialogflow.v2.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse;
+import com.google.cloud.dialogflow.v2.SuggestKnowledgeAssistRequest;
+import com.google.cloud.dialogflow.v2.SuggestKnowledgeAssistResponse;
 import com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest;
 import com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse;
 import com.google.cloud.dialogflow.v2.UpdateParticipantRequest;
@@ -383,6 +385,47 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistMethodDescriptor =
+          ApiMethodDescriptor
+              .<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.v2.Participants/SuggestKnowledgeAssist")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SuggestKnowledgeAssistRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/conversations/*/participants/*}/suggestions:suggestKnowledgeAssist",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SuggestKnowledgeAssistRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{parent=projects/*/locations/*/conversations/*/participants/*}/suggestions:suggestKnowledgeAssist")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SuggestKnowledgeAssistRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SuggestKnowledgeAssistResponse>newBuilder()
+                      .setDefaultInstance(SuggestKnowledgeAssistResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -465,6 +508,8 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
       suggestFaqAnswersCallable;
   private final UnaryCallable<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
       suggestSmartRepliesCallable;
+  private final UnaryCallable<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -522,6 +567,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetParticipantRequest, Participant> getParticipantTransportSettings =
         HttpJsonCallSettings.<GetParticipantRequest, Participant>newBuilder()
@@ -533,6 +579,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListParticipantsRequest, ListParticipantsResponse>
         listParticipantsTransportSettings =
@@ -545,6 +592,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateParticipantRequest, Participant> updateParticipantTransportSettings =
         HttpJsonCallSettings.<UpdateParticipantRequest, Participant>newBuilder()
@@ -569,6 +617,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("participant", String.valueOf(request.getParticipant()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParticipant())
                 .build();
     HttpJsonCallSettings<SuggestArticlesRequest, SuggestArticlesResponse>
         suggestArticlesTransportSettings =
@@ -581,6 +630,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
         suggestFaqAnswersTransportSettings =
@@ -593,6 +643,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
         suggestSmartRepliesTransportSettings =
@@ -606,6 +657,21 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+        suggestKnowledgeAssistTransportSettings =
+            HttpJsonCallSettings
+                .<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>newBuilder()
+                .setMethodDescriptor(suggestKnowledgeAssistMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -666,6 +732,11 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
             suggestSmartRepliesTransportSettings,
             settings.suggestSmartRepliesSettings(),
             clientContext);
+    this.suggestKnowledgeAssistCallable =
+        callableFactory.createUnaryCallable(
+            suggestKnowledgeAssistTransportSettings,
+            settings.suggestKnowledgeAssistSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -691,6 +762,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
     methodDescriptors.add(suggestArticlesMethodDescriptor);
     methodDescriptors.add(suggestFaqAnswersMethodDescriptor);
     methodDescriptors.add(suggestSmartRepliesMethodDescriptor);
+    methodDescriptors.add(suggestKnowledgeAssistMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -746,6 +818,12 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
   }
 
   @Override
+  public UnaryCallable<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistCallable() {
+    return suggestKnowledgeAssistCallable;
+  }
+
+  @Override
   public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
     return listLocationsCallable;
   }
@@ -765,7 +843,8 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
   public BidiStreamingCallable<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
       streamingAnalyzeContentCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamingAnalyzeContentCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: streamingAnalyzeContentCallable(). REST transport is not implemented for"
+            + " this method yet.");
   }
 
   @Override

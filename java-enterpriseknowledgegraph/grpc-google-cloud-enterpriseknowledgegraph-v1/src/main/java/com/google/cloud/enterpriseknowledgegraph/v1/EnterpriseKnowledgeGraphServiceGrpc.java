@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * APIs for enterprise knowledge graph product.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/enterpriseknowledgegraph/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EnterpriseKnowledgeGraphServiceGrpc {
 
@@ -518,6 +515,20 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
     return EnterpriseKnowledgeGraphServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EnterpriseKnowledgeGraphServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EnterpriseKnowledgeGraphServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EnterpriseKnowledgeGraphServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public EnterpriseKnowledgeGraphServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EnterpriseKnowledgeGraphServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EnterpriseKnowledgeGraphServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -893,6 +904,163 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service EnterpriseKnowledgeGraphService.
+   *
+   * <pre>
+   * APIs for enterprise knowledge graph product.
+   * </pre>
+   */
+  public static final class EnterpriseKnowledgeGraphServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EnterpriseKnowledgeGraphServiceBlockingV2Stub> {
+    private EnterpriseKnowledgeGraphServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EnterpriseKnowledgeGraphServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EnterpriseKnowledgeGraphServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a EntityReconciliationJob. A EntityReconciliationJob once created
+     * will right away be attempted to start.
+     * </pre>
+     */
+    public com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob
+        createEntityReconciliationJob(
+            com.google.cloud.enterpriseknowledgegraph.v1.CreateEntityReconciliationJobRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateEntityReconciliationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a EntityReconciliationJob.
+     * </pre>
+     */
+    public com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob
+        getEntityReconciliationJob(
+            com.google.cloud.enterpriseknowledgegraph.v1.GetEntityReconciliationJobRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEntityReconciliationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Entity Reconciliation Jobs.
+     * </pre>
+     */
+    public com.google.cloud.enterpriseknowledgegraph.v1.ListEntityReconciliationJobsResponse
+        listEntityReconciliationJobs(
+            com.google.cloud.enterpriseknowledgegraph.v1.ListEntityReconciliationJobsRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListEntityReconciliationJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a EntityReconciliationJob. Success of cancellation is not
+     * guaranteed.
+     * </pre>
+     */
+    public com.google.protobuf.Empty cancelEntityReconciliationJob(
+        com.google.cloud.enterpriseknowledgegraph.v1.CancelEntityReconciliationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelEntityReconciliationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a EntityReconciliationJob.
+     * It only deletes the job when the job state is in FAILED, SUCCEEDED, and
+     * CANCELLED.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEntityReconciliationJob(
+        com.google.cloud.enterpriseknowledgegraph.v1.DeleteEntityReconciliationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteEntityReconciliationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finds the Cloud KG entities with CKG ID(s).
+     * </pre>
+     */
+    public com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse lookup(
+        com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getLookupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches the Cloud KG entities with entity name.
+     * </pre>
+     */
+    public com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse search(
+        com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSearchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finds the public KG entities with public KG ID(s).
+     * </pre>
+     */
+    public com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse lookupPublicKg(
+        com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getLookupPublicKgMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches the public KG entities with entity name.
+     * </pre>
+     */
+    public com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse searchPublicKg(
+        com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSearchPublicKgMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * EnterpriseKnowledgeGraphService.
    *
    * <pre>
    * APIs for enterprise knowledge graph product.

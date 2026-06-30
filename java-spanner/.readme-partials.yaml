@@ -1,0 +1,217 @@
+custom_content: |
+  #### Calling Cloud Spanner
+  Here is a code snippet showing a simple usage example. Add the following imports
+  at the top of your file:
+
+  ```java
+  import com.google.cloud.spanner.DatabaseClient;
+  import com.google.cloud.spanner.DatabaseId;
+  import com.google.cloud.spanner.ResultSet;
+  import com.google.cloud.spanner.Spanner;
+  import com.google.cloud.spanner.SpannerOptions;
+  import com.google.cloud.spanner.Statement;
+
+  ```
+
+  Then, to make a query to Spanner, use the following code:
+  ```java
+  // Instantiates a client
+  SpannerOptions options = SpannerOptions.newBuilder().build();
+  Spanner spanner = options.getService();
+  String instance = "my-instance";
+  String database = "my-database";
+  try {
+    // Creates a database client
+    DatabaseClient dbClient = spanner.getDatabaseClient(
+      DatabaseId.of(options.getProjectId(), instance, database));
+    // Queries the database
+    try (ResultSet resultSet = dbClient.singleUse().executeQuery(Statement.of("SELECT 1"))) {
+      // Prints the results
+      while (resultSet.next()) {
+        System.out.printf("%d\n", resultSet.getLong(0));
+      }
+    }
+  } finally {
+    // Closes the client which will free up the resources used
+    spanner.close();
+  }
+  ```
+
+  #### Complete source code
+
+  In [DatabaseSelect.java](https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/spanner/snippets/DatabaseSelect.java) we put together all the code shown above in a single program.
+
+  ## Session Pool
+
+  The Cloud Spanner client maintains a session pool, as sessions are expensive to create and are
+  intended to be long-lived. The client automatically takes a session from the pool and uses this
+  executing queries and transactions.
+  See [Session Pool and Channel Pool Configuration](session-and-channel-pool-configuration.md)
+  for in-depth background information about sessions and gRPC channels and how these are handled in
+  the Cloud Spanner Java client.
+
+  ## Metrics
+
+  Cloud Spanner client supports [client-side metrics](https://cloud.google.com/spanner/docs/view-manage-client-side-metrics) that you can use along with server-side metrics to optimize performance and troubleshoot performance issues if they occur.
+  
+  Client-side metrics are measured from the time a request leaves your application to the time your application receives the response. 
+  In contrast, server-side metrics are measured from the time Spanner receives a request until the last byte of data is sent to the client.
+  
+  These metrics are enabled by default. You can opt out of using client-side metrics with the following code:
+  
+  ```
+  SpannerOptions options = SpannerOptions.newBuilder()
+    .setBuiltInMetricsEnabled(false)
+    .build();
+  ```
+  
+  You can also disable these metrics by setting `SPANNER_DISABLE_BUILTIN_METRICS` to `true`.
+  
+  > Note: Client-side metrics needs `monitoring.timeSeries.create` IAM permission to export metrics data. Ask your administrator to grant your service account the [Monitoring Metric Writer](https://cloud.google.com/iam/docs/roles-permissions/monitoring#monitoring.metricWriter) (roles/monitoring.metricWriter) IAM role on the project.
+
+  ## Traces
+  Cloud Spanner client supports OpenTelemetry Traces, which gives insight into the client internals and aids in debugging/troubleshooting production issues. 
+
+  By default, the functionality is disabled. You need to add OpenTelemetry dependencies, enable OpenTelemetry traces and must configure the OpenTelemetry with appropriate exporters at the startup of your application.
+
+  See [Configure client-side tracing](https://cloud.google.com/spanner/docs/set-up-tracing#configure-client-side-tracing) for more details on configuring traces.
+  
+  #### OpenTelemetry Dependencies
+
+  If you are using Maven, add this to your pom.xml file
+  ```xml
+  <dependency>
+        <groupId>io.opentelemetry</groupId>
+        <artifactId>opentelemetry-sdk</artifactId>
+        <version>{opentelemetry.version}</version>
+  </dependency>
+  <dependency>
+        <groupId>io.opentelemetry</groupId>
+        <artifactId>opentelemetry-sdk-trace</artifactId>
+        <version>{opentelemetry.version}</version>
+  </dependency>
+  <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-exporter-otlp</artifactId>
+      <version>{opentelemetry.version}</version>
+  </dependency>
+  ```
+  If you are using Gradle, add this to your dependencies
+  ```Groovy
+  compile 'io.opentelemetry:opentelemetry-sdk:{opentelemetry.version}'
+  compile 'io.opentelemetry:opentelemetry-sdk-trace:{opentelemetry.version}'
+  compile 'io.opentelemetry:opentelemetry-exporter-oltp:{opentelemetry.version}'
+  ```
+  #### OpenTelemetry Configuration
+
+  > Note: Enabling OpenTelemetry traces will automatically disable OpenCensus traces.
+
+  ```java
+  // Enable OpenTelemetry traces
+  SpannerOptions.enableOpenTelemetryTraces();
+
+  // Create a new tracer provider
+  SdkTracerProvider sdkTracerProvider = SdkTracerProvider.builder()
+        // Use Otlp exporter or any other exporter of your choice.
+        .addSpanProcessor(SimpleSpanProcessor.builder(OtlpGrpcSpanExporter
+            .builder().build()).build())
+            .build();
+
+
+  OpenTelemetry openTelemetry = OpenTelemetrySdk.builder()
+          .setTracerProvider(sdkTracerProvider)
+          .build()
+
+  SpannerOptions options = SpannerOptions.newBuilder()
+  // Inject OpenTelemetry object via Spanner Options or register OpenTelmetry object as Global
+    .setOpenTelemetry(openTelemetry)
+    .build();
+
+  Spanner spanner = options.getService();
+  ```
+  
+  #### OpenTelemetry SQL Statement Tracing
+  The OpenTelemetry traces that are generated by the Java client include any request and transaction
+  tags that have been set. The traces can also include the SQL statements that are executed and the
+  name of the thread that executes the statement. Enable this with the `enableExtendedTracing`
+  option:
+
+  ```
+  SpannerOptions options = SpannerOptions.newBuilder()
+    .setOpenTelemetry(openTelemetry)
+    .setEnableExtendedTracing(true)
+    .build();
+  ```
+
+  This option can also be enabled by setting the environment variable
+  `SPANNER_ENABLE_EXTENDED_TRACING=true`.
+
+  #### OpenTelemetry API Tracing
+  You can enable tracing of each API call that the Spanner client executes with the `enableApiTracing`
+  option. These traces also include any retry attempts for an API call:
+    
+  ```
+  SpannerOptions options = SpannerOptions.newBuilder()
+  .setOpenTelemetry(openTelemetry)
+  .setEnableApiTracing(true)
+  .build();
+  ```
+    
+  This option can also be enabled by setting the environment variable
+  `SPANNER_ENABLE_API_TRACING=true`.
+
+  > Note: The attribute keys that are used for additional information about retry attempts and the number of requests might change in a future release.
+  
+  #### End-to-end Tracing 
+              
+  In addition to client-side tracing, you can opt in for [end-to-end tracing](https://cloud.google.com/spanner/docs/tracing-overview#end-to-end-side-tracing). End-to-end tracing helps you understand and debug latency issues that are specific to Spanner such as the following:
+  * Identify whether the latency is due to network latency between your application and Spanner, or if the latency is occurring within Spanner.
+  * Identify the Google Cloud regions that your application requests are being routed through and if there is a cross-region request. A cross-region request usually means higher latencies between your application and Spanner.
+  
+  ```
+  SpannerOptions options = SpannerOptions.newBuilder()
+  .setOpenTelemetry(openTelemetry)
+  .setEnableEndToEndTracing(true)
+  .build();
+  ```
+  
+  Refer to [Configure end-to-end tracing](https://cloud.google.com/spanner/docs/set-up-tracing#configure-end-to-end-tracing) to configure end-to-end tracing and to understand its attributes.
+  
+  > Note: End-to-end traces can only be exported to [Cloud Trace](https://cloud.google.com/trace/docs).
+  
+  
+  ## Instrument with OpenCensus
+
+  > Note: OpenCensus project is deprecated. See [Sunsetting OpenCensus](https://opentelemetry.io/blog/2023/sunsetting-opencensus/).
+  We recommend migrating to OpenTelemetry, the successor project.
+  
+  ## Migrate from OpenCensus to OpenTelemetry
+
+  > Using the [OpenTelemetry OpenCensus Bridge](https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-opencensus-shim), you can immediately begin exporting your metrics and traces with OpenTelemetry.
+
+  #### Disable OpenCensus metrics
+  Disable OpenCensus metrics for Spanner by including the following code if you still possess OpenCensus dependencies and exporter.
+
+  ```java
+  SpannerOptions.disableOpenCensusMetrics();
+  ```
+
+  #### Disable OpenCensus traces
+  Enabling OpenTelemetry traces for Spanner will automatically disable OpenCensus traces.
+
+  ```java
+  SpannerOptions.enableOpenTelemetryTraces();
+  ```
+
+  #### Remove OpenCensus Dependencies and Code
+  Remove any OpenCensus-related code and dependencies from your codebase if all your dependencies are ready to move to OpenTelemetry.
+
+  * Remove the OpenCensus Exporters which were configured [here](#configure-the-opencensus-exporter)
+  * Remove SpannerRPCViews reference which were configured [here](#enable-rpc-views)
+  * Remove the OpenCensus dependencies which were added [here](#opencensus-dependencies)
+
+  #### Update your Dashboards and Alerts
+
+  Update your dashboards and alerts to reflect below changes
+  * **Metrics name** : `cloud.google.com/java` prefix has been removed from OpenTelemery metrics and instead has been added as Instrumenation Scope.
+  * **Metrics namespace** : OpenTelmetry exporters uses `workload.googleapis.com` namespace opposed to `custom.googleapis.com` with OpenCensus. 

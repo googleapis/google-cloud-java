@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Generated;
@@ -588,6 +589,7 @@ public class ConversationalSearchServiceClientTest {
         AnswerQueryResponse.newBuilder()
             .setAnswer(Answer.newBuilder().build())
             .setSession(Session.newBuilder().build())
+            .setAnswerQueryToken("answerQueryToken758314095")
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -610,6 +612,7 @@ public class ConversationalSearchServiceClientTest {
                 AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
             .setAsynchronousMode(true)
             .setUserPseudoId("userPseudoId-1155274652")
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
 
     AnswerQueryResponse actualResponse = client.answerQuery(request);
@@ -630,6 +633,7 @@ public class ConversationalSearchServiceClientTest {
         request.getQueryUnderstandingSpec(), actualRequest.getQueryUnderstandingSpec());
     Assert.assertEquals(request.getAsynchronousMode(), actualRequest.getAsynchronousMode());
     Assert.assertEquals(request.getUserPseudoId(), actualRequest.getUserPseudoId());
+    Assert.assertEquals(request.getUserLabelsMap(), actualRequest.getUserLabelsMap());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -661,6 +665,7 @@ public class ConversationalSearchServiceClientTest {
                   AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
               .setAsynchronousMode(true)
               .setUserPseudoId("userPseudoId-1155274652")
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       client.answerQuery(request);
       Assert.fail("No exception raised");
@@ -781,10 +786,12 @@ public class ConversationalSearchServiceClientTest {
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -831,10 +838,12 @@ public class ConversationalSearchServiceClientTest {
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -951,10 +960,12 @@ public class ConversationalSearchServiceClientTest {
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -999,10 +1010,12 @@ public class ConversationalSearchServiceClientTest {
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -1048,10 +1061,12 @@ public class ConversationalSearchServiceClientTest {
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 

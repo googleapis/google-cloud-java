@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,6 +91,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFeatureOnlineStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeatureOnlineStoreRequest, FeatureOnlineStore>
@@ -102,6 +103,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFeatureOnlineStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FeatureOnlineStore.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -116,6 +118,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   ProtoUtils.marshaller(ListFeatureOnlineStoresRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeatureOnlineStoresResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFeatureOnlineStoreRequest, Operation>
@@ -127,6 +130,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFeatureOnlineStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFeatureOnlineStoreRequest, Operation>
@@ -138,6 +142,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFeatureOnlineStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFeatureViewRequest, Operation>
@@ -149,6 +154,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFeatureViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeatureViewRequest, FeatureView>
@@ -160,6 +166,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFeatureViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FeatureView.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFeatureViewsRequest, ListFeatureViewsResponse>
@@ -172,6 +179,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   ProtoUtils.marshaller(ListFeatureViewsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeatureViewsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFeatureViewRequest, Operation>
@@ -183,6 +191,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFeatureViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFeatureViewRequest, Operation>
@@ -194,6 +203,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFeatureViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SyncFeatureViewRequest, SyncFeatureViewResponse>
@@ -206,6 +216,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   ProtoUtils.marshaller(SyncFeatureViewRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SyncFeatureViewResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeatureViewSyncRequest, FeatureViewSync>
@@ -217,6 +228,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFeatureViewSyncRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FeatureViewSync.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFeatureViewSyncsRequest, ListFeatureViewSyncsResponse>
@@ -229,6 +241,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   ProtoUtils.marshaller(ListFeatureViewSyncsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeatureViewSyncsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -240,6 +253,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -248,6 +262,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -256,6 +271,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -264,6 +280,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -275,6 +292,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateFeatureOnlineStoreRequest, Operation>
@@ -391,6 +409,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetFeatureOnlineStoreRequest, FeatureOnlineStore>
         getFeatureOnlineStoreTransportSettings =
@@ -402,6 +421,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListFeatureOnlineStoresRequest, ListFeatureOnlineStoresResponse>
         listFeatureOnlineStoresTransportSettings =
@@ -414,6 +434,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateFeatureOnlineStoreRequest, Operation>
         updateFeatureOnlineStoreTransportSettings =
@@ -438,6 +459,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateFeatureViewRequest, Operation> createFeatureViewTransportSettings =
         GrpcCallSettings.<CreateFeatureViewRequest, Operation>newBuilder()
@@ -448,6 +470,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetFeatureViewRequest, FeatureView> getFeatureViewTransportSettings =
         GrpcCallSettings.<GetFeatureViewRequest, FeatureView>newBuilder()
@@ -458,6 +481,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFeatureViewsRequest, ListFeatureViewsResponse>
         listFeatureViewsTransportSettings =
@@ -469,6 +493,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateFeatureViewRequest, Operation> updateFeatureViewTransportSettings =
         GrpcCallSettings.<UpdateFeatureViewRequest, Operation>newBuilder()
@@ -490,6 +515,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SyncFeatureViewRequest, SyncFeatureViewResponse>
         syncFeatureViewTransportSettings =
@@ -501,6 +527,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("feature_view", String.valueOf(request.getFeatureView()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getFeatureView())
                 .build();
     GrpcCallSettings<GetFeatureViewSyncRequest, FeatureViewSync>
         getFeatureViewSyncTransportSettings =
@@ -512,6 +539,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListFeatureViewSyncsRequest, ListFeatureViewSyncsResponse>
         listFeatureViewSyncsTransportSettings =
@@ -523,6 +551,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -553,6 +582,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -563,6 +593,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -574,6 +605,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createFeatureOnlineStoreCallable =

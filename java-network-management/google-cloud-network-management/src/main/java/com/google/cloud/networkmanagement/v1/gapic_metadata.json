@@ -11,13 +11,13 @@
           "libraryClient": "ReachabilityServiceClient",
           "rpcs": {
             "CreateConnectivityTest": {
-              "methods": ["createConnectivityTestAsync", "createConnectivityTestAsync", "createConnectivityTestOperationCallable", "createConnectivityTestCallable"]
+              "methods": ["createConnectivityTestAsync", "createConnectivityTestAsync", "createConnectivityTestAsync", "createConnectivityTestOperationCallable", "createConnectivityTestCallable"]
             },
             "DeleteConnectivityTest": {
-              "methods": ["deleteConnectivityTestAsync", "deleteConnectivityTestAsync", "deleteConnectivityTestOperationCallable", "deleteConnectivityTestCallable"]
+              "methods": ["deleteConnectivityTestAsync", "deleteConnectivityTestAsync", "deleteConnectivityTestAsync", "deleteConnectivityTestOperationCallable", "deleteConnectivityTestCallable"]
             },
             "GetConnectivityTest": {
-              "methods": ["getConnectivityTest", "getConnectivityTest", "getConnectivityTestCallable"]
+              "methods": ["getConnectivityTest", "getConnectivityTest", "getConnectivityTest", "getConnectivityTestCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -26,7 +26,7 @@
               "methods": ["getLocation", "getLocationCallable"]
             },
             "ListConnectivityTests": {
-              "methods": ["listConnectivityTests", "listConnectivityTests", "listConnectivityTestsPagedCallable", "listConnectivityTestsCallable"]
+              "methods": ["listConnectivityTests", "listConnectivityTests", "listConnectivityTests", "listConnectivityTestsPagedCallable", "listConnectivityTestsCallable"]
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
@@ -42,6 +42,90 @@
             },
             "UpdateConnectivityTest": {
               "methods": ["updateConnectivityTestAsync", "updateConnectivityTestAsync", "updateConnectivityTestOperationCallable", "updateConnectivityTestCallable"]
+            }
+          }
+        }
+      }
+    },
+    "VpcFlowLogsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VpcFlowLogsServiceClient",
+          "rpcs": {
+            "CreateVpcFlowLogsConfig": {
+              "methods": ["createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigOperationCallable", "createVpcFlowLogsConfigCallable"]
+            },
+            "DeleteVpcFlowLogsConfig": {
+              "methods": ["deleteVpcFlowLogsConfigAsync", "deleteVpcFlowLogsConfigAsync", "deleteVpcFlowLogsConfigAsync", "deleteVpcFlowLogsConfigOperationCallable", "deleteVpcFlowLogsConfigCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetVpcFlowLogsConfig": {
+              "methods": ["getVpcFlowLogsConfig", "getVpcFlowLogsConfig", "getVpcFlowLogsConfig", "getVpcFlowLogsConfigCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListVpcFlowLogsConfigs": {
+              "methods": ["listVpcFlowLogsConfigs", "listVpcFlowLogsConfigs", "listVpcFlowLogsConfigs", "listVpcFlowLogsConfigs", "listVpcFlowLogsConfigsPagedCallable", "listVpcFlowLogsConfigsCallable"]
+            },
+            "QueryOrgVpcFlowLogsConfigs": {
+              "methods": ["queryOrgVpcFlowLogsConfigs", "queryOrgVpcFlowLogsConfigsPagedCallable", "queryOrgVpcFlowLogsConfigsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "ShowEffectiveFlowLogsConfigs": {
+              "methods": ["showEffectiveFlowLogsConfigs", "showEffectiveFlowLogsConfigsPagedCallable", "showEffectiveFlowLogsConfigsCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateVpcFlowLogsConfig": {
+              "methods": ["updateVpcFlowLogsConfigAsync", "updateVpcFlowLogsConfigAsync", "updateVpcFlowLogsConfigOperationCallable", "updateVpcFlowLogsConfigCallable"]
+            }
+          }
+        }
+      }
+    },
+    "OrganizationVpcFlowLogsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OrganizationVpcFlowLogsServiceClient",
+          "rpcs": {
+            "CreateVpcFlowLogsConfig": {
+              "methods": ["createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigOperationCallable", "createVpcFlowLogsConfigCallable"]
+            },
+            "DeleteVpcFlowLogsConfig": {
+              "methods": ["deleteVpcFlowLogsConfigAsync", "deleteVpcFlowLogsConfigAsync", "deleteVpcFlowLogsConfigAsync", "deleteVpcFlowLogsConfigOperationCallable", "deleteVpcFlowLogsConfigCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetVpcFlowLogsConfig": {
+              "methods": ["getVpcFlowLogsConfig", "getVpcFlowLogsConfig", "getVpcFlowLogsConfig", "getVpcFlowLogsConfigCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListVpcFlowLogsConfigs": {
+              "methods": ["listVpcFlowLogsConfigs", "listVpcFlowLogsConfigs", "listVpcFlowLogsConfigs", "listVpcFlowLogsConfigs", "listVpcFlowLogsConfigsPagedCallable", "listVpcFlowLogsConfigsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateVpcFlowLogsConfig": {
+              "methods": ["updateVpcFlowLogsConfigAsync", "updateVpcFlowLogsConfigAsync", "updateVpcFlowLogsConfigOperationCallable", "updateVpcFlowLogsConfigCallable"]
             }
           }
         }

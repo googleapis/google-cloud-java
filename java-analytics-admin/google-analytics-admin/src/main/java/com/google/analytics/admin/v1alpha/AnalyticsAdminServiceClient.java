@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Service Interface for the Analytics Admin API (GA4).
+ * Service Description: Service Interface for the Google Analytics Admin API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -88,7 +88,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListAccounts</td>
  *      <td><p> Returns all accounts accessible by the caller.
- * <p>  Note that these accounts might not currently have GA4 properties. Soft-deleted (ie: "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are found.</td>
+ * <p>  Note that these accounts might not currently have GA properties. Soft-deleted (ie: "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are found.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -172,7 +172,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetProperty</td>
- *      <td><p> Lookup for a single "GA4" Property.</td>
+ *      <td><p> Lookup for a single GA Property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -192,7 +192,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListProperties</td>
  *      <td><p> Returns child Properties under the specified parent Account.
- * <p>  Only "GA4" properties will be returned. Properties will be excluded if the caller does not have access. Soft-deleted (ie: "trashed") properties are excluded by default. Returns an empty list if no relevant properties are found.</td>
+ * <p>  Properties will be excluded if the caller does not have access. Soft-deleted (ie: "trashed") properties are excluded by default. Returns an empty list if no relevant properties are found.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -207,7 +207,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateProperty</td>
- *      <td><p> Creates an "GA4" property with the specified location and attributes.</td>
+ *      <td><p> Creates a Google Analytics property with the specified location and attributes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -228,7 +228,7 @@ import javax.annotation.Generated;
  *      <td><p> Marks target Property as soft-deleted (ie: "trashed") and returns it.
  * <p>  This API does not have a method to restore soft-deleted properties. However, they can be restored using the Trash Can UI.
  * <p>  If the properties are not restored before the expiration time, the Property and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged. https://support.google.com/analytics/answer/6154772
- * <p>  Returns an error if the target is not found, or is not a GA4 Property.</td>
+ * <p>  Returns an error if the target is not found.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -438,7 +438,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetMeasurementProtocolSecret</td>
- *      <td><p> Lookup for a single "GA4" MeasurementProtocolSecret.</td>
+ *      <td><p> Lookup for a single MeasurementProtocolSecret.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -643,7 +643,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SearchChangeHistoryEvents</td>
- *      <td><p> Searches through all changes to an account or its children given the specified set of filters.</td>
+ *      <td><p> Searches through all changes to an account or its children given the specified set of filters.
+ * <p>  Only returns the subset of changes supported by the API. The UI may return additional changes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -695,7 +696,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateConversionEvent</td>
- *      <td><p> Creates a conversion event with the specified attributes.</td>
+ *      <td><p> Deprecated: Use `CreateKeyEvent` instead. Creates a conversion event with the specified attributes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -714,7 +715,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateConversionEvent</td>
- *      <td><p> Updates a conversion event with the specified attributes.</td>
+ *      <td><p> Deprecated: Use `UpdateKeyEvent` instead. Updates a conversion event with the specified attributes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -732,7 +733,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetConversionEvent</td>
- *      <td><p> Retrieve a single conversion event.</td>
+ *      <td><p> Deprecated: Use `GetKeyEvent` instead. Retrieve a single conversion event.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -751,7 +752,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteConversionEvent</td>
- *      <td><p> Deletes a conversion event in a property.</td>
+ *      <td><p> Deprecated: Use `DeleteKeyEvent` instead. Deletes a conversion event in a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -770,7 +771,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListConversionEvents</td>
- *      <td><p> Returns a list of conversion events in the specified parent property.
+ *      <td><p> Deprecated: Use `ListKeyEvents` instead. Returns a list of conversion events in the specified parent property.
  * <p>  Returns an empty list if no conversion events are found.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -786,6 +787,101 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listConversionEventsPagedCallable()
  *           <li><p> listConversionEventsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateKeyEvent</td>
+ *      <td><p> Creates a Key Event.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createKeyEvent(CreateKeyEventRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createKeyEvent(PropertyName parent, KeyEvent keyEvent)
+ *           <li><p> createKeyEvent(String parent, KeyEvent keyEvent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createKeyEventCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateKeyEvent</td>
+ *      <td><p> Updates a Key Event.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateKeyEvent(UpdateKeyEventRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateKeyEvent(KeyEvent keyEvent, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateKeyEventCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetKeyEvent</td>
+ *      <td><p> Retrieve a single Key Event.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getKeyEvent(GetKeyEventRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getKeyEvent(KeyEventName name)
+ *           <li><p> getKeyEvent(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getKeyEventCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteKeyEvent</td>
+ *      <td><p> Deletes a Key Event.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteKeyEvent(DeleteKeyEventRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteKeyEvent(KeyEventName name)
+ *           <li><p> deleteKeyEvent(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteKeyEventCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListKeyEvents</td>
+ *      <td><p> Returns a list of Key Events in the specified parent property. Returns an empty list if no Key Events are found.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listKeyEvents(ListKeyEventsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listKeyEvents(PropertyName parent)
+ *           <li><p> listKeyEvents(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listKeyEventsPagedCallable()
+ *           <li><p> listKeyEventsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1537,7 +1633,8 @@ import javax.annotation.Generated;
  *      <td><p> RunAccessReport</td>
  *      <td><p> Returns a customized report of data access records. The report provides records of each time a user reads Google Analytics reporting data. Access records are retained for up to 2 years.
  * <p>  Data Access Reports can be requested for a property. Reports may be requested for any property, but dimensions that aren't related to quota can only be requested on Google Analytics 360 properties. This method is only available to Administrators.
- * <p>  These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a linkage. These records don't include property configuration changes like adding a stream or changing a property's time zone. For configuration change history, see [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).</td>
+ * <p>  These data access records include GA UI Reporting, GA UI Explorations, GA Data API, and other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a linkage. These records don't include property configuration changes like adding a stream or changing a property's time zone. For configuration change history, see [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+ * <p>  To give your feedback on this API, complete the [Google Analytics Access Reports feedback](https://docs.google.com/forms/d/e/1FAIpQLSdmEBUrMzAEdiEKk5TV5dEHvDUZDRlgWYdQdAeSdtR4hVjEhw/viewform) form.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1894,30 +1991,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
- *      <td><p> SetAutomatedGa4ConfigurationOptOut</td>
- *      <td><p> Sets the opt out status for the automated GA4 setup process for a UA property. Note: this has no effect on GA4 property.</td>
+ *      <td><p> CreateBigQueryLink</td>
+ *      <td><p> Creates a BigQueryLink.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li><p> setAutomatedGa4ConfigurationOptOut(SetAutomatedGa4ConfigurationOptOutRequest request)
+ *           <li><p> createBigQueryLink(CreateBigQueryLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createBigQueryLink(PropertyName parent, BigQueryLink bigqueryLink)
+ *           <li><p> createBigQueryLink(String parent, BigQueryLink bigqueryLink)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li><p> setAutomatedGa4ConfigurationOptOutCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> FetchAutomatedGa4ConfigurationOptOut</td>
- *      <td><p> Fetches the opt out status for the automated GA4 setup process for a UA property. Note: this has no effect on GA4 property.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> fetchAutomatedGa4ConfigurationOptOut(FetchAutomatedGa4ConfigurationOptOutRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> fetchAutomatedGa4ConfigurationOptOutCallable()
+ *           <li><p> createBigQueryLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1961,6 +2049,43 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> DeleteBigQueryLink</td>
+ *      <td><p> Deletes a BigQueryLink on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteBigQueryLink(DeleteBigQueryLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteBigQueryLink(BigQueryLinkName name)
+ *           <li><p> deleteBigQueryLink(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteBigQueryLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateBigQueryLink</td>
+ *      <td><p> Updates a BigQueryLink.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateBigQueryLink(UpdateBigQueryLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateBigQueryLink(BigQueryLink bigqueryLink, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateBigQueryLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetEnhancedMeasurementSettings</td>
  *      <td><p> Returns the enhanced measurement settings for this data stream. Note that the stream must enable enhanced measurement for these settings to take effect.</td>
  *      <td>
@@ -1994,62 +2119,6 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> updateEnhancedMeasurementSettingsCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> CreateConnectedSiteTag</td>
- *      <td><p> Creates a connected site tag for a Universal Analytics property. You can create a maximum of 20 connected site tags per property. Note: This API cannot be used on GA4 properties.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> createConnectedSiteTag(CreateConnectedSiteTagRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> createConnectedSiteTagCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> DeleteConnectedSiteTag</td>
- *      <td><p> Deletes a connected site tag for a Universal Analytics property. Note: this has no effect on GA4 properties.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> deleteConnectedSiteTag(DeleteConnectedSiteTagRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> deleteConnectedSiteTagCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> ListConnectedSiteTags</td>
- *      <td><p> Lists the connected site tags for a Universal Analytics property. A maximum of 20 connected site tags will be returned. Note: this has no effect on GA4 property.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> listConnectedSiteTags(ListConnectedSiteTagsRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> listConnectedSiteTagsCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> FetchConnectedGa4Property</td>
- *      <td><p> Given a specified UA property, looks up the GA4 property connected to it. Note: this cannot be used with GA4 properties.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> fetchConnectedGa4Property(FetchConnectedGa4PropertyRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> fetchConnectedGa4PropertyCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2222,6 +2291,115 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> deleteEventCreateRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetEventEditRule</td>
+ *      <td><p> Lookup for a single EventEditRule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getEventEditRule(GetEventEditRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getEventEditRule(EventEditRuleName name)
+ *           <li><p> getEventEditRule(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getEventEditRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListEventEditRules</td>
+ *      <td><p> Lists EventEditRules on a web data stream.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listEventEditRules(ListEventEditRulesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listEventEditRules(DataStreamName parent)
+ *           <li><p> listEventEditRules(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listEventEditRulesPagedCallable()
+ *           <li><p> listEventEditRulesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateEventEditRule</td>
+ *      <td><p> Creates an EventEditRule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createEventEditRule(CreateEventEditRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createEventEditRule(DataStreamName parent, EventEditRule eventEditRule)
+ *           <li><p> createEventEditRule(String parent, EventEditRule eventEditRule)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createEventEditRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateEventEditRule</td>
+ *      <td><p> Updates an EventEditRule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateEventEditRule(UpdateEventEditRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateEventEditRule(EventEditRule eventEditRule, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateEventEditRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteEventEditRule</td>
+ *      <td><p> Deletes an EventEditRule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteEventEditRule(DeleteEventEditRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteEventEditRule(EventEditRuleName name)
+ *           <li><p> deleteEventEditRule(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteEventEditRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ReorderEventEditRules</td>
+ *      <td><p> Changes the processing order of event edit rules on the specified stream.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> reorderEventEditRules(ReorderEventEditRulesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> reorderEventEditRulesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2449,16 +2627,16 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
- *      <td><p> CreateSubproperty</td>
+ *      <td><p> ProvisionSubproperty</td>
  *      <td><p> Create a subproperty and a subproperty event filter that applies to the created subproperty.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li><p> createSubproperty(CreateSubpropertyRequest request)
+ *           <li><p> provisionSubproperty(ProvisionSubpropertyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li><p> createSubpropertyCallable()
+ *           <li><p> provisionSubpropertyCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2554,6 +2732,233 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> deleteSubpropertyEventFilterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateReportingDataAnnotation</td>
+ *      <td><p> Creates a Reporting Data Annotation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createReportingDataAnnotation(CreateReportingDataAnnotationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createReportingDataAnnotation(PropertyName parent, ReportingDataAnnotation reportingDataAnnotation)
+ *           <li><p> createReportingDataAnnotation(String parent, ReportingDataAnnotation reportingDataAnnotation)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createReportingDataAnnotationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetReportingDataAnnotation</td>
+ *      <td><p> Lookup a single Reporting Data Annotation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getReportingDataAnnotation(GetReportingDataAnnotationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getReportingDataAnnotation(ReportingDataAnnotationName name)
+ *           <li><p> getReportingDataAnnotation(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getReportingDataAnnotationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListReportingDataAnnotations</td>
+ *      <td><p> List all Reporting Data Annotations on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listReportingDataAnnotations(ListReportingDataAnnotationsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listReportingDataAnnotations(PropertyName parent)
+ *           <li><p> listReportingDataAnnotations(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listReportingDataAnnotationsPagedCallable()
+ *           <li><p> listReportingDataAnnotationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateReportingDataAnnotation</td>
+ *      <td><p> Updates a Reporting Data Annotation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateReportingDataAnnotation(UpdateReportingDataAnnotationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateReportingDataAnnotation(ReportingDataAnnotation reportingDataAnnotation, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateReportingDataAnnotationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteReportingDataAnnotation</td>
+ *      <td><p> Deletes a Reporting Data Annotation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteReportingDataAnnotation(DeleteReportingDataAnnotationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteReportingDataAnnotation(ReportingDataAnnotationName name)
+ *           <li><p> deleteReportingDataAnnotation(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteReportingDataAnnotationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SubmitUserDeletion</td>
+ *      <td><p> Submits a request for user deletion for a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> submitUserDeletion(SubmitUserDeletionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> submitUserDeletion(PropertyName name)
+ *           <li><p> submitUserDeletion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> submitUserDeletionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSubpropertySyncConfigs</td>
+ *      <td><p> List all `SubpropertySyncConfig` resources for a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSubpropertySyncConfigs(ListSubpropertySyncConfigsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSubpropertySyncConfigs(PropertyName parent)
+ *           <li><p> listSubpropertySyncConfigs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSubpropertySyncConfigsPagedCallable()
+ *           <li><p> listSubpropertySyncConfigsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSubpropertySyncConfig</td>
+ *      <td><p> Updates a `SubpropertySyncConfig`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSubpropertySyncConfig(UpdateSubpropertySyncConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateSubpropertySyncConfig(SubpropertySyncConfig subpropertySyncConfig, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSubpropertySyncConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSubpropertySyncConfig</td>
+ *      <td><p> Lookup for a single `SubpropertySyncConfig`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSubpropertySyncConfig(GetSubpropertySyncConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSubpropertySyncConfig(SubpropertySyncConfigName name)
+ *           <li><p> getSubpropertySyncConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSubpropertySyncConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetReportingIdentitySettings</td>
+ *      <td><p> Returns the reporting identity settings for this property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getReportingIdentitySettings(GetReportingIdentitySettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getReportingIdentitySettings(ReportingIdentitySettingsName name)
+ *           <li><p> getReportingIdentitySettings(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getReportingIdentitySettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateReportingIdentitySettings</td>
+ *      <td><p> Updates the reporting identity settings for this property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateReportingIdentitySettings(UpdateReportingIdentitySettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateReportingIdentitySettings(ReportingIdentitySettings reportingIdentitySettings, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateReportingIdentitySettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetUserProvidedDataSettings</td>
+ *      <td><p> Looks up settings related to user-provided data for a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getUserProvidedDataSettings(GetUserProvidedDataSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getUserProvidedDataSettings(UserProvidedDataSettingsName name)
+ *           <li><p> getUserProvidedDataSettings(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getUserProvidedDataSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2781,7 +3186,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Returns all accounts accessible by the caller.
    *
-   * <p>Note that these accounts might not currently have GA4 properties. Soft-deleted (ie:
+   * <p>Note that these accounts might not currently have GA properties. Soft-deleted (ie:
    * "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are
    * found.
    *
@@ -2818,7 +3223,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Returns all accounts accessible by the caller.
    *
-   * <p>Note that these accounts might not currently have GA4 properties. Soft-deleted (ie:
+   * <p>Note that these accounts might not currently have GA properties. Soft-deleted (ie:
    * "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are
    * found.
    *
@@ -2856,7 +3261,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Returns all accounts accessible by the caller.
    *
-   * <p>Note that these accounts might not currently have GA4 properties. Soft-deleted (ie:
+   * <p>Note that these accounts might not currently have GA properties. Soft-deleted (ie:
    * "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are
    * found.
    *
@@ -3308,7 +3713,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single "GA4" Property.
+   * Lookup for a single GA Property.
    *
    * <p>Sample code:
    *
@@ -3337,7 +3742,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single "GA4" Property.
+   * Lookup for a single GA Property.
    *
    * <p>Sample code:
    *
@@ -3365,7 +3770,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single "GA4" Property.
+   * Lookup for a single GA Property.
    *
    * <p>Sample code:
    *
@@ -3392,7 +3797,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single "GA4" Property.
+   * Lookup for a single GA Property.
    *
    * <p>Sample code:
    *
@@ -3421,9 +3826,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Returns child Properties under the specified parent Account.
    *
-   * <p>Only "GA4" properties will be returned. Properties will be excluded if the caller does not
-   * have access. Soft-deleted (ie: "trashed") properties are excluded by default. Returns an empty
-   * list if no relevant properties are found.
+   * <p>Properties will be excluded if the caller does not have access. Soft-deleted (ie: "trashed")
+   * properties are excluded by default. Returns an empty list if no relevant properties are found.
    *
    * <p>Sample code:
    *
@@ -3459,9 +3863,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Returns child Properties under the specified parent Account.
    *
-   * <p>Only "GA4" properties will be returned. Properties will be excluded if the caller does not
-   * have access. Soft-deleted (ie: "trashed") properties are excluded by default. Returns an empty
-   * list if no relevant properties are found.
+   * <p>Properties will be excluded if the caller does not have access. Soft-deleted (ie: "trashed")
+   * properties are excluded by default. Returns an empty list if no relevant properties are found.
    *
    * <p>Sample code:
    *
@@ -3498,9 +3901,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Returns child Properties under the specified parent Account.
    *
-   * <p>Only "GA4" properties will be returned. Properties will be excluded if the caller does not
-   * have access. Soft-deleted (ie: "trashed") properties are excluded by default. Returns an empty
-   * list if no relevant properties are found.
+   * <p>Properties will be excluded if the caller does not have access. Soft-deleted (ie: "trashed")
+   * properties are excluded by default. Returns an empty list if no relevant properties are found.
    *
    * <p>Sample code:
    *
@@ -3542,7 +3944,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an "GA4" property with the specified location and attributes.
+   * Creates a Google Analytics property with the specified location and attributes.
    *
    * <p>Sample code:
    *
@@ -3571,7 +3973,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an "GA4" property with the specified location and attributes.
+   * Creates a Google Analytics property with the specified location and attributes.
    *
    * <p>Sample code:
    *
@@ -3598,7 +4000,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an "GA4" property with the specified location and attributes.
+   * Creates a Google Analytics property with the specified location and attributes.
    *
    * <p>Sample code:
    *
@@ -3634,7 +4036,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
-   * <p>Returns an error if the target is not found, or is not a GA4 Property.
+   * <p>Returns an error if the target is not found.
    *
    * <p>Sample code:
    *
@@ -3672,7 +4074,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
-   * <p>Returns an error if the target is not found, or is not a GA4 Property.
+   * <p>Returns an error if the target is not found.
    *
    * <p>Sample code:
    *
@@ -3709,7 +4111,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
-   * <p>Returns an error if the target is not found, or is not a GA4 Property.
+   * <p>Returns an error if the target is not found.
    *
    * <p>Sample code:
    *
@@ -3747,7 +4149,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
-   * <p>Returns an error if the target is not found, or is not a GA4 Property.
+   * <p>Returns an error if the target is not found.
    *
    * <p>Sample code:
    *
@@ -3889,7 +4291,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Format: properties/{property_id} Example: properties/1234
+   * @param parent Required. Format: properties/{property_id}
+   *     <p>Example: `properties/1234`
    * @param firebaseLink Required. The Firebase link to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3924,7 +4327,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Format: properties/{property_id} Example: properties/1234
+   * @param parent Required. Format: properties/{property_id}
+   *     <p>Example: `properties/1234`
    * @param firebaseLink Required. The Firebase link to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -4021,7 +4425,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Format: properties/{property_id}/firebaseLinks/{firebase_link_id}
-   *     Example: properties/1234/firebaseLinks/5678
+   *     <p>Example: `properties/1234/firebaseLinks/5678`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteFirebaseLink(FirebaseLinkName name) {
@@ -4052,7 +4456,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Format: properties/{property_id}/firebaseLinks/{firebase_link_id}
-   *     Example: properties/1234/firebaseLinks/5678
+   *     <p>Example: `properties/1234/firebaseLinks/5678`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteFirebaseLink(String name) {
@@ -4141,7 +4545,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Format: properties/{property_id} Example: properties/1234
+   * @param parent Required. Format: properties/{property_id}
+   *     <p>Example: `properties/1234`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFirebaseLinksPagedResponse listFirebaseLinks(PropertyName parent) {
@@ -4174,7 +4579,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Format: properties/{property_id} Example: properties/1234
+   * @param parent Required. Format: properties/{property_id}
+   *     <p>Example: `properties/1234`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFirebaseLinksPagedResponse listFirebaseLinks(String parent) {
@@ -4313,8 +4719,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the site tag to lookup. Note that site tags are singletons
    *     and do not have unique IDs. Format:
-   *     properties/{property_id}/dataStreams/{stream_id}/globalSiteTag Example:
-   *     "properties/123/dataStreams/456/globalSiteTag"
+   *     properties/{property_id}/dataStreams/{stream_id}/globalSiteTag
+   *     <p>Example: `properties/123/dataStreams/456/globalSiteTag`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GlobalSiteTag getGlobalSiteTag(GlobalSiteTagName name) {
@@ -4344,8 +4750,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the site tag to lookup. Note that site tags are singletons
    *     and do not have unique IDs. Format:
-   *     properties/{property_id}/dataStreams/{stream_id}/globalSiteTag Example:
-   *     "properties/123/dataStreams/456/globalSiteTag"
+   *     properties/{property_id}/dataStreams/{stream_id}/globalSiteTag
+   *     <p>Example: `properties/123/dataStreams/456/globalSiteTag`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GlobalSiteTag getGlobalSiteTag(String name) {
@@ -4948,7 +5354,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the settings to lookup. Format:
-   *     accounts/{account}/dataSharingSettings Example: "accounts/1000/dataSharingSettings"
+   *     accounts/{account}/dataSharingSettings
+   *     <p>Example: `accounts/1000/dataSharingSettings`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataSharingSettings getDataSharingSettings(DataSharingSettingsName name) {
@@ -4979,7 +5386,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the settings to lookup. Format:
-   *     accounts/{account}/dataSharingSettings Example: "accounts/1000/dataSharingSettings"
+   *     accounts/{account}/dataSharingSettings
+   *     <p>Example: `accounts/1000/dataSharingSettings`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataSharingSettings getDataSharingSettings(String name) {
@@ -5049,7 +5457,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single "GA4" MeasurementProtocolSecret.
+   * Lookup for a single MeasurementProtocolSecret.
    *
    * <p>Sample code:
    *
@@ -5084,7 +5492,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single "GA4" MeasurementProtocolSecret.
+   * Lookup for a single MeasurementProtocolSecret.
    *
    * <p>Sample code:
    *
@@ -5117,7 +5525,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single "GA4" MeasurementProtocolSecret.
+   * Lookup for a single MeasurementProtocolSecret.
    *
    * <p>Sample code:
    *
@@ -5151,7 +5559,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single "GA4" MeasurementProtocolSecret.
+   * Lookup for a single MeasurementProtocolSecret.
    *
    * <p>Sample code:
    *
@@ -6528,6 +6936,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Searches through all changes to an account or its children given the specified set of filters.
    *
+   * <p>Only returns the subset of changes supported by the API. The UI may return additional
+   * changes.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -6569,6 +6980,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Searches through all changes to an account or its children given the specified set of filters.
    *
+   * <p>Only returns the subset of changes supported by the API. The UI may return additional
+   * changes.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -6609,6 +7023,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches through all changes to an account or its children given the specified set of filters.
+   *
+   * <p>Only returns the subset of changes supported by the API. The UI may return additional
+   * changes.
    *
    * <p>Sample code:
    *
@@ -6878,7 +7295,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a conversion event with the specified attributes.
+   * Deprecated: Use `CreateKeyEvent` instead. Creates a conversion event with the specified
+   * attributes.
    *
    * <p>Sample code:
    *
@@ -6901,7 +7319,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     will be created. Format: properties/123
    * @param conversionEvent Required. The conversion event to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ConversionEvent createConversionEvent(
       PropertyName parent, ConversionEvent conversionEvent) {
     CreateConversionEventRequest request =
@@ -6914,7 +7334,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a conversion event with the specified attributes.
+   * Deprecated: Use `CreateKeyEvent` instead. Creates a conversion event with the specified
+   * attributes.
    *
    * <p>Sample code:
    *
@@ -6937,7 +7358,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     will be created. Format: properties/123
    * @param conversionEvent Required. The conversion event to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ConversionEvent createConversionEvent(
       String parent, ConversionEvent conversionEvent) {
     CreateConversionEventRequest request =
@@ -6950,7 +7373,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a conversion event with the specified attributes.
+   * Deprecated: Use `CreateKeyEvent` instead. Creates a conversion event with the specified
+   * attributes.
    *
    * <p>Sample code:
    *
@@ -6973,14 +7397,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ConversionEvent createConversionEvent(CreateConversionEventRequest request) {
     return createConversionEventCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a conversion event with the specified attributes.
+   * Deprecated: Use `CreateKeyEvent` instead. Creates a conversion event with the specified
+   * attributes.
    *
    * <p>Sample code:
    *
@@ -7003,7 +7430,10 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   ConversionEvent response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable() {
     return stub.createConversionEventCallable();
@@ -7011,7 +7441,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a conversion event with the specified attributes.
+   * Deprecated: Use `UpdateKeyEvent` instead. Updates a conversion event with the specified
+   * attributes.
    *
    * <p>Sample code:
    *
@@ -7036,7 +7467,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
    *     entity, use one path with the string "&#42;" to match all fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ConversionEvent updateConversionEvent(
       ConversionEvent conversionEvent, FieldMask updateMask) {
     UpdateConversionEventRequest request =
@@ -7049,7 +7482,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a conversion event with the specified attributes.
+   * Deprecated: Use `UpdateKeyEvent` instead. Updates a conversion event with the specified
+   * attributes.
    *
    * <p>Sample code:
    *
@@ -7072,14 +7506,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ConversionEvent updateConversionEvent(UpdateConversionEventRequest request) {
     return updateConversionEventCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a conversion event with the specified attributes.
+   * Deprecated: Use `UpdateKeyEvent` instead. Updates a conversion event with the specified
+   * attributes.
    *
    * <p>Sample code:
    *
@@ -7102,7 +7539,10 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   ConversionEvent response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
       updateConversionEventCallable() {
     return stub.updateConversionEventCallable();
@@ -7110,7 +7550,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve a single conversion event.
+   * Deprecated: Use `GetKeyEvent` instead. Retrieve a single conversion event.
    *
    * <p>Sample code:
    *
@@ -7131,7 +7571,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     properties/{property}/conversionEvents/{conversion_event} Example:
    *     "properties/123/conversionEvents/456"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ConversionEvent getConversionEvent(ConversionEventName name) {
     GetConversionEventRequest request =
         GetConversionEventRequest.newBuilder()
@@ -7142,7 +7584,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve a single conversion event.
+   * Deprecated: Use `GetKeyEvent` instead. Retrieve a single conversion event.
    *
    * <p>Sample code:
    *
@@ -7163,7 +7605,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     properties/{property}/conversionEvents/{conversion_event} Example:
    *     "properties/123/conversionEvents/456"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ConversionEvent getConversionEvent(String name) {
     GetConversionEventRequest request =
         GetConversionEventRequest.newBuilder().setName(name).build();
@@ -7172,7 +7616,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve a single conversion event.
+   * Deprecated: Use `GetKeyEvent` instead. Retrieve a single conversion event.
    *
    * <p>Sample code:
    *
@@ -7194,14 +7638,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ConversionEvent getConversionEvent(GetConversionEventRequest request) {
     return getConversionEventCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve a single conversion event.
+   * Deprecated: Use `GetKeyEvent` instead. Retrieve a single conversion event.
    *
    * <p>Sample code:
    *
@@ -7223,7 +7669,10 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   ConversionEvent response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetConversionEventRequest, ConversionEvent>
       getConversionEventCallable() {
     return stub.getConversionEventCallable();
@@ -7231,7 +7680,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a conversion event in a property.
+   * Deprecated: Use `DeleteKeyEvent` instead. Deletes a conversion event in a property.
    *
    * <p>Sample code:
    *
@@ -7252,7 +7701,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     properties/{property}/conversionEvents/{conversion_event} Example:
    *     "properties/123/conversionEvents/456"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteConversionEvent(ConversionEventName name) {
     DeleteConversionEventRequest request =
         DeleteConversionEventRequest.newBuilder()
@@ -7263,7 +7714,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a conversion event in a property.
+   * Deprecated: Use `DeleteKeyEvent` instead. Deletes a conversion event in a property.
    *
    * <p>Sample code:
    *
@@ -7284,7 +7735,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     properties/{property}/conversionEvents/{conversion_event} Example:
    *     "properties/123/conversionEvents/456"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteConversionEvent(String name) {
     DeleteConversionEventRequest request =
         DeleteConversionEventRequest.newBuilder().setName(name).build();
@@ -7293,7 +7746,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a conversion event in a property.
+   * Deprecated: Use `DeleteKeyEvent` instead. Deletes a conversion event in a property.
    *
    * <p>Sample code:
    *
@@ -7315,14 +7768,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteConversionEvent(DeleteConversionEventRequest request) {
     deleteConversionEventCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a conversion event in a property.
+   * Deprecated: Use `DeleteKeyEvent` instead. Deletes a conversion event in a property.
    *
    * <p>Sample code:
    *
@@ -7344,14 +7799,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeleteConversionEventRequest, Empty> deleteConversionEventCallable() {
     return stub.deleteConversionEventCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of conversion events in the specified parent property.
+   * Deprecated: Use `ListKeyEvents` instead. Returns a list of conversion events in the specified
+   * parent property.
    *
    * <p>Returns an empty list if no conversion events are found.
    *
@@ -7375,7 +7834,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the parent property. Example: 'properties/123'
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListConversionEventsPagedResponse listConversionEvents(PropertyName parent) {
     ListConversionEventsRequest request =
         ListConversionEventsRequest.newBuilder()
@@ -7386,7 +7847,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of conversion events in the specified parent property.
+   * Deprecated: Use `ListKeyEvents` instead. Returns a list of conversion events in the specified
+   * parent property.
    *
    * <p>Returns an empty list if no conversion events are found.
    *
@@ -7410,7 +7872,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the parent property. Example: 'properties/123'
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListConversionEventsPagedResponse listConversionEvents(String parent) {
     ListConversionEventsRequest request =
         ListConversionEventsRequest.newBuilder().setParent(parent).build();
@@ -7419,7 +7883,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of conversion events in the specified parent property.
+   * Deprecated: Use `ListKeyEvents` instead. Returns a list of conversion events in the specified
+   * parent property.
    *
    * <p>Returns an empty list if no conversion events are found.
    *
@@ -7448,7 +7913,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListConversionEventsPagedResponse listConversionEvents(
       ListConversionEventsRequest request) {
     return listConversionEventsPagedCallable().call(request);
@@ -7456,7 +7923,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of conversion events in the specified parent property.
+   * Deprecated: Use `ListKeyEvents` instead. Returns a list of conversion events in the specified
+   * parent property.
    *
    * <p>Returns an empty list if no conversion events are found.
    *
@@ -7484,7 +7952,10 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListConversionEventsRequest, ListConversionEventsPagedResponse>
       listConversionEventsPagedCallable() {
     return stub.listConversionEventsPagedCallable();
@@ -7492,7 +7963,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of conversion events in the specified parent property.
+   * Deprecated: Use `ListKeyEvents` instead. Returns a list of conversion events in the specified
+   * parent property.
    *
    * <p>Returns an empty list if no conversion events are found.
    *
@@ -7527,10 +7999,634 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListConversionEventsRequest, ListConversionEventsResponse>
       listConversionEventsCallable() {
     return stub.listConversionEventsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Key Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   KeyEvent keyEvent = KeyEvent.newBuilder().build();
+   *   KeyEvent response = analyticsAdminServiceClient.createKeyEvent(parent, keyEvent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent property where this Key Event will be
+   *     created. Format: properties/123
+   * @param keyEvent Required. The Key Event to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KeyEvent createKeyEvent(PropertyName parent, KeyEvent keyEvent) {
+    CreateKeyEventRequest request =
+        CreateKeyEventRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setKeyEvent(keyEvent)
+            .build();
+    return createKeyEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Key Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   KeyEvent keyEvent = KeyEvent.newBuilder().build();
+   *   KeyEvent response = analyticsAdminServiceClient.createKeyEvent(parent, keyEvent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent property where this Key Event will be
+   *     created. Format: properties/123
+   * @param keyEvent Required. The Key Event to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KeyEvent createKeyEvent(String parent, KeyEvent keyEvent) {
+    CreateKeyEventRequest request =
+        CreateKeyEventRequest.newBuilder().setParent(parent).setKeyEvent(keyEvent).build();
+    return createKeyEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Key Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateKeyEventRequest request =
+   *       CreateKeyEventRequest.newBuilder()
+   *           .setKeyEvent(KeyEvent.newBuilder().build())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .build();
+   *   KeyEvent response = analyticsAdminServiceClient.createKeyEvent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KeyEvent createKeyEvent(CreateKeyEventRequest request) {
+    return createKeyEventCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Key Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateKeyEventRequest request =
+   *       CreateKeyEventRequest.newBuilder()
+   *           .setKeyEvent(KeyEvent.newBuilder().build())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<KeyEvent> future =
+   *       analyticsAdminServiceClient.createKeyEventCallable().futureCall(request);
+   *   // Do something.
+   *   KeyEvent response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateKeyEventRequest, KeyEvent> createKeyEventCallable() {
+    return stub.createKeyEventCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Key Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   KeyEvent keyEvent = KeyEvent.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   KeyEvent response = analyticsAdminServiceClient.updateKeyEvent(keyEvent, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param keyEvent Required. The Key Event to update. The `name` field is used to identify the
+   *     settings to be updated.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KeyEvent updateKeyEvent(KeyEvent keyEvent, FieldMask updateMask) {
+    UpdateKeyEventRequest request =
+        UpdateKeyEventRequest.newBuilder().setKeyEvent(keyEvent).setUpdateMask(updateMask).build();
+    return updateKeyEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Key Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateKeyEventRequest request =
+   *       UpdateKeyEventRequest.newBuilder()
+   *           .setKeyEvent(KeyEvent.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   KeyEvent response = analyticsAdminServiceClient.updateKeyEvent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KeyEvent updateKeyEvent(UpdateKeyEventRequest request) {
+    return updateKeyEventCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Key Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateKeyEventRequest request =
+   *       UpdateKeyEventRequest.newBuilder()
+   *           .setKeyEvent(KeyEvent.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<KeyEvent> future =
+   *       analyticsAdminServiceClient.updateKeyEventCallable().futureCall(request);
+   *   // Do something.
+   *   KeyEvent response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateKeyEventRequest, KeyEvent> updateKeyEventCallable() {
+    return stub.updateKeyEventCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a single Key Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   KeyEventName name = KeyEventName.of("[PROPERTY]", "[KEY_EVENT]");
+   *   KeyEvent response = analyticsAdminServiceClient.getKeyEvent(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Key Event to retrieve. Format:
+   *     properties/{property}/keyEvents/{key_event} Example: "properties/123/keyEvents/456"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KeyEvent getKeyEvent(KeyEventName name) {
+    GetKeyEventRequest request =
+        GetKeyEventRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getKeyEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a single Key Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString();
+   *   KeyEvent response = analyticsAdminServiceClient.getKeyEvent(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Key Event to retrieve. Format:
+   *     properties/{property}/keyEvents/{key_event} Example: "properties/123/keyEvents/456"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KeyEvent getKeyEvent(String name) {
+    GetKeyEventRequest request = GetKeyEventRequest.newBuilder().setName(name).build();
+    return getKeyEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a single Key Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetKeyEventRequest request =
+   *       GetKeyEventRequest.newBuilder()
+   *           .setName(KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString())
+   *           .build();
+   *   KeyEvent response = analyticsAdminServiceClient.getKeyEvent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KeyEvent getKeyEvent(GetKeyEventRequest request) {
+    return getKeyEventCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a single Key Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetKeyEventRequest request =
+   *       GetKeyEventRequest.newBuilder()
+   *           .setName(KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString())
+   *           .build();
+   *   ApiFuture<KeyEvent> future =
+   *       analyticsAdminServiceClient.getKeyEventCallable().futureCall(request);
+   *   // Do something.
+   *   KeyEvent response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetKeyEventRequest, KeyEvent> getKeyEventCallable() {
+    return stub.getKeyEventCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Key Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   KeyEventName name = KeyEventName.of("[PROPERTY]", "[KEY_EVENT]");
+   *   analyticsAdminServiceClient.deleteKeyEvent(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Key Event to delete. Format:
+   *     properties/{property}/keyEvents/{key_event} Example: "properties/123/keyEvents/456"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteKeyEvent(KeyEventName name) {
+    DeleteKeyEventRequest request =
+        DeleteKeyEventRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteKeyEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Key Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString();
+   *   analyticsAdminServiceClient.deleteKeyEvent(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Key Event to delete. Format:
+   *     properties/{property}/keyEvents/{key_event} Example: "properties/123/keyEvents/456"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteKeyEvent(String name) {
+    DeleteKeyEventRequest request = DeleteKeyEventRequest.newBuilder().setName(name).build();
+    deleteKeyEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Key Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteKeyEventRequest request =
+   *       DeleteKeyEventRequest.newBuilder()
+   *           .setName(KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteKeyEvent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteKeyEvent(DeleteKeyEventRequest request) {
+    deleteKeyEventCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Key Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteKeyEventRequest request =
+   *       DeleteKeyEventRequest.newBuilder()
+   *           .setName(KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteKeyEventCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteKeyEventRequest, Empty> deleteKeyEventCallable() {
+    return stub.deleteKeyEventCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of Key Events in the specified parent property. Returns an empty list if no Key
+   * Events are found.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (KeyEvent element : analyticsAdminServiceClient.listKeyEvents(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent property. Example: 'properties/123'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListKeyEventsPagedResponse listKeyEvents(PropertyName parent) {
+    ListKeyEventsRequest request =
+        ListKeyEventsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listKeyEvents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of Key Events in the specified parent property. Returns an empty list if no Key
+   * Events are found.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (KeyEvent element : analyticsAdminServiceClient.listKeyEvents(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent property. Example: 'properties/123'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListKeyEventsPagedResponse listKeyEvents(String parent) {
+    ListKeyEventsRequest request = ListKeyEventsRequest.newBuilder().setParent(parent).build();
+    return listKeyEvents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of Key Events in the specified parent property. Returns an empty list if no Key
+   * Events are found.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListKeyEventsRequest request =
+   *       ListKeyEventsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (KeyEvent element : analyticsAdminServiceClient.listKeyEvents(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListKeyEventsPagedResponse listKeyEvents(ListKeyEventsRequest request) {
+    return listKeyEventsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of Key Events in the specified parent property. Returns an empty list if no Key
+   * Events are found.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListKeyEventsRequest request =
+   *       ListKeyEventsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<KeyEvent> future =
+   *       analyticsAdminServiceClient.listKeyEventsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (KeyEvent element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListKeyEventsRequest, ListKeyEventsPagedResponse>
+      listKeyEventsPagedCallable() {
+    return stub.listKeyEventsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of Key Events in the specified parent property. Returns an empty list if no Key
+   * Events are found.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListKeyEventsRequest request =
+   *       ListKeyEventsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListKeyEventsResponse response =
+   *         analyticsAdminServiceClient.listKeyEventsCallable().call(request);
+   *     for (KeyEvent element : response.getKeyEventsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListKeyEventsRequest, ListKeyEventsResponse> listKeyEventsCallable() {
+    return stub.listKeyEventsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -12546,11 +13642,15 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * property, but dimensions that aren't related to quota can only be requested on Google Analytics
    * 360 properties. This method is only available to Administrators.
    *
-   * <p>These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and
+   * <p>These data access records include GA UI Reporting, GA UI Explorations, GA Data API, and
    * other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a
    * linkage. These records don't include property configuration changes like adding a stream or
    * changing a property's time zone. For configuration change history, see
    * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+   *
+   * <p>To give your feedback on this API, complete the [Google Analytics Access Reports
+   * feedback](https://docs.google.com/forms/d/e/1FAIpQLSdmEBUrMzAEdiEKk5TV5dEHvDUZDRlgWYdQdAeSdtR4hVjEhw/viewform)
+   * form.
    *
    * <p>Sample code:
    *
@@ -12598,11 +13698,15 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * property, but dimensions that aren't related to quota can only be requested on Google Analytics
    * 360 properties. This method is only available to Administrators.
    *
-   * <p>These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and
+   * <p>These data access records include GA UI Reporting, GA UI Explorations, GA Data API, and
    * other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a
    * linkage. These records don't include property configuration changes like adding a stream or
    * changing a property's time zone. For configuration change history, see
    * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+   *
+   * <p>To give your feedback on this API, complete the [Google Analytics Access Reports
+   * feedback](https://docs.google.com/forms/d/e/1FAIpQLSdmEBUrMzAEdiEKk5TV5dEHvDUZDRlgWYdQdAeSdtR4hVjEhw/viewform)
+   * form.
    *
    * <p>Sample code:
    *
@@ -14876,8 +15980,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the opt out status for the automated GA4 setup process for a UA property. Note: this has
-   * no effect on GA4 property.
+   * Creates a BigQueryLink.
    *
    * <p>Sample code:
    *
@@ -14889,28 +15992,91 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   SetAutomatedGa4ConfigurationOptOutRequest request =
-   *       SetAutomatedGa4ConfigurationOptOutRequest.newBuilder()
-   *           .setProperty("property-993141291")
-   *           .setOptOut(true)
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   BigQueryLink bigqueryLink = BigQueryLink.newBuilder().build();
+   *   BigQueryLink response = analyticsAdminServiceClient.createBigQueryLink(parent, bigqueryLink);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param bigqueryLink Required. The BigQueryLink to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryLink createBigQueryLink(PropertyName parent, BigQueryLink bigqueryLink) {
+    CreateBigQueryLinkRequest request =
+        CreateBigQueryLinkRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setBigqueryLink(bigqueryLink)
+            .build();
+    return createBigQueryLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a BigQueryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   BigQueryLink bigqueryLink = BigQueryLink.newBuilder().build();
+   *   BigQueryLink response = analyticsAdminServiceClient.createBigQueryLink(parent, bigqueryLink);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param bigqueryLink Required. The BigQueryLink to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryLink createBigQueryLink(String parent, BigQueryLink bigqueryLink) {
+    CreateBigQueryLinkRequest request =
+        CreateBigQueryLinkRequest.newBuilder()
+            .setParent(parent)
+            .setBigqueryLink(bigqueryLink)
+            .build();
+    return createBigQueryLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a BigQueryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateBigQueryLinkRequest request =
+   *       CreateBigQueryLinkRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setBigqueryLink(BigQueryLink.newBuilder().build())
    *           .build();
-   *   SetAutomatedGa4ConfigurationOptOutResponse response =
-   *       analyticsAdminServiceClient.setAutomatedGa4ConfigurationOptOut(request);
+   *   BigQueryLink response = analyticsAdminServiceClient.createBigQueryLink(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SetAutomatedGa4ConfigurationOptOutResponse setAutomatedGa4ConfigurationOptOut(
-      SetAutomatedGa4ConfigurationOptOutRequest request) {
-    return setAutomatedGa4ConfigurationOptOutCallable().call(request);
+  public final BigQueryLink createBigQueryLink(CreateBigQueryLinkRequest request) {
+    return createBigQueryLinkCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the opt out status for the automated GA4 setup process for a UA property. Note: this has
-   * no effect on GA4 property.
+   * Creates a BigQueryLink.
    *
    * <p>Sample code:
    *
@@ -14922,90 +16088,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   SetAutomatedGa4ConfigurationOptOutRequest request =
-   *       SetAutomatedGa4ConfigurationOptOutRequest.newBuilder()
-   *           .setProperty("property-993141291")
-   *           .setOptOut(true)
+   *   CreateBigQueryLinkRequest request =
+   *       CreateBigQueryLinkRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setBigqueryLink(BigQueryLink.newBuilder().build())
    *           .build();
-   *   ApiFuture<SetAutomatedGa4ConfigurationOptOutResponse> future =
-   *       analyticsAdminServiceClient
-   *           .setAutomatedGa4ConfigurationOptOutCallable()
-   *           .futureCall(request);
+   *   ApiFuture<BigQueryLink> future =
+   *       analyticsAdminServiceClient.createBigQueryLinkCallable().futureCall(request);
    *   // Do something.
-   *   SetAutomatedGa4ConfigurationOptOutResponse response = future.get();
+   *   BigQueryLink response = future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<
-          SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
-      setAutomatedGa4ConfigurationOptOutCallable() {
-    return stub.setAutomatedGa4ConfigurationOptOutCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Fetches the opt out status for the automated GA4 setup process for a UA property. Note: this
-   * has no effect on GA4 property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   FetchAutomatedGa4ConfigurationOptOutRequest request =
-   *       FetchAutomatedGa4ConfigurationOptOutRequest.newBuilder()
-   *           .setProperty("property-993141291")
-   *           .build();
-   *   FetchAutomatedGa4ConfigurationOptOutResponse response =
-   *       analyticsAdminServiceClient.fetchAutomatedGa4ConfigurationOptOut(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final FetchAutomatedGa4ConfigurationOptOutResponse fetchAutomatedGa4ConfigurationOptOut(
-      FetchAutomatedGa4ConfigurationOptOutRequest request) {
-    return fetchAutomatedGa4ConfigurationOptOutCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Fetches the opt out status for the automated GA4 setup process for a UA property. Note: this
-   * has no effect on GA4 property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   FetchAutomatedGa4ConfigurationOptOutRequest request =
-   *       FetchAutomatedGa4ConfigurationOptOutRequest.newBuilder()
-   *           .setProperty("property-993141291")
-   *           .build();
-   *   ApiFuture<FetchAutomatedGa4ConfigurationOptOutResponse> future =
-   *       analyticsAdminServiceClient
-   *           .fetchAutomatedGa4ConfigurationOptOutCallable()
-   *           .futureCall(request);
-   *   // Do something.
-   *   FetchAutomatedGa4ConfigurationOptOutResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<
-          FetchAutomatedGa4ConfigurationOptOutRequest, FetchAutomatedGa4ConfigurationOptOutResponse>
-      fetchAutomatedGa4ConfigurationOptOutCallable() {
-    return stub.fetchAutomatedGa4ConfigurationOptOutCallable();
+  public final UnaryCallable<CreateBigQueryLinkRequest, BigQueryLink> createBigQueryLinkCallable() {
+    return stub.createBigQueryLinkCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -15302,6 +16398,221 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Deletes a BigQueryLink on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BigQueryLinkName name = BigQueryLinkName.of("[PROPERTY]", "[BIGQUERY_LINK]");
+   *   analyticsAdminServiceClient.deleteBigQueryLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The BigQueryLink to delete. Example format:
+   *     properties/1234/bigQueryLinks/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteBigQueryLink(BigQueryLinkName name) {
+    DeleteBigQueryLinkRequest request =
+        DeleteBigQueryLinkRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteBigQueryLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a BigQueryLink on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = BigQueryLinkName.of("[PROPERTY]", "[BIGQUERY_LINK]").toString();
+   *   analyticsAdminServiceClient.deleteBigQueryLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The BigQueryLink to delete. Example format:
+   *     properties/1234/bigQueryLinks/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteBigQueryLink(String name) {
+    DeleteBigQueryLinkRequest request =
+        DeleteBigQueryLinkRequest.newBuilder().setName(name).build();
+    deleteBigQueryLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a BigQueryLink on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteBigQueryLinkRequest request =
+   *       DeleteBigQueryLinkRequest.newBuilder()
+   *           .setName(BigQueryLinkName.of("[PROPERTY]", "[BIGQUERY_LINK]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteBigQueryLink(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteBigQueryLink(DeleteBigQueryLinkRequest request) {
+    deleteBigQueryLinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a BigQueryLink on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteBigQueryLinkRequest request =
+   *       DeleteBigQueryLinkRequest.newBuilder()
+   *           .setName(BigQueryLinkName.of("[PROPERTY]", "[BIGQUERY_LINK]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteBigQueryLinkCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteBigQueryLinkRequest, Empty> deleteBigQueryLinkCallable() {
+    return stub.deleteBigQueryLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a BigQueryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BigQueryLink bigqueryLink = BigQueryLink.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   BigQueryLink response =
+   *       analyticsAdminServiceClient.updateBigQueryLink(bigqueryLink, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param bigqueryLink Required. The settings to update. The `name` field is used to identify the
+   *     settings to be updated.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryLink updateBigQueryLink(BigQueryLink bigqueryLink, FieldMask updateMask) {
+    UpdateBigQueryLinkRequest request =
+        UpdateBigQueryLinkRequest.newBuilder()
+            .setBigqueryLink(bigqueryLink)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateBigQueryLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a BigQueryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateBigQueryLinkRequest request =
+   *       UpdateBigQueryLinkRequest.newBuilder()
+   *           .setBigqueryLink(BigQueryLink.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   BigQueryLink response = analyticsAdminServiceClient.updateBigQueryLink(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryLink updateBigQueryLink(UpdateBigQueryLinkRequest request) {
+    return updateBigQueryLinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a BigQueryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateBigQueryLinkRequest request =
+   *       UpdateBigQueryLinkRequest.newBuilder()
+   *           .setBigqueryLink(BigQueryLink.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BigQueryLink> future =
+   *       analyticsAdminServiceClient.updateBigQueryLinkCallable().futureCall(request);
+   *   // Do something.
+   *   BigQueryLink response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateBigQueryLinkRequest, BigQueryLink> updateBigQueryLinkCallable() {
+    return stub.updateBigQueryLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Returns the enhanced measurement settings for this data stream. Note that the stream must
    * enable enhanced measurement for these settings to take effect.
    *
@@ -15537,256 +16848,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   public final UnaryCallable<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
       updateEnhancedMeasurementSettingsCallable() {
     return stub.updateEnhancedMeasurementSettingsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates a connected site tag for a Universal Analytics property. You can create a maximum of 20
-   * connected site tags per property. Note: This API cannot be used on GA4 properties.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   CreateConnectedSiteTagRequest request =
-   *       CreateConnectedSiteTagRequest.newBuilder()
-   *           .setProperty("property-993141291")
-   *           .setConnectedSiteTag(ConnectedSiteTag.newBuilder().build())
-   *           .build();
-   *   CreateConnectedSiteTagResponse response =
-   *       analyticsAdminServiceClient.createConnectedSiteTag(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CreateConnectedSiteTagResponse createConnectedSiteTag(
-      CreateConnectedSiteTagRequest request) {
-    return createConnectedSiteTagCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates a connected site tag for a Universal Analytics property. You can create a maximum of 20
-   * connected site tags per property. Note: This API cannot be used on GA4 properties.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   CreateConnectedSiteTagRequest request =
-   *       CreateConnectedSiteTagRequest.newBuilder()
-   *           .setProperty("property-993141291")
-   *           .setConnectedSiteTag(ConnectedSiteTag.newBuilder().build())
-   *           .build();
-   *   ApiFuture<CreateConnectedSiteTagResponse> future =
-   *       analyticsAdminServiceClient.createConnectedSiteTagCallable().futureCall(request);
-   *   // Do something.
-   *   CreateConnectedSiteTagResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
-      createConnectedSiteTagCallable() {
-    return stub.createConnectedSiteTagCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a connected site tag for a Universal Analytics property. Note: this has no effect on
-   * GA4 properties.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   DeleteConnectedSiteTagRequest request =
-   *       DeleteConnectedSiteTagRequest.newBuilder()
-   *           .setProperty("property-993141291")
-   *           .setTagId("tagId110119509")
-   *           .build();
-   *   analyticsAdminServiceClient.deleteConnectedSiteTag(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteConnectedSiteTag(DeleteConnectedSiteTagRequest request) {
-    deleteConnectedSiteTagCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a connected site tag for a Universal Analytics property. Note: this has no effect on
-   * GA4 properties.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   DeleteConnectedSiteTagRequest request =
-   *       DeleteConnectedSiteTagRequest.newBuilder()
-   *           .setProperty("property-993141291")
-   *           .setTagId("tagId110119509")
-   *           .build();
-   *   ApiFuture<Empty> future =
-   *       analyticsAdminServiceClient.deleteConnectedSiteTagCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<DeleteConnectedSiteTagRequest, Empty>
-      deleteConnectedSiteTagCallable() {
-    return stub.deleteConnectedSiteTagCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists the connected site tags for a Universal Analytics property. A maximum of 20 connected
-   * site tags will be returned. Note: this has no effect on GA4 property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   ListConnectedSiteTagsRequest request =
-   *       ListConnectedSiteTagsRequest.newBuilder().setProperty("property-993141291").build();
-   *   ListConnectedSiteTagsResponse response =
-   *       analyticsAdminServiceClient.listConnectedSiteTags(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListConnectedSiteTagsResponse listConnectedSiteTags(
-      ListConnectedSiteTagsRequest request) {
-    return listConnectedSiteTagsCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists the connected site tags for a Universal Analytics property. A maximum of 20 connected
-   * site tags will be returned. Note: this has no effect on GA4 property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   ListConnectedSiteTagsRequest request =
-   *       ListConnectedSiteTagsRequest.newBuilder().setProperty("property-993141291").build();
-   *   ApiFuture<ListConnectedSiteTagsResponse> future =
-   *       analyticsAdminServiceClient.listConnectedSiteTagsCallable().futureCall(request);
-   *   // Do something.
-   *   ListConnectedSiteTagsResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
-      listConnectedSiteTagsCallable() {
-    return stub.listConnectedSiteTagsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Given a specified UA property, looks up the GA4 property connected to it. Note: this cannot be
-   * used with GA4 properties.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   FetchConnectedGa4PropertyRequest request =
-   *       FetchConnectedGa4PropertyRequest.newBuilder()
-   *           .setProperty(PropertyName.of("[PROPERTY]").toString())
-   *           .build();
-   *   FetchConnectedGa4PropertyResponse response =
-   *       analyticsAdminServiceClient.fetchConnectedGa4Property(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final FetchConnectedGa4PropertyResponse fetchConnectedGa4Property(
-      FetchConnectedGa4PropertyRequest request) {
-    return fetchConnectedGa4PropertyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Given a specified UA property, looks up the GA4 property connected to it. Note: this cannot be
-   * used with GA4 properties.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   FetchConnectedGa4PropertyRequest request =
-   *       FetchConnectedGa4PropertyRequest.newBuilder()
-   *           .setProperty(PropertyName.of("[PROPERTY]").toString())
-   *           .build();
-   *   ApiFuture<FetchConnectedGa4PropertyResponse> future =
-   *       analyticsAdminServiceClient.fetchConnectedGa4PropertyCallable().futureCall(request);
-   *   // Do something.
-   *   FetchConnectedGa4PropertyResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
-      fetchConnectedGa4PropertyCallable() {
-    return stub.fetchConnectedGa4PropertyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -16970,6 +18031,712 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteEventCreateRuleRequest, Empty> deleteEventCreateRuleCallable() {
     return stub.deleteEventCreateRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single EventEditRule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   EventEditRuleName name =
+   *       EventEditRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_EDIT_RULE]");
+   *   EventEditRule response = analyticsAdminServiceClient.getEventEditRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the EventEditRule to get. Example format:
+   *     properties/123/dataStreams/456/eventEditRules/789
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EventEditRule getEventEditRule(EventEditRuleName name) {
+    GetEventEditRuleRequest request =
+        GetEventEditRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getEventEditRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single EventEditRule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       EventEditRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_EDIT_RULE]").toString();
+   *   EventEditRule response = analyticsAdminServiceClient.getEventEditRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the EventEditRule to get. Example format:
+   *     properties/123/dataStreams/456/eventEditRules/789
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EventEditRule getEventEditRule(String name) {
+    GetEventEditRuleRequest request = GetEventEditRuleRequest.newBuilder().setName(name).build();
+    return getEventEditRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single EventEditRule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetEventEditRuleRequest request =
+   *       GetEventEditRuleRequest.newBuilder()
+   *           .setName(
+   *               EventEditRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_EDIT_RULE]")
+   *                   .toString())
+   *           .build();
+   *   EventEditRule response = analyticsAdminServiceClient.getEventEditRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EventEditRule getEventEditRule(GetEventEditRuleRequest request) {
+    return getEventEditRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single EventEditRule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetEventEditRuleRequest request =
+   *       GetEventEditRuleRequest.newBuilder()
+   *           .setName(
+   *               EventEditRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_EDIT_RULE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<EventEditRule> future =
+   *       analyticsAdminServiceClient.getEventEditRuleCallable().futureCall(request);
+   *   // Do something.
+   *   EventEditRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetEventEditRuleRequest, EventEditRule> getEventEditRuleCallable() {
+    return stub.getEventEditRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists EventEditRules on a web data stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+   *   for (EventEditRule element :
+   *       analyticsAdminServiceClient.listEventEditRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/123/dataStreams/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEventEditRulesPagedResponse listEventEditRules(DataStreamName parent) {
+    ListEventEditRulesRequest request =
+        ListEventEditRulesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listEventEditRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists EventEditRules on a web data stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString();
+   *   for (EventEditRule element :
+   *       analyticsAdminServiceClient.listEventEditRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/123/dataStreams/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEventEditRulesPagedResponse listEventEditRules(String parent) {
+    ListEventEditRulesRequest request =
+        ListEventEditRulesRequest.newBuilder().setParent(parent).build();
+    return listEventEditRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists EventEditRules on a web data stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListEventEditRulesRequest request =
+   *       ListEventEditRulesRequest.newBuilder()
+   *           .setParent(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (EventEditRule element :
+   *       analyticsAdminServiceClient.listEventEditRules(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEventEditRulesPagedResponse listEventEditRules(
+      ListEventEditRulesRequest request) {
+    return listEventEditRulesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists EventEditRules on a web data stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListEventEditRulesRequest request =
+   *       ListEventEditRulesRequest.newBuilder()
+   *           .setParent(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<EventEditRule> future =
+   *       analyticsAdminServiceClient.listEventEditRulesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (EventEditRule element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListEventEditRulesRequest, ListEventEditRulesPagedResponse>
+      listEventEditRulesPagedCallable() {
+    return stub.listEventEditRulesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists EventEditRules on a web data stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListEventEditRulesRequest request =
+   *       ListEventEditRulesRequest.newBuilder()
+   *           .setParent(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListEventEditRulesResponse response =
+   *         analyticsAdminServiceClient.listEventEditRulesCallable().call(request);
+   *     for (EventEditRule element : response.getEventEditRulesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListEventEditRulesRequest, ListEventEditRulesResponse>
+      listEventEditRulesCallable() {
+    return stub.listEventEditRulesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an EventEditRule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+   *   EventEditRule eventEditRule = EventEditRule.newBuilder().build();
+   *   EventEditRule response =
+   *       analyticsAdminServiceClient.createEventEditRule(parent, eventEditRule);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/123/dataStreams/456
+   * @param eventEditRule Required. The EventEditRule to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EventEditRule createEventEditRule(
+      DataStreamName parent, EventEditRule eventEditRule) {
+    CreateEventEditRuleRequest request =
+        CreateEventEditRuleRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setEventEditRule(eventEditRule)
+            .build();
+    return createEventEditRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an EventEditRule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString();
+   *   EventEditRule eventEditRule = EventEditRule.newBuilder().build();
+   *   EventEditRule response =
+   *       analyticsAdminServiceClient.createEventEditRule(parent, eventEditRule);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/123/dataStreams/456
+   * @param eventEditRule Required. The EventEditRule to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EventEditRule createEventEditRule(String parent, EventEditRule eventEditRule) {
+    CreateEventEditRuleRequest request =
+        CreateEventEditRuleRequest.newBuilder()
+            .setParent(parent)
+            .setEventEditRule(eventEditRule)
+            .build();
+    return createEventEditRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an EventEditRule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateEventEditRuleRequest request =
+   *       CreateEventEditRuleRequest.newBuilder()
+   *           .setParent(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .setEventEditRule(EventEditRule.newBuilder().build())
+   *           .build();
+   *   EventEditRule response = analyticsAdminServiceClient.createEventEditRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EventEditRule createEventEditRule(CreateEventEditRuleRequest request) {
+    return createEventEditRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an EventEditRule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateEventEditRuleRequest request =
+   *       CreateEventEditRuleRequest.newBuilder()
+   *           .setParent(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .setEventEditRule(EventEditRule.newBuilder().build())
+   *           .build();
+   *   ApiFuture<EventEditRule> future =
+   *       analyticsAdminServiceClient.createEventEditRuleCallable().futureCall(request);
+   *   // Do something.
+   *   EventEditRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateEventEditRuleRequest, EventEditRule>
+      createEventEditRuleCallable() {
+    return stub.createEventEditRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an EventEditRule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   EventEditRule eventEditRule = EventEditRule.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   EventEditRule response =
+   *       analyticsAdminServiceClient.updateEventEditRule(eventEditRule, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param eventEditRule Required. The EventEditRule to update. The resource's `name` field is used
+   *     to identify the EventEditRule to be updated.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EventEditRule updateEventEditRule(
+      EventEditRule eventEditRule, FieldMask updateMask) {
+    UpdateEventEditRuleRequest request =
+        UpdateEventEditRuleRequest.newBuilder()
+            .setEventEditRule(eventEditRule)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateEventEditRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an EventEditRule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateEventEditRuleRequest request =
+   *       UpdateEventEditRuleRequest.newBuilder()
+   *           .setEventEditRule(EventEditRule.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   EventEditRule response = analyticsAdminServiceClient.updateEventEditRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EventEditRule updateEventEditRule(UpdateEventEditRuleRequest request) {
+    return updateEventEditRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an EventEditRule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateEventEditRuleRequest request =
+   *       UpdateEventEditRuleRequest.newBuilder()
+   *           .setEventEditRule(EventEditRule.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<EventEditRule> future =
+   *       analyticsAdminServiceClient.updateEventEditRuleCallable().futureCall(request);
+   *   // Do something.
+   *   EventEditRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateEventEditRuleRequest, EventEditRule>
+      updateEventEditRuleCallable() {
+    return stub.updateEventEditRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an EventEditRule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   EventEditRuleName name =
+   *       EventEditRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_EDIT_RULE]");
+   *   analyticsAdminServiceClient.deleteEventEditRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Example format: properties/123/dataStreams/456/eventEditRules/789
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEventEditRule(EventEditRuleName name) {
+    DeleteEventEditRuleRequest request =
+        DeleteEventEditRuleRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteEventEditRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an EventEditRule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       EventEditRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_EDIT_RULE]").toString();
+   *   analyticsAdminServiceClient.deleteEventEditRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Example format: properties/123/dataStreams/456/eventEditRules/789
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEventEditRule(String name) {
+    DeleteEventEditRuleRequest request =
+        DeleteEventEditRuleRequest.newBuilder().setName(name).build();
+    deleteEventEditRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an EventEditRule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteEventEditRuleRequest request =
+   *       DeleteEventEditRuleRequest.newBuilder()
+   *           .setName(
+   *               EventEditRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_EDIT_RULE]")
+   *                   .toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteEventEditRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEventEditRule(DeleteEventEditRuleRequest request) {
+    deleteEventEditRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an EventEditRule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteEventEditRuleRequest request =
+   *       DeleteEventEditRuleRequest.newBuilder()
+   *           .setName(
+   *               EventEditRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_EDIT_RULE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteEventEditRuleCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteEventEditRuleRequest, Empty> deleteEventEditRuleCallable() {
+    return stub.deleteEventEditRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Changes the processing order of event edit rules on the specified stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ReorderEventEditRulesRequest request =
+   *       ReorderEventEditRulesRequest.newBuilder()
+   *           .setParent(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .addAllEventEditRules(new ArrayList<String>())
+   *           .build();
+   *   analyticsAdminServiceClient.reorderEventEditRules(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void reorderEventEditRules(ReorderEventEditRulesRequest request) {
+    reorderEventEditRulesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Changes the processing order of event edit rules on the specified stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ReorderEventEditRulesRequest request =
+   *       ReorderEventEditRulesRequest.newBuilder()
+   *           .setParent(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .addAllEventEditRules(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.reorderEventEditRulesCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ReorderEventEditRulesRequest, Empty> reorderEventEditRulesCallable() {
+    return stub.reorderEventEditRulesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -18534,21 +20301,22 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   CreateSubpropertyRequest request =
-   *       CreateSubpropertyRequest.newBuilder()
-   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *   ProvisionSubpropertyRequest request =
+   *       ProvisionSubpropertyRequest.newBuilder()
    *           .setSubproperty(Property.newBuilder().build())
    *           .setSubpropertyEventFilter(SubpropertyEventFilter.newBuilder().build())
    *           .build();
-   *   CreateSubpropertyResponse response = analyticsAdminServiceClient.createSubproperty(request);
+   *   ProvisionSubpropertyResponse response =
+   *       analyticsAdminServiceClient.provisionSubproperty(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CreateSubpropertyResponse createSubproperty(CreateSubpropertyRequest request) {
-    return createSubpropertyCallable().call(request);
+  public final ProvisionSubpropertyResponse provisionSubproperty(
+      ProvisionSubpropertyRequest request) {
+    return provisionSubpropertyCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -18565,22 +20333,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   CreateSubpropertyRequest request =
-   *       CreateSubpropertyRequest.newBuilder()
-   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *   ProvisionSubpropertyRequest request =
+   *       ProvisionSubpropertyRequest.newBuilder()
    *           .setSubproperty(Property.newBuilder().build())
    *           .setSubpropertyEventFilter(SubpropertyEventFilter.newBuilder().build())
    *           .build();
-   *   ApiFuture<CreateSubpropertyResponse> future =
-   *       analyticsAdminServiceClient.createSubpropertyCallable().futureCall(request);
+   *   ApiFuture<ProvisionSubpropertyResponse> future =
+   *       analyticsAdminServiceClient.provisionSubpropertyCallable().futureCall(request);
    *   // Do something.
-   *   CreateSubpropertyResponse response = future.get();
+   *   ProvisionSubpropertyResponse response = future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<CreateSubpropertyRequest, CreateSubpropertyResponse>
-      createSubpropertyCallable() {
-    return stub.createSubpropertyCallable();
+  public final UnaryCallable<ProvisionSubpropertyRequest, ProvisionSubpropertyResponse>
+      provisionSubpropertyCallable() {
+    return stub.provisionSubpropertyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -19254,6 +21021,1570 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   public final UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
       deleteSubpropertyEventFilterCallable() {
     return stub.deleteSubpropertyEventFilterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   ReportingDataAnnotation reportingDataAnnotation =
+   *       ReportingDataAnnotation.newBuilder().build();
+   *   ReportingDataAnnotation response =
+   *       analyticsAdminServiceClient.createReportingDataAnnotation(
+   *           parent, reportingDataAnnotation);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The property for which to create a Reporting Data Annotation. Format:
+   *     properties/property_id Example: properties/123
+   * @param reportingDataAnnotation Required. The Reporting Data Annotation to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingDataAnnotation createReportingDataAnnotation(
+      PropertyName parent, ReportingDataAnnotation reportingDataAnnotation) {
+    CreateReportingDataAnnotationRequest request =
+        CreateReportingDataAnnotationRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setReportingDataAnnotation(reportingDataAnnotation)
+            .build();
+    return createReportingDataAnnotation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   ReportingDataAnnotation reportingDataAnnotation =
+   *       ReportingDataAnnotation.newBuilder().build();
+   *   ReportingDataAnnotation response =
+   *       analyticsAdminServiceClient.createReportingDataAnnotation(
+   *           parent, reportingDataAnnotation);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The property for which to create a Reporting Data Annotation. Format:
+   *     properties/property_id Example: properties/123
+   * @param reportingDataAnnotation Required. The Reporting Data Annotation to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingDataAnnotation createReportingDataAnnotation(
+      String parent, ReportingDataAnnotation reportingDataAnnotation) {
+    CreateReportingDataAnnotationRequest request =
+        CreateReportingDataAnnotationRequest.newBuilder()
+            .setParent(parent)
+            .setReportingDataAnnotation(reportingDataAnnotation)
+            .build();
+    return createReportingDataAnnotation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateReportingDataAnnotationRequest request =
+   *       CreateReportingDataAnnotationRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setReportingDataAnnotation(ReportingDataAnnotation.newBuilder().build())
+   *           .build();
+   *   ReportingDataAnnotation response =
+   *       analyticsAdminServiceClient.createReportingDataAnnotation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingDataAnnotation createReportingDataAnnotation(
+      CreateReportingDataAnnotationRequest request) {
+    return createReportingDataAnnotationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateReportingDataAnnotationRequest request =
+   *       CreateReportingDataAnnotationRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setReportingDataAnnotation(ReportingDataAnnotation.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ReportingDataAnnotation> future =
+   *       analyticsAdminServiceClient.createReportingDataAnnotationCallable().futureCall(request);
+   *   // Do something.
+   *   ReportingDataAnnotation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      createReportingDataAnnotationCallable() {
+    return stub.createReportingDataAnnotationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup a single Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ReportingDataAnnotationName name =
+   *       ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]");
+   *   ReportingDataAnnotation response =
+   *       analyticsAdminServiceClient.getReportingDataAnnotation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the Reporting Data Annotation to lookup. Format:
+   *     properties/property_id/reportingDataAnnotations/reportingDataAnnotation Example:
+   *     properties/123/reportingDataAnnotations/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingDataAnnotation getReportingDataAnnotation(
+      ReportingDataAnnotationName name) {
+    GetReportingDataAnnotationRequest request =
+        GetReportingDataAnnotationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getReportingDataAnnotation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup a single Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]").toString();
+   *   ReportingDataAnnotation response =
+   *       analyticsAdminServiceClient.getReportingDataAnnotation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the Reporting Data Annotation to lookup. Format:
+   *     properties/property_id/reportingDataAnnotations/reportingDataAnnotation Example:
+   *     properties/123/reportingDataAnnotations/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingDataAnnotation getReportingDataAnnotation(String name) {
+    GetReportingDataAnnotationRequest request =
+        GetReportingDataAnnotationRequest.newBuilder().setName(name).build();
+    return getReportingDataAnnotation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup a single Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetReportingDataAnnotationRequest request =
+   *       GetReportingDataAnnotationRequest.newBuilder()
+   *           .setName(
+   *               ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]")
+   *                   .toString())
+   *           .build();
+   *   ReportingDataAnnotation response =
+   *       analyticsAdminServiceClient.getReportingDataAnnotation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingDataAnnotation getReportingDataAnnotation(
+      GetReportingDataAnnotationRequest request) {
+    return getReportingDataAnnotationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup a single Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetReportingDataAnnotationRequest request =
+   *       GetReportingDataAnnotationRequest.newBuilder()
+   *           .setName(
+   *               ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ReportingDataAnnotation> future =
+   *       analyticsAdminServiceClient.getReportingDataAnnotationCallable().futureCall(request);
+   *   // Do something.
+   *   ReportingDataAnnotation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+      getReportingDataAnnotationCallable() {
+    return stub.getReportingDataAnnotationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Reporting Data Annotations on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (ReportingDataAnnotation element :
+   *       analyticsAdminServiceClient.listReportingDataAnnotations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the property. Format: properties/property_id Example:
+   *     properties/123
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListReportingDataAnnotationsPagedResponse listReportingDataAnnotations(
+      PropertyName parent) {
+    ListReportingDataAnnotationsRequest request =
+        ListReportingDataAnnotationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listReportingDataAnnotations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Reporting Data Annotations on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (ReportingDataAnnotation element :
+   *       analyticsAdminServiceClient.listReportingDataAnnotations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the property. Format: properties/property_id Example:
+   *     properties/123
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListReportingDataAnnotationsPagedResponse listReportingDataAnnotations(
+      String parent) {
+    ListReportingDataAnnotationsRequest request =
+        ListReportingDataAnnotationsRequest.newBuilder().setParent(parent).build();
+    return listReportingDataAnnotations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Reporting Data Annotations on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListReportingDataAnnotationsRequest request =
+   *       ListReportingDataAnnotationsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ReportingDataAnnotation element :
+   *       analyticsAdminServiceClient.listReportingDataAnnotations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListReportingDataAnnotationsPagedResponse listReportingDataAnnotations(
+      ListReportingDataAnnotationsRequest request) {
+    return listReportingDataAnnotationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Reporting Data Annotations on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListReportingDataAnnotationsRequest request =
+   *       ListReportingDataAnnotationsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ReportingDataAnnotation> future =
+   *       analyticsAdminServiceClient
+   *           .listReportingDataAnnotationsPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (ReportingDataAnnotation element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsPagedResponse>
+      listReportingDataAnnotationsPagedCallable() {
+    return stub.listReportingDataAnnotationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Reporting Data Annotations on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListReportingDataAnnotationsRequest request =
+   *       ListReportingDataAnnotationsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListReportingDataAnnotationsResponse response =
+   *         analyticsAdminServiceClient.listReportingDataAnnotationsCallable().call(request);
+   *     for (ReportingDataAnnotation element : response.getReportingDataAnnotationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+      listReportingDataAnnotationsCallable() {
+    return stub.listReportingDataAnnotationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ReportingDataAnnotation reportingDataAnnotation =
+   *       ReportingDataAnnotation.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ReportingDataAnnotation response =
+   *       analyticsAdminServiceClient.updateReportingDataAnnotation(
+   *           reportingDataAnnotation, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param reportingDataAnnotation Required. The Reporting Data Annotation to update.
+   * @param updateMask Optional. The list of fields to update. Field names must be in snake case
+   *     (for example, "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingDataAnnotation updateReportingDataAnnotation(
+      ReportingDataAnnotation reportingDataAnnotation, FieldMask updateMask) {
+    UpdateReportingDataAnnotationRequest request =
+        UpdateReportingDataAnnotationRequest.newBuilder()
+            .setReportingDataAnnotation(reportingDataAnnotation)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateReportingDataAnnotation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateReportingDataAnnotationRequest request =
+   *       UpdateReportingDataAnnotationRequest.newBuilder()
+   *           .setReportingDataAnnotation(ReportingDataAnnotation.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ReportingDataAnnotation response =
+   *       analyticsAdminServiceClient.updateReportingDataAnnotation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingDataAnnotation updateReportingDataAnnotation(
+      UpdateReportingDataAnnotationRequest request) {
+    return updateReportingDataAnnotationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateReportingDataAnnotationRequest request =
+   *       UpdateReportingDataAnnotationRequest.newBuilder()
+   *           .setReportingDataAnnotation(ReportingDataAnnotation.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ReportingDataAnnotation> future =
+   *       analyticsAdminServiceClient.updateReportingDataAnnotationCallable().futureCall(request);
+   *   // Do something.
+   *   ReportingDataAnnotation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      updateReportingDataAnnotationCallable() {
+    return stub.updateReportingDataAnnotationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ReportingDataAnnotationName name =
+   *       ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]");
+   *   analyticsAdminServiceClient.deleteReportingDataAnnotation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the Reporting Data Annotation to delete. Format:
+   *     properties/property_id/reportingDataAnnotations/reporting_data_annotation Example:
+   *     properties/123/reportingDataAnnotations/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReportingDataAnnotation(ReportingDataAnnotationName name) {
+    DeleteReportingDataAnnotationRequest request =
+        DeleteReportingDataAnnotationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteReportingDataAnnotation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]").toString();
+   *   analyticsAdminServiceClient.deleteReportingDataAnnotation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the Reporting Data Annotation to delete. Format:
+   *     properties/property_id/reportingDataAnnotations/reporting_data_annotation Example:
+   *     properties/123/reportingDataAnnotations/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReportingDataAnnotation(String name) {
+    DeleteReportingDataAnnotationRequest request =
+        DeleteReportingDataAnnotationRequest.newBuilder().setName(name).build();
+    deleteReportingDataAnnotation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteReportingDataAnnotationRequest request =
+   *       DeleteReportingDataAnnotationRequest.newBuilder()
+   *           .setName(
+   *               ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]")
+   *                   .toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteReportingDataAnnotation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReportingDataAnnotation(DeleteReportingDataAnnotationRequest request) {
+    deleteReportingDataAnnotationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteReportingDataAnnotationRequest request =
+   *       DeleteReportingDataAnnotationRequest.newBuilder()
+   *           .setName(
+   *               ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteReportingDataAnnotationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteReportingDataAnnotationRequest, Empty>
+      deleteReportingDataAnnotationCallable() {
+    return stub.deleteReportingDataAnnotationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a request for user deletion for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName name = PropertyName.of("[PROPERTY]");
+   *   SubmitUserDeletionResponse response = analyticsAdminServiceClient.submitUserDeletion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the property to submit user deletion for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubmitUserDeletionResponse submitUserDeletion(PropertyName name) {
+    SubmitUserDeletionRequest request =
+        SubmitUserDeletionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return submitUserDeletion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a request for user deletion for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = PropertyName.of("[PROPERTY]").toString();
+   *   SubmitUserDeletionResponse response = analyticsAdminServiceClient.submitUserDeletion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the property to submit user deletion for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubmitUserDeletionResponse submitUserDeletion(String name) {
+    SubmitUserDeletionRequest request =
+        SubmitUserDeletionRequest.newBuilder().setName(name).build();
+    return submitUserDeletion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a request for user deletion for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubmitUserDeletionRequest request =
+   *       SubmitUserDeletionRequest.newBuilder()
+   *           .setName(PropertyName.of("[PROPERTY]").toString())
+   *           .build();
+   *   SubmitUserDeletionResponse response = analyticsAdminServiceClient.submitUserDeletion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubmitUserDeletionResponse submitUserDeletion(SubmitUserDeletionRequest request) {
+    return submitUserDeletionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a request for user deletion for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubmitUserDeletionRequest request =
+   *       SubmitUserDeletionRequest.newBuilder()
+   *           .setName(PropertyName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<SubmitUserDeletionResponse> future =
+   *       analyticsAdminServiceClient.submitUserDeletionCallable().futureCall(request);
+   *   // Do something.
+   *   SubmitUserDeletionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+      submitUserDeletionCallable() {
+    return stub.submitUserDeletionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all `SubpropertySyncConfig` resources for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (SubpropertySyncConfig element :
+   *       analyticsAdminServiceClient.listSubpropertySyncConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the property. Format: properties/property_id Example:
+   *     properties/123
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubpropertySyncConfigsPagedResponse listSubpropertySyncConfigs(
+      PropertyName parent) {
+    ListSubpropertySyncConfigsRequest request =
+        ListSubpropertySyncConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSubpropertySyncConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all `SubpropertySyncConfig` resources for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (SubpropertySyncConfig element :
+   *       analyticsAdminServiceClient.listSubpropertySyncConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the property. Format: properties/property_id Example:
+   *     properties/123
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubpropertySyncConfigsPagedResponse listSubpropertySyncConfigs(String parent) {
+    ListSubpropertySyncConfigsRequest request =
+        ListSubpropertySyncConfigsRequest.newBuilder().setParent(parent).build();
+    return listSubpropertySyncConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all `SubpropertySyncConfig` resources for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSubpropertySyncConfigsRequest request =
+   *       ListSubpropertySyncConfigsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SubpropertySyncConfig element :
+   *       analyticsAdminServiceClient.listSubpropertySyncConfigs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubpropertySyncConfigsPagedResponse listSubpropertySyncConfigs(
+      ListSubpropertySyncConfigsRequest request) {
+    return listSubpropertySyncConfigsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all `SubpropertySyncConfig` resources for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSubpropertySyncConfigsRequest request =
+   *       ListSubpropertySyncConfigsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SubpropertySyncConfig> future =
+   *       analyticsAdminServiceClient.listSubpropertySyncConfigsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SubpropertySyncConfig element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsPagedResponse>
+      listSubpropertySyncConfigsPagedCallable() {
+    return stub.listSubpropertySyncConfigsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all `SubpropertySyncConfig` resources for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSubpropertySyncConfigsRequest request =
+   *       ListSubpropertySyncConfigsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSubpropertySyncConfigsResponse response =
+   *         analyticsAdminServiceClient.listSubpropertySyncConfigsCallable().call(request);
+   *     for (SubpropertySyncConfig element : response.getSubpropertySyncConfigsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>
+      listSubpropertySyncConfigsCallable() {
+    return stub.listSubpropertySyncConfigsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `SubpropertySyncConfig`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubpropertySyncConfig subpropertySyncConfig = SubpropertySyncConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   SubpropertySyncConfig response =
+   *       analyticsAdminServiceClient.updateSubpropertySyncConfig(
+   *           subpropertySyncConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param subpropertySyncConfig Required. The `SubpropertySyncConfig` to update.
+   * @param updateMask Optional. The list of fields to update. Field names must be in snake case
+   *     (for example, "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertySyncConfig updateSubpropertySyncConfig(
+      SubpropertySyncConfig subpropertySyncConfig, FieldMask updateMask) {
+    UpdateSubpropertySyncConfigRequest request =
+        UpdateSubpropertySyncConfigRequest.newBuilder()
+            .setSubpropertySyncConfig(subpropertySyncConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSubpropertySyncConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `SubpropertySyncConfig`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateSubpropertySyncConfigRequest request =
+   *       UpdateSubpropertySyncConfigRequest.newBuilder()
+   *           .setSubpropertySyncConfig(SubpropertySyncConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   SubpropertySyncConfig response =
+   *       analyticsAdminServiceClient.updateSubpropertySyncConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertySyncConfig updateSubpropertySyncConfig(
+      UpdateSubpropertySyncConfigRequest request) {
+    return updateSubpropertySyncConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `SubpropertySyncConfig`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateSubpropertySyncConfigRequest request =
+   *       UpdateSubpropertySyncConfigRequest.newBuilder()
+   *           .setSubpropertySyncConfig(SubpropertySyncConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SubpropertySyncConfig> future =
+   *       analyticsAdminServiceClient.updateSubpropertySyncConfigCallable().futureCall(request);
+   *   // Do something.
+   *   SubpropertySyncConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      updateSubpropertySyncConfigCallable() {
+    return stub.updateSubpropertySyncConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single `SubpropertySyncConfig`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubpropertySyncConfigName name =
+   *       SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]");
+   *   SubpropertySyncConfig response = analyticsAdminServiceClient.getSubpropertySyncConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the SubpropertySyncConfig to lookup. Format:
+   *     properties/{ordinary_property_id}/subpropertySyncConfigs/{subproperty_id} Example:
+   *     properties/1234/subpropertySyncConfigs/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertySyncConfig getSubpropertySyncConfig(SubpropertySyncConfigName name) {
+    GetSubpropertySyncConfigRequest request =
+        GetSubpropertySyncConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getSubpropertySyncConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single `SubpropertySyncConfig`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]").toString();
+   *   SubpropertySyncConfig response = analyticsAdminServiceClient.getSubpropertySyncConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the SubpropertySyncConfig to lookup. Format:
+   *     properties/{ordinary_property_id}/subpropertySyncConfigs/{subproperty_id} Example:
+   *     properties/1234/subpropertySyncConfigs/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertySyncConfig getSubpropertySyncConfig(String name) {
+    GetSubpropertySyncConfigRequest request =
+        GetSubpropertySyncConfigRequest.newBuilder().setName(name).build();
+    return getSubpropertySyncConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single `SubpropertySyncConfig`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetSubpropertySyncConfigRequest request =
+   *       GetSubpropertySyncConfigRequest.newBuilder()
+   *           .setName(
+   *               SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   SubpropertySyncConfig response =
+   *       analyticsAdminServiceClient.getSubpropertySyncConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertySyncConfig getSubpropertySyncConfig(
+      GetSubpropertySyncConfigRequest request) {
+    return getSubpropertySyncConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single `SubpropertySyncConfig`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetSubpropertySyncConfigRequest request =
+   *       GetSubpropertySyncConfigRequest.newBuilder()
+   *           .setName(
+   *               SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<SubpropertySyncConfig> future =
+   *       analyticsAdminServiceClient.getSubpropertySyncConfigCallable().futureCall(request);
+   *   // Do something.
+   *   SubpropertySyncConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      getSubpropertySyncConfigCallable() {
+    return stub.getSubpropertySyncConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the reporting identity settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ReportingIdentitySettingsName name = ReportingIdentitySettingsName.of("[PROPERTY]");
+   *   ReportingIdentitySettings response =
+   *       analyticsAdminServiceClient.getReportingIdentitySettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the settings to lookup. Format:
+   *     properties/{property}/reportingIdentitySettings Example:
+   *     "properties/1000/reportingIdentitySettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingIdentitySettings getReportingIdentitySettings(
+      ReportingIdentitySettingsName name) {
+    GetReportingIdentitySettingsRequest request =
+        GetReportingIdentitySettingsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getReportingIdentitySettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the reporting identity settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = ReportingIdentitySettingsName.of("[PROPERTY]").toString();
+   *   ReportingIdentitySettings response =
+   *       analyticsAdminServiceClient.getReportingIdentitySettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the settings to lookup. Format:
+   *     properties/{property}/reportingIdentitySettings Example:
+   *     "properties/1000/reportingIdentitySettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingIdentitySettings getReportingIdentitySettings(String name) {
+    GetReportingIdentitySettingsRequest request =
+        GetReportingIdentitySettingsRequest.newBuilder().setName(name).build();
+    return getReportingIdentitySettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the reporting identity settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetReportingIdentitySettingsRequest request =
+   *       GetReportingIdentitySettingsRequest.newBuilder()
+   *           .setName(ReportingIdentitySettingsName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ReportingIdentitySettings response =
+   *       analyticsAdminServiceClient.getReportingIdentitySettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingIdentitySettings getReportingIdentitySettings(
+      GetReportingIdentitySettingsRequest request) {
+    return getReportingIdentitySettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the reporting identity settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetReportingIdentitySettingsRequest request =
+   *       GetReportingIdentitySettingsRequest.newBuilder()
+   *           .setName(ReportingIdentitySettingsName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<ReportingIdentitySettings> future =
+   *       analyticsAdminServiceClient.getReportingIdentitySettingsCallable().futureCall(request);
+   *   // Do something.
+   *   ReportingIdentitySettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
+      getReportingIdentitySettingsCallable() {
+    return stub.getReportingIdentitySettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the reporting identity settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ReportingIdentitySettings reportingIdentitySettings =
+   *       ReportingIdentitySettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ReportingIdentitySettings response =
+   *       analyticsAdminServiceClient.updateReportingIdentitySettings(
+   *           reportingIdentitySettings, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param reportingIdentitySettings Required. The reporting identity settings to update. The
+   *     settings' `name` field is used to identify the settings.
+   * @param updateMask Optional. The list of fields to be updated. Field names must be in snake case
+   *     (for example, "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields. If omitted, the service
+   *     will treat it as an implied field mask equivalent to all fields that are populated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingIdentitySettings updateReportingIdentitySettings(
+      ReportingIdentitySettings reportingIdentitySettings, FieldMask updateMask) {
+    UpdateReportingIdentitySettingsRequest request =
+        UpdateReportingIdentitySettingsRequest.newBuilder()
+            .setReportingIdentitySettings(reportingIdentitySettings)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateReportingIdentitySettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the reporting identity settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateReportingIdentitySettingsRequest request =
+   *       UpdateReportingIdentitySettingsRequest.newBuilder()
+   *           .setReportingIdentitySettings(ReportingIdentitySettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ReportingIdentitySettings response =
+   *       analyticsAdminServiceClient.updateReportingIdentitySettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingIdentitySettings updateReportingIdentitySettings(
+      UpdateReportingIdentitySettingsRequest request) {
+    return updateReportingIdentitySettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the reporting identity settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateReportingIdentitySettingsRequest request =
+   *       UpdateReportingIdentitySettingsRequest.newBuilder()
+   *           .setReportingIdentitySettings(ReportingIdentitySettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ReportingIdentitySettings> future =
+   *       analyticsAdminServiceClient.updateReportingIdentitySettingsCallable().futureCall(request);
+   *   // Do something.
+   *   ReportingIdentitySettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+      updateReportingIdentitySettingsCallable() {
+    return stub.updateReportingIdentitySettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up settings related to user-provided data for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UserProvidedDataSettingsName name = UserProvidedDataSettingsName.of("[PROPERTY]");
+   *   UserProvidedDataSettings response =
+   *       analyticsAdminServiceClient.getUserProvidedDataSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the user provided data settings to retrieve. Format:
+   *     properties/{property}/userProvidedDataSettings
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserProvidedDataSettings getUserProvidedDataSettings(
+      UserProvidedDataSettingsName name) {
+    GetUserProvidedDataSettingsRequest request =
+        GetUserProvidedDataSettingsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getUserProvidedDataSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up settings related to user-provided data for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = UserProvidedDataSettingsName.of("[PROPERTY]").toString();
+   *   UserProvidedDataSettings response =
+   *       analyticsAdminServiceClient.getUserProvidedDataSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the user provided data settings to retrieve. Format:
+   *     properties/{property}/userProvidedDataSettings
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserProvidedDataSettings getUserProvidedDataSettings(String name) {
+    GetUserProvidedDataSettingsRequest request =
+        GetUserProvidedDataSettingsRequest.newBuilder().setName(name).build();
+    return getUserProvidedDataSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up settings related to user-provided data for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetUserProvidedDataSettingsRequest request =
+   *       GetUserProvidedDataSettingsRequest.newBuilder()
+   *           .setName(UserProvidedDataSettingsName.of("[PROPERTY]").toString())
+   *           .build();
+   *   UserProvidedDataSettings response =
+   *       analyticsAdminServiceClient.getUserProvidedDataSettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserProvidedDataSettings getUserProvidedDataSettings(
+      GetUserProvidedDataSettingsRequest request) {
+    return getUserProvidedDataSettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up settings related to user-provided data for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetUserProvidedDataSettingsRequest request =
+   *       GetUserProvidedDataSettingsRequest.newBuilder()
+   *           .setName(UserProvidedDataSettingsName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<UserProvidedDataSettings> future =
+   *       analyticsAdminServiceClient.getUserProvidedDataSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   UserProvidedDataSettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+      getUserProvidedDataSettingsCallable() {
+    return stub.getUserProvidedDataSettingsCallable();
   }
 
   @Override
@@ -20054,6 +23385,82 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListConversionEventsFixedSizeCollection createCollection(
         List<ListConversionEventsPage> pages, int collectionSize) {
       return new ListConversionEventsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListKeyEventsPagedResponse
+      extends AbstractPagedListResponse<
+          ListKeyEventsRequest,
+          ListKeyEventsResponse,
+          KeyEvent,
+          ListKeyEventsPage,
+          ListKeyEventsFixedSizeCollection> {
+
+    public static ApiFuture<ListKeyEventsPagedResponse> createAsync(
+        PageContext<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent> context,
+        ApiFuture<ListKeyEventsResponse> futureResponse) {
+      ApiFuture<ListKeyEventsPage> futurePage =
+          ListKeyEventsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListKeyEventsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListKeyEventsPagedResponse(ListKeyEventsPage page) {
+      super(page, ListKeyEventsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListKeyEventsPage
+      extends AbstractPage<
+          ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent, ListKeyEventsPage> {
+
+    private ListKeyEventsPage(
+        PageContext<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent> context,
+        ListKeyEventsResponse response) {
+      super(context, response);
+    }
+
+    private static ListKeyEventsPage createEmptyPage() {
+      return new ListKeyEventsPage(null, null);
+    }
+
+    @Override
+    protected ListKeyEventsPage createPage(
+        PageContext<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent> context,
+        ListKeyEventsResponse response) {
+      return new ListKeyEventsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListKeyEventsPage> createPageAsync(
+        PageContext<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent> context,
+        ApiFuture<ListKeyEventsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListKeyEventsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListKeyEventsRequest,
+          ListKeyEventsResponse,
+          KeyEvent,
+          ListKeyEventsPage,
+          ListKeyEventsFixedSizeCollection> {
+
+    private ListKeyEventsFixedSizeCollection(List<ListKeyEventsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListKeyEventsFixedSizeCollection createEmptyCollection() {
+      return new ListKeyEventsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListKeyEventsFixedSizeCollection createCollection(
+        List<ListKeyEventsPage> pages, int collectionSize) {
+      return new ListKeyEventsFixedSizeCollection(pages, collectionSize);
     }
   }
 
@@ -21143,6 +24550,86 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     }
   }
 
+  public static class ListEventEditRulesPagedResponse
+      extends AbstractPagedListResponse<
+          ListEventEditRulesRequest,
+          ListEventEditRulesResponse,
+          EventEditRule,
+          ListEventEditRulesPage,
+          ListEventEditRulesFixedSizeCollection> {
+
+    public static ApiFuture<ListEventEditRulesPagedResponse> createAsync(
+        PageContext<ListEventEditRulesRequest, ListEventEditRulesResponse, EventEditRule> context,
+        ApiFuture<ListEventEditRulesResponse> futureResponse) {
+      ApiFuture<ListEventEditRulesPage> futurePage =
+          ListEventEditRulesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListEventEditRulesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListEventEditRulesPagedResponse(ListEventEditRulesPage page) {
+      super(page, ListEventEditRulesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListEventEditRulesPage
+      extends AbstractPage<
+          ListEventEditRulesRequest,
+          ListEventEditRulesResponse,
+          EventEditRule,
+          ListEventEditRulesPage> {
+
+    private ListEventEditRulesPage(
+        PageContext<ListEventEditRulesRequest, ListEventEditRulesResponse, EventEditRule> context,
+        ListEventEditRulesResponse response) {
+      super(context, response);
+    }
+
+    private static ListEventEditRulesPage createEmptyPage() {
+      return new ListEventEditRulesPage(null, null);
+    }
+
+    @Override
+    protected ListEventEditRulesPage createPage(
+        PageContext<ListEventEditRulesRequest, ListEventEditRulesResponse, EventEditRule> context,
+        ListEventEditRulesResponse response) {
+      return new ListEventEditRulesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListEventEditRulesPage> createPageAsync(
+        PageContext<ListEventEditRulesRequest, ListEventEditRulesResponse, EventEditRule> context,
+        ApiFuture<ListEventEditRulesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListEventEditRulesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListEventEditRulesRequest,
+          ListEventEditRulesResponse,
+          EventEditRule,
+          ListEventEditRulesPage,
+          ListEventEditRulesFixedSizeCollection> {
+
+    private ListEventEditRulesFixedSizeCollection(
+        List<ListEventEditRulesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListEventEditRulesFixedSizeCollection createEmptyCollection() {
+      return new ListEventEditRulesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListEventEditRulesFixedSizeCollection createCollection(
+        List<ListEventEditRulesPage> pages, int collectionSize) {
+      return new ListEventEditRulesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
   public static class ListCalculatedMetricsPagedResponse
       extends AbstractPagedListResponse<
           ListCalculatedMetricsRequest,
@@ -21418,6 +24905,199 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListSubpropertyEventFiltersFixedSizeCollection createCollection(
         List<ListSubpropertyEventFiltersPage> pages, int collectionSize) {
       return new ListSubpropertyEventFiltersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListReportingDataAnnotationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListReportingDataAnnotationsRequest,
+          ListReportingDataAnnotationsResponse,
+          ReportingDataAnnotation,
+          ListReportingDataAnnotationsPage,
+          ListReportingDataAnnotationsFixedSizeCollection> {
+
+    public static ApiFuture<ListReportingDataAnnotationsPagedResponse> createAsync(
+        PageContext<
+                ListReportingDataAnnotationsRequest,
+                ListReportingDataAnnotationsResponse,
+                ReportingDataAnnotation>
+            context,
+        ApiFuture<ListReportingDataAnnotationsResponse> futureResponse) {
+      ApiFuture<ListReportingDataAnnotationsPage> futurePage =
+          ListReportingDataAnnotationsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListReportingDataAnnotationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListReportingDataAnnotationsPagedResponse(ListReportingDataAnnotationsPage page) {
+      super(page, ListReportingDataAnnotationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListReportingDataAnnotationsPage
+      extends AbstractPage<
+          ListReportingDataAnnotationsRequest,
+          ListReportingDataAnnotationsResponse,
+          ReportingDataAnnotation,
+          ListReportingDataAnnotationsPage> {
+
+    private ListReportingDataAnnotationsPage(
+        PageContext<
+                ListReportingDataAnnotationsRequest,
+                ListReportingDataAnnotationsResponse,
+                ReportingDataAnnotation>
+            context,
+        ListReportingDataAnnotationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListReportingDataAnnotationsPage createEmptyPage() {
+      return new ListReportingDataAnnotationsPage(null, null);
+    }
+
+    @Override
+    protected ListReportingDataAnnotationsPage createPage(
+        PageContext<
+                ListReportingDataAnnotationsRequest,
+                ListReportingDataAnnotationsResponse,
+                ReportingDataAnnotation>
+            context,
+        ListReportingDataAnnotationsResponse response) {
+      return new ListReportingDataAnnotationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListReportingDataAnnotationsPage> createPageAsync(
+        PageContext<
+                ListReportingDataAnnotationsRequest,
+                ListReportingDataAnnotationsResponse,
+                ReportingDataAnnotation>
+            context,
+        ApiFuture<ListReportingDataAnnotationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListReportingDataAnnotationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListReportingDataAnnotationsRequest,
+          ListReportingDataAnnotationsResponse,
+          ReportingDataAnnotation,
+          ListReportingDataAnnotationsPage,
+          ListReportingDataAnnotationsFixedSizeCollection> {
+
+    private ListReportingDataAnnotationsFixedSizeCollection(
+        List<ListReportingDataAnnotationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListReportingDataAnnotationsFixedSizeCollection createEmptyCollection() {
+      return new ListReportingDataAnnotationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListReportingDataAnnotationsFixedSizeCollection createCollection(
+        List<ListReportingDataAnnotationsPage> pages, int collectionSize) {
+      return new ListReportingDataAnnotationsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSubpropertySyncConfigsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSubpropertySyncConfigsRequest,
+          ListSubpropertySyncConfigsResponse,
+          SubpropertySyncConfig,
+          ListSubpropertySyncConfigsPage,
+          ListSubpropertySyncConfigsFixedSizeCollection> {
+
+    public static ApiFuture<ListSubpropertySyncConfigsPagedResponse> createAsync(
+        PageContext<
+                ListSubpropertySyncConfigsRequest,
+                ListSubpropertySyncConfigsResponse,
+                SubpropertySyncConfig>
+            context,
+        ApiFuture<ListSubpropertySyncConfigsResponse> futureResponse) {
+      ApiFuture<ListSubpropertySyncConfigsPage> futurePage =
+          ListSubpropertySyncConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSubpropertySyncConfigsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSubpropertySyncConfigsPagedResponse(ListSubpropertySyncConfigsPage page) {
+      super(page, ListSubpropertySyncConfigsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSubpropertySyncConfigsPage
+      extends AbstractPage<
+          ListSubpropertySyncConfigsRequest,
+          ListSubpropertySyncConfigsResponse,
+          SubpropertySyncConfig,
+          ListSubpropertySyncConfigsPage> {
+
+    private ListSubpropertySyncConfigsPage(
+        PageContext<
+                ListSubpropertySyncConfigsRequest,
+                ListSubpropertySyncConfigsResponse,
+                SubpropertySyncConfig>
+            context,
+        ListSubpropertySyncConfigsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSubpropertySyncConfigsPage createEmptyPage() {
+      return new ListSubpropertySyncConfigsPage(null, null);
+    }
+
+    @Override
+    protected ListSubpropertySyncConfigsPage createPage(
+        PageContext<
+                ListSubpropertySyncConfigsRequest,
+                ListSubpropertySyncConfigsResponse,
+                SubpropertySyncConfig>
+            context,
+        ListSubpropertySyncConfigsResponse response) {
+      return new ListSubpropertySyncConfigsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSubpropertySyncConfigsPage> createPageAsync(
+        PageContext<
+                ListSubpropertySyncConfigsRequest,
+                ListSubpropertySyncConfigsResponse,
+                SubpropertySyncConfig>
+            context,
+        ApiFuture<ListSubpropertySyncConfigsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSubpropertySyncConfigsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSubpropertySyncConfigsRequest,
+          ListSubpropertySyncConfigsResponse,
+          SubpropertySyncConfig,
+          ListSubpropertySyncConfigsPage,
+          ListSubpropertySyncConfigsFixedSizeCollection> {
+
+    private ListSubpropertySyncConfigsFixedSizeCollection(
+        List<ListSubpropertySyncConfigsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSubpropertySyncConfigsFixedSizeCollection createEmptyCollection() {
+      return new ListSubpropertySyncConfigsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSubpropertySyncConfigsFixedSizeCollection createCollection(
+        List<ListSubpropertySyncConfigsPage> pages, int collectionSize) {
+      return new ListSubpropertySyncConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

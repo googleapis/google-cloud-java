@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import "google/api/resource.proto";
 import "google/cloud/discoveryengine/v1alpha/common.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
+import "google/rpc/status.proto";
 
 option csharp_namespace = "Google.Cloud.DiscoveryEngine.V1Alpha";
 option go_package = "cloud.google.com/go/discoveryengine/apiv1alpha/discoveryenginepb;discoveryenginepb";
@@ -55,7 +56,7 @@ message Document {
 
       // The URI of the content. Only Cloud Storage URIs (e.g.
       // `gs://bucket-name/path/to/file`) are supported. The maximum file size
-      // is 2.5 MB for text-based formats, 100 MB for other formats.
+      // is 2.5 MB for text-based formats, 200 MB for other formats.
       string uri = 3;
     }
 
@@ -135,10 +136,24 @@ message Document {
     message AccessRestriction {
       // List of principals.
       repeated Principal principals = 1;
+
+      // All users within the Identity Provider.
+      bool idp_wide = 2;
     }
 
     // Readers of the document.
     repeated AccessRestriction readers = 1;
+  }
+
+  // Index status of the document.
+  message IndexStatus {
+    // The time when the document was indexed.
+    // If this field is populated, it means the document has been indexed.
+    google.protobuf.Timestamp index_time = 1;
+
+    // A sample of errors encountered while indexing the document.
+    // If this field is populated, the document is not indexed due to errors.
+    repeated google.rpc.Status error_samples = 2;
   }
 
   // Data representation. One of
@@ -201,6 +216,14 @@ message Document {
   // document has never been indexed.
   google.protobuf.Timestamp index_time = 13
       [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. The index status of the document.
+  //
+  // * If document is indexed successfully, the index_time field is populated.
+  // * Otherwise, if document is not indexed due to errors, the error_samples
+  //   field is populated.
+  // * Otherwise, index_status is unset.
+  IndexStatus index_status = 15 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Document captures all raw metadata information of items to be recommended or

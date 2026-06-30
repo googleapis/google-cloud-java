@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -59,13 +59,18 @@ message ChannelConnection {
   ];
 
   // Output only. The creation time.
-  google.protobuf.Timestamp create_time = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
+  google.protobuf.Timestamp create_time = 6
+      [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. The last-modified time.
-  google.protobuf.Timestamp update_time = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
+  google.protobuf.Timestamp update_time = 7
+      [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Input only. Activation token for the channel. The token will be used
   // during the creation of ChannelConnection to bind the channel with the
   // provider project. This field will not be stored in the provider resource.
   string activation_token = 8 [(google.api.field_behavior) = INPUT_ONLY];
+
+  // Optional. Resource labels.
+  map<string, string> labels = 9 [(google.api.field_behavior) = OPTIONAL];
 }

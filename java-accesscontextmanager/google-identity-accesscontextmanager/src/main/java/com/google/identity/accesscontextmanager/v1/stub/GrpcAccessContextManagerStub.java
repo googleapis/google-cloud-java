@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,6 +96,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   ProtoUtils.marshaller(ListAccessPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAccessPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAccessPolicyRequest, AccessPolicy>
@@ -107,6 +108,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAccessPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AccessPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AccessPolicy, Operation>
@@ -117,6 +119,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   "google.identity.accesscontextmanager.v1.AccessContextManager/CreateAccessPolicy")
               .setRequestMarshaller(ProtoUtils.marshaller(AccessPolicy.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAccessPolicyRequest, Operation>
@@ -128,6 +131,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAccessPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAccessPolicyRequest, Operation>
@@ -139,6 +143,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAccessPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAccessLevelsRequest, ListAccessLevelsResponse>
@@ -151,6 +156,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   ProtoUtils.marshaller(ListAccessLevelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAccessLevelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAccessLevelRequest, AccessLevel>
@@ -162,6 +168,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAccessLevelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AccessLevel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAccessLevelRequest, Operation>
@@ -173,6 +180,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAccessLevelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAccessLevelRequest, Operation>
@@ -184,6 +192,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAccessLevelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAccessLevelRequest, Operation>
@@ -195,6 +204,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAccessLevelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReplaceAccessLevelsRequest, Operation>
@@ -206,6 +216,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReplaceAccessLevelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListServicePerimetersRequest, ListServicePerimetersResponse>
@@ -218,6 +229,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   ProtoUtils.marshaller(ListServicePerimetersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServicePerimetersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServicePerimeterRequest, ServicePerimeter>
@@ -229,6 +241,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServicePerimeterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServicePerimeter.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServicePerimeterRequest, Operation>
@@ -240,6 +253,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServicePerimeterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateServicePerimeterRequest, Operation>
@@ -251,6 +265,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServicePerimeterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServicePerimeterRequest, Operation>
@@ -262,6 +277,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServicePerimeterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReplaceServicePerimetersRequest, Operation>
@@ -273,6 +289,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReplaceServicePerimetersRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CommitServicePerimetersRequest, Operation>
@@ -284,6 +301,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CommitServicePerimetersRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -298,6 +316,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   ProtoUtils.marshaller(ListGcpUserAccessBindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGcpUserAccessBindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGcpUserAccessBindingRequest, GcpUserAccessBinding>
@@ -310,6 +329,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   ProtoUtils.marshaller(GetGcpUserAccessBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GcpUserAccessBinding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateGcpUserAccessBindingRequest, Operation>
@@ -321,6 +341,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGcpUserAccessBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateGcpUserAccessBindingRequest, Operation>
@@ -332,6 +353,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateGcpUserAccessBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteGcpUserAccessBindingRequest, Operation>
@@ -343,6 +365,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteGcpUserAccessBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -352,6 +375,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               "google.identity.accesscontextmanager.v1.AccessContextManager/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -361,6 +385,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
               "google.identity.accesscontextmanager.v1.AccessContextManager/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -373,6 +398,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListAccessPoliciesRequest, ListAccessPoliciesResponse>
@@ -528,6 +554,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
         listAccessPoliciesTransportSettings =
             GrpcCallSettings.<ListAccessPoliciesRequest, ListAccessPoliciesResponse>newBuilder()
                 .setMethodDescriptor(listAccessPoliciesMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAccessPolicyRequest, AccessPolicy> getAccessPolicyTransportSettings =
         GrpcCallSettings.<GetAccessPolicyRequest, AccessPolicy>newBuilder()
@@ -538,10 +565,12 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<AccessPolicy, Operation> createAccessPolicyTransportSettings =
         GrpcCallSettings.<AccessPolicy, Operation>newBuilder()
             .setMethodDescriptor(createAccessPolicyMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateAccessPolicyRequest, Operation> updateAccessPolicyTransportSettings =
         GrpcCallSettings.<UpdateAccessPolicyRequest, Operation>newBuilder()
@@ -562,6 +591,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAccessLevelsRequest, ListAccessLevelsResponse>
         listAccessLevelsTransportSettings =
@@ -573,6 +603,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAccessLevelRequest, AccessLevel> getAccessLevelTransportSettings =
         GrpcCallSettings.<GetAccessLevelRequest, AccessLevel>newBuilder()
@@ -583,6 +614,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAccessLevelRequest, Operation> createAccessLevelTransportSettings =
         GrpcCallSettings.<CreateAccessLevelRequest, Operation>newBuilder()
@@ -593,6 +625,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAccessLevelRequest, Operation> updateAccessLevelTransportSettings =
         GrpcCallSettings.<UpdateAccessLevelRequest, Operation>newBuilder()
@@ -614,6 +647,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ReplaceAccessLevelsRequest, Operation> replaceAccessLevelsTransportSettings =
         GrpcCallSettings.<ReplaceAccessLevelsRequest, Operation>newBuilder()
@@ -624,6 +658,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListServicePerimetersRequest, ListServicePerimetersResponse>
         listServicePerimetersTransportSettings =
@@ -636,6 +671,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetServicePerimeterRequest, ServicePerimeter>
         getServicePerimeterTransportSettings =
@@ -647,6 +683,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateServicePerimeterRequest, Operation>
         createServicePerimeterTransportSettings =
@@ -658,6 +695,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateServicePerimeterRequest, Operation>
         updateServicePerimeterTransportSettings =
@@ -682,6 +720,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ReplaceServicePerimetersRequest, Operation>
         replaceServicePerimetersTransportSettings =
@@ -693,6 +732,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CommitServicePerimetersRequest, Operation>
         commitServicePerimetersTransportSettings =
@@ -704,6 +744,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListGcpUserAccessBindingsRequest, ListGcpUserAccessBindingsResponse>
         listGcpUserAccessBindingsTransportSettings =
@@ -716,6 +757,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetGcpUserAccessBindingRequest, GcpUserAccessBinding>
         getGcpUserAccessBindingTransportSettings =
@@ -727,6 +769,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateGcpUserAccessBindingRequest, Operation>
         createGcpUserAccessBindingTransportSettings =
@@ -738,6 +781,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateGcpUserAccessBindingRequest, Operation>
         updateGcpUserAccessBindingTransportSettings =
@@ -762,6 +806,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -772,6 +817,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -782,6 +828,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -793,6 +840,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listAccessPoliciesCallable =

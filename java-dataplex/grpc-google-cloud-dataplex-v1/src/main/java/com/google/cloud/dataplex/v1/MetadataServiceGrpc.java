@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * partitions.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataplex/v1/metadata.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MetadataServiceGrpc {
 
@@ -445,6 +442,19 @@ public final class MetadataServiceGrpc {
     return MetadataServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static MetadataServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<MetadataServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<MetadataServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public MetadataServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new MetadataServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return MetadataServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -794,6 +804,147 @@ public final class MetadataServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service MetadataService.
+   *
+   * <pre>
+   * Metadata service manages metadata resources such as tables, filesets and
+   * partitions.
+   * </pre>
+   */
+  public static final class MetadataServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<MetadataServiceBlockingV2Stub> {
+    private MetadataServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected MetadataServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new MetadataServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a metadata entity.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Entity createEntity(
+        com.google.cloud.dataplex.v1.CreateEntityRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateEntityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a metadata entity. Only supports full resource update.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Entity updateEntity(
+        com.google.cloud.dataplex.v1.UpdateEntityRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateEntityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a metadata entity.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEntity(
+        com.google.cloud.dataplex.v1.DeleteEntityRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteEntityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a metadata entity.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Entity getEntity(
+        com.google.cloud.dataplex.v1.GetEntityRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEntityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List metadata entities in a zone.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.ListEntitiesResponse listEntities(
+        com.google.cloud.dataplex.v1.ListEntitiesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListEntitiesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a metadata partition.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Partition createPartition(
+        com.google.cloud.dataplex.v1.CreatePartitionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreatePartitionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a metadata partition.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deletePartition(
+        com.google.cloud.dataplex.v1.DeletePartitionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeletePartitionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a metadata partition of an entity.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Partition getPartition(
+        com.google.cloud.dataplex.v1.GetPartitionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetPartitionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List metadata partitions of an entity.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.ListPartitionsResponse listPartitions(
+        com.google.cloud.dataplex.v1.ListPartitionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListPartitionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service MetadataService.
    *
    * <pre>
    * Metadata service manages metadata resources such as tables, filesets and

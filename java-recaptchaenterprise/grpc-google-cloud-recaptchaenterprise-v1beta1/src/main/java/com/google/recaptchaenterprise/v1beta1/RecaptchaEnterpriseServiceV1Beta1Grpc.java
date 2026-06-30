@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to determine the likelihood an event is legitimate.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/recaptchaenterprise/v1beta1/recaptchaenterprise.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
 
@@ -151,6 +148,21 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
           }
         };
     return RecaptchaEnterpriseServiceV1Beta1Stub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static RecaptchaEnterpriseServiceV1Beta1BlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<RecaptchaEnterpriseServiceV1Beta1BlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<
+            RecaptchaEnterpriseServiceV1Beta1BlockingV2Stub>() {
+          @java.lang.Override
+          public RecaptchaEnterpriseServiceV1Beta1BlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RecaptchaEnterpriseServiceV1Beta1BlockingV2Stub(channel, callOptions);
+          }
+        };
+    return RecaptchaEnterpriseServiceV1Beta1BlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -300,6 +312,57 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service
+   * RecaptchaEnterpriseServiceV1Beta1.
+   *
+   * <pre>
+   * Service to determine the likelihood an event is legitimate.
+   * </pre>
+   */
+  public static final class RecaptchaEnterpriseServiceV1Beta1BlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<RecaptchaEnterpriseServiceV1Beta1BlockingV2Stub> {
+    private RecaptchaEnterpriseServiceV1Beta1BlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected RecaptchaEnterpriseServiceV1Beta1BlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new RecaptchaEnterpriseServiceV1Beta1BlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Assessment of the likelihood an event is legitimate.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1beta1.Assessment createAssessment(
+        com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAssessmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Annotates a previously created Assessment to provide additional information
+     * on whether the event turned out to be authentic or fradulent.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse annotateAssessment(
+        com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAnnotateAssessmentMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
    * RecaptchaEnterpriseServiceV1Beta1.
    *
    * <pre>

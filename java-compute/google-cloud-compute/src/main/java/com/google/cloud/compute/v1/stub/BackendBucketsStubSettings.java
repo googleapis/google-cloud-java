@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,13 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.BackendBucketsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.BackendBucketsClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.BackendBucketsClient.ListUsablePagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -33,6 +36,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -44,14 +48,19 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddSignedUrlKeyBackendBucketRequest;
+import com.google.cloud.compute.v1.AggregatedListBackendBucketsRequest;
 import com.google.cloud.compute.v1.BackendBucket;
+import com.google.cloud.compute.v1.BackendBucketAggregatedList;
 import com.google.cloud.compute.v1.BackendBucketList;
+import com.google.cloud.compute.v1.BackendBucketListUsable;
+import com.google.cloud.compute.v1.BackendBucketsScopedList;
 import com.google.cloud.compute.v1.DeleteBackendBucketRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendBucketRequest;
 import com.google.cloud.compute.v1.GetBackendBucketRequest;
 import com.google.cloud.compute.v1.GetIamPolicyBackendBucketRequest;
 import com.google.cloud.compute.v1.InsertBackendBucketRequest;
 import com.google.cloud.compute.v1.ListBackendBucketsRequest;
+import com.google.cloud.compute.v1.ListUsableBackendBucketsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendBucketRequest;
 import com.google.cloud.compute.v1.Policy;
@@ -65,9 +74,10 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -84,7 +94,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -101,12 +113,50 @@ import org.threeten.bp.Duration;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * BackendBucketsStubSettings backendBucketsSettings = backendBucketsSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for addSignedUrlKey:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * BackendBucketsStubSettings.Builder backendBucketsSettingsBuilder =
+ *     BackendBucketsStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * backendBucketsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -119,6 +169,11 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       addSignedUrlKeySettings;
   private final OperationCallSettings<AddSignedUrlKeyBackendBucketRequest, Operation, Operation>
       addSignedUrlKeyOperationSettings;
+  private final PagedCallSettings<
+          AggregatedListBackendBucketsRequest,
+          BackendBucketAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings;
   private final UnaryCallSettings<DeleteBackendBucketRequest, Operation> deleteSettings;
   private final OperationCallSettings<DeleteBackendBucketRequest, Operation, Operation>
       deleteOperationSettings;
@@ -133,6 +188,9 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       insertOperationSettings;
   private final PagedCallSettings<ListBackendBucketsRequest, BackendBucketList, ListPagedResponse>
       listSettings;
+  private final PagedCallSettings<
+          ListUsableBackendBucketsRequest, BackendBucketListUsable, ListUsablePagedResponse>
+      listUsableSettings;
   private final UnaryCallSettings<PatchBackendBucketRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchBackendBucketRequest, Operation, Operation>
       patchOperationSettings;
@@ -147,6 +205,53 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
   private final UnaryCallSettings<UpdateBackendBucketRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateBackendBucketRequest, Operation, Operation>
       updateOperationSettings;
+
+  private static final PagedListDescriptor<
+          AggregatedListBackendBucketsRequest,
+          BackendBucketAggregatedList,
+          Map.Entry<String, BackendBucketsScopedList>>
+      AGGREGATED_LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListBackendBucketsRequest,
+              BackendBucketAggregatedList,
+              Map.Entry<String, BackendBucketsScopedList>>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListBackendBucketsRequest injectToken(
+                AggregatedListBackendBucketsRequest payload, String token) {
+              return AggregatedListBackendBucketsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListBackendBucketsRequest injectPageSize(
+                AggregatedListBackendBucketsRequest payload, int pageSize) {
+              return AggregatedListBackendBucketsRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListBackendBucketsRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(BackendBucketAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Map.Entry<String, BackendBucketsScopedList>> extractResources(
+                BackendBucketAggregatedList payload) {
+              return payload.getItemsMap().entrySet();
+            }
+          };
 
   private static final PagedListDescriptor<
           ListBackendBucketsRequest, BackendBucketList, BackendBucket>
@@ -181,9 +286,75 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
 
             @Override
             public Iterable<BackendBucket> extractResources(BackendBucketList payload) {
-              return payload.getItemsList() == null
-                  ? ImmutableList.<BackendBucket>of()
-                  : payload.getItemsList();
+              return payload.getItemsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket>
+      LIST_USABLE_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUsableBackendBucketsRequest injectToken(
+                ListUsableBackendBucketsRequest payload, String token) {
+              return ListUsableBackendBucketsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListUsableBackendBucketsRequest injectPageSize(
+                ListUsableBackendBucketsRequest payload, int pageSize) {
+              return ListUsableBackendBucketsRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUsableBackendBucketsRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(BackendBucketListUsable payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackendBucket> extractResources(BackendBucketListUsable payload) {
+              return payload.getItemsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          AggregatedListBackendBucketsRequest,
+          BackendBucketAggregatedList,
+          AggregatedListPagedResponse>
+      AGGREGATED_LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListBackendBucketsRequest,
+              BackendBucketAggregatedList,
+              AggregatedListPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<AggregatedListBackendBucketsRequest, BackendBucketAggregatedList>
+                    callable,
+                AggregatedListBackendBucketsRequest request,
+                ApiCallContext context,
+                ApiFuture<BackendBucketAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListBackendBucketsRequest,
+                      BackendBucketAggregatedList,
+                      Map.Entry<String, BackendBucketsScopedList>>
+                  pageContext =
+                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
+              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -204,6 +375,24 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListUsableBackendBucketsRequest, BackendBucketListUsable, ListUsablePagedResponse>
+      LIST_USABLE_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUsableBackendBucketsRequest, BackendBucketListUsable, ListUsablePagedResponse>() {
+            @Override
+            public ApiFuture<ListUsablePagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUsableBackendBucketsRequest, BackendBucketListUsable> callable,
+                ListUsableBackendBucketsRequest request,
+                ApiCallContext context,
+                ApiFuture<BackendBucketListUsable> futureResponse) {
+              PageContext<ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket>
+                  pageContext =
+                      PageContext.create(callable, LIST_USABLE_PAGE_STR_DESC, request, context);
+              return ListUsablePagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to addSignedUrlKey. */
   public UnaryCallSettings<AddSignedUrlKeyBackendBucketRequest, Operation>
       addSignedUrlKeySettings() {
@@ -214,6 +403,15 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
   public OperationCallSettings<AddSignedUrlKeyBackendBucketRequest, Operation, Operation>
       addSignedUrlKeyOperationSettings() {
     return addSignedUrlKeyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListBackendBucketsRequest,
+          BackendBucketAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return aggregatedListSettings;
   }
 
   /** Returns the object with the settings used for calls to delete. */
@@ -264,6 +462,13 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
   public PagedCallSettings<ListBackendBucketsRequest, BackendBucketList, ListPagedResponse>
       listSettings() {
     return listSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listUsable. */
+  public PagedCallSettings<
+          ListUsableBackendBucketsRequest, BackendBucketListUsable, ListUsablePagedResponse>
+      listUsableSettings() {
+    return listUsableSettings;
   }
 
   /** Returns the object with the settings used for calls to patch. */
@@ -322,15 +527,6 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -343,6 +539,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "compute.googleapis.com:443";
   }
@@ -403,6 +600,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
 
     addSignedUrlKeySettings = settingsBuilder.addSignedUrlKeySettings().build();
     addSignedUrlKeyOperationSettings = settingsBuilder.addSignedUrlKeyOperationSettings().build();
+    aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     deleteSignedUrlKeySettings = settingsBuilder.deleteSignedUrlKeySettings().build();
@@ -413,6 +611,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    listUsableSettings = settingsBuilder.listUsableSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
     setEdgeSecurityPolicySettings = settingsBuilder.setEdgeSecurityPolicySettings().build();
@@ -424,6 +623,15 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
 
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-compute")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
+  }
+
   /** Builder for BackendBucketsStubSettings. */
   public static class Builder extends StubSettings.Builder<BackendBucketsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
@@ -432,6 +640,11 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     private final OperationCallSettings.Builder<
             AddSignedUrlKeyBackendBucketRequest, Operation, Operation>
         addSignedUrlKeyOperationSettings;
+    private final PagedCallSettings.Builder<
+            AggregatedListBackendBucketsRequest,
+            BackendBucketAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings;
     private final UnaryCallSettings.Builder<DeleteBackendBucketRequest, Operation> deleteSettings;
     private final OperationCallSettings.Builder<DeleteBackendBucketRequest, Operation, Operation>
         deleteOperationSettings;
@@ -449,6 +662,9 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     private final PagedCallSettings.Builder<
             ListBackendBucketsRequest, BackendBucketList, ListPagedResponse>
         listSettings;
+    private final PagedCallSettings.Builder<
+            ListUsableBackendBucketsRequest, BackendBucketListUsable, ListUsablePagedResponse>
+        listUsableSettings;
     private final UnaryCallSettings.Builder<PatchBackendBucketRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchBackendBucketRequest, Operation, Operation>
         patchOperationSettings;
@@ -488,21 +704,21 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -517,6 +733,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
 
       addSignedUrlKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       addSignedUrlKeyOperationSettings = OperationCallSettings.newBuilder();
+      aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       deleteSignedUrlKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -526,6 +743,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      listUsableSettings = PagedCallSettings.newBuilder(LIST_USABLE_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
       setEdgeSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -538,12 +756,14 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addSignedUrlKeySettings,
+              aggregatedListSettings,
               deleteSettings,
               deleteSignedUrlKeySettings,
               getSettings,
               getIamPolicySettings,
               insertSettings,
               listSettings,
+              listUsableSettings,
               patchSettings,
               setEdgeSecurityPolicySettings,
               setIamPolicySettings,
@@ -557,6 +777,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
 
       addSignedUrlKeySettings = settings.addSignedUrlKeySettings.toBuilder();
       addSignedUrlKeyOperationSettings = settings.addSignedUrlKeyOperationSettings.toBuilder();
+      aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       deleteSignedUrlKeySettings = settings.deleteSignedUrlKeySettings.toBuilder();
@@ -567,6 +788,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      listUsableSettings = settings.listUsableSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
       setEdgeSecurityPolicySettings = settings.setEdgeSecurityPolicySettings.toBuilder();
@@ -580,12 +802,14 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addSignedUrlKeySettings,
+              aggregatedListSettings,
               deleteSettings,
               deleteSignedUrlKeySettings,
               getSettings,
               getIamPolicySettings,
               insertSettings,
               listSettings,
+              listUsableSettings,
               patchSettings,
               setEdgeSecurityPolicySettings,
               setIamPolicySettings,
@@ -610,6 +834,11 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
           .addSignedUrlKeySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .aggregatedListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteSettings()
@@ -638,6 +867,11 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
 
       builder
           .listSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listUsableSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -682,13 +916,13 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -706,13 +940,13 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -731,13 +965,13 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -755,13 +989,13 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -779,13 +1013,13 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -804,13 +1038,13 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -828,13 +1062,13 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       return builder;
@@ -865,6 +1099,15 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     public OperationCallSettings.Builder<AddSignedUrlKeyBackendBucketRequest, Operation, Operation>
         addSignedUrlKeyOperationSettings() {
       return addSignedUrlKeyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListBackendBucketsRequest,
+            BackendBucketAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return aggregatedListSettings;
     }
 
     /** Returns the builder for the settings used for calls to delete. */
@@ -920,6 +1163,13 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       return listSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listUsable. */
+    public PagedCallSettings.Builder<
+            ListUsableBackendBucketsRequest, BackendBucketListUsable, ListUsablePagedResponse>
+        listUsableSettings() {
+      return listUsableSettings;
+    }
+
     /** Returns the builder for the settings used for calls to patch. */
     public UnaryCallSettings.Builder<PatchBackendBucketRequest, Operation> patchSettings() {
       return patchSettings;
@@ -966,15 +1216,6 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     public OperationCallSettings.Builder<UpdateBackendBucketRequest, Operation, Operation>
         updateOperationSettings() {
       return updateOperationSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

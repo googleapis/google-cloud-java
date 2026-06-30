@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListReservationsRequest;
 import com.google.cloud.compute.v1.DeleteReservationRequest;
 import com.google.cloud.compute.v1.GetIamPolicyReservationRequest;
@@ -41,6 +42,7 @@ import com.google.cloud.compute.v1.InsertReservationRequest;
 import com.google.cloud.compute.v1.ListReservationsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.PerformMaintenanceReservationRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.Reservation;
 import com.google.cloud.compute.v1.ReservationAggregatedList;
@@ -370,6 +372,64 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<PerformMaintenanceReservationRequest, Operation>
+      performMaintenanceMethodDescriptor =
+          ApiMethodDescriptor.<PerformMaintenanceReservationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Reservations/PerformMaintenance")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PerformMaintenanceReservationRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/reservations/{reservation}/performMaintenance",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PerformMaintenanceReservationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "reservation", request.getReservation());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PerformMaintenanceReservationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "reservationsPerformMaintenanceRequestResource",
+                                      request.getReservationsPerformMaintenanceRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PerformMaintenanceReservationRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<ResizeReservationRequest, Operation>
       resizeMethodDescriptor =
           ApiMethodDescriptor.<ResizeReservationRequest, Operation>newBuilder()
@@ -591,6 +651,10 @@ public class HttpJsonReservationsStub extends ReservationsStub {
       insertOperationCallable;
   private final UnaryCallable<ListReservationsRequest, ReservationList> listCallable;
   private final UnaryCallable<ListReservationsRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<PerformMaintenanceReservationRequest, Operation>
+      performMaintenanceCallable;
+  private final OperationCallable<PerformMaintenanceReservationRequest, Operation, Operation>
+      performMaintenanceOperationCallable;
   private final UnaryCallable<ResizeReservationRequest, Operation> resizeCallable;
   private final OperationCallable<ResizeReservationRequest, Operation, Operation>
       resizeOperationCallable;
@@ -604,6 +668,29 @@ public class HttpJsonReservationsStub extends ReservationsStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/reservations/{reservation}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/reservations/{reservation}");
+  private static final PathTemplate GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/reservations/{resource}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate PERFORM_MAINTENANCE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/reservations/{reservation}");
+  private static final PathTemplate RESIZE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/reservations/{reservation}");
+  private static final PathTemplate SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/reservations/{resource}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/reservations/{resource}");
+  private static final PathTemplate UPDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/reservations/{reservation}");
 
   public static final HttpJsonReservationsStub create(ReservationsStubSettings settings)
       throws IOException {
@@ -657,6 +744,13 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteReservationRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteReservationRequest, Operation>newBuilder()
@@ -669,6 +763,14 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                   builder.add("reservation", String.valueOf(request.getReservation()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("reservation", String.valueOf(request.getReservation()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetReservationRequest, Reservation> getTransportSettings =
@@ -683,6 +785,14 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("reservation", String.valueOf(request.getReservation()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyReservationRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyReservationRequest, Policy>newBuilder()
@@ -696,6 +806,14 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertReservationRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertReservationRequest, Operation>newBuilder()
@@ -707,6 +825,13 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListReservationsRequest, ReservationList> listTransportSettings =
@@ -720,7 +845,38 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
+    HttpJsonCallSettings<PerformMaintenanceReservationRequest, Operation>
+        performMaintenanceTransportSettings =
+            HttpJsonCallSettings.<PerformMaintenanceReservationRequest, Operation>newBuilder()
+                .setMethodDescriptor(performMaintenanceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("reservation", String.valueOf(request.getReservation()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "reservation", String.valueOf(request.getReservation()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return PERFORM_MAINTENANCE_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
     HttpJsonCallSettings<ResizeReservationRequest, Operation> resizeTransportSettings =
         HttpJsonCallSettings.<ResizeReservationRequest, Operation>newBuilder()
             .setMethodDescriptor(resizeMethodDescriptor)
@@ -732,6 +888,14 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                   builder.add("reservation", String.valueOf(request.getReservation()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("reservation", String.valueOf(request.getReservation()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return RESIZE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetIamPolicyReservationRequest, Policy> setIamPolicyTransportSettings =
@@ -745,6 +909,14 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<TestIamPermissionsReservationRequest, TestPermissionsResponse>
@@ -761,6 +933,15 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<UpdateReservationRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateReservationRequest, Operation>newBuilder()
@@ -773,6 +954,14 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                   builder.add("reservation", String.valueOf(request.getReservation()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("reservation", String.valueOf(request.getReservation()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return UPDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 
@@ -812,6 +1001,17 @@ public class HttpJsonReservationsStub extends ReservationsStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.performMaintenanceCallable =
+        callableFactory.createUnaryCallable(
+            performMaintenanceTransportSettings,
+            settings.performMaintenanceSettings(),
+            clientContext);
+    this.performMaintenanceOperationCallable =
+        callableFactory.createOperationCallable(
+            performMaintenanceTransportSettings,
+            settings.performMaintenanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.resizeCallable =
         callableFactory.createUnaryCallable(
             resizeTransportSettings, settings.resizeSettings(), clientContext);
@@ -852,6 +1052,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(performMaintenanceMethodDescriptor);
     methodDescriptors.add(resizeMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
@@ -911,6 +1112,18 @@ public class HttpJsonReservationsStub extends ReservationsStub {
   @Override
   public UnaryCallable<ListReservationsRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<PerformMaintenanceReservationRequest, Operation>
+      performMaintenanceCallable() {
+    return performMaintenanceCallable;
+  }
+
+  @Override
+  public OperationCallable<PerformMaintenanceReservationRequest, Operation, Operation>
+      performMaintenanceOperationCallable() {
+    return performMaintenanceOperationCallable;
   }
 
   @Override

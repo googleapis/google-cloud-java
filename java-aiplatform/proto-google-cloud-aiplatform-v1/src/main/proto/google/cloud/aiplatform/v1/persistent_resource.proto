@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/cloud/aiplatform/v1/encryption_spec.proto";
 import "google/cloud/aiplatform/v1/machine_resources.proto";
+import "google/cloud/aiplatform/v1/service_networking.proto";
 import "google/protobuf/timestamp.proto";
 import "google/rpc/status.proto";
 
@@ -131,6 +132,10 @@ message PersistentResource {
     (google.api.resource_reference) = { type: "compute.googleapis.com/Network" }
   ];
 
+  // Optional. Configuration for PSC-I for PersistentResource.
+  PscInterfaceConfig psc_interface_config = 17
+      [(google.api.field_behavior) = OPTIONAL];
+
   // Optional. Customer-managed encryption key spec for a PersistentResource.
   // If set, this PersistentResource and all sub-resources of this
   // PersistentResource will be secured by this key.
@@ -163,7 +168,13 @@ message ResourcePool {
   // The min/max number of replicas allowed if enabling autoscaling
   message AutoscalingSpec {
     // Optional. min replicas in the node pool,
-    // must be ≤ replica_count and < max_replica_count or will throw error
+    // must be ≤ replica_count and < max_replica_count or will throw error.
+    // For autoscaling enabled Ray-on-Vertex, we allow min_replica_count of a
+    // resource_pool to be 0 to match the OSS Ray
+    // behavior(https://docs.ray.io/en/latest/cluster/vms/user-guides/configuring-autoscaling.html#cluster-config-parameters).
+    // As for Persistent Resource, the min_replica_count must be > 0, we added
+    // a corresponding validation inside
+    // CreatePersistentResourceRequestValidator.java.
     optional int64 min_replica_count = 1
         [(google.api.field_behavior) = OPTIONAL];
 
@@ -194,7 +205,7 @@ message ResourcePool {
   // this resource pool. Will replace idle_replica_count.
   int64 used_replica_count = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Optional. Optional spec to configure GKE autoscaling
+  // Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
   AutoscalingSpec autoscaling_spec = 7 [(google.api.field_behavior) = OPTIONAL];
 }
 
@@ -217,10 +228,52 @@ message ResourceRuntimeSpec {
 // For experimental launch, Ray cluster creation and Persistent
 // cluster creation are 1:1 mapping: We will provision all the nodes within the
 // Persistent cluster as Ray nodes.
-message RaySpec {}
+message RaySpec {
+  // Optional. Default image for user to choose a preferred ML framework
+  // (for example, TensorFlow or Pytorch) by choosing from [Vertex prebuilt
+  // images](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
+  // Either this or the resource_pool_images is required. Use this field if
+  // you need all the resource pools to have the same Ray image. Otherwise, use
+  // the {@code resource_pool_images} field.
+  string image_uri = 1 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Required if image_uri isn't set. A map of resource_pool_id to
+  // prebuild Ray image if user need to use different images for different
+  // head/worker pools. This map needs to cover all the resource pool ids.
+  // Example:
+  // {
+  //   "ray_head_node_pool": "head image"
+  //   "ray_worker_node_pool1": "worker image"
+  //   "ray_worker_node_pool2": "another worker image"
+  // }
+  map<string, string> resource_pool_images = 6
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. This will be used to indicate which resource pool will serve as
+  // the Ray head node(the first node within that pool). Will use the machine
+  // from the first workerpool as the head node by default if this field isn't
+  // set.
+  string head_node_resource_pool_id = 7
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Ray metrics configurations.
+  RayMetricSpec ray_metric_spec = 8 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. OSS Ray logging configurations.
+  RayLogsSpec ray_logs_spec = 10 [(google.api.field_behavior) = OPTIONAL];
+}
 
 // Persistent Cluster runtime information as output
-message ResourceRuntime {}
+message ResourceRuntime {
+  // Output only. URIs for user to connect to the Cluster.
+  // Example:
+  // {
+  //   "RAY_HEAD_NODE_INTERNAL_IP": "head-node-IP:10001"
+  //   "RAY_DASHBOARD_URI": "ray-dashboard-address:8888"
+  // }
+  map<string, string> access_uris = 1
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+}
 
 // Configuration for the use of custom service account to run the workloads.
 message ServiceAccountSpec {
@@ -243,4 +296,16 @@ message ServiceAccountSpec {
   // account to this PersistentResource after creation, but only specify the
   // `service_account` inside the job.
   string service_account = 2 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Configuration for the Ray metrics.
+message RayMetricSpec {
+  // Optional. Flag to disable the Ray metrics collection.
+  bool disabled = 1 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Configuration for the Ray OSS Logs.
+message RayLogsSpec {
+  // Optional. Flag to disable the export of Ray OSS logs to Cloud Logging.
+  bool disabled = 1 [(google.api.field_behavior) = OPTIONAL];
 }

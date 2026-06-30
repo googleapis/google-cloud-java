@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-build</artifactId>
-  <version>3.44.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-build:current} -->
+  <version>3.96.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-build:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Build</name>
   <description>
@@ -12,7 +12,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-build-parent</artifactId>
-    <version>3.44.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-build:current} -->
+    <version>3.96.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-build:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-build</site.installationModule>
@@ -42,6 +42,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-build-v2</artifactId>
@@ -50,6 +51,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-build-v1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -87,6 +89,7 @@
       <artifactId>grpc-google-common-protos</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-build-v1</artifactId>
@@ -97,6 +100,7 @@
       <artifactId>grpc-google-cloud-build-v2</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

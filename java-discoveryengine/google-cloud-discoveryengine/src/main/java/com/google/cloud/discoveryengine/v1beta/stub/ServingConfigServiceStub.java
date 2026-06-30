@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,11 +21,14 @@ import static com.google.cloud.discoveryengine.v1beta.ServingConfigServiceClient
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1beta.CreateServingConfigRequest;
+import com.google.cloud.discoveryengine.v1beta.DeleteServingConfigRequest;
 import com.google.cloud.discoveryengine.v1beta.GetServingConfigRequest;
 import com.google.cloud.discoveryengine.v1beta.ListServingConfigsRequest;
 import com.google.cloud.discoveryengine.v1beta.ListServingConfigsResponse;
 import com.google.cloud.discoveryengine.v1beta.ServingConfig;
 import com.google.cloud.discoveryengine.v1beta.UpdateServingConfigRequest;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -37,6 +40,14 @@ import javax.annotation.Generated;
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class ServingConfigServiceStub implements BackgroundResource {
+
+  public UnaryCallable<CreateServingConfigRequest, ServingConfig> createServingConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: createServingConfigCallable()");
+  }
+
+  public UnaryCallable<DeleteServingConfigRequest, Empty> deleteServingConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteServingConfigCallable()");
+  }
 
   public UnaryCallable<UpdateServingConfigRequest, ServingConfig> updateServingConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: updateServingConfigCallable()");

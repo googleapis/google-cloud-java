@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,7 +66,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Delete</td>
- *      <td><p> Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not necessarily delete all the data on that snapshot. If any data on the snapshot that is marked for deletion is needed for subsequent snapshots, the data will be moved to the next corresponding snapshot. For more information, see Deleting snapshots.</td>
+ *      <td><p> Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not necessarily delete all the data on that snapshot. If any data on the snapshot that is marked for deletion is needed for subsequent snapshots, the data will be moved to the next corresponding snapshot.
+ * <p>  For more information, seeDeleting snapshots.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -177,7 +178,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SetLabels</td>
- *      <td><p> Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources documentation.</td>
+ *      <td><p> Sets the labels on a snapshot. To learn more about labels, read theLabeling Resources documentation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -209,6 +210,25 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateKmsKey</td>
+ *      <td><p> Rotates the customer-managed encryption key to the latest version for the specified snapshot.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateKmsKeyAsync(UpdateKmsKeySnapshotRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateKmsKeyAsync(String project, String snapshot, SnapshotUpdateKmsKeyRequest snapshotUpdateKmsKeyRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateKmsKeyOperationCallable()
+ *           <li><p> updateKmsKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -306,7 +326,9 @@ public class SnapshotsClient implements BackgroundResource {
    * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not
    * necessarily delete all the data on that snapshot. If any data on the snapshot that is marked
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
-   * corresponding snapshot. For more information, see Deleting snapshots.
+   * corresponding snapshot.
+   *
+   * <p>For more information, seeDeleting snapshots.
    *
    * <p>Sample code:
    *
@@ -338,7 +360,9 @@ public class SnapshotsClient implements BackgroundResource {
    * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not
    * necessarily delete all the data on that snapshot. If any data on the snapshot that is marked
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
-   * corresponding snapshot. For more information, see Deleting snapshots.
+   * corresponding snapshot.
+   *
+   * <p>For more information, seeDeleting snapshots.
    *
    * <p>Sample code:
    *
@@ -371,7 +395,9 @@ public class SnapshotsClient implements BackgroundResource {
    * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not
    * necessarily delete all the data on that snapshot. If any data on the snapshot that is marked
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
-   * corresponding snapshot. For more information, see Deleting snapshots.
+   * corresponding snapshot.
+   *
+   * <p>For more information, seeDeleting snapshots.
    *
    * <p>Sample code:
    *
@@ -405,7 +431,9 @@ public class SnapshotsClient implements BackgroundResource {
    * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not
    * necessarily delete all the data on that snapshot. If any data on the snapshot that is marked
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
-   * corresponding snapshot. For more information, see Deleting snapshots.
+   * corresponding snapshot.
+   *
+   * <p>For more information, seeDeleting snapshots.
    *
    * <p>Sample code:
    *
@@ -981,7 +1009,7 @@ public class SnapshotsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a snapshot. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1020,7 +1048,7 @@ public class SnapshotsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a snapshot. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1052,7 +1080,7 @@ public class SnapshotsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a snapshot. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1084,7 +1112,7 @@ public class SnapshotsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a snapshot. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1210,6 +1238,145 @@ public class SnapshotsClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsSnapshotRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rotates the customer-managed encryption key to the latest version for the specified snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
+   *   String project = "project-309310695";
+   *   String snapshot = "snapshot284874180";
+   *   SnapshotUpdateKmsKeyRequest snapshotUpdateKmsKeyRequestResource =
+   *       SnapshotUpdateKmsKeyRequest.newBuilder().build();
+   *   Operation response =
+   *       snapshotsClient
+   *           .updateKmsKeyAsync(project, snapshot, snapshotUpdateKmsKeyRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param snapshot Name of the snapshot resource to update. Should conform to RFC1035.
+   * @param snapshotUpdateKmsKeyRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> updateKmsKeyAsync(
+      String project,
+      String snapshot,
+      SnapshotUpdateKmsKeyRequest snapshotUpdateKmsKeyRequestResource) {
+    UpdateKmsKeySnapshotRequest request =
+        UpdateKmsKeySnapshotRequest.newBuilder()
+            .setProject(project)
+            .setSnapshot(snapshot)
+            .setSnapshotUpdateKmsKeyRequestResource(snapshotUpdateKmsKeyRequestResource)
+            .build();
+    return updateKmsKeyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rotates the customer-managed encryption key to the latest version for the specified snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
+   *   UpdateKmsKeySnapshotRequest request =
+   *       UpdateKmsKeySnapshotRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSnapshot("snapshot284874180")
+   *           .setSnapshotUpdateKmsKeyRequestResource(
+   *               SnapshotUpdateKmsKeyRequest.newBuilder().build())
+   *           .build();
+   *   Operation response = snapshotsClient.updateKmsKeyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> updateKmsKeyAsync(
+      UpdateKmsKeySnapshotRequest request) {
+    return updateKmsKeyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rotates the customer-managed encryption key to the latest version for the specified snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
+   *   UpdateKmsKeySnapshotRequest request =
+   *       UpdateKmsKeySnapshotRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSnapshot("snapshot284874180")
+   *           .setSnapshotUpdateKmsKeyRequestResource(
+   *               SnapshotUpdateKmsKeyRequest.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       snapshotsClient.updateKmsKeyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateKmsKeySnapshotRequest, Operation, Operation>
+      updateKmsKeyOperationCallable() {
+    return stub.updateKmsKeyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rotates the customer-managed encryption key to the latest version for the specified snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
+   *   UpdateKmsKeySnapshotRequest request =
+   *       UpdateKmsKeySnapshotRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSnapshot("snapshot284874180")
+   *           .setSnapshotUpdateKmsKeyRequestResource(
+   *               SnapshotUpdateKmsKeyRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = snapshotsClient.updateKmsKeyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateKmsKeySnapshotRequest, Operation> updateKmsKeyCallable() {
+    return stub.updateKmsKeyCallable();
   }
 
   @Override

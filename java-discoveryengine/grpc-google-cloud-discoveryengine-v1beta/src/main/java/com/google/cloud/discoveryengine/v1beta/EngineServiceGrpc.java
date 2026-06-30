@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * configuration.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1beta/engine_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EngineServiceGrpc {
 
@@ -402,6 +399,84 @@ public final class EngineServiceGrpc {
     return getTuneEngineMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIamPolicy",
+      requestType = com.google.iam.v1.GetIamPolicyRequest.class,
+      responseType = com.google.iam.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+        getGetIamPolicyMethod;
+    if ((getGetIamPolicyMethod = EngineServiceGrpc.getGetIamPolicyMethod) == null) {
+      synchronized (EngineServiceGrpc.class) {
+        if ((getGetIamPolicyMethod = EngineServiceGrpc.getGetIamPolicyMethod) == null) {
+          EngineServiceGrpc.getGetIamPolicyMethod =
+              getGetIamPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetIamPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.GetIamPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EngineServiceMethodDescriptorSupplier("GetIamPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getGetIamPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetIamPolicy",
+      requestType = com.google.iam.v1.SetIamPolicyRequest.class,
+      responseType = com.google.iam.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+        getSetIamPolicyMethod;
+    if ((getSetIamPolicyMethod = EngineServiceGrpc.getSetIamPolicyMethod) == null) {
+      synchronized (EngineServiceGrpc.class) {
+        if ((getSetIamPolicyMethod = EngineServiceGrpc.getSetIamPolicyMethod) == null) {
+          EngineServiceGrpc.getSetIamPolicyMethod =
+              getSetIamPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetIamPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.SetIamPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EngineServiceMethodDescriptorSupplier("SetIamPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getSetIamPolicyMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EngineServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EngineServiceStub> factory =
@@ -413,6 +488,19 @@ public final class EngineServiceGrpc {
           }
         };
     return EngineServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EngineServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EngineServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EngineServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public EngineServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EngineServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EngineServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -457,7 +545,7 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Creates a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Creates an [Engine][google.cloud.discoveryengine.v1beta.Engine].
      * </pre>
      */
     default void createEngine(
@@ -471,7 +559,7 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Deletes an [Engine][google.cloud.discoveryengine.v1beta.Engine].
      * </pre>
      */
     default void deleteEngine(
@@ -500,7 +588,7 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Gets a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Gets an [Engine][google.cloud.discoveryengine.v1beta.Engine].
      * </pre>
      */
     default void getEngine(
@@ -530,7 +618,8 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Pauses the training of an existing engine. Only applicable if
+     * Pauses the training of an existing
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if
      * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
@@ -547,7 +636,8 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Resumes the training of an existing engine. Only applicable if
+     * Resumes the training of an existing
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if
      * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
@@ -564,7 +654,8 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Tunes an existing engine. Only applicable if
+     * Tunes an existing [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Only applicable if
      * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
@@ -573,6 +664,48 @@ public final class EngineServiceGrpc {
         com.google.cloud.discoveryengine.v1beta.TuneEngineRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTuneEngineMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM access control policy for an
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. A `NOT_FOUND` error
+     * is returned if the resource does not exist. An empty policy is returned if
+     * the resource exists but does not have a policy set on it.
+     * </pre>
+     */
+    default void getIamPolicy(
+        com.google.iam.v1.GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetIamPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM access control policy for an
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. A `NOT_FOUND` error
+     * is returned if the resource does not exist.
+     * **Important:** When setting a policy directly on an Engine resource,
+     * the only recommended roles in the bindings are:
+     * `roles/discoveryengine.admin`,
+     * `roles/discoveryengine.agentspaceAdmin`,
+     * `roles/discoveryengine.user`,
+     * `roles/discoveryengine.agentspaceUser`,
+     * `roles/discoveryengine.viewer`,
+     * `roles/discoveryengine.agentspaceViewer`.
+     * Attempting to grant any other role will result in a warning in logging.
+     * </pre>
+     */
+    default void setIamPolicy(
+        com.google.iam.v1.SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetIamPolicyMethod(), responseObserver);
     }
   }
 
@@ -616,7 +749,7 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Creates a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Creates an [Engine][google.cloud.discoveryengine.v1beta.Engine].
      * </pre>
      */
     public void createEngine(
@@ -632,7 +765,7 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Deletes an [Engine][google.cloud.discoveryengine.v1beta.Engine].
      * </pre>
      */
     public void deleteEngine(
@@ -665,7 +798,7 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Gets a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Gets an [Engine][google.cloud.discoveryengine.v1beta.Engine].
      * </pre>
      */
     public void getEngine(
@@ -698,7 +831,8 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Pauses the training of an existing engine. Only applicable if
+     * Pauses the training of an existing
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if
      * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
@@ -717,7 +851,8 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Resumes the training of an existing engine. Only applicable if
+     * Resumes the training of an existing
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if
      * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
@@ -736,7 +871,8 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Tunes an existing engine. Only applicable if
+     * Tunes an existing [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Only applicable if
      * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
@@ -747,10 +883,239 @@ public final class EngineServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTuneEngineMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM access control policy for an
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. A `NOT_FOUND` error
+     * is returned if the resource does not exist. An empty policy is returned if
+     * the resource exists but does not have a policy set on it.
+     * </pre>
+     */
+    public void getIamPolicy(
+        com.google.iam.v1.GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM access control policy for an
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. A `NOT_FOUND` error
+     * is returned if the resource does not exist.
+     * **Important:** When setting a policy directly on an Engine resource,
+     * the only recommended roles in the bindings are:
+     * `roles/discoveryengine.admin`,
+     * `roles/discoveryengine.agentspaceAdmin`,
+     * `roles/discoveryengine.user`,
+     * `roles/discoveryengine.agentspaceUser`,
+     * `roles/discoveryengine.viewer`,
+     * `roles/discoveryengine.agentspaceViewer`.
+     * Attempting to grant any other role will result in a warning in logging.
+     * </pre>
+     */
+    public void setIamPolicy(
+        com.google.iam.v1.SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service EngineService.
+   *
+   * <pre>
+   * Service for managing [Engine][google.cloud.discoveryengine.v1beta.Engine]
+   * configuration.
+   * </pre>
+   */
+  public static final class EngineServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EngineServiceBlockingV2Stub> {
+    private EngineServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EngineServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EngineServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEngine(
+        com.google.cloud.discoveryengine.v1beta.CreateEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteEngine(
+        com.google.cloud.discoveryengine.v1beta.DeleteEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an [Engine][google.cloud.discoveryengine.v1beta.Engine]
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Engine updateEngine(
+        com.google.cloud.discoveryengine.v1beta.UpdateEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Engine getEngine(
+        com.google.cloud.discoveryengine.v1beta.GetEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the [Engine][google.cloud.discoveryengine.v1beta.Engine]s
+     * associated with the project.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.ListEnginesResponse listEngines(
+        com.google.cloud.discoveryengine.v1beta.ListEnginesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListEnginesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses the training of an existing
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Engine pauseEngine(
+        com.google.cloud.discoveryengine.v1beta.PauseEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getPauseEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes the training of an existing
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Engine resumeEngine(
+        com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getResumeEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunes an existing [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    public com.google.longrunning.Operation tuneEngine(
+        com.google.cloud.discoveryengine.v1beta.TuneEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTuneEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM access control policy for an
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. A `NOT_FOUND` error
+     * is returned if the resource does not exist. An empty policy is returned if
+     * the resource exists but does not have a policy set on it.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM access control policy for an
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. A `NOT_FOUND` error
+     * is returned if the resource does not exist.
+     * **Important:** When setting a policy directly on an Engine resource,
+     * the only recommended roles in the bindings are:
+     * `roles/discoveryengine.admin`,
+     * `roles/discoveryengine.agentspaceAdmin`,
+     * `roles/discoveryengine.user`,
+     * `roles/discoveryengine.agentspaceUser`,
+     * `roles/discoveryengine.viewer`,
+     * `roles/discoveryengine.agentspaceViewer`.
+     * Attempting to grant any other role will result in a warning in logging.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service EngineService.
    *
    * <pre>
    * Service for managing [Engine][google.cloud.discoveryengine.v1beta.Engine]
@@ -773,7 +1138,7 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Creates a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Creates an [Engine][google.cloud.discoveryengine.v1beta.Engine].
      * </pre>
      */
     public com.google.longrunning.Operation createEngine(
@@ -786,7 +1151,7 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Deletes an [Engine][google.cloud.discoveryengine.v1beta.Engine].
      * </pre>
      */
     public com.google.longrunning.Operation deleteEngine(
@@ -812,7 +1177,7 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Gets a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Gets an [Engine][google.cloud.discoveryengine.v1beta.Engine].
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.Engine getEngine(
@@ -839,7 +1204,8 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Pauses the training of an existing engine. Only applicable if
+     * Pauses the training of an existing
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if
      * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
@@ -854,7 +1220,8 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Resumes the training of an existing engine. Only applicable if
+     * Resumes the training of an existing
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if
      * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
@@ -869,7 +1236,8 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Tunes an existing engine. Only applicable if
+     * Tunes an existing [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Only applicable if
      * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
@@ -878,6 +1246,44 @@ public final class EngineServiceGrpc {
         com.google.cloud.discoveryengine.v1beta.TuneEngineRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTuneEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM access control policy for an
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. A `NOT_FOUND` error
+     * is returned if the resource does not exist. An empty policy is returned if
+     * the resource exists but does not have a policy set on it.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM access control policy for an
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. A `NOT_FOUND` error
+     * is returned if the resource does not exist.
+     * **Important:** When setting a policy directly on an Engine resource,
+     * the only recommended roles in the bindings are:
+     * `roles/discoveryengine.admin`,
+     * `roles/discoveryengine.agentspaceAdmin`,
+     * `roles/discoveryengine.user`,
+     * `roles/discoveryengine.agentspaceUser`,
+     * `roles/discoveryengine.viewer`,
+     * `roles/discoveryengine.agentspaceViewer`.
+     * Attempting to grant any other role will result in a warning in logging.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
   }
 
@@ -905,7 +1311,7 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Creates a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Creates an [Engine][google.cloud.discoveryengine.v1beta.Engine].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -918,7 +1324,7 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Deletes an [Engine][google.cloud.discoveryengine.v1beta.Engine].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -945,7 +1351,7 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Gets a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Gets an [Engine][google.cloud.discoveryengine.v1beta.Engine].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -974,7 +1380,8 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Pauses the training of an existing engine. Only applicable if
+     * Pauses the training of an existing
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if
      * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
@@ -990,7 +1397,8 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Resumes the training of an existing engine. Only applicable if
+     * Resumes the training of an existing
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if
      * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
@@ -1006,7 +1414,8 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Tunes an existing engine. Only applicable if
+     * Tunes an existing [Engine][google.cloud.discoveryengine.v1beta.Engine].
+     * Only applicable if
      * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
@@ -1015,6 +1424,46 @@ public final class EngineServiceGrpc {
         tuneEngine(com.google.cloud.discoveryengine.v1beta.TuneEngineRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTuneEngineMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM access control policy for an
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. A `NOT_FOUND` error
+     * is returned if the resource does not exist. An empty policy is returned if
+     * the resource exists but does not have a policy set on it.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
+        getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM access control policy for an
+     * [Engine][google.cloud.discoveryengine.v1beta.Engine]. A `NOT_FOUND` error
+     * is returned if the resource does not exist.
+     * **Important:** When setting a policy directly on an Engine resource,
+     * the only recommended roles in the bindings are:
+     * `roles/discoveryengine.admin`,
+     * `roles/discoveryengine.agentspaceAdmin`,
+     * `roles/discoveryengine.user`,
+     * `roles/discoveryengine.agentspaceUser`,
+     * `roles/discoveryengine.viewer`,
+     * `roles/discoveryengine.agentspaceViewer`.
+     * Attempting to grant any other role will result in a warning in logging.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
+        setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
     }
   }
 
@@ -1026,6 +1475,8 @@ public final class EngineServiceGrpc {
   private static final int METHODID_PAUSE_ENGINE = 5;
   private static final int METHODID_RESUME_ENGINE = 6;
   private static final int METHODID_TUNE_ENGINE = 7;
+  private static final int METHODID_GET_IAM_POLICY = 8;
+  private static final int METHODID_SET_IAM_POLICY = 9;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1089,6 +1540,16 @@ public final class EngineServiceGrpc {
           serviceImpl.tuneEngine(
               (com.google.cloud.discoveryengine.v1beta.TuneEngineRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_IAM_POLICY:
+          serviceImpl.getIamPolicy(
+              (com.google.iam.v1.GetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          break;
+        case METHODID_SET_IAM_POLICY:
+          serviceImpl.setIamPolicy(
+              (com.google.iam.v1.SetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1160,6 +1621,16 @@ public final class EngineServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.discoveryengine.v1beta.TuneEngineRequest,
                     com.google.longrunning.Operation>(service, METHODID_TUNE_ENGINE)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
         .build();
   }
 
@@ -1219,6 +1690,8 @@ public final class EngineServiceGrpc {
                       .addMethod(getPauseEngineMethod())
                       .addMethod(getResumeEngineMethod())
                       .addMethod(getTuneEngineMethod())
+                      .addMethod(getGetIamPolicyMethod())
+                      .addMethod(getSetIamPolicyMethod())
                       .build();
         }
       }

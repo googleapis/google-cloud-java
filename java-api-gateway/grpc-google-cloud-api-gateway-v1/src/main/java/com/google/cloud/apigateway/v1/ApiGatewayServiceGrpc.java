@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The API Gateway Service is the interface for managing API Gateways.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/apigateway/v1/apigateway_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ApiGatewayServiceGrpc {
 
@@ -703,6 +700,19 @@ public final class ApiGatewayServiceGrpc {
     return ApiGatewayServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ApiGatewayServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ApiGatewayServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ApiGatewayServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ApiGatewayServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ApiGatewayServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ApiGatewayServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1217,6 +1227,229 @@ public final class ApiGatewayServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ApiGatewayService.
+   *
+   * <pre>
+   * The API Gateway Service is the interface for managing API Gateways.
+   * </pre>
+   */
+  public static final class ApiGatewayServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ApiGatewayServiceBlockingV2Stub> {
+    private ApiGatewayServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ApiGatewayServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ApiGatewayServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Gateways in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.apigateway.v1.ListGatewaysResponse listGateways(
+        com.google.cloud.apigateway.v1.ListGatewaysRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListGatewaysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Gateway.
+     * </pre>
+     */
+    public com.google.cloud.apigateway.v1.Gateway getGateway(
+        com.google.cloud.apigateway.v1.GetGatewayRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Gateway in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createGateway(
+        com.google.cloud.apigateway.v1.CreateGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Gateway.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGateway(
+        com.google.cloud.apigateway.v1.UpdateGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Gateway.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteGateway(
+        com.google.cloud.apigateway.v1.DeleteGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Apis in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.apigateway.v1.ListApisResponse listApis(
+        com.google.cloud.apigateway.v1.ListApisRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListApisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Api.
+     * </pre>
+     */
+    public com.google.cloud.apigateway.v1.Api getApi(
+        com.google.cloud.apigateway.v1.GetApiRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetApiMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Api in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createApi(
+        com.google.cloud.apigateway.v1.CreateApiRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateApiMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Api.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateApi(
+        com.google.cloud.apigateway.v1.UpdateApiRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateApiMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Api.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteApi(
+        com.google.cloud.apigateway.v1.DeleteApiRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteApiMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ApiConfigs in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.apigateway.v1.ListApiConfigsResponse listApiConfigs(
+        com.google.cloud.apigateway.v1.ListApiConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListApiConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ApiConfig.
+     * </pre>
+     */
+    public com.google.cloud.apigateway.v1.ApiConfig getApiConfig(
+        com.google.cloud.apigateway.v1.GetApiConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetApiConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ApiConfig in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createApiConfig(
+        com.google.cloud.apigateway.v1.CreateApiConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateApiConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single ApiConfig.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateApiConfig(
+        com.google.cloud.apigateway.v1.UpdateApiConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateApiConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ApiConfig.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteApiConfig(
+        com.google.cloud.apigateway.v1.DeleteApiConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteApiConfigMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ApiGatewayService.
    *
    * <pre>
    * The API Gateway Service is the interface for managing API Gateways.

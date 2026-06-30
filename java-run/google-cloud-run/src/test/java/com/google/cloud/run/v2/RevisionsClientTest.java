@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -115,6 +115,7 @@ public class RevisionsClientTest {
             .addAllVolumes(new ArrayList<Volume>())
             .setExecutionEnvironment(ExecutionEnvironment.forNumber(0))
             .setEncryptionKey("encryptionKey-36224036")
+            .setServiceMesh(ServiceMesh.newBuilder().build())
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
             .setEncryptionKeyShutdownDuration(Duration.newBuilder().build())
             .setReconciling(true)
@@ -124,6 +125,9 @@ public class RevisionsClientTest {
             .setSatisfiesPzs(true)
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
+            .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
+            .setCreator("creator1028554796")
             .setEtag("etag3123477")
             .build();
     mockRevisions.addResponse(expectedResponse);
@@ -183,6 +187,7 @@ public class RevisionsClientTest {
             .addAllVolumes(new ArrayList<Volume>())
             .setExecutionEnvironment(ExecutionEnvironment.forNumber(0))
             .setEncryptionKey("encryptionKey-36224036")
+            .setServiceMesh(ServiceMesh.newBuilder().build())
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
             .setEncryptionKeyShutdownDuration(Duration.newBuilder().build())
             .setReconciling(true)
@@ -192,6 +197,9 @@ public class RevisionsClientTest {
             .setSatisfiesPzs(true)
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
+            .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
+            .setCreator("creator1028554796")
             .setEtag("etag3123477")
             .build();
     mockRevisions.addResponse(expectedResponse);
@@ -339,6 +347,7 @@ public class RevisionsClientTest {
             .addAllVolumes(new ArrayList<Volume>())
             .setExecutionEnvironment(ExecutionEnvironment.forNumber(0))
             .setEncryptionKey("encryptionKey-36224036")
+            .setServiceMesh(ServiceMesh.newBuilder().build())
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
             .setEncryptionKeyShutdownDuration(Duration.newBuilder().build())
             .setReconciling(true)
@@ -348,6 +357,9 @@ public class RevisionsClientTest {
             .setSatisfiesPzs(true)
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
+            .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
+            .setCreator("creator1028554796")
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -415,6 +427,7 @@ public class RevisionsClientTest {
             .addAllVolumes(new ArrayList<Volume>())
             .setExecutionEnvironment(ExecutionEnvironment.forNumber(0))
             .setEncryptionKey("encryptionKey-36224036")
+            .setServiceMesh(ServiceMesh.newBuilder().build())
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
             .setEncryptionKeyShutdownDuration(Duration.newBuilder().build())
             .setReconciling(true)
@@ -424,6 +437,9 @@ public class RevisionsClientTest {
             .setSatisfiesPzs(true)
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
+            .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
+            .setCreator("creator1028554796")
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =

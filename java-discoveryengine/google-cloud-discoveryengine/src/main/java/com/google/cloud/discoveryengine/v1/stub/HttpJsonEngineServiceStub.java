@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -319,6 +319,26 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
             typeRegistry,
             ImmutableMap.<String, HttpRule>builder()
                 .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1/{name=projects/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/collections/*/engines/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/dataStores/*/branches/*/operations/*}:cancel")
+                                .build())
+                        .build())
+                .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet("/v1/{name=projects/*/operations/*}")
@@ -381,6 +401,11 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1/{name=projects/*/locations/*/dataStores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/identityMappingStores/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -456,6 +481,11 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/identityMappingStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1/{name=projects/*/locations/*}/operations")
                                 .build())
                         .addAdditionalBindings(
@@ -475,6 +505,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteEngineRequest, Operation> deleteEngineTransportSettings =
         HttpJsonCallSettings.<DeleteEngineRequest, Operation>newBuilder()
@@ -486,6 +517,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateEngineRequest, Engine> updateEngineTransportSettings =
         HttpJsonCallSettings.<UpdateEngineRequest, Engine>newBuilder()
@@ -508,6 +540,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListEnginesRequest, ListEnginesResponse> listEnginesTransportSettings =
         HttpJsonCallSettings.<ListEnginesRequest, ListEnginesResponse>newBuilder()
@@ -519,6 +552,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createEngineCallable =

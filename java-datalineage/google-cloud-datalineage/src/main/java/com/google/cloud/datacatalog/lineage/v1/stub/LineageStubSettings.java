@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import static com.google.cloud.datacatalog.lineage.v1.LineageClient.SearchLinksP
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -41,11 +42,13 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -76,6 +79,8 @@ import com.google.cloud.datacatalog.lineage.v1.ProcessLinks;
 import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest;
 import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventResponse;
 import com.google.cloud.datacatalog.lineage.v1.Run;
+import com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest;
+import com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse;
 import com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest;
 import com.google.cloud.datacatalog.lineage.v1.SearchLinksResponse;
 import com.google.cloud.datacatalog.lineage.v1.UpdateProcessRequest;
@@ -87,9 +92,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -106,7 +111,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of processOpenLineageRunEvent to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of processOpenLineageRunEvent:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -122,12 +129,49 @@ import org.threeten.bp.Duration;
  *             .processOpenLineageRunEventSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * LineageStubSettings lineageSettings = lineageSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for deleteProcess:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * LineageStubSettings.Builder lineageSettingsBuilder = LineageStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * lineageSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class LineageStubSettings extends StubSettings<LineageStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -167,6 +211,9 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
           BatchSearchLinkProcessesResponse,
           BatchSearchLinkProcessesPagedResponse>
       batchSearchLinkProcessesSettings;
+  private final ServerStreamingCallSettings<
+          SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+      searchLineageStreamingSettings;
 
   private static final PagedListDescriptor<ListProcessesRequest, ListProcessesResponse, Process>
       LIST_PROCESSES_PAGE_STR_DESC =
@@ -198,9 +245,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
 
             @Override
             public Iterable<Process> extractResources(ListProcessesResponse payload) {
-              return payload.getProcessesList() == null
-                  ? ImmutableList.<Process>of()
-                  : payload.getProcessesList();
+              return payload.getProcessesList();
             }
           };
 
@@ -234,9 +279,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
 
             @Override
             public Iterable<Run> extractResources(ListRunsResponse payload) {
-              return payload.getRunsList() == null
-                  ? ImmutableList.<Run>of()
-                  : payload.getRunsList();
+              return payload.getRunsList();
             }
           };
 
@@ -274,9 +317,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
 
             @Override
             public Iterable<LineageEvent> extractResources(ListLineageEventsResponse payload) {
-              return payload.getLineageEventsList() == null
-                  ? ImmutableList.<LineageEvent>of()
-                  : payload.getLineageEventsList();
+              return payload.getLineageEventsList();
             }
           };
 
@@ -310,9 +351,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
 
             @Override
             public Iterable<Link> extractResources(SearchLinksResponse payload) {
-              return payload.getLinksList() == null
-                  ? ImmutableList.<Link>of()
-                  : payload.getLinksList();
+              return payload.getLinksList();
             }
           };
 
@@ -355,9 +394,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
             @Override
             public Iterable<ProcessLinks> extractResources(
                 BatchSearchLinkProcessesResponse payload) {
-              return payload.getProcessLinksList() == null
-                  ? ImmutableList.<ProcessLinks>of()
-                  : payload.getProcessLinksList();
+              return payload.getProcessLinksList();
             }
           };
 
@@ -566,6 +603,12 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
     return batchSearchLinkProcessesSettings;
   }
 
+  /** Returns the object with the settings used for calls to searchLineageStreaming. */
+  public ServerStreamingCallSettings<SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+      searchLineageStreamingSettings() {
+    return searchLineageStreamingSettings;
+  }
+
   public LineageStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -582,15 +625,6 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -603,6 +637,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "datalineage.googleapis.com:443";
   }
@@ -703,6 +738,16 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
     deleteLineageEventSettings = settingsBuilder.deleteLineageEventSettings().build();
     searchLinksSettings = settingsBuilder.searchLinksSettings().build();
     batchSearchLinkProcessesSettings = settingsBuilder.batchSearchLinkProcessesSettings().build();
+    searchLineageStreamingSettings = settingsBuilder.searchLineageStreamingSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-datalineage")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for LineageStubSettings. */
@@ -746,6 +791,9 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
             BatchSearchLinkProcessesResponse,
             BatchSearchLinkProcessesPagedResponse>
         batchSearchLinkProcessesSettings;
+    private final ServerStreamingCallSettings.Builder<
+            SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+        searchLineageStreamingSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -765,13 +813,13 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -804,6 +852,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
       searchLinksSettings = PagedCallSettings.newBuilder(SEARCH_LINKS_PAGE_STR_FACT);
       batchSearchLinkProcessesSettings =
           PagedCallSettings.newBuilder(BATCH_SEARCH_LINK_PROCESSES_PAGE_STR_FACT);
+      searchLineageStreamingSettings = ServerStreamingCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -849,6 +898,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
       deleteLineageEventSettings = settings.deleteLineageEventSettings.toBuilder();
       searchLinksSettings = settings.searchLinksSettings.toBuilder();
       batchSearchLinkProcessesSettings = settings.batchSearchLinkProcessesSettings.toBuilder();
+      searchLineageStreamingSettings = settings.searchLineageStreamingSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -982,6 +1032,11 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .searchLineageStreamingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .deleteProcessOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -996,13 +1051,13 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1019,13 +1074,13 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1159,13 +1214,11 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
       return batchSearchLinkProcessesSettings;
     }
 
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
+    /** Returns the builder for the settings used for calls to searchLineageStreaming. */
+    public ServerStreamingCallSettings.Builder<
+            SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+        searchLineageStreamingSettings() {
+      return searchLineageStreamingSettings;
     }
 
     @Override

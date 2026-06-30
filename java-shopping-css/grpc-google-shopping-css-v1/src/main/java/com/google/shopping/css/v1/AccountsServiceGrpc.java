@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing CSS/MC account information.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/css/v1/accounts.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AccountsServiceGrpc {
 
@@ -179,6 +176,19 @@ public final class AccountsServiceGrpc {
           }
         };
     return AccountsServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AccountsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AccountsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AccountsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public AccountsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AccountsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AccountsServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -347,6 +357,69 @@ public final class AccountsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AccountsService.
+   *
+   * <pre>
+   * Service for managing CSS/MC account information.
+   * </pre>
+   */
+  public static final class AccountsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AccountsServiceBlockingV2Stub> {
+    private AccountsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AccountsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AccountsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the accounts under the specified CSS account ID, and
+     * optionally filters by label ID and account name.
+     * </pre>
+     */
+    public com.google.shopping.css.v1.ListChildAccountsResponse listChildAccounts(
+        com.google.shopping.css.v1.ListChildAccountsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListChildAccountsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a single CSS/MC account by ID.
+     * </pre>
+     */
+    public com.google.shopping.css.v1.Account getAccount(
+        com.google.shopping.css.v1.GetAccountRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates labels assigned to CSS/MC accounts by a CSS domain.
+     * </pre>
+     */
+    public com.google.shopping.css.v1.Account updateLabels(
+        com.google.shopping.css.v1.UpdateAccountLabelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateLabelsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AccountsService.
    *
    * <pre>
    * Service for managing CSS/MC account information.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,9 +34,13 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.commerce.consumer.procurement.v1.CancelOrderMetadata;
+import com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest;
 import com.google.cloud.commerce.consumer.procurement.v1.GetOrderRequest;
 import com.google.cloud.commerce.consumer.procurement.v1.ListOrdersRequest;
 import com.google.cloud.commerce.consumer.procurement.v1.ListOrdersResponse;
+import com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderMetadata;
+import com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest;
 import com.google.cloud.commerce.consumer.procurement.v1.Order;
 import com.google.cloud.commerce.consumer.procurement.v1.PlaceOrderMetadata;
 import com.google.cloud.commerce.consumer.procurement.v1.PlaceOrderRequest;
@@ -62,7 +66,9 @@ public class HttpJsonConsumerProcurementServiceStub extends ConsumerProcurementS
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(Order.getDescriptor())
+          .add(CancelOrderMetadata.getDescriptor())
           .add(PlaceOrderMetadata.getDescriptor())
+          .add(ModifyOrderMetadata.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<PlaceOrderRequest, Operation>
@@ -178,12 +184,100 @@ public class HttpJsonConsumerProcurementServiceStub extends ConsumerProcurementS
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ModifyOrderRequest, Operation>
+      modifyOrderMethodDescriptor =
+          ApiMethodDescriptor.<ModifyOrderRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.commerce.consumer.procurement.v1.ConsumerProcurementService/ModifyOrder")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ModifyOrderRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=billingAccounts/*/orders/*}:modify",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ModifyOrderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ModifyOrderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ModifyOrderRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<CancelOrderRequest, Operation>
+      cancelOrderMethodDescriptor =
+          ApiMethodDescriptor.<CancelOrderRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.commerce.consumer.procurement.v1.ConsumerProcurementService/CancelOrder")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CancelOrderRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=billingAccounts/*/orders/*}:cancel",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelOrderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelOrderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CancelOrderRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private final UnaryCallable<PlaceOrderRequest, Operation> placeOrderCallable;
   private final OperationCallable<PlaceOrderRequest, Order, PlaceOrderMetadata>
       placeOrderOperationCallable;
   private final UnaryCallable<GetOrderRequest, Order> getOrderCallable;
   private final UnaryCallable<ListOrdersRequest, ListOrdersResponse> listOrdersCallable;
   private final UnaryCallable<ListOrdersRequest, ListOrdersPagedResponse> listOrdersPagedCallable;
+  private final UnaryCallable<ModifyOrderRequest, Operation> modifyOrderCallable;
+  private final OperationCallable<ModifyOrderRequest, Order, ModifyOrderMetadata>
+      modifyOrderOperationCallable;
+  private final UnaryCallable<CancelOrderRequest, Operation> cancelOrderCallable;
+  private final OperationCallable<CancelOrderRequest, Order, CancelOrderMetadata>
+      cancelOrderOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -253,6 +347,7 @@ public class HttpJsonConsumerProcurementServiceStub extends ConsumerProcurementS
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetOrderRequest, Order> getOrderTransportSettings =
         HttpJsonCallSettings.<GetOrderRequest, Order>newBuilder()
@@ -276,6 +371,28 @@ public class HttpJsonConsumerProcurementServiceStub extends ConsumerProcurementS
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ModifyOrderRequest, Operation> modifyOrderTransportSettings =
+        HttpJsonCallSettings.<ModifyOrderRequest, Operation>newBuilder()
+            .setMethodDescriptor(modifyOrderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CancelOrderRequest, Operation> cancelOrderTransportSettings =
+        HttpJsonCallSettings.<CancelOrderRequest, Operation>newBuilder()
+            .setMethodDescriptor(cancelOrderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.placeOrderCallable =
         callableFactory.createUnaryCallable(
@@ -295,6 +412,24 @@ public class HttpJsonConsumerProcurementServiceStub extends ConsumerProcurementS
     this.listOrdersPagedCallable =
         callableFactory.createPagedCallable(
             listOrdersTransportSettings, settings.listOrdersSettings(), clientContext);
+    this.modifyOrderCallable =
+        callableFactory.createUnaryCallable(
+            modifyOrderTransportSettings, settings.modifyOrderSettings(), clientContext);
+    this.modifyOrderOperationCallable =
+        callableFactory.createOperationCallable(
+            modifyOrderTransportSettings,
+            settings.modifyOrderOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.cancelOrderCallable =
+        callableFactory.createUnaryCallable(
+            cancelOrderTransportSettings, settings.cancelOrderSettings(), clientContext);
+    this.cancelOrderOperationCallable =
+        callableFactory.createOperationCallable(
+            cancelOrderTransportSettings,
+            settings.cancelOrderOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -306,6 +441,8 @@ public class HttpJsonConsumerProcurementServiceStub extends ConsumerProcurementS
     methodDescriptors.add(placeOrderMethodDescriptor);
     methodDescriptors.add(getOrderMethodDescriptor);
     methodDescriptors.add(listOrdersMethodDescriptor);
+    methodDescriptors.add(modifyOrderMethodDescriptor);
+    methodDescriptors.add(cancelOrderMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -337,6 +474,28 @@ public class HttpJsonConsumerProcurementServiceStub extends ConsumerProcurementS
   @Override
   public UnaryCallable<ListOrdersRequest, ListOrdersPagedResponse> listOrdersPagedCallable() {
     return listOrdersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ModifyOrderRequest, Operation> modifyOrderCallable() {
+    return modifyOrderCallable;
+  }
+
+  @Override
+  public OperationCallable<ModifyOrderRequest, Order, ModifyOrderMetadata>
+      modifyOrderOperationCallable() {
+    return modifyOrderOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelOrderRequest, Operation> cancelOrderCallable() {
+    return cancelOrderCallable;
+  }
+
+  @Override
+  public OperationCallable<CancelOrderRequest, Order, CancelOrderMetadata>
+      cancelOrderOperationCallable() {
+    return cancelOrderOperationCallable;
   }
 
   @Override

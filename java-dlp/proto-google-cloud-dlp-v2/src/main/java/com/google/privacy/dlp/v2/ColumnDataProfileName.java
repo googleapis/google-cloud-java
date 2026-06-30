@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -309,7 +309,8 @@ public class ColumnDataProfileName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               columnDataProfileName.pathTemplate, ORGANIZATION_LOCATION_COLUMN_DATA_PROFILE),
-          "toBuilder is only supported when ColumnDataProfileName has the pattern of organizations/{organization}/locations/{location}/columnDataProfiles/{column_data_profile}");
+          "toBuilder is only supported when ColumnDataProfileName has the pattern of"
+              + " organizations/{organization}/locations/{location}/columnDataProfiles/{column_data_profile}");
       this.organization = columnDataProfileName.organization;
       this.location = columnDataProfileName.location;
       this.columnDataProfile = columnDataProfileName.columnDataProfile;

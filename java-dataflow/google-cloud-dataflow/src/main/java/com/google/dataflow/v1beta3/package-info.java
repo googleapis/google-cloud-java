@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,8 @@
  *
  * <p>======================= JobsV1Beta3Client =======================
  *
- * <p>Service Description: Provides a method to create and modify Google Cloud Dataflow jobs. A Job
- * is a multi-stage computation graph run by the Cloud Dataflow service.
+ * <p>Service Description: Provides a method to create and modify Dataflow jobs. A Job is a
+ * multi-stage computation graph run by the Dataflow service.
  *
  * <p>Sample for JobsV1Beta3Client:
  *
@@ -47,7 +47,7 @@
  *
  * <p>======================= MessagesV1Beta3Client =======================
  *
- * <p>Service Description: The Dataflow Messages API is used for monitoring the progress of Dataflow
+ * <p>Service Description: The Dataflow Messages API is used to monitor the progress of Dataflow
  * jobs.
  *
  * <p>Sample for MessagesV1Beta3Client:
@@ -150,7 +150,7 @@
  *
  * <p>======================= FlexTemplatesServiceClient =======================
  *
- * <p>Service Description: Provides a service for Flex templates. This feature is not ready yet.
+ * <p>Service Description: Provides a service for Flex templates.
  *
  * <p>Sample for FlexTemplatesServiceClient:
  *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * set to "allow" if not otherwise specified by the user.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/appengine/v1/appengine.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FirewallGrpc {
 
@@ -326,6 +323,19 @@ public final class FirewallGrpc {
           }
         };
     return FirewallStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static FirewallBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<FirewallBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<FirewallBlockingV2Stub>() {
+          @java.lang.Override
+          public FirewallBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new FirewallBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return FirewallBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -621,6 +631,116 @@ public final class FirewallGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Firewall.
+   *
+   * <pre>
+   * Firewall resources are used to define a collection of access control rules
+   * for an Application. Each rule is defined with a position which specifies
+   * the rule's order in the sequence of rules, an IP range to be matched against
+   * requests, and an action to take upon matching requests.
+   * Every request is evaluated against the Firewall rules in priority order.
+   * Processesing stops at the first rule which matches the request's IP address.
+   * A final rule always specifies an action that applies to all remaining
+   * IP addresses. The default final rule for a newly-created application will be
+   * set to "allow" if not otherwise specified by the user.
+   * </pre>
+   */
+  public static final class FirewallBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<FirewallBlockingV2Stub> {
+    private FirewallBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected FirewallBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new FirewallBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the firewall rules of an application.
+     * </pre>
+     */
+    public com.google.appengine.v1.ListIngressRulesResponse listIngressRules(
+        com.google.appengine.v1.ListIngressRulesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListIngressRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Replaces the entire firewall ruleset in one bulk operation. This overrides
+     * and replaces the rules of an existing firewall with the new rules.
+     * If the final rule does not match traffic with the '*' wildcard IP range,
+     * then an "allow all" rule is explicitly added to the end of the list.
+     * </pre>
+     */
+    public com.google.appengine.v1.BatchUpdateIngressRulesResponse batchUpdateIngressRules(
+        com.google.appengine.v1.BatchUpdateIngressRulesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchUpdateIngressRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a firewall rule for the application.
+     * </pre>
+     */
+    public com.google.appengine.v1.firewall.FirewallRule createIngressRule(
+        com.google.appengine.v1.CreateIngressRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateIngressRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the specified firewall rule.
+     * </pre>
+     */
+    public com.google.appengine.v1.firewall.FirewallRule getIngressRule(
+        com.google.appengine.v1.GetIngressRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetIngressRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified firewall rule.
+     * </pre>
+     */
+    public com.google.appengine.v1.firewall.FirewallRule updateIngressRule(
+        com.google.appengine.v1.UpdateIngressRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateIngressRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified firewall rule.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteIngressRule(
+        com.google.appengine.v1.DeleteIngressRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteIngressRuleMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Firewall.
    *
    * <pre>
    * Firewall resources are used to define a collection of access control rules

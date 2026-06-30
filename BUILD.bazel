@@ -1,0 +1,52 @@
+load("@rules_java//java:defs.bzl", "java_binary", "java_proto_library")
+
+package(default_visibility = ["//visibility:public"])
+
+java_binary(
+    name = "protoc-gen-java_gapic",
+    main_class = "com.google.api.generator.Main",
+    runtime_deps = ["@maven//:com_google_api_gapic_generator_java"],
+)
+
+# Request dumper binary, which dumps the CodeGeneratorRequest to a file on disk
+# which will be identical to the one passed to the protoc-gen-java_gapic during
+# normal execution. The dumped file then can be used to run this gapic-generator
+# directly (instead of relying on protoc to start the process), which would give
+# much greater flexibility in terms of debugging features, like attaching a
+# debugger, easier work with stdout and stderr etc.
+#
+# Usage example, via the rule in a corresponding BUILD.bazel file:
+#
+# load("@gapic_generator_java//rules_java_gapic:java_gapic.bzl", "java_generator_request_dump")
+# java_generator_request_dump(
+#     name = "compute_small_request_dump",
+#     srcs = [":compute_small_proto_with_info"],
+#     transport = "rest",
+# )
+#
+java_binary(
+    name = "protoc-gen-code_generator_request_dumper",
+    main_class = "com.google.api.generator.debug.CodeGeneratorRequestDumper",
+    runtime_deps = ["@maven//:com_google_api_gapic_generator_java"],
+)
+
+# A binary similar to protoc-gen-java_gapic but reads the CodeGeneratorRequest
+# directly from a file instead of relying on protoc to pipe it in.
+#
+# Usage example:
+#
+# bazel run code_generator_request_file_to_gapic_main desc-dump.bin dump.jar
+#
+java_binary(
+    name = "code_generator_request_file_to_gapic_main",
+    main_class = "com.google.api.generator.debug.CodeGeneratorRequestFileToGapicMain",
+    runtime_deps = ["@maven//:com_google_api_gapic_generator_java"],
+)
+
+# google-java-format
+java_binary(
+    name = "google_java_format_binary",
+    jvm_flags = ["-Xmx512m"],
+    main_class = "com.google.googlejavaformat.java.Main",
+    runtime_deps = ["@google_java_format_all_deps//jar"],
+)

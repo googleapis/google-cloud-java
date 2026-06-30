@@ -1,0 +1,13 @@
+proto_library_with_info(
+  # this comment should not indicate an end of a pattern match )
+  deps = [
+    "//google/cloud/location:location_proto",
+  ]
+)
+
+java_gapic_library(
+  # this comment should not indicate an end of a pattern match )
+  deps = [
+    "//google/iam/v1:iam_java_proto"
+  ],
+)

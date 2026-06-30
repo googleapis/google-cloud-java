@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.texttospeech.v1beta1.stub;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -30,12 +31,16 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.texttospeech.v1beta1.ListVoicesRequest;
 import com.google.cloud.texttospeech.v1beta1.ListVoicesResponse;
+import com.google.cloud.texttospeech.v1beta1.StreamingSynthesizeRequest;
+import com.google.cloud.texttospeech.v1beta1.StreamingSynthesizeResponse;
 import com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest;
 import com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse;
 import com.google.common.collect.ImmutableList;
@@ -43,9 +48,9 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -62,7 +67,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of listVoices to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of listVoices:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -79,13 +86,25 @@ import org.threeten.bp.Duration;
  *             .listVoicesSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * TextToSpeechStubSettings textToSpeechSettings = textToSpeechSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -94,6 +113,8 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
   private final UnaryCallSettings<ListVoicesRequest, ListVoicesResponse> listVoicesSettings;
   private final UnaryCallSettings<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechSettings;
+  private final StreamingCallSettings<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+      streamingSynthesizeSettings;
 
   /** Returns the object with the settings used for calls to listVoices. */
   public UnaryCallSettings<ListVoicesRequest, ListVoicesResponse> listVoicesSettings() {
@@ -104,6 +125,12 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
   public UnaryCallSettings<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechSettings() {
     return synthesizeSpeechSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamingSynthesize. */
+  public StreamingCallSettings<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+      streamingSynthesizeSettings() {
+    return streamingSynthesizeSettings;
   }
 
   public TextToSpeechStub createStub() throws IOException {
@@ -122,15 +149,6 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -143,6 +161,7 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "texttospeech.googleapis.com:443";
   }
@@ -227,6 +246,16 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
 
     listVoicesSettings = settingsBuilder.listVoicesSettings().build();
     synthesizeSpeechSettings = settingsBuilder.synthesizeSpeechSettings().build();
+    streamingSynthesizeSettings = settingsBuilder.streamingSynthesizeSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-texttospeech")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for TextToSpeechStubSettings. */
@@ -236,6 +265,9 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
         listVoicesSettings;
     private final UnaryCallSettings.Builder<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
         synthesizeSpeechSettings;
+    private final StreamingCallSettings.Builder<
+            StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+        streamingSynthesizeSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -257,13 +289,13 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(300000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(300000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(300000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(300000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -278,6 +310,7 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
 
       listVoicesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       synthesizeSpeechSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      streamingSynthesizeSettings = StreamingCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -290,6 +323,7 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
 
       listVoicesSettings = settings.listVoicesSettings.toBuilder();
       synthesizeSpeechSettings = settings.synthesizeSpeechSettings.toBuilder();
+      streamingSynthesizeSettings = settings.streamingSynthesizeSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -360,13 +394,10 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
       return synthesizeSpeechSettings;
     }
 
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
+    /** Returns the builder for the settings used for calls to streamingSynthesize. */
+    public StreamingCallSettings.Builder<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+        streamingSynthesizeSettings() {
+      return streamingSynthesizeSettings;
     }
 
     @Override

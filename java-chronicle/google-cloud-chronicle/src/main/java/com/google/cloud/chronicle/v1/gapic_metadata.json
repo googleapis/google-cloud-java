@@ -1,0 +1,333 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.chronicle.v1",
+  "libraryPackage": "com.google.cloud.chronicle.v1",
+  "services": {
+    "BigQueryExportService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BigQueryExportServiceClient",
+          "rpcs": {
+            "GetBigQueryExport": {
+              "methods": ["getBigQueryExport", "getBigQueryExport", "getBigQueryExport", "getBigQueryExportCallable"]
+            },
+            "ProvisionBigQueryExport": {
+              "methods": ["provisionBigQueryExport", "provisionBigQueryExport", "provisionBigQueryExport", "provisionBigQueryExportCallable"]
+            },
+            "UpdateBigQueryExport": {
+              "methods": ["updateBigQueryExport", "updateBigQueryExport", "updateBigQueryExportCallable"]
+            }
+          }
+        }
+      }
+    },
+    "DashboardChartService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DashboardChartServiceClient",
+          "rpcs": {
+            "BatchGetDashboardCharts": {
+              "methods": ["batchGetDashboardCharts", "batchGetDashboardCharts", "batchGetDashboardCharts", "batchGetDashboardChartsCallable"]
+            },
+            "GetDashboardChart": {
+              "methods": ["getDashboardChart", "getDashboardChart", "getDashboardChart", "getDashboardChartCallable"]
+            }
+          }
+        }
+      }
+    },
+    "DashboardQueryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DashboardQueryServiceClient",
+          "rpcs": {
+            "ExecuteDashboardQuery": {
+              "methods": ["executeDashboardQuery", "executeDashboardQuery", "executeDashboardQuery", "executeDashboardQueryCallable"]
+            },
+            "GetDashboardQuery": {
+              "methods": ["getDashboardQuery", "getDashboardQuery", "getDashboardQuery", "getDashboardQueryCallable"]
+            }
+          }
+        }
+      }
+    },
+    "DataAccessControlService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataAccessControlServiceClient",
+          "rpcs": {
+            "CreateDataAccessLabel": {
+              "methods": ["createDataAccessLabel", "createDataAccessLabel", "createDataAccessLabel", "createDataAccessLabelCallable"]
+            },
+            "CreateDataAccessScope": {
+              "methods": ["createDataAccessScope", "createDataAccessScope", "createDataAccessScope", "createDataAccessScopeCallable"]
+            },
+            "DeleteDataAccessLabel": {
+              "methods": ["deleteDataAccessLabel", "deleteDataAccessLabel", "deleteDataAccessLabel", "deleteDataAccessLabelCallable"]
+            },
+            "DeleteDataAccessScope": {
+              "methods": ["deleteDataAccessScope", "deleteDataAccessScope", "deleteDataAccessScope", "deleteDataAccessScopeCallable"]
+            },
+            "GetDataAccessLabel": {
+              "methods": ["getDataAccessLabel", "getDataAccessLabel", "getDataAccessLabel", "getDataAccessLabelCallable"]
+            },
+            "GetDataAccessScope": {
+              "methods": ["getDataAccessScope", "getDataAccessScope", "getDataAccessScope", "getDataAccessScopeCallable"]
+            },
+            "ListDataAccessLabels": {
+              "methods": ["listDataAccessLabels", "listDataAccessLabels", "listDataAccessLabels", "listDataAccessLabelsPagedCallable", "listDataAccessLabelsCallable"]
+            },
+            "ListDataAccessScopes": {
+              "methods": ["listDataAccessScopes", "listDataAccessScopes", "listDataAccessScopes", "listDataAccessScopesPagedCallable", "listDataAccessScopesCallable"]
+            },
+            "UpdateDataAccessLabel": {
+              "methods": ["updateDataAccessLabel", "updateDataAccessLabel", "updateDataAccessLabelCallable"]
+            },
+            "UpdateDataAccessScope": {
+              "methods": ["updateDataAccessScope", "updateDataAccessScope", "updateDataAccessScopeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "DataTableService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataTableServiceClient",
+          "rpcs": {
+            "BulkCreateDataTableRows": {
+              "methods": ["bulkCreateDataTableRows", "bulkCreateDataTableRows", "bulkCreateDataTableRows", "bulkCreateDataTableRowsCallable"]
+            },
+            "BulkGetDataTableRows": {
+              "methods": ["bulkGetDataTableRows", "bulkGetDataTableRows", "bulkGetDataTableRows", "bulkGetDataTableRowsCallable"]
+            },
+            "BulkReplaceDataTableRows": {
+              "methods": ["bulkReplaceDataTableRows", "bulkReplaceDataTableRows", "bulkReplaceDataTableRows", "bulkReplaceDataTableRowsCallable"]
+            },
+            "BulkUpdateDataTableRows": {
+              "methods": ["bulkUpdateDataTableRows", "bulkUpdateDataTableRows", "bulkUpdateDataTableRows", "bulkUpdateDataTableRowsCallable"]
+            },
+            "CreateDataTable": {
+              "methods": ["createDataTable", "createDataTable", "createDataTable", "createDataTableCallable"]
+            },
+            "CreateDataTableRow": {
+              "methods": ["createDataTableRow", "createDataTableRow", "createDataTableRow", "createDataTableRowCallable"]
+            },
+            "DeleteDataTable": {
+              "methods": ["deleteDataTable", "deleteDataTable", "deleteDataTable", "deleteDataTableCallable"]
+            },
+            "DeleteDataTableRow": {
+              "methods": ["deleteDataTableRow", "deleteDataTableRow", "deleteDataTableRow", "deleteDataTableRowCallable"]
+            },
+            "GetDataTable": {
+              "methods": ["getDataTable", "getDataTable", "getDataTable", "getDataTableCallable"]
+            },
+            "GetDataTableOperationErrors": {
+              "methods": ["getDataTableOperationErrors", "getDataTableOperationErrors", "getDataTableOperationErrors", "getDataTableOperationErrorsCallable"]
+            },
+            "GetDataTableRow": {
+              "methods": ["getDataTableRow", "getDataTableRow", "getDataTableRow", "getDataTableRowCallable"]
+            },
+            "ListDataTableRows": {
+              "methods": ["listDataTableRows", "listDataTableRows", "listDataTableRows", "listDataTableRowsPagedCallable", "listDataTableRowsCallable"]
+            },
+            "ListDataTables": {
+              "methods": ["listDataTables", "listDataTables", "listDataTables", "listDataTablesPagedCallable", "listDataTablesCallable"]
+            },
+            "UpdateDataTable": {
+              "methods": ["updateDataTable", "updateDataTable", "updateDataTableCallable"]
+            },
+            "UpdateDataTableRow": {
+              "methods": ["updateDataTableRow", "updateDataTableRow", "updateDataTableRowCallable"]
+            }
+          }
+        }
+      }
+    },
+    "EntityService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EntityServiceClient",
+          "rpcs": {
+            "CreateWatchlist": {
+              "methods": ["createWatchlist", "createWatchlist", "createWatchlist", "createWatchlistCallable"]
+            },
+            "DeleteWatchlist": {
+              "methods": ["deleteWatchlist", "deleteWatchlist", "deleteWatchlist", "deleteWatchlistCallable"]
+            },
+            "GetWatchlist": {
+              "methods": ["getWatchlist", "getWatchlist", "getWatchlist", "getWatchlistCallable"]
+            },
+            "ListWatchlists": {
+              "methods": ["listWatchlists", "listWatchlists", "listWatchlists", "listWatchlistsPagedCallable", "listWatchlistsCallable"]
+            },
+            "UpdateWatchlist": {
+              "methods": ["updateWatchlist", "updateWatchlist", "updateWatchlistCallable"]
+            }
+          }
+        }
+      }
+    },
+    "FeaturedContentNativeDashboardService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FeaturedContentNativeDashboardServiceClient",
+          "rpcs": {
+            "GetFeaturedContentNativeDashboard": {
+              "methods": ["getFeaturedContentNativeDashboard", "getFeaturedContentNativeDashboard", "getFeaturedContentNativeDashboard", "getFeaturedContentNativeDashboardCallable"]
+            },
+            "InstallFeaturedContentNativeDashboard": {
+              "methods": ["installFeaturedContentNativeDashboard", "installFeaturedContentNativeDashboard", "installFeaturedContentNativeDashboard", "installFeaturedContentNativeDashboardCallable"]
+            },
+            "ListFeaturedContentNativeDashboards": {
+              "methods": ["listFeaturedContentNativeDashboards", "listFeaturedContentNativeDashboards", "listFeaturedContentNativeDashboards", "listFeaturedContentNativeDashboardsPagedCallable", "listFeaturedContentNativeDashboardsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "InstanceService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "InstanceServiceClient",
+          "rpcs": {
+            "GetInstance": {
+              "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
+            }
+          }
+        }
+      }
+    },
+    "NativeDashboardService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "NativeDashboardServiceClient",
+          "rpcs": {
+            "AddChart": {
+              "methods": ["addChart", "addChart", "addChart", "addChartCallable"]
+            },
+            "CreateNativeDashboard": {
+              "methods": ["createNativeDashboard", "createNativeDashboard", "createNativeDashboard", "createNativeDashboardCallable"]
+            },
+            "DeleteNativeDashboard": {
+              "methods": ["deleteNativeDashboard", "deleteNativeDashboard", "deleteNativeDashboard", "deleteNativeDashboardCallable"]
+            },
+            "DuplicateChart": {
+              "methods": ["duplicateChart", "duplicateChart", "duplicateChart", "duplicateChartCallable"]
+            },
+            "DuplicateNativeDashboard": {
+              "methods": ["duplicateNativeDashboard", "duplicateNativeDashboard", "duplicateNativeDashboard", "duplicateNativeDashboardCallable"]
+            },
+            "EditChart": {
+              "methods": ["editChart", "editChart", "editChart", "editChartCallable"]
+            },
+            "ExportNativeDashboards": {
+              "methods": ["exportNativeDashboards", "exportNativeDashboards", "exportNativeDashboards", "exportNativeDashboardsCallable"]
+            },
+            "GetNativeDashboard": {
+              "methods": ["getNativeDashboard", "getNativeDashboard", "getNativeDashboard", "getNativeDashboardCallable"]
+            },
+            "ImportNativeDashboards": {
+              "methods": ["importNativeDashboards", "importNativeDashboards", "importNativeDashboards", "importNativeDashboardsCallable"]
+            },
+            "ListNativeDashboards": {
+              "methods": ["listNativeDashboards", "listNativeDashboards", "listNativeDashboards", "listNativeDashboardsPagedCallable", "listNativeDashboardsCallable"]
+            },
+            "RemoveChart": {
+              "methods": ["removeChart", "removeChart", "removeChart", "removeChartCallable"]
+            },
+            "UpdateNativeDashboard": {
+              "methods": ["updateNativeDashboard", "updateNativeDashboard", "updateNativeDashboardCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ReferenceListService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReferenceListServiceClient",
+          "rpcs": {
+            "CreateReferenceList": {
+              "methods": ["createReferenceList", "createReferenceList", "createReferenceList", "createReferenceListCallable"]
+            },
+            "GetReferenceList": {
+              "methods": ["getReferenceList", "getReferenceList", "getReferenceList", "getReferenceListCallable"]
+            },
+            "ListReferenceLists": {
+              "methods": ["listReferenceLists", "listReferenceLists", "listReferenceLists", "listReferenceListsPagedCallable", "listReferenceListsCallable"]
+            },
+            "UpdateReferenceList": {
+              "methods": ["updateReferenceList", "updateReferenceList", "updateReferenceListCallable"]
+            },
+            "VerifyReferenceList": {
+              "methods": ["verifyReferenceList", "verifyReferenceListCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RuleService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RuleServiceClient",
+          "rpcs": {
+            "CreateRetrohunt": {
+              "methods": ["createRetrohuntAsync", "createRetrohuntAsync", "createRetrohuntAsync", "createRetrohuntOperationCallable", "createRetrohuntCallable"]
+            },
+            "CreateRule": {
+              "methods": ["createRule", "createRule", "createRule", "createRuleCallable"]
+            },
+            "DeleteRule": {
+              "methods": ["deleteRule", "deleteRule", "deleteRule", "deleteRuleCallable"]
+            },
+            "GetRetrohunt": {
+              "methods": ["getRetrohunt", "getRetrohunt", "getRetrohunt", "getRetrohuntCallable"]
+            },
+            "GetRule": {
+              "methods": ["getRule", "getRule", "getRule", "getRuleCallable"]
+            },
+            "GetRuleDeployment": {
+              "methods": ["getRuleDeployment", "getRuleDeployment", "getRuleDeployment", "getRuleDeploymentCallable"]
+            },
+            "ListRetrohunts": {
+              "methods": ["listRetrohunts", "listRetrohunts", "listRetrohunts", "listRetrohuntsPagedCallable", "listRetrohuntsCallable"]
+            },
+            "ListRuleDeployments": {
+              "methods": ["listRuleDeployments", "listRuleDeployments", "listRuleDeployments", "listRuleDeploymentsPagedCallable", "listRuleDeploymentsCallable"]
+            },
+            "ListRuleRevisions": {
+              "methods": ["listRuleRevisions", "listRuleRevisions", "listRuleRevisions", "listRuleRevisionsPagedCallable", "listRuleRevisionsCallable"]
+            },
+            "ListRules": {
+              "methods": ["listRules", "listRules", "listRules", "listRulesPagedCallable", "listRulesCallable"]
+            },
+            "UpdateRule": {
+              "methods": ["updateRule", "updateRule", "updateRuleCallable"]
+            },
+            "UpdateRuleDeployment": {
+              "methods": ["updateRuleDeployment", "updateRuleDeployment", "updateRuleDeploymentCallable"]
+            },
+            "VerifyRuleText": {
+              "methods": ["verifyRuleText", "verifyRuleText", "verifyRuleText", "verifyRuleTextCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RuleExecutionErrorService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RuleExecutionErrorServiceClient",
+          "rpcs": {
+            "ListRuleExecutionErrors": {
+              "methods": ["listRuleExecutionErrors", "listRuleExecutionErrors", "listRuleExecutionErrors", "listRuleExecutionErrorsPagedCallable", "listRuleExecutionErrorsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

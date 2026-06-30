@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.batch.v1alpha.CancelJobRequest;
+import com.google.cloud.batch.v1alpha.CancelJobResponse;
 import com.google.cloud.batch.v1alpha.CreateJobRequest;
 import com.google.cloud.batch.v1alpha.CreateResourceAllowanceRequest;
 import com.google.cloud.batch.v1alpha.DeleteJobRequest;
@@ -47,6 +49,7 @@ import com.google.cloud.batch.v1alpha.ListTasksResponse;
 import com.google.cloud.batch.v1alpha.OperationMetadata;
 import com.google.cloud.batch.v1alpha.ResourceAllowance;
 import com.google.cloud.batch.v1alpha.Task;
+import com.google.cloud.batch.v1alpha.UpdateJobRequest;
 import com.google.cloud.batch.v1alpha.UpdateResourceAllowanceRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -76,6 +79,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
           .setFullMethodName("google.cloud.batch.v1alpha.BatchService/CreateJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
@@ -84,6 +88,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
           .setFullMethodName("google.cloud.batch.v1alpha.BatchService/GetJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteJobRequest, Operation> deleteJobMethodDescriptor =
@@ -92,6 +97,25 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
           .setFullMethodName("google.cloud.batch.v1alpha.BatchService/DeleteJob")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<CancelJobRequest, Operation> cancelJobMethodDescriptor =
+      MethodDescriptor.<CancelJobRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.batch.v1alpha.BatchService/CancelJob")
+          .setRequestMarshaller(ProtoUtils.marshaller(CancelJobRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<UpdateJobRequest, Job> updateJobMethodDescriptor =
+      MethodDescriptor.<UpdateJobRequest, Job>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.batch.v1alpha.BatchService/UpdateJob")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateJobRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
@@ -101,6 +125,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
               .setFullMethodName("google.cloud.batch.v1alpha.BatchService/ListJobs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTaskRequest, Task> getTaskMethodDescriptor =
@@ -109,6 +134,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
           .setFullMethodName("google.cloud.batch.v1alpha.BatchService/GetTask")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListTasksRequest, ListTasksResponse>
@@ -118,6 +144,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
               .setFullMethodName("google.cloud.batch.v1alpha.BatchService/ListTasks")
               .setRequestMarshaller(ProtoUtils.marshaller(ListTasksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTasksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateResourceAllowanceRequest, ResourceAllowance>
@@ -128,6 +155,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateResourceAllowanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ResourceAllowance.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetResourceAllowanceRequest, ResourceAllowance>
@@ -138,6 +166,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetResourceAllowanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ResourceAllowance.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteResourceAllowanceRequest, Operation>
@@ -148,6 +177,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteResourceAllowanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -161,6 +191,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                   ProtoUtils.marshaller(ListResourceAllowancesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListResourceAllowancesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateResourceAllowanceRequest, ResourceAllowance>
@@ -171,6 +202,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateResourceAllowanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ResourceAllowance.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -182,6 +214,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -190,6 +223,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateJobRequest, Job> createJobCallable;
@@ -197,6 +231,10 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
   private final UnaryCallable<DeleteJobRequest, Operation> deleteJobCallable;
   private final OperationCallable<DeleteJobRequest, Empty, OperationMetadata>
       deleteJobOperationCallable;
+  private final UnaryCallable<CancelJobRequest, Operation> cancelJobCallable;
+  private final OperationCallable<CancelJobRequest, CancelJobResponse, OperationMetadata>
+      cancelJobOperationCallable;
+  private final UnaryCallable<UpdateJobRequest, Job> updateJobCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable;
   private final UnaryCallable<GetTaskRequest, Task> getTaskCallable;
@@ -272,6 +310,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
         GrpcCallSettings.<GetJobRequest, Job>newBuilder()
@@ -282,6 +321,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteJobRequest, Operation> deleteJobTransportSettings =
         GrpcCallSettings.<DeleteJobRequest, Operation>newBuilder()
@@ -290,6 +330,27 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CancelJobRequest, Operation> cancelJobTransportSettings =
+        GrpcCallSettings.<CancelJobRequest, Operation>newBuilder()
+            .setMethodDescriptor(cancelJobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
+        GrpcCallSettings.<UpdateJobRequest, Job>newBuilder()
+            .setMethodDescriptor(updateJobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job.name", String.valueOf(request.getJob().getName()));
                   return builder.build();
                 })
             .build();
@@ -312,6 +373,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTasksRequest, ListTasksResponse> listTasksTransportSettings =
         GrpcCallSettings.<ListTasksRequest, ListTasksResponse>newBuilder()
@@ -322,6 +384,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateResourceAllowanceRequest, ResourceAllowance>
         createResourceAllowanceTransportSettings =
@@ -333,6 +396,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetResourceAllowanceRequest, ResourceAllowance>
         getResourceAllowanceTransportSettings =
@@ -344,6 +408,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteResourceAllowanceRequest, Operation>
         deleteResourceAllowanceTransportSettings =
@@ -355,6 +420,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListResourceAllowancesRequest, ListResourceAllowancesResponse>
         listResourceAllowancesTransportSettings =
@@ -367,6 +433,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateResourceAllowanceRequest, ResourceAllowance>
         updateResourceAllowanceTransportSettings =
@@ -417,6 +484,18 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
             settings.deleteJobOperationSettings(),
             clientContext,
             operationsStub);
+    this.cancelJobCallable =
+        callableFactory.createUnaryCallable(
+            cancelJobTransportSettings, settings.cancelJobSettings(), clientContext);
+    this.cancelJobOperationCallable =
+        callableFactory.createOperationCallable(
+            cancelJobTransportSettings,
+            settings.cancelJobOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateJobCallable =
+        callableFactory.createUnaryCallable(
+            updateJobTransportSettings, settings.updateJobSettings(), clientContext);
     this.listJobsCallable =
         callableFactory.createUnaryCallable(
             listJobsTransportSettings, settings.listJobsSettings(), clientContext);
@@ -505,6 +584,22 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
   public OperationCallable<DeleteJobRequest, Empty, OperationMetadata>
       deleteJobOperationCallable() {
     return deleteJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelJobRequest, Operation> cancelJobCallable() {
+    return cancelJobCallable;
+  }
+
+  @Override
+  public OperationCallable<CancelJobRequest, CancelJobResponse, OperationMetadata>
+      cancelJobOperationCallable() {
+    return cancelJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
+    return updateJobCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
               .setFullMethodName("google.cloud.scheduler.v1beta1.CloudScheduler/ListJobs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
@@ -73,6 +74,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setFullMethodName("google.cloud.scheduler.v1beta1.CloudScheduler/GetJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateJobRequest, Job> createJobMethodDescriptor =
@@ -81,6 +83,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setFullMethodName("google.cloud.scheduler.v1beta1.CloudScheduler/CreateJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateJobRequest, Job> updateJobMethodDescriptor =
@@ -89,6 +92,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setFullMethodName("google.cloud.scheduler.v1beta1.CloudScheduler/UpdateJob")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteJobRequest, Empty> deleteJobMethodDescriptor =
@@ -97,6 +101,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setFullMethodName("google.cloud.scheduler.v1beta1.CloudScheduler/DeleteJob")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<PauseJobRequest, Job> pauseJobMethodDescriptor =
@@ -105,6 +110,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setFullMethodName("google.cloud.scheduler.v1beta1.CloudScheduler/PauseJob")
           .setRequestMarshaller(ProtoUtils.marshaller(PauseJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ResumeJobRequest, Job> resumeJobMethodDescriptor =
@@ -113,6 +119,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setFullMethodName("google.cloud.scheduler.v1beta1.CloudScheduler/ResumeJob")
           .setRequestMarshaller(ProtoUtils.marshaller(ResumeJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RunJobRequest, Job> runJobMethodDescriptor =
@@ -121,6 +128,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setFullMethodName("google.cloud.scheduler.v1beta1.CloudScheduler/RunJob")
           .setRequestMarshaller(ProtoUtils.marshaller(RunJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -132,6 +140,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -140,6 +149,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable;
@@ -209,6 +219,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
         GrpcCallSettings.<GetJobRequest, Job>newBuilder()
@@ -219,6 +230,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateJobRequest, Job> createJobTransportSettings =
         GrpcCallSettings.<CreateJobRequest, Job>newBuilder()
@@ -229,6 +241,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
         GrpcCallSettings.<UpdateJobRequest, Job>newBuilder()
@@ -249,6 +262,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PauseJobRequest, Job> pauseJobTransportSettings =
         GrpcCallSettings.<PauseJobRequest, Job>newBuilder()
@@ -259,6 +273,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResumeJobRequest, Job> resumeJobTransportSettings =
         GrpcCallSettings.<ResumeJobRequest, Job>newBuilder()
@@ -269,6 +284,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RunJobRequest, Job> runJobTransportSettings =
         GrpcCallSettings.<RunJobRequest, Job>newBuilder()
@@ -279,6 +295,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

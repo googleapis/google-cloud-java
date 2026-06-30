@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,7 +51,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -68,9 +70,46 @@ import javax.annotation.Generated;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * InstanceGroupsSettings instanceGroupsSettings = instanceGroupsSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for addInstances:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * InstanceGroupsSettings.Builder instanceGroupsSettingsBuilder =
+ *     InstanceGroupsSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * instanceGroupsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -159,6 +198,12 @@ public class InstanceGroupsSettings extends ClientSettings<InstanceGroupsSetting
   public OperationCallSettings<SetNamedPortsInstanceGroupRequest, Operation, Operation>
       setNamedPortsOperationSettings() {
     return ((InstanceGroupsStubSettings) getStubSettings()).setNamedPortsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((InstanceGroupsStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final InstanceGroupsSettings create(InstanceGroupsStubSettings stub)
@@ -344,6 +389,13 @@ public class InstanceGroupsSettings extends ClientSettings<InstanceGroupsSetting
     public OperationCallSettings.Builder<SetNamedPortsInstanceGroupRequest, Operation, Operation>
         setNamedPortsOperationSettings() {
       return getStubSettingsBuilder().setNamedPortsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsInstanceGroupRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

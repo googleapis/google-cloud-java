@@ -29,5 +29,5 @@ popd >/dev/null
 # Ensure all SNAPSHOTs are available in the local mvn repository
 pushd "$scriptDir/.." >/dev/null
 source ./.kokoro/common.sh
-install_modules
+install_modules "$1"
 popd >/dev/null

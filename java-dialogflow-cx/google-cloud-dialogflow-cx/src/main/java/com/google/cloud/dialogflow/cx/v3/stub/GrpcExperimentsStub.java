@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
                   ProtoUtils.marshaller(ListExperimentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListExperimentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetExperimentRequest, Experiment>
@@ -74,6 +75,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Experiment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateExperimentRequest, Experiment>
@@ -84,6 +86,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Experiment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateExperimentRequest, Experiment>
@@ -94,6 +97,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Experiment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteExperimentRequest, Empty>
@@ -104,6 +108,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StartExperimentRequest, Experiment>
@@ -114,6 +119,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StartExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Experiment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopExperimentRequest, Experiment>
@@ -124,6 +130,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StopExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Experiment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -135,6 +142,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -143,6 +151,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListExperimentsRequest, ListExperimentsResponse>
@@ -212,6 +221,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetExperimentRequest, Experiment> getExperimentTransportSettings =
         GrpcCallSettings.<GetExperimentRequest, Experiment>newBuilder()
@@ -222,6 +232,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateExperimentRequest, Experiment> createExperimentTransportSettings =
         GrpcCallSettings.<CreateExperimentRequest, Experiment>newBuilder()
@@ -232,6 +243,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateExperimentRequest, Experiment> updateExperimentTransportSettings =
         GrpcCallSettings.<UpdateExperimentRequest, Experiment>newBuilder()
@@ -252,6 +264,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StartExperimentRequest, Experiment> startExperimentTransportSettings =
         GrpcCallSettings.<StartExperimentRequest, Experiment>newBuilder()
@@ -262,6 +275,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StopExperimentRequest, Experiment> stopExperimentTransportSettings =
         GrpcCallSettings.<StopExperimentRequest, Experiment>newBuilder()
@@ -272,6 +286,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

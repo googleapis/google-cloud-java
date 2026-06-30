@@ -1,0 +1,240 @@
+{
+  "group": [
+    {
+      "name": "Fully working conversions, no resources",
+      "rpcs": ["Compliance.RepeatDataBody", "Compliance.RepeatDataBodyPut", "Compliance.RepeatDataBodyPatch", "Compliance.RepeatDataQuery", "Compliance.RepeatDataSimplePath", "Compliance.RepeatDataBodyInfo"],
+      "requests": [
+        {
+          "name": "Basic data types",
+          "serverVerify": true,
+          "info": {
+            "fString": "Hello",
+	    "fInt32": -1,
+	    "fSint32" : -2,
+	    "fSfixed32": -3,
+	    "fUint32": 5,
+	    "fFixed32": 7,
+	    "fInt64": -11,
+	    "fSint64": -13,
+	    "fSfixed64": -17,
+	    "fUint64": 19,
+	    "fFixed64":23,
+	    "fDouble": -29e4,
+	    "fFloat": -31,
+	    "fBool": true,
+	    "fKingdom": "ANIMALIA", 
+
+	    "pString": "Goodbye",
+	    "pInt32": -37,
+	    "pDouble": -41.43,
+	    "pBool": true,
+	    "pKingdom": "PLANTAE",
+
+            "fChild": {
+              "fString": "second/bool/salutation"
+            }
+          },
+	  "fInt32": -10,
+	  "fInt64": -110,
+	  "fDouble": -54e4,
+          
+	  "pInt32": -47,
+          "pInt64": -477,
+	  "pDouble": -61.73
+        },
+        {
+          "name": "Basic types, no optional fields",
+          "serverVerify": true,
+          "info": {
+            "fString": "Hello",
+	    "fInt32": -1,
+	    "fSint32" : -2,
+	    "fSfixed32": -3,
+	    "fUint32": 5,
+	    "fFixed32": 7,
+	    "fInt64": -11,
+	    "fSint64": -13,
+	    "fSfixed64": -17,
+	    "fUint64": 19,
+	    "fFixed64":23,
+	    "fDouble": -29e4,
+	    "fFloat": -31,
+	    "fBool": true,
+	    "fKingdom": "ANIMALIA", 
+
+            "fChild": {
+              "fString": "second/bool/salutation"
+            }
+          }
+        },
+        
+        {
+          "name": "Zero values for non-string fields",
+          "serverVerify": true,
+          "info": {
+            "fString": "Hello",
+	    "fInt32": 0,
+	    "fSint32" : 0,
+	    "fSfixed32": 0,
+	    "fUint32": 0,
+	    "fFixed32": 0,
+	    "fInt64": 0,
+	    "fSint64": 0,
+	    "fSfixed64": 0,
+	    "fUint64": 0,
+	    "fFixed64": 0,
+	    "fDouble": 0,
+	    "fFloat": 0,
+	    "fBool": false,
+	    "fKingdom": "LIFE_KINGDOM_UNSPECIFIED",
+
+	    "pString": "Goodbye",
+	    "pInt32": 0,
+	    "pDouble": 0,
+	    "pBool": false,
+	    "pKingdom": "LIFE_KINGDOM_UNSPECIFIED"
+	  }
+	},
+	{
+	  "name": "Extreme values",
+          "serverVerify": true,
+	  "info": {
+            "fString": "non-ASCII+non-printable string ☺ → ← \"\\\/\b\f\r\t\u1234 works, not newlines yet",
+            "fInt32": 2147483647,
+            "fSint32" : 2147483647,
+            "fSfixed32": 2147483647,
+            "fUint32": 4294967295,
+            "fFixed32": 4294967295,
+            "fInt64": "9223372036854775807",
+            "fSint64": "9223372036854775807",
+            "fSfixed64": "9223372036854775807",
+            "fUint64": "18446744073709551615",
+            "fFixed64": "18446744073709551615",
+            "fDouble": 1.797693134862315708145274237317043567981e+308,
+            "fFloat": 3.40282346638528859811704183484516925440e+38,
+            "fBool": false,
+
+            "pString": "Goodbye",
+            "pInt32": 2147483647,
+            "pDouble": 1.797693134862315708145274237317043567981e+308,
+            "pBool": false
+          }
+        },
+        {
+          "name": "Strings with spaces",
+          "serverVerify": true,
+          "info": {
+            "fString": "Hello there"
+          }
+        },
+        {
+          "name": "Strings with quotes",
+          "serverVerify": true,
+          "info": {
+            "fString": "Hello \"You\""
+          }
+        },
+        {
+          "name": "Strings with percents",
+          "serverVerify": true,
+          "info": {
+            "fString": "Hello 100%"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Fully working conversions, resources",
+      "rpcs": ["Compliance.RepeatDataBody", "Compliance.RepeatDataBodyPut", "Compliance.RepeatDataBodyPatch", "Compliance.RepeatDataQuery"],
+      "requests": [
+        {
+          "name": "Strings with slashes and values that resemble subsequent resource templates",
+          "serverVerify": true,
+          "info": {
+            "fString": "first/hello/second/greetings",
+            "pBool": true,
+
+            "fChild": {
+              "fString": "second/zzz/bool/true"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Binding selection testing",
+      "rpcs": ["Compliance.RepeatDataPathResource"],
+      "requests": [
+        {
+          "name": "Binding testing baseline no Uri verification",
+          "serverVerify": true,
+          "info": {
+            "fString": "first/hello",
+            "pBool": true,
+
+            "fChild": {
+              "fString": "second/greetings"
+            }
+          }
+        },
+        {
+          "name": "Binding testing first binding",
+          "serverVerify": true,
+          "info": {
+            "fString": "first/hello",
+            "pBool": true,
+
+            "fChild": {
+              "fString": "second/greetings"
+            }
+          },
+          "intendedBindingUri": "/v1beta1/repeat/{info.f_string=first/*}/{info.f_child.f_string=second/*}/bool/{info.f_bool}:pathresource"
+        },
+        {
+          "name": "Binding testing additional binding",
+          "serverVerify": true,
+          "info": {
+            "fString": "second/greetings",
+            "pBool": true,
+
+            "fChild": {
+              "fString": "first/hello"
+            }
+          },
+          "intendedBindingUri": "/v1beta1/repeat/{info.f_child.f_string=first/*}/{info.f_string=second/*}/bool/{info.f_bool}:childfirstpathresource"
+        }
+      ]
+    },
+    {
+      "name": "Cases that apply to non-path requests",
+      "rpcs": ["Compliance.RepeatDataBody", "Compliance.RepeatDataBodyPut", "Compliance.RepeatDataBodyPatch", "Compliance.RepeatDataQuery"],
+      "requests": [
+        {
+          "name": "Zero values for all fields",
+          "serverVerify": true,
+          "info": {
+            "fString": "",
+            "fInt32": 0,
+            "fSint32" : 0,
+            "fSfixed32": 0,
+            "fUint32": 0,
+            "fFixed32": 0,
+            "fInt64": 0,
+            "fSint64": 0,
+            "fSfixed64": 0,
+            "fUint64": 0,
+            "fFixed64":20,
+            "fDouble": 0,
+            "fFloat": 0,
+            "fBool": false,
+
+            "pString": "",
+            "pInt32": 0,
+            "pDouble": 0,
+            "pBool": false
+          }
+        }
+      ]
+    }
+  ]
+}

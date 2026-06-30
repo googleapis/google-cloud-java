@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -185,6 +185,29 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
   }
 
   @Override
+  public void fetchStorageInventory(
+      FetchStorageInventoryRequest request,
+      StreamObserver<FetchStorageInventoryResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchStorageInventoryResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchStorageInventoryResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchStorageInventory, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchStorageInventoryResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listUtilizationReports(
       ListUtilizationReportsRequest request,
       StreamObserver<ListUtilizationReportsResponse> responseObserver) {
@@ -199,7 +222,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListUtilizationReports, expected %s or %s",
+                  "Unrecognized response type %s for method ListUtilizationReports, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListUtilizationReportsResponse.class.getName(),
                   Exception.class.getName())));
@@ -220,7 +244,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetUtilizationReport, expected %s or %s",
+                  "Unrecognized response type %s for method GetUtilizationReport, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   UtilizationReport.class.getName(),
                   Exception.class.getName())));
@@ -241,7 +266,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateUtilizationReport, expected %s or %s",
+                  "Unrecognized response type %s for method CreateUtilizationReport, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -262,7 +288,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteUtilizationReport, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteUtilizationReport, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -284,7 +311,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDatacenterConnectors, expected %s or %s",
+                  "Unrecognized response type %s for method ListDatacenterConnectors, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDatacenterConnectorsResponse.class.getName(),
                   Exception.class.getName())));
@@ -305,7 +333,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetDatacenterConnector, expected %s or %s",
+                  "Unrecognized response type %s for method GetDatacenterConnector, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DatacenterConnector.class.getName(),
                   Exception.class.getName())));
@@ -326,7 +355,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateDatacenterConnector, expected %s or %s",
+                  "Unrecognized response type %s for method CreateDatacenterConnector, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -347,7 +377,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteDatacenterConnector, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteDatacenterConnector, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -558,6 +589,27 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method FinalizeMigration, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void extendMigration(
+      ExtendMigrationRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExtendMigration, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -867,7 +919,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RemoveGroupMigration, expected %s or %s",
+                  "Unrecognized response type %s for method RemoveGroupMigration, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -995,7 +1048,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListReplicationCycles, expected %s or %s",
+                  "Unrecognized response type %s for method ListReplicationCycles, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListReplicationCyclesResponse.class.getName(),
                   Exception.class.getName())));
@@ -1019,6 +1073,308 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
                   "Unrecognized response type %s for method GetReplicationCycle, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ReplicationCycle.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listImageImports(
+      ListImageImportsRequest request, StreamObserver<ListImageImportsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListImageImportsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListImageImportsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListImageImports, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListImageImportsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getImageImport(
+      GetImageImportRequest request, StreamObserver<ImageImport> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ImageImport) {
+      requests.add(request);
+      responseObserver.onNext(((ImageImport) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetImageImport, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ImageImport.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createImageImport(
+      CreateImageImportRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateImageImport, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteImageImport(
+      DeleteImageImportRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteImageImport, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listImageImportJobs(
+      ListImageImportJobsRequest request,
+      StreamObserver<ListImageImportJobsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListImageImportJobsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListImageImportJobsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListImageImportJobs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListImageImportJobsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getImageImportJob(
+      GetImageImportJobRequest request, StreamObserver<ImageImportJob> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ImageImportJob) {
+      requests.add(request);
+      responseObserver.onNext(((ImageImportJob) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetImageImportJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ImageImportJob.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void cancelImageImportJob(
+      CancelImageImportJobRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelImageImportJob, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createDiskMigrationJob(
+      CreateDiskMigrationJobRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDiskMigrationJob, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDiskMigrationJobs(
+      ListDiskMigrationJobsRequest request,
+      StreamObserver<ListDiskMigrationJobsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDiskMigrationJobsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDiskMigrationJobsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDiskMigrationJobs, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDiskMigrationJobsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDiskMigrationJob(
+      GetDiskMigrationJobRequest request, StreamObserver<DiskMigrationJob> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DiskMigrationJob) {
+      requests.add(request);
+      responseObserver.onNext(((DiskMigrationJob) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDiskMigrationJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DiskMigrationJob.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateDiskMigrationJob(
+      UpdateDiskMigrationJobRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDiskMigrationJob, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteDiskMigrationJob(
+      DeleteDiskMigrationJobRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDiskMigrationJob, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void runDiskMigrationJob(
+      RunDiskMigrationJobRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RunDiskMigrationJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void cancelDiskMigrationJob(
+      CancelDiskMigrationJobRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelDiskMigrationJob, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

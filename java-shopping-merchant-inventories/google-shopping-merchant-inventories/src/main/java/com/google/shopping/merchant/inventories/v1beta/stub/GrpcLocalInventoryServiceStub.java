@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,7 @@ public class GrpcLocalInventoryServiceStub extends LocalInventoryServiceStub {
                   ProtoUtils.marshaller(ListLocalInventoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocalInventoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InsertLocalInventoryRequest, LocalInventory>
@@ -69,6 +70,7 @@ public class GrpcLocalInventoryServiceStub extends LocalInventoryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InsertLocalInventoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LocalInventory.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteLocalInventoryRequest, Empty>
@@ -80,6 +82,7 @@ public class GrpcLocalInventoryServiceStub extends LocalInventoryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteLocalInventoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListLocalInventoriesRequest, ListLocalInventoriesResponse>
@@ -144,6 +147,7 @@ public class GrpcLocalInventoryServiceStub extends LocalInventoryServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<InsertLocalInventoryRequest, LocalInventory>
         insertLocalInventoryTransportSettings =
@@ -155,6 +159,7 @@ public class GrpcLocalInventoryServiceStub extends LocalInventoryServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteLocalInventoryRequest, Empty> deleteLocalInventoryTransportSettings =
         GrpcCallSettings.<DeleteLocalInventoryRequest, Empty>newBuilder()
@@ -165,6 +170,7 @@ public class GrpcLocalInventoryServiceStub extends LocalInventoryServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listLocalInventoriesCallable =

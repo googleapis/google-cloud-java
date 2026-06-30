@@ -1,0 +1,13 @@
+{
+  "api_shortname": "gax",
+  "name_pretty": "gax",
+  "product_documentation": "https://github.com/googleapis/sdk-platform-java/blob/main/gax-java/README.md",
+  "api_description": "Google API Extensions for Java (GAX Java) is a library which aids in the development of client libraries for server APIs, based on GRPC and Google API conventions.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/gax/latest/overview",
+  "language": "java",
+  "release_level": "stable",
+  "repo": "googleapis/sdk-platform-java",
+  "repo_short": "gax-java",
+  "library_type": "OTHER",
+  "distribution_name": "com.google.api:gax"
+}

@@ -20,7 +20,8 @@ deep-remove-regex:
 - "/java-dataproc/google-.*/src"
 
 deep-preserve-regex:
-- "/java-dataproc/google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v.*/it/ITSystemTest.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v.*/it/ITSystemTest.java"
 
 deep-copy-regex:
 - source: "/google/cloud/dataproc/(v.*)/.*-java/proto-google-.*/src"

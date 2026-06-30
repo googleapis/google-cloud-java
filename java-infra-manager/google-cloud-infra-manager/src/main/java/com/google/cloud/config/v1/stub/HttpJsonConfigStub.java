@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,13 @@
 
 package com.google.cloud.config.v1.stub;
 
+import static com.google.cloud.config.v1.ConfigClient.ListDeploymentGroupRevisionsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListDeploymentGroupsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceChangesPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceDriftsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
@@ -39,27 +43,46 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.config.v1.AutoMigrationConfig;
+import com.google.cloud.config.v1.CreateDeploymentGroupRequest;
 import com.google.cloud.config.v1.CreateDeploymentRequest;
 import com.google.cloud.config.v1.CreatePreviewRequest;
+import com.google.cloud.config.v1.DeleteDeploymentGroupRequest;
 import com.google.cloud.config.v1.DeleteDeploymentRequest;
 import com.google.cloud.config.v1.DeletePreviewRequest;
 import com.google.cloud.config.v1.DeleteStatefileRequest;
 import com.google.cloud.config.v1.Deployment;
+import com.google.cloud.config.v1.DeploymentGroup;
+import com.google.cloud.config.v1.DeploymentGroupRevision;
+import com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest;
 import com.google.cloud.config.v1.ExportDeploymentStatefileRequest;
 import com.google.cloud.config.v1.ExportLockInfoRequest;
 import com.google.cloud.config.v1.ExportPreviewResultRequest;
 import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
+import com.google.cloud.config.v1.GetAutoMigrationConfigRequest;
+import com.google.cloud.config.v1.GetDeploymentGroupRequest;
+import com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
 import com.google.cloud.config.v1.GetPreviewRequest;
+import com.google.cloud.config.v1.GetResourceChangeRequest;
+import com.google.cloud.config.v1.GetResourceDriftRequest;
 import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
 import com.google.cloud.config.v1.GetTerraformVersionRequest;
 import com.google.cloud.config.v1.ImportStatefileRequest;
+import com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest;
+import com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse;
+import com.google.cloud.config.v1.ListDeploymentGroupsRequest;
+import com.google.cloud.config.v1.ListDeploymentGroupsResponse;
 import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
 import com.google.cloud.config.v1.ListPreviewsRequest;
 import com.google.cloud.config.v1.ListPreviewsResponse;
+import com.google.cloud.config.v1.ListResourceChangesRequest;
+import com.google.cloud.config.v1.ListResourceChangesResponse;
+import com.google.cloud.config.v1.ListResourceDriftsRequest;
+import com.google.cloud.config.v1.ListResourceDriftsResponse;
 import com.google.cloud.config.v1.ListResourcesRequest;
 import com.google.cloud.config.v1.ListResourcesResponse;
 import com.google.cloud.config.v1.ListRevisionsRequest;
@@ -70,11 +93,16 @@ import com.google.cloud.config.v1.LockDeploymentRequest;
 import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
 import com.google.cloud.config.v1.Preview;
+import com.google.cloud.config.v1.ProvisionDeploymentGroupRequest;
 import com.google.cloud.config.v1.Resource;
+import com.google.cloud.config.v1.ResourceChange;
+import com.google.cloud.config.v1.ResourceDrift;
 import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
 import com.google.cloud.config.v1.TerraformVersion;
 import com.google.cloud.config.v1.UnlockDeploymentRequest;
+import com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest;
+import com.google.cloud.config.v1.UpdateDeploymentGroupRequest;
 import com.google.cloud.config.v1.UpdateDeploymentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -108,6 +136,8 @@ public class HttpJsonConfigStub extends ConfigStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(Deployment.getDescriptor())
+          .add(AutoMigrationConfig.getDescriptor())
+          .add(DeploymentGroup.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(Preview.getDescriptor())
           .build();
@@ -979,6 +1009,591 @@ public class HttpJsonConfigStub extends ConfigStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ListResourceChangesRequest, ListResourceChangesResponse>
+      listResourceChangesMethodDescriptor =
+          ApiMethodDescriptor.<ListResourceChangesRequest, ListResourceChangesResponse>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/ListResourceChanges")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListResourceChangesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/previews/*}/resourceChanges",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListResourceChangesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListResourceChangesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListResourceChangesResponse>newBuilder()
+                      .setDefaultInstance(ListResourceChangesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetResourceChangeRequest, ResourceChange>
+      getResourceChangeMethodDescriptor =
+          ApiMethodDescriptor.<GetResourceChangeRequest, ResourceChange>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/GetResourceChange")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetResourceChangeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/previews/*/resourceChanges/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetResourceChangeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetResourceChangeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ResourceChange>newBuilder()
+                      .setDefaultInstance(ResourceChange.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListResourceDriftsRequest, ListResourceDriftsResponse>
+      listResourceDriftsMethodDescriptor =
+          ApiMethodDescriptor.<ListResourceDriftsRequest, ListResourceDriftsResponse>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/ListResourceDrifts")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListResourceDriftsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/previews/*}/resourceDrifts",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListResourceDriftsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListResourceDriftsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListResourceDriftsResponse>newBuilder()
+                      .setDefaultInstance(ListResourceDriftsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetResourceDriftRequest, ResourceDrift>
+      getResourceDriftMethodDescriptor =
+          ApiMethodDescriptor.<GetResourceDriftRequest, ResourceDrift>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/GetResourceDrift")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetResourceDriftRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/previews/*/resourceDrifts/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetResourceDriftRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetResourceDriftRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ResourceDrift>newBuilder()
+                      .setDefaultInstance(ResourceDrift.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+      getAutoMigrationConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetAutoMigrationConfigRequest, AutoMigrationConfig>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/GetAutoMigrationConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAutoMigrationConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/autoMigrationConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAutoMigrationConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAutoMigrationConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AutoMigrationConfig>newBuilder()
+                      .setDefaultInstance(AutoMigrationConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAutoMigrationConfigRequest, Operation>
+      updateAutoMigrationConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAutoMigrationConfigRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/UpdateAutoMigrationConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAutoMigrationConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{autoMigrationConfig.name=projects/*/locations/*/autoMigrationConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAutoMigrationConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "autoMigrationConfig.name",
+                                request.getAutoMigrationConfig().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAutoMigrationConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "autoMigrationConfig",
+                                      request.getAutoMigrationConfig(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateAutoMigrationConfigRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetDeploymentGroupRequest, DeploymentGroup>
+      getDeploymentGroupMethodDescriptor =
+          ApiMethodDescriptor.<GetDeploymentGroupRequest, DeploymentGroup>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/GetDeploymentGroup")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetDeploymentGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deploymentGroups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDeploymentGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDeploymentGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DeploymentGroup>newBuilder()
+                      .setDefaultInstance(DeploymentGroup.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateDeploymentGroupRequest, Operation>
+      createDeploymentGroupMethodDescriptor =
+          ApiMethodDescriptor.<CreateDeploymentGroupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/CreateDeploymentGroup")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateDeploymentGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/deploymentGroups",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDeploymentGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDeploymentGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "deploymentGroupId", request.getDeploymentGroupId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("deploymentGroup", request.getDeploymentGroup(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateDeploymentGroupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateDeploymentGroupRequest, Operation>
+      updateDeploymentGroupMethodDescriptor =
+          ApiMethodDescriptor.<UpdateDeploymentGroupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/UpdateDeploymentGroup")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateDeploymentGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{deploymentGroup.name=projects/*/locations/*/deploymentGroups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDeploymentGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "deploymentGroup.name",
+                                request.getDeploymentGroup().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDeploymentGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("deploymentGroup", request.getDeploymentGroup(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateDeploymentGroupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteDeploymentGroupRequest, Operation>
+      deleteDeploymentGroupMethodDescriptor =
+          ApiMethodDescriptor.<DeleteDeploymentGroupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/DeleteDeploymentGroup")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteDeploymentGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deploymentGroups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDeploymentGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDeploymentGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "deploymentReferencePolicy",
+                                request.getDeploymentReferencePolicyValue());
+                            serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteDeploymentGroupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListDeploymentGroupsRequest, ListDeploymentGroupsResponse>
+      listDeploymentGroupsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/ListDeploymentGroups")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDeploymentGroupsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/deploymentGroups",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDeploymentGroupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDeploymentGroupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDeploymentGroupsResponse>newBuilder()
+                      .setDefaultInstance(ListDeploymentGroupsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ProvisionDeploymentGroupRequest, Operation>
+      provisionDeploymentGroupMethodDescriptor =
+          ApiMethodDescriptor.<ProvisionDeploymentGroupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/ProvisionDeploymentGroup")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ProvisionDeploymentGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deploymentGroups/*}:provision",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ProvisionDeploymentGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ProvisionDeploymentGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ProvisionDeploymentGroupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeprovisionDeploymentGroupRequest, Operation>
+      deprovisionDeploymentGroupMethodDescriptor =
+          ApiMethodDescriptor.<DeprovisionDeploymentGroupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/DeprovisionDeploymentGroup")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeprovisionDeploymentGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deploymentGroups/*}:deprovision",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeprovisionDeploymentGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeprovisionDeploymentGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeprovisionDeploymentGroupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>
+      getDeploymentGroupRevisionMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/GetDeploymentGroupRevision")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetDeploymentGroupRevisionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deploymentGroups/*/revisions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDeploymentGroupRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDeploymentGroupRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DeploymentGroupRevision>newBuilder()
+                      .setDefaultInstance(DeploymentGroupRevision.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsResponse>
+      listDeploymentGroupRevisionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsResponse>
+                  newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/ListDeploymentGroupRevisions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDeploymentGroupRevisionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/deploymentGroups/*}/revisions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDeploymentGroupRevisionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDeploymentGroupRevisionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDeploymentGroupRevisionsResponse>newBuilder()
+                      .setDefaultInstance(ListDeploymentGroupRevisionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1208,6 +1823,59 @@ public class HttpJsonConfigStub extends ConfigStub {
       listTerraformVersionsPagedCallable;
   private final UnaryCallable<GetTerraformVersionRequest, TerraformVersion>
       getTerraformVersionCallable;
+  private final UnaryCallable<ListResourceChangesRequest, ListResourceChangesResponse>
+      listResourceChangesCallable;
+  private final UnaryCallable<ListResourceChangesRequest, ListResourceChangesPagedResponse>
+      listResourceChangesPagedCallable;
+  private final UnaryCallable<GetResourceChangeRequest, ResourceChange> getResourceChangeCallable;
+  private final UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsResponse>
+      listResourceDriftsCallable;
+  private final UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsPagedResponse>
+      listResourceDriftsPagedCallable;
+  private final UnaryCallable<GetResourceDriftRequest, ResourceDrift> getResourceDriftCallable;
+  private final UnaryCallable<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+      getAutoMigrationConfigCallable;
+  private final UnaryCallable<UpdateAutoMigrationConfigRequest, Operation>
+      updateAutoMigrationConfigCallable;
+  private final OperationCallable<
+          UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+      updateAutoMigrationConfigOperationCallable;
+  private final UnaryCallable<GetDeploymentGroupRequest, DeploymentGroup>
+      getDeploymentGroupCallable;
+  private final UnaryCallable<CreateDeploymentGroupRequest, Operation>
+      createDeploymentGroupCallable;
+  private final OperationCallable<CreateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      createDeploymentGroupOperationCallable;
+  private final UnaryCallable<UpdateDeploymentGroupRequest, Operation>
+      updateDeploymentGroupCallable;
+  private final OperationCallable<UpdateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      updateDeploymentGroupOperationCallable;
+  private final UnaryCallable<DeleteDeploymentGroupRequest, Operation>
+      deleteDeploymentGroupCallable;
+  private final OperationCallable<DeleteDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deleteDeploymentGroupOperationCallable;
+  private final UnaryCallable<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse>
+      listDeploymentGroupsCallable;
+  private final UnaryCallable<ListDeploymentGroupsRequest, ListDeploymentGroupsPagedResponse>
+      listDeploymentGroupsPagedCallable;
+  private final UnaryCallable<ProvisionDeploymentGroupRequest, Operation>
+      provisionDeploymentGroupCallable;
+  private final OperationCallable<
+          ProvisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      provisionDeploymentGroupOperationCallable;
+  private final UnaryCallable<DeprovisionDeploymentGroupRequest, Operation>
+      deprovisionDeploymentGroupCallable;
+  private final OperationCallable<
+          DeprovisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deprovisionDeploymentGroupOperationCallable;
+  private final UnaryCallable<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>
+      getDeploymentGroupRevisionCallable;
+  private final UnaryCallable<
+          ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsResponse>
+      listDeploymentGroupRevisionsCallable;
+  private final UnaryCallable<
+          ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsPagedResponse>
+      listDeploymentGroupRevisionsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1295,6 +1963,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDeploymentRequest, Deployment> getDeploymentTransportSettings =
         HttpJsonCallSettings.<GetDeploymentRequest, Deployment>newBuilder()
@@ -1306,6 +1975,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDeploymentRequest, Operation> createDeploymentTransportSettings =
         HttpJsonCallSettings.<CreateDeploymentRequest, Operation>newBuilder()
@@ -1317,6 +1987,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateDeploymentRequest, Operation> updateDeploymentTransportSettings =
         HttpJsonCallSettings.<UpdateDeploymentRequest, Operation>newBuilder()
@@ -1339,6 +2010,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRevisionsRequest, ListRevisionsResponse>
         listRevisionsTransportSettings =
@@ -1351,6 +2023,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRevisionRequest, Revision> getRevisionTransportSettings =
         HttpJsonCallSettings.<GetRevisionRequest, Revision>newBuilder()
@@ -1362,6 +2035,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetResourceRequest, Resource> getResourceTransportSettings =
         HttpJsonCallSettings.<GetResourceRequest, Resource>newBuilder()
@@ -1373,6 +2047,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListResourcesRequest, ListResourcesResponse>
         listResourcesTransportSettings =
@@ -1385,6 +2060,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ExportDeploymentStatefileRequest, Statefile>
         exportDeploymentStatefileTransportSettings =
@@ -1397,6 +2073,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ExportRevisionStatefileRequest, Statefile>
         exportRevisionStatefileTransportSettings =
@@ -1409,6 +2086,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ImportStatefileRequest, Statefile> importStatefileTransportSettings =
         HttpJsonCallSettings.<ImportStatefileRequest, Statefile>newBuilder()
@@ -1420,6 +2098,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteStatefileRequest, Empty> deleteStatefileTransportSettings =
         HttpJsonCallSettings.<DeleteStatefileRequest, Empty>newBuilder()
@@ -1431,6 +2110,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<LockDeploymentRequest, Operation> lockDeploymentTransportSettings =
         HttpJsonCallSettings.<LockDeploymentRequest, Operation>newBuilder()
@@ -1442,6 +2122,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UnlockDeploymentRequest, Operation> unlockDeploymentTransportSettings =
         HttpJsonCallSettings.<UnlockDeploymentRequest, Operation>newBuilder()
@@ -1453,6 +2134,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExportLockInfoRequest, LockInfo> exportLockInfoTransportSettings =
         HttpJsonCallSettings.<ExportLockInfoRequest, LockInfo>newBuilder()
@@ -1464,6 +2146,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreatePreviewRequest, Operation> createPreviewTransportSettings =
         HttpJsonCallSettings.<CreatePreviewRequest, Operation>newBuilder()
@@ -1475,6 +2158,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetPreviewRequest, Preview> getPreviewTransportSettings =
         HttpJsonCallSettings.<GetPreviewRequest, Preview>newBuilder()
@@ -1486,6 +2170,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListPreviewsRequest, ListPreviewsResponse> listPreviewsTransportSettings =
         HttpJsonCallSettings.<ListPreviewsRequest, ListPreviewsResponse>newBuilder()
@@ -1497,6 +2182,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeletePreviewRequest, Operation> deletePreviewTransportSettings =
         HttpJsonCallSettings.<DeletePreviewRequest, Operation>newBuilder()
@@ -1508,6 +2194,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExportPreviewResultRequest, ExportPreviewResultResponse>
         exportPreviewResultTransportSettings =
@@ -1521,6 +2208,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListTerraformVersionsRequest, ListTerraformVersionsResponse>
         listTerraformVersionsTransportSettings =
@@ -1534,6 +2222,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetTerraformVersionRequest, TerraformVersion>
         getTerraformVersionTransportSettings =
@@ -1546,6 +2235,208 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListResourceChangesRequest, ListResourceChangesResponse>
+        listResourceChangesTransportSettings =
+            HttpJsonCallSettings
+                .<ListResourceChangesRequest, ListResourceChangesResponse>newBuilder()
+                .setMethodDescriptor(listResourceChangesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetResourceChangeRequest, ResourceChange>
+        getResourceChangeTransportSettings =
+            HttpJsonCallSettings.<GetResourceChangeRequest, ResourceChange>newBuilder()
+                .setMethodDescriptor(getResourceChangeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListResourceDriftsRequest, ListResourceDriftsResponse>
+        listResourceDriftsTransportSettings =
+            HttpJsonCallSettings.<ListResourceDriftsRequest, ListResourceDriftsResponse>newBuilder()
+                .setMethodDescriptor(listResourceDriftsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetResourceDriftRequest, ResourceDrift> getResourceDriftTransportSettings =
+        HttpJsonCallSettings.<GetResourceDriftRequest, ResourceDrift>newBuilder()
+            .setMethodDescriptor(getResourceDriftMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+        getAutoMigrationConfigTransportSettings =
+            HttpJsonCallSettings.<GetAutoMigrationConfigRequest, AutoMigrationConfig>newBuilder()
+                .setMethodDescriptor(getAutoMigrationConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<UpdateAutoMigrationConfigRequest, Operation>
+        updateAutoMigrationConfigTransportSettings =
+            HttpJsonCallSettings.<UpdateAutoMigrationConfigRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateAutoMigrationConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "auto_migration_config.name",
+                          String.valueOf(request.getAutoMigrationConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetDeploymentGroupRequest, DeploymentGroup>
+        getDeploymentGroupTransportSettings =
+            HttpJsonCallSettings.<GetDeploymentGroupRequest, DeploymentGroup>newBuilder()
+                .setMethodDescriptor(getDeploymentGroupMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<CreateDeploymentGroupRequest, Operation>
+        createDeploymentGroupTransportSettings =
+            HttpJsonCallSettings.<CreateDeploymentGroupRequest, Operation>newBuilder()
+                .setMethodDescriptor(createDeploymentGroupMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<UpdateDeploymentGroupRequest, Operation>
+        updateDeploymentGroupTransportSettings =
+            HttpJsonCallSettings.<UpdateDeploymentGroupRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateDeploymentGroupMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "deployment_group.name",
+                          String.valueOf(request.getDeploymentGroup().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteDeploymentGroupRequest, Operation>
+        deleteDeploymentGroupTransportSettings =
+            HttpJsonCallSettings.<DeleteDeploymentGroupRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteDeploymentGroupMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse>
+        listDeploymentGroupsTransportSettings =
+            HttpJsonCallSettings
+                .<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse>newBuilder()
+                .setMethodDescriptor(listDeploymentGroupsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<ProvisionDeploymentGroupRequest, Operation>
+        provisionDeploymentGroupTransportSettings =
+            HttpJsonCallSettings.<ProvisionDeploymentGroupRequest, Operation>newBuilder()
+                .setMethodDescriptor(provisionDeploymentGroupMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<DeprovisionDeploymentGroupRequest, Operation>
+        deprovisionDeploymentGroupTransportSettings =
+            HttpJsonCallSettings.<DeprovisionDeploymentGroupRequest, Operation>newBuilder()
+                .setMethodDescriptor(deprovisionDeploymentGroupMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>
+        getDeploymentGroupRevisionTransportSettings =
+            HttpJsonCallSettings
+                .<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>newBuilder()
+                .setMethodDescriptor(getDeploymentGroupRevisionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsResponse>
+        listDeploymentGroupRevisionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listDeploymentGroupRevisionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -1580,6 +2471,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1591,6 +2483,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1603,6 +2496,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listDeploymentsCallable =
@@ -1743,6 +2637,135 @@ public class HttpJsonConfigStub extends ConfigStub {
             getTerraformVersionTransportSettings,
             settings.getTerraformVersionSettings(),
             clientContext);
+    this.listResourceChangesCallable =
+        callableFactory.createUnaryCallable(
+            listResourceChangesTransportSettings,
+            settings.listResourceChangesSettings(),
+            clientContext);
+    this.listResourceChangesPagedCallable =
+        callableFactory.createPagedCallable(
+            listResourceChangesTransportSettings,
+            settings.listResourceChangesSettings(),
+            clientContext);
+    this.getResourceChangeCallable =
+        callableFactory.createUnaryCallable(
+            getResourceChangeTransportSettings,
+            settings.getResourceChangeSettings(),
+            clientContext);
+    this.listResourceDriftsCallable =
+        callableFactory.createUnaryCallable(
+            listResourceDriftsTransportSettings,
+            settings.listResourceDriftsSettings(),
+            clientContext);
+    this.listResourceDriftsPagedCallable =
+        callableFactory.createPagedCallable(
+            listResourceDriftsTransportSettings,
+            settings.listResourceDriftsSettings(),
+            clientContext);
+    this.getResourceDriftCallable =
+        callableFactory.createUnaryCallable(
+            getResourceDriftTransportSettings, settings.getResourceDriftSettings(), clientContext);
+    this.getAutoMigrationConfigCallable =
+        callableFactory.createUnaryCallable(
+            getAutoMigrationConfigTransportSettings,
+            settings.getAutoMigrationConfigSettings(),
+            clientContext);
+    this.updateAutoMigrationConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateAutoMigrationConfigTransportSettings,
+            settings.updateAutoMigrationConfigSettings(),
+            clientContext);
+    this.updateAutoMigrationConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAutoMigrationConfigTransportSettings,
+            settings.updateAutoMigrationConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getDeploymentGroupCallable =
+        callableFactory.createUnaryCallable(
+            getDeploymentGroupTransportSettings,
+            settings.getDeploymentGroupSettings(),
+            clientContext);
+    this.createDeploymentGroupCallable =
+        callableFactory.createUnaryCallable(
+            createDeploymentGroupTransportSettings,
+            settings.createDeploymentGroupSettings(),
+            clientContext);
+    this.createDeploymentGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            createDeploymentGroupTransportSettings,
+            settings.createDeploymentGroupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateDeploymentGroupCallable =
+        callableFactory.createUnaryCallable(
+            updateDeploymentGroupTransportSettings,
+            settings.updateDeploymentGroupSettings(),
+            clientContext);
+    this.updateDeploymentGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDeploymentGroupTransportSettings,
+            settings.updateDeploymentGroupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteDeploymentGroupCallable =
+        callableFactory.createUnaryCallable(
+            deleteDeploymentGroupTransportSettings,
+            settings.deleteDeploymentGroupSettings(),
+            clientContext);
+    this.deleteDeploymentGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDeploymentGroupTransportSettings,
+            settings.deleteDeploymentGroupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listDeploymentGroupsCallable =
+        callableFactory.createUnaryCallable(
+            listDeploymentGroupsTransportSettings,
+            settings.listDeploymentGroupsSettings(),
+            clientContext);
+    this.listDeploymentGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDeploymentGroupsTransportSettings,
+            settings.listDeploymentGroupsSettings(),
+            clientContext);
+    this.provisionDeploymentGroupCallable =
+        callableFactory.createUnaryCallable(
+            provisionDeploymentGroupTransportSettings,
+            settings.provisionDeploymentGroupSettings(),
+            clientContext);
+    this.provisionDeploymentGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            provisionDeploymentGroupTransportSettings,
+            settings.provisionDeploymentGroupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deprovisionDeploymentGroupCallable =
+        callableFactory.createUnaryCallable(
+            deprovisionDeploymentGroupTransportSettings,
+            settings.deprovisionDeploymentGroupSettings(),
+            clientContext);
+    this.deprovisionDeploymentGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            deprovisionDeploymentGroupTransportSettings,
+            settings.deprovisionDeploymentGroupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getDeploymentGroupRevisionCallable =
+        callableFactory.createUnaryCallable(
+            getDeploymentGroupRevisionTransportSettings,
+            settings.getDeploymentGroupRevisionSettings(),
+            clientContext);
+    this.listDeploymentGroupRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listDeploymentGroupRevisionsTransportSettings,
+            settings.listDeploymentGroupRevisionsSettings(),
+            clientContext);
+    this.listDeploymentGroupRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDeploymentGroupRevisionsTransportSettings,
+            settings.listDeploymentGroupRevisionsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1794,6 +2817,21 @@ public class HttpJsonConfigStub extends ConfigStub {
     methodDescriptors.add(exportPreviewResultMethodDescriptor);
     methodDescriptors.add(listTerraformVersionsMethodDescriptor);
     methodDescriptors.add(getTerraformVersionMethodDescriptor);
+    methodDescriptors.add(listResourceChangesMethodDescriptor);
+    methodDescriptors.add(getResourceChangeMethodDescriptor);
+    methodDescriptors.add(listResourceDriftsMethodDescriptor);
+    methodDescriptors.add(getResourceDriftMethodDescriptor);
+    methodDescriptors.add(getAutoMigrationConfigMethodDescriptor);
+    methodDescriptors.add(updateAutoMigrationConfigMethodDescriptor);
+    methodDescriptors.add(getDeploymentGroupMethodDescriptor);
+    methodDescriptors.add(createDeploymentGroupMethodDescriptor);
+    methodDescriptors.add(updateDeploymentGroupMethodDescriptor);
+    methodDescriptors.add(deleteDeploymentGroupMethodDescriptor);
+    methodDescriptors.add(listDeploymentGroupsMethodDescriptor);
+    methodDescriptors.add(provisionDeploymentGroupMethodDescriptor);
+    methodDescriptors.add(deprovisionDeploymentGroupMethodDescriptor);
+    methodDescriptors.add(getDeploymentGroupRevisionMethodDescriptor);
+    methodDescriptors.add(listDeploymentGroupRevisionsMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -1994,6 +3032,151 @@ public class HttpJsonConfigStub extends ConfigStub {
   @Override
   public UnaryCallable<GetTerraformVersionRequest, TerraformVersion> getTerraformVersionCallable() {
     return getTerraformVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceChangesRequest, ListResourceChangesResponse>
+      listResourceChangesCallable() {
+    return listResourceChangesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceChangesRequest, ListResourceChangesPagedResponse>
+      listResourceChangesPagedCallable() {
+    return listResourceChangesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetResourceChangeRequest, ResourceChange> getResourceChangeCallable() {
+    return getResourceChangeCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsResponse>
+      listResourceDriftsCallable() {
+    return listResourceDriftsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsPagedResponse>
+      listResourceDriftsPagedCallable() {
+    return listResourceDriftsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetResourceDriftRequest, ResourceDrift> getResourceDriftCallable() {
+    return getResourceDriftCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+      getAutoMigrationConfigCallable() {
+    return getAutoMigrationConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAutoMigrationConfigRequest, Operation>
+      updateAutoMigrationConfigCallable() {
+    return updateAutoMigrationConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+      updateAutoMigrationConfigOperationCallable() {
+    return updateAutoMigrationConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDeploymentGroupRequest, DeploymentGroup> getDeploymentGroupCallable() {
+    return getDeploymentGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDeploymentGroupRequest, Operation> createDeploymentGroupCallable() {
+    return createDeploymentGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      createDeploymentGroupOperationCallable() {
+    return createDeploymentGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDeploymentGroupRequest, Operation> updateDeploymentGroupCallable() {
+    return updateDeploymentGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      updateDeploymentGroupOperationCallable() {
+    return updateDeploymentGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDeploymentGroupRequest, Operation> deleteDeploymentGroupCallable() {
+    return deleteDeploymentGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deleteDeploymentGroupOperationCallable() {
+    return deleteDeploymentGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse>
+      listDeploymentGroupsCallable() {
+    return listDeploymentGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDeploymentGroupsRequest, ListDeploymentGroupsPagedResponse>
+      listDeploymentGroupsPagedCallable() {
+    return listDeploymentGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ProvisionDeploymentGroupRequest, Operation>
+      provisionDeploymentGroupCallable() {
+    return provisionDeploymentGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<ProvisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      provisionDeploymentGroupOperationCallable() {
+    return provisionDeploymentGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeprovisionDeploymentGroupRequest, Operation>
+      deprovisionDeploymentGroupCallable() {
+    return deprovisionDeploymentGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<DeprovisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deprovisionDeploymentGroupOperationCallable() {
+    return deprovisionDeploymentGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>
+      getDeploymentGroupRevisionCallable() {
+    return getDeploymentGroupRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsResponse>
+      listDeploymentGroupRevisionsCallable() {
+    return listDeploymentGroupRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsPagedResponse>
+      listDeploymentGroupRevisionsPagedCallable() {
+    return listDeploymentGroupRevisionsPagedCallable;
   }
 
   @Override

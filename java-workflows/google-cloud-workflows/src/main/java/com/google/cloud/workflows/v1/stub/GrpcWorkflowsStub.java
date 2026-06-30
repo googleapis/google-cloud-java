@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.workflows.v1.stub;
 
 import static com.google.cloud.workflows.v1.WorkflowsClient.ListLocationsPagedResponse;
+import static com.google.cloud.workflows.v1.WorkflowsClient.ListWorkflowRevisionsPagedResponse;
 import static com.google.cloud.workflows.v1.WorkflowsClient.ListWorkflowsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -34,6 +35,8 @@ import com.google.cloud.location.Location;
 import com.google.cloud.workflows.v1.CreateWorkflowRequest;
 import com.google.cloud.workflows.v1.DeleteWorkflowRequest;
 import com.google.cloud.workflows.v1.GetWorkflowRequest;
+import com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest;
+import com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse;
 import com.google.cloud.workflows.v1.ListWorkflowsRequest;
 import com.google.cloud.workflows.v1.ListWorkflowsResponse;
 import com.google.cloud.workflows.v1.OperationMetadata;
@@ -65,6 +68,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   ProtoUtils.marshaller(ListWorkflowsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkflowsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWorkflowRequest, Workflow> getWorkflowMethodDescriptor =
@@ -73,6 +77,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
           .setFullMethodName("google.cloud.workflows.v1.Workflows/GetWorkflow")
           .setRequestMarshaller(ProtoUtils.marshaller(GetWorkflowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Workflow.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateWorkflowRequest, Operation>
@@ -83,6 +88,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWorkflowRequest, Operation>
@@ -93,6 +99,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateWorkflowRequest, Operation>
@@ -103,6 +110,19 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse>
+      listWorkflowRevisionsMethodDescriptor =
+          MethodDescriptor.<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.workflows.v1.Workflows/ListWorkflowRevisions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListWorkflowRevisionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListWorkflowRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -114,6 +134,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -122,6 +143,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsCallable;
@@ -137,6 +159,10 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
   private final UnaryCallable<UpdateWorkflowRequest, Operation> updateWorkflowCallable;
   private final OperationCallable<UpdateWorkflowRequest, Workflow, OperationMetadata>
       updateWorkflowOperationCallable;
+  private final UnaryCallable<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse>
+      listWorkflowRevisionsCallable;
+  private final UnaryCallable<ListWorkflowRevisionsRequest, ListWorkflowRevisionsPagedResponse>
+      listWorkflowRevisionsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -192,6 +218,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetWorkflowRequest, Workflow> getWorkflowTransportSettings =
         GrpcCallSettings.<GetWorkflowRequest, Workflow>newBuilder()
@@ -202,6 +229,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateWorkflowRequest, Operation> createWorkflowTransportSettings =
         GrpcCallSettings.<CreateWorkflowRequest, Operation>newBuilder()
@@ -212,6 +240,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteWorkflowRequest, Operation> deleteWorkflowTransportSettings =
         GrpcCallSettings.<DeleteWorkflowRequest, Operation>newBuilder()
@@ -222,6 +251,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateWorkflowRequest, Operation> updateWorkflowTransportSettings =
         GrpcCallSettings.<UpdateWorkflowRequest, Operation>newBuilder()
@@ -233,6 +263,19 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse>
+        listWorkflowRevisionsTransportSettings =
+            GrpcCallSettings
+                .<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse>newBuilder()
+                .setMethodDescriptor(listWorkflowRevisionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -290,6 +333,16 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
             settings.updateWorkflowOperationSettings(),
             clientContext,
             operationsStub);
+    this.listWorkflowRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listWorkflowRevisionsTransportSettings,
+            settings.listWorkflowRevisionsSettings(),
+            clientContext);
+    this.listWorkflowRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listWorkflowRevisionsTransportSettings,
+            settings.listWorkflowRevisionsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -355,6 +408,18 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
   public OperationCallable<UpdateWorkflowRequest, Workflow, OperationMetadata>
       updateWorkflowOperationCallable() {
     return updateWorkflowOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse>
+      listWorkflowRevisionsCallable() {
+    return listWorkflowRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWorkflowRevisionsRequest, ListWorkflowRevisionsPagedResponse>
+      listWorkflowRevisionsPagedCallable() {
+    return listWorkflowRevisionsPagedCallable;
   }
 
   @Override

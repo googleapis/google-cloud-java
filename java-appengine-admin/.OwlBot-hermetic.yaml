@@ -19,6 +19,9 @@ deep-remove-regex:
 - "/java-appengine-admin/google-.*/src"
 - "/java-appengine-admin/samples/snippets/generated"
 
+deep-preserve-regex:
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+
 deep-copy-regex:
 - source: "/google/appengine/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-appengine-admin/$1/proto-google-cloud-appengine-admin-$1/src"

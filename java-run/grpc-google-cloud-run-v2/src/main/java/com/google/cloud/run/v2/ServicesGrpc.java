@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Cloud Run Service Control Plane API
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/run/v2/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ServicesGrpc {
 
@@ -371,6 +368,19 @@ public final class ServicesGrpc {
     return ServicesStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ServicesBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ServicesBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ServicesBlockingV2Stub>() {
+          @java.lang.Override
+          public ServicesBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ServicesBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ServicesBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -439,7 +449,7 @@ public final class ServicesGrpc {
      *
      *
      * <pre>
-     * Lists Services.
+     * Lists Services. Results are sorted by creation time, descending.
      * </pre>
      */
     default void listServices(
@@ -593,7 +603,7 @@ public final class ServicesGrpc {
      *
      *
      * <pre>
-     * Lists Services.
+     * Lists Services. Results are sorted by creation time, descending.
      * </pre>
      */
     public void listServices(
@@ -700,6 +710,135 @@ public final class ServicesGrpc {
    * Cloud Run Service Control Plane API
    * </pre>
    */
+  public static final class ServicesBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ServicesBlockingV2Stub> {
+    private ServicesBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ServicesBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ServicesBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Service in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createService(
+        com.google.cloud.run.v2.CreateServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a Service.
+     * </pre>
+     */
+    public com.google.cloud.run.v2.Service getService(
+        com.google.cloud.run.v2.GetServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Services. Results are sorted by creation time, descending.
+     * </pre>
+     */
+    public com.google.cloud.run.v2.ListServicesResponse listServices(
+        com.google.cloud.run.v2.ListServicesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Service.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateService(
+        com.google.cloud.run.v2.UpdateServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Service.
+     * This will cause the Service to stop serving traffic and will delete all
+     * revisions.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteService(
+        com.google.cloud.run.v2.DeleteServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM Access Control policy currently in effect for the given
+     * Cloud Run Service. This result does not include any inherited policies.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM Access control policy for the specified Service. Overwrites
+     * any existing policy.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that a caller has on the specified Project.
+     * There are no permissions required for making this API call.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Services.
+   *
+   * <pre>
+   * Cloud Run Service Control Plane API
+   * </pre>
+   */
   public static final class ServicesBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<ServicesBlockingStub> {
     private ServicesBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -741,7 +880,7 @@ public final class ServicesGrpc {
      *
      *
      * <pre>
-     * Lists Services.
+     * Lists Services. Results are sorted by creation time, descending.
      * </pre>
      */
     public com.google.cloud.run.v2.ListServicesResponse listServices(
@@ -867,7 +1006,7 @@ public final class ServicesGrpc {
      *
      *
      * <pre>
-     * Lists Services.
+     * Lists Services. Results are sorted by creation time, descending.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

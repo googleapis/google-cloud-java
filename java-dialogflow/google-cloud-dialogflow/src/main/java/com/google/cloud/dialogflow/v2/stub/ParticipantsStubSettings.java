@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import static com.google.cloud.dialogflow.v2.ParticipantsClient.ListParticipants
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -35,6 +36,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -58,6 +60,8 @@ import com.google.cloud.dialogflow.v2.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse;
+import com.google.cloud.dialogflow.v2.SuggestKnowledgeAssistRequest;
+import com.google.cloud.dialogflow.v2.SuggestKnowledgeAssistResponse;
 import com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest;
 import com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse;
 import com.google.cloud.dialogflow.v2.UpdateParticipantRequest;
@@ -70,9 +74,9 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -89,7 +93,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createParticipant to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createParticipant:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -106,12 +112,24 @@ import org.threeten.bp.Duration;
  *             .createParticipantSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ParticipantsStubSettings participantsSettings = participantsSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -137,6 +155,8 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       suggestFaqAnswersSettings;
   private final UnaryCallSettings<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
       suggestSmartRepliesSettings;
+  private final UnaryCallSettings<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -176,9 +196,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
 
             @Override
             public Iterable<Participant> extractResources(ListParticipantsResponse payload) {
-              return payload.getParticipantsList() == null
-                  ? ImmutableList.<Participant>of()
-                  : payload.getParticipantsList();
+              return payload.getParticipantsList();
             }
           };
 
@@ -212,9 +230,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -305,6 +321,12 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     return suggestSmartRepliesSettings;
   }
 
+  /** Returns the object with the settings used for calls to suggestKnowledgeAssist. */
+  public UnaryCallSettings<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistSettings() {
+    return suggestKnowledgeAssistSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -332,15 +354,6 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -353,6 +366,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "dialogflow.googleapis.com:443";
   }
@@ -444,8 +458,18 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     suggestArticlesSettings = settingsBuilder.suggestArticlesSettings().build();
     suggestFaqAnswersSettings = settingsBuilder.suggestFaqAnswersSettings().build();
     suggestSmartRepliesSettings = settingsBuilder.suggestSmartRepliesSettings().build();
+    suggestKnowledgeAssistSettings = settingsBuilder.suggestKnowledgeAssistSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-dialogflow")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for ParticipantsStubSettings. */
@@ -471,6 +495,9 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
         suggestFaqAnswersSettings;
     private final UnaryCallSettings.Builder<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
         suggestSmartRepliesSettings;
+    private final UnaryCallSettings.Builder<
+            SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+        suggestKnowledgeAssistSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -499,32 +526,32 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(220000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(220000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(220000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(220000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(220000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(220000L))
               .build();
       definitions.put("no_retry_2_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -546,6 +573,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       suggestArticlesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       suggestFaqAnswersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       suggestSmartRepliesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      suggestKnowledgeAssistSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -559,6 +587,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
               suggestArticlesSettings,
               suggestFaqAnswersSettings,
               suggestSmartRepliesSettings,
+              suggestKnowledgeAssistSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -576,6 +605,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       suggestArticlesSettings = settings.suggestArticlesSettings.toBuilder();
       suggestFaqAnswersSettings = settings.suggestFaqAnswersSettings.toBuilder();
       suggestSmartRepliesSettings = settings.suggestSmartRepliesSettings.toBuilder();
+      suggestKnowledgeAssistSettings = settings.suggestKnowledgeAssistSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -589,6 +619,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
               suggestArticlesSettings,
               suggestFaqAnswersSettings,
               suggestSmartRepliesSettings,
+              suggestKnowledgeAssistSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -655,6 +686,11 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
 
       builder
           .suggestSmartRepliesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .suggestKnowledgeAssistSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -741,6 +777,12 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       return suggestSmartRepliesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to suggestKnowledgeAssist. */
+    public UnaryCallSettings.Builder<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+        suggestKnowledgeAssistSettings() {
+      return suggestKnowledgeAssistSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listLocations. */
     public PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -751,15 +793,6 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getLocationSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

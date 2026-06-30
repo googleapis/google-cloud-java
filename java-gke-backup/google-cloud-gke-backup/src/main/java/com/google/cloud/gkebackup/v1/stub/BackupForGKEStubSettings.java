@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,13 @@
 
 package com.google.cloud.gkebackup.v1.stub;
 
+import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupChannelsPagedResponse;
+import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupPlanBindingsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListLocationsPagedResponse;
+import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestoreChannelsPagedResponse;
+import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestorePlanBindingsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestorePlansPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestoresPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListVolumeBackupsPagedResponse;
@@ -27,6 +31,7 @@ import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListVolumeRestore
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -43,6 +48,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -54,27 +60,45 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkebackup.v1.Backup;
+import com.google.cloud.gkebackup.v1.BackupChannel;
 import com.google.cloud.gkebackup.v1.BackupPlan;
+import com.google.cloud.gkebackup.v1.BackupPlanBinding;
+import com.google.cloud.gkebackup.v1.CreateBackupChannelRequest;
 import com.google.cloud.gkebackup.v1.CreateBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.CreateBackupRequest;
+import com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest;
 import com.google.cloud.gkebackup.v1.CreateRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.CreateRestoreRequest;
+import com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest;
 import com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.DeleteBackupRequest;
+import com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest;
 import com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.DeleteRestoreRequest;
+import com.google.cloud.gkebackup.v1.GetBackupChannelRequest;
 import com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest;
 import com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse;
+import com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest;
 import com.google.cloud.gkebackup.v1.GetBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.GetBackupRequest;
+import com.google.cloud.gkebackup.v1.GetRestoreChannelRequest;
+import com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest;
 import com.google.cloud.gkebackup.v1.GetRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.GetRestoreRequest;
 import com.google.cloud.gkebackup.v1.GetVolumeBackupRequest;
 import com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest;
+import com.google.cloud.gkebackup.v1.ListBackupChannelsRequest;
+import com.google.cloud.gkebackup.v1.ListBackupChannelsResponse;
+import com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest;
+import com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse;
 import com.google.cloud.gkebackup.v1.ListBackupPlansRequest;
 import com.google.cloud.gkebackup.v1.ListBackupPlansResponse;
 import com.google.cloud.gkebackup.v1.ListBackupsRequest;
 import com.google.cloud.gkebackup.v1.ListBackupsResponse;
+import com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest;
+import com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse;
+import com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest;
+import com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse;
 import com.google.cloud.gkebackup.v1.ListRestorePlansRequest;
 import com.google.cloud.gkebackup.v1.ListRestorePlansResponse;
 import com.google.cloud.gkebackup.v1.ListRestoresRequest;
@@ -85,9 +109,13 @@ import com.google.cloud.gkebackup.v1.ListVolumeRestoresRequest;
 import com.google.cloud.gkebackup.v1.ListVolumeRestoresResponse;
 import com.google.cloud.gkebackup.v1.OperationMetadata;
 import com.google.cloud.gkebackup.v1.Restore;
+import com.google.cloud.gkebackup.v1.RestoreChannel;
 import com.google.cloud.gkebackup.v1.RestorePlan;
+import com.google.cloud.gkebackup.v1.RestorePlanBinding;
+import com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest;
 import com.google.cloud.gkebackup.v1.UpdateBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.UpdateBackupRequest;
+import com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest;
 import com.google.cloud.gkebackup.v1.UpdateRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.UpdateRestoreRequest;
 import com.google.cloud.gkebackup.v1.VolumeBackup;
@@ -108,9 +136,9 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -127,7 +155,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getBackupPlan to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getBackupPlan:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -144,12 +174,50 @@ import org.threeten.bp.Duration;
  *             .getBackupPlanSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * BackupForGKEStubSettings backupForGKESettings = backupForGKESettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createBackupPlan:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * BackupForGKEStubSettings.Builder backupForGKESettingsBuilder =
+ *     BackupForGKEStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * backupForGKESettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -168,6 +236,29 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
   private final UnaryCallSettings<DeleteBackupPlanRequest, Operation> deleteBackupPlanSettings;
   private final OperationCallSettings<DeleteBackupPlanRequest, Empty, OperationMetadata>
       deleteBackupPlanOperationSettings;
+  private final UnaryCallSettings<CreateBackupChannelRequest, Operation>
+      createBackupChannelSettings;
+  private final OperationCallSettings<CreateBackupChannelRequest, BackupChannel, OperationMetadata>
+      createBackupChannelOperationSettings;
+  private final PagedCallSettings<
+          ListBackupChannelsRequest, ListBackupChannelsResponse, ListBackupChannelsPagedResponse>
+      listBackupChannelsSettings;
+  private final UnaryCallSettings<GetBackupChannelRequest, BackupChannel> getBackupChannelSettings;
+  private final UnaryCallSettings<UpdateBackupChannelRequest, Operation>
+      updateBackupChannelSettings;
+  private final OperationCallSettings<UpdateBackupChannelRequest, BackupChannel, OperationMetadata>
+      updateBackupChannelOperationSettings;
+  private final UnaryCallSettings<DeleteBackupChannelRequest, Operation>
+      deleteBackupChannelSettings;
+  private final OperationCallSettings<DeleteBackupChannelRequest, Empty, OperationMetadata>
+      deleteBackupChannelOperationSettings;
+  private final PagedCallSettings<
+          ListBackupPlanBindingsRequest,
+          ListBackupPlanBindingsResponse,
+          ListBackupPlanBindingsPagedResponse>
+      listBackupPlanBindingsSettings;
+  private final UnaryCallSettings<GetBackupPlanBindingRequest, BackupPlanBinding>
+      getBackupPlanBindingSettings;
   private final UnaryCallSettings<CreateBackupRequest, Operation> createBackupSettings;
   private final OperationCallSettings<CreateBackupRequest, Backup, OperationMetadata>
       createBackupOperationSettings;
@@ -197,6 +288,32 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
   private final UnaryCallSettings<DeleteRestorePlanRequest, Operation> deleteRestorePlanSettings;
   private final OperationCallSettings<DeleteRestorePlanRequest, Empty, OperationMetadata>
       deleteRestorePlanOperationSettings;
+  private final UnaryCallSettings<CreateRestoreChannelRequest, Operation>
+      createRestoreChannelSettings;
+  private final OperationCallSettings<
+          CreateRestoreChannelRequest, RestoreChannel, OperationMetadata>
+      createRestoreChannelOperationSettings;
+  private final PagedCallSettings<
+          ListRestoreChannelsRequest, ListRestoreChannelsResponse, ListRestoreChannelsPagedResponse>
+      listRestoreChannelsSettings;
+  private final UnaryCallSettings<GetRestoreChannelRequest, RestoreChannel>
+      getRestoreChannelSettings;
+  private final UnaryCallSettings<UpdateRestoreChannelRequest, Operation>
+      updateRestoreChannelSettings;
+  private final OperationCallSettings<
+          UpdateRestoreChannelRequest, RestoreChannel, OperationMetadata>
+      updateRestoreChannelOperationSettings;
+  private final UnaryCallSettings<DeleteRestoreChannelRequest, Operation>
+      deleteRestoreChannelSettings;
+  private final OperationCallSettings<DeleteRestoreChannelRequest, Empty, OperationMetadata>
+      deleteRestoreChannelOperationSettings;
+  private final PagedCallSettings<
+          ListRestorePlanBindingsRequest,
+          ListRestorePlanBindingsResponse,
+          ListRestorePlanBindingsPagedResponse>
+      listRestorePlanBindingsSettings;
+  private final UnaryCallSettings<GetRestorePlanBindingRequest, RestorePlanBinding>
+      getRestorePlanBindingSettings;
   private final UnaryCallSettings<CreateRestoreRequest, Operation> createRestoreSettings;
   private final OperationCallSettings<CreateRestoreRequest, Restore, OperationMetadata>
       createRestoreOperationSettings;
@@ -259,9 +376,86 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
 
             @Override
             public Iterable<BackupPlan> extractResources(ListBackupPlansResponse payload) {
-              return payload.getBackupPlansList() == null
-                  ? ImmutableList.<BackupPlan>of()
-                  : payload.getBackupPlansList();
+              return payload.getBackupPlansList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBackupChannelsRequest, ListBackupChannelsResponse, BackupChannel>
+      LIST_BACKUP_CHANNELS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBackupChannelsRequest, ListBackupChannelsResponse, BackupChannel>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupChannelsRequest injectToken(
+                ListBackupChannelsRequest payload, String token) {
+              return ListBackupChannelsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupChannelsRequest injectPageSize(
+                ListBackupChannelsRequest payload, int pageSize) {
+              return ListBackupChannelsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupChannelsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupChannelsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackupChannel> extractResources(ListBackupChannelsResponse payload) {
+              return payload.getBackupChannelsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse, BackupPlanBinding>
+      LIST_BACKUP_PLAN_BINDINGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse, BackupPlanBinding>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupPlanBindingsRequest injectToken(
+                ListBackupPlanBindingsRequest payload, String token) {
+              return ListBackupPlanBindingsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupPlanBindingsRequest injectPageSize(
+                ListBackupPlanBindingsRequest payload, int pageSize) {
+              return ListBackupPlanBindingsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupPlanBindingsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupPlanBindingsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackupPlanBinding> extractResources(
+                ListBackupPlanBindingsResponse payload) {
+              return payload.getBackupPlanBindingsList();
             }
           };
 
@@ -295,9 +489,7 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
 
             @Override
             public Iterable<Backup> extractResources(ListBackupsResponse payload) {
-              return payload.getBackupsList() == null
-                  ? ImmutableList.<Backup>of()
-                  : payload.getBackupsList();
+              return payload.getBackupsList();
             }
           };
 
@@ -335,9 +527,7 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
 
             @Override
             public Iterable<VolumeBackup> extractResources(ListVolumeBackupsResponse payload) {
-              return payload.getVolumeBackupsList() == null
-                  ? ImmutableList.<VolumeBackup>of()
-                  : payload.getVolumeBackupsList();
+              return payload.getVolumeBackupsList();
             }
           };
 
@@ -375,9 +565,88 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
 
             @Override
             public Iterable<RestorePlan> extractResources(ListRestorePlansResponse payload) {
-              return payload.getRestorePlansList() == null
-                  ? ImmutableList.<RestorePlan>of()
-                  : payload.getRestorePlansList();
+              return payload.getRestorePlansList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListRestoreChannelsRequest, ListRestoreChannelsResponse, RestoreChannel>
+      LIST_RESTORE_CHANNELS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListRestoreChannelsRequest, ListRestoreChannelsResponse, RestoreChannel>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRestoreChannelsRequest injectToken(
+                ListRestoreChannelsRequest payload, String token) {
+              return ListRestoreChannelsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListRestoreChannelsRequest injectPageSize(
+                ListRestoreChannelsRequest payload, int pageSize) {
+              return ListRestoreChannelsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRestoreChannelsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListRestoreChannelsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<RestoreChannel> extractResources(ListRestoreChannelsResponse payload) {
+              return payload.getRestoreChannelsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse, RestorePlanBinding>
+      LIST_RESTORE_PLAN_BINDINGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListRestorePlanBindingsRequest,
+              ListRestorePlanBindingsResponse,
+              RestorePlanBinding>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRestorePlanBindingsRequest injectToken(
+                ListRestorePlanBindingsRequest payload, String token) {
+              return ListRestorePlanBindingsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListRestorePlanBindingsRequest injectPageSize(
+                ListRestorePlanBindingsRequest payload, int pageSize) {
+              return ListRestorePlanBindingsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRestorePlanBindingsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListRestorePlanBindingsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<RestorePlanBinding> extractResources(
+                ListRestorePlanBindingsResponse payload) {
+              return payload.getRestorePlanBindingsList();
             }
           };
 
@@ -411,9 +680,7 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
 
             @Override
             public Iterable<Restore> extractResources(ListRestoresResponse payload) {
-              return payload.getRestoresList() == null
-                  ? ImmutableList.<Restore>of()
-                  : payload.getRestoresList();
+              return payload.getRestoresList();
             }
           };
 
@@ -451,9 +718,7 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
 
             @Override
             public Iterable<VolumeRestore> extractResources(ListVolumeRestoresResponse payload) {
-              return payload.getVolumeRestoresList() == null
-                  ? ImmutableList.<VolumeRestore>of()
-                  : payload.getVolumeRestoresList();
+              return payload.getVolumeRestoresList();
             }
           };
 
@@ -487,9 +752,7 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -507,6 +770,54 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
               PageContext<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan> pageContext =
                   PageContext.create(callable, LIST_BACKUP_PLANS_PAGE_STR_DESC, request, context);
               return ListBackupPlansPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupChannelsRequest, ListBackupChannelsResponse, ListBackupChannelsPagedResponse>
+      LIST_BACKUP_CHANNELS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupChannelsRequest,
+              ListBackupChannelsResponse,
+              ListBackupChannelsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupChannelsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupChannelsRequest, ListBackupChannelsResponse> callable,
+                ListBackupChannelsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupChannelsResponse> futureResponse) {
+              PageContext<ListBackupChannelsRequest, ListBackupChannelsResponse, BackupChannel>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_BACKUP_CHANNELS_PAGE_STR_DESC, request, context);
+              return ListBackupChannelsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupPlanBindingsRequest,
+          ListBackupPlanBindingsResponse,
+          ListBackupPlanBindingsPagedResponse>
+      LIST_BACKUP_PLAN_BINDINGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupPlanBindingsRequest,
+              ListBackupPlanBindingsResponse,
+              ListBackupPlanBindingsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupPlanBindingsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse>
+                    callable,
+                ListBackupPlanBindingsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupPlanBindingsResponse> futureResponse) {
+              PageContext<
+                      ListBackupPlanBindingsRequest,
+                      ListBackupPlanBindingsResponse,
+                      BackupPlanBinding>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_BACKUP_PLAN_BINDINGS_PAGE_STR_DESC, request, context);
+              return ListBackupPlanBindingsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -564,6 +875,54 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
                       PageContext.create(
                           callable, LIST_RESTORE_PLANS_PAGE_STR_DESC, request, context);
               return ListRestorePlansPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRestoreChannelsRequest, ListRestoreChannelsResponse, ListRestoreChannelsPagedResponse>
+      LIST_RESTORE_CHANNELS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRestoreChannelsRequest,
+              ListRestoreChannelsResponse,
+              ListRestoreChannelsPagedResponse>() {
+            @Override
+            public ApiFuture<ListRestoreChannelsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListRestoreChannelsRequest, ListRestoreChannelsResponse> callable,
+                ListRestoreChannelsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListRestoreChannelsResponse> futureResponse) {
+              PageContext<ListRestoreChannelsRequest, ListRestoreChannelsResponse, RestoreChannel>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_RESTORE_CHANNELS_PAGE_STR_DESC, request, context);
+              return ListRestoreChannelsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRestorePlanBindingsRequest,
+          ListRestorePlanBindingsResponse,
+          ListRestorePlanBindingsPagedResponse>
+      LIST_RESTORE_PLAN_BINDINGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRestorePlanBindingsRequest,
+              ListRestorePlanBindingsResponse,
+              ListRestorePlanBindingsPagedResponse>() {
+            @Override
+            public ApiFuture<ListRestorePlanBindingsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse>
+                    callable,
+                ListRestorePlanBindingsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListRestorePlanBindingsResponse> futureResponse) {
+              PageContext<
+                      ListRestorePlanBindingsRequest,
+                      ListRestorePlanBindingsResponse,
+                      RestorePlanBinding>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_RESTORE_PLAN_BINDINGS_PAGE_STR_DESC, request, context);
+              return ListRestorePlanBindingsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -667,6 +1026,66 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     return deleteBackupPlanOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to createBackupChannel. */
+  public UnaryCallSettings<CreateBackupChannelRequest, Operation> createBackupChannelSettings() {
+    return createBackupChannelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackupChannel. */
+  public OperationCallSettings<CreateBackupChannelRequest, BackupChannel, OperationMetadata>
+      createBackupChannelOperationSettings() {
+    return createBackupChannelOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackupChannels. */
+  public PagedCallSettings<
+          ListBackupChannelsRequest, ListBackupChannelsResponse, ListBackupChannelsPagedResponse>
+      listBackupChannelsSettings() {
+    return listBackupChannelsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackupChannel. */
+  public UnaryCallSettings<GetBackupChannelRequest, BackupChannel> getBackupChannelSettings() {
+    return getBackupChannelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupChannel. */
+  public UnaryCallSettings<UpdateBackupChannelRequest, Operation> updateBackupChannelSettings() {
+    return updateBackupChannelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupChannel. */
+  public OperationCallSettings<UpdateBackupChannelRequest, BackupChannel, OperationMetadata>
+      updateBackupChannelOperationSettings() {
+    return updateBackupChannelOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupChannel. */
+  public UnaryCallSettings<DeleteBackupChannelRequest, Operation> deleteBackupChannelSettings() {
+    return deleteBackupChannelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupChannel. */
+  public OperationCallSettings<DeleteBackupChannelRequest, Empty, OperationMetadata>
+      deleteBackupChannelOperationSettings() {
+    return deleteBackupChannelOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackupPlanBindings. */
+  public PagedCallSettings<
+          ListBackupPlanBindingsRequest,
+          ListBackupPlanBindingsResponse,
+          ListBackupPlanBindingsPagedResponse>
+      listBackupPlanBindingsSettings() {
+    return listBackupPlanBindingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackupPlanBinding. */
+  public UnaryCallSettings<GetBackupPlanBindingRequest, BackupPlanBinding>
+      getBackupPlanBindingSettings() {
+    return getBackupPlanBindingSettings;
+  }
+
   /** Returns the object with the settings used for calls to createBackup. */
   public UnaryCallSettings<CreateBackupRequest, Operation> createBackupSettings() {
     return createBackupSettings;
@@ -766,6 +1185,66 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
   public OperationCallSettings<DeleteRestorePlanRequest, Empty, OperationMetadata>
       deleteRestorePlanOperationSettings() {
     return deleteRestorePlanOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createRestoreChannel. */
+  public UnaryCallSettings<CreateRestoreChannelRequest, Operation> createRestoreChannelSettings() {
+    return createRestoreChannelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createRestoreChannel. */
+  public OperationCallSettings<CreateRestoreChannelRequest, RestoreChannel, OperationMetadata>
+      createRestoreChannelOperationSettings() {
+    return createRestoreChannelOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listRestoreChannels. */
+  public PagedCallSettings<
+          ListRestoreChannelsRequest, ListRestoreChannelsResponse, ListRestoreChannelsPagedResponse>
+      listRestoreChannelsSettings() {
+    return listRestoreChannelsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getRestoreChannel. */
+  public UnaryCallSettings<GetRestoreChannelRequest, RestoreChannel> getRestoreChannelSettings() {
+    return getRestoreChannelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateRestoreChannel. */
+  public UnaryCallSettings<UpdateRestoreChannelRequest, Operation> updateRestoreChannelSettings() {
+    return updateRestoreChannelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateRestoreChannel. */
+  public OperationCallSettings<UpdateRestoreChannelRequest, RestoreChannel, OperationMetadata>
+      updateRestoreChannelOperationSettings() {
+    return updateRestoreChannelOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteRestoreChannel. */
+  public UnaryCallSettings<DeleteRestoreChannelRequest, Operation> deleteRestoreChannelSettings() {
+    return deleteRestoreChannelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteRestoreChannel. */
+  public OperationCallSettings<DeleteRestoreChannelRequest, Empty, OperationMetadata>
+      deleteRestoreChannelOperationSettings() {
+    return deleteRestoreChannelOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listRestorePlanBindings. */
+  public PagedCallSettings<
+          ListRestorePlanBindingsRequest,
+          ListRestorePlanBindingsResponse,
+          ListRestorePlanBindingsPagedResponse>
+      listRestorePlanBindingsSettings() {
+    return listRestorePlanBindingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getRestorePlanBinding. */
+  public UnaryCallSettings<GetRestorePlanBindingRequest, RestorePlanBinding>
+      getRestorePlanBindingSettings() {
+    return getRestorePlanBindingSettings;
   }
 
   /** Returns the object with the settings used for calls to createRestore. */
@@ -873,15 +1352,6 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -894,6 +1364,7 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "gkebackup.googleapis.com:443";
   }
@@ -984,6 +1455,19 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     updateBackupPlanOperationSettings = settingsBuilder.updateBackupPlanOperationSettings().build();
     deleteBackupPlanSettings = settingsBuilder.deleteBackupPlanSettings().build();
     deleteBackupPlanOperationSettings = settingsBuilder.deleteBackupPlanOperationSettings().build();
+    createBackupChannelSettings = settingsBuilder.createBackupChannelSettings().build();
+    createBackupChannelOperationSettings =
+        settingsBuilder.createBackupChannelOperationSettings().build();
+    listBackupChannelsSettings = settingsBuilder.listBackupChannelsSettings().build();
+    getBackupChannelSettings = settingsBuilder.getBackupChannelSettings().build();
+    updateBackupChannelSettings = settingsBuilder.updateBackupChannelSettings().build();
+    updateBackupChannelOperationSettings =
+        settingsBuilder.updateBackupChannelOperationSettings().build();
+    deleteBackupChannelSettings = settingsBuilder.deleteBackupChannelSettings().build();
+    deleteBackupChannelOperationSettings =
+        settingsBuilder.deleteBackupChannelOperationSettings().build();
+    listBackupPlanBindingsSettings = settingsBuilder.listBackupPlanBindingsSettings().build();
+    getBackupPlanBindingSettings = settingsBuilder.getBackupPlanBindingSettings().build();
     createBackupSettings = settingsBuilder.createBackupSettings().build();
     createBackupOperationSettings = settingsBuilder.createBackupOperationSettings().build();
     listBackupsSettings = settingsBuilder.listBackupsSettings().build();
@@ -1005,6 +1489,19 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     deleteRestorePlanSettings = settingsBuilder.deleteRestorePlanSettings().build();
     deleteRestorePlanOperationSettings =
         settingsBuilder.deleteRestorePlanOperationSettings().build();
+    createRestoreChannelSettings = settingsBuilder.createRestoreChannelSettings().build();
+    createRestoreChannelOperationSettings =
+        settingsBuilder.createRestoreChannelOperationSettings().build();
+    listRestoreChannelsSettings = settingsBuilder.listRestoreChannelsSettings().build();
+    getRestoreChannelSettings = settingsBuilder.getRestoreChannelSettings().build();
+    updateRestoreChannelSettings = settingsBuilder.updateRestoreChannelSettings().build();
+    updateRestoreChannelOperationSettings =
+        settingsBuilder.updateRestoreChannelOperationSettings().build();
+    deleteRestoreChannelSettings = settingsBuilder.deleteRestoreChannelSettings().build();
+    deleteRestoreChannelOperationSettings =
+        settingsBuilder.deleteRestoreChannelOperationSettings().build();
+    listRestorePlanBindingsSettings = settingsBuilder.listRestorePlanBindingsSettings().build();
+    getRestorePlanBindingSettings = settingsBuilder.getRestorePlanBindingSettings().build();
     createRestoreSettings = settingsBuilder.createRestoreSettings().build();
     createRestoreOperationSettings = settingsBuilder.createRestoreOperationSettings().build();
     listRestoresSettings = settingsBuilder.listRestoresSettings().build();
@@ -1021,6 +1518,15 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-gke-backup")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for BackupForGKEStubSettings. */
@@ -1044,6 +1550,33 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
         deleteBackupPlanSettings;
     private final OperationCallSettings.Builder<DeleteBackupPlanRequest, Empty, OperationMetadata>
         deleteBackupPlanOperationSettings;
+    private final UnaryCallSettings.Builder<CreateBackupChannelRequest, Operation>
+        createBackupChannelSettings;
+    private final OperationCallSettings.Builder<
+            CreateBackupChannelRequest, BackupChannel, OperationMetadata>
+        createBackupChannelOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupChannelsRequest, ListBackupChannelsResponse, ListBackupChannelsPagedResponse>
+        listBackupChannelsSettings;
+    private final UnaryCallSettings.Builder<GetBackupChannelRequest, BackupChannel>
+        getBackupChannelSettings;
+    private final UnaryCallSettings.Builder<UpdateBackupChannelRequest, Operation>
+        updateBackupChannelSettings;
+    private final OperationCallSettings.Builder<
+            UpdateBackupChannelRequest, BackupChannel, OperationMetadata>
+        updateBackupChannelOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteBackupChannelRequest, Operation>
+        deleteBackupChannelSettings;
+    private final OperationCallSettings.Builder<
+            DeleteBackupChannelRequest, Empty, OperationMetadata>
+        deleteBackupChannelOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupPlanBindingsRequest,
+            ListBackupPlanBindingsResponse,
+            ListBackupPlanBindingsPagedResponse>
+        listBackupPlanBindingsSettings;
+    private final UnaryCallSettings.Builder<GetBackupPlanBindingRequest, BackupPlanBinding>
+        getBackupPlanBindingSettings;
     private final UnaryCallSettings.Builder<CreateBackupRequest, Operation> createBackupSettings;
     private final OperationCallSettings.Builder<CreateBackupRequest, Backup, OperationMetadata>
         createBackupOperationSettings;
@@ -1081,6 +1614,35 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
         deleteRestorePlanSettings;
     private final OperationCallSettings.Builder<DeleteRestorePlanRequest, Empty, OperationMetadata>
         deleteRestorePlanOperationSettings;
+    private final UnaryCallSettings.Builder<CreateRestoreChannelRequest, Operation>
+        createRestoreChannelSettings;
+    private final OperationCallSettings.Builder<
+            CreateRestoreChannelRequest, RestoreChannel, OperationMetadata>
+        createRestoreChannelOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListRestoreChannelsRequest,
+            ListRestoreChannelsResponse,
+            ListRestoreChannelsPagedResponse>
+        listRestoreChannelsSettings;
+    private final UnaryCallSettings.Builder<GetRestoreChannelRequest, RestoreChannel>
+        getRestoreChannelSettings;
+    private final UnaryCallSettings.Builder<UpdateRestoreChannelRequest, Operation>
+        updateRestoreChannelSettings;
+    private final OperationCallSettings.Builder<
+            UpdateRestoreChannelRequest, RestoreChannel, OperationMetadata>
+        updateRestoreChannelOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteRestoreChannelRequest, Operation>
+        deleteRestoreChannelSettings;
+    private final OperationCallSettings.Builder<
+            DeleteRestoreChannelRequest, Empty, OperationMetadata>
+        deleteRestoreChannelOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListRestorePlanBindingsRequest,
+            ListRestorePlanBindingsResponse,
+            ListRestorePlanBindingsPagedResponse>
+        listRestorePlanBindingsSettings;
+    private final UnaryCallSettings.Builder<GetRestorePlanBindingRequest, RestorePlanBinding>
+        getRestorePlanBindingSettings;
     private final UnaryCallSettings.Builder<CreateRestoreRequest, Operation> createRestoreSettings;
     private final OperationCallSettings.Builder<CreateRestoreRequest, Restore, OperationMetadata>
         createRestoreOperationSettings;
@@ -1136,37 +1698,37 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(300000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(300000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(300000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(300000L))
               .build();
       definitions.put("no_retry_3_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(120000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(120000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(120000L))
-              .setTotalTimeout(Duration.ofMillis(120000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(120000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(120000L))
               .build();
       definitions.put("no_retry_2_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
@@ -1189,6 +1751,17 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
       updateBackupPlanOperationSettings = OperationCallSettings.newBuilder();
       deleteBackupPlanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteBackupPlanOperationSettings = OperationCallSettings.newBuilder();
+      createBackupChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBackupChannelOperationSettings = OperationCallSettings.newBuilder();
+      listBackupChannelsSettings = PagedCallSettings.newBuilder(LIST_BACKUP_CHANNELS_PAGE_STR_FACT);
+      getBackupChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBackupChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBackupChannelOperationSettings = OperationCallSettings.newBuilder();
+      deleteBackupChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBackupChannelOperationSettings = OperationCallSettings.newBuilder();
+      listBackupPlanBindingsSettings =
+          PagedCallSettings.newBuilder(LIST_BACKUP_PLAN_BINDINGS_PAGE_STR_FACT);
+      getBackupPlanBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createBackupOperationSettings = OperationCallSettings.newBuilder();
       listBackupsSettings = PagedCallSettings.newBuilder(LIST_BACKUPS_PAGE_STR_FACT);
@@ -1207,6 +1780,18 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
       updateRestorePlanOperationSettings = OperationCallSettings.newBuilder();
       deleteRestorePlanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteRestorePlanOperationSettings = OperationCallSettings.newBuilder();
+      createRestoreChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createRestoreChannelOperationSettings = OperationCallSettings.newBuilder();
+      listRestoreChannelsSettings =
+          PagedCallSettings.newBuilder(LIST_RESTORE_CHANNELS_PAGE_STR_FACT);
+      getRestoreChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateRestoreChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateRestoreChannelOperationSettings = OperationCallSettings.newBuilder();
+      deleteRestoreChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteRestoreChannelOperationSettings = OperationCallSettings.newBuilder();
+      listRestorePlanBindingsSettings =
+          PagedCallSettings.newBuilder(LIST_RESTORE_PLAN_BINDINGS_PAGE_STR_FACT);
+      getRestorePlanBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createRestoreSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createRestoreOperationSettings = OperationCallSettings.newBuilder();
       listRestoresSettings = PagedCallSettings.newBuilder(LIST_RESTORES_PAGE_STR_FACT);
@@ -1231,6 +1816,13 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
               getBackupPlanSettings,
               updateBackupPlanSettings,
               deleteBackupPlanSettings,
+              createBackupChannelSettings,
+              listBackupChannelsSettings,
+              getBackupChannelSettings,
+              updateBackupChannelSettings,
+              deleteBackupChannelSettings,
+              listBackupPlanBindingsSettings,
+              getBackupPlanBindingSettings,
               createBackupSettings,
               listBackupsSettings,
               getBackupSettings,
@@ -1243,6 +1835,13 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
               getRestorePlanSettings,
               updateRestorePlanSettings,
               deleteRestorePlanSettings,
+              createRestoreChannelSettings,
+              listRestoreChannelsSettings,
+              getRestoreChannelSettings,
+              updateRestoreChannelSettings,
+              deleteRestoreChannelSettings,
+              listRestorePlanBindingsSettings,
+              getRestorePlanBindingSettings,
               createRestoreSettings,
               listRestoresSettings,
               getRestoreSettings,
@@ -1270,6 +1869,19 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
       updateBackupPlanOperationSettings = settings.updateBackupPlanOperationSettings.toBuilder();
       deleteBackupPlanSettings = settings.deleteBackupPlanSettings.toBuilder();
       deleteBackupPlanOperationSettings = settings.deleteBackupPlanOperationSettings.toBuilder();
+      createBackupChannelSettings = settings.createBackupChannelSettings.toBuilder();
+      createBackupChannelOperationSettings =
+          settings.createBackupChannelOperationSettings.toBuilder();
+      listBackupChannelsSettings = settings.listBackupChannelsSettings.toBuilder();
+      getBackupChannelSettings = settings.getBackupChannelSettings.toBuilder();
+      updateBackupChannelSettings = settings.updateBackupChannelSettings.toBuilder();
+      updateBackupChannelOperationSettings =
+          settings.updateBackupChannelOperationSettings.toBuilder();
+      deleteBackupChannelSettings = settings.deleteBackupChannelSettings.toBuilder();
+      deleteBackupChannelOperationSettings =
+          settings.deleteBackupChannelOperationSettings.toBuilder();
+      listBackupPlanBindingsSettings = settings.listBackupPlanBindingsSettings.toBuilder();
+      getBackupPlanBindingSettings = settings.getBackupPlanBindingSettings.toBuilder();
       createBackupSettings = settings.createBackupSettings.toBuilder();
       createBackupOperationSettings = settings.createBackupOperationSettings.toBuilder();
       listBackupsSettings = settings.listBackupsSettings.toBuilder();
@@ -1288,6 +1900,19 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
       updateRestorePlanOperationSettings = settings.updateRestorePlanOperationSettings.toBuilder();
       deleteRestorePlanSettings = settings.deleteRestorePlanSettings.toBuilder();
       deleteRestorePlanOperationSettings = settings.deleteRestorePlanOperationSettings.toBuilder();
+      createRestoreChannelSettings = settings.createRestoreChannelSettings.toBuilder();
+      createRestoreChannelOperationSettings =
+          settings.createRestoreChannelOperationSettings.toBuilder();
+      listRestoreChannelsSettings = settings.listRestoreChannelsSettings.toBuilder();
+      getRestoreChannelSettings = settings.getRestoreChannelSettings.toBuilder();
+      updateRestoreChannelSettings = settings.updateRestoreChannelSettings.toBuilder();
+      updateRestoreChannelOperationSettings =
+          settings.updateRestoreChannelOperationSettings.toBuilder();
+      deleteRestoreChannelSettings = settings.deleteRestoreChannelSettings.toBuilder();
+      deleteRestoreChannelOperationSettings =
+          settings.deleteRestoreChannelOperationSettings.toBuilder();
+      listRestorePlanBindingsSettings = settings.listRestorePlanBindingsSettings.toBuilder();
+      getRestorePlanBindingSettings = settings.getRestorePlanBindingSettings.toBuilder();
       createRestoreSettings = settings.createRestoreSettings.toBuilder();
       createRestoreOperationSettings = settings.createRestoreOperationSettings.toBuilder();
       listRestoresSettings = settings.listRestoresSettings.toBuilder();
@@ -1312,6 +1937,13 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
               getBackupPlanSettings,
               updateBackupPlanSettings,
               deleteBackupPlanSettings,
+              createBackupChannelSettings,
+              listBackupChannelsSettings,
+              getBackupChannelSettings,
+              updateBackupChannelSettings,
+              deleteBackupChannelSettings,
+              listBackupPlanBindingsSettings,
+              getBackupPlanBindingSettings,
               createBackupSettings,
               listBackupsSettings,
               getBackupSettings,
@@ -1324,6 +1956,13 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
               getRestorePlanSettings,
               updateRestorePlanSettings,
               deleteRestorePlanSettings,
+              createRestoreChannelSettings,
+              listRestoreChannelsSettings,
+              getRestoreChannelSettings,
+              updateRestoreChannelSettings,
+              deleteRestoreChannelSettings,
+              listRestorePlanBindingsSettings,
+              getRestorePlanBindingSettings,
               createRestoreSettings,
               listRestoresSettings,
               getRestoreSettings,
@@ -1390,6 +2029,41 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .createBackupChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listBackupChannelsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getBackupChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateBackupChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteBackupChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listBackupPlanBindingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getBackupPlanBindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .createBackupSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
@@ -1448,6 +2122,41 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
           .deleteRestorePlanSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createRestoreChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listRestoreChannelsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getRestoreChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateRestoreChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteRestoreChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listRestorePlanBindingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getRestorePlanBindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createRestoreSettings()
@@ -1529,13 +2238,13 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1553,13 +2262,13 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1577,13 +2286,85 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createBackupChannelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateBackupChannelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BackupChannel.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateBackupChannelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateBackupChannelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BackupChannel.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteBackupChannelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteBackupChannelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1601,13 +2382,13 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1625,13 +2406,13 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1649,13 +2430,13 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1673,13 +2454,13 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1697,13 +2478,13 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1721,13 +2502,85 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createRestoreChannelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateRestoreChannelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(RestoreChannel.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateRestoreChannelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateRestoreChannelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(RestoreChannel.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteRestoreChannelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteRestoreChannelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1745,13 +2598,13 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1769,13 +2622,13 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1793,13 +2646,13 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1866,6 +2719,72 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     public OperationCallSettings.Builder<DeleteBackupPlanRequest, Empty, OperationMetadata>
         deleteBackupPlanOperationSettings() {
       return deleteBackupPlanOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupChannel. */
+    public UnaryCallSettings.Builder<CreateBackupChannelRequest, Operation>
+        createBackupChannelSettings() {
+      return createBackupChannelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupChannel. */
+    public OperationCallSettings.Builder<
+            CreateBackupChannelRequest, BackupChannel, OperationMetadata>
+        createBackupChannelOperationSettings() {
+      return createBackupChannelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupChannels. */
+    public PagedCallSettings.Builder<
+            ListBackupChannelsRequest, ListBackupChannelsResponse, ListBackupChannelsPagedResponse>
+        listBackupChannelsSettings() {
+      return listBackupChannelsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupChannel. */
+    public UnaryCallSettings.Builder<GetBackupChannelRequest, BackupChannel>
+        getBackupChannelSettings() {
+      return getBackupChannelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupChannel. */
+    public UnaryCallSettings.Builder<UpdateBackupChannelRequest, Operation>
+        updateBackupChannelSettings() {
+      return updateBackupChannelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupChannel. */
+    public OperationCallSettings.Builder<
+            UpdateBackupChannelRequest, BackupChannel, OperationMetadata>
+        updateBackupChannelOperationSettings() {
+      return updateBackupChannelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupChannel. */
+    public UnaryCallSettings.Builder<DeleteBackupChannelRequest, Operation>
+        deleteBackupChannelSettings() {
+      return deleteBackupChannelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupChannel. */
+    public OperationCallSettings.Builder<DeleteBackupChannelRequest, Empty, OperationMetadata>
+        deleteBackupChannelOperationSettings() {
+      return deleteBackupChannelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupPlanBindings. */
+    public PagedCallSettings.Builder<
+            ListBackupPlanBindingsRequest,
+            ListBackupPlanBindingsResponse,
+            ListBackupPlanBindingsPagedResponse>
+        listBackupPlanBindingsSettings() {
+      return listBackupPlanBindingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupPlanBinding. */
+    public UnaryCallSettings.Builder<GetBackupPlanBindingRequest, BackupPlanBinding>
+        getBackupPlanBindingSettings() {
+      return getBackupPlanBindingSettings;
     }
 
     /** Returns the builder for the settings used for calls to createBackup. */
@@ -1974,6 +2893,74 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
       return deleteRestorePlanOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createRestoreChannel. */
+    public UnaryCallSettings.Builder<CreateRestoreChannelRequest, Operation>
+        createRestoreChannelSettings() {
+      return createRestoreChannelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createRestoreChannel. */
+    public OperationCallSettings.Builder<
+            CreateRestoreChannelRequest, RestoreChannel, OperationMetadata>
+        createRestoreChannelOperationSettings() {
+      return createRestoreChannelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listRestoreChannels. */
+    public PagedCallSettings.Builder<
+            ListRestoreChannelsRequest,
+            ListRestoreChannelsResponse,
+            ListRestoreChannelsPagedResponse>
+        listRestoreChannelsSettings() {
+      return listRestoreChannelsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getRestoreChannel. */
+    public UnaryCallSettings.Builder<GetRestoreChannelRequest, RestoreChannel>
+        getRestoreChannelSettings() {
+      return getRestoreChannelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateRestoreChannel. */
+    public UnaryCallSettings.Builder<UpdateRestoreChannelRequest, Operation>
+        updateRestoreChannelSettings() {
+      return updateRestoreChannelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateRestoreChannel. */
+    public OperationCallSettings.Builder<
+            UpdateRestoreChannelRequest, RestoreChannel, OperationMetadata>
+        updateRestoreChannelOperationSettings() {
+      return updateRestoreChannelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRestoreChannel. */
+    public UnaryCallSettings.Builder<DeleteRestoreChannelRequest, Operation>
+        deleteRestoreChannelSettings() {
+      return deleteRestoreChannelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRestoreChannel. */
+    public OperationCallSettings.Builder<DeleteRestoreChannelRequest, Empty, OperationMetadata>
+        deleteRestoreChannelOperationSettings() {
+      return deleteRestoreChannelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listRestorePlanBindings. */
+    public PagedCallSettings.Builder<
+            ListRestorePlanBindingsRequest,
+            ListRestorePlanBindingsResponse,
+            ListRestorePlanBindingsPagedResponse>
+        listRestorePlanBindingsSettings() {
+      return listRestorePlanBindingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getRestorePlanBinding. */
+    public UnaryCallSettings.Builder<GetRestorePlanBindingRequest, RestorePlanBinding>
+        getRestorePlanBindingSettings() {
+      return getRestorePlanBindingSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createRestore. */
     public UnaryCallSettings.Builder<CreateRestoreRequest, Operation> createRestoreSettings() {
       return createRestoreSettings;
@@ -2065,15 +3052,6 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

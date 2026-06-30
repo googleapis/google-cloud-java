@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -386,6 +386,7 @@ public class HttpJsonGeneratorsStub extends GeneratorsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetGeneratorRequest, Generator> getGeneratorTransportSettings =
         HttpJsonCallSettings.<GetGeneratorRequest, Generator>newBuilder()
@@ -397,6 +398,7 @@ public class HttpJsonGeneratorsStub extends GeneratorsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateGeneratorRequest, Generator> createGeneratorTransportSettings =
         HttpJsonCallSettings.<CreateGeneratorRequest, Generator>newBuilder()
@@ -408,6 +410,7 @@ public class HttpJsonGeneratorsStub extends GeneratorsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateGeneratorRequest, Generator> updateGeneratorTransportSettings =
         HttpJsonCallSettings.<UpdateGeneratorRequest, Generator>newBuilder()
@@ -430,6 +433,7 @@ public class HttpJsonGeneratorsStub extends GeneratorsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

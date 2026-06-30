@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,6 +87,7 @@ public class NetworksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -156,6 +157,90 @@ public class NetworksClientTest {
   }
 
   @Test
+  public void cancelRequestRemovePeeringTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String network = "network-7324";
+    NetworksCancelRequestRemovePeeringRequest networksCancelRequestRemovePeeringRequestResource =
+        NetworksCancelRequestRemovePeeringRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client
+            .cancelRequestRemovePeeringAsync(
+                project, network, networksCancelRequestRemovePeeringRequestResource)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelRequestRemovePeeringExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String network = "network-7324";
+      NetworksCancelRequestRemovePeeringRequest networksCancelRequestRemovePeeringRequestResource =
+          NetworksCancelRequestRemovePeeringRequest.newBuilder().build();
+      client
+          .cancelRequestRemovePeeringAsync(
+              project, network, networksCancelRequestRemovePeeringRequestResource)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void deleteTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
@@ -164,6 +249,7 @@ public class NetworksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -245,6 +331,8 @@ public class NetworksClientTest {
             .setName("name3373707")
             .setNetworkFirewallPolicyEnforcementOrder(
                 "networkFirewallPolicyEnforcementOrder1610545966")
+            .setNetworkProfile("networkProfile-2013096037")
+            .setParams(NetworkParams.newBuilder().build())
             .addAllPeerings(new ArrayList<NetworkPeering>())
             .setRoutingConfig(NetworkRoutingConfig.newBuilder().build())
             .setSelfLink("selfLink1191800166")
@@ -349,6 +437,7 @@ public class NetworksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -523,6 +612,7 @@ public class NetworksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -597,6 +687,7 @@ public class NetworksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -666,6 +757,89 @@ public class NetworksClientTest {
   }
 
   @Test
+  public void requestRemovePeeringTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String network = "network-7324";
+    NetworksRequestRemovePeeringRequest networksRequestRemovePeeringRequestResource =
+        NetworksRequestRemovePeeringRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client
+            .requestRemovePeeringAsync(
+                project, network, networksRequestRemovePeeringRequestResource)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void requestRemovePeeringExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String network = "network-7324";
+      NetworksRequestRemovePeeringRequest networksRequestRemovePeeringRequestResource =
+          NetworksRequestRemovePeeringRequest.newBuilder().build();
+      client
+          .requestRemovePeeringAsync(project, network, networksRequestRemovePeeringRequestResource)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void switchToCustomModeTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
@@ -674,6 +848,7 @@ public class NetworksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -746,6 +921,7 @@ public class NetworksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)

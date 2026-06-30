@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -34,6 +34,8 @@ message ExternalSystem {
     pattern: "organizations/{organization}/sources/{source}/findings/{finding}/externalSystems/{externalsystem}"
     pattern: "folders/{folder}/sources/{source}/findings/{finding}/externalSystems/{externalsystem}"
     pattern: "projects/{project}/sources/{source}/findings/{finding}/externalSystems/{externalsystem}"
+    plural: "externalSystems"
+    singular: "externalSystem"
   };
 
   // Information about the ticket, if any, that is being used to track the

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The service that handles CRUD and List for resources for Featurestore.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/featurestore_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FeaturestoreServiceGrpc {
 
@@ -1046,6 +1043,19 @@ public final class FeaturestoreServiceGrpc {
     return FeaturestoreServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static FeaturestoreServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<FeaturestoreServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<FeaturestoreServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public FeaturestoreServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new FeaturestoreServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return FeaturestoreServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1819,6 +1829,349 @@ public final class FeaturestoreServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service FeaturestoreService.
+   *
+   * <pre>
+   * The service that handles CRUD and List for resources for Featurestore.
+   * </pre>
+   */
+  public static final class FeaturestoreServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<FeaturestoreServiceBlockingV2Stub> {
+    private FeaturestoreServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected FeaturestoreServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new FeaturestoreServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Featurestore in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createFeaturestore(
+        com.google.cloud.aiplatform.v1beta1.CreateFeaturestoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateFeaturestoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Featurestore.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Featurestore getFeaturestore(
+        com.google.cloud.aiplatform.v1beta1.GetFeaturestoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetFeaturestoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Featurestores in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListFeaturestoresResponse listFeaturestores(
+        com.google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListFeaturestoresMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Featurestore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateFeaturestore(
+        com.google.cloud.aiplatform.v1beta1.UpdateFeaturestoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateFeaturestoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Featurestore. The Featurestore must not contain any
+     * EntityTypes or `force` must be set to true for the request to succeed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteFeaturestore(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeaturestoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteFeaturestoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new EntityType in a given Featurestore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEntityType(
+        com.google.cloud.aiplatform.v1beta1.CreateEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateEntityTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single EntityType.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EntityType getEntityType(
+        com.google.cloud.aiplatform.v1beta1.GetEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEntityTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists EntityTypes in a given Featurestore.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListEntityTypesResponse listEntityTypes(
+        com.google.cloud.aiplatform.v1beta1.ListEntityTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListEntityTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single EntityType.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EntityType updateEntityType(
+        com.google.cloud.aiplatform.v1beta1.UpdateEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateEntityTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single EntityType. The EntityType must not have any Features
+     * or `force` must be set to true for the request to succeed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteEntityType(
+        com.google.cloud.aiplatform.v1beta1.DeleteEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteEntityTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Feature in a given EntityType.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createFeature(
+        com.google.cloud.aiplatform.v1beta1.CreateFeatureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateFeatureMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a batch of Features in a given EntityType.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreateFeatures(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchCreateFeaturesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Feature.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Feature getFeature(
+        com.google.cloud.aiplatform.v1beta1.GetFeatureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetFeatureMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Features in a given EntityType.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListFeaturesResponse listFeatures(
+        com.google.cloud.aiplatform.v1beta1.ListFeaturesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListFeaturesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Feature.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Feature updateFeature(
+        com.google.cloud.aiplatform.v1beta1.UpdateFeatureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateFeatureMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Feature.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteFeature(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteFeatureMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports Feature values into the Featurestore from a source storage.
+     * The progress of the import is tracked by the returned operation. The
+     * imported features are guaranteed to be visible to subsequent read
+     * operations after the operation is marked as successfully done.
+     * If an import operation fails, the Feature values returned from
+     * reads and exports may be inconsistent. If consistency is
+     * required, the caller must retry the same import request again and wait till
+     * the new operation returned is marked as successfully done.
+     * There are also scenarios where the caller can cause inconsistency.
+     *  - Source data for import contains multiple distinct Feature values for
+     *    the same entity ID and timestamp.
+     *  - Source is modified during an import. This includes adding, updating, or
+     *  removing source data and/or metadata. Examples of updating metadata
+     *  include but are not limited to changing storage location, storage class,
+     *  or retention policy.
+     *  - Online serving cluster is under-provisioned.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importFeatureValues(
+        com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getImportFeatureValuesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch reads Feature values from a Featurestore.
+     * This API enables batch reading Feature values, where each read
+     * instance in the batch may read Feature values of entities from one or
+     * more EntityTypes. Point-in-time correctness is guaranteed for Feature
+     * values of each read instance as of each instance's read timestamp.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchReadFeatureValues(
+        com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchReadFeatureValuesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports Feature values from all the entities of a target EntityType.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportFeatureValues(
+        com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportFeatureValuesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete Feature values from Featurestore.
+     * The progress of the deletion is tracked by the returned operation. The
+     * deleted feature values are guaranteed to be invisible to subsequent read
+     * operations after the operation is marked as successfully done.
+     * If a delete feature values operation fails, the feature values
+     * returned from reads and exports may be inconsistent. If consistency is
+     * required, the caller must retry the same delete request again and wait till
+     * the new operation returned is marked as successfully done.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteFeatureValues(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteFeatureValuesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches Features matching a query in a given project.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.SearchFeaturesResponse searchFeatures(
+        com.google.cloud.aiplatform.v1beta1.SearchFeaturesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSearchFeaturesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service FeaturestoreService.
    *
    * <pre>
    * The service that handles CRUD and List for resources for Featurestore.

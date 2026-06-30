@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -28,6 +28,18 @@ option objc_class_prefix = "DISCOVERYENGINE";
 option php_namespace = "Google\\Cloud\\DiscoveryEngine\\V1beta";
 option ruby_package = "Google::Cloud::DiscoveryEngine::V1beta";
 
+// Grounding configuration.
+message GroundingConfig {
+  option (google.api.resource) = {
+    type: "discoveryengine.googleapis.com/GroundingConfig"
+    pattern: "projects/{project}/locations/{location}/groundingConfigs/{grounding_config}"
+  };
+
+  // Required. Name of the GroundingConfig, of the form
+  // `projects/{project}/locations/{location}/groundingConfigs/{grounding_config}`.
+  string name = 1 [(google.api.field_behavior) = REQUIRED];
+}
+
 // Grounding Fact.
 message GroundingFact {
   // Text content of the fact. Can be at most 10K characters long.
@@ -50,6 +62,18 @@ message FactChunk {
   // retrieved.
   string source = 2;
 
+  // The index of this chunk. Currently, only used for the streaming mode.
+  int32 index = 4;
+
   // More fine-grained information for the source reference.
   map<string, string> source_metadata = 3;
+
+  // The URI of the source.
+  string uri = 5;
+
+  // The title of the source.
+  string title = 6;
+
+  // The domain of the source.
+  string domain = 7;
 }

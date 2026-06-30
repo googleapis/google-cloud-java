@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.google.cloud.confidentialcomputing.v1.ChallengeName;
 import com.google.cloud.confidentialcomputing.v1.ConfidentialComputingClient;
 import com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo;
 import com.google.cloud.confidentialcomputing.v1.GcpCredentials;
+import com.google.cloud.confidentialcomputing.v1.InstanceName;
 import com.google.cloud.confidentialcomputing.v1.TokenOptions;
 import com.google.cloud.confidentialcomputing.v1.TpmAttestation;
 import com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest;
@@ -48,6 +49,8 @@ public class AsyncVerifyAttestation {
               .setTpmAttestation(TpmAttestation.newBuilder().build())
               .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
               .setTokenOptions(TokenOptions.newBuilder().build())
+              .setAttester("attester542920370")
+              .setInstance(InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]").toString())
               .build();
       ApiFuture<VerifyAttestationResponse> future =
           confidentialComputingClient.verifyAttestationCallable().futureCall(request);

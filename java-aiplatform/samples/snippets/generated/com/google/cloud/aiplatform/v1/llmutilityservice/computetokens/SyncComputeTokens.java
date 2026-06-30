@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.aiplatform.v1.samples;
 // [START aiplatform_v1_generated_LlmUtilityService_ComputeTokens_sync]
 import com.google.cloud.aiplatform.v1.ComputeTokensRequest;
 import com.google.cloud.aiplatform.v1.ComputeTokensResponse;
+import com.google.cloud.aiplatform.v1.Content;
 import com.google.cloud.aiplatform.v1.EndpointName;
 import com.google.cloud.aiplatform.v1.LlmUtilityServiceClient;
 import com.google.protobuf.Value;
@@ -44,6 +45,8 @@ public class SyncComputeTokens {
                           "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .addAllInstances(new ArrayList<Value>())
+              .setModel("model104069929")
+              .addAllContents(new ArrayList<Content>())
               .build();
       ComputeTokensResponse response = llmUtilityServiceClient.computeTokens(request);
     }

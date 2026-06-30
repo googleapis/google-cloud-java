@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,11 @@ package com.google.cloud.compute.v1.stub;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.GetIamPolicyLicenseCodeRequest;
 import com.google.cloud.compute.v1.GetLicenseCodeRequest;
 import com.google.cloud.compute.v1.LicenseCode;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyLicenseCodeRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsLicenseCodeRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
@@ -35,6 +38,14 @@ public abstract class LicenseCodesStub implements BackgroundResource {
 
   public UnaryCallable<GetLicenseCodeRequest, LicenseCode> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyLicenseCodeRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyLicenseCodeRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
   }
 
   public UnaryCallable<TestIamPermissionsLicenseCodeRequest, TestPermissionsResponse>

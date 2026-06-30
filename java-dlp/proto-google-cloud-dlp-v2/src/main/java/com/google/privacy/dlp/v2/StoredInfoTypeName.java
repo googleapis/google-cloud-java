@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -332,7 +332,8 @@ public class StoredInfoTypeName implements ResourceName {
     private Builder(StoredInfoTypeName storedInfoTypeName) {
       Preconditions.checkArgument(
           Objects.equals(storedInfoTypeName.pathTemplate, ORGANIZATION_STORED_INFO_TYPE),
-          "toBuilder is only supported when StoredInfoTypeName has the pattern of organizations/{organization}/storedInfoTypes/{stored_info_type}");
+          "toBuilder is only supported when StoredInfoTypeName has the pattern of"
+              + " organizations/{organization}/storedInfoTypes/{stored_info_type}");
       this.organization = storedInfoTypeName.organization;
       this.storedInfoType = storedInfoTypeName.storedInfoType;
     }

@@ -1,0 +1,51 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.shopping.merchant.reviews.v1beta",
+  "libraryPackage": "com.google.shopping.merchant.reviews.v1beta",
+  "services": {
+    "MerchantReviewsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MerchantReviewsServiceClient",
+          "rpcs": {
+            "DeleteMerchantReview": {
+              "methods": ["deleteMerchantReview", "deleteMerchantReview", "deleteMerchantReview", "deleteMerchantReviewCallable"]
+            },
+            "GetMerchantReview": {
+              "methods": ["getMerchantReview", "getMerchantReview", "getMerchantReview", "getMerchantReviewCallable"]
+            },
+            "InsertMerchantReview": {
+              "methods": ["insertMerchantReview", "insertMerchantReviewCallable"]
+            },
+            "ListMerchantReviews": {
+              "methods": ["listMerchantReviews", "listMerchantReviews", "listMerchantReviews", "listMerchantReviewsPagedCallable", "listMerchantReviewsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ProductReviewsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProductReviewsServiceClient",
+          "rpcs": {
+            "DeleteProductReview": {
+              "methods": ["deleteProductReview", "deleteProductReview", "deleteProductReview", "deleteProductReviewCallable"]
+            },
+            "GetProductReview": {
+              "methods": ["getProductReview", "getProductReview", "getProductReview", "getProductReviewCallable"]
+            },
+            "InsertProductReview": {
+              "methods": ["insertProductReview", "insertProductReviewCallable"]
+            },
+            "ListProductReviews": {
+              "methods": ["listProductReviews", "listProductReviews", "listProductReviews", "listProductReviewsPagedCallable", "listProductReviewsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -512,6 +512,7 @@ public class HttpJsonVersionsStub extends VersionsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetVersionRequest, Version> getVersionTransportSettings =
         HttpJsonCallSettings.<GetVersionRequest, Version>newBuilder()
@@ -523,6 +524,7 @@ public class HttpJsonVersionsStub extends VersionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateVersionRequest, Operation> createVersionTransportSettings =
         HttpJsonCallSettings.<CreateVersionRequest, Operation>newBuilder()
@@ -534,6 +536,7 @@ public class HttpJsonVersionsStub extends VersionsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateVersionRequest, Version> updateVersionTransportSettings =
         HttpJsonCallSettings.<UpdateVersionRequest, Version>newBuilder()
@@ -556,6 +559,7 @@ public class HttpJsonVersionsStub extends VersionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<LoadVersionRequest, Operation> loadVersionTransportSettings =
         HttpJsonCallSettings.<LoadVersionRequest, Operation>newBuilder()
@@ -567,6 +571,7 @@ public class HttpJsonVersionsStub extends VersionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CompareVersionsRequest, CompareVersionsResponse>
         compareVersionsTransportSettings =
@@ -579,6 +584,7 @@ public class HttpJsonVersionsStub extends VersionsStub {
                       builder.add("base_version", String.valueOf(request.getBaseVersion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getBaseVersion())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

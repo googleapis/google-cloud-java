@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1alpha.BatchGetDocumentsMetadataRequest;
+import com.google.cloud.discoveryengine.v1alpha.BatchGetDocumentsMetadataResponse;
 import com.google.cloud.discoveryengine.v1alpha.CreateDocumentRequest;
 import com.google.cloud.discoveryengine.v1alpha.DeleteDocumentRequest;
 import com.google.cloud.discoveryengine.v1alpha.Document;
@@ -407,6 +409,46 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1alpha.DocumentService/BatchGetDocumentsMetadata")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchGetDocumentsMetadataRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=projects/*/locations/*/dataStores/*/branches/*}/batchGetDocumentsMetadata",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchGetDocumentsMetadataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*/branches/*}/batchGetDocumentsMetadata")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchGetDocumentsMetadataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "matcher", request.getMatcher());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchGetDocumentsMetadataResponse>newBuilder()
+                      .setDefaultInstance(BatchGetDocumentsMetadataResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetDocumentRequest, Document> getDocumentCallable;
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable;
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
@@ -424,6 +466,8 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
       purgeDocumentsOperationCallable;
   private final UnaryCallable<GetProcessedDocumentRequest, ProcessedDocument>
       getProcessedDocumentCallable;
+  private final UnaryCallable<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -473,6 +517,17 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
             callableFactory,
             typeRegistry,
             ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost(
+                            "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1alpha/{name=projects/*/locations/*/dataStores/*/branches/*/operations/*}:cancel")
+                                .build())
+                        .build())
                 .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
@@ -540,7 +595,17 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/identity_mapping_stores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1alpha/{name=projects/*/locations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/sampleQuerySets/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -609,6 +674,11 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/identity_mapping_stores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1alpha/{name=projects/*/locations/*}/operations")
                                 .build())
                         .addAdditionalBindings(
@@ -628,6 +698,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDocumentsRequest, ListDocumentsResponse>
         listDocumentsTransportSettings =
@@ -640,6 +711,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateDocumentRequest, Document> createDocumentTransportSettings =
         HttpJsonCallSettings.<CreateDocumentRequest, Document>newBuilder()
@@ -651,6 +723,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateDocumentRequest, Document> updateDocumentTransportSettings =
         HttpJsonCallSettings.<UpdateDocumentRequest, Document>newBuilder()
@@ -673,6 +746,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportDocumentsRequest, Operation> importDocumentsTransportSettings =
         HttpJsonCallSettings.<ImportDocumentsRequest, Operation>newBuilder()
@@ -684,6 +758,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<PurgeDocumentsRequest, Operation> purgeDocumentsTransportSettings =
         HttpJsonCallSettings.<PurgeDocumentsRequest, Operation>newBuilder()
@@ -695,6 +770,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetProcessedDocumentRequest, ProcessedDocument>
         getProcessedDocumentTransportSettings =
@@ -707,6 +783,21 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+        batchGetDocumentsMetadataTransportSettings =
+            HttpJsonCallSettings
+                .<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>newBuilder()
+                .setMethodDescriptor(batchGetDocumentsMetadataMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getDocumentCallable =
@@ -750,6 +841,11 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
             getProcessedDocumentTransportSettings,
             settings.getProcessedDocumentSettings(),
             clientContext);
+    this.batchGetDocumentsMetadataCallable =
+        callableFactory.createUnaryCallable(
+            batchGetDocumentsMetadataTransportSettings,
+            settings.batchGetDocumentsMetadataSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -766,6 +862,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
     methodDescriptors.add(importDocumentsMethodDescriptor);
     methodDescriptors.add(purgeDocumentsMethodDescriptor);
     methodDescriptors.add(getProcessedDocumentMethodDescriptor);
+    methodDescriptors.add(batchGetDocumentsMetadataMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -830,6 +927,12 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
   public UnaryCallable<GetProcessedDocumentRequest, ProcessedDocument>
       getProcessedDocumentCallable() {
     return getProcessedDocumentCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataCallable() {
+    return batchGetDocumentsMetadataCallable;
   }
 
   @Override

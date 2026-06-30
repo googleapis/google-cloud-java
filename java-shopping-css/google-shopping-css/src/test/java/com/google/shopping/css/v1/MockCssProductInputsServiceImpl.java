@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,7 +73,30 @@ public class MockCssProductInputsServiceImpl extends CssProductInputsServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method InsertCssProductInput, expected %s or %s",
+                  "Unrecognized response type %s for method InsertCssProductInput, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CssProductInput.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateCssProductInput(
+      UpdateCssProductInputRequest request, StreamObserver<CssProductInput> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CssProductInput) {
+      requests.add(request);
+      responseObserver.onNext(((CssProductInput) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateCssProductInput, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   CssProductInput.class.getName(),
                   Exception.class.getName())));
@@ -94,7 +117,8 @@ public class MockCssProductInputsServiceImpl extends CssProductInputsServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteCssProductInput, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteCssProductInput, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

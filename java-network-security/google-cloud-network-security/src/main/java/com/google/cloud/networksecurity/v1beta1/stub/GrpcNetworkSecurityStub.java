@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,6 +91,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                   ProtoUtils.marshaller(ListAuthorizationPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAuthorizationPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAuthorizationPolicyRequest, AuthorizationPolicy>
@@ -103,6 +104,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                   ProtoUtils.marshaller(GetAuthorizationPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AuthorizationPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAuthorizationPolicyRequest, Operation>
@@ -114,6 +116,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAuthorizationPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAuthorizationPolicyRequest, Operation>
@@ -125,6 +128,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAuthorizationPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAuthorizationPolicyRequest, Operation>
@@ -136,6 +140,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAuthorizationPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListServerTlsPoliciesRequest, ListServerTlsPoliciesResponse>
@@ -148,6 +153,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                   ProtoUtils.marshaller(ListServerTlsPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServerTlsPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServerTlsPolicyRequest, ServerTlsPolicy>
@@ -159,6 +165,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServerTlsPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServerTlsPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServerTlsPolicyRequest, Operation>
@@ -170,6 +177,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServerTlsPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateServerTlsPolicyRequest, Operation>
@@ -181,6 +189,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServerTlsPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServerTlsPolicyRequest, Operation>
@@ -192,6 +201,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServerTlsPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListClientTlsPoliciesRequest, ListClientTlsPoliciesResponse>
@@ -204,6 +214,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                   ProtoUtils.marshaller(ListClientTlsPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListClientTlsPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetClientTlsPolicyRequest, ClientTlsPolicy>
@@ -215,6 +226,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetClientTlsPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ClientTlsPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateClientTlsPolicyRequest, Operation>
@@ -226,6 +238,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateClientTlsPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateClientTlsPolicyRequest, Operation>
@@ -237,6 +250,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateClientTlsPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteClientTlsPolicyRequest, Operation>
@@ -248,6 +262,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteClientTlsPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -259,6 +274,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -267,6 +283,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -275,6 +292,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -283,6 +301,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -294,6 +313,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListAuthorizationPoliciesRequest, ListAuthorizationPoliciesResponse>
@@ -417,6 +437,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAuthorizationPolicyRequest, AuthorizationPolicy>
         getAuthorizationPolicyTransportSettings =
@@ -428,6 +449,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateAuthorizationPolicyRequest, Operation>
         createAuthorizationPolicyTransportSettings =
@@ -439,6 +461,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateAuthorizationPolicyRequest, Operation>
         updateAuthorizationPolicyTransportSettings =
@@ -463,6 +486,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListServerTlsPoliciesRequest, ListServerTlsPoliciesResponse>
         listServerTlsPoliciesTransportSettings =
@@ -475,6 +499,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetServerTlsPolicyRequest, ServerTlsPolicy>
         getServerTlsPolicyTransportSettings =
@@ -486,6 +511,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateServerTlsPolicyRequest, Operation>
         createServerTlsPolicyTransportSettings =
@@ -497,6 +523,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateServerTlsPolicyRequest, Operation>
         updateServerTlsPolicyTransportSettings =
@@ -521,6 +548,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListClientTlsPoliciesRequest, ListClientTlsPoliciesResponse>
         listClientTlsPoliciesTransportSettings =
@@ -533,6 +561,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetClientTlsPolicyRequest, ClientTlsPolicy>
         getClientTlsPolicyTransportSettings =
@@ -544,6 +573,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateClientTlsPolicyRequest, Operation>
         createClientTlsPolicyTransportSettings =
@@ -555,6 +585,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateClientTlsPolicyRequest, Operation>
         updateClientTlsPolicyTransportSettings =
@@ -579,6 +610,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -609,6 +641,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -619,6 +652,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -630,6 +664,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listAuthorizationPoliciesCallable =

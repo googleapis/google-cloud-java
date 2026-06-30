@@ -10,7 +10,7 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-os-config",
   "distribution_name": "com.google.cloud:google-cloud-os-config",
-  "api_id": "os-config.googleapis.com",
+  "api_id": "osconfig.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": false
 }

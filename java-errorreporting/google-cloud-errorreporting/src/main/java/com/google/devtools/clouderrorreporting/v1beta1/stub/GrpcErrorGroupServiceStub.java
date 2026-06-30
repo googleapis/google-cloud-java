@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
               "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/GetGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ErrorGroup.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateGroupRequest, ErrorGroup>
@@ -60,6 +61,7 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
                   "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/UpdateGroup")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ErrorGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable;
@@ -118,6 +120,7 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
                   builder.add("group_name", String.valueOf(request.getGroupName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getGroupName())
             .build();
     GrpcCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupTransportSettings =
         GrpcCallSettings.<UpdateGroupRequest, ErrorGroup>newBuilder()

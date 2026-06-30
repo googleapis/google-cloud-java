@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListCryptoKeysP
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListImportJobsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListKeyRingsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListRetiredResourcesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -29,6 +30,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -43,10 +45,12 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Int64Value;
 import com.google.protobuf.Timestamp;
@@ -57,6 +61,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -465,6 +470,96 @@ public class KeyManagementServiceClientTest {
   }
 
   @Test
+  public void listRetiredResourcesTest() throws Exception {
+    RetiredResource responsesElement = RetiredResource.newBuilder().build();
+    ListRetiredResourcesResponse expectedResponse =
+        ListRetiredResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRetiredResources(Arrays.asList(responsesElement))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListRetiredResourcesPagedResponse pagedListResponse = client.listRetiredResources(parent);
+
+    List<RetiredResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRetiredResourcesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRetiredResourcesRequest actualRequest =
+        ((ListRetiredResourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRetiredResourcesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listRetiredResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRetiredResourcesTest2() throws Exception {
+    RetiredResource responsesElement = RetiredResource.newBuilder().build();
+    ListRetiredResourcesResponse expectedResponse =
+        ListRetiredResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRetiredResources(Arrays.asList(responsesElement))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListRetiredResourcesPagedResponse pagedListResponse = client.listRetiredResources(parent);
+
+    List<RetiredResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRetiredResourcesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRetiredResourcesRequest actualRequest =
+        ((ListRetiredResourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRetiredResourcesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listRetiredResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getKeyRingTest() throws Exception {
     KeyRing expectedResponse =
         KeyRing.newBuilder()
@@ -559,6 +654,7 @@ public class KeyManagementServiceClientTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -610,6 +706,7 @@ public class KeyManagementServiceClientTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -771,6 +868,7 @@ public class KeyManagementServiceClientTest {
             .setPemCrc32C(Int64Value.newBuilder().build())
             .setName("name3373707")
             .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .setPublicKey(ChecksummedData.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -816,6 +914,7 @@ public class KeyManagementServiceClientTest {
             .setPemCrc32C(Int64Value.newBuilder().build())
             .setName("name3373707")
             .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .setPublicKey(ChecksummedData.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -863,6 +962,9 @@ public class KeyManagementServiceClientTest {
             .setExpireEventTime(Timestamp.newBuilder().build())
             .setPublicKey(ImportJob.WrappingPublicKey.newBuilder().build())
             .setAttestation(KeyOperationAttestation.newBuilder().build())
+            .setCryptoKeyBackend(
+                ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]")
+                    .toString())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -911,6 +1013,9 @@ public class KeyManagementServiceClientTest {
             .setExpireEventTime(Timestamp.newBuilder().build())
             .setPublicKey(ImportJob.WrappingPublicKey.newBuilder().build())
             .setAttestation(KeyOperationAttestation.newBuilder().build())
+            .setCryptoKeyBackend(
+                ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]")
+                    .toString())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -938,6 +1043,92 @@ public class KeyManagementServiceClientTest {
     try {
       String name = "name3373707";
       client.getImportJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRetiredResourceTest() throws Exception {
+    RetiredResource expectedResponse =
+        RetiredResource.newBuilder()
+            .setName(
+                RetiredResourceName.of("[PROJECT]", "[LOCATION]", "[RETIRED_RESOURCE]").toString())
+            .setOriginalResource("originalResource-1694609153")
+            .setResourceType("resourceType-384364440")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    RetiredResourceName name =
+        RetiredResourceName.of("[PROJECT]", "[LOCATION]", "[RETIRED_RESOURCE]");
+
+    RetiredResource actualResponse = client.getRetiredResource(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRetiredResourceRequest actualRequest = ((GetRetiredResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRetiredResourceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      RetiredResourceName name =
+          RetiredResourceName.of("[PROJECT]", "[LOCATION]", "[RETIRED_RESOURCE]");
+      client.getRetiredResource(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRetiredResourceTest2() throws Exception {
+    RetiredResource expectedResponse =
+        RetiredResource.newBuilder()
+            .setName(
+                RetiredResourceName.of("[PROJECT]", "[LOCATION]", "[RETIRED_RESOURCE]").toString())
+            .setOriginalResource("originalResource-1694609153")
+            .setResourceType("resourceType-384364440")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RetiredResource actualResponse = client.getRetiredResource(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRetiredResourceRequest actualRequest = ((GetRetiredResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRetiredResourceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getRetiredResource(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -1049,6 +1240,7 @@ public class KeyManagementServiceClientTest {
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
             .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1103,6 +1295,7 @@ public class KeyManagementServiceClientTest {
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
             .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1269,6 +1462,181 @@ public class KeyManagementServiceClientTest {
   }
 
   @Test
+  public void deleteCryptoKeyTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteCryptoKeyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockKeyManagementService.addResponse(resultOperation);
+
+    CryptoKeyName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+
+    client.deleteCryptoKeyAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCryptoKeyRequest actualRequest = ((DeleteCryptoKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteCryptoKeyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyName name =
+          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+      client.deleteCryptoKeyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteCryptoKeyTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteCryptoKeyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockKeyManagementService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteCryptoKeyAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCryptoKeyRequest actualRequest = ((DeleteCryptoKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteCryptoKeyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteCryptoKeyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteCryptoKeyVersionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteCryptoKeyVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockKeyManagementService.addResponse(resultOperation);
+
+    CryptoKeyVersionName name =
+        CryptoKeyVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+
+    client.deleteCryptoKeyVersionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCryptoKeyVersionRequest actualRequest =
+        ((DeleteCryptoKeyVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteCryptoKeyVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyVersionName name =
+          CryptoKeyVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+      client.deleteCryptoKeyVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteCryptoKeyVersionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteCryptoKeyVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockKeyManagementService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteCryptoKeyVersionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCryptoKeyVersionRequest actualRequest =
+        ((DeleteCryptoKeyVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteCryptoKeyVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteCryptoKeyVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void importCryptoKeyVersionTest() throws Exception {
     CryptoKeyVersion expectedResponse =
         CryptoKeyVersion.newBuilder()
@@ -1376,6 +1744,7 @@ public class KeyManagementServiceClientTest {
             .setExpireEventTime(Timestamp.newBuilder().build())
             .setPublicKey(ImportJob.WrappingPublicKey.newBuilder().build())
             .setAttestation(KeyOperationAttestation.newBuilder().build())
+            .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1429,6 +1798,7 @@ public class KeyManagementServiceClientTest {
             .setExpireEventTime(Timestamp.newBuilder().build())
             .setPublicKey(ImportJob.WrappingPublicKey.newBuilder().build())
             .setAttestation(KeyOperationAttestation.newBuilder().build())
+            .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1485,6 +1855,7 @@ public class KeyManagementServiceClientTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1600,6 +1971,7 @@ public class KeyManagementServiceClientTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1655,6 +2027,7 @@ public class KeyManagementServiceClientTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -2644,6 +3017,74 @@ public class KeyManagementServiceClientTest {
       ByteString data = ByteString.EMPTY;
       ByteString mac = ByteString.EMPTY;
       client.macVerify(name, data, mac);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void decapsulateTest() throws Exception {
+    DecapsulateResponse expectedResponse =
+        DecapsulateResponse.newBuilder()
+            .setName("name3373707")
+            .setSharedSecret(ByteString.EMPTY)
+            .setSharedSecretCrc32C(1482306981)
+            .setVerifiedCiphertextCrc32C(true)
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    DecapsulateRequest request =
+        DecapsulateRequest.newBuilder()
+            .setName(
+                CryptoKeyVersionName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[KEY_RING]",
+                        "[CRYPTO_KEY]",
+                        "[CRYPTO_KEY_VERSION]")
+                    .toString())
+            .setCiphertext(ByteString.EMPTY)
+            .setCiphertextCrc32C(Int64Value.newBuilder().build())
+            .build();
+
+    DecapsulateResponse actualResponse = client.decapsulate(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DecapsulateRequest actualRequest = ((DecapsulateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getCiphertext(), actualRequest.getCiphertext());
+    Assert.assertEquals(request.getCiphertextCrc32C(), actualRequest.getCiphertextCrc32C());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void decapsulateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      DecapsulateRequest request =
+          DecapsulateRequest.newBuilder()
+              .setName(
+                  CryptoKeyVersionName.of(
+                          "[PROJECT]",
+                          "[LOCATION]",
+                          "[KEY_RING]",
+                          "[CRYPTO_KEY]",
+                          "[CRYPTO_KEY_VERSION]")
+                      .toString())
+              .setCiphertext(ByteString.EMPTY)
+              .setCiphertextCrc32C(Int64Value.newBuilder().build())
+              .build();
+      client.decapsulate(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

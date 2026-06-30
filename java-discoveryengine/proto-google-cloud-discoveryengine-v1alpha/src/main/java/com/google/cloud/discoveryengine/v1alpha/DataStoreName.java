@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -297,7 +297,8 @@ public class DataStoreName implements ResourceName {
     private Builder(DataStoreName dataStoreName) {
       Preconditions.checkArgument(
           Objects.equals(dataStoreName.pathTemplate, PROJECT_LOCATION_DATA_STORE),
-          "toBuilder is only supported when DataStoreName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}");
+          "toBuilder is only supported when DataStoreName has the pattern of"
+              + " projects/{project}/locations/{location}/dataStores/{data_store}");
       this.project = dataStoreName.project;
       this.location = dataStoreName.location;
       this.dataStore = dataStoreName.dataStore;

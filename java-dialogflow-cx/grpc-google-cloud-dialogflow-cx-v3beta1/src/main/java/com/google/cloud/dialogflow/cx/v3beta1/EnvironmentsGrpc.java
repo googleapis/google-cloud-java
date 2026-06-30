@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Environments][google.cloud.dialogflow.cx.v3beta1.Environment].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3beta1/environment.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EnvironmentsGrpc {
 
@@ -474,6 +471,19 @@ public final class EnvironmentsGrpc {
     return EnvironmentsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EnvironmentsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EnvironmentsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EnvironmentsBlockingV2Stub>() {
+          @java.lang.Override
+          public EnvironmentsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EnvironmentsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EnvironmentsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -899,6 +909,189 @@ public final class EnvironmentsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Environments.
+   *
+   * <pre>
+   * Service for managing
+   * [Environments][google.cloud.dialogflow.cx.v3beta1.Environment].
+   * </pre>
+   */
+  public static final class EnvironmentsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EnvironmentsBlockingV2Stub> {
+    private EnvironmentsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EnvironmentsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EnvironmentsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all environments in the specified
+     * [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ListEnvironmentsResponse listEnvironments(
+        com.google.cloud.dialogflow.cx.v3beta1.ListEnvironmentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListEnvironmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Environment getEnvironment(
+        com.google.cloud.dialogflow.cx.v3beta1.GetEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in
+     * the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEnvironment(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateEnvironment(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEnvironment(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up the history of the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.LookupEnvironmentHistoryResponse
+        lookupEnvironmentHistory(
+            com.google.cloud.dialogflow.cx.v3beta1.LookupEnvironmentHistoryRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getLookupEnvironmentHistoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Kicks off a continuous test under the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata]
+     * - `response`:
+     * [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse]
+     * </pre>
+     */
+    public com.google.longrunning.Operation runContinuousTest(
+        com.google.cloud.dialogflow.cx.v3beta1.RunContinuousTestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRunContinuousTestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a list of continuous test results for a given environment.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ListContinuousTestResultsResponse
+        listContinuousTestResults(
+            com.google.cloud.dialogflow.cx.v3beta1.ListContinuousTestResultsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListContinuousTestResultsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a flow to the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [DeployFlowMetadata][google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata]
+     * - `response`:
+     * [DeployFlowResponse][google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse]
+     * </pre>
+     */
+    public com.google.longrunning.Operation deployFlow(
+        com.google.cloud.dialogflow.cx.v3beta1.DeployFlowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeployFlowMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Environments.
    *
    * <pre>
    * Service for managing

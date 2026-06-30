@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,18 +16,23 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionNotificationEndpointsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RegionNotificationEndpointsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListRegionNotificationEndpointsRequest;
 import com.google.cloud.compute.v1.DeleteRegionNotificationEndpointRequest;
 import com.google.cloud.compute.v1.GetRegionNotificationEndpointRequest;
 import com.google.cloud.compute.v1.InsertRegionNotificationEndpointRequest;
 import com.google.cloud.compute.v1.ListRegionNotificationEndpointsRequest;
 import com.google.cloud.compute.v1.NotificationEndpoint;
+import com.google.cloud.compute.v1.NotificationEndpointAggregatedList;
 import com.google.cloud.compute.v1.NotificationEndpointList;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionNotificationEndpointRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -38,6 +43,18 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class RegionNotificationEndpointsStub implements BackgroundResource {
+
+  public UnaryCallable<
+          AggregatedListRegionNotificationEndpointsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListPagedCallable()");
+  }
+
+  public UnaryCallable<
+          AggregatedListRegionNotificationEndpointsRequest, NotificationEndpointAggregatedList>
+      aggregatedListCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
+  }
 
   public OperationCallable<DeleteRegionNotificationEndpointRequest, Operation, Operation>
       deleteOperationCallable() {
@@ -69,6 +86,11 @@ public abstract class RegionNotificationEndpointsStub implements BackgroundResou
   public UnaryCallable<ListRegionNotificationEndpointsRequest, NotificationEndpointList>
       listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

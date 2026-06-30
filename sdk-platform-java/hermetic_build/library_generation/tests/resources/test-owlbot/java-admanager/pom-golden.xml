@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.api-ads</groupId>
+  <artifactId>ad-manager-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:ad-manager:current} -->
+  <name>Google Google Ad Manager API Parent</name>
+  <description>
+    Java idiomatic client for Google Cloud Platform services.
+  </description>
+
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-jar-parent</artifactId>
+    <version>1.37.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
+  </parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <github.global.server>github</github.global.server>
+    <site.installationModule>ad-manager-parent</site.installationModule>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.api-ads</groupId>
+        <artifactId>ad-manager</artifactId>
+        <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:ad-manager:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api-ads.api.grpc</groupId>
+        <artifactId>proto-ad-manager-v1</artifactId>
+        <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:proto-ad-manager-v1:current} -->
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>ad-manager</module>
+    <module>proto-ad-manager-v1</module>
+    <module>ad-manager-bom</module>
+  </modules>
+
+</project>

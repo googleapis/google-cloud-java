@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -121,6 +121,16 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> rawPredictCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamRawPredict</td>
+ *      <td><p> Perform a streaming online prediction with an arbitrary HTTP payload.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamRawPredictCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -276,6 +286,25 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> chatCompletionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> EmbedContent</td>
+ *      <td><p> Embed content with multimodal inputs.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> embedContent(EmbedContentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> embedContent(EndpointName model, Content content)
+ *           <li><p> embedContent(String model, Content content)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> embedContentCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -565,6 +594,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *                   .toString())
    *           .addAllInstances(new ArrayList<Value>())
    *           .setParameters(Value.newBuilder().setBoolValue(true).build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   PredictResponse response = predictionServiceClient.predict(request);
    * }
@@ -598,6 +628,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *                   .toString())
    *           .addAllInstances(new ArrayList<Value>())
    *           .setParameters(Value.newBuilder().setBoolValue(true).build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<PredictResponse> future =
    *       predictionServiceClient.predictCallable().futureCall(request);
@@ -811,6 +842,40 @@ public class PredictionServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable() {
     return stub.rawPredictCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a streaming online prediction with an arbitrary HTTP payload.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   StreamRawPredictRequest request =
+   *       StreamRawPredictRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .setHttpBody(HttpBody.newBuilder().build())
+   *           .build();
+   *   ServerStream<HttpBody> stream =
+   *       predictionServiceClient.streamRawPredictCallable().call(request);
+   *   for (HttpBody response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<StreamRawPredictRequest, HttpBody>
+      streamRawPredictCallable() {
+    return stub.streamRawPredictCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1363,7 +1428,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *
    * @param endpoint Required. The name of the Endpoint requested to perform token counting. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
-   * @param instances Required. The instances that are the input to token counting call. Schema is
+   * @param instances Optional. The instances that are the input to token counting call. Schema is
    *     identical to the prediction schema of the underlying model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1399,7 +1464,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *
    * @param endpoint Required. The name of the Endpoint requested to perform token counting. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
-   * @param instances Required. The instances that are the input to token counting call. Schema is
+   * @param instances Optional. The instances that are the input to token counting call. Schema is
    *     identical to the prediction schema of the underlying model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1431,6 +1496,9 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllInstances(new ArrayList<Value>())
    *           .addAllContents(new ArrayList<Content>())
+   *           .setSystemInstruction(Content.newBuilder().build())
+   *           .addAllTools(new ArrayList<Tool>())
+   *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();
    *   CountTokensResponse response = predictionServiceClient.countTokens(request);
    * }
@@ -1465,6 +1533,9 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllInstances(new ArrayList<Value>())
    *           .addAllContents(new ArrayList<Content>())
+   *           .setSystemInstruction(Content.newBuilder().build())
+   *           .addAllTools(new ArrayList<Tool>())
+   *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<CountTokensResponse> future =
    *       predictionServiceClient.countTokensCallable().futureCall(request);
@@ -1496,8 +1567,12 @@ public class PredictionServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param model Required. The name of the publisher model requested to serve the prediction.
-   *     Format: `projects/{project}/locations/{location}/publishers/&#42;/models/&#42;`
+   * @param model Required. The fully qualified name of the publisher model or tuned model endpoint
+   *     to use.
+   *     <p>Publisher model format:
+   *     `projects/{project}/locations/{location}/publishers/&#42;/models/&#42;`
+   *     <p>Tuned model endpoint format:
+   *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * @param contents Required. The content of the current conversation with the model.
    *     <p>For single-turn queries, this is a single instance. For multi-turn queries, this is a
    *     repeated field that contains conversation history + latest request.
@@ -1527,9 +1602,13 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllContents(new ArrayList<Content>())
    *           .setSystemInstruction(Content.newBuilder().build())
+   *           .setCachedContent(
+   *               CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
    *           .addAllTools(new ArrayList<Tool>())
    *           .setToolConfig(ToolConfig.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
+   *           .setModelArmorConfig(ModelArmorConfig.newBuilder().build())
    *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();
    *   GenerateContentResponse response = predictionServiceClient.generateContent(request);
@@ -1561,9 +1640,13 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllContents(new ArrayList<Content>())
    *           .setSystemInstruction(Content.newBuilder().build())
+   *           .setCachedContent(
+   *               CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
    *           .addAllTools(new ArrayList<Tool>())
    *           .setToolConfig(ToolConfig.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
+   *           .setModelArmorConfig(ModelArmorConfig.newBuilder().build())
    *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<GenerateContentResponse> future =
@@ -1596,9 +1679,13 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllContents(new ArrayList<Content>())
    *           .setSystemInstruction(Content.newBuilder().build())
+   *           .setCachedContent(
+   *               CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
    *           .addAllTools(new ArrayList<Tool>())
    *           .setToolConfig(ToolConfig.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
+   *           .setModelArmorConfig(ModelArmorConfig.newBuilder().build())
    *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();
    *   ServerStream<GenerateContentResponse> stream =
@@ -1645,6 +1732,145 @@ public class PredictionServiceClient implements BackgroundResource {
    */
   public final ServerStreamingCallable<ChatCompletionsRequest, HttpBody> chatCompletionsCallable() {
     return stub.chatCompletionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Embed content with multimodal inputs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   EndpointName model =
+   *       EndpointName.ofProjectLocationPublisherModelName(
+   *           "[PROJECT]", "[LOCATION]", "[PUBLISHER]", "[MODEL]");
+   *   Content content = Content.newBuilder().build();
+   *   EmbedContentResponse response = predictionServiceClient.embedContent(model, content);
+   * }
+   * }</pre>
+   *
+   * @param model Required. The name of the publisher model requested to serve the prediction.
+   *     Format: `projects/{project}/locations/{location}/publishers/&#42;/models/&#42;`
+   * @param content Required. Input content to be embedded.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EmbedContentResponse embedContent(EndpointName model, Content content) {
+    EmbedContentRequest request =
+        EmbedContentRequest.newBuilder()
+            .setModel(model == null ? null : model.toString())
+            .setContent(content)
+            .build();
+    return embedContent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Embed content with multimodal inputs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   String model =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *           .toString();
+   *   Content content = Content.newBuilder().build();
+   *   EmbedContentResponse response = predictionServiceClient.embedContent(model, content);
+   * }
+   * }</pre>
+   *
+   * @param model Required. The name of the publisher model requested to serve the prediction.
+   *     Format: `projects/{project}/locations/{location}/publishers/&#42;/models/&#42;`
+   * @param content Required. Input content to be embedded.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EmbedContentResponse embedContent(String model, Content content) {
+    EmbedContentRequest request =
+        EmbedContentRequest.newBuilder().setModel(model).setContent(content).build();
+    return embedContent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Embed content with multimodal inputs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   EmbedContentRequest request =
+   *       EmbedContentRequest.newBuilder()
+   *           .setModel(
+   *               EndpointName.ofProjectLocationPublisherModelName(
+   *                       "[PROJECT]", "[LOCATION]", "[PUBLISHER]", "[MODEL]")
+   *                   .toString())
+   *           .setContent(Content.newBuilder().build())
+   *           .setTitle("title110371416")
+   *           .setOutputDimensionality(-495931909)
+   *           .setAutoTruncate(true)
+   *           .setEmbedContentConfig(EmbedContentRequest.EmbedContentConfig.newBuilder().build())
+   *           .build();
+   *   EmbedContentResponse response = predictionServiceClient.embedContent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EmbedContentResponse embedContent(EmbedContentRequest request) {
+    return embedContentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Embed content with multimodal inputs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   EmbedContentRequest request =
+   *       EmbedContentRequest.newBuilder()
+   *           .setModel(
+   *               EndpointName.ofProjectLocationPublisherModelName(
+   *                       "[PROJECT]", "[LOCATION]", "[PUBLISHER]", "[MODEL]")
+   *                   .toString())
+   *           .setContent(Content.newBuilder().build())
+   *           .setTitle("title110371416")
+   *           .setOutputDimensionality(-495931909)
+   *           .setAutoTruncate(true)
+   *           .setEmbedContentConfig(EmbedContentRequest.EmbedContentConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<EmbedContentResponse> future =
+   *       predictionServiceClient.embedContentCallable().futureCall(request);
+   *   // Do something.
+   *   EmbedContentResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EmbedContentRequest, EmbedContentResponse> embedContentCallable() {
+    return stub.embedContentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

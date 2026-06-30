@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,30 +18,44 @@ package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionServiceClient.ListLocationsPagedResponse;
 
+import com.google.api.HttpBody;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest;
+import com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineResponse;
+import com.google.cloud.aiplatform.v1beta1.CancelAsyncQueryReasoningEngineRequest;
+import com.google.cloud.aiplatform.v1beta1.CancelAsyncQueryReasoningEngineResponse;
 import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -55,7 +69,9 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -74,7 +90,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of queryReasoningEngine to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of queryReasoningEngine:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -92,14 +110,53 @@ import javax.annotation.Generated;
  *             .queryReasoningEngineSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ReasoningEngineExecutionServiceStubSettings reasoningEngineExecutionServiceSettings =
  *     reasoningEngineExecutionServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for asyncQueryReasoningEngine:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ReasoningEngineExecutionServiceStubSettings.Builder
+ *     reasoningEngineExecutionServiceSettingsBuilder =
+ *         ReasoningEngineExecutionServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * reasoningEngineExecutionServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class ReasoningEngineExecutionServiceStubSettings
     extends StubSettings<ReasoningEngineExecutionServiceStubSettings> {
   /** The default scopes of the service. */
@@ -108,6 +165,18 @@ public class ReasoningEngineExecutionServiceStubSettings
 
   private final UnaryCallSettings<QueryReasoningEngineRequest, QueryReasoningEngineResponse>
       queryReasoningEngineSettings;
+  private final ServerStreamingCallSettings<StreamQueryReasoningEngineRequest, HttpBody>
+      streamQueryReasoningEngineSettings;
+  private final UnaryCallSettings<AsyncQueryReasoningEngineRequest, Operation>
+      asyncQueryReasoningEngineSettings;
+  private final OperationCallSettings<
+          AsyncQueryReasoningEngineRequest,
+          AsyncQueryReasoningEngineResponse,
+          AsyncQueryReasoningEngineOperationMetadata>
+      asyncQueryReasoningEngineOperationSettings;
+  private final UnaryCallSettings<
+          CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+      cancelAsyncQueryReasoningEngineSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -147,9 +216,7 @@ public class ReasoningEngineExecutionServiceStubSettings
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -174,6 +241,34 @@ public class ReasoningEngineExecutionServiceStubSettings
   public UnaryCallSettings<QueryReasoningEngineRequest, QueryReasoningEngineResponse>
       queryReasoningEngineSettings() {
     return queryReasoningEngineSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamQueryReasoningEngine. */
+  public ServerStreamingCallSettings<StreamQueryReasoningEngineRequest, HttpBody>
+      streamQueryReasoningEngineSettings() {
+    return streamQueryReasoningEngineSettings;
+  }
+
+  /** Returns the object with the settings used for calls to asyncQueryReasoningEngine. */
+  public UnaryCallSettings<AsyncQueryReasoningEngineRequest, Operation>
+      asyncQueryReasoningEngineSettings() {
+    return asyncQueryReasoningEngineSettings;
+  }
+
+  /** Returns the object with the settings used for calls to asyncQueryReasoningEngine. */
+  public OperationCallSettings<
+          AsyncQueryReasoningEngineRequest,
+          AsyncQueryReasoningEngineResponse,
+          AsyncQueryReasoningEngineOperationMetadata>
+      asyncQueryReasoningEngineOperationSettings() {
+    return asyncQueryReasoningEngineOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelAsyncQueryReasoningEngine. */
+  public UnaryCallSettings<
+          CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+      cancelAsyncQueryReasoningEngineSettings() {
+    return cancelAsyncQueryReasoningEngineSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -214,15 +309,6 @@ public class ReasoningEngineExecutionServiceStubSettings
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -235,6 +321,7 @@ public class ReasoningEngineExecutionServiceStubSettings
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "aiplatform.googleapis.com:443";
   }
@@ -295,11 +382,27 @@ public class ReasoningEngineExecutionServiceStubSettings
     super(settingsBuilder);
 
     queryReasoningEngineSettings = settingsBuilder.queryReasoningEngineSettings().build();
+    streamQueryReasoningEngineSettings =
+        settingsBuilder.streamQueryReasoningEngineSettings().build();
+    asyncQueryReasoningEngineSettings = settingsBuilder.asyncQueryReasoningEngineSettings().build();
+    asyncQueryReasoningEngineOperationSettings =
+        settingsBuilder.asyncQueryReasoningEngineOperationSettings().build();
+    cancelAsyncQueryReasoningEngineSettings =
+        settingsBuilder.cancelAsyncQueryReasoningEngineSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-aiplatform")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for ReasoningEngineExecutionServiceStubSettings. */
@@ -309,6 +412,18 @@ public class ReasoningEngineExecutionServiceStubSettings
     private final UnaryCallSettings.Builder<
             QueryReasoningEngineRequest, QueryReasoningEngineResponse>
         queryReasoningEngineSettings;
+    private final ServerStreamingCallSettings.Builder<StreamQueryReasoningEngineRequest, HttpBody>
+        streamQueryReasoningEngineSettings;
+    private final UnaryCallSettings.Builder<AsyncQueryReasoningEngineRequest, Operation>
+        asyncQueryReasoningEngineSettings;
+    private final OperationCallSettings.Builder<
+            AsyncQueryReasoningEngineRequest,
+            AsyncQueryReasoningEngineResponse,
+            AsyncQueryReasoningEngineOperationMetadata>
+        asyncQueryReasoningEngineOperationSettings;
+    private final UnaryCallSettings.Builder<
+            CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+        cancelAsyncQueryReasoningEngineSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -345,6 +460,10 @@ public class ReasoningEngineExecutionServiceStubSettings
       super(clientContext);
 
       queryReasoningEngineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      streamQueryReasoningEngineSettings = ServerStreamingCallSettings.newBuilder();
+      asyncQueryReasoningEngineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      asyncQueryReasoningEngineOperationSettings = OperationCallSettings.newBuilder();
+      cancelAsyncQueryReasoningEngineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -354,6 +473,8 @@ public class ReasoningEngineExecutionServiceStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               queryReasoningEngineSettings,
+              asyncQueryReasoningEngineSettings,
+              cancelAsyncQueryReasoningEngineSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -366,6 +487,12 @@ public class ReasoningEngineExecutionServiceStubSettings
       super(settings);
 
       queryReasoningEngineSettings = settings.queryReasoningEngineSettings.toBuilder();
+      streamQueryReasoningEngineSettings = settings.streamQueryReasoningEngineSettings.toBuilder();
+      asyncQueryReasoningEngineSettings = settings.asyncQueryReasoningEngineSettings.toBuilder();
+      asyncQueryReasoningEngineOperationSettings =
+          settings.asyncQueryReasoningEngineOperationSettings.toBuilder();
+      cancelAsyncQueryReasoningEngineSettings =
+          settings.cancelAsyncQueryReasoningEngineSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -375,6 +502,8 @@ public class ReasoningEngineExecutionServiceStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               queryReasoningEngineSettings,
+              asyncQueryReasoningEngineSettings,
+              cancelAsyncQueryReasoningEngineSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -397,6 +526,21 @@ public class ReasoningEngineExecutionServiceStubSettings
     private static Builder initDefaults(Builder builder) {
       builder
           .queryReasoningEngineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .streamQueryReasoningEngineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .asyncQueryReasoningEngineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .cancelAsyncQueryReasoningEngineSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -425,6 +569,33 @@ public class ReasoningEngineExecutionServiceStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
+      builder
+          .asyncQueryReasoningEngineOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AsyncQueryReasoningEngineRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  AsyncQueryReasoningEngineResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  AsyncQueryReasoningEngineOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -447,6 +618,34 @@ public class ReasoningEngineExecutionServiceStubSettings
     public UnaryCallSettings.Builder<QueryReasoningEngineRequest, QueryReasoningEngineResponse>
         queryReasoningEngineSettings() {
       return queryReasoningEngineSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamQueryReasoningEngine. */
+    public ServerStreamingCallSettings.Builder<StreamQueryReasoningEngineRequest, HttpBody>
+        streamQueryReasoningEngineSettings() {
+      return streamQueryReasoningEngineSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to asyncQueryReasoningEngine. */
+    public UnaryCallSettings.Builder<AsyncQueryReasoningEngineRequest, Operation>
+        asyncQueryReasoningEngineSettings() {
+      return asyncQueryReasoningEngineSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to asyncQueryReasoningEngine. */
+    public OperationCallSettings.Builder<
+            AsyncQueryReasoningEngineRequest,
+            AsyncQueryReasoningEngineResponse,
+            AsyncQueryReasoningEngineOperationMetadata>
+        asyncQueryReasoningEngineOperationSettings() {
+      return asyncQueryReasoningEngineOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelAsyncQueryReasoningEngine. */
+    public UnaryCallSettings.Builder<
+            CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+        cancelAsyncQueryReasoningEngineSettings() {
+      return cancelAsyncQueryReasoningEngineSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
@@ -475,15 +674,6 @@ public class ReasoningEngineExecutionServiceStubSettings
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

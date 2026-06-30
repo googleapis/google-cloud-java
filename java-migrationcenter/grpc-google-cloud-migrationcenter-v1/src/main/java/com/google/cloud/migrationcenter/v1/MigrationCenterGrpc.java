@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/migrationcenter/v1/migrationcenter.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MigrationCenterGrpc {
 
@@ -2267,6 +2264,19 @@ public final class MigrationCenterGrpc {
     return MigrationCenterStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static MigrationCenterBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<MigrationCenterBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<MigrationCenterBlockingV2Stub>() {
+          @java.lang.Override
+          public MigrationCenterBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new MigrationCenterBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return MigrationCenterBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -3802,6 +3812,699 @@ public final class MigrationCenterGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service MigrationCenter.
+   *
+   * <pre>
+   * Service describing handlers for resources.
+   * </pre>
+   */
+  public static final class MigrationCenterBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<MigrationCenterBlockingV2Stub> {
+    private MigrationCenterBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected MigrationCenterBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new MigrationCenterBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the assets in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.ListAssetsResponse listAssets(
+        com.google.cloud.migrationcenter.v1.ListAssetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAssetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of an asset.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.Asset getAsset(
+        com.google.cloud.migrationcenter.v1.GetAssetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAssetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of an asset.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.Asset updateAsset(
+        com.google.cloud.migrationcenter.v1.UpdateAssetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAssetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a list of assets.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.BatchUpdateAssetsResponse batchUpdateAssets(
+        com.google.cloud.migrationcenter.v1.BatchUpdateAssetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchUpdateAssetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an asset.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAsset(
+        com.google.cloud.migrationcenter.v1.DeleteAssetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteAssetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes list of Assets.
+     * </pre>
+     */
+    public com.google.protobuf.Empty batchDeleteAssets(
+        com.google.cloud.migrationcenter.v1.BatchDeleteAssetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchDeleteAssetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reports a set of frames.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.ReportAssetFramesResponse reportAssetFrames(
+        com.google.cloud.migrationcenter.v1.ReportAssetFramesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getReportAssetFramesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Aggregates the requested fields based on provided function.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.AggregateAssetsValuesResponse aggregateAssetsValues(
+        com.google.cloud.migrationcenter.v1.AggregateAssetsValuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAggregateAssetsValuesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an import job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createImportJob(
+        com.google.cloud.migrationcenter.v1.CreateImportJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateImportJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all import jobs.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.ListImportJobsResponse listImportJobs(
+        com.google.cloud.migrationcenter.v1.ListImportJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListImportJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of an import job.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.ImportJob getImportJob(
+        com.google.cloud.migrationcenter.v1.GetImportJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetImportJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an import job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteImportJob(
+        com.google.cloud.migrationcenter.v1.DeleteImportJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteImportJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an import job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateImportJob(
+        com.google.cloud.migrationcenter.v1.UpdateImportJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateImportJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Validates an import job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation validateImportJob(
+        com.google.cloud.migrationcenter.v1.ValidateImportJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getValidateImportJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs an import job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation runImportJob(
+        com.google.cloud.migrationcenter.v1.RunImportJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRunImportJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an import data file.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.ImportDataFile getImportDataFile(
+        com.google.cloud.migrationcenter.v1.GetImportDataFileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetImportDataFileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List import data files.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.ListImportDataFilesResponse listImportDataFiles(
+        com.google.cloud.migrationcenter.v1.ListImportDataFilesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListImportDataFilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an import data file.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createImportDataFile(
+        com.google.cloud.migrationcenter.v1.CreateImportDataFileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateImportDataFileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete an import data file.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteImportDataFile(
+        com.google.cloud.migrationcenter.v1.DeleteImportDataFileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteImportDataFileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all groups in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.ListGroupsResponse listGroups(
+        com.google.cloud.migrationcenter.v1.ListGroupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a group.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.Group getGroup(
+        com.google.cloud.migrationcenter.v1.GetGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new group in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createGroup(
+        com.google.cloud.migrationcenter.v1.CreateGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a group.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGroup(
+        com.google.cloud.migrationcenter.v1.UpdateGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a group.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteGroup(
+        com.google.cloud.migrationcenter.v1.DeleteGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds assets to a group.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addAssetsToGroup(
+        com.google.cloud.migrationcenter.v1.AddAssetsToGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAddAssetsToGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes assets from a group.
+     * </pre>
+     */
+    public com.google.longrunning.Operation removeAssetsFromGroup(
+        com.google.cloud.migrationcenter.v1.RemoveAssetsFromGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRemoveAssetsFromGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all error frames in a given source and location.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.ListErrorFramesResponse listErrorFrames(
+        com.google.cloud.migrationcenter.v1.ListErrorFramesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListErrorFramesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of an error frame.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.ErrorFrame getErrorFrame(
+        com.google.cloud.migrationcenter.v1.GetErrorFrameRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetErrorFrameMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the sources in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.ListSourcesResponse listSources(
+        com.google.cloud.migrationcenter.v1.ListSourcesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListSourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a source.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.Source getSource(
+        com.google.cloud.migrationcenter.v1.GetSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new source in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSource(
+        com.google.cloud.migrationcenter.v1.CreateSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a source.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateSource(
+        com.google.cloud.migrationcenter.v1.UpdateSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a source.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSource(
+        com.google.cloud.migrationcenter.v1.DeleteSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the preference sets in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.ListPreferenceSetsResponse listPreferenceSets(
+        com.google.cloud.migrationcenter.v1.ListPreferenceSetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListPreferenceSetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a preference set.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.PreferenceSet getPreferenceSet(
+        com.google.cloud.migrationcenter.v1.GetPreferenceSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetPreferenceSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new preference set in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createPreferenceSet(
+        com.google.cloud.migrationcenter.v1.CreatePreferenceSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreatePreferenceSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a preference set.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updatePreferenceSet(
+        com.google.cloud.migrationcenter.v1.UpdatePreferenceSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdatePreferenceSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a preference set.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePreferenceSet(
+        com.google.cloud.migrationcenter.v1.DeletePreferenceSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeletePreferenceSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of regional settings.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.Settings getSettings(
+        com.google.cloud.migrationcenter.v1.GetSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the regional-level project settings.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateSettings(
+        com.google.cloud.migrationcenter.v1.UpdateSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a report configuration.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createReportConfig(
+        com.google.cloud.migrationcenter.v1.CreateReportConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateReportConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ReportConfig.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.ReportConfig getReportConfig(
+        com.google.cloud.migrationcenter.v1.GetReportConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetReportConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ReportConfigs in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.ListReportConfigsResponse listReportConfigs(
+        com.google.cloud.migrationcenter.v1.ListReportConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListReportConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ReportConfig.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteReportConfig(
+        com.google.cloud.migrationcenter.v1.DeleteReportConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteReportConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a report.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createReport(
+        com.google.cloud.migrationcenter.v1.CreateReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Report.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.Report getReport(
+        com.google.cloud.migrationcenter.v1.GetReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Reports in a given ReportConfig.
+     * </pre>
+     */
+    public com.google.cloud.migrationcenter.v1.ListReportsResponse listReports(
+        com.google.cloud.migrationcenter.v1.ListReportsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListReportsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Report.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteReport(
+        com.google.cloud.migrationcenter.v1.DeleteReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteReportMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service MigrationCenter.
    *
    * <pre>
    * Service describing handlers for resources.

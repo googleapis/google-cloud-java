@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,17 @@
 
 package com.google.cloud.backupdr.v1.stub;
 
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupPlanAssociationsForResourceTypePagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupsForResourceTypePagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchDataSourceReferencesForResourceTypePagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchUsableBackupVaultsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanAssociationsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanRevisionsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlansPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupVaultsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourceReferencesPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListLocationsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListManagementServersPagedResponse;
 
@@ -35,13 +46,66 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.backupdr.v1.Backup;
+import com.google.cloud.backupdr.v1.BackupPlan;
+import com.google.cloud.backupdr.v1.BackupPlanAssociation;
+import com.google.cloud.backupdr.v1.BackupPlanRevision;
+import com.google.cloud.backupdr.v1.BackupVault;
+import com.google.cloud.backupdr.v1.CreateBackupPlanAssociationRequest;
+import com.google.cloud.backupdr.v1.CreateBackupPlanRequest;
+import com.google.cloud.backupdr.v1.CreateBackupVaultRequest;
 import com.google.cloud.backupdr.v1.CreateManagementServerRequest;
+import com.google.cloud.backupdr.v1.DataSource;
+import com.google.cloud.backupdr.v1.DataSourceReference;
+import com.google.cloud.backupdr.v1.DeleteBackupPlanAssociationRequest;
+import com.google.cloud.backupdr.v1.DeleteBackupPlanRequest;
+import com.google.cloud.backupdr.v1.DeleteBackupRequest;
+import com.google.cloud.backupdr.v1.DeleteBackupVaultRequest;
 import com.google.cloud.backupdr.v1.DeleteManagementServerRequest;
+import com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeRequest;
+import com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeResponse;
+import com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest;
+import com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse;
+import com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequest;
+import com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse;
+import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsRequest;
+import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsResponse;
+import com.google.cloud.backupdr.v1.GetBackupPlanAssociationRequest;
+import com.google.cloud.backupdr.v1.GetBackupPlanRequest;
+import com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest;
+import com.google.cloud.backupdr.v1.GetBackupRequest;
+import com.google.cloud.backupdr.v1.GetBackupVaultRequest;
+import com.google.cloud.backupdr.v1.GetDataSourceReferenceRequest;
+import com.google.cloud.backupdr.v1.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1.GetManagementServerRequest;
+import com.google.cloud.backupdr.v1.InitializeServiceRequest;
+import com.google.cloud.backupdr.v1.InitializeServiceResponse;
+import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsRequest;
+import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse;
+import com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest;
+import com.google.cloud.backupdr.v1.ListBackupPlanRevisionsResponse;
+import com.google.cloud.backupdr.v1.ListBackupPlansRequest;
+import com.google.cloud.backupdr.v1.ListBackupPlansResponse;
+import com.google.cloud.backupdr.v1.ListBackupVaultsRequest;
+import com.google.cloud.backupdr.v1.ListBackupVaultsResponse;
+import com.google.cloud.backupdr.v1.ListBackupsRequest;
+import com.google.cloud.backupdr.v1.ListBackupsResponse;
+import com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest;
+import com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse;
+import com.google.cloud.backupdr.v1.ListDataSourcesRequest;
+import com.google.cloud.backupdr.v1.ListDataSourcesResponse;
 import com.google.cloud.backupdr.v1.ListManagementServersRequest;
 import com.google.cloud.backupdr.v1.ListManagementServersResponse;
 import com.google.cloud.backupdr.v1.ManagementServer;
 import com.google.cloud.backupdr.v1.OperationMetadata;
+import com.google.cloud.backupdr.v1.RestoreBackupRequest;
+import com.google.cloud.backupdr.v1.RestoreBackupResponse;
+import com.google.cloud.backupdr.v1.TriggerBackupRequest;
+import com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest;
+import com.google.cloud.backupdr.v1.UpdateBackupPlanRequest;
+import com.google.cloud.backupdr.v1.UpdateBackupRequest;
+import com.google.cloud.backupdr.v1.UpdateBackupVaultRequest;
+import com.google.cloud.backupdr.v1.UpdateDataSourceRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -76,6 +140,13 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
           .add(ManagementServer.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(Empty.getDescriptor())
+          .add(BackupVault.getDescriptor())
+          .add(InitializeServiceResponse.getDescriptor())
+          .add(Backup.getDescriptor())
+          .add(DataSource.getDescriptor())
+          .add(BackupPlan.getDescriptor())
+          .add(RestoreBackupResponse.getDescriptor())
+          .add(BackupPlanAssociation.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<
@@ -237,6 +308,1344 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<CreateBackupVaultRequest, Operation>
+      createBackupVaultMethodDescriptor =
+          ApiMethodDescriptor.<CreateBackupVaultRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/CreateBackupVault")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateBackupVaultRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/backupVaults",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateBackupVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateBackupVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "backupVaultId", request.getBackupVaultId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("backupVault", request.getBackupVault(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateBackupVaultRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ListBackupVaultsRequest, ListBackupVaultsResponse>
+      listBackupVaultsMethodDescriptor =
+          ApiMethodDescriptor.<ListBackupVaultsRequest, ListBackupVaultsResponse>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/ListBackupVaults")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBackupVaultsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/backupVaults",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupVaultsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupVaultsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBackupVaultsResponse>newBuilder()
+                      .setDefaultInstance(ListBackupVaultsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse>
+      fetchUsableBackupVaultsMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/FetchUsableBackupVaults")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchUsableBackupVaultsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/backupVaults:fetchUsable",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchUsableBackupVaultsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchUsableBackupVaultsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchUsableBackupVaultsResponse>newBuilder()
+                      .setDefaultInstance(FetchUsableBackupVaultsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetBackupVaultRequest, BackupVault>
+      getBackupVaultMethodDescriptor =
+          ApiMethodDescriptor.<GetBackupVaultRequest, BackupVault>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/GetBackupVault")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetBackupVaultRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupVaults/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BackupVault>newBuilder()
+                      .setDefaultInstance(BackupVault.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateBackupVaultRequest, Operation>
+      updateBackupVaultMethodDescriptor =
+          ApiMethodDescriptor.<UpdateBackupVaultRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/UpdateBackupVault")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateBackupVaultRequest>newBuilder()
+                      .setPath(
+                          "/v1/{backupVault.name=projects/*/locations/*/backupVaults/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackupVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backupVault.name", request.getBackupVault().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackupVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(
+                                fields,
+                                "forceUpdateAccessRestriction",
+                                request.getForceUpdateAccessRestriction());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("backupVault", request.getBackupVault(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateBackupVaultRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteBackupVaultRequest, Operation>
+      deleteBackupVaultMethodDescriptor =
+          ApiMethodDescriptor.<DeleteBackupVaultRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/DeleteBackupVault")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteBackupVaultRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupVaults/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(
+                                fields,
+                                "ignoreBackupPlanReferences",
+                                request.getIgnoreBackupPlanReferences());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteBackupVaultRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ListDataSourcesRequest, ListDataSourcesResponse>
+      listDataSourcesMethodDescriptor =
+          ApiMethodDescriptor.<ListDataSourcesRequest, ListDataSourcesResponse>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/ListDataSources")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDataSourcesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/backupVaults/*}/dataSources",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDataSourcesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDataSourcesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDataSourcesResponse>newBuilder()
+                      .setDefaultInstance(ListDataSourcesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetDataSourceRequest, DataSource>
+      getDataSourceMethodDescriptor =
+          ApiMethodDescriptor.<GetDataSourceRequest, DataSource>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/GetDataSource")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetDataSourceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupVaults/*/dataSources/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDataSourceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDataSourceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DataSource>newBuilder()
+                      .setDefaultInstance(DataSource.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateDataSourceRequest, Operation>
+      updateDataSourceMethodDescriptor =
+          ApiMethodDescriptor.<UpdateDataSourceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/UpdateDataSource")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateDataSourceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{dataSource.name=projects/*/locations/*/backupVaults/*/dataSources/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDataSourceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "dataSource.name", request.getDataSource().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDataSourceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("dataSource", request.getDataSource(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateDataSourceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ListBackupsRequest, ListBackupsResponse>
+      listBackupsMethodDescriptor =
+          ApiMethodDescriptor.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/ListBackups")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBackupsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/backupVaults/*/dataSources/*}/backups",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBackupsResponse>newBuilder()
+                      .setDefaultInstance(ListBackupsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+      fetchBackupsForResourceTypeMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/FetchBackupsForResourceType")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchBackupsForResourceTypeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/backupVaults/*/dataSources/*}/backups:fetchForResourceType",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchBackupsForResourceTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchBackupsForResourceTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "resourceType", request.getResourceType());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchBackupsForResourceTypeResponse>newBuilder()
+                      .setDefaultInstance(FetchBackupsForResourceTypeResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
+      ApiMethodDescriptor.<GetBackupRequest, Backup>newBuilder()
+          .setFullMethodName("google.cloud.backupdr.v1.BackupDR/GetBackup")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetBackupRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/backupVaults/*/dataSources/*/backups/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetBackupRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetBackupRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "view", request.getViewValue());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Backup>newBuilder()
+                  .setDefaultInstance(Backup.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<UpdateBackupRequest, Operation>
+      updateBackupMethodDescriptor =
+          ApiMethodDescriptor.<UpdateBackupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/UpdateBackup")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateBackupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{backup.name=projects/*/locations/*/backupVaults/*/dataSources/*/backups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backup.name", request.getBackup().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("backup", request.getBackup(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateBackupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteBackupRequest, Operation>
+      deleteBackupMethodDescriptor =
+          ApiMethodDescriptor.<DeleteBackupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/DeleteBackup")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteBackupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupVaults/*/dataSources/*/backups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteBackupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<RestoreBackupRequest, Operation>
+      restoreBackupMethodDescriptor =
+          ApiMethodDescriptor.<RestoreBackupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/RestoreBackup")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RestoreBackupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupVaults/*/dataSources/*/backups/*}:restore",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RestoreBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RestoreBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RestoreBackupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<CreateBackupPlanRequest, Operation>
+      createBackupPlanMethodDescriptor =
+          ApiMethodDescriptor.<CreateBackupPlanRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/CreateBackupPlan")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateBackupPlanRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/backupPlans",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateBackupPlanRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateBackupPlanRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "backupPlanId", request.getBackupPlanId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("backupPlan", request.getBackupPlan(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateBackupPlanRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateBackupPlanRequest, Operation>
+      updateBackupPlanMethodDescriptor =
+          ApiMethodDescriptor.<UpdateBackupPlanRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/UpdateBackupPlan")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateBackupPlanRequest>newBuilder()
+                      .setPath(
+                          "/v1/{backupPlan.name=projects/*/locations/*/backupPlans/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackupPlanRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backupPlan.name", request.getBackupPlan().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackupPlanRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("backupPlan", request.getBackupPlan(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateBackupPlanRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetBackupPlanRequest, BackupPlan>
+      getBackupPlanMethodDescriptor =
+          ApiMethodDescriptor.<GetBackupPlanRequest, BackupPlan>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/GetBackupPlan")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetBackupPlanRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupPlans/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupPlanRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupPlanRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BackupPlan>newBuilder()
+                      .setDefaultInstance(BackupPlan.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListBackupPlansRequest, ListBackupPlansResponse>
+      listBackupPlansMethodDescriptor =
+          ApiMethodDescriptor.<ListBackupPlansRequest, ListBackupPlansResponse>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/ListBackupPlans")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBackupPlansRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/backupPlans",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupPlansRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupPlansRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBackupPlansResponse>newBuilder()
+                      .setDefaultInstance(ListBackupPlansResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteBackupPlanRequest, Operation>
+      deleteBackupPlanMethodDescriptor =
+          ApiMethodDescriptor.<DeleteBackupPlanRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/DeleteBackupPlan")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteBackupPlanRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupPlans/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupPlanRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupPlanRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteBackupPlanRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetBackupPlanRevisionRequest, BackupPlanRevision>
+      getBackupPlanRevisionMethodDescriptor =
+          ApiMethodDescriptor.<GetBackupPlanRevisionRequest, BackupPlanRevision>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/GetBackupPlanRevision")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetBackupPlanRevisionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupPlans/*/revisions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupPlanRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupPlanRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BackupPlanRevision>newBuilder()
+                      .setDefaultInstance(BackupPlanRevision.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse>
+      listBackupPlanRevisionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/ListBackupPlanRevisions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBackupPlanRevisionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/backupPlans/*}/revisions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupPlanRevisionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupPlanRevisionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBackupPlanRevisionsResponse>newBuilder()
+                      .setDefaultInstance(ListBackupPlanRevisionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateBackupPlanAssociationRequest, Operation>
+      createBackupPlanAssociationMethodDescriptor =
+          ApiMethodDescriptor.<CreateBackupPlanAssociationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/CreateBackupPlanAssociation")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateBackupPlanAssociationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/backupPlanAssociations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateBackupPlanAssociationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateBackupPlanAssociationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "backupPlanAssociationId",
+                                request.getBackupPlanAssociationId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "backupPlanAssociation",
+                                      request.getBackupPlanAssociation(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateBackupPlanAssociationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateBackupPlanAssociationRequest, Operation>
+      updateBackupPlanAssociationMethodDescriptor =
+          ApiMethodDescriptor.<UpdateBackupPlanAssociationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/UpdateBackupPlanAssociation")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateBackupPlanAssociationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{backupPlanAssociation.name=projects/*/locations/*/backupPlanAssociations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackupPlanAssociationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "backupPlanAssociation.name",
+                                request.getBackupPlanAssociation().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackupPlanAssociationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "backupPlanAssociation",
+                                      request.getBackupPlanAssociation(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateBackupPlanAssociationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetBackupPlanAssociationRequest, BackupPlanAssociation>
+      getBackupPlanAssociationMethodDescriptor =
+          ApiMethodDescriptor.<GetBackupPlanAssociationRequest, BackupPlanAssociation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/GetBackupPlanAssociation")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetBackupPlanAssociationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupPlanAssociations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupPlanAssociationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupPlanAssociationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BackupPlanAssociation>newBuilder()
+                      .setDefaultInstance(BackupPlanAssociation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListBackupPlanAssociationsRequest, ListBackupPlanAssociationsResponse>
+      listBackupPlanAssociationsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListBackupPlanAssociationsRequest, ListBackupPlanAssociationsResponse>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/ListBackupPlanAssociations")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBackupPlanAssociationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/backupPlanAssociations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupPlanAssociationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupPlanAssociationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBackupPlanAssociationsResponse>newBuilder()
+                      .setDefaultInstance(ListBackupPlanAssociationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FetchBackupPlanAssociationsForResourceTypeRequest,
+          FetchBackupPlanAssociationsForResourceTypeResponse>
+      fetchBackupPlanAssociationsForResourceTypeMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchBackupPlanAssociationsForResourceTypeRequest,
+                  FetchBackupPlanAssociationsForResourceTypeResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1.BackupDR/FetchBackupPlanAssociationsForResourceType")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<FetchBackupPlanAssociationsForResourceTypeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/backupPlanAssociations:fetchForResourceType",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchBackupPlanAssociationsForResourceTypeRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchBackupPlanAssociationsForResourceTypeRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "resourceType", request.getResourceType());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<FetchBackupPlanAssociationsForResourceTypeResponse>newBuilder()
+                      .setDefaultInstance(
+                          FetchBackupPlanAssociationsForResourceTypeResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteBackupPlanAssociationRequest, Operation>
+      deleteBackupPlanAssociationMethodDescriptor =
+          ApiMethodDescriptor.<DeleteBackupPlanAssociationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/DeleteBackupPlanAssociation")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteBackupPlanAssociationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupPlanAssociations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupPlanAssociationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupPlanAssociationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteBackupPlanAssociationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<TriggerBackupRequest, Operation>
+      triggerBackupMethodDescriptor =
+          ApiMethodDescriptor.<TriggerBackupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/TriggerBackup")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TriggerBackupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupPlanAssociations/*}:triggerBackup",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TriggerBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TriggerBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (TriggerBackupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetDataSourceReferenceRequest, DataSourceReference>
+      getDataSourceReferenceMethodDescriptor =
+          ApiMethodDescriptor.<GetDataSourceReferenceRequest, DataSourceReference>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/GetDataSourceReference")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetDataSourceReferenceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/dataSourceReferences/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDataSourceReferenceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDataSourceReferenceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DataSourceReference>newBuilder()
+                      .setDefaultInstance(DataSourceReference.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>
+      listDataSourceReferencesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/ListDataSourceReferences")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDataSourceReferencesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/dataSourceReferences",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDataSourceReferencesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDataSourceReferencesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDataSourceReferencesResponse>newBuilder()
+                      .setDefaultInstance(ListDataSourceReferencesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FetchDataSourceReferencesForResourceTypeRequest,
+          FetchDataSourceReferencesForResourceTypeResponse>
+      fetchDataSourceReferencesForResourceTypeMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchDataSourceReferencesForResourceTypeRequest,
+                  FetchDataSourceReferencesForResourceTypeResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1.BackupDR/FetchDataSourceReferencesForResourceType")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<FetchDataSourceReferencesForResourceTypeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/dataSourceReferences:fetchForResourceType",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchDataSourceReferencesForResourceTypeRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchDataSourceReferencesForResourceTypeRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "resourceType", request.getResourceType());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<FetchDataSourceReferencesForResourceTypeResponse>newBuilder()
+                      .setDefaultInstance(
+                          FetchDataSourceReferencesForResourceTypeResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<InitializeServiceRequest, Operation>
+      initializeServiceMethodDescriptor =
+          ApiMethodDescriptor.<InitializeServiceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/InitializeService")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<InitializeServiceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/serviceConfig}:initialize",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InitializeServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InitializeServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (InitializeServiceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -393,8 +1802,6 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                             serializer.putPathParam(fields, "resource", request.getResource());
                             return fields;
                           })
-                      .setAdditionalPaths(
-                          "/v1/{resource=projects/*/locations/*/backupVaults/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -430,6 +1837,122 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
       deleteManagementServerCallable;
   private final OperationCallable<DeleteManagementServerRequest, Empty, OperationMetadata>
       deleteManagementServerOperationCallable;
+  private final UnaryCallable<CreateBackupVaultRequest, Operation> createBackupVaultCallable;
+  private final OperationCallable<CreateBackupVaultRequest, BackupVault, OperationMetadata>
+      createBackupVaultOperationCallable;
+  private final UnaryCallable<ListBackupVaultsRequest, ListBackupVaultsResponse>
+      listBackupVaultsCallable;
+  private final UnaryCallable<ListBackupVaultsRequest, ListBackupVaultsPagedResponse>
+      listBackupVaultsPagedCallable;
+  private final UnaryCallable<FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse>
+      fetchUsableBackupVaultsCallable;
+  private final UnaryCallable<FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsPagedResponse>
+      fetchUsableBackupVaultsPagedCallable;
+  private final UnaryCallable<GetBackupVaultRequest, BackupVault> getBackupVaultCallable;
+  private final UnaryCallable<UpdateBackupVaultRequest, Operation> updateBackupVaultCallable;
+  private final OperationCallable<UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+      updateBackupVaultOperationCallable;
+  private final UnaryCallable<DeleteBackupVaultRequest, Operation> deleteBackupVaultCallable;
+  private final OperationCallable<DeleteBackupVaultRequest, Empty, OperationMetadata>
+      deleteBackupVaultOperationCallable;
+  private final UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse>
+      listDataSourcesCallable;
+  private final UnaryCallable<ListDataSourcesRequest, ListDataSourcesPagedResponse>
+      listDataSourcesPagedCallable;
+  private final UnaryCallable<GetDataSourceRequest, DataSource> getDataSourceCallable;
+  private final UnaryCallable<UpdateDataSourceRequest, Operation> updateDataSourceCallable;
+  private final OperationCallable<UpdateDataSourceRequest, DataSource, OperationMetadata>
+      updateDataSourceOperationCallable;
+  private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
+  private final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
+      listBackupsPagedCallable;
+  private final UnaryCallable<
+          FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+      fetchBackupsForResourceTypeCallable;
+  private final UnaryCallable<
+          FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypePagedResponse>
+      fetchBackupsForResourceTypePagedCallable;
+  private final UnaryCallable<GetBackupRequest, Backup> getBackupCallable;
+  private final UnaryCallable<UpdateBackupRequest, Operation> updateBackupCallable;
+  private final OperationCallable<UpdateBackupRequest, Backup, OperationMetadata>
+      updateBackupOperationCallable;
+  private final UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable;
+  private final OperationCallable<DeleteBackupRequest, Backup, OperationMetadata>
+      deleteBackupOperationCallable;
+  private final UnaryCallable<RestoreBackupRequest, Operation> restoreBackupCallable;
+  private final OperationCallable<RestoreBackupRequest, RestoreBackupResponse, OperationMetadata>
+      restoreBackupOperationCallable;
+  private final UnaryCallable<CreateBackupPlanRequest, Operation> createBackupPlanCallable;
+  private final OperationCallable<CreateBackupPlanRequest, BackupPlan, OperationMetadata>
+      createBackupPlanOperationCallable;
+  private final UnaryCallable<UpdateBackupPlanRequest, Operation> updateBackupPlanCallable;
+  private final OperationCallable<UpdateBackupPlanRequest, BackupPlan, OperationMetadata>
+      updateBackupPlanOperationCallable;
+  private final UnaryCallable<GetBackupPlanRequest, BackupPlan> getBackupPlanCallable;
+  private final UnaryCallable<ListBackupPlansRequest, ListBackupPlansResponse>
+      listBackupPlansCallable;
+  private final UnaryCallable<ListBackupPlansRequest, ListBackupPlansPagedResponse>
+      listBackupPlansPagedCallable;
+  private final UnaryCallable<DeleteBackupPlanRequest, Operation> deleteBackupPlanCallable;
+  private final OperationCallable<DeleteBackupPlanRequest, Empty, OperationMetadata>
+      deleteBackupPlanOperationCallable;
+  private final UnaryCallable<GetBackupPlanRevisionRequest, BackupPlanRevision>
+      getBackupPlanRevisionCallable;
+  private final UnaryCallable<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse>
+      listBackupPlanRevisionsCallable;
+  private final UnaryCallable<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsPagedResponse>
+      listBackupPlanRevisionsPagedCallable;
+  private final UnaryCallable<CreateBackupPlanAssociationRequest, Operation>
+      createBackupPlanAssociationCallable;
+  private final OperationCallable<
+          CreateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
+      createBackupPlanAssociationOperationCallable;
+  private final UnaryCallable<UpdateBackupPlanAssociationRequest, Operation>
+      updateBackupPlanAssociationCallable;
+  private final OperationCallable<
+          UpdateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
+      updateBackupPlanAssociationOperationCallable;
+  private final UnaryCallable<GetBackupPlanAssociationRequest, BackupPlanAssociation>
+      getBackupPlanAssociationCallable;
+  private final UnaryCallable<ListBackupPlanAssociationsRequest, ListBackupPlanAssociationsResponse>
+      listBackupPlanAssociationsCallable;
+  private final UnaryCallable<
+          ListBackupPlanAssociationsRequest, ListBackupPlanAssociationsPagedResponse>
+      listBackupPlanAssociationsPagedCallable;
+  private final UnaryCallable<
+          FetchBackupPlanAssociationsForResourceTypeRequest,
+          FetchBackupPlanAssociationsForResourceTypeResponse>
+      fetchBackupPlanAssociationsForResourceTypeCallable;
+  private final UnaryCallable<
+          FetchBackupPlanAssociationsForResourceTypeRequest,
+          FetchBackupPlanAssociationsForResourceTypePagedResponse>
+      fetchBackupPlanAssociationsForResourceTypePagedCallable;
+  private final UnaryCallable<DeleteBackupPlanAssociationRequest, Operation>
+      deleteBackupPlanAssociationCallable;
+  private final OperationCallable<DeleteBackupPlanAssociationRequest, Empty, OperationMetadata>
+      deleteBackupPlanAssociationOperationCallable;
+  private final UnaryCallable<TriggerBackupRequest, Operation> triggerBackupCallable;
+  private final OperationCallable<TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
+      triggerBackupOperationCallable;
+  private final UnaryCallable<GetDataSourceReferenceRequest, DataSourceReference>
+      getDataSourceReferenceCallable;
+  private final UnaryCallable<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>
+      listDataSourceReferencesCallable;
+  private final UnaryCallable<
+          ListDataSourceReferencesRequest, ListDataSourceReferencesPagedResponse>
+      listDataSourceReferencesPagedCallable;
+  private final UnaryCallable<
+          FetchDataSourceReferencesForResourceTypeRequest,
+          FetchDataSourceReferencesForResourceTypeResponse>
+      fetchDataSourceReferencesForResourceTypeCallable;
+  private final UnaryCallable<
+          FetchDataSourceReferencesForResourceTypeRequest,
+          FetchDataSourceReferencesForResourceTypePagedResponse>
+      fetchDataSourceReferencesForResourceTypePagedCallable;
+  private final UnaryCallable<InitializeServiceRequest, Operation> initializeServiceCallable;
+  private final OperationCallable<
+          InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
+      initializeServiceOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -520,6 +2043,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetManagementServerRequest, ManagementServer>
         getManagementServerTransportSettings =
@@ -532,6 +2056,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateManagementServerRequest, Operation>
         createManagementServerTransportSettings =
@@ -544,6 +2069,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteManagementServerRequest, Operation>
         deleteManagementServerTransportSettings =
@@ -556,7 +2082,436 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
+    HttpJsonCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultTransportSettings =
+        HttpJsonCallSettings.<CreateBackupVaultRequest, Operation>newBuilder()
+            .setMethodDescriptor(createBackupVaultMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<ListBackupVaultsRequest, ListBackupVaultsResponse>
+        listBackupVaultsTransportSettings =
+            HttpJsonCallSettings.<ListBackupVaultsRequest, ListBackupVaultsResponse>newBuilder()
+                .setMethodDescriptor(listBackupVaultsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse>
+        fetchUsableBackupVaultsTransportSettings =
+            HttpJsonCallSettings
+                .<FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse>newBuilder()
+                .setMethodDescriptor(fetchUsableBackupVaultsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetBackupVaultRequest, BackupVault> getBackupVaultTransportSettings =
+        HttpJsonCallSettings.<GetBackupVaultRequest, BackupVault>newBuilder()
+            .setMethodDescriptor(getBackupVaultMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<UpdateBackupVaultRequest, Operation> updateBackupVaultTransportSettings =
+        HttpJsonCallSettings.<UpdateBackupVaultRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateBackupVaultMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "backup_vault.name", String.valueOf(request.getBackupVault().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteBackupVaultRequest, Operation> deleteBackupVaultTransportSettings =
+        HttpJsonCallSettings.<DeleteBackupVaultRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteBackupVaultMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListDataSourcesRequest, ListDataSourcesResponse>
+        listDataSourcesTransportSettings =
+            HttpJsonCallSettings.<ListDataSourcesRequest, ListDataSourcesResponse>newBuilder()
+                .setMethodDescriptor(listDataSourcesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetDataSourceRequest, DataSource> getDataSourceTransportSettings =
+        HttpJsonCallSettings.<GetDataSourceRequest, DataSource>newBuilder()
+            .setMethodDescriptor(getDataSourceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<UpdateDataSourceRequest, Operation> updateDataSourceTransportSettings =
+        HttpJsonCallSettings.<UpdateDataSourceRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateDataSourceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "data_source.name", String.valueOf(request.getDataSource().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
+        HttpJsonCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+            .setMethodDescriptor(listBackupsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+        fetchBackupsForResourceTypeTransportSettings =
+            HttpJsonCallSettings
+                .<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchBackupsForResourceTypeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
+        HttpJsonCallSettings.<GetBackupRequest, Backup>newBuilder()
+            .setMethodDescriptor(getBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<UpdateBackupRequest, Operation> updateBackupTransportSettings =
+        HttpJsonCallSettings.<UpdateBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("backup.name", String.valueOf(request.getBackup().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
+        HttpJsonCallSettings.<DeleteBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<RestoreBackupRequest, Operation> restoreBackupTransportSettings =
+        HttpJsonCallSettings.<RestoreBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(restoreBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<CreateBackupPlanRequest, Operation> createBackupPlanTransportSettings =
+        HttpJsonCallSettings.<CreateBackupPlanRequest, Operation>newBuilder()
+            .setMethodDescriptor(createBackupPlanMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<UpdateBackupPlanRequest, Operation> updateBackupPlanTransportSettings =
+        HttpJsonCallSettings.<UpdateBackupPlanRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateBackupPlanMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "backup_plan.name", String.valueOf(request.getBackupPlan().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetBackupPlanRequest, BackupPlan> getBackupPlanTransportSettings =
+        HttpJsonCallSettings.<GetBackupPlanRequest, BackupPlan>newBuilder()
+            .setMethodDescriptor(getBackupPlanMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListBackupPlansRequest, ListBackupPlansResponse>
+        listBackupPlansTransportSettings =
+            HttpJsonCallSettings.<ListBackupPlansRequest, ListBackupPlansResponse>newBuilder()
+                .setMethodDescriptor(listBackupPlansMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<DeleteBackupPlanRequest, Operation> deleteBackupPlanTransportSettings =
+        HttpJsonCallSettings.<DeleteBackupPlanRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteBackupPlanMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<GetBackupPlanRevisionRequest, BackupPlanRevision>
+        getBackupPlanRevisionTransportSettings =
+            HttpJsonCallSettings.<GetBackupPlanRevisionRequest, BackupPlanRevision>newBuilder()
+                .setMethodDescriptor(getBackupPlanRevisionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse>
+        listBackupPlanRevisionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse>newBuilder()
+                .setMethodDescriptor(listBackupPlanRevisionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<CreateBackupPlanAssociationRequest, Operation>
+        createBackupPlanAssociationTransportSettings =
+            HttpJsonCallSettings.<CreateBackupPlanAssociationRequest, Operation>newBuilder()
+                .setMethodDescriptor(createBackupPlanAssociationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<UpdateBackupPlanAssociationRequest, Operation>
+        updateBackupPlanAssociationTransportSettings =
+            HttpJsonCallSettings.<UpdateBackupPlanAssociationRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateBackupPlanAssociationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "backup_plan_association.name",
+                          String.valueOf(request.getBackupPlanAssociation().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetBackupPlanAssociationRequest, BackupPlanAssociation>
+        getBackupPlanAssociationTransportSettings =
+            HttpJsonCallSettings
+                .<GetBackupPlanAssociationRequest, BackupPlanAssociation>newBuilder()
+                .setMethodDescriptor(getBackupPlanAssociationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListBackupPlanAssociationsRequest, ListBackupPlanAssociationsResponse>
+        listBackupPlanAssociationsTransportSettings =
+            HttpJsonCallSettings
+                .<ListBackupPlanAssociationsRequest, ListBackupPlanAssociationsResponse>newBuilder()
+                .setMethodDescriptor(listBackupPlanAssociationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            FetchBackupPlanAssociationsForResourceTypeRequest,
+            FetchBackupPlanAssociationsForResourceTypeResponse>
+        fetchBackupPlanAssociationsForResourceTypeTransportSettings =
+            HttpJsonCallSettings
+                .<FetchBackupPlanAssociationsForResourceTypeRequest,
+                    FetchBackupPlanAssociationsForResourceTypeResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchBackupPlanAssociationsForResourceTypeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<DeleteBackupPlanAssociationRequest, Operation>
+        deleteBackupPlanAssociationTransportSettings =
+            HttpJsonCallSettings.<DeleteBackupPlanAssociationRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteBackupPlanAssociationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<TriggerBackupRequest, Operation> triggerBackupTransportSettings =
+        HttpJsonCallSettings.<TriggerBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(triggerBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<GetDataSourceReferenceRequest, DataSourceReference>
+        getDataSourceReferenceTransportSettings =
+            HttpJsonCallSettings.<GetDataSourceReferenceRequest, DataSourceReference>newBuilder()
+                .setMethodDescriptor(getDataSourceReferenceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>
+        listDataSourceReferencesTransportSettings =
+            HttpJsonCallSettings
+                .<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>newBuilder()
+                .setMethodDescriptor(listDataSourceReferencesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            FetchDataSourceReferencesForResourceTypeRequest,
+            FetchDataSourceReferencesForResourceTypeResponse>
+        fetchDataSourceReferencesForResourceTypeTransportSettings =
+            HttpJsonCallSettings
+                .<FetchDataSourceReferencesForResourceTypeRequest,
+                    FetchDataSourceReferencesForResourceTypeResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchDataSourceReferencesForResourceTypeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<InitializeServiceRequest, Operation> initializeServiceTransportSettings =
+        HttpJsonCallSettings.<InitializeServiceRequest, Operation>newBuilder()
+            .setMethodDescriptor(initializeServiceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -590,6 +2545,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -601,6 +2557,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -613,6 +2570,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listManagementServersCallable =
@@ -652,6 +2610,276 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
             settings.deleteManagementServerOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.createBackupVaultCallable =
+        callableFactory.createUnaryCallable(
+            createBackupVaultTransportSettings,
+            settings.createBackupVaultSettings(),
+            clientContext);
+    this.createBackupVaultOperationCallable =
+        callableFactory.createOperationCallable(
+            createBackupVaultTransportSettings,
+            settings.createBackupVaultOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listBackupVaultsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupVaultsTransportSettings, settings.listBackupVaultsSettings(), clientContext);
+    this.listBackupVaultsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupVaultsTransportSettings, settings.listBackupVaultsSettings(), clientContext);
+    this.fetchUsableBackupVaultsCallable =
+        callableFactory.createUnaryCallable(
+            fetchUsableBackupVaultsTransportSettings,
+            settings.fetchUsableBackupVaultsSettings(),
+            clientContext);
+    this.fetchUsableBackupVaultsPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchUsableBackupVaultsTransportSettings,
+            settings.fetchUsableBackupVaultsSettings(),
+            clientContext);
+    this.getBackupVaultCallable =
+        callableFactory.createUnaryCallable(
+            getBackupVaultTransportSettings, settings.getBackupVaultSettings(), clientContext);
+    this.updateBackupVaultCallable =
+        callableFactory.createUnaryCallable(
+            updateBackupVaultTransportSettings,
+            settings.updateBackupVaultSettings(),
+            clientContext);
+    this.updateBackupVaultOperationCallable =
+        callableFactory.createOperationCallable(
+            updateBackupVaultTransportSettings,
+            settings.updateBackupVaultOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteBackupVaultCallable =
+        callableFactory.createUnaryCallable(
+            deleteBackupVaultTransportSettings,
+            settings.deleteBackupVaultSettings(),
+            clientContext);
+    this.deleteBackupVaultOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteBackupVaultTransportSettings,
+            settings.deleteBackupVaultOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listDataSourcesCallable =
+        callableFactory.createUnaryCallable(
+            listDataSourcesTransportSettings, settings.listDataSourcesSettings(), clientContext);
+    this.listDataSourcesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDataSourcesTransportSettings, settings.listDataSourcesSettings(), clientContext);
+    this.getDataSourceCallable =
+        callableFactory.createUnaryCallable(
+            getDataSourceTransportSettings, settings.getDataSourceSettings(), clientContext);
+    this.updateDataSourceCallable =
+        callableFactory.createUnaryCallable(
+            updateDataSourceTransportSettings, settings.updateDataSourceSettings(), clientContext);
+    this.updateDataSourceOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDataSourceTransportSettings,
+            settings.updateDataSourceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listBackupsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.listBackupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.fetchBackupsForResourceTypeCallable =
+        callableFactory.createUnaryCallable(
+            fetchBackupsForResourceTypeTransportSettings,
+            settings.fetchBackupsForResourceTypeSettings(),
+            clientContext);
+    this.fetchBackupsForResourceTypePagedCallable =
+        callableFactory.createPagedCallable(
+            fetchBackupsForResourceTypeTransportSettings,
+            settings.fetchBackupsForResourceTypeSettings(),
+            clientContext);
+    this.getBackupCallable =
+        callableFactory.createUnaryCallable(
+            getBackupTransportSettings, settings.getBackupSettings(), clientContext);
+    this.updateBackupCallable =
+        callableFactory.createUnaryCallable(
+            updateBackupTransportSettings, settings.updateBackupSettings(), clientContext);
+    this.updateBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            updateBackupTransportSettings,
+            settings.updateBackupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteBackupCallable =
+        callableFactory.createUnaryCallable(
+            deleteBackupTransportSettings, settings.deleteBackupSettings(), clientContext);
+    this.deleteBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteBackupTransportSettings,
+            settings.deleteBackupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.restoreBackupCallable =
+        callableFactory.createUnaryCallable(
+            restoreBackupTransportSettings, settings.restoreBackupSettings(), clientContext);
+    this.restoreBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            restoreBackupTransportSettings,
+            settings.restoreBackupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.createBackupPlanCallable =
+        callableFactory.createUnaryCallable(
+            createBackupPlanTransportSettings, settings.createBackupPlanSettings(), clientContext);
+    this.createBackupPlanOperationCallable =
+        callableFactory.createOperationCallable(
+            createBackupPlanTransportSettings,
+            settings.createBackupPlanOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateBackupPlanCallable =
+        callableFactory.createUnaryCallable(
+            updateBackupPlanTransportSettings, settings.updateBackupPlanSettings(), clientContext);
+    this.updateBackupPlanOperationCallable =
+        callableFactory.createOperationCallable(
+            updateBackupPlanTransportSettings,
+            settings.updateBackupPlanOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getBackupPlanCallable =
+        callableFactory.createUnaryCallable(
+            getBackupPlanTransportSettings, settings.getBackupPlanSettings(), clientContext);
+    this.listBackupPlansCallable =
+        callableFactory.createUnaryCallable(
+            listBackupPlansTransportSettings, settings.listBackupPlansSettings(), clientContext);
+    this.listBackupPlansPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupPlansTransportSettings, settings.listBackupPlansSettings(), clientContext);
+    this.deleteBackupPlanCallable =
+        callableFactory.createUnaryCallable(
+            deleteBackupPlanTransportSettings, settings.deleteBackupPlanSettings(), clientContext);
+    this.deleteBackupPlanOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteBackupPlanTransportSettings,
+            settings.deleteBackupPlanOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getBackupPlanRevisionCallable =
+        callableFactory.createUnaryCallable(
+            getBackupPlanRevisionTransportSettings,
+            settings.getBackupPlanRevisionSettings(),
+            clientContext);
+    this.listBackupPlanRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupPlanRevisionsTransportSettings,
+            settings.listBackupPlanRevisionsSettings(),
+            clientContext);
+    this.listBackupPlanRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupPlanRevisionsTransportSettings,
+            settings.listBackupPlanRevisionsSettings(),
+            clientContext);
+    this.createBackupPlanAssociationCallable =
+        callableFactory.createUnaryCallable(
+            createBackupPlanAssociationTransportSettings,
+            settings.createBackupPlanAssociationSettings(),
+            clientContext);
+    this.createBackupPlanAssociationOperationCallable =
+        callableFactory.createOperationCallable(
+            createBackupPlanAssociationTransportSettings,
+            settings.createBackupPlanAssociationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateBackupPlanAssociationCallable =
+        callableFactory.createUnaryCallable(
+            updateBackupPlanAssociationTransportSettings,
+            settings.updateBackupPlanAssociationSettings(),
+            clientContext);
+    this.updateBackupPlanAssociationOperationCallable =
+        callableFactory.createOperationCallable(
+            updateBackupPlanAssociationTransportSettings,
+            settings.updateBackupPlanAssociationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getBackupPlanAssociationCallable =
+        callableFactory.createUnaryCallable(
+            getBackupPlanAssociationTransportSettings,
+            settings.getBackupPlanAssociationSettings(),
+            clientContext);
+    this.listBackupPlanAssociationsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupPlanAssociationsTransportSettings,
+            settings.listBackupPlanAssociationsSettings(),
+            clientContext);
+    this.listBackupPlanAssociationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupPlanAssociationsTransportSettings,
+            settings.listBackupPlanAssociationsSettings(),
+            clientContext);
+    this.fetchBackupPlanAssociationsForResourceTypeCallable =
+        callableFactory.createUnaryCallable(
+            fetchBackupPlanAssociationsForResourceTypeTransportSettings,
+            settings.fetchBackupPlanAssociationsForResourceTypeSettings(),
+            clientContext);
+    this.fetchBackupPlanAssociationsForResourceTypePagedCallable =
+        callableFactory.createPagedCallable(
+            fetchBackupPlanAssociationsForResourceTypeTransportSettings,
+            settings.fetchBackupPlanAssociationsForResourceTypeSettings(),
+            clientContext);
+    this.deleteBackupPlanAssociationCallable =
+        callableFactory.createUnaryCallable(
+            deleteBackupPlanAssociationTransportSettings,
+            settings.deleteBackupPlanAssociationSettings(),
+            clientContext);
+    this.deleteBackupPlanAssociationOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteBackupPlanAssociationTransportSettings,
+            settings.deleteBackupPlanAssociationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.triggerBackupCallable =
+        callableFactory.createUnaryCallable(
+            triggerBackupTransportSettings, settings.triggerBackupSettings(), clientContext);
+    this.triggerBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            triggerBackupTransportSettings,
+            settings.triggerBackupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getDataSourceReferenceCallable =
+        callableFactory.createUnaryCallable(
+            getDataSourceReferenceTransportSettings,
+            settings.getDataSourceReferenceSettings(),
+            clientContext);
+    this.listDataSourceReferencesCallable =
+        callableFactory.createUnaryCallable(
+            listDataSourceReferencesTransportSettings,
+            settings.listDataSourceReferencesSettings(),
+            clientContext);
+    this.listDataSourceReferencesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDataSourceReferencesTransportSettings,
+            settings.listDataSourceReferencesSettings(),
+            clientContext);
+    this.fetchDataSourceReferencesForResourceTypeCallable =
+        callableFactory.createUnaryCallable(
+            fetchDataSourceReferencesForResourceTypeTransportSettings,
+            settings.fetchDataSourceReferencesForResourceTypeSettings(),
+            clientContext);
+    this.fetchDataSourceReferencesForResourceTypePagedCallable =
+        callableFactory.createPagedCallable(
+            fetchDataSourceReferencesForResourceTypeTransportSettings,
+            settings.fetchDataSourceReferencesForResourceTypeSettings(),
+            clientContext);
+    this.initializeServiceCallable =
+        callableFactory.createUnaryCallable(
+            initializeServiceTransportSettings,
+            settings.initializeServiceSettings(),
+            clientContext);
+    this.initializeServiceOperationCallable =
+        callableFactory.createOperationCallable(
+            initializeServiceTransportSettings,
+            settings.initializeServiceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -684,6 +2912,39 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
     methodDescriptors.add(getManagementServerMethodDescriptor);
     methodDescriptors.add(createManagementServerMethodDescriptor);
     methodDescriptors.add(deleteManagementServerMethodDescriptor);
+    methodDescriptors.add(createBackupVaultMethodDescriptor);
+    methodDescriptors.add(listBackupVaultsMethodDescriptor);
+    methodDescriptors.add(fetchUsableBackupVaultsMethodDescriptor);
+    methodDescriptors.add(getBackupVaultMethodDescriptor);
+    methodDescriptors.add(updateBackupVaultMethodDescriptor);
+    methodDescriptors.add(deleteBackupVaultMethodDescriptor);
+    methodDescriptors.add(listDataSourcesMethodDescriptor);
+    methodDescriptors.add(getDataSourceMethodDescriptor);
+    methodDescriptors.add(updateDataSourceMethodDescriptor);
+    methodDescriptors.add(listBackupsMethodDescriptor);
+    methodDescriptors.add(fetchBackupsForResourceTypeMethodDescriptor);
+    methodDescriptors.add(getBackupMethodDescriptor);
+    methodDescriptors.add(updateBackupMethodDescriptor);
+    methodDescriptors.add(deleteBackupMethodDescriptor);
+    methodDescriptors.add(restoreBackupMethodDescriptor);
+    methodDescriptors.add(createBackupPlanMethodDescriptor);
+    methodDescriptors.add(updateBackupPlanMethodDescriptor);
+    methodDescriptors.add(getBackupPlanMethodDescriptor);
+    methodDescriptors.add(listBackupPlansMethodDescriptor);
+    methodDescriptors.add(deleteBackupPlanMethodDescriptor);
+    methodDescriptors.add(getBackupPlanRevisionMethodDescriptor);
+    methodDescriptors.add(listBackupPlanRevisionsMethodDescriptor);
+    methodDescriptors.add(createBackupPlanAssociationMethodDescriptor);
+    methodDescriptors.add(updateBackupPlanAssociationMethodDescriptor);
+    methodDescriptors.add(getBackupPlanAssociationMethodDescriptor);
+    methodDescriptors.add(listBackupPlanAssociationsMethodDescriptor);
+    methodDescriptors.add(fetchBackupPlanAssociationsForResourceTypeMethodDescriptor);
+    methodDescriptors.add(deleteBackupPlanAssociationMethodDescriptor);
+    methodDescriptors.add(triggerBackupMethodDescriptor);
+    methodDescriptors.add(getDataSourceReferenceMethodDescriptor);
+    methodDescriptors.add(listDataSourceReferencesMethodDescriptor);
+    methodDescriptors.add(fetchDataSourceReferencesForResourceTypeMethodDescriptor);
+    methodDescriptors.add(initializeServiceMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -733,6 +2994,350 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   public OperationCallable<DeleteManagementServerRequest, Empty, OperationMetadata>
       deleteManagementServerOperationCallable() {
     return deleteManagementServerOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateBackupVaultRequest, Operation> createBackupVaultCallable() {
+    return createBackupVaultCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateBackupVaultRequest, BackupVault, OperationMetadata>
+      createBackupVaultOperationCallable() {
+    return createBackupVaultOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupVaultsRequest, ListBackupVaultsResponse>
+      listBackupVaultsCallable() {
+    return listBackupVaultsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupVaultsRequest, ListBackupVaultsPagedResponse>
+      listBackupVaultsPagedCallable() {
+    return listBackupVaultsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse>
+      fetchUsableBackupVaultsCallable() {
+    return fetchUsableBackupVaultsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsPagedResponse>
+      fetchUsableBackupVaultsPagedCallable() {
+    return fetchUsableBackupVaultsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupVaultRequest, BackupVault> getBackupVaultCallable() {
+    return getBackupVaultCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBackupVaultRequest, Operation> updateBackupVaultCallable() {
+    return updateBackupVaultCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+      updateBackupVaultOperationCallable() {
+    return updateBackupVaultOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBackupVaultRequest, Operation> deleteBackupVaultCallable() {
+    return deleteBackupVaultCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteBackupVaultRequest, Empty, OperationMetadata>
+      deleteBackupVaultOperationCallable() {
+    return deleteBackupVaultOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse> listDataSourcesCallable() {
+    return listDataSourcesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDataSourcesRequest, ListDataSourcesPagedResponse>
+      listDataSourcesPagedCallable() {
+    return listDataSourcesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDataSourceRequest, DataSource> getDataSourceCallable() {
+    return getDataSourceCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDataSourceRequest, Operation> updateDataSourceCallable() {
+    return updateDataSourceCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDataSourceRequest, DataSource, OperationMetadata>
+      updateDataSourceOperationCallable() {
+    return updateDataSourceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    return listBackupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
+    return listBackupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+      fetchBackupsForResourceTypeCallable() {
+    return fetchBackupsForResourceTypeCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypePagedResponse>
+      fetchBackupsForResourceTypePagedCallable() {
+    return fetchBackupsForResourceTypePagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    return getBackupCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBackupRequest, Operation> updateBackupCallable() {
+    return updateBackupCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateBackupRequest, Backup, OperationMetadata>
+      updateBackupOperationCallable() {
+    return updateBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable() {
+    return deleteBackupCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteBackupRequest, Backup, OperationMetadata>
+      deleteBackupOperationCallable() {
+    return deleteBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RestoreBackupRequest, Operation> restoreBackupCallable() {
+    return restoreBackupCallable;
+  }
+
+  @Override
+  public OperationCallable<RestoreBackupRequest, RestoreBackupResponse, OperationMetadata>
+      restoreBackupOperationCallable() {
+    return restoreBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateBackupPlanRequest, Operation> createBackupPlanCallable() {
+    return createBackupPlanCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateBackupPlanRequest, BackupPlan, OperationMetadata>
+      createBackupPlanOperationCallable() {
+    return createBackupPlanOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBackupPlanRequest, Operation> updateBackupPlanCallable() {
+    return updateBackupPlanCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateBackupPlanRequest, BackupPlan, OperationMetadata>
+      updateBackupPlanOperationCallable() {
+    return updateBackupPlanOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupPlanRequest, BackupPlan> getBackupPlanCallable() {
+    return getBackupPlanCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupPlansRequest, ListBackupPlansResponse> listBackupPlansCallable() {
+    return listBackupPlansCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupPlansRequest, ListBackupPlansPagedResponse>
+      listBackupPlansPagedCallable() {
+    return listBackupPlansPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBackupPlanRequest, Operation> deleteBackupPlanCallable() {
+    return deleteBackupPlanCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteBackupPlanRequest, Empty, OperationMetadata>
+      deleteBackupPlanOperationCallable() {
+    return deleteBackupPlanOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupPlanRevisionRequest, BackupPlanRevision>
+      getBackupPlanRevisionCallable() {
+    return getBackupPlanRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse>
+      listBackupPlanRevisionsCallable() {
+    return listBackupPlanRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsPagedResponse>
+      listBackupPlanRevisionsPagedCallable() {
+    return listBackupPlanRevisionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateBackupPlanAssociationRequest, Operation>
+      createBackupPlanAssociationCallable() {
+    return createBackupPlanAssociationCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
+      createBackupPlanAssociationOperationCallable() {
+    return createBackupPlanAssociationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBackupPlanAssociationRequest, Operation>
+      updateBackupPlanAssociationCallable() {
+    return updateBackupPlanAssociationCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
+      updateBackupPlanAssociationOperationCallable() {
+    return updateBackupPlanAssociationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupPlanAssociationRequest, BackupPlanAssociation>
+      getBackupPlanAssociationCallable() {
+    return getBackupPlanAssociationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupPlanAssociationsRequest, ListBackupPlanAssociationsResponse>
+      listBackupPlanAssociationsCallable() {
+    return listBackupPlanAssociationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupPlanAssociationsRequest, ListBackupPlanAssociationsPagedResponse>
+      listBackupPlanAssociationsPagedCallable() {
+    return listBackupPlanAssociationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchBackupPlanAssociationsForResourceTypeRequest,
+          FetchBackupPlanAssociationsForResourceTypeResponse>
+      fetchBackupPlanAssociationsForResourceTypeCallable() {
+    return fetchBackupPlanAssociationsForResourceTypeCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchBackupPlanAssociationsForResourceTypeRequest,
+          FetchBackupPlanAssociationsForResourceTypePagedResponse>
+      fetchBackupPlanAssociationsForResourceTypePagedCallable() {
+    return fetchBackupPlanAssociationsForResourceTypePagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBackupPlanAssociationRequest, Operation>
+      deleteBackupPlanAssociationCallable() {
+    return deleteBackupPlanAssociationCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteBackupPlanAssociationRequest, Empty, OperationMetadata>
+      deleteBackupPlanAssociationOperationCallable() {
+    return deleteBackupPlanAssociationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TriggerBackupRequest, Operation> triggerBackupCallable() {
+    return triggerBackupCallable;
+  }
+
+  @Override
+  public OperationCallable<TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
+      triggerBackupOperationCallable() {
+    return triggerBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDataSourceReferenceRequest, DataSourceReference>
+      getDataSourceReferenceCallable() {
+    return getDataSourceReferenceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>
+      listDataSourceReferencesCallable() {
+    return listDataSourceReferencesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDataSourceReferencesRequest, ListDataSourceReferencesPagedResponse>
+      listDataSourceReferencesPagedCallable() {
+    return listDataSourceReferencesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchDataSourceReferencesForResourceTypeRequest,
+          FetchDataSourceReferencesForResourceTypeResponse>
+      fetchDataSourceReferencesForResourceTypeCallable() {
+    return fetchDataSourceReferencesForResourceTypeCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchDataSourceReferencesForResourceTypeRequest,
+          FetchDataSourceReferencesForResourceTypePagedResponse>
+      fetchDataSourceReferencesForResourceTypePagedCallable() {
+    return fetchDataSourceReferencesForResourceTypePagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<InitializeServiceRequest, Operation> initializeServiceCallable() {
+    return initializeServiceCallable;
+  }
+
+  @Override
+  public OperationCallable<InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
+      initializeServiceOperationCallable() {
+    return initializeServiceOperationCallable;
   }
 
   @Override

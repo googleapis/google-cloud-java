@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * * Control their tuning schedule.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2alpha/model_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ModelServiceGrpc {
 
@@ -399,6 +396,19 @@ public final class ModelServiceGrpc {
     return ModelServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ModelServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ModelServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ModelServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ModelServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ModelServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ModelServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -737,6 +747,142 @@ public final class ModelServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ModelService.
+   *
+   * <pre>
+   * Service for performing CRUD operations on models.
+   * Recommendation models contain all the metadata necessary to generate a set of
+   * models for the `Predict()` API. A model is queried
+   * indirectly via a ServingConfig, which associates a model with a
+   * given Placement (e.g. Frequently Bought Together on Home Page).
+   * This service allows you to do the following:
+   * * Initiate training of a model.
+   * * Pause training of an existing model.
+   * * List all the available models along with their metadata.
+   * * Control their tuning schedule.
+   * </pre>
+   */
+  public static final class ModelServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ModelServiceBlockingV2Stub> {
+    private ModelServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ModelServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ModelServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new model.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createModel(
+        com.google.cloud.retail.v2alpha.CreateModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a model.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2alpha.Model getModel(
+        com.google.cloud.retail.v2alpha.GetModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses the training of an existing model.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2alpha.Model pauseModel(
+        com.google.cloud.retail.v2alpha.PauseModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getPauseModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes the training of an existing model.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2alpha.Model resumeModel(
+        com.google.cloud.retail.v2alpha.ResumeModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getResumeModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing model.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteModel(
+        com.google.cloud.retail.v2alpha.DeleteModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the models linked to this event store.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2alpha.ListModelsResponse listModels(
+        com.google.cloud.retail.v2alpha.ListModelsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListModelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update of model metadata. Only fields that
+     * currently can be updated are: `filtering_option` and
+     * `periodic_tuning_state`.
+     * If other values are provided, this API method ignores them.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2alpha.Model updateModel(
+        com.google.cloud.retail.v2alpha.UpdateModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunes an existing model.
+     * </pre>
+     */
+    public com.google.longrunning.Operation tuneModel(
+        com.google.cloud.retail.v2alpha.TuneModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTuneModelMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ModelService.
    *
    * <pre>
    * Service for performing CRUD operations on models.

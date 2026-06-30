@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.discoveryengine.v1beta.stub;
 import com.google.api.HttpBody;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -34,6 +35,7 @@ import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
@@ -43,6 +45,9 @@ import com.google.cloud.discoveryengine.v1beta.CollectUserEventRequest;
 import com.google.cloud.discoveryengine.v1beta.ImportUserEventsMetadata;
 import com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest;
 import com.google.cloud.discoveryengine.v1beta.ImportUserEventsResponse;
+import com.google.cloud.discoveryengine.v1beta.PurgeUserEventsMetadata;
+import com.google.cloud.discoveryengine.v1beta.PurgeUserEventsRequest;
+import com.google.cloud.discoveryengine.v1beta.PurgeUserEventsResponse;
 import com.google.cloud.discoveryengine.v1beta.UserEvent;
 import com.google.cloud.discoveryengine.v1beta.WriteUserEventRequest;
 import com.google.common.collect.ImmutableList;
@@ -51,9 +56,9 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -71,7 +76,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of writeUserEvent to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of writeUserEvent:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -88,20 +95,67 @@ import org.threeten.bp.Duration;
  *             .writeUserEventSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * UserEventServiceStubSettings userEventServiceSettings = userEventServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for purgeUserEvents:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * UserEventServiceStubSettings.Builder userEventServiceSettingsBuilder =
+ *     UserEventServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * userEventServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class UserEventServiceStubSettings extends StubSettings<UserEventServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/discoveryengine.assist.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.serving.readwrite")
+          .build();
 
   private final UnaryCallSettings<WriteUserEventRequest, UserEvent> writeUserEventSettings;
   private final UnaryCallSettings<CollectUserEventRequest, HttpBody> collectUserEventSettings;
+  private final UnaryCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsSettings;
+  private final OperationCallSettings<
+          PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsOperationSettings;
   private final UnaryCallSettings<ImportUserEventsRequest, Operation> importUserEventsSettings;
   private final OperationCallSettings<
           ImportUserEventsRequest, ImportUserEventsResponse, ImportUserEventsMetadata>
@@ -115,6 +169,18 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
   /** Returns the object with the settings used for calls to collectUserEvent. */
   public UnaryCallSettings<CollectUserEventRequest, HttpBody> collectUserEventSettings() {
     return collectUserEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeUserEvents. */
+  public UnaryCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsSettings() {
+    return purgeUserEventsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeUserEvents. */
+  public OperationCallSettings<
+          PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsOperationSettings() {
+    return purgeUserEventsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to importUserEvents. */
@@ -145,15 +211,6 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -166,6 +223,7 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "discoveryengine.googleapis.com:443";
   }
@@ -250,8 +308,19 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
 
     writeUserEventSettings = settingsBuilder.writeUserEventSettings().build();
     collectUserEventSettings = settingsBuilder.collectUserEventSettings().build();
+    purgeUserEventsSettings = settingsBuilder.purgeUserEventsSettings().build();
+    purgeUserEventsOperationSettings = settingsBuilder.purgeUserEventsOperationSettings().build();
     importUserEventsSettings = settingsBuilder.importUserEventsSettings().build();
     importUserEventsOperationSettings = settingsBuilder.importUserEventsOperationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-discoveryengine")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for UserEventServiceStubSettings. */
@@ -261,6 +330,11 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
         writeUserEventSettings;
     private final UnaryCallSettings.Builder<CollectUserEventRequest, HttpBody>
         collectUserEventSettings;
+    private final UnaryCallSettings.Builder<PurgeUserEventsRequest, Operation>
+        purgeUserEventsSettings;
+    private final OperationCallSettings.Builder<
+            PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+        purgeUserEventsOperationSettings;
     private final UnaryCallSettings.Builder<ImportUserEventsRequest, Operation>
         importUserEventsSettings;
     private final OperationCallSettings.Builder<
@@ -276,7 +350,7 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
           "retry_policy_1_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "retry_policy_2_codes",
+          "retry_policy_4_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
@@ -288,26 +362,26 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(30000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(30000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(30000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(300000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(300000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(300000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(300000L))
               .build();
-      definitions.put("retry_policy_2_params", settings);
+      definitions.put("retry_policy_4_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -320,12 +394,17 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
 
       writeUserEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       collectUserEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      purgeUserEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      purgeUserEventsOperationSettings = OperationCallSettings.newBuilder();
       importUserEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importUserEventsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              writeUserEventSettings, collectUserEventSettings, importUserEventsSettings);
+              writeUserEventSettings,
+              collectUserEventSettings,
+              purgeUserEventsSettings,
+              importUserEventsSettings);
       initDefaults(this);
     }
 
@@ -334,12 +413,17 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
 
       writeUserEventSettings = settings.writeUserEventSettings.toBuilder();
       collectUserEventSettings = settings.collectUserEventSettings.toBuilder();
+      purgeUserEventsSettings = settings.purgeUserEventsSettings.toBuilder();
+      purgeUserEventsOperationSettings = settings.purgeUserEventsOperationSettings.toBuilder();
       importUserEventsSettings = settings.importUserEventsSettings.toBuilder();
       importUserEventsOperationSettings = settings.importUserEventsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              writeUserEventSettings, collectUserEventSettings, importUserEventsSettings);
+              writeUserEventSettings,
+              collectUserEventSettings,
+              purgeUserEventsSettings,
+              importUserEventsSettings);
     }
 
     private static Builder createDefault() {
@@ -378,17 +462,46 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
+          .purgeUserEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
           .importUserEventsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .purgeUserEventsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PurgeUserEventsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(PurgeUserEventsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(PurgeUserEventsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
 
       builder
           .importUserEventsOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<ImportUserEventsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(ImportUserEventsResponse.class))
@@ -397,13 +510,13 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -434,6 +547,18 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
       return collectUserEventSettings;
     }
 
+    /** Returns the builder for the settings used for calls to purgeUserEvents. */
+    public UnaryCallSettings.Builder<PurgeUserEventsRequest, Operation> purgeUserEventsSettings() {
+      return purgeUserEventsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeUserEvents. */
+    public OperationCallSettings.Builder<
+            PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+        purgeUserEventsOperationSettings() {
+      return purgeUserEventsOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to importUserEvents. */
     public UnaryCallSettings.Builder<ImportUserEventsRequest, Operation>
         importUserEventsSettings() {
@@ -445,15 +570,6 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
             ImportUserEventsRequest, ImportUserEventsResponse, ImportUserEventsMetadata>
         importUserEventsOperationSettings() {
       return importUserEventsOperationSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

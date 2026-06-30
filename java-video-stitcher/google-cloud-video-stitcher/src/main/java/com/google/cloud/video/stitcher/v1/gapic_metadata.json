@@ -22,6 +22,9 @@
             "CreateSlate": {
               "methods": ["createSlateAsync", "createSlateAsync", "createSlateAsync", "createSlateOperationCallable", "createSlateCallable"]
             },
+            "CreateVodConfig": {
+              "methods": ["createVodConfigAsync", "createVodConfigAsync", "createVodConfigAsync", "createVodConfigOperationCallable", "createVodConfigCallable"]
+            },
             "CreateVodSession": {
               "methods": ["createVodSession", "createVodSession", "createVodSession", "createVodSessionCallable"]
             },
@@ -33,6 +36,9 @@
             },
             "DeleteSlate": {
               "methods": ["deleteSlateAsync", "deleteSlateAsync", "deleteSlateAsync", "deleteSlateOperationCallable", "deleteSlateCallable"]
+            },
+            "DeleteVodConfig": {
+              "methods": ["deleteVodConfigAsync", "deleteVodConfigAsync", "deleteVodConfigAsync", "deleteVodConfigOperationCallable", "deleteVodConfigCallable"]
             },
             "GetCdnKey": {
               "methods": ["getCdnKey", "getCdnKey", "getCdnKey", "getCdnKeyCallable"]
@@ -51,6 +57,9 @@
             },
             "GetVodAdTagDetail": {
               "methods": ["getVodAdTagDetail", "getVodAdTagDetail", "getVodAdTagDetail", "getVodAdTagDetailCallable"]
+            },
+            "GetVodConfig": {
+              "methods": ["getVodConfig", "getVodConfig", "getVodConfig", "getVodConfigCallable"]
             },
             "GetVodSession": {
               "methods": ["getVodSession", "getVodSession", "getVodSession", "getVodSessionCallable"]
@@ -73,14 +82,23 @@
             "ListVodAdTagDetails": {
               "methods": ["listVodAdTagDetails", "listVodAdTagDetails", "listVodAdTagDetails", "listVodAdTagDetailsPagedCallable", "listVodAdTagDetailsCallable"]
             },
+            "ListVodConfigs": {
+              "methods": ["listVodConfigs", "listVodConfigs", "listVodConfigs", "listVodConfigsPagedCallable", "listVodConfigsCallable"]
+            },
             "ListVodStitchDetails": {
               "methods": ["listVodStitchDetails", "listVodStitchDetails", "listVodStitchDetails", "listVodStitchDetailsPagedCallable", "listVodStitchDetailsCallable"]
             },
             "UpdateCdnKey": {
               "methods": ["updateCdnKeyAsync", "updateCdnKeyAsync", "updateCdnKeyOperationCallable", "updateCdnKeyCallable"]
             },
+            "UpdateLiveConfig": {
+              "methods": ["updateLiveConfigAsync", "updateLiveConfigAsync", "updateLiveConfigOperationCallable", "updateLiveConfigCallable"]
+            },
             "UpdateSlate": {
               "methods": ["updateSlateAsync", "updateSlateAsync", "updateSlateOperationCallable", "updateSlateCallable"]
+            },
+            "UpdateVodConfig": {
+              "methods": ["updateVodConfigAsync", "updateVodConfigAsync", "updateVodConfigOperationCallable", "updateVodConfigCallable"]
             }
           }
         }

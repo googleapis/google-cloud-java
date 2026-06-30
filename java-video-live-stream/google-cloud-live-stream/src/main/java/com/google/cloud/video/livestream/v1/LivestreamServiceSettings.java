@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,8 @@ package com.google.cloud.video.livestream.v1;
 
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListClipsPagedResponse;
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListDvrSessionsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListLocationsPagedResponse;
@@ -61,7 +63,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getChannel to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getChannel:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -78,9 +82,46 @@ import javax.annotation.Generated;
  *             .getChannelSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * LivestreamServiceSettings livestreamServiceSettings = livestreamServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createChannel:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * LivestreamServiceSettings.Builder livestreamServiceSettingsBuilder =
+ *     LivestreamServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * livestreamServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -152,6 +193,29 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
     return ((LivestreamServiceStubSettings) getStubSettings()).stopChannelOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to startDistribution. */
+  public UnaryCallSettings<StartDistributionRequest, Operation> startDistributionSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).startDistributionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startDistribution. */
+  public OperationCallSettings<
+          StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      startDistributionOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).startDistributionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopDistribution. */
+  public UnaryCallSettings<StopDistributionRequest, Operation> stopDistributionSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).stopDistributionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopDistribution. */
+  public OperationCallSettings<StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      stopDistributionOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).stopDistributionOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createInput. */
   public UnaryCallSettings<CreateInputRequest, Operation> createInputSettings() {
     return ((LivestreamServiceStubSettings) getStubSettings()).createInputSettings();
@@ -196,6 +260,11 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
     return ((LivestreamServiceStubSettings) getStubSettings()).updateInputOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to previewInput. */
+  public UnaryCallSettings<PreviewInputRequest, PreviewInputResponse> previewInputSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).previewInputSettings();
+  }
+
   /** Returns the object with the settings used for calls to createEvent. */
   public UnaryCallSettings<CreateEventRequest, Event> createEventSettings() {
     return ((LivestreamServiceStubSettings) getStubSettings()).createEventSettings();
@@ -215,6 +284,84 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
   /** Returns the object with the settings used for calls to deleteEvent. */
   public UnaryCallSettings<DeleteEventRequest, Empty> deleteEventSettings() {
     return ((LivestreamServiceStubSettings) getStubSettings()).deleteEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listClips. */
+  public PagedCallSettings<ListClipsRequest, ListClipsResponse, ListClipsPagedResponse>
+      listClipsSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).listClipsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getClip. */
+  public UnaryCallSettings<GetClipRequest, Clip> getClipSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).getClipSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createClip. */
+  public UnaryCallSettings<CreateClipRequest, Operation> createClipSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).createClipSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createClip. */
+  public OperationCallSettings<CreateClipRequest, Clip, OperationMetadata>
+      createClipOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).createClipOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteClip. */
+  public UnaryCallSettings<DeleteClipRequest, Operation> deleteClipSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).deleteClipSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteClip. */
+  public OperationCallSettings<DeleteClipRequest, Empty, OperationMetadata>
+      deleteClipOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).deleteClipOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDvrSession. */
+  public UnaryCallSettings<CreateDvrSessionRequest, Operation> createDvrSessionSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).createDvrSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDvrSession. */
+  public OperationCallSettings<CreateDvrSessionRequest, DvrSession, OperationMetadata>
+      createDvrSessionOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).createDvrSessionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDvrSessions. */
+  public PagedCallSettings<
+          ListDvrSessionsRequest, ListDvrSessionsResponse, ListDvrSessionsPagedResponse>
+      listDvrSessionsSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).listDvrSessionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDvrSession. */
+  public UnaryCallSettings<GetDvrSessionRequest, DvrSession> getDvrSessionSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).getDvrSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDvrSession. */
+  public UnaryCallSettings<DeleteDvrSessionRequest, Operation> deleteDvrSessionSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).deleteDvrSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDvrSession. */
+  public OperationCallSettings<DeleteDvrSessionRequest, Empty, OperationMetadata>
+      deleteDvrSessionOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).deleteDvrSessionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDvrSession. */
+  public UnaryCallSettings<UpdateDvrSessionRequest, Operation> updateDvrSessionSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).updateDvrSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDvrSession. */
+  public OperationCallSettings<UpdateDvrSessionRequest, DvrSession, OperationMetadata>
+      updateDvrSessionOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).updateDvrSessionOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createAsset. */
@@ -458,6 +605,32 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
       return getStubSettingsBuilder().stopChannelOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to startDistribution. */
+    public UnaryCallSettings.Builder<StartDistributionRequest, Operation>
+        startDistributionSettings() {
+      return getStubSettingsBuilder().startDistributionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startDistribution. */
+    public OperationCallSettings.Builder<
+            StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+        startDistributionOperationSettings() {
+      return getStubSettingsBuilder().startDistributionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopDistribution. */
+    public UnaryCallSettings.Builder<StopDistributionRequest, Operation>
+        stopDistributionSettings() {
+      return getStubSettingsBuilder().stopDistributionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopDistribution. */
+    public OperationCallSettings.Builder<
+            StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+        stopDistributionOperationSettings() {
+      return getStubSettingsBuilder().stopDistributionOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createInput. */
     public UnaryCallSettings.Builder<CreateInputRequest, Operation> createInputSettings() {
       return getStubSettingsBuilder().createInputSettings();
@@ -502,6 +675,12 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
       return getStubSettingsBuilder().updateInputOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to previewInput. */
+    public UnaryCallSettings.Builder<PreviewInputRequest, PreviewInputResponse>
+        previewInputSettings() {
+      return getStubSettingsBuilder().previewInputSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createEvent. */
     public UnaryCallSettings.Builder<CreateEventRequest, Event> createEventSettings() {
       return getStubSettingsBuilder().createEventSettings();
@@ -521,6 +700,87 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
     /** Returns the builder for the settings used for calls to deleteEvent. */
     public UnaryCallSettings.Builder<DeleteEventRequest, Empty> deleteEventSettings() {
       return getStubSettingsBuilder().deleteEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listClips. */
+    public PagedCallSettings.Builder<ListClipsRequest, ListClipsResponse, ListClipsPagedResponse>
+        listClipsSettings() {
+      return getStubSettingsBuilder().listClipsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getClip. */
+    public UnaryCallSettings.Builder<GetClipRequest, Clip> getClipSettings() {
+      return getStubSettingsBuilder().getClipSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createClip. */
+    public UnaryCallSettings.Builder<CreateClipRequest, Operation> createClipSettings() {
+      return getStubSettingsBuilder().createClipSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createClip. */
+    public OperationCallSettings.Builder<CreateClipRequest, Clip, OperationMetadata>
+        createClipOperationSettings() {
+      return getStubSettingsBuilder().createClipOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteClip. */
+    public UnaryCallSettings.Builder<DeleteClipRequest, Operation> deleteClipSettings() {
+      return getStubSettingsBuilder().deleteClipSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteClip. */
+    public OperationCallSettings.Builder<DeleteClipRequest, Empty, OperationMetadata>
+        deleteClipOperationSettings() {
+      return getStubSettingsBuilder().deleteClipOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDvrSession. */
+    public UnaryCallSettings.Builder<CreateDvrSessionRequest, Operation>
+        createDvrSessionSettings() {
+      return getStubSettingsBuilder().createDvrSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDvrSession. */
+    public OperationCallSettings.Builder<CreateDvrSessionRequest, DvrSession, OperationMetadata>
+        createDvrSessionOperationSettings() {
+      return getStubSettingsBuilder().createDvrSessionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDvrSessions. */
+    public PagedCallSettings.Builder<
+            ListDvrSessionsRequest, ListDvrSessionsResponse, ListDvrSessionsPagedResponse>
+        listDvrSessionsSettings() {
+      return getStubSettingsBuilder().listDvrSessionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDvrSession. */
+    public UnaryCallSettings.Builder<GetDvrSessionRequest, DvrSession> getDvrSessionSettings() {
+      return getStubSettingsBuilder().getDvrSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDvrSession. */
+    public UnaryCallSettings.Builder<DeleteDvrSessionRequest, Operation>
+        deleteDvrSessionSettings() {
+      return getStubSettingsBuilder().deleteDvrSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDvrSession. */
+    public OperationCallSettings.Builder<DeleteDvrSessionRequest, Empty, OperationMetadata>
+        deleteDvrSessionOperationSettings() {
+      return getStubSettingsBuilder().deleteDvrSessionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDvrSession. */
+    public UnaryCallSettings.Builder<UpdateDvrSessionRequest, Operation>
+        updateDvrSessionSettings() {
+      return getStubSettingsBuilder().updateDvrSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDvrSession. */
+    public OperationCallSettings.Builder<UpdateDvrSessionRequest, DvrSession, OperationMetadata>
+        updateDvrSessionOperationSettings() {
+      return getStubSettingsBuilder().updateDvrSessionOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createAsset. */

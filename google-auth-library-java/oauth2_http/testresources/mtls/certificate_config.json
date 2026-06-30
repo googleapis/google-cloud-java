@@ -1,0 +1,8 @@
+{
+  "cert_configs": {
+    "workload": {
+      "cert_path": "testresources/mtls/test_cert.pem",
+      "key_path": "testresources/mtls/test_key.pem"
+    }
+  }
+}

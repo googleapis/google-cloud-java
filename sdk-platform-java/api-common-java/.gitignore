@@ -1,0 +1,23 @@
+# Build results
+bin
+build
+.gradle
+tmp_gh-pages
+
+# Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+
+# Intellij
+.idea
+*.iml
+*.iws
+*.ipr
+
+# Vim
+*.sw*
+
+target/

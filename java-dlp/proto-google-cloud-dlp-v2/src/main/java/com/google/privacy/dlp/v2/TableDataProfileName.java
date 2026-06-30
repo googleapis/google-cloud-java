@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -308,7 +308,8 @@ public class TableDataProfileName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               tableDataProfileName.pathTemplate, ORGANIZATION_LOCATION_TABLE_DATA_PROFILE),
-          "toBuilder is only supported when TableDataProfileName has the pattern of organizations/{organization}/locations/{location}/tableDataProfiles/{table_data_profile}");
+          "toBuilder is only supported when TableDataProfileName has the pattern of"
+              + " organizations/{organization}/locations/{location}/tableDataProfiles/{table_data_profile}");
       this.organization = tableDataProfileName.organization;
       this.location = tableDataProfileName.location;
       this.tableDataProfile = tableDataProfileName.tableDataProfile;

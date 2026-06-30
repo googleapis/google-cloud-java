@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,9 +19,9 @@ package google.maps.places.v1;
 import "google/api/resource.proto";
 import "google/maps/places/v1/attribution.proto";
 import "google/protobuf/timestamp.proto";
+import "google/type/date.proto";
 import "google/type/localized_text.proto";
 
-option cc_enable_arenas = true;
 option csharp_namespace = "Google.Maps.Places.V1";
 option go_package = "cloud.google.com/go/maps/places/apiv1/placespb;placespb";
 option java_multiple_files = true;
@@ -62,4 +62,14 @@ message Review {
 
   // Timestamp for the review.
   google.protobuf.Timestamp publish_time = 14;
+
+  // A link where users can flag a problem with the review.
+  string flag_content_uri = 15;
+
+  // A link to show the review on Google Maps.
+  string google_maps_uri = 16;
+
+  // The date when the author visited the place. This is truncated to the year
+  // and month of the visit.
+  google.type.Date visit_date = 17;
 }

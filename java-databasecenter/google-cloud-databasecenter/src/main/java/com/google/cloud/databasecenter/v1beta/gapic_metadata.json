@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.databasecenter.v1beta",
+  "libraryPackage": "com.google.cloud.databasecenter.v1beta",
+  "services": {
+    "DatabaseCenter": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DatabaseCenterClient",
+          "rpcs": {
+            "AggregateFleet": {
+              "methods": ["aggregateFleet", "aggregateFleetPagedCallable", "aggregateFleetCallable"]
+            },
+            "AggregateIssueStats": {
+              "methods": ["aggregateIssueStats", "aggregateIssueStatsCallable"]
+            },
+            "AggregateQueryStats": {
+              "methods": ["aggregateQueryStats", "aggregateQueryStatsPagedCallable", "aggregateQueryStatsCallable"]
+            },
+            "QueryDatabaseResourceGroups": {
+              "methods": ["queryDatabaseResourceGroups", "queryDatabaseResourceGroupsPagedCallable", "queryDatabaseResourceGroupsCallable"]
+            },
+            "QueryIssues": {
+              "methods": ["queryIssues", "queryIssues", "queryIssuesPagedCallable", "queryIssuesCallable"]
+            },
+            "QueryProducts": {
+              "methods": ["queryProducts", "queryProductsPagedCallable", "queryProductsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

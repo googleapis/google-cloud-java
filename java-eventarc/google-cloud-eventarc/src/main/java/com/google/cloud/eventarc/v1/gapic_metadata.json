@@ -16,6 +16,18 @@
             "CreateChannelConnection": {
               "methods": ["createChannelConnectionAsync", "createChannelConnectionAsync", "createChannelConnectionAsync", "createChannelConnectionOperationCallable", "createChannelConnectionCallable"]
             },
+            "CreateEnrollment": {
+              "methods": ["createEnrollmentAsync", "createEnrollmentAsync", "createEnrollmentAsync", "createEnrollmentOperationCallable", "createEnrollmentCallable"]
+            },
+            "CreateGoogleApiSource": {
+              "methods": ["createGoogleApiSourceAsync", "createGoogleApiSourceAsync", "createGoogleApiSourceAsync", "createGoogleApiSourceOperationCallable", "createGoogleApiSourceCallable"]
+            },
+            "CreateMessageBus": {
+              "methods": ["createMessageBusAsync", "createMessageBusAsync", "createMessageBusAsync", "createMessageBusOperationCallable", "createMessageBusCallable"]
+            },
+            "CreatePipeline": {
+              "methods": ["createPipelineAsync", "createPipelineAsync", "createPipelineAsync", "createPipelineOperationCallable", "createPipelineCallable"]
+            },
             "CreateTrigger": {
               "methods": ["createTriggerAsync", "createTriggerAsync", "createTriggerAsync", "createTriggerOperationCallable", "createTriggerCallable"]
             },
@@ -24,6 +36,18 @@
             },
             "DeleteChannelConnection": {
               "methods": ["deleteChannelConnectionAsync", "deleteChannelConnectionAsync", "deleteChannelConnectionAsync", "deleteChannelConnectionOperationCallable", "deleteChannelConnectionCallable"]
+            },
+            "DeleteEnrollment": {
+              "methods": ["deleteEnrollmentAsync", "deleteEnrollmentAsync", "deleteEnrollmentAsync", "deleteEnrollmentOperationCallable", "deleteEnrollmentCallable"]
+            },
+            "DeleteGoogleApiSource": {
+              "methods": ["deleteGoogleApiSourceAsync", "deleteGoogleApiSourceAsync", "deleteGoogleApiSourceAsync", "deleteGoogleApiSourceOperationCallable", "deleteGoogleApiSourceCallable"]
+            },
+            "DeleteMessageBus": {
+              "methods": ["deleteMessageBusAsync", "deleteMessageBusAsync", "deleteMessageBusAsync", "deleteMessageBusOperationCallable", "deleteMessageBusCallable"]
+            },
+            "DeletePipeline": {
+              "methods": ["deletePipelineAsync", "deletePipelineAsync", "deletePipelineAsync", "deletePipelineOperationCallable", "deletePipelineCallable"]
             },
             "DeleteTrigger": {
               "methods": ["deleteTriggerAsync", "deleteTriggerAsync", "deleteTriggerAsync", "deleteTriggerOperationCallable", "deleteTriggerCallable"]
@@ -34,6 +58,12 @@
             "GetChannelConnection": {
               "methods": ["getChannelConnection", "getChannelConnection", "getChannelConnection", "getChannelConnectionCallable"]
             },
+            "GetEnrollment": {
+              "methods": ["getEnrollment", "getEnrollment", "getEnrollment", "getEnrollmentCallable"]
+            },
+            "GetGoogleApiSource": {
+              "methods": ["getGoogleApiSource", "getGoogleApiSource", "getGoogleApiSource", "getGoogleApiSourceCallable"]
+            },
             "GetGoogleChannelConfig": {
               "methods": ["getGoogleChannelConfig", "getGoogleChannelConfig", "getGoogleChannelConfig", "getGoogleChannelConfigCallable"]
             },
@@ -42,6 +72,12 @@
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetMessageBus": {
+              "methods": ["getMessageBus", "getMessageBus", "getMessageBus", "getMessageBusCallable"]
+            },
+            "GetPipeline": {
+              "methods": ["getPipeline", "getPipeline", "getPipeline", "getPipelineCallable"]
             },
             "GetProvider": {
               "methods": ["getProvider", "getProvider", "getProvider", "getProviderCallable"]
@@ -55,8 +91,23 @@
             "ListChannels": {
               "methods": ["listChannels", "listChannels", "listChannels", "listChannelsPagedCallable", "listChannelsCallable"]
             },
+            "ListEnrollments": {
+              "methods": ["listEnrollments", "listEnrollments", "listEnrollments", "listEnrollmentsPagedCallable", "listEnrollmentsCallable"]
+            },
+            "ListGoogleApiSources": {
+              "methods": ["listGoogleApiSources", "listGoogleApiSources", "listGoogleApiSources", "listGoogleApiSourcesPagedCallable", "listGoogleApiSourcesCallable"]
+            },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListMessageBusEnrollments": {
+              "methods": ["listMessageBusEnrollments", "listMessageBusEnrollments", "listMessageBusEnrollments", "listMessageBusEnrollmentsPagedCallable", "listMessageBusEnrollmentsCallable"]
+            },
+            "ListMessageBuses": {
+              "methods": ["listMessageBuses", "listMessageBuses", "listMessageBuses", "listMessageBusesPagedCallable", "listMessageBusesCallable"]
+            },
+            "ListPipelines": {
+              "methods": ["listPipelines", "listPipelines", "listPipelines", "listPipelinesPagedCallable", "listPipelinesCallable"]
             },
             "ListProviders": {
               "methods": ["listProviders", "listProviders", "listProviders", "listProvidersPagedCallable", "listProvidersCallable"]
@@ -73,8 +124,20 @@
             "UpdateChannel": {
               "methods": ["updateChannelAsync", "updateChannelAsync", "updateChannelOperationCallable", "updateChannelCallable"]
             },
+            "UpdateEnrollment": {
+              "methods": ["updateEnrollmentAsync", "updateEnrollmentAsync", "updateEnrollmentOperationCallable", "updateEnrollmentCallable"]
+            },
+            "UpdateGoogleApiSource": {
+              "methods": ["updateGoogleApiSourceAsync", "updateGoogleApiSourceAsync", "updateGoogleApiSourceOperationCallable", "updateGoogleApiSourceCallable"]
+            },
             "UpdateGoogleChannelConfig": {
               "methods": ["updateGoogleChannelConfig", "updateGoogleChannelConfig", "updateGoogleChannelConfigCallable"]
+            },
+            "UpdateMessageBus": {
+              "methods": ["updateMessageBusAsync", "updateMessageBusAsync", "updateMessageBusOperationCallable", "updateMessageBusCallable"]
+            },
+            "UpdatePipeline": {
+              "methods": ["updatePipelineAsync", "updatePipelineAsync", "updatePipelineOperationCallable", "updatePipelineCallable"]
             },
             "UpdateTrigger": {
               "methods": ["updateTriggerAsync", "updateTriggerAsync", "updateTriggerOperationCallable", "updateTriggerCallable"]

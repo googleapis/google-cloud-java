@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for creating and managing Vertex AI's jobs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/job_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class JobServiceGrpc {
 
@@ -1783,6 +1780,19 @@ public final class JobServiceGrpc {
     return JobServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static JobServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<JobServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<JobServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public JobServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new JobServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return JobServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -3072,6 +3082,583 @@ public final class JobServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service JobService.
+   *
+   * <pre>
+   * A service for creating and managing Vertex AI's jobs.
+   * </pre>
+   */
+  public static final class JobServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<JobServiceBlockingV2Stub> {
+    private JobServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected JobServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new JobServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomJob. A created CustomJob right away
+     * will be attempted to be run.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CustomJob createCustomJob(
+        com.google.cloud.aiplatform.v1beta1.CreateCustomJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateCustomJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a CustomJob.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CustomJob getCustomJob(
+        com.google.cloud.aiplatform.v1beta1.GetCustomJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetCustomJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomJobs in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListCustomJobsResponse listCustomJobs(
+        com.google.cloud.aiplatform.v1beta1.ListCustomJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListCustomJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a CustomJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCustomJob(
+        com.google.cloud.aiplatform.v1beta1.DeleteCustomJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteCustomJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a CustomJob.
+     * Starts asynchronous cancellation on the CustomJob. The server
+     * makes a best effort to cancel the job, but success is not
+     * guaranteed. Clients can use
+     * [JobService.GetCustomJob][google.cloud.aiplatform.v1beta1.JobService.GetCustomJob]
+     * or other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On successful cancellation,
+     * the CustomJob is not deleted; instead it becomes a job with
+     * a [CustomJob.error][google.cloud.aiplatform.v1beta1.CustomJob.error] value
+     * with a [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding
+     * to `Code.CANCELLED`, and
+     * [CustomJob.state][google.cloud.aiplatform.v1beta1.CustomJob.state] is set
+     * to `CANCELLED`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty cancelCustomJob(
+        com.google.cloud.aiplatform.v1beta1.CancelCustomJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelCustomJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DataLabelingJob.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.DataLabelingJob createDataLabelingJob(
+        com.google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateDataLabelingJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a DataLabelingJob.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.DataLabelingJob getDataLabelingJob(
+        com.google.cloud.aiplatform.v1beta1.GetDataLabelingJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDataLabelingJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataLabelingJobs in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListDataLabelingJobsResponse listDataLabelingJobs(
+        com.google.cloud.aiplatform.v1beta1.ListDataLabelingJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDataLabelingJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DataLabelingJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDataLabelingJob(
+        com.google.cloud.aiplatform.v1beta1.DeleteDataLabelingJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteDataLabelingJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a DataLabelingJob. Success of cancellation is not guaranteed.
+     * </pre>
+     */
+    public com.google.protobuf.Empty cancelDataLabelingJob(
+        com.google.cloud.aiplatform.v1beta1.CancelDataLabelingJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelDataLabelingJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a HyperparameterTuningJob
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob
+        createHyperparameterTuningJob(
+            com.google.cloud.aiplatform.v1beta1.CreateHyperparameterTuningJobRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateHyperparameterTuningJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a HyperparameterTuningJob
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob getHyperparameterTuningJob(
+        com.google.cloud.aiplatform.v1beta1.GetHyperparameterTuningJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetHyperparameterTuningJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists HyperparameterTuningJobs in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsResponse
+        listHyperparameterTuningJobs(
+            com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListHyperparameterTuningJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a HyperparameterTuningJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteHyperparameterTuningJob(
+        com.google.cloud.aiplatform.v1beta1.DeleteHyperparameterTuningJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteHyperparameterTuningJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a HyperparameterTuningJob.
+     * Starts asynchronous cancellation on the HyperparameterTuningJob. The server
+     * makes a best effort to cancel the job, but success is not
+     * guaranteed. Clients can use
+     * [JobService.GetHyperparameterTuningJob][google.cloud.aiplatform.v1beta1.JobService.GetHyperparameterTuningJob]
+     * or other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On successful cancellation,
+     * the HyperparameterTuningJob is not deleted; instead it becomes a job with
+     * a
+     * [HyperparameterTuningJob.error][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.error]
+     * value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`, and
+     * [HyperparameterTuningJob.state][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.state]
+     * is set to `CANCELLED`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty cancelHyperparameterTuningJob(
+        com.google.cloud.aiplatform.v1beta1.CancelHyperparameterTuningJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelHyperparameterTuningJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a NasJob
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NasJob createNasJob(
+        com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateNasJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NasJob
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NasJob getNasJob(
+        com.google.cloud.aiplatform.v1beta1.GetNasJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetNasJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists NasJobs in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse listNasJobs(
+        com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListNasJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a NasJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteNasJob(
+        com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteNasJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a NasJob.
+     * Starts asynchronous cancellation on the NasJob. The server
+     * makes a best effort to cancel the job, but success is not
+     * guaranteed. Clients can use
+     * [JobService.GetNasJob][google.cloud.aiplatform.v1beta1.JobService.GetNasJob]
+     * or other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On successful cancellation,
+     * the NasJob is not deleted; instead it becomes a job with
+     * a [NasJob.error][google.cloud.aiplatform.v1beta1.NasJob.error] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`, and
+     * [NasJob.state][google.cloud.aiplatform.v1beta1.NasJob.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty cancelNasJob(
+        com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelNasJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NasTrialDetail.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NasTrialDetail getNasTrialDetail(
+        com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetNasTrialDetailMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List top NasTrialDetails of a NasJob.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse listNasTrialDetails(
+        com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListNasTrialDetailsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a BatchPredictionJob. A BatchPredictionJob once created will
+     * right away be attempted to start.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchPredictionJob createBatchPredictionJob(
+        com.google.cloud.aiplatform.v1beta1.CreateBatchPredictionJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateBatchPredictionJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a BatchPredictionJob
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchPredictionJob getBatchPredictionJob(
+        com.google.cloud.aiplatform.v1beta1.GetBatchPredictionJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetBatchPredictionJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BatchPredictionJobs in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsResponse
+        listBatchPredictionJobs(
+            com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListBatchPredictionJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a BatchPredictionJob. Can only be called on jobs that already
+     * finished.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBatchPredictionJob(
+        com.google.cloud.aiplatform.v1beta1.DeleteBatchPredictionJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteBatchPredictionJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a BatchPredictionJob.
+     * Starts asynchronous cancellation on the BatchPredictionJob. The server
+     * makes the best effort to cancel the job, but success is not
+     * guaranteed. Clients can use
+     * [JobService.GetBatchPredictionJob][google.cloud.aiplatform.v1beta1.JobService.GetBatchPredictionJob]
+     * or other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On a successful cancellation,
+     * the BatchPredictionJob is not deleted;instead its
+     * [BatchPredictionJob.state][google.cloud.aiplatform.v1beta1.BatchPredictionJob.state]
+     * is set to `CANCELLED`. Any files already outputted by the job are not
+     * deleted.
+     * </pre>
+     */
+    public com.google.protobuf.Empty cancelBatchPredictionJob(
+        com.google.cloud.aiplatform.v1beta1.CancelBatchPredictionJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelBatchPredictionJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ModelDeploymentMonitoringJob. It will run periodically on a
+     * configured interval.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob
+        createModelDeploymentMonitoringJob(
+            com.google.cloud.aiplatform.v1beta1.CreateModelDeploymentMonitoringJobRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches Model Monitoring Statistics generated within a given time window.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesResponse
+        searchModelDeploymentMonitoringStatsAnomalies(
+            com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getSearchModelDeploymentMonitoringStatsAnomaliesMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ModelDeploymentMonitoringJob.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob
+        getModelDeploymentMonitoringJob(
+            com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ModelDeploymentMonitoringJobs in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsResponse
+        listModelDeploymentMonitoringJobs(
+            com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListModelDeploymentMonitoringJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ModelDeploymentMonitoringJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.UpdateModelDeploymentMonitoringJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ModelDeploymentMonitoringJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses a ModelDeploymentMonitoringJob. If the job is running, the server
+     * makes a best effort to cancel the job. Will mark
+     * [ModelDeploymentMonitoringJob.state][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.state]
+     * to 'PAUSED'.
+     * </pre>
+     */
+    public com.google.protobuf.Empty pauseModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getPauseModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes a paused ModelDeploymentMonitoringJob. It will start to run from
+     * next scheduled time. A deleted ModelDeploymentMonitoringJob can't be
+     * resumed.
+     * </pre>
+     */
+    public com.google.protobuf.Empty resumeModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getResumeModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service JobService.
    *
    * <pre>
    * A service for creating and managing Vertex AI's jobs.

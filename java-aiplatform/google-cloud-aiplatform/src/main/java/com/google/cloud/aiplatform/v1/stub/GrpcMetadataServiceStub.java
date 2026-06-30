@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -121,6 +121,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMetadataStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMetadataStoreRequest, MetadataStore>
@@ -131,6 +132,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMetadataStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MetadataStore.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMetadataStoresRequest, ListMetadataStoresResponse>
@@ -142,6 +144,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(ListMetadataStoresRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMetadataStoresResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMetadataStoreRequest, Operation>
@@ -152,6 +155,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMetadataStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateArtifactRequest, Artifact>
@@ -162,6 +166,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateArtifactRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Artifact.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetArtifactRequest, Artifact> getArtifactMethodDescriptor =
@@ -170,6 +175,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.MetadataService/GetArtifact")
           .setRequestMarshaller(ProtoUtils.marshaller(GetArtifactRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Artifact.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListArtifactsRequest, ListArtifactsResponse>
@@ -181,6 +187,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(ListArtifactsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListArtifactsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateArtifactRequest, Artifact>
@@ -191,6 +198,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateArtifactRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Artifact.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteArtifactRequest, Operation>
@@ -201,6 +209,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteArtifactRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PurgeArtifactsRequest, Operation>
@@ -211,6 +220,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PurgeArtifactsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateContextRequest, Context>
@@ -221,6 +231,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateContextRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Context.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetContextRequest, Context> getContextMethodDescriptor =
@@ -229,6 +240,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.MetadataService/GetContext")
           .setRequestMarshaller(ProtoUtils.marshaller(GetContextRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Context.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListContextsRequest, ListContextsResponse>
@@ -239,6 +251,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListContextsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListContextsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateContextRequest, Context>
@@ -249,6 +262,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateContextRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Context.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteContextRequest, Operation>
@@ -259,6 +273,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteContextRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PurgeContextsRequest, Operation>
@@ -269,6 +284,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PurgeContextsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -286,6 +302,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       AddContextArtifactsAndExecutionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddContextChildrenRequest, AddContextChildrenResponse>
@@ -297,6 +314,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(AddContextChildrenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AddContextChildrenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
@@ -308,6 +326,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(RemoveContextChildrenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RemoveContextChildrenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<QueryContextLineageSubgraphRequest, LineageSubgraph>
@@ -319,6 +338,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(QueryContextLineageSubgraphRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LineageSubgraph.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateExecutionRequest, Execution>
@@ -329,6 +349,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Execution.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetExecutionRequest, Execution>
@@ -338,6 +359,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1.MetadataService/GetExecution")
               .setRequestMarshaller(ProtoUtils.marshaller(GetExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Execution.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListExecutionsRequest, ListExecutionsResponse>
@@ -349,6 +371,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(ListExecutionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListExecutionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateExecutionRequest, Execution>
@@ -359,6 +382,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Execution.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteExecutionRequest, Operation>
@@ -369,6 +393,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PurgeExecutionsRequest, Operation>
@@ -379,6 +404,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PurgeExecutionsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddExecutionEventsRequest, AddExecutionEventsResponse>
@@ -390,6 +416,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(AddExecutionEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AddExecutionEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<QueryExecutionInputsAndOutputsRequest, LineageSubgraph>
@@ -401,6 +428,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(QueryExecutionInputsAndOutputsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LineageSubgraph.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMetadataSchemaRequest, MetadataSchema>
@@ -411,6 +439,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMetadataSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MetadataSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMetadataSchemaRequest, MetadataSchema>
@@ -421,6 +450,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMetadataSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MetadataSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMetadataSchemasRequest, ListMetadataSchemasResponse>
@@ -432,6 +462,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(ListMetadataSchemasRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMetadataSchemasResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<QueryArtifactLineageSubgraphRequest, LineageSubgraph>
@@ -443,6 +474,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(QueryArtifactLineageSubgraphRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LineageSubgraph.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -454,6 +486,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -462,6 +495,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -470,6 +504,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -478,6 +513,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -489,6 +525,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateMetadataStoreRequest, Operation> createMetadataStoreCallable;
@@ -627,6 +664,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetMetadataStoreRequest, MetadataStore> getMetadataStoreTransportSettings =
         GrpcCallSettings.<GetMetadataStoreRequest, MetadataStore>newBuilder()
@@ -637,6 +675,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMetadataStoresRequest, ListMetadataStoresResponse>
         listMetadataStoresTransportSettings =
@@ -648,6 +687,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteMetadataStoreRequest, Operation> deleteMetadataStoreTransportSettings =
         GrpcCallSettings.<DeleteMetadataStoreRequest, Operation>newBuilder()
@@ -658,6 +698,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateArtifactRequest, Artifact> createArtifactTransportSettings =
         GrpcCallSettings.<CreateArtifactRequest, Artifact>newBuilder()
@@ -668,6 +709,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetArtifactRequest, Artifact> getArtifactTransportSettings =
         GrpcCallSettings.<GetArtifactRequest, Artifact>newBuilder()
@@ -678,6 +720,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListArtifactsRequest, ListArtifactsResponse> listArtifactsTransportSettings =
         GrpcCallSettings.<ListArtifactsRequest, ListArtifactsResponse>newBuilder()
@@ -688,6 +731,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateArtifactRequest, Artifact> updateArtifactTransportSettings =
         GrpcCallSettings.<UpdateArtifactRequest, Artifact>newBuilder()
@@ -708,6 +752,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PurgeArtifactsRequest, Operation> purgeArtifactsTransportSettings =
         GrpcCallSettings.<PurgeArtifactsRequest, Operation>newBuilder()
@@ -718,6 +763,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateContextRequest, Context> createContextTransportSettings =
         GrpcCallSettings.<CreateContextRequest, Context>newBuilder()
@@ -728,6 +774,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetContextRequest, Context> getContextTransportSettings =
         GrpcCallSettings.<GetContextRequest, Context>newBuilder()
@@ -738,6 +785,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListContextsRequest, ListContextsResponse> listContextsTransportSettings =
         GrpcCallSettings.<ListContextsRequest, ListContextsResponse>newBuilder()
@@ -748,6 +796,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateContextRequest, Context> updateContextTransportSettings =
         GrpcCallSettings.<UpdateContextRequest, Context>newBuilder()
@@ -768,6 +817,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PurgeContextsRequest, Operation> purgeContextsTransportSettings =
         GrpcCallSettings.<PurgeContextsRequest, Operation>newBuilder()
@@ -778,6 +828,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<
             AddContextArtifactsAndExecutionsRequest, AddContextArtifactsAndExecutionsResponse>
@@ -792,6 +843,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("context", String.valueOf(request.getContext()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getContext())
                 .build();
     GrpcCallSettings<AddContextChildrenRequest, AddContextChildrenResponse>
         addContextChildrenTransportSettings =
@@ -803,6 +855,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("context", String.valueOf(request.getContext()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getContext())
                 .build();
     GrpcCallSettings<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
         removeContextChildrenTransportSettings =
@@ -815,6 +868,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("context", String.valueOf(request.getContext()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getContext())
                 .build();
     GrpcCallSettings<QueryContextLineageSubgraphRequest, LineageSubgraph>
         queryContextLineageSubgraphTransportSettings =
@@ -826,6 +880,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("context", String.valueOf(request.getContext()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getContext())
                 .build();
     GrpcCallSettings<CreateExecutionRequest, Execution> createExecutionTransportSettings =
         GrpcCallSettings.<CreateExecutionRequest, Execution>newBuilder()
@@ -836,6 +891,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetExecutionRequest, Execution> getExecutionTransportSettings =
         GrpcCallSettings.<GetExecutionRequest, Execution>newBuilder()
@@ -846,6 +902,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListExecutionsRequest, ListExecutionsResponse>
         listExecutionsTransportSettings =
@@ -857,6 +914,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateExecutionRequest, Execution> updateExecutionTransportSettings =
         GrpcCallSettings.<UpdateExecutionRequest, Execution>newBuilder()
@@ -877,6 +935,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PurgeExecutionsRequest, Operation> purgeExecutionsTransportSettings =
         GrpcCallSettings.<PurgeExecutionsRequest, Operation>newBuilder()
@@ -887,6 +946,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<AddExecutionEventsRequest, AddExecutionEventsResponse>
         addExecutionEventsTransportSettings =
@@ -898,6 +958,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("execution", String.valueOf(request.getExecution()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getExecution())
                 .build();
     GrpcCallSettings<QueryExecutionInputsAndOutputsRequest, LineageSubgraph>
         queryExecutionInputsAndOutputsTransportSettings =
@@ -909,6 +970,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("execution", String.valueOf(request.getExecution()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getExecution())
                 .build();
     GrpcCallSettings<CreateMetadataSchemaRequest, MetadataSchema>
         createMetadataSchemaTransportSettings =
@@ -920,6 +982,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMetadataSchemaRequest, MetadataSchema> getMetadataSchemaTransportSettings =
         GrpcCallSettings.<GetMetadataSchemaRequest, MetadataSchema>newBuilder()
@@ -930,6 +993,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMetadataSchemasRequest, ListMetadataSchemasResponse>
         listMetadataSchemasTransportSettings =
@@ -941,6 +1005,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<QueryArtifactLineageSubgraphRequest, LineageSubgraph>
         queryArtifactLineageSubgraphTransportSettings =
@@ -952,6 +1017,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("artifact", String.valueOf(request.getArtifact()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getArtifact())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -982,6 +1048,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -992,6 +1059,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1003,6 +1071,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createMetadataStoreCallable =

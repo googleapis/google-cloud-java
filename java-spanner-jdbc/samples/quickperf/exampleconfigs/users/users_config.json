@@ -1,0 +1,13 @@
+{
+    "project": "xxx",
+    "instance": "xxx",
+    "database": "users",
+    "threads": 1,
+    "iterations": 1000,
+    "query": "INSERT INTO Users (user_id, name) VALUES(?,?)",
+    "writeMetricToFile": false,
+    "queryParams": [
+        {"order": 1, "value": "#i"},
+        {"order": 2, "value": "#s"}
+    ]
+}

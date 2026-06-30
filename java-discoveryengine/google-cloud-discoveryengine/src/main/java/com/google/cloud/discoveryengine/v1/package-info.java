@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,60 @@
  * A client to Discovery Engine API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
+ *
+ * <p>======================= AssistantServiceClient =======================
+ *
+ * <p>Service Description: Service for managing Assistant configuration and assisting users.
+ *
+ * <p>Sample for AssistantServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AssistantServiceClient assistantServiceClient = AssistantServiceClient.create()) {
+ *   StreamAssistRequest request =
+ *       StreamAssistRequest.newBuilder()
+ *           .setName(
+ *               AssistantName.of(
+ *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]", "[ASSISTANT]")
+ *                   .toString())
+ *           .setQuery(Query.newBuilder().build())
+ *           .setSession(
+ *               SessionName.ofProjectLocationDataStoreSessionName(
+ *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+ *                   .toString())
+ *           .setUserMetadata(AssistUserMetadata.newBuilder().build())
+ *           .setToolsSpec(StreamAssistRequest.ToolsSpec.newBuilder().build())
+ *           .setGenerationSpec(StreamAssistRequest.GenerationSpec.newBuilder().build())
+ *           .build();
+ *   ServerStream<StreamAssistResponse> stream =
+ *       assistantServiceClient.streamAssistCallable().call(request);
+ *   for (StreamAssistResponse response : stream) {
+ *     // Do something when a response is received.
+ *   }
+ * }
+ * }</pre>
+ *
+ * <p>======================= CmekConfigServiceClient =======================
+ *
+ * <p>Service Description: Service for managing CMEK related tasks
+ *
+ * <p>Sample for CmekConfigServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (CmekConfigServiceClient cmekConfigServiceClient = CmekConfigServiceClient.create()) {
+ *   CmekConfigName name = CmekConfigName.ofProjectLocationName("[PROJECT]", "[LOCATION]");
+ *   CmekConfig response = cmekConfigServiceClient.getCmekConfig(name);
+ * }
+ * }</pre>
  *
  * <p>======================= CompletionServiceClient =======================
  *
@@ -44,6 +98,29 @@
  *           .setIncludeTailSuggestions(true)
  *           .build();
  *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ControlServiceClient =======================
+ *
+ * <p>Service Description: Service for performing CRUD operations on Controls. Controls allow for
+ * custom logic to be implemented in the serving path. Controls need to be attached to a Serving
+ * Config to be considered during a request.
+ *
+ * <p>Sample for ControlServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ControlServiceClient controlServiceClient = ControlServiceClient.create()) {
+ *   DataStoreName parent =
+ *       DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+ *   Control control = Control.newBuilder().build();
+ *   String controlId = "controlId-395080872";
+ *   Control response = controlServiceClient.createControl(parent, control, controlId);
  * }
  * }</pre>
  *
@@ -131,6 +208,104 @@
  * }
  * }</pre>
  *
+ * <p>======================= GroundedGenerationServiceClient =======================
+ *
+ * <p>Service Description: Service for grounded generation.
+ *
+ * <p>Sample for GroundedGenerationServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (GroundedGenerationServiceClient groundedGenerationServiceClient =
+ *     GroundedGenerationServiceClient.create()) {
+ *   GenerateGroundedContentRequest request =
+ *       GenerateGroundedContentRequest.newBuilder()
+ *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+ *           .setSystemInstruction(GroundedGenerationContent.newBuilder().build())
+ *           .addAllContents(new ArrayList<GroundedGenerationContent>())
+ *           .setGenerationSpec(GenerateGroundedContentRequest.GenerationSpec.newBuilder().build())
+ *           .setGroundingSpec(GenerateGroundedContentRequest.GroundingSpec.newBuilder().build())
+ *           .putAllUserLabels(new HashMap<String, String>())
+ *           .build();
+ *   GenerateGroundedContentResponse response =
+ *       groundedGenerationServiceClient.generateGroundedContent(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= IdentityMappingStoreServiceClient =======================
+ *
+ * <p>Service Description: Service for managing Identity Mapping Stores.
+ *
+ * <p>Sample for IdentityMappingStoreServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (IdentityMappingStoreServiceClient identityMappingStoreServiceClient =
+ *     IdentityMappingStoreServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   IdentityMappingStore identityMappingStore = IdentityMappingStore.newBuilder().build();
+ *   String identityMappingStoreId = "identityMappingStoreId677904780";
+ *   IdentityMappingStore response =
+ *       identityMappingStoreServiceClient.createIdentityMappingStore(
+ *           parent, identityMappingStore, identityMappingStoreId);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ProjectServiceClient =======================
+ *
+ * <p>Service Description: Service for operations on the
+ * [Project][google.cloud.discoveryengine.v1.Project].
+ *
+ * <p>Sample for ProjectServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ProjectServiceClient projectServiceClient = ProjectServiceClient.create()) {
+ *   ProjectName name = ProjectName.of("[PROJECT]");
+ *   Project response = projectServiceClient.provisionProjectAsync(name).get();
+ * }
+ * }</pre>
+ *
+ * <p>======================= RankServiceClient =======================
+ *
+ * <p>Service Description: Service for ranking text records.
+ *
+ * <p>Sample for RankServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RankServiceClient rankServiceClient = RankServiceClient.create()) {
+ *   RankRequest request =
+ *       RankRequest.newBuilder()
+ *           .setRankingConfig(
+ *               RankingConfigName.of("[PROJECT]", "[LOCATION]", "[RANKING_CONFIG]").toString())
+ *           .setModel("model104069929")
+ *           .setTopN(110545924)
+ *           .setQuery("query107944136")
+ *           .addAllRecords(new ArrayList<RankingRecord>())
+ *           .setIgnoreRecordDetailsInResponse(true)
+ *           .putAllUserLabels(new HashMap<String, String>())
+ *           .build();
+ *   RankResponse response = rankServiceClient.rank(request);
+ * }
+ * }</pre>
+ *
  * <p>======================= RecommendationServiceClient =======================
  *
  * <p>Service Description: Service for making recommendations.
@@ -206,15 +381,18 @@
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
  *                   .toString())
  *           .setQuery("query107944136")
+ *           .addAllPageCategories(new ArrayList<String>())
  *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
  *           .setPageSize(883849137)
  *           .setPageToken("pageToken873572522")
  *           .setOffset(-1019779949)
+ *           .setOneBoxPageSize(1988477988)
  *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
  *           .setFilter("filter-1274492040")
  *           .setCanonicalFilter("canonicalFilter-722283124")
  *           .setOrderBy("orderBy-1207110587")
  *           .setUserInfo(UserInfo.newBuilder().build())
+ *           .setLanguageCode("languageCode-2092349083")
  *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
  *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
  *           .putAllParams(new HashMap<String, Value>())
@@ -222,12 +400,90 @@
  *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
  *           .setUserPseudoId("userPseudoId-1155274652")
  *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+ *           .setRankingExpression("rankingExpression2110320494")
  *           .setSafeSearch(true)
  *           .putAllUserLabels(new HashMap<String, String>())
+ *           .setNaturalLanguageQueryUnderstandingSpec(
+ *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
+ *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+ *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+ *           .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
+ *           .setSession(
+ *               SessionName.ofProjectLocationDataStoreSessionName(
+ *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+ *                   .toString())
+ *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+ *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
  *   }
+ * }
+ * }</pre>
+ *
+ * <p>======================= SearchTuningServiceClient =======================
+ *
+ * <p>Service Description: Service for search tuning.
+ *
+ * <p>Sample for SearchTuningServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SearchTuningServiceClient searchTuningServiceClient = SearchTuningServiceClient.create()) {
+ *   ListCustomModelsRequest request =
+ *       ListCustomModelsRequest.newBuilder()
+ *           .setDataStore(
+ *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+ *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+ *                   .toString())
+ *           .build();
+ *   ListCustomModelsResponse response = searchTuningServiceClient.listCustomModels(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ServingConfigServiceClient =======================
+ *
+ * <p>Service Description: Service for operations related to
+ * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig].
+ *
+ * <p>Sample for ServingConfigServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ServingConfigServiceClient servingConfigServiceClient =
+ *     ServingConfigServiceClient.create()) {
+ *   ServingConfig servingConfig = ServingConfig.newBuilder().build();
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   ServingConfig response =
+ *       servingConfigServiceClient.updateServingConfig(servingConfig, updateMask);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SessionServiceClient =======================
+ *
+ * <p>Service Description: Service for managing Sessions and Session-related resources.
+ *
+ * <p>Sample for SessionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
+ *   DataStoreName parent =
+ *       DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+ *   Session session = Session.newBuilder().build();
+ *   Session response = sessionServiceClient.createSession(parent, session);
  * }
  * }</pre>
  *
@@ -273,8 +529,29 @@
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
  *                   .toString())
  *           .setUserEvent(UserEvent.newBuilder().build())
+ *           .setWriteAsync(true)
  *           .build();
  *   UserEvent response = userEventServiceClient.writeUserEvent(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= UserLicenseServiceClient =======================
+ *
+ * <p>Service Description: Service for managing User Licenses.
+ *
+ * <p>Sample for UserLicenseServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (UserLicenseServiceClient userLicenseServiceClient = UserLicenseServiceClient.create()) {
+ *   UserStoreName parent = UserStoreName.of("[PROJECT]", "[LOCATION]", "[USER_STORE]");
+ *   for (UserLicense element : userLicenseServiceClient.listUserLicenses(parent).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
  * }
  * }</pre>
  */

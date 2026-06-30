@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -253,7 +253,8 @@ public class JobTriggerName implements ResourceName {
     private Builder(JobTriggerName jobTriggerName) {
       Preconditions.checkArgument(
           Objects.equals(jobTriggerName.pathTemplate, PROJECT_JOB_TRIGGER),
-          "toBuilder is only supported when JobTriggerName has the pattern of projects/{project}/jobTriggers/{job_trigger}");
+          "toBuilder is only supported when JobTriggerName has the pattern of"
+              + " projects/{project}/jobTriggers/{job_trigger}");
       this.project = jobTriggerName.project;
       this.jobTrigger = jobTriggerName.jobTrigger;
     }

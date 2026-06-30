@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,6 +68,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListInsightsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInsightsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInsightRequest, Insight> getInsightMethodDescriptor =
@@ -76,6 +77,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
           .setFullMethodName("google.cloud.recommender.v1.Recommender/GetInsight")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInsightRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Insight.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<MarkInsightAcceptedRequest, Insight>
@@ -86,6 +88,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MarkInsightAcceptedRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Insight.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRecommendationsRequest, ListRecommendationsResponse>
@@ -97,6 +100,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   ProtoUtils.marshaller(ListRecommendationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRecommendationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRecommendationRequest, Recommendation>
@@ -107,6 +111,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRecommendationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MarkRecommendationDismissedRequest, Recommendation>
@@ -118,6 +123,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MarkRecommendationDismissedRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MarkRecommendationClaimedRequest, Recommendation>
@@ -129,6 +135,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MarkRecommendationClaimedRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MarkRecommendationSucceededRequest, Recommendation>
@@ -140,6 +147,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MarkRecommendationSucceededRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MarkRecommendationFailedRequest, Recommendation>
@@ -150,6 +158,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MarkRecommendationFailedRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRecommenderConfigRequest, RecommenderConfig>
@@ -160,6 +169,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRecommenderConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RecommenderConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRecommenderConfigRequest, RecommenderConfig>
@@ -170,6 +180,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRecommenderConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RecommenderConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInsightTypeConfigRequest, InsightTypeConfig>
@@ -180,6 +191,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetInsightTypeConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InsightTypeConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateInsightTypeConfigRequest, InsightTypeConfig>
@@ -190,6 +202,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateInsightTypeConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InsightTypeConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListInsightsRequest, ListInsightsResponse> listInsightsCallable;
@@ -270,6 +283,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInsightRequest, Insight> getInsightTransportSettings =
         GrpcCallSettings.<GetInsightRequest, Insight>newBuilder()
@@ -280,6 +294,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<MarkInsightAcceptedRequest, Insight> markInsightAcceptedTransportSettings =
         GrpcCallSettings.<MarkInsightAcceptedRequest, Insight>newBuilder()
@@ -290,6 +305,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRecommendationsRequest, ListRecommendationsResponse>
         listRecommendationsTransportSettings =
@@ -301,6 +317,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRecommendationRequest, Recommendation> getRecommendationTransportSettings =
         GrpcCallSettings.<GetRecommendationRequest, Recommendation>newBuilder()
@@ -311,6 +328,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<MarkRecommendationDismissedRequest, Recommendation>
         markRecommendationDismissedTransportSettings =
@@ -322,6 +340,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<MarkRecommendationClaimedRequest, Recommendation>
         markRecommendationClaimedTransportSettings =
@@ -333,6 +352,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<MarkRecommendationSucceededRequest, Recommendation>
         markRecommendationSucceededTransportSettings =
@@ -344,6 +364,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<MarkRecommendationFailedRequest, Recommendation>
         markRecommendationFailedTransportSettings =
@@ -355,6 +376,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetRecommenderConfigRequest, RecommenderConfig>
         getRecommenderConfigTransportSettings =
@@ -366,6 +388,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateRecommenderConfigRequest, RecommenderConfig>
         updateRecommenderConfigTransportSettings =
@@ -390,6 +413,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateInsightTypeConfigRequest, InsightTypeConfig>
         updateInsightTypeConfigTransportSettings =

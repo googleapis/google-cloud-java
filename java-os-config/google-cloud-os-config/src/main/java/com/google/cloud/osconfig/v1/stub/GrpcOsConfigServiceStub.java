@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PatchJobs.ExecutePatchJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PatchJobs.PatchJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>
@@ -63,6 +64,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PatchJobs.GetPatchJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PatchJobs.PatchJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
@@ -73,6 +75,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PatchJobs.CancelPatchJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PatchJobs.PatchJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -86,6 +89,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                   ProtoUtils.marshaller(PatchJobs.ListPatchJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PatchJobs.ListPatchJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -105,6 +109,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       PatchJobs.ListPatchJobInstanceDetailsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -120,6 +125,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       PatchDeployments.CreatePatchDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PatchDeployments.PatchDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -135,6 +141,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       PatchDeployments.GetPatchDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PatchDeployments.PatchDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -153,6 +160,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       PatchDeployments.ListPatchDeploymentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PatchDeployments.DeletePatchDeploymentRequest, Empty>
@@ -164,6 +172,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                   ProtoUtils.marshaller(
                       PatchDeployments.DeletePatchDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -179,6 +188,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       PatchDeployments.UpdatePatchDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PatchDeployments.PatchDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -194,6 +204,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       PatchDeployments.PausePatchDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PatchDeployments.PatchDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -209,6 +220,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       PatchDeployments.ResumePatchDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PatchDeployments.PatchDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>
@@ -306,6 +318,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>
         getPatchJobTransportSettings =
@@ -317,6 +330,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
         cancelPatchJobTransportSettings =
@@ -328,6 +342,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>
         listPatchJobsTransportSettings =
@@ -340,6 +355,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             PatchJobs.ListPatchJobInstanceDetailsRequest,
@@ -356,6 +372,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -370,6 +387,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
         getPatchDeploymentTransportSettings =
@@ -383,6 +401,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             PatchDeployments.ListPatchDeploymentsRequest,
@@ -399,6 +418,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<PatchDeployments.DeletePatchDeploymentRequest, Empty>
         deletePatchDeploymentTransportSettings =
@@ -410,6 +430,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -439,6 +460,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -453,6 +475,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.executePatchJobCallable =

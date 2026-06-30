@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,9 @@ public class AsyncListValuedResources {
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
       ListValuedResourcesRequest request =
           ListValuedResourcesRequest.newBuilder()
-              .setParent(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+              .setParent(
+                  SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]")
+                      .toString())
               .setFilter("filter-1274492040")
               .setPageToken("pageToken873572522")
               .setPageSize(883849137)

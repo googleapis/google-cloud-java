@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import static com.google.cloud.gkemulticloud.v1.AwsClustersClient.ListAwsNodePoo
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -38,6 +39,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -81,9 +83,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -100,7 +102,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getAwsCluster to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getAwsCluster:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -117,12 +121,53 @@ import org.threeten.bp.Duration;
  *             .getAwsClusterSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * AwsClustersStubSettings awsClustersSettings = awsClustersSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createAwsCluster:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * AwsClustersStubSettings.Builder awsClustersSettingsBuilder =
+ *     AwsClustersStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * awsClustersSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -204,9 +249,7 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
 
             @Override
             public Iterable<AwsCluster> extractResources(ListAwsClustersResponse payload) {
-              return payload.getAwsClustersList() == null
-                  ? ImmutableList.<AwsCluster>of()
-                  : payload.getAwsClustersList();
+              return payload.getAwsClustersList();
             }
           };
 
@@ -244,9 +287,7 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
 
             @Override
             public Iterable<AwsNodePool> extractResources(ListAwsNodePoolsResponse payload) {
-              return payload.getAwsNodePoolsList() == null
-                  ? ImmutableList.<AwsNodePool>of()
-                  : payload.getAwsNodePoolsList();
+              return payload.getAwsNodePoolsList();
             }
           };
 
@@ -286,7 +327,12 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
             }
           };
 
-  /** Returns the object with the settings used for calls to createAwsCluster. */
+  /**
+   * Returns the object with the settings used for calls to createAwsCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateAwsClusterRequest, Operation> createAwsClusterSettings() {
     return createAwsClusterSettings;
   }
@@ -297,7 +343,12 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     return createAwsClusterOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateAwsCluster. */
+  /**
+   * Returns the object with the settings used for calls to updateAwsCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateAwsClusterRequest, Operation> updateAwsClusterSettings() {
     return updateAwsClusterSettings;
   }
@@ -308,19 +359,34 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     return updateAwsClusterOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAwsCluster. */
+  /**
+   * Returns the object with the settings used for calls to getAwsCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAwsClusterRequest, AwsCluster> getAwsClusterSettings() {
     return getAwsClusterSettings;
   }
 
-  /** Returns the object with the settings used for calls to listAwsClusters. */
+  /**
+   * Returns the object with the settings used for calls to listAwsClusters.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListAwsClustersRequest, ListAwsClustersResponse, ListAwsClustersPagedResponse>
       listAwsClustersSettings() {
     return listAwsClustersSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteAwsCluster. */
+  /**
+   * Returns the object with the settings used for calls to deleteAwsCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteAwsClusterRequest, Operation> deleteAwsClusterSettings() {
     return deleteAwsClusterSettings;
   }
@@ -331,20 +397,35 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     return deleteAwsClusterOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to generateAwsClusterAgentToken. */
+  /**
+   * Returns the object with the settings used for calls to generateAwsClusterAgentToken.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<
           GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
       generateAwsClusterAgentTokenSettings() {
     return generateAwsClusterAgentTokenSettings;
   }
 
-  /** Returns the object with the settings used for calls to generateAwsAccessToken. */
+  /**
+   * Returns the object with the settings used for calls to generateAwsAccessToken.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
       generateAwsAccessTokenSettings() {
     return generateAwsAccessTokenSettings;
   }
 
-  /** Returns the object with the settings used for calls to createAwsNodePool. */
+  /**
+   * Returns the object with the settings used for calls to createAwsNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateAwsNodePoolRequest, Operation> createAwsNodePoolSettings() {
     return createAwsNodePoolSettings;
   }
@@ -355,7 +436,12 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     return createAwsNodePoolOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateAwsNodePool. */
+  /**
+   * Returns the object with the settings used for calls to updateAwsNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateAwsNodePoolRequest, Operation> updateAwsNodePoolSettings() {
     return updateAwsNodePoolSettings;
   }
@@ -366,7 +452,12 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     return updateAwsNodePoolOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to rollbackAwsNodePoolUpdate. */
+  /**
+   * Returns the object with the settings used for calls to rollbackAwsNodePoolUpdate.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<RollbackAwsNodePoolUpdateRequest, Operation>
       rollbackAwsNodePoolUpdateSettings() {
     return rollbackAwsNodePoolUpdateSettings;
@@ -378,19 +469,34 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     return rollbackAwsNodePoolUpdateOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAwsNodePool. */
+  /**
+   * Returns the object with the settings used for calls to getAwsNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolSettings() {
     return getAwsNodePoolSettings;
   }
 
-  /** Returns the object with the settings used for calls to listAwsNodePools. */
+  /**
+   * Returns the object with the settings used for calls to listAwsNodePools.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListAwsNodePoolsRequest, ListAwsNodePoolsResponse, ListAwsNodePoolsPagedResponse>
       listAwsNodePoolsSettings() {
     return listAwsNodePoolsSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteAwsNodePool. */
+  /**
+   * Returns the object with the settings used for calls to deleteAwsNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteAwsNodePoolRequest, Operation> deleteAwsNodePoolSettings() {
     return deleteAwsNodePoolSettings;
   }
@@ -401,18 +507,33 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     return deleteAwsNodePoolOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAwsOpenIdConfig. */
+  /**
+   * Returns the object with the settings used for calls to getAwsOpenIdConfig.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
       getAwsOpenIdConfigSettings() {
     return getAwsOpenIdConfigSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAwsJsonWebKeys. */
+  /**
+   * Returns the object with the settings used for calls to getAwsJsonWebKeys.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAwsJsonWebKeysRequest, AwsJsonWebKeys> getAwsJsonWebKeysSettings() {
     return getAwsJsonWebKeysSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAwsServerConfig. */
+  /**
+   * Returns the object with the settings used for calls to getAwsServerConfig.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAwsServerConfigRequest, AwsServerConfig>
       getAwsServerConfigSettings() {
     return getAwsServerConfigSettings;
@@ -434,15 +555,6 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -455,6 +567,7 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "gkemulticloud.googleapis.com:443";
   }
@@ -567,6 +680,15 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     getAwsServerConfigSettings = settingsBuilder.getAwsServerConfigSettings().build();
   }
 
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-gke-multi-cloud")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
+  }
+
   /** Builder for AwsClustersStubSettings. */
   public static class Builder extends StubSettings.Builder<AwsClustersStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
@@ -645,21 +767,21 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -886,13 +1008,13 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -910,13 +1032,13 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -934,13 +1056,13 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -958,13 +1080,13 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -982,13 +1104,13 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1007,13 +1129,13 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1031,13 +1153,13 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1058,7 +1180,12 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to createAwsCluster. */
+    /**
+     * Returns the builder for the settings used for calls to createAwsCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateAwsClusterRequest, Operation>
         createAwsClusterSettings() {
       return createAwsClusterSettings;
@@ -1070,7 +1197,12 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       return createAwsClusterOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateAwsCluster. */
+    /**
+     * Returns the builder for the settings used for calls to updateAwsCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateAwsClusterRequest, Operation>
         updateAwsClusterSettings() {
       return updateAwsClusterSettings;
@@ -1082,19 +1214,34 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       return updateAwsClusterOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAwsCluster. */
+    /**
+     * Returns the builder for the settings used for calls to getAwsCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAwsClusterRequest, AwsCluster> getAwsClusterSettings() {
       return getAwsClusterSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listAwsClusters. */
+    /**
+     * Returns the builder for the settings used for calls to listAwsClusters.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListAwsClustersRequest, ListAwsClustersResponse, ListAwsClustersPagedResponse>
         listAwsClustersSettings() {
       return listAwsClustersSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteAwsCluster. */
+    /**
+     * Returns the builder for the settings used for calls to deleteAwsCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteAwsClusterRequest, Operation>
         deleteAwsClusterSettings() {
       return deleteAwsClusterSettings;
@@ -1106,20 +1253,35 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       return deleteAwsClusterOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to generateAwsClusterAgentToken. */
+    /**
+     * Returns the builder for the settings used for calls to generateAwsClusterAgentToken.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<
             GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
         generateAwsClusterAgentTokenSettings() {
       return generateAwsClusterAgentTokenSettings;
     }
 
-    /** Returns the builder for the settings used for calls to generateAwsAccessToken. */
+    /**
+     * Returns the builder for the settings used for calls to generateAwsAccessToken.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
         generateAwsAccessTokenSettings() {
       return generateAwsAccessTokenSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createAwsNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to createAwsNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateAwsNodePoolRequest, Operation>
         createAwsNodePoolSettings() {
       return createAwsNodePoolSettings;
@@ -1131,7 +1293,12 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       return createAwsNodePoolOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateAwsNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to updateAwsNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateAwsNodePoolRequest, Operation>
         updateAwsNodePoolSettings() {
       return updateAwsNodePoolSettings;
@@ -1143,7 +1310,12 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       return updateAwsNodePoolOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to rollbackAwsNodePoolUpdate. */
+    /**
+     * Returns the builder for the settings used for calls to rollbackAwsNodePoolUpdate.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<RollbackAwsNodePoolUpdateRequest, Operation>
         rollbackAwsNodePoolUpdateSettings() {
       return rollbackAwsNodePoolUpdateSettings;
@@ -1156,19 +1328,34 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       return rollbackAwsNodePoolUpdateOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAwsNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to getAwsNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolSettings() {
       return getAwsNodePoolSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listAwsNodePools. */
+    /**
+     * Returns the builder for the settings used for calls to listAwsNodePools.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListAwsNodePoolsRequest, ListAwsNodePoolsResponse, ListAwsNodePoolsPagedResponse>
         listAwsNodePoolsSettings() {
       return listAwsNodePoolsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteAwsNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to deleteAwsNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteAwsNodePoolRequest, Operation>
         deleteAwsNodePoolSettings() {
       return deleteAwsNodePoolSettings;
@@ -1180,31 +1367,37 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       return deleteAwsNodePoolOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAwsOpenIdConfig. */
+    /**
+     * Returns the builder for the settings used for calls to getAwsOpenIdConfig.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
         getAwsOpenIdConfigSettings() {
       return getAwsOpenIdConfigSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAwsJsonWebKeys. */
+    /**
+     * Returns the builder for the settings used for calls to getAwsJsonWebKeys.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>
         getAwsJsonWebKeysSettings() {
       return getAwsJsonWebKeysSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAwsServerConfig. */
+    /**
+     * Returns the builder for the settings used for calls to getAwsServerConfig.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAwsServerConfigRequest, AwsServerConfig>
         getAwsServerConfigSettings() {
       return getAwsServerConfigSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

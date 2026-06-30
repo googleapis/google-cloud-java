@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service that implements Google Cloud Speech API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/speech/v1/cloud_speech.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SpeechGrpc {
 
@@ -178,6 +175,19 @@ public final class SpeechGrpc {
           }
         };
     return SpeechStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SpeechBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SpeechBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SpeechBlockingV2Stub>() {
+          @java.lang.Override
+          public SpeechBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SpeechBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SpeechBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -356,6 +366,75 @@ public final class SpeechGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Speech.
+   *
+   * <pre>
+   * Service that implements Google Cloud Speech API.
+   * </pre>
+   */
+  public static final class SpeechBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SpeechBlockingV2Stub> {
+    private SpeechBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SpeechBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SpeechBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs synchronous speech recognition: receive results after all audio
+     * has been sent and processed.
+     * </pre>
+     */
+    public com.google.cloud.speech.v1.RecognizeResponse recognize(
+        com.google.cloud.speech.v1.RecognizeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRecognizeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs asynchronous speech recognition: receive results via the
+     * google.longrunning.Operations interface. Returns either an
+     * `Operation.error` or an `Operation.response` which contains
+     * a `LongRunningRecognizeResponse` message.
+     * For more information on asynchronous speech recognition, see the
+     * [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
+     * </pre>
+     */
+    public com.google.longrunning.Operation longRunningRecognize(
+        com.google.cloud.speech.v1.LongRunningRecognizeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getLongRunningRecognizeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs bidirectional streaming speech recognition: receive results while
+     * sending audio. This method is only available via the gRPC API (not REST).
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.speech.v1.StreamingRecognizeRequest,
+            com.google.cloud.speech.v1.StreamingRecognizeResponse>
+        streamingRecognize() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamingRecognizeMethod(), getCallOptions());
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Speech.
    *
    * <pre>
    * Service that implements Google Cloud Speech API.

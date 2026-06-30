@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,6 +86,10 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "dataset", request.getDataset());
                             serializer.putQueryParam(fields, "deviceType", request.getDeviceType());
+                            serializer.putQueryParam(
+                                fields,
+                                "enableAttributeSuggestions",
+                                request.getEnableAttributeSuggestions());
                             serializer.putQueryParam(fields, "entity", request.getEntity());
                             serializer.putQueryParam(
                                 fields, "languageCodes", request.getLanguageCodesList());
@@ -243,6 +247,7 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                       builder.add("catalog", String.valueOf(request.getCatalog()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCatalog())
                 .build();
     HttpJsonCallSettings<ImportCompletionDataRequest, Operation>
         importCompletionDataTransportSettings =
@@ -255,6 +260,7 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.completeQueryCallable =

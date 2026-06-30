@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/serving_config_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ServingConfigServiceGrpc {
 
@@ -195,6 +192,19 @@ public final class ServingConfigServiceGrpc {
           }
         };
     return ServingConfigServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ServingConfigServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ServingConfigServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ServingConfigServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ServingConfigServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ServingConfigServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ServingConfigServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -378,6 +388,72 @@ public final class ServingConfigServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ServingConfigService.
+   *
+   * <pre>
+   * Service for operations related to
+   * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig].
+   * </pre>
+   */
+  public static final class ServingConfigServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ServingConfigServiceBlockingV2Stub> {
+    private ServingConfigServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ServingConfigServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ServingConfigServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ServingConfig.
+     * Returns a NOT_FOUND error if the ServingConfig does not exist.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.ServingConfig updateServingConfig(
+        com.google.cloud.discoveryengine.v1alpha.UpdateServingConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateServingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ServingConfig.
+     * Returns a NotFound error if the ServingConfig does not exist.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.ServingConfig getServingConfig(
+        com.google.cloud.discoveryengine.v1alpha.GetServingConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetServingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ServingConfigs linked to this dataStore.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.ListServingConfigsResponse listServingConfigs(
+        com.google.cloud.discoveryengine.v1alpha.ListServingConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListServingConfigsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ServingConfigService.
    *
    * <pre>
    * Service for operations related to

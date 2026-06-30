@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
  *
  * <p>======================= CaseAttachmentServiceClient =======================
  *
- * <p>Service Description: A service to manage file attachment for Google Cloud support cases.
+ * <p>Service Description: A service to manage file attachments for Google Cloud support cases.
  *
  * <p>Sample for CaseAttachmentServiceClient:
  *
@@ -33,10 +33,10 @@
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (CaseAttachmentServiceClient caseAttachmentServiceClient =
  *     CaseAttachmentServiceClient.create()) {
- *   CaseName parent = CaseName.ofProjectCaseName("[PROJECT]", "[CASE]");
- *   for (Attachment element : caseAttachmentServiceClient.listAttachments(parent).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   AttachmentName name =
+ *       AttachmentName.ofOrganizationCaseAttachmentIdName(
+ *           "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]");
+ *   Attachment response = caseAttachmentServiceClient.getAttachment(name);
  * }
  * }</pre>
  *

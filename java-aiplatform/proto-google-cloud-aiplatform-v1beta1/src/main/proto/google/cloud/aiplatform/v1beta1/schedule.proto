@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package google.cloud.aiplatform.v1beta1;
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/cloud/aiplatform/v1beta1/model_monitoring_service.proto";
+import "google/cloud/aiplatform/v1beta1/notebook_service.proto";
 import "google/cloud/aiplatform/v1beta1/pipeline_service.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -91,6 +92,11 @@ message Schedule {
     // Request for
     // [ModelMonitoringService.CreateModelMonitoringJob][google.cloud.aiplatform.v1beta1.ModelMonitoringService.CreateModelMonitoringJob].
     CreateModelMonitoringJobRequest create_model_monitoring_job_request = 15;
+
+    // Request for
+    // [NotebookService.CreateNotebookExecutionJob][google.cloud.aiplatform.v1beta1.NotebookService.CreateNotebookExecutionJob].
+    CreateNotebookExecutionJobRequest create_notebook_execution_job_request =
+        20;
   }
 
   // Immutable. The resource name of the Schedule.
@@ -157,6 +163,14 @@ message Schedule {
   // Schedule. This is the limit for starting the scheduled requests and not the
   // execution of the operations/jobs created by the requests (if applicable).
   int64 max_concurrent_run_count = 11 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. Specifies the maximum number of active runs that can be executed
+  // concurrently for this Schedule. This limits the number of runs that can be
+  // in a non-terminal state at the same time.
+  // Currently, this field is only supported for requests of type
+  // CreatePipelineJobRequest.
+  int64 max_concurrent_active_run_count = 21
+      [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Whether new scheduled runs can be queued when max_concurrent_runs
   // limit is reached. If set to true, new runs will be queued instead of

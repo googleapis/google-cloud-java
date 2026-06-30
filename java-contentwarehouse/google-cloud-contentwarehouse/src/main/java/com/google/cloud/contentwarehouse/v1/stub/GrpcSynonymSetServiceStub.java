@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSynonymSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SynonymSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSynonymSetRequest, SynonymSet>
@@ -67,6 +68,7 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSynonymSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SynonymSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSynonymSetRequest, SynonymSet>
@@ -78,6 +80,7 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSynonymSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SynonymSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSynonymSetRequest, Empty>
@@ -89,6 +92,7 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSynonymSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSynonymSetsRequest, ListSynonymSetsResponse>
@@ -101,6 +105,7 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
                   ProtoUtils.marshaller(ListSynonymSetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSynonymSetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateSynonymSetRequest, SynonymSet> createSynonymSetCallable;
@@ -165,6 +170,7 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSynonymSetRequest, SynonymSet> getSynonymSetTransportSettings =
         GrpcCallSettings.<GetSynonymSetRequest, SynonymSet>newBuilder()
@@ -175,6 +181,7 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSynonymSetRequest, SynonymSet> updateSynonymSetTransportSettings =
         GrpcCallSettings.<UpdateSynonymSetRequest, SynonymSet>newBuilder()
@@ -185,6 +192,7 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteSynonymSetRequest, Empty> deleteSynonymSetTransportSettings =
         GrpcCallSettings.<DeleteSynonymSetRequest, Empty>newBuilder()
@@ -195,6 +203,7 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSynonymSetsRequest, ListSynonymSetsResponse>
         listSynonymSetsTransportSettings =
@@ -206,6 +215,7 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createSynonymSetCallable =

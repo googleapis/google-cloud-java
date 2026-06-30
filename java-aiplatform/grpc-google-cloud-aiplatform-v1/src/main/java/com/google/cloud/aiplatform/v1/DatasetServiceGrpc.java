@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The service that manages Vertex AI Dataset and its child resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/dataset_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DatasetServiceGrpc {
 
@@ -388,6 +385,55 @@ public final class DatasetServiceGrpc {
       }
     }
     return getCreateDatasetVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest,
+          com.google.cloud.aiplatform.v1.DatasetVersion>
+      getUpdateDatasetVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDatasetVersion",
+      requestType = com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.DatasetVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest,
+          com.google.cloud.aiplatform.v1.DatasetVersion>
+      getUpdateDatasetVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest,
+            com.google.cloud.aiplatform.v1.DatasetVersion>
+        getUpdateDatasetVersionMethod;
+    if ((getUpdateDatasetVersionMethod = DatasetServiceGrpc.getUpdateDatasetVersionMethod)
+        == null) {
+      synchronized (DatasetServiceGrpc.class) {
+        if ((getUpdateDatasetVersionMethod = DatasetServiceGrpc.getUpdateDatasetVersionMethod)
+            == null) {
+          DatasetServiceGrpc.getUpdateDatasetVersionMethod =
+              getUpdateDatasetVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest,
+                          com.google.cloud.aiplatform.v1.DatasetVersion>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateDatasetVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.DatasetVersion.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatasetServiceMethodDescriptorSupplier("UpdateDatasetVersion"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDatasetVersionMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -874,6 +920,19 @@ public final class DatasetServiceGrpc {
     return DatasetServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DatasetServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DatasetServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DatasetServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public DatasetServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DatasetServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DatasetServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1025,6 +1084,21 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Updates a DatasetVersion.
+     * </pre>
+     */
+    default void updateDatasetVersion(
+        com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.DatasetVersion>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDatasetVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a Dataset version.
      * </pre>
      */
@@ -1157,7 +1231,7 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
-     * Lists Annotations belongs to a dataitem
+     * Lists Annotations belongs to a dataitem.
      * </pre>
      */
     default void listAnnotations(
@@ -1330,6 +1404,23 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Updates a DatasetVersion.
+     * </pre>
+     */
+    public void updateDatasetVersion(
+        com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.DatasetVersion>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDatasetVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a Dataset version.
      * </pre>
      */
@@ -1480,7 +1571,7 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
-     * Lists Annotations belongs to a dataitem
+     * Lists Annotations belongs to a dataitem.
      * </pre>
      */
     public void listAnnotations(
@@ -1496,6 +1587,288 @@ public final class DatasetServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DatasetService.
+   *
+   * <pre>
+   * The service that manages Vertex AI Dataset and its child resources.
+   * </pre>
+   */
+  public static final class DatasetServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DatasetServiceBlockingV2Stub> {
+    private DatasetServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DatasetServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DatasetServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Dataset.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDataset(
+        com.google.cloud.aiplatform.v1.CreateDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Dataset.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.Dataset getDataset(
+        com.google.cloud.aiplatform.v1.GetDatasetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Dataset.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.Dataset updateDataset(
+        com.google.cloud.aiplatform.v1.UpdateDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Datasets in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListDatasetsResponse listDatasets(
+        com.google.cloud.aiplatform.v1.ListDatasetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDatasetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Dataset.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDataset(
+        com.google.cloud.aiplatform.v1.DeleteDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports data into a Dataset.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importData(
+        com.google.cloud.aiplatform.v1.ImportDataRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getImportDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports data from a Dataset.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportData(
+        com.google.cloud.aiplatform.v1.ExportDataRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a version from a Dataset.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDatasetVersion(
+        com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateDatasetVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DatasetVersion.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.DatasetVersion updateDatasetVersion(
+        com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDatasetVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Dataset version.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDatasetVersion(
+        com.google.cloud.aiplatform.v1.DeleteDatasetVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteDatasetVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Dataset version.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.DatasetVersion getDatasetVersion(
+        com.google.cloud.aiplatform.v1.GetDatasetVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDatasetVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DatasetVersions in a Dataset.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListDatasetVersionsResponse listDatasetVersions(
+        com.google.cloud.aiplatform.v1.ListDatasetVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDatasetVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores a dataset version.
+     * </pre>
+     */
+    public com.google.longrunning.Operation restoreDatasetVersion(
+        com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRestoreDatasetVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataItems in a Dataset.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListDataItemsResponse listDataItems(
+        com.google.cloud.aiplatform.v1.ListDataItemsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDataItemsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches DataItems in a Dataset.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.SearchDataItemsResponse searchDataItems(
+        com.google.cloud.aiplatform.v1.SearchDataItemsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSearchDataItemsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists SavedQueries in a Dataset.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListSavedQueriesResponse listSavedQueries(
+        com.google.cloud.aiplatform.v1.ListSavedQueriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListSavedQueriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a SavedQuery.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSavedQuery(
+        com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteSavedQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an AnnotationSpec.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.AnnotationSpec getAnnotationSpec(
+        com.google.cloud.aiplatform.v1.GetAnnotationSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAnnotationSpecMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Annotations belongs to a dataitem.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListAnnotationsResponse listAnnotations(
+        com.google.cloud.aiplatform.v1.ListAnnotationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAnnotationsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DatasetService.
    *
    * <pre>
    * The service that manages Vertex AI Dataset and its child resources.
@@ -1621,6 +1994,19 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Updates a DatasetVersion.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.DatasetVersion updateDatasetVersion(
+        com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDatasetVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a Dataset version.
      * </pre>
      */
@@ -1738,7 +2124,7 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
-     * Lists Annotations belongs to a dataitem
+     * Lists Annotations belongs to a dataitem.
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListAnnotationsResponse listAnnotations(
@@ -1878,6 +2264,20 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Updates a DatasetVersion.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.DatasetVersion>
+        updateDatasetVersion(com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDatasetVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a Dataset version.
      * </pre>
      */
@@ -2001,7 +2401,7 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
-     * Lists Annotations belongs to a dataitem
+     * Lists Annotations belongs to a dataitem.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2020,16 +2420,17 @@ public final class DatasetServiceGrpc {
   private static final int METHODID_IMPORT_DATA = 5;
   private static final int METHODID_EXPORT_DATA = 6;
   private static final int METHODID_CREATE_DATASET_VERSION = 7;
-  private static final int METHODID_DELETE_DATASET_VERSION = 8;
-  private static final int METHODID_GET_DATASET_VERSION = 9;
-  private static final int METHODID_LIST_DATASET_VERSIONS = 10;
-  private static final int METHODID_RESTORE_DATASET_VERSION = 11;
-  private static final int METHODID_LIST_DATA_ITEMS = 12;
-  private static final int METHODID_SEARCH_DATA_ITEMS = 13;
-  private static final int METHODID_LIST_SAVED_QUERIES = 14;
-  private static final int METHODID_DELETE_SAVED_QUERY = 15;
-  private static final int METHODID_GET_ANNOTATION_SPEC = 16;
-  private static final int METHODID_LIST_ANNOTATIONS = 17;
+  private static final int METHODID_UPDATE_DATASET_VERSION = 8;
+  private static final int METHODID_DELETE_DATASET_VERSION = 9;
+  private static final int METHODID_GET_DATASET_VERSION = 10;
+  private static final int METHODID_LIST_DATASET_VERSIONS = 11;
+  private static final int METHODID_RESTORE_DATASET_VERSION = 12;
+  private static final int METHODID_LIST_DATA_ITEMS = 13;
+  private static final int METHODID_SEARCH_DATA_ITEMS = 14;
+  private static final int METHODID_LIST_SAVED_QUERIES = 15;
+  private static final int METHODID_DELETE_SAVED_QUERY = 16;
+  private static final int METHODID_GET_ANNOTATION_SPEC = 17;
+  private static final int METHODID_LIST_ANNOTATIONS = 18;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2090,6 +2491,12 @@ public final class DatasetServiceGrpc {
           serviceImpl.createDatasetVersion(
               (com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_DATASET_VERSION:
+          serviceImpl.updateDatasetVersion(
+              (com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.DatasetVersion>)
+                  responseObserver);
           break;
         case METHODID_DELETE_DATASET_VERSION:
           serviceImpl.deleteDatasetVersion(
@@ -2217,6 +2624,13 @@ public final class DatasetServiceGrpc {
                     com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_DATASET_VERSION)))
         .addMethod(
+            getUpdateDatasetVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest,
+                    com.google.cloud.aiplatform.v1.DatasetVersion>(
+                    service, METHODID_UPDATE_DATASET_VERSION)))
+        .addMethod(
             getDeleteDatasetVersionMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -2342,6 +2756,7 @@ public final class DatasetServiceGrpc {
                       .addMethod(getImportDataMethod())
                       .addMethod(getExportDataMethod())
                       .addMethod(getCreateDatasetVersionMethod())
+                      .addMethod(getUpdateDatasetVersionMethod())
                       .addMethod(getDeleteDatasetVersionMethod())
                       .addMethod(getGetDatasetVersionMethod())
                       .addMethod(getListDatasetVersionsMethod())

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,10 @@ import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPaged
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListHostGroupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListQuotaRulesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListReplicationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListStoragePoolsPagedResponse;
@@ -47,7 +49,9 @@ import com.google.cloud.netapp.v1.CreateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.CreateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.CreateBackupRequest;
 import com.google.cloud.netapp.v1.CreateBackupVaultRequest;
+import com.google.cloud.netapp.v1.CreateHostGroupRequest;
 import com.google.cloud.netapp.v1.CreateKmsConfigRequest;
+import com.google.cloud.netapp.v1.CreateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.CreateReplicationRequest;
 import com.google.cloud.netapp.v1.CreateSnapshotRequest;
 import com.google.cloud.netapp.v1.CreateStoragePoolRequest;
@@ -56,21 +60,36 @@ import com.google.cloud.netapp.v1.DeleteActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.DeleteBackupPolicyRequest;
 import com.google.cloud.netapp.v1.DeleteBackupRequest;
 import com.google.cloud.netapp.v1.DeleteBackupVaultRequest;
+import com.google.cloud.netapp.v1.DeleteHostGroupRequest;
 import com.google.cloud.netapp.v1.DeleteKmsConfigRequest;
+import com.google.cloud.netapp.v1.DeleteQuotaRuleRequest;
 import com.google.cloud.netapp.v1.DeleteReplicationRequest;
 import com.google.cloud.netapp.v1.DeleteSnapshotRequest;
 import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
 import com.google.cloud.netapp.v1.DeleteVolumeRequest;
 import com.google.cloud.netapp.v1.EncryptVolumesRequest;
+import com.google.cloud.netapp.v1.EstablishPeeringRequest;
+import com.google.cloud.netapp.v1.EstablishVolumePeeringRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapDeleteRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapDeleteResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapGetRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapGetResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapPatchRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapPatchResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapPostRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapPostResponse;
 import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
 import com.google.cloud.netapp.v1.GetBackupVaultRequest;
+import com.google.cloud.netapp.v1.GetHostGroupRequest;
 import com.google.cloud.netapp.v1.GetKmsConfigRequest;
+import com.google.cloud.netapp.v1.GetQuotaRuleRequest;
 import com.google.cloud.netapp.v1.GetReplicationRequest;
 import com.google.cloud.netapp.v1.GetSnapshotRequest;
 import com.google.cloud.netapp.v1.GetStoragePoolRequest;
 import com.google.cloud.netapp.v1.GetVolumeRequest;
+import com.google.cloud.netapp.v1.HostGroup;
 import com.google.cloud.netapp.v1.KmsConfig;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesRequest;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesResponse;
@@ -80,8 +99,12 @@ import com.google.cloud.netapp.v1.ListBackupVaultsRequest;
 import com.google.cloud.netapp.v1.ListBackupVaultsResponse;
 import com.google.cloud.netapp.v1.ListBackupsRequest;
 import com.google.cloud.netapp.v1.ListBackupsResponse;
+import com.google.cloud.netapp.v1.ListHostGroupsRequest;
+import com.google.cloud.netapp.v1.ListHostGroupsResponse;
 import com.google.cloud.netapp.v1.ListKmsConfigsRequest;
 import com.google.cloud.netapp.v1.ListKmsConfigsResponse;
+import com.google.cloud.netapp.v1.ListQuotaRulesRequest;
+import com.google.cloud.netapp.v1.ListQuotaRulesResponse;
 import com.google.cloud.netapp.v1.ListReplicationsRequest;
 import com.google.cloud.netapp.v1.ListReplicationsResponse;
 import com.google.cloud.netapp.v1.ListSnapshotsRequest;
@@ -91,22 +114,30 @@ import com.google.cloud.netapp.v1.ListStoragePoolsResponse;
 import com.google.cloud.netapp.v1.ListVolumesRequest;
 import com.google.cloud.netapp.v1.ListVolumesResponse;
 import com.google.cloud.netapp.v1.OperationMetadata;
+import com.google.cloud.netapp.v1.QuotaRule;
 import com.google.cloud.netapp.v1.Replication;
+import com.google.cloud.netapp.v1.RestoreBackupFilesRequest;
+import com.google.cloud.netapp.v1.RestoreBackupFilesResponse;
 import com.google.cloud.netapp.v1.ResumeReplicationRequest;
 import com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest;
 import com.google.cloud.netapp.v1.RevertVolumeRequest;
 import com.google.cloud.netapp.v1.Snapshot;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
+import com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest;
+import com.google.cloud.netapp.v1.SyncReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
 import com.google.cloud.netapp.v1.UpdateBackupVaultRequest;
+import com.google.cloud.netapp.v1.UpdateHostGroupRequest;
 import com.google.cloud.netapp.v1.UpdateKmsConfigRequest;
+import com.google.cloud.netapp.v1.UpdateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.UpdateReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateSnapshotRequest;
 import com.google.cloud.netapp.v1.UpdateStoragePoolRequest;
 import com.google.cloud.netapp.v1.UpdateVolumeRequest;
+import com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigResponse;
 import com.google.cloud.netapp.v1.Volume;
@@ -136,6 +167,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListStoragePoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListStoragePoolsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateStoragePoolRequest, Operation>
@@ -146,6 +178,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateStoragePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetStoragePoolRequest, StoragePool>
@@ -156,6 +189,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetStoragePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(StoragePool.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateStoragePoolRequest, Operation>
@@ -166,6 +200,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateStoragePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteStoragePoolRequest, Operation>
@@ -176,6 +211,29 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteStoragePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceMethodDescriptor =
+          MethodDescriptor.<ValidateDirectoryServiceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ValidateDirectoryService")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ValidateDirectoryServiceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneMethodDescriptor =
+          MethodDescriptor.<SwitchActiveReplicaZoneRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/SwitchActiveReplicaZone")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SwitchActiveReplicaZoneRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListVolumesRequest, ListVolumesResponse>
@@ -186,6 +244,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListVolumesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVolumesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVolumeRequest, Volume> getVolumeMethodDescriptor =
@@ -194,6 +253,7 @@ public class GrpcNetAppStub extends NetAppStub {
           .setFullMethodName("google.cloud.netapp.v1.NetApp/GetVolume")
           .setRequestMarshaller(ProtoUtils.marshaller(GetVolumeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Volume.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateVolumeRequest, Operation>
@@ -203,6 +263,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/CreateVolume")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateVolumeRequest, Operation>
@@ -212,6 +273,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/UpdateVolume")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteVolumeRequest, Operation>
@@ -221,6 +283,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/DeleteVolume")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RevertVolumeRequest, Operation>
@@ -230,6 +293,18 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/RevertVolume")
               .setRequestMarshaller(ProtoUtils.marshaller(RevertVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<EstablishVolumePeeringRequest, Operation>
+      establishVolumePeeringMethodDescriptor =
+          MethodDescriptor.<EstablishVolumePeeringRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/EstablishVolumePeering")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(EstablishVolumePeeringRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSnapshotsRequest, ListSnapshotsResponse>
@@ -241,6 +316,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListSnapshotsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSnapshotsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSnapshotRequest, Snapshot> getSnapshotMethodDescriptor =
@@ -249,6 +325,7 @@ public class GrpcNetAppStub extends NetAppStub {
           .setFullMethodName("google.cloud.netapp.v1.NetApp/GetSnapshot")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSnapshotRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Snapshot.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateSnapshotRequest, Operation>
@@ -259,6 +336,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSnapshotRequest, Operation>
@@ -269,6 +347,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSnapshotRequest, Operation>
@@ -279,6 +358,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListActiveDirectoriesRequest, ListActiveDirectoriesResponse>
@@ -290,6 +370,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListActiveDirectoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListActiveDirectoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetActiveDirectoryRequest, ActiveDirectory>
@@ -300,6 +381,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetActiveDirectoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ActiveDirectory.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateActiveDirectoryRequest, Operation>
@@ -310,6 +392,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateActiveDirectoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateActiveDirectoryRequest, Operation>
@@ -320,6 +403,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateActiveDirectoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteActiveDirectoryRequest, Operation>
@@ -330,6 +414,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteActiveDirectoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListKmsConfigsRequest, ListKmsConfigsResponse>
@@ -341,6 +426,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListKmsConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListKmsConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateKmsConfigRequest, Operation>
@@ -351,6 +437,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateKmsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetKmsConfigRequest, KmsConfig>
@@ -360,6 +447,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/GetKmsConfig")
               .setRequestMarshaller(ProtoUtils.marshaller(GetKmsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(KmsConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateKmsConfigRequest, Operation>
@@ -370,6 +458,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateKmsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EncryptVolumesRequest, Operation>
@@ -380,6 +469,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EncryptVolumesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<VerifyKmsConfigRequest, VerifyKmsConfigResponse>
@@ -391,6 +481,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(VerifyKmsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(VerifyKmsConfigResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteKmsConfigRequest, Operation>
@@ -401,6 +492,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteKmsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReplicationsRequest, ListReplicationsResponse>
@@ -412,6 +504,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListReplicationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReplicationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReplicationRequest, Replication>
@@ -422,6 +515,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetReplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Replication.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateReplicationRequest, Operation>
@@ -432,6 +526,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteReplicationRequest, Operation>
@@ -442,6 +537,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteReplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateReplicationRequest, Operation>
@@ -452,6 +548,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateReplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopReplicationRequest, Operation>
@@ -462,6 +559,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StopReplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResumeReplicationRequest, Operation>
@@ -472,6 +570,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResumeReplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReverseReplicationDirectionRequest, Operation>
@@ -482,6 +581,29 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReverseReplicationDirectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<EstablishPeeringRequest, Operation>
+      establishPeeringMethodDescriptor =
+          MethodDescriptor.<EstablishPeeringRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/EstablishPeering")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(EstablishPeeringRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<SyncReplicationRequest, Operation>
+      syncReplicationMethodDescriptor =
+          MethodDescriptor.<SyncReplicationRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/SyncReplication")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SyncReplicationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBackupVaultRequest, Operation>
@@ -492,6 +614,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBackupVaultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupVaultRequest, BackupVault>
@@ -502,6 +625,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBackupVaultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BackupVault.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBackupVaultsRequest, ListBackupVaultsResponse>
@@ -513,6 +637,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListBackupVaultsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupVaultsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBackupVaultRequest, Operation>
@@ -523,6 +648,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBackupVaultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupVaultRequest, Operation>
@@ -533,6 +659,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBackupVaultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBackupRequest, Operation>
@@ -542,6 +669,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/CreateBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
@@ -550,6 +678,7 @@ public class GrpcNetAppStub extends NetAppStub {
           .setFullMethodName("google.cloud.netapp.v1.NetApp/GetBackup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBackupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
@@ -560,6 +689,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListBackupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupRequest, Operation>
@@ -569,6 +699,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/DeleteBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBackupRequest, Operation>
@@ -578,6 +709,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/UpdateBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBackupPolicyRequest, Operation>
@@ -588,6 +720,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBackupPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupPolicyRequest, BackupPolicy>
@@ -598,6 +731,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBackupPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BackupPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBackupPoliciesRequest, ListBackupPoliciesResponse>
@@ -609,6 +743,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListBackupPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBackupPolicyRequest, Operation>
@@ -619,6 +754,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBackupPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupPolicyRequest, Operation>
@@ -629,6 +765,176 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBackupPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListQuotaRulesRequest, ListQuotaRulesResponse>
+      listQuotaRulesMethodDescriptor =
+          MethodDescriptor.<ListQuotaRulesRequest, ListQuotaRulesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ListQuotaRules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListQuotaRulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListQuotaRulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetQuotaRuleRequest, QuotaRule>
+      getQuotaRuleMethodDescriptor =
+          MethodDescriptor.<GetQuotaRuleRequest, QuotaRule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/GetQuotaRule")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetQuotaRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(QuotaRule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateQuotaRuleRequest, Operation>
+      createQuotaRuleMethodDescriptor =
+          MethodDescriptor.<CreateQuotaRuleRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/CreateQuotaRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateQuotaRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateQuotaRuleRequest, Operation>
+      updateQuotaRuleMethodDescriptor =
+          MethodDescriptor.<UpdateQuotaRuleRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/UpdateQuotaRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateQuotaRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteQuotaRuleRequest, Operation>
+      deleteQuotaRuleMethodDescriptor =
+          MethodDescriptor.<DeleteQuotaRuleRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/DeleteQuotaRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteQuotaRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<RestoreBackupFilesRequest, Operation>
+      restoreBackupFilesMethodDescriptor =
+          MethodDescriptor.<RestoreBackupFilesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/RestoreBackupFiles")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RestoreBackupFilesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListHostGroupsRequest, ListHostGroupsResponse>
+      listHostGroupsMethodDescriptor =
+          MethodDescriptor.<ListHostGroupsRequest, ListHostGroupsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ListHostGroups")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListHostGroupsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListHostGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetHostGroupRequest, HostGroup>
+      getHostGroupMethodDescriptor =
+          MethodDescriptor.<GetHostGroupRequest, HostGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/GetHostGroup")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetHostGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(HostGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateHostGroupRequest, Operation>
+      createHostGroupMethodDescriptor =
+          MethodDescriptor.<CreateHostGroupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/CreateHostGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateHostGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateHostGroupRequest, Operation>
+      updateHostGroupMethodDescriptor =
+          MethodDescriptor.<UpdateHostGroupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/UpdateHostGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateHostGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteHostGroupRequest, Operation>
+      deleteHostGroupMethodDescriptor =
+          MethodDescriptor.<DeleteHostGroupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/DeleteHostGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteHostGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostMethodDescriptor =
+          MethodDescriptor.<ExecuteOntapPostRequest, ExecuteOntapPostResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ExecuteOntapPost")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExecuteOntapPostRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ExecuteOntapPostResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+      executeOntapGetMethodDescriptor =
+          MethodDescriptor.<ExecuteOntapGetRequest, ExecuteOntapGetResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ExecuteOntapGet")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExecuteOntapGetRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ExecuteOntapGetResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteMethodDescriptor =
+          MethodDescriptor.<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ExecuteOntapDelete")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExecuteOntapDeleteRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ExecuteOntapDeleteResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchMethodDescriptor =
+          MethodDescriptor.<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ExecuteOntapPatch")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExecuteOntapPatchRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ExecuteOntapPatchResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -640,6 +946,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -648,6 +955,7 @@ public class GrpcNetAppStub extends NetAppStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListStoragePoolsRequest, ListStoragePoolsResponse>
@@ -664,6 +972,14 @@ public class GrpcNetAppStub extends NetAppStub {
   private final UnaryCallable<DeleteStoragePoolRequest, Operation> deleteStoragePoolCallable;
   private final OperationCallable<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationCallable;
+  private final UnaryCallable<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceCallable;
+  private final OperationCallable<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationCallable;
+  private final UnaryCallable<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneCallable;
+  private final OperationCallable<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationCallable;
   private final UnaryCallable<ListVolumesRequest, ListVolumesResponse> listVolumesCallable;
   private final UnaryCallable<ListVolumesRequest, ListVolumesPagedResponse>
       listVolumesPagedCallable;
@@ -680,6 +996,10 @@ public class GrpcNetAppStub extends NetAppStub {
   private final UnaryCallable<RevertVolumeRequest, Operation> revertVolumeCallable;
   private final OperationCallable<RevertVolumeRequest, Volume, OperationMetadata>
       revertVolumeOperationCallable;
+  private final UnaryCallable<EstablishVolumePeeringRequest, Operation>
+      establishVolumePeeringCallable;
+  private final OperationCallable<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+      establishVolumePeeringOperationCallable;
   private final UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsCallable;
   private final UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
       listSnapshotsPagedCallable;
@@ -754,6 +1074,12 @@ public class GrpcNetAppStub extends NetAppStub {
   private final OperationCallable<
           ReverseReplicationDirectionRequest, Replication, OperationMetadata>
       reverseReplicationDirectionOperationCallable;
+  private final UnaryCallable<EstablishPeeringRequest, Operation> establishPeeringCallable;
+  private final OperationCallable<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationCallable;
+  private final UnaryCallable<SyncReplicationRequest, Operation> syncReplicationCallable;
+  private final OperationCallable<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationCallable;
   private final UnaryCallable<CreateBackupVaultRequest, Operation> createBackupVaultCallable;
   private final OperationCallable<CreateBackupVaultRequest, BackupVault, OperationMetadata>
       createBackupVaultOperationCallable;
@@ -795,6 +1121,44 @@ public class GrpcNetAppStub extends NetAppStub {
   private final UnaryCallable<DeleteBackupPolicyRequest, Operation> deleteBackupPolicyCallable;
   private final OperationCallable<DeleteBackupPolicyRequest, Empty, OperationMetadata>
       deleteBackupPolicyOperationCallable;
+  private final UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesResponse> listQuotaRulesCallable;
+  private final UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesPagedResponse>
+      listQuotaRulesPagedCallable;
+  private final UnaryCallable<GetQuotaRuleRequest, QuotaRule> getQuotaRuleCallable;
+  private final UnaryCallable<CreateQuotaRuleRequest, Operation> createQuotaRuleCallable;
+  private final OperationCallable<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationCallable;
+  private final UnaryCallable<UpdateQuotaRuleRequest, Operation> updateQuotaRuleCallable;
+  private final OperationCallable<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationCallable;
+  private final UnaryCallable<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleCallable;
+  private final OperationCallable<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationCallable;
+  private final UnaryCallable<RestoreBackupFilesRequest, Operation> restoreBackupFilesCallable;
+  private final OperationCallable<
+          RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+      restoreBackupFilesOperationCallable;
+  private final UnaryCallable<ListHostGroupsRequest, ListHostGroupsResponse> listHostGroupsCallable;
+  private final UnaryCallable<ListHostGroupsRequest, ListHostGroupsPagedResponse>
+      listHostGroupsPagedCallable;
+  private final UnaryCallable<GetHostGroupRequest, HostGroup> getHostGroupCallable;
+  private final UnaryCallable<CreateHostGroupRequest, Operation> createHostGroupCallable;
+  private final OperationCallable<CreateHostGroupRequest, HostGroup, OperationMetadata>
+      createHostGroupOperationCallable;
+  private final UnaryCallable<UpdateHostGroupRequest, Operation> updateHostGroupCallable;
+  private final OperationCallable<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+      updateHostGroupOperationCallable;
+  private final UnaryCallable<DeleteHostGroupRequest, Operation> deleteHostGroupCallable;
+  private final OperationCallable<DeleteHostGroupRequest, Empty, OperationMetadata>
+      deleteHostGroupOperationCallable;
+  private final UnaryCallable<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostCallable;
+  private final UnaryCallable<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+      executeOntapGetCallable;
+  private final UnaryCallable<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteCallable;
+  private final UnaryCallable<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -849,6 +1213,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateStoragePoolRequest, Operation> createStoragePoolTransportSettings =
         GrpcCallSettings.<CreateStoragePoolRequest, Operation>newBuilder()
@@ -859,6 +1224,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetStoragePoolRequest, StoragePool> getStoragePoolTransportSettings =
         GrpcCallSettings.<GetStoragePoolRequest, StoragePool>newBuilder()
@@ -869,6 +1235,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateStoragePoolRequest, Operation> updateStoragePoolTransportSettings =
         GrpcCallSettings.<UpdateStoragePoolRequest, Operation>newBuilder()
@@ -890,7 +1257,32 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<ValidateDirectoryServiceRequest, Operation>
+        validateDirectoryServiceTransportSettings =
+            GrpcCallSettings.<ValidateDirectoryServiceRequest, Operation>newBuilder()
+                .setMethodDescriptor(validateDirectoryServiceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<SwitchActiveReplicaZoneRequest, Operation>
+        switchActiveReplicaZoneTransportSettings =
+            GrpcCallSettings.<SwitchActiveReplicaZoneRequest, Operation>newBuilder()
+                .setMethodDescriptor(switchActiveReplicaZoneMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<ListVolumesRequest, ListVolumesResponse> listVolumesTransportSettings =
         GrpcCallSettings.<ListVolumesRequest, ListVolumesResponse>newBuilder()
             .setMethodDescriptor(listVolumesMethodDescriptor)
@@ -900,6 +1292,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetVolumeRequest, Volume> getVolumeTransportSettings =
         GrpcCallSettings.<GetVolumeRequest, Volume>newBuilder()
@@ -910,6 +1303,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateVolumeRequest, Operation> createVolumeTransportSettings =
         GrpcCallSettings.<CreateVolumeRequest, Operation>newBuilder()
@@ -920,6 +1314,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateVolumeRequest, Operation> updateVolumeTransportSettings =
         GrpcCallSettings.<UpdateVolumeRequest, Operation>newBuilder()
@@ -940,6 +1335,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RevertVolumeRequest, Operation> revertVolumeTransportSettings =
         GrpcCallSettings.<RevertVolumeRequest, Operation>newBuilder()
@@ -950,7 +1346,20 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<EstablishVolumePeeringRequest, Operation>
+        establishVolumePeeringTransportSettings =
+            GrpcCallSettings.<EstablishVolumePeeringRequest, Operation>newBuilder()
+                .setMethodDescriptor(establishVolumePeeringMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsTransportSettings =
         GrpcCallSettings.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
             .setMethodDescriptor(listSnapshotsMethodDescriptor)
@@ -960,6 +1369,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSnapshotRequest, Snapshot> getSnapshotTransportSettings =
         GrpcCallSettings.<GetSnapshotRequest, Snapshot>newBuilder()
@@ -970,6 +1380,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateSnapshotRequest, Operation> createSnapshotTransportSettings =
         GrpcCallSettings.<CreateSnapshotRequest, Operation>newBuilder()
@@ -980,6 +1391,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteSnapshotRequest, Operation> deleteSnapshotTransportSettings =
         GrpcCallSettings.<DeleteSnapshotRequest, Operation>newBuilder()
@@ -990,6 +1402,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSnapshotRequest, Operation> updateSnapshotTransportSettings =
         GrpcCallSettings.<UpdateSnapshotRequest, Operation>newBuilder()
@@ -1012,6 +1425,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetActiveDirectoryRequest, ActiveDirectory>
         getActiveDirectoryTransportSettings =
@@ -1023,6 +1437,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateActiveDirectoryRequest, Operation>
         createActiveDirectoryTransportSettings =
@@ -1034,6 +1449,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateActiveDirectoryRequest, Operation>
         updateActiveDirectoryTransportSettings =
@@ -1058,6 +1474,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListKmsConfigsRequest, ListKmsConfigsResponse>
         listKmsConfigsTransportSettings =
@@ -1069,6 +1486,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateKmsConfigRequest, Operation> createKmsConfigTransportSettings =
         GrpcCallSettings.<CreateKmsConfigRequest, Operation>newBuilder()
@@ -1079,6 +1497,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetKmsConfigRequest, KmsConfig> getKmsConfigTransportSettings =
         GrpcCallSettings.<GetKmsConfigRequest, KmsConfig>newBuilder()
@@ -1089,6 +1508,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateKmsConfigRequest, Operation> updateKmsConfigTransportSettings =
         GrpcCallSettings.<UpdateKmsConfigRequest, Operation>newBuilder()
@@ -1109,6 +1529,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<VerifyKmsConfigRequest, VerifyKmsConfigResponse>
         verifyKmsConfigTransportSettings =
@@ -1120,6 +1541,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteKmsConfigRequest, Operation> deleteKmsConfigTransportSettings =
         GrpcCallSettings.<DeleteKmsConfigRequest, Operation>newBuilder()
@@ -1130,6 +1552,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListReplicationsRequest, ListReplicationsResponse>
         listReplicationsTransportSettings =
@@ -1141,6 +1564,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetReplicationRequest, Replication> getReplicationTransportSettings =
         GrpcCallSettings.<GetReplicationRequest, Replication>newBuilder()
@@ -1151,6 +1575,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateReplicationRequest, Operation> createReplicationTransportSettings =
         GrpcCallSettings.<CreateReplicationRequest, Operation>newBuilder()
@@ -1161,6 +1586,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteReplicationRequest, Operation> deleteReplicationTransportSettings =
         GrpcCallSettings.<DeleteReplicationRequest, Operation>newBuilder()
@@ -1171,6 +1597,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateReplicationRequest, Operation> updateReplicationTransportSettings =
         GrpcCallSettings.<UpdateReplicationRequest, Operation>newBuilder()
@@ -1192,6 +1619,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResumeReplicationRequest, Operation> resumeReplicationTransportSettings =
         GrpcCallSettings.<ResumeReplicationRequest, Operation>newBuilder()
@@ -1202,6 +1630,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ReverseReplicationDirectionRequest, Operation>
         reverseReplicationDirectionTransportSettings =
@@ -1213,7 +1642,30 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
+    GrpcCallSettings<EstablishPeeringRequest, Operation> establishPeeringTransportSettings =
+        GrpcCallSettings.<EstablishPeeringRequest, Operation>newBuilder()
+            .setMethodDescriptor(establishPeeringMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<SyncReplicationRequest, Operation> syncReplicationTransportSettings =
+        GrpcCallSettings.<SyncReplicationRequest, Operation>newBuilder()
+            .setMethodDescriptor(syncReplicationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     GrpcCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultTransportSettings =
         GrpcCallSettings.<CreateBackupVaultRequest, Operation>newBuilder()
             .setMethodDescriptor(createBackupVaultMethodDescriptor)
@@ -1223,6 +1675,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBackupVaultRequest, BackupVault> getBackupVaultTransportSettings =
         GrpcCallSettings.<GetBackupVaultRequest, BackupVault>newBuilder()
@@ -1233,6 +1686,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBackupVaultsRequest, ListBackupVaultsResponse>
         listBackupVaultsTransportSettings =
@@ -1244,6 +1698,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateBackupVaultRequest, Operation> updateBackupVaultTransportSettings =
         GrpcCallSettings.<UpdateBackupVaultRequest, Operation>newBuilder()
@@ -1265,6 +1720,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
         GrpcCallSettings.<CreateBackupRequest, Operation>newBuilder()
@@ -1275,6 +1731,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         GrpcCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -1285,6 +1742,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -1295,6 +1753,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
         GrpcCallSettings.<DeleteBackupRequest, Operation>newBuilder()
@@ -1305,6 +1764,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateBackupRequest, Operation> updateBackupTransportSettings =
         GrpcCallSettings.<UpdateBackupRequest, Operation>newBuilder()
@@ -1325,6 +1785,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBackupPolicyRequest, BackupPolicy> getBackupPolicyTransportSettings =
         GrpcCallSettings.<GetBackupPolicyRequest, BackupPolicy>newBuilder()
@@ -1335,6 +1796,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBackupPoliciesRequest, ListBackupPoliciesResponse>
         listBackupPoliciesTransportSettings =
@@ -1346,6 +1808,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateBackupPolicyRequest, Operation> updateBackupPolicyTransportSettings =
         GrpcCallSettings.<UpdateBackupPolicyRequest, Operation>newBuilder()
@@ -1367,7 +1830,173 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<ListQuotaRulesRequest, ListQuotaRulesResponse>
+        listQuotaRulesTransportSettings =
+            GrpcCallSettings.<ListQuotaRulesRequest, ListQuotaRulesResponse>newBuilder()
+                .setMethodDescriptor(listQuotaRulesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetQuotaRuleRequest, QuotaRule> getQuotaRuleTransportSettings =
+        GrpcCallSettings.<GetQuotaRuleRequest, QuotaRule>newBuilder()
+            .setMethodDescriptor(getQuotaRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<CreateQuotaRuleRequest, Operation> createQuotaRuleTransportSettings =
+        GrpcCallSettings.<CreateQuotaRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(createQuotaRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<UpdateQuotaRuleRequest, Operation> updateQuotaRuleTransportSettings =
+        GrpcCallSettings.<UpdateQuotaRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateQuotaRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("quota_rule.name", String.valueOf(request.getQuotaRule().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleTransportSettings =
+        GrpcCallSettings.<DeleteQuotaRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteQuotaRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<RestoreBackupFilesRequest, Operation> restoreBackupFilesTransportSettings =
+        GrpcCallSettings.<RestoreBackupFilesRequest, Operation>newBuilder()
+            .setMethodDescriptor(restoreBackupFilesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListHostGroupsRequest, ListHostGroupsResponse>
+        listHostGroupsTransportSettings =
+            GrpcCallSettings.<ListHostGroupsRequest, ListHostGroupsResponse>newBuilder()
+                .setMethodDescriptor(listHostGroupsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetHostGroupRequest, HostGroup> getHostGroupTransportSettings =
+        GrpcCallSettings.<GetHostGroupRequest, HostGroup>newBuilder()
+            .setMethodDescriptor(getHostGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<CreateHostGroupRequest, Operation> createHostGroupTransportSettings =
+        GrpcCallSettings.<CreateHostGroupRequest, Operation>newBuilder()
+            .setMethodDescriptor(createHostGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<UpdateHostGroupRequest, Operation> updateHostGroupTransportSettings =
+        GrpcCallSettings.<UpdateHostGroupRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateHostGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("host_group.name", String.valueOf(request.getHostGroup().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteHostGroupRequest, Operation> deleteHostGroupTransportSettings =
+        GrpcCallSettings.<DeleteHostGroupRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteHostGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+        executeOntapPostTransportSettings =
+            GrpcCallSettings.<ExecuteOntapPostRequest, ExecuteOntapPostResponse>newBuilder()
+                .setMethodDescriptor(executeOntapPostMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("ontap_path", String.valueOf(request.getOntapPath()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+        executeOntapGetTransportSettings =
+            GrpcCallSettings.<ExecuteOntapGetRequest, ExecuteOntapGetResponse>newBuilder()
+                .setMethodDescriptor(executeOntapGetMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("ontap_path", String.valueOf(request.getOntapPath()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+        executeOntapDeleteTransportSettings =
+            GrpcCallSettings.<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>newBuilder()
+                .setMethodDescriptor(executeOntapDeleteMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("ontap_path", String.valueOf(request.getOntapPath()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+        executeOntapPatchTransportSettings =
+            GrpcCallSettings.<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>newBuilder()
+                .setMethodDescriptor(executeOntapPatchMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("ontap_path", String.valueOf(request.getOntapPath()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -1431,6 +2060,28 @@ public class GrpcNetAppStub extends NetAppStub {
             settings.deleteStoragePoolOperationSettings(),
             clientContext,
             operationsStub);
+    this.validateDirectoryServiceCallable =
+        callableFactory.createUnaryCallable(
+            validateDirectoryServiceTransportSettings,
+            settings.validateDirectoryServiceSettings(),
+            clientContext);
+    this.validateDirectoryServiceOperationCallable =
+        callableFactory.createOperationCallable(
+            validateDirectoryServiceTransportSettings,
+            settings.validateDirectoryServiceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.switchActiveReplicaZoneCallable =
+        callableFactory.createUnaryCallable(
+            switchActiveReplicaZoneTransportSettings,
+            settings.switchActiveReplicaZoneSettings(),
+            clientContext);
+    this.switchActiveReplicaZoneOperationCallable =
+        callableFactory.createOperationCallable(
+            switchActiveReplicaZoneTransportSettings,
+            settings.switchActiveReplicaZoneOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listVolumesCallable =
         callableFactory.createUnaryCallable(
             listVolumesTransportSettings, settings.listVolumesSettings(), clientContext);
@@ -1474,6 +2125,17 @@ public class GrpcNetAppStub extends NetAppStub {
         callableFactory.createOperationCallable(
             revertVolumeTransportSettings,
             settings.revertVolumeOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.establishVolumePeeringCallable =
+        callableFactory.createUnaryCallable(
+            establishVolumePeeringTransportSettings,
+            settings.establishVolumePeeringSettings(),
+            clientContext);
+    this.establishVolumePeeringOperationCallable =
+        callableFactory.createOperationCallable(
+            establishVolumePeeringTransportSettings,
+            settings.establishVolumePeeringOperationSettings(),
             clientContext,
             operationsStub);
     this.listSnapshotsCallable =
@@ -1681,6 +2343,24 @@ public class GrpcNetAppStub extends NetAppStub {
             settings.reverseReplicationDirectionOperationSettings(),
             clientContext,
             operationsStub);
+    this.establishPeeringCallable =
+        callableFactory.createUnaryCallable(
+            establishPeeringTransportSettings, settings.establishPeeringSettings(), clientContext);
+    this.establishPeeringOperationCallable =
+        callableFactory.createOperationCallable(
+            establishPeeringTransportSettings,
+            settings.establishPeeringOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.syncReplicationCallable =
+        callableFactory.createUnaryCallable(
+            syncReplicationTransportSettings, settings.syncReplicationSettings(), clientContext);
+    this.syncReplicationOperationCallable =
+        callableFactory.createOperationCallable(
+            syncReplicationTransportSettings,
+            settings.syncReplicationOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createBackupVaultCallable =
         callableFactory.createUnaryCallable(
             createBackupVaultTransportSettings,
@@ -1805,6 +2485,105 @@ public class GrpcNetAppStub extends NetAppStub {
             settings.deleteBackupPolicyOperationSettings(),
             clientContext,
             operationsStub);
+    this.listQuotaRulesCallable =
+        callableFactory.createUnaryCallable(
+            listQuotaRulesTransportSettings, settings.listQuotaRulesSettings(), clientContext);
+    this.listQuotaRulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listQuotaRulesTransportSettings, settings.listQuotaRulesSettings(), clientContext);
+    this.getQuotaRuleCallable =
+        callableFactory.createUnaryCallable(
+            getQuotaRuleTransportSettings, settings.getQuotaRuleSettings(), clientContext);
+    this.createQuotaRuleCallable =
+        callableFactory.createUnaryCallable(
+            createQuotaRuleTransportSettings, settings.createQuotaRuleSettings(), clientContext);
+    this.createQuotaRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            createQuotaRuleTransportSettings,
+            settings.createQuotaRuleOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateQuotaRuleCallable =
+        callableFactory.createUnaryCallable(
+            updateQuotaRuleTransportSettings, settings.updateQuotaRuleSettings(), clientContext);
+    this.updateQuotaRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            updateQuotaRuleTransportSettings,
+            settings.updateQuotaRuleOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteQuotaRuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteQuotaRuleTransportSettings, settings.deleteQuotaRuleSettings(), clientContext);
+    this.deleteQuotaRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteQuotaRuleTransportSettings,
+            settings.deleteQuotaRuleOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.restoreBackupFilesCallable =
+        callableFactory.createUnaryCallable(
+            restoreBackupFilesTransportSettings,
+            settings.restoreBackupFilesSettings(),
+            clientContext);
+    this.restoreBackupFilesOperationCallable =
+        callableFactory.createOperationCallable(
+            restoreBackupFilesTransportSettings,
+            settings.restoreBackupFilesOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listHostGroupsCallable =
+        callableFactory.createUnaryCallable(
+            listHostGroupsTransportSettings, settings.listHostGroupsSettings(), clientContext);
+    this.listHostGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listHostGroupsTransportSettings, settings.listHostGroupsSettings(), clientContext);
+    this.getHostGroupCallable =
+        callableFactory.createUnaryCallable(
+            getHostGroupTransportSettings, settings.getHostGroupSettings(), clientContext);
+    this.createHostGroupCallable =
+        callableFactory.createUnaryCallable(
+            createHostGroupTransportSettings, settings.createHostGroupSettings(), clientContext);
+    this.createHostGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            createHostGroupTransportSettings,
+            settings.createHostGroupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateHostGroupCallable =
+        callableFactory.createUnaryCallable(
+            updateHostGroupTransportSettings, settings.updateHostGroupSettings(), clientContext);
+    this.updateHostGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            updateHostGroupTransportSettings,
+            settings.updateHostGroupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteHostGroupCallable =
+        callableFactory.createUnaryCallable(
+            deleteHostGroupTransportSettings, settings.deleteHostGroupSettings(), clientContext);
+    this.deleteHostGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteHostGroupTransportSettings,
+            settings.deleteHostGroupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.executeOntapPostCallable =
+        callableFactory.createUnaryCallable(
+            executeOntapPostTransportSettings, settings.executeOntapPostSettings(), clientContext);
+    this.executeOntapGetCallable =
+        callableFactory.createUnaryCallable(
+            executeOntapGetTransportSettings, settings.executeOntapGetSettings(), clientContext);
+    this.executeOntapDeleteCallable =
+        callableFactory.createUnaryCallable(
+            executeOntapDeleteTransportSettings,
+            settings.executeOntapDeleteSettings(),
+            clientContext);
+    this.executeOntapPatchCallable =
+        callableFactory.createUnaryCallable(
+            executeOntapPatchTransportSettings,
+            settings.executeOntapPatchSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1874,6 +2653,30 @@ public class GrpcNetAppStub extends NetAppStub {
   }
 
   @Override
+  public UnaryCallable<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceCallable() {
+    return validateDirectoryServiceCallable;
+  }
+
+  @Override
+  public OperationCallable<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationCallable() {
+    return validateDirectoryServiceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneCallable() {
+    return switchActiveReplicaZoneCallable;
+  }
+
+  @Override
+  public OperationCallable<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationCallable() {
+    return switchActiveReplicaZoneOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ListVolumesRequest, ListVolumesResponse> listVolumesCallable() {
     return listVolumesCallable;
   }
@@ -1930,6 +2733,17 @@ public class GrpcNetAppStub extends NetAppStub {
   public OperationCallable<RevertVolumeRequest, Volume, OperationMetadata>
       revertVolumeOperationCallable() {
     return revertVolumeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<EstablishVolumePeeringRequest, Operation> establishVolumePeeringCallable() {
+    return establishVolumePeeringCallable;
+  }
+
+  @Override
+  public OperationCallable<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+      establishVolumePeeringOperationCallable() {
+    return establishVolumePeeringOperationCallable;
   }
 
   @Override
@@ -2181,6 +2995,28 @@ public class GrpcNetAppStub extends NetAppStub {
   }
 
   @Override
+  public UnaryCallable<EstablishPeeringRequest, Operation> establishPeeringCallable() {
+    return establishPeeringCallable;
+  }
+
+  @Override
+  public OperationCallable<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationCallable() {
+    return establishPeeringOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SyncReplicationRequest, Operation> syncReplicationCallable() {
+    return syncReplicationCallable;
+  }
+
+  @Override
+  public OperationCallable<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationCallable() {
+    return syncReplicationOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateBackupVaultRequest, Operation> createBackupVaultCallable() {
     return createBackupVaultCallable;
   }
@@ -2326,6 +3162,138 @@ public class GrpcNetAppStub extends NetAppStub {
   public OperationCallable<DeleteBackupPolicyRequest, Empty, OperationMetadata>
       deleteBackupPolicyOperationCallable() {
     return deleteBackupPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesResponse> listQuotaRulesCallable() {
+    return listQuotaRulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesPagedResponse>
+      listQuotaRulesPagedCallable() {
+    return listQuotaRulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetQuotaRuleRequest, QuotaRule> getQuotaRuleCallable() {
+    return getQuotaRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateQuotaRuleRequest, Operation> createQuotaRuleCallable() {
+    return createQuotaRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationCallable() {
+    return createQuotaRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateQuotaRuleRequest, Operation> updateQuotaRuleCallable() {
+    return updateQuotaRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationCallable() {
+    return updateQuotaRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleCallable() {
+    return deleteQuotaRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationCallable() {
+    return deleteQuotaRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RestoreBackupFilesRequest, Operation> restoreBackupFilesCallable() {
+    return restoreBackupFilesCallable;
+  }
+
+  @Override
+  public OperationCallable<RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+      restoreBackupFilesOperationCallable() {
+    return restoreBackupFilesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListHostGroupsRequest, ListHostGroupsResponse> listHostGroupsCallable() {
+    return listHostGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListHostGroupsRequest, ListHostGroupsPagedResponse>
+      listHostGroupsPagedCallable() {
+    return listHostGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetHostGroupRequest, HostGroup> getHostGroupCallable() {
+    return getHostGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateHostGroupRequest, Operation> createHostGroupCallable() {
+    return createHostGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateHostGroupRequest, HostGroup, OperationMetadata>
+      createHostGroupOperationCallable() {
+    return createHostGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateHostGroupRequest, Operation> updateHostGroupCallable() {
+    return updateHostGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+      updateHostGroupOperationCallable() {
+    return updateHostGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteHostGroupRequest, Operation> deleteHostGroupCallable() {
+    return deleteHostGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteHostGroupRequest, Empty, OperationMetadata>
+      deleteHostGroupOperationCallable() {
+    return deleteHostGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostCallable() {
+    return executeOntapPostCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExecuteOntapGetRequest, ExecuteOntapGetResponse> executeOntapGetCallable() {
+    return executeOntapGetCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteCallable() {
+    return executeOntapDeleteCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchCallable() {
+    return executeOntapPatchCallable;
   }
 
   @Override

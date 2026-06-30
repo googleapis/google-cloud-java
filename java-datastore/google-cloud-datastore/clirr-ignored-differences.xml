@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://mojo.codehaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+    <!-- renaming internal only class-->
+    <difference>
+        <className>com/google/cloud/datastore/ReadOption$QueryAndReadOptions</className>
+        <method>*</method>
+        <differenceType>8001</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/execution/request/AggregationQueryRequestProtoPreparer</className>
+        <method>*QueryAndReadOptions*</method>
+        <to>*QueryConfig*</to>
+        <differenceType>7005</differenceType>
+    </difference>
+    <difference>
+        <!-- Added BaseGrpcServiceException as a superclass -->
+        <className>com/google/cloud/datastore/DatastoreException</className>
+        <differenceType>5000</differenceType>
+        <to>com/google/cloud/grpc/BaseGrpcServiceException</to>
+    </difference>
+    <difference>
+        <!-- Removed BaseHttpServiceException as a superclass -->
+        <className>com/google/cloud/datastore/DatastoreException</className>
+        <differenceType>5001</differenceType>
+        <to>com/google/cloud/http/BaseHttpServiceException</to>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/Datastore</className>
+        <method>void close()</method>
+        <differenceType>7012</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/spi/v1/DatastoreRpc</className>
+        <method>void close()</method>
+        <differenceType>7012</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/Datastore</className>
+        <method>boolean isClosed()</method>
+        <differenceType>7012</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/spi/v1/DatastoreRpc</className>
+        <method>boolean isClosed()</method>
+        <differenceType>7012</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/Datastore</className>
+        <method>com.google.cloud.datastore.QueryResults run(com.google.cloud.datastore.Query, com.google.cloud.datastore.models.ExplainOptions, com.google.cloud.datastore.ReadOption[])</method>
+        <differenceType>7012</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/Datastore</className>
+        <method>com.google.cloud.datastore.AggregationResults runAggregation(com.google.cloud.datastore.AggregationQuery, com.google.cloud.datastore.models.ExplainOptions, com.google.cloud.datastore.ReadOption[])</method>
+        <differenceType>7012</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/DatastoreReader</className>
+        <method>com.google.cloud.datastore.AggregationResults runAggregation(com.google.cloud.datastore.AggregationQuery, com.google.cloud.datastore.models.ExplainOptions)</method>
+        <differenceType>7012</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/QueryResults</className>
+        <method>java.util.Optional getExplainMetrics()</method>
+        <differenceType>7012</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/Transaction</className>
+        <method>com.google.cloud.datastore.QueryResults run(com.google.cloud.datastore.Query, com.google.cloud.datastore.models.ExplainOptions)</method>
+        <differenceType>7012</differenceType>
+    </difference>
+
+    <difference>
+        <className>com/google/cloud/datastore/execution/AggregationQueryExecutor</className>
+        <method>com.google.cloud.datastore.AggregationResults execute(com.google.cloud.datastore.AggregationQuery, com.google.cloud.datastore.ReadOption[])</method>
+        <differenceType>7004</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/execution/AggregationQueryExecutor</className>
+        <method>java.lang.Object execute(com.google.cloud.datastore.Query, com.google.cloud.datastore.ReadOption[])</method>
+        <differenceType>7004</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/execution/QueryExecutor</className>
+        <method>java.lang.Object execute(com.google.cloud.datastore.Query, com.google.cloud.datastore.ReadOption[])</method>
+        <differenceType>7004</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/RetryAndTraceDatastoreRpcDecorator</className>
+        <method>RetryAndTraceDatastoreRpcDecorator(com.google.cloud.datastore.spi.v1.DatastoreRpc, com.google.cloud.datastore.TraceUtil, com.google.api.gax.retrying.RetrySettings, com.google.cloud.datastore.DatastoreOptions)</method>
+        <to>RetryAndTraceDatastoreRpcDecorator(com.google.cloud.datastore.spi.v1.DatastoreRpc, com.google.cloud.datastore.telemetry.TraceUtil, com.google.api.gax.retrying.RetrySettings, com.google.cloud.datastore.DatastoreOptions)</to>
+        <differenceType>7005</differenceType>
+    </difference>
+
+    <!-- Class removed -->
+    <difference>
+        <className>com/google/cloud/datastore/TraceUtil</className>
+        <differenceType>8001</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/testing/RemoteDatastoreHelper</className>
+        <differenceType>8001</differenceType>
+    </difference>
+
+</differences>

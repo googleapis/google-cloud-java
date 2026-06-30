@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,9 +34,15 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1.CompleteQueryRequest;
 import com.google.cloud.discoveryengine.v1.CompleteQueryResponse;
+import com.google.cloud.discoveryengine.v1.ImportCompletionSuggestionsMetadata;
+import com.google.cloud.discoveryengine.v1.ImportCompletionSuggestionsRequest;
+import com.google.cloud.discoveryengine.v1.ImportCompletionSuggestionsResponse;
 import com.google.cloud.discoveryengine.v1.ImportSuggestionDenyListEntriesMetadata;
 import com.google.cloud.discoveryengine.v1.ImportSuggestionDenyListEntriesRequest;
 import com.google.cloud.discoveryengine.v1.ImportSuggestionDenyListEntriesResponse;
+import com.google.cloud.discoveryengine.v1.PurgeCompletionSuggestionsMetadata;
+import com.google.cloud.discoveryengine.v1.PurgeCompletionSuggestionsRequest;
+import com.google.cloud.discoveryengine.v1.PurgeCompletionSuggestionsResponse;
 import com.google.cloud.discoveryengine.v1.PurgeSuggestionDenyListEntriesMetadata;
 import com.google.cloud.discoveryengine.v1.PurgeSuggestionDenyListEntriesRequest;
 import com.google.cloud.discoveryengine.v1.PurgeSuggestionDenyListEntriesResponse;
@@ -62,9 +68,13 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(PurgeSuggestionDenyListEntriesResponse.getDescriptor())
+          .add(PurgeCompletionSuggestionsResponse.getDescriptor())
           .add(ImportSuggestionDenyListEntriesResponse.getDescriptor())
+          .add(ImportCompletionSuggestionsResponse.getDescriptor())
+          .add(ImportCompletionSuggestionsMetadata.getDescriptor())
           .add(ImportSuggestionDenyListEntriesMetadata.getDescriptor())
           .add(PurgeSuggestionDenyListEntriesMetadata.getDescriptor())
+          .add(PurgeCompletionSuggestionsMetadata.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<CompleteQueryRequest, CompleteQueryResponse>
@@ -197,6 +207,92 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ImportCompletionSuggestionsRequest, Operation>
+      importCompletionSuggestionsMethodDescriptor =
+          ApiMethodDescriptor.<ImportCompletionSuggestionsRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.CompletionService/ImportCompletionSuggestions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ImportCompletionSuggestionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/collections/*/dataStores/*}/completionSuggestions:import",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ImportCompletionSuggestionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=projects/*/locations/*/dataStores/*}/completionSuggestions:import")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ImportCompletionSuggestionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ImportCompletionSuggestionsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<PurgeCompletionSuggestionsRequest, Operation>
+      purgeCompletionSuggestionsMethodDescriptor =
+          ApiMethodDescriptor.<PurgeCompletionSuggestionsRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.CompletionService/PurgeCompletionSuggestions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PurgeCompletionSuggestionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/collections/*/dataStores/*}/completionSuggestions:purge",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PurgeCompletionSuggestionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=projects/*/locations/*/dataStores/*}/completionSuggestions:purge")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PurgeCompletionSuggestionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PurgeCompletionSuggestionsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private final UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable;
   private final UnaryCallable<ImportSuggestionDenyListEntriesRequest, Operation>
       importSuggestionDenyListEntriesCallable;
@@ -212,6 +308,20 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
           PurgeSuggestionDenyListEntriesResponse,
           PurgeSuggestionDenyListEntriesMetadata>
       purgeSuggestionDenyListEntriesOperationCallable;
+  private final UnaryCallable<ImportCompletionSuggestionsRequest, Operation>
+      importCompletionSuggestionsCallable;
+  private final OperationCallable<
+          ImportCompletionSuggestionsRequest,
+          ImportCompletionSuggestionsResponse,
+          ImportCompletionSuggestionsMetadata>
+      importCompletionSuggestionsOperationCallable;
+  private final UnaryCallable<PurgeCompletionSuggestionsRequest, Operation>
+      purgeCompletionSuggestionsCallable;
+  private final OperationCallable<
+          PurgeCompletionSuggestionsRequest,
+          PurgeCompletionSuggestionsResponse,
+          PurgeCompletionSuggestionsMetadata>
+      purgeCompletionSuggestionsOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -261,6 +371,26 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
             callableFactory,
             typeRegistry,
             ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1/{name=projects/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/collections/*/engines/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/dataStores/*/branches/*/operations/*}:cancel")
+                                .build())
+                        .build())
                 .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
@@ -324,6 +454,11 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1/{name=projects/*/locations/*/dataStores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/identityMappingStores/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -399,6 +534,11 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/identityMappingStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1/{name=projects/*/locations/*}/operations")
                                 .build())
                         .addAdditionalBindings(
@@ -419,6 +559,7 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                       builder.add("data_store", String.valueOf(request.getDataStore()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getDataStore())
                 .build();
     HttpJsonCallSettings<ImportSuggestionDenyListEntriesRequest, Operation>
         importSuggestionDenyListEntriesTransportSettings =
@@ -431,6 +572,7 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<PurgeSuggestionDenyListEntriesRequest, Operation>
         purgeSuggestionDenyListEntriesTransportSettings =
@@ -443,6 +585,33 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<ImportCompletionSuggestionsRequest, Operation>
+        importCompletionSuggestionsTransportSettings =
+            HttpJsonCallSettings.<ImportCompletionSuggestionsRequest, Operation>newBuilder()
+                .setMethodDescriptor(importCompletionSuggestionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<PurgeCompletionSuggestionsRequest, Operation>
+        purgeCompletionSuggestionsTransportSettings =
+            HttpJsonCallSettings.<PurgeCompletionSuggestionsRequest, Operation>newBuilder()
+                .setMethodDescriptor(purgeCompletionSuggestionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.completeQueryCallable =
@@ -470,6 +639,28 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
             settings.purgeSuggestionDenyListEntriesOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.importCompletionSuggestionsCallable =
+        callableFactory.createUnaryCallable(
+            importCompletionSuggestionsTransportSettings,
+            settings.importCompletionSuggestionsSettings(),
+            clientContext);
+    this.importCompletionSuggestionsOperationCallable =
+        callableFactory.createOperationCallable(
+            importCompletionSuggestionsTransportSettings,
+            settings.importCompletionSuggestionsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.purgeCompletionSuggestionsCallable =
+        callableFactory.createUnaryCallable(
+            purgeCompletionSuggestionsTransportSettings,
+            settings.purgeCompletionSuggestionsSettings(),
+            clientContext);
+    this.purgeCompletionSuggestionsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeCompletionSuggestionsTransportSettings,
+            settings.purgeCompletionSuggestionsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -481,6 +672,8 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
     methodDescriptors.add(completeQueryMethodDescriptor);
     methodDescriptors.add(importSuggestionDenyListEntriesMethodDescriptor);
     methodDescriptors.add(purgeSuggestionDenyListEntriesMethodDescriptor);
+    methodDescriptors.add(importCompletionSuggestionsMethodDescriptor);
+    methodDescriptors.add(purgeCompletionSuggestionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -521,6 +714,36 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
           PurgeSuggestionDenyListEntriesMetadata>
       purgeSuggestionDenyListEntriesOperationCallable() {
     return purgeSuggestionDenyListEntriesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportCompletionSuggestionsRequest, Operation>
+      importCompletionSuggestionsCallable() {
+    return importCompletionSuggestionsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ImportCompletionSuggestionsRequest,
+          ImportCompletionSuggestionsResponse,
+          ImportCompletionSuggestionsMetadata>
+      importCompletionSuggestionsOperationCallable() {
+    return importCompletionSuggestionsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PurgeCompletionSuggestionsRequest, Operation>
+      purgeCompletionSuggestionsCallable() {
+    return purgeCompletionSuggestionsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          PurgeCompletionSuggestionsRequest,
+          PurgeCompletionSuggestionsResponse,
+          PurgeCompletionSuggestionsMetadata>
+      purgeCompletionSuggestionsOperationCallable() {
+    return purgeCompletionSuggestionsOperationCallable;
   }
 
   @Override

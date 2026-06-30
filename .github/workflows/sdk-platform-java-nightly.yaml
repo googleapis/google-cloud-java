@@ -1,0 +1,81 @@
+name: sdk-platform-java Nightly
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 1 * * *' # Nightly at 1am
+defaults:
+  run:
+    shell: bash
+jobs:
+  nightly:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ macos-15, ubuntu-24.04, windows-2025 ]
+        java: [ 11, 17, 21, 25, 26 ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - run: git config --global core.longpaths true
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v5
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: temurin
+          cache: maven
+      - run: mvn -version
+      - name: Install all modules first
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
+      - name: Install
+        run: mvn install --errors --batch-mode --no-transfer-progress -Pquick-build
+        working-directory: sdk-platform-java
+      - name: Create issue if previous step fails
+        if: ${{ failure() }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "Nightly build for Java ${{ matrix.java }} on ${{ matrix.os }} failed." \
+            --body "The build has failed : https://github.com/googleapis/google-cloud-java/actions/runs/${GITHUB_RUN_ID}"
+  nightly-java8: # Compile with JDK 11. Run tests with JDK 8.
+    # We use macos-15-intel (x64) because Temurin JDK 8 is not available for macOS arm64 (macos-15)
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ macos-15-intel, ubuntu-24.04, windows-2025 ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - run: git config --global core.longpaths true
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v5
+        with:
+          java-version: 11
+          distribution: temurin
+          cache: maven
+      - run: mvn -version
+      - name: Install all modules first
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
+      - uses: actions/setup-java@v5
+        with:
+          java-version: 8
+          distribution: temurin
+      - run: mvn -version
+      - name: Test with Java 8
+        # Direct goal invocation ("surefire:test") prevents recompiling tests
+        run: mvn surefire:test --errors --batch-mode --no-transfer-progress -Dfmt.skip
+        working-directory: sdk-platform-java
+      - name: Create issue if previous step fails
+        if: ${{ failure() }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "Nightly-java8 build on ${{ matrix.os }} failed." \
+            --body "The build has failed : https://github.com/googleapis/google-cloud-java/actions/runs/${GITHUB_RUN_ID}"

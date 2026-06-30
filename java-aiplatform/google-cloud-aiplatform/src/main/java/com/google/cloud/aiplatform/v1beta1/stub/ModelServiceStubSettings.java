@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,14 @@ package com.google.cloud.aiplatform.v1beta1.stub;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelVersionCheckpointsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -38,6 +40,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -69,6 +72,8 @@ import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelVersionsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelVersionsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelsRequest;
@@ -77,6 +82,9 @@ import com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest;
 import com.google.cloud.aiplatform.v1beta1.Model;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluation;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice;
+import com.google.cloud.aiplatform.v1beta1.ModelVersionCheckpoint;
+import com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest;
+import com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetResponse;
@@ -100,9 +108,9 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -119,7 +127,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getModel to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getModel:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -136,13 +146,51 @@ import org.threeten.bp.Duration;
  *             .getModelSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ModelServiceStubSettings modelServiceSettings = modelServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for uploadModel:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ModelServiceStubSettings.Builder modelServiceSettingsBuilder =
+ *     ModelServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * modelServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -158,6 +206,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
   private final PagedCallSettings<
           ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
       listModelVersionsSettings;
+  private final PagedCallSettings<
+          ListModelVersionCheckpointsRequest,
+          ListModelVersionCheckpointsResponse,
+          ListModelVersionCheckpointsPagedResponse>
+      listModelVersionCheckpointsSettings;
   private final UnaryCallSettings<UpdateModelRequest, Model> updateModelSettings;
   private final UnaryCallSettings<UpdateExplanationDatasetRequest, Operation>
       updateExplanationDatasetSettings;
@@ -203,6 +256,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           ListModelEvaluationSlicesResponse,
           ListModelEvaluationSlicesPagedResponse>
       listModelEvaluationSlicesSettings;
+  private final UnaryCallSettings<RecommendSpecRequest, RecommendSpecResponse>
+      recommendSpecSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -242,9 +297,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
             @Override
             public Iterable<Model> extractResources(ListModelsResponse payload) {
-              return payload.getModelsList() == null
-                  ? ImmutableList.<Model>of()
-                  : payload.getModelsList();
+              return payload.getModelsList();
             }
           };
 
@@ -281,9 +334,54 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
             @Override
             public Iterable<Model> extractResources(ListModelVersionsResponse payload) {
-              return payload.getModelsList() == null
-                  ? ImmutableList.<Model>of()
-                  : payload.getModelsList();
+              return payload.getModelsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListModelVersionCheckpointsRequest,
+          ListModelVersionCheckpointsResponse,
+          ModelVersionCheckpoint>
+      LIST_MODEL_VERSION_CHECKPOINTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListModelVersionCheckpointsRequest,
+              ListModelVersionCheckpointsResponse,
+              ModelVersionCheckpoint>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListModelVersionCheckpointsRequest injectToken(
+                ListModelVersionCheckpointsRequest payload, String token) {
+              return ListModelVersionCheckpointsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListModelVersionCheckpointsRequest injectPageSize(
+                ListModelVersionCheckpointsRequest payload, int pageSize) {
+              return ListModelVersionCheckpointsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListModelVersionCheckpointsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListModelVersionCheckpointsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ModelVersionCheckpoint> extractResources(
+                ListModelVersionCheckpointsResponse payload) {
+              return payload.getCheckpointsList();
             }
           };
 
@@ -322,9 +420,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             @Override
             public Iterable<ModelEvaluation> extractResources(
                 ListModelEvaluationsResponse payload) {
-              return payload.getModelEvaluationsList() == null
-                  ? ImmutableList.<ModelEvaluation>of()
-                  : payload.getModelEvaluationsList();
+              return payload.getModelEvaluationsList();
             }
           };
 
@@ -369,9 +465,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             @Override
             public Iterable<ModelEvaluationSlice> extractResources(
                 ListModelEvaluationSlicesResponse payload) {
-              return payload.getModelEvaluationSlicesList() == null
-                  ? ImmutableList.<ModelEvaluationSlice>of()
-                  : payload.getModelEvaluationSlicesList();
+              return payload.getModelEvaluationSlicesList();
             }
           };
 
@@ -405,9 +499,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -444,6 +536,35 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               PageContext<ListModelVersionsRequest, ListModelVersionsResponse, Model> pageContext =
                   PageContext.create(callable, LIST_MODEL_VERSIONS_PAGE_STR_DESC, request, context);
               return ListModelVersionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListModelVersionCheckpointsRequest,
+          ListModelVersionCheckpointsResponse,
+          ListModelVersionCheckpointsPagedResponse>
+      LIST_MODEL_VERSION_CHECKPOINTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListModelVersionCheckpointsRequest,
+              ListModelVersionCheckpointsResponse,
+              ListModelVersionCheckpointsPagedResponse>() {
+            @Override
+            public ApiFuture<ListModelVersionCheckpointsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>
+                    callable,
+                ListModelVersionCheckpointsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListModelVersionCheckpointsResponse> futureResponse) {
+              PageContext<
+                      ListModelVersionCheckpointsRequest,
+                      ListModelVersionCheckpointsResponse,
+                      ModelVersionCheckpoint>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_MODEL_VERSION_CHECKPOINTS_PAGE_STR_DESC, request, context);
+              return ListModelVersionCheckpointsPagedResponse.createAsync(
+                  pageContext, futureResponse);
             }
           };
 
@@ -544,6 +665,15 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
       listModelVersionsSettings() {
     return listModelVersionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listModelVersionCheckpoints. */
+  public PagedCallSettings<
+          ListModelVersionCheckpointsRequest,
+          ListModelVersionCheckpointsResponse,
+          ListModelVersionCheckpointsPagedResponse>
+      listModelVersionCheckpointsSettings() {
+    return listModelVersionCheckpointsSettings;
   }
 
   /** Returns the object with the settings used for calls to updateModel. */
@@ -666,6 +796,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     return listModelEvaluationSlicesSettings;
   }
 
+  /** Returns the object with the settings used for calls to recommendSpec. */
+  public UnaryCallSettings<RecommendSpecRequest, RecommendSpecResponse> recommendSpecSettings() {
+    return recommendSpecSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -704,15 +839,6 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -725,6 +851,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "aiplatform.googleapis.com:443";
   }
@@ -787,6 +914,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     getModelSettings = settingsBuilder.getModelSettings().build();
     listModelsSettings = settingsBuilder.listModelsSettings().build();
     listModelVersionsSettings = settingsBuilder.listModelVersionsSettings().build();
+    listModelVersionCheckpointsSettings =
+        settingsBuilder.listModelVersionCheckpointsSettings().build();
     updateModelSettings = settingsBuilder.updateModelSettings().build();
     updateExplanationDatasetSettings = settingsBuilder.updateExplanationDatasetSettings().build();
     updateExplanationDatasetOperationSettings =
@@ -810,11 +939,21 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     listModelEvaluationsSettings = settingsBuilder.listModelEvaluationsSettings().build();
     getModelEvaluationSliceSettings = settingsBuilder.getModelEvaluationSliceSettings().build();
     listModelEvaluationSlicesSettings = settingsBuilder.listModelEvaluationSlicesSettings().build();
+    recommendSpecSettings = settingsBuilder.recommendSpecSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-aiplatform")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for ModelServiceStubSettings. */
@@ -831,6 +970,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     private final PagedCallSettings.Builder<
             ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
         listModelVersionsSettings;
+    private final PagedCallSettings.Builder<
+            ListModelVersionCheckpointsRequest,
+            ListModelVersionCheckpointsResponse,
+            ListModelVersionCheckpointsPagedResponse>
+        listModelVersionCheckpointsSettings;
     private final UnaryCallSettings.Builder<UpdateModelRequest, Model> updateModelSettings;
     private final UnaryCallSettings.Builder<UpdateExplanationDatasetRequest, Operation>
         updateExplanationDatasetSettings;
@@ -879,6 +1023,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             ListModelEvaluationSlicesResponse,
             ListModelEvaluationSlicesPagedResponse>
         listModelEvaluationSlicesSettings;
+    private final UnaryCallSettings.Builder<RecommendSpecRequest, RecommendSpecResponse>
+        recommendSpecSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -906,10 +1052,10 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(5000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(5000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(5000L))
               .build();
       definitions.put("no_retry_7_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
@@ -929,6 +1075,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       getModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listModelsSettings = PagedCallSettings.newBuilder(LIST_MODELS_PAGE_STR_FACT);
       listModelVersionsSettings = PagedCallSettings.newBuilder(LIST_MODEL_VERSIONS_PAGE_STR_FACT);
+      listModelVersionCheckpointsSettings =
+          PagedCallSettings.newBuilder(LIST_MODEL_VERSION_CHECKPOINTS_PAGE_STR_FACT);
       updateModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateExplanationDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateExplanationDatasetOperationSettings = OperationCallSettings.newBuilder();
@@ -950,6 +1098,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       getModelEvaluationSliceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listModelEvaluationSlicesSettings =
           PagedCallSettings.newBuilder(LIST_MODEL_EVALUATION_SLICES_PAGE_STR_FACT);
+      recommendSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -962,6 +1111,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               getModelSettings,
               listModelsSettings,
               listModelVersionsSettings,
+              listModelVersionCheckpointsSettings,
               updateModelSettings,
               updateExplanationDatasetSettings,
               deleteModelSettings,
@@ -976,6 +1126,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               listModelEvaluationsSettings,
               getModelEvaluationSliceSettings,
               listModelEvaluationSlicesSettings,
+              recommendSpecSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -992,6 +1143,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       getModelSettings = settings.getModelSettings.toBuilder();
       listModelsSettings = settings.listModelsSettings.toBuilder();
       listModelVersionsSettings = settings.listModelVersionsSettings.toBuilder();
+      listModelVersionCheckpointsSettings =
+          settings.listModelVersionCheckpointsSettings.toBuilder();
       updateModelSettings = settings.updateModelSettings.toBuilder();
       updateExplanationDatasetSettings = settings.updateExplanationDatasetSettings.toBuilder();
       updateExplanationDatasetOperationSettings =
@@ -1015,6 +1168,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       listModelEvaluationsSettings = settings.listModelEvaluationsSettings.toBuilder();
       getModelEvaluationSliceSettings = settings.getModelEvaluationSliceSettings.toBuilder();
       listModelEvaluationSlicesSettings = settings.listModelEvaluationSlicesSettings.toBuilder();
+      recommendSpecSettings = settings.recommendSpecSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1027,6 +1181,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               getModelSettings,
               listModelsSettings,
               listModelVersionsSettings,
+              listModelVersionCheckpointsSettings,
               updateModelSettings,
               updateExplanationDatasetSettings,
               deleteModelSettings,
@@ -1041,6 +1196,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               listModelEvaluationsSettings,
               getModelEvaluationSliceSettings,
               listModelEvaluationSlicesSettings,
+              recommendSpecSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1078,6 +1234,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
       builder
           .listModelVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listModelVersionCheckpointsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1152,6 +1313,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
 
       builder
+          .recommendSpecSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -1191,13 +1357,13 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1217,13 +1383,13 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1240,13 +1406,13 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1264,13 +1430,13 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1288,13 +1454,13 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1312,13 +1478,13 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1367,6 +1533,15 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
         listModelVersionsSettings() {
       return listModelVersionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listModelVersionCheckpoints. */
+    public PagedCallSettings.Builder<
+            ListModelVersionCheckpointsRequest,
+            ListModelVersionCheckpointsResponse,
+            ListModelVersionCheckpointsPagedResponse>
+        listModelVersionCheckpointsSettings() {
+      return listModelVersionCheckpointsSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateModel. */
@@ -1492,6 +1667,12 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       return listModelEvaluationSlicesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to recommendSpec. */
+    public UnaryCallSettings.Builder<RecommendSpecRequest, RecommendSpecResponse>
+        recommendSpecSettings() {
+      return recommendSpecSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listLocations. */
     public PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -1518,15 +1699,6 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

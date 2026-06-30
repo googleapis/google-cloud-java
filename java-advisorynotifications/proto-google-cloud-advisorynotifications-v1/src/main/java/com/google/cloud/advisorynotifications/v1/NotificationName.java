@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -299,7 +299,8 @@ public class NotificationName implements ResourceName {
     private Builder(NotificationName notificationName) {
       Preconditions.checkArgument(
           Objects.equals(notificationName.pathTemplate, ORGANIZATION_LOCATION_NOTIFICATION),
-          "toBuilder is only supported when NotificationName has the pattern of organizations/{organization}/locations/{location}/notifications/{notification}");
+          "toBuilder is only supported when NotificationName has the pattern of"
+              + " organizations/{organization}/locations/{location}/notifications/{notification}");
       this.organization = notificationName.organization;
       this.location = notificationName.location;
       this.notification = notificationName.notification;

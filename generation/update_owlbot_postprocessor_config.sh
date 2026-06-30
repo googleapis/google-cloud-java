@@ -6,14 +6,17 @@
 
 set -e
 
-for dir in $(find . -mindepth 2 -maxdepth 2 -name owlbot.py | sort | xargs dirname ); do
+TARGET_MODULE="${1:-.}"
+
+for owlbot_script in $(find "$TARGET_MODULE" -name owlbot.py | grep -v 'java-common-protos/' | grep -v 'java-iam/' | grep -v 'java-showcase/' | sort); do
+  dir=$(dirname "$owlbot_script")
   pushd "$dir"
 
   # form a perl command to replace java.common_templates() invocation
-  perl_command='s/java\.common_templates\(.*\)/java.common_templates(monorepo=True, excludes=['
+  perl_command='s/java\.common_templates\(.*\)/java.common_templates(\n    monorepo=True,\n    excludes=['
   comma=""
   for exclusion in '.github/*' '.kokoro/*' 'samples/*' 'CODE_OF_CONDUCT.md' 'CONTRIBUTING.md' 'LICENSE' 'SECURITY.md' 'java.header' 'license-checks.xml' 'renovate.json' '.gitignore'; do
-    perl_command+="${comma}\n    $(echo "\"${exclusion}\"" | sed 's/\//\\\//g')"
+    perl_command+="${comma}\n        $(echo "\"${exclusion}\"" | sed 's/\//\\\//g')"
     comma=","
 
     # delete files and directories

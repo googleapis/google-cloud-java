@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -345,7 +345,8 @@ public class DeidentifyTemplateName implements ResourceName {
     private Builder(DeidentifyTemplateName deidentifyTemplateName) {
       Preconditions.checkArgument(
           Objects.equals(deidentifyTemplateName.pathTemplate, ORGANIZATION_DEIDENTIFY_TEMPLATE),
-          "toBuilder is only supported when DeidentifyTemplateName has the pattern of organizations/{organization}/deidentifyTemplates/{deidentify_template}");
+          "toBuilder is only supported when DeidentifyTemplateName has the pattern of"
+              + " organizations/{organization}/deidentifyTemplates/{deidentify_template}");
       this.organization = deidentifyTemplateName.organization;
       this.deidentifyTemplate = deidentifyTemplateName.deidentifyTemplate;
     }

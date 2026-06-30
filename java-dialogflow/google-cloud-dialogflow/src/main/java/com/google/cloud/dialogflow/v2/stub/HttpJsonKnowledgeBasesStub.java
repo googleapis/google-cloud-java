@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -395,6 +395,7 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetKnowledgeBaseRequest, KnowledgeBase> getKnowledgeBaseTransportSettings =
         HttpJsonCallSettings.<GetKnowledgeBaseRequest, KnowledgeBase>newBuilder()
@@ -406,6 +407,7 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateKnowledgeBaseRequest, KnowledgeBase>
         createKnowledgeBaseTransportSettings =
@@ -418,6 +420,7 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteKnowledgeBaseRequest, Empty> deleteKnowledgeBaseTransportSettings =
         HttpJsonCallSettings.<DeleteKnowledgeBaseRequest, Empty>newBuilder()
@@ -429,6 +432,7 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateKnowledgeBaseRequest, KnowledgeBase>
         updateKnowledgeBaseTransportSettings =

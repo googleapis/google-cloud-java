@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 package com.google.apps.meet.v2beta;
 
+import static com.google.apps.meet.v2beta.SpacesServiceClient.ListMembersPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -25,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.apps.meet.v2beta.stub.SpacesServiceStubSettings;
@@ -48,7 +51,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createSpace to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createSpace:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -64,10 +69,21 @@ import javax.annotation.Generated;
  *             .createSpaceSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * SpacesServiceSettings spacesServiceSettings = spacesServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -88,9 +104,36 @@ public class SpacesServiceSettings extends ClientSettings<SpacesServiceSettings>
     return ((SpacesServiceStubSettings) getStubSettings()).updateSpaceSettings();
   }
 
+  /** Returns the object with the settings used for calls to connectActiveConference. */
+  public UnaryCallSettings<ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+      connectActiveConferenceSettings() {
+    return ((SpacesServiceStubSettings) getStubSettings()).connectActiveConferenceSettings();
+  }
+
   /** Returns the object with the settings used for calls to endActiveConference. */
   public UnaryCallSettings<EndActiveConferenceRequest, Empty> endActiveConferenceSettings() {
     return ((SpacesServiceStubSettings) getStubSettings()).endActiveConferenceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMember. */
+  public UnaryCallSettings<CreateMemberRequest, Member> createMemberSettings() {
+    return ((SpacesServiceStubSettings) getStubSettings()).createMemberSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMember. */
+  public UnaryCallSettings<GetMemberRequest, Member> getMemberSettings() {
+    return ((SpacesServiceStubSettings) getStubSettings()).getMemberSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMembers. */
+  public PagedCallSettings<ListMembersRequest, ListMembersResponse, ListMembersPagedResponse>
+      listMembersSettings() {
+    return ((SpacesServiceStubSettings) getStubSettings()).listMembersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteMember. */
+  public UnaryCallSettings<DeleteMemberRequest, Empty> deleteMemberSettings() {
+    return ((SpacesServiceStubSettings) getStubSettings()).deleteMemberSettings();
   }
 
   public static final SpacesServiceSettings create(SpacesServiceStubSettings stub)
@@ -220,10 +263,39 @@ public class SpacesServiceSettings extends ClientSettings<SpacesServiceSettings>
       return getStubSettingsBuilder().updateSpaceSettings();
     }
 
+    /** Returns the builder for the settings used for calls to connectActiveConference. */
+    public UnaryCallSettings.Builder<
+            ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+        connectActiveConferenceSettings() {
+      return getStubSettingsBuilder().connectActiveConferenceSettings();
+    }
+
     /** Returns the builder for the settings used for calls to endActiveConference. */
     public UnaryCallSettings.Builder<EndActiveConferenceRequest, Empty>
         endActiveConferenceSettings() {
       return getStubSettingsBuilder().endActiveConferenceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMember. */
+    public UnaryCallSettings.Builder<CreateMemberRequest, Member> createMemberSettings() {
+      return getStubSettingsBuilder().createMemberSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMember. */
+    public UnaryCallSettings.Builder<GetMemberRequest, Member> getMemberSettings() {
+      return getStubSettingsBuilder().getMemberSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMembers. */
+    public PagedCallSettings.Builder<
+            ListMembersRequest, ListMembersResponse, ListMembersPagedResponse>
+        listMembersSettings() {
+      return getStubSettingsBuilder().listMembersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMember. */
+    public UnaryCallSettings.Builder<DeleteMemberRequest, Empty> deleteMemberSettings() {
+      return getStubSettingsBuilder().deleteMemberSettings();
     }
 
     @Override

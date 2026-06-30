@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import "google/api/annotations.proto";
 import "google/api/client.proto";
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
+import "google/cloud/aiplatform/v1beta1/notebook_execution_job.proto";
 import "google/cloud/aiplatform/v1beta1/notebook_runtime.proto";
 import "google/cloud/aiplatform/v1beta1/operation.proto";
 import "google/longrunning/operations.proto";
@@ -84,6 +85,17 @@ service NotebookService {
       response_type: "google.protobuf.Empty"
       metadata_type: "DeleteOperationMetadata"
     };
+  }
+
+  // Updates a NotebookRuntimeTemplate.
+  rpc UpdateNotebookRuntimeTemplate(UpdateNotebookRuntimeTemplateRequest)
+      returns (NotebookRuntimeTemplate) {
+    option (google.api.http) = {
+      patch: "/v1beta1/{notebook_runtime_template.name=projects/*/locations/*/notebookRuntimeTemplates/*}"
+      body: "notebook_runtime_template"
+    };
+    option (google.api.method_signature) =
+        "notebook_runtime_template,update_mask";
   }
 
   // Assigns a NotebookRuntime to a user for a particular Notebook file. This
@@ -159,6 +171,78 @@ service NotebookService {
       metadata_type: "StartNotebookRuntimeOperationMetadata"
     };
   }
+
+  // Stops a NotebookRuntime.
+  rpc StopNotebookRuntime(StopNotebookRuntimeRequest)
+      returns (google.longrunning.Operation) {
+    option (google.api.http) = {
+      post: "/v1beta1/{name=projects/*/locations/*/notebookRuntimes/*}:stop"
+      body: "*"
+    };
+    option (google.api.method_signature) = "name";
+    option (google.longrunning.operation_info) = {
+      response_type: "StopNotebookRuntimeResponse"
+      metadata_type: "StopNotebookRuntimeOperationMetadata"
+    };
+  }
+
+  // Creates a NotebookExecutionJob.
+  rpc CreateNotebookExecutionJob(CreateNotebookExecutionJobRequest)
+      returns (google.longrunning.Operation) {
+    option (google.api.http) = {
+      post: "/v1beta1/{parent=projects/*/locations/*}/notebookExecutionJobs"
+      body: "notebook_execution_job"
+    };
+    option (google.api.method_signature) =
+        "parent,notebook_execution_job,notebook_execution_job_id";
+    option (google.longrunning.operation_info) = {
+      response_type: "NotebookExecutionJob"
+      metadata_type: "CreateNotebookExecutionJobOperationMetadata"
+    };
+  }
+
+  // Gets a NotebookExecutionJob.
+  rpc GetNotebookExecutionJob(GetNotebookExecutionJobRequest)
+      returns (NotebookExecutionJob) {
+    option (google.api.http) = {
+      get: "/v1beta1/{name=projects/*/locations/*/notebookExecutionJobs/*}"
+    };
+    option (google.api.method_signature) = "name";
+  }
+
+  // Lists NotebookExecutionJobs in a Location.
+  rpc ListNotebookExecutionJobs(ListNotebookExecutionJobsRequest)
+      returns (ListNotebookExecutionJobsResponse) {
+    option (google.api.http) = {
+      get: "/v1beta1/{parent=projects/*/locations/*}/notebookExecutionJobs"
+    };
+    option (google.api.method_signature) = "parent";
+  }
+
+  // Deletes a NotebookExecutionJob.
+  rpc DeleteNotebookExecutionJob(DeleteNotebookExecutionJobRequest)
+      returns (google.longrunning.Operation) {
+    option (google.api.http) = {
+      delete: "/v1beta1/{name=projects/*/locations/*/notebookExecutionJobs/*}"
+    };
+    option (google.api.method_signature) = "name";
+    option (google.longrunning.operation_info) = {
+      response_type: "google.protobuf.Empty"
+      metadata_type: "DeleteOperationMetadata"
+    };
+  }
+}
+
+// Views for Get/List NotebookExecutionJob
+enum NotebookExecutionJobView {
+  // When unspecified, the API defaults to the BASIC view.
+  NOTEBOOK_EXECUTION_JOB_VIEW_UNSPECIFIED = 0;
+
+  // Includes all fields except for direct notebook inputs.
+  NOTEBOOK_EXECUTION_JOB_VIEW_BASIC = 1;
+
+  // Includes all fields.
+  NOTEBOOK_EXECUTION_JOB_VIEW_FULL = 2;
 }
 
 // Request message for
@@ -230,6 +314,8 @@ message ListNotebookRuntimeTemplatesRequest {
   //     * A key including a space must be quoted. `labels."a key"`.
   //   * `notebookRuntimeType` supports = and !=. notebookRuntimeType enum:
   //   [USER_DEFINED, ONE_CLICK].
+  //   * `machineType` supports = and !=.
+  //   * `acceleratorType` supports = and !=.
   //
   // Some examples:
   //
@@ -237,6 +323,8 @@ message ListNotebookRuntimeTemplatesRequest {
   //   * `displayName="myDisplayName"`
   //   * `labels.myKey="myValue"`
   //   * `notebookRuntimeType=USER_DEFINED`
+  //   * `machineType=e2-standard-4`
+  //   * `acceleratorType=NVIDIA_TESLA_T4`
   string filter = 2 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. The standard list page size.
@@ -290,6 +378,23 @@ message DeleteNotebookRuntimeTemplateRequest {
       type: "aiplatform.googleapis.com/NotebookRuntimeTemplate"
     }
   ];
+}
+
+// Request message for
+// [NotebookService.UpdateNotebookRuntimeTemplate][google.cloud.aiplatform.v1beta1.NotebookService.UpdateNotebookRuntimeTemplate].
+message UpdateNotebookRuntimeTemplateRequest {
+  // Required. The NotebookRuntimeTemplate to update.
+  NotebookRuntimeTemplate notebook_runtime_template = 1
+      [(google.api.field_behavior) = REQUIRED];
+
+  // Required. The update mask applies to the resource.
+  // For the `FieldMask` definition, see
+  // [google.protobuf.FieldMask][google.protobuf.FieldMask]. Input format:
+  // `{paths: "${updated_filed}"}` Updatable fields:
+  //
+  //   * `encryption_spec.kms_key_name`
+  google.protobuf.FieldMask update_mask = 2
+      [(google.api.field_behavior) = REQUIRED];
 }
 
 // Request message for
@@ -384,6 +489,8 @@ message ListNotebookRuntimesRequest {
   //   UI_RESOURCE_STATE_CREATION_FAILED].
   //   * `notebookRuntimeType` supports = and !=. notebookRuntimeType enum:
   //   [USER_DEFINED, ONE_CLICK].
+  //   * `machineType` supports = and !=.
+  //   * `acceleratorType` supports = and !=.
   //
   // Some examples:
   //
@@ -395,6 +502,8 @@ message ListNotebookRuntimesRequest {
   //   * `runtimeUser="test@google.com"`
   //   * `uiState=UI_RESOURCE_STATE_BEING_DELETED`
   //   * `notebookRuntimeType=USER_DEFINED`
+  //   * `machineType=e2-standard-4`
+  //   * `acceleratorType=NVIDIA_TESLA_T4`
   string filter = 2 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. The standard list page size.
@@ -510,3 +619,147 @@ message StartNotebookRuntimeOperationMetadata {
 // Response message for
 // [NotebookService.StartNotebookRuntime][google.cloud.aiplatform.v1beta1.NotebookService.StartNotebookRuntime].
 message StartNotebookRuntimeResponse {}
+
+// Request message for
+// [NotebookService.StopNotebookRuntime][google.cloud.aiplatform.v1beta1.NotebookService.StopNotebookRuntime].
+message StopNotebookRuntimeRequest {
+  // Required. The name of the NotebookRuntime resource to be stopped.
+  // Instead of checking whether the name is in valid NotebookRuntime resource
+  // name format, directly throw NotFound exception if there is no such
+  // NotebookRuntime in spanner.
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "aiplatform.googleapis.com/NotebookRuntime"
+    }
+  ];
+}
+
+// Metadata information for
+// [NotebookService.StopNotebookRuntime][google.cloud.aiplatform.v1beta1.NotebookService.StopNotebookRuntime].
+message StopNotebookRuntimeOperationMetadata {
+  // The operation generic information.
+  GenericOperationMetadata generic_metadata = 1;
+}
+
+// Response message for
+// [NotebookService.StopNotebookRuntime][google.cloud.aiplatform.v1beta1.NotebookService.StopNotebookRuntime].
+message StopNotebookRuntimeResponse {}
+
+// Request message for [NotebookService.CreateNotebookExecutionJob]
+message CreateNotebookExecutionJobRequest {
+  // Required. The resource name of the Location to create the
+  // NotebookExecutionJob. Format: `projects/{project}/locations/{location}`
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "locations.googleapis.com/Location"
+    }
+  ];
+
+  // Required. The NotebookExecutionJob to create.
+  NotebookExecutionJob notebook_execution_job = 2
+      [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. User specified ID for the NotebookExecutionJob.
+  string notebook_execution_job_id = 3 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Metadata information for
+// [NotebookService.CreateNotebookExecutionJob][google.cloud.aiplatform.v1beta1.NotebookService.CreateNotebookExecutionJob].
+message CreateNotebookExecutionJobOperationMetadata {
+  // The operation generic information.
+  GenericOperationMetadata generic_metadata = 1;
+
+  // A human-readable message that shows the intermediate progress details of
+  // NotebookRuntime.
+  string progress_message = 2;
+}
+
+// Request message for [NotebookService.GetNotebookExecutionJob]
+message GetNotebookExecutionJobRequest {
+  // Required. The name of the NotebookExecutionJob resource.
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "aiplatform.googleapis.com/NotebookExecutionJob"
+    }
+  ];
+
+  // Optional. The NotebookExecutionJob view. Defaults to BASIC.
+  NotebookExecutionJobView view = 6 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Request message for [NotebookService.ListNotebookExecutionJobs]
+message ListNotebookExecutionJobsRequest {
+  // Required. The resource name of the Location from which to list the
+  // NotebookExecutionJobs.
+  // Format: `projects/{project}/locations/{location}`
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "locations.googleapis.com/Location"
+    }
+  ];
+
+  // Optional. An expression for filtering the results of the request. For field
+  // names both snake_case and camelCase are supported.
+  //
+  //   * `notebookExecutionJob` supports = and !=. `notebookExecutionJob`
+  //   represents the NotebookExecutionJob ID.
+  //   * `displayName` supports = and != and regex.
+  //   * `schedule` supports = and != and regex.
+  //
+  // Some examples:
+  //   * `notebookExecutionJob="123"`
+  //   * `notebookExecutionJob="my-execution-job"`
+  //   * `displayName="myDisplayName"` and `displayName=~"myDisplayNameRegex"`
+  string filter = 2 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The standard list page size.
+  int32 page_size = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The standard list page token.
+  // Typically obtained via
+  // [ListNotebookExecutionJobsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListNotebookExecutionJobsResponse.next_page_token]
+  // of the previous
+  // [NotebookService.ListNotebookExecutionJobs][google.cloud.aiplatform.v1beta1.NotebookService.ListNotebookExecutionJobs]
+  // call.
+  string page_token = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. A comma-separated list of fields to order by, sorted in ascending
+  // order. Use "desc" after a field name for descending. Supported fields:
+  //
+  //   * `display_name`
+  //   * `create_time`
+  //   * `update_time`
+  //
+  // Example: `display_name, create_time desc`.
+  string order_by = 5 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The NotebookExecutionJob view. Defaults to BASIC.
+  NotebookExecutionJobView view = 6 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Response message for [NotebookService.CreateNotebookExecutionJob]
+message ListNotebookExecutionJobsResponse {
+  // List of NotebookExecutionJobs in the requested page.
+  repeated NotebookExecutionJob notebook_execution_jobs = 1;
+
+  // A token to retrieve next page of results.
+  // Pass to
+  // [ListNotebookExecutionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListNotebookExecutionJobsRequest.page_token]
+  // to obtain that page.
+  string next_page_token = 2;
+}
+
+// Request message for [NotebookService.DeleteNotebookExecutionJob]
+message DeleteNotebookExecutionJobRequest {
+  // Required. The name of the NotebookExecutionJob resource to be deleted.
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "aiplatform.googleapis.com/NotebookExecutionJob"
+    }
+  ];
+}

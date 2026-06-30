@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -140,6 +140,7 @@ public class RegionCommitmentsClientTest {
             .setAutoRenew(true)
             .setCategory("category50511102")
             .setCreationTimestamp("creationTimestamp-370203401")
+            .setCustomEndTimestamp("customEndTimestamp1602602124")
             .setDescription("description-1724546052")
             .setEndTimestamp("endTimestamp-356088197")
             .addAllExistingReservations(new ArrayList<String>())
@@ -148,9 +149,11 @@ public class RegionCommitmentsClientTest {
             .setLicenseResource(LicenseResourceCommitment.newBuilder().build())
             .addAllMergeSourceCommitments(new ArrayList<String>())
             .setName("name3373707")
+            .setParams(CommitmentParams.newBuilder().build())
             .setPlan("plan3443497")
             .setRegion("region-934795532")
             .addAllReservations(new ArrayList<Reservation>())
+            .setResourceStatus(CommitmentResourceStatus.newBuilder().build())
             .addAllResources(new ArrayList<ResourceCommitment>())
             .setSelfLink("selfLink1191800166")
             .setSplitSourceCommitment("splitSourceCommitment-455879478")
@@ -210,6 +213,7 @@ public class RegionCommitmentsClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -336,6 +340,7 @@ public class RegionCommitmentsClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)

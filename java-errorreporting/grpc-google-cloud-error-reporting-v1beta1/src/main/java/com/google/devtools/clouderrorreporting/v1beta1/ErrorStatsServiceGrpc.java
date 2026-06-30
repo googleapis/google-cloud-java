@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * individual events.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/devtools/clouderrorreporting/v1beta1/error_stats_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ErrorStatsServiceGrpc {
 
@@ -189,6 +186,19 @@ public final class ErrorStatsServiceGrpc {
           }
         };
     return ErrorStatsServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ErrorStatsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ErrorStatsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ErrorStatsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ErrorStatsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ErrorStatsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ErrorStatsServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -369,6 +379,70 @@ public final class ErrorStatsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ErrorStatsService.
+   *
+   * <pre>
+   * An API for retrieving and managing error statistics as well as data for
+   * individual events.
+   * </pre>
+   */
+  public static final class ErrorStatsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ErrorStatsServiceBlockingV2Stub> {
+    private ErrorStatsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ErrorStatsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ErrorStatsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the specified groups.
+     * </pre>
+     */
+    public com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse listGroupStats(
+        com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListGroupStatsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the specified events.
+     * </pre>
+     */
+    public com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse listEvents(
+        com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes all error events of a given project.
+     * </pre>
+     */
+    public com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse deleteEvents(
+        com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteEventsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ErrorStatsService.
    *
    * <pre>
    * An API for retrieving and managing error statistics as well as data for

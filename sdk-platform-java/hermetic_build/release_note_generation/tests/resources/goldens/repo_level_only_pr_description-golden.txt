@@ -1,0 +1,5 @@
+BEGIN_COMMIT_OVERRIDE
+BEGIN_NESTED_COMMIT
+fix(deps): update the Java code generator (gapic-generator-java) to 1.2.3
+END_NESTED_COMMIT
+END_COMMIT_OVERRIDE

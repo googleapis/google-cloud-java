@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ public class GrpcDataFusionStub extends DataFusionStub {
                   ProtoUtils.marshaller(ListAvailableVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAvailableVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListInstancesRequest, ListInstancesResponse>
@@ -75,6 +76,7 @@ public class GrpcDataFusionStub extends DataFusionStub {
                   ProtoUtils.marshaller(ListInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstancesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
@@ -83,6 +85,7 @@ public class GrpcDataFusionStub extends DataFusionStub {
           .setFullMethodName("google.cloud.datafusion.v1.DataFusion/GetInstance")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateInstanceRequest, Operation>
@@ -93,6 +96,7 @@ public class GrpcDataFusionStub extends DataFusionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteInstanceRequest, Operation>
@@ -103,6 +107,7 @@ public class GrpcDataFusionStub extends DataFusionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateInstanceRequest, Operation>
@@ -113,6 +118,7 @@ public class GrpcDataFusionStub extends DataFusionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RestartInstanceRequest, Operation>
@@ -123,6 +129,7 @@ public class GrpcDataFusionStub extends DataFusionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RestartInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListAvailableVersionsRequest, ListAvailableVersionsResponse>
@@ -199,6 +206,7 @@ public class GrpcDataFusionStub extends DataFusionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListInstancesRequest, ListInstancesResponse> listInstancesTransportSettings =
         GrpcCallSettings.<ListInstancesRequest, ListInstancesResponse>newBuilder()
@@ -209,6 +217,7 @@ public class GrpcDataFusionStub extends DataFusionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -219,6 +228,7 @@ public class GrpcDataFusionStub extends DataFusionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         GrpcCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -229,6 +239,7 @@ public class GrpcDataFusionStub extends DataFusionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         GrpcCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
@@ -239,6 +250,7 @@ public class GrpcDataFusionStub extends DataFusionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         GrpcCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
@@ -259,6 +271,7 @@ public class GrpcDataFusionStub extends DataFusionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listAvailableVersionsCallable =

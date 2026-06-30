@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest;
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse;
+import com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest;
+import com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse;
 import com.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest;
 import com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse;
 import com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest;
@@ -46,6 +48,8 @@ import com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse;
+import com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest;
+import com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse;
 import com.google.cloud.dialogflow.v2beta1.UpdateParticipantRequest;
@@ -77,6 +81,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateParticipantRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Participant.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetParticipantRequest, Participant>
@@ -87,6 +92,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetParticipantRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Participant.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListParticipantsRequest, ListParticipantsResponse>
@@ -98,6 +104,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(ListParticipantsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListParticipantsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateParticipantRequest, Participant>
@@ -108,6 +115,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateParticipantRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Participant.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AnalyzeContentRequest, AnalyzeContentResponse>
@@ -119,6 +127,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(AnalyzeContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnalyzeContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -133,6 +142,22 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(StreamingAnalyzeContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingAnalyzeContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentMethodDescriptor =
+          MethodDescriptor
+              .<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2beta1.Participants/BidiStreamingAnalyzeContent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BidiStreamingAnalyzeContentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BidiStreamingAnalyzeContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SuggestArticlesRequest, SuggestArticlesResponse>
@@ -144,6 +169,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(SuggestArticlesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SuggestArticlesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
@@ -155,6 +181,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(SuggestFaqAnswersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SuggestFaqAnswersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
@@ -166,6 +193,22 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(SuggestSmartRepliesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SuggestSmartRepliesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistMethodDescriptor =
+          MethodDescriptor
+              .<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2beta1.Participants/SuggestKnowledgeAssist")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SuggestKnowledgeAssistRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SuggestKnowledgeAssistResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSuggestionsRequest, ListSuggestionsResponse>
@@ -177,6 +220,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(ListSuggestionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSuggestionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CompileSuggestionRequest, CompileSuggestionResponse>
@@ -188,6 +232,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(CompileSuggestionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CompileSuggestionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -199,6 +244,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -207,6 +253,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateParticipantRequest, Participant> createParticipantCallable;
@@ -220,12 +267,17 @@ public class GrpcParticipantsStub extends ParticipantsStub {
   private final BidiStreamingCallable<
           StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
       streamingAnalyzeContentCallable;
+  private final BidiStreamingCallable<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentCallable;
   private final UnaryCallable<SuggestArticlesRequest, SuggestArticlesResponse>
       suggestArticlesCallable;
   private final UnaryCallable<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
       suggestFaqAnswersCallable;
   private final UnaryCallable<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
       suggestSmartRepliesCallable;
+  private final UnaryCallable<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistCallable;
   private final UnaryCallable<ListSuggestionsRequest, ListSuggestionsResponse>
       listSuggestionsCallable;
   private final UnaryCallable<ListSuggestionsRequest, ListSuggestionsPagedResponse>
@@ -288,6 +340,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetParticipantRequest, Participant> getParticipantTransportSettings =
         GrpcCallSettings.<GetParticipantRequest, Participant>newBuilder()
@@ -298,6 +351,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListParticipantsRequest, ListParticipantsResponse>
         listParticipantsTransportSettings =
@@ -309,6 +363,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateParticipantRequest, Participant> updateParticipantTransportSettings =
         GrpcCallSettings.<UpdateParticipantRequest, Participant>newBuilder()
@@ -331,12 +386,21 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       builder.add("participant", String.valueOf(request.getParticipant()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParticipant())
                 .build();
     GrpcCallSettings<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
         streamingAnalyzeContentTransportSettings =
             GrpcCallSettings
                 .<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>newBuilder()
                 .setMethodDescriptor(streamingAnalyzeContentMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getParticipant())
+                .build();
+    GrpcCallSettings<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+        bidiStreamingAnalyzeContentTransportSettings =
+            GrpcCallSettings
+                .<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+                    newBuilder()
+                .setMethodDescriptor(bidiStreamingAnalyzeContentMethodDescriptor)
                 .build();
     GrpcCallSettings<SuggestArticlesRequest, SuggestArticlesResponse>
         suggestArticlesTransportSettings =
@@ -348,6 +412,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
         suggestFaqAnswersTransportSettings =
@@ -359,6 +424,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
         suggestSmartRepliesTransportSettings =
@@ -370,6 +436,20 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+        suggestKnowledgeAssistTransportSettings =
+            GrpcCallSettings
+                .<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>newBuilder()
+                .setMethodDescriptor(suggestKnowledgeAssistMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListSuggestionsRequest, ListSuggestionsResponse>
         listSuggestionsTransportSettings =
@@ -441,6 +521,11 @@ public class GrpcParticipantsStub extends ParticipantsStub {
             streamingAnalyzeContentTransportSettings,
             settings.streamingAnalyzeContentSettings(),
             clientContext);
+    this.bidiStreamingAnalyzeContentCallable =
+        callableFactory.createBidiStreamingCallable(
+            bidiStreamingAnalyzeContentTransportSettings,
+            settings.bidiStreamingAnalyzeContentSettings(),
+            clientContext);
     this.suggestArticlesCallable =
         callableFactory.createUnaryCallable(
             suggestArticlesTransportSettings, settings.suggestArticlesSettings(), clientContext);
@@ -453,6 +538,11 @@ public class GrpcParticipantsStub extends ParticipantsStub {
         callableFactory.createUnaryCallable(
             suggestSmartRepliesTransportSettings,
             settings.suggestSmartRepliesSettings(),
+            clientContext);
+    this.suggestKnowledgeAssistCallable =
+        callableFactory.createUnaryCallable(
+            suggestKnowledgeAssistTransportSettings,
+            settings.suggestKnowledgeAssistSettings(),
             clientContext);
     this.listSuggestionsCallable =
         callableFactory.createUnaryCallable(
@@ -522,6 +612,13 @@ public class GrpcParticipantsStub extends ParticipantsStub {
   }
 
   @Override
+  public BidiStreamingCallable<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentCallable() {
+    return bidiStreamingAnalyzeContentCallable;
+  }
+
+  @Override
   public UnaryCallable<SuggestArticlesRequest, SuggestArticlesResponse> suggestArticlesCallable() {
     return suggestArticlesCallable;
   }
@@ -536,6 +633,12 @@ public class GrpcParticipantsStub extends ParticipantsStub {
   public UnaryCallable<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
       suggestSmartRepliesCallable() {
     return suggestSmartRepliesCallable;
+  }
+
+  @Override
+  public UnaryCallable<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistCallable() {
+    return suggestKnowledgeAssistCallable;
   }
 
   @Override

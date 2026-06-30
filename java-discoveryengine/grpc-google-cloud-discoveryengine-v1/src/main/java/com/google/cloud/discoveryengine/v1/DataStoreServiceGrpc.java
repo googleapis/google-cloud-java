@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * configuration.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1/data_store_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataStoreServiceGrpc {
 
@@ -281,6 +278,19 @@ public final class DataStoreServiceGrpc {
     return DataStoreServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DataStoreServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DataStoreServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DataStoreServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public DataStoreServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DataStoreServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DataStoreServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -527,6 +537,104 @@ public final class DataStoreServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DataStoreService.
+   *
+   * <pre>
+   * Service for managing [DataStore][google.cloud.discoveryengine.v1.DataStore]
+   * configuration.
+   * </pre>
+   */
+  public static final class DataStoreServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DataStoreServiceBlockingV2Stub> {
+    private DataStoreServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DataStoreServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DataStoreServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [DataStore][google.cloud.discoveryengine.v1.DataStore].
+     * DataStore is for storing
+     * [Documents][google.cloud.discoveryengine.v1.Document]. To serve these
+     * documents for Search, or Recommendation use case, an
+     * [Engine][google.cloud.discoveryengine.v1.Engine] needs to be created
+     * separately.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDataStore(
+        com.google.cloud.discoveryengine.v1.CreateDataStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateDataStoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a [DataStore][google.cloud.discoveryengine.v1.DataStore].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.DataStore getDataStore(
+        com.google.cloud.discoveryengine.v1.GetDataStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDataStoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the [DataStore][google.cloud.discoveryengine.v1.DataStore]s
+     * associated with the project.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.ListDataStoresResponse listDataStores(
+        com.google.cloud.discoveryengine.v1.ListDataStoresRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDataStoresMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [DataStore][google.cloud.discoveryengine.v1.DataStore].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDataStore(
+        com.google.cloud.discoveryengine.v1.DeleteDataStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteDataStoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [DataStore][google.cloud.discoveryengine.v1.DataStore]
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.DataStore updateDataStore(
+        com.google.cloud.discoveryengine.v1.UpdateDataStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDataStoreMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DataStoreService.
    *
    * <pre>
    * Service for managing [DataStore][google.cloud.discoveryengine.v1.DataStore]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Managed Apache Airflow Environments.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/orchestration/airflow/service/v1beta1/environments.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EnvironmentsGrpc {
 
@@ -1361,6 +1358,19 @@ public final class EnvironmentsGrpc {
     return EnvironmentsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EnvironmentsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EnvironmentsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EnvironmentsBlockingV2Stub>() {
+          @java.lang.Override
+          public EnvironmentsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EnvironmentsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EnvironmentsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1557,7 +1567,7 @@ public final class EnvironmentsGrpc {
      * Lists workloads in a Cloud Composer environment. Workload is a unit that
      * runs a single Composer component.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
      */
     default void listWorkloads(
@@ -1575,7 +1585,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Creates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void createUserWorkloadsSecret(
@@ -1595,7 +1605,7 @@ public final class EnvironmentsGrpc {
      * Gets an existing user workloads Secret.
      * Values of the "data" field in the response are cleared.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void getUserWorkloadsSecret(
@@ -1614,7 +1624,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Lists user workloads Secrets.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void listUserWorkloadsSecrets(
@@ -1634,7 +1644,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Updates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void updateUserWorkloadsSecret(
@@ -1653,7 +1663,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Deletes a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void deleteUserWorkloadsSecret(
@@ -1670,7 +1680,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Creates a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void createUserWorkloadsConfigMap(
@@ -1689,7 +1699,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Gets an existing user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void getUserWorkloadsConfigMap(
@@ -1708,7 +1718,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Lists user workloads ConfigMaps.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void listUserWorkloadsConfigMaps(
@@ -1728,7 +1738,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Updates a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void updateUserWorkloadsConfigMap(
@@ -1747,7 +1757,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Deletes a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void deleteUserWorkloadsConfigMap(
@@ -2036,7 +2046,7 @@ public final class EnvironmentsGrpc {
      * Lists workloads in a Cloud Composer environment. Workload is a unit that
      * runs a single Composer component.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
      */
     public void listWorkloads(
@@ -2056,7 +2066,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Creates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void createUserWorkloadsSecret(
@@ -2078,7 +2088,7 @@ public final class EnvironmentsGrpc {
      * Gets an existing user workloads Secret.
      * Values of the "data" field in the response are cleared.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void getUserWorkloadsSecret(
@@ -2099,7 +2109,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Lists user workloads Secrets.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void listUserWorkloadsSecrets(
@@ -2121,7 +2131,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Updates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void updateUserWorkloadsSecret(
@@ -2142,7 +2152,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Deletes a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void deleteUserWorkloadsSecret(
@@ -2161,7 +2171,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Creates a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void createUserWorkloadsConfigMap(
@@ -2182,7 +2192,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Gets an existing user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void getUserWorkloadsConfigMap(
@@ -2203,7 +2213,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Lists user workloads ConfigMaps.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void listUserWorkloadsConfigMaps(
@@ -2225,7 +2235,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Updates a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void updateUserWorkloadsConfigMap(
@@ -2246,7 +2256,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Deletes a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void deleteUserWorkloadsConfigMap(
@@ -2334,6 +2344,437 @@ public final class EnvironmentsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Environments.
+   *
+   * <pre>
+   * Managed Apache Airflow Environments.
+   * </pre>
+   */
+  public static final class EnvironmentsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EnvironmentsBlockingV2Stub> {
+    private EnvironmentsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EnvironmentsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EnvironmentsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new environment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEnvironment(
+        com.google.cloud.orchestration.airflow.service.v1beta1.CreateEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get an existing environment.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.Environment getEnvironment(
+        com.google.cloud.orchestration.airflow.service.v1beta1.GetEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List environments.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.ListEnvironmentsResponse
+        listEnvironments(
+            com.google.cloud.orchestration.airflow.service.v1beta1.ListEnvironmentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListEnvironmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update an environment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateEnvironment(
+        com.google.cloud.orchestration.airflow.service.v1beta1.UpdateEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete an environment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteEnvironment(
+        com.google.cloud.orchestration.airflow.service.v1beta1.DeleteEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restart Airflow web server.
+     * </pre>
+     */
+    public com.google.longrunning.Operation restartWebServer(
+        com.google.cloud.orchestration.airflow.service.v1beta1.RestartWebServerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRestartWebServerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Check if an upgrade operation on the environment will succeed.
+     * In case of problems detailed info can be found in the returned Operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation checkUpgrade(
+        com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCheckUpgradeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Executes Airflow CLI command.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandResponse
+        executeAirflowCommand(
+            com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExecuteAirflowCommandMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops Airflow CLI command execution.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandResponse
+        stopAirflowCommand(
+            com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStopAirflowCommandMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Polls Airflow CLI command execution and fetches logs.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse
+        pollAirflowCommand(
+            com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getPollAirflowCommandMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists workloads in a Cloud Composer environment. Workload is a unit that
+     * runs a single Composer component.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsResponse
+        listWorkloads(
+            com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListWorkloadsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret
+        createUserWorkloadsSecret(
+            com.google.cloud.orchestration.airflow.service.v1beta1.CreateUserWorkloadsSecretRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateUserWorkloadsSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an existing user workloads Secret.
+     * Values of the "data" field in the response are cleared.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret
+        getUserWorkloadsSecret(
+            com.google.cloud.orchestration.airflow.service.v1beta1.GetUserWorkloadsSecretRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetUserWorkloadsSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists user workloads Secrets.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.ListUserWorkloadsSecretsResponse
+        listUserWorkloadsSecrets(
+            com.google.cloud.orchestration.airflow.service.v1beta1.ListUserWorkloadsSecretsRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListUserWorkloadsSecretsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret
+        updateUserWorkloadsSecret(
+            com.google.cloud.orchestration.airflow.service.v1beta1.UpdateUserWorkloadsSecretRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateUserWorkloadsSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteUserWorkloadsSecret(
+        com.google.cloud.orchestration.airflow.service.v1beta1.DeleteUserWorkloadsSecretRequest
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteUserWorkloadsSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMap
+        createUserWorkloadsConfigMap(
+            com.google.cloud.orchestration.airflow.service.v1beta1
+                    .CreateUserWorkloadsConfigMapRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateUserWorkloadsConfigMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an existing user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMap
+        getUserWorkloadsConfigMap(
+            com.google.cloud.orchestration.airflow.service.v1beta1.GetUserWorkloadsConfigMapRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetUserWorkloadsConfigMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists user workloads ConfigMaps.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1
+            .ListUserWorkloadsConfigMapsResponse
+        listUserWorkloadsConfigMaps(
+            com.google.cloud.orchestration.airflow.service.v1beta1
+                    .ListUserWorkloadsConfigMapsRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListUserWorkloadsConfigMapsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMap
+        updateUserWorkloadsConfigMap(
+            com.google.cloud.orchestration.airflow.service.v1beta1
+                    .UpdateUserWorkloadsConfigMapRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateUserWorkloadsConfigMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteUserWorkloadsConfigMap(
+        com.google.cloud.orchestration.airflow.service.v1beta1.DeleteUserWorkloadsConfigMapRequest
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteUserWorkloadsConfigMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a snapshots of a Cloud Composer environment.
+     * As a result of this operation, snapshot of environment's state is stored
+     * in a location specified in the SaveSnapshotRequest.
+     * </pre>
+     */
+    public com.google.longrunning.Operation saveSnapshot(
+        com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSaveSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Loads a snapshot of a Cloud Composer environment.
+     * As a result of this operation, a snapshot of environment's specified in
+     * LoadSnapshotRequest is loaded into the environment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation loadSnapshot(
+        com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getLoadSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers database failover (only for highly resilient environments).
+     * </pre>
+     */
+    public com.google.longrunning.Operation databaseFailover(
+        com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDatabaseFailoverMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches database properties.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesResponse
+        fetchDatabaseProperties(
+            com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchDatabasePropertiesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Environments.
    *
    * <pre>
    * Managed Apache Airflow Environments.
@@ -2497,7 +2938,7 @@ public final class EnvironmentsGrpc {
      * Lists workloads in a Cloud Composer environment. Workload is a unit that
      * runs a single Composer component.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsResponse
@@ -2513,7 +2954,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Creates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret
@@ -2531,7 +2972,7 @@ public final class EnvironmentsGrpc {
      * Gets an existing user workloads Secret.
      * Values of the "data" field in the response are cleared.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret
@@ -2548,7 +2989,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Lists user workloads Secrets.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.ListUserWorkloadsSecretsResponse
@@ -2565,7 +3006,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Updates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret
@@ -2582,7 +3023,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Deletes a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.protobuf.Empty deleteUserWorkloadsSecret(
@@ -2598,7 +3039,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Creates a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMap
@@ -2616,7 +3057,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Gets an existing user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMap
@@ -2633,7 +3074,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Lists user workloads ConfigMaps.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1
@@ -2652,7 +3093,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Updates a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMap
@@ -2670,7 +3111,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Deletes a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.protobuf.Empty deleteUserWorkloadsConfigMap(
@@ -2919,7 +3360,7 @@ public final class EnvironmentsGrpc {
      * Lists workloads in a Cloud Composer environment. Workload is a unit that
      * runs a single Composer component.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2936,7 +3377,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Creates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2955,7 +3396,7 @@ public final class EnvironmentsGrpc {
      * Gets an existing user workloads Secret.
      * Values of the "data" field in the response are cleared.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2973,7 +3414,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Lists user workloads Secrets.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2991,7 +3432,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Updates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3009,7 +3450,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Deletes a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -3026,7 +3467,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Creates a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3045,7 +3486,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Gets an existing user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3063,7 +3504,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Lists user workloads ConfigMaps.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3083,7 +3524,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Updates a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3102,7 +3543,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Deletes a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

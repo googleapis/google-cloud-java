@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                   ProtoUtils.marshaller(ListExecutionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListExecutionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateExecutionRequest, Execution>
@@ -65,6 +66,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Execution.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetExecutionRequest, Execution>
@@ -74,6 +76,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
               .setFullMethodName("google.cloud.workflows.executions.v1.Executions/GetExecution")
               .setRequestMarshaller(ProtoUtils.marshaller(GetExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Execution.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelExecutionRequest, Execution>
@@ -84,6 +87,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Execution.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListExecutionsRequest, ListExecutionsResponse> listExecutionsCallable;
@@ -145,6 +149,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateExecutionRequest, Execution> createExecutionTransportSettings =
         GrpcCallSettings.<CreateExecutionRequest, Execution>newBuilder()
@@ -155,6 +160,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetExecutionRequest, Execution> getExecutionTransportSettings =
         GrpcCallSettings.<GetExecutionRequest, Execution>newBuilder()
@@ -165,6 +171,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CancelExecutionRequest, Execution> cancelExecutionTransportSettings =
         GrpcCallSettings.<CancelExecutionRequest, Execution>newBuilder()
@@ -175,6 +182,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listExecutionsCallable =

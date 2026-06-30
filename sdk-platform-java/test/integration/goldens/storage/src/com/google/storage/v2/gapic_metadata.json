@@ -1,0 +1,108 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.storage.v2",
+  "libraryPackage": "com.google.storage.v2",
+  "services": {
+    "Storage": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StorageClient",
+          "rpcs": {
+            "CancelResumableWrite": {
+              "methods": ["cancelResumableWrite", "cancelResumableWrite", "cancelResumableWriteCallable"]
+            },
+            "ComposeObject": {
+              "methods": ["composeObject", "composeObjectCallable"]
+            },
+            "CreateBucket": {
+              "methods": ["createBucket", "createBucket", "createBucket", "createBucketCallable"]
+            },
+            "CreateHmacKey": {
+              "methods": ["createHmacKey", "createHmacKey", "createHmacKey", "createHmacKeyCallable"]
+            },
+            "CreateNotification": {
+              "methods": ["createNotification", "createNotification", "createNotification", "createNotificationCallable"]
+            },
+            "DeleteBucket": {
+              "methods": ["deleteBucket", "deleteBucket", "deleteBucket", "deleteBucketCallable"]
+            },
+            "DeleteHmacKey": {
+              "methods": ["deleteHmacKey", "deleteHmacKey", "deleteHmacKey", "deleteHmacKeyCallable"]
+            },
+            "DeleteNotification": {
+              "methods": ["deleteNotification", "deleteNotification", "deleteNotification", "deleteNotificationCallable"]
+            },
+            "DeleteObject": {
+              "methods": ["deleteObject", "deleteObject", "deleteObject", "deleteObjectCallable"]
+            },
+            "GetBucket": {
+              "methods": ["getBucket", "getBucket", "getBucket", "getBucketCallable"]
+            },
+            "GetHmacKey": {
+              "methods": ["getHmacKey", "getHmacKey", "getHmacKey", "getHmacKeyCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetNotification": {
+              "methods": ["getNotification", "getNotification", "getNotification", "getNotificationCallable"]
+            },
+            "GetObject": {
+              "methods": ["getObject", "getObject", "getObject", "getObjectCallable"]
+            },
+            "GetServiceAccount": {
+              "methods": ["getServiceAccount", "getServiceAccount", "getServiceAccount", "getServiceAccountCallable"]
+            },
+            "ListBuckets": {
+              "methods": ["listBuckets", "listBuckets", "listBuckets", "listBucketsPagedCallable", "listBucketsCallable"]
+            },
+            "ListHmacKeys": {
+              "methods": ["listHmacKeys", "listHmacKeys", "listHmacKeys", "listHmacKeysPagedCallable", "listHmacKeysCallable"]
+            },
+            "ListNotifications": {
+              "methods": ["listNotifications", "listNotifications", "listNotifications", "listNotificationsPagedCallable", "listNotificationsCallable"]
+            },
+            "ListObjects": {
+              "methods": ["listObjects", "listObjects", "listObjects", "listObjectsPagedCallable", "listObjectsCallable"]
+            },
+            "LockBucketRetentionPolicy": {
+              "methods": ["lockBucketRetentionPolicy", "lockBucketRetentionPolicy", "lockBucketRetentionPolicy", "lockBucketRetentionPolicyCallable"]
+            },
+            "QueryWriteStatus": {
+              "methods": ["queryWriteStatus", "queryWriteStatus", "queryWriteStatusCallable"]
+            },
+            "ReadObject": {
+              "methods": ["readObjectCallable"]
+            },
+            "RewriteObject": {
+              "methods": ["rewriteObject", "rewriteObjectCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "StartResumableWrite": {
+              "methods": ["startResumableWrite", "startResumableWriteCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateBucket": {
+              "methods": ["updateBucket", "updateBucket", "updateBucketCallable"]
+            },
+            "UpdateHmacKey": {
+              "methods": ["updateHmacKey", "updateHmacKey", "updateHmacKeyCallable"]
+            },
+            "UpdateObject": {
+              "methods": ["updateObject", "updateObject", "updateObjectCallable"]
+            },
+            "WriteObject": {
+              "methods": ["writeObjectCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

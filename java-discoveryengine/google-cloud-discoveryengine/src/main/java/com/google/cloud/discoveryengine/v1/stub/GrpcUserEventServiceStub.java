@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,9 @@ import com.google.cloud.discoveryengine.v1.CollectUserEventRequest;
 import com.google.cloud.discoveryengine.v1.ImportUserEventsMetadata;
 import com.google.cloud.discoveryengine.v1.ImportUserEventsRequest;
 import com.google.cloud.discoveryengine.v1.ImportUserEventsResponse;
+import com.google.cloud.discoveryengine.v1.PurgeUserEventsMetadata;
+import com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest;
+import com.google.cloud.discoveryengine.v1.PurgeUserEventsResponse;
 import com.google.cloud.discoveryengine.v1.UserEvent;
 import com.google.cloud.discoveryengine.v1.WriteUserEventRequest;
 import com.google.longrunning.Operation;
@@ -55,6 +58,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(WriteUserEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UserEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CollectUserEventRequest, HttpBody>
@@ -66,6 +70,18 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CollectUserEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<PurgeUserEventsRequest, Operation>
+      purgeUserEventsMethodDescriptor =
+          MethodDescriptor.<PurgeUserEventsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.discoveryengine.v1.UserEventService/PurgeUserEvents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PurgeUserEventsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportUserEventsRequest, Operation>
@@ -77,10 +93,15 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportUserEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<WriteUserEventRequest, UserEvent> writeUserEventCallable;
   private final UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable;
+  private final UnaryCallable<PurgeUserEventsRequest, Operation> purgeUserEventsCallable;
+  private final OperationCallable<
+          PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsOperationCallable;
   private final UnaryCallable<ImportUserEventsRequest, Operation> importUserEventsCallable;
   private final OperationCallable<
           ImportUserEventsRequest, ImportUserEventsResponse, ImportUserEventsMetadata>
@@ -139,6 +160,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CollectUserEventRequest, HttpBody> collectUserEventTransportSettings =
         GrpcCallSettings.<CollectUserEventRequest, HttpBody>newBuilder()
@@ -149,6 +171,18 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsTransportSettings =
+        GrpcCallSettings.<PurgeUserEventsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeUserEventsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ImportUserEventsRequest, Operation> importUserEventsTransportSettings =
         GrpcCallSettings.<ImportUserEventsRequest, Operation>newBuilder()
@@ -159,6 +193,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.writeUserEventCallable =
@@ -167,6 +202,15 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
     this.collectUserEventCallable =
         callableFactory.createUnaryCallable(
             collectUserEventTransportSettings, settings.collectUserEventSettings(), clientContext);
+    this.purgeUserEventsCallable =
+        callableFactory.createUnaryCallable(
+            purgeUserEventsTransportSettings, settings.purgeUserEventsSettings(), clientContext);
+    this.purgeUserEventsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeUserEventsTransportSettings,
+            settings.purgeUserEventsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.importUserEventsCallable =
         callableFactory.createUnaryCallable(
             importUserEventsTransportSettings, settings.importUserEventsSettings(), clientContext);
@@ -193,6 +237,17 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
   @Override
   public UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable() {
     return collectUserEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<PurgeUserEventsRequest, Operation> purgeUserEventsCallable() {
+    return purgeUserEventsCallable;
+  }
+
+  @Override
+  public OperationCallable<PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsOperationCallable() {
+    return purgeUserEventsOperationCallable;
   }
 
   @Override

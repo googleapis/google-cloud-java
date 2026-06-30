@@ -1,0 +1,9 @@
+{
+  "resources":{
+    "includes":[
+      {"pattern":".*.sql"},
+      {"pattern":".*.json"},
+      {"pattern":".*.txt"}
+    ]
+  }
+}

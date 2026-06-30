@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -833,7 +833,8 @@ public class ExtensionRegistryServiceClient implements BackgroundResource {
    *
    * @param extension Required. The Extension which replaces the resource on the server.
    * @param updateMask Required. Mask specifying which fields to update. Supported fields:
-   *     <p>&#42; `display_name` &#42; `description` &#42; `tool_use_examples`
+   *     <p>&#42; `display_name` &#42; `description` &#42; `runtime_config` &#42;
+   *     `tool_use_examples` &#42; `manifest.description`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Extension updateExtension(Extension extension, FieldMask updateMask) {

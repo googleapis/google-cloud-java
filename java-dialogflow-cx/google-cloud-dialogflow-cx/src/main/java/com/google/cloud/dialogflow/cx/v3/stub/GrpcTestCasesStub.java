@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,6 +83,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   ProtoUtils.marshaller(ListTestCasesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTestCasesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchDeleteTestCasesRequest, Empty>
@@ -93,6 +94,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchDeleteTestCasesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTestCaseRequest, TestCase> getTestCaseMethodDescriptor =
@@ -101,6 +103,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3.TestCases/GetTestCase")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTestCaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(TestCase.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateTestCaseRequest, TestCase>
@@ -111,6 +114,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTestCaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TestCase.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTestCaseRequest, TestCase>
@@ -121,6 +125,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTestCaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TestCase.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunTestCaseRequest, Operation> runTestCaseMethodDescriptor =
@@ -129,6 +134,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3.TestCases/RunTestCase")
           .setRequestMarshaller(ProtoUtils.marshaller(RunTestCaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchRunTestCasesRequest, Operation>
@@ -139,6 +145,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchRunTestCasesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CalculateCoverageRequest, CalculateCoverageResponse>
@@ -150,6 +157,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   ProtoUtils.marshaller(CalculateCoverageRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CalculateCoverageResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportTestCasesRequest, Operation>
@@ -160,6 +168,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportTestCasesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportTestCasesRequest, Operation>
@@ -170,6 +179,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportTestCasesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTestCaseResultsRequest, ListTestCaseResultsResponse>
@@ -181,6 +191,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   ProtoUtils.marshaller(ListTestCaseResultsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTestCaseResultsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTestCaseResultRequest, TestCaseResult>
@@ -191,6 +202,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTestCaseResultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TestCaseResult.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -202,6 +214,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -210,6 +223,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListTestCasesRequest, ListTestCasesResponse> listTestCasesCallable;
@@ -296,6 +310,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchDeleteTestCasesRequest, Empty> batchDeleteTestCasesTransportSettings =
         GrpcCallSettings.<BatchDeleteTestCasesRequest, Empty>newBuilder()
@@ -306,6 +321,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTestCaseRequest, TestCase> getTestCaseTransportSettings =
         GrpcCallSettings.<GetTestCaseRequest, TestCase>newBuilder()
@@ -316,6 +332,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTestCaseRequest, TestCase> createTestCaseTransportSettings =
         GrpcCallSettings.<CreateTestCaseRequest, TestCase>newBuilder()
@@ -326,6 +343,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateTestCaseRequest, TestCase> updateTestCaseTransportSettings =
         GrpcCallSettings.<UpdateTestCaseRequest, TestCase>newBuilder()
@@ -346,6 +364,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchRunTestCasesRequest, Operation> batchRunTestCasesTransportSettings =
         GrpcCallSettings.<BatchRunTestCasesRequest, Operation>newBuilder()
@@ -356,6 +375,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CalculateCoverageRequest, CalculateCoverageResponse>
         calculateCoverageTransportSettings =
@@ -367,6 +387,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                       builder.add("agent", String.valueOf(request.getAgent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAgent())
                 .build();
     GrpcCallSettings<ImportTestCasesRequest, Operation> importTestCasesTransportSettings =
         GrpcCallSettings.<ImportTestCasesRequest, Operation>newBuilder()
@@ -377,6 +398,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ExportTestCasesRequest, Operation> exportTestCasesTransportSettings =
         GrpcCallSettings.<ExportTestCasesRequest, Operation>newBuilder()
@@ -387,6 +409,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListTestCaseResultsRequest, ListTestCaseResultsResponse>
         listTestCaseResultsTransportSettings =
@@ -398,6 +421,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTestCaseResultRequest, TestCaseResult> getTestCaseResultTransportSettings =
         GrpcCallSettings.<GetTestCaseResultRequest, TestCaseResult>newBuilder()
@@ -408,6 +432,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/protobuf/duration.proto";
 
-option cc_enable_arenas = true;
 option csharp_namespace = "Google.Cloud.Dialogflow.Cx.V3";
 option go_package = "cloud.google.com/go/dialogflow/cx/apiv3/cxpb;cxpb";
 option java_multiple_files = true;
@@ -43,6 +42,7 @@ enum AudioEncoding {
   AUDIO_ENCODING_UNSPECIFIED = 0;
 
   // Uncompressed 16-bit signed little-endian samples (Linear PCM).
+  // LINT: LEGACY_NAMES
   AUDIO_ENCODING_LINEAR_16 = 1;
 
   // [`FLAC`](https://xiph.org/flac/documentation.html) (Free Lossless Audio
@@ -80,6 +80,9 @@ enum AudioEncoding {
   // is replaced with a single byte containing the block length. Only Speex
   // wideband is supported. `sample_rate_hertz` must be 16000.
   AUDIO_ENCODING_SPEEX_WITH_HEADER_BYTE = 7;
+
+  // 8-bit samples that compand 13-bit audio samples using G.711 PCMU/a-law.
+  AUDIO_ENCODING_ALAW = 8;
 }
 
 // Variant of the specified [Speech
@@ -162,7 +165,7 @@ message SpeechWordInfo {
 //
 // The client provides this configuration in terms of the durations of those
 // two phases. The durations are measured in terms of the audio length from the
-// the start of the input audio.
+// start of the input audio.
 //
 // No-speech event is a response with END_OF_UTTERANCE without any transcript
 // following up.
@@ -308,12 +311,14 @@ enum OutputAudioEncoding {
 
   // Uncompressed 16-bit signed little-endian samples (Linear PCM).
   // Audio content returned as LINEAR16 also contains a WAV header.
+  // LINT: LEGACY_NAMES
   OUTPUT_AUDIO_ENCODING_LINEAR_16 = 1;
 
-  // MP3 audio at 32kbps.
-  OUTPUT_AUDIO_ENCODING_MP3 = 2;
+  // MP3 audio at 64kbps.
+  OUTPUT_AUDIO_ENCODING_MP3 = 2 [deprecated = true];
 
   // MP3 audio at 64kbps.
+  // LINT: LEGACY_NAMES
   OUTPUT_AUDIO_ENCODING_MP3_64_KBPS = 4;
 
   // Opus encoded audio wrapped in an ogg container. The result will be a
@@ -324,6 +329,9 @@ enum OutputAudioEncoding {
 
   // 8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
   OUTPUT_AUDIO_ENCODING_MULAW = 5;
+
+  // 8-bit samples that compand 13-bit audio samples using G.711 PCMU/a-law.
+  OUTPUT_AUDIO_ENCODING_ALAW = 6;
 }
 
 // Instructs the speech synthesizer how to generate the output audio content.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteFirewallRequest;
 import com.google.cloud.compute.v1.Firewall;
 import com.google.cloud.compute.v1.FirewallList;
@@ -41,6 +42,8 @@ import com.google.cloud.compute.v1.ListFirewallsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchFirewallRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsFirewallRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateFirewallRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -298,6 +301,48 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
               })
           .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsFirewallRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsFirewallRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Firewalls/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsFirewallRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/firewalls/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsFirewallRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsFirewallRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<UpdateFirewallRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateFirewallRequest, Operation>newBuilder()
@@ -362,6 +407,8 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
   private final UnaryCallable<PatchFirewallRequest, Operation> patchCallable;
   private final OperationCallable<PatchFirewallRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<TestIamPermissionsFirewallRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
   private final UnaryCallable<UpdateFirewallRequest, Operation> updateCallable;
   private final OperationCallable<UpdateFirewallRequest, Operation, Operation>
       updateOperationCallable;
@@ -369,6 +416,21 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewalls/{firewall}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewalls/{firewall}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewalls/{firewall}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewalls/{resource}");
+  private static final PathTemplate UPDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewalls/{firewall}");
 
   public static final HttpJsonFirewallsStub create(FirewallsStubSettings settings)
       throws IOException {
@@ -420,6 +482,13 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("firewall", String.valueOf(request.getFirewall()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetFirewallRequest, Firewall> getTransportSettings =
         HttpJsonCallSettings.<GetFirewallRequest, Firewall>newBuilder()
@@ -432,6 +501,13 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("firewall", String.valueOf(request.getFirewall()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertFirewallRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertFirewallRequest, Operation>newBuilder()
@@ -443,6 +519,12 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListFirewallsRequest, FirewallList> listTransportSettings =
         HttpJsonCallSettings.<ListFirewallsRequest, FirewallList>newBuilder()
@@ -453,6 +535,12 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<PatchFirewallRequest, Operation> patchTransportSettings =
@@ -466,7 +554,36 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("firewall", String.valueOf(request.getFirewall()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
+    HttpJsonCallSettings<TestIamPermissionsFirewallRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsFirewallRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
     HttpJsonCallSettings<UpdateFirewallRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateFirewallRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
@@ -477,6 +594,13 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
                   builder.add("firewall", String.valueOf(request.getFirewall()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("firewall", String.valueOf(request.getFirewall()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return UPDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 
@@ -516,6 +640,11 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
@@ -538,6 +667,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
@@ -585,6 +715,12 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
   @Override
   public OperationCallable<PatchFirewallRequest, Operation, Operation> patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsFirewallRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

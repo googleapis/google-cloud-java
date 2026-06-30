@@ -10,7 +10,7 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-managed-identities",
   "distribution_name": "com.google.cloud:google-cloud-managed-identities",
-  "api_id": "managed-identities.googleapis.com",
+  "api_id": "managedidentities.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }

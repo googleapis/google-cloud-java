@@ -1,0 +1,43 @@
+  name: "Unmanaged dependency check"
+  description: "Checks whether there's a dependency that is not managed by java shared dependencies."
+  inputs:
+    bom-path:
+      description: "The relative path from the repository root to the pom.xml file"
+      required: true
+  runs:
+    using: "composite"
+    steps:
+    - uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 11
+        cache: maven
+    - name: Set up Maven
+      uses: stCarolas/setup-maven@v4.5
+      with:
+        maven-version: 3.8.2
+    - name: Install latest Java shared dependencies
+      shell: bash
+      run: |
+        cd ${{ github.action_path }}/..
+        echo "Install Java shared dependencies"
+        mvn clean install -V --batch-mode --no-transfer-progress -DskipTests
+    - name: Install check
+      shell: bash
+      run: |
+        cd ${{ github.action_path }}
+        echo "Install Unmanaged Dependency Check in $(pwd)"
+        mvn clean install -V --batch-mode --no-transfer-progress -DskipTests
+    - name: Run unmanaged dependency check
+      shell: bash
+      run: |
+        bom_absolute_path=$(realpath "${{ inputs.bom-path }}")
+        cd ${{ github.action_path }}
+        echo "Running Unmanaged Dependency Check against ${bom_absolute_path}"
+        unmanaged_dependencies=$(mvn exec:java -Dexec.args="../pom.xml ${bom_absolute_path}" -q)
+        if [[ "${unmanaged_dependencies}" != "[]" ]]; then
+          echo "This pull request seems to add new third-party dependency, ${unmanaged_dependencies}, among the artifacts listed in ${{ inputs.bom-path }}."
+          echo "Please see go/cloud-sdk-java-dependencies."
+          exit 1
+        fi
+

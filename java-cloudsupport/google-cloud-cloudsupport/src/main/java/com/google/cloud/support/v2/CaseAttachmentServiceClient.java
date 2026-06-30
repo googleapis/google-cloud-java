@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: A service to manage file attachment for Google Cloud support cases.
+ * Service Description: A service to manage file attachments for Google Cloud support cases.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -47,10 +47,10 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (CaseAttachmentServiceClient caseAttachmentServiceClient =
  *     CaseAttachmentServiceClient.create()) {
- *   CaseName parent = CaseName.ofProjectCaseName("[PROJECT]", "[CASE]");
- *   for (Attachment element : caseAttachmentServiceClient.listAttachments(parent).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   AttachmentName name =
+ *       AttachmentName.ofOrganizationCaseAttachmentIdName(
+ *           "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]");
+ *   Attachment response = caseAttachmentServiceClient.getAttachment(name);
  * }
  * }</pre>
  *
@@ -67,7 +67,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListAttachments</td>
- *      <td><p> Retrieve all attachments associated with a support case.</td>
+ *      <td><p> List all the attachments associated with a support case.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -82,6 +82,31 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listAttachmentsPagedCallable()
  *           <li><p> listAttachmentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAttachment</td>
+ *      <td><p> Retrieve an attachment associated with a support case.
+ * <p>  EXAMPLES:
+ * <p>  cURL:
+ * <p>  ```shell attachment="projects/some-project/cases/23598314/attachments/0684M00000P3h1fQAB" curl \\\\   --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\   "https://cloudsupport.googleapis.com/v2/$attachment" ```
+ * <p>  Python:
+ * <p>  ```python import googleapiclient.discovery
+ * <p>  api_version = "v2" supportApiService = googleapiclient.discovery.build(     serviceName="cloudsupport",     version=api_version,     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = (     supportApiService.cases()     .attachments()     .get(name="projects/some-project/cases/43595344/attachments/0684M00000P3h1fQAB") ) print(request.execute()) ```</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAttachment(GetAttachmentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAttachment(AttachmentName name)
+ *           <li><p> getAttachment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAttachmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -195,7 +220,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all attachments associated with a support case.
+   * List all the attachments associated with a support case.
    *
    * <p>Sample code:
    *
@@ -214,8 +239,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of Case object for which attachments should be
-   *     listed.
+   * @param parent Required. The name of the case for which attachments should be listed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAttachmentsPagedResponse listAttachments(CaseName parent) {
@@ -228,7 +252,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all attachments associated with a support case.
+   * List all the attachments associated with a support case.
    *
    * <p>Sample code:
    *
@@ -247,8 +271,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of Case object for which attachments should be
-   *     listed.
+   * @param parent Required. The name of the case for which attachments should be listed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAttachmentsPagedResponse listAttachments(String parent) {
@@ -258,7 +281,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all attachments associated with a support case.
+   * List all the attachments associated with a support case.
    *
    * <p>Sample code:
    *
@@ -291,7 +314,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all attachments associated with a support case.
+   * List all the attachments associated with a support case.
    *
    * <p>Sample code:
    *
@@ -325,7 +348,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all attachments associated with a support case.
+   * List all the attachments associated with a support case.
    *
    * <p>Sample code:
    *
@@ -362,6 +385,206 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
   public final UnaryCallable<ListAttachmentsRequest, ListAttachmentsResponse>
       listAttachmentsCallable() {
     return stub.listAttachmentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve an attachment associated with a support case.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell attachment="projects/some-project/cases/23598314/attachments/0684M00000P3h1fQAB"
+   * curl \\\\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\
+   * "https://cloudsupport.googleapis.com/v2/$attachment" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = ( supportApiService.cases() .attachments()
+   * .get(name="projects/some-project/cases/43595344/attachments/0684M00000P3h1fQAB") )
+   * print(request.execute()) ```
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CaseAttachmentServiceClient caseAttachmentServiceClient =
+   *     CaseAttachmentServiceClient.create()) {
+   *   AttachmentName name =
+   *       AttachmentName.ofOrganizationCaseAttachmentIdName(
+   *           "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]");
+   *   Attachment response = caseAttachmentServiceClient.getAttachment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the attachment to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Attachment getAttachment(AttachmentName name) {
+    GetAttachmentRequest request =
+        GetAttachmentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAttachment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve an attachment associated with a support case.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell attachment="projects/some-project/cases/23598314/attachments/0684M00000P3h1fQAB"
+   * curl \\\\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\
+   * "https://cloudsupport.googleapis.com/v2/$attachment" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = ( supportApiService.cases() .attachments()
+   * .get(name="projects/some-project/cases/43595344/attachments/0684M00000P3h1fQAB") )
+   * print(request.execute()) ```
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CaseAttachmentServiceClient caseAttachmentServiceClient =
+   *     CaseAttachmentServiceClient.create()) {
+   *   String name =
+   *       AttachmentName.ofOrganizationCaseAttachmentIdName(
+   *               "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]")
+   *           .toString();
+   *   Attachment response = caseAttachmentServiceClient.getAttachment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the attachment to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Attachment getAttachment(String name) {
+    GetAttachmentRequest request = GetAttachmentRequest.newBuilder().setName(name).build();
+    return getAttachment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve an attachment associated with a support case.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell attachment="projects/some-project/cases/23598314/attachments/0684M00000P3h1fQAB"
+   * curl \\\\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\
+   * "https://cloudsupport.googleapis.com/v2/$attachment" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = ( supportApiService.cases() .attachments()
+   * .get(name="projects/some-project/cases/43595344/attachments/0684M00000P3h1fQAB") )
+   * print(request.execute()) ```
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CaseAttachmentServiceClient caseAttachmentServiceClient =
+   *     CaseAttachmentServiceClient.create()) {
+   *   GetAttachmentRequest request =
+   *       GetAttachmentRequest.newBuilder()
+   *           .setName(
+   *               AttachmentName.ofOrganizationCaseAttachmentIdName(
+   *                       "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]")
+   *                   .toString())
+   *           .build();
+   *   Attachment response = caseAttachmentServiceClient.getAttachment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Attachment getAttachment(GetAttachmentRequest request) {
+    return getAttachmentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve an attachment associated with a support case.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell attachment="projects/some-project/cases/23598314/attachments/0684M00000P3h1fQAB"
+   * curl \\\\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\
+   * "https://cloudsupport.googleapis.com/v2/$attachment" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = ( supportApiService.cases() .attachments()
+   * .get(name="projects/some-project/cases/43595344/attachments/0684M00000P3h1fQAB") )
+   * print(request.execute()) ```
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CaseAttachmentServiceClient caseAttachmentServiceClient =
+   *     CaseAttachmentServiceClient.create()) {
+   *   GetAttachmentRequest request =
+   *       GetAttachmentRequest.newBuilder()
+   *           .setName(
+   *               AttachmentName.ofOrganizationCaseAttachmentIdName(
+   *                       "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Attachment> future =
+   *       caseAttachmentServiceClient.getAttachmentCallable().futureCall(request);
+   *   // Do something.
+   *   Attachment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable() {
+    return stub.getAttachmentCallable();
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,9 @@ import com.google.cloud.retail.v2.ImportProductsResponse;
 import com.google.cloud.retail.v2.ListProductsRequest;
 import com.google.cloud.retail.v2.ListProductsResponse;
 import com.google.cloud.retail.v2.Product;
+import com.google.cloud.retail.v2.PurgeProductsMetadata;
+import com.google.cloud.retail.v2.PurgeProductsRequest;
+import com.google.cloud.retail.v2.PurgeProductsResponse;
 import com.google.cloud.retail.v2.RemoveFulfillmentPlacesMetadata;
 import com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest;
 import com.google.cloud.retail.v2.RemoveFulfillmentPlacesResponse;
@@ -81,18 +84,20 @@ import javax.annotation.Generated;
 public class HttpJsonProductServiceStub extends ProductServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
-          .add(RemoveLocalInventoriesMetadata.getDescriptor())
-          .add(AddLocalInventoriesMetadata.getDescriptor())
-          .add(AddFulfillmentPlacesMetadata.getDescriptor())
           .add(RemoveFulfillmentPlacesMetadata.getDescriptor())
+          .add(PurgeProductsMetadata.getDescriptor())
           .add(SetInventoryResponse.getDescriptor())
           .add(AddLocalInventoriesResponse.getDescriptor())
           .add(ImportProductsResponse.getDescriptor())
           .add(RemoveFulfillmentPlacesResponse.getDescriptor())
-          .add(RemoveLocalInventoriesResponse.getDescriptor())
-          .add(ImportMetadata.getDescriptor())
           .add(AddFulfillmentPlacesResponse.getDescriptor())
           .add(SetInventoryMetadata.getDescriptor())
+          .add(RemoveLocalInventoriesMetadata.getDescriptor())
+          .add(AddLocalInventoriesMetadata.getDescriptor())
+          .add(AddFulfillmentPlacesMetadata.getDescriptor())
+          .add(PurgeProductsResponse.getDescriptor())
+          .add(RemoveLocalInventoriesResponse.getDescriptor())
+          .add(ImportMetadata.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<CreateProductRequest, Product>
@@ -277,6 +282,46 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                       .setDefaultInstance(Empty.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<PurgeProductsRequest, Operation>
+      purgeProductsMethodDescriptor =
+          ApiMethodDescriptor.<PurgeProductsRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.retail.v2.ProductService/PurgeProducts")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PurgeProductsRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/locations/*/catalogs/*/branches/*}/products:purge",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PurgeProductsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PurgeProductsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PurgeProductsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<ImportProductsRequest, Operation>
@@ -527,6 +572,10 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
       listProductsPagedCallable;
   private final UnaryCallable<UpdateProductRequest, Product> updateProductCallable;
   private final UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable;
+  private final UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable;
+  private final OperationCallable<
+          PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+      purgeProductsOperationCallable;
   private final UnaryCallable<ImportProductsRequest, Operation> importProductsCallable;
   private final OperationCallable<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationCallable;
@@ -647,6 +696,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetProductRequest, Product> getProductTransportSettings =
         HttpJsonCallSettings.<GetProductRequest, Product>newBuilder()
@@ -658,6 +708,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
         HttpJsonCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
@@ -669,6 +720,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateProductRequest, Product> updateProductTransportSettings =
         HttpJsonCallSettings.<UpdateProductRequest, Product>newBuilder()
@@ -691,6 +743,19 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<PurgeProductsRequest, Operation> purgeProductsTransportSettings =
+        HttpJsonCallSettings.<PurgeProductsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeProductsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ImportProductsRequest, Operation> importProductsTransportSettings =
         HttpJsonCallSettings.<ImportProductsRequest, Operation>newBuilder()
@@ -702,6 +767,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<SetInventoryRequest, Operation> setInventoryTransportSettings =
         HttpJsonCallSettings.<SetInventoryRequest, Operation>newBuilder()
@@ -725,6 +791,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                       builder.add("product", String.valueOf(request.getProduct()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProduct())
                 .build();
     HttpJsonCallSettings<RemoveFulfillmentPlacesRequest, Operation>
         removeFulfillmentPlacesTransportSettings =
@@ -737,6 +804,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                       builder.add("product", String.valueOf(request.getProduct()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProduct())
                 .build();
     HttpJsonCallSettings<AddLocalInventoriesRequest, Operation>
         addLocalInventoriesTransportSettings =
@@ -749,6 +817,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                       builder.add("product", String.valueOf(request.getProduct()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProduct())
                 .build();
     HttpJsonCallSettings<RemoveLocalInventoriesRequest, Operation>
         removeLocalInventoriesTransportSettings =
@@ -761,6 +830,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                       builder.add("product", String.valueOf(request.getProduct()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProduct())
                 .build();
 
     this.createProductCallable =
@@ -781,6 +851,15 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
     this.deleteProductCallable =
         callableFactory.createUnaryCallable(
             deleteProductTransportSettings, settings.deleteProductSettings(), clientContext);
+    this.purgeProductsCallable =
+        callableFactory.createUnaryCallable(
+            purgeProductsTransportSettings, settings.purgeProductsSettings(), clientContext);
+    this.purgeProductsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeProductsTransportSettings,
+            settings.purgeProductsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.importProductsCallable =
         callableFactory.createUnaryCallable(
             importProductsTransportSettings, settings.importProductsSettings(), clientContext);
@@ -856,6 +935,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
     methodDescriptors.add(listProductsMethodDescriptor);
     methodDescriptors.add(updateProductMethodDescriptor);
     methodDescriptors.add(deleteProductMethodDescriptor);
+    methodDescriptors.add(purgeProductsMethodDescriptor);
     methodDescriptors.add(importProductsMethodDescriptor);
     methodDescriptors.add(setInventoryMethodDescriptor);
     methodDescriptors.add(addFulfillmentPlacesMethodDescriptor);
@@ -897,6 +977,17 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
   @Override
   public UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable() {
     return deleteProductCallable;
+  }
+
+  @Override
+  public UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
+    return purgeProductsCallable;
+  }
+
+  @Override
+  public OperationCallable<PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+      purgeProductsOperationCallable() {
+    return purgeProductsOperationCallable;
   }
 
   @Override

@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,13 +22,14 @@ import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 
-option cc_enable_arenas = true;
 option csharp_namespace = "Google.Cloud.Kms.V1";
 option go_package = "cloud.google.com/go/kms/apiv1/kmspb;kmspb";
 option java_multiple_files = true;
 option java_outer_classname = "KmsResourcesProto";
 option java_package = "com.google.cloud.kms.v1";
 option php_namespace = "Google\\Cloud\\Kms\\V1";
+
+// LINT: LEGACY_NAMES
 
 // A [KeyRing][google.cloud.kms.v1.KeyRing] is a toplevel logical grouping of
 // [CryptoKeys][google.cloud.kms.v1.CryptoKey].
@@ -99,6 +100,12 @@ message CryptoKey {
     // [CryptoKeys][google.cloud.kms.v1.CryptoKey] with this purpose may be used
     // with [MacSign][google.cloud.kms.v1.KeyManagementService.MacSign].
     MAC = 9;
+
+    // [CryptoKeys][google.cloud.kms.v1.CryptoKey] with this purpose may be used
+    // with
+    // [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey]
+    // and [Decapsulate][google.cloud.kms.v1.KeyManagementService.Decapsulate].
+    KEY_ENCAPSULATION = 10;
   }
 
   // Output only. The resource name for this
@@ -184,7 +191,7 @@ message CryptoKey {
   // [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
   // state before transitioning to
   // [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
-  // If not specified at creation time, the default duration is 24 hours.
+  // If not specified at creation time, the default duration is 30 days.
   google.protobuf.Duration destroy_scheduled_duration = 14
       [(google.api.field_behavior) = IMMUTABLE];
 
@@ -194,14 +201,34 @@ message CryptoKey {
   // where all related cryptographic operations are performed. Only applicable
   // if [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] have a
   // [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
-  // [EXTERNAL_VPC][CryptoKeyVersion.ProtectionLevel.EXTERNAL_VPC], with the
-  // resource name in the format `projects/*/locations/*/ekmConnections/*`.
+  // [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC], with the
+  // resource name in the format `projects/*/locations/*/ekmConnections/*`. Only
+  // applicable if [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion]
+  // have a [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
+  // [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT],
+  // with the resource name in the format
+  // `projects/*/locations/*/singleTenantHsmInstances/*`.
   // Note, this list is non-exhaustive and may apply to additional
   // [ProtectionLevels][google.cloud.kms.v1.ProtectionLevel] in the future.
   string crypto_key_backend = 15 [
     (google.api.field_behavior) = IMMUTABLE,
     (google.api.resource_reference) = { type: "*" }
   ];
+
+  // Optional. The policy used for Key Access Justifications Policy Enforcement.
+  // If this field is present and this key is enrolled in Key Access
+  // Justifications Policy Enforcement, the policy will be evaluated in encrypt,
+  // decrypt, and sign operations, and the operation will fail if rejected by
+  // the policy. The policy is defined by specifying zero or more allowed
+  // justification codes.
+  // https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+  // By default, this field is absent, and all justification codes are allowed.
+  // If the
+  // `key_access_justifications_policy.allowed_access_reasons`
+  // is empty (zero allowed justification code), all encrypt, decrypt, and sign
+  // operations will fail.
+  KeyAccessJustificationsPolicy key_access_justifications_policy = 17
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // A [CryptoKeyVersionTemplate][google.cloud.kms.v1.CryptoKeyVersionTemplate]
@@ -337,6 +364,8 @@ message CryptoKeyVersion {
   // The suffix following `HMAC_` corresponds to the hash algorithm being used
   // (eg. SHA256).
   //
+  // Algorithms beginning with `PQ_` are post-quantum.
+  //
   // For more information, see [Key purposes and algorithms]
   // (https://cloud.google.com/kms/docs/algorithms).
   enum CryptoKeyVersionAlgorithm {
@@ -434,6 +463,9 @@ message CryptoKeyVersion {
     // https://cloud.google.com/kms/docs/create-validate-signatures#ecdsa_support_for_other_hash_algorithms
     EC_SIGN_SECP256K1_SHA256 = 31;
 
+    // EdDSA on the Curve25519 in pure mode (taking data as input).
+    EC_SIGN_ED25519 = 40;
+
     // HMAC-SHA256 signing with a 256 bit key.
     HMAC_SHA256 = 32;
 
@@ -451,6 +483,51 @@ message CryptoKeyVersion {
 
     // Algorithm representing symmetric encryption by an external key manager.
     EXTERNAL_SYMMETRIC_ENCRYPTION = 18;
+
+    // ML-KEM-768 (FIPS 203)
+    ML_KEM_768 = 47;
+
+    // ML-KEM-1024 (FIPS 203)
+    ML_KEM_1024 = 48;
+
+    // X-Wing hybrid KEM combining ML-KEM-768 with X25519 following
+    // datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem/.
+    KEM_XWING = 63;
+
+    // The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+    // security level 1. Randomized version.
+    PQ_SIGN_ML_DSA_44 = 68;
+
+    // The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+    // security level 3. Randomized version.
+    PQ_SIGN_ML_DSA_65 = 56;
+
+    // The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+    // security level 5. Randomized version.
+    PQ_SIGN_ML_DSA_87 = 69;
+
+    // The post-quantum stateless hash-based digital signature algorithm, at
+    // security level 1. Randomized version.
+    PQ_SIGN_SLH_DSA_SHA2_128S = 57;
+
+    // The post-quantum stateless hash-based digital signature algorithm, at
+    // security level 1. Randomized pre-hash version supporting SHA256 digests.
+    PQ_SIGN_HASH_SLH_DSA_SHA2_128S_SHA256 = 60;
+
+    // The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+    // security level 1. Randomized version supporting externally-computed
+    // message representatives.
+    PQ_SIGN_ML_DSA_44_EXTERNAL_MU = 70;
+
+    // The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+    // security level 3. Randomized version supporting externally-computed
+    // message representatives.
+    PQ_SIGN_ML_DSA_65_EXTERNAL_MU = 67;
+
+    // The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+    // security level 5. Randomized version supporting externally-computed
+    // message representatives.
+    PQ_SIGN_ML_DSA_87_EXTERNAL_MU = 71;
   }
 
   // The state of a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion],
@@ -475,7 +552,7 @@ message CryptoKeyVersion {
     // state.
     DISABLED = 2;
 
-    // This version is destroyed, and the key material is no longer stored.
+    // The key material of this version is destroyed and no longer stored.
     // This version may only become
     // [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
     // again if this version is
@@ -642,6 +719,28 @@ message CryptoKeyVersion {
   bool reimport_eligible = 18 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
+// Data with integrity verification field.
+message ChecksummedData {
+  // Raw Data.
+  bytes data = 3;
+
+  // Integrity verification field. A CRC32C
+  // checksum of the returned
+  // [ChecksummedData.data][google.cloud.kms.v1.ChecksummedData.data]. An
+  // integrity check of
+  // [ChecksummedData.data][google.cloud.kms.v1.ChecksummedData.data] can be
+  // performed by computing the CRC32C checksum of
+  // [ChecksummedData.data][google.cloud.kms.v1.ChecksummedData.data] and
+  // comparing your results to this field. Discard the response in case of
+  // non-matching checksum values, and perform a limited number of retries. A
+  // persistent mismatch may indicate an issue in your computation of the CRC32C
+  // checksum. Note: This field is defined as int64 for reasons of compatibility
+  // across different languages. However, it is a non-negative integer, which
+  // will never exceed `2^32-1`, and can be safely downconverted to uint32 in
+  // languages that support this type.
+  google.protobuf.Int64Value crc32c_checksum = 2;
+}
+
 // The public keys for a given
 // [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Obtained via
 // [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
@@ -651,12 +750,45 @@ message PublicKey {
     pattern: "projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}/publicKey"
   };
 
-  // A public key encoded in PEM format, populated only when
-  // [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey]
-  // returns one key. For more information, see the [RFC
-  // 7468](https://tools.ietf.org/html/rfc7468) sections for [General
-  // Considerations](https://tools.ietf.org/html/rfc7468#section-2) and [Textual
-  // Encoding of Subject Public Key Info]
+  // The supported [PublicKey][google.cloud.kms.v1.PublicKey] formats.
+  enum PublicKeyFormat {
+    // If the
+    // [public_key_format][google.cloud.kms.v1.GetPublicKeyRequest.public_key_format]
+    // field is not specified:
+    // - For PQC algorithms, an error will be returned.
+    // - For non-PQC algorithms, the default format is PEM, and the field
+    //   [pem][google.cloud.kms.v1.PublicKey.pem] will be populated.
+    //
+    // Otherwise, the public key will be exported through the
+    // [public_key][google.cloud.kms.v1.PublicKey.public_key] field in the
+    // requested format.
+    PUBLIC_KEY_FORMAT_UNSPECIFIED = 0;
+
+    // The returned public key will be encoded in PEM format.
+    // See the [RFC7468](https://tools.ietf.org/html/rfc7468) sections for
+    // [General Considerations](https://tools.ietf.org/html/rfc7468#section-2)
+    // and [Textual Encoding of Subject Public Key Info]
+    // (https://tools.ietf.org/html/rfc7468#section-13) for more information.
+    PEM = 1;
+
+    // The returned public key will be encoded in DER format (the
+    // PrivateKeyInfo structure from RFC 5208).
+    DER = 2;
+
+    // This is supported only for PQC algorithms.
+    // The key material is returned in the format defined by NIST PQC
+    // standards (FIPS 203, FIPS 204, and FIPS 205).
+    NIST_PQC = 3;
+
+    // The returned public key is in raw bytes format defined in its standard
+    // https://datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem.
+    XWING_RAW_BYTES = 4;
+  }
+
+  // The public key, encoded in PEM format. For more information, see the
+  // [RFC 7468](https://tools.ietf.org/html/rfc7468) sections for
+  // [General Considerations](https://tools.ietf.org/html/rfc7468#section-2) and
+  // [Textual Encoding of Subject Public Key Info]
   // (https://tools.ietf.org/html/rfc7468#section-13).
   string pem = 1;
 
@@ -665,10 +797,8 @@ message PublicKey {
   // associated with this key.
   CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;
 
-  // Integrity verification field: A CRC32C checksum of the returned
-  // [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem]. It is only populated
-  // when [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey]
-  // returns one key. An integrity check of
+  // Integrity verification field. A CRC32C checksum of the returned
+  // [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem]. An integrity check of
   // [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] can be performed by
   // computing the CRC32C checksum of
   // [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] and comparing your
@@ -677,8 +807,8 @@ message PublicKey {
   // mismatch may indicate an issue in your computation of the CRC32C checksum.
   // Note: This field is defined as int64 for reasons of compatibility across
   // different languages. However, it is a non-negative integer, which will
-  // never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-  // that support this type.
+  // never exceed `2^32-1`, and can be safely downconverted to uint32 in
+  // languages that support this type.
   //
   // NOTE: This field is in Beta.
   google.protobuf.Int64Value pem_crc32c = 3;
@@ -693,6 +823,17 @@ message PublicKey {
   // The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the
   // [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
   ProtectionLevel protection_level = 5;
+
+  // The [PublicKey][google.cloud.kms.v1.PublicKey] format specified by the
+  // customer through the
+  // [public_key_format][google.cloud.kms.v1.GetPublicKeyRequest.public_key_format]
+  // field.
+  PublicKeyFormat public_key_format = 7;
+
+  // This field contains the public key (with integrity verification), formatted
+  // according to the
+  // [public_key_format][google.cloud.kms.v1.PublicKey.public_key_format] field.
+  ChecksummedData public_key = 8;
 }
 
 // An [ImportJob][google.cloud.kms.v1.ImportJob] can be used to create
@@ -883,6 +1024,18 @@ message ImportJob {
   // protection level of [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
   KeyOperationAttestation attestation = 8
       [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Immutable. The resource name of the backend environment where the key
+  // material for the wrapping key resides and where all related cryptographic
+  // operations are performed. Currently, this field is only populated for keys
+  // stored in HSM_SINGLE_TENANT. Note, this list is non-exhaustive and may
+  // apply to additional [ProtectionLevels][google.cloud.kms.v1.ProtectionLevel]
+  // in the future. Supported resources:
+  // * `"projects/*/locations/*/singleTenantHsmInstances/*"`
+  string crypto_key_backend = 11 [
+    (google.api.field_behavior) = IMMUTABLE,
+    (google.api.resource_reference) = { type: "*" }
+  ];
 }
 
 // ExternalProtectionLevelOptions stores a group of additional fields for
@@ -903,6 +1056,58 @@ message ExternalProtectionLevelOptions {
   string ekm_connection_key_path = 2;
 }
 
+// A
+// [KeyAccessJustificationsPolicy][google.cloud.kms.v1.KeyAccessJustificationsPolicy]
+// specifies zero or more allowed
+// [AccessReason][google.cloud.kms.v1.AccessReason] values for encrypt, decrypt,
+// and sign operations on a [CryptoKey][google.cloud.kms.v1.CryptoKey] or
+// [KeyAccessJustificationsPolicyConfig][google.cloud.kms.v1.KeyAccessJustificationsPolicyConfig]
+// (the default Key Access Justifications policy).
+message KeyAccessJustificationsPolicy {
+  // The list of allowed reasons for access to a
+  // [CryptoKey][google.cloud.kms.v1.CryptoKey]. Note that empty
+  // allowed_access_reasons has a different meaning depending on where this
+  // message appears. If this is under
+  // [KeyAccessJustificationsPolicyConfig][google.cloud.kms.v1.KeyAccessJustificationsPolicyConfig],
+  // it means allow-all. If this is under
+  // [CryptoKey][google.cloud.kms.v1.CryptoKey], it means deny-all.
+  repeated AccessReason allowed_access_reasons = 1;
+}
+
+// A RetiredResource resource represents the record of a deleted
+// [CryptoKey][google.cloud.kms.v1.CryptoKey]. Its purpose is to provide
+// visibility into retained user data and to prevent reuse of these names for
+// new [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+message RetiredResource {
+  option (google.api.resource) = {
+    type: "cloudkms.googleapis.com/RetiredResource"
+    pattern: "projects/{project}/locations/{location}/retiredResources/{retired_resource}"
+    plural: "retiredResources"
+    singular: "retiredResource"
+  };
+
+  // Output only. Identifier. The resource name for this
+  // [RetiredResource][google.cloud.kms.v1.RetiredResource] in the format
+  // `projects/*/locations/*/retiredResources/*`.
+  string name = 1 [
+    (google.api.field_behavior) = OUTPUT_ONLY,
+    (google.api.field_behavior) = IDENTIFIER
+  ];
+
+  // Output only. The full resource name of the original
+  // [CryptoKey][google.cloud.kms.v1.CryptoKey] that was deleted in the format
+  // `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
+  string original_resource = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. The resource type of the original deleted resource.
+  string resource_type = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. The time at which the original resource was deleted and this
+  // RetiredResource record was created.
+  google.protobuf.Timestamp delete_time = 4
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
 // [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] specifies how
 // cryptographic operations are performed. For more information, see [Protection
 // levels] (https://cloud.google.com/kms/docs/algorithms#protection_levels).
@@ -921,4 +1126,86 @@ enum ProtectionLevel {
 
   // Crypto operations are performed in an EKM-over-VPC backend.
   EXTERNAL_VPC = 4;
+
+  // Crypto operations are performed in a single-tenant HSM.
+  HSM_SINGLE_TENANT = 5;
+}
+
+// Describes the reason for a data access. Please refer to
+// https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+// for the detailed semantic meaning of justification reason codes.
+enum AccessReason {
+  // Unspecified access reason.
+  REASON_UNSPECIFIED = 0;
+
+  // Customer-initiated support.
+  CUSTOMER_INITIATED_SUPPORT = 1;
+
+  // Google-initiated access for system management and troubleshooting.
+  GOOGLE_INITIATED_SERVICE = 2;
+
+  // Google-initiated access in response to a legal request or legal process.
+  THIRD_PARTY_DATA_REQUEST = 3;
+
+  // Google-initiated access for security, fraud, abuse, or compliance purposes.
+  GOOGLE_INITIATED_REVIEW = 4;
+
+  // Customer uses their account to perform any access to their own data which
+  // their IAM policy authorizes.
+  CUSTOMER_INITIATED_ACCESS = 5;
+
+  // Google systems access customer data to help optimize the structure of the
+  // data or quality for future uses by the customer.
+  GOOGLE_INITIATED_SYSTEM_OPERATION = 6;
+
+  // No reason is expected for this key request.
+  REASON_NOT_EXPECTED = 7;
+
+  // Deprecated: This code is no longer generated by
+  // Google Cloud. The GOOGLE_RESPONSE_TO_PRODUCTION_ALERT justification codes
+  // available in both Key Access Justifications and Access Transparency logs
+  // provide customer-visible signals of emergency access in more precise
+  // contexts.
+  //
+  // Customer uses their account to perform any access to their own data which
+  // their IAM policy authorizes, and one of the following is true:
+  //
+  // * A Google administrator has reset the root-access account associated with
+  //   the user's organization within the past 7 days.
+  // * A Google-initiated emergency access operation has interacted with a
+  //   resource in the same project or folder as the currently accessed resource
+  //   within the past 7 days.
+  MODIFIED_CUSTOMER_INITIATED_ACCESS = 8 [deprecated = true];
+
+  // Deprecated: This code is no longer generated by
+  // Google Cloud. The GOOGLE_RESPONSE_TO_PRODUCTION_ALERT justification codes
+  // available in both Key Access Justifications and Access Transparency logs
+  // provide customer-visible signals of emergency access in more precise
+  // contexts.
+  //
+  // Google systems access customer data to help optimize the structure of the
+  // data or quality for future uses by the customer, and one of the following
+  // is true:
+  //
+  // * A Google administrator has reset the root-access account associated with
+  //   the user's organization within the past 7 days.
+  // * A Google-initiated emergency access operation has interacted with a
+  //   resource in the same project or folder as the currently accessed resource
+  //   within the past 7 days.
+  MODIFIED_GOOGLE_INITIATED_SYSTEM_OPERATION = 9 [deprecated = true];
+
+  // Google-initiated access to maintain system reliability.
+  GOOGLE_RESPONSE_TO_PRODUCTION_ALERT = 10;
+
+  // One of the following operations is being executed while simultaneously
+  // encountering an internal technical issue which prevented a more precise
+  // justification code from being generated:
+  //
+  // * Your account has been used to perform any access to your own data which
+  //   your IAM policy authorizes.
+  // * An automated Google system operates on encrypted customer data which your
+  //   IAM policy authorizes.
+  // * Customer-initiated Google support access.
+  // * Google-initiated support access to protect system reliability.
+  CUSTOMER_AUTHORIZED_WORKFLOW_SERVICING = 11;
 }

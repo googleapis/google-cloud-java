@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * taxonomy of categorized Health Metrics.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/monitoring/v3/service_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ServiceMonitoringServiceGrpc {
 
@@ -525,6 +522,19 @@ public final class ServiceMonitoringServiceGrpc {
     return ServiceMonitoringServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ServiceMonitoringServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ServiceMonitoringServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ServiceMonitoringServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ServiceMonitoringServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ServiceMonitoringServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ServiceMonitoringServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -917,6 +927,166 @@ public final class ServiceMonitoringServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ServiceMonitoringService.
+   *
+   * <pre>
+   * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
+   * managing and querying aspects of a Metrics Scope's services. These include
+   * the `Service`'s monitored resources, its Service-Level Objectives, and a
+   * taxonomy of categorized Health Metrics.
+   * </pre>
+   */
+  public static final class ServiceMonitoringServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ServiceMonitoringServiceBlockingV2Stub> {
+    private ServiceMonitoringServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ServiceMonitoringServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ServiceMonitoringServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a `Service`.
+     * </pre>
+     */
+    public com.google.monitoring.v3.Service createService(
+        com.google.monitoring.v3.CreateServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the named `Service`.
+     * </pre>
+     */
+    public com.google.monitoring.v3.Service getService(
+        com.google.monitoring.v3.GetServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List `Service`s for this Metrics Scope.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ListServicesResponse listServices(
+        com.google.monitoring.v3.ListServicesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update this `Service`.
+     * </pre>
+     */
+    public com.google.monitoring.v3.Service updateService(
+        com.google.monitoring.v3.UpdateServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Soft delete this `Service`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteService(
+        com.google.monitoring.v3.DeleteServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a `ServiceLevelObjective` for the given `Service`.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ServiceLevelObjective createServiceLevelObjective(
+        com.google.monitoring.v3.CreateServiceLevelObjectiveRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateServiceLevelObjectiveMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a `ServiceLevelObjective` by name.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ServiceLevelObjective getServiceLevelObjective(
+        com.google.monitoring.v3.GetServiceLevelObjectiveRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetServiceLevelObjectiveMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the `ServiceLevelObjective`s for the given `Service`.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ListServiceLevelObjectivesResponse listServiceLevelObjectives(
+        com.google.monitoring.v3.ListServiceLevelObjectivesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListServiceLevelObjectivesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update the given `ServiceLevelObjective`.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ServiceLevelObjective updateServiceLevelObjective(
+        com.google.monitoring.v3.UpdateServiceLevelObjectiveRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateServiceLevelObjectiveMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete the given `ServiceLevelObjective`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteServiceLevelObjective(
+        com.google.monitoring.v3.DeleteServiceLevelObjectiveRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteServiceLevelObjectiveMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * ServiceMonitoringService.
    *
    * <pre>
    * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for

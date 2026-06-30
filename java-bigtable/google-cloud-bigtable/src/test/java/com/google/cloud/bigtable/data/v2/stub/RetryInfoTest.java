@@ -1,0 +1,646 @@
+/*
+ * Copyright 2023 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.cloud.bigtable.data.v2.stub;
+
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.columnMetadata;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.metadata;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringType;
+import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
+
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ErrorDetails;
+import com.google.api.gax.rpc.InternalException;
+import com.google.api.gax.rpc.UnavailableException;
+import com.google.bigtable.v2.BigtableGrpc;
+import com.google.bigtable.v2.CheckAndMutateRowRequest;
+import com.google.bigtable.v2.CheckAndMutateRowResponse;
+import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest;
+import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsResponse;
+import com.google.bigtable.v2.MutateRowRequest;
+import com.google.bigtable.v2.MutateRowResponse;
+import com.google.bigtable.v2.MutateRowsRequest;
+import com.google.bigtable.v2.MutateRowsResponse;
+import com.google.bigtable.v2.PrepareQueryRequest;
+import com.google.bigtable.v2.PrepareQueryResponse;
+import com.google.bigtable.v2.ReadChangeStreamRequest;
+import com.google.bigtable.v2.ReadChangeStreamResponse;
+import com.google.bigtable.v2.ReadModifyWriteRowRequest;
+import com.google.bigtable.v2.ReadModifyWriteRowResponse;
+import com.google.bigtable.v2.ReadRowsRequest;
+import com.google.bigtable.v2.ReadRowsResponse;
+import com.google.bigtable.v2.SampleRowKeysRequest;
+import com.google.bigtable.v2.SampleRowKeysResponse;
+import com.google.cloud.bigtable.data.v2.BigtableDataClient;
+import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
+import com.google.cloud.bigtable.data.v2.models.BulkMutation;
+import com.google.cloud.bigtable.data.v2.models.ChangeStreamRecord;
+import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
+import com.google.cloud.bigtable.data.v2.models.Filters;
+import com.google.cloud.bigtable.data.v2.models.MutateRowsException;
+import com.google.cloud.bigtable.data.v2.models.Mutation;
+import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Range;
+import com.google.cloud.bigtable.data.v2.models.ReadChangeStreamQuery;
+import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
+import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.TableId;
+import com.google.common.base.Stopwatch;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Queues;
+import com.google.protobuf.Any;
+import com.google.rpc.RetryInfo;
+import io.grpc.ForwardingServerCall;
+import io.grpc.Metadata;
+import io.grpc.MethodDescriptor;
+import io.grpc.Server;
+import io.grpc.ServerCall;
+import io.grpc.ServerCallHandler;
+import io.grpc.ServerInterceptor;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
+import io.grpc.stub.StreamObserver;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Queue;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
+@RunWith(JUnit4.class)
+public class RetryInfoTest {
+
+  private static final Metadata.Key<byte[]> ERROR_DETAILS_KEY =
+      Metadata.Key.of("grpc-status-details-bin", Metadata.BINARY_BYTE_MARSHALLER);
+  private static final TableId TABLE_ID = TableId.of("table");
+
+  private final Set<String> methods = new HashSet<>();
+
+  private FakeBigtableService service;
+  private Server server;
+  private BigtableDataClient client;
+
+  private final AtomicInteger attemptCounter = new AtomicInteger();
+  private com.google.protobuf.Duration defaultDelay =
+      com.google.protobuf.Duration.newBuilder().setSeconds(2).setNanos(0).build();
+
+  @Before
+  public void setUp() throws IOException {
+    service = new FakeBigtableService();
+
+    ServerInterceptor serverInterceptor =
+        new ServerInterceptor() {
+          @Override
+          public <ReqT, RespT> ServerCall.Listener<ReqT> interceptCall(
+              ServerCall<ReqT, RespT> serverCall,
+              Metadata metadata,
+              ServerCallHandler<ReqT, RespT> serverCallHandler) {
+            return serverCallHandler.startCall(
+                new ForwardingServerCall.SimpleForwardingServerCall<ReqT, RespT>(serverCall) {
+                  @Override
+                  public void close(Status status, Metadata trailers) {
+                    if (trailers.containsKey(ERROR_DETAILS_KEY)) {
+                      methods.add(serverCall.getMethodDescriptor().getBareMethodName());
+                    }
+                    super.close(status, trailers);
+                  }
+                },
+                metadata);
+          }
+        };
+    server = FakeServiceBuilder.create(service).intercept(serverInterceptor).start();
+
+    BigtableDataSettings.Builder settings =
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
+            .setProjectId("fake-project")
+            .setInstanceId("fake-instance");
+
+    this.client = BigtableDataClient.create(settings.build());
+  }
+
+  @After
+  public void tearDown() {
+    if (client != null) {
+      client.close();
+    }
+    if (server != null) {
+      server.shutdown();
+    }
+  }
+
+  @Test
+  public void testAllMethods() {
+    // Verify retry info is handled correctly for all the methods in data API.
+    verifyRetryInfoIsUsed(() -> client.readRow(TABLE_ID, "row"), true);
+
+    attemptCounter.set(0);
+    verifyRetryInfoIsUsed(
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create(TABLE_ID)));
+        },
+        true);
+
+    attemptCounter.set(0);
+    verifyRetryInfoIsUsed(
+        () ->
+            client.bulkMutateRows(
+                BulkMutation.create(TABLE_ID)
+                    .add(RowMutationEntry.create("row-key-1").setCell("cf", "q", "v"))),
+        true);
+
+    attemptCounter.set(0);
+    verifyRetryInfoIsUsed(
+        () -> client.mutateRow(RowMutation.create(TABLE_ID, "key").setCell("cf", "q", "v")), true);
+
+    attemptCounter.set(0);
+    verifyRetryInfoIsUsed(() -> client.sampleRowKeys(TABLE_ID), true);
+
+    attemptCounter.set(0);
+    verifyRetryInfoIsUsed(
+        () ->
+            client.checkAndMutateRow(
+                ConditionalRowMutation.create(TABLE_ID, "key")
+                    .condition(Filters.FILTERS.value().regex("old-value"))
+                    .then(Mutation.create().setCell("cf", "q", "v"))),
+        true);
+
+    attemptCounter.set(0);
+    verifyRetryInfoIsUsed(
+        () ->
+            client.readModifyWriteRow(
+                ReadModifyWriteRow.create(TABLE_ID, "row").append("cf", "q", "v")),
+        true);
+
+    attemptCounter.set(0);
+    verifyRetryInfoIsUsed(
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<ChangeStreamRecord> ignored =
+              Lists.newArrayList(client.readChangeStream(ReadChangeStreamQuery.create("table")));
+        },
+        true);
+
+    attemptCounter.set(0);
+    verifyRetryInfoIsUsed(
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<Range.ByteStringRange> ignored =
+              Lists.newArrayList(client.generateInitialChangeStreamPartitions("table"));
+        },
+        true);
+
+    attemptCounter.set(0);
+    verifyRetryInfoIsUsed(
+        () -> client.prepareStatement("SELECT * FROM table", new HashMap<>()), true);
+    // Verify that the new data API methods are tested or excluded. This is enforced by
+    // introspecting grpc
+    // method descriptors.
+    Set<String> expected =
+        BigtableGrpc.getServiceDescriptor().getMethods().stream()
+            .map(MethodDescriptor::getBareMethodName)
+            .collect(Collectors.toSet());
+
+    // Exclude methods that don't support retry info
+    methods.add("PingAndWarm");
+    methods.add("ExecuteQuery"); // TODO remove when retries are implemented
+
+    // Session APIs. RetryInfo is handled differently
+    methods.add("OpenAuthorizedView");
+    methods.add("OpenMaterializedView");
+    methods.add("GetClientConfiguration");
+    methods.add("OpenTable");
+
+    assertThat(methods).containsExactlyElementsIn(expected);
+  }
+
+  @Test
+  public void testReadRowNonRetryableErrorWithRetryInfo() {
+    verifyRetryInfoIsUsed(() -> client.readRow(TABLE_ID, "row"), false);
+  }
+
+  @Test
+  public void testReadRowServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(() -> client.readRow(TABLE_ID, "row"), true);
+  }
+
+  @Test
+  public void testReadRowsNonRetraybleErrorWithRetryInfo() {
+    verifyRetryInfoIsUsed(
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create(TABLE_ID)));
+        },
+        false);
+  }
+
+  @Test
+  public void testReadRowsServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create(TABLE_ID)));
+        },
+        true);
+  }
+
+  @Test
+  public void testMutateRowsNonRetryableErrorWithRetryInfo() {
+    verifyRetryInfoIsUsed(
+        () ->
+            client.bulkMutateRows(
+                BulkMutation.create(TABLE_ID)
+                    .add(RowMutationEntry.create("row-key-1").setCell("cf", "q", "v"))),
+        false);
+  }
+
+  @Test
+  public void testMutateRowsServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(
+        () ->
+            client.bulkMutateRows(
+                BulkMutation.create(TABLE_ID)
+                    .add(RowMutationEntry.create("row-key-1").setCell("cf", "q", "v"))),
+        true);
+  }
+
+  @Test
+  public void testMutateRowNonRetryableErrorWithRetryInfo() {
+    verifyRetryInfoIsUsed(
+        () -> client.mutateRow(RowMutation.create(TABLE_ID, "key").setCell("cf", "q", "v")), false);
+  }
+
+  @Test
+  public void testMutateRowServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(
+        () -> client.mutateRow(RowMutation.create(TABLE_ID, "key").setCell("cf", "q", "v")), true);
+  }
+
+  @Test
+  public void testSampleRowKeysNonRetryableErrorWithRetryInfo() {
+    verifyRetryInfoIsUsed(() -> client.sampleRowKeys(TABLE_ID), false);
+  }
+
+  @Test
+  public void testSampleRowKeysServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(() -> client.sampleRowKeys(TABLE_ID), true);
+  }
+
+  @Test
+  public void testCheckAndMutateServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(
+        () ->
+            client.checkAndMutateRow(
+                ConditionalRowMutation.create(TABLE_ID, "key")
+                    .condition(Filters.FILTERS.value().regex("old-value"))
+                    .then(Mutation.create().setCell("cf", "q", "v"))),
+        false);
+  }
+
+  @Test
+  public void testReadModifyWriteServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(
+        () ->
+            client.readModifyWriteRow(
+                ReadModifyWriteRow.create(TABLE_ID, "row").append("cf", "q", "v")),
+        false);
+  }
+
+  @Test
+  public void testReadChangeStreamNonRetryableErrorWithRetryInfo() {
+    verifyRetryInfoIsUsed(
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<ChangeStreamRecord> ignored =
+              Lists.newArrayList(client.readChangeStream(ReadChangeStreamQuery.create("table")));
+        },
+        false);
+  }
+
+  @Test
+  public void testReadChangeStreamServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<ChangeStreamRecord> ignored =
+              Lists.newArrayList(client.readChangeStream(ReadChangeStreamQuery.create("table")));
+        },
+        true);
+  }
+
+  @Test
+  public void testGenerateInitialChangeStreamPartitionNonRetryableError() {
+    verifyRetryInfoIsUsed(
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<Range.ByteStringRange> ignored =
+              Lists.newArrayList(client.generateInitialChangeStreamPartitions("table"));
+        },
+        false);
+  }
+
+  @Test
+  public void testGenerateInitialChangeStreamServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<Range.ByteStringRange> ignored =
+              Lists.newArrayList(client.generateInitialChangeStreamPartitions("table"));
+        },
+        true);
+  }
+
+  @Test
+  public void testPrepareQueryNonRetryableErrorWithRetryInfo() {
+    verifyRetryInfoIsUsed(
+        () -> client.prepareStatement("SELECT * FROM table", new HashMap<>()), false);
+  }
+
+  @Test
+  public void testPrepareQueryServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(() -> client.prepareStatement("SELECT * FROM table", new HashMap<>()), true);
+  }
+
+  // Test the case where server returns retry info and client enables handling of retry info
+  private void verifyRetryInfoIsUsed(Runnable runnable, boolean retryableError) {
+    if (retryableError) {
+      enqueueRetryableExceptionWithDelay(defaultDelay);
+    } else {
+      @SuppressWarnings("ThrowableNotThrown")
+      ApiException ignored = enqueueNonRetryableExceptionWithDelay(defaultDelay);
+    }
+    Stopwatch stopwatch = Stopwatch.createStarted();
+    runnable.run();
+    stopwatch.stop();
+
+    assertThat(attemptCounter.get()).isEqualTo(2);
+    assertThat(stopwatch.elapsed()).isAtLeast(Duration.ofSeconds(defaultDelay.getSeconds()));
+  }
+
+  // Test the case where server does not return retry info
+  private void verifyNoRetryInfo(Runnable runnable, boolean operationRetryable) {
+    verifyNoRetryInfo(runnable, operationRetryable, defaultDelay);
+  }
+
+  // individual test can override the default delay
+  private void verifyNoRetryInfo(
+      Runnable runnable, boolean operationRetryable, com.google.protobuf.Duration delay) {
+    enqueueRetryableExceptionNoRetryInfo();
+
+    if (!operationRetryable) {
+      assertThrows("non retryable operation should fail", ApiException.class, runnable::run);
+      assertThat(attemptCounter.get()).isEqualTo(1);
+    } else {
+      Stopwatch stopwatch = Stopwatch.createStarted();
+      runnable.run();
+      stopwatch.stop();
+
+      assertThat(attemptCounter.get()).isEqualTo(2);
+      assertThat(stopwatch.elapsed()).isLessThan(Duration.ofSeconds(delay.getSeconds()));
+    }
+
+    attemptCounter.set(0);
+
+    ApiException expectedApiException = enqueueNonRetryableExceptionNoRetryInfo();
+
+    ApiException actualApiException =
+        assertThrows("non retryable error should fail", ApiException.class, runnable::run);
+    if (actualApiException instanceof MutateRowsException) {
+      assertThat(
+              ((MutateRowsException) actualApiException)
+                  .getFailedMutations()
+                  .get(0)
+                  .getError()
+                  .getStatusCode())
+          .isEqualTo(expectedApiException.getStatusCode());
+    } else {
+      assertThat(actualApiException.getStatusCode())
+          .isEqualTo(expectedApiException.getStatusCode());
+    }
+
+    assertThat(attemptCounter.get()).isEqualTo(1);
+  }
+
+  private void enqueueRetryableExceptionWithDelay(com.google.protobuf.Duration delay) {
+    Metadata trailers = new Metadata();
+    RetryInfo retryInfo = RetryInfo.newBuilder().setRetryDelay(delay).build();
+    ErrorDetails errorDetails =
+        ErrorDetails.builder().setRawErrorMessages(ImmutableList.of(Any.pack(retryInfo))).build();
+    byte[] status =
+        com.google.rpc.Status.newBuilder().addDetails(Any.pack(retryInfo)).build().toByteArray();
+    trailers.put(ERROR_DETAILS_KEY, status);
+
+    ApiException exception =
+        new UnavailableException(
+            new StatusRuntimeException(Status.UNAVAILABLE, trailers),
+            GrpcStatusCode.of(Status.Code.UNAVAILABLE),
+            true,
+            errorDetails);
+
+    service.expectations.add(exception);
+  }
+
+  private ApiException enqueueNonRetryableExceptionWithDelay(com.google.protobuf.Duration delay) {
+    Metadata trailers = new Metadata();
+    RetryInfo retryInfo = RetryInfo.newBuilder().setRetryDelay(delay).build();
+    ErrorDetails errorDetails =
+        ErrorDetails.builder().setRawErrorMessages(ImmutableList.of(Any.pack(retryInfo))).build();
+    byte[] status =
+        com.google.rpc.Status.newBuilder().addDetails(Any.pack(retryInfo)).build().toByteArray();
+    trailers.put(ERROR_DETAILS_KEY, status);
+
+    ApiException exception =
+        new InternalException(
+            new StatusRuntimeException(Status.INTERNAL, trailers),
+            GrpcStatusCode.of(Status.Code.INTERNAL),
+            false,
+            errorDetails);
+
+    service.expectations.add(exception);
+
+    return exception;
+  }
+
+  private void enqueueRetryableExceptionNoRetryInfo() {
+    ApiException exception =
+        new UnavailableException(
+            new StatusRuntimeException(Status.UNAVAILABLE),
+            GrpcStatusCode.of(Status.Code.UNAVAILABLE),
+            true);
+    service.expectations.add(exception);
+  }
+
+  private ApiException enqueueNonRetryableExceptionNoRetryInfo() {
+    ApiException exception =
+        new InternalException(
+            new StatusRuntimeException(Status.INTERNAL),
+            GrpcStatusCode.of(Status.Code.INTERNAL),
+            false);
+
+    service.expectations.add(exception);
+
+    return exception;
+  }
+
+  private class FakeBigtableService extends BigtableGrpc.BigtableImplBase {
+    Queue<Exception> expectations = Queues.newArrayDeque();
+
+    @Override
+    public void readRows(
+        ReadRowsRequest request, StreamObserver<ReadRowsResponse> responseObserver) {
+      attemptCounter.incrementAndGet();
+      if (expectations.isEmpty()) {
+        responseObserver.onNext(ReadRowsResponse.getDefaultInstance());
+        responseObserver.onCompleted();
+      } else {
+        Exception expectedRpc = expectations.poll();
+        responseObserver.onError(expectedRpc);
+      }
+    }
+
+    @Override
+    public void mutateRow(
+        MutateRowRequest request, StreamObserver<MutateRowResponse> responseObserver) {
+      attemptCounter.incrementAndGet();
+      if (expectations.isEmpty()) {
+        responseObserver.onNext(MutateRowResponse.getDefaultInstance());
+        responseObserver.onCompleted();
+      } else {
+        Exception expectedRpc = expectations.poll();
+        responseObserver.onError(expectedRpc);
+      }
+    }
+
+    @Override
+    public void mutateRows(
+        MutateRowsRequest request, StreamObserver<MutateRowsResponse> responseObserver) {
+      attemptCounter.incrementAndGet();
+      if (expectations.isEmpty()) {
+        MutateRowsResponse.Builder builder = MutateRowsResponse.newBuilder();
+        for (int i = 0; i < request.getEntriesCount(); i++) {
+          builder.addEntriesBuilder().setIndex(i);
+        }
+        responseObserver.onNext(builder.build());
+        responseObserver.onCompleted();
+      } else {
+        Exception expectedRpc = expectations.poll();
+        responseObserver.onError(expectedRpc);
+      }
+    }
+
+    @Override
+    public void sampleRowKeys(
+        SampleRowKeysRequest request, StreamObserver<SampleRowKeysResponse> responseObserver) {
+      attemptCounter.incrementAndGet();
+      if (expectations.isEmpty()) {
+        responseObserver.onNext(SampleRowKeysResponse.getDefaultInstance());
+        responseObserver.onCompleted();
+      } else {
+        Exception expectedRpc = expectations.poll();
+        responseObserver.onError(expectedRpc);
+      }
+    }
+
+    @Override
+    public void checkAndMutateRow(
+        CheckAndMutateRowRequest request,
+        StreamObserver<CheckAndMutateRowResponse> responseObserver) {
+      attemptCounter.incrementAndGet();
+      if (expectations.isEmpty()) {
+        responseObserver.onNext(CheckAndMutateRowResponse.getDefaultInstance());
+        responseObserver.onCompleted();
+      } else {
+        Exception expectedRpc = expectations.poll();
+        responseObserver.onError(expectedRpc);
+      }
+    }
+
+    @Override
+    public void readModifyWriteRow(
+        ReadModifyWriteRowRequest request,
+        StreamObserver<ReadModifyWriteRowResponse> responseObserver) {
+      attemptCounter.incrementAndGet();
+      if (expectations.isEmpty()) {
+        responseObserver.onNext(ReadModifyWriteRowResponse.getDefaultInstance());
+        responseObserver.onCompleted();
+      } else {
+        Exception expectedRpc = expectations.poll();
+        responseObserver.onError(expectedRpc);
+      }
+    }
+
+    @Override
+    public void generateInitialChangeStreamPartitions(
+        GenerateInitialChangeStreamPartitionsRequest request,
+        StreamObserver<GenerateInitialChangeStreamPartitionsResponse> responseObserver) {
+      attemptCounter.incrementAndGet();
+      if (expectations.isEmpty()) {
+        responseObserver.onNext(GenerateInitialChangeStreamPartitionsResponse.getDefaultInstance());
+        responseObserver.onCompleted();
+      } else {
+        Exception expectedRpc = expectations.poll();
+        responseObserver.onError(expectedRpc);
+      }
+    }
+
+    @Override
+    public void readChangeStream(
+        ReadChangeStreamRequest request,
+        StreamObserver<ReadChangeStreamResponse> responseObserver) {
+      attemptCounter.incrementAndGet();
+      if (expectations.isEmpty()) {
+        responseObserver.onNext(
+            ReadChangeStreamResponse.newBuilder()
+                .setCloseStream(ReadChangeStreamResponse.CloseStream.getDefaultInstance())
+                .build());
+        responseObserver.onCompleted();
+      } else {
+        Exception expectedRpc = expectations.poll();
+        responseObserver.onError(expectedRpc);
+      }
+    }
+
+    @Override
+    public void prepareQuery(
+        PrepareQueryRequest request, StreamObserver<PrepareQueryResponse> responseObserver) {
+      attemptCounter.incrementAndGet();
+      if (expectations.isEmpty()) {
+        responseObserver.onNext(
+            // Need to set metadata for response to parse
+            PrepareQueryResponse.newBuilder()
+                .setMetadata(metadata(columnMetadata("foo", stringType())))
+                .build());
+        responseObserver.onCompleted();
+      } else {
+        Exception expectedRpc = expectations.poll();
+        responseObserver.onError(expectedRpc);
+      }
+    }
+  }
+}

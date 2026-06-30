@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.cx.v3beta1;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListLocationsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolVersionsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -58,7 +59,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createTool to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createTool:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -74,9 +77,45 @@ import javax.annotation.Generated;
  *             .createToolSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ToolsSettings toolsSettings = toolsSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for exportTools:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ToolsSettings.Builder toolsSettingsBuilder = ToolsSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * toolsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
@@ -118,6 +157,34 @@ public class ToolsSettings extends ClientSettings<ToolsSettings> {
   /** Returns the object with the settings used for calls to deleteTool. */
   public UnaryCallSettings<DeleteToolRequest, Empty> deleteToolSettings() {
     return ((ToolsStubSettings) getStubSettings()).deleteToolSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listToolVersions. */
+  public PagedCallSettings<
+          ListToolVersionsRequest, ListToolVersionsResponse, ListToolVersionsPagedResponse>
+      listToolVersionsSettings() {
+    return ((ToolsStubSettings) getStubSettings()).listToolVersionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createToolVersion. */
+  public UnaryCallSettings<CreateToolVersionRequest, ToolVersion> createToolVersionSettings() {
+    return ((ToolsStubSettings) getStubSettings()).createToolVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getToolVersion. */
+  public UnaryCallSettings<GetToolVersionRequest, ToolVersion> getToolVersionSettings() {
+    return ((ToolsStubSettings) getStubSettings()).getToolVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteToolVersion. */
+  public UnaryCallSettings<DeleteToolVersionRequest, Empty> deleteToolVersionSettings() {
+    return ((ToolsStubSettings) getStubSettings()).deleteToolVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restoreToolVersion. */
+  public UnaryCallSettings<RestoreToolVersionRequest, RestoreToolVersionResponse>
+      restoreToolVersionSettings() {
+    return ((ToolsStubSettings) getStubSettings()).restoreToolVersionSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -278,6 +345,35 @@ public class ToolsSettings extends ClientSettings<ToolsSettings> {
     /** Returns the builder for the settings used for calls to deleteTool. */
     public UnaryCallSettings.Builder<DeleteToolRequest, Empty> deleteToolSettings() {
       return getStubSettingsBuilder().deleteToolSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listToolVersions. */
+    public PagedCallSettings.Builder<
+            ListToolVersionsRequest, ListToolVersionsResponse, ListToolVersionsPagedResponse>
+        listToolVersionsSettings() {
+      return getStubSettingsBuilder().listToolVersionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createToolVersion. */
+    public UnaryCallSettings.Builder<CreateToolVersionRequest, ToolVersion>
+        createToolVersionSettings() {
+      return getStubSettingsBuilder().createToolVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getToolVersion. */
+    public UnaryCallSettings.Builder<GetToolVersionRequest, ToolVersion> getToolVersionSettings() {
+      return getStubSettingsBuilder().getToolVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteToolVersion. */
+    public UnaryCallSettings.Builder<DeleteToolVersionRequest, Empty> deleteToolVersionSettings() {
+      return getStubSettingsBuilder().deleteToolVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreToolVersion. */
+    public UnaryCallSettings.Builder<RestoreToolVersionRequest, RestoreToolVersionResponse>
+        restoreToolVersionSettings() {
+      return getStubSettingsBuilder().restoreToolVersionSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

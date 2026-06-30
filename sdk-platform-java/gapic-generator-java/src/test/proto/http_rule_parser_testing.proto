@@ -1,0 +1,63 @@
+// Copyright 2022 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+package google.http.rule.parser;
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+option java_package = "com.google.http.rule.parser";
+option java_multiple_files = true;
+
+// This service is only meant for unit testing HttpRuleParser
+service HttpRuleParserTesting {
+
+  // Test case for putting all fields to query params
+  rpc QueryParamHappyPathTest(QueryParamRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/v1/test"
+    };
+  }
+
+  // Test case for excluding path params from query params
+  rpc ExcludePathParamsQueryParamTest(QueryParamRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/v1/test/{nested_object.name}"
+    };
+  }
+
+  //TODO: Add more test cases once https://github.com/googleapis/sdk-platform-java/issues/1041 is fixed
+}
+
+enum Continent {
+  CONTINENT_UNSPECIFIED = 0;
+  AFRICA = 1;
+  AMERICA = 2;
+  ANTARCTICA = 3;
+  AUSTRALIA = 4;
+  EUROPE = 5;
+}
+
+message QueryParamRequest {
+  string name = 1;
+  NestedObject nested_object = 2;
+}
+
+message NestedObject {
+  string name = 1;
+  Continent continent = 2;
+}
+

@@ -1,0 +1,49 @@
+// Copyright 2023 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+import "google/api/client.proto";
+
+package google.showcase.v1beta1;
+
+option go_package = "github.com/googleapis/gapic-showcase/server/genproto";
+option java_package = "com.google.showcase.v1beta1";
+option java_multiple_files = true;
+option ruby_package = "Google::Showcase::V1beta1";
+
+// This service is used to show a Service with either non-enabled or non-eligible
+// RPCs for HttpJson (Http 1.1).
+// Non-Enabled: Missing the (google.api.http) annotation to enabled it
+// Non-Eligible: BIDI and Client side streaming are not supported with Http 1.1
+// Service name is reference to `No REST for the Wicked`
+service Wicked {
+  // This service is meant to only run locally on the port 7469 (keypad digits
+  // for "show").
+  option (google.api.default_host) = "localhost:7469";
+
+  rpc CraftEvilPlan(EvilRequest) returns (EvilResponse);
+
+  rpc BrainstormEvilPlans(stream EvilRequest) returns (stream EvilResponse);
+
+  rpc PersuadeEvilPlan(stream EvilRequest) returns (EvilResponse);
+}
+
+message EvilRequest {
+  string malicious_idea = 1;
+}
+
+message EvilResponse {
+  string malicious_plan = 1;
+}

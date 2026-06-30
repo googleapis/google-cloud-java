@@ -1,0 +1,17 @@
+{
+  "api_shortname": "locationfinder",
+  "name_pretty": "Cloud Location Finder API",
+  "product_documentation": "https://cloud.google.com/location-finder/docs/overview",
+  "api_description": "Cloud Location Finder is a public API that offers a repository of all Google Cloud and Google Distributed Cloud locations, as well as cloud locations for other cloud providers.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-locationfinder/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-locationfinder",
+  "distribution_name": "com.google.cloud:google-cloud-locationfinder",
+  "api_id": "locationfinder.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true,
+  "rpc_documentation": "https://cloud.google.com/locationfinder/docs/reference/rest"
+}

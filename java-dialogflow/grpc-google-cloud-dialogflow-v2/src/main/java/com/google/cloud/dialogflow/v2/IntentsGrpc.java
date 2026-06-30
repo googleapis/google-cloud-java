@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Intents][google.cloud.dialogflow.v2.Intent].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2/intent.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class IntentsGrpc {
 
@@ -352,6 +349,19 @@ public final class IntentsGrpc {
           }
         };
     return IntentsStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static IntentsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<IntentsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<IntentsBlockingV2Stub>() {
+          @java.lang.Override
+          public IntentsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new IntentsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return IntentsBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -694,6 +704,148 @@ public final class IntentsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Intents.
+   *
+   * <pre>
+   * Service for managing [Intents][google.cloud.dialogflow.v2.Intent].
+   * </pre>
+   */
+  public static final class IntentsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<IntentsBlockingV2Stub> {
+    private IntentsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected IntentsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new IntentsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all intents in the specified agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.ListIntentsResponse listIntents(
+        com.google.cloud.dialogflow.v2.ListIntentsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListIntentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified intent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.Intent getIntent(
+        com.google.cloud.dialogflow.v2.GetIntentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetIntentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an intent in the specified agent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.Intent createIntent(
+        com.google.cloud.dialogflow.v2.CreateIntentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateIntentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified intent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.Intent updateIntent(
+        com.google.cloud.dialogflow.v2.UpdateIntentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateIntentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified intent and its direct or indirect followup intents.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteIntent(
+        com.google.cloud.dialogflow.v2.DeleteIntentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteIntentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates/Creates multiple intents in the specified agent.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`:
+     * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchUpdateIntents(
+        com.google.cloud.dialogflow.v2.BatchUpdateIntentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchUpdateIntentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes intents in the specified agent.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchDeleteIntents(
+        com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchDeleteIntentsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Intents.
    *
    * <pre>
    * Service for managing [Intents][google.cloud.dialogflow.v2.Intent].

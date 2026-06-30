@@ -1,0 +1,2282 @@
+/*
+ * Copyright 2018 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.cloud.bigtable.admin.v2;
+
+import com.google.api.core.ApiAsyncFunction;
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
+import com.google.api.core.ObsoleteApi;
+import com.google.api.gax.rpc.ApiExceptions;
+import com.google.api.gax.rpc.NotFoundException;
+import com.google.bigtable.admin.v2.DeleteAppProfileRequest;
+import com.google.bigtable.admin.v2.DeleteLogicalViewRequest;
+import com.google.bigtable.admin.v2.DeleteMaterializedViewRequest;
+import com.google.bigtable.admin.v2.GetAppProfileRequest;
+import com.google.bigtable.admin.v2.GetLogicalViewRequest;
+import com.google.bigtable.admin.v2.GetMaterializedViewRequest;
+import com.google.bigtable.admin.v2.ListAppProfilesRequest;
+import com.google.bigtable.admin.v2.ListLogicalViewsRequest;
+import com.google.bigtable.admin.v2.ListMaterializedViewsRequest;
+import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
+import com.google.cloud.Policy;
+import com.google.cloud.Policy.DefaultMarshaller;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPage;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListLogicalViewsPage;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListLogicalViewsPagedResponse;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMaterializedViewsPage;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMaterializedViewsPagedResponse;
+import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile;
+import com.google.cloud.bigtable.admin.v2.models.Cluster;
+import com.google.cloud.bigtable.admin.v2.models.ClusterAutoscalingConfig;
+import com.google.cloud.bigtable.admin.v2.models.CreateAppProfileRequest;
+import com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest;
+import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
+import com.google.cloud.bigtable.admin.v2.models.CreateLogicalViewRequest;
+import com.google.cloud.bigtable.admin.v2.models.CreateMaterializedViewRequest;
+import com.google.cloud.bigtable.admin.v2.models.Instance;
+import com.google.cloud.bigtable.admin.v2.models.LogicalView;
+import com.google.cloud.bigtable.admin.v2.models.MaterializedView;
+import com.google.cloud.bigtable.admin.v2.models.PartialListClustersException;
+import com.google.cloud.bigtable.admin.v2.models.PartialListInstancesException;
+import com.google.cloud.bigtable.admin.v2.models.UpdateAppProfileRequest;
+import com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequest;
+import com.google.cloud.bigtable.admin.v2.models.UpdateLogicalViewRequest;
+import com.google.cloud.bigtable.admin.v2.models.UpdateMaterializedViewRequest;
+import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
+import com.google.common.base.Verify;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.protobuf.Empty;
+import com.google.protobuf.util.FieldMaskUtil;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+import javax.annotation.Nonnull;
+
+/**
+ * Client for creating, configuring and deleting Cloud Bigtable instances, app profiles, and
+ * clusters.
+ *
+ * <p>See the individual methods for example code.
+ *
+ * <pre>{@code
+ * // One instance per application.
+ * BigtableInstanceAdminClient client =  BigtableInstanceAdminClient.create("my-project");
+ * CreateInstanceRequest request = CreateInstanceRequest.of("my-instance")
+ *   .addCluster("my-cluster", "us-east1-c", 3, StorageType.SSD);
+ *
+ * Instance instance = client.createInstance(request);
+ *
+ * // Cleanup during application shutdown.
+ * client.close();
+ * }</pre>
+ *
+ * <p>Creating a new client is a very expensive operation and should only be done once and shared in
+ * an application. However, close() needs to be called on the client object to clean up resources
+ * such as threads during application shutdown.
+ *
+ * <p>This class can be customized by passing in a custom instance of BigtableInstanceAdminSettings
+ * to create(). For example:
+ *
+ * <p>To customize credentials:
+ *
+ * <pre>{@code
+ * BigtableInstanceAdminSettings settings = BigtableInstanceAdminSettings.newBuilder()
+ *   .setProjectId("my-project")
+ *   .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *   .build();
+ *
+ * BigtableInstanceAdminClient client = BigtableInstanceAdminClient.create(settings);
+ * }</pre>
+ *
+ * To customize the endpoint:
+ *
+ * <pre>{@code
+ * BigtableInstanceAdminSettings.Builder settingsBuilder = BigtableInstanceAdminSettings.newBuilder()
+ *   .setProjectId("my-project");
+ *
+ * settingsBuilder.stubSettings()
+ *   .setEndpoint(myEndpoint);
+ *
+ * BigtableInstanceAdminClient client = BigtableInstanceAdminClient.create(settingsBuilder.build());
+ * }</pre>
+ */
+public final class BigtableInstanceAdminClient implements AutoCloseable {
+  private final String projectId;
+  private final BigtableInstanceAdminStub stub;
+  private final BigtableInstanceAdminClientV2 v2Client;
+
+  /** Constructs an instance of BigtableInstanceAdminClient with the given project ID. */
+  public static BigtableInstanceAdminClient create(@Nonnull String projectId) throws IOException {
+    return create(BigtableInstanceAdminSettings.newBuilder().setProjectId(projectId).build());
+  }
+
+  /** Constructs an instance of BigtableInstanceAdminClient with the given settings. */
+  public static BigtableInstanceAdminClient create(@Nonnull BigtableInstanceAdminSettings settings)
+      throws IOException {
+    return create(settings.getProjectId(), settings.getStubSettings().createStub());
+  }
+
+  /** Constructs an instance of BigtableInstanceAdminClient with the given project ID and stub. */
+  public static BigtableInstanceAdminClient create(
+      @Nonnull String projectId, @Nonnull BigtableInstanceAdminStub stub) {
+    return new BigtableInstanceAdminClient(projectId, stub);
+  }
+
+  private BigtableInstanceAdminClient(
+      @Nonnull String projectId, @Nonnull BigtableInstanceAdminStub stub) {
+    this.projectId = projectId;
+    this.stub = stub;
+    this.v2Client = new BigtableInstanceAdminClientV2(stub);
+  }
+
+  /** Gets the project ID this client is associated with. */
+  public String getProjectId() {
+    return projectId;
+  }
+
+  /**
+   * Returns the modern V2 client. This provides access to the newest features and proto-based
+   * methods.
+   */
+  public BigtableInstanceAdminClientV2 getBaseClient() {
+    return v2Client;
+  }
+
+  /** Closes the client and frees all resources associated with it (like thread pools). */
+  @Override
+  public void close() {
+    stub.close();
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#createInstanceAsync(com.google.bigtable.admin.v2.CreateInstanceRequest)}.
+   *
+   * <p>Creates a new instance and returns its representation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Instance instance = client.createInstance(
+   *   CreateInstanceRequest.of("my-instance")
+   *     .addCluster("my-cluster", "us-east1-c", 3, StorageType.SSD)
+   * );
+   * }</pre>
+   *
+   * @see CreateInstanceRequest for details.
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public Instance createInstance(CreateInstanceRequest request) {
+    return ApiExceptions.callAndTranslateApiException(createInstanceAsync(request));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#createInstanceAsync(com.google.bigtable.admin.v2.CreateInstanceRequest)}.
+   *
+   * <p>Asynchronously creates a new instance and returns its representation wrapped in a future.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Instance> instanceFuture = client.createInstanceAsync(
+   *   CreateInstanceRequest.of("my-instance")
+   *     .addCluster("my-cluster", "us-east1-c", 3, StorageType.SSD)
+   * );
+   *
+   * Instance instance = instanceFuture.get();
+   * }</pre>
+   *
+   * @see CreateInstanceRequest for details.
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Instance> createInstanceAsync(CreateInstanceRequest request) {
+    return ApiFutures.transform(
+        stub.createInstanceOperationCallable().futureCall(request.toProto(projectId)),
+        new ApiFunction<com.google.bigtable.admin.v2.Instance, Instance>() {
+          @Override
+          public Instance apply(com.google.bigtable.admin.v2.Instance proto) {
+            return Instance.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#partialUpdateInstanceAsync(com.google.bigtable.admin.v2.PartialUpdateInstanceRequest)}.
+   *
+   * <p>Updates a new instance and returns its representation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Instance instance = client.updateInstance(
+   *   UpdateInstanceRequest.of("my-instance")
+   *     .setProductionType()
+   * );
+   * }</pre>
+   *
+   * @see UpdateInstanceRequest for details.
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public Instance updateInstance(UpdateInstanceRequest request) {
+    return ApiExceptions.callAndTranslateApiException(updateInstanceAsync(request));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#partialUpdateInstanceAsync(com.google.bigtable.admin.v2.PartialUpdateInstanceRequest)}.
+   *
+   * <p>Asynchronously updates a new instance and returns its representation wrapped in a future.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Instance> instanceFuture = client.updateInstanceAsync(
+   *   UpdateInstanceRequest.of("my-instance")
+   *     .setProductionType()
+   * );
+   *
+   * Instance instance = instanceFuture.get();
+   * }</pre>
+   *
+   * @see UpdateInstanceRequest for details.
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Instance> updateInstanceAsync(UpdateInstanceRequest request) {
+    return ApiFutures.transform(
+        stub.partialUpdateInstanceOperationCallable().futureCall(request.toProto(projectId)),
+        new ApiFunction<com.google.bigtable.admin.v2.Instance, Instance>() {
+          @Override
+          public Instance apply(com.google.bigtable.admin.v2.Instance proto) {
+            return Instance.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#getInstance(com.google.bigtable.admin.v2.GetInstanceRequest)}.
+   *
+   * <p>Get the instance representation by ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Instance instance = client.getInstance("my-instance");
+   * }</pre>
+   */
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public Instance getInstance(String id) {
+    return ApiExceptions.callAndTranslateApiException(getInstanceAsync(id));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#getInstance(com.google.bigtable.admin.v2.GetInstanceRequest)}.
+   *
+   * <p>Asynchronously gets the instance representation by ID wrapped in a future.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Instance> instanceFuture = client.getInstanceAsync("my-instance");
+   * Instance instance = instanceFuture.get();
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Instance> getInstanceAsync(String instanceId) {
+    String name = NameUtil.formatInstanceName(projectId, instanceId);
+
+    com.google.bigtable.admin.v2.GetInstanceRequest request =
+        com.google.bigtable.admin.v2.GetInstanceRequest.newBuilder().setName(name).build();
+
+    return ApiFutures.transform(
+        stub.getInstanceCallable().futureCall(request),
+        new ApiFunction<com.google.bigtable.admin.v2.Instance, Instance>() {
+          @Override
+          public Instance apply(com.google.bigtable.admin.v2.Instance proto) {
+            return Instance.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#listInstances(com.google.bigtable.admin.v2.ListInstancesRequest)}.
+   *
+   * <p>Lists all of the instances in the current project.
+   *
+   * <p>This method will throw a {@link PartialListInstancesException} when any zone is unavailable.
+   * If a partial list is OK, the exception can be caught and inspected.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try {
+   *   List<Instance> instances = client.listInstances();
+   * } catch (PartialListInstancesException e) {
+   *   System.out.println("The following zones are unavailable: " + e.getUnavailableZones());
+   *   System.out.println("But the following instances are reachable: " + e.getInstances());
+   * }
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public List<Instance> listInstances() {
+    return ApiExceptions.callAndTranslateApiException(listInstancesAsync());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#listInstances(com.google.bigtable.admin.v2.ListInstancesRequest)}.
+   *
+   * <p>Asynchronously lists all of the instances in the current project.
+   *
+   * <p>This method will throw a {@link PartialListInstancesException} when any zone is unavailable.
+   * If a partial list is OK, the exception can be caught and inspected.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Instance> instancesFuture = client.listInstancesAsync();
+   *
+   * ApiFutures.addCallback(instancesFuture, new ApiFutureCallback<List<Instance>>() {
+   *   public void onFailure(Throwable t) {
+   *     if (t instanceof PartialListInstancesException) {
+   *       PartialListInstancesException partialError = (PartialListInstancesException)t;
+   *       System.out.println("The following zones are unavailable: " + partialError.getUnavailableZones());
+   *       System.out.println("But the following instances are reachable: " + partialError.getInstances());
+   *     } else {
+   *       t.printStackTrace();
+   *     }
+   *   }
+   *
+   *   public void onSuccess(List<Instance> result) {
+   *     System.out.println("Found a complete set of instances: " + result);
+   *   }
+   * }, MoreExecutors.directExecutor());
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<List<Instance>> listInstancesAsync() {
+    com.google.bigtable.admin.v2.ListInstancesRequest request =
+        com.google.bigtable.admin.v2.ListInstancesRequest.newBuilder()
+            .setParent(NameUtil.formatProjectName(projectId))
+            .build();
+
+    ApiFuture<com.google.bigtable.admin.v2.ListInstancesResponse> responseFuture =
+        stub.listInstancesCallable().futureCall(request);
+
+    return ApiFutures.transform(
+        responseFuture,
+        new ApiFunction<com.google.bigtable.admin.v2.ListInstancesResponse, List<Instance>>() {
+          @Override
+          public List<Instance> apply(com.google.bigtable.admin.v2.ListInstancesResponse proto) {
+            // NOTE: Pagination is intentionally ignored. The server does not implement it and never
+            // will.
+            Verify.verify(
+                proto.getNextPageToken().isEmpty(),
+                "Server returned an unexpected paginated response");
+
+            ImmutableList.Builder<Instance> instances = ImmutableList.builder();
+
+            for (com.google.bigtable.admin.v2.Instance protoInstance : proto.getInstancesList()) {
+              instances.add(Instance.fromProto(protoInstance));
+            }
+
+            ImmutableList.Builder<String> failedZones = ImmutableList.builder();
+            for (String locationStr : proto.getFailedLocationsList()) {
+              failedZones.add(NameUtil.extractZoneIdFromLocationName(locationStr));
+            }
+
+            if (!failedZones.build().isEmpty()) {
+              throw new PartialListInstancesException(failedZones.build(), instances.build());
+            }
+
+            return instances.build();
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#deleteInstance(com.google.bigtable.admin.v2.DeleteInstanceRequest)}.
+   *
+   * <p>Deletes the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * client.deleteInstance("my-instance");
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public void deleteInstance(String instanceId) {
+    ApiExceptions.callAndTranslateApiException(deleteInstanceAsync(instanceId));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#deleteInstance(com.google.bigtable.admin.v2.DeleteInstanceRequest)}.
+   *
+   * <p>Asynchronously deletes the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Void> deleteFuture = client.deleteInstanceAsync("my-instance");
+   * deleteFuture.get();
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Void> deleteInstanceAsync(String instanceId) {
+    String instanceName = NameUtil.formatInstanceName(projectId, instanceId);
+
+    com.google.bigtable.admin.v2.DeleteInstanceRequest request =
+        com.google.bigtable.admin.v2.DeleteInstanceRequest.newBuilder()
+            .setName(instanceName)
+            .build();
+
+    return ApiFutures.transform(
+        stub.deleteInstanceCallable().futureCall(request),
+        new ApiFunction<Empty, Void>() {
+          @Override
+          public Void apply(Empty input) {
+            return null;
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#getInstance(com.google.bigtable.admin.v2.GetInstanceRequest)}.
+   *
+   * <p>Checks if the instance specified by the instance ID exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * if(client.exists("my-instance")) {
+   *   System.out.println("Instance exists");
+   * }
+   * }</pre>
+   */
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public boolean exists(String instanceId) {
+    return ApiExceptions.callAndTranslateApiException(existsAsync(instanceId));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#getInstance(com.google.bigtable.admin.v2.GetInstanceRequest)}.
+   *
+   * <p>Asynchronously checks if the instance specified by the instance ID exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Boolean> found = client.existsAsync("my-instance");
+   *
+   * ApiFutures.addCallback(
+   *  found,
+   *  new ApiFutureCallback<Boolean>() {
+   *    public void onSuccess(Boolean found) {
+   *      if (found) {
+   *        System.out.println("Instance exists");
+   *      } else {
+   *        System.out.println("Instance not found");
+   *      }
+   *    }
+   *
+   *    public void onFailure(Throwable t) {
+   *      t.printStackTrace();
+   *    }
+   *  },
+   *  MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   */
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Boolean> existsAsync(String instanceId) {
+    ApiFuture<Instance> protoFuture = getInstanceAsync(instanceId);
+
+    ApiFuture<Boolean> existsFuture =
+        ApiFutures.transform(
+            protoFuture,
+            new ApiFunction<Instance, Boolean>() {
+              @Override
+              public Boolean apply(Instance ignored) {
+                return true;
+              }
+            },
+            MoreExecutors.directExecutor());
+
+    return ApiFutures.catching(
+        existsFuture,
+        NotFoundException.class,
+        new ApiFunction<NotFoundException, Boolean>() {
+          @Override
+          public Boolean apply(NotFoundException ignored) {
+            return false;
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#createClusterAsync(com.google.bigtable.admin.v2.CreateClusterRequest)}.
+   *
+   * <p>Creates a new cluster in the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Cluster cluster = client.createCluster(
+   *   CreateClusterRequest.of("my-instance", "my-new-cluster")
+   *     .setZone("us-east1-c")
+   *     .setServeNodes(3)
+   *     .setStorageType(StorageType.SSD)
+   * );
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public Cluster createCluster(CreateClusterRequest request) {
+    return ApiExceptions.callAndTranslateApiException(createClusterAsync(request));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#createClusterAsync(com.google.bigtable.admin.v2.CreateClusterRequest)}.
+   *
+   * <p>Asynchronously creates a new cluster in the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Cluster> clusterFuture = client.createClusterAsync(
+   *   CreateClusterRequest.of("my-instance", "my-new-cluster")
+   *     .setZone("us-east1-c")
+   *     .setServeNodes(3)
+   *     .setStorageType(StorageType.SSD)
+   * );
+   *
+   * Cluster cluster = clusterFuture.get();
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Cluster> createClusterAsync(CreateClusterRequest request) {
+    return ApiFutures.transform(
+        stub.createClusterOperationCallable().futureCall(request.toProto(projectId)),
+        Cluster::fromProto,
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#getCluster(com.google.bigtable.admin.v2.GetClusterRequest)}.
+   *
+   * <p>Gets the cluster representation by ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Cluster cluster = client.getCluster("my-instance", "my-cluster");
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public Cluster getCluster(String instanceId, String clusterId) {
+    return ApiExceptions.callAndTranslateApiException(getClusterAsync(instanceId, clusterId));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#getCluster(com.google.bigtable.admin.v2.GetClusterRequest)}.
+   *
+   * <p>Asynchronously gets the cluster representation by ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Cluster> clusterFuture = client.getClusterAsync("my-instance", "my-cluster");
+   * Cluster cluster = clusterFuture.get();
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Cluster> getClusterAsync(String instanceId, String clusterId) {
+    String name = NameUtil.formatClusterName(projectId, instanceId, clusterId);
+
+    com.google.bigtable.admin.v2.GetClusterRequest request =
+        com.google.bigtable.admin.v2.GetClusterRequest.newBuilder().setName(name).build();
+
+    return ApiFutures.transform(
+        stub.getClusterCallable().futureCall(request),
+        new ApiFunction<com.google.bigtable.admin.v2.Cluster, Cluster>() {
+          @Override
+          public Cluster apply(com.google.bigtable.admin.v2.Cluster proto) {
+            return Cluster.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#listClusters(com.google.bigtable.admin.v2.ListClustersRequest)}.
+   *
+   * <p>Lists all clusters in the specified instance.
+   *
+   * <p>This method will throw a {@link PartialListClustersException} when any zone is unavailable.
+   * If a partial list is OK, the exception can be caught and inspected.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try {
+   *   List<Cluster> clusters = client.listClusters("my-instance");
+   * } catch (PartialListClustersException e) {
+   *   System.out.println("The following zones are unavailable: " + e.getUnavailableZones());
+   *   System.out.println("But the following clusters are reachable: " + e.getClusters())
+   * }
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public List<Cluster> listClusters(String instanceId) {
+    return ApiExceptions.callAndTranslateApiException(listClustersAsync(instanceId));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#listClusters(com.google.bigtable.admin.v2.ListClustersRequest)}.
+   *
+   * <p>Asynchronously lists all clusters in the specified instance.
+   *
+   * <p>This method will throw a {@link PartialListClustersException} when any zone is unavailable.
+   * If a partial list is OK, the exception can be caught and inspected.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Cluster> clustersFuture = client.listClustersAsync("my-instance");
+   *
+   * ApiFutures.addCallback(clustersFuture, new ApiFutureCallback<List<Cluster>>() {
+   *   public void onFailure(Throwable t) {
+   *     if (t instanceof PartialListClustersException) {
+   *       PartialListClustersException partialError = (PartialListClustersException)t;
+   *       System.out.println("The following zones are unavailable: " + partialError.getUnavailableZones());
+   *       System.out.println("But the following clusters are reachable: " + partialError.getClusters());
+   *     } else {
+   *       t.printStackTrace();
+   *     }
+   *   }
+   *
+   *   public void onSuccess(List<Cluster> result) {
+   *     System.out.println("Found a complete set of instances: " + result);
+   *   }
+   * }, MoreExecutors.directExecutor());
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<List<Cluster>> listClustersAsync(String instanceId) {
+    String name = NameUtil.formatInstanceName(projectId, instanceId);
+    com.google.bigtable.admin.v2.ListClustersRequest request =
+        com.google.bigtable.admin.v2.ListClustersRequest.newBuilder().setParent(name).build();
+
+    return ApiFutures.transform(
+        stub.listClustersCallable().futureCall(request),
+        new ApiFunction<com.google.bigtable.admin.v2.ListClustersResponse, List<Cluster>>() {
+          @Override
+          public List<Cluster> apply(com.google.bigtable.admin.v2.ListClustersResponse proto) {
+            // NOTE: Server-side pagination is not and will not be implemented, so remaining pages
+            // are not fetched. However, if that assumption turns out to be wrong, fail fast to
+            // avoid returning partial data.
+            Verify.verify(
+                proto.getNextPageToken().isEmpty(),
+                "Server returned an unexpected paginated response");
+
+            ImmutableList.Builder<Cluster> clusters = ImmutableList.builder();
+            for (com.google.bigtable.admin.v2.Cluster cluster : proto.getClustersList()) {
+              clusters.add(Cluster.fromProto(cluster));
+            }
+
+            ImmutableList.Builder<String> failedZones = ImmutableList.builder();
+            for (String locationStr : proto.getFailedLocationsList()) {
+              failedZones.add(NameUtil.extractZoneIdFromLocationName(locationStr));
+            }
+
+            if (!failedZones.build().isEmpty()) {
+              throw new PartialListClustersException(failedZones.build(), clusters.build());
+            }
+
+            return clusters.build();
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#partialUpdateClusterAsync(com.google.bigtable.admin.v2.PartialUpdateClusterRequest)}.
+   *
+   * <p>Modifies the cluster's node count for manual scaling. If autoscaling is already enabled,
+   * manual scaling will be silently ignored. If you wish to disable autoscaling and enable manual
+   * scaling, please use {@link BigtableInstanceAdminClient#disableClusterAutoscaling(String,
+   * String, int)} instead. Please note that only clusters that belong to a production instance can
+   * be resized.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Cluster cluster = client.resizeCluster("my-instance", "my-cluster", 30);
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public Cluster resizeCluster(String instanceId, String clusterId, int numServeNodes) {
+    return ApiExceptions.callAndTranslateApiException(
+        resizeClusterAsync(instanceId, clusterId, numServeNodes));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#partialUpdateClusterAsync(com.google.bigtable.admin.v2.PartialUpdateClusterRequest)}.
+   *
+   * <p>Asynchronously modifies the cluster's node count for manual scaling. If autoscaling is
+   * already enabled, manual scaling will be silently ignored. If you wish to disable autoscaling
+   * and enable manual scaling, please use {@link
+   * BigtableInstanceAdminClient#disableClusterAutoscaling(String, String, int)} instead. Please
+   * note that only clusters that belong to a production instance can be resized.
+   *
+   * <pre>{@code
+   * ApiFuture<Cluster> clusterFuture = client.resizeCluster("my-instance", "my-cluster", 30);
+   * Cluster cluster = clusterFuture.get();
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Cluster> resizeClusterAsync(
+      String instanceId, String clusterId, int numServeNodes) {
+
+    String name = NameUtil.formatClusterName(projectId, instanceId, clusterId);
+
+    com.google.bigtable.admin.v2.Cluster request =
+        com.google.bigtable.admin.v2.Cluster.newBuilder()
+            .setName(name)
+            .setServeNodes(numServeNodes)
+            .build();
+
+    return ApiFutures.transform(
+        stub.updateClusterOperationCallable().futureCall(request),
+        new ApiFunction<com.google.bigtable.admin.v2.Cluster, Cluster>() {
+          @Override
+          public Cluster apply(com.google.bigtable.admin.v2.Cluster proto) {
+            return Cluster.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#partialUpdateClusterAsync(com.google.bigtable.admin.v2.PartialUpdateClusterRequest)}.
+   *
+   * <p>Modifies the cluster's autoscaling config. This will enable autoscaling and disable manual
+   * scaling if the cluster is manually scaled. Please note that only clusters that belong to a
+   * production instance can enable autoscaling.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ClusterAutoscalingConfig clusterAutoscalingConfig =
+   *      ClusterAutoscalingConfig.of("my-instance", "my-cluster")
+   *          .setMinNodes(1)
+   *          .setMaxNodes(4)
+   *          .setCpuUtilizationTargetPercent(40);
+   * Cluster cluster = client.updateClusterAutoscalingConfig(clusterAutoscalingConfig);
+   * }</pre>
+   */
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public Cluster updateClusterAutoscalingConfig(
+      @Nonnull ClusterAutoscalingConfig clusterAutoscalingConfig) {
+    return ApiExceptions.callAndTranslateApiException(
+        updateClusterAutoscalingConfigAsync(clusterAutoscalingConfig));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#partialUpdateClusterAsync(com.google.bigtable.admin.v2.PartialUpdateClusterRequest)}.
+   *
+   * <p>Asynchronously modifies the cluster's autoscaling config. This will enable autoscaling and
+   * disable manual scaling if the cluster is manually scaled. Please note that only clusters that
+   * belong to a production instance can enable autoscaling.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ClusterAutoscalingConfig clusterAutoscalingConfig =
+   *      ClusterAutoscalingConfig.of(targetInstanceId, targetClusterId)
+   *          .setMinNodes(1)
+   *          .setMaxNodes(4)
+   *          .setCpuUtilizationTargetPercent(40);
+   *
+   *  ApiFuture<Cluster> clusterApiFuture = client.updateClusterAutoscalingConfigAsync(clusterAutoscalingConfig);
+   *  Cluster cluster = clusterApiFuture.get();
+   * }</pre>
+   */
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Cluster> updateClusterAutoscalingConfigAsync(
+      @Nonnull ClusterAutoscalingConfig clusterAutoscalingConfig) {
+    PartialUpdateClusterRequest proto = clusterAutoscalingConfig.toProto(projectId);
+
+    return ApiFutures.transform(
+        stub.partialUpdateClusterOperationCallable().futureCall(proto),
+        Cluster::fromProto,
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#partialUpdateClusterAsync(com.google.bigtable.admin.v2.PartialUpdateClusterRequest)}.
+   *
+   * <p>Disables autoscaling and enables manual scaling by setting a static node count for the
+   * cluster. Please note that only clusters that belong to a production instance can be resized.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Cluster cluster = client.disableClusterAutoscaling("my-instance", "my-cluster", 3);
+   * }</pre>
+   */
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public Cluster disableClusterAutoscaling(String instanceId, String clusterId, int staticSize) {
+    return ApiExceptions.callAndTranslateApiException(
+        disableClusterAutoscalingAsync(instanceId, clusterId, staticSize));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#partialUpdateClusterAsync(com.google.bigtable.admin.v2.PartialUpdateClusterRequest)}.
+   *
+   * <p>Asynchronously disables autoscaling and enables manual scaling by setting a static node
+   * count for the cluster. Please note that only clusters that belong to a production instance can
+   * be resized.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Cluster> clusterApiFuture = client.disableClusterAutoscalingAsync("my-instance", "my-cluster", 3);
+   * Cluster cluster = clusterApiFuture.get();
+   * }</pre>
+   */
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Cluster> disableClusterAutoscalingAsync(
+      String instanceId, String clusterId, int staticSize) {
+    String name = NameUtil.formatClusterName(projectId, instanceId, clusterId);
+
+    com.google.bigtable.admin.v2.Cluster request =
+        com.google.bigtable.admin.v2.Cluster.newBuilder()
+            .setName(name)
+            .setServeNodes(staticSize)
+            .setClusterConfig(
+                com.google.bigtable.admin.v2.Cluster.ClusterConfig.getDefaultInstance())
+            .build();
+
+    PartialUpdateClusterRequest partialUpdateClusterRequest =
+        PartialUpdateClusterRequest.newBuilder()
+            .setUpdateMask(
+                FieldMaskUtil.fromStringList(
+                    com.google.bigtable.admin.v2.Cluster.class,
+                    Lists.newArrayList("cluster_config.cluster_autoscaling_config", "serve_nodes")))
+            .setCluster(request)
+            .build();
+    return ApiFutures.transform(
+        stub.partialUpdateClusterOperationCallable().futureCall(partialUpdateClusterRequest),
+        Cluster::fromProto,
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#deleteCluster(com.google.bigtable.admin.v2.DeleteClusterRequest)}.
+   *
+   * <p>Deletes the specified cluster. Please note that an instance must have at least 1 cluster. To
+   * remove the last cluster, please use {@link BigtableInstanceAdminClient#deleteInstance(String)}.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * client.deleteCluster("my-instance", "my-cluster");
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public void deleteCluster(String instanceId, String clusterId) {
+    ApiExceptions.callAndTranslateApiException(deleteClusterAsync(instanceId, clusterId));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#deleteCluster(com.google.bigtable.admin.v2.DeleteClusterRequest)}.
+   *
+   * <p>Asynchronously deletes the specified cluster. Please note that an instance must have at
+   * least 1 cluster. To remove the last cluster, please use {@link
+   * BigtableInstanceAdminClient#deleteInstanceAsync(String)}.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Void> future = client.deleteClusterAsync("my-instance", "my-cluster");
+   * future.get();
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Void> deleteClusterAsync(String instanceId, String clusterId) {
+    String name = NameUtil.formatClusterName(projectId, instanceId, clusterId);
+
+    com.google.bigtable.admin.v2.DeleteClusterRequest request =
+        com.google.bigtable.admin.v2.DeleteClusterRequest.newBuilder().setName(name).build();
+
+    return ApiFutures.transform(
+        stub.deleteClusterCallable().futureCall(request),
+        new ApiFunction<Empty, Void>() {
+          @Override
+          public Void apply(Empty input) {
+            return null;
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#createAppProfile(com.google.bigtable.admin.v2.CreateAppProfileRequest)}.
+   *
+   * <p>Creates a new app profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * AppProfile appProfile = client.createAppProfile(
+   *   CreateAppProfileRequest.of("my-instance", "my-new-app-profile")
+   *     .setRoutingPolicy(SingleClusterRoutingPolicy.of("my-cluster"))
+   * );
+   * }</pre>
+   *
+   * @see CreateAppProfileRequest
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public AppProfile createAppProfile(CreateAppProfileRequest request) {
+    return ApiExceptions.callAndTranslateApiException(createAppProfileAsync(request));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#createAppProfile(com.google.bigtable.admin.v2.CreateAppProfileRequest)}.
+   *
+   * <p>Asynchronously creates a new app profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<AppProfile> appProfileFuture = client.createAppProfileAsync(
+   *   CreateAppProfileRequest.of("my-instance", "my-new-app-profile")
+   *     .setRoutingPolicy(SingleClusterRoutingPolicy.of("my-cluster"))
+   * );
+   *
+   * AppProfile appProfile = appProfileFuture.get();
+   * }</pre>
+   *
+   * @see CreateAppProfileRequest
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<AppProfile> createAppProfileAsync(CreateAppProfileRequest request) {
+    return ApiFutures.transform(
+        stub.createAppProfileCallable().futureCall(request.toProto(projectId)),
+        new ApiFunction<com.google.bigtable.admin.v2.AppProfile, AppProfile>() {
+          @Override
+          public AppProfile apply(com.google.bigtable.admin.v2.AppProfile proto) {
+            return AppProfile.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#getAppProfile(com.google.bigtable.admin.v2.GetAppProfileRequest)}.
+   *
+   * <p>Gets the app profile by ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * AppProfile appProfile = client.getAppProfile("my-instance", "my-app-profile");
+   * }</pre>
+   *
+   * @see AppProfile
+   */
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public AppProfile getAppProfile(String instanceId, String appProfileId) {
+    return ApiExceptions.callAndTranslateApiException(getAppProfileAsync(instanceId, appProfileId));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#getAppProfile(com.google.bigtable.admin.v2.GetAppProfileRequest)}.
+   *
+   * <p>Asynchronously gets the app profile by ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<AppProfile> appProfileFuture = client.getAppProfileAsync("my-instance", "my-app-profile");
+   *
+   * AppProfile appProfile = appProfileFuture.get();
+   * }</pre>
+   *
+   * @see AppProfile
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<AppProfile> getAppProfileAsync(String instanceId, String appProfileId) {
+    String name = NameUtil.formatAppProfileName(projectId, instanceId, appProfileId);
+
+    GetAppProfileRequest request = GetAppProfileRequest.newBuilder().setName(name).build();
+
+    return ApiFutures.transform(
+        stub.getAppProfileCallable().futureCall(request),
+        new ApiFunction<com.google.bigtable.admin.v2.AppProfile, AppProfile>() {
+          @Override
+          public AppProfile apply(com.google.bigtable.admin.v2.AppProfile proto) {
+            return AppProfile.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#listAppProfiles(com.google.bigtable.admin.v2.ListAppProfilesRequest)}.
+   *
+   * <p>Lists all app profiles of the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * List<AppProfile> appProfiles = client.listAppProfiles("my-instance");
+   * }</pre>
+   *
+   * @see AppProfile
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public List<AppProfile> listAppProfiles(String instanceId) {
+    return ApiExceptions.callAndTranslateApiException(listAppProfilesAsync(instanceId));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#listAppProfiles(com.google.bigtable.admin.v2.ListAppProfilesRequest)}.
+   *
+   * <p>Asynchronously lists all app profiles of the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<List<AppProfile>> appProfilesFuture = client.listAppProfilesAsync("my-instance");
+   *
+   * List<AppProfile> appProfiles = appProfileFuture.get();
+   * }</pre>
+   *
+   * @see AppProfile
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<List<AppProfile>> listAppProfilesAsync(String instanceId) {
+    String instanceName = NameUtil.formatInstanceName(projectId, instanceId);
+
+    ListAppProfilesRequest request =
+        ListAppProfilesRequest.newBuilder().setParent(instanceName).build();
+
+    // TODO(igorbernstein2): try to upstream pagination spooling or figure out a way to expose the
+    // paginated responses while maintaining the wrapper facade.
+
+    // Fetches the first page.
+    ApiFuture<ListAppProfilesPage> firstPageFuture =
+        ApiFutures.transform(
+            stub.listAppProfilesPagedCallable().futureCall(request),
+            new ApiFunction<ListAppProfilesPagedResponse, ListAppProfilesPage>() {
+              @Override
+              public ListAppProfilesPage apply(ListAppProfilesPagedResponse response) {
+                return response.getPage();
+              }
+            },
+            MoreExecutors.directExecutor());
+
+    // Fetches the rest of the pages by chaining the futures.
+    ApiFuture<List<com.google.bigtable.admin.v2.AppProfile>> allProtos =
+        ApiFutures.transformAsync(
+            firstPageFuture,
+            new ApiAsyncFunction<
+                ListAppProfilesPage, List<com.google.bigtable.admin.v2.AppProfile>>() {
+              List<com.google.bigtable.admin.v2.AppProfile> responseAccumulator =
+                  Lists.newArrayList();
+
+              @Override
+              public ApiFuture<List<com.google.bigtable.admin.v2.AppProfile>> apply(
+                  ListAppProfilesPage page) {
+                // Add all entries from the page
+                responseAccumulator.addAll(Lists.newArrayList(page.getValues()));
+
+                // If this is the last page, just return the accumulated responses.
+                if (!page.hasNextPage()) {
+                  return ApiFutures.immediateFuture(responseAccumulator);
+                }
+
+                // Otherwise fetch the next page.
+                return ApiFutures.transformAsync(
+                    page.getNextPageAsync(), this, MoreExecutors.directExecutor());
+              }
+            },
+            MoreExecutors.directExecutor());
+
+    // Wraps all of the accumulated protos.
+    return ApiFutures.transform(
+        allProtos,
+        new ApiFunction<List<com.google.bigtable.admin.v2.AppProfile>, List<AppProfile>>() {
+          @Override
+          public List<AppProfile> apply(List<com.google.bigtable.admin.v2.AppProfile> input) {
+            List<AppProfile> results = Lists.newArrayListWithCapacity(input.size());
+            for (com.google.bigtable.admin.v2.AppProfile appProfile : input) {
+              results.add(AppProfile.fromProto(appProfile));
+            }
+            return results;
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#updateAppProfile(com.google.bigtable.admin.v2.UpdateAppProfileRequest)}.
+   *
+   * <p>Updates an existing app profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * AppProfile existingAppProfile = client.getAppProfile("my-instance", "my-app-profile");
+   *
+   * AppProfile updatedAppProfile = client.updateAppProfile(
+   *   UpdateAppProfileRequest.of(existingAppProfile)
+   *     .setRoutingPolicy(SingleClusterRoutingPolicy.of("my-cluster"))
+   * );
+   * }</pre>
+   *
+   * @see UpdateAppProfileRequest
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public AppProfile updateAppProfile(UpdateAppProfileRequest request) {
+    return ApiExceptions.callAndTranslateApiException(updateAppProfileAsync(request));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#updateAppProfile(com.google.bigtable.admin.v2.UpdateAppProfileRequest)}.
+   *
+   * <p>Asynchronously updates an existing app profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<AppProfile> existingAppProfileFuture = client.getAppProfileAsync("my-instance", "my-app-profile");
+   *
+   * ApiFuture<AppProfile> updatedAppProfileFuture = ApiFutures.transformAsync(
+   *   existingAppProfileFuture,
+   *   new ApiAsyncFunction<AppProfile, AppProfile>() {
+   *     public ApiFuture<AppProfile> apply(AppProfile existingAppProfile) {
+   *       return client.updateAppProfileAsync(
+   *         UpdateAppProfileRequest.of(existingAppProfile)
+   *           .setRoutingPolicy(SingleClusterRoutingPolicy.of("my-other-cluster"))
+   *       );
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   *
+   * ApiFuture<AppProfile> appProfile = updatedAppProfileFuture.get();
+   * }</pre>
+   *
+   * @see UpdateAppProfileRequest
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<AppProfile> updateAppProfileAsync(UpdateAppProfileRequest request) {
+    return ApiFutures.transform(
+        stub.updateAppProfileOperationCallable().futureCall(request.toProto(projectId)),
+        new ApiFunction<com.google.bigtable.admin.v2.AppProfile, AppProfile>() {
+          @Override
+          public AppProfile apply(com.google.bigtable.admin.v2.AppProfile proto) {
+            return AppProfile.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#deleteAppProfile(com.google.bigtable.admin.v2.DeleteAppProfileRequest)}.
+   *
+   * <p>Deletes the specified app profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * client.deleteAppProfile("my-instance", "my-app-profile");
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public void deleteAppProfile(String instanceId, String appProfileId) {
+    ApiExceptions.callAndTranslateApiException(
+        deleteAppProfileAsync(instanceId, appProfileId, false));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#deleteAppProfile(com.google.bigtable.admin.v2.DeleteAppProfileRequest)}.
+   *
+   * <p>Asynchronously deletes the specified app profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Void> deleteFuture = client.deleteAppProfileAsync("my-instance", "my-app-profile");
+   *
+   * deleteFuture.get();
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Void> deleteAppProfileAsync(String instanceId, String appProfileId) {
+    return deleteAppProfileAsync(instanceId, appProfileId, false);
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#deleteAppProfile(com.google.bigtable.admin.v2.DeleteAppProfileRequest)}.
+   *
+   * <p>Deletes the specified app profile with an option to force deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * client.deleteAppProfile("my-instance", "my-app-profile", true);
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public void deleteAppProfile(String instanceId, String appProfileId, boolean forceDelete) {
+    ApiExceptions.callAndTranslateApiException(
+        deleteAppProfileAsync(instanceId, appProfileId, forceDelete));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#deleteAppProfile(com.google.bigtable.admin.v2.DeleteAppProfileRequest)}.
+   *
+   * <p>Asynchronously deletes the specified app profile with an option to force deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Void> deleteFuture = client.deleteAppProfileAsync("my-instance", "my-app-profile", true);
+   *
+   * deleteFuture.get();
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Void> deleteAppProfileAsync(
+      String instanceId, String appProfileId, boolean forceDelete) {
+    String name = NameUtil.formatAppProfileName(projectId, instanceId, appProfileId);
+    DeleteAppProfileRequest request =
+        DeleteAppProfileRequest.newBuilder().setName(name).setIgnoreWarnings(forceDelete).build();
+
+    return ApiFutures.transform(
+        stub.deleteAppProfileCallable().futureCall(request),
+        new ApiFunction<Empty, Void>() {
+          @Override
+          public Void apply(Empty input) {
+            return null;
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#getIamPolicy(com.google.iam.v1.GetIamPolicyRequest)}.
+   *
+   * <p>Gets the IAM access control policy for the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Policy policy = client.getIamPolicy("my-instance");
+   * for(Map.Entry<Role, Set<Identity>> entry : policy.getBindings().entrySet()) {
+   *   System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
+   * }
+   * }</pre>
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigtable/docs/access-control#iam-management-instance">Instance-level
+   *     IAM management</a>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public Policy getIamPolicy(String instanceId) {
+    return ApiExceptions.callAndTranslateApiException(getIamPolicyAsync(instanceId));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#getIamPolicy(com.google.iam.v1.GetIamPolicyRequest)}.
+   *
+   * <p>Asynchronously gets the IAM access control policy for the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Policy> policyFuture = client.getIamPolicyAsync("my-instance");
+   *
+   * ApiFutures.addCallback(policyFuture,
+   *   new ApiFutureCallback<Policy>() {
+   *     public void onSuccess(Policy policy) {
+   *       for (Entry<Role, Set<Identity>> entry : policy.getBindings().entrySet()) {
+   *         System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
+   *       }
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigtable/docs/access-control#iam-management-instance">Instance-level
+   *     IAM management</a>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Policy> getIamPolicyAsync(String instanceId) {
+    String name = NameUtil.formatInstanceName(projectId, instanceId);
+
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(name).build();
+
+    final IamPolicyMarshaller marshaller = new IamPolicyMarshaller();
+
+    return ApiFutures.transform(
+        stub.getIamPolicyCallable().futureCall(request),
+        new ApiFunction<com.google.iam.v1.Policy, Policy>() {
+          @Override
+          public Policy apply(com.google.iam.v1.Policy proto) {
+            return marshaller.fromPb(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#setIamPolicy(com.google.iam.v1.SetIamPolicyRequest)}.
+   *
+   * <p>Replaces the IAM policy associated with the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Policy newPolicy = client.setIamPolicy("my-instance",
+   *   Policy.newBuilder()
+   *     .addIdentity(Role.of("bigtable.user"), Identity.user("someone@example.com"))
+   *     .addIdentity(Role.of("bigtable.admin"), Identity.group("admins@example.com"))
+   *     .build());
+   * }</pre>
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigtable/docs/access-control#iam-management-instance">Instance-level
+   *     IAM management</a>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public Policy setIamPolicy(String instanceId, Policy policy) {
+    return ApiExceptions.callAndTranslateApiException(setIamPolicyAsync(instanceId, policy));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#setIamPolicy(com.google.iam.v1.SetIamPolicyRequest)}.
+   *
+   * <p>Asynchronously replaces the IAM policy associated with the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Policy> newPolicyFuture = client.setIamPolicyAsync("my-instance",
+   *   Policy.newBuilder()
+   *     .addIdentity(Role.of("bigtable.user"), Identity.user("someone@example.com"))
+   *     .addIdentity(Role.of("bigtable.admin"), Identity.group("admins@example.com"))
+   *     .build());
+   *
+   * ApiFutures.addCallback(policyFuture,
+   *   new ApiFutureCallback<Policy>() {
+   *     public void onSuccess(Policy policy) {
+   *       for (Entry<Role, Set<Identity>> entry : policy.getBindings().entrySet()) {
+   *         System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
+   *       }
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigtable/docs/access-control#iam-management-instance">Instance-level
+   *     IAM management</a>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Policy> setIamPolicyAsync(String instanceId, Policy policy) {
+    String name = NameUtil.formatInstanceName(projectId, instanceId);
+    final IamPolicyMarshaller marshaller = new IamPolicyMarshaller();
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(name)
+            .setPolicy(marshaller.toPb(policy))
+            .build();
+
+    return ApiFutures.transform(
+        stub.setIamPolicyCallable().futureCall(request),
+        new ApiFunction<com.google.iam.v1.Policy, Policy>() {
+          @Override
+          public Policy apply(com.google.iam.v1.Policy proto) {
+            return marshaller.fromPb(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest)}.
+   *
+   * <p>Tests whether the caller has the given permissions for the specified instance. Returns a
+   * subset of the specified permissions that the caller has.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * List<String> grantedPermissions = client.testIamPermission("my-instance",
+   *   "bigtable.tables.readRows", "bigtable.tables.mutateRows");
+   * }</pre>
+   *
+   * System.out.println("Has read access: " +
+   * grantedPermissions.contains("bigtable.tables.readRows")); System.out.println("Has write access:
+   * " + grantedPermissions.contains("bigtable.tables.mutateRows"));
+   *
+   * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable
+   *     permissions</a>
+   */
+  @SuppressWarnings({"WeakerAccess"})
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public List<String> testIamPermission(String instanceId, String... permissions) {
+    return ApiExceptions.callAndTranslateApiException(
+        testIamPermissionAsync(instanceId, permissions));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest)}.
+   *
+   * <p>Asynchronously tests whether the caller has the given permissions for the specified
+   * instance. Returns a subset of the specified permissions that the caller has.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<List<String>> grantedPermissionsFuture = client.testIamPermissionAsync("my-instance",
+   *   "bigtable.tables.readRows", "bigtable.tables.mutateRows");
+   *
+   * ApiFutures.addCallback(grantedPermissionsFuture,
+   *   new ApiFutureCallback<List<String>>() {
+   *     public void onSuccess(List<String> grantedPermissions) {
+   *       System.out.println("Has read access: " + grantedPermissions.contains("bigtable.tables.readRows"));
+   *       System.out.println("Has write access: " + grantedPermissions.contains("bigtable.tables.mutateRows"));
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable
+   *     permissions</a>
+   */
+  @SuppressWarnings({"WeakerAccess"})
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<List<String>> testIamPermissionAsync(String instanceId, String... permissions) {
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(NameUtil.formatInstanceName(projectId, instanceId))
+            .addAllPermissions(Arrays.asList(permissions))
+            .build();
+
+    return ApiFutures.transform(
+        stub.testIamPermissionsCallable().futureCall(request),
+        new ApiFunction<TestIamPermissionsResponse, List<String>>() {
+          @Override
+          public List<String> apply(TestIamPermissionsResponse input) {
+            return input.getPermissionsList();
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#createMaterializedViewAsync(com.google.bigtable.admin.v2.CreateMaterializedViewRequest)}.
+   *
+   * <p>Creates a new materialized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * MaterializedView materializedView = client.createMaterializedView(
+   *   CreateMaterializedViewRequest.of("my-instance", "my-new-materialized-view")
+   *     .setQuery(query)
+   * );
+   * }</pre>
+   *
+   * @see CreateMaterializedViewRequest
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public MaterializedView createMaterializedView(CreateMaterializedViewRequest request) {
+    return ApiExceptions.callAndTranslateApiException(createMaterializedViewAsync(request));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#createMaterializedViewAsync(com.google.bigtable.admin.v2.CreateMaterializedViewRequest)}.
+   *
+   * <p>Asynchronously creates a new materialized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<MaterializedView> materializedViewFuture = client.createMaterializedViewAsync(
+   *   CreateMaterializedViewRequest.of("my-instance", "my-new-materialized-view")
+   *     .setQuery(query)
+   * );
+   *
+   * MaterializedView materializedView = materializedViewFuture.get();
+   * }</pre>
+   *
+   * @see CreateMaterializedViewRequest
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<MaterializedView> createMaterializedViewAsync(
+      CreateMaterializedViewRequest request) {
+    return ApiFutures.transform(
+        stub.createMaterializedViewOperationCallable().futureCall(request.toProto(projectId)),
+        new ApiFunction<com.google.bigtable.admin.v2.MaterializedView, MaterializedView>() {
+          @Override
+          public MaterializedView apply(com.google.bigtable.admin.v2.MaterializedView proto) {
+            return MaterializedView.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#getMaterializedView(com.google.bigtable.admin.v2.GetMaterializedViewRequest)}.
+   *
+   * <p>Gets the materialized view by ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * MaterializedView materializedView = client.getMaterializedView("my-instance", "my-materialized-view");
+   * }</pre>
+   *
+   * @see MaterializedView
+   */
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public MaterializedView getMaterializedView(String instanceId, String materializedViewId) {
+    return ApiExceptions.callAndTranslateApiException(
+        getMaterializedViewAsync(instanceId, materializedViewId));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#getMaterializedView(com.google.bigtable.admin.v2.GetMaterializedViewRequest)}.
+   *
+   * <p>Asynchronously gets the materialized view by ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<MaterializedView> materializedViewFuture = client.getMaterializedViewAsync("my-instance", "my-materialized-view");
+   *
+   * MaterializedView materializedView = materializedViewFuture.get();
+   * }</pre>
+   *
+   * @see MaterializedView
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<MaterializedView> getMaterializedViewAsync(
+      String instanceId, String materializedViewId) {
+    String name = NameUtil.formatMaterializedViewName(projectId, instanceId, materializedViewId);
+
+    GetMaterializedViewRequest request =
+        GetMaterializedViewRequest.newBuilder().setName(name).build();
+
+    return ApiFutures.transform(
+        stub.getMaterializedViewCallable().futureCall(request),
+        new ApiFunction<com.google.bigtable.admin.v2.MaterializedView, MaterializedView>() {
+          @Override
+          public MaterializedView apply(com.google.bigtable.admin.v2.MaterializedView proto) {
+            return MaterializedView.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#listMaterializedViews(com.google.bigtable.admin.v2.ListMaterializedViewsRequest)}.
+   *
+   * <p>Lists all materialized views of the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * List<MaterializedView> materializedViews = client.listMaterializedViews("my-instance");
+   * }</pre>
+   *
+   * @see MaterializedView
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public List<MaterializedView> listMaterializedViews(String instanceId) {
+    return ApiExceptions.callAndTranslateApiException(listMaterializedViewsAsync(instanceId));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#listMaterializedViews(com.google.bigtable.admin.v2.ListMaterializedViewsRequest)}.
+   *
+   * <p>Asynchronously lists all materialized views of the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<List<MaterializedView>> materializedViewsFuture = client.listMaterializedViewsAsync("my-instance");
+   *
+   * List<MaterializedView> materializedViews = materializedViewFuture.get();
+   * }</pre>
+   *
+   * @see MaterializedView
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<List<MaterializedView>> listMaterializedViewsAsync(String instanceId) {
+    String instanceName = NameUtil.formatInstanceName(projectId, instanceId);
+
+    ListMaterializedViewsRequest request =
+        ListMaterializedViewsRequest.newBuilder().setParent(instanceName).build();
+
+    // TODO(igorbernstein2): try to upstream pagination spooling or figure out a way to expose the
+    // paginated responses while maintaining the wrapper facade.
+
+    // Fetches the first page.
+    ApiFuture<ListMaterializedViewsPage> firstPageFuture =
+        ApiFutures.transform(
+            stub.listMaterializedViewsPagedCallable().futureCall(request),
+            new ApiFunction<ListMaterializedViewsPagedResponse, ListMaterializedViewsPage>() {
+              @Override
+              public ListMaterializedViewsPage apply(ListMaterializedViewsPagedResponse response) {
+                return response.getPage();
+              }
+            },
+            MoreExecutors.directExecutor());
+
+    // Fetches the rest of the pages by chaining the futures.
+    ApiFuture<List<com.google.bigtable.admin.v2.MaterializedView>> allProtos =
+        ApiFutures.transformAsync(
+            firstPageFuture,
+            new ApiAsyncFunction<
+                ListMaterializedViewsPage, List<com.google.bigtable.admin.v2.MaterializedView>>() {
+              List<com.google.bigtable.admin.v2.MaterializedView> responseAccumulator =
+                  Lists.newArrayList();
+
+              @Override
+              public ApiFuture<List<com.google.bigtable.admin.v2.MaterializedView>> apply(
+                  ListMaterializedViewsPage page) {
+                // Add all entries from the page
+                responseAccumulator.addAll(Lists.newArrayList(page.getValues()));
+
+                // If this is the last page, just return the accumulated responses.
+                if (!page.hasNextPage()) {
+                  return ApiFutures.immediateFuture(responseAccumulator);
+                }
+
+                // Otherwise fetch the next page.
+                return ApiFutures.transformAsync(
+                    page.getNextPageAsync(), this, MoreExecutors.directExecutor());
+              }
+            },
+            MoreExecutors.directExecutor());
+
+    // Wraps all of the accumulated protos.
+    return ApiFutures.transform(
+        allProtos,
+        new ApiFunction<
+            List<com.google.bigtable.admin.v2.MaterializedView>, List<MaterializedView>>() {
+          @Override
+          public List<MaterializedView> apply(
+              List<com.google.bigtable.admin.v2.MaterializedView> input) {
+            List<MaterializedView> results = Lists.newArrayListWithCapacity(input.size());
+            for (com.google.bigtable.admin.v2.MaterializedView materializedView : input) {
+              results.add(MaterializedView.fromProto(materializedView));
+            }
+            return results;
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#updateMaterializedView(com.google.bigtable.admin.v2.UpdateMaterializedViewRequest)}.
+   *
+   * <p>Updates an existing materialized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * MaterializedView existingMaterializedView = client.getMaterializedView("my-instance", "my-materialized-view");
+   *
+   * MaterializedView updatedMaterializedView = client.updateMaterializedView(
+   *   UpdateMaterializedViewRequest.of(existingMaterializedView)
+   *     .setDeletionProtection(false)
+   * );
+   * }</pre>
+   *
+   * @see UpdateMaterializedViewRequest
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public MaterializedView updateMaterializedView(UpdateMaterializedViewRequest request) {
+    return ApiExceptions.callAndTranslateApiException(updateMaterializedViewAsync(request));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#updateMaterializedView(com.google.bigtable.admin.v2.UpdateMaterializedViewRequest)}.
+   *
+   * <p>Asynchronously updates an existing materialized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<MaterializedView> existingMaterializedViewFuture = client.getMaterializedViewAsync("my-instance", "my-materialized-view");
+   *
+   * ApiFuture<MaterializedView> updatedMaterializedViewFuture = ApiFutures.transformAsync(
+   *   existingMaterializedViewFuture,
+   *   new ApiAsyncFunction<MaterializedView, MaterializedView>() {
+   *     public ApiFuture<MaterializedView> apply(MaterializedView existingMaterializedView) {
+   *       return client.updateMaterializedViewAsync(
+   *         UpdateMaterializedViewRequest.of(existingMaterializedView)
+   *           .setDeletionProtection(false)
+   *       );
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   *
+   * ApiFuture<MaterializedView> materializedView = updatedMaterializedViewFuture.get();
+   * }</pre>
+   *
+   * @see UpdateMaterializedViewRequest
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<MaterializedView> updateMaterializedViewAsync(
+      UpdateMaterializedViewRequest request) {
+    return ApiFutures.transform(
+        stub.updateMaterializedViewOperationCallable().futureCall(request.toProto(projectId)),
+        new ApiFunction<com.google.bigtable.admin.v2.MaterializedView, MaterializedView>() {
+          @Override
+          public MaterializedView apply(com.google.bigtable.admin.v2.MaterializedView proto) {
+            return MaterializedView.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#deleteMaterializedView(com.google.bigtable.admin.v2.DeleteMaterializedViewRequest)}.
+   *
+   * <p>Deletes the specified materialized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * client.deleteMaterializedView("my-instance", "my-materialized-view");
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public void deleteMaterializedView(String instanceId, String materializedViewId) {
+    ApiExceptions.callAndTranslateApiException(
+        deleteMaterializedViewAsync(instanceId, materializedViewId));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#deleteMaterializedView(com.google.bigtable.admin.v2.DeleteMaterializedViewRequest)}.
+   *
+   * <p>Asynchronously deletes the specified materialized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Void> deleteFuture = client.deleteMaterializedViewAsync("my-instance", "my-materialized-view");
+   *
+   * deleteFuture.get();
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Void> deleteMaterializedViewAsync(String instanceId, String materializedViewId) {
+
+    String name = NameUtil.formatMaterializedViewName(projectId, instanceId, materializedViewId);
+    DeleteMaterializedViewRequest request =
+        DeleteMaterializedViewRequest.newBuilder().setName(name).build();
+
+    return ApiFutures.transform(
+        stub.deleteMaterializedViewCallable().futureCall(request),
+        new ApiFunction<Empty, Void>() {
+          @Override
+          public Void apply(Empty input) {
+            return null;
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#createLogicalViewAsync(com.google.bigtable.admin.v2.CreateLogicalViewRequest)}.
+   *
+   * <p>Creates a new logical view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * LogicalView logicalView = client.createLogicalView(
+   *   CreateLogicalViewRequest.of("my-instance", "my-new-logical-view")
+   *     .setQuery(query)
+   * );
+   * }</pre>
+   *
+   * @see CreateLogicalViewRequest
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public LogicalView createLogicalView(CreateLogicalViewRequest request) {
+    return ApiExceptions.callAndTranslateApiException(createLogicalViewAsync(request));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#createLogicalViewAsync(com.google.bigtable.admin.v2.CreateLogicalViewRequest)}.
+   *
+   * <p>Asynchronously creates a new logical view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<LogicalView> logicalViewFuture = client.createLogicalViewAsync(
+   *   CreateLogicalViewRequest.of("my-instance", "my-new-logical-view")
+   *     .setQuery(query)
+   * );
+   *
+   * LogicalView logicalView = logicalViewFuture.get();
+   * }</pre>
+   *
+   * @see CreateLogicalViewRequest
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<LogicalView> createLogicalViewAsync(CreateLogicalViewRequest request) {
+    return ApiFutures.transform(
+        stub.createLogicalViewOperationCallable().futureCall(request.toProto(projectId)),
+        new ApiFunction<com.google.bigtable.admin.v2.LogicalView, LogicalView>() {
+          @Override
+          public LogicalView apply(com.google.bigtable.admin.v2.LogicalView proto) {
+            return LogicalView.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#getLogicalView(com.google.bigtable.admin.v2.GetLogicalViewRequest)}.
+   *
+   * <p>Gets the logical view by ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * LogicalView logicalView = client.getLogicalView("my-instance", "my-logical-view");
+   * }</pre>
+   *
+   * @see LogicalView
+   */
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public LogicalView getLogicalView(String instanceId, String logicalViewId) {
+    return ApiExceptions.callAndTranslateApiException(
+        getLogicalViewAsync(instanceId, logicalViewId));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#getLogicalView(com.google.bigtable.admin.v2.GetLogicalViewRequest)}.
+   *
+   * <p>Asynchronously gets the logical view by ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<LogicalView> logicalViewFuture = client.getLogicalViewAsync("my-instance", "my-logical-view");
+   *
+   * LogicalView logicalView = logicalViewFuture.get();
+   * }</pre>
+   *
+   * @see LogicalView
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<LogicalView> getLogicalViewAsync(String instanceId, String logicalViewId) {
+    String name = NameUtil.formatLogicalViewName(projectId, instanceId, logicalViewId);
+
+    GetLogicalViewRequest request = GetLogicalViewRequest.newBuilder().setName(name).build();
+
+    return ApiFutures.transform(
+        stub.getLogicalViewCallable().futureCall(request),
+        new ApiFunction<com.google.bigtable.admin.v2.LogicalView, LogicalView>() {
+          @Override
+          public LogicalView apply(com.google.bigtable.admin.v2.LogicalView proto) {
+            return LogicalView.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#listLogicalViews(com.google.bigtable.admin.v2.ListLogicalViewsRequest)}.
+   *
+   * <p>Lists all logical views of the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * List<LogicalView> logicalViews = client.listLogicalViews("my-instance");
+   * }</pre>
+   *
+   * @see LogicalView
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public List<LogicalView> listLogicalViews(String instanceId) {
+    return ApiExceptions.callAndTranslateApiException(listLogicalViewsAsync(instanceId));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#listLogicalViews(com.google.bigtable.admin.v2.ListLogicalViewsRequest)}.
+   *
+   * <p>Asynchronously lists all logical views of the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<List<LogicalView>> logicalViewsFuture = client.listLogicalViewsAsync("my-instance");
+   *
+   * List<LogicalView> logicalViews = logicalViewFuture.get();
+   * }</pre>
+   *
+   * @see LogicalView
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<List<LogicalView>> listLogicalViewsAsync(String instanceId) {
+    String instanceName = NameUtil.formatInstanceName(projectId, instanceId);
+
+    ListLogicalViewsRequest request =
+        ListLogicalViewsRequest.newBuilder().setParent(instanceName).build();
+
+    // TODO(igorbernstein2): try to upstream pagination spooling or figure out a way to expose the
+    // paginated responses while maintaining the wrapper facade.
+
+    // Fetches the first page.
+    ApiFuture<ListLogicalViewsPage> firstPageFuture =
+        ApiFutures.transform(
+            stub.listLogicalViewsPagedCallable().futureCall(request),
+            new ApiFunction<ListLogicalViewsPagedResponse, ListLogicalViewsPage>() {
+              @Override
+              public ListLogicalViewsPage apply(ListLogicalViewsPagedResponse response) {
+                return response.getPage();
+              }
+            },
+            MoreExecutors.directExecutor());
+
+    // Fetches the rest of the pages by chaining the futures.
+    ApiFuture<List<com.google.bigtable.admin.v2.LogicalView>> allProtos =
+        ApiFutures.transformAsync(
+            firstPageFuture,
+            new ApiAsyncFunction<
+                ListLogicalViewsPage, List<com.google.bigtable.admin.v2.LogicalView>>() {
+              List<com.google.bigtable.admin.v2.LogicalView> responseAccumulator =
+                  Lists.newArrayList();
+
+              @Override
+              public ApiFuture<List<com.google.bigtable.admin.v2.LogicalView>> apply(
+                  ListLogicalViewsPage page) {
+                // Add all entries from the page
+                responseAccumulator.addAll(Lists.newArrayList(page.getValues()));
+
+                // If this is the last page, just return the accumulated responses.
+                if (!page.hasNextPage()) {
+                  return ApiFutures.immediateFuture(responseAccumulator);
+                }
+
+                // Otherwise fetch the next page.
+                return ApiFutures.transformAsync(
+                    page.getNextPageAsync(), this, MoreExecutors.directExecutor());
+              }
+            },
+            MoreExecutors.directExecutor());
+
+    // Wraps all of the accumulated protos.
+    return ApiFutures.transform(
+        allProtos,
+        new ApiFunction<List<com.google.bigtable.admin.v2.LogicalView>, List<LogicalView>>() {
+          @Override
+          public List<LogicalView> apply(List<com.google.bigtable.admin.v2.LogicalView> input) {
+            List<LogicalView> results = Lists.newArrayListWithCapacity(input.size());
+            for (com.google.bigtable.admin.v2.LogicalView logicalView : input) {
+              results.add(LogicalView.fromProto(logicalView));
+            }
+            return results;
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#updateLogicalView(com.google.bigtable.admin.v2.UpdateLogicalViewRequest)}.
+   *
+   * <p>Updates an existing logical view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * LogicalView existingLogicalView = client.getLogicalView("my-instance", "my-logical-view");
+   *
+   * LogicalView updatedLogicalView = client.updateLogicalView(
+   *   UpdateLogicalViewRequest.of(existingLogicalView)
+   *     .setQuery(query)
+   * );
+   * }</pre>
+   *
+   * @see UpdateLogicalViewRequest
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public LogicalView updateLogicalView(UpdateLogicalViewRequest request) {
+    return ApiExceptions.callAndTranslateApiException(updateLogicalViewAsync(request));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#updateLogicalView(com.google.bigtable.admin.v2.UpdateLogicalViewRequest)}.
+   *
+   * <p>Asynchronously updates an existing logical view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<LogicalView> existingLogicalViewFuture = client.getLogicalViewAsync("my-instance", "my-logical-view");
+   *
+   * ApiFuture<LogicalView> updatedLogicalViewFuture = ApiFutures.transformAsync(
+   *   existingLogicalViewFuture,
+   *   new ApiAsyncFunction<LogicalView, LogicalView>() {
+   *     public ApiFuture<LogicalView> apply(LogicalView existingLogicalView) {
+   *       return client.updateLogicalViewAsync(
+   *         UpdateLogicalViewRequest.of(existingLogicalView)
+   *           .setQuery(query)
+   *       );
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   *
+   * ApiFuture<LogicalView> logicalView = updatedLogicalViewFuture.get();
+   * }</pre>
+   *
+   * @see UpdateLogicalViewRequest
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<LogicalView> updateLogicalViewAsync(UpdateLogicalViewRequest request) {
+    return ApiFutures.transform(
+        stub.updateLogicalViewOperationCallable().futureCall(request.toProto(projectId)),
+        new ApiFunction<com.google.bigtable.admin.v2.LogicalView, LogicalView>() {
+          @Override
+          public LogicalView apply(com.google.bigtable.admin.v2.LogicalView proto) {
+            return LogicalView.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#deleteLogicalView(com.google.bigtable.admin.v2.DeleteLogicalViewRequest)}.
+   *
+   * <p>Deletes the specified logical view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * client.deleteLogicalView("my-instance", "my-logical-view");
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public void deleteLogicalView(String instanceId, String logicalViewId) {
+    ApiExceptions.callAndTranslateApiException(deleteLogicalViewAsync(instanceId, logicalViewId));
+  }
+
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#deleteLogicalView(com.google.bigtable.admin.v2.DeleteLogicalViewRequest)}.
+   *
+   * <p>Asynchronously deletes the specified logical view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Void> deleteFuture = client.deleteLogicalViewAsync("my-instance", "my-logical-view");
+   *
+   * deleteFuture.get();
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  public ApiFuture<Void> deleteLogicalViewAsync(String instanceId, String logicalViewId) {
+
+    String name = NameUtil.formatLogicalViewName(projectId, instanceId, logicalViewId);
+    DeleteLogicalViewRequest request = DeleteLogicalViewRequest.newBuilder().setName(name).build();
+
+    return ApiFutures.transform(
+        stub.deleteLogicalViewCallable().futureCall(request),
+        new ApiFunction<Empty, Void>() {
+          @Override
+          public Void apply(Empty input) {
+            return null;
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Simple adapter to expose {@link DefaultMarshaller} to this class. It enables this client to
+   * convert to/from IAM wrappers and protobufs.
+   */
+  private static class IamPolicyMarshaller extends DefaultMarshaller {
+    @Override
+    public Policy fromPb(com.google.iam.v1.Policy policyPb) {
+      return super.fromPb(policyPb);
+    }
+
+    @Override
+    public com.google.iam.v1.Policy toPb(Policy policy) {
+      return super.toPb(policy);
+    }
+  }
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,9 +29,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * determine the status of the build.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/devtools/cloudbuild/v1/cloudbuild.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudBuildGrpc {
 
@@ -811,6 +808,55 @@ public final class CloudBuildGrpc {
     return getListWorkerPoolsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.GetDefaultServiceAccountRequest,
+          com.google.cloudbuild.v1.DefaultServiceAccount>
+      getGetDefaultServiceAccountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDefaultServiceAccount",
+      requestType = com.google.cloudbuild.v1.GetDefaultServiceAccountRequest.class,
+      responseType = com.google.cloudbuild.v1.DefaultServiceAccount.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.GetDefaultServiceAccountRequest,
+          com.google.cloudbuild.v1.DefaultServiceAccount>
+      getGetDefaultServiceAccountMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloudbuild.v1.GetDefaultServiceAccountRequest,
+            com.google.cloudbuild.v1.DefaultServiceAccount>
+        getGetDefaultServiceAccountMethod;
+    if ((getGetDefaultServiceAccountMethod = CloudBuildGrpc.getGetDefaultServiceAccountMethod)
+        == null) {
+      synchronized (CloudBuildGrpc.class) {
+        if ((getGetDefaultServiceAccountMethod = CloudBuildGrpc.getGetDefaultServiceAccountMethod)
+            == null) {
+          CloudBuildGrpc.getGetDefaultServiceAccountMethod =
+              getGetDefaultServiceAccountMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloudbuild.v1.GetDefaultServiceAccountRequest,
+                          com.google.cloudbuild.v1.DefaultServiceAccount>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetDefaultServiceAccount"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloudbuild.v1.GetDefaultServiceAccountRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloudbuild.v1.DefaultServiceAccount.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudBuildMethodDescriptorSupplier("GetDefaultServiceAccount"))
+                      .build();
+        }
+      }
+    }
+    return getGetDefaultServiceAccountMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CloudBuildStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudBuildStub> factory =
@@ -821,6 +867,19 @@ public final class CloudBuildGrpc {
           }
         };
     return CloudBuildStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CloudBuildBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CloudBuildBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudBuildBlockingV2Stub>() {
+          @java.lang.Override
+          public CloudBuildBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudBuildBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CloudBuildBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -963,8 +1022,8 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Approves or rejects a pending build.
-     * If approved, the returned LRO will be analogous to the LRO returned from
-     * a CreateBuild call.
+     * If approved, the returned long-running operation (LRO) will be analogous to
+     * the LRO returned from a CreateBuild call.
      * If rejected, the returned LRO will be immediately done.
      * </pre>
      */
@@ -980,7 +1039,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Creates a new `BuildTrigger`.
-     * This API is experimental.
      * </pre>
      */
     default void createBuildTrigger(
@@ -995,7 +1053,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Returns information about a `BuildTrigger`.
-     * This API is experimental.
      * </pre>
      */
     default void getBuildTrigger(
@@ -1010,7 +1067,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Lists existing `BuildTrigger`s.
-     * This API is experimental.
      * </pre>
      */
     default void listBuildTriggers(
@@ -1026,7 +1082,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Deletes a `BuildTrigger` by its project ID and trigger ID.
-     * This API is experimental.
      * </pre>
      */
     default void deleteBuildTrigger(
@@ -1041,7 +1096,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Updates a `BuildTrigger` by its project ID and trigger ID.
-     * This API is experimental.
      * </pre>
      */
     default void updateBuildTrigger(
@@ -1155,6 +1209,21 @@ public final class CloudBuildGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListWorkerPoolsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the `DefaultServiceAccount` used by the project.
+     * </pre>
+     */
+    default void getDefaultServiceAccount(
+        com.google.cloudbuild.v1.GetDefaultServiceAccountRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.DefaultServiceAccount>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDefaultServiceAccountMethod(), responseObserver);
     }
   }
 
@@ -1305,8 +1374,8 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Approves or rejects a pending build.
-     * If approved, the returned LRO will be analogous to the LRO returned from
-     * a CreateBuild call.
+     * If approved, the returned long-running operation (LRO) will be analogous to
+     * the LRO returned from a CreateBuild call.
      * If rejected, the returned LRO will be immediately done.
      * </pre>
      */
@@ -1324,7 +1393,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Creates a new `BuildTrigger`.
-     * This API is experimental.
      * </pre>
      */
     public void createBuildTrigger(
@@ -1341,7 +1409,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Returns information about a `BuildTrigger`.
-     * This API is experimental.
      * </pre>
      */
     public void getBuildTrigger(
@@ -1358,7 +1425,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Lists existing `BuildTrigger`s.
-     * This API is experimental.
      * </pre>
      */
     public void listBuildTriggers(
@@ -1376,7 +1442,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Deletes a `BuildTrigger` by its project ID and trigger ID.
-     * This API is experimental.
      * </pre>
      */
     public void deleteBuildTrigger(
@@ -1393,7 +1458,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Updates a `BuildTrigger` by its project ID and trigger ID.
-     * This API is experimental.
      * </pre>
      */
     public void updateBuildTrigger(
@@ -1524,10 +1588,336 @@ public final class CloudBuildGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the `DefaultServiceAccount` used by the project.
+     * </pre>
+     */
+    public void getDefaultServiceAccount(
+        com.google.cloudbuild.v1.GetDefaultServiceAccountRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.DefaultServiceAccount>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDefaultServiceAccountMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CloudBuild.
+   *
+   * <pre>
+   * Creates and manages builds on Google Cloud Platform.
+   * The main concept used by this API is a `Build`, which describes the location
+   * of the source to build, how to build the source, and where to store the
+   * built artifacts, if any.
+   * A user can list previously-requested builds or get builds by their ID to
+   * determine the status of the build.
+   * </pre>
+   */
+  public static final class CloudBuildBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CloudBuildBlockingV2Stub> {
+    private CloudBuildBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CloudBuildBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CloudBuildBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a build with the specified configuration.
+     * This method returns a long-running `Operation`, which includes the build
+     * ID. Pass the build ID to `GetBuild` to determine the build status (such as
+     * `SUCCESS` or `FAILURE`).
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBuild(
+        com.google.cloudbuild.v1.CreateBuildRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateBuildMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about a previously requested build.
+     * The `Build` that is returned includes its status (such as `SUCCESS`,
+     * `FAILURE`, or `WORKING`), and timing information.
+     * </pre>
+     */
+    public com.google.cloudbuild.v1.Build getBuild(com.google.cloudbuild.v1.GetBuildRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetBuildMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists previously requested builds.
+     * Previously requested builds may still be in-progress, or may have finished
+     * successfully or unsuccessfully.
+     * </pre>
+     */
+    public com.google.cloudbuild.v1.ListBuildsResponse listBuilds(
+        com.google.cloudbuild.v1.ListBuildsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListBuildsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a build in progress.
+     * </pre>
+     */
+    public com.google.cloudbuild.v1.Build cancelBuild(
+        com.google.cloudbuild.v1.CancelBuildRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelBuildMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new build based on the specified build.
+     * This method creates a new build using the original build request, which may
+     * or may not result in an identical build.
+     * For triggered builds:
+     * * Triggered builds resolve to a precise revision; therefore a retry of a
+     * triggered build will result in a build that uses the same revision.
+     * For non-triggered builds that specify `RepoSource`:
+     * * If the original build built from the tip of a branch, the retried build
+     * will build from the tip of that branch, which may not be the same revision
+     * as the original build.
+     * * If the original build specified a commit sha or revision ID, the retried
+     * build will use the identical source.
+     * For builds that specify `StorageSource`:
+     * * If the original build pulled source from Cloud Storage without
+     * specifying the generation of the object, the new build will use the current
+     * object, which may be different from the original build source.
+     * * If the original build pulled source from Cloud Storage and specified the
+     * generation of the object, the new build will attempt to use the same
+     * object, which may or may not be available depending on the bucket's
+     * lifecycle management settings.
+     * </pre>
+     */
+    public com.google.longrunning.Operation retryBuild(
+        com.google.cloudbuild.v1.RetryBuildRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRetryBuildMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Approves or rejects a pending build.
+     * If approved, the returned long-running operation (LRO) will be analogous to
+     * the LRO returned from a CreateBuild call.
+     * If rejected, the returned LRO will be immediately done.
+     * </pre>
+     */
+    public com.google.longrunning.Operation approveBuild(
+        com.google.cloudbuild.v1.ApproveBuildRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getApproveBuildMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `BuildTrigger`.
+     * </pre>
+     */
+    public com.google.cloudbuild.v1.BuildTrigger createBuildTrigger(
+        com.google.cloudbuild.v1.CreateBuildTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateBuildTriggerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about a `BuildTrigger`.
+     * </pre>
+     */
+    public com.google.cloudbuild.v1.BuildTrigger getBuildTrigger(
+        com.google.cloudbuild.v1.GetBuildTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetBuildTriggerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists existing `BuildTrigger`s.
+     * </pre>
+     */
+    public com.google.cloudbuild.v1.ListBuildTriggersResponse listBuildTriggers(
+        com.google.cloudbuild.v1.ListBuildTriggersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListBuildTriggersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `BuildTrigger` by its project ID and trigger ID.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteBuildTrigger(
+        com.google.cloudbuild.v1.DeleteBuildTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteBuildTriggerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a `BuildTrigger` by its project ID and trigger ID.
+     * </pre>
+     */
+    public com.google.cloudbuild.v1.BuildTrigger updateBuildTrigger(
+        com.google.cloudbuild.v1.UpdateBuildTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateBuildTriggerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs a `BuildTrigger` at a particular source revision.
+     * To run a regional or global trigger, use the POST request
+     * that includes the location endpoint in the path (ex.
+     * v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run). The
+     * POST request that does not include the location endpoint in the path can
+     * only be used when running global triggers.
+     * </pre>
+     */
+    public com.google.longrunning.Operation runBuildTrigger(
+        com.google.cloudbuild.v1.RunBuildTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRunBuildTriggerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ReceiveTriggerWebhook [Experimental] is called when the API receives a
+     * webhook request targeted at a specific trigger.
+     * </pre>
+     */
+    public com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse receiveTriggerWebhook(
+        com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getReceiveTriggerWebhookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a `WorkerPool`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createWorkerPool(
+        com.google.cloudbuild.v1.CreateWorkerPoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateWorkerPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details of a `WorkerPool`.
+     * </pre>
+     */
+    public com.google.cloudbuild.v1.WorkerPool getWorkerPool(
+        com.google.cloudbuild.v1.GetWorkerPoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetWorkerPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `WorkerPool`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteWorkerPool(
+        com.google.cloudbuild.v1.DeleteWorkerPoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteWorkerPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a `WorkerPool`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateWorkerPool(
+        com.google.cloudbuild.v1.UpdateWorkerPoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateWorkerPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `WorkerPool`s.
+     * </pre>
+     */
+    public com.google.cloudbuild.v1.ListWorkerPoolsResponse listWorkerPools(
+        com.google.cloudbuild.v1.ListWorkerPoolsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListWorkerPoolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the `DefaultServiceAccount` used by the project.
+     * </pre>
+     */
+    public com.google.cloudbuild.v1.DefaultServiceAccount getDefaultServiceAccount(
+        com.google.cloudbuild.v1.GetDefaultServiceAccountRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDefaultServiceAccountMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CloudBuild.
    *
    * <pre>
    * Creates and manages builds on Google Cloud Platform.
@@ -1646,8 +2036,8 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Approves or rejects a pending build.
-     * If approved, the returned LRO will be analogous to the LRO returned from
-     * a CreateBuild call.
+     * If approved, the returned long-running operation (LRO) will be analogous to
+     * the LRO returned from a CreateBuild call.
      * If rejected, the returned LRO will be immediately done.
      * </pre>
      */
@@ -1662,7 +2052,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Creates a new `BuildTrigger`.
-     * This API is experimental.
      * </pre>
      */
     public com.google.cloudbuild.v1.BuildTrigger createBuildTrigger(
@@ -1676,7 +2065,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Returns information about a `BuildTrigger`.
-     * This API is experimental.
      * </pre>
      */
     public com.google.cloudbuild.v1.BuildTrigger getBuildTrigger(
@@ -1690,7 +2078,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Lists existing `BuildTrigger`s.
-     * This API is experimental.
      * </pre>
      */
     public com.google.cloudbuild.v1.ListBuildTriggersResponse listBuildTriggers(
@@ -1704,7 +2091,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Deletes a `BuildTrigger` by its project ID and trigger ID.
-     * This API is experimental.
      * </pre>
      */
     public com.google.protobuf.Empty deleteBuildTrigger(
@@ -1718,7 +2104,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Updates a `BuildTrigger` by its project ID and trigger ID.
-     * This API is experimental.
      * </pre>
      */
     public com.google.cloudbuild.v1.BuildTrigger updateBuildTrigger(
@@ -1822,6 +2207,19 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.ListWorkerPoolsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListWorkerPoolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the `DefaultServiceAccount` used by the project.
+     * </pre>
+     */
+    public com.google.cloudbuild.v1.DefaultServiceAccount getDefaultServiceAccount(
+        com.google.cloudbuild.v1.GetDefaultServiceAccountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDefaultServiceAccountMethod(), getCallOptions(), request);
     }
   }
 
@@ -1945,8 +2343,8 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Approves or rejects a pending build.
-     * If approved, the returned LRO will be analogous to the LRO returned from
-     * a CreateBuild call.
+     * If approved, the returned long-running operation (LRO) will be analogous to
+     * the LRO returned from a CreateBuild call.
      * If rejected, the returned LRO will be immediately done.
      * </pre>
      */
@@ -1961,7 +2359,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Creates a new `BuildTrigger`.
-     * This API is experimental.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.BuildTrigger>
@@ -1975,7 +2372,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Returns information about a `BuildTrigger`.
-     * This API is experimental.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.BuildTrigger>
@@ -1989,7 +2385,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Lists existing `BuildTrigger`s.
-     * This API is experimental.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2004,7 +2399,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Deletes a `BuildTrigger` by its project ID and trigger ID.
-     * This API is experimental.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2018,7 +2412,6 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Updates a `BuildTrigger` by its project ID and trigger ID.
-     * This API is experimental.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.BuildTrigger>
@@ -2125,6 +2518,20 @@ public final class CloudBuildGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListWorkerPoolsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the `DefaultServiceAccount` used by the project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloudbuild.v1.DefaultServiceAccount>
+        getDefaultServiceAccount(com.google.cloudbuild.v1.GetDefaultServiceAccountRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDefaultServiceAccountMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_BUILD = 0;
@@ -2145,6 +2552,7 @@ public final class CloudBuildGrpc {
   private static final int METHODID_DELETE_WORKER_POOL = 15;
   private static final int METHODID_UPDATE_WORKER_POOL = 16;
   private static final int METHODID_LIST_WORKER_POOLS = 17;
+  private static final int METHODID_GET_DEFAULT_SERVICE_ACCOUNT = 18;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2258,6 +2666,12 @@ public final class CloudBuildGrpc {
           serviceImpl.listWorkerPools(
               (com.google.cloudbuild.v1.ListWorkerPoolsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.ListWorkerPoolsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_DEFAULT_SERVICE_ACCOUNT:
+          serviceImpl.getDefaultServiceAccount(
+              (com.google.cloudbuild.v1.GetDefaultServiceAccountRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.DefaultServiceAccount>)
                   responseObserver);
           break;
         default:
@@ -2389,6 +2803,13 @@ public final class CloudBuildGrpc {
                     com.google.cloudbuild.v1.ListWorkerPoolsRequest,
                     com.google.cloudbuild.v1.ListWorkerPoolsResponse>(
                     service, METHODID_LIST_WORKER_POOLS)))
+        .addMethod(
+            getGetDefaultServiceAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.GetDefaultServiceAccountRequest,
+                    com.google.cloudbuild.v1.DefaultServiceAccount>(
+                    service, METHODID_GET_DEFAULT_SERVICE_ACCOUNT)))
         .build();
   }
 
@@ -2458,6 +2879,7 @@ public final class CloudBuildGrpc {
                       .addMethod(getDeleteWorkerPoolMethod())
                       .addMethod(getUpdateWorkerPoolMethod())
                       .addMethod(getListWorkerPoolsMethod())
+                      .addMethod(getGetDefaultServiceAccountMethod())
                       .build();
         }
       }

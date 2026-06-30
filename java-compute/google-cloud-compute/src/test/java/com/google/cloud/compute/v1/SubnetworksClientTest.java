@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -143,6 +143,7 @@ public class SubnetworksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -217,6 +218,7 @@ public class SubnetworksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -297,6 +299,7 @@ public class SubnetworksClientTest {
   public void getTest() throws Exception {
     Subnetwork expectedResponse =
         Subnetwork.newBuilder()
+            .setAllowSubnetCidrRoutesOverlap(true)
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setEnableFlowLogs(true)
@@ -306,22 +309,29 @@ public class SubnetworksClientTest {
             .setId(3355)
             .setInternalIpv6Prefix("internalIpv6Prefix-561062410")
             .setIpCidrRange("ipCidrRange-866375486")
+            .setIpCollection("ipCollection1525846821")
             .setIpv6AccessType("ipv6AccessType606780421")
             .setIpv6CidrRange("ipv6CidrRange885760002")
+            .setIpv6GceEndpoint("ipv6GceEndpoint-363181225")
             .setKind("kind3292052")
             .setLogConfig(SubnetworkLogConfig.newBuilder().build())
             .setName("name3373707")
             .setNetwork("network1843485230")
+            .setParams(SubnetworkParams.newBuilder().build())
             .setPrivateIpGoogleAccess(true)
             .setPrivateIpv6GoogleAccess("privateIpv6GoogleAccess-1729571801")
             .setPurpose("purpose-220463842")
             .setRegion("region-934795532")
             .setReservedInternalRange("reservedInternalRange518272568")
+            .setResolveSubnetMask("resolveSubnetMask1231531765")
             .setRole("role3506294")
             .addAllSecondaryIpRanges(new ArrayList<SubnetworkSecondaryRange>())
             .setSelfLink("selfLink1191800166")
             .setStackType("stackType1727939042")
             .setState("state109757585")
+            .addAllSystemReservedExternalIpv6Ranges(new ArrayList<String>())
+            .addAllSystemReservedInternalIpv6Ranges(new ArrayList<String>())
+            .setUtilizationDetails(SubnetworkUtilizationDetails.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -373,7 +383,6 @@ public class SubnetworksClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -427,6 +436,7 @@ public class SubnetworksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -603,6 +613,7 @@ public class SubnetworksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -679,7 +690,6 @@ public class SubnetworksClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -738,6 +748,7 @@ public class SubnetworksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)

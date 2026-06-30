@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.cloud.discoveryengine.v1beta.RankServiceClient;
 import com.google.cloud.discoveryengine.v1beta.RankingConfigName;
 import com.google.cloud.discoveryengine.v1beta.RankingRecord;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AsyncRank {
 
@@ -47,6 +48,7 @@ public class AsyncRank {
               .setQuery("query107944136")
               .addAllRecords(new ArrayList<RankingRecord>())
               .setIgnoreRecordDetailsInResponse(true)
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       ApiFuture<RankResponse> future = rankServiceClient.rankCallable().futureCall(request);
       // Do something.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -188,6 +188,8 @@ public class GeneratorsClientTest {
             .setDisplayName("displayName1714148973")
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockGenerators.addResponse(expectedResponse);
 
@@ -230,6 +232,8 @@ public class GeneratorsClientTest {
             .setDisplayName("displayName1714148973")
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockGenerators.addResponse(expectedResponse);
 
@@ -272,6 +276,8 @@ public class GeneratorsClientTest {
             .setDisplayName("displayName1714148973")
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockGenerators.addResponse(expectedResponse);
 
@@ -317,6 +323,8 @@ public class GeneratorsClientTest {
             .setDisplayName("displayName1714148973")
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockGenerators.addResponse(expectedResponse);
 
@@ -362,6 +370,8 @@ public class GeneratorsClientTest {
             .setDisplayName("displayName1714148973")
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockGenerators.addResponse(expectedResponse);
 

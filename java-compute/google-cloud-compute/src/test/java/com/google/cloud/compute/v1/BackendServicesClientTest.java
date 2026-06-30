@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,6 +92,7 @@ public class BackendServicesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -219,6 +220,7 @@ public class BackendServicesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -291,6 +293,7 @@ public class BackendServicesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -371,16 +374,21 @@ public class BackendServicesClientTest {
                 BackendServiceConnectionTrackingPolicy.newBuilder().build())
             .setConsistentHash(ConsistentHashLoadBalancerSettings.newBuilder().build())
             .setCreationTimestamp("creationTimestamp-370203401")
+            .addAllCustomMetrics(new ArrayList<BackendServiceCustomMetric>())
             .addAllCustomRequestHeaders(new ArrayList<String>())
             .addAllCustomResponseHeaders(new ArrayList<String>())
             .setDescription("description-1724546052")
             .setEdgeSecurityPolicy("edgeSecurityPolicy-630226001")
             .setEnableCDN(true)
+            .setExternalManagedMigrationState("externalManagedMigrationState252654551")
+            .setExternalManagedMigrationTestingPercentage(1044103374)
             .setFailoverPolicy(BackendServiceFailoverPolicy.newBuilder().build())
             .setFingerprint("fingerprint-1375934236")
+            .setHaPolicy(BackendServiceHAPolicy.newBuilder().build())
             .addAllHealthChecks(new ArrayList<String>())
             .setIap(BackendServiceIAP.newBuilder().build())
             .setId(3355)
+            .setIpAddressSelectionPolicy("ipAddressSelectionPolicy1723019601")
             .setKind("kind3292052")
             .setLoadBalancingScheme("loadBalancingScheme-1223583272")
             .addAllLocalityLbPolicies(
@@ -391,7 +399,11 @@ public class BackendServicesClientTest {
             .putAllMetadatas(new HashMap<String, String>())
             .setName("name3373707")
             .setNetwork("network1843485230")
+            .setNetworkPassThroughLbTrafficPolicy(
+                BackendServiceNetworkPassThroughLbTrafficPolicy.newBuilder().build())
+            .setOrchestrationInfo(BackendServiceOrchestrationInfo.newBuilder().build())
             .setOutlierDetection(OutlierDetection.newBuilder().build())
+            .setParams(BackendServiceParams.newBuilder().build())
             .setPort(3446913)
             .setPortName("portName728194732")
             .setProtocol("protocol-989163880")
@@ -402,8 +414,10 @@ public class BackendServicesClientTest {
             .addAllServiceBindings(new ArrayList<String>())
             .setServiceLbPolicy("serviceLbPolicy-347155427")
             .setSessionAffinity("sessionAffinity-289859106")
+            .setStrongSessionAffinityCookie(BackendServiceHttpCookie.newBuilder().build())
             .setSubsetting(Subsetting.newBuilder().build())
             .setTimeoutSec(-2067488653)
+            .setTlsSettings(BackendServiceTlsSettings.newBuilder().build())
             .addAllUsedBy(new ArrayList<BackendServiceUsedBy>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -440,6 +454,51 @@ public class BackendServicesClientTest {
       String project = "project-6911";
       String backendService = "backendService-8873";
       client.get(project, backendService);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEffectiveSecurityPoliciesTest() throws Exception {
+    GetEffectiveSecurityPoliciesBackendServiceResponse expectedResponse =
+        GetEffectiveSecurityPoliciesBackendServiceResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String backendService = "backendService-8873";
+
+    GetEffectiveSecurityPoliciesBackendServiceResponse actualResponse =
+        client.getEffectiveSecurityPolicies(project, backendService);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEffectiveSecurityPoliciesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String backendService = "backendService-8873";
+      client.getEffectiveSecurityPolicies(project, backendService);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -507,7 +566,6 @@ public class BackendServicesClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -559,6 +617,7 @@ public class BackendServicesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -731,6 +790,7 @@ public class BackendServicesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -806,6 +866,7 @@ public class BackendServicesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -886,7 +947,6 @@ public class BackendServicesClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -942,6 +1002,7 @@ public class BackendServicesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -1070,6 +1131,7 @@ public class BackendServicesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)

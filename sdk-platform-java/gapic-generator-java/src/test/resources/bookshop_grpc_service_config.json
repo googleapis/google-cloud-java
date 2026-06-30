@@ -1,0 +1,8 @@
+{
+  "methodConfig": [
+    {
+      "name": [{"service": "google.bookshop.v1beta1.Bookshop"}],
+      "timeout": "60s"
+    }
+  ]
+}

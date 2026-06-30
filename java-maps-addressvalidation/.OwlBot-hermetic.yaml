@@ -20,7 +20,8 @@ deep-remove-regex:
 - "/java-maps-addressvalidation/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-maps-addressvalidation/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/maps/addressvalidation/(v.*)/.*-java/proto-google-.*/src"

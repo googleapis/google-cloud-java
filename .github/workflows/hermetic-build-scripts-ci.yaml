@@ -1,0 +1,110 @@
+on:
+  pull_request:
+
+name: hermetic build scripts
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'sdk-platform-java/hermetic_build/**'
+            - 'sdk-platform-java/.cloudbuild/library_generation/**'
+            - '.github/workflows/hermetic-build-scripts-ci.yaml'
+  library-generation-unit-tests:
+    needs: filter
+    if: needs.filter.outputs.library == 'true'
+    runs-on: ubuntu-22.04
+    name: hermetic build units (python)
+    defaults:
+      run:
+        working-directory: sdk-platform-java
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: 3.12
+    - name: install python modules and dependencies
+      shell: bash
+      run: |
+        set -ex
+        pip install --upgrade pip
+        pip install --require-hashes -r hermetic_build/common/requirements.txt
+        pip install hermetic_build/common
+        pip install --require-hashes -r hermetic_build/library_generation/requirements.txt
+        pip install hermetic_build/library_generation
+        pip install --require-hashes -r hermetic_build/release_note_generation/requirements.txt
+        pip install hermetic_build/release_note_generation
+    - name: Run shell unit tests
+      run: |
+        set -x
+        hermetic_build/library_generation/tests/generate_library_unit_tests.sh
+    - name: Run python unit tests
+      run: |
+        set -x
+        python -m unittest discover -s hermetic_build -p "*unit_tests.py"
+  library-generation-lint-shell:
+    needs: filter
+    if: needs.filter.outputs.library == 'true'
+    runs-on: ubuntu-22.04
+    name: hermetic build lint (shell)
+    defaults:
+      run:
+        working-directory: sdk-platform-java
+    steps:
+    - uses: actions/checkout@v4
+    - name: Run ShellCheck
+      uses: ludeeus/action-shellcheck@2.0.0
+      with:
+        scandir: 'sdk-platform-java/hermetic_build'
+        format: tty
+        severity: error
+        ignore_paths: 
+          .kokoro
+  library-generation-lint-python:
+    needs: filter
+    if: needs.filter.outputs.library == 'true'
+    runs-on: ubuntu-22.04
+    name: hermetic build lint (python)
+    defaults:
+      run:
+        working-directory: sdk-platform-java
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: 3.12
+    - name: install python dependencies
+      shell: bash
+      run: |
+        set -ex
+        pip install --upgrade pip
+        pip install --require-hashes -r hermetic_build/common/requirements.txt
+        pip install hermetic_build/common
+        pip install --require-hashes -r hermetic_build/library_generation/requirements.txt
+        pip install hermetic_build/library_generation
+        pip install --require-hashes -r hermetic_build/release_note_generation/requirements.txt
+        pip install hermetic_build/release_note_generation
+    - name: Lint
+      shell: bash
+      run: |
+        # exclude generated golden files
+        # exclude owlbot until further refaction
+        black --check hermetic_build --exclude "(library_generation/tests/resources/goldens)"
+  required:
+    needs: [ library-generation-unit-tests, library-generation-lint-shell, library-generation-lint-python ]
+    name: conditional-required-check
+    if: ${{ always() }} # Always run even if any "needs" jobs fail
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Fail if any previous failure
+        if: ${{ contains(needs.*.result, 'failure') }}
+        run: exit 1
+      - name: Success otherwise
+        run: echo "Success!"

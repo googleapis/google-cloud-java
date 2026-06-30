@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.CancelTuningJobRequest;
@@ -31,6 +32,8 @@ import com.google.cloud.aiplatform.v1.CreateTuningJobRequest;
 import com.google.cloud.aiplatform.v1.GetTuningJobRequest;
 import com.google.cloud.aiplatform.v1.ListTuningJobsRequest;
 import com.google.cloud.aiplatform.v1.ListTuningJobsResponse;
+import com.google.cloud.aiplatform.v1.RebaseTunedModelOperationMetadata;
+import com.google.cloud.aiplatform.v1.RebaseTunedModelRequest;
 import com.google.cloud.aiplatform.v1.TuningJob;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -41,6 +44,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -65,6 +69,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TuningJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTuningJobRequest, TuningJob>
@@ -74,6 +79,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1.GenAiTuningService/GetTuningJob")
               .setRequestMarshaller(ProtoUtils.marshaller(GetTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TuningJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTuningJobsRequest, ListTuningJobsResponse>
@@ -85,6 +91,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   ProtoUtils.marshaller(ListTuningJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTuningJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelTuningJobRequest, Empty>
@@ -95,6 +102,18 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<RebaseTunedModelRequest, Operation>
+      rebaseTunedModelMethodDescriptor =
+          MethodDescriptor.<RebaseTunedModelRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.GenAiTuningService/RebaseTunedModel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RebaseTunedModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -106,6 +125,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -114,6 +134,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -122,6 +143,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -130,6 +152,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -141,6 +164,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateTuningJobRequest, TuningJob> createTuningJobCallable;
@@ -149,6 +173,10 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
   private final UnaryCallable<ListTuningJobsRequest, ListTuningJobsPagedResponse>
       listTuningJobsPagedCallable;
   private final UnaryCallable<CancelTuningJobRequest, Empty> cancelTuningJobCallable;
+  private final UnaryCallable<RebaseTunedModelRequest, Operation> rebaseTunedModelCallable;
+  private final OperationCallable<
+          RebaseTunedModelRequest, TuningJob, RebaseTunedModelOperationMetadata>
+      rebaseTunedModelOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -211,6 +239,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTuningJobRequest, TuningJob> getTuningJobTransportSettings =
         GrpcCallSettings.<GetTuningJobRequest, TuningJob>newBuilder()
@@ -221,6 +250,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTuningJobsRequest, ListTuningJobsResponse>
         listTuningJobsTransportSettings =
@@ -232,6 +262,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CancelTuningJobRequest, Empty> cancelTuningJobTransportSettings =
         GrpcCallSettings.<CancelTuningJobRequest, Empty>newBuilder()
@@ -242,6 +273,18 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<RebaseTunedModelRequest, Operation> rebaseTunedModelTransportSettings =
+        GrpcCallSettings.<RebaseTunedModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(rebaseTunedModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -272,6 +315,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -282,6 +326,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -293,6 +338,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createTuningJobCallable =
@@ -310,6 +356,15 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
     this.cancelTuningJobCallable =
         callableFactory.createUnaryCallable(
             cancelTuningJobTransportSettings, settings.cancelTuningJobSettings(), clientContext);
+    this.rebaseTunedModelCallable =
+        callableFactory.createUnaryCallable(
+            rebaseTunedModelTransportSettings, settings.rebaseTunedModelSettings(), clientContext);
+    this.rebaseTunedModelOperationCallable =
+        callableFactory.createOperationCallable(
+            rebaseTunedModelTransportSettings,
+            settings.rebaseTunedModelOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -363,6 +418,17 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
   @Override
   public UnaryCallable<CancelTuningJobRequest, Empty> cancelTuningJobCallable() {
     return cancelTuningJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<RebaseTunedModelRequest, Operation> rebaseTunedModelCallable() {
+    return rebaseTunedModelCallable;
+  }
+
+  @Override
+  public OperationCallable<RebaseTunedModelRequest, TuningJob, RebaseTunedModelOperationMetadata>
+      rebaseTunedModelOperationCallable() {
+    return rebaseTunedModelOperationCallable;
   }
 
   @Override

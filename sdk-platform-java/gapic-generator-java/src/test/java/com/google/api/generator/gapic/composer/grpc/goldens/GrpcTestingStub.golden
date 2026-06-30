@@ -1,0 +1,422 @@
+package com.google.showcase.v1beta1.stub;
+
+import static com.google.showcase.v1beta1.TestingClient.ListSessionsPagedResponse;
+import static com.google.showcase.v1beta1.TestingClient.ListTestsPagedResponse;
+
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
+import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.protobuf.Empty;
+import com.google.showcase.v1beta1.CreateSessionRequest;
+import com.google.showcase.v1beta1.DeleteSessionRequest;
+import com.google.showcase.v1beta1.DeleteTestRequest;
+import com.google.showcase.v1beta1.GetSessionRequest;
+import com.google.showcase.v1beta1.GetTestRequest;
+import com.google.showcase.v1beta1.ListSessionsRequest;
+import com.google.showcase.v1beta1.ListSessionsResponse;
+import com.google.showcase.v1beta1.ListTestsRequest;
+import com.google.showcase.v1beta1.ListTestsResponse;
+import com.google.showcase.v1beta1.ReportSessionRequest;
+import com.google.showcase.v1beta1.ReportSessionResponse;
+import com.google.showcase.v1beta1.Session;
+import com.google.showcase.v1beta1.Test;
+import com.google.showcase.v1beta1.VerifyTestRequest;
+import com.google.showcase.v1beta1.VerifyTestResponse;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
+import java.io.IOException;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * gRPC stub implementation for the Testing service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@BetaApi
+@Generated("by gapic-generator-java")
+public class GrpcTestingStub extends TestingStub {
+  private static final MethodDescriptor<CreateSessionRequest, Session>
+      createSessionMethodDescriptor =
+          MethodDescriptor.<CreateSessionRequest, Session>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.showcase.v1beta1.Testing/CreateSession")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateSessionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetSessionRequest, Session> getSessionMethodDescriptor =
+      MethodDescriptor.<GetSessionRequest, Session>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.showcase.v1beta1.Testing/GetSession")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetSessionRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<ListSessionsRequest, ListSessionsResponse>
+      listSessionsMethodDescriptor =
+          MethodDescriptor.<ListSessionsRequest, ListSessionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.showcase.v1beta1.Testing/ListSessions")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListSessionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSessionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteSessionRequest, Empty> deleteSessionMethodDescriptor =
+      MethodDescriptor.<DeleteSessionRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.showcase.v1beta1.Testing/DeleteSession")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteSessionRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<ReportSessionRequest, ReportSessionResponse>
+      reportSessionMethodDescriptor =
+          MethodDescriptor.<ReportSessionRequest, ReportSessionResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.showcase.v1beta1.Testing/ReportSession")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReportSessionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReportSessionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetTestRequest, Test> getTestMethodDescriptor =
+      MethodDescriptor.<GetTestRequest, Test>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.showcase.v1beta1.Testing/GetTest")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetTestRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Test.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<ListTestsRequest, ListTestsResponse>
+      listTestsMethodDescriptor =
+          MethodDescriptor.<ListTestsRequest, ListTestsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.showcase.v1beta1.Testing/ListTests")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListTestsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListTestsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteTestRequest, Empty> deleteTestMethodDescriptor =
+      MethodDescriptor.<DeleteTestRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.showcase.v1beta1.Testing/DeleteTest")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteTestRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<VerifyTestRequest, VerifyTestResponse>
+      verifyTestMethodDescriptor =
+          MethodDescriptor.<VerifyTestRequest, VerifyTestResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.showcase.v1beta1.Testing/VerifyTest")
+              .setRequestMarshaller(ProtoUtils.marshaller(VerifyTestRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(VerifyTestResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private final UnaryCallable<CreateSessionRequest, Session> createSessionCallable;
+  private final UnaryCallable<GetSessionRequest, Session> getSessionCallable;
+  private final UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable;
+  private final UnaryCallable<ListSessionsRequest, ListSessionsPagedResponse>
+      listSessionsPagedCallable;
+  private final UnaryCallable<DeleteSessionRequest, Empty> deleteSessionCallable;
+  private final UnaryCallable<ReportSessionRequest, ReportSessionResponse> reportSessionCallable;
+  private final UnaryCallable<GetTestRequest, Test> getTestCallable;
+  private final UnaryCallable<ListTestsRequest, ListTestsResponse> listTestsCallable;
+  private final UnaryCallable<ListTestsRequest, ListTestsPagedResponse> listTestsPagedCallable;
+  private final UnaryCallable<DeleteTestRequest, Empty> deleteTestCallable;
+  private final UnaryCallable<VerifyTestRequest, VerifyTestResponse> verifyTestCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
+  private final GrpcStubCallableFactory callableFactory;
+
+  private static final PathTemplate GET_TEST_0_PATH_TEMPLATE =
+      PathTemplate.create("/v1beta1/{rename=tests/*}");
+  private static final PathTemplate GET_TEST_1_PATH_TEMPLATE =
+      PathTemplate.create("/v1beta1/{routing_id=tests/*}");
+
+  public static final GrpcTestingStub create(TestingStubSettings settings) throws IOException {
+    return new GrpcTestingStub(settings, ClientContext.create(settings));
+  }
+
+  public static final GrpcTestingStub create(ClientContext clientContext) throws IOException {
+    return new GrpcTestingStub(TestingStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final GrpcTestingStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcTestingStub(
+        TestingStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
+  /**
+   * Constructs an instance of GrpcTestingStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected GrpcTestingStub(TestingStubSettings settings, ClientContext clientContext)
+      throws IOException {
+    this(settings, clientContext, new GrpcTestingCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcTestingStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected GrpcTestingStub(
+      TestingStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
+
+    GrpcCallSettings<CreateSessionRequest, Session> createSessionTransportSettings =
+        GrpcCallSettings.<CreateSessionRequest, Session>newBuilder()
+            .setMethodDescriptor(createSessionMethodDescriptor)
+            .build();
+    GrpcCallSettings<GetSessionRequest, Session> getSessionTransportSettings =
+        GrpcCallSettings.<GetSessionRequest, Session>newBuilder()
+            .setMethodDescriptor(getSessionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListSessionsRequest, ListSessionsResponse> listSessionsTransportSettings =
+        GrpcCallSettings.<ListSessionsRequest, ListSessionsResponse>newBuilder()
+            .setMethodDescriptor(listSessionsMethodDescriptor)
+            .build();
+    GrpcCallSettings<DeleteSessionRequest, Empty> deleteSessionTransportSettings =
+        GrpcCallSettings.<DeleteSessionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteSessionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ReportSessionRequest, ReportSessionResponse> reportSessionTransportSettings =
+        GrpcCallSettings.<ReportSessionRequest, ReportSessionResponse>newBuilder()
+            .setMethodDescriptor(reportSessionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<GetTestRequest, Test> getTestTransportSettings =
+        GrpcCallSettings.<GetTestRequest, Test>newBuilder()
+            .setMethodDescriptor(getTestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "rename", GET_TEST_0_PATH_TEMPLATE);
+                  if (request.getRouting() != null) {
+                    builder.add(
+                        request.getRouting().getName(), "routing_id", GET_TEST_1_PATH_TEMPLATE);
+                  }
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListTestsRequest, ListTestsResponse> listTestsTransportSettings =
+        GrpcCallSettings.<ListTestsRequest, ListTestsResponse>newBuilder()
+            .setMethodDescriptor(listTestsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<DeleteTestRequest, Empty> deleteTestTransportSettings =
+        GrpcCallSettings.<DeleteTestRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<VerifyTestRequest, VerifyTestResponse> verifyTestTransportSettings =
+        GrpcCallSettings.<VerifyTestRequest, VerifyTestResponse>newBuilder()
+            .setMethodDescriptor(verifyTestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("answer", String.valueOf(request.getAnswer()));
+                  builder.add("foo", String.valueOf(request.getFoo()));
+                  builder.add("name", String.valueOf(request.getName()));
+                  builder.add(
+                      "test_to_verify.name", String.valueOf(request.getTestToVerify().getName()));
+                  builder.add("type", String.valueOf(request.getTypeValue()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+
+    this.createSessionCallable =
+        callableFactory.createUnaryCallable(
+            createSessionTransportSettings, settings.createSessionSettings(), clientContext);
+    this.getSessionCallable =
+        callableFactory.createUnaryCallable(
+            getSessionTransportSettings, settings.getSessionSettings(), clientContext);
+    this.listSessionsCallable =
+        callableFactory.createUnaryCallable(
+            listSessionsTransportSettings, settings.listSessionsSettings(), clientContext);
+    this.listSessionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSessionsTransportSettings, settings.listSessionsSettings(), clientContext);
+    this.deleteSessionCallable =
+        callableFactory.createUnaryCallable(
+            deleteSessionTransportSettings, settings.deleteSessionSettings(), clientContext);
+    this.reportSessionCallable =
+        callableFactory.createUnaryCallable(
+            reportSessionTransportSettings, settings.reportSessionSettings(), clientContext);
+    this.getTestCallable =
+        callableFactory.createUnaryCallable(
+            getTestTransportSettings, settings.getTestSettings(), clientContext);
+    this.listTestsCallable =
+        callableFactory.createUnaryCallable(
+            listTestsTransportSettings, settings.listTestsSettings(), clientContext);
+    this.listTestsPagedCallable =
+        callableFactory.createPagedCallable(
+            listTestsTransportSettings, settings.listTestsSettings(), clientContext);
+    this.deleteTestCallable =
+        callableFactory.createUnaryCallable(
+            deleteTestTransportSettings, settings.deleteTestSettings(), clientContext);
+    this.verifyTestCallable =
+        callableFactory.createUnaryCallable(
+            verifyTestTransportSettings, settings.verifyTestSettings(), clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<CreateSessionRequest, Session> createSessionCallable() {
+    return createSessionCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSessionRequest, Session> getSessionCallable() {
+    return getSessionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable() {
+    return listSessionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSessionsRequest, ListSessionsPagedResponse> listSessionsPagedCallable() {
+    return listSessionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSessionRequest, Empty> deleteSessionCallable() {
+    return deleteSessionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReportSessionRequest, ReportSessionResponse> reportSessionCallable() {
+    return reportSessionCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetTestRequest, Test> getTestCallable() {
+    return getTestCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTestsRequest, ListTestsResponse> listTestsCallable() {
+    return listTestsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTestsRequest, ListTestsPagedResponse> listTestsPagedCallable() {
+    return listTestsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteTestRequest, Empty> deleteTestCallable() {
+    return deleteTestCallable;
+  }
+
+  @Override
+  public UnaryCallable<VerifyTestRequest, VerifyTestResponse> verifyTestCallable() {
+    return verifyTestCallable;
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

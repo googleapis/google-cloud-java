@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -478,6 +478,7 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetModelRequest, Model> getModelTransportSettings =
         HttpJsonCallSettings.<GetModelRequest, Model>newBuilder()
@@ -489,6 +490,7 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<PauseModelRequest, Model> pauseModelTransportSettings =
         HttpJsonCallSettings.<PauseModelRequest, Model>newBuilder()
@@ -500,6 +502,7 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ResumeModelRequest, Model> resumeModelTransportSettings =
         HttpJsonCallSettings.<ResumeModelRequest, Model>newBuilder()
@@ -522,6 +525,7 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListModelsRequest, ListModelsResponse> listModelsTransportSettings =
         HttpJsonCallSettings.<ListModelsRequest, ListModelsResponse>newBuilder()
@@ -533,6 +537,7 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateModelRequest, Model> updateModelTransportSettings =
         HttpJsonCallSettings.<UpdateModelRequest, Model>newBuilder()
@@ -555,6 +560,7 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createModelCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddPeeringNetworkRequest;
+import com.google.cloud.compute.v1.CancelRequestRemovePeeringNetworkRequest;
 import com.google.cloud.compute.v1.DeleteNetworkRequest;
 import com.google.cloud.compute.v1.ExchangedPeeringRoutesList;
 import com.google.cloud.compute.v1.GetEffectiveFirewallsNetworkRequest;
@@ -36,6 +37,7 @@ import com.google.cloud.compute.v1.NetworksGetEffectiveFirewallsResponse;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchNetworkRequest;
 import com.google.cloud.compute.v1.RemovePeeringNetworkRequest;
+import com.google.cloud.compute.v1.RequestRemovePeeringNetworkRequest;
 import com.google.cloud.compute.v1.SwitchToCustomModeNetworkRequest;
 import com.google.cloud.compute.v1.UpdatePeeringNetworkRequest;
 import javax.annotation.Generated;
@@ -56,6 +58,18 @@ public abstract class NetworksStub implements BackgroundResource {
 
   public UnaryCallable<AddPeeringNetworkRequest, Operation> addPeeringCallable() {
     throw new UnsupportedOperationException("Not implemented: addPeeringCallable()");
+  }
+
+  public OperationCallable<CancelRequestRemovePeeringNetworkRequest, Operation, Operation>
+      cancelRequestRemovePeeringOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: cancelRequestRemovePeeringOperationCallable()");
+  }
+
+  public UnaryCallable<CancelRequestRemovePeeringNetworkRequest, Operation>
+      cancelRequestRemovePeeringCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: cancelRequestRemovePeeringCallable()");
   }
 
   public OperationCallable<DeleteNetworkRequest, Operation, Operation> deleteOperationCallable() {
@@ -116,6 +130,17 @@ public abstract class NetworksStub implements BackgroundResource {
 
   public UnaryCallable<RemovePeeringNetworkRequest, Operation> removePeeringCallable() {
     throw new UnsupportedOperationException("Not implemented: removePeeringCallable()");
+  }
+
+  public OperationCallable<RequestRemovePeeringNetworkRequest, Operation, Operation>
+      requestRemovePeeringOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: requestRemovePeeringOperationCallable()");
+  }
+
+  public UnaryCallable<RequestRemovePeeringNetworkRequest, Operation>
+      requestRemovePeeringCallable() {
+    throw new UnsupportedOperationException("Not implemented: requestRemovePeeringCallable()");
   }
 
   public OperationCallable<SwitchToCustomModeNetworkRequest, Operation, Operation>

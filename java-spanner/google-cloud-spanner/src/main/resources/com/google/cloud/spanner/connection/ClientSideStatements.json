@@ -1,0 +1,951 @@
+{
+"statements":
+	[
+	{
+	  "name": "SHOW VARIABLE AUTOCOMMIT",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_AUTOCOMMIT",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+autocommit\\s*\\z",
+	  "method": "statementShowAutocommit",
+	  "exampleStatements": ["show variable autocommit"]
+	},
+	{
+	  "name": "SHOW VARIABLE READONLY",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_READONLY",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+readonly\\s*\\z",
+	  "method": "statementShowReadOnly",
+	  "exampleStatements": ["show variable readonly"]
+	},
+	{
+	  "name": "SHOW VARIABLE RETRY_ABORTS_INTERNALLY",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_RETRY_ABORTS_INTERNALLY",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+retry_aborts_internally\\s*\\z",
+	  "method": "statementShowRetryAbortsInternally",
+	  "exampleStatements": ["show variable retry_aborts_internally"],
+	  "examplePrerequisiteStatements": ["set readonly=false", "set autocommit=false"]
+	},
+	{
+	  "name": "SHOW VARIABLE AUTOCOMMIT_DML_MODE",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_AUTOCOMMIT_DML_MODE",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+autocommit_dml_mode\\s*\\z",
+	  "method": "statementShowAutocommitDmlMode",
+	  "exampleStatements": ["show variable autocommit_dml_mode"]
+	},
+	{
+	  "name": "SHOW VARIABLE STATEMENT_TIMEOUT",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_STATEMENT_TIMEOUT",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+statement_timeout\\s*\\z",
+	  "method": "statementShowStatementTimeout",
+	  "exampleStatements": ["show variable statement_timeout"]
+	},
+	{
+		"name": "SHOW VARIABLE TRANSACTION_TIMEOUT",
+		"executorName": "ClientSideStatementNoParamExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "SHOW_TRANSACTION_TIMEOUT",
+		"regex": "(?is)\\A\\s*show\\s+variable\\s+transaction_timeout\\s*\\z",
+		"method": "statementShowTransactionTimeout",
+		"exampleStatements": ["show variable transaction_timeout"]
+	},
+	{
+	  "name": "SHOW VARIABLE READ_TIMESTAMP",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_READ_TIMESTAMP",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+read_timestamp\\s*\\z",
+	  "method": "statementShowReadTimestamp",
+	  "exampleStatements": ["show variable read_timestamp"],
+	  "examplePrerequisiteStatements": ["set readonly = true", "SELECT 1 AS TEST"]
+	},
+	{
+	  "name": "SHOW VARIABLE COMMIT_TIMESTAMP",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_COMMIT_TIMESTAMP",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+commit_timestamp\\s*\\z",
+	  "method": "statementShowCommitTimestamp",
+	  "exampleStatements": ["show variable commit_timestamp"],
+	  "examplePrerequisiteStatements": ["update foo set bar=1"]
+	},
+	{
+	  "name": "SHOW VARIABLE READ_ONLY_STALENESS",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_READ_ONLY_STALENESS",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+read_only_staleness\\s*\\z",
+	  "method": "statementShowReadOnlyStaleness",
+	  "exampleStatements": ["show variable read_only_staleness"]
+	},
+	{
+		"name": "SHOW VARIABLE DIRECTED_READ",
+		"executorName": "ClientSideStatementNoParamExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "SHOW_DIRECTED_READ",
+		"regex": "(?is)\\A\\s*show\\s+variable\\s+directed_read\\s*\\z",
+		"method": "statementShowDirectedRead",
+		"exampleStatements": ["show variable directed_read"]
+	},
+	{
+	  "name": "SHOW VARIABLE OPTIMIZER_VERSION",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_OPTIMIZER_VERSION",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+optimizer_version\\s*\\z",
+	  "method": "statementShowOptimizerVersion",
+	  "exampleStatements": ["show variable optimizer_version"]
+	},
+	{
+	  "name": "SHOW VARIABLE OPTIMIZER_STATISTICS_PACKAGE",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_OPTIMIZER_STATISTICS_PACKAGE",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+optimizer_statistics_package\\s*\\z",
+	  "method": "statementShowOptimizerStatisticsPackage",
+	  "exampleStatements": ["show variable optimizer_statistics_package"]
+	},
+	{
+	  "name": "SHOW VARIABLE RETURN_COMMIT_STATS",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_RETURN_COMMIT_STATS",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+return_commit_stats\\s*\\z",
+	  "method": "statementShowReturnCommitStats",
+	  "exampleStatements": ["show variable return_commit_stats"]
+	},
+	{
+		"name": "SHOW VARIABLE MAX_COMMIT_DELAY",
+		"executorName": "ClientSideStatementNoParamExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "SHOW_MAX_COMMIT_DELAY",
+		"regex": "(?is)\\A\\s*show\\s+variable\\s+max_commit_delay\\s*\\z",
+		"method": "statementShowMaxCommitDelay",
+		"exampleStatements": ["show variable max_commit_delay"]
+	},
+	{
+	  "name": "SHOW VARIABLE COMMIT_RESPONSE",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_COMMIT_RESPONSE",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+commit_response\\s*\\z",
+	  "method": "statementShowCommitResponse",
+	  "exampleStatements": ["show variable commit_response"],
+	  "examplePrerequisiteStatements": ["update foo set bar=1"]
+	},
+	{
+	  "name": "SHOW VARIABLE STATEMENT_TAG",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_STATEMENT_TAG",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+statement_tag\\s*\\z",
+	  "method": "statementShowStatementTag",
+	  "exampleStatements": ["show variable statement_tag"]
+	},
+	{
+	  "name": "SHOW VARIABLE TRANSACTION_TAG",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_TRANSACTION_TAG",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+transaction_tag\\s*\\z",
+	  "method": "statementShowTransactionTag",
+	  "exampleStatements": ["show variable transaction_tag"]
+	},
+	{
+		"name": "SHOW VARIABLE EXCLUDE_TXN_FROM_CHANGE_STREAMS",
+		"executorName": "ClientSideStatementNoParamExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "SHOW_EXCLUDE_TXN_FROM_CHANGE_STREAMS",
+		"regex": "(?is)\\A\\s*show\\s+variable\\s+exclude_txn_from_change_streams\\s*\\z",
+		"method": "statementShowExcludeTxnFromChangeStreams",
+		"exampleStatements": ["show variable exclude_txn_from_change_streams"]
+	},
+	{
+		"name": "SHOW VARIABLE RPC_PRIORITY",
+		"executorName": "ClientSideStatementNoParamExecutor",
+		"resultType": "RESULT_SET",
+	  "statementType": "SHOW_TRANSACTION_TAG",
+		"regex": "(?is)\\A\\s*show\\s+variable\\s+rpc_priority\\s*\\z",
+		"method": "statementShowRPCPriority",
+		"exampleStatements": ["show variable rpc_priority"]
+	},
+	{
+		"name": "SHOW VARIABLE SAVEPOINT_SUPPORT",
+		"executorName": "ClientSideStatementNoParamExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "SHOW_SAVEPOINT_SUPPORT",
+		"regex": "(?is)\\A\\s*show\\s+variable\\s+savepoint_support\\s*\\z",
+		"method": "statementShowSavepointSupport",
+		"exampleStatements": ["show variable savepoint_support"]
+	},
+	{
+		"name": "SHOW VARIABLE DELAY_TRANSACTION_START_UNTIL_FIRST_WRITE",
+		"executorName": "ClientSideStatementNoParamExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "SHOW_DELAY_TRANSACTION_START_UNTIL_FIRST_WRITE",
+		"regex": "(?is)\\A\\s*show\\s+variable\\s+delay_transaction_start_until_first_write\\s*\\z",
+		"method": "statementShowDelayTransactionStartUntilFirstWrite",
+		"exampleStatements": ["show variable delay_transaction_start_until_first_write"]
+	},
+	{
+		"name": "SHOW VARIABLE KEEP_TRANSACTION_ALIVE",
+		"executorName": "ClientSideStatementNoParamExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "SHOW_KEEP_TRANSACTION_ALIVE",
+		"regex": "(?is)\\A\\s*show\\s+variable\\s+keep_transaction_alive\\s*\\z",
+		"method": "statementShowKeepTransactionAlive",
+		"exampleStatements": ["show variable keep_transaction_alive"]
+	},
+	{
+	  "name": "SHOW VARIABLE AUTO_BATCH_DML",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_AUTO_BATCH_DML",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+auto_batch_dml\\s*\\z",
+	  "method": "statementShowAutoBatchDml",
+	  "exampleStatements": ["show variable auto_batch_dml"]
+	},
+	{
+	  "name": "SHOW VARIABLE AUTO_BATCH_DML_UPDATE_COUNT",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_AUTO_BATCH_DML_UPDATE_COUNT",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+auto_batch_dml_update_count\\s*\\z",
+	  "method": "statementShowAutoBatchDmlUpdateCount",
+	  "exampleStatements": ["show variable auto_batch_dml_update_count"]
+	},
+	{
+	  "name": "SHOW VARIABLE AUTO_BATCH_DML_UPDATE_COUNT_VERIFICATION",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "RESULT_SET",
+	  "statementType": "SHOW_AUTO_BATCH_DML_UPDATE_COUNT_VERIFICATION",
+	  "regex": "(?is)\\A\\s*show\\s+variable\\s+auto_batch_dml_update_count_verification\\s*\\z",
+	  "method": "statementShowAutoBatchDmlUpdateCountVerification",
+	  "exampleStatements": ["show variable auto_batch_dml_update_count_verification"]
+	},
+	{
+		"name": "PARTITION <sql>",
+		"executorName": "ClientSideStatementPartitionExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "PARTITION",
+		"regex": "(?is)\\A\\s*partition(\\s+|\\()(.*)\\z",
+		"method": "statementPartition",
+		"exampleStatements": ["partition select col1, col2 from my_table"]
+	},
+	{
+		"name": "RUN PARTITION ['<partition_id>']",
+		"executorName": "ClientSideStatementRunPartitionExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "RUN_PARTITION",
+		"regex": "(?is)\\A\\s*run\\s+partition(?:\\s*'(.*)')?\\s*\\z",
+		"method": "statementRunPartition",
+		"exampleStatements": []
+	},
+	{
+		"name": "RUN PARTITIONED QUERY <sql>",
+		"executorName": "ClientSideStatementRunPartitionedQueryExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "RUN_PARTITIONED_QUERY",
+		"regex": "(?is)\\A\\s*run\\s+partitioned\\s+query(\\s+|\\()(.*)\\z",
+		"method": "statementRunPartitionedQuery",
+		"exampleStatements": ["run partitioned query select col1, col2 from my_table"]
+	},
+	{
+	  "name": "BEGIN [TRANSACTION] [ISOLATION LEVEL isolation_level]",
+	  "executorName": "ClientSideStatementBeginExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "BEGIN",
+	  "regex": "(?is)\\A\\s*(?:begin|start)(?:\\s+transaction)?(?:\\s+isolation\\s+level\\s+(repeatable\\s+read|serializable))?\\s*\\z",
+	  "method": "statementBeginTransaction",
+	  "exampleStatements": [
+			"begin",
+			"start",
+			"begin transaction",
+			"start transaction",
+			"begin isolation level repeatable read",
+			"begin transaction isolation level repeatable read",
+			"begin isolation level serializable",
+			"begin transaction isolation level serializable",
+			"start isolation level repeatable read",
+			"start transaction isolation level repeatable read",
+			"start isolation level serializable",
+			"start transaction isolation level serializable"
+		]
+	},
+	{
+	  "name": "COMMIT TRANSACTION",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "COMMIT",
+	  "regex": "(?is)\\A\\s*(?:commit)(?:\\s+transaction)?\\s*\\z",
+	  "method": "statementCommit",
+	  "exampleStatements": ["commit", "commit transaction"],
+	  "examplePrerequisiteStatements": ["begin transaction"]
+	},
+	{
+	  "name": "ROLLBACK TRANSACTION",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "ROLLBACK",
+	  "regex": "(?is)\\A\\s*(?:rollback)(?:\\s+transaction)?\\s*\\z",
+	  "method": "statementRollback",
+	  "exampleStatements": ["rollback", "rollback transaction"],
+	  "examplePrerequisiteStatements": ["begin transaction"]
+	},
+	{
+	  "name": "START BATCH DDL",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "START_BATCH_DDL",
+	  "regex": "(?is)\\A\\s*(?:start)(?:\\s+batch)(?:\\s+ddl)\\s*\\z",
+	  "method": "statementStartBatchDdl",
+	  "exampleStatements": ["start batch ddl"]
+	},
+	{
+	  "name": "START BATCH DML",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "START_BATCH_DML",
+	  "regex": "(?is)\\A\\s*(?:start)(?:\\s+batch)(?:\\s+dml)\\s*\\z",
+	  "method": "statementStartBatchDml",
+	  "exampleStatements": ["start batch dml"]
+	},
+	{
+	  "name": "RUN BATCH",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "RUN_BATCH",
+	  "regex": "(?is)\\A\\s*(?:run)(?:\\s+batch)\\s*\\z",
+	  "method": "statementRunBatch",
+	  "exampleStatements": ["run batch"],
+	  "examplePrerequisiteStatements": ["start batch ddl"]
+	},
+	{
+	  "name": "ABORT BATCH",
+	  "executorName": "ClientSideStatementNoParamExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "ABORT_BATCH",
+	  "regex": "(?is)\\A\\s*(?:abort)(?:\\s+batch)\\s*\\z",
+	  "method": "statementAbortBatch",
+	  "exampleStatements": ["abort batch"],
+	  "examplePrerequisiteStatements": ["start batch ddl"]
+	},
+	{
+		"name": "RESET ALL",
+		"executorName": "ClientSideStatementNoParamExecutor",
+		"resultType": "NO_RESULT",
+		"statementType": "RESET_ALL",
+		"regex": "(?is)\\A\\s*(?:reset)(?:\\s+all)\\s*\\z",
+		"method": "statementResetAll",
+		"exampleStatements": ["reset all"]
+	},
+	{
+	  "name": "SET AUTOCOMMIT = TRUE|FALSE",
+	  "executorName": "ClientSideStatementSetExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "SET_AUTOCOMMIT",
+	  "regex": "(?is)\\A\\s*set\\s+autocommit\\s*(?:=)\\s*(.*)\\z",
+	  "method": "statementSetAutocommit",
+	  "exampleStatements": ["set autocommit = true", "set autocommit = false"],
+	  "setStatement": {
+	    "propertyName": "AUTOCOMMIT",
+	    "separator": "=",
+	    "allowedValues": "(TRUE|FALSE)",
+	    "converterName": "ClientSideStatementValueConverters$BooleanConverter"
+	  }
+	},
+	{
+	  "name": "SET READONLY = TRUE|FALSE",
+	  "executorName": "ClientSideStatementSetExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "SET_READONLY",
+	  "regex": "(?is)\\A\\s*set\\s+readonly\\s*(?:=)\\s*(.*)\\z",
+	  "method": "statementSetReadOnly",
+	  "exampleStatements": ["set readonly = true", "set readonly = false"],
+	  "setStatement": {
+	    "propertyName": "READONLY",
+	    "separator": "=",
+	    "allowedValues": "(TRUE|FALSE)",
+	    "converterName": "ClientSideStatementValueConverters$BooleanConverter"
+	  }
+	},
+	{
+	  "name": "SET [LOCAL] RETRY_ABORTS_INTERNALLY = TRUE|FALSE",
+	  "executorName": "ClientSideStatementSetExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "SET_RETRY_ABORTS_INTERNALLY",
+	  "regex": "(?is)\\A\\s*set\\s+(local\\s+)?retry_aborts_internally\\s*(?:=)\\s*(.*)\\z",
+	  "method": "statementSetRetryAbortsInternally",
+	  "exampleStatements": [
+			"set retry_aborts_internally = true",
+			"set retry_aborts_internally = false",
+			"set local retry_aborts_internally = true",
+			"set local retry_aborts_internally = false"
+		],
+	  "examplePrerequisiteStatements": ["set readonly = false", "set autocommit = false"],
+	  "setStatement": {
+	    "propertyName": "RETRY_ABORTS_INTERNALLY",
+	    "separator": "=",
+	    "allowedValues": "(TRUE|FALSE)",
+	    "converterName": "ClientSideStatementValueConverters$BooleanConverter"
+	  }
+	},
+	{
+	  "name": "SET AUTOCOMMIT_DML_MODE = 'PARTITIONED_NON_ATOMIC'|'TRANSACTIONAL'|'TRANSACTIONAL_WITH_FALLBACK_TO_PARTITIONED_NON_ATOMIC'",
+	  "executorName": "ClientSideStatementSetExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "SET_AUTOCOMMIT_DML_MODE",
+	  "regex": "(?is)\\A\\s*set\\s+autocommit_dml_mode\\s*(?:=)\\s*(.*)\\z",
+	  "method": "statementSetAutocommitDmlMode",
+	  "exampleStatements": ["set autocommit_dml_mode='PARTITIONED_NON_ATOMIC'", "set autocommit_dml_mode='TRANSACTIONAL'", "set autocommit_dml_mode='TRANSACTIONAL_WITH_FALLBACK_TO_PARTITIONED_NON_ATOMIC'"],
+	  "setStatement": {
+	    "propertyName": "AUTOCOMMIT_DML_MODE",
+	    "separator": "=",
+	    "allowedValues": "'(PARTITIONED_NON_ATOMIC|TRANSACTIONAL|TRANSACTIONAL_WITH_FALLBACK_TO_PARTITIONED_NON_ATOMIC)'",
+	    "converterName": "ClientSideStatementValueConverters$AutocommitDmlModeConverter"
+	  }
+	},
+	{
+	  "name": "SET STATEMENT_TIMEOUT = '<duration>'|NULL",
+	  "executorName": "ClientSideStatementSetExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "SET_STATEMENT_TIMEOUT",
+	  "regex": "(?is)\\A\\s*set\\s+statement_timeout\\s*(?:=)\\s*(.*)\\z",
+	  "method": "statementSetStatementTimeout",
+	  "exampleStatements": [
+			"set statement_timeout=null",
+			"set statement_timeout = null ",
+			"set statement_timeout='1s'",
+			"set statement_timeout = '1s' ",
+			"set statement_timeout=100",
+			"set statement_timeout = 100 ",
+			"set statement_timeout='100ms'",
+			"set statement_timeout='10000us'",
+			"set statement_timeout='9223372036854775807ns'"
+		],
+	  "setStatement": {
+	    "propertyName": "STATEMENT_TIMEOUT",
+	    "separator": "=",
+	    "allowedValues": "('(\\d{1,19})(s|ms|us|ns)'|\\d{1,19}|NULL)",
+	    "converterName": "ClientSideStatementValueConverters$DurationConverter"
+	  }
+	},
+	{
+		"name": "SET TRANSACTION_TIMEOUT = '<duration>'|NULL",
+		"executorName": "ClientSideStatementSetExecutor",
+		"resultType": "NO_RESULT",
+		"statementType": "SET_TRANSACTION_TIMEOUT",
+		"regex": "(?is)\\A\\s*set\\s+transaction_timeout\\s*(?:=)\\s*(.*)\\z",
+		"method": "statementSetTransactionTimeout",
+		"exampleStatements": [
+			"set transaction_timeout=null",
+			"set transaction_timeout = null ",
+			"set transaction_timeout='1s'",
+			"set transaction_timeout = '1s' ",
+			"set transaction_timeout=100",
+			"set transaction_timeout = 100 ",
+			"set transaction_timeout='100ms'",
+			"set transaction_timeout='10000us'",
+			"set transaction_timeout='9223372036854775807ns'"
+		],
+		"setStatement": {
+			"propertyName": "TRANSACTION_TIMEOUT",
+			"separator": "=",
+			"allowedValues": "('(\\d{1,19})(s|ms|us|ns)'|\\d{1,19}|NULL)",
+			"converterName": "ClientSideStatementValueConverters$DurationConverter"
+		}
+	},
+	{
+	  "name": "SET TRANSACTION READ ONLY|READ WRITE",
+	  "executorName": "ClientSideStatementSetExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "SET_TRANSACTION_MODE",
+	  "regex": "(?is)\\A\\s*set\\s+transaction\\s*(?:\\s+)\\s*(.*)\\z",
+	  "method": "statementSetTransactionMode",
+	  "exampleStatements": ["set transaction read only", "set transaction read write"],
+	  "examplePrerequisiteStatements": ["set autocommit = false"],
+	  "setStatement": {
+	    "propertyName": "TRANSACTION",
+	    "separator": "\\s+",
+	    "allowedValues": "(READ\\s+ONLY|READ\\s+WRITE)",
+	    "converterName": "ClientSideStatementValueConverters$TransactionModeConverter"
+	  }
+	},
+	{
+	  "name": "SET READ_ONLY_STALENESS = 'STRONG' | 'MIN_READ_TIMESTAMP <timestamp>' | 'READ_TIMESTAMP <timestamp>' | 'MAX_STALENESS <int64>s|ms|us|ns' | 'EXACT_STALENESS (<int64>s|ms|us|ns)'",
+	  "executorName": "ClientSideStatementSetExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "SET_READ_ONLY_STALENESS",
+	  "regex": "(?is)\\A\\s*set\\s+read_only_staleness\\s*(?:=)\\s*(.*)\\z",
+	  "method": "statementSetReadOnlyStaleness",
+	  "exampleStatements": ["set read_only_staleness='STRONG'",
+	              "set read_only_staleness='MIN_READ_TIMESTAMP 2018-01-02T03:04:05.123-08:00'",
+	              "set read_only_staleness='MIN_READ_TIMESTAMP 2018-01-02T03:04:05.123Z'",
+	              "set read_only_staleness='MIN_READ_TIMESTAMP 2018-01-02T03:04:05.123+07:45'",
+	              "set read_only_staleness='READ_TIMESTAMP 2018-01-02T03:04:05.54321-07:00'",
+	              "set read_only_staleness='READ_TIMESTAMP 2018-01-02T03:04:05.54321Z'",
+	              "set read_only_staleness='READ_TIMESTAMP 2018-01-02T03:04:05.54321+05:30'",
+	              "set read_only_staleness='MAX_STALENESS 12s'",
+	              "set read_only_staleness='MAX_STALENESS 100ms'",
+	              "set read_only_staleness='MAX_STALENESS 99999us'",
+	              "set read_only_staleness='MAX_STALENESS 10ns'",
+	              "set read_only_staleness='EXACT_STALENESS 15s'",
+	              "set read_only_staleness='EXACT_STALENESS 1500ms'",
+	              "set read_only_staleness='EXACT_STALENESS 15000000us'",
+	              "set read_only_staleness='EXACT_STALENESS 9999ns'"],
+	  "setStatement": {
+	    "propertyName": "READ_ONLY_STALENESS",
+	    "separator": "=",
+	    "allowedValues": "'((STRONG)|(MIN_READ_TIMESTAMP)[\\t ]+((\\d{4})-(\\d{2})-(\\d{2})([Tt](\\d{2}):(\\d{2}):(\\d{2})(\\.\\d{1,9})?)([Zz]|([+-])(\\d{2}):(\\d{2})))|(READ_TIMESTAMP)[\\t ]+((\\d{4})-(\\d{2})-(\\d{2})([Tt](\\d{2}):(\\d{2}):(\\d{2})(\\.\\d{1,9})?)([Zz]|([+-])(\\d{2}):(\\d{2})))|(MAX_STALENESS)[\\t ]+((\\d{1,19})(s|ms|us|ns))|(EXACT_STALENESS)[\\t ]+((\\d{1,19})(s|ms|us|ns)))'",
+	    "converterName": "ClientSideStatementValueConverters$ReadOnlyStalenessConverter"
+	  }
+	},
+	{
+		"name": "SET DIRECTED_READ = '<directed-read-options>'|''",
+		"executorName": "ClientSideStatementSetExecutor",
+		"resultType": "NO_RESULT",
+		"statementType": "SET_DIRECTED_READ",
+		"regex": "(?is)\\A\\s*set\\s+directed_read\\s*(?:=)\\s*(.*)\\z",
+		"method": "statementSetDirectedRead",
+		"exampleStatements": ["set directed_read='{\"includeReplicas\":{\"replicaSelections\":[{\"location\":\"eu-west1\",\"type\":\"READ_ONLY\"}]}}'", "set directed_read=''"],
+		"setStatement": {
+			"propertyName": "DIRECTED_READ",
+			"separator": "=",
+			"allowedValues": "'((\\S+)|())'",
+			"converterName": "ClientSideStatementValueConverters$DirectedReadOptionsConverter"
+		}
+	},
+	{
+	  "name": "SET OPTIMIZER_VERSION = '<version>'|'LATEST'|''",
+	  "executorName": "ClientSideStatementSetExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "SET_OPTIMIZER_VERSION",
+	  "regex": "(?is)\\A\\s*set\\s+optimizer_version\\s*(?:=)\\s*(.*)\\z",
+	  "method": "statementSetOptimizerVersion",
+	  "exampleStatements": ["set optimizer_version='1'", "set optimizer_version='200'", "set optimizer_version='LATEST'", "set optimizer_version=''"],
+	  "setStatement": {
+	    "propertyName": "OPTIMIZER_VERSION",
+	    "separator": "=",
+	    "allowedValues": "'((\\d{1,20})|(LATEST)|())'",
+	    "converterName": "ClientSideStatementValueConverters$StringValueConverter"
+	  }
+	},
+	{
+	  "name": "SET OPTIMIZER_STATISTICS_PACKAGE = '<package>'|''",
+	  "executorName": "ClientSideStatementSetExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "SET_OPTIMIZER_STATISTICS_PACKAGE",
+	  "regex": "(?is)\\A\\s*set\\s+optimizer_statistics_package\\s*(?:=)\\s*(.*)\\z",
+	  "method": "statementSetOptimizerStatisticsPackage",
+	  "exampleStatements": ["set optimizer_statistics_package='auto_20191128_14_47_22UTC'", "set optimizer_statistics_package=''"],
+	  "setStatement": {
+	    "propertyName": "OPTIMIZER_STATISTICS_PACKAGE",
+	    "separator": "=",
+	    "allowedValues": "'((\\S+)|())'",
+	    "converterName": "ClientSideStatementValueConverters$StringValueConverter"
+	  }
+	},
+	{
+	  "name": "SET RETURN_COMMIT_STATS = TRUE|FALSE",
+	  "executorName": "ClientSideStatementSetExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "SET_RETURN_COMMIT_STATS",
+	  "regex": "(?is)\\A\\s*set\\s+return_commit_stats\\s*(?:=)\\s*(.*)\\z",
+	  "method": "statementSetReturnCommitStats",
+	  "exampleStatements": ["set return_commit_stats = true", "set return_commit_stats = false"],
+	  "setStatement": {
+	    "propertyName": "RETURN_COMMIT_STATS",
+	    "separator": "=",
+	    "allowedValues": "(TRUE|FALSE)",
+	    "converterName": "ClientSideStatementValueConverters$BooleanConverter"
+	  }
+	},
+	{
+		"name": "SET MAX_COMMIT_DELAY = '<duration>'|NULL",
+		"executorName": "ClientSideStatementSetExecutor",
+		"resultType": "NO_RESULT",
+		"statementType": "SET_MAX_COMMIT_DELAY",
+		"regex": "(?is)\\A\\s*set\\s+max_commit_delay\\s*(?:=)\\s*(.*)\\z",
+		"method": "statementSetMaxCommitDelay",
+		"exampleStatements": [
+			"set max_commit_delay=null",
+			"set max_commit_delay = null",
+			"set max_commit_delay = null ",
+			"set max_commit_delay=1000",
+			"set max_commit_delay = 1000",
+			"set max_commit_delay = 1000 ",
+			"set max_commit_delay='1s'",
+			"set max_commit_delay = '1s'",
+			"set max_commit_delay = '1s' ",
+			"set max_commit_delay='100ms'",
+			"set max_commit_delay='10000us'",
+			"set max_commit_delay='9223372036854775807ns'"],
+		"setStatement": {
+			"propertyName": "MAX_COMMIT_DELAY",
+			"separator": "=",
+			"allowedValues": "('(\\d{1,19})(s|ms|us|ns)'|\\d{1,19}|NULL)",
+			"converterName": "ClientSideStatementValueConverters$DurationConverter"
+		}
+	},
+	{
+	  "name": "SET STATEMENT_TAG = '<tag>'",
+	  "executorName": "ClientSideStatementSetExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "SET_STATEMENT_TAG",
+	  "regex": "(?is)\\A\\s*set\\s+statement_tag\\s*(?:=)\\s*(.*)\\z",
+	  "method": "statementSetStatementTag",
+	  "exampleStatements": ["set statement_tag='tag1'", "set statement_tag='tag2'", "set statement_tag=''", "set statement_tag='test_tag'"],
+	  "setStatement": {
+	    "propertyName": "STATEMENT_TAG",
+	    "separator": "=",
+	    "allowedValues": "'(.*)'",
+	    "converterName": "ClientSideStatementValueConverters$StringValueConverter"
+	  }
+	},
+	{
+	  "name": "SET TRANSACTION_TAG = '<tag>'",
+	  "executorName": "ClientSideStatementSetExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "SET_TRANSACTION_TAG",
+	  "regex": "(?is)\\A\\s*set\\s+transaction_tag\\s*(?:=)\\s*(.*)\\z",
+	  "method": "statementSetTransactionTag",
+	  "exampleStatements": ["set transaction_tag='tag1'", "set transaction_tag='tag2'", "set transaction_tag=''", "set transaction_tag='test_tag'"],
+	  "examplePrerequisiteStatements": ["set autocommit = false"],
+	  "setStatement": {
+	    "propertyName": "TRANSACTION_TAG",
+	    "separator": "=",
+	    "allowedValues": "'(.*)'",
+	    "converterName": "ClientSideStatementValueConverters$StringValueConverter"
+	  }
+	},
+	{
+		"name": "SET EXCLUDE_TXN_FROM_CHANGE_STREAMS = TRUE|FALSE",
+		"executorName": "ClientSideStatementSetExecutor",
+		"resultType": "NO_RESULT",
+		"statementType": "SET_EXCLUDE_TXN_FROM_CHANGE_STREAMS",
+		"regex": "(?is)\\A\\s*set\\s+exclude_txn_from_change_streams\\s*(?:=)\\s*(.*)\\z",
+		"method": "statementSetExcludeTxnFromChangeStreams",
+		"exampleStatements": ["set exclude_txn_from_change_streams = true", "set exclude_txn_from_change_streams = false"],
+		"setStatement": {
+			"propertyName": "EXCLUDE_TXN_FROM_CHANGE_STREAMS",
+			"separator": "=",
+			"allowedValues": "(TRUE|FALSE)",
+			"converterName": "ClientSideStatementValueConverters$BooleanConverter"
+		}
+	},
+	{
+		"name": "SET RPC_PRIORITY = 'HIGH'|'MEDIUM'|'LOW'|'NULL'",
+		"executorName": "ClientSideStatementSetExecutor",
+		"resultType": "NO_RESULT",
+	  "statementType": "SET_RPC_PRIORITY",
+		"regex": "(?is)\\A\\s*set\\s+rpc_priority\\s*(?:=)\\s*(.*)\\z",
+		"method": "statementSetRPCPriority",
+		"exampleStatements": [
+			"set rpc_priority='HIGH'",
+			"set rpc_priority='MEDIUM'",
+			"set rpc_priority='LOW'",
+			"set rpc_priority='NULL'"
+		],
+		"setStatement": {
+			"propertyName": "RPC_PRIORITY",
+			"separator": "=",
+			"allowedValues": "'(HIGH|MEDIUM|LOW|NULL)'",
+			"converterName": "ClientSideStatementValueConverters$RpcPriorityConverter"
+		}
+	},
+	{
+		"name": "SET SAVEPOINT_SUPPORT = 'ENABLED'|'FAIL_AFTER_ROLLBACK'|'DISABLED'",
+		"executorName": "ClientSideStatementSetExecutor",
+		"resultType": "NO_RESULT",
+		"statementType": "SET_SAVEPOINT_SUPPORT",
+		"regex": "(?is)\\A\\s*set\\s+savepoint_support\\s*(?:=)\\s*(.*)\\z",
+		"method": "statementSetSavepointSupport",
+		"exampleStatements": [
+			"set savepoint_support='ENABLED'",
+			"set savepoint_support='FAIL_AFTER_ROLLBACK'",
+			"set savepoint_support='DISABLED'"],
+		"setStatement": {
+			"propertyName": "SAVEPOINT_SUPPORT",
+			"separator": "=",
+			"allowedValues": "'(ENABLED|FAIL_AFTER_ROLLBACK|DISABLED)'",
+			"converterName": "ClientSideStatementValueConverters$SavepointSupportConverter"
+		}
+	},
+	{
+		"name": "SET DELAY_TRANSACTION_START_UNTIL_FIRST_WRITE = TRUE|FALSE",
+		"executorName": "ClientSideStatementSetExecutor",
+		"resultType": "NO_RESULT",
+		"statementType": "SET_DELAY_TRANSACTION_START_UNTIL_FIRST_WRITE",
+		"regex": "(?is)\\A\\s*set\\s+delay_transaction_start_until_first_write\\s*(?:=)\\s*(.*)\\z",
+		"method": "statementSetDelayTransactionStartUntilFirstWrite",
+		"exampleStatements": ["set delay_transaction_start_until_first_write = true", "set delay_transaction_start_until_first_write = false"],
+		"setStatement": {
+			"propertyName": "DELAY_TRANSACTION_START_UNTIL_FIRST_WRITE",
+			"separator": "=",
+			"allowedValues": "(TRUE|FALSE)",
+			"converterName": "ClientSideStatementValueConverters$BooleanConverter"
+		}
+	},
+	{
+		"name": "SET KEEP_TRANSACTION_ALIVE = TRUE|FALSE",
+		"executorName": "ClientSideStatementSetExecutor",
+		"resultType": "NO_RESULT",
+		"statementType": "SET_KEEP_TRANSACTION_ALIVE",
+		"regex": "(?is)\\A\\s*set\\s+keep_transaction_alive\\s*(?:=)\\s*(.*)\\z",
+		"method": "statementSetKeepTransactionAlive",
+		"exampleStatements": ["set keep_transaction_alive = true", "set keep_transaction_alive = false"],
+		"setStatement": {
+			"propertyName": "KEEP_TRANSACTION_ALIVE",
+			"separator": "=",
+			"allowedValues": "(TRUE|FALSE)",
+			"converterName": "ClientSideStatementValueConverters$BooleanConverter"
+		}
+	},
+	{
+	  "name": "SET AUTO_BATCH_DML = TRUE|FALSE",
+	  "executorName": "ClientSideStatementSetExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "SET_AUTO_BATCH_DML",
+	  "regex": "(?is)\\A\\s*set\\s+auto_batch_dml\\s*(?:=)\\s*(.*)\\z",
+	  "method": "statementSetAutoBatchDml",
+	  "exampleStatements": ["set auto_batch_dml = true", "set auto_batch_dml = false"],
+	  "setStatement": {
+	    "propertyName": "AUTO_BATCH_DML",
+	    "separator": "=",
+	    "allowedValues": "(TRUE|FALSE)",
+	    "converterName": "ClientSideStatementValueConverters$BooleanConverter"
+	  }
+	},
+	{
+	  "name": "SET AUTO_BATCH_DML_UPDATE_COUNT = <INT64>",
+	  "executorName": "ClientSideStatementSetExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "SET_AUTO_BATCH_DML_UPDATE_COUNT",
+	  "regex": "(?is)\\A\\s*set\\s+auto_batch_dml_update_count\\s*(?:=)\\s*(.*)\\z",
+	  "method": "statementSetAutoBatchDmlUpdateCount",
+	  "exampleStatements": ["set auto_batch_dml_update_count = 0", "set auto_batch_dml_update_count = 100"],
+	  "setStatement": {
+	    "propertyName": "AUTO_BATCH_DML_UPDATE_COUNT",
+	    "separator": "=",
+	    "allowedValues": "(\\d{1,19})",
+	    "converterName": "ClientSideStatementValueConverters$LongConverter"
+	  }
+	},
+	{
+	  "name": "SET AUTO_BATCH_DML_UPDATE_COUNT_VERIFICATION = TRUE|FALSE",
+	  "executorName": "ClientSideStatementSetExecutor",
+	  "resultType": "NO_RESULT",
+	  "statementType": "SET_AUTO_BATCH_DML_UPDATE_COUNT_VERIFICATION",
+	  "regex": "(?is)\\A\\s*set\\s+auto_batch_dml_update_count_verification\\s*(?:=)\\s*(.*)\\z",
+	  "method": "statementSetAutoBatchDmlUpdateCountVerification",
+	  "exampleStatements": ["set auto_batch_dml_update_count_verification = true", "set auto_batch_dml_update_count_verification = false"],
+	  "setStatement": {
+	    "propertyName": "AUTO_BATCH_DML_UPDATE_COUNT_VERIFICATION",
+	    "separator": "=",
+	    "allowedValues": "(TRUE|FALSE)",
+	    "converterName": "ClientSideStatementValueConverters$BooleanConverter"
+	  }
+	},
+  {
+    "name": "SET [LOCAL] BATCH_DML_UPDATE_COUNT = <INT64>",
+    "executorName": "ClientSideStatementSetExecutor",
+    "resultType": "NO_RESULT",
+    "statementType": "SET_BATCH_DML_UPDATE_COUNT",
+    "regex": "(?is)\\A\\s*set\\s+(local\\s+)?batch_dml_update_count\\s*(?:=)\\s*(.*)\\z",
+    "method": "statementSetBatchDmlUpdateCount",
+    "exampleStatements": [
+      "set local batch_dml_update_count = 0",
+      "set local batch_dml_update_count = 100",
+      "set batch_dml_update_count = 1",
+      "set batch_dml_update_count = 100"
+    ],
+    "examplePrerequisiteStatements": ["set readonly = false", "set autocommit = false"],
+    "setStatement": {
+      "propertyName": "BATCH_DML_UPDATE_COUNT",
+      "separator": "=",
+      "allowedValues": "(\\d{1,19})",
+      "converterName": "ClientSideStatementValueConverters$LongConverter"
+    }
+  },
+	{
+		"name": "SHOW VARIABLE READ_LOCK_MODE",
+		"executorName": "ClientSideStatementNoParamExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "SHOW_READ_LOCK_MODE",
+		"regex": "(?is)\\A\\s*show\\s+variable\\s+read_lock_mode\\s*\\z",
+		"method": "statementShowReadLockMode",
+		"exampleStatements": ["show variable read_lock_mode"]
+	},
+	{
+		"name": "SET READ_LOCK_MODE = 'OPTIMISTIC'|'PESSIMISTIC'|'UNSPECIFIED'",
+		"executorName": "ClientSideStatementSetExecutor",
+		"resultType": "NO_RESULT",
+		"statementType": "SET_READ_LOCK_MODE",
+		"regex": "(?is)\\A\\s*set\\s+read_lock_mode\\s*(?:=)\\s*(.*)\\z",
+		"method": "statementSetReadLockMode",
+		"exampleStatements": [
+			"set read_lock_mode='OPTIMISTIC'",
+			"set read_lock_mode='PESSIMISTIC'",
+			"set read_lock_mode='UNSPECIFIED'"],
+		"setStatement": {
+			"propertyName": "READ_LOCK_MODE",
+			"separator": "=",
+			"allowedValues": "'(OPTIMISTIC|PESSIMISTIC|UNSPECIFIED|READ_LOCK_MODE_UNSPECIFIED)'",
+			"converterName": "ClientSideStatementValueConverters$ReadLockModeConverter"
+		}
+	},
+	{
+		"name": "SHOW VARIABLE DATA_BOOST_ENABLED",
+		"executorName": "ClientSideStatementNoParamExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "SHOW_DATA_BOOST_ENABLED",
+		"regex": "(?is)\\A\\s*show\\s+variable\\s+data_boost_enabled\\s*\\z",
+		"method": "statementShowDataBoostEnabled",
+		"exampleStatements": ["show variable data_boost_enabled"]
+	},
+	{
+		"name": "SET DATA_BOOST_ENABLED = TRUE|FALSE",
+		"executorName": "ClientSideStatementSetExecutor",
+		"resultType": "NO_RESULT",
+		"statementType": "SET_DATA_BOOST_ENABLED",
+		"regex": "(?is)\\A\\s*set\\s+data_boost_enabled\\s*(?:=)\\s*(.*)\\z",
+		"method": "statementSetDataBoostEnabled",
+		"exampleStatements": ["set data_boost_enabled = true", "set data_boost_enabled = false"],
+		"setStatement": {
+			"propertyName": "DATA_BOOST_ENABLED",
+			"separator": "=",
+			"allowedValues": "(TRUE|FALSE)",
+			"converterName": "ClientSideStatementValueConverters$BooleanConverter"
+		}
+	},
+	{
+		"name": "SHOW VARIABLE AUTO_PARTITION_MODE",
+		"executorName": "ClientSideStatementNoParamExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "SHOW_AUTO_PARTITION_MODE",
+		"regex": "(?is)\\A\\s*show\\s+variable\\s+auto_partition_mode\\s*\\z",
+		"method": "statementShowAutoPartitionMode",
+		"exampleStatements": ["show variable auto_partition_mode"]
+	},
+	{
+		"name": "SET AUTO_PARTITION_MODE = TRUE|FALSE",
+		"executorName": "ClientSideStatementSetExecutor",
+		"resultType": "NO_RESULT",
+		"statementType": "SET_AUTO_PARTITION_MODE",
+		"regex": "(?is)\\A\\s*set\\s+auto_partition_mode\\s*(?:=)\\s*(.*)\\z",
+		"method": "statementSetAutoPartitionMode",
+		"exampleStatements": ["set auto_partition_mode = true", "set auto_partition_mode = false"],
+		"setStatement": {
+			"propertyName": "AUTO_PARTITION_MODE",
+			"separator": "=",
+			"allowedValues": "(TRUE|FALSE)",
+			"converterName": "ClientSideStatementValueConverters$BooleanConverter"
+		}
+	},
+	{
+		"name": "SHOW VARIABLE MAX_PARTITIONS",
+		"executorName": "ClientSideStatementNoParamExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "SHOW_MAX_PARTITIONS",
+		"regex": "(?is)\\A\\s*show\\s+variable\\s+max_partitions\\s*\\z",
+		"method": "statementShowMaxPartitions",
+		"exampleStatements": ["show variable max_partitions"]
+	},
+	{
+		"name": "SET MAX_PARTITIONS = <INT64>",
+		"executorName": "ClientSideStatementSetExecutor",
+		"resultType": "NO_RESULT",
+		"statementType": "SET_MAX_PARTITIONS",
+		"regex": "(?is)\\A\\s*set\\s+max_partitions\\s*(?:=)\\s*(.*)\\z",
+		"method": "statementSetMaxPartitions",
+		"exampleStatements": ["set max_partitions = 0", "set max_partitions = 10"],
+		"setStatement": {
+			"propertyName": "MAX_PARTITIONS",
+			"separator": "=",
+			"allowedValues": "(\\d{1,9})",
+			"converterName": "ClientSideStatementValueConverters$NonNegativeIntegerConverter"
+		}
+	},
+	{
+		"name": "SHOW VARIABLE MAX_PARTITIONED_PARALLELISM",
+		"executorName": "ClientSideStatementNoParamExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "SHOW_MAX_PARTITIONED_PARALLELISM",
+		"regex": "(?is)\\A\\s*show\\s+variable\\s+max_partitioned_parallelism\\s*\\z",
+		"method": "statementShowMaxPartitionedParallelism",
+		"exampleStatements": ["show variable max_partitioned_parallelism"]
+	},
+	{
+		"name": "SET MAX_PARTITIONED_PARALLELISM = <INT64>",
+		"executorName": "ClientSideStatementSetExecutor",
+		"resultType": "NO_RESULT",
+		"statementType": "SET_MAX_PARTITIONED_PARALLELISM",
+		"regex": "(?is)\\A\\s*set\\s+max_partitioned_parallelism\\s*(?:=)\\s*(.*)\\z",
+		"method": "statementSetMaxPartitionedParallelism",
+		"exampleStatements": ["set max_partitioned_parallelism = 0", "set max_partitioned_parallelism = 10"],
+		"setStatement": {
+			"propertyName": "MAX_PARTITIONED_PARALLELISM",
+			"separator": "=",
+			"allowedValues": "(\\d{1,9})",
+			"converterName": "ClientSideStatementValueConverters$NonNegativeIntegerConverter"
+		}
+	},
+	{
+		"name": "SET PROTO_DESCRIPTORS = '<proto_descriptor>'",
+		"executorName": "ClientSideStatementSetExecutor",
+		"resultType": "NO_RESULT",
+		"statementType": "SET_PROTO_DESCRIPTORS",
+		"regex": "(?is)\\A\\s*set\\s+proto_descriptors\\s*(?:=)\\s*(.*)\\z",
+		"method": "statementSetProtoDescriptors",
+		"exampleStatements": ["set proto_descriptors='protodescriptorsbase64'"],
+		"setStatement": {
+		"propertyName": "PROTO_DESCRIPTORS",
+		"separator": "=",
+		"allowedValues": "'((\\S+)|())'",
+		"converterName": "ClientSideStatementValueConverters$ProtoDescriptorsConverter"
+		}
+	},
+	{
+		"name": "SET PROTO_DESCRIPTORS_FILE_PATH = '<path>'",
+		"executorName": "ClientSideStatementSetExecutor",
+		"resultType": "NO_RESULT",
+		"statementType": "SET_PROTO_DESCRIPTORS_FILE_PATH",
+		"regex": "(?is)\\A\\s*set\\s+proto_descriptors_file_path\\s*(?:=)\\s*(.*)\\z",
+		"method": "statementSetProtoDescriptorsFilePath",
+		"exampleStatements": ["set proto_descriptors_file_path='src/test/resources/com/google/cloud/spanner/descriptors.pb'"],
+		"setStatement": {
+			"propertyName": "PROTO_DESCRIPTORS_FILE_PATH",
+			"separator": "=",
+			"allowedValues": "'((\\S+)|())'",
+			"converterName": "ClientSideStatementValueConverters$ProtoDescriptorsFileConverter"
+		}
+	},
+	{
+		"name": "SHOW VARIABLE PROTO_DESCRIPTORS",
+		"executorName": "ClientSideStatementNoParamExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "SHOW_PROTO_DESCRIPTORS",
+		"regex": "(?is)\\A\\s*show\\s+variable\\s+proto_descriptors\\s*\\z",
+		"method": "statementShowProtoDescriptors",
+		"exampleStatements": ["show variable proto_descriptors"]
+	},
+	{
+		"name": "SHOW VARIABLE PROTO_DESCRIPTORS_FILE_PATH",
+		"executorName": "ClientSideStatementNoParamExecutor",
+		"resultType": "RESULT_SET",
+		"statementType": "SHOW_PROTO_DESCRIPTORS_FILE_PATH",
+		"regex": "(?is)\\A\\s*show\\s+variable\\s+proto_descriptors_file_path\\s*\\z",
+		"method": "statementShowProtoDescriptorsFilePath",
+		"exampleStatements": [
+			"show variable proto_descriptors_file_path"
+		]
+	}
+	]
+}

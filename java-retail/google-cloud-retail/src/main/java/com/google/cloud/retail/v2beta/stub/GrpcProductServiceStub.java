@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,9 @@ import com.google.cloud.retail.v2beta.AddLocalInventoriesRequest;
 import com.google.cloud.retail.v2beta.AddLocalInventoriesResponse;
 import com.google.cloud.retail.v2beta.CreateProductRequest;
 import com.google.cloud.retail.v2beta.DeleteProductRequest;
+import com.google.cloud.retail.v2beta.ExportMetadata;
+import com.google.cloud.retail.v2beta.ExportProductsRequest;
+import com.google.cloud.retail.v2beta.ExportProductsResponse;
 import com.google.cloud.retail.v2beta.GetProductRequest;
 import com.google.cloud.retail.v2beta.ImportMetadata;
 import com.google.cloud.retail.v2beta.ImportProductsRequest;
@@ -42,6 +45,9 @@ import com.google.cloud.retail.v2beta.ImportProductsResponse;
 import com.google.cloud.retail.v2beta.ListProductsRequest;
 import com.google.cloud.retail.v2beta.ListProductsResponse;
 import com.google.cloud.retail.v2beta.Product;
+import com.google.cloud.retail.v2beta.PurgeProductsMetadata;
+import com.google.cloud.retail.v2beta.PurgeProductsRequest;
+import com.google.cloud.retail.v2beta.PurgeProductsResponse;
 import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesMetadata;
 import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest;
 import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesResponse;
@@ -78,6 +84,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateProductRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProductRequest, Product> getProductMethodDescriptor =
@@ -86,6 +93,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
           .setFullMethodName("google.cloud.retail.v2beta.ProductService/GetProduct")
           .setRequestMarshaller(ProtoUtils.marshaller(GetProductRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListProductsRequest, ListProductsResponse>
@@ -96,6 +104,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListProductsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProductsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateProductRequest, Product>
@@ -106,6 +115,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProductRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProductRequest, Empty> deleteProductMethodDescriptor =
@@ -114,7 +124,19 @@ public class GrpcProductServiceStub extends ProductServiceStub {
           .setFullMethodName("google.cloud.retail.v2beta.ProductService/DeleteProduct")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteProductRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<PurgeProductsRequest, Operation>
+      purgeProductsMethodDescriptor =
+          MethodDescriptor.<PurgeProductsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2beta.ProductService/PurgeProducts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PurgeProductsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<ImportProductsRequest, Operation>
       importProductsMethodDescriptor =
@@ -124,6 +146,18 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportProductsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ExportProductsRequest, Operation>
+      exportProductsMethodDescriptor =
+          MethodDescriptor.<ExportProductsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2beta.ProductService/ExportProducts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportProductsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetInventoryRequest, Operation>
@@ -133,6 +167,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setFullMethodName("google.cloud.retail.v2beta.ProductService/SetInventory")
               .setRequestMarshaller(ProtoUtils.marshaller(SetInventoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddFulfillmentPlacesRequest, Operation>
@@ -143,6 +178,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AddFulfillmentPlacesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveFulfillmentPlacesRequest, Operation>
@@ -154,6 +190,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RemoveFulfillmentPlacesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddLocalInventoriesRequest, Operation>
@@ -164,6 +201,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AddLocalInventoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveLocalInventoriesRequest, Operation>
@@ -174,6 +212,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RemoveLocalInventoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateProductRequest, Product> createProductCallable;
@@ -183,9 +222,16 @@ public class GrpcProductServiceStub extends ProductServiceStub {
       listProductsPagedCallable;
   private final UnaryCallable<UpdateProductRequest, Product> updateProductCallable;
   private final UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable;
+  private final UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable;
+  private final OperationCallable<
+          PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+      purgeProductsOperationCallable;
   private final UnaryCallable<ImportProductsRequest, Operation> importProductsCallable;
   private final OperationCallable<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationCallable;
+  private final UnaryCallable<ExportProductsRequest, Operation> exportProductsCallable;
+  private final OperationCallable<ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+      exportProductsOperationCallable;
   private final UnaryCallable<SetInventoryRequest, Operation> setInventoryCallable;
   private final OperationCallable<SetInventoryRequest, SetInventoryResponse, SetInventoryMetadata>
       setInventoryOperationCallable;
@@ -265,6 +311,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetProductRequest, Product> getProductTransportSettings =
         GrpcCallSettings.<GetProductRequest, Product>newBuilder()
@@ -275,6 +322,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
         GrpcCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
@@ -285,6 +333,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateProductRequest, Product> updateProductTransportSettings =
         GrpcCallSettings.<UpdateProductRequest, Product>newBuilder()
@@ -305,6 +354,18 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<PurgeProductsRequest, Operation> purgeProductsTransportSettings =
+        GrpcCallSettings.<PurgeProductsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeProductsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ImportProductsRequest, Operation> importProductsTransportSettings =
         GrpcCallSettings.<ImportProductsRequest, Operation>newBuilder()
@@ -315,6 +376,18 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<ExportProductsRequest, Operation> exportProductsTransportSettings =
+        GrpcCallSettings.<ExportProductsRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportProductsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SetInventoryRequest, Operation> setInventoryTransportSettings =
         GrpcCallSettings.<SetInventoryRequest, Operation>newBuilder()
@@ -335,6 +408,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   builder.add("product", String.valueOf(request.getProduct()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProduct())
             .build();
     GrpcCallSettings<RemoveFulfillmentPlacesRequest, Operation>
         removeFulfillmentPlacesTransportSettings =
@@ -346,6 +420,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                       builder.add("product", String.valueOf(request.getProduct()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProduct())
                 .build();
     GrpcCallSettings<AddLocalInventoriesRequest, Operation> addLocalInventoriesTransportSettings =
         GrpcCallSettings.<AddLocalInventoriesRequest, Operation>newBuilder()
@@ -356,6 +431,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   builder.add("product", String.valueOf(request.getProduct()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProduct())
             .build();
     GrpcCallSettings<RemoveLocalInventoriesRequest, Operation>
         removeLocalInventoriesTransportSettings =
@@ -367,6 +443,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                       builder.add("product", String.valueOf(request.getProduct()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProduct())
                 .build();
 
     this.createProductCallable =
@@ -387,6 +464,15 @@ public class GrpcProductServiceStub extends ProductServiceStub {
     this.deleteProductCallable =
         callableFactory.createUnaryCallable(
             deleteProductTransportSettings, settings.deleteProductSettings(), clientContext);
+    this.purgeProductsCallable =
+        callableFactory.createUnaryCallable(
+            purgeProductsTransportSettings, settings.purgeProductsSettings(), clientContext);
+    this.purgeProductsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeProductsTransportSettings,
+            settings.purgeProductsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.importProductsCallable =
         callableFactory.createUnaryCallable(
             importProductsTransportSettings, settings.importProductsSettings(), clientContext);
@@ -394,6 +480,15 @@ public class GrpcProductServiceStub extends ProductServiceStub {
         callableFactory.createOperationCallable(
             importProductsTransportSettings,
             settings.importProductsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.exportProductsCallable =
+        callableFactory.createUnaryCallable(
+            exportProductsTransportSettings, settings.exportProductsSettings(), clientContext);
+    this.exportProductsOperationCallable =
+        callableFactory.createOperationCallable(
+            exportProductsTransportSettings,
+            settings.exportProductsOperationSettings(),
             clientContext,
             operationsStub);
     this.setInventoryCallable =
@@ -489,6 +584,17 @@ public class GrpcProductServiceStub extends ProductServiceStub {
   }
 
   @Override
+  public UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
+    return purgeProductsCallable;
+  }
+
+  @Override
+  public OperationCallable<PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+      purgeProductsOperationCallable() {
+    return purgeProductsOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ImportProductsRequest, Operation> importProductsCallable() {
     return importProductsCallable;
   }
@@ -497,6 +603,17 @@ public class GrpcProductServiceStub extends ProductServiceStub {
   public OperationCallable<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationCallable() {
     return importProductsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportProductsRequest, Operation> exportProductsCallable() {
+    return exportProductsCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+      exportProductsOperationCallable() {
+    return exportProductsOperationCallable;
   }
 
   @Override

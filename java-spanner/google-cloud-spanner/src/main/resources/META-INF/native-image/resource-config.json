@@ -1,0 +1,8 @@
+{
+  "resources": [
+    {"pattern": "\\Qcom/google/cloud/spanner/connection/ClientSideStatements.json\\E"},
+    {"pattern": "\\Qcom/google/cloud/spanner/connection/PG_ClientSideStatements.json\\E"},
+    {"pattern": "\\Qcom/google/cloud/spanner/spi/v1/grpc-gcp-apiconfig.json\\E"},
+    {"pattern": "\\Qcom/google/cloud/spanner/connection/ITSqlScriptTest_TestQueryOptions.sql\\E"}
+  ]
+}

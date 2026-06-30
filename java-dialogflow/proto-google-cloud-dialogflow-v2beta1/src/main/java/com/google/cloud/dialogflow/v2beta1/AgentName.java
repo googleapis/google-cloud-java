@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,7 +90,9 @@ public class AgentName implements ResourceName {
     return newBuilder().setProject(project).build();
   }
 
-  /** @deprecated Please use {@link #ofProjectName()} instead */
+  /**
+   * @deprecated Please use {@link #ofProjectName()} instead
+   */
   @Deprecated
   public static AgentName ofProjectAgentName(String project) {
     return newBuilder().setProject(project).build();
@@ -100,7 +102,9 @@ public class AgentName implements ResourceName {
     return newProjectLocationAgentBuilder().setProject(project).setLocation(location).build();
   }
 
-  /** @deprecated Please use {@link #ofProjectLocationName()} instead */
+  /**
+   * @deprecated Please use {@link #ofProjectLocationName()} instead
+   */
   @Deprecated
   public static AgentName ofProjectLocationAgentName(String project, String location) {
     return newProjectLocationAgentBuilder().setProject(project).setLocation(location).build();

@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -53,7 +53,7 @@ message Environment {
 
     // Software Runtime Configuration to run Analyze.
     message OsImageRuntime {
-      // Required. Dataplex Image version.
+      // Required. Dataplex Universal Catalog Image version.
       string image_version = 1 [(google.api.field_behavior) = REQUIRED];
 
       // Optional. List of Java jars to be included in the runtime environment.

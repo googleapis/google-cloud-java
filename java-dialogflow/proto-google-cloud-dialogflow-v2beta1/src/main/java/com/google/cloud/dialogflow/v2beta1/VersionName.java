@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -253,7 +253,8 @@ public class VersionName implements ResourceName {
     private Builder(VersionName versionName) {
       Preconditions.checkArgument(
           Objects.equals(versionName.pathTemplate, PROJECT_VERSION),
-          "toBuilder is only supported when VersionName has the pattern of projects/{project}/agent/versions/{version}");
+          "toBuilder is only supported when VersionName has the pattern of"
+              + " projects/{project}/agent/versions/{version}");
       this.project = versionName.project;
       this.version = versionName.version;
     }

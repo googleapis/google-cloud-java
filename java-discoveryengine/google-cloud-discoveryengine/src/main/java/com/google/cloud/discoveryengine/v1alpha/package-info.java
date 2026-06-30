@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,6 +85,29 @@
  *           .setIncludeTailSuggestions(true)
  *           .build();
  *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ControlServiceClient =======================
+ *
+ * <p>Service Description: Service for performing CRUD operations on Controls. Controls allow for
+ * custom logic to be implemented in the serving path. Controls need to be attached to a Serving
+ * Config to be considered during a request.
+ *
+ * <p>Sample for ControlServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ControlServiceClient controlServiceClient = ControlServiceClient.create()) {
+ *   DataStoreName parent =
+ *       DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+ *   Control control = Control.newBuilder().build();
+ *   String controlId = "controlId-395080872";
+ *   Control response = controlServiceClient.createControl(parent, control, controlId);
  * }
  * }</pre>
  *
@@ -195,6 +218,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= EvaluationServiceClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [Evaluation][google.cloud.discoveryengine.v1alpha.Evaluation]s,
+ *
+ * <p>Sample for EvaluationServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+ *   EvaluationName name = EvaluationName.of("[PROJECT]", "[LOCATION]", "[EVALUATION]");
+ *   Evaluation response = evaluationServiceClient.getEvaluation(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= GroundedGenerationServiceClient =======================
  *
  * <p>Service Description: Service for grounded generation.
@@ -217,6 +259,7 @@
  *           .setAnswerCandidate("answerCandidate-292402331")
  *           .addAllFacts(new ArrayList<GroundingFact>())
  *           .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+ *           .putAllUserLabels(new HashMap<String, String>())
  *           .build();
  *   CheckGroundingResponse response = groundedGenerationServiceClient.checkGrounding(request);
  * }
@@ -263,6 +306,7 @@
  *           .setQuery("query107944136")
  *           .addAllRecords(new ArrayList<RankingRecord>())
  *           .setIgnoreRecordDetailsInResponse(true)
+ *           .putAllUserLabels(new HashMap<String, String>())
  *           .build();
  *   RankResponse response = rankServiceClient.rank(request);
  * }
@@ -296,6 +340,47 @@
  *           .putAllUserLabels(new HashMap<String, String>())
  *           .build();
  *   RecommendResponse response = recommendationServiceClient.recommend(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SampleQueryServiceClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [SampleQuery][google.cloud.discoveryengine.v1alpha.SampleQuery]s,
+ *
+ * <p>Sample for SampleQueryServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SampleQueryServiceClient sampleQueryServiceClient = SampleQueryServiceClient.create()) {
+ *   SampleQueryName name =
+ *       SampleQueryName.of("[PROJECT]", "[LOCATION]", "[SAMPLE_QUERY_SET]", "[SAMPLE_QUERY]");
+ *   SampleQuery response = sampleQueryServiceClient.getSampleQuery(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SampleQuerySetServiceClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [SampleQuerySet][google.cloud.discoveryengine.v1alpha.SampleQuerySet]s,
+ *
+ * <p>Sample for SampleQuerySetServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SampleQuerySetServiceClient sampleQuerySetServiceClient =
+ *     SampleQuerySetServiceClient.create()) {
+ *   SampleQuerySetName name =
+ *       SampleQuerySetName.of("[PROJECT]", "[LOCATION]", "[SAMPLE_QUERY_SET]");
+ *   SampleQuerySet response = sampleQuerySetServiceClient.getSampleQuerySet(name);
  * }
  * }</pre>
  *
@@ -353,6 +438,8 @@
  *           .setCanonicalFilter("canonicalFilter-722283124")
  *           .setOrderBy("orderBy-1207110587")
  *           .setUserInfo(UserInfo.newBuilder().build())
+ *           .setLanguageCode("languageCode-2092349083")
+ *           .setRegionCode("regionCode-1991004415")
  *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
  *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
  *           .putAllParams(new HashMap<String, Value>())
@@ -364,7 +451,15 @@
  *           .setRankingExpression("rankingExpression2110320494")
  *           .setSafeSearch(true)
  *           .putAllUserLabels(new HashMap<String, String>())
+ *           .setNaturalLanguageQueryUnderstandingSpec(
+ *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
+ *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
  *           .setCustomFineTuningSpec(CustomFineTuningSpec.newBuilder().build())
+ *           .setSession(
+ *               SessionName.ofProjectLocationDataStoreSessionName(
+ *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+ *                   .toString())
+ *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
@@ -385,17 +480,14 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (SearchTuningServiceClient searchTuningServiceClient = SearchTuningServiceClient.create()) {
- *   TrainCustomModelRequest request =
- *       TrainCustomModelRequest.newBuilder()
+ *   ListCustomModelsRequest request =
+ *       ListCustomModelsRequest.newBuilder()
  *           .setDataStore(
  *               DataStoreName.ofProjectLocationCollectionDataStoreName(
  *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
  *                   .toString())
- *           .setModelType("modelType-2010627581")
- *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
  *           .build();
- *   TrainCustomModelResponse response =
- *       searchTuningServiceClient.trainCustomModelAsync(request).get();
+ *   ListCustomModelsResponse response = searchTuningServiceClient.listCustomModels(request);
  * }
  * }</pre>
  *
@@ -418,6 +510,26 @@
  *   FieldMask updateMask = FieldMask.newBuilder().build();
  *   ServingConfig response =
  *       servingConfigServiceClient.updateServingConfig(servingConfig, updateMask);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SessionServiceClient =======================
+ *
+ * <p>Service Description: Service for managing Sessions and Session-related resources.
+ *
+ * <p>Sample for SessionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
+ *   DataStoreName parent =
+ *       DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+ *   Session session = Session.newBuilder().build();
+ *   Session response = sessionServiceClient.createSession(parent, session);
  * }
  * }</pre>
  *
@@ -463,6 +575,7 @@
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
  *                   .toString())
  *           .setUserEvent(UserEvent.newBuilder().build())
+ *           .setWriteAsync(true)
  *           .build();
  *   UserEvent response = userEventServiceClient.writeUserEvent(request);
  * }

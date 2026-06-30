@@ -10,7 +10,7 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-certificate-manager",
   "distribution_name": "com.google.cloud:google-cloud-certificate-manager",
-  "api_id": "certificate-manager.googleapis.com",
+  "api_id": "certificatemanager.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }

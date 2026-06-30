@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * management of Google Cloud infrastructure resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/config/v1/config.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConfigGrpc {
 
@@ -1038,6 +1035,714 @@ public final class ConfigGrpc {
     return getGetTerraformVersionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListResourceChangesRequest,
+          com.google.cloud.config.v1.ListResourceChangesResponse>
+      getListResourceChangesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListResourceChanges",
+      requestType = com.google.cloud.config.v1.ListResourceChangesRequest.class,
+      responseType = com.google.cloud.config.v1.ListResourceChangesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListResourceChangesRequest,
+          com.google.cloud.config.v1.ListResourceChangesResponse>
+      getListResourceChangesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.ListResourceChangesRequest,
+            com.google.cloud.config.v1.ListResourceChangesResponse>
+        getListResourceChangesMethod;
+    if ((getListResourceChangesMethod = ConfigGrpc.getListResourceChangesMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getListResourceChangesMethod = ConfigGrpc.getListResourceChangesMethod) == null) {
+          ConfigGrpc.getListResourceChangesMethod =
+              getListResourceChangesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.ListResourceChangesRequest,
+                          com.google.cloud.config.v1.ListResourceChangesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListResourceChanges"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListResourceChangesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListResourceChangesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("ListResourceChanges"))
+                      .build();
+        }
+      }
+    }
+    return getListResourceChangesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetResourceChangeRequest,
+          com.google.cloud.config.v1.ResourceChange>
+      getGetResourceChangeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetResourceChange",
+      requestType = com.google.cloud.config.v1.GetResourceChangeRequest.class,
+      responseType = com.google.cloud.config.v1.ResourceChange.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetResourceChangeRequest,
+          com.google.cloud.config.v1.ResourceChange>
+      getGetResourceChangeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.GetResourceChangeRequest,
+            com.google.cloud.config.v1.ResourceChange>
+        getGetResourceChangeMethod;
+    if ((getGetResourceChangeMethod = ConfigGrpc.getGetResourceChangeMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getGetResourceChangeMethod = ConfigGrpc.getGetResourceChangeMethod) == null) {
+          ConfigGrpc.getGetResourceChangeMethod =
+              getGetResourceChangeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.GetResourceChangeRequest,
+                          com.google.cloud.config.v1.ResourceChange>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetResourceChange"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.GetResourceChangeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ResourceChange.getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigMethodDescriptorSupplier("GetResourceChange"))
+                      .build();
+        }
+      }
+    }
+    return getGetResourceChangeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListResourceDriftsRequest,
+          com.google.cloud.config.v1.ListResourceDriftsResponse>
+      getListResourceDriftsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListResourceDrifts",
+      requestType = com.google.cloud.config.v1.ListResourceDriftsRequest.class,
+      responseType = com.google.cloud.config.v1.ListResourceDriftsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListResourceDriftsRequest,
+          com.google.cloud.config.v1.ListResourceDriftsResponse>
+      getListResourceDriftsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.ListResourceDriftsRequest,
+            com.google.cloud.config.v1.ListResourceDriftsResponse>
+        getListResourceDriftsMethod;
+    if ((getListResourceDriftsMethod = ConfigGrpc.getListResourceDriftsMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getListResourceDriftsMethod = ConfigGrpc.getListResourceDriftsMethod) == null) {
+          ConfigGrpc.getListResourceDriftsMethod =
+              getListResourceDriftsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.ListResourceDriftsRequest,
+                          com.google.cloud.config.v1.ListResourceDriftsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListResourceDrifts"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListResourceDriftsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListResourceDriftsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigMethodDescriptorSupplier("ListResourceDrifts"))
+                      .build();
+        }
+      }
+    }
+    return getListResourceDriftsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetResourceDriftRequest,
+          com.google.cloud.config.v1.ResourceDrift>
+      getGetResourceDriftMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetResourceDrift",
+      requestType = com.google.cloud.config.v1.GetResourceDriftRequest.class,
+      responseType = com.google.cloud.config.v1.ResourceDrift.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetResourceDriftRequest,
+          com.google.cloud.config.v1.ResourceDrift>
+      getGetResourceDriftMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.GetResourceDriftRequest,
+            com.google.cloud.config.v1.ResourceDrift>
+        getGetResourceDriftMethod;
+    if ((getGetResourceDriftMethod = ConfigGrpc.getGetResourceDriftMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getGetResourceDriftMethod = ConfigGrpc.getGetResourceDriftMethod) == null) {
+          ConfigGrpc.getGetResourceDriftMethod =
+              getGetResourceDriftMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.GetResourceDriftRequest,
+                          com.google.cloud.config.v1.ResourceDrift>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetResourceDrift"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.GetResourceDriftRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ResourceDrift.getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigMethodDescriptorSupplier("GetResourceDrift"))
+                      .build();
+        }
+      }
+    }
+    return getGetResourceDriftMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetAutoMigrationConfigRequest,
+          com.google.cloud.config.v1.AutoMigrationConfig>
+      getGetAutoMigrationConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAutoMigrationConfig",
+      requestType = com.google.cloud.config.v1.GetAutoMigrationConfigRequest.class,
+      responseType = com.google.cloud.config.v1.AutoMigrationConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetAutoMigrationConfigRequest,
+          com.google.cloud.config.v1.AutoMigrationConfig>
+      getGetAutoMigrationConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.GetAutoMigrationConfigRequest,
+            com.google.cloud.config.v1.AutoMigrationConfig>
+        getGetAutoMigrationConfigMethod;
+    if ((getGetAutoMigrationConfigMethod = ConfigGrpc.getGetAutoMigrationConfigMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getGetAutoMigrationConfigMethod = ConfigGrpc.getGetAutoMigrationConfigMethod)
+            == null) {
+          ConfigGrpc.getGetAutoMigrationConfigMethod =
+              getGetAutoMigrationConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.GetAutoMigrationConfigRequest,
+                          com.google.cloud.config.v1.AutoMigrationConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetAutoMigrationConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.GetAutoMigrationConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.AutoMigrationConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("GetAutoMigrationConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetAutoMigrationConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest,
+          com.google.longrunning.Operation>
+      getUpdateAutoMigrationConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAutoMigrationConfig",
+      requestType = com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest,
+          com.google.longrunning.Operation>
+      getUpdateAutoMigrationConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest,
+            com.google.longrunning.Operation>
+        getUpdateAutoMigrationConfigMethod;
+    if ((getUpdateAutoMigrationConfigMethod = ConfigGrpc.getUpdateAutoMigrationConfigMethod)
+        == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getUpdateAutoMigrationConfigMethod = ConfigGrpc.getUpdateAutoMigrationConfigMethod)
+            == null) {
+          ConfigGrpc.getUpdateAutoMigrationConfigMethod =
+              getUpdateAutoMigrationConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateAutoMigrationConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("UpdateAutoMigrationConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAutoMigrationConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetDeploymentGroupRequest,
+          com.google.cloud.config.v1.DeploymentGroup>
+      getGetDeploymentGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDeploymentGroup",
+      requestType = com.google.cloud.config.v1.GetDeploymentGroupRequest.class,
+      responseType = com.google.cloud.config.v1.DeploymentGroup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetDeploymentGroupRequest,
+          com.google.cloud.config.v1.DeploymentGroup>
+      getGetDeploymentGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.GetDeploymentGroupRequest,
+            com.google.cloud.config.v1.DeploymentGroup>
+        getGetDeploymentGroupMethod;
+    if ((getGetDeploymentGroupMethod = ConfigGrpc.getGetDeploymentGroupMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getGetDeploymentGroupMethod = ConfigGrpc.getGetDeploymentGroupMethod) == null) {
+          ConfigGrpc.getGetDeploymentGroupMethod =
+              getGetDeploymentGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.GetDeploymentGroupRequest,
+                          com.google.cloud.config.v1.DeploymentGroup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDeploymentGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.GetDeploymentGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.DeploymentGroup.getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigMethodDescriptorSupplier("GetDeploymentGroup"))
+                      .build();
+        }
+      }
+    }
+    return getGetDeploymentGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.CreateDeploymentGroupRequest, com.google.longrunning.Operation>
+      getCreateDeploymentGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDeploymentGroup",
+      requestType = com.google.cloud.config.v1.CreateDeploymentGroupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.CreateDeploymentGroupRequest, com.google.longrunning.Operation>
+      getCreateDeploymentGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.CreateDeploymentGroupRequest,
+            com.google.longrunning.Operation>
+        getCreateDeploymentGroupMethod;
+    if ((getCreateDeploymentGroupMethod = ConfigGrpc.getCreateDeploymentGroupMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getCreateDeploymentGroupMethod = ConfigGrpc.getCreateDeploymentGroupMethod) == null) {
+          ConfigGrpc.getCreateDeploymentGroupMethod =
+              getCreateDeploymentGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.CreateDeploymentGroupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateDeploymentGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.CreateDeploymentGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("CreateDeploymentGroup"))
+                      .build();
+        }
+      }
+    }
+    return getCreateDeploymentGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.UpdateDeploymentGroupRequest, com.google.longrunning.Operation>
+      getUpdateDeploymentGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDeploymentGroup",
+      requestType = com.google.cloud.config.v1.UpdateDeploymentGroupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.UpdateDeploymentGroupRequest, com.google.longrunning.Operation>
+      getUpdateDeploymentGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.UpdateDeploymentGroupRequest,
+            com.google.longrunning.Operation>
+        getUpdateDeploymentGroupMethod;
+    if ((getUpdateDeploymentGroupMethod = ConfigGrpc.getUpdateDeploymentGroupMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getUpdateDeploymentGroupMethod = ConfigGrpc.getUpdateDeploymentGroupMethod) == null) {
+          ConfigGrpc.getUpdateDeploymentGroupMethod =
+              getUpdateDeploymentGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.UpdateDeploymentGroupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateDeploymentGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.UpdateDeploymentGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("UpdateDeploymentGroup"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDeploymentGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.DeleteDeploymentGroupRequest, com.google.longrunning.Operation>
+      getDeleteDeploymentGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDeploymentGroup",
+      requestType = com.google.cloud.config.v1.DeleteDeploymentGroupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.DeleteDeploymentGroupRequest, com.google.longrunning.Operation>
+      getDeleteDeploymentGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.DeleteDeploymentGroupRequest,
+            com.google.longrunning.Operation>
+        getDeleteDeploymentGroupMethod;
+    if ((getDeleteDeploymentGroupMethod = ConfigGrpc.getDeleteDeploymentGroupMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getDeleteDeploymentGroupMethod = ConfigGrpc.getDeleteDeploymentGroupMethod) == null) {
+          ConfigGrpc.getDeleteDeploymentGroupMethod =
+              getDeleteDeploymentGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.DeleteDeploymentGroupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteDeploymentGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.DeleteDeploymentGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("DeleteDeploymentGroup"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteDeploymentGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListDeploymentGroupsRequest,
+          com.google.cloud.config.v1.ListDeploymentGroupsResponse>
+      getListDeploymentGroupsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDeploymentGroups",
+      requestType = com.google.cloud.config.v1.ListDeploymentGroupsRequest.class,
+      responseType = com.google.cloud.config.v1.ListDeploymentGroupsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListDeploymentGroupsRequest,
+          com.google.cloud.config.v1.ListDeploymentGroupsResponse>
+      getListDeploymentGroupsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.ListDeploymentGroupsRequest,
+            com.google.cloud.config.v1.ListDeploymentGroupsResponse>
+        getListDeploymentGroupsMethod;
+    if ((getListDeploymentGroupsMethod = ConfigGrpc.getListDeploymentGroupsMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getListDeploymentGroupsMethod = ConfigGrpc.getListDeploymentGroupsMethod) == null) {
+          ConfigGrpc.getListDeploymentGroupsMethod =
+              getListDeploymentGroupsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.ListDeploymentGroupsRequest,
+                          com.google.cloud.config.v1.ListDeploymentGroupsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListDeploymentGroups"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListDeploymentGroupsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListDeploymentGroupsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("ListDeploymentGroups"))
+                      .build();
+        }
+      }
+    }
+    return getListDeploymentGroupsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ProvisionDeploymentGroupRequest,
+          com.google.longrunning.Operation>
+      getProvisionDeploymentGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ProvisionDeploymentGroup",
+      requestType = com.google.cloud.config.v1.ProvisionDeploymentGroupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ProvisionDeploymentGroupRequest,
+          com.google.longrunning.Operation>
+      getProvisionDeploymentGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.ProvisionDeploymentGroupRequest,
+            com.google.longrunning.Operation>
+        getProvisionDeploymentGroupMethod;
+    if ((getProvisionDeploymentGroupMethod = ConfigGrpc.getProvisionDeploymentGroupMethod)
+        == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getProvisionDeploymentGroupMethod = ConfigGrpc.getProvisionDeploymentGroupMethod)
+            == null) {
+          ConfigGrpc.getProvisionDeploymentGroupMethod =
+              getProvisionDeploymentGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.ProvisionDeploymentGroupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ProvisionDeploymentGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ProvisionDeploymentGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("ProvisionDeploymentGroup"))
+                      .build();
+        }
+      }
+    }
+    return getProvisionDeploymentGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest,
+          com.google.longrunning.Operation>
+      getDeprovisionDeploymentGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeprovisionDeploymentGroup",
+      requestType = com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest,
+          com.google.longrunning.Operation>
+      getDeprovisionDeploymentGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest,
+            com.google.longrunning.Operation>
+        getDeprovisionDeploymentGroupMethod;
+    if ((getDeprovisionDeploymentGroupMethod = ConfigGrpc.getDeprovisionDeploymentGroupMethod)
+        == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getDeprovisionDeploymentGroupMethod = ConfigGrpc.getDeprovisionDeploymentGroupMethod)
+            == null) {
+          ConfigGrpc.getDeprovisionDeploymentGroupMethod =
+              getDeprovisionDeploymentGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeprovisionDeploymentGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("DeprovisionDeploymentGroup"))
+                      .build();
+        }
+      }
+    }
+    return getDeprovisionDeploymentGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest,
+          com.google.cloud.config.v1.DeploymentGroupRevision>
+      getGetDeploymentGroupRevisionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDeploymentGroupRevision",
+      requestType = com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest.class,
+      responseType = com.google.cloud.config.v1.DeploymentGroupRevision.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest,
+          com.google.cloud.config.v1.DeploymentGroupRevision>
+      getGetDeploymentGroupRevisionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest,
+            com.google.cloud.config.v1.DeploymentGroupRevision>
+        getGetDeploymentGroupRevisionMethod;
+    if ((getGetDeploymentGroupRevisionMethod = ConfigGrpc.getGetDeploymentGroupRevisionMethod)
+        == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getGetDeploymentGroupRevisionMethod = ConfigGrpc.getGetDeploymentGroupRevisionMethod)
+            == null) {
+          ConfigGrpc.getGetDeploymentGroupRevisionMethod =
+              getGetDeploymentGroupRevisionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest,
+                          com.google.cloud.config.v1.DeploymentGroupRevision>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetDeploymentGroupRevision"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.DeploymentGroupRevision
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("GetDeploymentGroupRevision"))
+                      .build();
+        }
+      }
+    }
+    return getGetDeploymentGroupRevisionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest,
+          com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>
+      getListDeploymentGroupRevisionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDeploymentGroupRevisions",
+      requestType = com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest.class,
+      responseType = com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest,
+          com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>
+      getListDeploymentGroupRevisionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest,
+            com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>
+        getListDeploymentGroupRevisionsMethod;
+    if ((getListDeploymentGroupRevisionsMethod = ConfigGrpc.getListDeploymentGroupRevisionsMethod)
+        == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getListDeploymentGroupRevisionsMethod =
+                ConfigGrpc.getListDeploymentGroupRevisionsMethod)
+            == null) {
+          ConfigGrpc.getListDeploymentGroupRevisionsMethod =
+              getListDeploymentGroupRevisionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest,
+                          com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListDeploymentGroupRevisions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("ListDeploymentGroupRevisions"))
+                      .build();
+        }
+      }
+    }
+    return getListDeploymentGroupRevisionsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConfigStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ConfigStub> factory =
@@ -1048,6 +1753,19 @@ public final class ConfigGrpc {
           }
         };
     return ConfigStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ConfigBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ConfigBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConfigBlockingV2Stub>() {
+          @java.lang.Override
+          public ConfigBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConfigBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ConfigBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -1208,7 +1926,7 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists [Resource][google.cloud.config.v1.Resource]s in a given revision.
+     * Lists [Resources][google.cloud.config.v1.Resource] in a given revision.
      * </pre>
      */
     default void listResources(
@@ -1420,6 +2138,243 @@ public final class ConfigGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetTerraformVersionMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ResourceChanges for a given preview.
+     * </pre>
+     */
+    default void listResourceChanges(
+        com.google.cloud.config.v1.ListResourceChangesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListResourceChangesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListResourceChangesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceChange for a given preview.
+     * </pre>
+     */
+    default void getResourceChange(
+        com.google.cloud.config.v1.GetResourceChangeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ResourceChange> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetResourceChangeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List ResourceDrifts for a given preview.
+     * </pre>
+     */
+    default void listResourceDrifts(
+        com.google.cloud.config.v1.ListResourceDriftsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListResourceDriftsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListResourceDriftsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceDrift for a given preview.
+     * </pre>
+     */
+    default void getResourceDrift(
+        com.google.cloud.config.v1.GetResourceDriftRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ResourceDrift> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetResourceDriftMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    default void getAutoMigrationConfig(
+        com.google.cloud.config.v1.GetAutoMigrationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.AutoMigrationConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAutoMigrationConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    default void updateAutoMigrationConfig(
+        com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAutoMigrationConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a DeploymentGroup for a given project and location.
+     * </pre>
+     */
+    default void getDeploymentGroup(
+        com.google.cloud.config.v1.GetDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.DeploymentGroup> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDeploymentGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * The newly created DeploymentGroup will be in the `CREATING` state
+     * and can be retrieved via Get and List calls.
+     * </pre>
+     */
+    default void createDeploymentGroup(
+        com.google.cloud.config.v1.CreateDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateDeploymentGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    default void updateDeploymentGroup(
+        com.google.cloud.config.v1.UpdateDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDeploymentGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    default void deleteDeploymentGroup(
+        com.google.cloud.config.v1.DeleteDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteDeploymentGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List DeploymentGroups for a given project and location.
+     * </pre>
+     */
+    default void listDeploymentGroups(
+        com.google.cloud.config.v1.ListDeploymentGroupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListDeploymentGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDeploymentGroupsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    default void provisionDeploymentGroup(
+        com.google.cloud.config.v1.ProvisionDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getProvisionDeploymentGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprovisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    default void deprovisionDeploymentGroup(
+        com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeprovisionDeploymentGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision].
+     * </pre>
+     */
+    default void getDeploymentGroupRevision(
+        com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.DeploymentGroupRevision>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDeploymentGroupRevisionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]s
+     * in a given [DeploymentGroup][google.cloud.config.v1.DeploymentGroup].
+     * </pre>
+     */
+    default void listDeploymentGroupRevisions(
+        com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDeploymentGroupRevisionsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1592,7 +2547,7 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists [Resource][google.cloud.config.v1.Resource]s in a given revision.
+     * Lists [Resources][google.cloud.config.v1.Resource] in a given revision.
      * </pre>
      */
     public void listResources(
@@ -1833,10 +2788,838 @@ public final class ConfigGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ResourceChanges for a given preview.
+     * </pre>
+     */
+    public void listResourceChanges(
+        com.google.cloud.config.v1.ListResourceChangesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListResourceChangesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListResourceChangesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceChange for a given preview.
+     * </pre>
+     */
+    public void getResourceChange(
+        com.google.cloud.config.v1.GetResourceChangeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ResourceChange> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetResourceChangeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List ResourceDrifts for a given preview.
+     * </pre>
+     */
+    public void listResourceDrifts(
+        com.google.cloud.config.v1.ListResourceDriftsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListResourceDriftsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListResourceDriftsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceDrift for a given preview.
+     * </pre>
+     */
+    public void getResourceDrift(
+        com.google.cloud.config.v1.GetResourceDriftRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ResourceDrift> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetResourceDriftMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    public void getAutoMigrationConfig(
+        com.google.cloud.config.v1.GetAutoMigrationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.AutoMigrationConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAutoMigrationConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    public void updateAutoMigrationConfig(
+        com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAutoMigrationConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a DeploymentGroup for a given project and location.
+     * </pre>
+     */
+    public void getDeploymentGroup(
+        com.google.cloud.config.v1.GetDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.DeploymentGroup> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDeploymentGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * The newly created DeploymentGroup will be in the `CREATING` state
+     * and can be retrieved via Get and List calls.
+     * </pre>
+     */
+    public void createDeploymentGroup(
+        com.google.cloud.config.v1.CreateDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateDeploymentGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    public void updateDeploymentGroup(
+        com.google.cloud.config.v1.UpdateDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDeploymentGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    public void deleteDeploymentGroup(
+        com.google.cloud.config.v1.DeleteDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDeploymentGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List DeploymentGroups for a given project and location.
+     * </pre>
+     */
+    public void listDeploymentGroups(
+        com.google.cloud.config.v1.ListDeploymentGroupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListDeploymentGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDeploymentGroupsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    public void provisionDeploymentGroup(
+        com.google.cloud.config.v1.ProvisionDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getProvisionDeploymentGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprovisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    public void deprovisionDeploymentGroup(
+        com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeprovisionDeploymentGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision].
+     * </pre>
+     */
+    public void getDeploymentGroupRevision(
+        com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.DeploymentGroupRevision>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDeploymentGroupRevisionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]s
+     * in a given [DeploymentGroup][google.cloud.config.v1.DeploymentGroup].
+     * </pre>
+     */
+    public void listDeploymentGroupRevisions(
+        com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDeploymentGroupRevisionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Config.
+   *
+   * <pre>
+   * Infrastructure Manager is a managed service that automates the deployment and
+   * management of Google Cloud infrastructure resources.
+   * </pre>
+   */
+  public static final class ConfigBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ConfigBlockingV2Stub> {
+    private ConfigBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ConfigBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ConfigBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Deployment][google.cloud.config.v1.Deployment]s in a given project
+     * and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListDeploymentsResponse listDeployments(
+        com.google.cloud.config.v1.ListDeploymentsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDeploymentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a [Deployment][google.cloud.config.v1.Deployment].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.Deployment getDeployment(
+        com.google.cloud.config.v1.GetDeploymentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Deployment][google.cloud.config.v1.Deployment].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDeployment(
+        com.google.cloud.config.v1.CreateDeploymentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [Deployment][google.cloud.config.v1.Deployment].
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDeployment(
+        com.google.cloud.config.v1.UpdateDeploymentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Deployment][google.cloud.config.v1.Deployment].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDeployment(
+        com.google.cloud.config.v1.DeleteDeploymentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Revision][google.cloud.config.v1.Revision]s of a deployment.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListRevisionsResponse listRevisions(
+        com.google.cloud.config.v1.ListRevisionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a [Revision][google.cloud.config.v1.Revision].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.Revision getRevision(
+        com.google.cloud.config.v1.GetRevisionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a [Resource][google.cloud.config.v1.Resource] deployed
+     * by Infra Manager.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.Resource getResource(
+        com.google.cloud.config.v1.GetResourceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Resources][google.cloud.config.v1.Resource] in a given revision.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListResourcesResponse listResources(
+        com.google.cloud.config.v1.ListResourcesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListResourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports Terraform state file from a given deployment.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.Statefile exportDeploymentStatefile(
+        com.google.cloud.config.v1.ExportDeploymentStatefileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportDeploymentStatefileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports Terraform state file from a given revision.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.Statefile exportRevisionStatefile(
+        com.google.cloud.config.v1.ExportRevisionStatefileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportRevisionStatefileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports Terraform state file in a given deployment. The state file does not
+     * take effect until the Deployment has been unlocked.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.Statefile importStatefile(
+        com.google.cloud.config.v1.ImportStatefileRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getImportStatefileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes Terraform state file in a given deployment.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteStatefile(
+        com.google.cloud.config.v1.DeleteStatefileRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteStatefileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locks a deployment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation lockDeployment(
+        com.google.cloud.config.v1.LockDeploymentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getLockDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unlocks a locked deployment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation unlockDeployment(
+        com.google.cloud.config.v1.UnlockDeploymentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUnlockDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the lock info on a locked deployment.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.LockInfo exportLockInfo(
+        com.google.cloud.config.v1.ExportLockInfoRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportLockInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createPreview(
+        com.google.cloud.config.v1.CreatePreviewRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreatePreviewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.Preview getPreview(
+        com.google.cloud.config.v1.GetPreviewRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetPreviewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Preview][google.cloud.config.v1.Preview]s in a given project and
+     * location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListPreviewsResponse listPreviews(
+        com.google.cloud.config.v1.ListPreviewsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListPreviewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePreview(
+        com.google.cloud.config.v1.DeletePreviewRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeletePreviewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Export [Preview][google.cloud.config.v1.Preview] results.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ExportPreviewResultResponse exportPreviewResult(
+        com.google.cloud.config.v1.ExportPreviewResultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportPreviewResultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [TerraformVersion][google.cloud.config.v1.TerraformVersion]s in a
+     * given project and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListTerraformVersionsResponse listTerraformVersions(
+        com.google.cloud.config.v1.ListTerraformVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTerraformVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a
+     * [TerraformVersion][google.cloud.config.v1.TerraformVersion].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.TerraformVersion getTerraformVersion(
+        com.google.cloud.config.v1.GetTerraformVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTerraformVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ResourceChanges for a given preview.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListResourceChangesResponse listResourceChanges(
+        com.google.cloud.config.v1.ListResourceChangesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListResourceChangesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceChange for a given preview.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ResourceChange getResourceChange(
+        com.google.cloud.config.v1.GetResourceChangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetResourceChangeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List ResourceDrifts for a given preview.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListResourceDriftsResponse listResourceDrifts(
+        com.google.cloud.config.v1.ListResourceDriftsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListResourceDriftsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceDrift for a given preview.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ResourceDrift getResourceDrift(
+        com.google.cloud.config.v1.GetResourceDriftRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetResourceDriftMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.AutoMigrationConfig getAutoMigrationConfig(
+        com.google.cloud.config.v1.GetAutoMigrationConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAutoMigrationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAutoMigrationConfig(
+        com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAutoMigrationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a DeploymentGroup for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.DeploymentGroup getDeploymentGroup(
+        com.google.cloud.config.v1.GetDeploymentGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * The newly created DeploymentGroup will be in the `CREATING` state
+     * and can be retrieved via Get and List calls.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDeploymentGroup(
+        com.google.cloud.config.v1.CreateDeploymentGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDeploymentGroup(
+        com.google.cloud.config.v1.UpdateDeploymentGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDeploymentGroup(
+        com.google.cloud.config.v1.DeleteDeploymentGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List DeploymentGroups for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListDeploymentGroupsResponse listDeploymentGroups(
+        com.google.cloud.config.v1.ListDeploymentGroupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDeploymentGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    public com.google.longrunning.Operation provisionDeploymentGroup(
+        com.google.cloud.config.v1.ProvisionDeploymentGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getProvisionDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprovisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deprovisionDeploymentGroup(
+        com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeprovisionDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.DeploymentGroupRevision getDeploymentGroupRevision(
+        com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDeploymentGroupRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]s
+     * in a given [DeploymentGroup][google.cloud.config.v1.DeploymentGroup].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse
+        listDeploymentGroupRevisions(
+            com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDeploymentGroupRevisionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Config.
    *
    * <pre>
    * Infrastructure Manager is a managed service that automates the deployment and
@@ -1964,7 +3747,7 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists [Resource][google.cloud.config.v1.Resource]s in a given revision.
+     * Lists [Resources][google.cloud.config.v1.Resource] in a given revision.
      * </pre>
      */
     public com.google.cloud.config.v1.ListResourcesResponse listResources(
@@ -2158,6 +3941,223 @@ public final class ConfigGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetTerraformVersionMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ResourceChanges for a given preview.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListResourceChangesResponse listResourceChanges(
+        com.google.cloud.config.v1.ListResourceChangesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListResourceChangesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceChange for a given preview.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ResourceChange getResourceChange(
+        com.google.cloud.config.v1.GetResourceChangeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetResourceChangeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List ResourceDrifts for a given preview.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListResourceDriftsResponse listResourceDrifts(
+        com.google.cloud.config.v1.ListResourceDriftsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListResourceDriftsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceDrift for a given preview.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ResourceDrift getResourceDrift(
+        com.google.cloud.config.v1.GetResourceDriftRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetResourceDriftMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.AutoMigrationConfig getAutoMigrationConfig(
+        com.google.cloud.config.v1.GetAutoMigrationConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAutoMigrationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAutoMigrationConfig(
+        com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAutoMigrationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a DeploymentGroup for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.DeploymentGroup getDeploymentGroup(
+        com.google.cloud.config.v1.GetDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * The newly created DeploymentGroup will be in the `CREATING` state
+     * and can be retrieved via Get and List calls.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDeploymentGroup(
+        com.google.cloud.config.v1.CreateDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDeploymentGroup(
+        com.google.cloud.config.v1.UpdateDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDeploymentGroup(
+        com.google.cloud.config.v1.DeleteDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List DeploymentGroups for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListDeploymentGroupsResponse listDeploymentGroups(
+        com.google.cloud.config.v1.ListDeploymentGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDeploymentGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    public com.google.longrunning.Operation provisionDeploymentGroup(
+        com.google.cloud.config.v1.ProvisionDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getProvisionDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprovisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deprovisionDeploymentGroup(
+        com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeprovisionDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.DeploymentGroupRevision getDeploymentGroupRevision(
+        com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDeploymentGroupRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]s
+     * in a given [DeploymentGroup][google.cloud.config.v1.DeploymentGroup].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse
+        listDeploymentGroupRevisions(
+            com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDeploymentGroupRevisionsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2291,7 +4291,7 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists [Resource][google.cloud.config.v1.Resource]s in a given revision.
+     * Lists [Resources][google.cloud.config.v1.Resource] in a given revision.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2491,6 +4491,236 @@ public final class ConfigGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetTerraformVersionMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ResourceChanges for a given preview.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.ListResourceChangesResponse>
+        listResourceChanges(com.google.cloud.config.v1.ListResourceChangesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListResourceChangesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceChange for a given preview.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.ResourceChange>
+        getResourceChange(com.google.cloud.config.v1.GetResourceChangeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetResourceChangeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List ResourceDrifts for a given preview.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.ListResourceDriftsResponse>
+        listResourceDrifts(com.google.cloud.config.v1.ListResourceDriftsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListResourceDriftsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceDrift for a given preview.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.ResourceDrift>
+        getResourceDrift(com.google.cloud.config.v1.GetResourceDriftRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetResourceDriftMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.AutoMigrationConfig>
+        getAutoMigrationConfig(com.google.cloud.config.v1.GetAutoMigrationConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAutoMigrationConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateAutoMigrationConfig(
+            com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAutoMigrationConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a DeploymentGroup for a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.DeploymentGroup>
+        getDeploymentGroup(com.google.cloud.config.v1.GetDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDeploymentGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * The newly created DeploymentGroup will be in the `CREATING` state
+     * and can be retrieved via Get and List calls.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createDeploymentGroup(com.google.cloud.config.v1.CreateDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateDeploymentGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateDeploymentGroup(com.google.cloud.config.v1.UpdateDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDeploymentGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteDeploymentGroup(com.google.cloud.config.v1.DeleteDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDeploymentGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List DeploymentGroups for a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.ListDeploymentGroupsResponse>
+        listDeploymentGroups(com.google.cloud.config.v1.ListDeploymentGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDeploymentGroupsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        provisionDeploymentGroup(
+            com.google.cloud.config.v1.ProvisionDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getProvisionDeploymentGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprovisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deprovisionDeploymentGroup(
+            com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeprovisionDeploymentGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.DeploymentGroupRevision>
+        getDeploymentGroupRevision(
+            com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDeploymentGroupRevisionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]s
+     * in a given [DeploymentGroup][google.cloud.config.v1.DeploymentGroup].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>
+        listDeploymentGroupRevisions(
+            com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDeploymentGroupRevisionsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_DEPLOYMENTS = 0;
@@ -2516,6 +4746,21 @@ public final class ConfigGrpc {
   private static final int METHODID_EXPORT_PREVIEW_RESULT = 20;
   private static final int METHODID_LIST_TERRAFORM_VERSIONS = 21;
   private static final int METHODID_GET_TERRAFORM_VERSION = 22;
+  private static final int METHODID_LIST_RESOURCE_CHANGES = 23;
+  private static final int METHODID_GET_RESOURCE_CHANGE = 24;
+  private static final int METHODID_LIST_RESOURCE_DRIFTS = 25;
+  private static final int METHODID_GET_RESOURCE_DRIFT = 26;
+  private static final int METHODID_GET_AUTO_MIGRATION_CONFIG = 27;
+  private static final int METHODID_UPDATE_AUTO_MIGRATION_CONFIG = 28;
+  private static final int METHODID_GET_DEPLOYMENT_GROUP = 29;
+  private static final int METHODID_CREATE_DEPLOYMENT_GROUP = 30;
+  private static final int METHODID_UPDATE_DEPLOYMENT_GROUP = 31;
+  private static final int METHODID_DELETE_DEPLOYMENT_GROUP = 32;
+  private static final int METHODID_LIST_DEPLOYMENT_GROUPS = 33;
+  private static final int METHODID_PROVISION_DEPLOYMENT_GROUP = 34;
+  private static final int METHODID_DEPROVISION_DEPLOYMENT_GROUP = 35;
+  private static final int METHODID_GET_DEPLOYMENT_GROUP_REVISION = 36;
+  private static final int METHODID_LIST_DEPLOYMENT_GROUP_REVISIONS = 37;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2656,6 +4901,91 @@ public final class ConfigGrpc {
           serviceImpl.getTerraformVersion(
               (com.google.cloud.config.v1.GetTerraformVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.TerraformVersion>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_RESOURCE_CHANGES:
+          serviceImpl.listResourceChanges(
+              (com.google.cloud.config.v1.ListResourceChangesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListResourceChangesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_RESOURCE_CHANGE:
+          serviceImpl.getResourceChange(
+              (com.google.cloud.config.v1.GetResourceChangeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ResourceChange>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_RESOURCE_DRIFTS:
+          serviceImpl.listResourceDrifts(
+              (com.google.cloud.config.v1.ListResourceDriftsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListResourceDriftsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_RESOURCE_DRIFT:
+          serviceImpl.getResourceDrift(
+              (com.google.cloud.config.v1.GetResourceDriftRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ResourceDrift>)
+                  responseObserver);
+          break;
+        case METHODID_GET_AUTO_MIGRATION_CONFIG:
+          serviceImpl.getAutoMigrationConfig(
+              (com.google.cloud.config.v1.GetAutoMigrationConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.AutoMigrationConfig>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_AUTO_MIGRATION_CONFIG:
+          serviceImpl.updateAutoMigrationConfig(
+              (com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_DEPLOYMENT_GROUP:
+          serviceImpl.getDeploymentGroup(
+              (com.google.cloud.config.v1.GetDeploymentGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.DeploymentGroup>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_DEPLOYMENT_GROUP:
+          serviceImpl.createDeploymentGroup(
+              (com.google.cloud.config.v1.CreateDeploymentGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_DEPLOYMENT_GROUP:
+          serviceImpl.updateDeploymentGroup(
+              (com.google.cloud.config.v1.UpdateDeploymentGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_DEPLOYMENT_GROUP:
+          serviceImpl.deleteDeploymentGroup(
+              (com.google.cloud.config.v1.DeleteDeploymentGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_DEPLOYMENT_GROUPS:
+          serviceImpl.listDeploymentGroups(
+              (com.google.cloud.config.v1.ListDeploymentGroupsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListDeploymentGroupsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_PROVISION_DEPLOYMENT_GROUP:
+          serviceImpl.provisionDeploymentGroup(
+              (com.google.cloud.config.v1.ProvisionDeploymentGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DEPROVISION_DEPLOYMENT_GROUP:
+          serviceImpl.deprovisionDeploymentGroup(
+              (com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_DEPLOYMENT_GROUP_REVISION:
+          serviceImpl.getDeploymentGroupRevision(
+              (com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.DeploymentGroupRevision>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_DEPLOYMENT_GROUP_REVISIONS:
+          serviceImpl.listDeploymentGroupRevisions(
+              (com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>)
                   responseObserver);
           break;
         default:
@@ -2823,6 +5153,108 @@ public final class ConfigGrpc {
                     com.google.cloud.config.v1.GetTerraformVersionRequest,
                     com.google.cloud.config.v1.TerraformVersion>(
                     service, METHODID_GET_TERRAFORM_VERSION)))
+        .addMethod(
+            getListResourceChangesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.ListResourceChangesRequest,
+                    com.google.cloud.config.v1.ListResourceChangesResponse>(
+                    service, METHODID_LIST_RESOURCE_CHANGES)))
+        .addMethod(
+            getGetResourceChangeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.GetResourceChangeRequest,
+                    com.google.cloud.config.v1.ResourceChange>(
+                    service, METHODID_GET_RESOURCE_CHANGE)))
+        .addMethod(
+            getListResourceDriftsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.ListResourceDriftsRequest,
+                    com.google.cloud.config.v1.ListResourceDriftsResponse>(
+                    service, METHODID_LIST_RESOURCE_DRIFTS)))
+        .addMethod(
+            getGetResourceDriftMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.GetResourceDriftRequest,
+                    com.google.cloud.config.v1.ResourceDrift>(
+                    service, METHODID_GET_RESOURCE_DRIFT)))
+        .addMethod(
+            getGetAutoMigrationConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.GetAutoMigrationConfigRequest,
+                    com.google.cloud.config.v1.AutoMigrationConfig>(
+                    service, METHODID_GET_AUTO_MIGRATION_CONFIG)))
+        .addMethod(
+            getUpdateAutoMigrationConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_AUTO_MIGRATION_CONFIG)))
+        .addMethod(
+            getGetDeploymentGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.GetDeploymentGroupRequest,
+                    com.google.cloud.config.v1.DeploymentGroup>(
+                    service, METHODID_GET_DEPLOYMENT_GROUP)))
+        .addMethod(
+            getCreateDeploymentGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.CreateDeploymentGroupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_DEPLOYMENT_GROUP)))
+        .addMethod(
+            getUpdateDeploymentGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.UpdateDeploymentGroupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_DEPLOYMENT_GROUP)))
+        .addMethod(
+            getDeleteDeploymentGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.DeleteDeploymentGroupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_DEPLOYMENT_GROUP)))
+        .addMethod(
+            getListDeploymentGroupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.ListDeploymentGroupsRequest,
+                    com.google.cloud.config.v1.ListDeploymentGroupsResponse>(
+                    service, METHODID_LIST_DEPLOYMENT_GROUPS)))
+        .addMethod(
+            getProvisionDeploymentGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.ProvisionDeploymentGroupRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_PROVISION_DEPLOYMENT_GROUP)))
+        .addMethod(
+            getDeprovisionDeploymentGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DEPROVISION_DEPLOYMENT_GROUP)))
+        .addMethod(
+            getGetDeploymentGroupRevisionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest,
+                    com.google.cloud.config.v1.DeploymentGroupRevision>(
+                    service, METHODID_GET_DEPLOYMENT_GROUP_REVISION)))
+        .addMethod(
+            getListDeploymentGroupRevisionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest,
+                    com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>(
+                    service, METHODID_LIST_DEPLOYMENT_GROUP_REVISIONS)))
         .build();
   }
 
@@ -2895,6 +5327,21 @@ public final class ConfigGrpc {
                       .addMethod(getExportPreviewResultMethod())
                       .addMethod(getListTerraformVersionsMethod())
                       .addMethod(getGetTerraformVersionMethod())
+                      .addMethod(getListResourceChangesMethod())
+                      .addMethod(getGetResourceChangeMethod())
+                      .addMethod(getListResourceDriftsMethod())
+                      .addMethod(getGetResourceDriftMethod())
+                      .addMethod(getGetAutoMigrationConfigMethod())
+                      .addMethod(getUpdateAutoMigrationConfigMethod())
+                      .addMethod(getGetDeploymentGroupMethod())
+                      .addMethod(getCreateDeploymentGroupMethod())
+                      .addMethod(getUpdateDeploymentGroupMethod())
+                      .addMethod(getDeleteDeploymentGroupMethod())
+                      .addMethod(getListDeploymentGroupsMethod())
+                      .addMethod(getProvisionDeploymentGroupMethod())
+                      .addMethod(getDeprovisionDeploymentGroupMethod())
+                      .addMethod(getGetDeploymentGroupRevisionMethod())
+                      .addMethod(getListDeploymentGroupRevisionsMethod())
                       .build();
         }
       }

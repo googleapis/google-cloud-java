@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.aiplatform.v1beta1.stub;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelVersionCheckpointsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelsPagedResponse;
 
@@ -47,6 +48,8 @@ import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelVersionsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelVersionsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelsRequest;
@@ -55,6 +58,8 @@ import com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest;
 import com.google.cloud.aiplatform.v1beta1.Model;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluation;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice;
+import com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest;
+import com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetResponse;
@@ -119,6 +124,18 @@ public abstract class ModelServiceStub implements BackgroundResource {
   public UnaryCallable<ListModelVersionsRequest, ListModelVersionsResponse>
       listModelVersionsCallable() {
     throw new UnsupportedOperationException("Not implemented: listModelVersionsCallable()");
+  }
+
+  public UnaryCallable<ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsPagedResponse>
+      listModelVersionCheckpointsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listModelVersionCheckpointsPagedCallable()");
+  }
+
+  public UnaryCallable<ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>
+      listModelVersionCheckpointsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listModelVersionCheckpointsCallable()");
   }
 
   public UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {
@@ -227,6 +244,10 @@ public abstract class ModelServiceStub implements BackgroundResource {
   public UnaryCallable<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse>
       listModelEvaluationSlicesCallable() {
     throw new UnsupportedOperationException("Not implemented: listModelEvaluationSlicesCallable()");
+  }
+
+  public UnaryCallable<RecommendSpecRequest, RecommendSpecResponse> recommendSpecCallable() {
+    throw new UnsupportedOperationException("Not implemented: recommendSpecCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

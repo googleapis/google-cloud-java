@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
           .setFullMethodName("google.api.apikeys.v2.ApiKeys/CreateKey")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListKeysRequest, ListKeysResponse>
@@ -70,6 +71,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
               .setFullMethodName("google.api.apikeys.v2.ApiKeys/ListKeys")
               .setRequestMarshaller(ProtoUtils.marshaller(ListKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListKeysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetKeyRequest, Key> getKeyMethodDescriptor =
@@ -78,6 +80,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
           .setFullMethodName("google.api.apikeys.v2.ApiKeys/GetKey")
           .setRequestMarshaller(ProtoUtils.marshaller(GetKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Key.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetKeyStringRequest, GetKeyStringResponse>
@@ -88,6 +91,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GetKeyStringRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GetKeyStringResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateKeyRequest, Operation> updateKeyMethodDescriptor =
@@ -96,6 +100,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
           .setFullMethodName("google.api.apikeys.v2.ApiKeys/UpdateKey")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteKeyRequest, Operation> deleteKeyMethodDescriptor =
@@ -104,6 +109,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
           .setFullMethodName("google.api.apikeys.v2.ApiKeys/DeleteKey")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UndeleteKeyRequest, Operation> undeleteKeyMethodDescriptor =
@@ -112,6 +118,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
           .setFullMethodName("google.api.apikeys.v2.ApiKeys/UndeleteKey")
           .setRequestMarshaller(ProtoUtils.marshaller(UndeleteKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<LookupKeyRequest, LookupKeyResponse>
@@ -121,6 +128,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
               .setFullMethodName("google.api.apikeys.v2.ApiKeys/LookupKey")
               .setRequestMarshaller(ProtoUtils.marshaller(LookupKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LookupKeyResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateKeyRequest, Operation> createKeyCallable;
@@ -185,6 +193,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListKeysRequest, ListKeysResponse> listKeysTransportSettings =
         GrpcCallSettings.<ListKeysRequest, ListKeysResponse>newBuilder()
@@ -195,6 +204,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetKeyRequest, Key> getKeyTransportSettings =
         GrpcCallSettings.<GetKeyRequest, Key>newBuilder()
@@ -205,6 +215,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetKeyStringRequest, GetKeyStringResponse> getKeyStringTransportSettings =
         GrpcCallSettings.<GetKeyStringRequest, GetKeyStringResponse>newBuilder()
@@ -215,6 +226,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateKeyRequest, Operation> updateKeyTransportSettings =
         GrpcCallSettings.<UpdateKeyRequest, Operation>newBuilder()
@@ -235,6 +247,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeleteKeyRequest, Operation> undeleteKeyTransportSettings =
         GrpcCallSettings.<UndeleteKeyRequest, Operation>newBuilder()
@@ -245,6 +258,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<LookupKeyRequest, LookupKeyResponse> lookupKeyTransportSettings =
         GrpcCallSettings.<LookupKeyRequest, LookupKeyResponse>newBuilder()

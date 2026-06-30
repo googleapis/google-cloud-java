@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddResourcePoliciesDiskRequest;
 import com.google.cloud.compute.v1.AggregatedListDisksRequest;
 import com.google.cloud.compute.v1.BulkInsertDiskRequest;
+import com.google.cloud.compute.v1.BulkSetLabelsDiskRequest;
 import com.google.cloud.compute.v1.CreateSnapshotDiskRequest;
 import com.google.cloud.compute.v1.DeleteDiskRequest;
 import com.google.cloud.compute.v1.Disk;
@@ -46,6 +47,7 @@ import com.google.cloud.compute.v1.StopGroupAsyncReplicationDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateDiskRequest;
+import com.google.cloud.compute.v1.UpdateKmsKeyDiskRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -83,6 +85,15 @@ public abstract class DisksStub implements BackgroundResource {
 
   public UnaryCallable<BulkInsertDiskRequest, Operation> bulkInsertCallable() {
     throw new UnsupportedOperationException("Not implemented: bulkInsertCallable()");
+  }
+
+  public OperationCallable<BulkSetLabelsDiskRequest, Operation, Operation>
+      bulkSetLabelsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: bulkSetLabelsOperationCallable()");
+  }
+
+  public UnaryCallable<BulkSetLabelsDiskRequest, Operation> bulkSetLabelsCallable() {
+    throw new UnsupportedOperationException("Not implemented: bulkSetLabelsCallable()");
   }
 
   public OperationCallable<CreateSnapshotDiskRequest, Operation, Operation>
@@ -201,6 +212,15 @@ public abstract class DisksStub implements BackgroundResource {
 
   public UnaryCallable<UpdateDiskRequest, Operation> updateCallable() {
     throw new UnsupportedOperationException("Not implemented: updateCallable()");
+  }
+
+  public OperationCallable<UpdateKmsKeyDiskRequest, Operation, Operation>
+      updateKmsKeyOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateKmsKeyOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateKmsKeyDiskRequest, Operation> updateKmsKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateKmsKeyCallable()");
   }
 
   @Override

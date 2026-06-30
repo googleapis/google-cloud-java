@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.compute.v1.ReservationsClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -34,6 +35,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -51,6 +53,7 @@ import com.google.cloud.compute.v1.GetReservationRequest;
 import com.google.cloud.compute.v1.InsertReservationRequest;
 import com.google.cloud.compute.v1.ListReservationsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PerformMaintenanceReservationRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.Reservation;
 import com.google.cloud.compute.v1.ReservationAggregatedList;
@@ -66,11 +69,10 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
-import java.util.Collections;
+import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -87,7 +89,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -104,12 +108,50 @@ import org.threeten.bp.Duration;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ReservationsStubSettings reservationsSettings = reservationsSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for delete:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ReservationsStubSettings.Builder reservationsSettingsBuilder =
+ *     ReservationsStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * reservationsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class ReservationsStubSettings extends StubSettings<ReservationsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -131,6 +173,10 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
       insertOperationSettings;
   private final PagedCallSettings<ListReservationsRequest, ReservationList, ListPagedResponse>
       listSettings;
+  private final UnaryCallSettings<PerformMaintenanceReservationRequest, Operation>
+      performMaintenanceSettings;
+  private final OperationCallSettings<PerformMaintenanceReservationRequest, Operation, Operation>
+      performMaintenanceOperationSettings;
   private final UnaryCallSettings<ResizeReservationRequest, Operation> resizeSettings;
   private final OperationCallSettings<ResizeReservationRequest, Operation, Operation>
       resizeOperationSettings;
@@ -184,9 +230,7 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
             @Override
             public Iterable<Map.Entry<String, ReservationsScopedList>> extractResources(
                 ReservationAggregatedList payload) {
-              return payload.getItemsMap() == null
-                  ? Collections.<Map.Entry<String, ReservationsScopedList>>emptySet()
-                  : payload.getItemsMap().entrySet();
+              return payload.getItemsMap().entrySet();
             }
           };
 
@@ -222,9 +266,7 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
 
             @Override
             public Iterable<Reservation> extractResources(ReservationList payload) {
-              return payload.getItemsList() == null
-                  ? ImmutableList.<Reservation>of()
-                  : payload.getItemsList();
+              return payload.getItemsList();
             }
           };
 
@@ -314,6 +356,18 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
     return listSettings;
   }
 
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public UnaryCallSettings<PerformMaintenanceReservationRequest, Operation>
+      performMaintenanceSettings() {
+    return performMaintenanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public OperationCallSettings<PerformMaintenanceReservationRequest, Operation, Operation>
+      performMaintenanceOperationSettings() {
+    return performMaintenanceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to resize. */
   public UnaryCallSettings<ResizeReservationRequest, Operation> resizeSettings() {
     return resizeSettings;
@@ -358,15 +412,6 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -379,6 +424,7 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "compute.googleapis.com:443";
   }
@@ -445,12 +491,24 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    performMaintenanceSettings = settingsBuilder.performMaintenanceSettings().build();
+    performMaintenanceOperationSettings =
+        settingsBuilder.performMaintenanceOperationSettings().build();
     resizeSettings = settingsBuilder.resizeSettings().build();
     resizeOperationSettings = settingsBuilder.resizeOperationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-compute")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for ReservationsStubSettings. */
@@ -473,6 +531,11 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
     private final PagedCallSettings.Builder<
             ListReservationsRequest, ReservationList, ListPagedResponse>
         listSettings;
+    private final UnaryCallSettings.Builder<PerformMaintenanceReservationRequest, Operation>
+        performMaintenanceSettings;
+    private final OperationCallSettings.Builder<
+            PerformMaintenanceReservationRequest, Operation, Operation>
+        performMaintenanceOperationSettings;
     private final UnaryCallSettings.Builder<ResizeReservationRequest, Operation> resizeSettings;
     private final OperationCallSettings.Builder<ResizeReservationRequest, Operation, Operation>
         resizeOperationSettings;
@@ -507,21 +570,21 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -542,6 +605,8 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      performMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      performMaintenanceOperationSettings = OperationCallSettings.newBuilder();
       resizeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       resizeOperationSettings = OperationCallSettings.newBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -557,6 +622,7 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
               getIamPolicySettings,
               insertSettings,
               listSettings,
+              performMaintenanceSettings,
               resizeSettings,
               setIamPolicySettings,
               testIamPermissionsSettings,
@@ -575,6 +641,9 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      performMaintenanceSettings = settings.performMaintenanceSettings.toBuilder();
+      performMaintenanceOperationSettings =
+          settings.performMaintenanceOperationSettings.toBuilder();
       resizeSettings = settings.resizeSettings.toBuilder();
       resizeOperationSettings = settings.resizeOperationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -590,6 +659,7 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
               getIamPolicySettings,
               insertSettings,
               listSettings,
+              performMaintenanceSettings,
               resizeSettings,
               setIamPolicySettings,
               testIamPermissionsSettings,
@@ -640,6 +710,11 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .performMaintenanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .resizeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -674,13 +749,13 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -698,13 +773,38 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .performMaintenanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PerformMaintenanceReservationRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -722,13 +822,13 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -746,13 +846,13 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       return builder;
@@ -821,6 +921,18 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
       return listSettings;
     }
 
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public UnaryCallSettings.Builder<PerformMaintenanceReservationRequest, Operation>
+        performMaintenanceSettings() {
+      return performMaintenanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public OperationCallSettings.Builder<PerformMaintenanceReservationRequest, Operation, Operation>
+        performMaintenanceOperationSettings() {
+      return performMaintenanceOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to resize. */
     public UnaryCallSettings.Builder<ResizeReservationRequest, Operation> resizeSettings() {
       return resizeSettings;
@@ -853,15 +965,6 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
     public OperationCallSettings.Builder<UpdateReservationRequest, Operation, Operation>
         updateOperationSettings() {
       return updateOperationSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

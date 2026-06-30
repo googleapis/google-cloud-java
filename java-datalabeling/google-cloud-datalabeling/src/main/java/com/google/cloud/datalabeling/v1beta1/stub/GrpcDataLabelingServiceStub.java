@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,6 +119,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDatasetRequest, Dataset> getDatasetMethodDescriptor =
@@ -127,6 +128,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setFullMethodName("google.cloud.datalabeling.v1beta1.DataLabelingService/GetDataset")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDatasetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListDatasetsRequest, ListDatasetsResponse>
@@ -138,6 +140,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListDatasetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatasetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDatasetRequest, Empty> deleteDatasetMethodDescriptor =
@@ -146,6 +149,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setFullMethodName("google.cloud.datalabeling.v1beta1.DataLabelingService/DeleteDataset")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteDatasetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ImportDataRequest, Operation> importDataMethodDescriptor =
@@ -154,6 +158,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setFullMethodName("google.cloud.datalabeling.v1beta1.DataLabelingService/ImportData")
           .setRequestMarshaller(ProtoUtils.marshaller(ImportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ExportDataRequest, Operation> exportDataMethodDescriptor =
@@ -162,6 +167,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setFullMethodName("google.cloud.datalabeling.v1beta1.DataLabelingService/ExportData")
           .setRequestMarshaller(ProtoUtils.marshaller(ExportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetDataItemRequest, DataItem> getDataItemMethodDescriptor =
@@ -170,6 +176,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setFullMethodName("google.cloud.datalabeling.v1beta1.DataLabelingService/GetDataItem")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDataItemRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(DataItem.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListDataItemsRequest, ListDataItemsResponse>
@@ -182,6 +189,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(ListDataItemsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataItemsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAnnotatedDatasetRequest, AnnotatedDataset>
@@ -193,6 +201,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAnnotatedDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AnnotatedDataset.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse>
@@ -205,6 +214,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(ListAnnotatedDatasetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAnnotatedDatasetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAnnotatedDatasetRequest, Empty>
@@ -216,6 +226,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAnnotatedDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<LabelImageRequest, Operation> labelImageMethodDescriptor =
@@ -224,6 +235,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setFullMethodName("google.cloud.datalabeling.v1beta1.DataLabelingService/LabelImage")
           .setRequestMarshaller(ProtoUtils.marshaller(LabelImageRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<LabelVideoRequest, Operation> labelVideoMethodDescriptor =
@@ -232,6 +244,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setFullMethodName("google.cloud.datalabeling.v1beta1.DataLabelingService/LabelVideo")
           .setRequestMarshaller(ProtoUtils.marshaller(LabelVideoRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<LabelTextRequest, Operation> labelTextMethodDescriptor =
@@ -240,6 +253,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setFullMethodName("google.cloud.datalabeling.v1beta1.DataLabelingService/LabelText")
           .setRequestMarshaller(ProtoUtils.marshaller(LabelTextRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetExampleRequest, Example> getExampleMethodDescriptor =
@@ -248,6 +262,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setFullMethodName("google.cloud.datalabeling.v1beta1.DataLabelingService/GetExample")
           .setRequestMarshaller(ProtoUtils.marshaller(GetExampleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Example.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListExamplesRequest, ListExamplesResponse>
@@ -259,6 +274,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListExamplesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListExamplesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAnnotationSpecSetRequest, AnnotationSpecSet>
@@ -270,6 +286,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAnnotationSpecSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AnnotationSpecSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAnnotationSpecSetRequest, AnnotationSpecSet>
@@ -281,6 +298,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAnnotationSpecSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AnnotationSpecSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -295,6 +313,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(ListAnnotationSpecSetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAnnotationSpecSetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAnnotationSpecSetRequest, Empty>
@@ -306,6 +325,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAnnotationSpecSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateInstructionRequest, Operation>
@@ -317,6 +337,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateInstructionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInstructionRequest, Instruction>
@@ -328,6 +349,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetInstructionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Instruction.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListInstructionsRequest, ListInstructionsResponse>
@@ -340,6 +362,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(ListInstructionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstructionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteInstructionRequest, Empty>
@@ -351,6 +374,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteInstructionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEvaluationRequest, Evaluation>
@@ -362,6 +386,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEvaluationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Evaluation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchEvaluationsRequest, SearchEvaluationsResponse>
@@ -374,6 +399,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(SearchEvaluationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchEvaluationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -388,6 +414,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(SearchExampleComparisonsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchExampleComparisonsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEvaluationJobRequest, EvaluationJob>
@@ -399,6 +426,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEvaluationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EvaluationJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEvaluationJobRequest, EvaluationJob>
@@ -410,6 +438,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEvaluationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EvaluationJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEvaluationJobRequest, EvaluationJob>
@@ -421,6 +450,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEvaluationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EvaluationJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PauseEvaluationJobRequest, Empty>
@@ -432,6 +462,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PauseEvaluationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResumeEvaluationJobRequest, Empty>
@@ -443,6 +474,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResumeEvaluationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEvaluationJobRequest, Empty>
@@ -454,6 +486,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEvaluationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
@@ -466,6 +499,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(ListEvaluationJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEvaluationJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateDatasetRequest, Dataset> createDatasetCallable;
@@ -601,6 +635,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetDatasetRequest, Dataset> getDatasetTransportSettings =
         GrpcCallSettings.<GetDatasetRequest, Dataset>newBuilder()
@@ -611,6 +646,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
         GrpcCallSettings.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
@@ -621,6 +657,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteDatasetRequest, Empty> deleteDatasetTransportSettings =
         GrpcCallSettings.<DeleteDatasetRequest, Empty>newBuilder()
@@ -631,6 +668,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportDataRequest, Operation> importDataTransportSettings =
         GrpcCallSettings.<ImportDataRequest, Operation>newBuilder()
@@ -641,6 +679,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportDataRequest, Operation> exportDataTransportSettings =
         GrpcCallSettings.<ExportDataRequest, Operation>newBuilder()
@@ -651,6 +690,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetDataItemRequest, DataItem> getDataItemTransportSettings =
         GrpcCallSettings.<GetDataItemRequest, DataItem>newBuilder()
@@ -661,6 +701,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDataItemsRequest, ListDataItemsResponse> listDataItemsTransportSettings =
         GrpcCallSettings.<ListDataItemsRequest, ListDataItemsResponse>newBuilder()
@@ -671,6 +712,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAnnotatedDatasetRequest, AnnotatedDataset>
         getAnnotatedDatasetTransportSettings =
@@ -682,6 +724,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse>
         listAnnotatedDatasetsTransportSettings =
@@ -694,6 +737,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetTransportSettings =
         GrpcCallSettings.<DeleteAnnotatedDatasetRequest, Empty>newBuilder()
@@ -704,6 +748,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<LabelImageRequest, Operation> labelImageTransportSettings =
         GrpcCallSettings.<LabelImageRequest, Operation>newBuilder()
@@ -714,6 +759,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<LabelVideoRequest, Operation> labelVideoTransportSettings =
         GrpcCallSettings.<LabelVideoRequest, Operation>newBuilder()
@@ -724,6 +770,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<LabelTextRequest, Operation> labelTextTransportSettings =
         GrpcCallSettings.<LabelTextRequest, Operation>newBuilder()
@@ -734,6 +781,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetExampleRequest, Example> getExampleTransportSettings =
         GrpcCallSettings.<GetExampleRequest, Example>newBuilder()
@@ -744,6 +792,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListExamplesRequest, ListExamplesResponse> listExamplesTransportSettings =
         GrpcCallSettings.<ListExamplesRequest, ListExamplesResponse>newBuilder()
@@ -754,6 +803,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateAnnotationSpecSetRequest, AnnotationSpecSet>
         createAnnotationSpecSetTransportSettings =
@@ -765,6 +815,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAnnotationSpecSetRequest, AnnotationSpecSet>
         getAnnotationSpecSetTransportSettings =
@@ -776,6 +827,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse>
         listAnnotationSpecSetsTransportSettings =
@@ -788,6 +840,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAnnotationSpecSetRequest, Empty>
         deleteAnnotationSpecSetTransportSettings =
@@ -799,6 +852,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateInstructionRequest, Operation> createInstructionTransportSettings =
         GrpcCallSettings.<CreateInstructionRequest, Operation>newBuilder()
@@ -809,6 +863,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInstructionRequest, Instruction> getInstructionTransportSettings =
         GrpcCallSettings.<GetInstructionRequest, Instruction>newBuilder()
@@ -819,6 +874,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListInstructionsRequest, ListInstructionsResponse>
         listInstructionsTransportSettings =
@@ -830,6 +886,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteInstructionRequest, Empty> deleteInstructionTransportSettings =
         GrpcCallSettings.<DeleteInstructionRequest, Empty>newBuilder()
@@ -840,6 +897,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetEvaluationRequest, Evaluation> getEvaluationTransportSettings =
         GrpcCallSettings.<GetEvaluationRequest, Evaluation>newBuilder()
@@ -850,6 +908,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SearchEvaluationsRequest, SearchEvaluationsResponse>
         searchEvaluationsTransportSettings =
@@ -861,6 +920,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SearchExampleComparisonsRequest, SearchExampleComparisonsResponse>
         searchExampleComparisonsTransportSettings =
@@ -873,6 +933,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateEvaluationJobRequest, EvaluationJob>
         createEvaluationJobTransportSettings =
@@ -884,6 +945,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateEvaluationJobRequest, EvaluationJob>
         updateEvaluationJobTransportSettings =
@@ -907,6 +969,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PauseEvaluationJobRequest, Empty> pauseEvaluationJobTransportSettings =
         GrpcCallSettings.<PauseEvaluationJobRequest, Empty>newBuilder()
@@ -917,6 +980,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobTransportSettings =
         GrpcCallSettings.<ResumeEvaluationJobRequest, Empty>newBuilder()
@@ -927,6 +991,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobTransportSettings =
         GrpcCallSettings.<DeleteEvaluationJobRequest, Empty>newBuilder()
@@ -937,6 +1002,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
         listEvaluationJobsTransportSettings =
@@ -948,6 +1014,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createDatasetCallable =

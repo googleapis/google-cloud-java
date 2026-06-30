@@ -10,17 +10,26 @@
         "grpc": {
           "libraryClient": "AnalyticsHubServiceClient",
           "rpcs": {
+            "ApproveQueryTemplate": {
+              "methods": ["approveQueryTemplate", "approveQueryTemplate", "approveQueryTemplate", "approveQueryTemplateCallable"]
+            },
             "CreateDataExchange": {
               "methods": ["createDataExchange", "createDataExchange", "createDataExchange", "createDataExchangeCallable"]
             },
             "CreateListing": {
               "methods": ["createListing", "createListing", "createListing", "createListingCallable"]
             },
+            "CreateQueryTemplate": {
+              "methods": ["createQueryTemplate", "createQueryTemplate", "createQueryTemplate", "createQueryTemplateCallable"]
+            },
             "DeleteDataExchange": {
               "methods": ["deleteDataExchange", "deleteDataExchange", "deleteDataExchange", "deleteDataExchangeCallable"]
             },
             "DeleteListing": {
               "methods": ["deleteListing", "deleteListing", "deleteListing", "deleteListingCallable"]
+            },
+            "DeleteQueryTemplate": {
+              "methods": ["deleteQueryTemplate", "deleteQueryTemplate", "deleteQueryTemplate", "deleteQueryTemplateCallable"]
             },
             "DeleteSubscription": {
               "methods": ["deleteSubscriptionAsync", "deleteSubscriptionAsync", "deleteSubscriptionAsync", "deleteSubscriptionOperationCallable", "deleteSubscriptionCallable"]
@@ -34,6 +43,9 @@
             "GetListing": {
               "methods": ["getListing", "getListing", "getListing", "getListingCallable"]
             },
+            "GetQueryTemplate": {
+              "methods": ["getQueryTemplate", "getQueryTemplate", "getQueryTemplate", "getQueryTemplateCallable"]
+            },
             "GetSubscription": {
               "methods": ["getSubscription", "getSubscription", "getSubscription", "getSubscriptionCallable"]
             },
@@ -45,6 +57,9 @@
             },
             "ListOrgDataExchanges": {
               "methods": ["listOrgDataExchanges", "listOrgDataExchanges", "listOrgDataExchangesPagedCallable", "listOrgDataExchangesCallable"]
+            },
+            "ListQueryTemplates": {
+              "methods": ["listQueryTemplates", "listQueryTemplates", "listQueryTemplates", "listQueryTemplatesPagedCallable", "listQueryTemplatesCallable"]
             },
             "ListSharedResourceSubscriptions": {
               "methods": ["listSharedResourceSubscriptions", "listSharedResourceSubscriptions", "listSharedResourceSubscriptions", "listSharedResourceSubscriptionsPagedCallable", "listSharedResourceSubscriptionsCallable"]
@@ -61,6 +76,9 @@
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
+            "SubmitQueryTemplate": {
+              "methods": ["submitQueryTemplate", "submitQueryTemplate", "submitQueryTemplate", "submitQueryTemplateCallable"]
+            },
             "SubscribeDataExchange": {
               "methods": ["subscribeDataExchangeAsync", "subscribeDataExchangeAsync", "subscribeDataExchangeAsync", "subscribeDataExchangeOperationCallable", "subscribeDataExchangeCallable"]
             },
@@ -75,6 +93,9 @@
             },
             "UpdateListing": {
               "methods": ["updateListing", "updateListing", "updateListingCallable"]
+            },
+            "UpdateQueryTemplate": {
+              "methods": ["updateQueryTemplate", "updateQueryTemplate", "updateQueryTemplateCallable"]
             }
           }
         }

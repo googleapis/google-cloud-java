@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ public class SyncTrainCustomModel {
                       .toString())
               .setModelType("modelType-2010627581")
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
+              .setModelId("modelId1226956324")
               .build();
       TrainCustomModelResponse response =
           searchTuningServiceClient.trainCustomModelAsync(request).get();

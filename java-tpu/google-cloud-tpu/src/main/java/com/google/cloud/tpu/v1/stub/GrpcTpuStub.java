@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,6 +74,7 @@ public class GrpcTpuStub extends TpuStub {
               .setFullMethodName("google.cloud.tpu.v1.Tpu/ListNodes")
               .setRequestMarshaller(ProtoUtils.marshaller(ListNodesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListNodesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNodeRequest, Node> getNodeMethodDescriptor =
@@ -82,6 +83,7 @@ public class GrpcTpuStub extends TpuStub {
           .setFullMethodName("google.cloud.tpu.v1.Tpu/GetNode")
           .setRequestMarshaller(ProtoUtils.marshaller(GetNodeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Node.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateNodeRequest, Operation> createNodeMethodDescriptor =
@@ -90,6 +92,7 @@ public class GrpcTpuStub extends TpuStub {
           .setFullMethodName("google.cloud.tpu.v1.Tpu/CreateNode")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateNodeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteNodeRequest, Operation> deleteNodeMethodDescriptor =
@@ -98,6 +101,7 @@ public class GrpcTpuStub extends TpuStub {
           .setFullMethodName("google.cloud.tpu.v1.Tpu/DeleteNode")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteNodeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ReimageNodeRequest, Operation> reimageNodeMethodDescriptor =
@@ -106,6 +110,7 @@ public class GrpcTpuStub extends TpuStub {
           .setFullMethodName("google.cloud.tpu.v1.Tpu/ReimageNode")
           .setRequestMarshaller(ProtoUtils.marshaller(ReimageNodeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<StopNodeRequest, Operation> stopNodeMethodDescriptor =
@@ -114,6 +119,7 @@ public class GrpcTpuStub extends TpuStub {
           .setFullMethodName("google.cloud.tpu.v1.Tpu/StopNode")
           .setRequestMarshaller(ProtoUtils.marshaller(StopNodeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<StartNodeRequest, Operation> startNodeMethodDescriptor =
@@ -122,6 +128,7 @@ public class GrpcTpuStub extends TpuStub {
           .setFullMethodName("google.cloud.tpu.v1.Tpu/StartNode")
           .setRequestMarshaller(ProtoUtils.marshaller(StartNodeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<
@@ -135,6 +142,7 @@ public class GrpcTpuStub extends TpuStub {
                   ProtoUtils.marshaller(ListTensorFlowVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTensorFlowVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTensorFlowVersionRequest, TensorFlowVersion>
@@ -145,6 +153,7 @@ public class GrpcTpuStub extends TpuStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTensorFlowVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TensorFlowVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse>
@@ -156,6 +165,7 @@ public class GrpcTpuStub extends TpuStub {
                   ProtoUtils.marshaller(ListAcceleratorTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAcceleratorTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAcceleratorTypeRequest, AcceleratorType>
@@ -166,6 +176,7 @@ public class GrpcTpuStub extends TpuStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAcceleratorTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AcceleratorType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -177,6 +188,7 @@ public class GrpcTpuStub extends TpuStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -185,6 +197,7 @@ public class GrpcTpuStub extends TpuStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListNodesRequest, ListNodesResponse> listNodesCallable;
@@ -268,6 +281,7 @@ public class GrpcTpuStub extends TpuStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetNodeRequest, Node> getNodeTransportSettings =
         GrpcCallSettings.<GetNodeRequest, Node>newBuilder()
@@ -278,6 +292,7 @@ public class GrpcTpuStub extends TpuStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateNodeRequest, Operation> createNodeTransportSettings =
         GrpcCallSettings.<CreateNodeRequest, Operation>newBuilder()
@@ -288,6 +303,7 @@ public class GrpcTpuStub extends TpuStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteNodeRequest, Operation> deleteNodeTransportSettings =
         GrpcCallSettings.<DeleteNodeRequest, Operation>newBuilder()
@@ -298,6 +314,7 @@ public class GrpcTpuStub extends TpuStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ReimageNodeRequest, Operation> reimageNodeTransportSettings =
         GrpcCallSettings.<ReimageNodeRequest, Operation>newBuilder()
@@ -340,6 +357,7 @@ public class GrpcTpuStub extends TpuStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTensorFlowVersionRequest, TensorFlowVersion>
         getTensorFlowVersionTransportSettings =
@@ -351,6 +369,7 @@ public class GrpcTpuStub extends TpuStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse>
         listAcceleratorTypesTransportSettings =
@@ -362,6 +381,7 @@ public class GrpcTpuStub extends TpuStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAcceleratorTypeRequest, AcceleratorType>
         getAcceleratorTypeTransportSettings =
@@ -373,6 +393,7 @@ public class GrpcTpuStub extends TpuStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

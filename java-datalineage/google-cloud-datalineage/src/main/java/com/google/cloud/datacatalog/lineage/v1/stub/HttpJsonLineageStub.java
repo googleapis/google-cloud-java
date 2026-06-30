@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest;
 import com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesResponse;
@@ -61,10 +62,13 @@ import com.google.cloud.datacatalog.lineage.v1.Process;
 import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest;
 import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventResponse;
 import com.google.cloud.datacatalog.lineage.v1.Run;
+import com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest;
+import com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse;
 import com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest;
 import com.google.cloud.datacatalog.lineage.v1.SearchLinksResponse;
 import com.google.cloud.datacatalog.lineage.v1.UpdateProcessRequest;
 import com.google.cloud.datacatalog.lineage.v1.UpdateRunRequest;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -74,6 +78,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -195,6 +200,7 @@ public class HttpJsonLineageStub extends LineageStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
@@ -717,6 +723,46 @@ public class HttpJsonLineageStub extends LineageStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+      searchLineageStreamingMethodDescriptor =
+          ApiMethodDescriptor
+              .<SearchLineageStreamingRequest, SearchLineageStreamingResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.datacatalog.lineage.v1.Lineage/SearchLineageStreaming")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.SERVER_STREAMING)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SearchLineageStreamingRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}:searchLineageStreaming",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchLineageStreamingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchLineageStreamingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SearchLineageStreamingResponse>newBuilder()
+                      .setDefaultInstance(SearchLineageStreamingResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
       processOpenLineageRunEventCallable;
   private final UnaryCallable<CreateProcessRequest, Process> createProcessCallable;
@@ -751,6 +797,9 @@ public class HttpJsonLineageStub extends LineageStub {
   private final UnaryCallable<
           BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesPagedResponse>
       batchSearchLinkProcessesPagedCallable;
+  private final ServerStreamingCallable<
+          SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+      searchLineageStreamingCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -831,6 +880,15 @@ public class HttpJsonLineageStub extends LineageStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setRequestMutator(
+                    request -> {
+                      ProcessOpenLineageRunEventRequest.Builder requestBuilder =
+                          request.toBuilder();
+                      if (Strings.isNullOrEmpty(request.getRequestId())) {
+                        requestBuilder.setRequestId(UUID.randomUUID().toString());
+                      }
+                      return requestBuilder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateProcessRequest, Process> createProcessTransportSettings =
         HttpJsonCallSettings.<CreateProcessRequest, Process>newBuilder()
@@ -842,6 +900,15 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setRequestMutator(
+                request -> {
+                  CreateProcessRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateProcessRequest, Process> updateProcessTransportSettings =
         HttpJsonCallSettings.<UpdateProcessRequest, Process>newBuilder()
@@ -852,6 +919,14 @@ public class HttpJsonLineageStub extends LineageStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("process.name", String.valueOf(request.getProcess().getName()));
                   return builder.build();
+                })
+            .setRequestMutator(
+                request -> {
+                  UpdateProcessRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
                 })
             .build();
     HttpJsonCallSettings<GetProcessRequest, Process> getProcessTransportSettings =
@@ -864,6 +939,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListProcessesRequest, ListProcessesResponse>
         listProcessesTransportSettings =
@@ -876,6 +952,7 @@ public class HttpJsonLineageStub extends LineageStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteProcessRequest, Operation> deleteProcessTransportSettings =
         HttpJsonCallSettings.<DeleteProcessRequest, Operation>newBuilder()
@@ -887,6 +964,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateRunRequest, Run> createRunTransportSettings =
         HttpJsonCallSettings.<CreateRunRequest, Run>newBuilder()
@@ -898,6 +976,15 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setRequestMutator(
+                request -> {
+                  CreateRunRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateRunRequest, Run> updateRunTransportSettings =
         HttpJsonCallSettings.<UpdateRunRequest, Run>newBuilder()
@@ -920,6 +1007,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRunsRequest, ListRunsResponse> listRunsTransportSettings =
         HttpJsonCallSettings.<ListRunsRequest, ListRunsResponse>newBuilder()
@@ -931,6 +1019,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteRunRequest, Operation> deleteRunTransportSettings =
         HttpJsonCallSettings.<DeleteRunRequest, Operation>newBuilder()
@@ -942,6 +1031,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateLineageEventRequest, LineageEvent>
         createLineageEventTransportSettings =
@@ -954,6 +1044,15 @@ public class HttpJsonLineageStub extends LineageStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setRequestMutator(
+                    request -> {
+                      CreateLineageEventRequest.Builder requestBuilder = request.toBuilder();
+                      if (Strings.isNullOrEmpty(request.getRequestId())) {
+                        requestBuilder.setRequestId(UUID.randomUUID().toString());
+                      }
+                      return requestBuilder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetLineageEventRequest, LineageEvent> getLineageEventTransportSettings =
         HttpJsonCallSettings.<GetLineageEventRequest, LineageEvent>newBuilder()
@@ -965,6 +1064,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLineageEventsRequest, ListLineageEventsResponse>
         listLineageEventsTransportSettings =
@@ -977,6 +1077,7 @@ public class HttpJsonLineageStub extends LineageStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteLineageEventRequest, Empty> deleteLineageEventTransportSettings =
         HttpJsonCallSettings.<DeleteLineageEventRequest, Empty>newBuilder()
@@ -988,6 +1089,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SearchLinksRequest, SearchLinksResponse> searchLinksTransportSettings =
         HttpJsonCallSettings.<SearchLinksRequest, SearchLinksResponse>newBuilder()
@@ -999,6 +1101,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse>
         batchSearchLinkProcessesTransportSettings =
@@ -1012,6 +1115,21 @@ public class HttpJsonLineageStub extends LineageStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+        searchLineageStreamingTransportSettings =
+            HttpJsonCallSettings
+                .<SearchLineageStreamingRequest, SearchLineageStreamingResponse>newBuilder()
+                .setMethodDescriptor(searchLineageStreamingMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.processOpenLineageRunEventCallable =
@@ -1106,6 +1224,11 @@ public class HttpJsonLineageStub extends LineageStub {
             batchSearchLinkProcessesTransportSettings,
             settings.batchSearchLinkProcessesSettings(),
             clientContext);
+    this.searchLineageStreamingCallable =
+        callableFactory.createServerStreamingCallable(
+            searchLineageStreamingTransportSettings,
+            settings.searchLineageStreamingSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1131,6 +1254,7 @@ public class HttpJsonLineageStub extends LineageStub {
     methodDescriptors.add(deleteLineageEventMethodDescriptor);
     methodDescriptors.add(searchLinksMethodDescriptor);
     methodDescriptors.add(batchSearchLinkProcessesMethodDescriptor);
+    methodDescriptors.add(searchLineageStreamingMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1264,6 +1388,12 @@ public class HttpJsonLineageStub extends LineageStub {
   public UnaryCallable<BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesPagedResponse>
       batchSearchLinkProcessesPagedCallable() {
     return batchSearchLinkProcessesPagedCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+      searchLineageStreamingCallable() {
+    return searchLineageStreamingCallable;
   }
 
   @Override

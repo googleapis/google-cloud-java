@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service handles auto completion.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/talent/v4/completion_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CompletionGrpc {
 
@@ -90,6 +87,19 @@ public final class CompletionGrpc {
           }
         };
     return CompletionStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CompletionBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CompletionBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CompletionBlockingV2Stub>() {
+          @java.lang.Override
+          public CompletionBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CompletionBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CompletionBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -199,6 +209,40 @@ public final class CompletionGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Completion.
+   *
+   * <pre>
+   * A service handles auto completion.
+   * </pre>
+   */
+  public static final class CompletionBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CompletionBlockingV2Stub> {
+    private CompletionBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CompletionBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CompletionBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Completes the specified prefix with keyword suggestions.
+     * Intended for use by a job search auto-complete search box.
+     * </pre>
+     */
+    public com.google.cloud.talent.v4.CompleteQueryResponse completeQuery(
+        com.google.cloud.talent.v4.CompleteQueryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCompleteQueryMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Completion.
    *
    * <pre>
    * A service handles auto completion.

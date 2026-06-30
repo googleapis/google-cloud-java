@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,8 @@ package com.google.cloud.video.livestream.v1.stub;
 
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListClipsPagedResponse;
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListDvrSessionsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListLocationsPagedResponse;
@@ -37,17 +39,25 @@ import com.google.cloud.location.Location;
 import com.google.cloud.video.livestream.v1.Asset;
 import com.google.cloud.video.livestream.v1.Channel;
 import com.google.cloud.video.livestream.v1.ChannelOperationResponse;
+import com.google.cloud.video.livestream.v1.Clip;
 import com.google.cloud.video.livestream.v1.CreateAssetRequest;
 import com.google.cloud.video.livestream.v1.CreateChannelRequest;
+import com.google.cloud.video.livestream.v1.CreateClipRequest;
+import com.google.cloud.video.livestream.v1.CreateDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.CreateEventRequest;
 import com.google.cloud.video.livestream.v1.CreateInputRequest;
 import com.google.cloud.video.livestream.v1.DeleteAssetRequest;
 import com.google.cloud.video.livestream.v1.DeleteChannelRequest;
+import com.google.cloud.video.livestream.v1.DeleteClipRequest;
+import com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.DeleteEventRequest;
 import com.google.cloud.video.livestream.v1.DeleteInputRequest;
+import com.google.cloud.video.livestream.v1.DvrSession;
 import com.google.cloud.video.livestream.v1.Event;
 import com.google.cloud.video.livestream.v1.GetAssetRequest;
 import com.google.cloud.video.livestream.v1.GetChannelRequest;
+import com.google.cloud.video.livestream.v1.GetClipRequest;
+import com.google.cloud.video.livestream.v1.GetDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.GetEventRequest;
 import com.google.cloud.video.livestream.v1.GetInputRequest;
 import com.google.cloud.video.livestream.v1.GetPoolRequest;
@@ -56,15 +66,24 @@ import com.google.cloud.video.livestream.v1.ListAssetsRequest;
 import com.google.cloud.video.livestream.v1.ListAssetsResponse;
 import com.google.cloud.video.livestream.v1.ListChannelsRequest;
 import com.google.cloud.video.livestream.v1.ListChannelsResponse;
+import com.google.cloud.video.livestream.v1.ListClipsRequest;
+import com.google.cloud.video.livestream.v1.ListClipsResponse;
+import com.google.cloud.video.livestream.v1.ListDvrSessionsRequest;
+import com.google.cloud.video.livestream.v1.ListDvrSessionsResponse;
 import com.google.cloud.video.livestream.v1.ListEventsRequest;
 import com.google.cloud.video.livestream.v1.ListEventsResponse;
 import com.google.cloud.video.livestream.v1.ListInputsRequest;
 import com.google.cloud.video.livestream.v1.ListInputsResponse;
 import com.google.cloud.video.livestream.v1.OperationMetadata;
 import com.google.cloud.video.livestream.v1.Pool;
+import com.google.cloud.video.livestream.v1.PreviewInputRequest;
+import com.google.cloud.video.livestream.v1.PreviewInputResponse;
 import com.google.cloud.video.livestream.v1.StartChannelRequest;
+import com.google.cloud.video.livestream.v1.StartDistributionRequest;
 import com.google.cloud.video.livestream.v1.StopChannelRequest;
+import com.google.cloud.video.livestream.v1.StopDistributionRequest;
 import com.google.cloud.video.livestream.v1.UpdateChannelRequest;
+import com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.UpdateInputRequest;
 import com.google.cloud.video.livestream.v1.UpdatePoolRequest;
 import com.google.longrunning.Operation;
@@ -92,6 +111,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListChannelsRequest, ListChannelsResponse>
@@ -102,6 +122,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListChannelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListChannelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetChannelRequest, Channel> getChannelMethodDescriptor =
@@ -110,6 +131,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetChannel")
           .setRequestMarshaller(ProtoUtils.marshaller(GetChannelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Channel.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteChannelRequest, Operation>
@@ -120,6 +142,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateChannelRequest, Operation>
@@ -130,6 +153,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StartChannelRequest, Operation>
@@ -139,6 +163,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/StartChannel")
               .setRequestMarshaller(ProtoUtils.marshaller(StartChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopChannelRequest, Operation> stopChannelMethodDescriptor =
@@ -147,7 +172,32 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/StopChannel")
           .setRequestMarshaller(ProtoUtils.marshaller(StopChannelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<StartDistributionRequest, Operation>
+      startDistributionMethodDescriptor =
+          MethodDescriptor.<StartDistributionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.livestream.v1.LivestreamService/StartDistribution")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StartDistributionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<StopDistributionRequest, Operation>
+      stopDistributionMethodDescriptor =
+          MethodDescriptor.<StopDistributionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.livestream.v1.LivestreamService/StopDistribution")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StopDistributionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<CreateInputRequest, Operation> createInputMethodDescriptor =
       MethodDescriptor.<CreateInputRequest, Operation>newBuilder()
@@ -155,6 +205,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/CreateInput")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateInputRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListInputsRequest, ListInputsResponse>
@@ -164,6 +215,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/ListInputs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListInputsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListInputsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInputRequest, Input> getInputMethodDescriptor =
@@ -172,6 +224,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetInput")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInputRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Input.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteInputRequest, Operation> deleteInputMethodDescriptor =
@@ -180,6 +233,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/DeleteInput")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteInputRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateInputRequest, Operation> updateInputMethodDescriptor =
@@ -188,7 +242,19 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/UpdateInput")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateInputRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<PreviewInputRequest, PreviewInputResponse>
+      previewInputMethodDescriptor =
+          MethodDescriptor.<PreviewInputRequest, PreviewInputResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/PreviewInput")
+              .setRequestMarshaller(ProtoUtils.marshaller(PreviewInputRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PreviewInputResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<CreateEventRequest, Event> createEventMethodDescriptor =
       MethodDescriptor.<CreateEventRequest, Event>newBuilder()
@@ -196,6 +262,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/CreateEvent")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateEventRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Event.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListEventsRequest, ListEventsResponse>
@@ -205,6 +272,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/ListEvents")
               .setRequestMarshaller(ProtoUtils.marshaller(ListEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEventRequest, Event> getEventMethodDescriptor =
@@ -213,6 +281,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetEvent")
           .setRequestMarshaller(ProtoUtils.marshaller(GetEventRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Event.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteEventRequest, Empty> deleteEventMethodDescriptor =
@@ -221,7 +290,105 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/DeleteEvent")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteEventRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<ListClipsRequest, ListClipsResponse>
+      listClipsMethodDescriptor =
+          MethodDescriptor.<ListClipsRequest, ListClipsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/ListClips")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListClipsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListClipsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetClipRequest, Clip> getClipMethodDescriptor =
+      MethodDescriptor.<GetClipRequest, Clip>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetClip")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetClipRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Clip.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<CreateClipRequest, Operation> createClipMethodDescriptor =
+      MethodDescriptor.<CreateClipRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/CreateClip")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateClipRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<DeleteClipRequest, Operation> deleteClipMethodDescriptor =
+      MethodDescriptor.<DeleteClipRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/DeleteClip")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteClipRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<CreateDvrSessionRequest, Operation>
+      createDvrSessionMethodDescriptor =
+          MethodDescriptor.<CreateDvrSessionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.livestream.v1.LivestreamService/CreateDvrSession")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateDvrSessionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListDvrSessionsRequest, ListDvrSessionsResponse>
+      listDvrSessionsMethodDescriptor =
+          MethodDescriptor.<ListDvrSessionsRequest, ListDvrSessionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.livestream.v1.LivestreamService/ListDvrSessions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDvrSessionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDvrSessionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetDvrSessionRequest, DvrSession>
+      getDvrSessionMethodDescriptor =
+          MethodDescriptor.<GetDvrSessionRequest, DvrSession>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetDvrSession")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDvrSessionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DvrSession.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteDvrSessionRequest, Operation>
+      deleteDvrSessionMethodDescriptor =
+          MethodDescriptor.<DeleteDvrSessionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.livestream.v1.LivestreamService/DeleteDvrSession")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteDvrSessionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateDvrSessionRequest, Operation>
+      updateDvrSessionMethodDescriptor =
+          MethodDescriptor.<UpdateDvrSessionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.livestream.v1.LivestreamService/UpdateDvrSession")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDvrSessionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<CreateAssetRequest, Operation> createAssetMethodDescriptor =
       MethodDescriptor.<CreateAssetRequest, Operation>newBuilder()
@@ -229,6 +396,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/CreateAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteAssetRequest, Operation> deleteAssetMethodDescriptor =
@@ -237,6 +405,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/DeleteAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetAssetRequest, Asset> getAssetMethodDescriptor =
@@ -245,6 +414,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Asset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListAssetsRequest, ListAssetsResponse>
@@ -254,6 +424,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/ListAssets")
               .setRequestMarshaller(ProtoUtils.marshaller(ListAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPoolRequest, Pool> getPoolMethodDescriptor =
@@ -262,6 +433,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetPool")
           .setRequestMarshaller(ProtoUtils.marshaller(GetPoolRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Pool.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdatePoolRequest, Operation> updatePoolMethodDescriptor =
@@ -270,6 +442,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/UpdatePool")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdatePoolRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -281,6 +454,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -289,6 +463,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateChannelRequest, Operation> createChannelCallable;
@@ -310,6 +485,14 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
   private final UnaryCallable<StopChannelRequest, Operation> stopChannelCallable;
   private final OperationCallable<StopChannelRequest, ChannelOperationResponse, OperationMetadata>
       stopChannelOperationCallable;
+  private final UnaryCallable<StartDistributionRequest, Operation> startDistributionCallable;
+  private final OperationCallable<
+          StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      startDistributionOperationCallable;
+  private final UnaryCallable<StopDistributionRequest, Operation> stopDistributionCallable;
+  private final OperationCallable<
+          StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      stopDistributionOperationCallable;
   private final UnaryCallable<CreateInputRequest, Operation> createInputCallable;
   private final OperationCallable<CreateInputRequest, Input, OperationMetadata>
       createInputOperationCallable;
@@ -322,11 +505,35 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
   private final UnaryCallable<UpdateInputRequest, Operation> updateInputCallable;
   private final OperationCallable<UpdateInputRequest, Input, OperationMetadata>
       updateInputOperationCallable;
+  private final UnaryCallable<PreviewInputRequest, PreviewInputResponse> previewInputCallable;
   private final UnaryCallable<CreateEventRequest, Event> createEventCallable;
   private final UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable;
   private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
   private final UnaryCallable<GetEventRequest, Event> getEventCallable;
   private final UnaryCallable<DeleteEventRequest, Empty> deleteEventCallable;
+  private final UnaryCallable<ListClipsRequest, ListClipsResponse> listClipsCallable;
+  private final UnaryCallable<ListClipsRequest, ListClipsPagedResponse> listClipsPagedCallable;
+  private final UnaryCallable<GetClipRequest, Clip> getClipCallable;
+  private final UnaryCallable<CreateClipRequest, Operation> createClipCallable;
+  private final OperationCallable<CreateClipRequest, Clip, OperationMetadata>
+      createClipOperationCallable;
+  private final UnaryCallable<DeleteClipRequest, Operation> deleteClipCallable;
+  private final OperationCallable<DeleteClipRequest, Empty, OperationMetadata>
+      deleteClipOperationCallable;
+  private final UnaryCallable<CreateDvrSessionRequest, Operation> createDvrSessionCallable;
+  private final OperationCallable<CreateDvrSessionRequest, DvrSession, OperationMetadata>
+      createDvrSessionOperationCallable;
+  private final UnaryCallable<ListDvrSessionsRequest, ListDvrSessionsResponse>
+      listDvrSessionsCallable;
+  private final UnaryCallable<ListDvrSessionsRequest, ListDvrSessionsPagedResponse>
+      listDvrSessionsPagedCallable;
+  private final UnaryCallable<GetDvrSessionRequest, DvrSession> getDvrSessionCallable;
+  private final UnaryCallable<DeleteDvrSessionRequest, Operation> deleteDvrSessionCallable;
+  private final OperationCallable<DeleteDvrSessionRequest, Empty, OperationMetadata>
+      deleteDvrSessionOperationCallable;
+  private final UnaryCallable<UpdateDvrSessionRequest, Operation> updateDvrSessionCallable;
+  private final OperationCallable<UpdateDvrSessionRequest, DvrSession, OperationMetadata>
+      updateDvrSessionOperationCallable;
   private final UnaryCallable<CreateAssetRequest, Operation> createAssetCallable;
   private final OperationCallable<CreateAssetRequest, Asset, OperationMetadata>
       createAssetOperationCallable;
@@ -398,6 +605,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListChannelsRequest, ListChannelsResponse> listChannelsTransportSettings =
         GrpcCallSettings.<ListChannelsRequest, ListChannelsResponse>newBuilder()
@@ -408,6 +616,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetChannelRequest, Channel> getChannelTransportSettings =
         GrpcCallSettings.<GetChannelRequest, Channel>newBuilder()
@@ -418,6 +627,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteChannelRequest, Operation> deleteChannelTransportSettings =
         GrpcCallSettings.<DeleteChannelRequest, Operation>newBuilder()
@@ -428,6 +638,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateChannelRequest, Operation> updateChannelTransportSettings =
         GrpcCallSettings.<UpdateChannelRequest, Operation>newBuilder()
@@ -448,6 +659,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StopChannelRequest, Operation> stopChannelTransportSettings =
         GrpcCallSettings.<StopChannelRequest, Operation>newBuilder()
@@ -458,6 +670,29 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<StartDistributionRequest, Operation> startDistributionTransportSettings =
+        GrpcCallSettings.<StartDistributionRequest, Operation>newBuilder()
+            .setMethodDescriptor(startDistributionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<StopDistributionRequest, Operation> stopDistributionTransportSettings =
+        GrpcCallSettings.<StopDistributionRequest, Operation>newBuilder()
+            .setMethodDescriptor(stopDistributionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateInputRequest, Operation> createInputTransportSettings =
         GrpcCallSettings.<CreateInputRequest, Operation>newBuilder()
@@ -468,6 +703,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListInputsRequest, ListInputsResponse> listInputsTransportSettings =
         GrpcCallSettings.<ListInputsRequest, ListInputsResponse>newBuilder()
@@ -478,6 +714,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInputRequest, Input> getInputTransportSettings =
         GrpcCallSettings.<GetInputRequest, Input>newBuilder()
@@ -488,6 +725,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteInputRequest, Operation> deleteInputTransportSettings =
         GrpcCallSettings.<DeleteInputRequest, Operation>newBuilder()
@@ -498,6 +736,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateInputRequest, Operation> updateInputTransportSettings =
         GrpcCallSettings.<UpdateInputRequest, Operation>newBuilder()
@@ -509,6 +748,17 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<PreviewInputRequest, PreviewInputResponse> previewInputTransportSettings =
+        GrpcCallSettings.<PreviewInputRequest, PreviewInputResponse>newBuilder()
+            .setMethodDescriptor(previewInputMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     GrpcCallSettings<CreateEventRequest, Event> createEventTransportSettings =
         GrpcCallSettings.<CreateEventRequest, Event>newBuilder()
             .setMethodDescriptor(createEventMethodDescriptor)
@@ -518,6 +768,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListEventsRequest, ListEventsResponse> listEventsTransportSettings =
         GrpcCallSettings.<ListEventsRequest, ListEventsResponse>newBuilder()
@@ -528,6 +779,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetEventRequest, Event> getEventTransportSettings =
         GrpcCallSettings.<GetEventRequest, Event>newBuilder()
@@ -538,6 +790,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteEventRequest, Empty> deleteEventTransportSettings =
         GrpcCallSettings.<DeleteEventRequest, Empty>newBuilder()
@@ -546,6 +799,107 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListClipsRequest, ListClipsResponse> listClipsTransportSettings =
+        GrpcCallSettings.<ListClipsRequest, ListClipsResponse>newBuilder()
+            .setMethodDescriptor(listClipsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<GetClipRequest, Clip> getClipTransportSettings =
+        GrpcCallSettings.<GetClipRequest, Clip>newBuilder()
+            .setMethodDescriptor(getClipMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<CreateClipRequest, Operation> createClipTransportSettings =
+        GrpcCallSettings.<CreateClipRequest, Operation>newBuilder()
+            .setMethodDescriptor(createClipMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<DeleteClipRequest, Operation> deleteClipTransportSettings =
+        GrpcCallSettings.<DeleteClipRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteClipMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<CreateDvrSessionRequest, Operation> createDvrSessionTransportSettings =
+        GrpcCallSettings.<CreateDvrSessionRequest, Operation>newBuilder()
+            .setMethodDescriptor(createDvrSessionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<ListDvrSessionsRequest, ListDvrSessionsResponse>
+        listDvrSessionsTransportSettings =
+            GrpcCallSettings.<ListDvrSessionsRequest, ListDvrSessionsResponse>newBuilder()
+                .setMethodDescriptor(listDvrSessionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetDvrSessionRequest, DvrSession> getDvrSessionTransportSettings =
+        GrpcCallSettings.<GetDvrSessionRequest, DvrSession>newBuilder()
+            .setMethodDescriptor(getDvrSessionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<DeleteDvrSessionRequest, Operation> deleteDvrSessionTransportSettings =
+        GrpcCallSettings.<DeleteDvrSessionRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteDvrSessionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<UpdateDvrSessionRequest, Operation> updateDvrSessionTransportSettings =
+        GrpcCallSettings.<UpdateDvrSessionRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateDvrSessionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "dvr_session.name", String.valueOf(request.getDvrSession().getName()));
                   return builder.build();
                 })
             .build();
@@ -558,6 +912,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteAssetRequest, Operation> deleteAssetTransportSettings =
         GrpcCallSettings.<DeleteAssetRequest, Operation>newBuilder()
@@ -568,6 +923,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetAssetRequest, Asset> getAssetTransportSettings =
         GrpcCallSettings.<GetAssetRequest, Asset>newBuilder()
@@ -578,6 +934,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         GrpcCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
@@ -588,6 +945,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetPoolRequest, Pool> getPoolTransportSettings =
         GrpcCallSettings.<GetPoolRequest, Pool>newBuilder()
@@ -598,6 +956,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdatePoolRequest, Operation> updatePoolTransportSettings =
         GrpcCallSettings.<UpdatePoolRequest, Operation>newBuilder()
@@ -684,6 +1043,26 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             settings.stopChannelOperationSettings(),
             clientContext,
             operationsStub);
+    this.startDistributionCallable =
+        callableFactory.createUnaryCallable(
+            startDistributionTransportSettings,
+            settings.startDistributionSettings(),
+            clientContext);
+    this.startDistributionOperationCallable =
+        callableFactory.createOperationCallable(
+            startDistributionTransportSettings,
+            settings.startDistributionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.stopDistributionCallable =
+        callableFactory.createUnaryCallable(
+            stopDistributionTransportSettings, settings.stopDistributionSettings(), clientContext);
+    this.stopDistributionOperationCallable =
+        callableFactory.createOperationCallable(
+            stopDistributionTransportSettings,
+            settings.stopDistributionOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createInputCallable =
         callableFactory.createUnaryCallable(
             createInputTransportSettings, settings.createInputSettings(), clientContext);
@@ -720,6 +1099,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             settings.updateInputOperationSettings(),
             clientContext,
             operationsStub);
+    this.previewInputCallable =
+        callableFactory.createUnaryCallable(
+            previewInputTransportSettings, settings.previewInputSettings(), clientContext);
     this.createEventCallable =
         callableFactory.createUnaryCallable(
             createEventTransportSettings, settings.createEventSettings(), clientContext);
@@ -735,6 +1117,69 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
     this.deleteEventCallable =
         callableFactory.createUnaryCallable(
             deleteEventTransportSettings, settings.deleteEventSettings(), clientContext);
+    this.listClipsCallable =
+        callableFactory.createUnaryCallable(
+            listClipsTransportSettings, settings.listClipsSettings(), clientContext);
+    this.listClipsPagedCallable =
+        callableFactory.createPagedCallable(
+            listClipsTransportSettings, settings.listClipsSettings(), clientContext);
+    this.getClipCallable =
+        callableFactory.createUnaryCallable(
+            getClipTransportSettings, settings.getClipSettings(), clientContext);
+    this.createClipCallable =
+        callableFactory.createUnaryCallable(
+            createClipTransportSettings, settings.createClipSettings(), clientContext);
+    this.createClipOperationCallable =
+        callableFactory.createOperationCallable(
+            createClipTransportSettings,
+            settings.createClipOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteClipCallable =
+        callableFactory.createUnaryCallable(
+            deleteClipTransportSettings, settings.deleteClipSettings(), clientContext);
+    this.deleteClipOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteClipTransportSettings,
+            settings.deleteClipOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.createDvrSessionCallable =
+        callableFactory.createUnaryCallable(
+            createDvrSessionTransportSettings, settings.createDvrSessionSettings(), clientContext);
+    this.createDvrSessionOperationCallable =
+        callableFactory.createOperationCallable(
+            createDvrSessionTransportSettings,
+            settings.createDvrSessionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listDvrSessionsCallable =
+        callableFactory.createUnaryCallable(
+            listDvrSessionsTransportSettings, settings.listDvrSessionsSettings(), clientContext);
+    this.listDvrSessionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDvrSessionsTransportSettings, settings.listDvrSessionsSettings(), clientContext);
+    this.getDvrSessionCallable =
+        callableFactory.createUnaryCallable(
+            getDvrSessionTransportSettings, settings.getDvrSessionSettings(), clientContext);
+    this.deleteDvrSessionCallable =
+        callableFactory.createUnaryCallable(
+            deleteDvrSessionTransportSettings, settings.deleteDvrSessionSettings(), clientContext);
+    this.deleteDvrSessionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDvrSessionTransportSettings,
+            settings.deleteDvrSessionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateDvrSessionCallable =
+        callableFactory.createUnaryCallable(
+            updateDvrSessionTransportSettings, settings.updateDvrSessionSettings(), clientContext);
+    this.updateDvrSessionOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDvrSessionTransportSettings,
+            settings.updateDvrSessionOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createAssetCallable =
         callableFactory.createUnaryCallable(
             createAssetTransportSettings, settings.createAssetSettings(), clientContext);
@@ -863,6 +1308,28 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
   }
 
   @Override
+  public UnaryCallable<StartDistributionRequest, Operation> startDistributionCallable() {
+    return startDistributionCallable;
+  }
+
+  @Override
+  public OperationCallable<StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      startDistributionOperationCallable() {
+    return startDistributionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StopDistributionRequest, Operation> stopDistributionCallable() {
+    return stopDistributionCallable;
+  }
+
+  @Override
+  public OperationCallable<StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      stopDistributionOperationCallable() {
+    return stopDistributionOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateInputRequest, Operation> createInputCallable() {
     return createInputCallable;
   }
@@ -911,6 +1378,11 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
   }
 
   @Override
+  public UnaryCallable<PreviewInputRequest, PreviewInputResponse> previewInputCallable() {
+    return previewInputCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateEventRequest, Event> createEventCallable() {
     return createEventCallable;
   }
@@ -933,6 +1405,92 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
   @Override
   public UnaryCallable<DeleteEventRequest, Empty> deleteEventCallable() {
     return deleteEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListClipsRequest, ListClipsResponse> listClipsCallable() {
+    return listClipsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListClipsRequest, ListClipsPagedResponse> listClipsPagedCallable() {
+    return listClipsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetClipRequest, Clip> getClipCallable() {
+    return getClipCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateClipRequest, Operation> createClipCallable() {
+    return createClipCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateClipRequest, Clip, OperationMetadata>
+      createClipOperationCallable() {
+    return createClipOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteClipRequest, Operation> deleteClipCallable() {
+    return deleteClipCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteClipRequest, Empty, OperationMetadata>
+      deleteClipOperationCallable() {
+    return deleteClipOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDvrSessionRequest, Operation> createDvrSessionCallable() {
+    return createDvrSessionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateDvrSessionRequest, DvrSession, OperationMetadata>
+      createDvrSessionOperationCallable() {
+    return createDvrSessionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDvrSessionsRequest, ListDvrSessionsResponse> listDvrSessionsCallable() {
+    return listDvrSessionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDvrSessionsRequest, ListDvrSessionsPagedResponse>
+      listDvrSessionsPagedCallable() {
+    return listDvrSessionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDvrSessionRequest, DvrSession> getDvrSessionCallable() {
+    return getDvrSessionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDvrSessionRequest, Operation> deleteDvrSessionCallable() {
+    return deleteDvrSessionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDvrSessionRequest, Empty, OperationMetadata>
+      deleteDvrSessionOperationCallable() {
+    return deleteDvrSessionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDvrSessionRequest, Operation> updateDvrSessionCallable() {
+    return updateDvrSessionCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDvrSessionRequest, DvrSession, OperationMetadata>
+      updateDvrSessionOperationCallable() {
+    return updateDvrSessionOperationCallable;
   }
 
   @Override

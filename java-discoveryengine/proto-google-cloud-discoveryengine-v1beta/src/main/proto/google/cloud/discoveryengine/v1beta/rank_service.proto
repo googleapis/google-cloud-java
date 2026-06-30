@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -34,7 +34,9 @@ option ruby_package = "Google::Cloud::DiscoveryEngine::V1beta";
 service RankService {
   option (google.api.default_host) = "discoveryengine.googleapis.com";
   option (google.api.oauth_scopes) =
-      "https://www.googleapis.com/auth/cloud-platform";
+      "https://www.googleapis.com/auth/cloud-platform,"
+      "https://www.googleapis.com/auth/discoveryengine.readwrite,"
+      "https://www.googleapis.com/auth/discoveryengine.serving.readwrite";
 
   // Ranks a list of text records based on the given input query.
   rpc Rank(RankRequest) returns (RankResponse) {
@@ -67,6 +69,8 @@ message RankingRecord {
   string content = 3;
 
   // The score of this record based on the given query and selected model.
+  // The score will be rounded to 4 decimal places. If the score is close to 0,
+  // it will be rounded to 0.00001 to avoid returning unset.
   float score = 4;
 }
 
@@ -75,7 +79,7 @@ message RankingRecord {
 // method.
 message RankRequest {
   // Required. The resource name of the rank service config, such as
-  // `projects/{project_num}/locations/{location_id}/rankingConfigs/default_ranking_config`.
+  // `projects/{project_num}/locations/{location}/rankingConfigs/default_ranking_config`.
   string ranking_config = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -85,7 +89,7 @@ message RankRequest {
 
   // The identifier of the model to use. It is one of:
   //
-  // * `semantic-ranker-512@latest`: Semantic ranking model with maxiumn input
+  // * `semantic-ranker-512@latest`: Semantic ranking model with maximum input
   // token size 512.
   //
   // It is set to `semantic-ranker-512@latest` by default if unspecified.
@@ -98,12 +102,31 @@ message RankRequest {
   // The query to use.
   string query = 4;
 
-  // Required. A list of records to rank. At most 200 records to rank.
+  // Required. A list of records to rank.
   repeated RankingRecord records = 5 [(google.api.field_behavior) = REQUIRED];
 
   // If true, the response will contain only record ID and score. By default, it
   // is false, the response will contain record details.
   bool ignore_record_details_in_response = 6;
+
+  // The user labels applied to a resource must meet the following requirements:
+  //
+  // * Each resource can have multiple labels, up to a maximum of 64.
+  // * Each label must be a key-value pair.
+  // * Keys have a minimum length of 1 character and a maximum length of 63
+  //   characters and cannot be empty. Values can be empty and have a maximum
+  //   length of 63 characters.
+  // * Keys and values can contain only lowercase letters, numeric characters,
+  //   underscores, and dashes. All characters must use UTF-8 encoding, and
+  //   international characters are allowed.
+  // * The key portion of a label must be unique. However, you can use the same
+  //   key with multiple resources.
+  // * Keys must start with a lowercase letter or international character.
+  //
+  // See [Google Cloud
+  // Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+  // for more details.
+  map<string, string> user_labels = 7;
 }
 
 // Response message for

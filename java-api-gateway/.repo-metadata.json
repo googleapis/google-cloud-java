@@ -10,7 +10,7 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-api-gateway",
   "distribution_name": "com.google.cloud:google-cloud-api-gateway",
-  "api_id": "api-gateway.googleapis.com",
+  "api_id": "apigateway.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true,
   "rest_documentation": "https://cloud.google.com/api-gateway/docs/reference/rest"

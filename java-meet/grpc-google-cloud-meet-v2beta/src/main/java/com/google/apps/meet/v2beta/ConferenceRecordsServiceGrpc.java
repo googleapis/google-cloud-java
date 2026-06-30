@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * REST API for services dealing with conference records.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/apps/meet/v2beta/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConferenceRecordsServiceGrpc {
 
@@ -640,6 +637,19 @@ public final class ConferenceRecordsServiceGrpc {
     return ConferenceRecordsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ConferenceRecordsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ConferenceRecordsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConferenceRecordsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ConferenceRecordsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConferenceRecordsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ConferenceRecordsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -681,7 +691,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a conference record by conference ID.
      * </pre>
      */
@@ -697,8 +706,8 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the conference records by start time and in descending order.
+     * Lists the conference records. By default, ordered by start time and in
+     * descending order.
      * </pre>
      */
     default void listConferenceRecords(
@@ -713,7 +722,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a participant by participant ID.
      * </pre>
      */
@@ -728,8 +736,7 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the participants in a conference record, by default ordered by join
+     * Lists the participants in a conference record. By default, ordered by join
      * time and in descending order. This API supports `fields` as standard
      * parameters like every other API. However, when the `fields` request
      * parameter is omitted, this API defaults to `'participants/&#42;,
@@ -748,7 +755,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a participant session by participant session ID.
      * </pre>
      */
@@ -764,9 +770,8 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the participant sessions of a participant in a conference record, by
-     * default ordered by join time and in descending order. This API supports
+     * Lists the participant sessions of a participant in a conference record. By
+     * default, ordered by join time and in descending order. This API supports
      * `fields` as standard parameters like every other API. However, when the
      * `fields` request parameter is omitted this API defaults to
      * `'participantsessions/&#42;, next_page_token'`.
@@ -784,7 +789,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a recording by recording ID.
      * </pre>
      */
@@ -799,8 +803,8 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the recording resources from the conference record.
+     * Lists the recording resources from the conference record. By default,
+     * ordered by start time and in ascending order.
      * </pre>
      */
     default void listRecordings(
@@ -815,7 +819,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a transcript by transcript ID.
      * </pre>
      */
@@ -830,8 +833,8 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the set of transcripts from the conference record.
+     * Lists the set of transcripts from the conference record. By default,
+     * ordered by start time and in ascending order.
      * </pre>
      */
     default void listTranscripts(
@@ -846,7 +849,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a `TranscriptEntry` resource by entry ID.
      * Note: The transcript entries returned by the Google Meet API might not
      * match the transcription found in the Google Docs transcript file. This can
@@ -864,7 +866,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Lists the structured transcript entries per transcript. By default, ordered
      * by start time and in ascending order.
      * Note: The transcript entries returned by the Google Meet API might not
@@ -920,7 +921,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a conference record by conference ID.
      * </pre>
      */
@@ -938,8 +938,8 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the conference records by start time and in descending order.
+     * Lists the conference records. By default, ordered by start time and in
+     * descending order.
      * </pre>
      */
     public void listConferenceRecords(
@@ -956,7 +956,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a participant by participant ID.
      * </pre>
      */
@@ -973,8 +972,7 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the participants in a conference record, by default ordered by join
+     * Lists the participants in a conference record. By default, ordered by join
      * time and in descending order. This API supports `fields` as standard
      * parameters like every other API. However, when the `fields` request
      * parameter is omitted, this API defaults to `'participants/&#42;,
@@ -995,7 +993,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a participant session by participant session ID.
      * </pre>
      */
@@ -1013,9 +1010,8 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the participant sessions of a participant in a conference record, by
-     * default ordered by join time and in descending order. This API supports
+     * Lists the participant sessions of a participant in a conference record. By
+     * default, ordered by join time and in descending order. This API supports
      * `fields` as standard parameters like every other API. However, when the
      * `fields` request parameter is omitted this API defaults to
      * `'participantsessions/&#42;, next_page_token'`.
@@ -1035,7 +1031,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a recording by recording ID.
      * </pre>
      */
@@ -1052,8 +1047,8 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the recording resources from the conference record.
+     * Lists the recording resources from the conference record. By default,
+     * ordered by start time and in ascending order.
      * </pre>
      */
     public void listRecordings(
@@ -1070,7 +1065,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a transcript by transcript ID.
      * </pre>
      */
@@ -1087,8 +1081,8 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the set of transcripts from the conference record.
+     * Lists the set of transcripts from the conference record. By default,
+     * ordered by start time and in ascending order.
      * </pre>
      */
     public void listTranscripts(
@@ -1105,7 +1099,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a `TranscriptEntry` resource by entry ID.
      * Note: The transcript entries returned by the Google Meet API might not
      * match the transcription found in the Google Docs transcript file. This can
@@ -1125,7 +1118,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Lists the structured transcript entries per transcript. By default, ordered
      * by start time and in ascending order.
      * Note: The transcript entries returned by the Google Meet API might not
@@ -1151,6 +1143,209 @@ public final class ConferenceRecordsServiceGrpc {
    * REST API for services dealing with conference records.
    * </pre>
    */
+  public static final class ConferenceRecordsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ConferenceRecordsServiceBlockingV2Stub> {
+    private ConferenceRecordsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ConferenceRecordsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ConferenceRecordsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a conference record by conference ID.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ConferenceRecord getConferenceRecord(
+        com.google.apps.meet.v2beta.GetConferenceRecordRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetConferenceRecordMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the conference records. By default, ordered by start time and in
+     * descending order.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ListConferenceRecordsResponse listConferenceRecords(
+        com.google.apps.meet.v2beta.ListConferenceRecordsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListConferenceRecordsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a participant by participant ID.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.Participant getParticipant(
+        com.google.apps.meet.v2beta.GetParticipantRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetParticipantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the participants in a conference record. By default, ordered by join
+     * time and in descending order. This API supports `fields` as standard
+     * parameters like every other API. However, when the `fields` request
+     * parameter is omitted, this API defaults to `'participants/&#42;,
+     * next_page_token'`.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ListParticipantsResponse listParticipants(
+        com.google.apps.meet.v2beta.ListParticipantsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListParticipantsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a participant session by participant session ID.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ParticipantSession getParticipantSession(
+        com.google.apps.meet.v2beta.GetParticipantSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetParticipantSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the participant sessions of a participant in a conference record. By
+     * default, ordered by join time and in descending order. This API supports
+     * `fields` as standard parameters like every other API. However, when the
+     * `fields` request parameter is omitted this API defaults to
+     * `'participantsessions/&#42;, next_page_token'`.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ListParticipantSessionsResponse listParticipantSessions(
+        com.google.apps.meet.v2beta.ListParticipantSessionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListParticipantSessionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a recording by recording ID.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.Recording getRecording(
+        com.google.apps.meet.v2beta.GetRecordingRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetRecordingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the recording resources from the conference record. By default,
+     * ordered by start time and in ascending order.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ListRecordingsResponse listRecordings(
+        com.google.apps.meet.v2beta.ListRecordingsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListRecordingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a transcript by transcript ID.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.Transcript getTranscript(
+        com.google.apps.meet.v2beta.GetTranscriptRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTranscriptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the set of transcripts from the conference record. By default,
+     * ordered by start time and in ascending order.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ListTranscriptsResponse listTranscripts(
+        com.google.apps.meet.v2beta.ListTranscriptsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTranscriptsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a `TranscriptEntry` resource by entry ID.
+     * Note: The transcript entries returned by the Google Meet API might not
+     * match the transcription found in the Google Docs transcript file. This can
+     * occur when the Google Docs transcript file is modified after generation.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.TranscriptEntry getTranscriptEntry(
+        com.google.apps.meet.v2beta.GetTranscriptEntryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTranscriptEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the structured transcript entries per transcript. By default, ordered
+     * by start time and in ascending order.
+     * Note: The transcript entries returned by the Google Meet API might not
+     * match the transcription found in the Google Docs transcript file. This can
+     * occur when the Google Docs transcript file is modified after generation.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ListTranscriptEntriesResponse listTranscriptEntries(
+        com.google.apps.meet.v2beta.ListTranscriptEntriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTranscriptEntriesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * ConferenceRecordsService.
+   *
+   * <pre>
+   * REST API for services dealing with conference records.
+   * </pre>
+   */
   public static final class ConferenceRecordsServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<ConferenceRecordsServiceBlockingStub> {
     private ConferenceRecordsServiceBlockingStub(
@@ -1168,7 +1363,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a conference record by conference ID.
      * </pre>
      */
@@ -1182,8 +1376,8 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the conference records by start time and in descending order.
+     * Lists the conference records. By default, ordered by start time and in
+     * descending order.
      * </pre>
      */
     public com.google.apps.meet.v2beta.ListConferenceRecordsResponse listConferenceRecords(
@@ -1196,7 +1390,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a participant by participant ID.
      * </pre>
      */
@@ -1210,8 +1403,7 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the participants in a conference record, by default ordered by join
+     * Lists the participants in a conference record. By default, ordered by join
      * time and in descending order. This API supports `fields` as standard
      * parameters like every other API. However, when the `fields` request
      * parameter is omitted, this API defaults to `'participants/&#42;,
@@ -1228,7 +1420,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a participant session by participant session ID.
      * </pre>
      */
@@ -1242,9 +1433,8 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the participant sessions of a participant in a conference record, by
-     * default ordered by join time and in descending order. This API supports
+     * Lists the participant sessions of a participant in a conference record. By
+     * default, ordered by join time and in descending order. This API supports
      * `fields` as standard parameters like every other API. However, when the
      * `fields` request parameter is omitted this API defaults to
      * `'participantsessions/&#42;, next_page_token'`.
@@ -1260,7 +1450,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a recording by recording ID.
      * </pre>
      */
@@ -1274,8 +1463,8 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the recording resources from the conference record.
+     * Lists the recording resources from the conference record. By default,
+     * ordered by start time and in ascending order.
      * </pre>
      */
     public com.google.apps.meet.v2beta.ListRecordingsResponse listRecordings(
@@ -1288,7 +1477,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a transcript by transcript ID.
      * </pre>
      */
@@ -1302,8 +1490,8 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the set of transcripts from the conference record.
+     * Lists the set of transcripts from the conference record. By default,
+     * ordered by start time and in ascending order.
      * </pre>
      */
     public com.google.apps.meet.v2beta.ListTranscriptsResponse listTranscripts(
@@ -1316,7 +1504,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a `TranscriptEntry` resource by entry ID.
      * Note: The transcript entries returned by the Google Meet API might not
      * match the transcription found in the Google Docs transcript file. This can
@@ -1333,7 +1520,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Lists the structured transcript entries per transcript. By default, ordered
      * by start time and in ascending order.
      * Note: The transcript entries returned by the Google Meet API might not
@@ -1373,7 +1559,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a conference record by conference ID.
      * </pre>
      */
@@ -1388,8 +1573,8 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the conference records by start time and in descending order.
+     * Lists the conference records. By default, ordered by start time and in
+     * descending order.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1403,7 +1588,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a participant by participant ID.
      * </pre>
      */
@@ -1418,8 +1602,7 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the participants in a conference record, by default ordered by join
+     * Lists the participants in a conference record. By default, ordered by join
      * time and in descending order. This API supports `fields` as standard
      * parameters like every other API. However, when the `fields` request
      * parameter is omitted, this API defaults to `'participants/&#42;,
@@ -1437,7 +1620,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a participant session by participant session ID.
      * </pre>
      */
@@ -1452,9 +1634,8 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the participant sessions of a participant in a conference record, by
-     * default ordered by join time and in descending order. This API supports
+     * Lists the participant sessions of a participant in a conference record. By
+     * default, ordered by join time and in descending order. This API supports
      * `fields` as standard parameters like every other API. However, when the
      * `fields` request parameter is omitted this API defaults to
      * `'participantsessions/&#42;, next_page_token'`.
@@ -1472,7 +1653,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a recording by recording ID.
      * </pre>
      */
@@ -1486,8 +1666,8 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the recording resources from the conference record.
+     * Lists the recording resources from the conference record. By default,
+     * ordered by start time and in ascending order.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1501,7 +1681,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a transcript by transcript ID.
      * </pre>
      */
@@ -1516,8 +1695,8 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
-     * Lists the set of transcripts from the conference record.
+     * Lists the set of transcripts from the conference record. By default,
+     * ordered by start time and in ascending order.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1531,7 +1710,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Gets a `TranscriptEntry` resource by entry ID.
      * Note: The transcript entries returned by the Google Meet API might not
      * match the transcription found in the Google Docs transcript file. This can
@@ -1549,7 +1727,6 @@ public final class ConferenceRecordsServiceGrpc {
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview).
      * Lists the structured transcript entries per transcript. By default, ordered
      * by start time and in ascending order.
      * Note: The transcript entries returned by the Google Meet API might not

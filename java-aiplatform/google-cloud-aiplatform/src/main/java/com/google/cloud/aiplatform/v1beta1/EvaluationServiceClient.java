@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.stub.EvaluationServiceStub;
@@ -37,6 +39,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -59,6 +63,10 @@ import javax.annotation.Generated;
  *   EvaluateInstancesRequest request =
  *       EvaluateInstancesRequest.newBuilder()
  *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+ *           .addAllMetrics(new ArrayList<Metric>())
+ *           .addAllMetricSources(new ArrayList<MetricSource>())
+ *           .setInstance(EvaluationInstance.newBuilder().build())
+ *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
  *           .build();
  *   EvaluateInstancesResponse response = evaluationServiceClient.evaluateInstances(request);
  * }
@@ -86,6 +94,35 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> evaluateInstancesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> EvaluateDataset</td>
+ *      <td><p> Evaluates a dataset based on a set of given metrics.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> evaluateDatasetAsync(EvaluateDatasetRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> evaluateDatasetOperationCallable()
+ *           <li><p> evaluateDatasetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateInstanceRubrics</td>
+ *      <td><p> Generates rubrics for a given prompt. A rubric represents a single testable criterion for evaluation. One input prompt could have multiple rubrics This RPC allows users to get suggested rubrics based on provided prompt, which can then be reviewed and used for subsequent evaluations.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateInstanceRubrics(GenerateInstanceRubricsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateInstanceRubricsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -210,6 +247,7 @@ import javax.annotation.Generated;
 public class EvaluationServiceClient implements BackgroundResource {
   private final EvaluationServiceSettings settings;
   private final EvaluationServiceStub stub;
+  private final OperationsClient operationsClient;
 
   /** Constructs an instance of EvaluationServiceClient with default settings. */
   public static final EvaluationServiceClient create() throws IOException {
@@ -241,11 +279,13 @@ public class EvaluationServiceClient implements BackgroundResource {
   protected EvaluationServiceClient(EvaluationServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((EvaluationServiceStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   protected EvaluationServiceClient(EvaluationServiceStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   public final EvaluationServiceSettings getSettings() {
@@ -254,6 +294,14 @@ public class EvaluationServiceClient implements BackgroundResource {
 
   public EvaluationServiceStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getOperationsClient() {
+    return operationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -272,6 +320,10 @@ public class EvaluationServiceClient implements BackgroundResource {
    *   EvaluateInstancesRequest request =
    *       EvaluateInstancesRequest.newBuilder()
    *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllMetrics(new ArrayList<Metric>())
+   *           .addAllMetricSources(new ArrayList<MetricSource>())
+   *           .setInstance(EvaluationInstance.newBuilder().build())
+   *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
    *           .build();
    *   EvaluateInstancesResponse response = evaluationServiceClient.evaluateInstances(request);
    * }
@@ -300,6 +352,10 @@ public class EvaluationServiceClient implements BackgroundResource {
    *   EvaluateInstancesRequest request =
    *       EvaluateInstancesRequest.newBuilder()
    *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllMetrics(new ArrayList<Metric>())
+   *           .addAllMetricSources(new ArrayList<MetricSource>())
+   *           .setInstance(EvaluationInstance.newBuilder().build())
+   *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<EvaluateInstancesResponse> future =
    *       evaluationServiceClient.evaluateInstancesCallable().futureCall(request);
@@ -311,6 +367,179 @@ public class EvaluationServiceClient implements BackgroundResource {
   public final UnaryCallable<EvaluateInstancesRequest, EvaluateInstancesResponse>
       evaluateInstancesCallable() {
     return stub.evaluateInstancesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Evaluates a dataset based on a set of given metrics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   EvaluateDatasetRequest request =
+   *       EvaluateDatasetRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDataset(EvaluationDataset.newBuilder().build())
+   *           .addAllMetrics(new ArrayList<Metric>())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
+   *           .build();
+   *   EvaluateDatasetResponse response =
+   *       evaluationServiceClient.evaluateDatasetAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
+      evaluateDatasetAsync(EvaluateDatasetRequest request) {
+    return evaluateDatasetOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Evaluates a dataset based on a set of given metrics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   EvaluateDatasetRequest request =
+   *       EvaluateDatasetRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDataset(EvaluationDataset.newBuilder().build())
+   *           .addAllMetrics(new ArrayList<Metric>())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<EvaluateDatasetResponse, EvaluateDatasetOperationMetadata> future =
+   *       evaluationServiceClient.evaluateDatasetOperationCallable().futureCall(request);
+   *   // Do something.
+   *   EvaluateDatasetResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
+      evaluateDatasetOperationCallable() {
+    return stub.evaluateDatasetOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Evaluates a dataset based on a set of given metrics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   EvaluateDatasetRequest request =
+   *       EvaluateDatasetRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDataset(EvaluationDataset.newBuilder().build())
+   *           .addAllMetrics(new ArrayList<Metric>())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       evaluationServiceClient.evaluateDatasetCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EvaluateDatasetRequest, Operation> evaluateDatasetCallable() {
+    return stub.evaluateDatasetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates rubrics for a given prompt. A rubric represents a single testable criterion for
+   * evaluation. One input prompt could have multiple rubrics This RPC allows users to get suggested
+   * rubrics based on provided prompt, which can then be reviewed and used for subsequent
+   * evaluations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   GenerateInstanceRubricsRequest request =
+   *       GenerateInstanceRubricsRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllContents(new ArrayList<Content>())
+   *           .setPredefinedRubricGenerationSpec(PredefinedMetricSpec.newBuilder().build())
+   *           .setRubricGenerationSpec(RubricGenerationSpec.newBuilder().build())
+   *           .setAgentConfig(EvaluationInstance.DeprecatedAgentConfig.newBuilder().build())
+   *           .build();
+   *   GenerateInstanceRubricsResponse response =
+   *       evaluationServiceClient.generateInstanceRubrics(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateInstanceRubricsResponse generateInstanceRubrics(
+      GenerateInstanceRubricsRequest request) {
+    return generateInstanceRubricsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates rubrics for a given prompt. A rubric represents a single testable criterion for
+   * evaluation. One input prompt could have multiple rubrics This RPC allows users to get suggested
+   * rubrics based on provided prompt, which can then be reviewed and used for subsequent
+   * evaluations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   GenerateInstanceRubricsRequest request =
+   *       GenerateInstanceRubricsRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllContents(new ArrayList<Content>())
+   *           .setPredefinedRubricGenerationSpec(PredefinedMetricSpec.newBuilder().build())
+   *           .setRubricGenerationSpec(RubricGenerationSpec.newBuilder().build())
+   *           .setAgentConfig(EvaluationInstance.DeprecatedAgentConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<GenerateInstanceRubricsResponse> future =
+   *       evaluationServiceClient.generateInstanceRubricsCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateInstanceRubricsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GenerateInstanceRubricsRequest, GenerateInstanceRubricsResponse>
+      generateInstanceRubricsCallable() {
+    return stub.generateInstanceRubricsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

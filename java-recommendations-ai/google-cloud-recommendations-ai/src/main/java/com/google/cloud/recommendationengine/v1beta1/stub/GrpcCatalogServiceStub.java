@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCatalogItemRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CatalogItem.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCatalogItemRequest, CatalogItem>
@@ -75,6 +76,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCatalogItemRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CatalogItem.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCatalogItemsRequest, ListCatalogItemsResponse>
@@ -87,6 +89,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   ProtoUtils.marshaller(ListCatalogItemsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCatalogItemsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCatalogItemRequest, CatalogItem>
@@ -98,6 +101,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCatalogItemRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CatalogItem.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCatalogItemRequest, Empty>
@@ -109,6 +113,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCatalogItemRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportCatalogItemsRequest, Operation>
@@ -120,6 +125,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportCatalogItemsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateCatalogItemRequest, CatalogItem> createCatalogItemCallable;
@@ -188,6 +194,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetCatalogItemRequest, CatalogItem> getCatalogItemTransportSettings =
         GrpcCallSettings.<GetCatalogItemRequest, CatalogItem>newBuilder()
@@ -198,6 +205,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCatalogItemsRequest, ListCatalogItemsResponse>
         listCatalogItemsTransportSettings =
@@ -209,6 +217,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemTransportSettings =
         GrpcCallSettings.<UpdateCatalogItemRequest, CatalogItem>newBuilder()
@@ -219,6 +228,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteCatalogItemRequest, Empty> deleteCatalogItemTransportSettings =
         GrpcCallSettings.<DeleteCatalogItemRequest, Empty>newBuilder()
@@ -229,6 +239,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsTransportSettings =
         GrpcCallSettings.<ImportCatalogItemsRequest, Operation>newBuilder()
@@ -239,6 +250,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createCatalogItemCallable =

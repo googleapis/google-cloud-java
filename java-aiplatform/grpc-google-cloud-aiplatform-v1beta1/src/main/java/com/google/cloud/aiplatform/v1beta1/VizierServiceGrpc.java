@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * learning architectures.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/vizier_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class VizierServiceGrpc {
 
@@ -736,6 +733,19 @@ public final class VizierServiceGrpc {
     return VizierServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static VizierServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<VizierServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<VizierServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public VizierServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new VizierServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return VizierServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1292,6 +1302,253 @@ public final class VizierServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service VizierService.
+   *
+   * <pre>
+   * Vertex AI Vizier API.
+   * Vertex AI Vizier is a service to solve blackbox optimization problems,
+   * such as tuning machine learning hyperparameters and searching over deep
+   * learning architectures.
+   * </pre>
+   */
+  public static final class VizierServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<VizierServiceBlockingV2Stub> {
+    private VizierServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected VizierServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new VizierServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Study. A resource name will be generated after creation of the
+     * Study.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Study createStudy(
+        com.google.cloud.aiplatform.v1beta1.CreateStudyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateStudyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Study by name.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Study getStudy(
+        com.google.cloud.aiplatform.v1beta1.GetStudyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetStudyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the studies in a region for an associated project.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListStudiesResponse listStudies(
+        com.google.cloud.aiplatform.v1beta1.ListStudiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListStudiesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Study.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteStudy(
+        com.google.cloud.aiplatform.v1beta1.DeleteStudyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteStudyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks a study up using the user-defined display_name field instead of the
+     * fully qualified resource name.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Study lookupStudy(
+        com.google.cloud.aiplatform.v1beta1.LookupStudyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getLookupStudyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds one or more Trials to a Study, with parameter values
+     * suggested by Vertex AI Vizier. Returns a long-running
+     * operation associated with the generation of Trial suggestions.
+     * When this long-running operation succeeds, it will contain
+     * a
+     * [SuggestTrialsResponse][google.cloud.aiplatform.v1beta1.SuggestTrialsResponse].
+     * </pre>
+     */
+    public com.google.longrunning.Operation suggestTrials(
+        com.google.cloud.aiplatform.v1beta1.SuggestTrialsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSuggestTrialsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a user provided Trial to a Study.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Trial createTrial(
+        com.google.cloud.aiplatform.v1beta1.CreateTrialRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateTrialMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Trial.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Trial getTrial(
+        com.google.cloud.aiplatform.v1beta1.GetTrialRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTrialMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the Trials associated with a Study.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListTrialsResponse listTrials(
+        com.google.cloud.aiplatform.v1beta1.ListTrialsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTrialsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a measurement of the objective metrics to a Trial. This measurement
+     * is assumed to have been taken before the Trial is complete.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Trial addTrialMeasurement(
+        com.google.cloud.aiplatform.v1beta1.AddTrialMeasurementRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAddTrialMeasurementMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks a Trial as complete.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Trial completeTrial(
+        com.google.cloud.aiplatform.v1beta1.CompleteTrialRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCompleteTrialMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Trial.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTrial(
+        com.google.cloud.aiplatform.v1beta1.DeleteTrialRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTrialMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Checks  whether a Trial should stop or not. Returns a
+     * long-running operation. When the operation is successful,
+     * it will contain a
+     * [CheckTrialEarlyStoppingStateResponse][google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateResponse].
+     * </pre>
+     */
+    public com.google.longrunning.Operation checkTrialEarlyStoppingState(
+        com.google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCheckTrialEarlyStoppingStateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops a Trial.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Trial stopTrial(
+        com.google.cloud.aiplatform.v1beta1.StopTrialRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStopTrialMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the pareto-optimal Trials for multi-objective Study or the
+     * optimal Trials for single-objective Study. The definition of
+     * pareto-optimal can be checked in wiki page.
+     * https://en.wikipedia.org/wiki/Pareto_efficiency
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListOptimalTrialsResponse listOptimalTrials(
+        com.google.cloud.aiplatform.v1beta1.ListOptimalTrialsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListOptimalTrialsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service VizierService.
    *
    * <pre>
    * Vertex AI Vizier API.

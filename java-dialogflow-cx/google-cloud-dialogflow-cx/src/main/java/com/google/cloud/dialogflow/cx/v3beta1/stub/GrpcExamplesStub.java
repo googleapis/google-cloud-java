@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,7 @@ public class GrpcExamplesStub extends ExamplesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateExampleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Example.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteExampleRequest, Empty> deleteExampleMethodDescriptor =
@@ -71,6 +72,7 @@ public class GrpcExamplesStub extends ExamplesStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Examples/DeleteExample")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteExampleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListExamplesRequest, ListExamplesResponse>
@@ -81,6 +83,7 @@ public class GrpcExamplesStub extends ExamplesStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListExamplesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListExamplesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetExampleRequest, Example> getExampleMethodDescriptor =
@@ -89,6 +92,7 @@ public class GrpcExamplesStub extends ExamplesStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Examples/GetExample")
           .setRequestMarshaller(ProtoUtils.marshaller(GetExampleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Example.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateExampleRequest, Example>
@@ -99,6 +103,7 @@ public class GrpcExamplesStub extends ExamplesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateExampleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Example.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -110,6 +115,7 @@ public class GrpcExamplesStub extends ExamplesStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -118,6 +124,7 @@ public class GrpcExamplesStub extends ExamplesStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateExampleRequest, Example> createExampleCallable;
@@ -180,6 +187,7 @@ public class GrpcExamplesStub extends ExamplesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteExampleRequest, Empty> deleteExampleTransportSettings =
         GrpcCallSettings.<DeleteExampleRequest, Empty>newBuilder()
@@ -190,6 +198,7 @@ public class GrpcExamplesStub extends ExamplesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListExamplesRequest, ListExamplesResponse> listExamplesTransportSettings =
         GrpcCallSettings.<ListExamplesRequest, ListExamplesResponse>newBuilder()
@@ -200,6 +209,7 @@ public class GrpcExamplesStub extends ExamplesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetExampleRequest, Example> getExampleTransportSettings =
         GrpcCallSettings.<GetExampleRequest, Example>newBuilder()
@@ -210,6 +220,7 @@ public class GrpcExamplesStub extends ExamplesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateExampleRequest, Example> updateExampleTransportSettings =
         GrpcCallSettings.<UpdateExampleRequest, Example>newBuilder()

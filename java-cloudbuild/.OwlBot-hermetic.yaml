@@ -19,6 +19,9 @@ deep-remove-regex:
 - "/java-cloudbuild/google-.*/src"
 - "/java-cloudbuild/samples/snippets/generated"
 
+deep-preserve-regex:
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+
 deep-copy-regex:
 - source: "/google/devtools/cloudbuild/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-cloudbuild/$1/proto-google-cloud-build-$1/src"

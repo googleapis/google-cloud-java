@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -361,7 +361,8 @@ public class TransitionRouteGroupName implements ResourceName {
           Objects.equals(
               transitionRouteGroupName.pathTemplate,
               PROJECT_LOCATION_AGENT_FLOW_TRANSITION_ROUTE_GROUP),
-          "toBuilder is only supported when TransitionRouteGroupName has the pattern of projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/transitionRouteGroups/{transition_route_group}");
+          "toBuilder is only supported when TransitionRouteGroupName has the pattern of"
+              + " projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/transitionRouteGroups/{transition_route_group}");
       this.project = transitionRouteGroupName.project;
       this.location = transitionRouteGroupName.location;
       this.agent = transitionRouteGroupName.agent;

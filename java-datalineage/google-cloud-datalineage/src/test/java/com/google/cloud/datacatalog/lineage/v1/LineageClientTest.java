@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,10 @@ import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.grpc.testing.MockStreamObserver;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
@@ -1288,6 +1290,8 @@ public class LineageClientTest {
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getSource(), actualRequest.getSource());
     Assert.assertEquals(request.getTarget(), actualRequest.getTarget());
+    Assert.assertEquals(request.getSources(), actualRequest.getSources());
+    Assert.assertEquals(request.getTargets(), actualRequest.getTargets());
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertTrue(
@@ -1373,6 +1377,65 @@ public class LineageClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchLineageStreamingTest() throws Exception {
+    SearchLineageStreamingResponse expectedResponse =
+        SearchLineageStreamingResponse.newBuilder()
+            .addAllLinks(new ArrayList<LineageLink>())
+            .addAllUnreachable(new ArrayList<String>())
+            .build();
+    mockLineage.addResponse(expectedResponse);
+    SearchLineageStreamingRequest request =
+        SearchLineageStreamingRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .addAllLocations(new ArrayList<String>())
+            .setRootCriteria(SearchLineageStreamingRequest.RootCriteria.newBuilder().build())
+            .setFilters(SearchLineageStreamingRequest.SearchFilters.newBuilder().build())
+            .setLimits(SearchLineageStreamingRequest.SearchLimits.newBuilder().build())
+            .build();
+
+    MockStreamObserver<SearchLineageStreamingResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    ServerStreamingCallable<SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+        callable = client.searchLineageStreamingCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    List<SearchLineageStreamingResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void searchLineageStreamingExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLineage.addException(exception);
+    SearchLineageStreamingRequest request =
+        SearchLineageStreamingRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .addAllLocations(new ArrayList<String>())
+            .setRootCriteria(SearchLineageStreamingRequest.RootCriteria.newBuilder().build())
+            .setFilters(SearchLineageStreamingRequest.SearchFilters.newBuilder().build())
+            .setLimits(SearchLineageStreamingRequest.SearchLimits.newBuilder().build())
+            .build();
+
+    MockStreamObserver<SearchLineageStreamingResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    ServerStreamingCallable<SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+        callable = client.searchLineageStreamingCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    try {
+      List<SearchLineageStreamingResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

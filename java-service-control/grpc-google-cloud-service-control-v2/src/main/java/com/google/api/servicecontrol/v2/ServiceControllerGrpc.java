@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,15 +23,11 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * <pre>
  * [Service Control API
  * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
- * Private Preview. This feature is only available for approved services.
  * This API provides admission control and telemetry reporting for services
  * that are integrated with [Service
  * Infrastructure](https://cloud.google.com/service-infrastructure).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/api/servicecontrol/v2/service_controller.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ServiceControllerGrpc {
 
@@ -142,6 +138,19 @@ public final class ServiceControllerGrpc {
     return ServiceControllerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ServiceControllerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ServiceControllerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ServiceControllerBlockingV2Stub>() {
+          @java.lang.Override
+          public ServiceControllerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ServiceControllerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ServiceControllerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -176,7 +185,6 @@ public final class ServiceControllerGrpc {
    * <pre>
    * [Service Control API
    * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
-   * Private Preview. This feature is only available for approved services.
    * This API provides admission control and telemetry reporting for services
    * that are integrated with [Service
    * Infrastructure](https://cloud.google.com/service-infrastructure).
@@ -188,7 +196,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides admission control for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It checks
@@ -219,7 +226,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides telemetry reporting for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It
@@ -227,9 +233,8 @@ public final class ServiceControllerGrpc {
      * called after the operations have been executed. For more information, see
      * [Telemetry
      * Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
-     * NOTE: The telemetry reporting has a hard limit of 1000 operations and 1MB
-     * per Report call. It is recommended to have no more than 100 operations per
-     * call.
+     * NOTE: The telemetry reporting has a hard limit of 100 operations and 1MB
+     * per Report call.
      * This method requires the `servicemanagement.services.report` permission
      * on the specified service. For more information, see
      * [Service Control API Access
@@ -250,7 +255,6 @@ public final class ServiceControllerGrpc {
    * <pre>
    * [Service Control API
    * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
-   * Private Preview. This feature is only available for approved services.
    * This API provides admission control and telemetry reporting for services
    * that are integrated with [Service
    * Infrastructure](https://cloud.google.com/service-infrastructure).
@@ -271,7 +275,6 @@ public final class ServiceControllerGrpc {
    * <pre>
    * [Service Control API
    * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
-   * Private Preview. This feature is only available for approved services.
    * This API provides admission control and telemetry reporting for services
    * that are integrated with [Service
    * Infrastructure](https://cloud.google.com/service-infrastructure).
@@ -293,7 +296,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides admission control for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It checks
@@ -325,7 +327,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides telemetry reporting for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It
@@ -333,9 +334,8 @@ public final class ServiceControllerGrpc {
      * called after the operations have been executed. For more information, see
      * [Telemetry
      * Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
-     * NOTE: The telemetry reporting has a hard limit of 1000 operations and 1MB
-     * per Report call. It is recommended to have no more than 100 operations per
-     * call.
+     * NOTE: The telemetry reporting has a hard limit of 100 operations and 1MB
+     * per Report call.
      * This method requires the `servicemanagement.services.report` permission
      * on the specified service. For more information, see
      * [Service Control API Access
@@ -357,7 +357,85 @@ public final class ServiceControllerGrpc {
    * <pre>
    * [Service Control API
    * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
-   * Private Preview. This feature is only available for approved services.
+   * This API provides admission control and telemetry reporting for services
+   * that are integrated with [Service
+   * Infrastructure](https://cloud.google.com/service-infrastructure).
+   * </pre>
+   */
+  public static final class ServiceControllerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ServiceControllerBlockingV2Stub> {
+    private ServiceControllerBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ServiceControllerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ServiceControllerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This method provides admission control for services that are integrated
+     * with [Service
+     * Infrastructure](https://cloud.google.com/service-infrastructure). It checks
+     * whether an operation should be allowed based on the service configuration
+     * and relevant policies. It must be called before the operation is executed.
+     * For more information, see
+     * [Admission
+     * Control](https://cloud.google.com/service-infrastructure/docs/admission-control).
+     * NOTE: The admission control has an expected policy propagation delay of
+     * 60s. The caller **must** not depend on the most recent policy changes.
+     * NOTE: The admission control has a hard limit of 1 referenced resources
+     * per call. If an operation refers to more than 1 resources, the caller
+     * must call the Check method multiple times.
+     * This method requires the `servicemanagement.services.check` permission
+     * on the specified service. For more information, see
+     * [Service Control API Access
+     * Control](https://cloud.google.com/service-infrastructure/docs/service-control/access-control).
+     * </pre>
+     */
+    public com.google.api.servicecontrol.v2.CheckResponse check(
+        com.google.api.servicecontrol.v2.CheckRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCheckMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This method provides telemetry reporting for services that are integrated
+     * with [Service
+     * Infrastructure](https://cloud.google.com/service-infrastructure). It
+     * reports a list of operations that have occurred on a service. It must be
+     * called after the operations have been executed. For more information, see
+     * [Telemetry
+     * Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
+     * NOTE: The telemetry reporting has a hard limit of 100 operations and 1MB
+     * per Report call.
+     * This method requires the `servicemanagement.services.report` permission
+     * on the specified service. For more information, see
+     * [Service Control API Access
+     * Control](https://cloud.google.com/service-infrastructure/docs/service-control/access-control).
+     * </pre>
+     */
+    public com.google.api.servicecontrol.v2.ReportResponse report(
+        com.google.api.servicecontrol.v2.ReportRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getReportMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ServiceController.
+   *
+   * <pre>
+   * [Service Control API
+   * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
    * This API provides admission control and telemetry reporting for services
    * that are integrated with [Service
    * Infrastructure](https://cloud.google.com/service-infrastructure).
@@ -380,7 +458,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides admission control for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It checks
@@ -410,7 +487,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides telemetry reporting for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It
@@ -418,9 +494,8 @@ public final class ServiceControllerGrpc {
      * called after the operations have been executed. For more information, see
      * [Telemetry
      * Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
-     * NOTE: The telemetry reporting has a hard limit of 1000 operations and 1MB
-     * per Report call. It is recommended to have no more than 100 operations per
-     * call.
+     * NOTE: The telemetry reporting has a hard limit of 100 operations and 1MB
+     * per Report call.
      * This method requires the `servicemanagement.services.report` permission
      * on the specified service. For more information, see
      * [Service Control API Access
@@ -440,7 +515,6 @@ public final class ServiceControllerGrpc {
    * <pre>
    * [Service Control API
    * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
-   * Private Preview. This feature is only available for approved services.
    * This API provides admission control and telemetry reporting for services
    * that are integrated with [Service
    * Infrastructure](https://cloud.google.com/service-infrastructure).
@@ -462,7 +536,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides admission control for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It checks
@@ -493,7 +566,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides telemetry reporting for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It
@@ -501,9 +573,8 @@ public final class ServiceControllerGrpc {
      * called after the operations have been executed. For more information, see
      * [Telemetry
      * Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
-     * NOTE: The telemetry reporting has a hard limit of 1000 operations and 1MB
-     * per Report call. It is recommended to have no more than 100 operations per
-     * call.
+     * NOTE: The telemetry reporting has a hard limit of 100 operations and 1MB
+     * per Report call.
      * This method requires the `servicemanagement.services.report` permission
      * on the specified service. For more information, see
      * [Service Control API Access

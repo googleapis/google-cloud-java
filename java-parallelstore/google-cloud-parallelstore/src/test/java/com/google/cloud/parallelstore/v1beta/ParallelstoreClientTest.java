@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -197,6 +197,10 @@ public class ParallelstoreClientTest {
             .addAllAccessPoints(new ArrayList<String>())
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
+            .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     mockParallelstore.addResponse(expectedResponse);
 
@@ -244,6 +248,10 @@ public class ParallelstoreClientTest {
             .addAllAccessPoints(new ArrayList<String>())
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
+            .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     mockParallelstore.addResponse(expectedResponse);
 
@@ -291,6 +299,10 @@ public class ParallelstoreClientTest {
             .addAllAccessPoints(new ArrayList<String>())
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
+            .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -352,6 +364,10 @@ public class ParallelstoreClientTest {
             .addAllAccessPoints(new ArrayList<String>())
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
+            .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -413,6 +429,10 @@ public class ParallelstoreClientTest {
             .addAllAccessPoints(new ArrayList<String>())
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
+            .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -533,6 +553,127 @@ public class ParallelstoreClientTest {
     try {
       String name = "name3373707";
       client.deleteInstanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void importDataTest() throws Exception {
+    ImportDataResponse expectedResponse = ImportDataResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importDataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockParallelstore.addResponse(resultOperation);
+
+    ImportDataRequest request =
+        ImportDataRequest.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setRequestId("requestId693933066")
+            .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
+            .build();
+
+    ImportDataResponse actualResponse = client.importDataAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockParallelstore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportDataRequest actualRequest = ((ImportDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getSourceGcsBucket(), actualRequest.getSourceGcsBucket());
+    Assert.assertEquals(
+        request.getDestinationParallelstore(), actualRequest.getDestinationParallelstore());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getRequestId(), actualRequest.getRequestId());
+    Assert.assertEquals(request.getServiceAccount(), actualRequest.getServiceAccount());
+    Assert.assertEquals(request.getMetadataOptions(), actualRequest.getMetadataOptions());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importDataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockParallelstore.addException(exception);
+
+    try {
+      ImportDataRequest request =
+          ImportDataRequest.newBuilder()
+              .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .setRequestId("requestId693933066")
+              .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+              .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
+              .build();
+      client.importDataAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void exportDataTest() throws Exception {
+    ExportDataResponse expectedResponse = ExportDataResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportDataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockParallelstore.addResponse(resultOperation);
+
+    ExportDataRequest request =
+        ExportDataRequest.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setRequestId("requestId693933066")
+            .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
+            .build();
+
+    ExportDataResponse actualResponse = client.exportDataAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockParallelstore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportDataRequest actualRequest = ((ExportDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getSourceParallelstore(), actualRequest.getSourceParallelstore());
+    Assert.assertEquals(request.getDestinationGcsBucket(), actualRequest.getDestinationGcsBucket());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getRequestId(), actualRequest.getRequestId());
+    Assert.assertEquals(request.getServiceAccount(), actualRequest.getServiceAccount());
+    Assert.assertEquals(request.getMetadataOptions(), actualRequest.getMetadataOptions());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportDataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockParallelstore.addException(exception);
+
+    try {
+      ExportDataRequest request =
+          ExportDataRequest.newBuilder()
+              .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .setRequestId("requestId693933066")
+              .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+              .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
+              .build();
+      client.exportDataAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

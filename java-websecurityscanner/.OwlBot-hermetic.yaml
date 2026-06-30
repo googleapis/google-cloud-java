@@ -20,9 +20,10 @@ deep-remove-regex:
 - "/java-websecurityscanner/google-.*/src"
 
 deep-preserve-regex:
-- "/java-websecurityscanner/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/java-websecurityscanner/google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlNegativeTest.java"
-- "/java-websecurityscanner/google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlPositiveTest.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlNegativeTest.java"
+- "/.*google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlPositiveTest.java"
 
 
 deep-copy-regex:

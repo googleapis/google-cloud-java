@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,6 +123,8 @@ public class IndexServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setIndexStats(IndexStats.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -183,6 +185,8 @@ public class IndexServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setIndexStats(IndexStats.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -243,6 +247,8 @@ public class IndexServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setIndexStats(IndexStats.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockIndexService.addResponse(expectedResponse);
 
@@ -292,6 +298,8 @@ public class IndexServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setIndexStats(IndexStats.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockIndexService.addResponse(expectedResponse);
 
@@ -429,6 +437,8 @@ public class IndexServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setIndexStats(IndexStats.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

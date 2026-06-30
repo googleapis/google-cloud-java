@@ -1,0 +1,288 @@
+package com.google.bookshop.v1beta1;
+
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bookshop.v1beta1.stub.BookshopStub;
+import com.google.bookshop.v1beta1.stub.BookshopStubSettings;
+import java.io.IOException;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * This class provides the ability to make remote calls to the backing service through method calls
+ * that map to API methods. Sample code to get started:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (BookshopClient bookshopClient = BookshopClient.create()) {
+ *   int booksCount = 1618425911;
+ *   List<Book> books = new ArrayList<>();
+ *   Book response = bookshopClient.getBook(booksCount, books);
+ * }
+ * }</pre>
+ *
+ * <p>Note: close() needs to be called on the BookshopClient object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
+ *
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetBook</td>
+ *      <td><p> </td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getBook(GetBookRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getBook(int booksCount, List&lt;Book&gt; books)
+ *           <li><p> getBook(String booksList, List&lt;Book&gt; books)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getBookCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
+ *
+ * <p>See the individual methods for example code.
+ *
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
+ *
+ * <p>This class can be customized by passing in a custom instance of BookshopSettings to create().
+ * For example:
+ *
+ * <p>To customize credentials:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * BookshopSettings bookshopSettings =
+ *     BookshopSettings.newBuilder()
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * BookshopClient bookshopClient = BookshopClient.create(bookshopSettings);
+ * }</pre>
+ *
+ * <p>To customize the endpoint:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * BookshopSettings bookshopSettings =
+ *     BookshopSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * BookshopClient bookshopClient = BookshopClient.create(bookshopSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
+ */
+@BetaApi
+@Generated("by gapic-generator-java")
+public class BookshopClient implements BackgroundResource {
+  private final BookshopSettings settings;
+  private final BookshopStub stub;
+
+  /** Constructs an instance of BookshopClient with default settings. */
+  public static final BookshopClient create() throws IOException {
+    return create(BookshopSettings.newBuilder().build());
+  }
+
+  /**
+   * Constructs an instance of BookshopClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
+   */
+  public static final BookshopClient create(BookshopSettings settings) throws IOException {
+    return new BookshopClient(settings);
+  }
+
+  /**
+   * Constructs an instance of BookshopClient, using the given stub for making calls. This is for
+   * advanced usage - prefer using create(BookshopSettings).
+   */
+  public static final BookshopClient create(BookshopStub stub) {
+    return new BookshopClient(stub);
+  }
+
+  /**
+   * Constructs an instance of BookshopClient, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected BookshopClient(BookshopSettings settings) throws IOException {
+    this.settings = settings;
+    this.stub = ((BookshopStubSettings) settings.getStubSettings()).createStub();
+  }
+
+  protected BookshopClient(BookshopStub stub) {
+    this.settings = null;
+    this.stub = stub;
+  }
+
+  public final BookshopSettings getSettings() {
+    return settings;
+  }
+
+  public BookshopStub getStub() {
+    return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BookshopClient bookshopClient = BookshopClient.create()) {
+   *   int booksCount = 1618425911;
+   *   List<Book> books = new ArrayList<>();
+   *   Book response = bookshopClient.getBook(booksCount, books);
+   * }
+   * }</pre>
+   *
+   * @param booksCount
+   * @param books
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Book getBook(int booksCount, List<Book> books) {
+    GetBookRequest request =
+        GetBookRequest.newBuilder().setBooksCount(booksCount).addAllBooks(books).build();
+    return getBook(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BookshopClient bookshopClient = BookshopClient.create()) {
+   *   String booksList = "booksList2-1119589686";
+   *   List<Book> books = new ArrayList<>();
+   *   Book response = bookshopClient.getBook(booksList, books);
+   * }
+   * }</pre>
+   *
+   * @param booksList
+   * @param books
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Book getBook(String booksList, List<Book> books) {
+    GetBookRequest request =
+        GetBookRequest.newBuilder().setBooksList(booksList).addAllBooks(books).build();
+    return getBook(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BookshopClient bookshopClient = BookshopClient.create()) {
+   *   GetBookRequest request =
+   *       GetBookRequest.newBuilder()
+   *           .setBooksCount1(1618425911)
+   *           .setBooksList2("booksList2-1119589686")
+   *           .addAllBooks3(new ArrayList<Book>())
+   *           .build();
+   *   Book response = bookshopClient.getBook(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Book getBook(GetBookRequest request) {
+    return getBookCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BookshopClient bookshopClient = BookshopClient.create()) {
+   *   GetBookRequest request =
+   *       GetBookRequest.newBuilder()
+   *           .setBooksCount1(1618425911)
+   *           .setBooksList2("booksList2-1119589686")
+   *           .addAllBooks3(new ArrayList<Book>())
+   *           .build();
+   *   ApiFuture<Book> future = bookshopClient.getBookCallable().futureCall(request);
+   *   // Do something.
+   *   Book response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetBookRequest, Book> getBookCallable() {
+    return stub.getBookCallable();
+  }
+
+  @Override
+  public final void close() {
+    stub.close();
+  }
+
+  @Override
+  public void shutdown() {
+    stub.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return stub.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return stub.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    stub.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return stub.awaitTermination(duration, unit);
+  }
+}

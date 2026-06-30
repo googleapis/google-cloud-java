@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -279,7 +279,8 @@ public class InstanceName implements ResourceName {
     private Builder(InstanceName instanceName) {
       Preconditions.checkArgument(
           Objects.equals(instanceName.pathTemplate, PROJECT_ZONE_INSTANCE),
-          "toBuilder is only supported when InstanceName has the pattern of projects/{project}/zones/{zone}/instances/{instance}");
+          "toBuilder is only supported when InstanceName has the pattern of"
+              + " projects/{project}/zones/{zone}/instances/{instance}");
       this.project = instanceName.project;
       this.zone = instanceName.zone;
       this.instance = instanceName.instance;

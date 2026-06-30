@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -231,6 +231,17 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
             typeRegistry,
             ImmutableMap.<String, HttpRule>builder()
                 .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost(
+                            "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1alpha/{name=projects/*/locations/*/dataStores/*/branches/*/operations/*}:cancel")
+                                .build())
+                        .build())
+                .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet(
@@ -297,7 +308,17 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/identity_mapping_stores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1alpha/{name=projects/*/locations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/sampleQuerySets/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -366,6 +387,11 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/identity_mapping_stores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1alpha/{name=projects/*/locations/*}/operations")
                                 .build())
                         .addAdditionalBindings(
@@ -385,6 +411,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ProvisionProjectRequest, Operation> provisionProjectTransportSettings =
         HttpJsonCallSettings.<ProvisionProjectRequest, Operation>newBuilder()
@@ -396,6 +423,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ReportConsentChangeRequest, Project> reportConsentChangeTransportSettings =
         HttpJsonCallSettings.<ReportConsentChangeRequest, Project>newBuilder()
@@ -407,6 +435,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProject())
             .build();
 
     this.getProjectCallable =

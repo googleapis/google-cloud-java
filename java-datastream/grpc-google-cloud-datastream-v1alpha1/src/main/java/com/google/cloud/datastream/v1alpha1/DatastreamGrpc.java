@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Datastream service
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/datastream/v1alpha1/datastream.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DatastreamGrpc {
 
@@ -1032,6 +1029,19 @@ public final class DatastreamGrpc {
     return DatastreamStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DatastreamBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DatastreamBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DatastreamBlockingV2Stub>() {
+          @java.lang.Override
+          public DatastreamBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DatastreamBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DatastreamBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1766,6 +1776,332 @@ public final class DatastreamGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Datastream.
+   *
+   * <pre>
+   * Datastream service
+   * </pre>
+   */
+  public static final class DatastreamBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DatastreamBlockingV2Stub> {
+    private DatastreamBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DatastreamBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DatastreamBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to list connection profiles created in a project and
+     * location.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1alpha1.ListConnectionProfilesResponse
+        listConnectionProfiles(
+            com.google.cloud.datastream.v1alpha1.ListConnectionProfilesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListConnectionProfilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to get details about a connection profile.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1alpha1.ConnectionProfile getConnectionProfile(
+        com.google.cloud.datastream.v1alpha1.GetConnectionProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetConnectionProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to create a connection profile in a project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createConnectionProfile(
+        com.google.cloud.datastream.v1alpha1.CreateConnectionProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateConnectionProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to update the parameters of a connection profile.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateConnectionProfile(
+        com.google.cloud.datastream.v1alpha1.UpdateConnectionProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateConnectionProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to delete a connection profile..
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteConnectionProfile(
+        com.google.cloud.datastream.v1alpha1.DeleteConnectionProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteConnectionProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to discover a connection profile.
+     * The discover API call exposes the data objects and metadata belonging to
+     * the profile. Typically, a request returns children data objects under a
+     * parent data object that's optionally supplied in the request.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileResponse
+        discoverConnectionProfile(
+            com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDiscoverConnectionProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to list streams in a project and location.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1alpha1.ListStreamsResponse listStreams(
+        com.google.cloud.datastream.v1alpha1.ListStreamsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListStreamsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to get details about a stream.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1alpha1.Stream getStream(
+        com.google.cloud.datastream.v1alpha1.GetStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to create a stream.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createStream(
+        com.google.cloud.datastream.v1alpha1.CreateStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to update the configuration of a stream.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateStream(
+        com.google.cloud.datastream.v1alpha1.UpdateStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to delete a stream.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteStream(
+        com.google.cloud.datastream.v1alpha1.DeleteStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to fetch any errors associated with a stream.
+     * </pre>
+     */
+    public com.google.longrunning.Operation fetchErrors(
+        com.google.cloud.datastream.v1alpha1.FetchErrorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchErrorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The FetchStaticIps API call exposes the static ips used by Datastream.
+     * Typically, a request returns children data objects under
+     * a parent data object that's optionally supplied in the request.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1alpha1.FetchStaticIpsResponse fetchStaticIps(
+        com.google.cloud.datastream.v1alpha1.FetchStaticIpsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchStaticIpsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to create a private connectivity configuration.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createPrivateConnection(
+        com.google.cloud.datastream.v1alpha1.CreatePrivateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreatePrivateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to get details about a private connectivity configuration.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1alpha1.PrivateConnection getPrivateConnection(
+        com.google.cloud.datastream.v1alpha1.GetPrivateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetPrivateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to list private connectivity configurations in a project
+     * and location.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1alpha1.ListPrivateConnectionsResponse
+        listPrivateConnections(
+            com.google.cloud.datastream.v1alpha1.ListPrivateConnectionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListPrivateConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to delete a private connectivity configuration.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePrivateConnection(
+        com.google.cloud.datastream.v1alpha1.DeletePrivateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeletePrivateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to create a route for a private connectivity in a project
+     * and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRoute(
+        com.google.cloud.datastream.v1alpha1.CreateRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to get details about a route.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1alpha1.Route getRoute(
+        com.google.cloud.datastream.v1alpha1.GetRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to list routes created for a private connectivity in a
+     * project and location.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1alpha1.ListRoutesResponse listRoutes(
+        com.google.cloud.datastream.v1alpha1.ListRoutesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListRoutesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to delete a route.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRoute(
+        com.google.cloud.datastream.v1alpha1.DeleteRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteRouteMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Datastream.
    *
    * <pre>
    * Datastream service

@@ -82,8 +82,17 @@
             "RenameTagTemplateFieldEnumValue": {
               "methods": ["renameTagTemplateFieldEnumValue", "renameTagTemplateFieldEnumValue", "renameTagTemplateFieldEnumValue", "renameTagTemplateFieldEnumValueCallable"]
             },
+            "RetrieveConfig": {
+              "methods": ["retrieveConfig", "retrieveConfigCallable"]
+            },
+            "RetrieveEffectiveConfig": {
+              "methods": ["retrieveEffectiveConfig", "retrieveEffectiveConfigCallable"]
+            },
             "SearchCatalog": {
               "methods": ["searchCatalog", "searchCatalog", "searchCatalogPagedCallable", "searchCatalogCallable"]
+            },
+            "SetConfig": {
+              "methods": ["setConfig", "setConfigCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]

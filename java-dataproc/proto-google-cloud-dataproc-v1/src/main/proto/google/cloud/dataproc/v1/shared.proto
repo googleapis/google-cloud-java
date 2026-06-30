@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -33,6 +33,10 @@ option (google.api.resource_definition) = {
   type: "metastore.googleapis.com/Service"
   pattern: "projects/{project}/locations/{location}/services/{service}"
 };
+option (google.api.resource_definition) = {
+  type: "cloudkms.googleapis.com/CryptoKey"
+  pattern: "projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}"
+};
 
 // Runtime configuration for a workload.
 message RuntimeConfig {
@@ -50,6 +54,14 @@ message RuntimeConfig {
   // Optional. Dependency repository configuration.
   RepositoryConfig repository_config = 5
       [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Autotuning configuration of the workload.
+  AutotuningConfig autotuning_config = 6
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Cohort identifier. Identifies families of the workloads that have
+  // the same shape, for example, daily ETL jobs.
+  string cohort = 7 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Environment configuration for a workload.
@@ -80,7 +92,12 @@ message ExecutionConfig {
   repeated string network_tags = 6 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. The Cloud KMS key to use for encryption.
-  string kms_key = 7 [(google.api.field_behavior) = OPTIONAL];
+  string kms_key = 7 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.resource_reference) = {
+      type: "cloudkms.googleapis.com/CryptoKey"
+    }
+  ];
 
   // Optional. Applies to sessions only. The duration to keep the session alive
   // while it's idling. Exceeding this threshold causes the session to
@@ -120,6 +137,22 @@ message ExecutionConfig {
   // **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
   // a Cloud Storage bucket.**
   string staging_bucket = 10 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Authentication configuration used to set the default identity for
+  // the workload execution. The config specifies the type of identity
+  // (service account or user) that will be used by workloads to access
+  // resources on the project(s).
+  AuthenticationConfig authentication_config = 11
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Associates Resource Manager tags with the workload nodes.
+  // There is a max limit of 30 tags.
+  // Keys and values can be either in numeric format, such as
+  // `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+  // format, such as `{org_id|project_id}/{tag_key_short_name}` and
+  // `{tag_value_short_name}`.
+  map<string, string> resource_manager_tags = 12
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Spark History Server configuration for the workload.
@@ -195,13 +228,17 @@ message UsageMetrics {
   // (https://cloud.google.com/dataproc-serverless/pricing)).
   int64 shuffle_storage_gb_seconds = 2 [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. Accelerator usage in (`milliAccelerator` x `seconds`) (see
-  // [Dataproc Serverless pricing]
+  // Optional. [DEPRECATED] Accelerator usage in (`milliAccelerator` x
+  // `seconds`) (see [Dataproc Serverless pricing]
   // (https://cloud.google.com/dataproc-serverless/pricing)).
   int64 milli_accelerator_seconds = 3 [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. Accelerator type being used, if any
+  // Optional. [DEPRECATED] Accelerator type being used, if any
   string accelerator_type = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The timestamp of the usage metrics.
+  google.protobuf.Timestamp update_time = 6
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // The usage snapshot represents the resources consumed by a workload at a
@@ -398,8 +435,13 @@ message GkeNodePoolConfig {
     // (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
     // used to encrypt the boot disk attached to each node in the node pool.
     // Specify the key using the following format:
-    // <code>projects/<var>KEY_PROJECT_ID</var>/locations/<var>LOCATION</var>/keyRings/<var>RING_NAME</var>/cryptoKeys/<var>KEY_NAME</var></code>.
-    string boot_disk_kms_key = 23 [(google.api.field_behavior) = OPTIONAL];
+    // `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
+    string boot_disk_kms_key = 23 [
+      (google.api.field_behavior) = OPTIONAL,
+      (google.api.resource_reference) = {
+        type: "cloudkms.googleapis.com/CryptoKey"
+      }
+    ];
 
     // Optional. Whether the nodes are created as [Spot VM instances]
     // (https://cloud.google.com/compute/docs/instances/spot).
@@ -464,6 +506,59 @@ message GkeNodePoolConfig {
       [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Authentication configuration for a workload is used to set the default
+// identity for the workload execution.
+// The config specifies the type of identity (service account or user) that
+// will be used by workloads to access resources on the project(s).
+message AuthenticationConfig {
+  // Authentication types for workload execution.
+  enum AuthenticationType {
+    // If AuthenticationType is unspecified then END_USER_CREDENTIALS is used
+    // for 3.0 and newer runtimes, and SERVICE_ACCOUNT is used for older
+    // runtimes.
+    AUTHENTICATION_TYPE_UNSPECIFIED = 0;
+
+    // Use service account credentials for authenticating to other services.
+    SERVICE_ACCOUNT = 1;
+
+    // Use OAuth credentials associated with the workload creator/user for
+    // authenticating to other services.
+    END_USER_CREDENTIALS = 2;
+  }
+
+  // Optional. Authentication type for the user workload running in containers.
+  AuthenticationType user_workload_authentication_type = 1
+      [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Autotuning configuration of the workload.
+message AutotuningConfig {
+  // Scenario represents a specific goal that autotuning will attempt to achieve
+  // by modifying workloads.
+  enum Scenario {
+    // Default value.
+    SCENARIO_UNSPECIFIED = 0;
+
+    // Scaling recommendations such as initialExecutors.
+    SCALING = 2;
+
+    // Adding hints for potential relation broadcasts.
+    BROADCAST_HASH_JOIN = 3;
+
+    // Memory management for workloads.
+    MEMORY = 4;
+
+    // No autotuning.
+    NONE = 5;
+
+    // Automatic selection of scenarios.
+    AUTO = 6;
+  }
+
+  // Optional. Scenarios for which tunings are applied.
+  repeated Scenario scenarios = 2 [(google.api.field_behavior) = OPTIONAL];
+}
+
 // Configuration for dependency repositories
 message RepositoryConfig {
   // Optional. Configuration for PyPi repository.
@@ -473,7 +568,8 @@ message RepositoryConfig {
 
 // Configuration for PyPi repository
 message PyPiRepositoryConfig {
-  // Optional. PyPi repository address
+  // Optional. The PyPi repository address. **Note: This field is not available
+  // for batch workloads.**
   string pypi_repository = 1 [(google.api.field_behavior) = OPTIONAL];
 }
 
@@ -482,11 +578,15 @@ enum Component {
   // Unspecified component. Specifying this will cause Cluster creation to fail.
   COMPONENT_UNSPECIFIED = 0;
 
-  // The Anaconda python distribution. The Anaconda component is not supported
-  // in the Dataproc [2.0 image]
-  // (/https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-release-2.0).
-  // The 2.0 image is pre-installed with Miniconda.
+  // The Anaconda component is no longer supported or applicable to
+  // [supported Dataproc on Compute Engine image versions]
+  // (https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-version-clusters#supported-dataproc-image-versions).
+  // It cannot be activated on clusters created with supported Dataproc on
+  // Compute Engine image versions.
   ANACONDA = 5;
+
+  // Delta Lake.
+  DELTA = 20;
 
   // Docker
   DOCKER = 13;
@@ -506,8 +606,14 @@ enum Component {
   // Hudi.
   HUDI = 18;
 
+  // Iceberg.
+  ICEBERG = 19;
+
   // The Jupyter Notebook.
   JUPYTER = 1;
+
+  // The Pig component.
+  PIG = 21;
 
   // The Presto query engine.
   PRESTO = 6;
@@ -526,6 +632,9 @@ enum Component {
 
   // The Zookeeper service.
   ZOOKEEPER = 8;
+
+  // The Jupyter Kernel Gateway.
+  JUPYTER_KERNEL_GATEWAY = 22;
 }
 
 // Actions in response to failure of a resource associated with a cluster.

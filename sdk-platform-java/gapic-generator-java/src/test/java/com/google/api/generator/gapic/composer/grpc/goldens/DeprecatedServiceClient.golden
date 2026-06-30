@@ -1,0 +1,288 @@
+package com.google.testdata.v1;
+
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.protobuf.Empty;
+import com.google.testdata.v1.stub.DeprecatedServiceStub;
+import com.google.testdata.v1.stub.DeprecatedServiceStubSettings;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * This class provides the ability to make remote calls to the backing service through method calls
+ * that map to API methods. Sample code to get started:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create()) {
+ *   FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
+ *   deprecatedServiceClient.fastFibonacci(request);
+ * }
+ * }</pre>
+ *
+ * <p>Note: close() needs to be called on the DeprecatedServiceClient object to clean up resources
+ * such as threads. In the example above, try-with-resources is used, which automatically calls
+ * close().
+ *
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FastFibonacci</td>
+ *      <td><p> </td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fastFibonacci(FibonacciRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fastFibonacciCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SlowFibonacci</td>
+ *      <td><p> </td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> slowFibonacci(FibonacciRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> slowFibonacciCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
+ *
+ * <p>See the individual methods for example code.
+ *
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
+ *
+ * <p>This class can be customized by passing in a custom instance of DeprecatedServiceSettings to
+ * create(). For example:
+ *
+ * <p>To customize credentials:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * DeprecatedServiceSettings deprecatedServiceSettings =
+ *     DeprecatedServiceSettings.newBuilder()
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * DeprecatedServiceClient deprecatedServiceClient =
+ *     DeprecatedServiceClient.create(deprecatedServiceSettings);
+ * }</pre>
+ *
+ * <p>To customize the endpoint:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * DeprecatedServiceSettings deprecatedServiceSettings =
+ *     DeprecatedServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * DeprecatedServiceClient deprecatedServiceClient =
+ *     DeprecatedServiceClient.create(deprecatedServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
+ */
+@Deprecated
+@Generated("by gapic-generator-java")
+public class DeprecatedServiceClient implements BackgroundResource {
+  private final DeprecatedServiceSettings settings;
+  private final DeprecatedServiceStub stub;
+
+  /** Constructs an instance of DeprecatedServiceClient with default settings. */
+  public static final DeprecatedServiceClient create() throws IOException {
+    return create(DeprecatedServiceSettings.newBuilder().build());
+  }
+
+  /**
+   * Constructs an instance of DeprecatedServiceClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
+   */
+  public static final DeprecatedServiceClient create(DeprecatedServiceSettings settings)
+      throws IOException {
+    return new DeprecatedServiceClient(settings);
+  }
+
+  /**
+   * Constructs an instance of DeprecatedServiceClient, using the given stub for making calls. This
+   * is for advanced usage - prefer using create(DeprecatedServiceSettings).
+   */
+  public static final DeprecatedServiceClient create(DeprecatedServiceStub stub) {
+    return new DeprecatedServiceClient(stub);
+  }
+
+  /**
+   * Constructs an instance of DeprecatedServiceClient, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected DeprecatedServiceClient(DeprecatedServiceSettings settings) throws IOException {
+    this.settings = settings;
+    this.stub = ((DeprecatedServiceStubSettings) settings.getStubSettings()).createStub();
+  }
+
+  protected DeprecatedServiceClient(DeprecatedServiceStub stub) {
+    this.settings = null;
+    this.stub = stub;
+  }
+
+  public final DeprecatedServiceSettings getSettings() {
+    return settings;
+  }
+
+  public DeprecatedServiceStub getStub() {
+    return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create()) {
+   *   FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
+   *   deprecatedServiceClient.fastFibonacci(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void fastFibonacci(FibonacciRequest request) {
+    fastFibonacciCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create()) {
+   *   FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
+   *   ApiFuture<Empty> future = deprecatedServiceClient.fastFibonacciCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FibonacciRequest, Empty> fastFibonacciCallable() {
+    return stub.fastFibonacciCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create()) {
+   *   FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
+   *   deprecatedServiceClient.slowFibonacci(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
+  public final void slowFibonacci(FibonacciRequest request) {
+    slowFibonacciCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create()) {
+   *   FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
+   *   ApiFuture<Empty> future = deprecatedServiceClient.slowFibonacciCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
+  public final UnaryCallable<FibonacciRequest, Empty> slowFibonacciCallable() {
+    return stub.slowFibonacciCallable();
+  }
+
+  @Override
+  public final void close() {
+    stub.close();
+  }
+
+  @Override
+  public void shutdown() {
+    stub.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return stub.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return stub.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    stub.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return stub.awaitTermination(duration, unit);
+  }
+}

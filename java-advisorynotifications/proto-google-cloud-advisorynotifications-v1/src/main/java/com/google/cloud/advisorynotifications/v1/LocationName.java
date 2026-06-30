@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -240,7 +240,8 @@ public class LocationName implements ResourceName {
     private Builder(LocationName locationName) {
       Preconditions.checkArgument(
           Objects.equals(locationName.pathTemplate, ORGANIZATION_LOCATION),
-          "toBuilder is only supported when LocationName has the pattern of organizations/{organization}/locations/{location}");
+          "toBuilder is only supported when LocationName has the pattern of"
+              + " organizations/{organization}/locations/{location}");
       this.organization = locationName.organization;
       this.location = locationName.location;
     }

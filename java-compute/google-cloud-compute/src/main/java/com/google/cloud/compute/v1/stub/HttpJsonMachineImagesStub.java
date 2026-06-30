@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteMachineImageRequest;
 import com.google.cloud.compute.v1.GetIamPolicyMachineImageRequest;
 import com.google.cloud.compute.v1.GetMachineImageRequest;
@@ -43,6 +44,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyMachineImageRequest;
+import com.google.cloud.compute.v1.SetLabelsMachineImageRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsMachineImageRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
@@ -340,6 +342,58 @@ public class HttpJsonMachineImagesStub extends MachineImagesStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SetLabelsMachineImageRequest, Operation>
+      setLabelsMethodDescriptor =
+          ApiMethodDescriptor.<SetLabelsMachineImageRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.MachineImages/SetLabels")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetLabelsMachineImageRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/machineImages/{resource}/setLabels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsMachineImageRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsMachineImageRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "globalSetLabelsRequestResource",
+                                      request.getGlobalSetLabelsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetLabelsMachineImageRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<
           TestIamPermissionsMachineImageRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
@@ -393,12 +447,32 @@ public class HttpJsonMachineImagesStub extends MachineImagesStub {
   private final UnaryCallable<ListMachineImagesRequest, MachineImageList> listCallable;
   private final UnaryCallable<ListMachineImagesRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<SetIamPolicyMachineImageRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<SetLabelsMachineImageRequest, Operation> setLabelsCallable;
+  private final OperationCallable<SetLabelsMachineImageRequest, Operation, Operation>
+      setLabelsOperationCallable;
   private final UnaryCallable<TestIamPermissionsMachineImageRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/machineImages/{machine_image}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/machineImages/{machine_image}");
+  private static final PathTemplate GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/machineImages/{resource}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/machineImages/{resource}");
+  private static final PathTemplate SET_LABELS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/machineImages/{resource}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/machineImages/{resource}");
 
   public static final HttpJsonMachineImagesStub create(MachineImagesStubSettings settings)
       throws IOException {
@@ -452,6 +526,14 @@ public class HttpJsonMachineImagesStub extends MachineImagesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "machine_image", String.valueOf(request.getMachineImage()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetMachineImageRequest, MachineImage> getTransportSettings =
         HttpJsonCallSettings.<GetMachineImageRequest, MachineImage>newBuilder()
@@ -463,6 +545,14 @@ public class HttpJsonMachineImagesStub extends MachineImagesStub {
                   builder.add("machine_image", String.valueOf(request.getMachineImage()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "machine_image", String.valueOf(request.getMachineImage()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetIamPolicyMachineImageRequest, Policy> getIamPolicyTransportSettings =
@@ -476,6 +566,13 @@ public class HttpJsonMachineImagesStub extends MachineImagesStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertMachineImageRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertMachineImageRequest, Operation>newBuilder()
@@ -486,6 +583,12 @@ public class HttpJsonMachineImagesStub extends MachineImagesStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListMachineImagesRequest, MachineImageList> listTransportSettings =
@@ -498,6 +601,12 @@ public class HttpJsonMachineImagesStub extends MachineImagesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyMachineImageRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyMachineImageRequest, Policy>newBuilder()
@@ -509,6 +618,32 @@ public class HttpJsonMachineImagesStub extends MachineImagesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
+    HttpJsonCallSettings<SetLabelsMachineImageRequest, Operation> setLabelsTransportSettings =
+        HttpJsonCallSettings.<SetLabelsMachineImageRequest, Operation>newBuilder()
+            .setMethodDescriptor(setLabelsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return SET_LABELS_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<TestIamPermissionsMachineImageRequest, TestPermissionsResponse>
@@ -523,6 +658,14 @@ public class HttpJsonMachineImagesStub extends MachineImagesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 
@@ -559,6 +702,15 @@ public class HttpJsonMachineImagesStub extends MachineImagesStub {
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.setLabelsCallable =
+        callableFactory.createUnaryCallable(
+            setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
+    this.setLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            setLabelsTransportSettings,
+            settings.setLabelsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.testIamPermissionsCallable =
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
@@ -578,6 +730,7 @@ public class HttpJsonMachineImagesStub extends MachineImagesStub {
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(setLabelsMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
@@ -627,6 +780,17 @@ public class HttpJsonMachineImagesStub extends MachineImagesStub {
   @Override
   public UnaryCallable<SetIamPolicyMachineImageRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetLabelsMachineImageRequest, Operation> setLabelsCallable() {
+    return setLabelsCallable;
+  }
+
+  @Override
+  public OperationCallable<SetLabelsMachineImageRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return setLabelsOperationCallable;
   }
 
   @Override

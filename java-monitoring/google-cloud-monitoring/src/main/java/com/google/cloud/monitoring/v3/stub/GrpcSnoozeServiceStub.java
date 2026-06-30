@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,7 @@ public class GrpcSnoozeServiceStub extends SnoozeServiceStub {
           .setFullMethodName("google.monitoring.v3.SnoozeService/CreateSnooze")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSnoozeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Snooze.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListSnoozesRequest, ListSnoozesResponse>
@@ -62,6 +63,7 @@ public class GrpcSnoozeServiceStub extends SnoozeServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSnoozesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSnoozesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSnoozeRequest, Snooze> getSnoozeMethodDescriptor =
@@ -70,6 +72,7 @@ public class GrpcSnoozeServiceStub extends SnoozeServiceStub {
           .setFullMethodName("google.monitoring.v3.SnoozeService/GetSnooze")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSnoozeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Snooze.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSnoozeRequest, Snooze> updateSnoozeMethodDescriptor =
@@ -78,6 +81,7 @@ public class GrpcSnoozeServiceStub extends SnoozeServiceStub {
           .setFullMethodName("google.monitoring.v3.SnoozeService/UpdateSnooze")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSnoozeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Snooze.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateSnoozeRequest, Snooze> createSnoozeCallable;
@@ -138,6 +142,7 @@ public class GrpcSnoozeServiceStub extends SnoozeServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListSnoozesRequest, ListSnoozesResponse> listSnoozesTransportSettings =
         GrpcCallSettings.<ListSnoozesRequest, ListSnoozesResponse>newBuilder()
@@ -148,6 +153,7 @@ public class GrpcSnoozeServiceStub extends SnoozeServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSnoozeRequest, Snooze> getSnoozeTransportSettings =
         GrpcCallSettings.<GetSnoozeRequest, Snooze>newBuilder()
@@ -158,6 +164,7 @@ public class GrpcSnoozeServiceStub extends SnoozeServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSnoozeRequest, Snooze> updateSnoozeTransportSettings =
         GrpcCallSettings.<UpdateSnoozeRequest, Snooze>newBuilder()

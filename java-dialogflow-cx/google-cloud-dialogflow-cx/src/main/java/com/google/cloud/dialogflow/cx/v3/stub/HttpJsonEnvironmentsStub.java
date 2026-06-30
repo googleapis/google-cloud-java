@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -627,6 +627,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetEnvironmentRequest, Environment> getEnvironmentTransportSettings =
         HttpJsonCallSettings.<GetEnvironmentRequest, Environment>newBuilder()
@@ -638,6 +639,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateEnvironmentRequest, Operation> createEnvironmentTransportSettings =
         HttpJsonCallSettings.<CreateEnvironmentRequest, Operation>newBuilder()
@@ -649,6 +651,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateEnvironmentRequest, Operation> updateEnvironmentTransportSettings =
         HttpJsonCallSettings.<UpdateEnvironmentRequest, Operation>newBuilder()
@@ -672,6 +675,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse>
         lookupEnvironmentHistoryTransportSettings =
@@ -685,6 +689,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RunContinuousTestRequest, Operation> runContinuousTestTransportSettings =
         HttpJsonCallSettings.<RunContinuousTestRequest, Operation>newBuilder()
@@ -696,6 +701,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                   builder.add("environment", String.valueOf(request.getEnvironment()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEnvironment())
             .build();
     HttpJsonCallSettings<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse>
         listContinuousTestResultsTransportSettings =
@@ -709,6 +715,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeployFlowRequest, Operation> deployFlowTransportSettings =
         HttpJsonCallSettings.<DeployFlowRequest, Operation>newBuilder()
@@ -720,6 +727,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                   builder.add("environment", String.valueOf(request.getEnvironment()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEnvironment())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,15 @@
 package com.google.cloud.networksecurity.v1;
 
 import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListAuthorizationPoliciesPagedResponse;
+import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListAuthzPoliciesPagedResponse;
+import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListBackendAuthenticationConfigsPagedResponse;
 import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListClientTlsPoliciesPagedResponse;
+import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListGatewaySecurityPoliciesPagedResponse;
+import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListGatewaySecurityPolicyRulesPagedResponse;
 import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListLocationsPagedResponse;
 import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListServerTlsPoliciesPagedResponse;
+import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListTlsInspectionPoliciesPagedResponse;
+import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListUrlListsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -64,7 +70,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getAuthorizationPolicy to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getAuthorizationPolicy:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -81,9 +89,46 @@ import javax.annotation.Generated;
  *             .getAuthorizationPolicySettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * NetworkSecuritySettings networkSecuritySettings = networkSecuritySettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createAuthorizationPolicy:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * NetworkSecuritySettings.Builder networkSecuritySettingsBuilder =
+ *     NetworkSecuritySettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * networkSecuritySettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -143,6 +188,67 @@ public class NetworkSecuritySettings extends ClientSettings<NetworkSecuritySetti
       deleteAuthorizationPolicyOperationSettings() {
     return ((NetworkSecurityStubSettings) getStubSettings())
         .deleteAuthorizationPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackendAuthenticationConfigs. */
+  public PagedCallSettings<
+          ListBackendAuthenticationConfigsRequest,
+          ListBackendAuthenticationConfigsResponse,
+          ListBackendAuthenticationConfigsPagedResponse>
+      listBackendAuthenticationConfigsSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .listBackendAuthenticationConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBackendAuthenticationConfig. */
+  public UnaryCallSettings<GetBackendAuthenticationConfigRequest, BackendAuthenticationConfig>
+      getBackendAuthenticationConfigSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .getBackendAuthenticationConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackendAuthenticationConfig. */
+  public UnaryCallSettings<CreateBackendAuthenticationConfigRequest, Operation>
+      createBackendAuthenticationConfigSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .createBackendAuthenticationConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackendAuthenticationConfig. */
+  public OperationCallSettings<
+          CreateBackendAuthenticationConfigRequest, BackendAuthenticationConfig, OperationMetadata>
+      createBackendAuthenticationConfigOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .createBackendAuthenticationConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackendAuthenticationConfig. */
+  public UnaryCallSettings<UpdateBackendAuthenticationConfigRequest, Operation>
+      updateBackendAuthenticationConfigSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .updateBackendAuthenticationConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackendAuthenticationConfig. */
+  public OperationCallSettings<
+          UpdateBackendAuthenticationConfigRequest, BackendAuthenticationConfig, OperationMetadata>
+      updateBackendAuthenticationConfigOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .updateBackendAuthenticationConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackendAuthenticationConfig. */
+  public UnaryCallSettings<DeleteBackendAuthenticationConfigRequest, Operation>
+      deleteBackendAuthenticationConfigSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .deleteBackendAuthenticationConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackendAuthenticationConfig. */
+  public OperationCallSettings<DeleteBackendAuthenticationConfigRequest, Empty, OperationMetadata>
+      deleteBackendAuthenticationConfigOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .deleteBackendAuthenticationConfigOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listServerTlsPolicies. */
@@ -251,6 +357,267 @@ public class NetworkSecuritySettings extends ClientSettings<NetworkSecuritySetti
       deleteClientTlsPolicyOperationSettings() {
     return ((NetworkSecurityStubSettings) getStubSettings())
         .deleteClientTlsPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listGatewaySecurityPolicies. */
+  public PagedCallSettings<
+          ListGatewaySecurityPoliciesRequest,
+          ListGatewaySecurityPoliciesResponse,
+          ListGatewaySecurityPoliciesPagedResponse>
+      listGatewaySecurityPoliciesSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).listGatewaySecurityPoliciesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGatewaySecurityPolicy. */
+  public UnaryCallSettings<GetGatewaySecurityPolicyRequest, GatewaySecurityPolicy>
+      getGatewaySecurityPolicySettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).getGatewaySecurityPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createGatewaySecurityPolicy. */
+  public UnaryCallSettings<CreateGatewaySecurityPolicyRequest, Operation>
+      createGatewaySecurityPolicySettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).createGatewaySecurityPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createGatewaySecurityPolicy. */
+  public OperationCallSettings<
+          CreateGatewaySecurityPolicyRequest, GatewaySecurityPolicy, OperationMetadata>
+      createGatewaySecurityPolicyOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .createGatewaySecurityPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGatewaySecurityPolicy. */
+  public UnaryCallSettings<UpdateGatewaySecurityPolicyRequest, Operation>
+      updateGatewaySecurityPolicySettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).updateGatewaySecurityPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGatewaySecurityPolicy. */
+  public OperationCallSettings<
+          UpdateGatewaySecurityPolicyRequest, GatewaySecurityPolicy, OperationMetadata>
+      updateGatewaySecurityPolicyOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .updateGatewaySecurityPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteGatewaySecurityPolicy. */
+  public UnaryCallSettings<DeleteGatewaySecurityPolicyRequest, Operation>
+      deleteGatewaySecurityPolicySettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).deleteGatewaySecurityPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteGatewaySecurityPolicy. */
+  public OperationCallSettings<DeleteGatewaySecurityPolicyRequest, Empty, OperationMetadata>
+      deleteGatewaySecurityPolicyOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .deleteGatewaySecurityPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listGatewaySecurityPolicyRules. */
+  public PagedCallSettings<
+          ListGatewaySecurityPolicyRulesRequest,
+          ListGatewaySecurityPolicyRulesResponse,
+          ListGatewaySecurityPolicyRulesPagedResponse>
+      listGatewaySecurityPolicyRulesSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .listGatewaySecurityPolicyRulesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGatewaySecurityPolicyRule. */
+  public UnaryCallSettings<GetGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule>
+      getGatewaySecurityPolicyRuleSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).getGatewaySecurityPolicyRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createGatewaySecurityPolicyRule. */
+  public UnaryCallSettings<CreateGatewaySecurityPolicyRuleRequest, Operation>
+      createGatewaySecurityPolicyRuleSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .createGatewaySecurityPolicyRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createGatewaySecurityPolicyRule. */
+  public OperationCallSettings<
+          CreateGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule, OperationMetadata>
+      createGatewaySecurityPolicyRuleOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .createGatewaySecurityPolicyRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGatewaySecurityPolicyRule. */
+  public UnaryCallSettings<UpdateGatewaySecurityPolicyRuleRequest, Operation>
+      updateGatewaySecurityPolicyRuleSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .updateGatewaySecurityPolicyRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGatewaySecurityPolicyRule. */
+  public OperationCallSettings<
+          UpdateGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule, OperationMetadata>
+      updateGatewaySecurityPolicyRuleOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .updateGatewaySecurityPolicyRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteGatewaySecurityPolicyRule. */
+  public UnaryCallSettings<DeleteGatewaySecurityPolicyRuleRequest, Operation>
+      deleteGatewaySecurityPolicyRuleSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .deleteGatewaySecurityPolicyRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteGatewaySecurityPolicyRule. */
+  public OperationCallSettings<DeleteGatewaySecurityPolicyRuleRequest, Empty, OperationMetadata>
+      deleteGatewaySecurityPolicyRuleOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .deleteGatewaySecurityPolicyRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listUrlLists. */
+  public PagedCallSettings<ListUrlListsRequest, ListUrlListsResponse, ListUrlListsPagedResponse>
+      listUrlListsSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).listUrlListsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getUrlList. */
+  public UnaryCallSettings<GetUrlListRequest, UrlList> getUrlListSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).getUrlListSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createUrlList. */
+  public UnaryCallSettings<CreateUrlListRequest, Operation> createUrlListSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).createUrlListSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createUrlList. */
+  public OperationCallSettings<CreateUrlListRequest, UrlList, OperationMetadata>
+      createUrlListOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).createUrlListOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateUrlList. */
+  public UnaryCallSettings<UpdateUrlListRequest, Operation> updateUrlListSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).updateUrlListSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateUrlList. */
+  public OperationCallSettings<UpdateUrlListRequest, UrlList, OperationMetadata>
+      updateUrlListOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).updateUrlListOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteUrlList. */
+  public UnaryCallSettings<DeleteUrlListRequest, Operation> deleteUrlListSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).deleteUrlListSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteUrlList. */
+  public OperationCallSettings<DeleteUrlListRequest, Empty, OperationMetadata>
+      deleteUrlListOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).deleteUrlListOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listTlsInspectionPolicies. */
+  public PagedCallSettings<
+          ListTlsInspectionPoliciesRequest,
+          ListTlsInspectionPoliciesResponse,
+          ListTlsInspectionPoliciesPagedResponse>
+      listTlsInspectionPoliciesSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).listTlsInspectionPoliciesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getTlsInspectionPolicy. */
+  public UnaryCallSettings<GetTlsInspectionPolicyRequest, TlsInspectionPolicy>
+      getTlsInspectionPolicySettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).getTlsInspectionPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createTlsInspectionPolicy. */
+  public UnaryCallSettings<CreateTlsInspectionPolicyRequest, Operation>
+      createTlsInspectionPolicySettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).createTlsInspectionPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createTlsInspectionPolicy. */
+  public OperationCallSettings<
+          CreateTlsInspectionPolicyRequest, TlsInspectionPolicy, OperationMetadata>
+      createTlsInspectionPolicyOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .createTlsInspectionPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateTlsInspectionPolicy. */
+  public UnaryCallSettings<UpdateTlsInspectionPolicyRequest, Operation>
+      updateTlsInspectionPolicySettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).updateTlsInspectionPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateTlsInspectionPolicy. */
+  public OperationCallSettings<
+          UpdateTlsInspectionPolicyRequest, TlsInspectionPolicy, OperationMetadata>
+      updateTlsInspectionPolicyOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .updateTlsInspectionPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTlsInspectionPolicy. */
+  public UnaryCallSettings<DeleteTlsInspectionPolicyRequest, Operation>
+      deleteTlsInspectionPolicySettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).deleteTlsInspectionPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTlsInspectionPolicy. */
+  public OperationCallSettings<DeleteTlsInspectionPolicyRequest, Empty, OperationMetadata>
+      deleteTlsInspectionPolicyOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings())
+        .deleteTlsInspectionPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAuthzPolicies. */
+  public PagedCallSettings<
+          ListAuthzPoliciesRequest, ListAuthzPoliciesResponse, ListAuthzPoliciesPagedResponse>
+      listAuthzPoliciesSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).listAuthzPoliciesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAuthzPolicy. */
+  public UnaryCallSettings<GetAuthzPolicyRequest, AuthzPolicy> getAuthzPolicySettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).getAuthzPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAuthzPolicy. */
+  public UnaryCallSettings<CreateAuthzPolicyRequest, Operation> createAuthzPolicySettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).createAuthzPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAuthzPolicy. */
+  public OperationCallSettings<CreateAuthzPolicyRequest, AuthzPolicy, OperationMetadata>
+      createAuthzPolicyOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).createAuthzPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAuthzPolicy. */
+  public UnaryCallSettings<UpdateAuthzPolicyRequest, Operation> updateAuthzPolicySettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).updateAuthzPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAuthzPolicy. */
+  public OperationCallSettings<UpdateAuthzPolicyRequest, AuthzPolicy, OperationMetadata>
+      updateAuthzPolicyOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).updateAuthzPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAuthzPolicy. */
+  public UnaryCallSettings<DeleteAuthzPolicyRequest, Operation> deleteAuthzPolicySettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).deleteAuthzPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAuthzPolicy. */
+  public OperationCallSettings<DeleteAuthzPolicyRequest, Empty, OperationMetadata>
+      deleteAuthzPolicyOperationSettings() {
+    return ((NetworkSecurityStubSettings) getStubSettings()).deleteAuthzPolicyOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -429,6 +796,65 @@ public class NetworkSecuritySettings extends ClientSettings<NetworkSecuritySetti
       return getStubSettingsBuilder().deleteAuthorizationPolicyOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listBackendAuthenticationConfigs. */
+    public PagedCallSettings.Builder<
+            ListBackendAuthenticationConfigsRequest,
+            ListBackendAuthenticationConfigsResponse,
+            ListBackendAuthenticationConfigsPagedResponse>
+        listBackendAuthenticationConfigsSettings() {
+      return getStubSettingsBuilder().listBackendAuthenticationConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBackendAuthenticationConfig. */
+    public UnaryCallSettings.Builder<
+            GetBackendAuthenticationConfigRequest, BackendAuthenticationConfig>
+        getBackendAuthenticationConfigSettings() {
+      return getStubSettingsBuilder().getBackendAuthenticationConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackendAuthenticationConfig. */
+    public UnaryCallSettings.Builder<CreateBackendAuthenticationConfigRequest, Operation>
+        createBackendAuthenticationConfigSettings() {
+      return getStubSettingsBuilder().createBackendAuthenticationConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackendAuthenticationConfig. */
+    public OperationCallSettings.Builder<
+            CreateBackendAuthenticationConfigRequest,
+            BackendAuthenticationConfig,
+            OperationMetadata>
+        createBackendAuthenticationConfigOperationSettings() {
+      return getStubSettingsBuilder().createBackendAuthenticationConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackendAuthenticationConfig. */
+    public UnaryCallSettings.Builder<UpdateBackendAuthenticationConfigRequest, Operation>
+        updateBackendAuthenticationConfigSettings() {
+      return getStubSettingsBuilder().updateBackendAuthenticationConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackendAuthenticationConfig. */
+    public OperationCallSettings.Builder<
+            UpdateBackendAuthenticationConfigRequest,
+            BackendAuthenticationConfig,
+            OperationMetadata>
+        updateBackendAuthenticationConfigOperationSettings() {
+      return getStubSettingsBuilder().updateBackendAuthenticationConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackendAuthenticationConfig. */
+    public UnaryCallSettings.Builder<DeleteBackendAuthenticationConfigRequest, Operation>
+        deleteBackendAuthenticationConfigSettings() {
+      return getStubSettingsBuilder().deleteBackendAuthenticationConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackendAuthenticationConfig. */
+    public OperationCallSettings.Builder<
+            DeleteBackendAuthenticationConfigRequest, Empty, OperationMetadata>
+        deleteBackendAuthenticationConfigOperationSettings() {
+      return getStubSettingsBuilder().deleteBackendAuthenticationConfigOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listServerTlsPolicies. */
     public PagedCallSettings.Builder<
             ListServerTlsPoliciesRequest,
@@ -533,6 +959,260 @@ public class NetworkSecuritySettings extends ClientSettings<NetworkSecuritySetti
     public OperationCallSettings.Builder<DeleteClientTlsPolicyRequest, Empty, OperationMetadata>
         deleteClientTlsPolicyOperationSettings() {
       return getStubSettingsBuilder().deleteClientTlsPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listGatewaySecurityPolicies. */
+    public PagedCallSettings.Builder<
+            ListGatewaySecurityPoliciesRequest,
+            ListGatewaySecurityPoliciesResponse,
+            ListGatewaySecurityPoliciesPagedResponse>
+        listGatewaySecurityPoliciesSettings() {
+      return getStubSettingsBuilder().listGatewaySecurityPoliciesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGatewaySecurityPolicy. */
+    public UnaryCallSettings.Builder<GetGatewaySecurityPolicyRequest, GatewaySecurityPolicy>
+        getGatewaySecurityPolicySettings() {
+      return getStubSettingsBuilder().getGatewaySecurityPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createGatewaySecurityPolicy. */
+    public UnaryCallSettings.Builder<CreateGatewaySecurityPolicyRequest, Operation>
+        createGatewaySecurityPolicySettings() {
+      return getStubSettingsBuilder().createGatewaySecurityPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createGatewaySecurityPolicy. */
+    public OperationCallSettings.Builder<
+            CreateGatewaySecurityPolicyRequest, GatewaySecurityPolicy, OperationMetadata>
+        createGatewaySecurityPolicyOperationSettings() {
+      return getStubSettingsBuilder().createGatewaySecurityPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGatewaySecurityPolicy. */
+    public UnaryCallSettings.Builder<UpdateGatewaySecurityPolicyRequest, Operation>
+        updateGatewaySecurityPolicySettings() {
+      return getStubSettingsBuilder().updateGatewaySecurityPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGatewaySecurityPolicy. */
+    public OperationCallSettings.Builder<
+            UpdateGatewaySecurityPolicyRequest, GatewaySecurityPolicy, OperationMetadata>
+        updateGatewaySecurityPolicyOperationSettings() {
+      return getStubSettingsBuilder().updateGatewaySecurityPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGatewaySecurityPolicy. */
+    public UnaryCallSettings.Builder<DeleteGatewaySecurityPolicyRequest, Operation>
+        deleteGatewaySecurityPolicySettings() {
+      return getStubSettingsBuilder().deleteGatewaySecurityPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGatewaySecurityPolicy. */
+    public OperationCallSettings.Builder<
+            DeleteGatewaySecurityPolicyRequest, Empty, OperationMetadata>
+        deleteGatewaySecurityPolicyOperationSettings() {
+      return getStubSettingsBuilder().deleteGatewaySecurityPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listGatewaySecurityPolicyRules. */
+    public PagedCallSettings.Builder<
+            ListGatewaySecurityPolicyRulesRequest,
+            ListGatewaySecurityPolicyRulesResponse,
+            ListGatewaySecurityPolicyRulesPagedResponse>
+        listGatewaySecurityPolicyRulesSettings() {
+      return getStubSettingsBuilder().listGatewaySecurityPolicyRulesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGatewaySecurityPolicyRule. */
+    public UnaryCallSettings.Builder<GetGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule>
+        getGatewaySecurityPolicyRuleSettings() {
+      return getStubSettingsBuilder().getGatewaySecurityPolicyRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createGatewaySecurityPolicyRule. */
+    public UnaryCallSettings.Builder<CreateGatewaySecurityPolicyRuleRequest, Operation>
+        createGatewaySecurityPolicyRuleSettings() {
+      return getStubSettingsBuilder().createGatewaySecurityPolicyRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createGatewaySecurityPolicyRule. */
+    public OperationCallSettings.Builder<
+            CreateGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule, OperationMetadata>
+        createGatewaySecurityPolicyRuleOperationSettings() {
+      return getStubSettingsBuilder().createGatewaySecurityPolicyRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGatewaySecurityPolicyRule. */
+    public UnaryCallSettings.Builder<UpdateGatewaySecurityPolicyRuleRequest, Operation>
+        updateGatewaySecurityPolicyRuleSettings() {
+      return getStubSettingsBuilder().updateGatewaySecurityPolicyRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGatewaySecurityPolicyRule. */
+    public OperationCallSettings.Builder<
+            UpdateGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule, OperationMetadata>
+        updateGatewaySecurityPolicyRuleOperationSettings() {
+      return getStubSettingsBuilder().updateGatewaySecurityPolicyRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGatewaySecurityPolicyRule. */
+    public UnaryCallSettings.Builder<DeleteGatewaySecurityPolicyRuleRequest, Operation>
+        deleteGatewaySecurityPolicyRuleSettings() {
+      return getStubSettingsBuilder().deleteGatewaySecurityPolicyRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGatewaySecurityPolicyRule. */
+    public OperationCallSettings.Builder<
+            DeleteGatewaySecurityPolicyRuleRequest, Empty, OperationMetadata>
+        deleteGatewaySecurityPolicyRuleOperationSettings() {
+      return getStubSettingsBuilder().deleteGatewaySecurityPolicyRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listUrlLists. */
+    public PagedCallSettings.Builder<
+            ListUrlListsRequest, ListUrlListsResponse, ListUrlListsPagedResponse>
+        listUrlListsSettings() {
+      return getStubSettingsBuilder().listUrlListsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getUrlList. */
+    public UnaryCallSettings.Builder<GetUrlListRequest, UrlList> getUrlListSettings() {
+      return getStubSettingsBuilder().getUrlListSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createUrlList. */
+    public UnaryCallSettings.Builder<CreateUrlListRequest, Operation> createUrlListSettings() {
+      return getStubSettingsBuilder().createUrlListSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createUrlList. */
+    public OperationCallSettings.Builder<CreateUrlListRequest, UrlList, OperationMetadata>
+        createUrlListOperationSettings() {
+      return getStubSettingsBuilder().createUrlListOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateUrlList. */
+    public UnaryCallSettings.Builder<UpdateUrlListRequest, Operation> updateUrlListSettings() {
+      return getStubSettingsBuilder().updateUrlListSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateUrlList. */
+    public OperationCallSettings.Builder<UpdateUrlListRequest, UrlList, OperationMetadata>
+        updateUrlListOperationSettings() {
+      return getStubSettingsBuilder().updateUrlListOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUrlList. */
+    public UnaryCallSettings.Builder<DeleteUrlListRequest, Operation> deleteUrlListSettings() {
+      return getStubSettingsBuilder().deleteUrlListSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUrlList. */
+    public OperationCallSettings.Builder<DeleteUrlListRequest, Empty, OperationMetadata>
+        deleteUrlListOperationSettings() {
+      return getStubSettingsBuilder().deleteUrlListOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listTlsInspectionPolicies. */
+    public PagedCallSettings.Builder<
+            ListTlsInspectionPoliciesRequest,
+            ListTlsInspectionPoliciesResponse,
+            ListTlsInspectionPoliciesPagedResponse>
+        listTlsInspectionPoliciesSettings() {
+      return getStubSettingsBuilder().listTlsInspectionPoliciesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getTlsInspectionPolicy. */
+    public UnaryCallSettings.Builder<GetTlsInspectionPolicyRequest, TlsInspectionPolicy>
+        getTlsInspectionPolicySettings() {
+      return getStubSettingsBuilder().getTlsInspectionPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createTlsInspectionPolicy. */
+    public UnaryCallSettings.Builder<CreateTlsInspectionPolicyRequest, Operation>
+        createTlsInspectionPolicySettings() {
+      return getStubSettingsBuilder().createTlsInspectionPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createTlsInspectionPolicy. */
+    public OperationCallSettings.Builder<
+            CreateTlsInspectionPolicyRequest, TlsInspectionPolicy, OperationMetadata>
+        createTlsInspectionPolicyOperationSettings() {
+      return getStubSettingsBuilder().createTlsInspectionPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTlsInspectionPolicy. */
+    public UnaryCallSettings.Builder<UpdateTlsInspectionPolicyRequest, Operation>
+        updateTlsInspectionPolicySettings() {
+      return getStubSettingsBuilder().updateTlsInspectionPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTlsInspectionPolicy. */
+    public OperationCallSettings.Builder<
+            UpdateTlsInspectionPolicyRequest, TlsInspectionPolicy, OperationMetadata>
+        updateTlsInspectionPolicyOperationSettings() {
+      return getStubSettingsBuilder().updateTlsInspectionPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTlsInspectionPolicy. */
+    public UnaryCallSettings.Builder<DeleteTlsInspectionPolicyRequest, Operation>
+        deleteTlsInspectionPolicySettings() {
+      return getStubSettingsBuilder().deleteTlsInspectionPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTlsInspectionPolicy. */
+    public OperationCallSettings.Builder<DeleteTlsInspectionPolicyRequest, Empty, OperationMetadata>
+        deleteTlsInspectionPolicyOperationSettings() {
+      return getStubSettingsBuilder().deleteTlsInspectionPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAuthzPolicies. */
+    public PagedCallSettings.Builder<
+            ListAuthzPoliciesRequest, ListAuthzPoliciesResponse, ListAuthzPoliciesPagedResponse>
+        listAuthzPoliciesSettings() {
+      return getStubSettingsBuilder().listAuthzPoliciesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAuthzPolicy. */
+    public UnaryCallSettings.Builder<GetAuthzPolicyRequest, AuthzPolicy> getAuthzPolicySettings() {
+      return getStubSettingsBuilder().getAuthzPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAuthzPolicy. */
+    public UnaryCallSettings.Builder<CreateAuthzPolicyRequest, Operation>
+        createAuthzPolicySettings() {
+      return getStubSettingsBuilder().createAuthzPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAuthzPolicy. */
+    public OperationCallSettings.Builder<CreateAuthzPolicyRequest, AuthzPolicy, OperationMetadata>
+        createAuthzPolicyOperationSettings() {
+      return getStubSettingsBuilder().createAuthzPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAuthzPolicy. */
+    public UnaryCallSettings.Builder<UpdateAuthzPolicyRequest, Operation>
+        updateAuthzPolicySettings() {
+      return getStubSettingsBuilder().updateAuthzPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAuthzPolicy. */
+    public OperationCallSettings.Builder<UpdateAuthzPolicyRequest, AuthzPolicy, OperationMetadata>
+        updateAuthzPolicyOperationSettings() {
+      return getStubSettingsBuilder().updateAuthzPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAuthzPolicy. */
+    public UnaryCallSettings.Builder<DeleteAuthzPolicyRequest, Operation>
+        deleteAuthzPolicySettings() {
+      return getStubSettingsBuilder().deleteAuthzPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAuthzPolicy. */
+    public OperationCallSettings.Builder<DeleteAuthzPolicyRequest, Empty, OperationMetadata>
+        deleteAuthzPolicyOperationSettings() {
+      return getStubSettingsBuilder().deleteAuthzPolicyOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

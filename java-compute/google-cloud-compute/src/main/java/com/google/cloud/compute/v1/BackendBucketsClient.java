@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.cloud.compute.v1.stub.BackendBucketsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -80,6 +81,26 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> addSignedUrlKeyOperationCallable()
  *           <li><p> addSignedUrlKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AggregatedList</td>
+ *      <td><p> Retrieves the list of all BackendBucket resources, regional and global, available to the specified project.
+ * <p>  To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> aggregatedList(AggregatedListBackendBucketsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> aggregatedList(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> aggregatedListPagedCallable()
+ *           <li><p> aggregatedListCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -196,8 +217,27 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListUsable</td>
+ *      <td><p> Retrieves a list of all usable backend buckets in the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listUsable(ListUsableBackendBucketsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listUsable(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listUsablePagedCallable()
+ *           <li><p> listUsableCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> Patch</td>
- *      <td><p> Updates the specified BackendBucket resource with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.</td>
+ *      <td><p> Updates the specified BackendBucket resource with the data included in the request. This method supportsPATCH semantics and uses theJSON merge patch format and processing rules.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -513,6 +553,174 @@ public class BackendBucketsClient implements BackgroundResource {
   public final UnaryCallable<AddSignedUrlKeyBackendBucketRequest, Operation>
       addSignedUrlKeyCallable() {
     return stub.addSignedUrlKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all BackendBucket resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, BackendBucketsScopedList> element :
+   *       backendBucketsClient.aggregatedList(project).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param project Name of the project scoping this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregatedListPagedResponse aggregatedList(String project) {
+    AggregatedListBackendBucketsRequest request =
+        AggregatedListBackendBucketsRequest.newBuilder().setProject(project).build();
+    return aggregatedList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all BackendBucket resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
+   *   AggregatedListBackendBucketsRequest request =
+   *       AggregatedListBackendBucketsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
+   *           .build();
+   *   for (Map.Entry<String, BackendBucketsScopedList> element :
+   *       backendBucketsClient.aggregatedList(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregatedListPagedResponse aggregatedList(
+      AggregatedListBackendBucketsRequest request) {
+    return aggregatedListPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all BackendBucket resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
+   *   AggregatedListBackendBucketsRequest request =
+   *       AggregatedListBackendBucketsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, BackendBucketsScopedList>> future =
+   *       backendBucketsClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, BackendBucketsScopedList> element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AggregatedListBackendBucketsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return stub.aggregatedListPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all BackendBucket resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
+   *   AggregatedListBackendBucketsRequest request =
+   *       AggregatedListBackendBucketsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
+   *           .build();
+   *   while (true) {
+   *     BackendBucketAggregatedList response =
+   *         backendBucketsClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, BackendBucketsScopedList> element : response.getItemsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AggregatedListBackendBucketsRequest, BackendBucketAggregatedList>
+      aggregatedListCallable() {
+    return stub.aggregatedListCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1226,8 +1434,150 @@ public class BackendBucketsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Retrieves a list of all usable backend buckets in the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
+   *   String project = "project-309310695";
+   *   for (BackendBucket element : backendBucketsClient.listUsable(project).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListUsablePagedResponse listUsable(String project) {
+    ListUsableBackendBucketsRequest request =
+        ListUsableBackendBucketsRequest.newBuilder().setProject(project).build();
+    return listUsable(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a list of all usable backend buckets in the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
+   *   ListUsableBackendBucketsRequest request =
+   *       ListUsableBackendBucketsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (BackendBucket element : backendBucketsClient.listUsable(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListUsablePagedResponse listUsable(ListUsableBackendBucketsRequest request) {
+    return listUsablePagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a list of all usable backend buckets in the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
+   *   ListUsableBackendBucketsRequest request =
+   *       ListUsableBackendBucketsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<BackendBucket> future =
+   *       backendBucketsClient.listUsablePagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BackendBucket element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListUsableBackendBucketsRequest, ListUsablePagedResponse>
+      listUsablePagedCallable() {
+    return stub.listUsablePagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a list of all usable backend buckets in the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
+   *   ListUsableBackendBucketsRequest request =
+   *       ListUsableBackendBucketsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   while (true) {
+   *     BackendBucketListUsable response = backendBucketsClient.listUsableCallable().call(request);
+   *     for (BackendBucket element : response.getItemsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListUsableBackendBucketsRequest, BackendBucketListUsable>
+      listUsableCallable() {
+    return stub.listUsableCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Updates the specified BackendBucket resource with the data included in the request. This method
-   * supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   * supportsPATCH semantics and uses theJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1265,7 +1615,7 @@ public class BackendBucketsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified BackendBucket resource with the data included in the request. This method
-   * supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   * supportsPATCH semantics and uses theJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1297,7 +1647,7 @@ public class BackendBucketsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified BackendBucket resource with the data included in the request. This method
-   * supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   * supportsPATCH semantics and uses theJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1330,7 +1680,7 @@ public class BackendBucketsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified BackendBucket resource with the data included in the request. This method
-   * supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   * supportsPATCH semantics and uses theJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1856,6 +2206,101 @@ public class BackendBucketsClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
+  public static class AggregatedListPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListBackendBucketsRequest,
+          BackendBucketAggregatedList,
+          Map.Entry<String, BackendBucketsScopedList>,
+          AggregatedListPage,
+          AggregatedListFixedSizeCollection> {
+
+    public static ApiFuture<AggregatedListPagedResponse> createAsync(
+        PageContext<
+                AggregatedListBackendBucketsRequest,
+                BackendBucketAggregatedList,
+                Map.Entry<String, BackendBucketsScopedList>>
+            context,
+        ApiFuture<BackendBucketAggregatedList> futureResponse) {
+      ApiFuture<AggregatedListPage> futurePage =
+          AggregatedListPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new AggregatedListPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private AggregatedListPagedResponse(AggregatedListPage page) {
+      super(page, AggregatedListFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class AggregatedListPage
+      extends AbstractPage<
+          AggregatedListBackendBucketsRequest,
+          BackendBucketAggregatedList,
+          Map.Entry<String, BackendBucketsScopedList>,
+          AggregatedListPage> {
+
+    private AggregatedListPage(
+        PageContext<
+                AggregatedListBackendBucketsRequest,
+                BackendBucketAggregatedList,
+                Map.Entry<String, BackendBucketsScopedList>>
+            context,
+        BackendBucketAggregatedList response) {
+      super(context, response);
+    }
+
+    private static AggregatedListPage createEmptyPage() {
+      return new AggregatedListPage(null, null);
+    }
+
+    @Override
+    protected AggregatedListPage createPage(
+        PageContext<
+                AggregatedListBackendBucketsRequest,
+                BackendBucketAggregatedList,
+                Map.Entry<String, BackendBucketsScopedList>>
+            context,
+        BackendBucketAggregatedList response) {
+      return new AggregatedListPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<AggregatedListPage> createPageAsync(
+        PageContext<
+                AggregatedListBackendBucketsRequest,
+                BackendBucketAggregatedList,
+                Map.Entry<String, BackendBucketsScopedList>>
+            context,
+        ApiFuture<BackendBucketAggregatedList> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class AggregatedListFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListBackendBucketsRequest,
+          BackendBucketAggregatedList,
+          Map.Entry<String, BackendBucketsScopedList>,
+          AggregatedListPage,
+          AggregatedListFixedSizeCollection> {
+
+    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static AggregatedListFixedSizeCollection createEmptyCollection() {
+      return new AggregatedListFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected AggregatedListFixedSizeCollection createCollection(
+        List<AggregatedListPage> pages, int collectionSize) {
+      return new AggregatedListFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
   public static class ListPagedResponse
       extends AbstractPagedListResponse<
           ListBackendBucketsRequest,
@@ -1925,6 +2370,84 @@ public class BackendBucketsClient implements BackgroundResource {
     @Override
     protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListUsablePagedResponse
+      extends AbstractPagedListResponse<
+          ListUsableBackendBucketsRequest,
+          BackendBucketListUsable,
+          BackendBucket,
+          ListUsablePage,
+          ListUsableFixedSizeCollection> {
+
+    public static ApiFuture<ListUsablePagedResponse> createAsync(
+        PageContext<ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket>
+            context,
+        ApiFuture<BackendBucketListUsable> futureResponse) {
+      ApiFuture<ListUsablePage> futurePage =
+          ListUsablePage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListUsablePagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListUsablePagedResponse(ListUsablePage page) {
+      super(page, ListUsableFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListUsablePage
+      extends AbstractPage<
+          ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket, ListUsablePage> {
+
+    private ListUsablePage(
+        PageContext<ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket>
+            context,
+        BackendBucketListUsable response) {
+      super(context, response);
+    }
+
+    private static ListUsablePage createEmptyPage() {
+      return new ListUsablePage(null, null);
+    }
+
+    @Override
+    protected ListUsablePage createPage(
+        PageContext<ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket>
+            context,
+        BackendBucketListUsable response) {
+      return new ListUsablePage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListUsablePage> createPageAsync(
+        PageContext<ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket>
+            context,
+        ApiFuture<BackendBucketListUsable> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListUsableFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListUsableBackendBucketsRequest,
+          BackendBucketListUsable,
+          BackendBucket,
+          ListUsablePage,
+          ListUsableFixedSizeCollection> {
+
+    private ListUsableFixedSizeCollection(List<ListUsablePage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListUsableFixedSizeCollection createEmptyCollection() {
+      return new ListUsableFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListUsableFixedSizeCollection createCollection(
+        List<ListUsablePage> pages, int collectionSize) {
+      return new ListUsableFixedSizeCollection(pages, collectionSize);
     }
   }
 }

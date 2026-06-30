@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPag
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeployPoliciesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListReleasesPagedResponse;
@@ -50,6 +51,7 @@ import com.google.cloud.deploy.v1.Config;
 import com.google.cloud.deploy.v1.CreateAutomationRequest;
 import com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.CreateDeployPolicyRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.CreateTargetRequest;
@@ -57,13 +59,16 @@ import com.google.cloud.deploy.v1.CustomTargetType;
 import com.google.cloud.deploy.v1.DeleteAutomationRequest;
 import com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.DeleteDeployPolicyRequest;
 import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
+import com.google.cloud.deploy.v1.DeployPolicy;
 import com.google.cloud.deploy.v1.GetAutomationRequest;
 import com.google.cloud.deploy.v1.GetAutomationRunRequest;
 import com.google.cloud.deploy.v1.GetConfigRequest;
 import com.google.cloud.deploy.v1.GetCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.GetDeployPolicyRequest;
 import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
 import com.google.cloud.deploy.v1.GetRolloutRequest;
@@ -79,6 +84,8 @@ import com.google.cloud.deploy.v1.ListCustomTargetTypesRequest;
 import com.google.cloud.deploy.v1.ListCustomTargetTypesResponse;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
+import com.google.cloud.deploy.v1.ListDeployPoliciesRequest;
+import com.google.cloud.deploy.v1.ListDeployPoliciesResponse;
 import com.google.cloud.deploy.v1.ListJobRunsRequest;
 import com.google.cloud.deploy.v1.ListJobRunsResponse;
 import com.google.cloud.deploy.v1.ListReleasesRequest;
@@ -100,6 +107,7 @@ import com.google.cloud.deploy.v1.TerminateJobRunResponse;
 import com.google.cloud.deploy.v1.UpdateAutomationRequest;
 import com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.UpdateDeployPolicyRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -136,6 +144,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   ProtoUtils.marshaller(ListDeliveryPipelinesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeliveryPipelinesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDeliveryPipelineRequest, DeliveryPipeline>
@@ -146,6 +155,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDeliveryPipelineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeliveryPipeline.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDeliveryPipelineRequest, Operation>
@@ -156,6 +166,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDeliveryPipelineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDeliveryPipelineRequest, Operation>
@@ -166,6 +177,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDeliveryPipelineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDeliveryPipelineRequest, Operation>
@@ -176,6 +188,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDeliveryPipelineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTargetsRequest, ListTargetsResponse>
@@ -186,6 +199,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListTargetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTargetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RollbackTargetRequest, RollbackTargetResponse>
@@ -197,6 +211,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   ProtoUtils.marshaller(RollbackTargetRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RollbackTargetResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTargetRequest, Target> getTargetMethodDescriptor =
@@ -205,6 +220,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
           .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetTarget")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTargetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Target.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateTargetRequest, Operation>
@@ -214,6 +230,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/CreateTarget")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateTargetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTargetRequest, Operation>
@@ -223,6 +240,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/UpdateTarget")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateTargetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTargetRequest, Operation>
@@ -232,6 +250,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/DeleteTarget")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteTargetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
@@ -243,6 +262,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   ProtoUtils.marshaller(ListCustomTargetTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomTargetTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomTargetTypeRequest, CustomTargetType>
@@ -253,6 +273,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCustomTargetTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomTargetType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCustomTargetTypeRequest, Operation>
@@ -263,6 +284,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCustomTargetTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCustomTargetTypeRequest, Operation>
@@ -273,6 +295,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCustomTargetTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCustomTargetTypeRequest, Operation>
@@ -283,6 +306,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCustomTargetTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReleasesRequest, ListReleasesResponse>
@@ -293,6 +317,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListReleasesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReleasesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReleaseRequest, Release> getReleaseMethodDescriptor =
@@ -301,6 +326,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
           .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetRelease")
           .setRequestMarshaller(ProtoUtils.marshaller(GetReleaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Release.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateReleaseRequest, Operation>
@@ -311,6 +337,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReleaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AbandonReleaseRequest, AbandonReleaseResponse>
@@ -322,6 +349,63 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   ProtoUtils.marshaller(AbandonReleaseRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AbandonReleaseResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateDeployPolicyRequest, Operation>
+      createDeployPolicyMethodDescriptor =
+          MethodDescriptor.<CreateDeployPolicyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/CreateDeployPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateDeployPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateDeployPolicyRequest, Operation>
+      updateDeployPolicyMethodDescriptor =
+          MethodDescriptor.<UpdateDeployPolicyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/UpdateDeployPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDeployPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteDeployPolicyRequest, Operation>
+      deleteDeployPolicyMethodDescriptor =
+          MethodDescriptor.<DeleteDeployPolicyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/DeleteDeployPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteDeployPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
+      listDeployPoliciesMethodDescriptor =
+          MethodDescriptor.<ListDeployPoliciesRequest, ListDeployPoliciesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/ListDeployPolicies")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDeployPoliciesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDeployPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetDeployPolicyRequest, DeployPolicy>
+      getDeployPolicyMethodDescriptor =
+          MethodDescriptor.<GetDeployPolicyRequest, DeployPolicy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetDeployPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDeployPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DeployPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ApproveRolloutRequest, ApproveRolloutResponse>
@@ -333,6 +417,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   ProtoUtils.marshaller(ApproveRolloutRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ApproveRolloutResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AdvanceRolloutRequest, AdvanceRolloutResponse>
@@ -344,6 +429,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   ProtoUtils.marshaller(AdvanceRolloutRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AdvanceRolloutResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelRolloutRequest, CancelRolloutResponse>
@@ -355,6 +441,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   ProtoUtils.marshaller(CancelRolloutRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CancelRolloutResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRolloutsRequest, ListRolloutsResponse>
@@ -365,6 +452,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListRolloutsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRolloutsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRolloutRequest, Rollout> getRolloutMethodDescriptor =
@@ -373,6 +461,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
           .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetRollout")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRolloutRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Rollout.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateRolloutRequest, Operation>
@@ -383,6 +472,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRolloutRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<IgnoreJobRequest, IgnoreJobResponse>
@@ -392,6 +482,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/IgnoreJob")
               .setRequestMarshaller(ProtoUtils.marshaller(IgnoreJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(IgnoreJobResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RetryJobRequest, RetryJobResponse>
@@ -401,6 +492,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/RetryJob")
               .setRequestMarshaller(ProtoUtils.marshaller(RetryJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RetryJobResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListJobRunsRequest, ListJobRunsResponse>
@@ -411,6 +503,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobRunsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListJobRunsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetJobRunRequest, JobRun> getJobRunMethodDescriptor =
@@ -419,6 +512,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
           .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetJobRun")
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(JobRun.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TerminateJobRunRequest, TerminateJobRunResponse>
@@ -430,6 +524,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   ProtoUtils.marshaller(TerminateJobRunRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TerminateJobRunResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConfigRequest, Config> getConfigMethodDescriptor =
@@ -438,6 +533,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
           .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetConfig")
           .setRequestMarshaller(ProtoUtils.marshaller(GetConfigRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Config.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateAutomationRequest, Operation>
@@ -448,6 +544,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAutomationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAutomationRequest, Operation>
@@ -458,6 +555,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAutomationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAutomationRequest, Operation>
@@ -468,6 +566,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAutomationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAutomationRequest, Automation>
@@ -478,6 +577,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAutomationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Automation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAutomationsRequest, ListAutomationsResponse>
@@ -489,6 +589,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   ProtoUtils.marshaller(ListAutomationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAutomationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAutomationRunRequest, AutomationRun>
@@ -499,6 +600,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAutomationRunRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AutomationRun.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAutomationRunsRequest, ListAutomationRunsResponse>
@@ -510,6 +612,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   ProtoUtils.marshaller(ListAutomationRunsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAutomationRunsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelAutomationRunRequest, CancelAutomationRunResponse>
@@ -521,6 +624,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   ProtoUtils.marshaller(CancelAutomationRunRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CancelAutomationRunResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -532,6 +636,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -540,6 +645,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -548,6 +654,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -556,6 +663,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -567,6 +675,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListDeliveryPipelinesRequest, ListDeliveryPipelinesResponse>
@@ -631,6 +740,20 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   private final OperationCallable<CreateReleaseRequest, Release, OperationMetadata>
       createReleaseOperationCallable;
   private final UnaryCallable<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseCallable;
+  private final UnaryCallable<CreateDeployPolicyRequest, Operation> createDeployPolicyCallable;
+  private final OperationCallable<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      createDeployPolicyOperationCallable;
+  private final UnaryCallable<UpdateDeployPolicyRequest, Operation> updateDeployPolicyCallable;
+  private final OperationCallable<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      updateDeployPolicyOperationCallable;
+  private final UnaryCallable<DeleteDeployPolicyRequest, Operation> deleteDeployPolicyCallable;
+  private final OperationCallable<DeleteDeployPolicyRequest, Empty, OperationMetadata>
+      deleteDeployPolicyOperationCallable;
+  private final UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
+      listDeployPoliciesCallable;
+  private final UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesPagedResponse>
+      listDeployPoliciesPagedCallable;
+  private final UnaryCallable<GetDeployPolicyRequest, DeployPolicy> getDeployPolicyCallable;
   private final UnaryCallable<ApproveRolloutRequest, ApproveRolloutResponse> approveRolloutCallable;
   private final UnaryCallable<AdvanceRolloutRequest, AdvanceRolloutResponse> advanceRolloutCallable;
   private final UnaryCallable<CancelRolloutRequest, CancelRolloutResponse> cancelRolloutCallable;
@@ -733,6 +856,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDeliveryPipelineRequest, DeliveryPipeline>
         getDeliveryPipelineTransportSettings =
@@ -744,6 +868,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateDeliveryPipelineRequest, Operation>
         createDeliveryPipelineTransportSettings =
@@ -755,6 +880,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateDeliveryPipelineRequest, Operation>
         updateDeliveryPipelineTransportSettings =
@@ -779,6 +905,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListTargetsRequest, ListTargetsResponse> listTargetsTransportSettings =
         GrpcCallSettings.<ListTargetsRequest, ListTargetsResponse>newBuilder()
@@ -789,6 +916,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RollbackTargetRequest, RollbackTargetResponse>
         rollbackTargetTransportSettings =
@@ -800,6 +928,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetTargetRequest, Target> getTargetTransportSettings =
         GrpcCallSettings.<GetTargetRequest, Target>newBuilder()
@@ -810,6 +939,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTargetRequest, Operation> createTargetTransportSettings =
         GrpcCallSettings.<CreateTargetRequest, Operation>newBuilder()
@@ -820,6 +950,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateTargetRequest, Operation> updateTargetTransportSettings =
         GrpcCallSettings.<UpdateTargetRequest, Operation>newBuilder()
@@ -840,6 +971,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
         listCustomTargetTypesTransportSettings =
@@ -852,6 +984,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCustomTargetTypeRequest, CustomTargetType>
         getCustomTargetTypeTransportSettings =
@@ -863,6 +996,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateCustomTargetTypeRequest, Operation>
         createCustomTargetTypeTransportSettings =
@@ -874,6 +1008,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateCustomTargetTypeRequest, Operation>
         updateCustomTargetTypeTransportSettings =
@@ -898,6 +1033,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListReleasesRequest, ListReleasesResponse> listReleasesTransportSettings =
         GrpcCallSettings.<ListReleasesRequest, ListReleasesResponse>newBuilder()
@@ -908,6 +1044,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetReleaseRequest, Release> getReleaseTransportSettings =
         GrpcCallSettings.<GetReleaseRequest, Release>newBuilder()
@@ -918,6 +1055,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateReleaseRequest, Operation> createReleaseTransportSettings =
         GrpcCallSettings.<CreateReleaseRequest, Operation>newBuilder()
@@ -928,6 +1066,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<AbandonReleaseRequest, AbandonReleaseResponse>
         abandonReleaseTransportSettings =
@@ -939,7 +1078,64 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
+    GrpcCallSettings<CreateDeployPolicyRequest, Operation> createDeployPolicyTransportSettings =
+        GrpcCallSettings.<CreateDeployPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(createDeployPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<UpdateDeployPolicyRequest, Operation> updateDeployPolicyTransportSettings =
+        GrpcCallSettings.<UpdateDeployPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateDeployPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "deploy_policy.name", String.valueOf(request.getDeployPolicy().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteDeployPolicyRequest, Operation> deleteDeployPolicyTransportSettings =
+        GrpcCallSettings.<DeleteDeployPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteDeployPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
+        listDeployPoliciesTransportSettings =
+            GrpcCallSettings.<ListDeployPoliciesRequest, ListDeployPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listDeployPoliciesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetDeployPolicyRequest, DeployPolicy> getDeployPolicyTransportSettings =
+        GrpcCallSettings.<GetDeployPolicyRequest, DeployPolicy>newBuilder()
+            .setMethodDescriptor(getDeployPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     GrpcCallSettings<ApproveRolloutRequest, ApproveRolloutResponse>
         approveRolloutTransportSettings =
             GrpcCallSettings.<ApproveRolloutRequest, ApproveRolloutResponse>newBuilder()
@@ -950,6 +1146,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<AdvanceRolloutRequest, AdvanceRolloutResponse>
         advanceRolloutTransportSettings =
@@ -961,6 +1158,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CancelRolloutRequest, CancelRolloutResponse> cancelRolloutTransportSettings =
         GrpcCallSettings.<CancelRolloutRequest, CancelRolloutResponse>newBuilder()
@@ -971,6 +1169,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRolloutsRequest, ListRolloutsResponse> listRolloutsTransportSettings =
         GrpcCallSettings.<ListRolloutsRequest, ListRolloutsResponse>newBuilder()
@@ -981,6 +1180,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetRolloutRequest, Rollout> getRolloutTransportSettings =
         GrpcCallSettings.<GetRolloutRequest, Rollout>newBuilder()
@@ -991,6 +1191,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateRolloutRequest, Operation> createRolloutTransportSettings =
         GrpcCallSettings.<CreateRolloutRequest, Operation>newBuilder()
@@ -1001,6 +1202,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<IgnoreJobRequest, IgnoreJobResponse> ignoreJobTransportSettings =
         GrpcCallSettings.<IgnoreJobRequest, IgnoreJobResponse>newBuilder()
@@ -1011,6 +1213,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("rollout", String.valueOf(request.getRollout()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRollout())
             .build();
     GrpcCallSettings<RetryJobRequest, RetryJobResponse> retryJobTransportSettings =
         GrpcCallSettings.<RetryJobRequest, RetryJobResponse>newBuilder()
@@ -1021,6 +1224,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("rollout", String.valueOf(request.getRollout()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRollout())
             .build();
     GrpcCallSettings<ListJobRunsRequest, ListJobRunsResponse> listJobRunsTransportSettings =
         GrpcCallSettings.<ListJobRunsRequest, ListJobRunsResponse>newBuilder()
@@ -1031,6 +1235,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetJobRunRequest, JobRun> getJobRunTransportSettings =
         GrpcCallSettings.<GetJobRunRequest, JobRun>newBuilder()
@@ -1041,6 +1246,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<TerminateJobRunRequest, TerminateJobRunResponse>
         terminateJobRunTransportSettings =
@@ -1052,6 +1258,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetConfigRequest, Config> getConfigTransportSettings =
         GrpcCallSettings.<GetConfigRequest, Config>newBuilder()
@@ -1062,6 +1269,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAutomationRequest, Operation> createAutomationTransportSettings =
         GrpcCallSettings.<CreateAutomationRequest, Operation>newBuilder()
@@ -1072,6 +1280,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAutomationRequest, Operation> updateAutomationTransportSettings =
         GrpcCallSettings.<UpdateAutomationRequest, Operation>newBuilder()
@@ -1092,6 +1301,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetAutomationRequest, Automation> getAutomationTransportSettings =
         GrpcCallSettings.<GetAutomationRequest, Automation>newBuilder()
@@ -1102,6 +1312,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAutomationsRequest, ListAutomationsResponse>
         listAutomationsTransportSettings =
@@ -1113,6 +1324,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAutomationRunRequest, AutomationRun> getAutomationRunTransportSettings =
         GrpcCallSettings.<GetAutomationRunRequest, AutomationRun>newBuilder()
@@ -1123,6 +1335,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAutomationRunsRequest, ListAutomationRunsResponse>
         listAutomationRunsTransportSettings =
@@ -1134,6 +1347,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CancelAutomationRunRequest, CancelAutomationRunResponse>
         cancelAutomationRunTransportSettings =
@@ -1145,6 +1359,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1175,6 +1390,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1185,6 +1401,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1196,6 +1413,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listDeliveryPipelinesCallable =
@@ -1354,6 +1572,52 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
     this.abandonReleaseCallable =
         callableFactory.createUnaryCallable(
             abandonReleaseTransportSettings, settings.abandonReleaseSettings(), clientContext);
+    this.createDeployPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createDeployPolicyTransportSettings,
+            settings.createDeployPolicySettings(),
+            clientContext);
+    this.createDeployPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            createDeployPolicyTransportSettings,
+            settings.createDeployPolicyOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateDeployPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateDeployPolicyTransportSettings,
+            settings.updateDeployPolicySettings(),
+            clientContext);
+    this.updateDeployPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDeployPolicyTransportSettings,
+            settings.updateDeployPolicyOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteDeployPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteDeployPolicyTransportSettings,
+            settings.deleteDeployPolicySettings(),
+            clientContext);
+    this.deleteDeployPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDeployPolicyTransportSettings,
+            settings.deleteDeployPolicyOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listDeployPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listDeployPoliciesTransportSettings,
+            settings.listDeployPoliciesSettings(),
+            clientContext);
+    this.listDeployPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDeployPoliciesTransportSettings,
+            settings.listDeployPoliciesSettings(),
+            clientContext);
+    this.getDeployPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getDeployPolicyTransportSettings, settings.getDeployPolicySettings(), clientContext);
     this.approveRolloutCallable =
         callableFactory.createUnaryCallable(
             approveRolloutTransportSettings, settings.approveRolloutSettings(), clientContext);
@@ -1667,6 +1931,56 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   @Override
   public UnaryCallable<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseCallable() {
     return abandonReleaseCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDeployPolicyRequest, Operation> createDeployPolicyCallable() {
+    return createDeployPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      createDeployPolicyOperationCallable() {
+    return createDeployPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDeployPolicyRequest, Operation> updateDeployPolicyCallable() {
+    return updateDeployPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      updateDeployPolicyOperationCallable() {
+    return updateDeployPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDeployPolicyRequest, Operation> deleteDeployPolicyCallable() {
+    return deleteDeployPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDeployPolicyRequest, Empty, OperationMetadata>
+      deleteDeployPolicyOperationCallable() {
+    return deleteDeployPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
+      listDeployPoliciesCallable() {
+    return listDeployPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesPagedResponse>
+      listDeployPoliciesPagedCallable() {
+    return listDeployPoliciesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDeployPolicyRequest, DeployPolicy> getDeployPolicyCallable() {
+    return getDeployPolicyCallable;
   }
 
   @Override

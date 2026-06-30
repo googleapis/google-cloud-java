@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -284,6 +284,7 @@ public class CloudChannelServiceClientHttpJsonTest {
         CheckCloudIdentityAccountsExistRequest.newBuilder()
             .setParent("accounts/account-4811")
             .setDomain("domain-1326197564")
+            .setPrimaryAdminEmail("primaryAdminEmail-1896816337")
             .build();
 
     CheckCloudIdentityAccountsExistResponse actualResponse =
@@ -317,6 +318,7 @@ public class CloudChannelServiceClientHttpJsonTest {
           CheckCloudIdentityAccountsExistRequest.newBuilder()
               .setParent("accounts/account-4811")
               .setDomain("domain-1326197564")
+              .setPrimaryAdminEmail("primaryAdminEmail-1896816337")
               .build();
       client.checkCloudIdentityAccountsExist(request);
       Assert.fail("No exception raised");
@@ -912,6 +914,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -973,6 +976,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1043,6 +1047,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1116,6 +1121,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1187,6 +1193,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1204,6 +1211,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setPurchaseOrderId("purchaseOrderId2029917384")
             .setRequestId("requestId693933066")
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
 
     Entitlement actualResponse = client.changeOfferAsync(request).get();
@@ -1241,6 +1249,7 @@ public class CloudChannelServiceClientHttpJsonTest {
               .setPurchaseOrderId("purchaseOrderId2029917384")
               .setRequestId("requestId693933066")
               .setBillingAccount("billingAccount708726578")
+              .setPriceReferenceId("priceReferenceId-5103427")
               .build();
       client.changeOfferAsync(request).get();
       Assert.fail("No exception raised");
@@ -1264,6 +1273,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1333,6 +1343,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1456,6 +1467,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3395,8 +3407,9 @@ public class CloudChannelServiceClientHttpJsonTest {
 
     RegisterSubscriberRequest request =
         RegisterSubscriberRequest.newBuilder()
-            .setAccount("accounts/account-7630")
+            .setAccount(AccountName.of("[ACCOUNT]").toString())
             .setServiceAccount("serviceAccount1079137720")
+            .setIntegrator("integrator-1902360937")
             .build();
 
     RegisterSubscriberResponse actualResponse = client.registerSubscriber(request);
@@ -3427,8 +3440,9 @@ public class CloudChannelServiceClientHttpJsonTest {
     try {
       RegisterSubscriberRequest request =
           RegisterSubscriberRequest.newBuilder()
-              .setAccount("accounts/account-7630")
+              .setAccount(AccountName.of("[ACCOUNT]").toString())
               .setServiceAccount("serviceAccount1079137720")
+              .setIntegrator("integrator-1902360937")
               .build();
       client.registerSubscriber(request);
       Assert.fail("No exception raised");
@@ -3445,8 +3459,9 @@ public class CloudChannelServiceClientHttpJsonTest {
 
     UnregisterSubscriberRequest request =
         UnregisterSubscriberRequest.newBuilder()
-            .setAccount("accounts/account-7630")
+            .setAccount(AccountName.of("[ACCOUNT]").toString())
             .setServiceAccount("serviceAccount1079137720")
+            .setIntegrator("integrator-1902360937")
             .build();
 
     UnregisterSubscriberResponse actualResponse = client.unregisterSubscriber(request);
@@ -3477,8 +3492,9 @@ public class CloudChannelServiceClientHttpJsonTest {
     try {
       UnregisterSubscriberRequest request =
           UnregisterSubscriberRequest.newBuilder()
-              .setAccount("accounts/account-7630")
+              .setAccount(AccountName.of("[ACCOUNT]").toString())
               .setServiceAccount("serviceAccount1079137720")
+              .setIntegrator("integrator-1902360937")
               .build();
       client.unregisterSubscriber(request);
       Assert.fail("No exception raised");
@@ -3499,9 +3515,10 @@ public class CloudChannelServiceClientHttpJsonTest {
 
     ListSubscribersRequest request =
         ListSubscribersRequest.newBuilder()
-            .setAccount("accounts/account-7630")
+            .setAccount(AccountName.of("[ACCOUNT]").toString())
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
+            .setIntegrator("integrator-1902360937")
             .build();
 
     ListSubscribersPagedResponse pagedListResponse = client.listSubscribers(request);
@@ -3536,9 +3553,10 @@ public class CloudChannelServiceClientHttpJsonTest {
     try {
       ListSubscribersRequest request =
           ListSubscribersRequest.newBuilder()
-              .setAccount("accounts/account-7630")
+              .setAccount(AccountName.of("[ACCOUNT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setIntegrator("integrator-1902360937")
               .build();
       client.listSubscribers(request);
       Assert.fail("No exception raised");

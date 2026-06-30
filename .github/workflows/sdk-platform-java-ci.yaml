@@ -1,0 +1,388 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+name: sdk-platform-java
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'sdk-platform-java/**'
+            - 'google-auth-library-java/**'
+            - '.github/workflows/sdk-platform-java-ci.yaml'
+  units:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    name: sdk-platform-java units
+    strategy:
+      matrix:
+        java: [ 11, 17, 21, 25, 26 ]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: temurin
+          cache: maven
+      - run: java -version
+      - name: Unit Tests
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: test
+      # The `envVarTest` profile runs tests that require an environment variable
+      - name: Env Var Tests
+        run: |
+          mvn test --batch-mode --no-transfer-progress -Pquick-build \
+              -DenableTestCoverage -PenvVarTest
+        # Set the Env Var for this step only
+        env:
+          GOOGLE_CLOUD_UNIVERSE_DOMAIN: random.com
+          GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS: true
+          GOOGLE_SDK_JAVA_LOGGING: true
+        working-directory: sdk-platform-java
+
+  clirr:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 11
+    - run: java -version
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: clirr
+        BUILD_SUBDIR: sdk-platform-java
+
+  dependencies:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: 17
+    - run: .kokoro/dependencies.sh
+      env:
+        BUILD_SUBDIR: sdk-platform-java
+
+  sdk-platform-java-8:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    name: "sdk-platform-java units (8)"
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      # Java 8 tests uses JDK 17 to compile and JDK 8 to run tests.
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 8
+          distribution: temurin
+          cache: maven
+      - run: echo "JAVA8_HOME=${JAVA_HOME}" >> $GITHUB_ENV
+      - uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+      - name: Install all modules using Java 17
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
+      - name: Run tests with Java 8
+        shell: bash
+        run: |
+          set -x
+          export JAVA_HOME=$JAVA_HOME
+          export PATH=${JAVA_HOME}/bin:$PATH
+          # Maven surefire plugin lets us to specify the JVM when running tests via
+          # the "jvm" system property.
+          mvn verify --batch-mode --no-transfer-progress -Pquick-build \
+              -Djvm="${JAVA8_HOME}/bin/java"
+        working-directory: sdk-platform-java
+      # The `envVarTest` profile runs tests that require an environment variable
+      - name: Run tests with Java 8 (Env Var Tests)
+        shell: bash
+        run: |
+          set -x
+          export JAVA_HOME=$JAVA_HOME
+          export PATH=${JAVA_HOME}/bin:$PATH
+          # Maven surefire plugin lets us to specify the JVM when running tests via
+          # the "jvm" system property.
+          export GOOGLE_CLOUD_UNIVERSE_DOMAIN=random.com
+          mvn test --batch-mode --no-transfer-progress -Pquick-build \
+              -DenableTestCoverage -Dsurefire.failIfNoSpecifiedTests=false \
+              -PenvVarTest
+        # Set the Env Var for this step only
+        env:
+          GOOGLE_CLOUD_UNIVERSE_DOMAIN: random.com
+          GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS: true
+          GOOGLE_SDK_JAVA_LOGGING: true
+        working-directory: sdk-platform-java
+
+  bazel:  
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    name: sdk-platform-java integration
+    strategy:
+      matrix:
+        java: [ 11, 17, 21 ]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: temurin
+          cache: maven
+      - run: bazelisk version
+      - name: Install all modules
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
+      - name: Integration Tests
+        run: |
+          bazelisk --batch test //sdk-platform-java/test/integration/... --test_output=errors
+
+  # JDK 24+ permanently disables Security Manager. Bazel's default test runner tries to install it.
+  # We must explicitly disable this behavior using shouldInstallTestSecurityManager=false.
+  bazel-no-security-manager-jdk24-plus:  
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    name: sdk-platform-java integration (JDK 24+)
+    strategy:
+      matrix:
+        java: [ 25, 26 ]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: temurin
+          cache: maven
+      - run: bazelisk version
+      - name: Install all modules
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
+      - name: Integration Tests
+        run: |
+          bazelisk --batch test //sdk-platform-java/test/integration/... --jvmopt=-Dcom.google.testing.junit.runner.shouldInstallTestSecurityManager=false
+
+  self-service:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    name: sdk-platform-java self-service clients
+    strategy:
+      matrix:
+        java: [ 11, 17 ]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: temurin
+          cache: maven
+      - run: bazelisk version
+      - name: Install all modules using Java 11
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
+      - name: Gradle Build Generated Storage Client Library
+        run: |
+          echo "Building Storage lib from generated source..."
+          mkdir /tmp/java-storage
+          bazelisk --batch build @com_google_googleapis//google/storage/v2:google-cloud-storage-v2-java
+          tar zxvf bazel-bin/external/com_google_googleapis/google/storage/v2/google-cloud-storage-v2-java.tar.gz -C /tmp/java-storage
+          pushd /tmp/java-storage/google-cloud-storage-v2-java
+          ./gradlew clean build publishToMavenLocal sourcesJar allJars
+          popd
+      - name: Gradle Build Generated Compute Client Library
+        run: |
+          echo "Building Compute lib from generated source..."
+          mkdir /tmp/java-compute
+          bazelisk --batch build @com_google_googleapis//google/cloud/compute/v1small:google-cloud-compute-small-v1-java
+          tar zxvf bazel-bin/external/com_google_googleapis/google/cloud/compute/v1small/google-cloud-compute-small-v1-java.tar.gz -C /tmp/java-compute
+          pushd /tmp/java-compute/google-cloud-compute-small-v1-java
+          ./gradlew clean build publishToMavenLocal sourcesJar allJars
+          popd
+
+
+  gapic-generator-java:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    name: "gapic-generator-java (8)"
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 11
+          distribution: temurin
+          cache: maven
+      - name: Install all modules using Java 11
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
+      - uses: actions/setup-java@v3
+        with:
+          java-version: 8
+          distribution: temurin
+      - run: java -version
+      - name: Run tests in Java 8 with the source compiled in Java 11 for gapic-generator-java
+        shell: bash
+        run: |
+          mvn -V -B -ntp surefire:test --projects 'gapic-generator-java'
+        working-directory: sdk-platform-java
+      - run: bazelisk version
+      - name: Integration Tests
+        run: |
+          bazelisk --batch test //sdk-platform-java/test/integration/...
+      - name: Gradle Build Generated Storage Client Library
+        run: |
+          echo "Building Storage lib from generated source..."
+          mkdir /tmp/java-storage
+          bazelisk --batch build @com_google_googleapis//google/storage/v2:google-cloud-storage-v2-java
+          tar zxvf bazel-bin/external/com_google_googleapis/google/storage/v2/google-cloud-storage-v2-java.tar.gz -C /tmp/java-storage
+          pushd /tmp/java-storage/google-cloud-storage-v2-java
+          ./gradlew clean build publishToMavenLocal sourcesJar allJars
+          popd
+      - name: Gradle Build Generated Compute Client Library
+        run: |
+          echo "Building Compute lib from generated source..."
+          mkdir /tmp/java-compute
+          bazelisk --batch build @com_google_googleapis//google/cloud/compute/v1small:google-cloud-compute-small-v1-java
+          tar zxvf bazel-bin/external/com_google_googleapis/google/cloud/compute/v1small/google-cloud-compute-small-v1-java.tar.gz -C /tmp/java-compute
+          pushd /tmp/java-compute/google-cloud-compute-small-v1-java
+          ./gradlew clean build publishToMavenLocal sourcesJar allJars
+          popd
+  
+  java8-compatibility:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        java-version: 17
+        distribution: temurin
+        cache: maven
+    - name: Install sdk-platform-modules to local Maven repository
+      shell: bash
+      run: .kokoro/build.sh
+      env:
+        BUILD_SUBDIR: sdk-platform-java
+        JOB_TYPE: install
+    - name: Check Java 8 compatibility for class files
+      shell: bash
+      run: |
+        find . -type f -name "*.class" -path "*/classes/*" \
+          -not -path "*/grpc-*/*" \
+          -not -path "*/proto-*/*" \
+          -not -path "*/gapic-generator-java/*" -print |\
+          while IFS= read -r class_file; do
+          version=$(javap -v "${class_file}" | grep "major version" | cut -d ' ' -f 5)
+          if [[ "${version}" != "52" ]]; then
+            echo "${class_file} is not compatible with Java 8."
+            exit 1
+          fi
+        done
+        echo "All class files are compatible with Java 8."
+      working-directory: sdk-platform-java
+
+  gapic-generator-java-bom:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        java-version: 11
+        distribution: temurin
+        cache: maven
+    - name: Install Maven modules to local Maven repository
+      shell: bash
+      run: .kokoro/build.sh
+      env:
+        BUILD_SUBDIR: sdk-platform-java
+        JOB_TYPE: install
+    - name: Validate gapic-generator-java-bom
+      uses: googleapis/java-cloud-bom/tests/validate-bom@47ad868794c5d38ee7eb95d69371a7a79f84d890
+      with:
+        bom-path: sdk-platform-java/gapic-generator-java-bom/pom.xml
+
+  unmanaged_dependency_check:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+    - uses: actions/setup-java@v4
+      with:
+        java-version: 11
+        distribution: temurin
+    - run: mvn -version
+    - name: Unit Tests
+      run: |
+        mvn test --batch-mode --no-transfer-progress
+      working-directory: sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check
+    - name: Install Maven modules
+      shell: bash
+      run: .kokoro/build.sh
+      env:
+        BUILD_SUBDIR: sdk-platform-java
+        JOB_TYPE: test
+    - name: Unmanaged dependency check
+      uses: ./sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check
+      with:
+        bom-path: sdk-platform-java/gapic-generator-java-bom/pom.xml
+
+  dependency_analyzer_unit_test:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+    - uses: actions/setup-java@v4
+      with:
+        java-version: 17
+        distribution: temurin
+    - run: mvn -version
+    - name: Unit Tests
+      run: |
+        mvn test --batch-mode --no-transfer-progress
+      working-directory: sdk-platform-java/java-shared-dependencies/dependency-analyzer

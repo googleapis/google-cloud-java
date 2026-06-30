@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,8 @@ import com.google.cloud.workstations.v1beta.ListWorkstationConfigsResponse;
 import com.google.cloud.workstations.v1beta.ListWorkstationsRequest;
 import com.google.cloud.workstations.v1beta.ListWorkstationsResponse;
 import com.google.cloud.workstations.v1beta.OperationMetadata;
+import com.google.cloud.workstations.v1beta.PushCredentialsMetadata;
+import com.google.cloud.workstations.v1beta.PushCredentialsRequest;
 import com.google.cloud.workstations.v1beta.StartWorkstationRequest;
 import com.google.cloud.workstations.v1beta.StopWorkstationRequest;
 import com.google.cloud.workstations.v1beta.UpdateWorkstationClusterRequest;
@@ -92,6 +94,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetWorkstationClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkstationCluster.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -106,6 +109,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   ProtoUtils.marshaller(ListWorkstationClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkstationClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateWorkstationClusterRequest, Operation>
@@ -117,6 +121,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkstationClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateWorkstationClusterRequest, Operation>
@@ -128,6 +133,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWorkstationClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWorkstationClusterRequest, Operation>
@@ -139,6 +145,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkstationClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWorkstationConfigRequest, WorkstationConfig>
@@ -150,6 +157,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetWorkstationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkstationConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -164,6 +172,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   ProtoUtils.marshaller(ListWorkstationConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkstationConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -179,6 +188,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   ProtoUtils.marshaller(ListUsableWorkstationConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUsableWorkstationConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateWorkstationConfigRequest, Operation>
@@ -190,6 +200,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkstationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateWorkstationConfigRequest, Operation>
@@ -201,6 +212,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWorkstationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWorkstationConfigRequest, Operation>
@@ -212,6 +224,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkstationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWorkstationRequest, Workstation>
@@ -222,6 +235,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetWorkstationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Workstation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListWorkstationsRequest, ListWorkstationsResponse>
@@ -233,6 +247,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   ProtoUtils.marshaller(ListWorkstationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkstationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -247,6 +262,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   ProtoUtils.marshaller(ListUsableWorkstationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUsableWorkstationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateWorkstationRequest, Operation>
@@ -257,6 +273,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkstationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateWorkstationRequest, Operation>
@@ -267,6 +284,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWorkstationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWorkstationRequest, Operation>
@@ -277,6 +295,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkstationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StartWorkstationRequest, Operation>
@@ -287,6 +306,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StartWorkstationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopWorkstationRequest, Operation>
@@ -297,6 +317,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StopWorkstationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
@@ -309,6 +330,18 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   ProtoUtils.marshaller(GenerateAccessTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateAccessTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<PushCredentialsRequest, Operation>
+      pushCredentialsMethodDescriptor =
+          MethodDescriptor.<PushCredentialsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.workstations.v1beta.Workstations/PushCredentials")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PushCredentialsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -317,6 +350,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -325,6 +359,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -336,6 +371,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetWorkstationClusterRequest, WorkstationCluster>
@@ -412,6 +448,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
       stopWorkstationOperationCallable;
   private final UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenCallable;
+  private final UnaryCallable<PushCredentialsRequest, Operation> pushCredentialsCallable;
+  private final OperationCallable<PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+      pushCredentialsOperationCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -469,6 +508,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListWorkstationClustersRequest, ListWorkstationClustersResponse>
         listWorkstationClustersTransportSettings =
@@ -481,6 +521,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateWorkstationClusterRequest, Operation>
         createWorkstationClusterTransportSettings =
@@ -492,6 +533,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateWorkstationClusterRequest, Operation>
         updateWorkstationClusterTransportSettings =
@@ -516,6 +558,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetWorkstationConfigRequest, WorkstationConfig>
         getWorkstationConfigTransportSettings =
@@ -527,6 +570,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListWorkstationConfigsRequest, ListWorkstationConfigsResponse>
         listWorkstationConfigsTransportSettings =
@@ -539,6 +583,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListUsableWorkstationConfigsRequest, ListUsableWorkstationConfigsResponse>
         listUsableWorkstationConfigsTransportSettings =
@@ -552,6 +597,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateWorkstationConfigRequest, Operation>
         createWorkstationConfigTransportSettings =
@@ -563,6 +609,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateWorkstationConfigRequest, Operation>
         updateWorkstationConfigTransportSettings =
@@ -587,6 +634,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetWorkstationRequest, Workstation> getWorkstationTransportSettings =
         GrpcCallSettings.<GetWorkstationRequest, Workstation>newBuilder()
@@ -597,6 +645,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListWorkstationsRequest, ListWorkstationsResponse>
         listWorkstationsTransportSettings =
@@ -608,6 +657,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListUsableWorkstationsRequest, ListUsableWorkstationsResponse>
         listUsableWorkstationsTransportSettings =
@@ -620,6 +670,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateWorkstationRequest, Operation> createWorkstationTransportSettings =
         GrpcCallSettings.<CreateWorkstationRequest, Operation>newBuilder()
@@ -630,6 +681,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateWorkstationRequest, Operation> updateWorkstationTransportSettings =
         GrpcCallSettings.<UpdateWorkstationRequest, Operation>newBuilder()
@@ -651,6 +703,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StartWorkstationRequest, Operation> startWorkstationTransportSettings =
         GrpcCallSettings.<StartWorkstationRequest, Operation>newBuilder()
@@ -661,6 +714,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StopWorkstationRequest, Operation> stopWorkstationTransportSettings =
         GrpcCallSettings.<StopWorkstationRequest, Operation>newBuilder()
@@ -671,6 +725,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
         generateAccessTokenTransportSettings =
@@ -682,7 +737,19 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("workstation", String.valueOf(request.getWorkstation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkstation())
                 .build();
+    GrpcCallSettings<PushCredentialsRequest, Operation> pushCredentialsTransportSettings =
+        GrpcCallSettings.<PushCredentialsRequest, Operation>newBuilder()
+            .setMethodDescriptor(pushCredentialsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workstation", String.valueOf(request.getWorkstation()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getWorkstation())
+            .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
@@ -692,6 +759,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -702,6 +770,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -713,6 +782,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.getWorkstationClusterCallable =
@@ -896,6 +966,15 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
             generateAccessTokenTransportSettings,
             settings.generateAccessTokenSettings(),
             clientContext);
+    this.pushCredentialsCallable =
+        callableFactory.createUnaryCallable(
+            pushCredentialsTransportSettings, settings.pushCredentialsSettings(), clientContext);
+    this.pushCredentialsOperationCallable =
+        callableFactory.createOperationCallable(
+            pushCredentialsTransportSettings,
+            settings.pushCredentialsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -1125,6 +1204,17 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
   public UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenCallable() {
     return generateAccessTokenCallable;
+  }
+
+  @Override
+  public UnaryCallable<PushCredentialsRequest, Operation> pushCredentialsCallable() {
+    return pushCredentialsCallable;
+  }
+
+  @Override
+  public OperationCallable<PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+      pushCredentialsOperationCallable() {
+    return pushCredentialsOperationCallable;
   }
 
   @Override

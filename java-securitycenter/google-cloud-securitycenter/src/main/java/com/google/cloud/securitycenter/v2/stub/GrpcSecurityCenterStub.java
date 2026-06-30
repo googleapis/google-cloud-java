@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,6 +130,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       BatchCreateResourceValueConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BulkMuteFindingsRequest, Operation>
@@ -140,6 +141,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BulkMuteFindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBigQueryExportRequest, BigQueryExport>
@@ -151,6 +153,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBigQueryExportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BigQueryExport.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFindingRequest, Finding>
@@ -161,6 +164,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMuteConfigRequest, MuteConfig>
@@ -171,6 +175,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMuteConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MuteConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateNotificationConfigRequest, NotificationConfig>
@@ -182,6 +187,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NotificationConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSourceRequest, Source> createSourceMethodDescriptor =
@@ -190,6 +196,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v2.SecurityCenter/CreateSource")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteBigQueryExportRequest, Empty>
@@ -201,6 +208,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBigQueryExportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMuteConfigRequest, Empty>
@@ -211,6 +219,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMuteConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNotificationConfigRequest, Empty>
@@ -222,6 +231,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteResourceValueConfigRequest, Empty>
@@ -233,6 +243,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteResourceValueConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBigQueryExportRequest, BigQueryExport>
@@ -243,6 +254,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBigQueryExportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BigQueryExport.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSimulationRequest, Simulation>
@@ -253,6 +265,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSimulationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Simulation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetValuedResourceRequest, ValuedResource>
@@ -263,6 +276,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetValuedResourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ValuedResource.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -271,6 +285,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v2.SecurityCenter/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetMuteConfigRequest, MuteConfig>
@@ -281,6 +296,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMuteConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MuteConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNotificationConfigRequest, NotificationConfig>
@@ -292,6 +308,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NotificationConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetResourceValueConfigRequest, ResourceValueConfig>
@@ -304,6 +321,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(GetResourceValueConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ResourceValueConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSourceRequest, Source> getSourceMethodDescriptor =
@@ -312,6 +330,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v2.SecurityCenter/GetSource")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GroupFindingsRequest, GroupFindingsResponse>
@@ -323,6 +342,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(GroupFindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GroupFindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAttackPathsRequest, ListAttackPathsResponse>
@@ -334,6 +354,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListAttackPathsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAttackPathsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBigQueryExportsRequest, ListBigQueryExportsResponse>
@@ -346,6 +367,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListBigQueryExportsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBigQueryExportsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFindingsRequest, ListFindingsResponse>
@@ -356,6 +378,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListFindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMuteConfigsRequest, ListMuteConfigsResponse>
@@ -367,6 +390,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListMuteConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMuteConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -381,6 +405,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListNotificationConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNotificationConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -395,6 +420,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListResourceValueConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListResourceValueConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSourcesRequest, ListSourcesResponse>
@@ -405,6 +431,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListValuedResourcesRequest, ListValuedResourcesResponse>
@@ -417,6 +444,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListValuedResourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListValuedResourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetFindingStateRequest, Finding>
@@ -427,6 +455,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetFindingStateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -435,6 +464,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v2.SecurityCenter/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetMuteRequest, Finding> setMuteMethodDescriptor =
@@ -443,6 +473,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v2.SecurityCenter/SetMute")
           .setRequestMarshaller(ProtoUtils.marshaller(SetMuteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -454,6 +485,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBigQueryExportRequest, BigQueryExport>
@@ -465,6 +497,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBigQueryExportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BigQueryExport.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateExternalSystemRequest, ExternalSystem>
@@ -476,6 +509,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateExternalSystemRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ExternalSystem.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFindingRequest, Finding>
@@ -486,6 +520,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateMuteConfigRequest, MuteConfig>
@@ -496,6 +531,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateMuteConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MuteConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateNotificationConfigRequest, NotificationConfig>
@@ -507,6 +543,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NotificationConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateResourceValueConfigRequest, ResourceValueConfig>
@@ -519,6 +556,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(UpdateResourceValueConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ResourceValueConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSecurityMarksRequest, SecurityMarks>
@@ -530,6 +568,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSecurityMarksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecurityMarks.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSourceRequest, Source> updateSourceMethodDescriptor =
@@ -538,6 +577,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v2.SecurityCenter/UpdateSource")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<
@@ -710,6 +750,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<BulkMuteFindingsRequest, Operation> bulkMuteFindingsTransportSettings =
         GrpcCallSettings.<BulkMuteFindingsRequest, Operation>newBuilder()
@@ -720,6 +761,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateBigQueryExportRequest, BigQueryExport>
         createBigQueryExportTransportSettings =
@@ -731,6 +773,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateFindingRequest, Finding> createFindingTransportSettings =
         GrpcCallSettings.<CreateFindingRequest, Finding>newBuilder()
@@ -741,6 +784,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateMuteConfigRequest, MuteConfig> createMuteConfigTransportSettings =
         GrpcCallSettings.<CreateMuteConfigRequest, MuteConfig>newBuilder()
@@ -753,6 +797,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add(request.getParent(), "location", CREATE_MUTE_CONFIG_2_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateNotificationConfigRequest, NotificationConfig>
         createNotificationConfigTransportSettings =
@@ -764,6 +809,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateSourceRequest, Source> createSourceTransportSettings =
         GrpcCallSettings.<CreateSourceRequest, Source>newBuilder()
@@ -774,6 +820,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteBigQueryExportRequest, Empty> deleteBigQueryExportTransportSettings =
         GrpcCallSettings.<DeleteBigQueryExportRequest, Empty>newBuilder()
@@ -784,6 +831,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteMuteConfigRequest, Empty> deleteMuteConfigTransportSettings =
         GrpcCallSettings.<DeleteMuteConfigRequest, Empty>newBuilder()
@@ -796,6 +844,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add(request.getName(), "location", DELETE_MUTE_CONFIG_2_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteNotificationConfigRequest, Empty>
         deleteNotificationConfigTransportSettings =
@@ -807,6 +856,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteResourceValueConfigRequest, Empty>
         deleteResourceValueConfigTransportSettings =
@@ -818,6 +868,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportTransportSettings =
         GrpcCallSettings.<GetBigQueryExportRequest, BigQueryExport>newBuilder()
@@ -828,6 +879,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetSimulationRequest, Simulation> getSimulationTransportSettings =
         GrpcCallSettings.<GetSimulationRequest, Simulation>newBuilder()
@@ -838,6 +890,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetValuedResourceRequest, ValuedResource> getValuedResourceTransportSettings =
         GrpcCallSettings.<GetValuedResourceRequest, ValuedResource>newBuilder()
@@ -848,6 +901,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -858,6 +912,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetMuteConfigRequest, MuteConfig> getMuteConfigTransportSettings =
         GrpcCallSettings.<GetMuteConfigRequest, MuteConfig>newBuilder()
@@ -870,6 +925,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add(request.getName(), "location", GET_MUTE_CONFIG_2_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetNotificationConfigRequest, NotificationConfig>
         getNotificationConfigTransportSettings =
@@ -881,6 +937,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetResourceValueConfigRequest, ResourceValueConfig>
         getResourceValueConfigTransportSettings =
@@ -892,6 +949,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetSourceRequest, Source> getSourceTransportSettings =
         GrpcCallSettings.<GetSourceRequest, Source>newBuilder()
@@ -902,6 +960,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GroupFindingsRequest, GroupFindingsResponse> groupFindingsTransportSettings =
         GrpcCallSettings.<GroupFindingsRequest, GroupFindingsResponse>newBuilder()
@@ -912,6 +971,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListAttackPathsRequest, ListAttackPathsResponse>
         listAttackPathsTransportSettings =
@@ -923,6 +983,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListBigQueryExportsRequest, ListBigQueryExportsResponse>
         listBigQueryExportsTransportSettings =
@@ -934,6 +995,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
         GrpcCallSettings.<ListFindingsRequest, ListFindingsResponse>newBuilder()
@@ -944,6 +1006,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListMuteConfigsRequest, ListMuteConfigsResponse>
         listMuteConfigsTransportSettings =
@@ -960,6 +1023,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                           request.getParent(), "location", LIST_MUTE_CONFIGS_2_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
         listNotificationConfigsTransportSettings =
@@ -972,6 +1036,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListResourceValueConfigsRequest, ListResourceValueConfigsResponse>
         listResourceValueConfigsTransportSettings =
@@ -984,6 +1049,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListSourcesRequest, ListSourcesResponse> listSourcesTransportSettings =
         GrpcCallSettings.<ListSourcesRequest, ListSourcesResponse>newBuilder()
@@ -994,6 +1060,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListValuedResourcesRequest, ListValuedResourcesResponse>
         listValuedResourcesTransportSettings =
@@ -1005,6 +1072,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SetFindingStateRequest, Finding> setFindingStateTransportSettings =
         GrpcCallSettings.<SetFindingStateRequest, Finding>newBuilder()
@@ -1015,6 +1083,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -1025,6 +1094,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetMuteRequest, Finding> setMuteTransportSettings =
         GrpcCallSettings.<SetMuteRequest, Finding>newBuilder()
@@ -1035,6 +1105,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1046,6 +1117,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<UpdateBigQueryExportRequest, BigQueryExport>
         updateBigQueryExportTransportSettings =

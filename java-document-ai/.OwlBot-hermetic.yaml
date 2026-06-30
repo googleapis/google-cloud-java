@@ -19,6 +19,9 @@ deep-remove-regex:
 - "/java-document-ai/proto-google-.*/src"
 - "/java-document-ai/google-.*/src"
 
+deep-preserve-regex:
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+
 deep-copy-regex:
 - source: "/google/cloud/documentai/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-document-ai/$1/proto-google-cloud-document-ai-$1/src"

@@ -1,0 +1,408 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.apihub.v1",
+  "libraryPackage": "com.google.cloud.apihub.v1",
+  "services": {
+    "ApiHub": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ApiHubClient",
+          "rpcs": {
+            "CreateApi": {
+              "methods": ["createApi", "createApi", "createApi", "createApiCallable"]
+            },
+            "CreateApiOperation": {
+              "methods": ["createApiOperation", "createApiOperation", "createApiOperation", "createApiOperationCallable"]
+            },
+            "CreateAttribute": {
+              "methods": ["createAttribute", "createAttribute", "createAttribute", "createAttributeCallable"]
+            },
+            "CreateDeployment": {
+              "methods": ["createDeployment", "createDeployment", "createDeployment", "createDeploymentCallable"]
+            },
+            "CreateExternalApi": {
+              "methods": ["createExternalApi", "createExternalApi", "createExternalApi", "createExternalApiCallable"]
+            },
+            "CreateSpec": {
+              "methods": ["createSpec", "createSpec", "createSpec", "createSpecCallable"]
+            },
+            "CreateVersion": {
+              "methods": ["createVersion", "createVersion", "createVersion", "createVersionCallable"]
+            },
+            "DeleteApi": {
+              "methods": ["deleteApi", "deleteApi", "deleteApi", "deleteApiCallable"]
+            },
+            "DeleteApiOperation": {
+              "methods": ["deleteApiOperation", "deleteApiOperation", "deleteApiOperation", "deleteApiOperationCallable"]
+            },
+            "DeleteAttribute": {
+              "methods": ["deleteAttribute", "deleteAttribute", "deleteAttribute", "deleteAttributeCallable"]
+            },
+            "DeleteDeployment": {
+              "methods": ["deleteDeployment", "deleteDeployment", "deleteDeployment", "deleteDeploymentCallable"]
+            },
+            "DeleteExternalApi": {
+              "methods": ["deleteExternalApi", "deleteExternalApi", "deleteExternalApi", "deleteExternalApiCallable"]
+            },
+            "DeleteSpec": {
+              "methods": ["deleteSpec", "deleteSpec", "deleteSpec", "deleteSpecCallable"]
+            },
+            "DeleteVersion": {
+              "methods": ["deleteVersion", "deleteVersion", "deleteVersion", "deleteVersionCallable"]
+            },
+            "GetApi": {
+              "methods": ["getApi", "getApi", "getApi", "getApiCallable"]
+            },
+            "GetApiOperation": {
+              "methods": ["getApiOperation", "getApiOperation", "getApiOperation", "getApiOperationCallable"]
+            },
+            "GetAttribute": {
+              "methods": ["getAttribute", "getAttribute", "getAttribute", "getAttributeCallable"]
+            },
+            "GetDefinition": {
+              "methods": ["getDefinition", "getDefinition", "getDefinition", "getDefinitionCallable"]
+            },
+            "GetDeployment": {
+              "methods": ["getDeployment", "getDeployment", "getDeployment", "getDeploymentCallable"]
+            },
+            "GetExternalApi": {
+              "methods": ["getExternalApi", "getExternalApi", "getExternalApi", "getExternalApiCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetSpec": {
+              "methods": ["getSpec", "getSpec", "getSpec", "getSpecCallable"]
+            },
+            "GetSpecContents": {
+              "methods": ["getSpecContents", "getSpecContents", "getSpecContents", "getSpecContentsCallable"]
+            },
+            "GetVersion": {
+              "methods": ["getVersion", "getVersion", "getVersion", "getVersionCallable"]
+            },
+            "ListApiOperations": {
+              "methods": ["listApiOperations", "listApiOperations", "listApiOperations", "listApiOperationsPagedCallable", "listApiOperationsCallable"]
+            },
+            "ListApis": {
+              "methods": ["listApis", "listApis", "listApis", "listApisPagedCallable", "listApisCallable"]
+            },
+            "ListAttributes": {
+              "methods": ["listAttributes", "listAttributes", "listAttributes", "listAttributesPagedCallable", "listAttributesCallable"]
+            },
+            "ListDeployments": {
+              "methods": ["listDeployments", "listDeployments", "listDeployments", "listDeploymentsPagedCallable", "listDeploymentsCallable"]
+            },
+            "ListExternalApis": {
+              "methods": ["listExternalApis", "listExternalApis", "listExternalApis", "listExternalApisPagedCallable", "listExternalApisCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListSpecs": {
+              "methods": ["listSpecs", "listSpecs", "listSpecs", "listSpecsPagedCallable", "listSpecsCallable"]
+            },
+            "ListVersions": {
+              "methods": ["listVersions", "listVersions", "listVersions", "listVersionsPagedCallable", "listVersionsCallable"]
+            },
+            "SearchResources": {
+              "methods": ["searchResources", "searchResources", "searchResources", "searchResourcesPagedCallable", "searchResourcesCallable"]
+            },
+            "UpdateApi": {
+              "methods": ["updateApi", "updateApi", "updateApiCallable"]
+            },
+            "UpdateApiOperation": {
+              "methods": ["updateApiOperation", "updateApiOperation", "updateApiOperationCallable"]
+            },
+            "UpdateAttribute": {
+              "methods": ["updateAttribute", "updateAttribute", "updateAttributeCallable"]
+            },
+            "UpdateDeployment": {
+              "methods": ["updateDeployment", "updateDeployment", "updateDeploymentCallable"]
+            },
+            "UpdateExternalApi": {
+              "methods": ["updateExternalApi", "updateExternalApi", "updateExternalApiCallable"]
+            },
+            "UpdateSpec": {
+              "methods": ["updateSpec", "updateSpec", "updateSpecCallable"]
+            },
+            "UpdateVersion": {
+              "methods": ["updateVersion", "updateVersion", "updateVersionCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ApiHubDependencies": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ApiHubDependenciesClient",
+          "rpcs": {
+            "CreateDependency": {
+              "methods": ["createDependency", "createDependency", "createDependency", "createDependencyCallable"]
+            },
+            "DeleteDependency": {
+              "methods": ["deleteDependency", "deleteDependency", "deleteDependency", "deleteDependencyCallable"]
+            },
+            "GetDependency": {
+              "methods": ["getDependency", "getDependency", "getDependency", "getDependencyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListDependencies": {
+              "methods": ["listDependencies", "listDependencies", "listDependencies", "listDependenciesPagedCallable", "listDependenciesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateDependency": {
+              "methods": ["updateDependency", "updateDependency", "updateDependencyCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ApiHubCollect": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ApiHubCollectClient",
+          "rpcs": {
+            "CollectApiData": {
+              "methods": ["collectApiDataAsync", "collectApiDataAsync", "collectApiDataAsync", "collectApiDataOperationCallable", "collectApiDataCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ApiHubCurate": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ApiHubCurateClient",
+          "rpcs": {
+            "CreateCuration": {
+              "methods": ["createCuration", "createCuration", "createCuration", "createCurationCallable"]
+            },
+            "DeleteCuration": {
+              "methods": ["deleteCuration", "deleteCuration", "deleteCuration", "deleteCurationCallable"]
+            },
+            "GetCuration": {
+              "methods": ["getCuration", "getCuration", "getCuration", "getCurationCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListCurations": {
+              "methods": ["listCurations", "listCurations", "listCurations", "listCurationsPagedCallable", "listCurationsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateCuration": {
+              "methods": ["updateCuration", "updateCuration", "updateCurationCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ApiHubDiscovery": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ApiHubDiscoveryClient",
+          "rpcs": {
+            "GetDiscoveredApiObservation": {
+              "methods": ["getDiscoveredApiObservation", "getDiscoveredApiObservation", "getDiscoveredApiObservation", "getDiscoveredApiObservationCallable"]
+            },
+            "GetDiscoveredApiOperation": {
+              "methods": ["getDiscoveredApiOperation", "getDiscoveredApiOperation", "getDiscoveredApiOperation", "getDiscoveredApiOperationCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListDiscoveredApiObservations": {
+              "methods": ["listDiscoveredApiObservations", "listDiscoveredApiObservations", "listDiscoveredApiObservations", "listDiscoveredApiObservationsPagedCallable", "listDiscoveredApiObservationsCallable"]
+            },
+            "ListDiscoveredApiOperations": {
+              "methods": ["listDiscoveredApiOperations", "listDiscoveredApiOperations", "listDiscoveredApiOperations", "listDiscoveredApiOperationsPagedCallable", "listDiscoveredApiOperationsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "HostProjectRegistrationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HostProjectRegistrationServiceClient",
+          "rpcs": {
+            "CreateHostProjectRegistration": {
+              "methods": ["createHostProjectRegistration", "createHostProjectRegistration", "createHostProjectRegistration", "createHostProjectRegistrationCallable"]
+            },
+            "GetHostProjectRegistration": {
+              "methods": ["getHostProjectRegistration", "getHostProjectRegistration", "getHostProjectRegistration", "getHostProjectRegistrationCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListHostProjectRegistrations": {
+              "methods": ["listHostProjectRegistrations", "listHostProjectRegistrations", "listHostProjectRegistrations", "listHostProjectRegistrationsPagedCallable", "listHostProjectRegistrationsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "LintingService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LintingServiceClient",
+          "rpcs": {
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetStyleGuide": {
+              "methods": ["getStyleGuide", "getStyleGuide", "getStyleGuide", "getStyleGuideCallable"]
+            },
+            "GetStyleGuideContents": {
+              "methods": ["getStyleGuideContents", "getStyleGuideContents", "getStyleGuideContents", "getStyleGuideContentsCallable"]
+            },
+            "LintSpec": {
+              "methods": ["lintSpec", "lintSpecCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateStyleGuide": {
+              "methods": ["updateStyleGuide", "updateStyleGuide", "updateStyleGuideCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ApiHubPlugin": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ApiHubPluginClient",
+          "rpcs": {
+            "CreatePlugin": {
+              "methods": ["createPlugin", "createPlugin", "createPlugin", "createPluginCallable"]
+            },
+            "CreatePluginInstance": {
+              "methods": ["createPluginInstanceAsync", "createPluginInstanceAsync", "createPluginInstanceAsync", "createPluginInstanceOperationCallable", "createPluginInstanceCallable"]
+            },
+            "DeletePlugin": {
+              "methods": ["deletePluginAsync", "deletePluginAsync", "deletePluginAsync", "deletePluginOperationCallable", "deletePluginCallable"]
+            },
+            "DeletePluginInstance": {
+              "methods": ["deletePluginInstanceAsync", "deletePluginInstanceAsync", "deletePluginInstanceAsync", "deletePluginInstanceOperationCallable", "deletePluginInstanceCallable"]
+            },
+            "DisablePlugin": {
+              "methods": ["disablePlugin", "disablePlugin", "disablePlugin", "disablePluginCallable"]
+            },
+            "DisablePluginInstanceAction": {
+              "methods": ["disablePluginInstanceActionAsync", "disablePluginInstanceActionAsync", "disablePluginInstanceActionAsync", "disablePluginInstanceActionOperationCallable", "disablePluginInstanceActionCallable"]
+            },
+            "EnablePlugin": {
+              "methods": ["enablePlugin", "enablePlugin", "enablePlugin", "enablePluginCallable"]
+            },
+            "EnablePluginInstanceAction": {
+              "methods": ["enablePluginInstanceActionAsync", "enablePluginInstanceActionAsync", "enablePluginInstanceActionAsync", "enablePluginInstanceActionOperationCallable", "enablePluginInstanceActionCallable"]
+            },
+            "ExecutePluginInstanceAction": {
+              "methods": ["executePluginInstanceActionAsync", "executePluginInstanceActionAsync", "executePluginInstanceActionAsync", "executePluginInstanceActionOperationCallable", "executePluginInstanceActionCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPlugin": {
+              "methods": ["getPlugin", "getPlugin", "getPlugin", "getPluginCallable"]
+            },
+            "GetPluginInstance": {
+              "methods": ["getPluginInstance", "getPluginInstance", "getPluginInstance", "getPluginInstanceCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListPluginInstances": {
+              "methods": ["listPluginInstances", "listPluginInstances", "listPluginInstances", "listPluginInstancesPagedCallable", "listPluginInstancesCallable"]
+            },
+            "ListPlugins": {
+              "methods": ["listPlugins", "listPlugins", "listPlugins", "listPluginsPagedCallable", "listPluginsCallable"]
+            },
+            "UpdatePluginInstance": {
+              "methods": ["updatePluginInstance", "updatePluginInstance", "updatePluginInstanceCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Provisioning": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProvisioningClient",
+          "rpcs": {
+            "CreateApiHubInstance": {
+              "methods": ["createApiHubInstanceAsync", "createApiHubInstanceAsync", "createApiHubInstanceAsync", "createApiHubInstanceOperationCallable", "createApiHubInstanceCallable"]
+            },
+            "DeleteApiHubInstance": {
+              "methods": ["deleteApiHubInstanceAsync", "deleteApiHubInstanceAsync", "deleteApiHubInstanceAsync", "deleteApiHubInstanceOperationCallable", "deleteApiHubInstanceCallable"]
+            },
+            "GetApiHubInstance": {
+              "methods": ["getApiHubInstance", "getApiHubInstance", "getApiHubInstance", "getApiHubInstanceCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "LookupApiHubInstance": {
+              "methods": ["lookupApiHubInstance", "lookupApiHubInstance", "lookupApiHubInstance", "lookupApiHubInstanceCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RuntimeProjectAttachmentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RuntimeProjectAttachmentServiceClient",
+          "rpcs": {
+            "CreateRuntimeProjectAttachment": {
+              "methods": ["createRuntimeProjectAttachment", "createRuntimeProjectAttachment", "createRuntimeProjectAttachment", "createRuntimeProjectAttachmentCallable"]
+            },
+            "DeleteRuntimeProjectAttachment": {
+              "methods": ["deleteRuntimeProjectAttachment", "deleteRuntimeProjectAttachment", "deleteRuntimeProjectAttachment", "deleteRuntimeProjectAttachmentCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetRuntimeProjectAttachment": {
+              "methods": ["getRuntimeProjectAttachment", "getRuntimeProjectAttachment", "getRuntimeProjectAttachment", "getRuntimeProjectAttachmentCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListRuntimeProjectAttachments": {
+              "methods": ["listRuntimeProjectAttachments", "listRuntimeProjectAttachments", "listRuntimeProjectAttachments", "listRuntimeProjectAttachmentsPagedCallable", "listRuntimeProjectAttachmentsCallable"]
+            },
+            "LookupRuntimeProjectAttachment": {
+              "methods": ["lookupRuntimeProjectAttachment", "lookupRuntimeProjectAttachment", "lookupRuntimeProjectAttachment", "lookupRuntimeProjectAttachmentCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

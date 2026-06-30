@@ -1,0 +1,11 @@
+{
+  "api_shortname": "google-cloud-shared-config",
+  "name_pretty": "Google Cloud Shared Build Configs",
+  "release_level": "preview",
+  "client_documentation": "https://n/a",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-shared-config",
+  "distribution_name": "com.google.cloud:google-cloud-shared-config",
+  "library_type": "OTHER"
+}

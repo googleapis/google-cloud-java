@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * model.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/networkconnectivity/v1alpha1/hub.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class HubServiceGrpc {
 
@@ -505,6 +502,19 @@ public final class HubServiceGrpc {
     return HubServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static HubServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<HubServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<HubServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public HubServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new HubServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return HubServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -876,6 +886,169 @@ public final class HubServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service HubService.
+   *
+   * <pre>
+   * Network Connectivity Center is a hub-and-spoke abstraction for
+   * network connectivity management in Google Cloud. It reduces
+   * operational complexity through a simple, centralized connectivity management
+   * model.
+   * </pre>
+   */
+  public static final class HubServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<HubServiceBlockingV2Stub> {
+    private HubServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected HubServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new HubServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Hubs in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1alpha1.ListHubsResponse listHubs(
+        com.google.cloud.networkconnectivity.v1alpha1.ListHubsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListHubsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Hub.
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1alpha1.Hub getHub(
+        com.google.cloud.networkconnectivity.v1alpha1.GetHubRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetHubMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Hub in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createHub(
+        com.google.cloud.networkconnectivity.v1alpha1.CreateHubRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateHubMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Hub.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateHub(
+        com.google.cloud.networkconnectivity.v1alpha1.UpdateHubRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateHubMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Hub.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteHub(
+        com.google.cloud.networkconnectivity.v1alpha1.DeleteHubRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteHubMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Spokes in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1alpha1.ListSpokesResponse listSpokes(
+        com.google.cloud.networkconnectivity.v1alpha1.ListSpokesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListSpokesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Spoke.
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1alpha1.Spoke getSpoke(
+        com.google.cloud.networkconnectivity.v1alpha1.GetSpokeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetSpokeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Spoke in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSpoke(
+        com.google.cloud.networkconnectivity.v1alpha1.CreateSpokeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateSpokeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Spoke.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateSpoke(
+        com.google.cloud.networkconnectivity.v1alpha1.UpdateSpokeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateSpokeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Spoke.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSpoke(
+        com.google.cloud.networkconnectivity.v1alpha1.DeleteSpokeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteSpokeMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service HubService.
    *
    * <pre>
    * Network Connectivity Center is a hub-and-spoke abstraction for

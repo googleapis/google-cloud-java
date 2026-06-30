@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -120,6 +120,46 @@ public class MockBatchServiceImpl extends BatchServiceImplBase {
   }
 
   @Override
+  public void cancelJob(CancelJobRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateJob(UpdateJobRequest request, StreamObserver<Job> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Job) {
+      requests.add(request);
+      responseObserver.onNext(((Job) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Job.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listJobs(ListJobsRequest request, StreamObserver<ListJobsResponse> responseObserver) {
     Object response = responses.poll();
     if (response instanceof ListJobsResponse) {
@@ -194,7 +234,8 @@ public class MockBatchServiceImpl extends BatchServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateResourceAllowance, expected %s or %s",
+                  "Unrecognized response type %s for method CreateResourceAllowance, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ResourceAllowance.class.getName(),
                   Exception.class.getName())));
@@ -215,7 +256,8 @@ public class MockBatchServiceImpl extends BatchServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetResourceAllowance, expected %s or %s",
+                  "Unrecognized response type %s for method GetResourceAllowance, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ResourceAllowance.class.getName(),
                   Exception.class.getName())));
@@ -236,7 +278,8 @@ public class MockBatchServiceImpl extends BatchServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteResourceAllowance, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteResourceAllowance, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -258,7 +301,8 @@ public class MockBatchServiceImpl extends BatchServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListResourceAllowances, expected %s or %s",
+                  "Unrecognized response type %s for method ListResourceAllowances, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListResourceAllowancesResponse.class.getName(),
                   Exception.class.getName())));
@@ -279,7 +323,8 @@ public class MockBatchServiceImpl extends BatchServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateResourceAllowance, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateResourceAllowance, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ResourceAllowance.class.getName(),
                   Exception.class.getName())));

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -446,6 +446,17 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
             typeRegistry,
             ImmutableMap.<String, HttpRule>builder()
                 .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost(
+                            "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1alpha/{name=projects/*/locations/*/dataStores/*/branches/*/operations/*}:cancel")
+                                .build())
+                        .build())
+                .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet(
@@ -512,7 +523,17 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/identity_mapping_stores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1alpha/{name=projects/*/locations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/sampleQuerySets/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -581,6 +602,11 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/identity_mapping_stores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1alpha/{name=projects/*/locations/*}/operations")
                                 .build())
                         .addAdditionalBindings(
@@ -600,6 +626,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteEngineRequest, Operation> deleteEngineTransportSettings =
         HttpJsonCallSettings.<DeleteEngineRequest, Operation>newBuilder()
@@ -611,6 +638,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateEngineRequest, Engine> updateEngineTransportSettings =
         HttpJsonCallSettings.<UpdateEngineRequest, Engine>newBuilder()
@@ -633,6 +661,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListEnginesRequest, ListEnginesResponse> listEnginesTransportSettings =
         HttpJsonCallSettings.<ListEnginesRequest, ListEnginesResponse>newBuilder()
@@ -644,6 +673,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<PauseEngineRequest, Engine> pauseEngineTransportSettings =
         HttpJsonCallSettings.<PauseEngineRequest, Engine>newBuilder()
@@ -655,6 +685,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ResumeEngineRequest, Engine> resumeEngineTransportSettings =
         HttpJsonCallSettings.<ResumeEngineRequest, Engine>newBuilder()
@@ -666,6 +697,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<TuneEngineRequest, Operation> tuneEngineTransportSettings =
         HttpJsonCallSettings.<TuneEngineRequest, Operation>newBuilder()
@@ -677,6 +709,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createEngineCallable =

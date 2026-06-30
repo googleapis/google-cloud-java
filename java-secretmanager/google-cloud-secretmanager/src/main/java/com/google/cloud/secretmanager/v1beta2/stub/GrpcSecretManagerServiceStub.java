@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,6 +80,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSecretsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSecretsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSecretRequest, Secret> createSecretMethodDescriptor =
@@ -88,6 +89,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setFullMethodName("google.cloud.secretmanager.v1beta2.SecretManagerService/CreateSecret")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSecretRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Secret.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<AddSecretVersionRequest, SecretVersion>
@@ -99,6 +101,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AddSecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSecretRequest, Secret> getSecretMethodDescriptor =
@@ -107,6 +110,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setFullMethodName("google.cloud.secretmanager.v1beta2.SecretManagerService/GetSecret")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSecretRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Secret.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSecretRequest, Secret> updateSecretMethodDescriptor =
@@ -115,6 +119,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setFullMethodName("google.cloud.secretmanager.v1beta2.SecretManagerService/UpdateSecret")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSecretRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Secret.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteSecretRequest, Empty> deleteSecretMethodDescriptor =
@@ -123,6 +128,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setFullMethodName("google.cloud.secretmanager.v1beta2.SecretManagerService/DeleteSecret")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSecretRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListSecretVersionsRequest, ListSecretVersionsResponse>
@@ -135,6 +141,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   ProtoUtils.marshaller(ListSecretVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSecretVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSecretVersionRequest, SecretVersion>
@@ -146,6 +153,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AccessSecretVersionRequest, AccessSecretVersionResponse>
@@ -158,6 +166,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   ProtoUtils.marshaller(AccessSecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AccessSecretVersionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DisableSecretVersionRequest, SecretVersion>
@@ -169,6 +178,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DisableSecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EnableSecretVersionRequest, SecretVersion>
@@ -180,6 +190,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EnableSecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DestroySecretVersionRequest, SecretVersion>
@@ -191,6 +202,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DestroySecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -199,6 +211,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setFullMethodName("google.cloud.secretmanager.v1beta2.SecretManagerService/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -207,6 +220,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setFullMethodName("google.cloud.secretmanager.v1beta2.SecretManagerService/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -219,6 +233,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -230,6 +245,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -238,6 +254,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListSecretsRequest, ListSecretsResponse> listSecretsCallable;
@@ -323,6 +340,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateSecretRequest, Secret> createSecretTransportSettings =
         GrpcCallSettings.<CreateSecretRequest, Secret>newBuilder()
@@ -333,6 +351,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<AddSecretVersionRequest, SecretVersion> addSecretVersionTransportSettings =
         GrpcCallSettings.<AddSecretVersionRequest, SecretVersion>newBuilder()
@@ -343,6 +362,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSecretRequest, Secret> getSecretTransportSettings =
         GrpcCallSettings.<GetSecretRequest, Secret>newBuilder()
@@ -353,6 +373,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSecretRequest, Secret> updateSecretTransportSettings =
         GrpcCallSettings.<UpdateSecretRequest, Secret>newBuilder()
@@ -373,6 +394,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSecretVersionsRequest, ListSecretVersionsResponse>
         listSecretVersionsTransportSettings =
@@ -384,6 +406,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetSecretVersionRequest, SecretVersion> getSecretVersionTransportSettings =
         GrpcCallSettings.<GetSecretVersionRequest, SecretVersion>newBuilder()
@@ -394,6 +417,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<AccessSecretVersionRequest, AccessSecretVersionResponse>
         accessSecretVersionTransportSettings =
@@ -405,6 +429,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DisableSecretVersionRequest, SecretVersion>
         disableSecretVersionTransportSettings =
@@ -416,6 +441,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<EnableSecretVersionRequest, SecretVersion>
         enableSecretVersionTransportSettings =
@@ -427,6 +453,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DestroySecretVersionRequest, SecretVersion>
         destroySecretVersionTransportSettings =
@@ -438,6 +465,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -448,6 +476,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -458,6 +487,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -469,6 +499,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

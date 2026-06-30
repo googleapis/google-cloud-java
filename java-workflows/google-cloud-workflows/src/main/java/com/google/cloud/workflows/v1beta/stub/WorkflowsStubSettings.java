@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,13 @@
 
 package com.google.cloud.workflows.v1beta.stub;
 
+import static com.google.cloud.workflows.v1beta.WorkflowsClient.ListLocationsPagedResponse;
 import static com.google.cloud.workflows.v1beta.WorkflowsClient.ListWorkflowsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -37,6 +39,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -47,6 +50,10 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.workflows.v1beta.CreateWorkflowRequest;
 import com.google.cloud.workflows.v1beta.DeleteWorkflowRequest;
 import com.google.cloud.workflows.v1beta.GetWorkflowRequest;
@@ -62,9 +69,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -81,7 +88,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getWorkflow to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getWorkflow:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -97,13 +106,50 @@ import org.threeten.bp.Duration;
  *             .getWorkflowSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * WorkflowsStubSettings workflowsSettings = workflowsSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createWorkflow:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * WorkflowsStubSettings.Builder workflowsSettingsBuilder = WorkflowsStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * workflowsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -122,6 +168,10 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
   private final UnaryCallSettings<UpdateWorkflowRequest, Operation> updateWorkflowSettings;
   private final OperationCallSettings<UpdateWorkflowRequest, Workflow, OperationMetadata>
       updateWorkflowOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<ListWorkflowsRequest, ListWorkflowsResponse, Workflow>
       LIST_WORKFLOWS_PAGE_STR_DESC =
@@ -153,9 +203,41 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
 
             @Override
             public Iterable<Workflow> extractResources(ListWorkflowsResponse payload) {
-              return payload.getWorkflowsList() == null
-                  ? ImmutableList.<Workflow>of()
-                  : payload.getWorkflowsList();
+              return payload.getWorkflowsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList();
             }
           };
 
@@ -173,6 +255,23 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
               PageContext<ListWorkflowsRequest, ListWorkflowsResponse, Workflow> pageContext =
                   PageContext.create(callable, LIST_WORKFLOWS_PAGE_STR_DESC, request, context);
               return ListWorkflowsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -220,6 +319,17 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
     return updateWorkflowOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
+  }
+
   public WorkflowsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -236,15 +346,6 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -257,6 +358,7 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "workflows.googleapis.com:443";
   }
@@ -345,6 +447,17 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
     deleteWorkflowOperationSettings = settingsBuilder.deleteWorkflowOperationSettings().build();
     updateWorkflowSettings = settingsBuilder.updateWorkflowSettings().build();
     updateWorkflowOperationSettings = settingsBuilder.updateWorkflowOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-workflows")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for WorkflowsStubSettings. */
@@ -366,6 +479,10 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
         updateWorkflowSettings;
     private final OperationCallSettings.Builder<UpdateWorkflowRequest, Workflow, OperationMetadata>
         updateWorkflowOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -401,6 +518,8 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
       deleteWorkflowOperationSettings = OperationCallSettings.newBuilder();
       updateWorkflowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateWorkflowOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -408,7 +527,9 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
               getWorkflowSettings,
               createWorkflowSettings,
               deleteWorkflowSettings,
-              updateWorkflowSettings);
+              updateWorkflowSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -423,6 +544,8 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
       deleteWorkflowOperationSettings = settings.deleteWorkflowOperationSettings.toBuilder();
       updateWorkflowSettings = settings.updateWorkflowSettings.toBuilder();
       updateWorkflowOperationSettings = settings.updateWorkflowOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -430,7 +553,9 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
               getWorkflowSettings,
               createWorkflowSettings,
               deleteWorkflowSettings,
-              updateWorkflowSettings);
+              updateWorkflowSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -484,6 +609,16 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .createWorkflowOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -498,13 +633,13 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -522,13 +657,13 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -546,13 +681,13 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -618,13 +753,16 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
       return updateWorkflowOperationSettings;
     }
 
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

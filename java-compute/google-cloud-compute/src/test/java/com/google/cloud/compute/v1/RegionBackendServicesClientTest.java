@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,6 +89,7 @@ public class RegionBackendServicesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -168,16 +169,21 @@ public class RegionBackendServicesClientTest {
                 BackendServiceConnectionTrackingPolicy.newBuilder().build())
             .setConsistentHash(ConsistentHashLoadBalancerSettings.newBuilder().build())
             .setCreationTimestamp("creationTimestamp-370203401")
+            .addAllCustomMetrics(new ArrayList<BackendServiceCustomMetric>())
             .addAllCustomRequestHeaders(new ArrayList<String>())
             .addAllCustomResponseHeaders(new ArrayList<String>())
             .setDescription("description-1724546052")
             .setEdgeSecurityPolicy("edgeSecurityPolicy-630226001")
             .setEnableCDN(true)
+            .setExternalManagedMigrationState("externalManagedMigrationState252654551")
+            .setExternalManagedMigrationTestingPercentage(1044103374)
             .setFailoverPolicy(BackendServiceFailoverPolicy.newBuilder().build())
             .setFingerprint("fingerprint-1375934236")
+            .setHaPolicy(BackendServiceHAPolicy.newBuilder().build())
             .addAllHealthChecks(new ArrayList<String>())
             .setIap(BackendServiceIAP.newBuilder().build())
             .setId(3355)
+            .setIpAddressSelectionPolicy("ipAddressSelectionPolicy1723019601")
             .setKind("kind3292052")
             .setLoadBalancingScheme("loadBalancingScheme-1223583272")
             .addAllLocalityLbPolicies(
@@ -188,7 +194,11 @@ public class RegionBackendServicesClientTest {
             .putAllMetadatas(new HashMap<String, String>())
             .setName("name3373707")
             .setNetwork("network1843485230")
+            .setNetworkPassThroughLbTrafficPolicy(
+                BackendServiceNetworkPassThroughLbTrafficPolicy.newBuilder().build())
+            .setOrchestrationInfo(BackendServiceOrchestrationInfo.newBuilder().build())
             .setOutlierDetection(OutlierDetection.newBuilder().build())
+            .setParams(BackendServiceParams.newBuilder().build())
             .setPort(3446913)
             .setPortName("portName728194732")
             .setProtocol("protocol-989163880")
@@ -199,8 +209,10 @@ public class RegionBackendServicesClientTest {
             .addAllServiceBindings(new ArrayList<String>())
             .setServiceLbPolicy("serviceLbPolicy-347155427")
             .setSessionAffinity("sessionAffinity-289859106")
+            .setStrongSessionAffinityCookie(BackendServiceHttpCookie.newBuilder().build())
             .setSubsetting(Subsetting.newBuilder().build())
             .setTimeoutSec(-2067488653)
+            .setTlsSettings(BackendServiceTlsSettings.newBuilder().build())
             .addAllUsedBy(new ArrayList<BackendServiceUsedBy>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -308,7 +320,6 @@ public class RegionBackendServicesClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -362,6 +373,7 @@ public class RegionBackendServicesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -540,6 +552,7 @@ public class RegionBackendServicesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -616,7 +629,6 @@ public class RegionBackendServicesClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -675,6 +687,7 @@ public class RegionBackendServicesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -810,6 +823,7 @@ public class RegionBackendServicesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)

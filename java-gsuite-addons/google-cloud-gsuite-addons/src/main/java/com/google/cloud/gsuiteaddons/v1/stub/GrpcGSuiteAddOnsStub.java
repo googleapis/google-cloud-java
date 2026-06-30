@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAuthorizationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Authorization.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDeploymentRequest, Deployment>
@@ -72,6 +73,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReplaceDeploymentRequest, Deployment>
@@ -82,6 +84,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReplaceDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDeploymentRequest, Deployment>
@@ -92,6 +95,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDeploymentsRequest, ListDeploymentsResponse>
@@ -103,6 +107,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                   ProtoUtils.marshaller(ListDeploymentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeploymentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDeploymentRequest, Empty>
@@ -113,6 +118,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InstallDeploymentRequest, Empty>
@@ -123,6 +129,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InstallDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UninstallDeploymentRequest, Empty>
@@ -133,6 +140,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UninstallDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInstallStatusRequest, InstallStatus>
@@ -143,6 +151,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetInstallStatusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InstallStatus.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetAuthorizationRequest, Authorization> getAuthorizationCallable;
@@ -209,6 +218,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDeploymentRequest, Deployment> createDeploymentTransportSettings =
         GrpcCallSettings.<CreateDeploymentRequest, Deployment>newBuilder()
@@ -219,6 +229,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ReplaceDeploymentRequest, Deployment> replaceDeploymentTransportSettings =
         GrpcCallSettings.<ReplaceDeploymentRequest, Deployment>newBuilder()
@@ -239,6 +250,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDeploymentsRequest, ListDeploymentsResponse>
         listDeploymentsTransportSettings =
@@ -250,6 +262,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteDeploymentRequest, Empty> deleteDeploymentTransportSettings =
         GrpcCallSettings.<DeleteDeploymentRequest, Empty>newBuilder()
@@ -260,6 +273,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<InstallDeploymentRequest, Empty> installDeploymentTransportSettings =
         GrpcCallSettings.<InstallDeploymentRequest, Empty>newBuilder()
@@ -270,6 +284,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UninstallDeploymentRequest, Empty> uninstallDeploymentTransportSettings =
         GrpcCallSettings.<UninstallDeploymentRequest, Empty>newBuilder()
@@ -280,6 +295,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetInstallStatusRequest, InstallStatus> getInstallStatusTransportSettings =
         GrpcCallSettings.<GetInstallStatusRequest, InstallStatus>newBuilder()
@@ -290,6 +306,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getAuthorizationCallable =

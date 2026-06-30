@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ option go_package = "cloud.google.com/go/chat/apiv1/chatpb;chatpb";
 option java_multiple_files = true;
 option java_outer_classname = "AttachmentProto";
 option java_package = "com.google.chat.v1";
+option objc_class_prefix = "DYNAPIProto";
 option php_namespace = "Google\\Apps\\Chat\\V1";
 option ruby_package = "Google::Apps::Chat::V1";
 
@@ -34,17 +35,22 @@ message Attachment {
     pattern: "spaces/{space}/messages/{message}/attachments/{attachment}"
   };
 
+  // The source of the attachment.
   enum Source {
+    // Reserved.
     SOURCE_UNSPECIFIED = 0;
 
+    // The file is a Google Drive file.
     DRIVE_FILE = 1;
 
+    // The file is uploaded to Chat.
     UPLOADED_CONTENT = 2;
   }
 
-  // Resource name of the attachment, in the form
-  // `spaces/*/messages/*/attachments/*`.
-  string name = 1;
+  // Identifier. Resource name of the attachment.
+  //
+  // Format: `spaces/{space}/messages/{message}/attachments/{attachment}`.
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Output only. The original file name for the content, not the full path.
   string content_name = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -52,10 +58,13 @@ message Attachment {
   // Output only. The content type (MIME type) of the file.
   string content_type = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
+  // The data reference to the attachment.
   oneof data_ref {
-    // A reference to the attachment data. This field is used with the media API
-    // to download the attachment data.
-    AttachmentDataRef attachment_data_ref = 4;
+    // Optional. A reference to the attachment data. This field is used to
+    // create or update messages with attachments, or with the media API to
+    // download the attachment data.
+    AttachmentDataRef attachment_data_ref = 4
+        [(google.api.field_behavior) = OPTIONAL];
 
     // Output only. A reference to the Google Drive attachment. This field is
     // used with the Google Drive API.
@@ -82,26 +91,29 @@ message DriveDataRef {
   string drive_file_id = 2;
 }
 
+// A reference to the attachment data.
 message AttachmentDataRef {
-  // The resource name of the attachment data. This field is used with the media
-  // API to download the attachment data.
-  string resource_name = 1;
+  // Optional. The resource name of the attachment data. This field is used with
+  // the media API to download the attachment data.
+  string resource_name = 1 [(google.api.field_behavior) = OPTIONAL];
 
-  // Opaque token containing a reference to an uploaded attachment. Treated by
-  // clients as an opaque string and used to create or update Chat messages with
-  // attachments.
-  string attachment_upload_token = 2;
+  // Optional. Opaque token containing a reference to an uploaded attachment.
+  // Treated by clients as an opaque string and used to create or update Chat
+  // messages with attachments.
+  string attachment_upload_token = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Request to get an attachment.
 message GetAttachmentRequest {
   // Required. Resource name of the attachment, in the form
-  // `spaces/*/messages/*/attachments/*`.
+  // `spaces/{space}/messages/{message}/attachments/{attachment}`.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = { type: "chat.googleapis.com/Attachment" }
   ];
 }
 
+// Request to upload an attachment.
 message UploadAttachmentRequest {
   // Required. Resource name of the Chat space in which the attachment is
   // uploaded. Format "spaces/{space}".
@@ -116,6 +128,7 @@ message UploadAttachmentRequest {
   string filename = 4 [(google.api.field_behavior) = REQUIRED];
 }
 
+// Response of uploading an attachment.
 message UploadAttachmentResponse {
   // Reference to the uploaded attachment.
   AttachmentDataRef attachment_data_ref = 1;

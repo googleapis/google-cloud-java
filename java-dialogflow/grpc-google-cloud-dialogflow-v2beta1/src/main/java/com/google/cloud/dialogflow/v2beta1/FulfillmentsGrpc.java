@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Fulfillments][google.cloud.dialogflow.v2beta1.Fulfillment].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2beta1/fulfillment.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FulfillmentsGrpc {
 
@@ -140,6 +137,19 @@ public final class FulfillmentsGrpc {
           }
         };
     return FulfillmentsStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static FulfillmentsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<FulfillmentsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<FulfillmentsBlockingV2Stub>() {
+          @java.lang.Override
+          public FulfillmentsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new FulfillmentsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return FulfillmentsBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -284,6 +294,55 @@ public final class FulfillmentsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Fulfillments.
+   *
+   * <pre>
+   * Service for managing
+   * [Fulfillments][google.cloud.dialogflow.v2beta1.Fulfillment].
+   * </pre>
+   */
+  public static final class FulfillmentsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<FulfillmentsBlockingV2Stub> {
+    private FulfillmentsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected FulfillmentsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new FulfillmentsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the fulfillment.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Fulfillment getFulfillment(
+        com.google.cloud.dialogflow.v2beta1.GetFulfillmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetFulfillmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the fulfillment.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Fulfillment updateFulfillment(
+        com.google.cloud.dialogflow.v2beta1.UpdateFulfillmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateFulfillmentMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Fulfillments.
    *
    * <pre>
    * Service for managing

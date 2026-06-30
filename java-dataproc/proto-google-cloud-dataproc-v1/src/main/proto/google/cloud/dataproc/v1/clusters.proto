@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -215,6 +215,55 @@ message Cluster {
 
 // The cluster config.
 message ClusterConfig {
+  // The type of the cluster.
+  enum ClusterType {
+    // Not set.
+    CLUSTER_TYPE_UNSPECIFIED = 0;
+
+    // Standard dataproc cluster with a minimum of two primary workers.
+    STANDARD = 1;
+
+    // https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/single-node-clusters
+    SINGLE_NODE = 2;
+
+    // Clusters that can use only secondary workers and be scaled down to zero
+    // secondary worker nodes.
+    ZERO_SCALE = 3;
+  }
+
+  // The cluster tier.
+  enum ClusterTier {
+    // Not set. Works the same as CLUSTER_TIER_STANDARD.
+    CLUSTER_TIER_UNSPECIFIED = 0;
+
+    // Standard Dataproc cluster.
+    CLUSTER_TIER_STANDARD = 1;
+
+    // Premium Dataproc cluster.
+    CLUSTER_TIER_PREMIUM = 2;
+  }
+
+  // The cluster engine.
+  enum Engine {
+    // The engine is not specified. Works the same as ENGINE_DEFAULT.
+    ENGINE_UNSPECIFIED = 0;
+
+    // The cluster is a default engine cluster.
+    DEFAULT = 1;
+
+    // The cluster is a lightning engine cluster.
+    LIGHTNING = 2;
+  }
+
+  // Optional. The type of the cluster.
+  ClusterType cluster_type = 27 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The cluster tier.
+  ClusterTier cluster_tier = 29 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The cluster engine.
+  Engine engine = 30 [(google.api.field_behavior) = OPTIONAL];
+
   // Optional. A Cloud Storage bucket used to stage job
   // dependencies, config files, and job driver console output.
   // If you do not specify a staging bucket, Cloud
@@ -379,9 +428,45 @@ message AutoscalingConfig {
 
 // Encryption settings for the cluster.
 message EncryptionConfig {
-  // Optional. The Cloud KMS key name to use for PD disk encryption for all
-  // instances in the cluster.
+  // Optional. The Cloud KMS key resource name to use for persistent disk
+  // encryption for all instances in the cluster. See [Use CMEK with cluster
+  // data]
+  // (https://cloud.google.com//dataproc/docs/concepts/configuring-clusters/customer-managed-encryption#use_cmek_with_cluster_data)
+  // for more information.
   string gce_pd_kms_key_name = 1 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The Cloud KMS key resource name to use for cluster persistent
+  // disk and job argument encryption. See [Use CMEK with cluster data]
+  // (https://cloud.google.com//dataproc/docs/concepts/configuring-clusters/customer-managed-encryption#use_cmek_with_cluster_data)
+  // for more information.
+  //
+  // When this key resource name is provided, the following job arguments of
+  // the following job types submitted to the cluster are encrypted using CMEK:
+  //
+  // * [FlinkJob
+  // args](https://cloud.google.com/dataproc/docs/reference/rest/v1/FlinkJob)
+  // * [HadoopJob
+  // args](https://cloud.google.com/dataproc/docs/reference/rest/v1/HadoopJob)
+  // * [SparkJob
+  // args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob)
+  // * [SparkRJob
+  // args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkRJob)
+  // * [PySparkJob
+  // args](https://cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob)
+  // * [SparkSqlJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkSqlJob)
+  //   scriptVariables and queryList.queries
+  // * [HiveJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/HiveJob)
+  //   scriptVariables and queryList.queries
+  // * [PigJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PigJob)
+  //   scriptVariables and queryList.queries
+  // * [PrestoJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob)
+  //   scriptVariables and queryList.queries
+  string kms_key = 2 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.resource_reference) = {
+      type: "cloudkms.googleapis.com/CryptoKey"
+    }
+  ];
 }
 
 // Common config settings for resources of Compute Engine cluster
@@ -447,12 +532,22 @@ message GceClusterConfig {
   // * `sub0`
   string subnetwork_uri = 6 [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. If true, all instances in the cluster will only have internal IP
-  // addresses. By default, clusters are not restricted to internal IP
-  // addresses, and will have ephemeral external IP addresses assigned to each
-  // instance. This `internal_ip_only` restriction can only be enabled for
-  // subnetwork enabled networks, and all off-cluster dependencies must be
-  // configured to be accessible without external IP addresses.
+  // Optional. This setting applies to subnetwork-enabled networks. It is set to
+  // `true` by default in clusters created with image versions 2.2.x.
+  //
+  // When set to `true`:
+  //
+  // * All cluster VMs have internal IP addresses.
+  // * [Google Private Access]
+  // (https://cloud.google.com/vpc/docs/private-google-access)
+  // must be enabled to access Dataproc and other Google Cloud APIs.
+  // * Off-cluster dependencies must be configured to be accessible
+  // without external IP addresses.
+  //
+  // When set to `false`:
+  //
+  // * Cluster VMs are not restricted to internal IP addresses.
+  // * Ephemeral external IP addresses are assigned to each cluster VM.
   optional bool internal_ip_only = 7 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. The type of IPv6 access for a cluster.
@@ -489,8 +584,8 @@ message GceClusterConfig {
   repeated string service_account_scopes = 3
       [(google.api.field_behavior) = OPTIONAL];
 
-  // The Compute Engine tags to add to all instances (see [Tagging
-  // instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
+  // The Compute Engine network tags to add to all instances (see [Tagging
+  // instances](https://cloud.google.com/vpc/docs/add-remove-network-tags)).
   repeated string tags = 4;
 
   // Optional. The Compute Engine metadata entries to add to all instances (see
@@ -513,8 +608,15 @@ message GceClusterConfig {
       [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Confidential Instance Config for clusters using [Confidential
-  // VMs](https://cloud.google.com/compute/confidential-vm/docs).
+  // VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs).
   ConfidentialInstanceConfig confidential_instance_config = 15
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. [Resource manager tags]
+  // (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+  // to add to all instances (see [Use secure tags]
+  // (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+  map<string, string> resource_manager_tags = 16
       [(google.api.field_behavior) = OPTIONAL];
 }
 
@@ -550,11 +652,36 @@ message ShieldedInstanceConfig {
 }
 
 // Confidential Instance Config for clusters using [Confidential
-// VMs](https://cloud.google.com/compute/confidential-vm/docs)
+// VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs)
 message ConfidentialInstanceConfig {
-  // Optional. Defines whether the instance should have confidential compute
-  // enabled.
-  bool enable_confidential_compute = 1 [(google.api.field_behavior) = OPTIONAL];
+  // The type of Confidential Compute technology as per [Confidential Computing
+  // types](https://cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance#create-instance).
+  // New values may be added in the future.
+  enum ConfidentialInstanceType {
+    // Confidential Instance Type is not specified.
+    CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED = 0;
+
+    // [AMD Secure Encrypted
+    // Virtualization](https://cloud.google.com/confidential-computing/confidential-vm/docs/confidential-vm-overview#amd_sev)
+    SEV = 1;
+
+    // [AMD Secure Encrypted Virtualization-Secure Nested
+    // Paging](https://cloud.google.com/confidential-computing/confidential-vm/docs/confidential-vm-overview#amd_sev-snp)
+    SEV_SNP = 2;
+
+    // [Intel Trust Domain
+    // Extensions](https://cloud.google.com/confidential-computing/confidential-vm/docs/confidential-vm-overview#intel_tdx)
+    TDX = 3;
+  }
+
+  // Optional. Deprecated: Use 'confidential_instance_type' instead.
+  // Defines whether the instance should have confidential compute enabled.
+  bool enable_confidential_compute = 1
+      [deprecated = true, (google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Defines the type of Confidential Compute technology to use.
+  ConfidentialInstanceType confidential_instance_type = 2
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // The config settings for Compute Engine resources in
@@ -748,6 +875,30 @@ message ManagedGroupConfig {
 // Instance flexibility Policy allowing a mixture of VM shapes and provisioning
 // models.
 message InstanceFlexibilityPolicy {
+  // Defines how Dataproc should create VMs with a mixture of provisioning
+  // models.
+  message ProvisioningModelMix {
+    // Optional. The base capacity that will always use Standard VMs to avoid
+    // risk of more preemption than the minimum capacity you need. Dataproc will
+    // create only standard VMs until it reaches standard_capacity_base, then it
+    // will start using standard_capacity_percent_above_base to mix Spot with
+    // Standard VMs. eg. If 15 instances are requested and
+    // standard_capacity_base is 5, Dataproc will create 5 standard VMs and then
+    // start mixing spot and standard VMs for remaining 10 instances.
+    optional int32 standard_capacity_base = 1
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. The percentage of target capacity that should use Standard VM.
+    // The remaining percentage will use Spot VMs. The percentage applies only
+    // to the capacity above standard_capacity_base. eg. If 15 instances are
+    // requested and standard_capacity_base is 5 and
+    // standard_capacity_percent_above_base is 30, Dataproc will create 5
+    // standard VMs and then start mixing spot and standard VMs for remaining 10
+    // instances. The mix will be 30% standard and 70% spot.
+    optional int32 standard_capacity_percent_above_base = 2
+        [(google.api.field_behavior) = OPTIONAL];
+  }
+
   // Defines machines types and a rank to which the machines types belong.
   message InstanceSelection {
     // Optional. Full machine-type names, e.g. "n1-standard-16".
@@ -772,6 +923,11 @@ message InstanceFlexibilityPolicy {
     optional int32 vm_count = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
   }
 
+  // Optional. Defines how the Group selects the provisioning model to ensure
+  // required reliability.
+  ProvisioningModelMix provisioning_model_mix = 1
+      [(google.api.field_behavior) = OPTIONAL];
+
   // Optional. List of instance selection options that the group will use when
   // creating new VMs.
   repeated InstanceSelection instance_selection_list = 2
@@ -793,15 +949,15 @@ message AcceleratorConfig {
   //
   // Examples:
   //
-  // * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
-  // * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
-  // * `nvidia-tesla-k80`
+  // * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4`
+  // * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4`
+  // * `nvidia-tesla-t4`
   //
   // **Auto Zone Exception**: If you are using the Dataproc
   // [Auto Zone
   // Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
   // feature, you must use the short name of the accelerator type
-  // resource, for example, `nvidia-tesla-k80`.
+  // resource, for example, `nvidia-tesla-t4`.
   string accelerator_type_uri = 1;
 
   // The number of the accelerator cards of this type exposed to this instance.
@@ -837,6 +993,19 @@ message DiskConfig {
   // See [local SSD
   // performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
   string local_ssd_interface = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Indicates how many IOPS to provision for the disk. This sets the
+  // number of I/O operations per second that the disk can handle. Note: This
+  // field is only supported if boot_disk_type is hyperdisk-balanced.
+  optional int64 boot_disk_provisioned_iops = 5
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Indicates how much throughput to provision for the disk. This
+  // sets the number of throughput mb per second that the disk can handle.
+  // Values must be greater than or equal to 1. Note: This field is only
+  // supported if boot_disk_type is hyperdisk-balanced.
+  optional int64 boot_disk_provisioned_throughput = 6
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Node group identification and configuration information.
@@ -1011,7 +1180,7 @@ message KerberosConfig {
   string root_principal_password_uri = 2
       [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. The uri of the KMS key used to encrypt various sensitive
+  // Optional. The URI of the KMS key used to encrypt sensitive
   // files.
   string kms_key_uri = 3 [(google.api.field_behavior) = OPTIONAL];
 
@@ -1085,7 +1254,7 @@ message IdentityConfig {
 message SoftwareConfig {
   // Optional. The version of software inside the cluster. It must be one of the
   // supported [Dataproc
-  // Versions](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#supported_dataproc_versions),
+  // Versions](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#supported-dataproc-image-versions),
   // such as "1.2" (including a subminor version, such as "1.2.29"), or the
   // ["preview"
   // version](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
@@ -1141,6 +1310,32 @@ message LifecycleConfig {
     // maximum value is 14 days (see JSON representation of
     // [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
     google.protobuf.Duration auto_delete_ttl = 3
+        [(google.api.field_behavior) = OPTIONAL];
+  }
+
+  // Optional. The duration to keep the cluster started while idling (when no
+  // jobs are running). Passing this threshold will cause the cluster to be
+  // stopped. Minimum value is 5 minutes; maximum value is 14 days (see JSON
+  // representation of
+  // [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+  google.protobuf.Duration idle_stop_ttl = 5
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Either the exact time the cluster should be stopped at or
+  // the cluster maximum age.
+  oneof stop_ttl {
+    // Optional. The time when cluster will be auto-stopped (see JSON
+    // representation of
+    // [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+    google.protobuf.Timestamp auto_stop_time = 6
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. The lifetime duration of the cluster. The cluster will be
+    // auto-stopped at the end of this period, calculated from the time of
+    // submission of the create or update cluster request. Minimum value is 10
+    // minutes; maximum value is 14 days (see JSON representation of
+    // [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+    google.protobuf.Duration auto_stop_ttl = 7
         [(google.api.field_behavior) = OPTIONAL];
   }
 
@@ -1211,6 +1406,9 @@ message DataprocMetricConfig {
 
     // hivemetastore metric source
     HIVEMETASTORE = 7;
+
+    // flink metric source
+    FLINK = 8;
   }
 
   // A Dataproc custom metric.
@@ -1508,12 +1706,12 @@ message ListClustersRequest {
   // where **field** is one of `status.state`, `clusterName`, or `labels.[KEY]`,
   // and `[KEY]` is a label key. **value** can be `*` to match all values.
   // `status.state` can be one of the following: `ACTIVE`, `INACTIVE`,
-  // `CREATING`, `RUNNING`, `ERROR`, `DELETING`, or `UPDATING`. `ACTIVE`
-  // contains the `CREATING`, `UPDATING`, and `RUNNING` states. `INACTIVE`
-  // contains the `DELETING` and `ERROR` states.
-  // `clusterName` is the name of the cluster provided at creation time.
-  // Only the logical `AND` operator is supported; space-separated items are
-  // treated as having an implicit `AND` operator.
+  // `CREATING`, `RUNNING`, `ERROR`, `DELETING`, `UPDATING`, `STOPPING`, or
+  // `STOPPED`. `ACTIVE` contains the `CREATING`, `UPDATING`, and `RUNNING`
+  // states. `INACTIVE` contains the `DELETING`, `ERROR`, `STOPPING`, and
+  // `STOPPED` states. `clusterName` is the name of the cluster provided at
+  // creation time. Only the logical `AND` operator is supported;
+  // space-separated items are treated as having an implicit `AND` operator.
   //
   // Example filter:
   //
@@ -1541,6 +1739,20 @@ message ListClustersResponse {
 
 // A request to collect cluster diagnostic information.
 message DiagnoseClusterRequest {
+  // Defines who has access to the diagnostic tarball
+  enum TarballAccess {
+    // Tarball Access unspecified. Falls back to default access of the bucket
+    TARBALL_ACCESS_UNSPECIFIED = 0;
+
+    // Google Cloud Support group has read access to the
+    // diagnostic tarball
+    GOOGLE_CLOUD_SUPPORT = 1;
+
+    // Google Cloud Dataproc Diagnose service account has read access to the
+    // diagnostic tarball
+    GOOGLE_DATAPROC_DIAGNOSE = 2;
+  }
+
   // Required. The ID of the Google Cloud Platform project that the cluster
   // belongs to.
   string project_id = 1 [(google.api.field_behavior) = REQUIRED];
@@ -1551,10 +1763,14 @@ message DiagnoseClusterRequest {
   // Required. The cluster name.
   string cluster_name = 2 [(google.api.field_behavior) = REQUIRED];
 
-  // Optional. The output Cloud Storage directory for the diagnostic
+  // Optional. (Optional) The output Cloud Storage directory for the diagnostic
   // tarball. If not specified, a task-specific directory in the cluster's
   // staging bucket will be used.
   string tarball_gcs_dir = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. (Optional) The access type to the diagnostic tarball. If not
+  // specified, falls back to default access of the bucket
+  TarballAccess tarball_access = 5 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Time interval in which diagnosis should be carried out on the
   // cluster.

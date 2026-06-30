@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
               .setFullMethodName("google.monitoring.v3.GroupService/ListGroups")
               .setRequestMarshaller(ProtoUtils.marshaller(ListGroupsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGroupRequest, Group> getGroupMethodDescriptor =
@@ -66,6 +67,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
           .setFullMethodName("google.monitoring.v3.GroupService/GetGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateGroupRequest, Group> createGroupMethodDescriptor =
@@ -74,6 +76,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
           .setFullMethodName("google.monitoring.v3.GroupService/CreateGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateGroupRequest, Group> updateGroupMethodDescriptor =
@@ -82,6 +85,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
           .setFullMethodName("google.monitoring.v3.GroupService/UpdateGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteGroupRequest, Empty> deleteGroupMethodDescriptor =
@@ -90,6 +94,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
           .setFullMethodName("google.monitoring.v3.GroupService/DeleteGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListGroupMembersRequest, ListGroupMembersResponse>
@@ -101,6 +106,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
                   ProtoUtils.marshaller(ListGroupMembersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGroupMembersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable;
@@ -165,6 +171,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetGroupRequest, Group> getGroupTransportSettings =
         GrpcCallSettings.<GetGroupRequest, Group>newBuilder()
@@ -175,6 +182,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateGroupRequest, Group> createGroupTransportSettings =
         GrpcCallSettings.<CreateGroupRequest, Group>newBuilder()
@@ -185,6 +193,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateGroupRequest, Group> updateGroupTransportSettings =
         GrpcCallSettings.<UpdateGroupRequest, Group>newBuilder()
@@ -205,6 +214,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListGroupMembersRequest, ListGroupMembersResponse>
         listGroupMembersTransportSettings =
@@ -216,6 +226,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.listGroupsCallable =

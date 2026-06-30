@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,7 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateChallengeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Challenge.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<VerifyAttestationRequest, VerifyAttestationResponse>
@@ -71,6 +72,7 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
                   ProtoUtils.marshaller(VerifyAttestationRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(VerifyAttestationResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -82,6 +84,7 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -90,6 +93,7 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateChallengeRequest, Challenge> createChallengeCallable;
@@ -153,6 +157,7 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<VerifyAttestationRequest, VerifyAttestationResponse>
         verifyAttestationTransportSettings =
@@ -164,6 +169,7 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
                       builder.add("challenge", String.valueOf(request.getChallenge()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getChallenge())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

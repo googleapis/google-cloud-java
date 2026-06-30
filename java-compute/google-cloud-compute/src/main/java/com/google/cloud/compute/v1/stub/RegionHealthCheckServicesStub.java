@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,19 +16,24 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionHealthCheckServicesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RegionHealthCheckServicesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListRegionHealthCheckServicesRequest;
 import com.google.cloud.compute.v1.DeleteRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.GetRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.HealthCheckService;
+import com.google.cloud.compute.v1.HealthCheckServiceAggregatedList;
 import com.google.cloud.compute.v1.HealthCheckServicesList;
 import com.google.cloud.compute.v1.InsertRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.ListRegionHealthCheckServicesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionHealthCheckServiceRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionHealthCheckServiceRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -39,6 +44,17 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class RegionHealthCheckServicesStub implements BackgroundResource {
+
+  public UnaryCallable<AggregatedListRegionHealthCheckServicesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListPagedCallable()");
+  }
+
+  public UnaryCallable<
+          AggregatedListRegionHealthCheckServicesRequest, HealthCheckServiceAggregatedList>
+      aggregatedListCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
+  }
 
   public OperationCallable<DeleteRegionHealthCheckServiceRequest, Operation, Operation>
       deleteOperationCallable() {
@@ -79,6 +95,11 @@ public abstract class RegionHealthCheckServicesStub implements BackgroundResourc
 
   public UnaryCallable<PatchRegionHealthCheckServiceRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRegionHealthCheckServiceRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

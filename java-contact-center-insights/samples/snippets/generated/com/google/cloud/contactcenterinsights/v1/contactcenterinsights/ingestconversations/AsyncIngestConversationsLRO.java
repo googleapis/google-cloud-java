@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,7 @@ public class AsyncIngestConversationsLRO {
                   IngestConversationsRequest.ConversationConfig.newBuilder().build())
               .setRedactionConfig(RedactionConfig.newBuilder().build())
               .setSpeechConfig(SpeechConfig.newBuilder().build())
+              .setSampleSize(153230710)
               .build();
       OperationFuture<IngestConversationsResponse, IngestConversationsMetadata> future =
           contactCenterInsightsClient.ingestConversationsOperationCallable().futureCall(request);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * configure the network setup and property to meet the workload requirement.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/edgenetwork/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EdgeNetworkGrpc {
 
@@ -1230,6 +1227,19 @@ public final class EdgeNetworkGrpc {
     return EdgeNetworkStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EdgeNetworkBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EdgeNetworkBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EdgeNetworkBlockingV2Stub>() {
+          @java.lang.Override
+          public EdgeNetworkBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EdgeNetworkBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EdgeNetworkBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2113,6 +2123,391 @@ public final class EdgeNetworkGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service EdgeNetwork.
+   *
+   * <pre>
+   * EdgeNetwork API provides managed, highly available cloud dynamic network
+   * configuration service to the GEC customer to enable edge application and
+   * network function solutions. This allows the customers to easily define and
+   * configure the network setup and property to meet the workload requirement.
+   * </pre>
+   */
+  public static final class EdgeNetworkBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EdgeNetworkBlockingV2Stub> {
+    private EdgeNetworkBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EdgeNetworkBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EdgeNetworkBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * InitializeZone will initialize resources for a zone in a project.
+     * </pre>
+     */
+    public com.google.cloud.edgenetwork.v1.InitializeZoneResponse initializeZone(
+        com.google.cloud.edgenetwork.v1.InitializeZoneRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getInitializeZoneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: not implemented.
+     * Lists Zones in a given project and location.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.edgenetwork.v1.ListZonesResponse listZones(
+        com.google.cloud.edgenetwork.v1.ListZonesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListZonesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: not implemented.
+     * Gets details of a single Zone.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.edgenetwork.v1.Zone getZone(
+        com.google.cloud.edgenetwork.v1.GetZoneRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetZoneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Networks in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.edgenetwork.v1.ListNetworksResponse listNetworks(
+        com.google.cloud.edgenetwork.v1.ListNetworksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListNetworksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Network.
+     * </pre>
+     */
+    public com.google.cloud.edgenetwork.v1.Network getNetwork(
+        com.google.cloud.edgenetwork.v1.GetNetworkRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetNetworkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the diagnostics of a single network resource.
+     * </pre>
+     */
+    public com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse diagnoseNetwork(
+        com.google.cloud.edgenetwork.v1.DiagnoseNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDiagnoseNetworkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Network in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createNetwork(
+        com.google.cloud.edgenetwork.v1.CreateNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateNetworkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Network.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteNetwork(
+        com.google.cloud.edgenetwork.v1.DeleteNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteNetworkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Subnets in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.edgenetwork.v1.ListSubnetsResponse listSubnets(
+        com.google.cloud.edgenetwork.v1.ListSubnetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListSubnetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Subnet.
+     * </pre>
+     */
+    public com.google.cloud.edgenetwork.v1.Subnet getSubnet(
+        com.google.cloud.edgenetwork.v1.GetSubnetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetSubnetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Subnet in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSubnet(
+        com.google.cloud.edgenetwork.v1.CreateSubnetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateSubnetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Subnet.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateSubnet(
+        com.google.cloud.edgenetwork.v1.UpdateSubnetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateSubnetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Subnet.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSubnet(
+        com.google.cloud.edgenetwork.v1.DeleteSubnetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteSubnetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Interconnects in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.edgenetwork.v1.ListInterconnectsResponse listInterconnects(
+        com.google.cloud.edgenetwork.v1.ListInterconnectsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListInterconnectsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Interconnect.
+     * </pre>
+     */
+    public com.google.cloud.edgenetwork.v1.Interconnect getInterconnect(
+        com.google.cloud.edgenetwork.v1.GetInterconnectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetInterconnectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the diagnostics of a single interconnect resource.
+     * </pre>
+     */
+    public com.google.cloud.edgenetwork.v1.DiagnoseInterconnectResponse diagnoseInterconnect(
+        com.google.cloud.edgenetwork.v1.DiagnoseInterconnectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDiagnoseInterconnectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists InterconnectAttachments in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.edgenetwork.v1.ListInterconnectAttachmentsResponse
+        listInterconnectAttachments(
+            com.google.cloud.edgenetwork.v1.ListInterconnectAttachmentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListInterconnectAttachmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single InterconnectAttachment.
+     * </pre>
+     */
+    public com.google.cloud.edgenetwork.v1.InterconnectAttachment getInterconnectAttachment(
+        com.google.cloud.edgenetwork.v1.GetInterconnectAttachmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetInterconnectAttachmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new InterconnectAttachment in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createInterconnectAttachment(
+        com.google.cloud.edgenetwork.v1.CreateInterconnectAttachmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateInterconnectAttachmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single InterconnectAttachment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteInterconnectAttachment(
+        com.google.cloud.edgenetwork.v1.DeleteInterconnectAttachmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteInterconnectAttachmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Routers in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.edgenetwork.v1.ListRoutersResponse listRouters(
+        com.google.cloud.edgenetwork.v1.ListRoutersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListRoutersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Router.
+     * </pre>
+     */
+    public com.google.cloud.edgenetwork.v1.Router getRouter(
+        com.google.cloud.edgenetwork.v1.GetRouterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetRouterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the diagnostics of a single router resource.
+     * </pre>
+     */
+    public com.google.cloud.edgenetwork.v1.DiagnoseRouterResponse diagnoseRouter(
+        com.google.cloud.edgenetwork.v1.DiagnoseRouterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDiagnoseRouterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Router in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRouter(
+        com.google.cloud.edgenetwork.v1.CreateRouterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateRouterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Router.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRouter(
+        com.google.cloud.edgenetwork.v1.UpdateRouterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateRouterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Router.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRouter(
+        com.google.cloud.edgenetwork.v1.DeleteRouterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteRouterMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service EdgeNetwork.
    *
    * <pre>
    * EdgeNetwork API provides managed, highly available cloud dynamic network

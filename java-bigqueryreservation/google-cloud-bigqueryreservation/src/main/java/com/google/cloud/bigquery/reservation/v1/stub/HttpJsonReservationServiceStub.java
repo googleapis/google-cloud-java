@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.reservation.v1.stub;
 
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListCapacityCommitmentsPagedResponse;
+import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationGroupsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAllAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAssignmentsPagedResponse;
@@ -39,22 +40,29 @@ import com.google.cloud.bigquery.reservation.v1.BiReservation;
 import com.google.cloud.bigquery.reservation.v1.CapacityCommitment;
 import com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest;
+import com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest;
 import com.google.cloud.bigquery.reservation.v1.CreateReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest;
+import com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest;
+import com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest;
+import com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest;
 import com.google.cloud.bigquery.reservation.v1.GetReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse;
+import com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest;
+import com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse;
 import com.google.cloud.bigquery.reservation.v1.ListReservationsRequest;
 import com.google.cloud.bigquery.reservation.v1.ListReservationsResponse;
 import com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.Reservation;
+import com.google.cloud.bigquery.reservation.v1.ReservationGroup;
 import com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest;
@@ -65,6 +73,11 @@ import com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -264,6 +277,44 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody("reservation", request.getReservation(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Reservation>newBuilder()
+                      .setDefaultInstance(Reservation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<FailoverReservationRequest, Reservation>
+      failoverReservationMethodDescriptor =
+          ApiMethodDescriptor.<FailoverReservationRequest, Reservation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/FailoverReservation")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FailoverReservationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/reservations/*}:failoverReservation",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FailoverReservationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FailoverReservationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Reservation>newBuilder()
@@ -891,6 +942,273 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetIamPolicyRequest, Policy>
+      getIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/GetIamPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/reservations/*}:getIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/reservations/*/assignments/*}:getIamPolicy")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "options", request.getOptions());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<SetIamPolicyRequest, Policy>
+      setIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/SetIamPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/reservations/*}:setIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/reservations/*/assignments/*}:setIamPolicy")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/reservations/*}:testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/reservations/*/assignments/*}:testIamPermissions")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestIamPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateReservationGroupRequest, ReservationGroup>
+      createReservationGroupMethodDescriptor =
+          ApiMethodDescriptor.<CreateReservationGroupRequest, ReservationGroup>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/CreateReservationGroup")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateReservationGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/reservationGroups",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateReservationGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateReservationGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "reservationGroupId", request.getReservationGroupId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("reservationGroup", request.getReservationGroup(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ReservationGroup>newBuilder()
+                      .setDefaultInstance(ReservationGroup.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetReservationGroupRequest, ReservationGroup>
+      getReservationGroupMethodDescriptor =
+          ApiMethodDescriptor.<GetReservationGroupRequest, ReservationGroup>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/GetReservationGroup")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetReservationGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/reservationGroups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetReservationGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetReservationGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ReservationGroup>newBuilder()
+                      .setDefaultInstance(ReservationGroup.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteReservationGroupRequest, Empty>
+      deleteReservationGroupMethodDescriptor =
+          ApiMethodDescriptor.<DeleteReservationGroupRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/DeleteReservationGroup")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteReservationGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/reservationGroups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteReservationGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteReservationGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListReservationGroupsRequest, ListReservationGroupsResponse>
+      listReservationGroupsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListReservationGroupsRequest, ListReservationGroupsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/ListReservationGroups")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListReservationGroupsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/reservationGroups",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListReservationGroupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListReservationGroupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListReservationGroupsResponse>newBuilder()
+                      .setDefaultInstance(ListReservationGroupsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateReservationRequest, Reservation> createReservationCallable;
   private final UnaryCallable<ListReservationsRequest, ListReservationsResponse>
       listReservationsCallable;
@@ -899,6 +1217,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
   private final UnaryCallable<GetReservationRequest, Reservation> getReservationCallable;
   private final UnaryCallable<DeleteReservationRequest, Empty> deleteReservationCallable;
   private final UnaryCallable<UpdateReservationRequest, Reservation> updateReservationCallable;
+  private final UnaryCallable<FailoverReservationRequest, Reservation> failoverReservationCallable;
   private final UnaryCallable<CreateCapacityCommitmentRequest, CapacityCommitment>
       createCapacityCommitmentCallable;
   private final UnaryCallable<ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse>
@@ -934,6 +1253,19 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
   private final UnaryCallable<GetBiReservationRequest, BiReservation> getBiReservationCallable;
   private final UnaryCallable<UpdateBiReservationRequest, BiReservation>
       updateBiReservationCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
+  private final UnaryCallable<CreateReservationGroupRequest, ReservationGroup>
+      createReservationGroupCallable;
+  private final UnaryCallable<GetReservationGroupRequest, ReservationGroup>
+      getReservationGroupCallable;
+  private final UnaryCallable<DeleteReservationGroupRequest, Empty> deleteReservationGroupCallable;
+  private final UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsResponse>
+      listReservationGroupsCallable;
+  private final UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsPagedResponse>
+      listReservationGroupsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -989,6 +1321,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListReservationsRequest, ListReservationsResponse>
         listReservationsTransportSettings =
@@ -1001,6 +1334,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetReservationRequest, Reservation> getReservationTransportSettings =
         HttpJsonCallSettings.<GetReservationRequest, Reservation>newBuilder()
@@ -1012,6 +1346,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteReservationRequest, Empty> deleteReservationTransportSettings =
         HttpJsonCallSettings.<DeleteReservationRequest, Empty>newBuilder()
@@ -1023,6 +1358,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateReservationRequest, Reservation> updateReservationTransportSettings =
         HttpJsonCallSettings.<UpdateReservationRequest, Reservation>newBuilder()
@@ -1036,6 +1372,19 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<FailoverReservationRequest, Reservation>
+        failoverReservationTransportSettings =
+            HttpJsonCallSettings.<FailoverReservationRequest, Reservation>newBuilder()
+                .setMethodDescriptor(failoverReservationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<CreateCapacityCommitmentRequest, CapacityCommitment>
         createCapacityCommitmentTransportSettings =
             HttpJsonCallSettings.<CreateCapacityCommitmentRequest, CapacityCommitment>newBuilder()
@@ -1047,6 +1396,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse>
         listCapacityCommitmentsTransportSettings =
@@ -1060,6 +1410,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetCapacityCommitmentRequest, CapacityCommitment>
         getCapacityCommitmentTransportSettings =
@@ -1072,6 +1423,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteCapacityCommitmentRequest, Empty>
         deleteCapacityCommitmentTransportSettings =
@@ -1084,6 +1436,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateCapacityCommitmentRequest, CapacityCommitment>
         updateCapacityCommitmentTransportSettings =
@@ -1111,6 +1464,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<MergeCapacityCommitmentsRequest, CapacityCommitment>
         mergeCapacityCommitmentsTransportSettings =
@@ -1123,6 +1477,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateAssignmentRequest, Assignment> createAssignmentTransportSettings =
         HttpJsonCallSettings.<CreateAssignmentRequest, Assignment>newBuilder()
@@ -1134,6 +1489,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListAssignmentsRequest, ListAssignmentsResponse>
         listAssignmentsTransportSettings =
@@ -1146,6 +1502,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteAssignmentRequest, Empty> deleteAssignmentTransportSettings =
         HttpJsonCallSettings.<DeleteAssignmentRequest, Empty>newBuilder()
@@ -1157,6 +1514,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SearchAssignmentsRequest, SearchAssignmentsResponse>
         searchAssignmentsTransportSettings =
@@ -1169,6 +1527,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse>
         searchAllAssignmentsTransportSettings =
@@ -1182,6 +1541,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<MoveAssignmentRequest, Assignment> moveAssignmentTransportSettings =
         HttpJsonCallSettings.<MoveAssignmentRequest, Assignment>newBuilder()
@@ -1193,6 +1553,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateAssignmentRequest, Assignment> updateAssignmentTransportSettings =
         HttpJsonCallSettings.<UpdateAssignmentRequest, Assignment>newBuilder()
@@ -1215,6 +1576,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateBiReservationRequest, BiReservation>
         updateBiReservationTransportSettings =
@@ -1229,6 +1591,96 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                           String.valueOf(request.getBiReservation().getName()));
                       return builder.build();
                     })
+                .build();
+    HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
+    HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
+    HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getResource())
+                .build();
+    HttpJsonCallSettings<CreateReservationGroupRequest, ReservationGroup>
+        createReservationGroupTransportSettings =
+            HttpJsonCallSettings.<CreateReservationGroupRequest, ReservationGroup>newBuilder()
+                .setMethodDescriptor(createReservationGroupMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetReservationGroupRequest, ReservationGroup>
+        getReservationGroupTransportSettings =
+            HttpJsonCallSettings.<GetReservationGroupRequest, ReservationGroup>newBuilder()
+                .setMethodDescriptor(getReservationGroupMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<DeleteReservationGroupRequest, Empty>
+        deleteReservationGroupTransportSettings =
+            HttpJsonCallSettings.<DeleteReservationGroupRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteReservationGroupMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListReservationGroupsRequest, ListReservationGroupsResponse>
+        listReservationGroupsTransportSettings =
+            HttpJsonCallSettings
+                .<ListReservationGroupsRequest, ListReservationGroupsResponse>newBuilder()
+                .setMethodDescriptor(listReservationGroupsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createReservationCallable =
@@ -1254,6 +1706,11 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
         callableFactory.createUnaryCallable(
             updateReservationTransportSettings,
             settings.updateReservationSettings(),
+            clientContext);
+    this.failoverReservationCallable =
+        callableFactory.createUnaryCallable(
+            failoverReservationTransportSettings,
+            settings.failoverReservationSettings(),
             clientContext);
     this.createCapacityCommitmentCallable =
         callableFactory.createUnaryCallable(
@@ -1341,6 +1798,42 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
             updateBiReservationTransportSettings,
             settings.updateBiReservationSettings(),
             clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
+    this.createReservationGroupCallable =
+        callableFactory.createUnaryCallable(
+            createReservationGroupTransportSettings,
+            settings.createReservationGroupSettings(),
+            clientContext);
+    this.getReservationGroupCallable =
+        callableFactory.createUnaryCallable(
+            getReservationGroupTransportSettings,
+            settings.getReservationGroupSettings(),
+            clientContext);
+    this.deleteReservationGroupCallable =
+        callableFactory.createUnaryCallable(
+            deleteReservationGroupTransportSettings,
+            settings.deleteReservationGroupSettings(),
+            clientContext);
+    this.listReservationGroupsCallable =
+        callableFactory.createUnaryCallable(
+            listReservationGroupsTransportSettings,
+            settings.listReservationGroupsSettings(),
+            clientContext);
+    this.listReservationGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listReservationGroupsTransportSettings,
+            settings.listReservationGroupsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1354,6 +1847,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
     methodDescriptors.add(getReservationMethodDescriptor);
     methodDescriptors.add(deleteReservationMethodDescriptor);
     methodDescriptors.add(updateReservationMethodDescriptor);
+    methodDescriptors.add(failoverReservationMethodDescriptor);
     methodDescriptors.add(createCapacityCommitmentMethodDescriptor);
     methodDescriptors.add(listCapacityCommitmentsMethodDescriptor);
     methodDescriptors.add(getCapacityCommitmentMethodDescriptor);
@@ -1370,6 +1864,13 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
     methodDescriptors.add(updateAssignmentMethodDescriptor);
     methodDescriptors.add(getBiReservationMethodDescriptor);
     methodDescriptors.add(updateBiReservationMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    methodDescriptors.add(createReservationGroupMethodDescriptor);
+    methodDescriptors.add(getReservationGroupMethodDescriptor);
+    methodDescriptors.add(deleteReservationGroupMethodDescriptor);
+    methodDescriptors.add(listReservationGroupsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1403,6 +1904,11 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
   @Override
   public UnaryCallable<UpdateReservationRequest, Reservation> updateReservationCallable() {
     return updateReservationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FailoverReservationRequest, Reservation> failoverReservationCallable() {
+    return failoverReservationCallable;
   }
 
   @Override
@@ -1515,6 +2021,50 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
   @Override
   public UnaryCallable<UpdateBiReservationRequest, BiReservation> updateBiReservationCallable() {
     return updateBiReservationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateReservationGroupRequest, ReservationGroup>
+      createReservationGroupCallable() {
+    return createReservationGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetReservationGroupRequest, ReservationGroup> getReservationGroupCallable() {
+    return getReservationGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteReservationGroupRequest, Empty> deleteReservationGroupCallable() {
+    return deleteReservationGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsResponse>
+      listReservationGroupsCallable() {
+    return listReservationGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsPagedResponse>
+      listReservationGroupsPagedCallable() {
+    return listReservationGroupsPagedCallable;
   }
 
   @Override

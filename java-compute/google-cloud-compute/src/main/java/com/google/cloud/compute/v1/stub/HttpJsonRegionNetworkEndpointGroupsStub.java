@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AttachNetworkEndpointsRegionNetworkEndpointGroupRequest;
 import com.google.cloud.compute.v1.DeleteRegionNetworkEndpointGroupRequest;
 import com.google.cloud.compute.v1.DetachNetworkEndpointsRegionNetworkEndpointGroupRequest;
@@ -497,6 +498,26 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate ATTACH_NETWORK_ENDPOINTS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/networkEndpointGroups/{network_endpoint_group}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/networkEndpointGroups/{network_endpoint_group}");
+  private static final PathTemplate DETACH_NETWORK_ENDPOINTS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/networkEndpointGroups/{network_endpoint_group}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/networkEndpointGroups/{network_endpoint_group}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_NETWORK_ENDPOINTS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/networkEndpointGroups/{network_endpoint_group}");
+
   public static final HttpJsonRegionNetworkEndpointGroupsStub create(
       RegionNetworkEndpointGroupsStubSettings settings) throws IOException {
     return new HttpJsonRegionNetworkEndpointGroupsStub(settings, ClientContext.create(settings));
@@ -557,6 +578,17 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "network_endpoint_group",
+                          String.valueOf(request.getNetworkEndpointGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return ATTACH_NETWORK_ENDPOINTS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteRegionNetworkEndpointGroupRequest, Operation>
         deleteTransportSettings =
@@ -572,6 +604,16 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "network_endpoint_group",
+                          String.valueOf(request.getNetworkEndpointGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
@@ -590,6 +632,17 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "network_endpoint_group",
+                          String.valueOf(request.getNetworkEndpointGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return DETACH_NETWORK_ENDPOINTS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetRegionNetworkEndpointGroupRequest, NetworkEndpointGroup>
         getTransportSettings =
@@ -607,6 +660,16 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "network_endpoint_group",
+                          String.valueOf(request.getNetworkEndpointGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertRegionNetworkEndpointGroupRequest, Operation>
         insertTransportSettings =
@@ -619,6 +682,13 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<ListRegionNetworkEndpointGroupsRequest, NetworkEndpointGroupList>
@@ -633,6 +703,13 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<
@@ -654,6 +731,17 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "network_endpoint_group",
+                          String.valueOf(request.getNetworkEndpointGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return LIST_NETWORK_ENDPOINTS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 

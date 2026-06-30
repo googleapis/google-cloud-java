@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ import com.google.cloud.compute.v1.StopAsyncReplicationRegionDiskRequest;
 import com.google.cloud.compute.v1.StopGroupAsyncReplicationRegionDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateKmsKeyRegionDiskRequest;
 import com.google.cloud.compute.v1.UpdateRegionDiskRequest;
 import javax.annotation.Generated;
 
@@ -195,6 +196,15 @@ public abstract class RegionDisksStub implements BackgroundResource {
 
   public UnaryCallable<UpdateRegionDiskRequest, Operation> updateCallable() {
     throw new UnsupportedOperationException("Not implemented: updateCallable()");
+  }
+
+  public OperationCallable<UpdateKmsKeyRegionDiskRequest, Operation, Operation>
+      updateKmsKeyOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateKmsKeyOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateKmsKeyRegionDiskRequest, Operation> updateKmsKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateKmsKeyCallable()");
   }
 
   @Override

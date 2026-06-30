@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.Address;
 import com.google.cloud.compute.v1.AddressAggregatedList;
 import com.google.cloud.compute.v1.AddressList;
@@ -45,6 +46,8 @@ import com.google.cloud.compute.v1.MoveAddressRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.SetLabelsAddressRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsAddressRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -425,6 +428,49 @@ public class HttpJsonAddressesStub extends AddressesStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsAddressRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsAddressRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Addresses/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsAddressRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/addresses/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsAddressRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsAddressRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<AggregatedListAddressesRequest, AddressAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListAddressesRequest, AggregatedListPagedResponse>
@@ -443,10 +489,29 @@ public class HttpJsonAddressesStub extends AddressesStub {
   private final UnaryCallable<SetLabelsAddressRequest, Operation> setLabelsCallable;
   private final OperationCallable<SetLabelsAddressRequest, Operation, Operation>
       setLabelsOperationCallable;
+  private final UnaryCallable<TestIamPermissionsAddressRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/addresses/{address}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/addresses/{address}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate MOVE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/addresses/{address}");
+  private static final PathTemplate SET_LABELS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/addresses/{resource}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/addresses/{resource}");
 
   public static final HttpJsonAddressesStub create(AddressesStubSettings settings)
       throws IOException {
@@ -498,6 +563,13 @@ public class HttpJsonAddressesStub extends AddressesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteAddressRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteAddressRequest, Operation>newBuilder()
@@ -510,6 +582,14 @@ public class HttpJsonAddressesStub extends AddressesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("address", String.valueOf(request.getAddress()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetAddressRequest, Address> getTransportSettings =
@@ -524,6 +604,14 @@ public class HttpJsonAddressesStub extends AddressesStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("address", String.valueOf(request.getAddress()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertAddressRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertAddressRequest, Operation>newBuilder()
@@ -536,6 +624,13 @@ public class HttpJsonAddressesStub extends AddressesStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListAddressesRequest, AddressList> listTransportSettings =
         HttpJsonCallSettings.<ListAddressesRequest, AddressList>newBuilder()
@@ -547,6 +642,13 @@ public class HttpJsonAddressesStub extends AddressesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<MoveAddressRequest, Operation> moveTransportSettings =
@@ -561,6 +663,14 @@ public class HttpJsonAddressesStub extends AddressesStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("address", String.valueOf(request.getAddress()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return MOVE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<SetLabelsAddressRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsAddressRequest, Operation>newBuilder()
@@ -574,7 +684,39 @@ public class HttpJsonAddressesStub extends AddressesStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return SET_LABELS_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
+    HttpJsonCallSettings<TestIamPermissionsAddressRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsAddressRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
 
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
@@ -627,6 +769,11 @@ public class HttpJsonAddressesStub extends AddressesStub {
             settings.setLabelsOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -642,6 +789,7 @@ public class HttpJsonAddressesStub extends AddressesStub {
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(moveMethodDescriptor);
     methodDescriptors.add(setLabelsMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -711,6 +859,12 @@ public class HttpJsonAddressesStub extends AddressesStub {
   public OperationCallable<SetLabelsAddressRequest, Operation, Operation>
       setLabelsOperationCallable() {
     return setLabelsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsAddressRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import com.google.cloud.retail.v2.BranchName;
 import com.google.cloud.retail.v2.SearchRequest;
 import com.google.cloud.retail.v2.SearchResponse;
 import com.google.cloud.retail.v2.SearchServiceClient;
+import com.google.cloud.retail.v2.StringList;
 import com.google.cloud.retail.v2.UserInfo;
 import com.google.common.base.Strings;
 import java.util.ArrayList;
@@ -63,6 +64,13 @@ public class AsyncSearchPaged {
               .putAllLabels(new HashMap<String, String>())
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
               .setEntity("entity-1298275357")
+              .setConversationalSearchSpec(
+                  SearchRequest.ConversationalSearchSpec.newBuilder().build())
+              .setTileNavigationSpec(SearchRequest.TileNavigationSpec.newBuilder().build())
+              .setLanguageCode("languageCode-2092349083")
+              .setRegionCode("regionCode-1991004415")
+              .setPlaceId("placeId-494224254")
+              .putAllUserAttributes(new HashMap<String, StringList>())
               .build();
       while (true) {
         SearchResponse response = searchServiceClient.searchCallable().call(request);

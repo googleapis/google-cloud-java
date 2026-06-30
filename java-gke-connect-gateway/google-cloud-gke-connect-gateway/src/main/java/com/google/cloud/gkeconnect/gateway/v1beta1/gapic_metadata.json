@@ -5,25 +5,13 @@
   "protoPackage": "google.cloud.gkeconnect.gateway.v1beta1",
   "libraryPackage": "com.google.cloud.gkeconnect.gateway.v1beta1",
   "services": {
-    "GatewayService": {
+    "GatewayControl": {
       "clients": {
         "grpc": {
-          "libraryClient": "GatewayServiceClient",
+          "libraryClient": "GatewayControlClient",
           "rpcs": {
-            "DeleteResource": {
-              "methods": ["deleteResource", "deleteResourceCallable"]
-            },
-            "GetResource": {
-              "methods": ["getResource", "getResourceCallable"]
-            },
-            "PatchResource": {
-              "methods": ["patchResource", "patchResourceCallable"]
-            },
-            "PostResource": {
-              "methods": ["postResource", "postResourceCallable"]
-            },
-            "PutResource": {
-              "methods": ["putResource", "putResourceCallable"]
+            "GenerateCredentials": {
+              "methods": ["generateCredentials", "generateCredentialsCallable"]
             }
           }
         }

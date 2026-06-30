@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to manage local inventory for products
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/inventories/v1beta/localinventory.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LocalInventoryServiceGrpc {
 
@@ -204,6 +201,19 @@ public final class LocalInventoryServiceGrpc {
           }
         };
     return LocalInventoryServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static LocalInventoryServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<LocalInventoryServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LocalInventoryServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public LocalInventoryServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LocalInventoryServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return LocalInventoryServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -406,6 +416,84 @@ public final class LocalInventoryServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LocalInventoryService.
+   *
+   * <pre>
+   * Service to manage local inventory for products
+   * </pre>
+   */
+  public static final class LocalInventoryServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<LocalInventoryServiceBlockingV2Stub> {
+    private LocalInventoryServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected LocalInventoryServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new LocalInventoryServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the `LocalInventory` resources for the given product in your merchant
+     * account. The response might contain fewer items than specified by
+     * `pageSize`. If `pageToken` was returned in previous request, it can be used
+     * to obtain additional results.
+     * `LocalInventory` resources are listed per product for a given account.
+     * </pre>
+     */
+    public com.google.shopping.merchant.inventories.v1beta.ListLocalInventoriesResponse
+        listLocalInventories(
+            com.google.shopping.merchant.inventories.v1beta.ListLocalInventoriesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListLocalInventoriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Inserts a `LocalInventory` resource to a product in your merchant
+     * account.
+     * Replaces the full `LocalInventory` resource if an entry with the same
+     * [`storeCode`][google.shopping.merchant.inventories.v1beta.LocalInventory.store_code]
+     * already exists for the product.
+     * It might take up to 30 minutes for the new or updated `LocalInventory`
+     * resource to appear in products.
+     * </pre>
+     */
+    public com.google.shopping.merchant.inventories.v1beta.LocalInventory insertLocalInventory(
+        com.google.shopping.merchant.inventories.v1beta.InsertLocalInventoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getInsertLocalInventoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `LocalInventory` from the given product in your
+     * merchant account. It might take a up to an hour for the
+     * `LocalInventory` to be deleted from the specific product.
+     * Once you have received a successful delete response, wait for that
+     * period before attempting a delete again.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteLocalInventory(
+        com.google.shopping.merchant.inventories.v1beta.DeleteLocalInventoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteLocalInventoryMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service LocalInventoryService.
    *
    * <pre>
    * Service to manage local inventory for products

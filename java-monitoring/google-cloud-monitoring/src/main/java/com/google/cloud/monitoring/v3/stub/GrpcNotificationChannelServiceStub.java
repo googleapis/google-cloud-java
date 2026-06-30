@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,6 +73,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListNotificationChannelDescriptorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -88,6 +89,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       GetNotificationChannelDescriptorRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotificationChannelDescriptor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -102,6 +104,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                   ProtoUtils.marshaller(ListNotificationChannelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNotificationChannelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNotificationChannelRequest, NotificationChannel>
@@ -114,6 +117,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                   ProtoUtils.marshaller(GetNotificationChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotificationChannel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateNotificationChannelRequest, NotificationChannel>
@@ -126,6 +130,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                   ProtoUtils.marshaller(CreateNotificationChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotificationChannel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateNotificationChannelRequest, NotificationChannel>
@@ -138,6 +143,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                   ProtoUtils.marshaller(UpdateNotificationChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotificationChannel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNotificationChannelRequest, Empty>
@@ -149,6 +155,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNotificationChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SendNotificationChannelVerificationCodeRequest, Empty>
@@ -161,6 +168,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                   ProtoUtils.marshaller(
                       SendNotificationChannelVerificationCodeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -180,6 +188,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       GetNotificationChannelVerificationCodeResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<VerifyNotificationChannelRequest, NotificationChannel>
@@ -192,6 +201,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                   ProtoUtils.marshaller(VerifyNotificationChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotificationChannel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<
@@ -287,6 +297,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetNotificationChannelDescriptorRequest, NotificationChannelDescriptor>
         getNotificationChannelDescriptorTransportSettings =
@@ -300,6 +311,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListNotificationChannelsRequest, ListNotificationChannelsResponse>
         listNotificationChannelsTransportSettings =
@@ -312,6 +324,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetNotificationChannelRequest, NotificationChannel>
         getNotificationChannelTransportSettings =
@@ -323,6 +336,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateNotificationChannelRequest, NotificationChannel>
         createNotificationChannelTransportSettings =
@@ -334,6 +348,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateNotificationChannelRequest, NotificationChannel>
         updateNotificationChannelTransportSettings =
@@ -358,6 +373,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SendNotificationChannelVerificationCodeRequest, Empty>
         sendNotificationChannelVerificationCodeTransportSettings =
@@ -369,6 +385,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             GetNotificationChannelVerificationCodeRequest,
@@ -385,6 +402,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<VerifyNotificationChannelRequest, NotificationChannel>
         verifyNotificationChannelTransportSettings =
@@ -396,6 +414,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.listNotificationChannelDescriptorsCallable =

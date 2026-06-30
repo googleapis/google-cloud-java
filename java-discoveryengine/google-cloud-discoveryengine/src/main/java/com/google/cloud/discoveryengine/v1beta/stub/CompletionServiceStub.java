@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,24 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest;
+import com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse;
 import com.google.cloud.discoveryengine.v1beta.CompleteQueryRequest;
 import com.google.cloud.discoveryengine.v1beta.CompleteQueryResponse;
+import com.google.cloud.discoveryengine.v1beta.ImportCompletionSuggestionsMetadata;
+import com.google.cloud.discoveryengine.v1beta.ImportCompletionSuggestionsRequest;
+import com.google.cloud.discoveryengine.v1beta.ImportCompletionSuggestionsResponse;
 import com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesMetadata;
 import com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesRequest;
 import com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesResponse;
+import com.google.cloud.discoveryengine.v1beta.PurgeCompletionSuggestionsMetadata;
+import com.google.cloud.discoveryengine.v1beta.PurgeCompletionSuggestionsRequest;
+import com.google.cloud.discoveryengine.v1beta.PurgeCompletionSuggestionsResponse;
 import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesMetadata;
 import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest;
 import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesResponse;
+import com.google.cloud.discoveryengine.v1beta.RemoveSuggestionRequest;
+import com.google.cloud.discoveryengine.v1beta.RemoveSuggestionResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
@@ -52,6 +62,11 @@ public abstract class CompletionServiceStub implements BackgroundResource {
 
   public UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable() {
     throw new UnsupportedOperationException("Not implemented: completeQueryCallable()");
+  }
+
+  public UnaryCallable<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+      advancedCompleteQueryCallable() {
+    throw new UnsupportedOperationException("Not implemented: advancedCompleteQueryCallable()");
   }
 
   public OperationCallable<
@@ -82,6 +97,41 @@ public abstract class CompletionServiceStub implements BackgroundResource {
       purgeSuggestionDenyListEntriesCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: purgeSuggestionDenyListEntriesCallable()");
+  }
+
+  public OperationCallable<
+          ImportCompletionSuggestionsRequest,
+          ImportCompletionSuggestionsResponse,
+          ImportCompletionSuggestionsMetadata>
+      importCompletionSuggestionsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: importCompletionSuggestionsOperationCallable()");
+  }
+
+  public UnaryCallable<ImportCompletionSuggestionsRequest, Operation>
+      importCompletionSuggestionsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: importCompletionSuggestionsCallable()");
+  }
+
+  public OperationCallable<
+          PurgeCompletionSuggestionsRequest,
+          PurgeCompletionSuggestionsResponse,
+          PurgeCompletionSuggestionsMetadata>
+      purgeCompletionSuggestionsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: purgeCompletionSuggestionsOperationCallable()");
+  }
+
+  public UnaryCallable<PurgeCompletionSuggestionsRequest, Operation>
+      purgeCompletionSuggestionsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: purgeCompletionSuggestionsCallable()");
+  }
+
+  public UnaryCallable<RemoveSuggestionRequest, RemoveSuggestionResponse>
+      removeSuggestionCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeSuggestionCallable()");
   }
 
   @Override

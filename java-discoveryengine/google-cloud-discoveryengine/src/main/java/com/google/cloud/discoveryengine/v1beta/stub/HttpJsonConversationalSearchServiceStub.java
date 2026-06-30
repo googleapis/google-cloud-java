@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1beta.Answer;
 import com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest;
@@ -361,6 +362,49 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<AnswerQueryRequest, AnswerQueryResponse>
+      streamAnswerQueryMethodDescriptor =
+          ApiMethodDescriptor.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.ConversationalSearchService/StreamAnswerQuery")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.SERVER_STREAMING)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AnswerQueryRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{servingConfig=projects/*/locations/*/dataStores/*/servingConfigs/*}:streamAnswer",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AnswerQueryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "servingConfig", request.getServingConfig());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1beta/{servingConfig=projects/*/locations/*/collections/*/dataStores/*/servingConfigs/*}:streamAnswer",
+                          "/v1beta/{servingConfig=projects/*/locations/*/collections/*/engines/*/servingConfigs/*}:streamAnswer")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AnswerQueryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearServingConfig().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AnswerQueryResponse>newBuilder()
+                      .setDefaultInstance(AnswerQueryResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetAnswerRequest, Answer> getAnswerMethodDescriptor =
       ApiMethodDescriptor.<GetAnswerRequest, Answer>newBuilder()
           .setFullMethodName(
@@ -424,6 +468,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateSessionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "sessionId", request.getSessionId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -545,6 +590,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetSessionRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(
+                            fields, "includeAnswerDetails", request.getIncludeAnswerDetails());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
@@ -610,6 +657,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
   private final UnaryCallable<ListConversationsRequest, ListConversationsPagedResponse>
       listConversationsPagedCallable;
   private final UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable;
+  private final ServerStreamingCallable<AnswerQueryRequest, AnswerQueryResponse>
+      streamAnswerQueryCallable;
   private final UnaryCallable<GetAnswerRequest, Answer> getAnswerCallable;
   private final UnaryCallable<CreateSessionRequest, Session> createSessionCallable;
   private final UnaryCallable<DeleteSessionRequest, Empty> deleteSessionCallable;
@@ -676,6 +725,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateConversationRequest, Conversation>
         createConversationTransportSettings =
@@ -688,6 +738,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteConversationRequest, Empty> deleteConversationTransportSettings =
         HttpJsonCallSettings.<DeleteConversationRequest, Empty>newBuilder()
@@ -699,6 +750,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateConversationRequest, Conversation>
         updateConversationTransportSettings =
@@ -723,6 +775,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListConversationsRequest, ListConversationsResponse>
         listConversationsTransportSettings =
@@ -735,6 +788,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQueryTransportSettings =
         HttpJsonCallSettings.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
@@ -746,7 +800,21 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                   builder.add("serving_config", String.valueOf(request.getServingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
+    HttpJsonCallSettings<AnswerQueryRequest, AnswerQueryResponse>
+        streamAnswerQueryTransportSettings =
+            HttpJsonCallSettings.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
+                .setMethodDescriptor(streamAnswerQueryMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("serving_config", String.valueOf(request.getServingConfig()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getServingConfig())
+                .build();
     HttpJsonCallSettings<GetAnswerRequest, Answer> getAnswerTransportSettings =
         HttpJsonCallSettings.<GetAnswerRequest, Answer>newBuilder()
             .setMethodDescriptor(getAnswerMethodDescriptor)
@@ -757,6 +825,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateSessionRequest, Session> createSessionTransportSettings =
         HttpJsonCallSettings.<CreateSessionRequest, Session>newBuilder()
@@ -768,6 +837,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteSessionRequest, Empty> deleteSessionTransportSettings =
         HttpJsonCallSettings.<DeleteSessionRequest, Empty>newBuilder()
@@ -779,6 +849,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateSessionRequest, Session> updateSessionTransportSettings =
         HttpJsonCallSettings.<UpdateSessionRequest, Session>newBuilder()
@@ -801,6 +872,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSessionsRequest, ListSessionsResponse> listSessionsTransportSettings =
         HttpJsonCallSettings.<ListSessionsRequest, ListSessionsResponse>newBuilder()
@@ -812,6 +884,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.converseConversationCallable =
@@ -850,6 +923,11 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
     this.answerQueryCallable =
         callableFactory.createUnaryCallable(
             answerQueryTransportSettings, settings.answerQuerySettings(), clientContext);
+    this.streamAnswerQueryCallable =
+        callableFactory.createServerStreamingCallable(
+            streamAnswerQueryTransportSettings,
+            settings.streamAnswerQuerySettings(),
+            clientContext);
     this.getAnswerCallable =
         callableFactory.createUnaryCallable(
             getAnswerTransportSettings, settings.getAnswerSettings(), clientContext);
@@ -886,6 +964,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
     methodDescriptors.add(getConversationMethodDescriptor);
     methodDescriptors.add(listConversationsMethodDescriptor);
     methodDescriptors.add(answerQueryMethodDescriptor);
+    methodDescriptors.add(streamAnswerQueryMethodDescriptor);
     methodDescriptors.add(getAnswerMethodDescriptor);
     methodDescriptors.add(createSessionMethodDescriptor);
     methodDescriptors.add(deleteSessionMethodDescriptor);
@@ -936,6 +1015,12 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
   @Override
   public UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable() {
     return answerQueryCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<AnswerQueryRequest, AnswerQueryResponse>
+      streamAnswerQueryCallable() {
+    return streamAnswerQueryCallable;
   }
 
   @Override

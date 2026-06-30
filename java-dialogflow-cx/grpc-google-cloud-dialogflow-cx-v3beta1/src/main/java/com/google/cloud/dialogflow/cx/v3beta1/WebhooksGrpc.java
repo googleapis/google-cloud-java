@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Webhooks][google.cloud.dialogflow.cx.v3beta1.Webhook].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3beta1/webhook.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class WebhooksGrpc {
 
@@ -270,6 +267,19 @@ public final class WebhooksGrpc {
     return WebhooksStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static WebhooksBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<WebhooksBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<WebhooksBlockingV2Stub>() {
+          @java.lang.Override
+          public WebhooksBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new WebhooksBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return WebhooksBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -498,6 +508,96 @@ public final class WebhooksGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Webhooks.
+   *
+   * <pre>
+   * Service for managing [Webhooks][google.cloud.dialogflow.cx.v3beta1.Webhook].
+   * </pre>
+   */
+  public static final class WebhooksBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<WebhooksBlockingV2Stub> {
+    private WebhooksBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected WebhooksBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new WebhooksBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all webhooks in the specified agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ListWebhooksResponse listWebhooks(
+        com.google.cloud.dialogflow.cx.v3beta1.ListWebhooksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListWebhooksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified webhook.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Webhook getWebhook(
+        com.google.cloud.dialogflow.cx.v3beta1.GetWebhookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetWebhookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a webhook in the specified agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Webhook createWebhook(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateWebhookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateWebhookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified webhook.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Webhook updateWebhook(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateWebhookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateWebhookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified webhook.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteWebhook(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteWebhookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteWebhookMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Webhooks.
    *
    * <pre>
    * Service for managing [Webhooks][google.cloud.dialogflow.cx.v3beta1.Webhook].

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -124,7 +124,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Delete</td>
- *      <td><p> Deletes the specified regional persistent disk. Deleting a regional disk removes all the replicas of its data permanently and is irreversible. However, deleting a disk does not delete any snapshots previously made from the disk. You must separately delete snapshots.</td>
+ *      <td><p> Deletes the specified regional persistent disk. Deleting a regional disk removes all the replicas of its data permanently and is irreversible. However, deleting a disk does not delete anysnapshots previously made from the disk. You must separatelydelete snapshots.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -367,7 +367,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Update</td>
- *      <td><p> Update the specified disk with the data included in the request. Update is performed only on selected fields included as part of update-mask. Only the following fields can be modified: user_license.</td>
+ *      <td><p> Update the specified disk with the data included in the request. Update is performed only on selected fields included as part of update-mask.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -381,6 +381,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> updateOperationCallable()
  *           <li><p> updateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateKmsKey</td>
+ *      <td><p> Rotates the customer-managed encryption key to the latest version for the specified persistent disk.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateKmsKeyAsync(UpdateKmsKeyRegionDiskRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateKmsKeyAsync(String project, String region, String disk, RegionDiskUpdateKmsKeyRequest regionDiskUpdateKmsKeyRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateKmsKeyOperationCallable()
+ *           <li><p> updateKmsKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -909,7 +928,7 @@ public class RegionDisksClient implements BackgroundResource {
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
-   * any snapshots previously made from the disk. You must separately delete snapshots.
+   * anysnapshots previously made from the disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -947,7 +966,7 @@ public class RegionDisksClient implements BackgroundResource {
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
-   * any snapshots previously made from the disk. You must separately delete snapshots.
+   * anysnapshots previously made from the disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -980,7 +999,7 @@ public class RegionDisksClient implements BackgroundResource {
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
-   * any snapshots previously made from the disk. You must separately delete snapshots.
+   * anysnapshots previously made from the disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -1014,7 +1033,7 @@ public class RegionDisksClient implements BackgroundResource {
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
-   * any snapshots previously made from the disk. You must separately delete snapshots.
+   * anysnapshots previously made from the disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -2597,8 +2616,7 @@ public class RegionDisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the specified disk with the data included in the request. Update is performed only on
-   * selected fields included as part of update-mask. Only the following fields can be modified:
-   * user_license.
+   * selected fields included as part of update-mask.
    *
    * <p>Sample code:
    *
@@ -2638,8 +2656,7 @@ public class RegionDisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the specified disk with the data included in the request. Update is performed only on
-   * selected fields included as part of update-mask. Only the following fields can be modified:
-   * user_license.
+   * selected fields included as part of update-mask.
    *
    * <p>Sample code:
    *
@@ -2674,8 +2691,7 @@ public class RegionDisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the specified disk with the data included in the request. Update is performed only on
-   * selected fields included as part of update-mask. Only the following fields can be modified:
-   * user_license.
+   * selected fields included as part of update-mask.
    *
    * <p>Sample code:
    *
@@ -2711,8 +2727,7 @@ public class RegionDisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the specified disk with the data included in the request. Update is performed only on
-   * selected fields included as part of update-mask. Only the following fields can be modified:
-   * user_license.
+   * selected fields included as part of update-mask.
    *
    * <p>Sample code:
    *
@@ -2741,6 +2756,156 @@ public class RegionDisksClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateRegionDiskRequest, Operation> updateCallable() {
     return stub.updateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rotates the customer-managed encryption key to the latest version for the specified persistent
+   * disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String disk = "disk3083677";
+   *   RegionDiskUpdateKmsKeyRequest regionDiskUpdateKmsKeyRequestResource =
+   *       RegionDiskUpdateKmsKeyRequest.newBuilder().build();
+   *   Operation response =
+   *       regionDisksClient
+   *           .updateKmsKeyAsync(project, region, disk, regionDiskUpdateKmsKeyRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The name of the region for this request.
+   * @param disk Name of the Disk resource, should conform to RFC1035.
+   * @param regionDiskUpdateKmsKeyRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> updateKmsKeyAsync(
+      String project,
+      String region,
+      String disk,
+      RegionDiskUpdateKmsKeyRequest regionDiskUpdateKmsKeyRequestResource) {
+    UpdateKmsKeyRegionDiskRequest request =
+        UpdateKmsKeyRegionDiskRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setDisk(disk)
+            .setRegionDiskUpdateKmsKeyRequestResource(regionDiskUpdateKmsKeyRequestResource)
+            .build();
+    return updateKmsKeyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rotates the customer-managed encryption key to the latest version for the specified persistent
+   * disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
+   *   UpdateKmsKeyRegionDiskRequest request =
+   *       UpdateKmsKeyRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionDiskUpdateKmsKeyRequestResource(
+   *               RegionDiskUpdateKmsKeyRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response = regionDisksClient.updateKmsKeyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> updateKmsKeyAsync(
+      UpdateKmsKeyRegionDiskRequest request) {
+    return updateKmsKeyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rotates the customer-managed encryption key to the latest version for the specified persistent
+   * disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
+   *   UpdateKmsKeyRegionDiskRequest request =
+   *       UpdateKmsKeyRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionDiskUpdateKmsKeyRequestResource(
+   *               RegionDiskUpdateKmsKeyRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionDisksClient.updateKmsKeyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateKmsKeyRegionDiskRequest, Operation, Operation>
+      updateKmsKeyOperationCallable() {
+    return stub.updateKmsKeyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rotates the customer-managed encryption key to the latest version for the specified persistent
+   * disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
+   *   UpdateKmsKeyRegionDiskRequest request =
+   *       UpdateKmsKeyRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionDiskUpdateKmsKeyRequestResource(
+   *               RegionDiskUpdateKmsKeyRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = regionDisksClient.updateKmsKeyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateKmsKeyRegionDiskRequest, Operation> updateKmsKeyCallable() {
+    return stub.updateKmsKeyCallable();
   }
 
   @Override

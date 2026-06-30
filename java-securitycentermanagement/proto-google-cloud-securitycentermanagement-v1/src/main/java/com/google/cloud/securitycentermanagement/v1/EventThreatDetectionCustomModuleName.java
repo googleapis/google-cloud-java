@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -383,7 +383,8 @@ public class EventThreatDetectionCustomModuleName implements ResourceName {
           Objects.equals(
               eventThreatDetectionCustomModuleName.pathTemplate,
               ORGANIZATION_LOCATION_EVENT_THREAT_DETECTION_CUSTOM_MODULE),
-          "toBuilder is only supported when EventThreatDetectionCustomModuleName has the pattern of organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}");
+          "toBuilder is only supported when EventThreatDetectionCustomModuleName has the pattern of"
+              + " organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}");
       this.organization = eventThreatDetectionCustomModuleName.organization;
       this.location = eventThreatDetectionCustomModuleName.location;
       this.eventThreatDetectionCustomModule =

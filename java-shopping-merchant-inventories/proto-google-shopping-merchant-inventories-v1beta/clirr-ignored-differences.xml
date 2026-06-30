@@ -15,19 +15,66 @@
     <differenceType>7012</differenceType>
     <className>com/google/shopping/merchant/inventories/v1beta/*OrBuilder</className>
     <method>boolean has*(*)</method>
-  </difference>  <difference>
-    <differenceType>7012</differenceType>
-    <className>com/google/shopping/type/*OrBuilder</className>
-    <method>* get*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/shopping/merchant/inventories/v1beta/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>7012</differenceType>
-    <className>com/google/shopping/type/*OrBuilder</className>
-    <method>boolean contains*(*)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/shopping/merchant/inventories/v1beta/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>7012</differenceType>
-    <className>com/google/shopping/type/*OrBuilder</className>
-    <method>boolean has*(*)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/shopping/merchant/inventories/v1beta/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/shopping/merchant/inventories/v1beta/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/shopping/merchant/inventories/v1beta/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/shopping/merchant/inventories/v1beta/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/shopping/merchant/inventories/v1beta/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/shopping/merchant/inventories/v1beta/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/shopping/merchant/inventories/v1beta/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/shopping/merchant/inventories/v1beta/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>
 </differences>

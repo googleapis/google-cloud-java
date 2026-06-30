@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,27 +18,41 @@ package com.google.analytics.data.v1alpha.stub;
 
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListAudienceListsPagedResponse;
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRecurringAudienceListsPagedResponse;
+import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListReportTasksPagedResponse;
 
 import com.google.analytics.data.v1alpha.AudienceList;
 import com.google.analytics.data.v1alpha.AudienceListMetadata;
 import com.google.analytics.data.v1alpha.CreateAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest;
+import com.google.analytics.data.v1alpha.CreateReportTaskRequest;
 import com.google.analytics.data.v1alpha.GetAudienceListRequest;
+import com.google.analytics.data.v1alpha.GetMetadataRequest;
+import com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest;
 import com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest;
+import com.google.analytics.data.v1alpha.GetReportTaskRequest;
 import com.google.analytics.data.v1alpha.ListAudienceListsRequest;
 import com.google.analytics.data.v1alpha.ListAudienceListsResponse;
 import com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest;
 import com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse;
+import com.google.analytics.data.v1alpha.ListReportTasksRequest;
+import com.google.analytics.data.v1alpha.ListReportTasksResponse;
+import com.google.analytics.data.v1alpha.Metadata;
+import com.google.analytics.data.v1alpha.PropertyQuotasSnapshot;
 import com.google.analytics.data.v1alpha.QueryAudienceListRequest;
 import com.google.analytics.data.v1alpha.QueryAudienceListResponse;
+import com.google.analytics.data.v1alpha.QueryReportTaskRequest;
+import com.google.analytics.data.v1alpha.QueryReportTaskResponse;
 import com.google.analytics.data.v1alpha.RecurringAudienceList;
+import com.google.analytics.data.v1alpha.ReportTask;
+import com.google.analytics.data.v1alpha.ReportTaskMetadata;
 import com.google.analytics.data.v1alpha.RunFunnelReportRequest;
 import com.google.analytics.data.v1alpha.RunFunnelReportResponse;
-import com.google.analytics.data.v1alpha.SheetExportAudienceListRequest;
-import com.google.analytics.data.v1alpha.SheetExportAudienceListResponse;
+import com.google.analytics.data.v1alpha.RunReportRequest;
+import com.google.analytics.data.v1alpha.RunReportResponse;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -55,6 +69,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -71,9 +86,9 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -90,7 +105,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of runFunnelReport to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of runFunnelReport:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -107,23 +124,58 @@ import org.threeten.bp.Duration;
  *             .runFunnelReportSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * AlphaAnalyticsDataStubSettings alphaAnalyticsDataSettings =
  *     alphaAnalyticsDataSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createAudienceList:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * AlphaAnalyticsDataStubSettings.Builder alphaAnalyticsDataSettingsBuilder =
+ *     AlphaAnalyticsDataStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * alphaAnalyticsDataSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsDataStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/analytics")
           .add("https://www.googleapis.com/auth/analytics.readonly")
-          .add("https://www.googleapis.com/auth/drive")
-          .add("https://www.googleapis.com/auth/drive.file")
-          .add("https://www.googleapis.com/auth/spreadsheets")
           .build();
 
   private final UnaryCallSettings<RunFunnelReportRequest, RunFunnelReportResponse>
@@ -133,8 +185,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       createAudienceListOperationSettings;
   private final UnaryCallSettings<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListSettings;
-  private final UnaryCallSettings<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-      sheetExportAudienceListSettings;
   private final UnaryCallSettings<GetAudienceListRequest, AudienceList> getAudienceListSettings;
   private final PagedCallSettings<
           ListAudienceListsRequest, ListAudienceListsResponse, ListAudienceListsPagedResponse>
@@ -148,6 +198,19 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
           ListRecurringAudienceListsResponse,
           ListRecurringAudienceListsPagedResponse>
       listRecurringAudienceListsSettings;
+  private final UnaryCallSettings<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
+      getPropertyQuotasSnapshotSettings;
+  private final UnaryCallSettings<CreateReportTaskRequest, Operation> createReportTaskSettings;
+  private final OperationCallSettings<CreateReportTaskRequest, ReportTask, ReportTaskMetadata>
+      createReportTaskOperationSettings;
+  private final UnaryCallSettings<QueryReportTaskRequest, QueryReportTaskResponse>
+      queryReportTaskSettings;
+  private final UnaryCallSettings<GetReportTaskRequest, ReportTask> getReportTaskSettings;
+  private final PagedCallSettings<
+          ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>
+      listReportTasksSettings;
+  private final UnaryCallSettings<RunReportRequest, RunReportResponse> runReportSettings;
+  private final UnaryCallSettings<GetMetadataRequest, Metadata> getMetadataSettings;
 
   private static final PagedListDescriptor<
           ListAudienceListsRequest, ListAudienceListsResponse, AudienceList>
@@ -183,9 +246,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
 
             @Override
             public Iterable<AudienceList> extractResources(ListAudienceListsResponse payload) {
-              return payload.getAudienceListsList() == null
-                  ? ImmutableList.<AudienceList>of()
-                  : payload.getAudienceListsList();
+              return payload.getAudienceListsList();
             }
           };
 
@@ -232,9 +293,44 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
             @Override
             public Iterable<RecurringAudienceList> extractResources(
                 ListRecurringAudienceListsResponse payload) {
-              return payload.getRecurringAudienceListsList() == null
-                  ? ImmutableList.<RecurringAudienceList>of()
-                  : payload.getRecurringAudienceListsList();
+              return payload.getRecurringAudienceListsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListReportTasksRequest, ListReportTasksResponse, ReportTask>
+      LIST_REPORT_TASKS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListReportTasksRequest, ListReportTasksResponse, ReportTask>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListReportTasksRequest injectToken(
+                ListReportTasksRequest payload, String token) {
+              return ListReportTasksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListReportTasksRequest injectPageSize(
+                ListReportTasksRequest payload, int pageSize) {
+              return ListReportTasksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListReportTasksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListReportTasksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ReportTask> extractResources(ListReportTasksResponse payload) {
+              return payload.getReportTasksList();
             }
           };
 
@@ -287,6 +383,23 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>
+      LIST_REPORT_TASKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>() {
+            @Override
+            public ApiFuture<ListReportTasksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListReportTasksRequest, ListReportTasksResponse> callable,
+                ListReportTasksRequest request,
+                ApiCallContext context,
+                ApiFuture<ListReportTasksResponse> futureResponse) {
+              PageContext<ListReportTasksRequest, ListReportTasksResponse, ReportTask> pageContext =
+                  PageContext.create(callable, LIST_REPORT_TASKS_PAGE_STR_DESC, request, context);
+              return ListReportTasksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to runFunnelReport. */
   public UnaryCallSettings<RunFunnelReportRequest, RunFunnelReportResponse>
       runFunnelReportSettings() {
@@ -308,12 +421,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
   public UnaryCallSettings<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListSettings() {
     return queryAudienceListSettings;
-  }
-
-  /** Returns the object with the settings used for calls to sheetExportAudienceList. */
-  public UnaryCallSettings<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-      sheetExportAudienceListSettings() {
-    return sheetExportAudienceListSettings;
   }
 
   /** Returns the object with the settings used for calls to getAudienceList. */
@@ -349,6 +456,51 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     return listRecurringAudienceListsSettings;
   }
 
+  /** Returns the object with the settings used for calls to getPropertyQuotasSnapshot. */
+  public UnaryCallSettings<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
+      getPropertyQuotasSnapshotSettings() {
+    return getPropertyQuotasSnapshotSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createReportTask. */
+  public UnaryCallSettings<CreateReportTaskRequest, Operation> createReportTaskSettings() {
+    return createReportTaskSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createReportTask. */
+  public OperationCallSettings<CreateReportTaskRequest, ReportTask, ReportTaskMetadata>
+      createReportTaskOperationSettings() {
+    return createReportTaskOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to queryReportTask. */
+  public UnaryCallSettings<QueryReportTaskRequest, QueryReportTaskResponse>
+      queryReportTaskSettings() {
+    return queryReportTaskSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getReportTask. */
+  public UnaryCallSettings<GetReportTaskRequest, ReportTask> getReportTaskSettings() {
+    return getReportTaskSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listReportTasks. */
+  public PagedCallSettings<
+          ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>
+      listReportTasksSettings() {
+    return listReportTasksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to runReport. */
+  public UnaryCallSettings<RunReportRequest, RunReportResponse> runReportSettings() {
+    return runReportSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getMetadata. */
+  public UnaryCallSettings<GetMetadataRequest, Metadata> getMetadataSettings() {
+    return getMetadataSettings;
+  }
+
   public AlphaAnalyticsDataStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -365,15 +517,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -386,6 +529,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "analyticsdata.googleapis.com:443";
   }
@@ -473,7 +617,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     createAudienceListOperationSettings =
         settingsBuilder.createAudienceListOperationSettings().build();
     queryAudienceListSettings = settingsBuilder.queryAudienceListSettings().build();
-    sheetExportAudienceListSettings = settingsBuilder.sheetExportAudienceListSettings().build();
     getAudienceListSettings = settingsBuilder.getAudienceListSettings().build();
     listAudienceListsSettings = settingsBuilder.listAudienceListsSettings().build();
     createRecurringAudienceListSettings =
@@ -481,6 +624,23 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     getRecurringAudienceListSettings = settingsBuilder.getRecurringAudienceListSettings().build();
     listRecurringAudienceListsSettings =
         settingsBuilder.listRecurringAudienceListsSettings().build();
+    getPropertyQuotasSnapshotSettings = settingsBuilder.getPropertyQuotasSnapshotSettings().build();
+    createReportTaskSettings = settingsBuilder.createReportTaskSettings().build();
+    createReportTaskOperationSettings = settingsBuilder.createReportTaskOperationSettings().build();
+    queryReportTaskSettings = settingsBuilder.queryReportTaskSettings().build();
+    getReportTaskSettings = settingsBuilder.getReportTaskSettings().build();
+    listReportTasksSettings = settingsBuilder.listReportTasksSettings().build();
+    runReportSettings = settingsBuilder.runReportSettings().build();
+    getMetadataSettings = settingsBuilder.getMetadataSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.analytics:google-analytics-data")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for AlphaAnalyticsDataStubSettings. */
@@ -496,9 +656,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
         createAudienceListOperationSettings;
     private final UnaryCallSettings.Builder<QueryAudienceListRequest, QueryAudienceListResponse>
         queryAudienceListSettings;
-    private final UnaryCallSettings.Builder<
-            SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-        sheetExportAudienceListSettings;
     private final UnaryCallSettings.Builder<GetAudienceListRequest, AudienceList>
         getAudienceListSettings;
     private final PagedCallSettings.Builder<
@@ -514,6 +671,22 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
             ListRecurringAudienceListsResponse,
             ListRecurringAudienceListsPagedResponse>
         listRecurringAudienceListsSettings;
+    private final UnaryCallSettings.Builder<
+            GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
+        getPropertyQuotasSnapshotSettings;
+    private final UnaryCallSettings.Builder<CreateReportTaskRequest, Operation>
+        createReportTaskSettings;
+    private final OperationCallSettings.Builder<
+            CreateReportTaskRequest, ReportTask, ReportTaskMetadata>
+        createReportTaskOperationSettings;
+    private final UnaryCallSettings.Builder<QueryReportTaskRequest, QueryReportTaskResponse>
+        queryReportTaskSettings;
+    private final UnaryCallSettings.Builder<GetReportTaskRequest, ReportTask> getReportTaskSettings;
+    private final PagedCallSettings.Builder<
+            ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>
+        listReportTasksSettings;
+    private final UnaryCallSettings.Builder<RunReportRequest, RunReportResponse> runReportSettings;
+    private final UnaryCallSettings.Builder<GetMetadataRequest, Metadata> getMetadataSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -535,21 +708,21 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -566,25 +739,38 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       createAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAudienceListOperationSettings = OperationCallSettings.newBuilder();
       queryAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      sheetExportAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAudienceListsSettings = PagedCallSettings.newBuilder(LIST_AUDIENCE_LISTS_PAGE_STR_FACT);
       createRecurringAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getRecurringAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listRecurringAudienceListsSettings =
           PagedCallSettings.newBuilder(LIST_RECURRING_AUDIENCE_LISTS_PAGE_STR_FACT);
+      getPropertyQuotasSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createReportTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createReportTaskOperationSettings = OperationCallSettings.newBuilder();
+      queryReportTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getReportTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listReportTasksSettings = PagedCallSettings.newBuilder(LIST_REPORT_TASKS_PAGE_STR_FACT);
+      runReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               runFunnelReportSettings,
               createAudienceListSettings,
               queryAudienceListSettings,
-              sheetExportAudienceListSettings,
               getAudienceListSettings,
               listAudienceListsSettings,
               createRecurringAudienceListSettings,
               getRecurringAudienceListSettings,
-              listRecurringAudienceListsSettings);
+              listRecurringAudienceListsSettings,
+              getPropertyQuotasSnapshotSettings,
+              createReportTaskSettings,
+              queryReportTaskSettings,
+              getReportTaskSettings,
+              listReportTasksSettings,
+              runReportSettings,
+              getMetadataSettings);
       initDefaults(this);
     }
 
@@ -596,25 +782,38 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       createAudienceListOperationSettings =
           settings.createAudienceListOperationSettings.toBuilder();
       queryAudienceListSettings = settings.queryAudienceListSettings.toBuilder();
-      sheetExportAudienceListSettings = settings.sheetExportAudienceListSettings.toBuilder();
       getAudienceListSettings = settings.getAudienceListSettings.toBuilder();
       listAudienceListsSettings = settings.listAudienceListsSettings.toBuilder();
       createRecurringAudienceListSettings =
           settings.createRecurringAudienceListSettings.toBuilder();
       getRecurringAudienceListSettings = settings.getRecurringAudienceListSettings.toBuilder();
       listRecurringAudienceListsSettings = settings.listRecurringAudienceListsSettings.toBuilder();
+      getPropertyQuotasSnapshotSettings = settings.getPropertyQuotasSnapshotSettings.toBuilder();
+      createReportTaskSettings = settings.createReportTaskSettings.toBuilder();
+      createReportTaskOperationSettings = settings.createReportTaskOperationSettings.toBuilder();
+      queryReportTaskSettings = settings.queryReportTaskSettings.toBuilder();
+      getReportTaskSettings = settings.getReportTaskSettings.toBuilder();
+      listReportTasksSettings = settings.listReportTasksSettings.toBuilder();
+      runReportSettings = settings.runReportSettings.toBuilder();
+      getMetadataSettings = settings.getMetadataSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               runFunnelReportSettings,
               createAudienceListSettings,
               queryAudienceListSettings,
-              sheetExportAudienceListSettings,
               getAudienceListSettings,
               listAudienceListsSettings,
               createRecurringAudienceListSettings,
               getRecurringAudienceListSettings,
-              listRecurringAudienceListsSettings);
+              listRecurringAudienceListsSettings,
+              getPropertyQuotasSnapshotSettings,
+              createReportTaskSettings,
+              queryReportTaskSettings,
+              getReportTaskSettings,
+              listReportTasksSettings,
+              runReportSettings,
+              getMetadataSettings);
     }
 
     private static Builder createDefault() {
@@ -658,11 +857,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .sheetExportAudienceListSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
           .getAudienceListSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -688,6 +882,41 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .getPropertyQuotasSnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createReportTaskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .queryReportTaskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getReportTaskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listReportTasksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .runReportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getMetadataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .createAudienceListOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -702,13 +931,37 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createReportTaskOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateReportTaskRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ReportTask.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(ReportTaskMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -754,13 +1007,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       return queryAudienceListSettings;
     }
 
-    /** Returns the builder for the settings used for calls to sheetExportAudienceList. */
-    public UnaryCallSettings.Builder<
-            SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-        sheetExportAudienceListSettings() {
-      return sheetExportAudienceListSettings;
-    }
-
     /** Returns the builder for the settings used for calls to getAudienceList. */
     public UnaryCallSettings.Builder<GetAudienceListRequest, AudienceList>
         getAudienceListSettings() {
@@ -795,13 +1041,50 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       return listRecurringAudienceListsSettings;
     }
 
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
+    /** Returns the builder for the settings used for calls to getPropertyQuotasSnapshot. */
+    public UnaryCallSettings.Builder<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
+        getPropertyQuotasSnapshotSettings() {
+      return getPropertyQuotasSnapshotSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createReportTask. */
+    public UnaryCallSettings.Builder<CreateReportTaskRequest, Operation>
+        createReportTaskSettings() {
+      return createReportTaskSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createReportTask. */
+    public OperationCallSettings.Builder<CreateReportTaskRequest, ReportTask, ReportTaskMetadata>
+        createReportTaskOperationSettings() {
+      return createReportTaskOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryReportTask. */
+    public UnaryCallSettings.Builder<QueryReportTaskRequest, QueryReportTaskResponse>
+        queryReportTaskSettings() {
+      return queryReportTaskSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getReportTask. */
+    public UnaryCallSettings.Builder<GetReportTaskRequest, ReportTask> getReportTaskSettings() {
+      return getReportTaskSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listReportTasks. */
+    public PagedCallSettings.Builder<
+            ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>
+        listReportTasksSettings() {
+      return listReportTasksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to runReport. */
+    public UnaryCallSettings.Builder<RunReportRequest, RunReportResponse> runReportSettings() {
+      return runReportSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getMetadata. */
+    public UnaryCallSettings.Builder<GetMetadataRequest, Metadata> getMetadataSettings() {
+      return getMetadataSettings;
     }
 
     @Override

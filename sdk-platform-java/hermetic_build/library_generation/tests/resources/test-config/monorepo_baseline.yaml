@@ -1,0 +1,30 @@
+gapic_generator_version: 2.34.0
+googleapis_commitish: 1a45bf7393b52407188c82e63101db7dc9c72026
+libraries_bom_version: 26.37.0
+libraries:
+  - api_shortname: cloudasset
+    name_pretty: Cloud Asset Inventory
+    product_documentation: "https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview"
+    api_description: "provides inventory services based on a time series database."
+    library_name: "asset"
+    client_documentation: "https://cloud.google.com/java/docs/reference/google-cloud-asset/latest/overview"
+    distribution_name: "com.google.cloud:google-cloud-asset"
+    release_level: preview
+    GAPICs:
+      - proto_path: google/cloud/asset/v1
+      - proto_path: google/cloud/asset/v1p1beta1
+      - proto_path: google/cloud/asset/v1p2beta1
+      - proto_path: google/cloud/asset/v1p5beta1
+      - proto_path: google/cloud/asset/v1p7beta1
+  - api_shortname: cloudbuild
+    name_pretty: Cloud Build
+    product_documentation: https://cloud.google.com/cloud-build/
+    api_description: lets you build software quickly across all languages. Get complete
+        control over defining custom workflows for building, testing, and deploying across
+        multiple environments such as VMs, serverless, Kubernetes, or Firebase.
+    release_level: stable
+    distribution_name: com.google.cloud:google-cloud-build
+    issue_tracker: https://issuetracker.google.com/savedsearches/5226584
+    GAPICs:
+       - proto_path: google/devtools/cloudbuild/v1
+       - proto_path: google/devtools/cloudbuild/v2

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRuleSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RuleSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRuleSetRequest, RuleSet> getRuleSetMethodDescriptor =
@@ -64,6 +65,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
           .setFullMethodName("google.cloud.contentwarehouse.v1.RuleSetService/GetRuleSet")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRuleSetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(RuleSet.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateRuleSetRequest, RuleSet>
@@ -74,6 +76,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRuleSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RuleSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRuleSetRequest, Empty> deleteRuleSetMethodDescriptor =
@@ -82,6 +85,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
           .setFullMethodName("google.cloud.contentwarehouse.v1.RuleSetService/DeleteRuleSet")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteRuleSetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListRuleSetsRequest, ListRuleSetsResponse>
@@ -92,6 +96,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListRuleSetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRuleSetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateRuleSetRequest, RuleSet> createRuleSetCallable;
@@ -155,6 +160,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetRuleSetRequest, RuleSet> getRuleSetTransportSettings =
         GrpcCallSettings.<GetRuleSetRequest, RuleSet>newBuilder()
@@ -165,6 +171,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateRuleSetRequest, RuleSet> updateRuleSetTransportSettings =
         GrpcCallSettings.<UpdateRuleSetRequest, RuleSet>newBuilder()
@@ -175,6 +182,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteRuleSetRequest, Empty> deleteRuleSetTransportSettings =
         GrpcCallSettings.<DeleteRuleSetRequest, Empty>newBuilder()
@@ -185,6 +193,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRuleSetsRequest, ListRuleSetsResponse> listRuleSetsTransportSettings =
         GrpcCallSettings.<ListRuleSetsRequest, ListRuleSetsResponse>newBuilder()
@@ -195,6 +204,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createRuleSetCallable =

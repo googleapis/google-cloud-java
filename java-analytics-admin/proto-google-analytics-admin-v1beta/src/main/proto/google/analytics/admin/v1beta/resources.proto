@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,10 +21,14 @@ import "google/api/resource.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 
-option go_package = "google.golang.org/genproto/googleapis/analytics/admin/v1beta;admin";
+option go_package = "cloud.google.com/go/analytics/admin/apiv1beta/adminpb;adminpb";
 option java_multiple_files = true;
 option java_outer_classname = "ResourcesProto";
 option java_package = "com.google.analytics.admin.v1beta";
+option (google.api.resource_definition) = {
+  type: "marketingplatformadmin.googleapis.com/Organization"
+  pattern: "organizations/{organization}"
+};
 
 // The category selected for this property, used for industry benchmarking.
 enum IndustryCategory {
@@ -179,6 +183,12 @@ enum ChangeHistoryResourceType {
   // MeasurementProtocolSecret resource
   MEASUREMENT_PROTOCOL_SECRET = 10;
 
+  // CustomDimension resource
+  CUSTOM_DIMENSION = 11;
+
+  // CustomMetric resource
+  CUSTOM_METRIC = 12;
+
   // DataRetentionSettings resource
   DATA_RETENTION_SETTINGS = 13;
 
@@ -195,18 +205,18 @@ enum ChangeHistoryResourceType {
   ATTRIBUTION_SETTINGS = 20;
 }
 
-// Types of Property resources.
+// Types of `Property` resources.
 enum PropertyType {
   // Unknown or unspecified property type
   PROPERTY_TYPE_UNSPECIFIED = 0;
 
-  // Ordinary GA4 property
+  // Ordinary Google Analytics property
   PROPERTY_TYPE_ORDINARY = 1;
 
-  // GA4 subproperty
+  // Google Analytics subproperty
   PROPERTY_TYPE_SUBPROPERTY = 2;
 
-  // GA4 rollup property
+  // Google Analytics rollup property
   PROPERTY_TYPE_ROLLUP = 3;
 }
 
@@ -215,12 +225,14 @@ message Account {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/Account"
     pattern: "accounts/{account}"
+    plural: "accounts"
+    singular: "account"
   };
 
-  // Output only. Resource name of this account.
+  // Identifier. Resource name of this account.
   // Format: accounts/{account}
   // Example: "accounts/100"
-  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Output only. Time when this account was originally created.
   google.protobuf.Timestamp create_time = 2
@@ -239,24 +251,35 @@ message Account {
   // Output only. Indicates whether this Account is soft-deleted or not. Deleted
   // accounts are excluded from List results unless specifically requested.
   bool deleted = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. The URI for a Google Marketing Platform organization resource.
+  // Only set when this account is connected to a GMP organization.
+  // Format: marketingplatformadmin.googleapis.com/organizations/{org_id}
+  string gmp_organization = 7 [
+    (google.api.field_behavior) = OUTPUT_ONLY,
+    (google.api.resource_reference) = {
+      type: "marketingplatformadmin.googleapis.com/Organization"
+    }
+  ];
 }
 
-// A resource message representing a Google Analytics GA4 property.
+// A resource message representing a Google Analytics property.
 message Property {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/Property"
     pattern: "properties/{property}"
+    plural: "properties"
+    singular: "property"
   };
 
-  // Output only. Resource name of this property.
+  // Identifier. Resource name of this property.
   // Format: properties/{property_id}
   // Example: "properties/1000"
-  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Immutable. The property type for this Property resource. When creating a
   // property, if the type is "PROPERTY_TYPE_UNSPECIFIED", then
-  // "ORDINARY_PROPERTY" will be implied. "SUBPROPERTY" and "ROLLUP_PROPERTY"
-  // types cannot yet be created with the Google Analytics Admin API.
+  // "ORDINARY_PROPERTY" will be implied.
   PropertyType property_type = 14 [(google.api.field_behavior) = IMMUTABLE];
 
   // Output only. Time when the entity was originally created.
@@ -332,6 +355,8 @@ message DataStream {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/DataStream"
     pattern: "properties/{property}/dataStreams/{data_stream}"
+    plural: "dataStreams"
+    singular: "dataStream"
   };
 
   // Data specific to web streams.
@@ -406,10 +431,10 @@ message DataStream {
     IosAppStreamData ios_app_stream_data = 8;
   }
 
-  // Output only. Resource name of this Data Stream.
+  // Identifier. Resource name of this Data Stream.
   // Format: properties/{property_id}/dataStreams/{stream_id}
   // Example: "properties/1000/dataStreams/2000"
-  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Required. Immutable. The type of this DataStream resource.
   DataStreamType type = 2 [
@@ -433,15 +458,17 @@ message DataStream {
       [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// A link between a GA4 property and a Firebase project.
+// A link between a Google Analytics property and a Firebase project.
 message FirebaseLink {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/FirebaseLink"
     pattern: "properties/{property}/firebaseLinks/{firebase_link}"
+    plural: "firebaseLinks"
+    singular: "firebaseLink"
   };
 
-  // Output only. Example format: properties/1234/firebaseLinks/5678
-  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Identifier. Example format: properties/1234/firebaseLinks/5678
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Immutable. Firebase project resource name. When creating a FirebaseLink,
   // you may provide this resource name using either a project number or project
@@ -457,18 +484,20 @@ message FirebaseLink {
       [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// A link between a GA4 property and a Google Ads account.
+// A link between a Google Analytics property and a Google Ads account.
 message GoogleAdsLink {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/GoogleAdsLink"
     pattern: "properties/{property}/googleAdsLinks/{google_ads_link}"
+    plural: "googleAdsLinks"
+    singular: "googleAdsLink"
   };
 
-  // Output only. Format:
+  // Identifier. Format:
   // properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
   //
   // Note: googleAdsLinkId is not the Google Ads customer ID.
-  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Immutable. Google Ads customer ID.
   string customer_id = 3 [(google.api.field_behavior) = IMMUTABLE];
@@ -501,45 +530,68 @@ message DataSharingSettings {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/DataSharingSettings"
     pattern: "accounts/{account}/dataSharingSettings"
+    plural: "dataSharingSettings"
+    singular: "dataSharingSettings"
   };
 
-  // Output only. Resource name.
+  // Identifier. Resource name.
   // Format: accounts/{account}/dataSharingSettings
   // Example: "accounts/1000/dataSharingSettings"
-  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-  // Allows Google support to access the data in order to help troubleshoot
-  // issues.
+  // Allows Google technical support representatives access to your Google
+  // Analytics data and account when necessary to provide service and find
+  // solutions to technical issues.
+  //
+  // This field maps to the "Technical support" field in the Google Analytics
+  // Admin UI.
   bool sharing_with_google_support_enabled = 2;
 
-  // Allows Google sales teams that are assigned to the customer to access the
-  // data in order to suggest configuration changes to improve results.
-  // Sales team restrictions still apply when enabled.
+  // Allows Google access to your Google Analytics account data, including
+  // account usage and configuration data, product spending, and users
+  // associated with your Google Analytics account, so that Google can help you
+  // make the most of Google products, providing you with insights, offers,
+  // recommendations, and optimization tips across Google Analytics and other
+  // Google products for business.
+  //
+  // This field maps to the "Recommendations for your business" field in the
+  // Google Analytics Admin UI.
   bool sharing_with_google_assigned_sales_enabled = 3;
 
-  // Allows any of Google sales to access the data in order to suggest
-  // configuration changes to improve results.
-  bool sharing_with_google_any_sales_enabled = 4;
+  // Deprecated. This field is no longer used and always returns false.
+  bool sharing_with_google_any_sales_enabled = 4 [deprecated = true];
 
   // Allows Google to use the data to improve other Google products or services.
+  //
+  // This fields maps to the "Google products & services" field in the Google
+  // Analytics Admin UI.
   bool sharing_with_google_products_enabled = 5;
 
-  // Allows Google to share the data anonymously in aggregate form with others.
+  // Enable features like predictions, modeled data, and benchmarking that can
+  // provide you with richer business insights when you contribute aggregated
+  // measurement data. The data you share (including information about the
+  // property from which it is shared) is aggregated and de-identified before
+  // being used to generate business insights.
+  //
+  // This field maps to the "Modeling contributions & business insights" field
+  // in the Google Analytics Admin UI.
   bool sharing_with_others_enabled = 6;
 }
 
 // A virtual resource representing an overview of an account and
-// all its child GA4 properties.
+// all its child Google Analytics properties.
 message AccountSummary {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/AccountSummary"
     pattern: "accountSummaries/{account_summary}"
+    plural: "accountSummaries"
+    singular: "accountSummary"
   };
 
-  // Resource name for this account summary.
+  // Identifier. Resource name for this account summary.
   // Format: accountSummaries/{account_id}
   // Example: "accountSummaries/1000"
-  string name = 1;
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Resource name of account referred to by this account summary
   // Format: accounts/{account_id}
@@ -555,7 +607,7 @@ message AccountSummary {
   repeated PropertySummary property_summaries = 4;
 }
 
-// A virtual resource representing metadata for a GA4 property.
+// A virtual resource representing metadata for a Google Analytics property.
 message PropertySummary {
   // Resource name of property referred to by this property summary
   // Format: properties/{property_id}
@@ -576,6 +628,10 @@ message PropertySummary {
   // Format: accounts/{account}, properties/{property}
   // Example: "accounts/100", "properties/200"
   string parent = 4;
+
+  // If true, then the user has a Google Analytics role that permits them to
+  // edit the property.
+  bool can_edit = 5;
 }
 
 // A secret value used for sending hits to Measurement Protocol.
@@ -583,12 +639,14 @@ message MeasurementProtocolSecret {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/MeasurementProtocolSecret"
     pattern: "properties/{property}/dataStreams/{data_stream}/measurementProtocolSecrets/{measurement_protocol_secret}"
+    plural: "measurementProtocolSecrets"
+    singular: "measurementProtocolSecret"
   };
 
-  // Output only. Resource name of this secret. This secret may be a child of
-  // any type of stream. Format:
+  // Identifier. Resource name of this secret. This secret may be a child of any
+  // type of stream. Format:
   // properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
-  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Required. Human-readable display name for this secret.
   string display_name = 2 [(google.api.field_behavior) = REQUIRED];
@@ -679,7 +737,23 @@ message ConversionEvent {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/ConversionEvent"
     pattern: "properties/{property}/conversionEvents/{conversion_event}"
+    plural: "conversionEvents"
+    singular: "conversionEvent"
   };
+
+  // Defines a default value/currency for a conversion event. Both value and
+  // currency must be provided.
+  message DefaultConversionValue {
+    // This value will be used to populate the value for all conversions
+    // of the specified event_name where the event "value" parameter is unset.
+    optional double value = 1;
+
+    // When a conversion event for this event_name has no set currency,
+    // this currency will be applied as the default. Must be in ISO 4217
+    // currency code format. See https://en.wikipedia.org/wiki/ISO_4217 for
+    // more information.
+    optional string currency_code = 2;
+  }
 
   // The method by which conversions will be counted across multiple events
   // within a session.
@@ -695,9 +769,9 @@ message ConversionEvent {
     ONCE_PER_SESSION = 2;
   }
 
-  // Output only. Resource name of this conversion event.
+  // Identifier. Resource name of this conversion event.
   // Format: properties/{property}/conversionEvents/{conversion_event}
-  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Immutable. The event name for this conversion event.
   // Examples: 'click', 'purchase'
@@ -724,6 +798,79 @@ message ConversionEvent {
   // `ONCE_PER_EVENT`.
   ConversionCountingMethod counting_method = 6
       [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Defines a default value/currency for a conversion event.
+  optional DefaultConversionValue default_conversion_value = 7
+      [(google.api.field_behavior) = OPTIONAL];
+}
+
+// A key event in a Google Analytics property.
+message KeyEvent {
+  option (google.api.resource) = {
+    type: "analyticsadmin.googleapis.com/KeyEvent"
+    pattern: "properties/{property}/keyEvents/{key_event}"
+    plural: "keyEvents"
+    singular: "keyEvent"
+  };
+
+  // Defines a default value/currency for a key event.
+  message DefaultValue {
+    // Required. This will be used to populate the "value" parameter for all
+    // occurrences of this Key Event (specified by event_name) where that
+    // parameter is unset.
+    double numeric_value = 1 [(google.api.field_behavior) = REQUIRED];
+
+    // Required. When an occurrence of this Key Event (specified by event_name)
+    // has no set currency this currency will be applied as the default. Must be
+    // in ISO 4217 currency code format.
+    //
+    // See https://en.wikipedia.org/wiki/ISO_4217 for more information.
+    string currency_code = 2 [(google.api.field_behavior) = REQUIRED];
+  }
+
+  // The method by which Key Events will be counted across multiple events
+  // within a session.
+  enum CountingMethod {
+    // Counting method not specified.
+    COUNTING_METHOD_UNSPECIFIED = 0;
+
+    // Each Event instance is considered a Key Event.
+    ONCE_PER_EVENT = 1;
+
+    // An Event instance is considered a Key Event at most once per session per
+    // user.
+    ONCE_PER_SESSION = 2;
+  }
+
+  // Output only. Resource name of this key event.
+  // Format: properties/{property}/keyEvents/{key_event}
+  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Immutable. The event name for this key event.
+  // Examples: 'click', 'purchase'
+  string event_name = 2 [(google.api.field_behavior) = IMMUTABLE];
+
+  // Output only. Time when this key event was created in the property.
+  google.protobuf.Timestamp create_time = 3
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. If set to true, this event can be deleted.
+  bool deletable = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. If set to true, this key event refers to a custom event.  If
+  // set to false, this key event refers to a default event in GA. Default
+  // events typically have special meaning in GA. Default events are usually
+  // created for you by the GA system, but in some cases can be created by
+  // property admins. Custom events count towards the maximum number of
+  // custom key events that may be created per property.
+  bool custom = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Required. The method by which Key Events will be counted across multiple
+  // events within a session.
+  CountingMethod counting_method = 6 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. Defines a default value/currency for a key event.
+  DefaultValue default_value = 7 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // A definition for a CustomDimension.
@@ -731,6 +878,8 @@ message CustomDimension {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/CustomDimension"
     pattern: "properties/{property}/customDimensions/{custom_dimension}"
+    plural: "customDimensions"
+    singular: "customDimension"
   };
 
   // Valid values for the scope of this dimension.
@@ -748,9 +897,9 @@ message CustomDimension {
     ITEM = 3;
   }
 
-  // Output only. Resource name for this CustomDimension resource.
+  // Identifier. Resource name for this CustomDimension resource.
   // Format: properties/{property}/customDimensions/{customDimension}
-  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Required. Immutable. Tagging parameter name for this custom dimension.
   //
@@ -799,6 +948,8 @@ message CustomMetric {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/CustomMetric"
     pattern: "properties/{property}/customMetrics/{custom_metric}"
+    plural: "customMetrics"
+    singular: "customMetric"
   };
 
   // Possible types of representing the custom metric's value.
@@ -862,9 +1013,9 @@ message CustomMetric {
     REVENUE_DATA = 2;
   }
 
-  // Output only. Resource name for this CustomMetric resource.
+  // Identifier. Resource name for this CustomMetric resource.
   // Format: properties/{property}/customMetrics/{customMetric}
-  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Required. Immutable. Tagging name for this custom metric.
   //
@@ -910,6 +1061,8 @@ message DataRetentionSettings {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/DataRetentionSettings"
     pattern: "properties/{property}/dataRetentionSettings"
+    plural: "dataRetentionSettings"
+    singular: "dataRetentionSettings"
   };
 
   // Valid values for the data retention duration.
@@ -924,24 +1077,29 @@ message DataRetentionSettings {
     FOURTEEN_MONTHS = 3;
 
     // The data retention time duration is 26 months.
-    // Available to 360 properties only.
+    // Available to 360 properties only. Available for event data only.
     TWENTY_SIX_MONTHS = 4;
 
     // The data retention time duration is 38 months.
-    // Available to 360 properties only.
+    // Available to 360 properties only. Available for event data only.
     THIRTY_EIGHT_MONTHS = 5;
 
     // The data retention time duration is 50 months.
-    // Available to 360 properties only.
+    // Available to 360 properties only. Available for event data only.
     FIFTY_MONTHS = 6;
   }
 
-  // Output only. Resource name for this DataRetentionSetting resource.
+  // Identifier. Resource name for this DataRetentionSetting resource.
   // Format: properties/{property}/dataRetentionSettings
-  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-  // The length of time that event-level data is retained.
-  RetentionDuration event_data_retention = 2;
+  // Required. The length of time that event-level data is retained.
+  RetentionDuration event_data_retention = 2
+      [(google.api.field_behavior) = REQUIRED];
+
+  // Required. The length of time that user-level data is retained.
+  RetentionDuration user_data_retention = 4
+      [(google.api.field_behavior) = REQUIRED];
 
   // If true, reset the retention period for the user identifier with every
   // event from that user.

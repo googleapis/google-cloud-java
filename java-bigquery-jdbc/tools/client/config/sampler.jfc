@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration version="2.0" label="No OOM" description="Disable OldObjectSample, max frequency" provider="Jetski">
+    <event name="jdk.OldObjectSample">
+      <setting name="enabled">false</setting>
+    </event>
+    <event name="jdk.ExecutionSample">
+      <setting name="enabled">true</setting>
+      <setting name="period">1 ms</setting>
+    </event>
+    <event name="jdk.NativeMethodSample">
+      <setting name="enabled">true</setting>
+      <setting name="period">1 ms</setting>
+    </event>
+    <event name="jdk.ObjectAllocationSample">
+      <setting name="enabled">true</setting>
+      <setting name="throttle">10000/s</setting>
+    </event>
+</configuration>

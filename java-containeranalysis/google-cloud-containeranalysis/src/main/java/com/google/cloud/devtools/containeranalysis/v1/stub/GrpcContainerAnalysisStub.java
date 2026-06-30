@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,8 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.containeranalysis.v1.ExportSBOMRequest;
+import com.google.containeranalysis.v1.ExportSBOMResponse;
 import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
 import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -51,6 +53,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
           .setFullMethodName("google.devtools.containeranalysis.v1.ContainerAnalysis/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -59,6 +62,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
           .setFullMethodName("google.devtools.containeranalysis.v1.ContainerAnalysis/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -71,6 +75,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -87,6 +92,18 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
                       GetVulnerabilityOccurrencesSummaryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(VulnerabilityOccurrencesSummary.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ExportSBOMRequest, ExportSBOMResponse>
+      exportSBOMMethodDescriptor =
+          MethodDescriptor.<ExportSBOMRequest, ExportSBOMResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.containeranalysis.v1.ContainerAnalysis/ExportSBOM")
+              .setRequestMarshaller(ProtoUtils.marshaller(ExportSBOMRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ExportSBOMResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
@@ -96,6 +113,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
   private final UnaryCallable<
           GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
       getVulnerabilityOccurrencesSummaryCallable;
+  private final UnaryCallable<ExportSBOMRequest, ExportSBOMResponse> exportSBOMCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -150,6 +168,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -160,6 +179,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -171,6 +191,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
         getVulnerabilityOccurrencesSummaryTransportSettings =
@@ -184,7 +205,18 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<ExportSBOMRequest, ExportSBOMResponse> exportSBOMTransportSettings =
+        GrpcCallSettings.<ExportSBOMRequest, ExportSBOMResponse>newBuilder()
+            .setMethodDescriptor(exportSBOMMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
@@ -202,6 +234,9 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
             getVulnerabilityOccurrencesSummaryTransportSettings,
             settings.getVulnerabilityOccurrencesSummarySettings(),
             clientContext);
+    this.exportSBOMCallable =
+        callableFactory.createUnaryCallable(
+            exportSBOMTransportSettings, settings.exportSBOMSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -231,6 +266,11 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
   public UnaryCallable<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
       getVulnerabilityOccurrencesSummaryCallable() {
     return getVulnerabilityOccurrencesSummaryCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportSBOMRequest, ExportSBOMResponse> exportSBOMCallable() {
+    return exportSBOMCallable;
   }
 
   @Override

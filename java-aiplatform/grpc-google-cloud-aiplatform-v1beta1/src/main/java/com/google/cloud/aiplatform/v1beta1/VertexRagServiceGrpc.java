@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for retrieving relevant contexts.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/vertex_rag_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class VertexRagServiceGrpc {
 
@@ -83,6 +80,197 @@ public final class VertexRagServiceGrpc {
     return getRetrieveContextsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest,
+          com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>
+      getAugmentPromptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AugmentPrompt",
+      requestType = com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest,
+          com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>
+      getAugmentPromptMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest,
+            com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>
+        getAugmentPromptMethod;
+    if ((getAugmentPromptMethod = VertexRagServiceGrpc.getAugmentPromptMethod) == null) {
+      synchronized (VertexRagServiceGrpc.class) {
+        if ((getAugmentPromptMethod = VertexRagServiceGrpc.getAugmentPromptMethod) == null) {
+          VertexRagServiceGrpc.getAugmentPromptMethod =
+              getAugmentPromptMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest,
+                          com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AugmentPrompt"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagServiceMethodDescriptorSupplier("AugmentPrompt"))
+                      .build();
+        }
+      }
+    }
+    return getAugmentPromptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest,
+          com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>
+      getCorroborateContentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CorroborateContent",
+      requestType = com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest,
+          com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>
+      getCorroborateContentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest,
+            com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>
+        getCorroborateContentMethod;
+    if ((getCorroborateContentMethod = VertexRagServiceGrpc.getCorroborateContentMethod) == null) {
+      synchronized (VertexRagServiceGrpc.class) {
+        if ((getCorroborateContentMethod = VertexRagServiceGrpc.getCorroborateContentMethod)
+            == null) {
+          VertexRagServiceGrpc.getCorroborateContentMethod =
+              getCorroborateContentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest,
+                          com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CorroborateContent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagServiceMethodDescriptorSupplier("CorroborateContent"))
+                      .build();
+        }
+      }
+    }
+    return getCorroborateContentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.AskContextsRequest,
+          com.google.cloud.aiplatform.v1beta1.AskContextsResponse>
+      getAskContextsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AskContexts",
+      requestType = com.google.cloud.aiplatform.v1beta1.AskContextsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.AskContextsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.AskContextsRequest,
+          com.google.cloud.aiplatform.v1beta1.AskContextsResponse>
+      getAskContextsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.AskContextsRequest,
+            com.google.cloud.aiplatform.v1beta1.AskContextsResponse>
+        getAskContextsMethod;
+    if ((getAskContextsMethod = VertexRagServiceGrpc.getAskContextsMethod) == null) {
+      synchronized (VertexRagServiceGrpc.class) {
+        if ((getAskContextsMethod = VertexRagServiceGrpc.getAskContextsMethod) == null) {
+          VertexRagServiceGrpc.getAskContextsMethod =
+              getAskContextsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.AskContextsRequest,
+                          com.google.cloud.aiplatform.v1beta1.AskContextsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AskContexts"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.AskContextsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.AskContextsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagServiceMethodDescriptorSupplier("AskContexts"))
+                      .build();
+        }
+      }
+    }
+    return getAskContextsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsRequest,
+          com.google.longrunning.Operation>
+      getAsyncRetrieveContextsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AsyncRetrieveContexts",
+      requestType = com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsRequest,
+          com.google.longrunning.Operation>
+      getAsyncRetrieveContextsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsRequest,
+            com.google.longrunning.Operation>
+        getAsyncRetrieveContextsMethod;
+    if ((getAsyncRetrieveContextsMethod = VertexRagServiceGrpc.getAsyncRetrieveContextsMethod)
+        == null) {
+      synchronized (VertexRagServiceGrpc.class) {
+        if ((getAsyncRetrieveContextsMethod = VertexRagServiceGrpc.getAsyncRetrieveContextsMethod)
+            == null) {
+          VertexRagServiceGrpc.getAsyncRetrieveContextsMethod =
+              getAsyncRetrieveContextsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "AsyncRetrieveContexts"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagServiceMethodDescriptorSupplier("AsyncRetrieveContexts"))
+                      .build();
+        }
+      }
+    }
+    return getAsyncRetrieveContextsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static VertexRagServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<VertexRagServiceStub> factory =
@@ -94,6 +282,19 @@ public final class VertexRagServiceGrpc {
           }
         };
     return VertexRagServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static VertexRagServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<VertexRagServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<VertexRagServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public VertexRagServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new VertexRagServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return VertexRagServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -147,6 +348,68 @@ public final class VertexRagServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRetrieveContextsMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input prompt, it returns augmented prompt from vertex rag store
+     *  to guide LLM towards generating grounded responses.
+     * </pre>
+     */
+    default void augmentPrompt(
+        com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAugmentPromptMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input text, it returns a score that evaluates the factuality of
+     * the text. It also extracts and returns claims from the text and provides
+     * supporting facts.
+     * </pre>
+     */
+    default void corroborateContent(
+        com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCorroborateContentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Agentic Retrieval Ask API for RAG.
+     * </pre>
+     */
+    default void askContexts(
+        com.google.cloud.aiplatform.v1beta1.AskContextsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.AskContextsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAskContextsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronous API to retrieves relevant contexts for a query.
+     * </pre>
+     */
+    default void asyncRetrieveContexts(
+        com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAsyncRetrieveContextsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -199,10 +462,174 @@ public final class VertexRagServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input prompt, it returns augmented prompt from vertex rag store
+     *  to guide LLM towards generating grounded responses.
+     * </pre>
+     */
+    public void augmentPrompt(
+        com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAugmentPromptMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input text, it returns a score that evaluates the factuality of
+     * the text. It also extracts and returns claims from the text and provides
+     * supporting facts.
+     * </pre>
+     */
+    public void corroborateContent(
+        com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCorroborateContentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Agentic Retrieval Ask API for RAG.
+     * </pre>
+     */
+    public void askContexts(
+        com.google.cloud.aiplatform.v1beta1.AskContextsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.AskContextsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAskContextsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronous API to retrieves relevant contexts for a query.
+     * </pre>
+     */
+    public void asyncRetrieveContexts(
+        com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAsyncRetrieveContextsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service VertexRagService.
+   *
+   * <pre>
+   * A service for retrieving relevant contexts.
+   * </pre>
+   */
+  public static final class VertexRagServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<VertexRagServiceBlockingV2Stub> {
+    private VertexRagServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected VertexRagServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new VertexRagServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves relevant contexts for a query.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RetrieveContextsResponse retrieveContexts(
+        com.google.cloud.aiplatform.v1beta1.RetrieveContextsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRetrieveContextsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input prompt, it returns augmented prompt from vertex rag store
+     *  to guide LLM towards generating grounded responses.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse augmentPrompt(
+        com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAugmentPromptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input text, it returns a score that evaluates the factuality of
+     * the text. It also extracts and returns claims from the text and provides
+     * supporting facts.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse corroborateContent(
+        com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCorroborateContentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Agentic Retrieval Ask API for RAG.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.AskContextsResponse askContexts(
+        com.google.cloud.aiplatform.v1beta1.AskContextsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAskContextsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronous API to retrieves relevant contexts for a query.
+     * </pre>
+     */
+    public com.google.longrunning.Operation asyncRetrieveContexts(
+        com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAsyncRetrieveContextsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service VertexRagService.
    *
    * <pre>
    * A service for retrieving relevant contexts.
@@ -231,6 +658,61 @@ public final class VertexRagServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.RetrieveContextsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRetrieveContextsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input prompt, it returns augmented prompt from vertex rag store
+     *  to guide LLM towards generating grounded responses.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse augmentPrompt(
+        com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAugmentPromptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input text, it returns a score that evaluates the factuality of
+     * the text. It also extracts and returns claims from the text and provides
+     * supporting facts.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse corroborateContent(
+        com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCorroborateContentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Agentic Retrieval Ask API for RAG.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.AskContextsResponse askContexts(
+        com.google.cloud.aiplatform.v1beta1.AskContextsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAskContextsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronous API to retrieves relevant contexts for a query.
+     * </pre>
+     */
+    public com.google.longrunning.Operation asyncRetrieveContexts(
+        com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAsyncRetrieveContextsMethod(), getCallOptions(), request);
     }
   }
 
@@ -266,9 +748,72 @@ public final class VertexRagServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRetrieveContextsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input prompt, it returns augmented prompt from vertex rag store
+     *  to guide LLM towards generating grounded responses.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>
+        augmentPrompt(com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAugmentPromptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input text, it returns a score that evaluates the factuality of
+     * the text. It also extracts and returns claims from the text and provides
+     * supporting facts.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>
+        corroborateContent(com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCorroborateContentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Agentic Retrieval Ask API for RAG.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.AskContextsResponse>
+        askContexts(com.google.cloud.aiplatform.v1beta1.AskContextsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAskContextsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronous API to retrieves relevant contexts for a query.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        asyncRetrieveContexts(
+            com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAsyncRetrieveContextsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_RETRIEVE_CONTEXTS = 0;
+  private static final int METHODID_AUGMENT_PROMPT = 1;
+  private static final int METHODID_CORROBORATE_CONTENT = 2;
+  private static final int METHODID_ASK_CONTEXTS = 3;
+  private static final int METHODID_ASYNC_RETRIEVE_CONTEXTS = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -293,6 +838,31 @@ public final class VertexRagServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1beta1.RetrieveContextsResponse>)
                   responseObserver);
+          break;
+        case METHODID_AUGMENT_PROMPT:
+          serviceImpl.augmentPrompt(
+              (com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CORROBORATE_CONTENT:
+          serviceImpl.corroborateContent(
+              (com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>)
+                  responseObserver);
+          break;
+        case METHODID_ASK_CONTEXTS:
+          serviceImpl.askContexts(
+              (com.google.cloud.aiplatform.v1beta1.AskContextsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.AskContextsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_ASYNC_RETRIEVE_CONTEXTS:
+          serviceImpl.asyncRetrieveContexts(
+              (com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -319,6 +889,33 @@ public final class VertexRagServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.RetrieveContextsRequest,
                     com.google.cloud.aiplatform.v1beta1.RetrieveContextsResponse>(
                     service, METHODID_RETRIEVE_CONTEXTS)))
+        .addMethod(
+            getAugmentPromptMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest,
+                    com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>(
+                    service, METHODID_AUGMENT_PROMPT)))
+        .addMethod(
+            getCorroborateContentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest,
+                    com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>(
+                    service, METHODID_CORROBORATE_CONTENT)))
+        .addMethod(
+            getAskContextsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.AskContextsRequest,
+                    com.google.cloud.aiplatform.v1beta1.AskContextsResponse>(
+                    service, METHODID_ASK_CONTEXTS)))
+        .addMethod(
+            getAsyncRetrieveContextsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ASYNC_RETRIEVE_CONTEXTS)))
         .build();
   }
 
@@ -371,6 +968,10 @@ public final class VertexRagServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new VertexRagServiceFileDescriptorSupplier())
                       .addMethod(getRetrieveContextsMethod())
+                      .addMethod(getAugmentPromptMethod())
+                      .addMethod(getCorroborateContentMethod())
+                      .addMethod(getAskContextsMethod())
+                      .addMethod(getAsyncRetrieveContextsMethod())
                       .build();
         }
       }

@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,9 +25,11 @@ option go_package = "cloud.google.com/go/chat/apiv1/chatpb;chatpb";
 option java_multiple_files = true;
 option java_outer_classname = "SpaceSetupProto";
 option java_package = "com.google.chat.v1";
+option objc_class_prefix = "DYNAPIProto";
 option php_namespace = "Google\\Apps\\Chat\\V1";
 option ruby_package = "Google::Apps::Chat::V1";
 
+// Request to create a space and add specified users to it.
 message SetUpSpaceRequest {
   // Required. The `Space.spaceType` field is required.
   //
@@ -62,19 +64,23 @@ message SetUpSpaceRequest {
   // authenticated user returns an error.
   string request_id = 2 [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. The Google Chat users to invite to join the space. Omit the
-  // calling user, as they are added automatically.
+  // Optional. The Google Chat users or groups to invite to join the space. Omit
+  // the calling user, as they are added automatically.
   //
-  // The set currently allows up to 20 memberships (in addition to the caller).
+  // The set currently allows up to 49 memberships (in addition to the caller).
   //
-  // The `Membership.member` field must contain a `user` with `name` populated
-  // (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-  // add human users when setting up a space (adding Chat apps is only supported
-  // for direct message setup with the calling app). You can also add members
-  // using the user's email as an alias for {user}. For example, the `user.name`
-  // can be `users/example@gmail.com`." To invite Gmail users or users from
-  // external Google Workspace domains, user's email must be used for
-  // `{user}`.
+  // For human membership, the `Membership.member` field must contain a `user`
+  // with `name` populated (format: `users/{user}`) and `type` set to
+  // `User.Type.HUMAN`. You can only add human users when setting up a space
+  // (adding Chat apps is only supported for direct message setup with the
+  // calling app). You can also add members using the user's email as an alias
+  // for {user}. For example, the `user.name` can be `users/example@gmail.com`.
+  // To invite Gmail users or users from external Google Workspace domains,
+  // user's email must be used for `{user}`.
+  //
+  // For Google group membership, the `Membership.group_member` field must
+  // contain a `group` with `name` populated (format `groups/{group}`). You
+  // can only add Google groups when setting `Space.spaceType` to `SPACE`.
   //
   // Optional when setting `Space.spaceType` to `SPACE`.
   //

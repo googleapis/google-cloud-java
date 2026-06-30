@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for conversational search.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/conversational_search_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConversationalSearchServiceGrpc {
 
@@ -684,6 +681,20 @@ public final class ConversationalSearchServiceGrpc {
     return ConversationalSearchServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ConversationalSearchServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ConversationalSearchServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConversationalSearchServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ConversationalSearchServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConversationalSearchServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ConversationalSearchServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1205,6 +1216,228 @@ public final class ConversationalSearchServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ConversationalSearchService.
+   *
+   * <pre>
+   * Service for conversational search.
+   * </pre>
+   */
+  public static final class ConversationalSearchServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ConversationalSearchServiceBlockingV2Stub> {
+    private ConversationalSearchServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ConversationalSearchServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ConversationalSearchServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Converses a conversation.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.ConverseConversationResponse
+        converseConversation(
+            com.google.cloud.discoveryengine.v1alpha.ConverseConversationRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getConverseConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Conversation.
+     * If the [Conversation][google.cloud.discoveryengine.v1alpha.Conversation] to
+     * create already exists, an ALREADY_EXISTS error is returned.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Conversation createConversation(
+        com.google.cloud.discoveryengine.v1alpha.CreateConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Conversation.
+     * If the [Conversation][google.cloud.discoveryengine.v1alpha.Conversation] to
+     * delete does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteConversation(
+        com.google.cloud.discoveryengine.v1alpha.DeleteConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Conversation.
+     * [Conversation][google.cloud.discoveryengine.v1alpha.Conversation] action
+     * type cannot be changed. If the
+     * [Conversation][google.cloud.discoveryengine.v1alpha.Conversation] to update
+     * does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Conversation updateConversation(
+        com.google.cloud.discoveryengine.v1alpha.UpdateConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Conversation.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Conversation getConversation(
+        com.google.cloud.discoveryengine.v1alpha.GetConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Conversations by their parent
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.ListConversationsResponse listConversations(
+        com.google.cloud.discoveryengine.v1alpha.ListConversationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListConversationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Answer query method.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.AnswerQueryResponse answerQuery(
+        com.google.cloud.discoveryengine.v1alpha.AnswerQueryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAnswerQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Answer.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Answer getAnswer(
+        com.google.cloud.discoveryengine.v1alpha.GetAnswerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAnswerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Session.
+     * If the [Session][google.cloud.discoveryengine.v1alpha.Session] to create
+     * already exists, an ALREADY_EXISTS error is returned.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Session createSession(
+        com.google.cloud.discoveryengine.v1alpha.CreateSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Session.
+     * If the [Session][google.cloud.discoveryengine.v1alpha.Session] to delete
+     * does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSession(
+        com.google.cloud.discoveryengine.v1alpha.DeleteSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Session.
+     * [Session][google.cloud.discoveryengine.v1alpha.Session] action type cannot
+     * be changed. If the [Session][google.cloud.discoveryengine.v1alpha.Session]
+     * to update does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Session updateSession(
+        com.google.cloud.discoveryengine.v1alpha.UpdateSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Session.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Session getSession(
+        com.google.cloud.discoveryengine.v1alpha.GetSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Sessions by their parent
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.ListSessionsResponse listSessions(
+        com.google.cloud.discoveryengine.v1alpha.ListSessionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListSessionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * ConversationalSearchService.
    *
    * <pre>
    * Service for conversational search.

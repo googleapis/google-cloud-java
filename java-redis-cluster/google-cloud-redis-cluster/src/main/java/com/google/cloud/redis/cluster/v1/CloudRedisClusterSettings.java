@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 package com.google.cloud.redis.cluster.v1;
 
+import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListBackupCollectionsPagedResponse;
+import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListBackupsPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListLocationsPagedResponse;
 
@@ -59,7 +61,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getCluster to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getCluster:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -76,9 +80,46 @@ import javax.annotation.Generated;
  *             .getClusterSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * CloudRedisClusterSettings cloudRedisClusterSettings = cloudRedisClusterSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for updateCluster:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * CloudRedisClusterSettings.Builder cloudRedisClusterSettingsBuilder =
+ *     CloudRedisClusterSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * cloudRedisClusterSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -125,6 +166,94 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
   public OperationCallSettings<CreateClusterRequest, Cluster, Any>
       createClusterOperationSettings() {
     return ((CloudRedisClusterStubSettings) getStubSettings()).createClusterOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getClusterCertificateAuthority. */
+  public UnaryCallSettings<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+      getClusterCertificateAuthoritySettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings())
+        .getClusterCertificateAuthoritySettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to getSharedRegionalCertificateAuthority.
+   */
+  public UnaryCallSettings<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthoritySettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings())
+        .getSharedRegionalCertificateAuthoritySettings();
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleClusterMaintenance. */
+  public UnaryCallSettings<RescheduleClusterMaintenanceRequest, Operation>
+      rescheduleClusterMaintenanceSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings())
+        .rescheduleClusterMaintenanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleClusterMaintenance. */
+  public OperationCallSettings<RescheduleClusterMaintenanceRequest, Cluster, Any>
+      rescheduleClusterMaintenanceOperationSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings())
+        .rescheduleClusterMaintenanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackupCollections. */
+  public PagedCallSettings<
+          ListBackupCollectionsRequest,
+          ListBackupCollectionsResponse,
+          ListBackupCollectionsPagedResponse>
+      listBackupCollectionsSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).listBackupCollectionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBackupCollection. */
+  public UnaryCallSettings<GetBackupCollectionRequest, BackupCollection>
+      getBackupCollectionSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).getBackupCollectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackups. */
+  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).listBackupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBackup. */
+  public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).getBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).deleteBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public OperationCallSettings<DeleteBackupRequest, Empty, Any> deleteBackupOperationSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).deleteBackupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportBackup. */
+  public UnaryCallSettings<ExportBackupRequest, Operation> exportBackupSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).exportBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportBackup. */
+  public OperationCallSettings<ExportBackupRequest, Backup, Any> exportBackupOperationSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).exportBackupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to backupCluster. */
+  public UnaryCallSettings<BackupClusterRequest, Operation> backupClusterSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).backupClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to backupCluster. */
+  public OperationCallSettings<BackupClusterRequest, Cluster, Any>
+      backupClusterOperationSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).backupClusterOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -293,6 +422,93 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
     public OperationCallSettings.Builder<CreateClusterRequest, Cluster, Any>
         createClusterOperationSettings() {
       return getStubSettingsBuilder().createClusterOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getClusterCertificateAuthority. */
+    public UnaryCallSettings.Builder<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+        getClusterCertificateAuthoritySettings() {
+      return getStubSettingsBuilder().getClusterCertificateAuthoritySettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getSharedRegionalCertificateAuthority.
+     */
+    public UnaryCallSettings.Builder<
+            GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+        getSharedRegionalCertificateAuthoritySettings() {
+      return getStubSettingsBuilder().getSharedRegionalCertificateAuthoritySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleClusterMaintenance. */
+    public UnaryCallSettings.Builder<RescheduleClusterMaintenanceRequest, Operation>
+        rescheduleClusterMaintenanceSettings() {
+      return getStubSettingsBuilder().rescheduleClusterMaintenanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleClusterMaintenance. */
+    public OperationCallSettings.Builder<RescheduleClusterMaintenanceRequest, Cluster, Any>
+        rescheduleClusterMaintenanceOperationSettings() {
+      return getStubSettingsBuilder().rescheduleClusterMaintenanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupCollections. */
+    public PagedCallSettings.Builder<
+            ListBackupCollectionsRequest,
+            ListBackupCollectionsResponse,
+            ListBackupCollectionsPagedResponse>
+        listBackupCollectionsSettings() {
+      return getStubSettingsBuilder().listBackupCollectionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupCollection. */
+    public UnaryCallSettings.Builder<GetBackupCollectionRequest, BackupCollection>
+        getBackupCollectionSettings() {
+      return getStubSettingsBuilder().getBackupCollectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBackups. */
+    public PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings() {
+      return getStubSettingsBuilder().listBackupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBackup. */
+    public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
+      return getStubSettingsBuilder().getBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings() {
+      return getStubSettingsBuilder().deleteBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public OperationCallSettings.Builder<DeleteBackupRequest, Empty, Any>
+        deleteBackupOperationSettings() {
+      return getStubSettingsBuilder().deleteBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportBackup. */
+    public UnaryCallSettings.Builder<ExportBackupRequest, Operation> exportBackupSettings() {
+      return getStubSettingsBuilder().exportBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportBackup. */
+    public OperationCallSettings.Builder<ExportBackupRequest, Backup, Any>
+        exportBackupOperationSettings() {
+      return getStubSettingsBuilder().exportBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to backupCluster. */
+    public UnaryCallSettings.Builder<BackupClusterRequest, Operation> backupClusterSettings() {
+      return getStubSettingsBuilder().backupClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to backupCluster. */
+    public OperationCallSettings.Builder<BackupClusterRequest, Cluster, Any>
+        backupClusterOperationSettings() {
+      return getStubSettingsBuilder().backupClusterOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

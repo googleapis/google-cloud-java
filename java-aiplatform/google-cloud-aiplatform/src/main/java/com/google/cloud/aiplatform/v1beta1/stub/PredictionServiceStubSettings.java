@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.google.api.HttpBody;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -32,6 +33,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -50,6 +52,8 @@ import com.google.cloud.aiplatform.v1beta1.DirectPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.DirectPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.EmbedContentRequest;
+import com.google.cloud.aiplatform.v1beta1.EmbedContentResponse;
 import com.google.cloud.aiplatform.v1beta1.ExplainRequest;
 import com.google.cloud.aiplatform.v1beta1.ExplainResponse;
 import com.google.cloud.aiplatform.v1beta1.GenerateContentRequest;
@@ -61,6 +65,7 @@ import com.google.cloud.aiplatform.v1beta1.StreamDirectPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamDirectPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamDirectRawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamDirectRawPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamRawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest;
@@ -79,9 +84,9 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -98,7 +103,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of predict to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of predict:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -115,21 +122,38 @@ import org.threeten.bp.Duration;
  *             .predictSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * PredictionServiceStubSettings predictionServiceSettings =
  *     predictionServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class PredictionServiceStubSettings extends StubSettings<PredictionServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
+          .build();
 
   private final UnaryCallSettings<PredictRequest, PredictResponse> predictSettings;
   private final UnaryCallSettings<RawPredictRequest, HttpBody> rawPredictSettings;
+  private final ServerStreamingCallSettings<StreamRawPredictRequest, HttpBody>
+      streamRawPredictSettings;
   private final UnaryCallSettings<DirectPredictRequest, DirectPredictResponse>
       directPredictSettings;
   private final UnaryCallSettings<DirectRawPredictRequest, DirectRawPredictResponse>
@@ -152,6 +176,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       streamGenerateContentSettings;
   private final ServerStreamingCallSettings<ChatCompletionsRequest, HttpBody>
       chatCompletionsSettings;
+  private final UnaryCallSettings<EmbedContentRequest, EmbedContentResponse> embedContentSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -191,9 +216,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -222,6 +245,11 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
   /** Returns the object with the settings used for calls to rawPredict. */
   public UnaryCallSettings<RawPredictRequest, HttpBody> rawPredictSettings() {
     return rawPredictSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamRawPredict. */
+  public ServerStreamingCallSettings<StreamRawPredictRequest, HttpBody> streamRawPredictSettings() {
+    return streamRawPredictSettings;
   }
 
   /** Returns the object with the settings used for calls to directPredict. */
@@ -292,6 +320,11 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     return chatCompletionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to embedContent. */
+  public UnaryCallSettings<EmbedContentRequest, EmbedContentResponse> embedContentSettings() {
+    return embedContentSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -330,15 +363,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -351,6 +375,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "aiplatform.googleapis.com:443";
   }
@@ -410,6 +435,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
     predictSettings = settingsBuilder.predictSettings().build();
     rawPredictSettings = settingsBuilder.rawPredictSettings().build();
+    streamRawPredictSettings = settingsBuilder.streamRawPredictSettings().build();
     directPredictSettings = settingsBuilder.directPredictSettings().build();
     directRawPredictSettings = settingsBuilder.directRawPredictSettings().build();
     streamDirectPredictSettings = settingsBuilder.streamDirectPredictSettings().build();
@@ -422,6 +448,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     generateContentSettings = settingsBuilder.generateContentSettings().build();
     streamGenerateContentSettings = settingsBuilder.streamGenerateContentSettings().build();
     chatCompletionsSettings = settingsBuilder.chatCompletionsSettings().build();
+    embedContentSettings = settingsBuilder.embedContentSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -429,11 +456,22 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-aiplatform")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
+  }
+
   /** Builder for PredictionServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<PredictionServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<PredictRequest, PredictResponse> predictSettings;
     private final UnaryCallSettings.Builder<RawPredictRequest, HttpBody> rawPredictSettings;
+    private final ServerStreamingCallSettings.Builder<StreamRawPredictRequest, HttpBody>
+        streamRawPredictSettings;
     private final UnaryCallSettings.Builder<DirectPredictRequest, DirectPredictResponse>
         directPredictSettings;
     private final UnaryCallSettings.Builder<DirectRawPredictRequest, DirectRawPredictResponse>
@@ -462,6 +500,8 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
         streamGenerateContentSettings;
     private final ServerStreamingCallSettings.Builder<ChatCompletionsRequest, HttpBody>
         chatCompletionsSettings;
+    private final UnaryCallSettings.Builder<EmbedContentRequest, EmbedContentResponse>
+        embedContentSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -489,10 +529,10 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(5000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(5000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(5000L))
               .build();
       definitions.put("no_retry_9_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
@@ -509,6 +549,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       predictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       rawPredictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      streamRawPredictSettings = ServerStreamingCallSettings.newBuilder();
       directPredictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       directRawPredictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       streamDirectPredictSettings = StreamingCallSettings.newBuilder();
@@ -521,6 +562,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       generateContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       streamGenerateContentSettings = ServerStreamingCallSettings.newBuilder();
       chatCompletionsSettings = ServerStreamingCallSettings.newBuilder();
+      embedContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -536,6 +578,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
               explainSettings,
               countTokensSettings,
               generateContentSettings,
+              embedContentSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -549,6 +592,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       predictSettings = settings.predictSettings.toBuilder();
       rawPredictSettings = settings.rawPredictSettings.toBuilder();
+      streamRawPredictSettings = settings.streamRawPredictSettings.toBuilder();
       directPredictSettings = settings.directPredictSettings.toBuilder();
       directRawPredictSettings = settings.directRawPredictSettings.toBuilder();
       streamDirectPredictSettings = settings.streamDirectPredictSettings.toBuilder();
@@ -561,6 +605,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       generateContentSettings = settings.generateContentSettings.toBuilder();
       streamGenerateContentSettings = settings.streamGenerateContentSettings.toBuilder();
       chatCompletionsSettings = settings.chatCompletionsSettings.toBuilder();
+      embedContentSettings = settings.embedContentSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -576,6 +621,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
               explainSettings,
               countTokensSettings,
               generateContentSettings,
+              embedContentSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -603,6 +649,11 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       builder
           .rawPredictSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .streamRawPredictSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -643,6 +694,11 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       builder
           .chatCompletionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .embedContentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -697,6 +753,12 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     /** Returns the builder for the settings used for calls to rawPredict. */
     public UnaryCallSettings.Builder<RawPredictRequest, HttpBody> rawPredictSettings() {
       return rawPredictSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamRawPredict. */
+    public ServerStreamingCallSettings.Builder<StreamRawPredictRequest, HttpBody>
+        streamRawPredictSettings() {
+      return streamRawPredictSettings;
     }
 
     /** Returns the builder for the settings used for calls to directPredict. */
@@ -771,6 +833,12 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       return chatCompletionsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to embedContent. */
+    public UnaryCallSettings.Builder<EmbedContentRequest, EmbedContentResponse>
+        embedContentSettings() {
+      return embedContentSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listLocations. */
     public PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -797,15 +865,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest;
+import com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataResponse;
 import com.google.cloud.discoveryengine.v1beta.CreateDocumentRequest;
 import com.google.cloud.discoveryengine.v1beta.DeleteDocumentRequest;
 import com.google.cloud.discoveryengine.v1beta.Document;
@@ -64,6 +66,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1beta.DocumentService/GetDocument")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDocumentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListDocumentsRequest, ListDocumentsResponse>
@@ -76,6 +79,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   ProtoUtils.marshaller(ListDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDocumentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDocumentRequest, Document>
@@ -87,6 +91,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDocumentRequest, Document>
@@ -98,6 +103,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDocumentRequest, Empty>
@@ -109,6 +115,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportDocumentsRequest, Operation>
@@ -120,6 +127,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PurgeDocumentsRequest, Operation>
@@ -131,6 +139,22 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PurgeDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataMethodDescriptor =
+          MethodDescriptor
+              .<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.DocumentService/BatchGetDocumentsMetadata")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchGetDocumentsMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchGetDocumentsMetadataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetDocumentRequest, Document> getDocumentCallable;
@@ -148,6 +172,8 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
   private final OperationCallable<
           PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
       purgeDocumentsOperationCallable;
+  private final UnaryCallable<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -202,6 +228,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDocumentsRequest, ListDocumentsResponse> listDocumentsTransportSettings =
         GrpcCallSettings.<ListDocumentsRequest, ListDocumentsResponse>newBuilder()
@@ -212,6 +239,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateDocumentRequest, Document> createDocumentTransportSettings =
         GrpcCallSettings.<CreateDocumentRequest, Document>newBuilder()
@@ -222,6 +250,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDocumentRequest, Document> updateDocumentTransportSettings =
         GrpcCallSettings.<UpdateDocumentRequest, Document>newBuilder()
@@ -242,6 +271,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportDocumentsRequest, Operation> importDocumentsTransportSettings =
         GrpcCallSettings.<ImportDocumentsRequest, Operation>newBuilder()
@@ -252,6 +282,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<PurgeDocumentsRequest, Operation> purgeDocumentsTransportSettings =
         GrpcCallSettings.<PurgeDocumentsRequest, Operation>newBuilder()
@@ -262,7 +293,21 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
+    GrpcCallSettings<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+        batchGetDocumentsMetadataTransportSettings =
+            GrpcCallSettings
+                .<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>newBuilder()
+                .setMethodDescriptor(batchGetDocumentsMetadataMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.getDocumentCallable =
         callableFactory.createUnaryCallable(
@@ -300,6 +345,11 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
             settings.purgeDocumentsOperationSettings(),
             clientContext,
             operationsStub);
+    this.batchGetDocumentsMetadataCallable =
+        callableFactory.createUnaryCallable(
+            batchGetDocumentsMetadataTransportSettings,
+            settings.batchGetDocumentsMetadataSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -360,6 +410,12 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
   public OperationCallable<PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
       purgeDocumentsOperationCallable() {
     return purgeDocumentsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataCallable() {
+    return batchGetDocumentsMetadataCallable;
   }
 
   @Override

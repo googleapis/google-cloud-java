@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,6 +75,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListGatewaysRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGatewaysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGatewayRequest, Gateway> getGatewayMethodDescriptor =
@@ -83,6 +84,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
           .setFullMethodName("google.cloud.apigateway.v1.ApiGatewayService/GetGateway")
           .setRequestMarshaller(ProtoUtils.marshaller(GetGatewayRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Gateway.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateGatewayRequest, Operation>
@@ -93,6 +95,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateGatewayRequest, Operation>
@@ -103,6 +106,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteGatewayRequest, Operation>
@@ -113,6 +117,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListApisRequest, ListApisResponse>
@@ -122,6 +127,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
               .setFullMethodName("google.cloud.apigateway.v1.ApiGatewayService/ListApis")
               .setRequestMarshaller(ProtoUtils.marshaller(ListApisRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListApisResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetApiRequest, Api> getApiMethodDescriptor =
@@ -130,6 +136,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
           .setFullMethodName("google.cloud.apigateway.v1.ApiGatewayService/GetApi")
           .setRequestMarshaller(ProtoUtils.marshaller(GetApiRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Api.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateApiRequest, Operation> createApiMethodDescriptor =
@@ -138,6 +145,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
           .setFullMethodName("google.cloud.apigateway.v1.ApiGatewayService/CreateApi")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateApiRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateApiRequest, Operation> updateApiMethodDescriptor =
@@ -146,6 +154,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
           .setFullMethodName("google.cloud.apigateway.v1.ApiGatewayService/UpdateApi")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateApiRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteApiRequest, Operation> deleteApiMethodDescriptor =
@@ -154,6 +163,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
           .setFullMethodName("google.cloud.apigateway.v1.ApiGatewayService/DeleteApi")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteApiRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListApiConfigsRequest, ListApiConfigsResponse>
@@ -165,6 +175,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   ProtoUtils.marshaller(ListApiConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListApiConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetApiConfigRequest, ApiConfig>
@@ -174,6 +185,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
               .setFullMethodName("google.cloud.apigateway.v1.ApiGatewayService/GetApiConfig")
               .setRequestMarshaller(ProtoUtils.marshaller(GetApiConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApiConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateApiConfigRequest, Operation>
@@ -184,6 +196,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateApiConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateApiConfigRequest, Operation>
@@ -194,6 +207,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateApiConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteApiConfigRequest, Operation>
@@ -204,6 +218,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteApiConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListGatewaysRequest, ListGatewaysResponse> listGatewaysCallable;
@@ -298,6 +313,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetGatewayRequest, Gateway> getGatewayTransportSettings =
         GrpcCallSettings.<GetGatewayRequest, Gateway>newBuilder()
@@ -308,6 +324,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateGatewayRequest, Operation> createGatewayTransportSettings =
         GrpcCallSettings.<CreateGatewayRequest, Operation>newBuilder()
@@ -318,6 +335,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateGatewayRequest, Operation> updateGatewayTransportSettings =
         GrpcCallSettings.<UpdateGatewayRequest, Operation>newBuilder()
@@ -338,6 +356,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListApisRequest, ListApisResponse> listApisTransportSettings =
         GrpcCallSettings.<ListApisRequest, ListApisResponse>newBuilder()
@@ -348,6 +367,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetApiRequest, Api> getApiTransportSettings =
         GrpcCallSettings.<GetApiRequest, Api>newBuilder()
@@ -358,6 +378,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateApiRequest, Operation> createApiTransportSettings =
         GrpcCallSettings.<CreateApiRequest, Operation>newBuilder()
@@ -368,6 +389,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateApiRequest, Operation> updateApiTransportSettings =
         GrpcCallSettings.<UpdateApiRequest, Operation>newBuilder()
@@ -388,6 +410,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListApiConfigsRequest, ListApiConfigsResponse>
         listApiConfigsTransportSettings =
@@ -399,6 +422,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetApiConfigRequest, ApiConfig> getApiConfigTransportSettings =
         GrpcCallSettings.<GetApiConfigRequest, ApiConfig>newBuilder()
@@ -409,6 +433,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateApiConfigRequest, Operation> createApiConfigTransportSettings =
         GrpcCallSettings.<CreateApiConfigRequest, Operation>newBuilder()
@@ -419,6 +444,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateApiConfigRequest, Operation> updateApiConfigTransportSettings =
         GrpcCallSettings.<UpdateApiConfigRequest, Operation>newBuilder()
@@ -439,6 +465,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listGatewaysCallable =

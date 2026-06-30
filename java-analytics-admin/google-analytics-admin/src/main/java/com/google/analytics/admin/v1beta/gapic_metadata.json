@@ -37,6 +37,9 @@
             "CreateGoogleAdsLink": {
               "methods": ["createGoogleAdsLink", "createGoogleAdsLink", "createGoogleAdsLink", "createGoogleAdsLinkCallable"]
             },
+            "CreateKeyEvent": {
+              "methods": ["createKeyEvent", "createKeyEvent", "createKeyEvent", "createKeyEventCallable"]
+            },
             "CreateMeasurementProtocolSecret": {
               "methods": ["createMeasurementProtocolSecret", "createMeasurementProtocolSecret", "createMeasurementProtocolSecret", "createMeasurementProtocolSecretCallable"]
             },
@@ -57,6 +60,9 @@
             },
             "DeleteGoogleAdsLink": {
               "methods": ["deleteGoogleAdsLink", "deleteGoogleAdsLink", "deleteGoogleAdsLink", "deleteGoogleAdsLinkCallable"]
+            },
+            "DeleteKeyEvent": {
+              "methods": ["deleteKeyEvent", "deleteKeyEvent", "deleteKeyEvent", "deleteKeyEventCallable"]
             },
             "DeleteMeasurementProtocolSecret": {
               "methods": ["deleteMeasurementProtocolSecret", "deleteMeasurementProtocolSecret", "deleteMeasurementProtocolSecret", "deleteMeasurementProtocolSecretCallable"]
@@ -84,6 +90,9 @@
             },
             "GetDataStream": {
               "methods": ["getDataStream", "getDataStream", "getDataStream", "getDataStreamCallable"]
+            },
+            "GetKeyEvent": {
+              "methods": ["getKeyEvent", "getKeyEvent", "getKeyEvent", "getKeyEventCallable"]
             },
             "GetMeasurementProtocolSecret": {
               "methods": ["getMeasurementProtocolSecret", "getMeasurementProtocolSecret", "getMeasurementProtocolSecret", "getMeasurementProtocolSecretCallable"]
@@ -114,6 +123,9 @@
             },
             "ListGoogleAdsLinks": {
               "methods": ["listGoogleAdsLinks", "listGoogleAdsLinks", "listGoogleAdsLinks", "listGoogleAdsLinksPagedCallable", "listGoogleAdsLinksCallable"]
+            },
+            "ListKeyEvents": {
+              "methods": ["listKeyEvents", "listKeyEvents", "listKeyEvents", "listKeyEventsPagedCallable", "listKeyEventsCallable"]
             },
             "ListMeasurementProtocolSecrets": {
               "methods": ["listMeasurementProtocolSecrets", "listMeasurementProtocolSecrets", "listMeasurementProtocolSecrets", "listMeasurementProtocolSecretsPagedCallable", "listMeasurementProtocolSecretsCallable"]
@@ -150,6 +162,9 @@
             },
             "UpdateGoogleAdsLink": {
               "methods": ["updateGoogleAdsLink", "updateGoogleAdsLink", "updateGoogleAdsLinkCallable"]
+            },
+            "UpdateKeyEvent": {
+              "methods": ["updateKeyEvent", "updateKeyEvent", "updateKeyEventCallable"]
             },
             "UpdateMeasurementProtocolSecret": {
               "methods": ["updateMeasurementProtocolSecret", "updateMeasurementProtocolSecret", "updateMeasurementProtocolSecretCallable"]

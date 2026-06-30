@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
           .setFullMethodName("google.cloud.video.transcoder.v1.TranscoderService/CreateJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
@@ -69,6 +70,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
               .setFullMethodName("google.cloud.video.transcoder.v1.TranscoderService/ListJobs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
@@ -77,6 +79,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
           .setFullMethodName("google.cloud.video.transcoder.v1.TranscoderService/GetJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteJobRequest, Empty> deleteJobMethodDescriptor =
@@ -85,6 +88,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
           .setFullMethodName("google.cloud.video.transcoder.v1.TranscoderService/DeleteJob")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateJobTemplateRequest, JobTemplate>
@@ -96,6 +100,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateJobTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListJobTemplatesRequest, ListJobTemplatesResponse>
@@ -108,6 +113,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   ProtoUtils.marshaller(ListJobTemplatesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListJobTemplatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetJobTemplateRequest, JobTemplate>
@@ -119,6 +125,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetJobTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteJobTemplateRequest, Empty>
@@ -130,6 +137,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteJobTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateJobRequest, Job> createJobCallable;
@@ -198,6 +206,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         GrpcCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -208,6 +217,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
         GrpcCallSettings.<GetJobRequest, Job>newBuilder()
@@ -218,6 +228,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
         GrpcCallSettings.<DeleteJobRequest, Empty>newBuilder()
@@ -228,6 +239,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateJobTemplateRequest, JobTemplate> createJobTemplateTransportSettings =
         GrpcCallSettings.<CreateJobTemplateRequest, JobTemplate>newBuilder()
@@ -238,6 +250,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListJobTemplatesRequest, ListJobTemplatesResponse>
         listJobTemplatesTransportSettings =
@@ -249,6 +262,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetJobTemplateRequest, JobTemplate> getJobTemplateTransportSettings =
         GrpcCallSettings.<GetJobTemplateRequest, JobTemplate>newBuilder()
@@ -259,6 +273,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteJobTemplateRequest, Empty> deleteJobTemplateTransportSettings =
         GrpcCallSettings.<DeleteJobTemplateRequest, Empty>newBuilder()
@@ -269,6 +284,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createJobCallable =

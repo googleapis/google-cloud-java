@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,10 @@ package com.google.cloud.dataplex.v1.stub;
 
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListAssetActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListAssetsPagedResponse;
-import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListJobsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLakeActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLakesPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLocationsPagedResponse;
-import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListSessionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListTasksPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListZoneActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListZonesPagedResponse;
@@ -39,18 +37,14 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataplex.v1.Asset;
 import com.google.cloud.dataplex.v1.CancelJobRequest;
 import com.google.cloud.dataplex.v1.CreateAssetRequest;
-import com.google.cloud.dataplex.v1.CreateEnvironmentRequest;
 import com.google.cloud.dataplex.v1.CreateLakeRequest;
 import com.google.cloud.dataplex.v1.CreateTaskRequest;
 import com.google.cloud.dataplex.v1.CreateZoneRequest;
 import com.google.cloud.dataplex.v1.DeleteAssetRequest;
-import com.google.cloud.dataplex.v1.DeleteEnvironmentRequest;
 import com.google.cloud.dataplex.v1.DeleteLakeRequest;
 import com.google.cloud.dataplex.v1.DeleteTaskRequest;
 import com.google.cloud.dataplex.v1.DeleteZoneRequest;
-import com.google.cloud.dataplex.v1.Environment;
 import com.google.cloud.dataplex.v1.GetAssetRequest;
-import com.google.cloud.dataplex.v1.GetEnvironmentRequest;
 import com.google.cloud.dataplex.v1.GetJobRequest;
 import com.google.cloud.dataplex.v1.GetLakeRequest;
 import com.google.cloud.dataplex.v1.GetTaskRequest;
@@ -61,15 +55,11 @@ import com.google.cloud.dataplex.v1.ListActionsResponse;
 import com.google.cloud.dataplex.v1.ListAssetActionsRequest;
 import com.google.cloud.dataplex.v1.ListAssetsRequest;
 import com.google.cloud.dataplex.v1.ListAssetsResponse;
-import com.google.cloud.dataplex.v1.ListEnvironmentsRequest;
-import com.google.cloud.dataplex.v1.ListEnvironmentsResponse;
 import com.google.cloud.dataplex.v1.ListJobsRequest;
 import com.google.cloud.dataplex.v1.ListJobsResponse;
 import com.google.cloud.dataplex.v1.ListLakeActionsRequest;
 import com.google.cloud.dataplex.v1.ListLakesRequest;
 import com.google.cloud.dataplex.v1.ListLakesResponse;
-import com.google.cloud.dataplex.v1.ListSessionsRequest;
-import com.google.cloud.dataplex.v1.ListSessionsResponse;
 import com.google.cloud.dataplex.v1.ListTasksRequest;
 import com.google.cloud.dataplex.v1.ListTasksResponse;
 import com.google.cloud.dataplex.v1.ListZoneActionsRequest;
@@ -80,7 +70,6 @@ import com.google.cloud.dataplex.v1.RunTaskRequest;
 import com.google.cloud.dataplex.v1.RunTaskResponse;
 import com.google.cloud.dataplex.v1.Task;
 import com.google.cloud.dataplex.v1.UpdateAssetRequest;
-import com.google.cloud.dataplex.v1.UpdateEnvironmentRequest;
 import com.google.cloud.dataplex.v1.UpdateLakeRequest;
 import com.google.cloud.dataplex.v1.UpdateTaskRequest;
 import com.google.cloud.dataplex.v1.UpdateZoneRequest;
@@ -89,6 +78,11 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -112,6 +106,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/CreateLake")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateLakeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateLakeRequest, Operation> updateLakeMethodDescriptor =
@@ -120,6 +115,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/UpdateLake")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateLakeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteLakeRequest, Operation> deleteLakeMethodDescriptor =
@@ -128,6 +124,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/DeleteLake")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteLakeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLakesRequest, ListLakesResponse>
@@ -137,6 +134,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
               .setFullMethodName("google.cloud.dataplex.v1.DataplexService/ListLakes")
               .setRequestMarshaller(ProtoUtils.marshaller(ListLakesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListLakesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLakeRequest, Lake> getLakeMethodDescriptor =
@@ -145,6 +143,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/GetLake")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLakeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Lake.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLakeActionsRequest, ListActionsResponse>
@@ -156,6 +155,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   ProtoUtils.marshaller(ListLakeActionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListActionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateZoneRequest, Operation> createZoneMethodDescriptor =
@@ -164,6 +164,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/CreateZone")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateZoneRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateZoneRequest, Operation> updateZoneMethodDescriptor =
@@ -172,6 +173,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/UpdateZone")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateZoneRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteZoneRequest, Operation> deleteZoneMethodDescriptor =
@@ -180,6 +182,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/DeleteZone")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteZoneRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListZonesRequest, ListZonesResponse>
@@ -189,6 +192,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
               .setFullMethodName("google.cloud.dataplex.v1.DataplexService/ListZones")
               .setRequestMarshaller(ProtoUtils.marshaller(ListZonesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListZonesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetZoneRequest, Zone> getZoneMethodDescriptor =
@@ -197,6 +201,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/GetZone")
           .setRequestMarshaller(ProtoUtils.marshaller(GetZoneRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Zone.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListZoneActionsRequest, ListActionsResponse>
@@ -208,6 +213,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   ProtoUtils.marshaller(ListZoneActionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListActionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAssetRequest, Operation> createAssetMethodDescriptor =
@@ -216,6 +222,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/CreateAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateAssetRequest, Operation> updateAssetMethodDescriptor =
@@ -224,6 +231,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/UpdateAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteAssetRequest, Operation> deleteAssetMethodDescriptor =
@@ -232,6 +240,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/DeleteAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListAssetsRequest, ListAssetsResponse>
@@ -241,6 +250,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
               .setFullMethodName("google.cloud.dataplex.v1.DataplexService/ListAssets")
               .setRequestMarshaller(ProtoUtils.marshaller(ListAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAssetRequest, Asset> getAssetMethodDescriptor =
@@ -249,6 +259,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/GetAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Asset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListAssetActionsRequest, ListActionsResponse>
@@ -260,6 +271,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   ProtoUtils.marshaller(ListAssetActionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListActionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTaskRequest, Operation> createTaskMethodDescriptor =
@@ -268,6 +280,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/CreateTask")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateTaskRequest, Operation> updateTaskMethodDescriptor =
@@ -276,6 +289,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/UpdateTask")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteTaskRequest, Operation> deleteTaskMethodDescriptor =
@@ -284,6 +298,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/DeleteTask")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListTasksRequest, ListTasksResponse>
@@ -293,6 +308,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
               .setFullMethodName("google.cloud.dataplex.v1.DataplexService/ListTasks")
               .setRequestMarshaller(ProtoUtils.marshaller(ListTasksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTasksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTaskRequest, Task> getTaskMethodDescriptor =
@@ -301,6 +317,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/GetTask")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
@@ -310,6 +327,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
               .setFullMethodName("google.cloud.dataplex.v1.DataplexService/ListJobs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunTaskRequest, RunTaskResponse> runTaskMethodDescriptor =
@@ -318,6 +336,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/RunTask")
           .setRequestMarshaller(ProtoUtils.marshaller(RunTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(RunTaskResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
@@ -326,6 +345,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/GetJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CancelJobRequest, Empty> cancelJobMethodDescriptor =
@@ -334,68 +354,8 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/CancelJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CancelJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
-
-  private static final MethodDescriptor<CreateEnvironmentRequest, Operation>
-      createEnvironmentMethodDescriptor =
-          MethodDescriptor.<CreateEnvironmentRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.dataplex.v1.DataplexService/CreateEnvironment")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateEnvironmentRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<UpdateEnvironmentRequest, Operation>
-      updateEnvironmentMethodDescriptor =
-          MethodDescriptor.<UpdateEnvironmentRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.dataplex.v1.DataplexService/UpdateEnvironment")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateEnvironmentRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<DeleteEnvironmentRequest, Operation>
-      deleteEnvironmentMethodDescriptor =
-          MethodDescriptor.<DeleteEnvironmentRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.dataplex.v1.DataplexService/DeleteEnvironment")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteEnvironmentRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<ListEnvironmentsRequest, ListEnvironmentsResponse>
-      listEnvironmentsMethodDescriptor =
-          MethodDescriptor.<ListEnvironmentsRequest, ListEnvironmentsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.dataplex.v1.DataplexService/ListEnvironments")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListEnvironmentsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListEnvironmentsResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<GetEnvironmentRequest, Environment>
-      getEnvironmentMethodDescriptor =
-          MethodDescriptor.<GetEnvironmentRequest, Environment>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.dataplex.v1.DataplexService/GetEnvironment")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetEnvironmentRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Environment.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<ListSessionsRequest, ListSessionsResponse>
-      listSessionsMethodDescriptor =
-          MethodDescriptor.<ListSessionsRequest, ListSessionsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.dataplex.v1.DataplexService/ListSessions")
-              .setRequestMarshaller(ProtoUtils.marshaller(ListSessionsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListSessionsResponse.getDefaultInstance()))
-              .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
@@ -406,6 +366,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -414,7 +375,38 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private final UnaryCallable<CreateLakeRequest, Operation> createLakeCallable;
   private final OperationCallable<CreateLakeRequest, Lake, OperationMetadata>
@@ -479,27 +471,14 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
   private final UnaryCallable<RunTaskRequest, RunTaskResponse> runTaskCallable;
   private final UnaryCallable<GetJobRequest, Job> getJobCallable;
   private final UnaryCallable<CancelJobRequest, Empty> cancelJobCallable;
-  private final UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable;
-  private final OperationCallable<CreateEnvironmentRequest, Environment, OperationMetadata>
-      createEnvironmentOperationCallable;
-  private final UnaryCallable<UpdateEnvironmentRequest, Operation> updateEnvironmentCallable;
-  private final OperationCallable<UpdateEnvironmentRequest, Environment, OperationMetadata>
-      updateEnvironmentOperationCallable;
-  private final UnaryCallable<DeleteEnvironmentRequest, Operation> deleteEnvironmentCallable;
-  private final OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
-      deleteEnvironmentOperationCallable;
-  private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
-      listEnvironmentsCallable;
-  private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
-      listEnvironmentsPagedCallable;
-  private final UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable;
-  private final UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable;
-  private final UnaryCallable<ListSessionsRequest, ListSessionsPagedResponse>
-      listSessionsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
   private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -554,6 +533,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateLakeRequest, Operation> updateLakeTransportSettings =
         GrpcCallSettings.<UpdateLakeRequest, Operation>newBuilder()
@@ -574,6 +554,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLakesRequest, ListLakesResponse> listLakesTransportSettings =
         GrpcCallSettings.<ListLakesRequest, ListLakesResponse>newBuilder()
@@ -584,6 +565,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetLakeRequest, Lake> getLakeTransportSettings =
         GrpcCallSettings.<GetLakeRequest, Lake>newBuilder()
@@ -594,6 +576,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLakeActionsRequest, ListActionsResponse> listLakeActionsTransportSettings =
         GrpcCallSettings.<ListLakeActionsRequest, ListActionsResponse>newBuilder()
@@ -604,6 +587,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateZoneRequest, Operation> createZoneTransportSettings =
         GrpcCallSettings.<CreateZoneRequest, Operation>newBuilder()
@@ -614,6 +598,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateZoneRequest, Operation> updateZoneTransportSettings =
         GrpcCallSettings.<UpdateZoneRequest, Operation>newBuilder()
@@ -634,6 +619,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListZonesRequest, ListZonesResponse> listZonesTransportSettings =
         GrpcCallSettings.<ListZonesRequest, ListZonesResponse>newBuilder()
@@ -644,6 +630,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetZoneRequest, Zone> getZoneTransportSettings =
         GrpcCallSettings.<GetZoneRequest, Zone>newBuilder()
@@ -654,6 +641,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListZoneActionsRequest, ListActionsResponse> listZoneActionsTransportSettings =
         GrpcCallSettings.<ListZoneActionsRequest, ListActionsResponse>newBuilder()
@@ -664,6 +652,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateAssetRequest, Operation> createAssetTransportSettings =
         GrpcCallSettings.<CreateAssetRequest, Operation>newBuilder()
@@ -674,6 +663,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAssetRequest, Operation> updateAssetTransportSettings =
         GrpcCallSettings.<UpdateAssetRequest, Operation>newBuilder()
@@ -694,6 +684,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         GrpcCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
@@ -704,6 +695,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAssetRequest, Asset> getAssetTransportSettings =
         GrpcCallSettings.<GetAssetRequest, Asset>newBuilder()
@@ -714,6 +706,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAssetActionsRequest, ListActionsResponse>
         listAssetActionsTransportSettings =
@@ -725,6 +718,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateTaskRequest, Operation> createTaskTransportSettings =
         GrpcCallSettings.<CreateTaskRequest, Operation>newBuilder()
@@ -735,6 +729,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateTaskRequest, Operation> updateTaskTransportSettings =
         GrpcCallSettings.<UpdateTaskRequest, Operation>newBuilder()
@@ -755,6 +750,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTasksRequest, ListTasksResponse> listTasksTransportSettings =
         GrpcCallSettings.<ListTasksRequest, ListTasksResponse>newBuilder()
@@ -765,6 +761,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTaskRequest, Task> getTaskTransportSettings =
         GrpcCallSettings.<GetTaskRequest, Task>newBuilder()
@@ -775,6 +772,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         GrpcCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -785,6 +783,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RunTaskRequest, RunTaskResponse> runTaskTransportSettings =
         GrpcCallSettings.<RunTaskRequest, RunTaskResponse>newBuilder()
@@ -795,6 +794,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
         GrpcCallSettings.<GetJobRequest, Job>newBuilder()
@@ -805,6 +805,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CancelJobRequest, Empty> cancelJobTransportSettings =
         GrpcCallSettings.<CancelJobRequest, Empty>newBuilder()
@@ -815,68 +816,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
-            .build();
-    GrpcCallSettings<CreateEnvironmentRequest, Operation> createEnvironmentTransportSettings =
-        GrpcCallSettings.<CreateEnvironmentRequest, Operation>newBuilder()
-            .setMethodDescriptor(createEnvironmentMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("parent", String.valueOf(request.getParent()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<UpdateEnvironmentRequest, Operation> updateEnvironmentTransportSettings =
-        GrpcCallSettings.<UpdateEnvironmentRequest, Operation>newBuilder()
-            .setMethodDescriptor(updateEnvironmentMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add(
-                      "environment.name", String.valueOf(request.getEnvironment().getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<DeleteEnvironmentRequest, Operation> deleteEnvironmentTransportSettings =
-        GrpcCallSettings.<DeleteEnvironmentRequest, Operation>newBuilder()
-            .setMethodDescriptor(deleteEnvironmentMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<ListEnvironmentsRequest, ListEnvironmentsResponse>
-        listEnvironmentsTransportSettings =
-            GrpcCallSettings.<ListEnvironmentsRequest, ListEnvironmentsResponse>newBuilder()
-                .setMethodDescriptor(listEnvironmentsMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    GrpcCallSettings<GetEnvironmentRequest, Environment> getEnvironmentTransportSettings =
-        GrpcCallSettings.<GetEnvironmentRequest, Environment>newBuilder()
-            .setMethodDescriptor(getEnvironmentMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<ListSessionsRequest, ListSessionsResponse> listSessionsTransportSettings =
-        GrpcCallSettings.<ListSessionsRequest, ListSessionsResponse>newBuilder()
-            .setMethodDescriptor(listSessionsMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("parent", String.valueOf(request.getParent()));
-                  return builder.build();
-                })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -898,6 +838,40 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getResource())
+                .build();
 
     this.createLakeCallable =
         callableFactory.createUnaryCallable(
@@ -1076,54 +1050,6 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
     this.cancelJobCallable =
         callableFactory.createUnaryCallable(
             cancelJobTransportSettings, settings.cancelJobSettings(), clientContext);
-    this.createEnvironmentCallable =
-        callableFactory.createUnaryCallable(
-            createEnvironmentTransportSettings,
-            settings.createEnvironmentSettings(),
-            clientContext);
-    this.createEnvironmentOperationCallable =
-        callableFactory.createOperationCallable(
-            createEnvironmentTransportSettings,
-            settings.createEnvironmentOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.updateEnvironmentCallable =
-        callableFactory.createUnaryCallable(
-            updateEnvironmentTransportSettings,
-            settings.updateEnvironmentSettings(),
-            clientContext);
-    this.updateEnvironmentOperationCallable =
-        callableFactory.createOperationCallable(
-            updateEnvironmentTransportSettings,
-            settings.updateEnvironmentOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.deleteEnvironmentCallable =
-        callableFactory.createUnaryCallable(
-            deleteEnvironmentTransportSettings,
-            settings.deleteEnvironmentSettings(),
-            clientContext);
-    this.deleteEnvironmentOperationCallable =
-        callableFactory.createOperationCallable(
-            deleteEnvironmentTransportSettings,
-            settings.deleteEnvironmentOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.listEnvironmentsCallable =
-        callableFactory.createUnaryCallable(
-            listEnvironmentsTransportSettings, settings.listEnvironmentsSettings(), clientContext);
-    this.listEnvironmentsPagedCallable =
-        callableFactory.createPagedCallable(
-            listEnvironmentsTransportSettings, settings.listEnvironmentsSettings(), clientContext);
-    this.getEnvironmentCallable =
-        callableFactory.createUnaryCallable(
-            getEnvironmentTransportSettings, settings.getEnvironmentSettings(), clientContext);
-    this.listSessionsCallable =
-        callableFactory.createUnaryCallable(
-            listSessionsTransportSettings, settings.listSessionsSettings(), clientContext);
-    this.listSessionsPagedCallable =
-        callableFactory.createPagedCallable(
-            listSessionsTransportSettings, settings.listSessionsSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1133,6 +1059,17 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
     this.getLocationCallable =
         callableFactory.createUnaryCallable(
             getLocationTransportSettings, settings.getLocationSettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1393,66 +1330,6 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
   }
 
   @Override
-  public UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable() {
-    return createEnvironmentCallable;
-  }
-
-  @Override
-  public OperationCallable<CreateEnvironmentRequest, Environment, OperationMetadata>
-      createEnvironmentOperationCallable() {
-    return createEnvironmentOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateEnvironmentRequest, Operation> updateEnvironmentCallable() {
-    return updateEnvironmentCallable;
-  }
-
-  @Override
-  public OperationCallable<UpdateEnvironmentRequest, Environment, OperationMetadata>
-      updateEnvironmentOperationCallable() {
-    return updateEnvironmentOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteEnvironmentRequest, Operation> deleteEnvironmentCallable() {
-    return deleteEnvironmentCallable;
-  }
-
-  @Override
-  public OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
-      deleteEnvironmentOperationCallable() {
-    return deleteEnvironmentOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
-      listEnvironmentsCallable() {
-    return listEnvironmentsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
-      listEnvironmentsPagedCallable() {
-    return listEnvironmentsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable() {
-    return getEnvironmentCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable() {
-    return listSessionsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListSessionsRequest, ListSessionsPagedResponse> listSessionsPagedCallable() {
-    return listSessionsPagedCallable;
-  }
-
-  @Override
   public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
     return listLocationsCallable;
   }
@@ -1466,6 +1343,22 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
   @Override
   public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     return getLocationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

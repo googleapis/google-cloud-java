@@ -1,0 +1,24 @@
+name: Renovate Bot Config Validation
+
+on:
+  pull_request:
+    paths:
+      - 'renovate.json'
+      - '.github/workflows/renovate_config_check.yaml'
+
+jobs:
+  renovate_bot_config_validation:
+    runs-on: ubuntu-24.04
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+
+    - name: Run Renovate Config Validator
+      run: |
+        npx --package renovate@43.136.0 renovate-config-validator

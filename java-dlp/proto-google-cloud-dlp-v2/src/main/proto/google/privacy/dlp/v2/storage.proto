@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -57,6 +57,9 @@ message SensitivityScore {
     // No sensitive information detected. The resource isn't publicly
     // accessible.
     SENSITIVITY_LOW = 10;
+
+    // Unable to determine sensitivity.
+    SENSITIVITY_UNKNOWN = 12;
 
     // Medium risk. Contains personally identifiable information (PII),
     // potentially sensitive data, or fields with free-text data that are at a
@@ -190,6 +193,17 @@ message CustomInfoType {
   // not support the use of `detection_rules`.
   message SurrogateType {}
 
+  // Configuration for a custom infoType that detects key-value pairs in the
+  // metadata matching the specified regular expressions.
+  message MetadataKeyValueExpression {
+    // The regular expression for the key. Key should be
+    // non-empty.
+    string key_regex = 1;
+
+    // The regular expression for the value. Value should be non-empty.
+    string value_regex = 2;
+  }
+
   // Deprecated; use `InspectionRuleSet` instead. Rule for modifying a
   // `CustomInfoType` to alter behavior under certain circumstances, depending
   // on the specific details of the rule. Not supported for the `surrogate_type`
@@ -296,18 +310,21 @@ message CustomInfoType {
     // support reversing.
     SurrogateType surrogate_type = 4;
 
-    // Load an existing `StoredInfoType` resource for use in
-    // `InspectDataSource`. Not currently supported in `InspectContent`.
+    // Loads an existing `StoredInfoType` resource.
     StoredType stored_type = 5;
+
+    // Key-value pair to detect in the metadata.
+    MetadataKeyValueExpression metadata_key_value_expression = 10;
   }
 
   // Set of detection rules to apply to all findings of this CustomInfoType.
-  // Rules are applied in order that they are specified. Not supported for the
-  // `surrogate_type` CustomInfoType.
+  // Rules are applied in the order that they are specified. Only supported
+  // for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
   repeated DetectionRule detection_rules = 7;
 
   // If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
-  // to be returned. It still can be used for rules matching.
+  // to be returned. It still can be used for rules matching. Only supported
+  // for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
   ExclusionType exclusion_type = 8;
 
   // Sensitivity for this CustomInfoType. If this CustomInfoType extends an
@@ -650,7 +667,7 @@ message StorageConfig {
     // Specification of the field containing the timestamp of scanned items.
     // Used for data sources like Datastore and BigQuery.
     //
-    // <b>For BigQuery</b>
+    // **For BigQuery**
     //
     // If this value is not specified and the table was modified between the
     // given start and end times, the entire table will be scanned. If this
@@ -665,13 +682,11 @@ message StorageConfig {
     // you can use any of the following pseudo-columns as your timestamp field.
     // When used with Cloud DLP, these pseudo-column names are case sensitive.
     //
-    // <ul>
-    // <li><code>_PARTITIONTIME</code></li>
-    // <li><code>_PARTITIONDATE</code></li>
-    // <li><code>_PARTITION_LOAD_TIME</code></li>
-    // </ul>
+    // - `_PARTITIONTIME`
+    // - `_PARTITIONDATE`
+    // - `_PARTITION_LOAD_TIME`
     //
-    // <b>For Datastore</b>
+    // **For Datastore**
     //
     // If this value is specified, then entities are filtered based on the given
     // start and end times. If an entity does not contain the provided timestamp
@@ -689,6 +704,17 @@ message StorageConfig {
     // since the last time the JobTrigger executed. This will be based on the
     // time of the execution of the last run of the JobTrigger or the timespan
     // end_time used in the last run of the JobTrigger.
+    //
+    // **For BigQuery**
+    //
+    // Inspect jobs triggered by automatic population will scan data that is at
+    // least three hours old when the job starts. This is because streaming
+    // buffer rows are not read during inspection and reading up to the current
+    // timestamp will result in skipped rows.
+    //
+    // See the [known
+    // issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#recently-streamed-data)
+    // related to this operation.
     bool enable_auto_population_of_timespan_config = 4;
   }
 
@@ -739,6 +765,7 @@ message HybridOptions {
   // No more than 10 labels can be associated with a given finding.
   //
   // Examples:
+  //
   // * `"environment" : "production"`
   // * `"pipeline" : "etl"`
   map<string, string> labels = 3;
@@ -837,7 +864,7 @@ message RecordKey {
 // `<project_id>:<dataset_id>.<table_id>` or
 // `<project_id>.<dataset_id>.<table_id>`.
 message BigQueryTable {
-  // The Google Cloud Platform project ID of the project containing the table.
+  // The Google Cloud project ID of the project containing the table.
   // If omitted, project ID is inferred from the API call.
   string project_id = 1;
 
@@ -846,6 +873,21 @@ message BigQueryTable {
 
   // Name of the table.
   string table_id = 3;
+}
+
+// Message defining the location of a BigQuery table with the projectId inferred
+// from the parent project.
+message TableReference {
+  // Dataset ID of the table.
+  string dataset_id = 1;
+
+  // Name of the table.
+  string table_id = 2;
+
+  // The Google Cloud project ID of the project containing the table.
+  // If omitted, the project ID is inferred from the parent project. This field
+  // is required if the parent resource is an organization.
+  string project_id = 3;
 }
 
 // Message defining a field of a BigQuery table.

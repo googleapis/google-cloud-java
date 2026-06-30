@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSecuritySettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecuritySettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSecuritySettingsRequest, SecuritySettings>
@@ -73,6 +74,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSecuritySettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecuritySettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSecuritySettingsRequest, SecuritySettings>
@@ -84,6 +86,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSecuritySettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecuritySettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSecuritySettingsRequest, ListSecuritySettingsResponse>
@@ -96,6 +99,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
                   ProtoUtils.marshaller(ListSecuritySettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSecuritySettingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSecuritySettingsRequest, Empty>
@@ -107,6 +111,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSecuritySettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -118,6 +123,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -126,6 +132,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateSecuritySettingsRequest, SecuritySettings>
@@ -199,6 +206,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetSecuritySettingsRequest, SecuritySettings>
         getSecuritySettingsTransportSettings =
@@ -210,6 +218,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateSecuritySettingsRequest, SecuritySettings>
         updateSecuritySettingsTransportSettings =
@@ -234,6 +243,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteSecuritySettingsRequest, Empty> deleteSecuritySettingsTransportSettings =
         GrpcCallSettings.<DeleteSecuritySettingsRequest, Empty>newBuilder()
@@ -244,6 +254,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

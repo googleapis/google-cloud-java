@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,6 +85,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTrainingPipelineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TrainingPipeline.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTrainingPipelineRequest, TrainingPipeline>
@@ -96,6 +97,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTrainingPipelineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TrainingPipeline.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTrainingPipelinesRequest, ListTrainingPipelinesResponse>
@@ -108,6 +110,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   ProtoUtils.marshaller(ListTrainingPipelinesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTrainingPipelinesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTrainingPipelineRequest, Operation>
@@ -119,6 +122,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTrainingPipelineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelTrainingPipelineRequest, Empty>
@@ -130,6 +134,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelTrainingPipelineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePipelineJobRequest, PipelineJob>
@@ -141,6 +146,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePipelineJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PipelineJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPipelineJobRequest, PipelineJob>
@@ -151,6 +157,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPipelineJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PipelineJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPipelineJobsRequest, ListPipelineJobsResponse>
@@ -162,6 +169,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   ProtoUtils.marshaller(ListPipelineJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPipelineJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePipelineJobRequest, Operation>
@@ -173,6 +181,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePipelineJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchDeletePipelineJobsRequest, Operation>
@@ -184,6 +193,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchDeletePipelineJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelPipelineJobRequest, Empty>
@@ -195,6 +205,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelPipelineJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchCancelPipelineJobsRequest, Operation>
@@ -206,6 +217,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchCancelPipelineJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -217,6 +229,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -225,6 +238,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -233,6 +247,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -241,6 +256,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -252,6 +268,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateTrainingPipelineRequest, TrainingPipeline>
@@ -352,6 +369,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTrainingPipelineRequest, TrainingPipeline>
         getTrainingPipelineTransportSettings =
@@ -363,6 +381,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListTrainingPipelinesRequest, ListTrainingPipelinesResponse>
         listTrainingPipelinesTransportSettings =
@@ -375,6 +394,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteTrainingPipelineRequest, Operation>
         deleteTrainingPipelineTransportSettings =
@@ -386,6 +406,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CancelTrainingPipelineRequest, Empty> cancelTrainingPipelineTransportSettings =
         GrpcCallSettings.<CancelTrainingPipelineRequest, Empty>newBuilder()
@@ -396,6 +417,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreatePipelineJobRequest, PipelineJob> createPipelineJobTransportSettings =
         GrpcCallSettings.<CreatePipelineJobRequest, PipelineJob>newBuilder()
@@ -406,6 +428,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetPipelineJobRequest, PipelineJob> getPipelineJobTransportSettings =
         GrpcCallSettings.<GetPipelineJobRequest, PipelineJob>newBuilder()
@@ -416,6 +439,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListPipelineJobsRequest, ListPipelineJobsResponse>
         listPipelineJobsTransportSettings =
@@ -427,6 +451,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeletePipelineJobRequest, Operation> deletePipelineJobTransportSettings =
         GrpcCallSettings.<DeletePipelineJobRequest, Operation>newBuilder()
@@ -437,6 +462,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchDeletePipelineJobsRequest, Operation>
         batchDeletePipelineJobsTransportSettings =
@@ -448,6 +474,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CancelPipelineJobRequest, Empty> cancelPipelineJobTransportSettings =
         GrpcCallSettings.<CancelPipelineJobRequest, Empty>newBuilder()
@@ -458,6 +485,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchCancelPipelineJobsRequest, Operation>
         batchCancelPipelineJobsTransportSettings =
@@ -469,6 +497,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -499,6 +528,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -509,6 +539,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -520,6 +551,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createTrainingPipelineCallable =

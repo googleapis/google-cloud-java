@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@ import "google/protobuf/struct.proto";
 import "google/rpc/status.proto";
 import "google/type/latlng.proto";
 
-option cc_enable_arenas = true;
 option csharp_namespace = "Google.Cloud.Dialogflow.V2Beta1";
 option go_package = "cloud.google.com/go/dialogflow/apiv2beta1/dialogflowpb;dialogflowpb";
 option java_multiple_files = true;
@@ -745,20 +744,24 @@ message StreamingDetectIntentResponse {
 // finalized transcript values received for the series of results.
 //
 // In the following example, single utterance is enabled. In the case where
-// single utterance is not enabled, result 7 would not occur.
+// single utterance is not enabled, result 8 would not occur.
 //
 // ```
-// Num | transcript              | message_type            | is_final
-// --- | ----------------------- | ----------------------- | --------
-// 1   | "tube"                  | TRANSCRIPT              | false
-// 2   | "to be a"               | TRANSCRIPT              | false
-// 3   | "to be"                 | TRANSCRIPT              | false
-// 4   | "to be or not to be"    | TRANSCRIPT              | true
-// 5   | "that's"                | TRANSCRIPT              | false
-// 6   | "that is                | TRANSCRIPT              | false
-// 7   | unset                   | END_OF_SINGLE_UTTERANCE | unset
-// 8   | " that is the question" | TRANSCRIPT              | true
+// Num | transcript               | message_type            | is_final
+// --- | ------------------------ | ----------------------- | --------
+// 1   | "tube"                   | TRANSCRIPT              | false
+// 2   | "to be a"                | TRANSCRIPT              | false
+// 3   | "to be"                  | TRANSCRIPT              | false
+// 4   | "to be or not to be"     | TRANSCRIPT              | true
+// 5   | "that's"                 | TRANSCRIPT              | false
+// 6   | "that is                 | TRANSCRIPT              | false
+// 7   | " that is the question"  | TRANSCRIPT              | true
+// 8   | unset                    | END_OF_SINGLE_UTTERANCE | unset
+// 9   | ". Whether 'tis nobler"  | TRANSCRIPT              | true
+// 10  | " in the mind"           | TRANSCRIPT              | false
+// 11  | " in the mind to suffer" | TRANSCRIPT              | true
 // ```
+//
 // Concatenating the finalized transcripts with `is_final` set to true,
 // the complete utterance becomes "to be or not to be that is the question".
 message StreamingRecognitionResult {
@@ -770,9 +773,6 @@ message StreamingRecognitionResult {
     // Message contains a (possibly partial) transcript.
     TRANSCRIPT = 1;
 
-    // Message contains DTMF digits.
-    DTMF_DIGITS = 3;
-
     // This event indicates that the server has detected the end of the user's
     // speech utterance and expects no additional speech. Therefore, the server
     // will not process additional audio (although it may subsequently return
@@ -781,6 +781,9 @@ message StreamingRecognitionResult {
     // until the server closes the gRPC connection. This message is only sent if
     // `single_utterance` was set to `true`, and is not used otherwise.
     END_OF_SINGLE_UTTERANCE = 2;
+
+    // Message contains DTMF digits.
+    DTMF_DIGITS = 3;
 
     // Message contains DTMF digits. Before a message with DTMF_DIGITS is sent,
     // a message with PARTIAL_DTMF_DIGITS may be sent with DTMF digits collected
@@ -919,7 +922,7 @@ message SentimentAnalysisResult {
 // for how to interpret the result.
 message Sentiment {
   // Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
-  // sentiment).
+  //  sentiment).
   float score = 1;
 
   // A non-negative number in the [0, +inf) range, which represents the absolute

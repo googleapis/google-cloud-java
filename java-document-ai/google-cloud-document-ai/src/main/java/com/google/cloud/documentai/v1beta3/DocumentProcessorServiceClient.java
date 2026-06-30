@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -334,7 +334,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateProcessor</td>
- *      <td><p> Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType] provided. The processor will be at `ENABLED` state by default after its creation.</td>
+ *      <td><p> Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType] provided. The processor will be at `ENABLED` state by default after its creation. Note that this method requires the `documentai.processors.create` permission on the project, which is highly privileged. A user or service account with this permission can create new processors that can interact with any gcs bucket in your project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -517,7 +517,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
+ * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -771,6 +772,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setFieldMask(FieldMask.newBuilder().build())
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
    *           .putAllLabels(new HashMap<String, String>())
+   *           .setImagelessMode(true)
    *           .build();
    *   ProcessResponse response = documentProcessorServiceClient.processDocument(request);
    * }
@@ -805,6 +807,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setFieldMask(FieldMask.newBuilder().build())
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
    *           .putAllLabels(new HashMap<String, String>())
+   *           .setImagelessMode(true)
    *           .build();
    *   ApiFuture<ProcessResponse> future =
    *       documentProcessorServiceClient.processDocumentCallable().futureCall(request);
@@ -2703,7 +2706,10 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType]
-   * provided. The processor will be at `ENABLED` state by default after its creation.
+   * provided. The processor will be at `ENABLED` state by default after its creation. Note that
+   * this method requires the `documentai.processors.create` permission on the project, which is
+   * highly privileged. A user or service account with this permission can create new processors
+   * that can interact with any gcs bucket in your project.
    *
    * <p>Sample code:
    *
@@ -2742,7 +2748,10 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType]
-   * provided. The processor will be at `ENABLED` state by default after its creation.
+   * provided. The processor will be at `ENABLED` state by default after its creation. Note that
+   * this method requires the `documentai.processors.create` permission on the project, which is
+   * highly privileged. A user or service account with this permission can create new processors
+   * that can interact with any gcs bucket in your project.
    *
    * <p>Sample code:
    *
@@ -2778,7 +2787,10 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType]
-   * provided. The processor will be at `ENABLED` state by default after its creation.
+   * provided. The processor will be at `ENABLED` state by default after its creation. Note that
+   * this method requires the `documentai.processors.create` permission on the project, which is
+   * highly privileged. A user or service account with this permission can create new processors
+   * that can interact with any gcs bucket in your project.
    *
    * <p>Sample code:
    *
@@ -2809,7 +2821,10 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType]
-   * provided. The processor will be at `ENABLED` state by default after its creation.
+   * provided. The processor will be at `ENABLED` state by default after its creation. Note that
+   * this method requires the `documentai.processors.create` permission on the project, which is
+   * highly privileged. A user or service account with this permission can create new processors
+   * that can interact with any gcs bucket in your project.
    *
    * <p>Sample code:
    *
@@ -3314,7 +3329,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     [HumanReviewConfig][google.cloud.documentai.v1beta3.HumanReviewConfig] that the document
    *     will be reviewed with.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentAsync(HumanReviewConfigName humanReviewConfig) {
     ReviewDocumentRequest request =
@@ -3350,7 +3367,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     [HumanReviewConfig][google.cloud.documentai.v1beta3.HumanReviewConfig] that the document
    *     will be reviewed with.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentAsync(String humanReviewConfig) {
     ReviewDocumentRequest request =
@@ -3388,7 +3407,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentAsync(ReviewDocumentRequest request) {
     return reviewDocumentOperationCallable().futureCall(request);
@@ -3423,7 +3444,10 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *   ReviewDocumentResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<
           ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentOperationCallable() {
@@ -3459,7 +3483,10 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ReviewDocumentRequest, Operation> reviewDocumentCallable() {
     return stub.reviewDocumentCallable();
   }
@@ -4129,7 +4156,13 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -4163,7 +4196,13 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -4198,7 +4237,13 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *

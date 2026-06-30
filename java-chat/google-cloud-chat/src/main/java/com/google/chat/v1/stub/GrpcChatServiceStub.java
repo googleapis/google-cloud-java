@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,16 @@
 
 package com.google.chat.v1.stub;
 
+import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -31,33 +37,68 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.chat.v1.Attachment;
 import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
+import com.google.chat.v1.CreateCustomEmojiRequest;
 import com.google.chat.v1.CreateMembershipRequest;
 import com.google.chat.v1.CreateMessageRequest;
 import com.google.chat.v1.CreateReactionRequest;
+import com.google.chat.v1.CreateSectionRequest;
 import com.google.chat.v1.CreateSpaceRequest;
+import com.google.chat.v1.CustomEmoji;
+import com.google.chat.v1.DeleteCustomEmojiRequest;
 import com.google.chat.v1.DeleteMembershipRequest;
 import com.google.chat.v1.DeleteMessageRequest;
 import com.google.chat.v1.DeleteReactionRequest;
+import com.google.chat.v1.DeleteSectionRequest;
 import com.google.chat.v1.DeleteSpaceRequest;
 import com.google.chat.v1.FindDirectMessageRequest;
+import com.google.chat.v1.FindGroupChatsRequest;
+import com.google.chat.v1.FindGroupChatsResponse;
 import com.google.chat.v1.GetAttachmentRequest;
+import com.google.chat.v1.GetCustomEmojiRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
+import com.google.chat.v1.GetSpaceEventRequest;
+import com.google.chat.v1.GetSpaceNotificationSettingRequest;
+import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
+import com.google.chat.v1.GetThreadReadStateRequest;
+import com.google.chat.v1.ListCustomEmojisRequest;
+import com.google.chat.v1.ListCustomEmojisResponse;
 import com.google.chat.v1.ListMembershipsRequest;
 import com.google.chat.v1.ListMembershipsResponse;
 import com.google.chat.v1.ListMessagesRequest;
 import com.google.chat.v1.ListMessagesResponse;
 import com.google.chat.v1.ListReactionsRequest;
 import com.google.chat.v1.ListReactionsResponse;
+import com.google.chat.v1.ListSectionItemsRequest;
+import com.google.chat.v1.ListSectionItemsResponse;
+import com.google.chat.v1.ListSectionsRequest;
+import com.google.chat.v1.ListSectionsResponse;
+import com.google.chat.v1.ListSpaceEventsRequest;
+import com.google.chat.v1.ListSpaceEventsResponse;
 import com.google.chat.v1.ListSpacesRequest;
 import com.google.chat.v1.ListSpacesResponse;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
+import com.google.chat.v1.MoveSectionItemRequest;
+import com.google.chat.v1.MoveSectionItemResponse;
+import com.google.chat.v1.PositionSectionRequest;
+import com.google.chat.v1.PositionSectionResponse;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.SearchSpacesRequest;
+import com.google.chat.v1.SearchSpacesResponse;
+import com.google.chat.v1.Section;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
+import com.google.chat.v1.SpaceEvent;
+import com.google.chat.v1.SpaceNotificationSetting;
+import com.google.chat.v1.SpaceReadState;
+import com.google.chat.v1.ThreadReadState;
+import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
+import com.google.chat.v1.UpdateSectionRequest;
+import com.google.chat.v1.UpdateSpaceNotificationSettingRequest;
+import com.google.chat.v1.UpdateSpaceReadStateRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
 import com.google.chat.v1.UploadAttachmentResponse;
@@ -85,6 +126,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMessageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Message.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMessagesRequest, ListMessagesResponse>
@@ -95,6 +137,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListMessagesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMessagesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMembershipsRequest, ListMembershipsResponse>
@@ -106,6 +149,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   ProtoUtils.marshaller(ListMembershipsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMembershipsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMembershipRequest, Membership>
@@ -116,6 +160,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMembershipRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Membership.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMessageRequest, Message> getMessageMethodDescriptor =
@@ -124,6 +169,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
           .setFullMethodName("google.chat.v1.ChatService/GetMessage")
           .setRequestMarshaller(ProtoUtils.marshaller(GetMessageRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Message.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateMessageRequest, Message>
@@ -134,6 +180,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateMessageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Message.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMessageRequest, Empty> deleteMessageMethodDescriptor =
@@ -142,6 +189,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
           .setFullMethodName("google.chat.v1.ChatService/DeleteMessage")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteMessageRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetAttachmentRequest, Attachment>
@@ -152,6 +200,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAttachmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Attachment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UploadAttachmentRequest, UploadAttachmentResponse>
@@ -163,6 +212,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   ProtoUtils.marshaller(UploadAttachmentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UploadAttachmentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSpacesRequest, ListSpacesResponse>
@@ -172,6 +222,18 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setFullMethodName("google.chat.v1.ChatService/ListSpaces")
               .setRequestMarshaller(ProtoUtils.marshaller(ListSpacesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListSpacesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<SearchSpacesRequest, SearchSpacesResponse>
+      searchSpacesMethodDescriptor =
+          MethodDescriptor.<SearchSpacesRequest, SearchSpacesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/SearchSpaces")
+              .setRequestMarshaller(ProtoUtils.marshaller(SearchSpacesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchSpacesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSpaceRequest, Space> getSpaceMethodDescriptor =
@@ -180,6 +242,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
           .setFullMethodName("google.chat.v1.ChatService/GetSpace")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSpaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateSpaceRequest, Space> createSpaceMethodDescriptor =
@@ -188,6 +251,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
           .setFullMethodName("google.chat.v1.ChatService/CreateSpace")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSpaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetUpSpaceRequest, Space> setUpSpaceMethodDescriptor =
@@ -196,6 +260,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
           .setFullMethodName("google.chat.v1.ChatService/SetUpSpace")
           .setRequestMarshaller(ProtoUtils.marshaller(SetUpSpaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSpaceRequest, Space> updateSpaceMethodDescriptor =
@@ -204,6 +269,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
           .setFullMethodName("google.chat.v1.ChatService/UpdateSpace")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSpaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteSpaceRequest, Empty> deleteSpaceMethodDescriptor =
@@ -212,6 +278,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
           .setFullMethodName("google.chat.v1.ChatService/DeleteSpace")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSpaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CompleteImportSpaceRequest, CompleteImportSpaceResponse>
@@ -223,6 +290,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   ProtoUtils.marshaller(CompleteImportSpaceRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CompleteImportSpaceResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FindDirectMessageRequest, Space>
@@ -233,6 +301,19 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(FindDirectMessageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<FindGroupChatsRequest, FindGroupChatsResponse>
+      findGroupChatsMethodDescriptor =
+          MethodDescriptor.<FindGroupChatsRequest, FindGroupChatsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/FindGroupChats")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FindGroupChatsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FindGroupChatsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMembershipRequest, Membership>
@@ -243,6 +324,18 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMembershipRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Membership.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateMembershipRequest, Membership>
+      updateMembershipMethodDescriptor =
+          MethodDescriptor.<UpdateMembershipRequest, Membership>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/UpdateMembership")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateMembershipRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Membership.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMembershipRequest, Membership>
@@ -253,6 +346,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMembershipRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Membership.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateReactionRequest, Reaction>
@@ -263,6 +357,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReactionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Reaction.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReactionsRequest, ListReactionsResponse>
@@ -274,6 +369,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   ProtoUtils.marshaller(ListReactionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReactionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteReactionRequest, Empty>
@@ -284,6 +380,214 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteReactionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateCustomEmojiRequest, CustomEmoji>
+      createCustomEmojiMethodDescriptor =
+          MethodDescriptor.<CreateCustomEmojiRequest, CustomEmoji>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/CreateCustomEmoji")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateCustomEmojiRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CustomEmoji.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetCustomEmojiRequest, CustomEmoji>
+      getCustomEmojiMethodDescriptor =
+          MethodDescriptor.<GetCustomEmojiRequest, CustomEmoji>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/GetCustomEmoji")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetCustomEmojiRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CustomEmoji.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListCustomEmojisRequest, ListCustomEmojisResponse>
+      listCustomEmojisMethodDescriptor =
+          MethodDescriptor.<ListCustomEmojisRequest, ListCustomEmojisResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/ListCustomEmojis")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListCustomEmojisRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListCustomEmojisResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteCustomEmojiRequest, Empty>
+      deleteCustomEmojiMethodDescriptor =
+          MethodDescriptor.<DeleteCustomEmojiRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/DeleteCustomEmoji")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteCustomEmojiRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetSpaceReadStateRequest, SpaceReadState>
+      getSpaceReadStateMethodDescriptor =
+          MethodDescriptor.<GetSpaceReadStateRequest, SpaceReadState>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/GetSpaceReadState")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSpaceReadStateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SpaceReadState.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateSpaceReadStateRequest, SpaceReadState>
+      updateSpaceReadStateMethodDescriptor =
+          MethodDescriptor.<UpdateSpaceReadStateRequest, SpaceReadState>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/UpdateSpaceReadState")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSpaceReadStateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SpaceReadState.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetThreadReadStateRequest, ThreadReadState>
+      getThreadReadStateMethodDescriptor =
+          MethodDescriptor.<GetThreadReadStateRequest, ThreadReadState>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/GetThreadReadState")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetThreadReadStateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ThreadReadState.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetSpaceEventRequest, SpaceEvent>
+      getSpaceEventMethodDescriptor =
+          MethodDescriptor.<GetSpaceEventRequest, SpaceEvent>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/GetSpaceEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSpaceEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SpaceEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListSpaceEventsRequest, ListSpaceEventsResponse>
+      listSpaceEventsMethodDescriptor =
+          MethodDescriptor.<ListSpaceEventsRequest, ListSpaceEventsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/ListSpaceEvents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSpaceEventsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSpaceEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingMethodDescriptor =
+          MethodDescriptor
+              .<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/GetSpaceNotificationSetting")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSpaceNotificationSettingRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SpaceNotificationSetting.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingMethodDescriptor =
+          MethodDescriptor
+              .<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/UpdateSpaceNotificationSetting")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSpaceNotificationSettingRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SpaceNotificationSetting.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateSectionRequest, Section>
+      createSectionMethodDescriptor =
+          MethodDescriptor.<CreateSectionRequest, Section>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/CreateSection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateSectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Section.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteSectionRequest, Empty> deleteSectionMethodDescriptor =
+      MethodDescriptor.<DeleteSectionRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.chat.v1.ChatService/DeleteSection")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteSectionRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<UpdateSectionRequest, Section>
+      updateSectionMethodDescriptor =
+          MethodDescriptor.<UpdateSectionRequest, Section>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/UpdateSection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Section.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListSectionsRequest, ListSectionsResponse>
+      listSectionsMethodDescriptor =
+          MethodDescriptor.<ListSectionsRequest, ListSectionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/ListSections")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListSectionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<PositionSectionRequest, PositionSectionResponse>
+      positionSectionMethodDescriptor =
+          MethodDescriptor.<PositionSectionRequest, PositionSectionResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/PositionSection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PositionSectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PositionSectionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListSectionItemsRequest, ListSectionItemsResponse>
+      listSectionItemsMethodDescriptor =
+          MethodDescriptor.<ListSectionItemsRequest, ListSectionItemsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/ListSectionItems")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSectionItemsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSectionItemsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<MoveSectionItemRequest, MoveSectionItemResponse>
+      moveSectionItemMethodDescriptor =
+          MethodDescriptor.<MoveSectionItemRequest, MoveSectionItemResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/MoveSectionItem")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(MoveSectionItemRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(MoveSectionItemResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateMessageRequest, Message> createMessageCallable;
@@ -303,6 +607,9 @@ public class GrpcChatServiceStub extends ChatServiceStub {
       uploadAttachmentCallable;
   private final UnaryCallable<ListSpacesRequest, ListSpacesResponse> listSpacesCallable;
   private final UnaryCallable<ListSpacesRequest, ListSpacesPagedResponse> listSpacesPagedCallable;
+  private final UnaryCallable<SearchSpacesRequest, SearchSpacesResponse> searchSpacesCallable;
+  private final UnaryCallable<SearchSpacesRequest, SearchSpacesPagedResponse>
+      searchSpacesPagedCallable;
   private final UnaryCallable<GetSpaceRequest, Space> getSpaceCallable;
   private final UnaryCallable<CreateSpaceRequest, Space> createSpaceCallable;
   private final UnaryCallable<SetUpSpaceRequest, Space> setUpSpaceCallable;
@@ -311,13 +618,52 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   private final UnaryCallable<CompleteImportSpaceRequest, CompleteImportSpaceResponse>
       completeImportSpaceCallable;
   private final UnaryCallable<FindDirectMessageRequest, Space> findDirectMessageCallable;
+  private final UnaryCallable<FindGroupChatsRequest, FindGroupChatsResponse> findGroupChatsCallable;
+  private final UnaryCallable<FindGroupChatsRequest, FindGroupChatsPagedResponse>
+      findGroupChatsPagedCallable;
   private final UnaryCallable<CreateMembershipRequest, Membership> createMembershipCallable;
+  private final UnaryCallable<UpdateMembershipRequest, Membership> updateMembershipCallable;
   private final UnaryCallable<DeleteMembershipRequest, Membership> deleteMembershipCallable;
   private final UnaryCallable<CreateReactionRequest, Reaction> createReactionCallable;
   private final UnaryCallable<ListReactionsRequest, ListReactionsResponse> listReactionsCallable;
   private final UnaryCallable<ListReactionsRequest, ListReactionsPagedResponse>
       listReactionsPagedCallable;
   private final UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable;
+  private final UnaryCallable<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiCallable;
+  private final UnaryCallable<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiCallable;
+  private final UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisResponse>
+      listCustomEmojisCallable;
+  private final UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisPagedResponse>
+      listCustomEmojisPagedCallable;
+  private final UnaryCallable<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiCallable;
+  private final UnaryCallable<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateCallable;
+  private final UnaryCallable<UpdateSpaceReadStateRequest, SpaceReadState>
+      updateSpaceReadStateCallable;
+  private final UnaryCallable<GetThreadReadStateRequest, ThreadReadState>
+      getThreadReadStateCallable;
+  private final UnaryCallable<GetSpaceEventRequest, SpaceEvent> getSpaceEventCallable;
+  private final UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse>
+      listSpaceEventsCallable;
+  private final UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsPagedResponse>
+      listSpaceEventsPagedCallable;
+  private final UnaryCallable<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingCallable;
+  private final UnaryCallable<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingCallable;
+  private final UnaryCallable<CreateSectionRequest, Section> createSectionCallable;
+  private final UnaryCallable<DeleteSectionRequest, Empty> deleteSectionCallable;
+  private final UnaryCallable<UpdateSectionRequest, Section> updateSectionCallable;
+  private final UnaryCallable<ListSectionsRequest, ListSectionsResponse> listSectionsCallable;
+  private final UnaryCallable<ListSectionsRequest, ListSectionsPagedResponse>
+      listSectionsPagedCallable;
+  private final UnaryCallable<PositionSectionRequest, PositionSectionResponse>
+      positionSectionCallable;
+  private final UnaryCallable<ListSectionItemsRequest, ListSectionItemsResponse>
+      listSectionItemsCallable;
+  private final UnaryCallable<ListSectionItemsRequest, ListSectionItemsPagedResponse>
+      listSectionItemsPagedCallable;
+  private final UnaryCallable<MoveSectionItemRequest, MoveSectionItemResponse>
+      moveSectionItemCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -370,6 +716,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListMessagesRequest, ListMessagesResponse> listMessagesTransportSettings =
         GrpcCallSettings.<ListMessagesRequest, ListMessagesResponse>newBuilder()
@@ -380,6 +727,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListMembershipsRequest, ListMembershipsResponse>
         listMembershipsTransportSettings =
@@ -391,6 +739,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMembershipRequest, Membership> getMembershipTransportSettings =
         GrpcCallSettings.<GetMembershipRequest, Membership>newBuilder()
@@ -401,6 +750,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetMessageRequest, Message> getMessageTransportSettings =
         GrpcCallSettings.<GetMessageRequest, Message>newBuilder()
@@ -411,6 +761,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateMessageRequest, Message> updateMessageTransportSettings =
         GrpcCallSettings.<UpdateMessageRequest, Message>newBuilder()
@@ -431,6 +782,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetAttachmentRequest, Attachment> getAttachmentTransportSettings =
         GrpcCallSettings.<GetAttachmentRequest, Attachment>newBuilder()
@@ -441,6 +793,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UploadAttachmentRequest, UploadAttachmentResponse>
         uploadAttachmentTransportSettings =
@@ -452,10 +805,15 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListSpacesRequest, ListSpacesResponse> listSpacesTransportSettings =
         GrpcCallSettings.<ListSpacesRequest, ListSpacesResponse>newBuilder()
             .setMethodDescriptor(listSpacesMethodDescriptor)
+            .build();
+    GrpcCallSettings<SearchSpacesRequest, SearchSpacesResponse> searchSpacesTransportSettings =
+        GrpcCallSettings.<SearchSpacesRequest, SearchSpacesResponse>newBuilder()
+            .setMethodDescriptor(searchSpacesMethodDescriptor)
             .build();
     GrpcCallSettings<GetSpaceRequest, Space> getSpaceTransportSettings =
         GrpcCallSettings.<GetSpaceRequest, Space>newBuilder()
@@ -466,6 +824,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateSpaceRequest, Space> createSpaceTransportSettings =
         GrpcCallSettings.<CreateSpaceRequest, Space>newBuilder()
@@ -494,6 +853,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CompleteImportSpaceRequest, CompleteImportSpaceResponse>
         completeImportSpaceTransportSettings =
@@ -505,11 +865,17 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<FindDirectMessageRequest, Space> findDirectMessageTransportSettings =
         GrpcCallSettings.<FindDirectMessageRequest, Space>newBuilder()
             .setMethodDescriptor(findDirectMessageMethodDescriptor)
             .build();
+    GrpcCallSettings<FindGroupChatsRequest, FindGroupChatsResponse>
+        findGroupChatsTransportSettings =
+            GrpcCallSettings.<FindGroupChatsRequest, FindGroupChatsResponse>newBuilder()
+                .setMethodDescriptor(findGroupChatsMethodDescriptor)
+                .build();
     GrpcCallSettings<CreateMembershipRequest, Membership> createMembershipTransportSettings =
         GrpcCallSettings.<CreateMembershipRequest, Membership>newBuilder()
             .setMethodDescriptor(createMembershipMethodDescriptor)
@@ -517,6 +883,17 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<UpdateMembershipRequest, Membership> updateMembershipTransportSettings =
+        GrpcCallSettings.<UpdateMembershipRequest, Membership>newBuilder()
+            .setMethodDescriptor(updateMembershipMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("membership.name", String.valueOf(request.getMembership().getName()));
                   return builder.build();
                 })
             .build();
@@ -529,6 +906,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateReactionRequest, Reaction> createReactionTransportSettings =
         GrpcCallSettings.<CreateReactionRequest, Reaction>newBuilder()
@@ -539,6 +917,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListReactionsRequest, ListReactionsResponse> listReactionsTransportSettings =
         GrpcCallSettings.<ListReactionsRequest, ListReactionsResponse>newBuilder()
@@ -549,6 +928,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteReactionRequest, Empty> deleteReactionTransportSettings =
         GrpcCallSettings.<DeleteReactionRequest, Empty>newBuilder()
@@ -559,7 +939,204 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiTransportSettings =
+        GrpcCallSettings.<CreateCustomEmojiRequest, CustomEmoji>newBuilder()
+            .setMethodDescriptor(createCustomEmojiMethodDescriptor)
+            .build();
+    GrpcCallSettings<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiTransportSettings =
+        GrpcCallSettings.<GetCustomEmojiRequest, CustomEmoji>newBuilder()
+            .setMethodDescriptor(getCustomEmojiMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListCustomEmojisRequest, ListCustomEmojisResponse>
+        listCustomEmojisTransportSettings =
+            GrpcCallSettings.<ListCustomEmojisRequest, ListCustomEmojisResponse>newBuilder()
+                .setMethodDescriptor(listCustomEmojisMethodDescriptor)
+                .build();
+    GrpcCallSettings<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiTransportSettings =
+        GrpcCallSettings.<DeleteCustomEmojiRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteCustomEmojiMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateTransportSettings =
+        GrpcCallSettings.<GetSpaceReadStateRequest, SpaceReadState>newBuilder()
+            .setMethodDescriptor(getSpaceReadStateMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<UpdateSpaceReadStateRequest, SpaceReadState>
+        updateSpaceReadStateTransportSettings =
+            GrpcCallSettings.<UpdateSpaceReadStateRequest, SpaceReadState>newBuilder()
+                .setMethodDescriptor(updateSpaceReadStateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "space_read_state.name",
+                          String.valueOf(request.getSpaceReadState().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetThreadReadStateRequest, ThreadReadState>
+        getThreadReadStateTransportSettings =
+            GrpcCallSettings.<GetThreadReadStateRequest, ThreadReadState>newBuilder()
+                .setMethodDescriptor(getThreadReadStateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventTransportSettings =
+        GrpcCallSettings.<GetSpaceEventRequest, SpaceEvent>newBuilder()
+            .setMethodDescriptor(getSpaceEventMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListSpaceEventsRequest, ListSpaceEventsResponse>
+        listSpaceEventsTransportSettings =
+            GrpcCallSettings.<ListSpaceEventsRequest, ListSpaceEventsResponse>newBuilder()
+                .setMethodDescriptor(listSpaceEventsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        getSpaceNotificationSettingTransportSettings =
+            GrpcCallSettings
+                .<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>newBuilder()
+                .setMethodDescriptor(getSpaceNotificationSettingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        updateSpaceNotificationSettingTransportSettings =
+            GrpcCallSettings
+                .<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>newBuilder()
+                .setMethodDescriptor(updateSpaceNotificationSettingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "space_notification_setting.name",
+                          String.valueOf(request.getSpaceNotificationSetting().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateSectionRequest, Section> createSectionTransportSettings =
+        GrpcCallSettings.<CreateSectionRequest, Section>newBuilder()
+            .setMethodDescriptor(createSectionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<DeleteSectionRequest, Empty> deleteSectionTransportSettings =
+        GrpcCallSettings.<DeleteSectionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteSectionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<UpdateSectionRequest, Section> updateSectionTransportSettings =
+        GrpcCallSettings.<UpdateSectionRequest, Section>newBuilder()
+            .setMethodDescriptor(updateSectionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("section.name", String.valueOf(request.getSection().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListSectionsRequest, ListSectionsResponse> listSectionsTransportSettings =
+        GrpcCallSettings.<ListSectionsRequest, ListSectionsResponse>newBuilder()
+            .setMethodDescriptor(listSectionsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<PositionSectionRequest, PositionSectionResponse>
+        positionSectionTransportSettings =
+            GrpcCallSettings.<PositionSectionRequest, PositionSectionResponse>newBuilder()
+                .setMethodDescriptor(positionSectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListSectionItemsRequest, ListSectionItemsResponse>
+        listSectionItemsTransportSettings =
+            GrpcCallSettings.<ListSectionItemsRequest, ListSectionItemsResponse>newBuilder()
+                .setMethodDescriptor(listSectionItemsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<MoveSectionItemRequest, MoveSectionItemResponse>
+        moveSectionItemTransportSettings =
+            GrpcCallSettings.<MoveSectionItemRequest, MoveSectionItemResponse>newBuilder()
+                .setMethodDescriptor(moveSectionItemMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
 
     this.createMessageCallable =
         callableFactory.createUnaryCallable(
@@ -600,6 +1177,12 @@ public class GrpcChatServiceStub extends ChatServiceStub {
     this.listSpacesPagedCallable =
         callableFactory.createPagedCallable(
             listSpacesTransportSettings, settings.listSpacesSettings(), clientContext);
+    this.searchSpacesCallable =
+        callableFactory.createUnaryCallable(
+            searchSpacesTransportSettings, settings.searchSpacesSettings(), clientContext);
+    this.searchSpacesPagedCallable =
+        callableFactory.createPagedCallable(
+            searchSpacesTransportSettings, settings.searchSpacesSettings(), clientContext);
     this.getSpaceCallable =
         callableFactory.createUnaryCallable(
             getSpaceTransportSettings, settings.getSpaceSettings(), clientContext);
@@ -625,9 +1208,18 @@ public class GrpcChatServiceStub extends ChatServiceStub {
             findDirectMessageTransportSettings,
             settings.findDirectMessageSettings(),
             clientContext);
+    this.findGroupChatsCallable =
+        callableFactory.createUnaryCallable(
+            findGroupChatsTransportSettings, settings.findGroupChatsSettings(), clientContext);
+    this.findGroupChatsPagedCallable =
+        callableFactory.createPagedCallable(
+            findGroupChatsTransportSettings, settings.findGroupChatsSettings(), clientContext);
     this.createMembershipCallable =
         callableFactory.createUnaryCallable(
             createMembershipTransportSettings, settings.createMembershipSettings(), clientContext);
+    this.updateMembershipCallable =
+        callableFactory.createUnaryCallable(
+            updateMembershipTransportSettings, settings.updateMembershipSettings(), clientContext);
     this.deleteMembershipCallable =
         callableFactory.createUnaryCallable(
             deleteMembershipTransportSettings, settings.deleteMembershipSettings(), clientContext);
@@ -643,6 +1235,86 @@ public class GrpcChatServiceStub extends ChatServiceStub {
     this.deleteReactionCallable =
         callableFactory.createUnaryCallable(
             deleteReactionTransportSettings, settings.deleteReactionSettings(), clientContext);
+    this.createCustomEmojiCallable =
+        callableFactory.createUnaryCallable(
+            createCustomEmojiTransportSettings,
+            settings.createCustomEmojiSettings(),
+            clientContext);
+    this.getCustomEmojiCallable =
+        callableFactory.createUnaryCallable(
+            getCustomEmojiTransportSettings, settings.getCustomEmojiSettings(), clientContext);
+    this.listCustomEmojisCallable =
+        callableFactory.createUnaryCallable(
+            listCustomEmojisTransportSettings, settings.listCustomEmojisSettings(), clientContext);
+    this.listCustomEmojisPagedCallable =
+        callableFactory.createPagedCallable(
+            listCustomEmojisTransportSettings, settings.listCustomEmojisSettings(), clientContext);
+    this.deleteCustomEmojiCallable =
+        callableFactory.createUnaryCallable(
+            deleteCustomEmojiTransportSettings,
+            settings.deleteCustomEmojiSettings(),
+            clientContext);
+    this.getSpaceReadStateCallable =
+        callableFactory.createUnaryCallable(
+            getSpaceReadStateTransportSettings,
+            settings.getSpaceReadStateSettings(),
+            clientContext);
+    this.updateSpaceReadStateCallable =
+        callableFactory.createUnaryCallable(
+            updateSpaceReadStateTransportSettings,
+            settings.updateSpaceReadStateSettings(),
+            clientContext);
+    this.getThreadReadStateCallable =
+        callableFactory.createUnaryCallable(
+            getThreadReadStateTransportSettings,
+            settings.getThreadReadStateSettings(),
+            clientContext);
+    this.getSpaceEventCallable =
+        callableFactory.createUnaryCallable(
+            getSpaceEventTransportSettings, settings.getSpaceEventSettings(), clientContext);
+    this.listSpaceEventsCallable =
+        callableFactory.createUnaryCallable(
+            listSpaceEventsTransportSettings, settings.listSpaceEventsSettings(), clientContext);
+    this.listSpaceEventsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSpaceEventsTransportSettings, settings.listSpaceEventsSettings(), clientContext);
+    this.getSpaceNotificationSettingCallable =
+        callableFactory.createUnaryCallable(
+            getSpaceNotificationSettingTransportSettings,
+            settings.getSpaceNotificationSettingSettings(),
+            clientContext);
+    this.updateSpaceNotificationSettingCallable =
+        callableFactory.createUnaryCallable(
+            updateSpaceNotificationSettingTransportSettings,
+            settings.updateSpaceNotificationSettingSettings(),
+            clientContext);
+    this.createSectionCallable =
+        callableFactory.createUnaryCallable(
+            createSectionTransportSettings, settings.createSectionSettings(), clientContext);
+    this.deleteSectionCallable =
+        callableFactory.createUnaryCallable(
+            deleteSectionTransportSettings, settings.deleteSectionSettings(), clientContext);
+    this.updateSectionCallable =
+        callableFactory.createUnaryCallable(
+            updateSectionTransportSettings, settings.updateSectionSettings(), clientContext);
+    this.listSectionsCallable =
+        callableFactory.createUnaryCallable(
+            listSectionsTransportSettings, settings.listSectionsSettings(), clientContext);
+    this.listSectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSectionsTransportSettings, settings.listSectionsSettings(), clientContext);
+    this.positionSectionCallable =
+        callableFactory.createUnaryCallable(
+            positionSectionTransportSettings, settings.positionSectionSettings(), clientContext);
+    this.listSectionItemsCallable =
+        callableFactory.createUnaryCallable(
+            listSectionItemsTransportSettings, settings.listSectionItemsSettings(), clientContext);
+    this.listSectionItemsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSectionItemsTransportSettings, settings.listSectionItemsSettings(), clientContext);
+    this.moveSectionItemCallable =
+        callableFactory.createUnaryCallable(
+            moveSectionItemTransportSettings, settings.moveSectionItemSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -720,6 +1392,16 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   }
 
   @Override
+  public UnaryCallable<SearchSpacesRequest, SearchSpacesResponse> searchSpacesCallable() {
+    return searchSpacesCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchSpacesRequest, SearchSpacesPagedResponse> searchSpacesPagedCallable() {
+    return searchSpacesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetSpaceRequest, Space> getSpaceCallable() {
     return getSpaceCallable;
   }
@@ -756,8 +1438,24 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   }
 
   @Override
+  public UnaryCallable<FindGroupChatsRequest, FindGroupChatsResponse> findGroupChatsCallable() {
+    return findGroupChatsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FindGroupChatsRequest, FindGroupChatsPagedResponse>
+      findGroupChatsPagedCallable() {
+    return findGroupChatsPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateMembershipRequest, Membership> createMembershipCallable() {
     return createMembershipCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateMembershipRequest, Membership> updateMembershipCallable() {
+    return updateMembershipCallable;
   }
 
   @Override
@@ -784,6 +1482,123 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable() {
     return deleteReactionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiCallable() {
+    return createCustomEmojiCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiCallable() {
+    return getCustomEmojiCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisResponse>
+      listCustomEmojisCallable() {
+    return listCustomEmojisCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisPagedResponse>
+      listCustomEmojisPagedCallable() {
+    return listCustomEmojisPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiCallable() {
+    return deleteCustomEmojiCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateCallable() {
+    return getSpaceReadStateCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSpaceReadStateRequest, SpaceReadState> updateSpaceReadStateCallable() {
+    return updateSpaceReadStateCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetThreadReadStateRequest, ThreadReadState> getThreadReadStateCallable() {
+    return getThreadReadStateCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSpaceEventRequest, SpaceEvent> getSpaceEventCallable() {
+    return getSpaceEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse> listSpaceEventsCallable() {
+    return listSpaceEventsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsPagedResponse>
+      listSpaceEventsPagedCallable() {
+    return listSpaceEventsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingCallable() {
+    return getSpaceNotificationSettingCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingCallable() {
+    return updateSpaceNotificationSettingCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSectionRequest, Section> createSectionCallable() {
+    return createSectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSectionRequest, Empty> deleteSectionCallable() {
+    return deleteSectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSectionRequest, Section> updateSectionCallable() {
+    return updateSectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSectionsRequest, ListSectionsResponse> listSectionsCallable() {
+    return listSectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSectionsRequest, ListSectionsPagedResponse> listSectionsPagedCallable() {
+    return listSectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<PositionSectionRequest, PositionSectionResponse> positionSectionCallable() {
+    return positionSectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSectionItemsRequest, ListSectionItemsResponse>
+      listSectionItemsCallable() {
+    return listSectionItemsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSectionItemsRequest, ListSectionItemsPagedResponse>
+      listSectionItemsPagedCallable() {
+    return listSectionItemsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<MoveSectionItemRequest, MoveSectionItemResponse> moveSectionItemCallable() {
+    return moveSectionItemCallable;
   }
 
   @Override

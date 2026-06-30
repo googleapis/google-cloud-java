@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,8 @@ import com.google.cloud.aiplatform.v1beta1.DirectPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.DirectPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.EmbedContentRequest;
+import com.google.cloud.aiplatform.v1beta1.EmbedContentResponse;
 import com.google.cloud.aiplatform.v1beta1.ExplainRequest;
 import com.google.cloud.aiplatform.v1beta1.ExplainResponse;
 import com.google.cloud.aiplatform.v1beta1.GenerateContentRequest;
@@ -47,6 +49,7 @@ import com.google.cloud.aiplatform.v1beta1.StreamDirectPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamDirectPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamDirectRawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamDirectRawPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamRawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest;
@@ -82,6 +85,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/Predict")
           .setRequestMarshaller(ProtoUtils.marshaller(PredictRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(PredictResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RawPredictRequest, HttpBody> rawPredictMethodDescriptor =
@@ -90,7 +94,20 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/RawPredict")
           .setRequestMarshaller(ProtoUtils.marshaller(RawPredictRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<StreamRawPredictRequest, HttpBody>
+      streamRawPredictMethodDescriptor =
+          MethodDescriptor.<StreamRawPredictRequest, HttpBody>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.PredictionService/StreamRawPredict")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StreamRawPredictRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<DirectPredictRequest, DirectPredictResponse>
       directPredictMethodDescriptor =
@@ -101,6 +118,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(DirectPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DirectPredictResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DirectRawPredictRequest, DirectRawPredictResponse>
@@ -113,6 +131,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(DirectRawPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DirectRawPredictResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StreamDirectPredictRequest, StreamDirectPredictResponse>
@@ -125,6 +144,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(StreamDirectPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamDirectPredictResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -139,6 +159,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(StreamDirectRawPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamDirectRawPredictResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StreamingPredictRequest, StreamingPredictResponse>
@@ -151,6 +172,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(StreamingPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingPredictResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StreamingPredictRequest, StreamingPredictResponse>
@@ -163,6 +185,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(StreamingPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingPredictResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StreamingRawPredictRequest, StreamingRawPredictResponse>
@@ -175,6 +198,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(StreamingRawPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingRawPredictResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExplainRequest, ExplainResponse> explainMethodDescriptor =
@@ -183,6 +207,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/Explain")
           .setRequestMarshaller(ProtoUtils.marshaller(ExplainRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ExplainResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CountTokensRequest, CountTokensResponse>
@@ -193,6 +218,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(CountTokensRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CountTokensResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GenerateContentRequest, GenerateContentResponse>
@@ -205,6 +231,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(GenerateContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GenerateContentRequest, GenerateContentResponse>
@@ -217,6 +244,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(GenerateContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ChatCompletionsRequest, HttpBody>
@@ -228,6 +256,18 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ChatCompletionsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<EmbedContentRequest, EmbedContentResponse>
+      embedContentMethodDescriptor =
+          MethodDescriptor.<EmbedContentRequest, EmbedContentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/EmbedContent")
+              .setRequestMarshaller(ProtoUtils.marshaller(EmbedContentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(EmbedContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -239,6 +279,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -247,6 +288,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -255,6 +297,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -263,6 +306,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -274,10 +318,12 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<PredictRequest, PredictResponse> predictCallable;
   private final UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable;
+  private final ServerStreamingCallable<StreamRawPredictRequest, HttpBody> streamRawPredictCallable;
   private final UnaryCallable<DirectPredictRequest, DirectPredictResponse> directPredictCallable;
   private final UnaryCallable<DirectRawPredictRequest, DirectRawPredictResponse>
       directRawPredictCallable;
@@ -298,6 +344,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   private final ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentCallable;
   private final ServerStreamingCallable<ChatCompletionsRequest, HttpBody> chatCompletionsCallable;
+  private final UnaryCallable<EmbedContentRequest, EmbedContentResponse> embedContentCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -360,6 +407,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("endpoint", String.valueOf(request.getEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEndpoint())
             .build();
     GrpcCallSettings<RawPredictRequest, HttpBody> rawPredictTransportSettings =
         GrpcCallSettings.<RawPredictRequest, HttpBody>newBuilder()
@@ -370,6 +418,18 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("endpoint", String.valueOf(request.getEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEndpoint())
+            .build();
+    GrpcCallSettings<StreamRawPredictRequest, HttpBody> streamRawPredictTransportSettings =
+        GrpcCallSettings.<StreamRawPredictRequest, HttpBody>newBuilder()
+            .setMethodDescriptor(streamRawPredictMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("endpoint", String.valueOf(request.getEndpoint()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getEndpoint())
             .build();
     GrpcCallSettings<DirectPredictRequest, DirectPredictResponse> directPredictTransportSettings =
         GrpcCallSettings.<DirectPredictRequest, DirectPredictResponse>newBuilder()
@@ -380,6 +440,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("endpoint", String.valueOf(request.getEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEndpoint())
             .build();
     GrpcCallSettings<DirectRawPredictRequest, DirectRawPredictResponse>
         directRawPredictTransportSettings =
@@ -391,22 +452,26 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                       builder.add("endpoint", String.valueOf(request.getEndpoint()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getEndpoint())
                 .build();
     GrpcCallSettings<StreamDirectPredictRequest, StreamDirectPredictResponse>
         streamDirectPredictTransportSettings =
             GrpcCallSettings.<StreamDirectPredictRequest, StreamDirectPredictResponse>newBuilder()
                 .setMethodDescriptor(streamDirectPredictMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getEndpoint())
                 .build();
     GrpcCallSettings<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
         streamDirectRawPredictTransportSettings =
             GrpcCallSettings
                 .<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>newBuilder()
                 .setMethodDescriptor(streamDirectRawPredictMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getEndpoint())
                 .build();
     GrpcCallSettings<StreamingPredictRequest, StreamingPredictResponse>
         streamingPredictTransportSettings =
             GrpcCallSettings.<StreamingPredictRequest, StreamingPredictResponse>newBuilder()
                 .setMethodDescriptor(streamingPredictMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getEndpoint())
                 .build();
     GrpcCallSettings<StreamingPredictRequest, StreamingPredictResponse>
         serverStreamingPredictTransportSettings =
@@ -418,11 +483,13 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                       builder.add("endpoint", String.valueOf(request.getEndpoint()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getEndpoint())
                 .build();
     GrpcCallSettings<StreamingRawPredictRequest, StreamingRawPredictResponse>
         streamingRawPredictTransportSettings =
             GrpcCallSettings.<StreamingRawPredictRequest, StreamingRawPredictResponse>newBuilder()
                 .setMethodDescriptor(streamingRawPredictMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getEndpoint())
                 .build();
     GrpcCallSettings<ExplainRequest, ExplainResponse> explainTransportSettings =
         GrpcCallSettings.<ExplainRequest, ExplainResponse>newBuilder()
@@ -433,6 +500,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("endpoint", String.valueOf(request.getEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEndpoint())
             .build();
     GrpcCallSettings<CountTokensRequest, CountTokensResponse> countTokensTransportSettings =
         GrpcCallSettings.<CountTokensRequest, CountTokensResponse>newBuilder()
@@ -443,6 +511,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("endpoint", String.valueOf(request.getEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEndpoint())
             .build();
     GrpcCallSettings<GenerateContentRequest, GenerateContentResponse>
         generateContentTransportSettings =
@@ -454,6 +523,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                       builder.add("model", String.valueOf(request.getModel()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCachedContent())
                 .build();
     GrpcCallSettings<GenerateContentRequest, GenerateContentResponse>
         streamGenerateContentTransportSettings =
@@ -465,6 +535,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                       builder.add("model", String.valueOf(request.getModel()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCachedContent())
                 .build();
     GrpcCallSettings<ChatCompletionsRequest, HttpBody> chatCompletionsTransportSettings =
         GrpcCallSettings.<ChatCompletionsRequest, HttpBody>newBuilder()
@@ -475,6 +546,18 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("endpoint", String.valueOf(request.getEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEndpoint())
+            .build();
+    GrpcCallSettings<EmbedContentRequest, EmbedContentResponse> embedContentTransportSettings =
+        GrpcCallSettings.<EmbedContentRequest, EmbedContentResponse>newBuilder()
+            .setMethodDescriptor(embedContentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("model", String.valueOf(request.getModel()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getModel())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -505,6 +588,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -515,6 +599,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -526,6 +611,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.predictCallable =
@@ -534,6 +620,9 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
     this.rawPredictCallable =
         callableFactory.createUnaryCallable(
             rawPredictTransportSettings, settings.rawPredictSettings(), clientContext);
+    this.streamRawPredictCallable =
+        callableFactory.createServerStreamingCallable(
+            streamRawPredictTransportSettings, settings.streamRawPredictSettings(), clientContext);
     this.directPredictCallable =
         callableFactory.createUnaryCallable(
             directPredictTransportSettings, settings.directPredictSettings(), clientContext);
@@ -580,6 +669,9 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
     this.chatCompletionsCallable =
         callableFactory.createServerStreamingCallable(
             chatCompletionsTransportSettings, settings.chatCompletionsSettings(), clientContext);
+    this.embedContentCallable =
+        callableFactory.createUnaryCallable(
+            embedContentTransportSettings, settings.embedContentSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -617,6 +709,11 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   @Override
   public UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable() {
     return rawPredictCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<StreamRawPredictRequest, HttpBody> streamRawPredictCallable() {
+    return streamRawPredictCallable;
   }
 
   @Override
@@ -684,6 +781,11 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   @Override
   public ServerStreamingCallable<ChatCompletionsRequest, HttpBody> chatCompletionsCallable() {
     return chatCompletionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<EmbedContentRequest, EmbedContentResponse> embedContentCallable() {
+    return embedContentCallable;
   }
 
   @Override

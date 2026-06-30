@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPag
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeployPoliciesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListReleasesPagedResponse;
@@ -70,7 +71,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getDeliveryPipeline to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getDeliveryPipeline:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -86,9 +89,45 @@ import javax.annotation.Generated;
  *             .getDeliveryPipelineSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * CloudDeploySettings cloudDeploySettings = cloudDeploySettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createDeliveryPipeline:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * CloudDeploySettings.Builder cloudDeploySettingsBuilder = CloudDeploySettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * cloudDeploySettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -270,6 +309,51 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
   /** Returns the object with the settings used for calls to abandonRelease. */
   public UnaryCallSettings<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseSettings() {
     return ((CloudDeployStubSettings) getStubSettings()).abandonReleaseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDeployPolicy. */
+  public UnaryCallSettings<CreateDeployPolicyRequest, Operation> createDeployPolicySettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).createDeployPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDeployPolicy. */
+  public OperationCallSettings<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      createDeployPolicyOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).createDeployPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDeployPolicy. */
+  public UnaryCallSettings<UpdateDeployPolicyRequest, Operation> updateDeployPolicySettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).updateDeployPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDeployPolicy. */
+  public OperationCallSettings<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      updateDeployPolicyOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).updateDeployPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDeployPolicy. */
+  public UnaryCallSettings<DeleteDeployPolicyRequest, Operation> deleteDeployPolicySettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).deleteDeployPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDeployPolicy. */
+  public OperationCallSettings<DeleteDeployPolicyRequest, Empty, OperationMetadata>
+      deleteDeployPolicyOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).deleteDeployPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDeployPolicies. */
+  public PagedCallSettings<
+          ListDeployPoliciesRequest, ListDeployPoliciesResponse, ListDeployPoliciesPagedResponse>
+      listDeployPoliciesSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).listDeployPoliciesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDeployPolicy. */
+  public UnaryCallSettings<GetDeployPolicyRequest, DeployPolicy> getDeployPolicySettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).getDeployPolicySettings();
   }
 
   /** Returns the object with the settings used for calls to approveRollout. */
@@ -726,6 +810,55 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
     public UnaryCallSettings.Builder<AbandonReleaseRequest, AbandonReleaseResponse>
         abandonReleaseSettings() {
       return getStubSettingsBuilder().abandonReleaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDeployPolicy. */
+    public UnaryCallSettings.Builder<CreateDeployPolicyRequest, Operation>
+        createDeployPolicySettings() {
+      return getStubSettingsBuilder().createDeployPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDeployPolicy. */
+    public OperationCallSettings.Builder<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+        createDeployPolicyOperationSettings() {
+      return getStubSettingsBuilder().createDeployPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDeployPolicy. */
+    public UnaryCallSettings.Builder<UpdateDeployPolicyRequest, Operation>
+        updateDeployPolicySettings() {
+      return getStubSettingsBuilder().updateDeployPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDeployPolicy. */
+    public OperationCallSettings.Builder<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+        updateDeployPolicyOperationSettings() {
+      return getStubSettingsBuilder().updateDeployPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDeployPolicy. */
+    public UnaryCallSettings.Builder<DeleteDeployPolicyRequest, Operation>
+        deleteDeployPolicySettings() {
+      return getStubSettingsBuilder().deleteDeployPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDeployPolicy. */
+    public OperationCallSettings.Builder<DeleteDeployPolicyRequest, Empty, OperationMetadata>
+        deleteDeployPolicyOperationSettings() {
+      return getStubSettingsBuilder().deleteDeployPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDeployPolicies. */
+    public PagedCallSettings.Builder<
+            ListDeployPoliciesRequest, ListDeployPoliciesResponse, ListDeployPoliciesPagedResponse>
+        listDeployPoliciesSettings() {
+      return getStubSettingsBuilder().listDeployPoliciesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDeployPolicy. */
+    public UnaryCallSettings.Builder<GetDeployPolicyRequest, DeployPolicy>
+        getDeployPolicySettings() {
+      return getStubSettingsBuilder().getDeployPolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to approveRollout. */

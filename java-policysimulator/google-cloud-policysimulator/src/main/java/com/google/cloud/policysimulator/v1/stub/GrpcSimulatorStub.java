@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,7 @@ public class GrpcSimulatorStub extends SimulatorStub {
           .setFullMethodName("google.cloud.policysimulator.v1.Simulator/GetReplay")
           .setRequestMarshaller(ProtoUtils.marshaller(GetReplayRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Replay.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateReplayRequest, Operation>
@@ -63,6 +64,7 @@ public class GrpcSimulatorStub extends SimulatorStub {
               .setFullMethodName("google.cloud.policysimulator.v1.Simulator/CreateReplay")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateReplayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReplayResultsRequest, ListReplayResultsResponse>
@@ -74,6 +76,7 @@ public class GrpcSimulatorStub extends SimulatorStub {
                   ProtoUtils.marshaller(ListReplayResultsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReplayResultsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetReplayRequest, Replay> getReplayCallable;
@@ -135,6 +138,7 @@ public class GrpcSimulatorStub extends SimulatorStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateReplayRequest, Operation> createReplayTransportSettings =
         GrpcCallSettings.<CreateReplayRequest, Operation>newBuilder()
@@ -156,6 +160,7 @@ public class GrpcSimulatorStub extends SimulatorStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getReplayCallable =

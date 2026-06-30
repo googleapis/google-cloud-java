@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.cloud.deploy.v1.DeliveryPipelineName;
 import com.google.cloud.deploy.v1.RollbackTargetConfig;
 import com.google.cloud.deploy.v1.RollbackTargetRequest;
 import com.google.cloud.deploy.v1.RollbackTargetResponse;
+import java.util.ArrayList;
 
 public class AsyncRollbackTarget {
 
@@ -48,6 +49,7 @@ public class AsyncRollbackTarget {
               .setRolloutToRollBack("rolloutToRollBack-1195544784")
               .setRollbackConfig(RollbackTargetConfig.newBuilder().build())
               .setValidateOnly(true)
+              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       ApiFuture<RollbackTargetResponse> future =
           cloudDeployClient.rollbackTargetCallable().futureCall(request);

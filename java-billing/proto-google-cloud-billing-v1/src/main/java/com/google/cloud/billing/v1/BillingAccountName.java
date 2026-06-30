@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -227,7 +227,8 @@ public class BillingAccountName implements ResourceName {
     private Builder(BillingAccountName billingAccountName) {
       Preconditions.checkArgument(
           Objects.equals(billingAccountName.pathTemplate, BILLING_ACCOUNT),
-          "toBuilder is only supported when BillingAccountName has the pattern of billingAccounts/{billing_account}");
+          "toBuilder is only supported when BillingAccountName has the pattern of"
+              + " billingAccounts/{billing_account}");
       this.billingAccount = billingAccountName.billingAccount;
     }
 

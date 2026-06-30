@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCompanyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Company.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCompanyRequest, Company> getCompanyMethodDescriptor =
@@ -64,6 +65,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
           .setFullMethodName("google.cloud.talent.v4.CompanyService/GetCompany")
           .setRequestMarshaller(ProtoUtils.marshaller(GetCompanyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Company.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateCompanyRequest, Company>
@@ -74,6 +76,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCompanyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Company.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCompanyRequest, Empty> deleteCompanyMethodDescriptor =
@@ -82,6 +85,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
           .setFullMethodName("google.cloud.talent.v4.CompanyService/DeleteCompany")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteCompanyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListCompaniesRequest, ListCompaniesResponse>
@@ -93,6 +97,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
                   ProtoUtils.marshaller(ListCompaniesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCompaniesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateCompanyRequest, Company> createCompanyCallable;
@@ -156,6 +161,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetCompanyRequest, Company> getCompanyTransportSettings =
         GrpcCallSettings.<GetCompanyRequest, Company>newBuilder()
@@ -166,6 +172,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateCompanyRequest, Company> updateCompanyTransportSettings =
         GrpcCallSettings.<UpdateCompanyRequest, Company>newBuilder()
@@ -186,6 +193,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCompaniesRequest, ListCompaniesResponse> listCompaniesTransportSettings =
         GrpcCallSettings.<ListCompaniesRequest, ListCompaniesResponse>newBuilder()
@@ -196,6 +204,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createCompanyCallable =

@@ -1,0 +1,206 @@
+package com.google.showcase.v1beta1;
+
+import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
+public class TestName implements ResourceName {
+  private static final PathTemplate SESSION_SHARD_ID_TEST_ID =
+      PathTemplate.createWithoutUrlEncoding("sessions/{session}/tests/{shard_id}~{test_id}");
+  private volatile Map<String, String> fieldValuesMap;
+  private final String session;
+  private final String shardId;
+  private final String testId;
+
+  @Deprecated
+  protected TestName() {
+    session = null;
+    shardId = null;
+    testId = null;
+  }
+
+  private TestName(Builder builder) {
+    session = Preconditions.checkNotNull(builder.getSession());
+    shardId = Preconditions.checkNotNull(builder.getShardId());
+    testId = Preconditions.checkNotNull(builder.getTestId());
+  }
+
+  public String getSession() {
+    return session;
+  }
+
+  public String getShardId() {
+    return shardId;
+  }
+
+  public String getTestId() {
+    return testId;
+  }
+
+  public static Builder newBuilder() {
+    return new Builder();
+  }
+
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  public static TestName of(String session, String shardId, String testId) {
+    return newBuilder().setSession(session).setShardId(shardId).setTestId(testId).build();
+  }
+
+  public static String format(String session, String shardId, String testId) {
+    return newBuilder()
+        .setSession(session)
+        .setShardId(shardId)
+        .setTestId(testId)
+        .build()
+        .toString();
+  }
+
+  public static TestName parse(String formattedString) {
+    if (formattedString.isEmpty()) {
+      return null;
+    }
+    Map<String, String> matchMap =
+        SESSION_SHARD_ID_TEST_ID.validatedMatch(
+            formattedString, "TestName.parse: formattedString not in valid format");
+    return of(matchMap.get("session"), matchMap.get("shard_id"), matchMap.get("test_id"));
+  }
+
+  public static List<TestName> parseList(List<String> formattedStrings) {
+    List<TestName> list = new ArrayList<>(formattedStrings.size());
+    for (String formattedString : formattedStrings) {
+      list.add(parse(formattedString));
+    }
+    return list;
+  }
+
+  public static List<String> toStringList(List<TestName> values) {
+    List<String> list = new ArrayList<>(values.size());
+    for (TestName value : values) {
+      if (value == null) {
+        list.add("");
+      } else {
+        list.add(value.toString());
+      }
+    }
+    return list;
+  }
+
+  public static boolean isParsableFrom(String formattedString) {
+    return SESSION_SHARD_ID_TEST_ID.matches(formattedString);
+  }
+
+  @Override
+  public Map<String, String> getFieldValuesMap() {
+    if (fieldValuesMap == null) {
+      synchronized (this) {
+        if (fieldValuesMap == null) {
+          ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
+          if (session != null) {
+            fieldMapBuilder.put("session", session);
+          }
+          if (shardId != null) {
+            fieldMapBuilder.put("shard_id", shardId);
+          }
+          if (testId != null) {
+            fieldMapBuilder.put("test_id", testId);
+          }
+          fieldValuesMap = fieldMapBuilder.build();
+        }
+      }
+    }
+    return fieldValuesMap;
+  }
+
+  public String getFieldValue(String fieldName) {
+    return getFieldValuesMap().get(fieldName);
+  }
+
+  @Override
+  public String toString() {
+    return SESSION_SHARD_ID_TEST_ID.instantiate(
+        "session", session, "shard_id", shardId, "test_id", testId);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null && getClass() == o.getClass()) {
+      TestName that = ((TestName) o);
+      return Objects.equals(this.session, that.session)
+          && Objects.equals(this.shardId, that.shardId)
+          && Objects.equals(this.testId, that.testId);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(session);
+    h *= 1000003;
+    h ^= Objects.hashCode(shardId);
+    h *= 1000003;
+    h ^= Objects.hashCode(testId);
+    return h;
+  }
+
+  /** Builder for sessions/{session}/tests/{shard_id}~{test_id}. */
+  public static class Builder {
+    private String session;
+    private String shardId;
+    private String testId;
+
+    protected Builder() {}
+
+    public String getSession() {
+      return session;
+    }
+
+    public String getShardId() {
+      return shardId;
+    }
+
+    public String getTestId() {
+      return testId;
+    }
+
+    public Builder setSession(String session) {
+      this.session = session;
+      return this;
+    }
+
+    public Builder setShardId(String shardId) {
+      this.shardId = shardId;
+      return this;
+    }
+
+    public Builder setTestId(String testId) {
+      this.testId = testId;
+      return this;
+    }
+
+    private Builder(TestName testName) {
+      this.session = testName.session;
+      this.shardId = testName.shardId;
+      this.testId = testName.testId;
+    }
+
+    public TestName build() {
+      return new TestName(this);
+    }
+  }
+}

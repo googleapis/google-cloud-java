@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                   ProtoUtils.marshaller(ListApprovalRequestsMessage.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListApprovalRequestsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetApprovalRequestMessage, ApprovalRequest>
@@ -74,6 +75,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetApprovalRequestMessage.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApprovalRequest.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ApproveApprovalRequestMessage, ApprovalRequest>
@@ -85,6 +87,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ApproveApprovalRequestMessage.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApprovalRequest.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DismissApprovalRequestMessage, ApprovalRequest>
@@ -96,6 +99,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DismissApprovalRequestMessage.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApprovalRequest.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InvalidateApprovalRequestMessage, ApprovalRequest>
@@ -107,6 +111,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InvalidateApprovalRequestMessage.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ApprovalRequest.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
@@ -119,6 +124,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                   ProtoUtils.marshaller(GetAccessApprovalSettingsMessage.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AccessApprovalSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAccessApprovalSettingsMessage, AccessApprovalSettings>
@@ -131,6 +137,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                   ProtoUtils.marshaller(UpdateAccessApprovalSettingsMessage.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AccessApprovalSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAccessApprovalSettingsMessage, Empty>
@@ -142,6 +149,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAccessApprovalSettingsMessage.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -157,6 +165,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       GetAccessApprovalServiceAccountMessage.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AccessApprovalServiceAccount.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListApprovalRequestsMessage, ListApprovalRequestsResponse>
@@ -234,6 +243,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetApprovalRequestMessage, ApprovalRequest>
         getApprovalRequestTransportSettings =
@@ -245,6 +255,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ApproveApprovalRequestMessage, ApprovalRequest>
         approveApprovalRequestTransportSettings =
@@ -256,6 +267,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DismissApprovalRequestMessage, ApprovalRequest>
         dismissApprovalRequestTransportSettings =
@@ -267,6 +279,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<InvalidateApprovalRequestMessage, ApprovalRequest>
         invalidateApprovalRequestTransportSettings =
@@ -278,6 +291,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
         getAccessApprovalSettingsTransportSettings =
@@ -289,6 +303,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateAccessApprovalSettingsMessage, AccessApprovalSettings>
         updateAccessApprovalSettingsTransportSettings =
@@ -312,6 +327,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
         getAccessApprovalServiceAccountTransportSettings =

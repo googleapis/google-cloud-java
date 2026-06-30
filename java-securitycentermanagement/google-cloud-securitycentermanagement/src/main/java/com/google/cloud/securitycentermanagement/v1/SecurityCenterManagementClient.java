@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,7 +75,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListEffectiveSecurityHealthAnalyticsCustomModules</td>
- *      <td><p> Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the given parent. This includes resident modules defined at the scope of the parent, and inherited modules, inherited from CRM ancestors (no descendants).</td>
+ *      <td><p> Returns a list of all [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule] resources for the given parent. This includes resident modules defined at the scope of the parent, and inherited modules, inherited from ancestor organizations, folders, and projects (no descendants).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -97,7 +97,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetEffectiveSecurityHealthAnalyticsCustomModule</td>
- *      <td><p> Gets details of a single EffectiveSecurityHealthAnalyticsCustomModule.</td>
+ *      <td><p> Gets details of a single [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -116,7 +116,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListSecurityHealthAnalyticsCustomModules</td>
- *      <td><p> Returns a list of all SecurityHealthAnalyticsCustomModules for the given parent. This includes resident modules defined at the scope of the parent, and inherited modules, inherited from CRM ancestors (no descendants).</td>
+ *      <td><p> Returns a list of all [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule] resources for the given parent. This includes resident modules defined at the scope of the parent, and inherited modules, inherited from ancestor organizations, folders, and projects (no descendants).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -138,7 +138,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListDescendantSecurityHealthAnalyticsCustomModules</td>
- *      <td><p> Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent and all of the parent's CRM descendants.</td>
+ *      <td><p> Returns a list of all resident [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule] resources under the given organization, folder, or project and all of its descendants.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -160,7 +160,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetSecurityHealthAnalyticsCustomModule</td>
- *      <td><p> Retrieves a SecurityHealthAnalyticsCustomModule.</td>
+ *      <td><p> Retrieves a [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -179,7 +179,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateSecurityHealthAnalyticsCustomModule</td>
- *      <td><p> Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the given CRM parent, and also creates inherited SecurityHealthAnalyticsCustomModules for all CRM descendants of the given parent. These modules are enabled by default.</td>
+ *      <td><p> Creates a resident [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule] at the scope of the given organization, folder, or project, and also creates inherited `SecurityHealthAnalyticsCustomModule` resources for all folders and projects that are descendants of the given parent. These modules are enabled by default.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -200,7 +200,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateSecurityHealthAnalyticsCustomModule</td>
- *      <td><p> Updates the SecurityHealthAnalyticsCustomModule under the given name based on the given update mask. Updating the enablement state is supported on both resident and inherited modules (though resident modules cannot have an enablement state of "inherited"). Updating the display name and custom config of a module is supported on resident modules only.</td>
+ *      <td><p> Updates the [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule] under the given name based on the given update mask. Updating the enablement state is supported on both resident and inherited modules (though resident modules cannot have an enablement state of "inherited"). Updating the display name and custom configuration of a module is supported on resident modules only.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -218,7 +218,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteSecurityHealthAnalyticsCustomModule</td>
- *      <td><p> Deletes the specified SecurityHealthAnalyticsCustomModule and all of its descendants in the CRM hierarchy. This method is only supported for resident custom modules.</td>
+ *      <td><p> Deletes the specified [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule] and all of its descendants in the resource hierarchy. This method is only supported for resident custom modules.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -237,7 +237,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SimulateSecurityHealthAnalyticsCustomModule</td>
- *      <td><p> Simulates a given SecurityHealthAnalyticsCustomModule and Resource.</td>
+ *      <td><p> Simulates the result of using a [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule] to check a resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -277,7 +277,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetEffectiveEventThreatDetectionCustomModule</td>
- *      <td><p> Gets an effective ETD custom module. Retrieves the effective module at the given level. The difference between an EffectiveCustomModule and a CustomModule is that the fields for an EffectiveCustomModule are computed from ancestors if needed. For example, the enablement_state for a CustomModule can be either ENABLED, DISABLED, or INHERITED. Where as the enablement_state for an EffectiveCustomModule is always computed to ENABLED or DISABLED (the effective enablement_state).</td>
+ *      <td><p> Gets the effective Event Threat Detection custom module at the given level.
+ * <p>  The difference between an [EffectiveEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule] and an [EventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule] is that the fields for an `EffectiveEventThreatDetectionCustomModule` are computed from ancestors if needed. For example, the enablement state for an `EventThreatDetectionCustomModule` can be `ENABLED`, `DISABLED`, or `INHERITED`. In contrast, the enablement state for an `EffectiveEventThreatDetectionCustomModule` is always computed as `ENABLED` or `DISABLED`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -296,7 +297,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListEventThreatDetectionCustomModules</td>
- *      <td><p> Lists all Event Threat Detection custom modules for the given Resource Manager parent. This includes resident modules defined at the scope of the parent along with modules inherited from ancestors.</td>
+ *      <td><p> Lists all Event Threat Detection custom modules for the given organization, folder, or project. This includes resident modules defined at the scope of the parent along with modules inherited from ancestors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -318,7 +319,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListDescendantEventThreatDetectionCustomModules</td>
- *      <td><p> Lists all resident Event Threat Detection custom modules under the given Resource Manager parent and its descendants.</td>
+ *      <td><p> Lists all resident Event Threat Detection custom modules for the given organization, folder, or project and its descendants.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -359,7 +360,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateEventThreatDetectionCustomModule</td>
- *      <td><p> Creates a resident Event Threat Detection custom module at the scope of the given Resource Manager parent, and also creates inherited custom modules for all descendants of the given parent. These modules are enabled by default.</td>
+ *      <td><p> Creates a resident Event Threat Detection custom module at the scope of the given organization, folder, or project, and creates inherited custom modules for all descendants of the given parent. These modules are enabled by default.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -398,7 +399,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteEventThreatDetectionCustomModule</td>
- *      <td><p> Deletes the specified Event Threat Detection custom module and all of its descendants in the Resource Manager hierarchy. This method is only supported for resident custom modules.</td>
+ *      <td><p> Deletes the specified Event Threat Detection custom module and all of its descendants in the resource hierarchy. This method is only supported for resident custom modules.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -426,6 +427,65 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> validateEventThreatDetectionCustomModuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSecurityCenterService</td>
+ *      <td><p> Gets service settings for the specified Security Command Center service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSecurityCenterService(GetSecurityCenterServiceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSecurityCenterService(SecurityCenterServiceName name)
+ *           <li><p> getSecurityCenterService(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSecurityCenterServiceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSecurityCenterServices</td>
+ *      <td><p> Returns a list of all Security Command Center services for the given parent.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSecurityCenterServices(ListSecurityCenterServicesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSecurityCenterServices(FolderLocationName parent)
+ *           <li><p> listSecurityCenterServices(LocationName parent)
+ *           <li><p> listSecurityCenterServices(OrganizationLocationName parent)
+ *           <li><p> listSecurityCenterServices(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSecurityCenterServicesPagedCallable()
+ *           <li><p> listSecurityCenterServicesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSecurityCenterService</td>
+ *      <td><p> Updates a Security Command Center service using the given update mask.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSecurityCenterService(UpdateSecurityCenterServiceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateSecurityCenterService(SecurityCenterService securityCenterService, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSecurityCenterServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -570,9 +630,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the given parent. This
-   * includes resident modules defined at the scope of the parent, and inherited modules, inherited
-   * from CRM ancestors (no descendants).
+   * Returns a list of all
+   * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule]
+   * resources for the given parent. This includes resident modules defined at the scope of the
+   * parent, and inherited modules, inherited from ancestor organizations, folders, and projects (no
+   * descendants).
    *
    * <p>Sample code:
    *
@@ -594,9 +656,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list effective custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent to list effective custom modules, in one of the
+   *     following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse
@@ -610,9 +677,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the given parent. This
-   * includes resident modules defined at the scope of the parent, and inherited modules, inherited
-   * from CRM ancestors (no descendants).
+   * Returns a list of all
+   * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule]
+   * resources for the given parent. This includes resident modules defined at the scope of the
+   * parent, and inherited modules, inherited from ancestor organizations, folders, and projects (no
+   * descendants).
    *
    * <p>Sample code:
    *
@@ -634,9 +703,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list effective custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent to list effective custom modules, in one of the
+   *     following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse
@@ -650,9 +724,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the given parent. This
-   * includes resident modules defined at the scope of the parent, and inherited modules, inherited
-   * from CRM ancestors (no descendants).
+   * Returns a list of all
+   * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule]
+   * resources for the given parent. This includes resident modules defined at the scope of the
+   * parent, and inherited modules, inherited from ancestor organizations, folders, and projects (no
+   * descendants).
    *
    * <p>Sample code:
    *
@@ -674,9 +750,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list effective custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent to list effective custom modules, in one of the
+   *     following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse
@@ -690,9 +771,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the given parent. This
-   * includes resident modules defined at the scope of the parent, and inherited modules, inherited
-   * from CRM ancestors (no descendants).
+   * Returns a list of all
+   * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule]
+   * resources for the given parent. This includes resident modules defined at the scope of the
+   * parent, and inherited modules, inherited from ancestor organizations, folders, and projects (no
+   * descendants).
    *
    * <p>Sample code:
    *
@@ -714,9 +797,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list effective custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent to list effective custom modules, in one of the
+   *     following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse
@@ -730,9 +818,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the given parent. This
-   * includes resident modules defined at the scope of the parent, and inherited modules, inherited
-   * from CRM ancestors (no descendants).
+   * Returns a list of all
+   * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule]
+   * resources for the given parent. This includes resident modules defined at the scope of the
+   * parent, and inherited modules, inherited from ancestor organizations, folders, and projects (no
+   * descendants).
    *
    * <p>Sample code:
    *
@@ -770,9 +860,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the given parent. This
-   * includes resident modules defined at the scope of the parent, and inherited modules, inherited
-   * from CRM ancestors (no descendants).
+   * Returns a list of all
+   * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule]
+   * resources for the given parent. This includes resident modules defined at the scope of the
+   * parent, and inherited modules, inherited from ancestor organizations, folders, and projects (no
+   * descendants).
    *
    * <p>Sample code:
    *
@@ -810,9 +902,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the given parent. This
-   * includes resident modules defined at the scope of the parent, and inherited modules, inherited
-   * from CRM ancestors (no descendants).
+   * Returns a list of all
+   * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule]
+   * resources for the given parent. This includes resident modules defined at the scope of the
+   * parent, and inherited modules, inherited from ancestor organizations, folders, and projects (no
+   * descendants).
    *
    * <p>Sample code:
    *
@@ -858,7 +952,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single EffectiveSecurityHealthAnalyticsCustomModule.
+   * Gets details of a single
+   * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule].
    *
    * <p>Sample code:
    *
@@ -879,14 +974,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the SHA custom module.
-   *     <p>Its format is:
-   *     <p>&#42;
-   *     "organizations/{organization}/locations/{location}/effectiveSecurityHealthAnalyticsCustomModules/{module_id}".
-   *     &#42;
-   *     "folders/{folder}/locations/{location}/effectiveSecurityHealthAnalyticsCustomModules/{module_id}".
-   *     &#42;
-   *     "projects/{project}/locations/{location}/effectiveSecurityHealthAnalyticsCustomModules/{module_id}".
+   * @param name Required. The full resource name of the custom module, specified in one of the
+   *     following formats:
+   *     <ul>
+   *       <li>`organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   *       <li>`folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   *       <li>`projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EffectiveSecurityHealthAnalyticsCustomModule
@@ -901,7 +996,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single EffectiveSecurityHealthAnalyticsCustomModule.
+   * Gets details of a single
+   * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule].
    *
    * <p>Sample code:
    *
@@ -925,14 +1021,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the SHA custom module.
-   *     <p>Its format is:
-   *     <p>&#42;
-   *     "organizations/{organization}/locations/{location}/effectiveSecurityHealthAnalyticsCustomModules/{module_id}".
-   *     &#42;
-   *     "folders/{folder}/locations/{location}/effectiveSecurityHealthAnalyticsCustomModules/{module_id}".
-   *     &#42;
-   *     "projects/{project}/locations/{location}/effectiveSecurityHealthAnalyticsCustomModules/{module_id}".
+   * @param name Required. The full resource name of the custom module, specified in one of the
+   *     following formats:
+   *     <ul>
+   *       <li>`organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   *       <li>`folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   *       <li>`projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EffectiveSecurityHealthAnalyticsCustomModule
@@ -944,7 +1040,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single EffectiveSecurityHealthAnalyticsCustomModule.
+   * Gets details of a single
+   * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule].
    *
    * <p>Sample code:
    *
@@ -982,7 +1079,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single EffectiveSecurityHealthAnalyticsCustomModule.
+   * Gets details of a single
+   * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule].
    *
    * <p>Sample code:
    *
@@ -1022,9 +1120,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all SecurityHealthAnalyticsCustomModules for the given parent. This includes
-   * resident modules defined at the scope of the parent, and inherited modules, inherited from CRM
-   * ancestors (no descendants).
+   * Returns a list of all
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * resources for the given parent. This includes resident modules defined at the scope of the
+   * parent, and inherited modules, inherited from ancestor organizations, folders, and projects (no
+   * descendants).
    *
    * <p>Sample code:
    *
@@ -1046,9 +1146,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of the parent organization, folder, or project in which to list
+   *     custom modules, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecurityHealthAnalyticsCustomModulesPagedResponse
@@ -1062,9 +1167,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all SecurityHealthAnalyticsCustomModules for the given parent. This includes
-   * resident modules defined at the scope of the parent, and inherited modules, inherited from CRM
-   * ancestors (no descendants).
+   * Returns a list of all
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * resources for the given parent. This includes resident modules defined at the scope of the
+   * parent, and inherited modules, inherited from ancestor organizations, folders, and projects (no
+   * descendants).
    *
    * <p>Sample code:
    *
@@ -1086,9 +1193,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of the parent organization, folder, or project in which to list
+   *     custom modules, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecurityHealthAnalyticsCustomModulesPagedResponse
@@ -1102,9 +1214,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all SecurityHealthAnalyticsCustomModules for the given parent. This includes
-   * resident modules defined at the scope of the parent, and inherited modules, inherited from CRM
-   * ancestors (no descendants).
+   * Returns a list of all
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * resources for the given parent. This includes resident modules defined at the scope of the
+   * parent, and inherited modules, inherited from ancestor organizations, folders, and projects (no
+   * descendants).
    *
    * <p>Sample code:
    *
@@ -1126,9 +1240,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of the parent organization, folder, or project in which to list
+   *     custom modules, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecurityHealthAnalyticsCustomModulesPagedResponse
@@ -1142,9 +1261,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all SecurityHealthAnalyticsCustomModules for the given parent. This includes
-   * resident modules defined at the scope of the parent, and inherited modules, inherited from CRM
-   * ancestors (no descendants).
+   * Returns a list of all
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * resources for the given parent. This includes resident modules defined at the scope of the
+   * parent, and inherited modules, inherited from ancestor organizations, folders, and projects (no
+   * descendants).
    *
    * <p>Sample code:
    *
@@ -1166,9 +1287,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of the parent organization, folder, or project in which to list
+   *     custom modules, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecurityHealthAnalyticsCustomModulesPagedResponse
@@ -1180,9 +1306,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all SecurityHealthAnalyticsCustomModules for the given parent. This includes
-   * resident modules defined at the scope of the parent, and inherited modules, inherited from CRM
-   * ancestors (no descendants).
+   * Returns a list of all
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * resources for the given parent. This includes resident modules defined at the scope of the
+   * parent, and inherited modules, inherited from ancestor organizations, folders, and projects (no
+   * descendants).
    *
    * <p>Sample code:
    *
@@ -1220,9 +1348,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all SecurityHealthAnalyticsCustomModules for the given parent. This includes
-   * resident modules defined at the scope of the parent, and inherited modules, inherited from CRM
-   * ancestors (no descendants).
+   * Returns a list of all
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * resources for the given parent. This includes resident modules defined at the scope of the
+   * parent, and inherited modules, inherited from ancestor organizations, folders, and projects (no
+   * descendants).
    *
    * <p>Sample code:
    *
@@ -1260,9 +1390,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all SecurityHealthAnalyticsCustomModules for the given parent. This includes
-   * resident modules defined at the scope of the parent, and inherited modules, inherited from CRM
-   * ancestors (no descendants).
+   * Returns a list of all
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * resources for the given parent. This includes resident modules defined at the scope of the
+   * parent, and inherited modules, inherited from ancestor organizations, folders, and projects (no
+   * descendants).
    *
    * <p>Sample code:
    *
@@ -1308,8 +1440,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
-   * and all of the parent's CRM descendants.
+   * Returns a list of all resident
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * resources under the given organization, folder, or project and all of its descendants.
    *
    * <p>Sample code:
    *
@@ -1331,9 +1464,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of the parent organization, folder, or project in which to list
+   *     custom modules, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse
@@ -1347,8 +1485,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
-   * and all of the parent's CRM descendants.
+   * Returns a list of all resident
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * resources under the given organization, folder, or project and all of its descendants.
    *
    * <p>Sample code:
    *
@@ -1370,9 +1509,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of the parent organization, folder, or project in which to list
+   *     custom modules, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse
@@ -1386,8 +1530,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
-   * and all of the parent's CRM descendants.
+   * Returns a list of all resident
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * resources under the given organization, folder, or project and all of its descendants.
    *
    * <p>Sample code:
    *
@@ -1409,9 +1554,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of the parent organization, folder, or project in which to list
+   *     custom modules, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse
@@ -1425,8 +1575,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
-   * and all of the parent's CRM descendants.
+   * Returns a list of all resident
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * resources under the given organization, folder, or project and all of its descendants.
    *
    * <p>Sample code:
    *
@@ -1448,9 +1599,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of the parent organization, folder, or project in which to list
+   *     custom modules, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse
@@ -1464,8 +1620,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
-   * and all of the parent's CRM descendants.
+   * Returns a list of all resident
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * resources under the given organization, folder, or project and all of its descendants.
    *
    * <p>Sample code:
    *
@@ -1503,8 +1660,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
-   * and all of the parent's CRM descendants.
+   * Returns a list of all resident
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * resources under the given organization, folder, or project and all of its descendants.
    *
    * <p>Sample code:
    *
@@ -1542,8 +1700,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
-   * and all of the parent's CRM descendants.
+   * Returns a list of all resident
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * resources under the given organization, folder, or project and all of its descendants.
    *
    * <p>Sample code:
    *
@@ -1589,7 +1748,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a SecurityHealthAnalyticsCustomModule.
+   * Retrieves a
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule].
    *
    * <p>Sample code:
    *
@@ -1610,7 +1770,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the resource
+   * @param name Required. Name of the resource, in the format
+   *     `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecurityHealthAnalyticsCustomModule getSecurityHealthAnalyticsCustomModule(
@@ -1624,7 +1785,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a SecurityHealthAnalyticsCustomModule.
+   * Retrieves a
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule].
    *
    * <p>Sample code:
    *
@@ -1646,7 +1808,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the resource
+   * @param name Required. Name of the resource, in the format
+   *     `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecurityHealthAnalyticsCustomModule getSecurityHealthAnalyticsCustomModule(
@@ -1658,7 +1821,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a SecurityHealthAnalyticsCustomModule.
+   * Retrieves a
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule].
    *
    * <p>Sample code:
    *
@@ -1693,7 +1857,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a SecurityHealthAnalyticsCustomModule.
+   * Retrieves a
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule].
    *
    * <p>Sample code:
    *
@@ -1730,9 +1895,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the given CRM parent,
-   * and also creates inherited SecurityHealthAnalyticsCustomModules for all CRM descendants of the
-   * given parent. These modules are enabled by default.
+   * Creates a resident
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * at the scope of the given organization, folder, or project, and also creates inherited
+   * `SecurityHealthAnalyticsCustomModule` resources for all folders and projects that are
+   * descendants of the given parent. These modules are enabled by default.
    *
    * <p>Sample code:
    *
@@ -1753,10 +1920,15 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of the parent for the module. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
-   * @param securityHealthAnalyticsCustomModule Required. The resource being created
+   * @param parent Required. Name of the parent organization, folder, or project of the module, in
+   *     one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
+   * @param securityHealthAnalyticsCustomModule Required. The resource being created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecurityHealthAnalyticsCustomModule createSecurityHealthAnalyticsCustomModule(
@@ -1772,9 +1944,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the given CRM parent,
-   * and also creates inherited SecurityHealthAnalyticsCustomModules for all CRM descendants of the
-   * given parent. These modules are enabled by default.
+   * Creates a resident
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * at the scope of the given organization, folder, or project, and also creates inherited
+   * `SecurityHealthAnalyticsCustomModule` resources for all folders and projects that are
+   * descendants of the given parent. These modules are enabled by default.
    *
    * <p>Sample code:
    *
@@ -1795,10 +1969,15 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of the parent for the module. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
-   * @param securityHealthAnalyticsCustomModule Required. The resource being created
+   * @param parent Required. Name of the parent organization, folder, or project of the module, in
+   *     one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
+   * @param securityHealthAnalyticsCustomModule Required. The resource being created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecurityHealthAnalyticsCustomModule createSecurityHealthAnalyticsCustomModule(
@@ -1814,9 +1993,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the given CRM parent,
-   * and also creates inherited SecurityHealthAnalyticsCustomModules for all CRM descendants of the
-   * given parent. These modules are enabled by default.
+   * Creates a resident
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * at the scope of the given organization, folder, or project, and also creates inherited
+   * `SecurityHealthAnalyticsCustomModule` resources for all folders and projects that are
+   * descendants of the given parent. These modules are enabled by default.
    *
    * <p>Sample code:
    *
@@ -1837,10 +2018,15 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of the parent for the module. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
-   * @param securityHealthAnalyticsCustomModule Required. The resource being created
+   * @param parent Required. Name of the parent organization, folder, or project of the module, in
+   *     one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
+   * @param securityHealthAnalyticsCustomModule Required. The resource being created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecurityHealthAnalyticsCustomModule createSecurityHealthAnalyticsCustomModule(
@@ -1856,9 +2042,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the given CRM parent,
-   * and also creates inherited SecurityHealthAnalyticsCustomModules for all CRM descendants of the
-   * given parent. These modules are enabled by default.
+   * Creates a resident
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * at the scope of the given organization, folder, or project, and also creates inherited
+   * `SecurityHealthAnalyticsCustomModule` resources for all folders and projects that are
+   * descendants of the given parent. These modules are enabled by default.
    *
    * <p>Sample code:
    *
@@ -1879,10 +2067,15 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of the parent for the module. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
-   * @param securityHealthAnalyticsCustomModule Required. The resource being created
+   * @param parent Required. Name of the parent organization, folder, or project of the module, in
+   *     one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
+   * @param securityHealthAnalyticsCustomModule Required. The resource being created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecurityHealthAnalyticsCustomModule createSecurityHealthAnalyticsCustomModule(
@@ -1897,9 +2090,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the given CRM parent,
-   * and also creates inherited SecurityHealthAnalyticsCustomModules for all CRM descendants of the
-   * given parent. These modules are enabled by default.
+   * Creates a resident
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * at the scope of the given organization, folder, or project, and also creates inherited
+   * `SecurityHealthAnalyticsCustomModule` resources for all folders and projects that are
+   * descendants of the given parent. These modules are enabled by default.
    *
    * <p>Sample code:
    *
@@ -1933,9 +2128,11 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the given CRM parent,
-   * and also creates inherited SecurityHealthAnalyticsCustomModules for all CRM descendants of the
-   * given parent. These modules are enabled by default.
+   * Creates a resident
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * at the scope of the given organization, folder, or project, and also creates inherited
+   * `SecurityHealthAnalyticsCustomModule` resources for all folders and projects that are
+   * descendants of the given parent. These modules are enabled by default.
    *
    * <p>Sample code:
    *
@@ -1971,10 +2168,12 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the SecurityHealthAnalyticsCustomModule under the given name based on the given update
-   * mask. Updating the enablement state is supported on both resident and inherited modules (though
-   * resident modules cannot have an enablement state of "inherited"). Updating the display name and
-   * custom config of a module is supported on resident modules only.
+   * Updates the
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * under the given name based on the given update mask. Updating the enablement state is supported
+   * on both resident and inherited modules (though resident modules cannot have an enablement state
+   * of "inherited"). Updating the display name and custom configuration of a module is supported on
+   * resident modules only.
    *
    * <p>Sample code:
    *
@@ -1995,10 +2194,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param securityHealthAnalyticsCustomModule Required. The resource being updated
-   * @param updateMask Required. The list of fields to be updated. The only fields that can be
-   *     updated are `enablement_state` and `custom_config`. If empty or set to the wildcard value
-   *     `&#42;`, both `enablement_state` and `custom_config` are updated.
+   * @param securityHealthAnalyticsCustomModule Required. The resource being updated.
+   * @param updateMask Required. The fields to update. The following values are valid:
+   *     <ul>
+   *       <li>`custom_config`
+   *       <li>`enablement_state`
+   *     </ul>
+   *     <p>If you omit this field or set it to the wildcard value `&#42;`, then all eligible fields
+   *     are updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecurityHealthAnalyticsCustomModule updateSecurityHealthAnalyticsCustomModule(
@@ -2014,10 +2217,12 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the SecurityHealthAnalyticsCustomModule under the given name based on the given update
-   * mask. Updating the enablement state is supported on both resident and inherited modules (though
-   * resident modules cannot have an enablement state of "inherited"). Updating the display name and
-   * custom config of a module is supported on resident modules only.
+   * Updates the
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * under the given name based on the given update mask. Updating the enablement state is supported
+   * on both resident and inherited modules (though resident modules cannot have an enablement state
+   * of "inherited"). Updating the display name and custom configuration of a module is supported on
+   * resident modules only.
    *
    * <p>Sample code:
    *
@@ -2051,10 +2256,12 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the SecurityHealthAnalyticsCustomModule under the given name based on the given update
-   * mask. Updating the enablement state is supported on both resident and inherited modules (though
-   * resident modules cannot have an enablement state of "inherited"). Updating the display name and
-   * custom config of a module is supported on resident modules only.
+   * Updates the
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * under the given name based on the given update mask. Updating the enablement state is supported
+   * on both resident and inherited modules (though resident modules cannot have an enablement state
+   * of "inherited"). Updating the display name and custom configuration of a module is supported on
+   * resident modules only.
    *
    * <p>Sample code:
    *
@@ -2090,8 +2297,10 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its descendants in the CRM
-   * hierarchy. This method is only supported for resident custom modules.
+   * Deletes the specified
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * and all of its descendants in the resource hierarchy. This method is only supported for
+   * resident custom modules.
    *
    * <p>Sample code:
    *
@@ -2111,14 +2320,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the SHA custom module.
-   *     <p>Its format is:
+   * @param name Required. The resource name of the SHA custom module, in one of the following
+   *     formats:
    *     <p>&#42;
-   *     "organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}".
+   *     `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
    *     &#42;
-   *     "folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}".
+   *     `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
    *     &#42;
-   *     "projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}".
+   *     `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSecurityHealthAnalyticsCustomModule(
@@ -2132,8 +2341,10 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its descendants in the CRM
-   * hierarchy. This method is only supported for resident custom modules.
+   * Deletes the specified
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * and all of its descendants in the resource hierarchy. This method is only supported for
+   * resident custom modules.
    *
    * <p>Sample code:
    *
@@ -2154,14 +2365,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the SHA custom module.
-   *     <p>Its format is:
+   * @param name Required. The resource name of the SHA custom module, in one of the following
+   *     formats:
    *     <p>&#42;
-   *     "organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}".
+   *     `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
    *     &#42;
-   *     "folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}".
+   *     `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
    *     &#42;
-   *     "projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}".
+   *     `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSecurityHealthAnalyticsCustomModule(String name) {
@@ -2172,8 +2383,10 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its descendants in the CRM
-   * hierarchy. This method is only supported for resident custom modules.
+   * Deletes the specified
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * and all of its descendants in the resource hierarchy. This method is only supported for
+   * resident custom modules.
    *
    * <p>Sample code:
    *
@@ -2208,8 +2421,10 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its descendants in the CRM
-   * hierarchy. This method is only supported for resident custom modules.
+   * Deletes the specified
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * and all of its descendants in the resource hierarchy. This method is only supported for
+   * resident custom modules.
    *
    * <p>Sample code:
    *
@@ -2246,7 +2461,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+   * Simulates the result of using a
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * to check a resource.
    *
    * <p>Sample code:
    *
@@ -2269,9 +2486,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The relative resource name of the organization, project, or folder. For
-   *     more information about relative resource names, see [Relative Resource
-   *     Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) Example:
-   *     `organizations/{organization_id}`.
+   *     more information about relative resource names, see [AIP-122: Resource
+   *     names](https://google.aip.dev/122). Example: `organizations/{organization_id}`.
    * @param customConfig Required. The custom configuration that you need to test.
    * @param resource Required. Resource data to simulate custom module against.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2292,7 +2508,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+   * Simulates the result of using a
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * to check a resource.
    *
    * <p>Sample code:
    *
@@ -2328,7 +2546,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+   * Simulates the result of using a
+   * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+   * to check a resource.
    *
    * <p>Sample code:
    *
@@ -2390,9 +2610,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list effective custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent to list effective custom modules, in one of the
+   *     following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEffectiveEventThreatDetectionCustomModulesPagedResponse
@@ -2430,9 +2655,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list effective custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent to list effective custom modules, in one of the
+   *     following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEffectiveEventThreatDetectionCustomModulesPagedResponse
@@ -2470,9 +2700,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list effective custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent to list effective custom modules, in one of the
+   *     following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEffectiveEventThreatDetectionCustomModulesPagedResponse
@@ -2510,9 +2745,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list effective custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent to list effective custom modules, in one of the
+   *     following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEffectiveEventThreatDetectionCustomModulesPagedResponse
@@ -2654,12 +2894,17 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an effective ETD custom module. Retrieves the effective module at the given level. The
-   * difference between an EffectiveCustomModule and a CustomModule is that the fields for an
-   * EffectiveCustomModule are computed from ancestors if needed. For example, the enablement_state
-   * for a CustomModule can be either ENABLED, DISABLED, or INHERITED. Where as the enablement_state
-   * for an EffectiveCustomModule is always computed to ENABLED or DISABLED (the effective
-   * enablement_state).
+   * Gets the effective Event Threat Detection custom module at the given level.
+   *
+   * <p>The difference between an
+   * [EffectiveEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule]
+   * and an
+   * [EventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule]
+   * is that the fields for an `EffectiveEventThreatDetectionCustomModule` are computed from
+   * ancestors if needed. For example, the enablement state for an
+   * `EventThreatDetectionCustomModule` can be `ENABLED`, `DISABLED`, or `INHERITED`. In contrast,
+   * the enablement state for an `EffectiveEventThreatDetectionCustomModule` is always computed as
+   * `ENABLED` or `DISABLED`.
    *
    * <p>Sample code:
    *
@@ -2680,14 +2925,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the ETD custom module.
-   *     <p>Its format is:
-   *     <p>&#42;
-   *     "organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}".
-   *     &#42;
-   *     "folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}".
-   *     &#42;
-   *     "projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}".
+   * @param name Required. The resource name of the Event Threat Detection custom module, in one of
+   *     the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   *       <li>`folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   *       <li>`projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EffectiveEventThreatDetectionCustomModule
@@ -2702,12 +2947,17 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an effective ETD custom module. Retrieves the effective module at the given level. The
-   * difference between an EffectiveCustomModule and a CustomModule is that the fields for an
-   * EffectiveCustomModule are computed from ancestors if needed. For example, the enablement_state
-   * for a CustomModule can be either ENABLED, DISABLED, or INHERITED. Where as the enablement_state
-   * for an EffectiveCustomModule is always computed to ENABLED or DISABLED (the effective
-   * enablement_state).
+   * Gets the effective Event Threat Detection custom module at the given level.
+   *
+   * <p>The difference between an
+   * [EffectiveEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule]
+   * and an
+   * [EventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule]
+   * is that the fields for an `EffectiveEventThreatDetectionCustomModule` are computed from
+   * ancestors if needed. For example, the enablement state for an
+   * `EventThreatDetectionCustomModule` can be `ENABLED`, `DISABLED`, or `INHERITED`. In contrast,
+   * the enablement state for an `EffectiveEventThreatDetectionCustomModule` is always computed as
+   * `ENABLED` or `DISABLED`.
    *
    * <p>Sample code:
    *
@@ -2731,14 +2981,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the ETD custom module.
-   *     <p>Its format is:
-   *     <p>&#42;
-   *     "organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}".
-   *     &#42;
-   *     "folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}".
-   *     &#42;
-   *     "projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}".
+   * @param name Required. The resource name of the Event Threat Detection custom module, in one of
+   *     the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   *       <li>`folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   *       <li>`projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EffectiveEventThreatDetectionCustomModule
@@ -2750,12 +3000,17 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an effective ETD custom module. Retrieves the effective module at the given level. The
-   * difference between an EffectiveCustomModule and a CustomModule is that the fields for an
-   * EffectiveCustomModule are computed from ancestors if needed. For example, the enablement_state
-   * for a CustomModule can be either ENABLED, DISABLED, or INHERITED. Where as the enablement_state
-   * for an EffectiveCustomModule is always computed to ENABLED or DISABLED (the effective
-   * enablement_state).
+   * Gets the effective Event Threat Detection custom module at the given level.
+   *
+   * <p>The difference between an
+   * [EffectiveEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule]
+   * and an
+   * [EventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule]
+   * is that the fields for an `EffectiveEventThreatDetectionCustomModule` are computed from
+   * ancestors if needed. For example, the enablement state for an
+   * `EventThreatDetectionCustomModule` can be `ENABLED`, `DISABLED`, or `INHERITED`. In contrast,
+   * the enablement state for an `EffectiveEventThreatDetectionCustomModule` is always computed as
+   * `ENABLED` or `DISABLED`.
    *
    * <p>Sample code:
    *
@@ -2793,12 +3048,17 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an effective ETD custom module. Retrieves the effective module at the given level. The
-   * difference between an EffectiveCustomModule and a CustomModule is that the fields for an
-   * EffectiveCustomModule are computed from ancestors if needed. For example, the enablement_state
-   * for a CustomModule can be either ENABLED, DISABLED, or INHERITED. Where as the enablement_state
-   * for an EffectiveCustomModule is always computed to ENABLED or DISABLED (the effective
-   * enablement_state).
+   * Gets the effective Event Threat Detection custom module at the given level.
+   *
+   * <p>The difference between an
+   * [EffectiveEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule]
+   * and an
+   * [EventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule]
+   * is that the fields for an `EffectiveEventThreatDetectionCustomModule` are computed from
+   * ancestors if needed. For example, the enablement state for an
+   * `EventThreatDetectionCustomModule` can be `ENABLED`, `DISABLED`, or `INHERITED`. In contrast,
+   * the enablement state for an `EffectiveEventThreatDetectionCustomModule` is always computed as
+   * `ENABLED` or `DISABLED`.
    *
    * <p>Sample code:
    *
@@ -2838,9 +3098,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Event Threat Detection custom modules for the given Resource Manager parent. This
-   * includes resident modules defined at the scope of the parent along with modules inherited from
-   * ancestors.
+   * Lists all Event Threat Detection custom modules for the given organization, folder, or project.
+   * This includes resident modules defined at the scope of the parent along with modules inherited
+   * from ancestors.
    *
    * <p>Sample code:
    *
@@ -2862,9 +3122,13 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent to list custom modules, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEventThreatDetectionCustomModulesPagedResponse
@@ -2878,9 +3142,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Event Threat Detection custom modules for the given Resource Manager parent. This
-   * includes resident modules defined at the scope of the parent along with modules inherited from
-   * ancestors.
+   * Lists all Event Threat Detection custom modules for the given organization, folder, or project.
+   * This includes resident modules defined at the scope of the parent along with modules inherited
+   * from ancestors.
    *
    * <p>Sample code:
    *
@@ -2902,9 +3166,13 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent to list custom modules, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEventThreatDetectionCustomModulesPagedResponse
@@ -2918,9 +3186,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Event Threat Detection custom modules for the given Resource Manager parent. This
-   * includes resident modules defined at the scope of the parent along with modules inherited from
-   * ancestors.
+   * Lists all Event Threat Detection custom modules for the given organization, folder, or project.
+   * This includes resident modules defined at the scope of the parent along with modules inherited
+   * from ancestors.
    *
    * <p>Sample code:
    *
@@ -2942,9 +3210,13 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent to list custom modules, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEventThreatDetectionCustomModulesPagedResponse
@@ -2958,9 +3230,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Event Threat Detection custom modules for the given Resource Manager parent. This
-   * includes resident modules defined at the scope of the parent along with modules inherited from
-   * ancestors.
+   * Lists all Event Threat Detection custom modules for the given organization, folder, or project.
+   * This includes resident modules defined at the scope of the parent along with modules inherited
+   * from ancestors.
    *
    * <p>Sample code:
    *
@@ -2982,9 +3254,13 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent to list custom modules, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEventThreatDetectionCustomModulesPagedResponse
@@ -2996,9 +3272,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Event Threat Detection custom modules for the given Resource Manager parent. This
-   * includes resident modules defined at the scope of the parent along with modules inherited from
-   * ancestors.
+   * Lists all Event Threat Detection custom modules for the given organization, folder, or project.
+   * This includes resident modules defined at the scope of the parent along with modules inherited
+   * from ancestors.
    *
    * <p>Sample code:
    *
@@ -3035,9 +3311,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Event Threat Detection custom modules for the given Resource Manager parent. This
-   * includes resident modules defined at the scope of the parent along with modules inherited from
-   * ancestors.
+   * Lists all Event Threat Detection custom modules for the given organization, folder, or project.
+   * This includes resident modules defined at the scope of the parent along with modules inherited
+   * from ancestors.
    *
    * <p>Sample code:
    *
@@ -3075,9 +3351,9 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Event Threat Detection custom modules for the given Resource Manager parent. This
-   * includes resident modules defined at the scope of the parent along with modules inherited from
-   * ancestors.
+   * Lists all Event Threat Detection custom modules for the given organization, folder, or project.
+   * This includes resident modules defined at the scope of the parent along with modules inherited
+   * from ancestors.
    *
    * <p>Sample code:
    *
@@ -3123,8 +3399,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all resident Event Threat Detection custom modules under the given Resource Manager
-   * parent and its descendants.
+   * Lists all resident Event Threat Detection custom modules for the given organization, folder, or
+   * project and its descendants.
    *
    * <p>Sample code:
    *
@@ -3146,9 +3422,13 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent to list custom modules, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDescendantEventThreatDetectionCustomModulesPagedResponse
@@ -3162,8 +3442,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all resident Event Threat Detection custom modules under the given Resource Manager
-   * parent and its descendants.
+   * Lists all resident Event Threat Detection custom modules for the given organization, folder, or
+   * project and its descendants.
    *
    * <p>Sample code:
    *
@@ -3185,9 +3465,13 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent to list custom modules, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDescendantEventThreatDetectionCustomModulesPagedResponse
@@ -3201,8 +3485,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all resident Event Threat Detection custom modules under the given Resource Manager
-   * parent and its descendants.
+   * Lists all resident Event Threat Detection custom modules for the given organization, folder, or
+   * project and its descendants.
    *
    * <p>Sample code:
    *
@@ -3224,9 +3508,13 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent to list custom modules, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDescendantEventThreatDetectionCustomModulesPagedResponse
@@ -3240,8 +3528,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all resident Event Threat Detection custom modules under the given Resource Manager
-   * parent and its descendants.
+   * Lists all resident Event Threat Detection custom modules for the given organization, folder, or
+   * project and its descendants.
    *
    * <p>Sample code:
    *
@@ -3263,9 +3551,13 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent to list custom modules. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent to list custom modules, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDescendantEventThreatDetectionCustomModulesPagedResponse
@@ -3279,8 +3571,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all resident Event Threat Detection custom modules under the given Resource Manager
-   * parent and its descendants.
+   * Lists all resident Event Threat Detection custom modules for the given organization, folder, or
+   * project and its descendants.
    *
    * <p>Sample code:
    *
@@ -3318,8 +3610,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all resident Event Threat Detection custom modules under the given Resource Manager
-   * parent and its descendants.
+   * Lists all resident Event Threat Detection custom modules for the given organization, folder, or
+   * project and its descendants.
    *
    * <p>Sample code:
    *
@@ -3357,8 +3649,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all resident Event Threat Detection custom modules under the given Resource Manager
-   * parent and its descendants.
+   * Lists all resident Event Threat Detection custom modules for the given organization, folder, or
+   * project and its descendants.
    *
    * <p>Sample code:
    *
@@ -3425,14 +3717,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the ETD custom module.
-   *     <p>Its format is:
-   *     <p>&#42;
-   *     "organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
-   *     &#42;
-   *     "folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
-   *     &#42;
-   *     "projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
+   * @param name Required. The resource name of the Event Threat Detection custom module, in one of
+   *     the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   *       <li>`folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   *       <li>`projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EventThreatDetectionCustomModule getEventThreatDetectionCustomModule(
@@ -3468,14 +3760,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the ETD custom module.
-   *     <p>Its format is:
-   *     <p>&#42;
-   *     "organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
-   *     &#42;
-   *     "folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
-   *     &#42;
-   *     "projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
+   * @param name Required. The resource name of the Event Threat Detection custom module, in one of
+   *     the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   *       <li>`folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   *       <li>`projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EventThreatDetectionCustomModule getEventThreatDetectionCustomModule(String name) {
@@ -3558,8 +3850,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a resident Event Threat Detection custom module at the scope of the given Resource
-   * Manager parent, and also creates inherited custom modules for all descendants of the given
+   * Creates a resident Event Threat Detection custom module at the scope of the given organization,
+   * folder, or project, and creates inherited custom modules for all descendants of the given
    * parent. These modules are enabled by default.
    *
    * <p>Sample code:
@@ -3581,11 +3873,16 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent for the module. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent for the module, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @param eventThreatDetectionCustomModule Required. The module to create. The
-   *     event_threat_detection_custom_module.name will be ignored and server generated.
+   *     [EventThreatDetectionCustomModule.name][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule.name]
+   *     field is ignored; Security Command Center generates the name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EventThreatDetectionCustomModule createEventThreatDetectionCustomModule(
@@ -3601,8 +3898,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a resident Event Threat Detection custom module at the scope of the given Resource
-   * Manager parent, and also creates inherited custom modules for all descendants of the given
+   * Creates a resident Event Threat Detection custom module at the scope of the given organization,
+   * folder, or project, and creates inherited custom modules for all descendants of the given
    * parent. These modules are enabled by default.
    *
    * <p>Sample code:
@@ -3624,11 +3921,16 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent for the module. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent for the module, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @param eventThreatDetectionCustomModule Required. The module to create. The
-   *     event_threat_detection_custom_module.name will be ignored and server generated.
+   *     [EventThreatDetectionCustomModule.name][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule.name]
+   *     field is ignored; Security Command Center generates the name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EventThreatDetectionCustomModule createEventThreatDetectionCustomModule(
@@ -3643,8 +3945,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a resident Event Threat Detection custom module at the scope of the given Resource
-   * Manager parent, and also creates inherited custom modules for all descendants of the given
+   * Creates a resident Event Threat Detection custom module at the scope of the given organization,
+   * folder, or project, and creates inherited custom modules for all descendants of the given
    * parent. These modules are enabled by default.
    *
    * <p>Sample code:
@@ -3666,11 +3968,16 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent for the module. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent for the module, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @param eventThreatDetectionCustomModule Required. The module to create. The
-   *     event_threat_detection_custom_module.name will be ignored and server generated.
+   *     [EventThreatDetectionCustomModule.name][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule.name]
+   *     field is ignored; Security Command Center generates the name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EventThreatDetectionCustomModule createEventThreatDetectionCustomModule(
@@ -3686,8 +3993,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a resident Event Threat Detection custom module at the scope of the given Resource
-   * Manager parent, and also creates inherited custom modules for all descendants of the given
+   * Creates a resident Event Threat Detection custom module at the scope of the given organization,
+   * folder, or project, and creates inherited custom modules for all descendants of the given
    * parent. These modules are enabled by default.
    *
    * <p>Sample code:
@@ -3709,11 +4016,16 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of parent for the module. Its format is
-   *     "organizations/{organization}/locations/{location}",
-   *     "folders/{folder}/locations/{location}", or "projects/{project}/locations/{location}"
+   * @param parent Required. Name of parent for the module, in one of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
    * @param eventThreatDetectionCustomModule Required. The module to create. The
-   *     event_threat_detection_custom_module.name will be ignored and server generated.
+   *     [EventThreatDetectionCustomModule.name][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule.name]
+   *     field is ignored; Security Command Center generates the name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EventThreatDetectionCustomModule createEventThreatDetectionCustomModule(
@@ -3728,8 +4040,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a resident Event Threat Detection custom module at the scope of the given Resource
-   * Manager parent, and also creates inherited custom modules for all descendants of the given
+   * Creates a resident Event Threat Detection custom module at the scope of the given organization,
+   * folder, or project, and creates inherited custom modules for all descendants of the given
    * parent. These modules are enabled by default.
    *
    * <p>Sample code:
@@ -3764,8 +4076,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a resident Event Threat Detection custom module at the scope of the given Resource
-   * Manager parent, and also creates inherited custom modules for all descendants of the given
+   * Creates a resident Event Threat Detection custom module at the scope of the given organization,
+   * folder, or project, and creates inherited custom modules for all descendants of the given
    * parent. These modules are enabled by default.
    *
    * <p>Sample code:
@@ -3827,12 +4139,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param eventThreatDetectionCustomModule Required. The module being updated
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
-   *     EventThreatDetectionCustomModule resource by the update. The fields specified in the
-   *     update_mask are relative to the resource, not the full request. A field will be overwritten
-   *     if it is in the mask. If the user does not provide a mask then all fields will be
-   *     overwritten.
+   * @param eventThreatDetectionCustomModule Required. The module being updated.
+   * @param updateMask Required. The fields to update. If omitted, then all fields are updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EventThreatDetectionCustomModule updateEventThreatDetectionCustomModule(
@@ -3926,7 +4234,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Event Threat Detection custom module and all of its descendants in the
-   * Resource Manager hierarchy. This method is only supported for resident custom modules.
+   * resource hierarchy. This method is only supported for resident custom modules.
    *
    * <p>Sample code:
    *
@@ -3946,14 +4254,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the ETD custom module.
-   *     <p>Its format is:
-   *     <p>&#42;
-   *     "organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
-   *     &#42;
-   *     "folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
-   *     &#42;
-   *     "projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
+   * @param name Required. The resource name of the Event Threat Detection custom module, in one of
+   *     the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   *       <li>`folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   *       <li>`projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteEventThreatDetectionCustomModule(
@@ -3968,7 +4276,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Event Threat Detection custom module and all of its descendants in the
-   * Resource Manager hierarchy. This method is only supported for resident custom modules.
+   * resource hierarchy. This method is only supported for resident custom modules.
    *
    * <p>Sample code:
    *
@@ -3989,14 +4297,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the ETD custom module.
-   *     <p>Its format is:
-   *     <p>&#42;
-   *     "organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
-   *     &#42;
-   *     "folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
-   *     &#42;
-   *     "projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
+   * @param name Required. The resource name of the Event Threat Detection custom module, in one of
+   *     the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   *       <li>`folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   *       <li>`projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteEventThreatDetectionCustomModule(String name) {
@@ -4008,7 +4316,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Event Threat Detection custom module and all of its descendants in the
-   * Resource Manager hierarchy. This method is only supported for resident custom modules.
+   * resource hierarchy. This method is only supported for resident custom modules.
    *
    * <p>Sample code:
    *
@@ -4044,7 +4352,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Event Threat Detection custom module and all of its descendants in the
-   * Resource Manager hierarchy. This method is only supported for resident custom modules.
+   * resource hierarchy. This method is only supported for resident custom modules.
    *
    * <p>Sample code:
    *
@@ -4147,6 +4455,553 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ValidateEventThreatDetectionCustomModuleResponse>
       validateEventThreatDetectionCustomModuleCallable() {
     return stub.validateEventThreatDetectionCustomModuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets service settings for the specified Security Command Center service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterManagementClient securityCenterManagementClient =
+   *     SecurityCenterManagementClient.create()) {
+   *   SecurityCenterServiceName name =
+   *       SecurityCenterServiceName.ofProjectLocationServiceName(
+   *           "[PROJECT]", "[LOCATION]", "[SERVICE]");
+   *   SecurityCenterService response =
+   *       securityCenterManagementClient.getSecurityCenterService(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Security Command Center service to retrieve, in one of the following
+   *     formats:
+   *     <ul>
+   *       <li>organizations/{organization}/locations/{location}/securityCenterServices/{service}
+   *       <li>folders/{folder}/locations/{location}/securityCenterServices/{service}
+   *       <li>projects/{project}/locations/{location}/securityCenterServices/{service}
+   *     </ul>
+   *     <p>The following values are valid for `{service}`:
+   *     <ul>
+   *       <li>`container-threat-detection`
+   *       <li>`event-threat-detection`
+   *       <li>`security-health-analytics`
+   *       <li>`vm-threat-detection`
+   *       <li>`web-security-scanner`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecurityCenterService getSecurityCenterService(SecurityCenterServiceName name) {
+    GetSecurityCenterServiceRequest request =
+        GetSecurityCenterServiceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getSecurityCenterService(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets service settings for the specified Security Command Center service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterManagementClient securityCenterManagementClient =
+   *     SecurityCenterManagementClient.create()) {
+   *   String name =
+   *       SecurityCenterServiceName.ofProjectLocationServiceName(
+   *               "[PROJECT]", "[LOCATION]", "[SERVICE]")
+   *           .toString();
+   *   SecurityCenterService response =
+   *       securityCenterManagementClient.getSecurityCenterService(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Security Command Center service to retrieve, in one of the following
+   *     formats:
+   *     <ul>
+   *       <li>organizations/{organization}/locations/{location}/securityCenterServices/{service}
+   *       <li>folders/{folder}/locations/{location}/securityCenterServices/{service}
+   *       <li>projects/{project}/locations/{location}/securityCenterServices/{service}
+   *     </ul>
+   *     <p>The following values are valid for `{service}`:
+   *     <ul>
+   *       <li>`container-threat-detection`
+   *       <li>`event-threat-detection`
+   *       <li>`security-health-analytics`
+   *       <li>`vm-threat-detection`
+   *       <li>`web-security-scanner`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecurityCenterService getSecurityCenterService(String name) {
+    GetSecurityCenterServiceRequest request =
+        GetSecurityCenterServiceRequest.newBuilder().setName(name).build();
+    return getSecurityCenterService(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets service settings for the specified Security Command Center service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterManagementClient securityCenterManagementClient =
+   *     SecurityCenterManagementClient.create()) {
+   *   GetSecurityCenterServiceRequest request =
+   *       GetSecurityCenterServiceRequest.newBuilder()
+   *           .setName(
+   *               SecurityCenterServiceName.ofProjectLocationServiceName(
+   *                       "[PROJECT]", "[LOCATION]", "[SERVICE]")
+   *                   .toString())
+   *           .setShowEligibleModulesOnly(true)
+   *           .build();
+   *   SecurityCenterService response =
+   *       securityCenterManagementClient.getSecurityCenterService(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecurityCenterService getSecurityCenterService(
+      GetSecurityCenterServiceRequest request) {
+    return getSecurityCenterServiceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets service settings for the specified Security Command Center service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterManagementClient securityCenterManagementClient =
+   *     SecurityCenterManagementClient.create()) {
+   *   GetSecurityCenterServiceRequest request =
+   *       GetSecurityCenterServiceRequest.newBuilder()
+   *           .setName(
+   *               SecurityCenterServiceName.ofProjectLocationServiceName(
+   *                       "[PROJECT]", "[LOCATION]", "[SERVICE]")
+   *                   .toString())
+   *           .setShowEligibleModulesOnly(true)
+   *           .build();
+   *   ApiFuture<SecurityCenterService> future =
+   *       securityCenterManagementClient.getSecurityCenterServiceCallable().futureCall(request);
+   *   // Do something.
+   *   SecurityCenterService response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSecurityCenterServiceRequest, SecurityCenterService>
+      getSecurityCenterServiceCallable() {
+    return stub.getSecurityCenterServiceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all Security Command Center services for the given parent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterManagementClient securityCenterManagementClient =
+   *     SecurityCenterManagementClient.create()) {
+   *   FolderLocationName parent = FolderLocationName.of("[FOLDER]", "[LOCATION]");
+   *   for (SecurityCenterService element :
+   *       securityCenterManagementClient.listSecurityCenterServices(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent to list Security Command Center services, in one
+   *     of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSecurityCenterServicesPagedResponse listSecurityCenterServices(
+      FolderLocationName parent) {
+    ListSecurityCenterServicesRequest request =
+        ListSecurityCenterServicesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSecurityCenterServices(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all Security Command Center services for the given parent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterManagementClient securityCenterManagementClient =
+   *     SecurityCenterManagementClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (SecurityCenterService element :
+   *       securityCenterManagementClient.listSecurityCenterServices(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent to list Security Command Center services, in one
+   *     of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSecurityCenterServicesPagedResponse listSecurityCenterServices(
+      LocationName parent) {
+    ListSecurityCenterServicesRequest request =
+        ListSecurityCenterServicesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSecurityCenterServices(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all Security Command Center services for the given parent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterManagementClient securityCenterManagementClient =
+   *     SecurityCenterManagementClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (SecurityCenterService element :
+   *       securityCenterManagementClient.listSecurityCenterServices(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent to list Security Command Center services, in one
+   *     of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSecurityCenterServicesPagedResponse listSecurityCenterServices(
+      OrganizationLocationName parent) {
+    ListSecurityCenterServicesRequest request =
+        ListSecurityCenterServicesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSecurityCenterServices(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all Security Command Center services for the given parent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterManagementClient securityCenterManagementClient =
+   *     SecurityCenterManagementClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (SecurityCenterService element :
+   *       securityCenterManagementClient.listSecurityCenterServices(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent to list Security Command Center services, in one
+   *     of the following formats:
+   *     <ul>
+   *       <li>`organizations/{organization}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`projects/{project}/locations/{location}`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSecurityCenterServicesPagedResponse listSecurityCenterServices(String parent) {
+    ListSecurityCenterServicesRequest request =
+        ListSecurityCenterServicesRequest.newBuilder().setParent(parent).build();
+    return listSecurityCenterServices(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all Security Command Center services for the given parent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterManagementClient securityCenterManagementClient =
+   *     SecurityCenterManagementClient.create()) {
+   *   ListSecurityCenterServicesRequest request =
+   *       ListSecurityCenterServicesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setShowEligibleModulesOnly(true)
+   *           .build();
+   *   for (SecurityCenterService element :
+   *       securityCenterManagementClient.listSecurityCenterServices(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSecurityCenterServicesPagedResponse listSecurityCenterServices(
+      ListSecurityCenterServicesRequest request) {
+    return listSecurityCenterServicesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all Security Command Center services for the given parent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterManagementClient securityCenterManagementClient =
+   *     SecurityCenterManagementClient.create()) {
+   *   ListSecurityCenterServicesRequest request =
+   *       ListSecurityCenterServicesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setShowEligibleModulesOnly(true)
+   *           .build();
+   *   ApiFuture<SecurityCenterService> future =
+   *       securityCenterManagementClient
+   *           .listSecurityCenterServicesPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (SecurityCenterService element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListSecurityCenterServicesRequest, ListSecurityCenterServicesPagedResponse>
+      listSecurityCenterServicesPagedCallable() {
+    return stub.listSecurityCenterServicesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all Security Command Center services for the given parent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterManagementClient securityCenterManagementClient =
+   *     SecurityCenterManagementClient.create()) {
+   *   ListSecurityCenterServicesRequest request =
+   *       ListSecurityCenterServicesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setShowEligibleModulesOnly(true)
+   *           .build();
+   *   while (true) {
+   *     ListSecurityCenterServicesResponse response =
+   *         securityCenterManagementClient.listSecurityCenterServicesCallable().call(request);
+   *     for (SecurityCenterService element : response.getSecurityCenterServicesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSecurityCenterServicesRequest, ListSecurityCenterServicesResponse>
+      listSecurityCenterServicesCallable() {
+    return stub.listSecurityCenterServicesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Security Command Center service using the given update mask.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterManagementClient securityCenterManagementClient =
+   *     SecurityCenterManagementClient.create()) {
+   *   SecurityCenterService securityCenterService = SecurityCenterService.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   SecurityCenterService response =
+   *       securityCenterManagementClient.updateSecurityCenterService(
+   *           securityCenterService, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param securityCenterService Required. The updated service.
+   * @param updateMask Required. The fields to update. Accepts the following values:
+   *     <ul>
+   *       <li>`intended_enablement_state`
+   *       <li>`modules`
+   *     </ul>
+   *     <p>If omitted, then all eligible fields are updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecurityCenterService updateSecurityCenterService(
+      SecurityCenterService securityCenterService, FieldMask updateMask) {
+    UpdateSecurityCenterServiceRequest request =
+        UpdateSecurityCenterServiceRequest.newBuilder()
+            .setSecurityCenterService(securityCenterService)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSecurityCenterService(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Security Command Center service using the given update mask.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterManagementClient securityCenterManagementClient =
+   *     SecurityCenterManagementClient.create()) {
+   *   UpdateSecurityCenterServiceRequest request =
+   *       UpdateSecurityCenterServiceRequest.newBuilder()
+   *           .setSecurityCenterService(SecurityCenterService.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   SecurityCenterService response =
+   *       securityCenterManagementClient.updateSecurityCenterService(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecurityCenterService updateSecurityCenterService(
+      UpdateSecurityCenterServiceRequest request) {
+    return updateSecurityCenterServiceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Security Command Center service using the given update mask.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterManagementClient securityCenterManagementClient =
+   *     SecurityCenterManagementClient.create()) {
+   *   UpdateSecurityCenterServiceRequest request =
+   *       UpdateSecurityCenterServiceRequest.newBuilder()
+   *           .setSecurityCenterService(SecurityCenterService.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<SecurityCenterService> future =
+   *       securityCenterManagementClient.updateSecurityCenterServiceCallable().futureCall(request);
+   *   // Do something.
+   *   SecurityCenterService response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSecurityCenterServiceRequest, SecurityCenterService>
+      updateSecurityCenterServiceCallable() {
+    return stub.updateSecurityCenterServiceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4956,6 +5811,102 @@ public class SecurityCenterManagementClient implements BackgroundResource {
         List<ListDescendantEventThreatDetectionCustomModulesPage> pages, int collectionSize) {
       return new ListDescendantEventThreatDetectionCustomModulesFixedSizeCollection(
           pages, collectionSize);
+    }
+  }
+
+  public static class ListSecurityCenterServicesPagedResponse
+      extends AbstractPagedListResponse<
+          ListSecurityCenterServicesRequest,
+          ListSecurityCenterServicesResponse,
+          SecurityCenterService,
+          ListSecurityCenterServicesPage,
+          ListSecurityCenterServicesFixedSizeCollection> {
+
+    public static ApiFuture<ListSecurityCenterServicesPagedResponse> createAsync(
+        PageContext<
+                ListSecurityCenterServicesRequest,
+                ListSecurityCenterServicesResponse,
+                SecurityCenterService>
+            context,
+        ApiFuture<ListSecurityCenterServicesResponse> futureResponse) {
+      ApiFuture<ListSecurityCenterServicesPage> futurePage =
+          ListSecurityCenterServicesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSecurityCenterServicesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSecurityCenterServicesPagedResponse(ListSecurityCenterServicesPage page) {
+      super(page, ListSecurityCenterServicesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSecurityCenterServicesPage
+      extends AbstractPage<
+          ListSecurityCenterServicesRequest,
+          ListSecurityCenterServicesResponse,
+          SecurityCenterService,
+          ListSecurityCenterServicesPage> {
+
+    private ListSecurityCenterServicesPage(
+        PageContext<
+                ListSecurityCenterServicesRequest,
+                ListSecurityCenterServicesResponse,
+                SecurityCenterService>
+            context,
+        ListSecurityCenterServicesResponse response) {
+      super(context, response);
+    }
+
+    private static ListSecurityCenterServicesPage createEmptyPage() {
+      return new ListSecurityCenterServicesPage(null, null);
+    }
+
+    @Override
+    protected ListSecurityCenterServicesPage createPage(
+        PageContext<
+                ListSecurityCenterServicesRequest,
+                ListSecurityCenterServicesResponse,
+                SecurityCenterService>
+            context,
+        ListSecurityCenterServicesResponse response) {
+      return new ListSecurityCenterServicesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSecurityCenterServicesPage> createPageAsync(
+        PageContext<
+                ListSecurityCenterServicesRequest,
+                ListSecurityCenterServicesResponse,
+                SecurityCenterService>
+            context,
+        ApiFuture<ListSecurityCenterServicesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSecurityCenterServicesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSecurityCenterServicesRequest,
+          ListSecurityCenterServicesResponse,
+          SecurityCenterService,
+          ListSecurityCenterServicesPage,
+          ListSecurityCenterServicesFixedSizeCollection> {
+
+    private ListSecurityCenterServicesFixedSizeCollection(
+        List<ListSecurityCenterServicesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSecurityCenterServicesFixedSizeCollection createEmptyCollection() {
+      return new ListSecurityCenterServicesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSecurityCenterServicesFixedSizeCollection createCollection(
+        List<ListSecurityCenterServicesPage> pages, int collectionSize) {
+      return new ListSecurityCenterServicesFixedSizeCollection(pages, collectionSize);
     }
   }
 

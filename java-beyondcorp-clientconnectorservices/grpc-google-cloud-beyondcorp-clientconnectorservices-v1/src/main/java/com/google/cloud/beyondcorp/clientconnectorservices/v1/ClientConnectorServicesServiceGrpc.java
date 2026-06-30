@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,10 +30,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *   `projects/{project_id}/locations/{location_id}/client_connector_services/{client_connector_service_id}`.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments =
-        "Source: google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ClientConnectorServicesServiceGrpc {
 
@@ -351,6 +347,20 @@ public final class ClientConnectorServicesServiceGrpc {
     return ClientConnectorServicesServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ClientConnectorServicesServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ClientConnectorServicesServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ClientConnectorServicesServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ClientConnectorServicesServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ClientConnectorServicesServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ClientConnectorServicesServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -617,6 +627,113 @@ public final class ClientConnectorServicesServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ClientConnectorServicesService.
+   *
+   * <pre>
+   * API Overview:
+   * The `beyondcorp.googleapis.com` service implements the Google Cloud
+   * BeyondCorp API.
+   * Data Model:
+   * The ClientConnectorServicesService exposes the following resources:
+   * * Client Connector Services, named as follows:
+   *   `projects/{project_id}/locations/{location_id}/client_connector_services/{client_connector_service_id}`.
+   * </pre>
+   */
+  public static final class ClientConnectorServicesServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ClientConnectorServicesServiceBlockingV2Stub> {
+    private ClientConnectorServicesServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ClientConnectorServicesServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ClientConnectorServicesServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ClientConnectorServices in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.beyondcorp.clientconnectorservices.v1
+            .ListClientConnectorServicesResponse
+        listClientConnectorServices(
+            com.google.cloud.beyondcorp.clientconnectorservices.v1
+                    .ListClientConnectorServicesRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListClientConnectorServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ClientConnectorService.
+     * </pre>
+     */
+    public com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
+        getClientConnectorService(
+            com.google.cloud.beyondcorp.clientconnectorservices.v1.GetClientConnectorServiceRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetClientConnectorServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ClientConnectorService in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createClientConnectorService(
+        com.google.cloud.beyondcorp.clientconnectorservices.v1.CreateClientConnectorServiceRequest
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateClientConnectorServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single ClientConnectorService.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateClientConnectorService(
+        com.google.cloud.beyondcorp.clientconnectorservices.v1.UpdateClientConnectorServiceRequest
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateClientConnectorServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ClientConnectorService.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteClientConnectorService(
+        com.google.cloud.beyondcorp.clientconnectorservices.v1.DeleteClientConnectorServiceRequest
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteClientConnectorServiceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * ClientConnectorServicesService.
    *
    * <pre>
    * API Overview:

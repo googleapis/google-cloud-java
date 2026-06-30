@@ -1,0 +1,6 @@
+java_gapic_library(
+    deps = [
+        "//google/cloud/location:location_java_proto",
+        "//google/iam/v1:iam_java_proto"
+   ],
+)

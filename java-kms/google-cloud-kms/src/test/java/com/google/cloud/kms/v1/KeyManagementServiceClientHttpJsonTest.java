@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListCryptoKeysP
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListImportJobsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListKeyRingsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListRetiredResourcesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -46,9 +47,11 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Int64Value;
 import com.google.protobuf.Timestamp;
@@ -57,6 +60,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -505,6 +509,106 @@ public class KeyManagementServiceClientHttpJsonTest {
   }
 
   @Test
+  public void listRetiredResourcesTest() throws Exception {
+    RetiredResource responsesElement = RetiredResource.newBuilder().build();
+    ListRetiredResourcesResponse expectedResponse =
+        ListRetiredResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRetiredResources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListRetiredResourcesPagedResponse pagedListResponse = client.listRetiredResources(parent);
+
+    List<RetiredResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRetiredResourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRetiredResourcesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listRetiredResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRetiredResourcesTest2() throws Exception {
+    RetiredResource responsesElement = RetiredResource.newBuilder().build();
+    ListRetiredResourcesResponse expectedResponse =
+        ListRetiredResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRetiredResources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListRetiredResourcesPagedResponse pagedListResponse = client.listRetiredResources(parent);
+
+    List<RetiredResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRetiredResourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRetiredResourcesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listRetiredResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getKeyRingTest() throws Exception {
     KeyRing expectedResponse =
         KeyRing.newBuilder()
@@ -611,6 +715,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -668,6 +773,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -851,6 +957,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setPemCrc32C(Int64Value.newBuilder().build())
             .setName("name3373707")
             .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .setPublicKey(ChecksummedData.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -902,6 +1009,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setPemCrc32C(Int64Value.newBuilder().build())
             .setName("name3373707")
             .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .setPublicKey(ChecksummedData.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -957,6 +1065,9 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExpireEventTime(Timestamp.newBuilder().build())
             .setPublicKey(ImportJob.WrappingPublicKey.newBuilder().build())
             .setAttestation(KeyOperationAttestation.newBuilder().build())
+            .setCryptoKeyBackend(
+                ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1011,6 +1122,9 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExpireEventTime(Timestamp.newBuilder().build())
             .setPublicKey(ImportJob.WrappingPublicKey.newBuilder().build())
             .setAttestation(KeyOperationAttestation.newBuilder().build())
+            .setCryptoKeyBackend(
+                ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1046,6 +1160,106 @@ public class KeyManagementServiceClientHttpJsonTest {
       String name =
           "projects/project-6111/locations/location-6111/keyRings/keyRing-6111/importJobs/importJob-6111";
       client.getImportJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRetiredResourceTest() throws Exception {
+    RetiredResource expectedResponse =
+        RetiredResource.newBuilder()
+            .setName(
+                RetiredResourceName.of("[PROJECT]", "[LOCATION]", "[RETIRED_RESOURCE]").toString())
+            .setOriginalResource("originalResource-1694609153")
+            .setResourceType("resourceType-384364440")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RetiredResourceName name =
+        RetiredResourceName.of("[PROJECT]", "[LOCATION]", "[RETIRED_RESOURCE]");
+
+    RetiredResource actualResponse = client.getRetiredResource(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRetiredResourceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RetiredResourceName name =
+          RetiredResourceName.of("[PROJECT]", "[LOCATION]", "[RETIRED_RESOURCE]");
+      client.getRetiredResource(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRetiredResourceTest2() throws Exception {
+    RetiredResource expectedResponse =
+        RetiredResource.newBuilder()
+            .setName(
+                RetiredResourceName.of("[PROJECT]", "[LOCATION]", "[RETIRED_RESOURCE]").toString())
+            .setOriginalResource("originalResource-1694609153")
+            .setResourceType("resourceType-384364440")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-4892/locations/location-4892/retiredResources/retiredResource-4892";
+
+    RetiredResource actualResponse = client.getRetiredResource(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRetiredResourceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4892/locations/location-4892/retiredResources/retiredResource-4892";
+      client.getRetiredResource(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -1165,6 +1379,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
             .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1223,6 +1438,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
             .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1403,6 +1619,195 @@ public class KeyManagementServiceClientHttpJsonTest {
   }
 
   @Test
+  public void deleteCryptoKeyTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteCryptoKeyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    CryptoKeyName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+
+    client.deleteCryptoKeyAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteCryptoKeyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CryptoKeyName name =
+          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+      client.deleteCryptoKeyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteCryptoKeyTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteCryptoKeyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-5355/locations/location-5355/keyRings/keyRing-5355/cryptoKeys/cryptoKey-5355";
+
+    client.deleteCryptoKeyAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteCryptoKeyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5355/locations/location-5355/keyRings/keyRing-5355/cryptoKeys/cryptoKey-5355";
+      client.deleteCryptoKeyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteCryptoKeyVersionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteCryptoKeyVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    CryptoKeyVersionName name =
+        CryptoKeyVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+
+    client.deleteCryptoKeyVersionAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteCryptoKeyVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CryptoKeyVersionName name =
+          CryptoKeyVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+      client.deleteCryptoKeyVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteCryptoKeyVersionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteCryptoKeyVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-9504/locations/location-9504/keyRings/keyRing-9504/cryptoKeys/cryptoKey-9504/cryptoKeyVersions/cryptoKeyVersion-9504";
+
+    client.deleteCryptoKeyVersionAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteCryptoKeyVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9504/locations/location-9504/keyRings/keyRing-9504/cryptoKeys/cryptoKey-9504/cryptoKeyVersions/cryptoKeyVersion-9504";
+      client.deleteCryptoKeyVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void importCryptoKeyVersionTest() throws Exception {
     CryptoKeyVersion expectedResponse =
         CryptoKeyVersion.newBuilder()
@@ -1510,6 +1915,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExpireEventTime(Timestamp.newBuilder().build())
             .setPublicKey(ImportJob.WrappingPublicKey.newBuilder().build())
             .setAttestation(KeyOperationAttestation.newBuilder().build())
+            .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1567,6 +1973,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExpireEventTime(Timestamp.newBuilder().build())
             .setPublicKey(ImportJob.WrappingPublicKey.newBuilder().build())
             .setAttestation(KeyOperationAttestation.newBuilder().build())
+            .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1627,6 +2034,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1645,6 +2053,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1689,6 +2098,7 @@ public class KeyManagementServiceClientHttpJsonTest {
               .setCryptoKeyBackend(
                   CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                       .toString())
+              .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateCryptoKey(cryptoKey, updateMask);
@@ -1828,6 +2238,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1887,6 +2298,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2971,6 +3383,78 @@ public class KeyManagementServiceClientHttpJsonTest {
       ByteString data = ByteString.EMPTY;
       ByteString mac = ByteString.EMPTY;
       client.macVerify(name, data, mac);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void decapsulateTest() throws Exception {
+    DecapsulateResponse expectedResponse =
+        DecapsulateResponse.newBuilder()
+            .setName("name3373707")
+            .setSharedSecret(ByteString.EMPTY)
+            .setSharedSecretCrc32C(1482306981)
+            .setVerifiedCiphertextCrc32C(true)
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DecapsulateRequest request =
+        DecapsulateRequest.newBuilder()
+            .setName(
+                CryptoKeyVersionName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[KEY_RING]",
+                        "[CRYPTO_KEY]",
+                        "[CRYPTO_KEY_VERSION]")
+                    .toString())
+            .setCiphertext(ByteString.EMPTY)
+            .setCiphertextCrc32C(Int64Value.newBuilder().build())
+            .build();
+
+    DecapsulateResponse actualResponse = client.decapsulate(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void decapsulateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DecapsulateRequest request =
+          DecapsulateRequest.newBuilder()
+              .setName(
+                  CryptoKeyVersionName.of(
+                          "[PROJECT]",
+                          "[LOCATION]",
+                          "[KEY_RING]",
+                          "[CRYPTO_KEY]",
+                          "[CRYPTO_KEY_VERSION]")
+                      .toString())
+              .setCiphertext(ByteString.EMPTY)
+              .setCiphertextCrc32C(Int64Value.newBuilder().build())
+              .build();
+      client.decapsulate(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

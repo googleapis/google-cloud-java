@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,10 @@ import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPaged
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListHostGroupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListQuotaRulesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListReplicationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListStoragePoolsPagedResponse;
@@ -45,6 +47,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -212,6 +215,23 @@ public class NetAppClientTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setAllowAutoTiering(true)
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
+            .setType(StoragePoolType.forNumber(0))
+            .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -281,6 +301,23 @@ public class NetAppClientTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setAllowAutoTiering(true)
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
+            .setType(StoragePoolType.forNumber(0))
+            .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -350,6 +387,23 @@ public class NetAppClientTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setAllowAutoTiering(true)
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
+            .setType(StoragePoolType.forNumber(0))
+            .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -404,6 +458,23 @@ public class NetAppClientTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setAllowAutoTiering(true)
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
+            .setType(StoragePoolType.forNumber(0))
+            .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -458,6 +529,23 @@ public class NetAppClientTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setAllowAutoTiering(true)
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
+            .setType(StoragePoolType.forNumber(0))
+            .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -578,6 +666,144 @@ public class NetAppClientTest {
     try {
       String name = "name3373707";
       client.deleteStoragePoolAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void validateDirectoryServiceTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("validateDirectoryServiceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    ValidateDirectoryServiceRequest request =
+        ValidateDirectoryServiceRequest.newBuilder()
+            .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+            .setDirectoryServiceType(DirectoryServiceType.forNumber(0))
+            .build();
+
+    client.validateDirectoryServiceAsync(request).get();
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ValidateDirectoryServiceRequest actualRequest =
+        ((ValidateDirectoryServiceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getDirectoryServiceType(), actualRequest.getDirectoryServiceType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void validateDirectoryServiceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      ValidateDirectoryServiceRequest request =
+          ValidateDirectoryServiceRequest.newBuilder()
+              .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+              .setDirectoryServiceType(DirectoryServiceType.forNumber(0))
+              .build();
+      client.validateDirectoryServiceAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void switchActiveReplicaZoneTest() throws Exception {
+    StoragePool expectedResponse =
+        StoragePool.newBuilder()
+            .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+            .setServiceLevel(ServiceLevel.forNumber(0))
+            .setCapacityGib(498394811)
+            .setVolumeCapacityGib(643777472)
+            .setVolumeCount(-1362665558)
+            .setStateDetails("stateDetails1730982001")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setActiveDirectory(
+                ActiveDirectoryName.of("[PROJECT]", "[LOCATION]", "[ACTIVE_DIRECTORY]").toString())
+            .setKmsConfig(KmsConfigName.of("[PROJECT]", "[LOCATION]", "[KMS_CONFIG]").toString())
+            .setLdapEnabled(true)
+            .setPsaRange("psaRange-534274785")
+            .setEncryptionType(EncryptionType.forNumber(0))
+            .setGlobalAccessAllowed(true)
+            .setAllowAutoTiering(true)
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
+            .setType(StoragePoolType.forNumber(0))
+            .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("switchActiveReplicaZoneTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    SwitchActiveReplicaZoneRequest request =
+        SwitchActiveReplicaZoneRequest.newBuilder()
+            .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+            .build();
+
+    StoragePool actualResponse = client.switchActiveReplicaZoneAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SwitchActiveReplicaZoneRequest actualRequest =
+        ((SwitchActiveReplicaZoneRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void switchActiveReplicaZoneExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      SwitchActiveReplicaZoneRequest request =
+          SwitchActiveReplicaZoneRequest.newBuilder()
+              .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+              .build();
+      client.switchActiveReplicaZoneAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -710,6 +936,19 @@ public class NetAppClientTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setCacheParameters(CacheParameters.newBuilder().build())
+            .setHotTierSizeUsedGib(-151116719)
+            .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -779,6 +1018,19 @@ public class NetAppClientTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setCacheParameters(CacheParameters.newBuilder().build())
+            .setHotTierSizeUsedGib(-151116719)
+            .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -848,6 +1100,19 @@ public class NetAppClientTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setCacheParameters(CacheParameters.newBuilder().build())
+            .setHotTierSizeUsedGib(-151116719)
+            .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -931,6 +1196,19 @@ public class NetAppClientTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setCacheParameters(CacheParameters.newBuilder().build())
+            .setHotTierSizeUsedGib(-151116719)
+            .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1014,6 +1292,19 @@ public class NetAppClientTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setCacheParameters(CacheParameters.newBuilder().build())
+            .setHotTierSizeUsedGib(-151116719)
+            .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1178,6 +1469,19 @@ public class NetAppClientTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setCacheParameters(CacheParameters.newBuilder().build())
+            .setHotTierSizeUsedGib(-151116719)
+            .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1220,6 +1524,115 @@ public class NetAppClientTest {
               .setSnapshotId("snapshotId-1113817601")
               .build();
       client.revertVolumeAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void establishVolumePeeringTest() throws Exception {
+    Volume expectedResponse =
+        Volume.newBuilder()
+            .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setStateDetails("stateDetails1730982001")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setShareName("shareName-1582221558")
+            .setPsaRange("psaRange-534274785")
+            .setStoragePool(
+                StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+            .setNetwork("network1843485230")
+            .setServiceLevel(ServiceLevel.forNumber(0))
+            .setCapacityGib(498394811)
+            .setExportPolicy(ExportPolicy.newBuilder().build())
+            .addAllProtocols(new ArrayList<Protocols>())
+            .addAllSmbSettings(new ArrayList<SMBSettings>())
+            .addAllMountOptions(new ArrayList<MountOption>())
+            .setUnixPermissions("unixPermissions882114012")
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setSnapshotPolicy(SnapshotPolicy.newBuilder().build())
+            .setSnapReserve(-1429587641)
+            .setSnapshotDirectory(true)
+            .setUsedGib(-279083970)
+            .setSecurityStyle(SecurityStyle.forNumber(0))
+            .setKerberosEnabled(true)
+            .setLdapEnabled(true)
+            .setActiveDirectory(
+                ActiveDirectoryName.of("[PROJECT]", "[LOCATION]", "[ACTIVE_DIRECTORY]").toString())
+            .setRestoreParameters(RestoreParameters.newBuilder().build())
+            .setKmsConfig(KmsConfigName.of("[PROJECT]", "[LOCATION]", "[KMS_CONFIG]").toString())
+            .setEncryptionType(EncryptionType.forNumber(0))
+            .setHasReplication(true)
+            .setBackupConfig(BackupConfig.newBuilder().build())
+            .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setCacheParameters(CacheParameters.newBuilder().build())
+            .setHotTierSizeUsedGib(-151116719)
+            .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("establishVolumePeeringTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    EstablishVolumePeeringRequest request =
+        EstablishVolumePeeringRequest.newBuilder()
+            .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setPeerClusterName("peerClusterName313022691")
+            .setPeerSvmName("peerSvmName1014209619")
+            .addAllPeerIpAddresses(new ArrayList<String>())
+            .setPeerVolumeName("peerVolumeName1542206407")
+            .build();
+
+    Volume actualResponse = client.establishVolumePeeringAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EstablishVolumePeeringRequest actualRequest =
+        ((EstablishVolumePeeringRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getPeerClusterName(), actualRequest.getPeerClusterName());
+    Assert.assertEquals(request.getPeerSvmName(), actualRequest.getPeerSvmName());
+    Assert.assertEquals(request.getPeerIpAddressesList(), actualRequest.getPeerIpAddressesList());
+    Assert.assertEquals(request.getPeerVolumeName(), actualRequest.getPeerVolumeName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void establishVolumePeeringExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      EstablishVolumePeeringRequest request =
+          EstablishVolumePeeringRequest.newBuilder()
+              .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+              .setPeerClusterName("peerClusterName313022691")
+              .setPeerSvmName("peerSvmName1014209619")
+              .addAllPeerIpAddresses(new ArrayList<String>())
+              .setPeerVolumeName("peerVolumeName1542206407")
+              .build();
+      client.establishVolumePeeringAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -1765,6 +2178,7 @@ public class NetAppClientTest {
             .setUsername("username-265713450")
             .setPassword("password1216985755")
             .addAllBackupOperators(new ArrayList<String>())
+            .addAllAdministrators(new ArrayList<String>())
             .addAllSecurityOperators(new ArrayList<String>())
             .setKdcHostname("kdcHostname-256273283")
             .setKdcIp("kdcIp101893361")
@@ -1825,6 +2239,7 @@ public class NetAppClientTest {
             .setUsername("username-265713450")
             .setPassword("password1216985755")
             .addAllBackupOperators(new ArrayList<String>())
+            .addAllAdministrators(new ArrayList<String>())
             .addAllSecurityOperators(new ArrayList<String>())
             .setKdcHostname("kdcHostname-256273283")
             .setKdcIp("kdcIp101893361")
@@ -1883,6 +2298,7 @@ public class NetAppClientTest {
             .setUsername("username-265713450")
             .setPassword("password1216985755")
             .addAllBackupOperators(new ArrayList<String>())
+            .addAllAdministrators(new ArrayList<String>())
             .addAllSecurityOperators(new ArrayList<String>())
             .setKdcHostname("kdcHostname-256273283")
             .setKdcIp("kdcIp101893361")
@@ -1957,6 +2373,7 @@ public class NetAppClientTest {
             .setUsername("username-265713450")
             .setPassword("password1216985755")
             .addAllBackupOperators(new ArrayList<String>())
+            .addAllAdministrators(new ArrayList<String>())
             .addAllSecurityOperators(new ArrayList<String>())
             .setKdcHostname("kdcHostname-256273283")
             .setKdcIp("kdcIp101893361")
@@ -2031,6 +2448,7 @@ public class NetAppClientTest {
             .setUsername("username-265713450")
             .setPassword("password1216985755")
             .addAllBackupOperators(new ArrayList<String>())
+            .addAllAdministrators(new ArrayList<String>())
             .addAllSecurityOperators(new ArrayList<String>())
             .setKdcHostname("kdcHostname-256273283")
             .setKdcIp("kdcIp101893361")
@@ -2819,6 +3237,9 @@ public class NetAppClientTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -2870,6 +3291,9 @@ public class NetAppClientTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -2919,6 +3343,9 @@ public class NetAppClientTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2983,6 +3410,9 @@ public class NetAppClientTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3133,6 +3563,9 @@ public class NetAppClientTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3193,6 +3626,9 @@ public class NetAppClientTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3263,6 +3699,9 @@ public class NetAppClientTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3330,6 +3769,9 @@ public class NetAppClientTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3383,6 +3825,158 @@ public class NetAppClientTest {
   }
 
   @Test
+  public void establishPeeringTest() throws Exception {
+    Replication expectedResponse =
+        Replication.newBuilder()
+            .setName(
+                ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                    .toString())
+            .setStateDetails("stateDetails1730982001")
+            .setHealthy(true)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestinationVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setTransferStats(TransferStats.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
+            .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("establishPeeringTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    EstablishPeeringRequest request =
+        EstablishPeeringRequest.newBuilder()
+            .setName(
+                ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                    .toString())
+            .setPeerClusterName("peerClusterName313022691")
+            .setPeerSvmName("peerSvmName1014209619")
+            .addAllPeerIpAddresses(new ArrayList<String>())
+            .setPeerVolumeName("peerVolumeName1542206407")
+            .build();
+
+    Replication actualResponse = client.establishPeeringAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EstablishPeeringRequest actualRequest = ((EstablishPeeringRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getPeerClusterName(), actualRequest.getPeerClusterName());
+    Assert.assertEquals(request.getPeerSvmName(), actualRequest.getPeerSvmName());
+    Assert.assertEquals(request.getPeerIpAddressesList(), actualRequest.getPeerIpAddressesList());
+    Assert.assertEquals(request.getPeerVolumeName(), actualRequest.getPeerVolumeName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void establishPeeringExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      EstablishPeeringRequest request =
+          EstablishPeeringRequest.newBuilder()
+              .setName(
+                  ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                      .toString())
+              .setPeerClusterName("peerClusterName313022691")
+              .setPeerSvmName("peerSvmName1014209619")
+              .addAllPeerIpAddresses(new ArrayList<String>())
+              .setPeerVolumeName("peerVolumeName1542206407")
+              .build();
+      client.establishPeeringAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void syncReplicationTest() throws Exception {
+    Replication expectedResponse =
+        Replication.newBuilder()
+            .setName(
+                ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                    .toString())
+            .setStateDetails("stateDetails1730982001")
+            .setHealthy(true)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestinationVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setTransferStats(TransferStats.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
+            .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("syncReplicationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    SyncReplicationRequest request =
+        SyncReplicationRequest.newBuilder()
+            .setName(
+                ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                    .toString())
+            .build();
+
+    Replication actualResponse = client.syncReplicationAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SyncReplicationRequest actualRequest = ((SyncReplicationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void syncReplicationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      SyncReplicationRequest request =
+          SyncReplicationRequest.newBuilder()
+              .setName(
+                  ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                      .toString())
+              .build();
+      client.syncReplicationAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void createBackupVaultTest() throws Exception {
     BackupVault expectedResponse =
         BackupVault.newBuilder()
@@ -3390,6 +3984,15 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
+            .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setDestinationBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
+            .setKmsConfig(KmsConfigName.of("[PROJECT]", "[LOCATION]", "[KMS_CONFIG]").toString())
+            .setBackupsCryptoKeyVersion("backupsCryptoKeyVersion541463083")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3446,6 +4049,15 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
+            .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setDestinationBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
+            .setKmsConfig(KmsConfigName.of("[PROJECT]", "[LOCATION]", "[KMS_CONFIG]").toString())
+            .setBackupsCryptoKeyVersion("backupsCryptoKeyVersion541463083")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3502,6 +4114,15 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
+            .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setDestinationBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
+            .setKmsConfig(KmsConfigName.of("[PROJECT]", "[LOCATION]", "[KMS_CONFIG]").toString())
+            .setBackupsCryptoKeyVersion("backupsCryptoKeyVersion541463083")
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -3543,6 +4164,15 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
+            .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setDestinationBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
+            .setKmsConfig(KmsConfigName.of("[PROJECT]", "[LOCATION]", "[KMS_CONFIG]").toString())
+            .setBackupsCryptoKeyVersion("backupsCryptoKeyVersion541463083")
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -3672,6 +4302,15 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
+            .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setDestinationBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
+            .setKmsConfig(KmsConfigName.of("[PROJECT]", "[LOCATION]", "[KMS_CONFIG]").toString())
+            .setBackupsCryptoKeyVersion("backupsCryptoKeyVersion541463083")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3814,6 +4453,11 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChainStorageBytes(1614651561)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3875,6 +4519,11 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChainStorageBytes(1614651561)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3936,6 +4585,11 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChainStorageBytes(1614651561)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -3983,6 +4637,11 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChainStorageBytes(1614651561)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -4202,6 +4861,11 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChainStorageBytes(1614651561)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4686,6 +5350,1095 @@ public class NetAppClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listQuotaRulesTest() throws Exception {
+    QuotaRule responsesElement = QuotaRule.newBuilder().build();
+    ListQuotaRulesResponse expectedResponse =
+        ListQuotaRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQuotaRules(Arrays.asList(responsesElement))
+            .build();
+    mockNetApp.addResponse(expectedResponse);
+
+    VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+
+    ListQuotaRulesPagedResponse pagedListResponse = client.listQuotaRules(parent);
+
+    List<QuotaRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQuotaRulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListQuotaRulesRequest actualRequest = ((ListQuotaRulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listQuotaRulesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+      client.listQuotaRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQuotaRulesTest2() throws Exception {
+    QuotaRule responsesElement = QuotaRule.newBuilder().build();
+    ListQuotaRulesResponse expectedResponse =
+        ListQuotaRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQuotaRules(Arrays.asList(responsesElement))
+            .build();
+    mockNetApp.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListQuotaRulesPagedResponse pagedListResponse = client.listQuotaRules(parent);
+
+    List<QuotaRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQuotaRulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListQuotaRulesRequest actualRequest = ((ListQuotaRulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listQuotaRulesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listQuotaRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQuotaRuleTest() throws Exception {
+    QuotaRule expectedResponse =
+        QuotaRule.newBuilder()
+            .setName(
+                QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]").toString())
+            .setTarget("target-880905839")
+            .setDiskLimitMib(-838650976)
+            .setStateDetails("stateDetails1730982001")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockNetApp.addResponse(expectedResponse);
+
+    QuotaRuleName name = QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]");
+
+    QuotaRule actualResponse = client.getQuotaRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetQuotaRuleRequest actualRequest = ((GetQuotaRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getQuotaRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      QuotaRuleName name = QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]");
+      client.getQuotaRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQuotaRuleTest2() throws Exception {
+    QuotaRule expectedResponse =
+        QuotaRule.newBuilder()
+            .setName(
+                QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]").toString())
+            .setTarget("target-880905839")
+            .setDiskLimitMib(-838650976)
+            .setStateDetails("stateDetails1730982001")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockNetApp.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    QuotaRule actualResponse = client.getQuotaRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetQuotaRuleRequest actualRequest = ((GetQuotaRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getQuotaRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getQuotaRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createQuotaRuleTest() throws Exception {
+    QuotaRule expectedResponse =
+        QuotaRule.newBuilder()
+            .setName(
+                QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]").toString())
+            .setTarget("target-880905839")
+            .setDiskLimitMib(-838650976)
+            .setStateDetails("stateDetails1730982001")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createQuotaRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+    QuotaRule quotaRule = QuotaRule.newBuilder().build();
+    String quotaRuleId = "quotaRuleId1476739535";
+
+    QuotaRule actualResponse = client.createQuotaRuleAsync(parent, quotaRule, quotaRuleId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateQuotaRuleRequest actualRequest = ((CreateQuotaRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(quotaRule, actualRequest.getQuotaRule());
+    Assert.assertEquals(quotaRuleId, actualRequest.getQuotaRuleId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createQuotaRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+      QuotaRule quotaRule = QuotaRule.newBuilder().build();
+      String quotaRuleId = "quotaRuleId1476739535";
+      client.createQuotaRuleAsync(parent, quotaRule, quotaRuleId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createQuotaRuleTest2() throws Exception {
+    QuotaRule expectedResponse =
+        QuotaRule.newBuilder()
+            .setName(
+                QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]").toString())
+            .setTarget("target-880905839")
+            .setDiskLimitMib(-838650976)
+            .setStateDetails("stateDetails1730982001")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createQuotaRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    QuotaRule quotaRule = QuotaRule.newBuilder().build();
+    String quotaRuleId = "quotaRuleId1476739535";
+
+    QuotaRule actualResponse = client.createQuotaRuleAsync(parent, quotaRule, quotaRuleId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateQuotaRuleRequest actualRequest = ((CreateQuotaRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(quotaRule, actualRequest.getQuotaRule());
+    Assert.assertEquals(quotaRuleId, actualRequest.getQuotaRuleId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createQuotaRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      QuotaRule quotaRule = QuotaRule.newBuilder().build();
+      String quotaRuleId = "quotaRuleId1476739535";
+      client.createQuotaRuleAsync(parent, quotaRule, quotaRuleId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateQuotaRuleTest() throws Exception {
+    QuotaRule expectedResponse =
+        QuotaRule.newBuilder()
+            .setName(
+                QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]").toString())
+            .setTarget("target-880905839")
+            .setDiskLimitMib(-838650976)
+            .setStateDetails("stateDetails1730982001")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateQuotaRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    QuotaRule quotaRule = QuotaRule.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    QuotaRule actualResponse = client.updateQuotaRuleAsync(quotaRule, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateQuotaRuleRequest actualRequest = ((UpdateQuotaRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(quotaRule, actualRequest.getQuotaRule());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateQuotaRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      QuotaRule quotaRule = QuotaRule.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateQuotaRuleAsync(quotaRule, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteQuotaRuleTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteQuotaRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    QuotaRuleName name = QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]");
+
+    client.deleteQuotaRuleAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteQuotaRuleRequest actualRequest = ((DeleteQuotaRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteQuotaRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      QuotaRuleName name = QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]");
+      client.deleteQuotaRuleAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteQuotaRuleTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteQuotaRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteQuotaRuleAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteQuotaRuleRequest actualRequest = ((DeleteQuotaRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteQuotaRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteQuotaRuleAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void restoreBackupFilesTest() throws Exception {
+    RestoreBackupFilesResponse expectedResponse = RestoreBackupFilesResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("restoreBackupFilesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    RestoreBackupFilesRequest request =
+        RestoreBackupFilesRequest.newBuilder()
+            .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setBackup(
+                BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]").toString())
+            .addAllFileList(new ArrayList<String>())
+            .setRestoreDestinationPath("restoreDestinationPath-1614668571")
+            .build();
+
+    RestoreBackupFilesResponse actualResponse = client.restoreBackupFilesAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RestoreBackupFilesRequest actualRequest = ((RestoreBackupFilesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getBackup(), actualRequest.getBackup());
+    Assert.assertEquals(request.getFileListList(), actualRequest.getFileListList());
+    Assert.assertEquals(
+        request.getRestoreDestinationPath(), actualRequest.getRestoreDestinationPath());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void restoreBackupFilesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      RestoreBackupFilesRequest request =
+          RestoreBackupFilesRequest.newBuilder()
+              .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+              .setBackup(
+                  BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]").toString())
+              .addAllFileList(new ArrayList<String>())
+              .setRestoreDestinationPath("restoreDestinationPath-1614668571")
+              .build();
+      client.restoreBackupFilesAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listHostGroupsTest() throws Exception {
+    HostGroup responsesElement = HostGroup.newBuilder().build();
+    ListHostGroupsResponse expectedResponse =
+        ListHostGroupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllHostGroups(Arrays.asList(responsesElement))
+            .build();
+    mockNetApp.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListHostGroupsPagedResponse pagedListResponse = client.listHostGroups(parent);
+
+    List<HostGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getHostGroupsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListHostGroupsRequest actualRequest = ((ListHostGroupsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listHostGroupsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listHostGroups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listHostGroupsTest2() throws Exception {
+    HostGroup responsesElement = HostGroup.newBuilder().build();
+    ListHostGroupsResponse expectedResponse =
+        ListHostGroupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllHostGroups(Arrays.asList(responsesElement))
+            .build();
+    mockNetApp.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListHostGroupsPagedResponse pagedListResponse = client.listHostGroups(parent);
+
+    List<HostGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getHostGroupsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListHostGroupsRequest actualRequest = ((ListHostGroupsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listHostGroupsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listHostGroups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getHostGroupTest() throws Exception {
+    HostGroup expectedResponse =
+        HostGroup.newBuilder()
+            .setName(HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllHosts(new ArrayList<String>())
+            .setOsType(OsType.forNumber(0))
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockNetApp.addResponse(expectedResponse);
+
+    HostGroupName name = HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]");
+
+    HostGroup actualResponse = client.getHostGroup(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetHostGroupRequest actualRequest = ((GetHostGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getHostGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      HostGroupName name = HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]");
+      client.getHostGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getHostGroupTest2() throws Exception {
+    HostGroup expectedResponse =
+        HostGroup.newBuilder()
+            .setName(HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllHosts(new ArrayList<String>())
+            .setOsType(OsType.forNumber(0))
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockNetApp.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    HostGroup actualResponse = client.getHostGroup(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetHostGroupRequest actualRequest = ((GetHostGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getHostGroupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getHostGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createHostGroupTest() throws Exception {
+    HostGroup expectedResponse =
+        HostGroup.newBuilder()
+            .setName(HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllHosts(new ArrayList<String>())
+            .setOsType(OsType.forNumber(0))
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createHostGroupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    HostGroup hostGroup = HostGroup.newBuilder().build();
+    String hostGroupId = "hostGroupId-1975725774";
+
+    HostGroup actualResponse = client.createHostGroupAsync(parent, hostGroup, hostGroupId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateHostGroupRequest actualRequest = ((CreateHostGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(hostGroup, actualRequest.getHostGroup());
+    Assert.assertEquals(hostGroupId, actualRequest.getHostGroupId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createHostGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      HostGroup hostGroup = HostGroup.newBuilder().build();
+      String hostGroupId = "hostGroupId-1975725774";
+      client.createHostGroupAsync(parent, hostGroup, hostGroupId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createHostGroupTest2() throws Exception {
+    HostGroup expectedResponse =
+        HostGroup.newBuilder()
+            .setName(HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllHosts(new ArrayList<String>())
+            .setOsType(OsType.forNumber(0))
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createHostGroupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    HostGroup hostGroup = HostGroup.newBuilder().build();
+    String hostGroupId = "hostGroupId-1975725774";
+
+    HostGroup actualResponse = client.createHostGroupAsync(parent, hostGroup, hostGroupId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateHostGroupRequest actualRequest = ((CreateHostGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(hostGroup, actualRequest.getHostGroup());
+    Assert.assertEquals(hostGroupId, actualRequest.getHostGroupId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createHostGroupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      HostGroup hostGroup = HostGroup.newBuilder().build();
+      String hostGroupId = "hostGroupId-1975725774";
+      client.createHostGroupAsync(parent, hostGroup, hostGroupId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateHostGroupTest() throws Exception {
+    HostGroup expectedResponse =
+        HostGroup.newBuilder()
+            .setName(HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllHosts(new ArrayList<String>())
+            .setOsType(OsType.forNumber(0))
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateHostGroupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    HostGroup hostGroup = HostGroup.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    HostGroup actualResponse = client.updateHostGroupAsync(hostGroup, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateHostGroupRequest actualRequest = ((UpdateHostGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(hostGroup, actualRequest.getHostGroup());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateHostGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      HostGroup hostGroup = HostGroup.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateHostGroupAsync(hostGroup, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteHostGroupTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteHostGroupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    HostGroupName name = HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]");
+
+    client.deleteHostGroupAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteHostGroupRequest actualRequest = ((DeleteHostGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteHostGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      HostGroupName name = HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]");
+      client.deleteHostGroupAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteHostGroupTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteHostGroupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteHostGroupAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteHostGroupRequest actualRequest = ((DeleteHostGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteHostGroupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteHostGroupAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void executeOntapPostTest() throws Exception {
+    ExecuteOntapPostResponse expectedResponse =
+        ExecuteOntapPostResponse.newBuilder().setBody(Struct.newBuilder().build()).build();
+    mockNetApp.addResponse(expectedResponse);
+
+    ExecuteOntapPostRequest request =
+        ExecuteOntapPostRequest.newBuilder()
+            .setBody(Struct.newBuilder().build())
+            .setOntapPath("ontapPath-1869187159")
+            .build();
+
+    ExecuteOntapPostResponse actualResponse = client.executeOntapPost(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExecuteOntapPostRequest actualRequest = ((ExecuteOntapPostRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getBody(), actualRequest.getBody());
+    Assert.assertEquals(request.getOntapPath(), actualRequest.getOntapPath());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void executeOntapPostExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      ExecuteOntapPostRequest request =
+          ExecuteOntapPostRequest.newBuilder()
+              .setBody(Struct.newBuilder().build())
+              .setOntapPath("ontapPath-1869187159")
+              .build();
+      client.executeOntapPost(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void executeOntapGetTest() throws Exception {
+    ExecuteOntapGetResponse expectedResponse =
+        ExecuteOntapGetResponse.newBuilder().setBody(Struct.newBuilder().build()).build();
+    mockNetApp.addResponse(expectedResponse);
+
+    ExecuteOntapGetRequest request =
+        ExecuteOntapGetRequest.newBuilder().setOntapPath("ontapPath-1869187159").build();
+
+    ExecuteOntapGetResponse actualResponse = client.executeOntapGet(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExecuteOntapGetRequest actualRequest = ((ExecuteOntapGetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getOntapPath(), actualRequest.getOntapPath());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void executeOntapGetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      ExecuteOntapGetRequest request =
+          ExecuteOntapGetRequest.newBuilder().setOntapPath("ontapPath-1869187159").build();
+      client.executeOntapGet(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void executeOntapDeleteTest() throws Exception {
+    ExecuteOntapDeleteResponse expectedResponse =
+        ExecuteOntapDeleteResponse.newBuilder().setBody(Struct.newBuilder().build()).build();
+    mockNetApp.addResponse(expectedResponse);
+
+    ExecuteOntapDeleteRequest request =
+        ExecuteOntapDeleteRequest.newBuilder().setOntapPath("ontapPath-1869187159").build();
+
+    ExecuteOntapDeleteResponse actualResponse = client.executeOntapDelete(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExecuteOntapDeleteRequest actualRequest = ((ExecuteOntapDeleteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getOntapPath(), actualRequest.getOntapPath());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void executeOntapDeleteExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      ExecuteOntapDeleteRequest request =
+          ExecuteOntapDeleteRequest.newBuilder().setOntapPath("ontapPath-1869187159").build();
+      client.executeOntapDelete(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void executeOntapPatchTest() throws Exception {
+    ExecuteOntapPatchResponse expectedResponse =
+        ExecuteOntapPatchResponse.newBuilder().setBody(Struct.newBuilder().build()).build();
+    mockNetApp.addResponse(expectedResponse);
+
+    ExecuteOntapPatchRequest request =
+        ExecuteOntapPatchRequest.newBuilder()
+            .setBody(Struct.newBuilder().build())
+            .setOntapPath("ontapPath-1869187159")
+            .build();
+
+    ExecuteOntapPatchResponse actualResponse = client.executeOntapPatch(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExecuteOntapPatchRequest actualRequest = ((ExecuteOntapPatchRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getBody(), actualRequest.getBody());
+    Assert.assertEquals(request.getOntapPath(), actualRequest.getOntapPath());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void executeOntapPatchExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      ExecuteOntapPatchRequest request =
+          ExecuteOntapPatchRequest.newBuilder()
+              .setBody(Struct.newBuilder().build())
+              .setOntapPath("ontapPath-1869187159")
+              .build();
+      client.executeOntapPatch(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

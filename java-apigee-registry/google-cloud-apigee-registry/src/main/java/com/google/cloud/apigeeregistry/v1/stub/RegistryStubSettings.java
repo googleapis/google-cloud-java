@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.HttpBody;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -42,6 +43,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -113,9 +115,9 @@ import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -133,7 +135,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getApi to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getApi:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -149,12 +153,24 @@ import org.threeten.bp.Duration;
  *             .getApiSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * RegistryStubSettings registrySettings = registrySettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class RegistryStubSettings extends StubSettings<RegistryStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -257,9 +273,7 @@ public class RegistryStubSettings extends StubSettings<RegistryStubSettings> {
 
             @Override
             public Iterable<Api> extractResources(ListApisResponse payload) {
-              return payload.getApisList() == null
-                  ? ImmutableList.<Api>of()
-                  : payload.getApisList();
+              return payload.getApisList();
             }
           };
 
@@ -296,9 +310,7 @@ public class RegistryStubSettings extends StubSettings<RegistryStubSettings> {
 
             @Override
             public Iterable<ApiVersion> extractResources(ListApiVersionsResponse payload) {
-              return payload.getApiVersionsList() == null
-                  ? ImmutableList.<ApiVersion>of()
-                  : payload.getApiVersionsList();
+              return payload.getApiVersionsList();
             }
           };
 
@@ -332,9 +344,7 @@ public class RegistryStubSettings extends StubSettings<RegistryStubSettings> {
 
             @Override
             public Iterable<ApiSpec> extractResources(ListApiSpecsResponse payload) {
-              return payload.getApiSpecsList() == null
-                  ? ImmutableList.<ApiSpec>of()
-                  : payload.getApiSpecsList();
+              return payload.getApiSpecsList();
             }
           };
 
@@ -372,9 +382,7 @@ public class RegistryStubSettings extends StubSettings<RegistryStubSettings> {
 
             @Override
             public Iterable<ApiSpec> extractResources(ListApiSpecRevisionsResponse payload) {
-              return payload.getApiSpecsList() == null
-                  ? ImmutableList.<ApiSpec>of()
-                  : payload.getApiSpecsList();
+              return payload.getApiSpecsList();
             }
           };
 
@@ -412,9 +420,7 @@ public class RegistryStubSettings extends StubSettings<RegistryStubSettings> {
 
             @Override
             public Iterable<ApiDeployment> extractResources(ListApiDeploymentsResponse payload) {
-              return payload.getApiDeploymentsList() == null
-                  ? ImmutableList.<ApiDeployment>of()
-                  : payload.getApiDeploymentsList();
+              return payload.getApiDeploymentsList();
             }
           };
 
@@ -459,9 +465,7 @@ public class RegistryStubSettings extends StubSettings<RegistryStubSettings> {
             @Override
             public Iterable<ApiDeployment> extractResources(
                 ListApiDeploymentRevisionsResponse payload) {
-              return payload.getApiDeploymentsList() == null
-                  ? ImmutableList.<ApiDeployment>of()
-                  : payload.getApiDeploymentsList();
+              return payload.getApiDeploymentsList();
             }
           };
 
@@ -495,9 +499,7 @@ public class RegistryStubSettings extends StubSettings<RegistryStubSettings> {
 
             @Override
             public Iterable<Artifact> extractResources(ListArtifactsResponse payload) {
-              return payload.getArtifactsList() == null
-                  ? ImmutableList.<Artifact>of()
-                  : payload.getArtifactsList();
+              return payload.getArtifactsList();
             }
           };
 
@@ -531,9 +533,7 @@ public class RegistryStubSettings extends StubSettings<RegistryStubSettings> {
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -931,15 +931,6 @@ public class RegistryStubSettings extends StubSettings<RegistryStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -952,6 +943,7 @@ public class RegistryStubSettings extends StubSettings<RegistryStubSettings> {
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "apigeeregistry.googleapis.com:443";
   }
@@ -1076,6 +1068,15 @@ public class RegistryStubSettings extends StubSettings<RegistryStubSettings> {
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-apigee-registry")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
+  }
+
   /** Builder for RegistryStubSettings. */
   public static class Builder extends StubSettings.Builder<RegistryStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
@@ -1183,21 +1184,21 @@ public class RegistryStubSettings extends StubSettings<RegistryStubSettings> {
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(200L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(200L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
@@ -1863,15 +1864,6 @@ public class RegistryStubSettings extends StubSettings<RegistryStubSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

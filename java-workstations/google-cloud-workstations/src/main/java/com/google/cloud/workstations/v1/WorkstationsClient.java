@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -449,7 +449,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GenerateAccessToken</td>
- *      <td><p> Returns a short-lived credential that can be used to send authenticated and authorized traffic to a workstation.</td>
+ *      <td><p> Returns a short-lived credential that can be used to send authenticated and authorized traffic to a workstation. Once generated this token cannot be revoked and is good for the lifetime of the token.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -837,6 +837,7 @@ public class WorkstationsClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (WorkstationCluster element :
    *       workstationsClient.listWorkstationClusters(request).iterateAll()) {
@@ -871,6 +872,7 @@ public class WorkstationsClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<WorkstationCluster> future =
    *       workstationsClient.listWorkstationClustersPagedCallable().futureCall(request);
@@ -904,6 +906,7 @@ public class WorkstationsClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListWorkstationClustersResponse response =
@@ -1611,6 +1614,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (WorkstationConfig element :
    *       workstationsClient.listWorkstationConfigs(request).iterateAll()) {
@@ -1647,6 +1651,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<WorkstationConfig> future =
    *       workstationsClient.listWorkstationConfigsPagedCallable().futureCall(request);
@@ -1682,6 +1687,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListWorkstationConfigsResponse response =
@@ -1915,7 +1921,7 @@ public class WorkstationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Parent resource name.
-   * @param workstationConfig Required. Config to create.
+   * @param workstationConfig Required. Workstation configuration to create.
    * @param workstationConfigId Required. ID to use for the workstation configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1957,7 +1963,7 @@ public class WorkstationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Parent resource name.
-   * @param workstationConfig Required. Config to create.
+   * @param workstationConfig Required. Workstation configuration to create.
    * @param workstationConfigId Required. ID to use for the workstation configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2095,7 +2101,7 @@ public class WorkstationsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param workstationConfig Required. Config to update.
+   * @param workstationConfig Required. Workstation configuration to update.
    * @param updateMask Required. Mask specifying which fields in the workstation configuration
    *     should be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2610,6 +2616,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (Workstation element : workstationsClient.listWorkstations(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -2648,6 +2655,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<Workstation> future =
    *       workstationsClient.listWorkstationsPagedCallable().futureCall(request);
@@ -2687,6 +2695,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListWorkstationsResponse response =
@@ -2928,7 +2937,11 @@ public class WorkstationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Parent resource name.
-   * @param workstation Required. Workstation to create.
+   * @param workstation Required. Workstation to create. If source_workstation is specified, the
+   *     user must have `workstations.workstations.use` permission on the source workstation, and
+   *     the Cloud Workstations Service Agent for the project where you are creating the new
+   *     workstation must have compute.disks.createSnapshot and compute.snapshots.useReadOnly on the
+   *     source project.
    * @param workstationId Required. ID to use for the workstation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2968,7 +2981,11 @@ public class WorkstationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Parent resource name.
-   * @param workstation Required. Workstation to create.
+   * @param workstation Required. Workstation to create. If source_workstation is specified, the
+   *     user must have `workstations.workstations.use` permission on the source workstation, and
+   *     the Cloud Workstations Service Agent for the project where you are creating the new
+   *     workstation must have compute.disks.createSnapshot and compute.snapshots.useReadOnly on the
+   *     source project.
    * @param workstationId Required. ID to use for the workstation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3117,8 +3134,7 @@ public class WorkstationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param workstation Required. Workstation to update.
-   * @param updateMask Required. Mask specifying which fields in the workstation configuration
-   *     should be updated.
+   * @param updateMask Required. Mask specifying which fields in the workstation should be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Workstation, OperationMetadata> updateWorkstationAsync(
@@ -3500,6 +3516,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setValidateOnly(true)
    *           .setEtag("etag3123477")
+   *           .setBoostConfig("boostConfig1345260741")
    *           .build();
    *   Workstation response = workstationsClient.startWorkstationAsync(request).get();
    * }
@@ -3538,6 +3555,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setValidateOnly(true)
    *           .setEtag("etag3123477")
+   *           .setBoostConfig("boostConfig1345260741")
    *           .build();
    *   OperationFuture<Workstation, OperationMetadata> future =
    *       workstationsClient.startWorkstationOperationCallable().futureCall(request);
@@ -3576,6 +3594,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setValidateOnly(true)
    *           .setEtag("etag3123477")
+   *           .setBoostConfig("boostConfig1345260741")
    *           .build();
    *   ApiFuture<Operation> future =
    *       workstationsClient.startWorkstationCallable().futureCall(request);
@@ -3771,7 +3790,8 @@ public class WorkstationsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a short-lived credential that can be used to send authenticated and authorized traffic
-   * to a workstation.
+   * to a workstation. Once generated this token cannot be revoked and is good for the lifetime of
+   * the token.
    *
    * <p>Sample code:
    *
@@ -3808,7 +3828,8 @@ public class WorkstationsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a short-lived credential that can be used to send authenticated and authorized traffic
-   * to a workstation.
+   * to a workstation. Once generated this token cannot be revoked and is good for the lifetime of
+   * the token.
    *
    * <p>Sample code:
    *
@@ -3844,7 +3865,8 @@ public class WorkstationsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a short-lived credential that can be used to send authenticated and authorized traffic
-   * to a workstation.
+   * to a workstation. Once generated this token cannot be revoked and is good for the lifetime of
+   * the token.
    *
    * <p>Sample code:
    *
@@ -3865,6 +3887,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                       "[WORKSTATION_CONFIG]",
    *                       "[WORKSTATION]")
    *                   .toString())
+   *           .setPort(3446913)
    *           .build();
    *   GenerateAccessTokenResponse response = workstationsClient.generateAccessToken(request);
    * }
@@ -3880,7 +3903,8 @@ public class WorkstationsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a short-lived credential that can be used to send authenticated and authorized traffic
-   * to a workstation.
+   * to a workstation. Once generated this token cannot be revoked and is good for the lifetime of
+   * the token.
    *
    * <p>Sample code:
    *
@@ -3901,6 +3925,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                       "[WORKSTATION_CONFIG]",
    *                       "[WORKSTATION]")
    *                   .toString())
+   *           .setPort(3446913)
    *           .build();
    *   ApiFuture<GenerateAccessTokenResponse> future =
    *       workstationsClient.generateAccessTokenCallable().futureCall(request);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,20 @@ import com.google.cloud.datacatalog.v1.ListEntryGroupsResponse;
 import com.google.cloud.datacatalog.v1.ListTagsRequest;
 import com.google.cloud.datacatalog.v1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1.LookupEntryRequest;
+import com.google.cloud.datacatalog.v1.MigrationConfig;
 import com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest;
 import com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest;
+import com.google.cloud.datacatalog.v1.OrganizationConfig;
 import com.google.cloud.datacatalog.v1.ReconcileTagsMetadata;
 import com.google.cloud.datacatalog.v1.ReconcileTagsRequest;
 import com.google.cloud.datacatalog.v1.ReconcileTagsResponse;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest;
+import com.google.cloud.datacatalog.v1.RetrieveConfigRequest;
+import com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogResponse;
+import com.google.cloud.datacatalog.v1.SetConfigRequest;
 import com.google.cloud.datacatalog.v1.StarEntryRequest;
 import com.google.cloud.datacatalog.v1.StarEntryResponse;
 import com.google.cloud.datacatalog.v1.Tag;
@@ -107,7 +112,10 @@ import javax.annotation.Generated;
  * REST stub implementation for the DataCatalog service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class HttpJsonDataCatalogStub extends DataCatalogStub {
   private static final TypeRegistry typeRegistry =
@@ -1343,6 +1351,111 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<SetConfigRequest, MigrationConfig>
+      setConfigMethodDescriptor =
+          ApiMethodDescriptor.<SetConfigRequest, MigrationConfig>newBuilder()
+              .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/SetConfig")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=organizations/*/locations/*}:setConfig",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*}:setConfig")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<MigrationConfig>newBuilder()
+                      .setDefaultInstance(MigrationConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<RetrieveConfigRequest, OrganizationConfig>
+      retrieveConfigMethodDescriptor =
+          ApiMethodDescriptor.<RetrieveConfigRequest, OrganizationConfig>newBuilder()
+              .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/RetrieveConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RetrieveConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=organizations/*/locations/*}:retrieveConfig",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RetrieveConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RetrieveConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<OrganizationConfig>newBuilder()
+                      .setDefaultInstance(OrganizationConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<RetrieveEffectiveConfigRequest, MigrationConfig>
+      retrieveEffectiveConfigMethodDescriptor =
+          ApiMethodDescriptor.<RetrieveEffectiveConfigRequest, MigrationConfig>newBuilder()
+              .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/RetrieveEffectiveConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RetrieveEffectiveConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=organizations/*/locations/*}:retrieveEffectiveConfig",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RetrieveEffectiveConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*}:retrieveEffectiveConfig")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RetrieveEffectiveConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<MigrationConfig>newBuilder()
+                      .setDefaultInstance(MigrationConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> searchCatalogCallable;
   private final UnaryCallable<SearchCatalogRequest, SearchCatalogPagedResponse>
       searchCatalogPagedCallable;
@@ -1397,6 +1510,10 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
   private final OperationCallable<
           ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
       importEntriesOperationCallable;
+  private final UnaryCallable<SetConfigRequest, MigrationConfig> setConfigCallable;
+  private final UnaryCallable<RetrieveConfigRequest, OrganizationConfig> retrieveConfigCallable;
+  private final UnaryCallable<RetrieveEffectiveConfigRequest, MigrationConfig>
+      retrieveEffectiveConfigCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -1484,6 +1601,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetEntryGroupRequest, EntryGroup> getEntryGroupTransportSettings =
         HttpJsonCallSettings.<GetEntryGroupRequest, EntryGroup>newBuilder()
@@ -1495,6 +1613,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupTransportSettings =
         HttpJsonCallSettings.<UpdateEntryGroupRequest, EntryGroup>newBuilder()
@@ -1518,6 +1637,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListEntryGroupsRequest, ListEntryGroupsResponse>
         listEntryGroupsTransportSettings =
@@ -1530,6 +1650,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateEntryRequest, Entry> createEntryTransportSettings =
         HttpJsonCallSettings.<CreateEntryRequest, Entry>newBuilder()
@@ -1541,6 +1662,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateEntryRequest, Entry> updateEntryTransportSettings =
         HttpJsonCallSettings.<UpdateEntryRequest, Entry>newBuilder()
@@ -1563,6 +1685,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetEntryRequest, Entry> getEntryTransportSettings =
         HttpJsonCallSettings.<GetEntryRequest, Entry>newBuilder()
@@ -1574,6 +1697,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<LookupEntryRequest, Entry> lookupEntryTransportSettings =
         HttpJsonCallSettings.<LookupEntryRequest, Entry>newBuilder()
@@ -1590,6 +1714,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ModifyEntryOverviewRequest, EntryOverview>
         modifyEntryOverviewTransportSettings =
@@ -1602,6 +1727,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ModifyEntryContactsRequest, Contacts>
         modifyEntryContactsTransportSettings =
@@ -1614,6 +1740,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateTagTemplateRequest, TagTemplate> createTagTemplateTransportSettings =
         HttpJsonCallSettings.<CreateTagTemplateRequest, TagTemplate>newBuilder()
@@ -1625,6 +1752,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetTagTemplateRequest, TagTemplate> getTagTemplateTransportSettings =
         HttpJsonCallSettings.<GetTagTemplateRequest, TagTemplate>newBuilder()
@@ -1636,6 +1764,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateTransportSettings =
         HttpJsonCallSettings.<UpdateTagTemplateRequest, TagTemplate>newBuilder()
@@ -1659,6 +1788,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateTagTemplateFieldRequest, TagTemplateField>
         createTagTemplateFieldTransportSettings =
@@ -1671,6 +1801,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateTagTemplateFieldRequest, TagTemplateField>
         updateTagTemplateFieldTransportSettings =
@@ -1683,6 +1814,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RenameTagTemplateFieldRequest, TagTemplateField>
         renameTagTemplateFieldTransportSettings =
@@ -1695,6 +1827,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
         renameTagTemplateFieldEnumValueTransportSettings =
@@ -1708,6 +1841,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteTagTemplateFieldRequest, Empty>
         deleteTagTemplateFieldTransportSettings =
@@ -1720,6 +1854,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateTagRequest, Tag> createTagTransportSettings =
         HttpJsonCallSettings.<CreateTagRequest, Tag>newBuilder()
@@ -1731,6 +1866,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateTagRequest, Tag> updateTagTransportSettings =
         HttpJsonCallSettings.<UpdateTagRequest, Tag>newBuilder()
@@ -1753,6 +1889,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListTagsRequest, ListTagsResponse> listTagsTransportSettings =
         HttpJsonCallSettings.<ListTagsRequest, ListTagsResponse>newBuilder()
@@ -1764,6 +1901,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ReconcileTagsRequest, Operation> reconcileTagsTransportSettings =
         HttpJsonCallSettings.<ReconcileTagsRequest, Operation>newBuilder()
@@ -1775,6 +1913,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<StarEntryRequest, StarEntryResponse> starEntryTransportSettings =
         HttpJsonCallSettings.<StarEntryRequest, StarEntryResponse>newBuilder()
@@ -1786,6 +1925,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UnstarEntryRequest, UnstarEntryResponse> unstarEntryTransportSettings =
         HttpJsonCallSettings.<UnstarEntryRequest, UnstarEntryResponse>newBuilder()
@@ -1797,6 +1937,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -1808,6 +1949,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1819,6 +1961,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1831,6 +1974,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     HttpJsonCallSettings<ImportEntriesRequest, Operation> importEntriesTransportSettings =
         HttpJsonCallSettings.<ImportEntriesRequest, Operation>newBuilder()
@@ -1842,7 +1986,43 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
+    HttpJsonCallSettings<SetConfigRequest, MigrationConfig> setConfigTransportSettings =
+        HttpJsonCallSettings.<SetConfigRequest, MigrationConfig>newBuilder()
+            .setMethodDescriptor(setConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<RetrieveConfigRequest, OrganizationConfig>
+        retrieveConfigTransportSettings =
+            HttpJsonCallSettings.<RetrieveConfigRequest, OrganizationConfig>newBuilder()
+                .setMethodDescriptor(retrieveConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<RetrieveEffectiveConfigRequest, MigrationConfig>
+        retrieveEffectiveConfigTransportSettings =
+            HttpJsonCallSettings.<RetrieveEffectiveConfigRequest, MigrationConfig>newBuilder()
+                .setMethodDescriptor(retrieveEffectiveConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.searchCatalogCallable =
         callableFactory.createUnaryCallable(
@@ -1992,6 +2172,17 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
             settings.importEntriesOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.setConfigCallable =
+        callableFactory.createUnaryCallable(
+            setConfigTransportSettings, settings.setConfigSettings(), clientContext);
+    this.retrieveConfigCallable =
+        callableFactory.createUnaryCallable(
+            retrieveConfigTransportSettings, settings.retrieveConfigSettings(), clientContext);
+    this.retrieveEffectiveConfigCallable =
+        callableFactory.createUnaryCallable(
+            retrieveEffectiveConfigTransportSettings,
+            settings.retrieveEffectiveConfigSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2034,6 +2225,9 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(importEntriesMethodDescriptor);
+    methodDescriptors.add(setConfigMethodDescriptor);
+    methodDescriptors.add(retrieveConfigMethodDescriptor);
+    methodDescriptors.add(retrieveEffectiveConfigMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -2248,6 +2442,22 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
   public OperationCallable<ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
       importEntriesOperationCallable() {
     return importEntriesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetConfigRequest, MigrationConfig> setConfigCallable() {
+    return setConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<RetrieveConfigRequest, OrganizationConfig> retrieveConfigCallable() {
+    return retrieveConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<RetrieveEffectiveConfigRequest, MigrationConfig>
+      retrieveEffectiveConfigCallable() {
+    return retrieveEffectiveConfigCallable;
   }
 
   @Override

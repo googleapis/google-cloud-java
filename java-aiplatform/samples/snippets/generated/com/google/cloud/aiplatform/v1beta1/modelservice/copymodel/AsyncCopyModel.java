@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ public class AsyncCopyModel {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setSourceModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
               .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+              .setCustomServiceAccount("customServiceAccount-2110106743")
               .build();
       ApiFuture<Operation> future = modelServiceClient.copyModelCallable().futureCall(request);
       // Do something.

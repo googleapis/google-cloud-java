@@ -1,0 +1,279 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.ads.datamanager.v1;
+
+import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
+public class UserListGlobalLicenseCustomerInfoName implements ResourceName {
+  private static final PathTemplate
+      ACCOUNT_TYPE_ACCOUNT_USER_LIST_GLOBAL_LICENSE_LICENSE_CUSTOMER_INFO =
+          PathTemplate.createWithoutUrlEncoding(
+              "accountTypes/{account_type}/accounts/{account}/userListGlobalLicenses/{user_list_global_license}/customerInfos/{license_customer_info}");
+  private volatile Map<String, String> fieldValuesMap;
+  private final String accountType;
+  private final String account;
+  private final String userListGlobalLicense;
+  private final String licenseCustomerInfo;
+
+  @Deprecated
+  protected UserListGlobalLicenseCustomerInfoName() {
+    accountType = null;
+    account = null;
+    userListGlobalLicense = null;
+    licenseCustomerInfo = null;
+  }
+
+  private UserListGlobalLicenseCustomerInfoName(Builder builder) {
+    accountType = Preconditions.checkNotNull(builder.getAccountType());
+    account = Preconditions.checkNotNull(builder.getAccount());
+    userListGlobalLicense = Preconditions.checkNotNull(builder.getUserListGlobalLicense());
+    licenseCustomerInfo = Preconditions.checkNotNull(builder.getLicenseCustomerInfo());
+  }
+
+  public String getAccountType() {
+    return accountType;
+  }
+
+  public String getAccount() {
+    return account;
+  }
+
+  public String getUserListGlobalLicense() {
+    return userListGlobalLicense;
+  }
+
+  public String getLicenseCustomerInfo() {
+    return licenseCustomerInfo;
+  }
+
+  public static Builder newBuilder() {
+    return new Builder();
+  }
+
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  public static UserListGlobalLicenseCustomerInfoName of(
+      String accountType,
+      String account,
+      String userListGlobalLicense,
+      String licenseCustomerInfo) {
+    return newBuilder()
+        .setAccountType(accountType)
+        .setAccount(account)
+        .setUserListGlobalLicense(userListGlobalLicense)
+        .setLicenseCustomerInfo(licenseCustomerInfo)
+        .build();
+  }
+
+  public static String format(
+      String accountType,
+      String account,
+      String userListGlobalLicense,
+      String licenseCustomerInfo) {
+    return newBuilder()
+        .setAccountType(accountType)
+        .setAccount(account)
+        .setUserListGlobalLicense(userListGlobalLicense)
+        .setLicenseCustomerInfo(licenseCustomerInfo)
+        .build()
+        .toString();
+  }
+
+  public static UserListGlobalLicenseCustomerInfoName parse(String formattedString) {
+    if (formattedString.isEmpty()) {
+      return null;
+    }
+    Map<String, String> matchMap =
+        ACCOUNT_TYPE_ACCOUNT_USER_LIST_GLOBAL_LICENSE_LICENSE_CUSTOMER_INFO.validatedMatch(
+            formattedString,
+            "UserListGlobalLicenseCustomerInfoName.parse: formattedString not in valid format");
+    return of(
+        matchMap.get("account_type"),
+        matchMap.get("account"),
+        matchMap.get("user_list_global_license"),
+        matchMap.get("license_customer_info"));
+  }
+
+  public static List<UserListGlobalLicenseCustomerInfoName> parseList(
+      List<String> formattedStrings) {
+    List<UserListGlobalLicenseCustomerInfoName> list = new ArrayList<>(formattedStrings.size());
+    for (String formattedString : formattedStrings) {
+      list.add(parse(formattedString));
+    }
+    return list;
+  }
+
+  public static List<String> toStringList(List<UserListGlobalLicenseCustomerInfoName> values) {
+    List<String> list = new ArrayList<>(values.size());
+    for (UserListGlobalLicenseCustomerInfoName value : values) {
+      if (value == null) {
+        list.add("");
+      } else {
+        list.add(value.toString());
+      }
+    }
+    return list;
+  }
+
+  public static boolean isParsableFrom(String formattedString) {
+    return ACCOUNT_TYPE_ACCOUNT_USER_LIST_GLOBAL_LICENSE_LICENSE_CUSTOMER_INFO.matches(
+        formattedString);
+  }
+
+  @Override
+  public Map<String, String> getFieldValuesMap() {
+    if (fieldValuesMap == null) {
+      synchronized (this) {
+        if (fieldValuesMap == null) {
+          ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
+          if (accountType != null) {
+            fieldMapBuilder.put("account_type", accountType);
+          }
+          if (account != null) {
+            fieldMapBuilder.put("account", account);
+          }
+          if (userListGlobalLicense != null) {
+            fieldMapBuilder.put("user_list_global_license", userListGlobalLicense);
+          }
+          if (licenseCustomerInfo != null) {
+            fieldMapBuilder.put("license_customer_info", licenseCustomerInfo);
+          }
+          fieldValuesMap = fieldMapBuilder.build();
+        }
+      }
+    }
+    return fieldValuesMap;
+  }
+
+  public String getFieldValue(String fieldName) {
+    return getFieldValuesMap().get(fieldName);
+  }
+
+  @Override
+  public String toString() {
+    return ACCOUNT_TYPE_ACCOUNT_USER_LIST_GLOBAL_LICENSE_LICENSE_CUSTOMER_INFO.instantiate(
+        "account_type",
+        accountType,
+        "account",
+        account,
+        "user_list_global_license",
+        userListGlobalLicense,
+        "license_customer_info",
+        licenseCustomerInfo);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null && getClass() == o.getClass()) {
+      UserListGlobalLicenseCustomerInfoName that = ((UserListGlobalLicenseCustomerInfoName) o);
+      return Objects.equals(this.accountType, that.accountType)
+          && Objects.equals(this.account, that.account)
+          && Objects.equals(this.userListGlobalLicense, that.userListGlobalLicense)
+          && Objects.equals(this.licenseCustomerInfo, that.licenseCustomerInfo);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(accountType);
+    h *= 1000003;
+    h ^= Objects.hashCode(account);
+    h *= 1000003;
+    h ^= Objects.hashCode(userListGlobalLicense);
+    h *= 1000003;
+    h ^= Objects.hashCode(licenseCustomerInfo);
+    return h;
+  }
+
+  /**
+   * Builder for
+   * accountTypes/{account_type}/accounts/{account}/userListGlobalLicenses/{user_list_global_license}/customerInfos/{license_customer_info}.
+   */
+  public static class Builder {
+    private String accountType;
+    private String account;
+    private String userListGlobalLicense;
+    private String licenseCustomerInfo;
+
+    protected Builder() {}
+
+    public String getAccountType() {
+      return accountType;
+    }
+
+    public String getAccount() {
+      return account;
+    }
+
+    public String getUserListGlobalLicense() {
+      return userListGlobalLicense;
+    }
+
+    public String getLicenseCustomerInfo() {
+      return licenseCustomerInfo;
+    }
+
+    public Builder setAccountType(String accountType) {
+      this.accountType = accountType;
+      return this;
+    }
+
+    public Builder setAccount(String account) {
+      this.account = account;
+      return this;
+    }
+
+    public Builder setUserListGlobalLicense(String userListGlobalLicense) {
+      this.userListGlobalLicense = userListGlobalLicense;
+      return this;
+    }
+
+    public Builder setLicenseCustomerInfo(String licenseCustomerInfo) {
+      this.licenseCustomerInfo = licenseCustomerInfo;
+      return this;
+    }
+
+    private Builder(UserListGlobalLicenseCustomerInfoName userListGlobalLicenseCustomerInfoName) {
+      this.accountType = userListGlobalLicenseCustomerInfoName.accountType;
+      this.account = userListGlobalLicenseCustomerInfoName.account;
+      this.userListGlobalLicense = userListGlobalLicenseCustomerInfoName.userListGlobalLicense;
+      this.licenseCustomerInfo = userListGlobalLicenseCustomerInfoName.licenseCustomerInfo;
+    }
+
+    public UserListGlobalLicenseCustomerInfoName build() {
+      return new UserListGlobalLicenseCustomerInfoName(this);
+    }
+  }
+}

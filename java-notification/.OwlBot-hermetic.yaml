@@ -14,3 +14,6 @@
 
 
 api-name: notification
+deep-preserve-regex:
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+

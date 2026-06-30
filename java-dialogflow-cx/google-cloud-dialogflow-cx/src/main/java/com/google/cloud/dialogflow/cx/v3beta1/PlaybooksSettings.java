@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -37,7 +38,9 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -57,7 +60,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createPlaybook to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createPlaybook:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -73,9 +78,45 @@ import javax.annotation.Generated;
  *             .createPlaybookSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * PlaybooksSettings playbooksSettings = playbooksSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for exportPlaybook:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * PlaybooksSettings.Builder playbooksSettingsBuilder = PlaybooksSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * playbooksSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
@@ -103,6 +144,28 @@ public class PlaybooksSettings extends ClientSettings<PlaybooksSettings> {
     return ((PlaybooksStubSettings) getStubSettings()).getPlaybookSettings();
   }
 
+  /** Returns the object with the settings used for calls to exportPlaybook. */
+  public UnaryCallSettings<ExportPlaybookRequest, Operation> exportPlaybookSettings() {
+    return ((PlaybooksStubSettings) getStubSettings()).exportPlaybookSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportPlaybook. */
+  public OperationCallSettings<ExportPlaybookRequest, ExportPlaybookResponse, Struct>
+      exportPlaybookOperationSettings() {
+    return ((PlaybooksStubSettings) getStubSettings()).exportPlaybookOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importPlaybook. */
+  public UnaryCallSettings<ImportPlaybookRequest, Operation> importPlaybookSettings() {
+    return ((PlaybooksStubSettings) getStubSettings()).importPlaybookSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importPlaybook. */
+  public OperationCallSettings<ImportPlaybookRequest, ImportPlaybookResponse, Struct>
+      importPlaybookOperationSettings() {
+    return ((PlaybooksStubSettings) getStubSettings()).importPlaybookOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to updatePlaybook. */
   public UnaryCallSettings<UpdatePlaybookRequest, Playbook> updatePlaybookSettings() {
     return ((PlaybooksStubSettings) getStubSettings()).updatePlaybookSettings();
@@ -118,6 +181,12 @@ public class PlaybooksSettings extends ClientSettings<PlaybooksSettings> {
   public UnaryCallSettings<GetPlaybookVersionRequest, PlaybookVersion>
       getPlaybookVersionSettings() {
     return ((PlaybooksStubSettings) getStubSettings()).getPlaybookVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restorePlaybookVersion. */
+  public UnaryCallSettings<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
+      restorePlaybookVersionSettings() {
+    return ((PlaybooksStubSettings) getStubSettings()).restorePlaybookVersionSettings();
   }
 
   /** Returns the object with the settings used for calls to listPlaybookVersions. */
@@ -278,6 +347,28 @@ public class PlaybooksSettings extends ClientSettings<PlaybooksSettings> {
       return getStubSettingsBuilder().getPlaybookSettings();
     }
 
+    /** Returns the builder for the settings used for calls to exportPlaybook. */
+    public UnaryCallSettings.Builder<ExportPlaybookRequest, Operation> exportPlaybookSettings() {
+      return getStubSettingsBuilder().exportPlaybookSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportPlaybook. */
+    public OperationCallSettings.Builder<ExportPlaybookRequest, ExportPlaybookResponse, Struct>
+        exportPlaybookOperationSettings() {
+      return getStubSettingsBuilder().exportPlaybookOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importPlaybook. */
+    public UnaryCallSettings.Builder<ImportPlaybookRequest, Operation> importPlaybookSettings() {
+      return getStubSettingsBuilder().importPlaybookSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importPlaybook. */
+    public OperationCallSettings.Builder<ImportPlaybookRequest, ImportPlaybookResponse, Struct>
+        importPlaybookOperationSettings() {
+      return getStubSettingsBuilder().importPlaybookOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updatePlaybook. */
     public UnaryCallSettings.Builder<UpdatePlaybookRequest, Playbook> updatePlaybookSettings() {
       return getStubSettingsBuilder().updatePlaybookSettings();
@@ -293,6 +384,12 @@ public class PlaybooksSettings extends ClientSettings<PlaybooksSettings> {
     public UnaryCallSettings.Builder<GetPlaybookVersionRequest, PlaybookVersion>
         getPlaybookVersionSettings() {
       return getStubSettingsBuilder().getPlaybookVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restorePlaybookVersion. */
+    public UnaryCallSettings.Builder<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
+        restorePlaybookVersionSettings() {
+      return getStubSettingsBuilder().restorePlaybookVersionSettings();
     }
 
     /** Returns the builder for the settings used for calls to listPlaybookVersions. */

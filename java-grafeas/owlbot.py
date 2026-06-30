@@ -15,10 +15,11 @@
 import synthtool as s
 from synthtool.languages import java
 import glob
+from datetime import datetime
 
 # License header
-license = """/*
- * Copyright 2019 The Grafeas Authors. All rights reserved.
+license = f"""/*
+ * Copyright {datetime.now().year} The Grafeas Authors. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,16 +76,18 @@ for library in s.get_staging_dirs():
     s.move(library)
 
 s.remove_staging_dirs()
-java.common_templates(monorepo=True, excludes=[
-    ".github/*",
-    ".kokoro/*",
-    "samples/*",
-    "CODE_OF_CONDUCT.md",
-    "CONTRIBUTING.md",
-    "LICENSE",
-    "SECURITY.md",
-    "java.header",
-    "license-checks.xml",
-    "renovate.json",
-    ".gitignore"
+java.common_templates(
+    monorepo=True,
+    excludes=[
+        ".github/*",
+        ".kokoro/*",
+        "samples/*",
+        "CODE_OF_CONDUCT.md",
+        "CONTRIBUTING.md",
+        "LICENSE",
+        "SECURITY.md",
+        "java.header",
+        "license-checks.xml",
+        "renovate.json",
+        ".gitignore"
 ])

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2beta1/knowledge_base.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class KnowledgeBasesGrpc {
 
@@ -289,6 +286,19 @@ public final class KnowledgeBasesGrpc {
     return KnowledgeBasesStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static KnowledgeBasesBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<KnowledgeBasesBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<KnowledgeBasesBlockingV2Stub>() {
+          @java.lang.Override
+          public KnowledgeBasesBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new KnowledgeBasesBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return KnowledgeBasesBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -545,6 +555,107 @@ public final class KnowledgeBasesGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service KnowledgeBases.
+   *
+   * <pre>
+   * Service for managing
+   * [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
+   * </pre>
+   */
+  public static final class KnowledgeBasesBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<KnowledgeBasesBlockingV2Stub> {
+    private KnowledgeBasesBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected KnowledgeBasesBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new KnowledgeBasesBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all knowledge bases of the specified agent.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse listKnowledgeBases(
+        com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListKnowledgeBasesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.KnowledgeBase getKnowledgeBase(
+        com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetKnowledgeBaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.KnowledgeBase createKnowledgeBase(
+        com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateKnowledgeBaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteKnowledgeBase(
+        com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteKnowledgeBaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.KnowledgeBase updateKnowledgeBase(
+        com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateKnowledgeBaseMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service KnowledgeBases.
    *
    * <pre>
    * Service for managing

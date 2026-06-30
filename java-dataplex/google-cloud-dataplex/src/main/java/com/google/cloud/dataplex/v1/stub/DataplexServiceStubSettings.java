@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,10 @@ package com.google.cloud.dataplex.v1.stub;
 
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListAssetActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListAssetsPagedResponse;
-import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListJobsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLakeActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLakesPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLocationsPagedResponse;
-import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListSessionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListTasksPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListZoneActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListZonesPagedResponse;
@@ -31,6 +29,7 @@ import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListZonesPagedR
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -47,6 +46,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -61,18 +61,14 @@ import com.google.cloud.dataplex.v1.Action;
 import com.google.cloud.dataplex.v1.Asset;
 import com.google.cloud.dataplex.v1.CancelJobRequest;
 import com.google.cloud.dataplex.v1.CreateAssetRequest;
-import com.google.cloud.dataplex.v1.CreateEnvironmentRequest;
 import com.google.cloud.dataplex.v1.CreateLakeRequest;
 import com.google.cloud.dataplex.v1.CreateTaskRequest;
 import com.google.cloud.dataplex.v1.CreateZoneRequest;
 import com.google.cloud.dataplex.v1.DeleteAssetRequest;
-import com.google.cloud.dataplex.v1.DeleteEnvironmentRequest;
 import com.google.cloud.dataplex.v1.DeleteLakeRequest;
 import com.google.cloud.dataplex.v1.DeleteTaskRequest;
 import com.google.cloud.dataplex.v1.DeleteZoneRequest;
-import com.google.cloud.dataplex.v1.Environment;
 import com.google.cloud.dataplex.v1.GetAssetRequest;
-import com.google.cloud.dataplex.v1.GetEnvironmentRequest;
 import com.google.cloud.dataplex.v1.GetJobRequest;
 import com.google.cloud.dataplex.v1.GetLakeRequest;
 import com.google.cloud.dataplex.v1.GetTaskRequest;
@@ -83,15 +79,11 @@ import com.google.cloud.dataplex.v1.ListActionsResponse;
 import com.google.cloud.dataplex.v1.ListAssetActionsRequest;
 import com.google.cloud.dataplex.v1.ListAssetsRequest;
 import com.google.cloud.dataplex.v1.ListAssetsResponse;
-import com.google.cloud.dataplex.v1.ListEnvironmentsRequest;
-import com.google.cloud.dataplex.v1.ListEnvironmentsResponse;
 import com.google.cloud.dataplex.v1.ListJobsRequest;
 import com.google.cloud.dataplex.v1.ListJobsResponse;
 import com.google.cloud.dataplex.v1.ListLakeActionsRequest;
 import com.google.cloud.dataplex.v1.ListLakesRequest;
 import com.google.cloud.dataplex.v1.ListLakesResponse;
-import com.google.cloud.dataplex.v1.ListSessionsRequest;
-import com.google.cloud.dataplex.v1.ListSessionsResponse;
 import com.google.cloud.dataplex.v1.ListTasksRequest;
 import com.google.cloud.dataplex.v1.ListTasksResponse;
 import com.google.cloud.dataplex.v1.ListZoneActionsRequest;
@@ -100,10 +92,8 @@ import com.google.cloud.dataplex.v1.ListZonesResponse;
 import com.google.cloud.dataplex.v1.OperationMetadata;
 import com.google.cloud.dataplex.v1.RunTaskRequest;
 import com.google.cloud.dataplex.v1.RunTaskResponse;
-import com.google.cloud.dataplex.v1.Session;
 import com.google.cloud.dataplex.v1.Task;
 import com.google.cloud.dataplex.v1.UpdateAssetRequest;
-import com.google.cloud.dataplex.v1.UpdateEnvironmentRequest;
 import com.google.cloud.dataplex.v1.UpdateLakeRequest;
 import com.google.cloud.dataplex.v1.UpdateTaskRequest;
 import com.google.cloud.dataplex.v1.UpdateZoneRequest;
@@ -116,12 +106,17 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -138,7 +133,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getLake to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getLake:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -155,16 +152,59 @@ import org.threeten.bp.Duration;
  *             .getLakeSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * DataplexServiceStubSettings dataplexServiceSettings = dataplexServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createLake:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * DataplexServiceStubSettings.Builder dataplexServiceSettingsBuilder =
+ *     DataplexServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * dataplexServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
+          .add("https://www.googleapis.com/auth/dataplex.read-write")
+          .add("https://www.googleapis.com/auth/dataplex.readonly")
+          .build();
 
   private final UnaryCallSettings<CreateLakeRequest, Operation> createLakeSettings;
   private final OperationCallSettings<CreateLakeRequest, Lake, OperationMetadata>
@@ -228,26 +268,14 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
   private final UnaryCallSettings<RunTaskRequest, RunTaskResponse> runTaskSettings;
   private final UnaryCallSettings<GetJobRequest, Job> getJobSettings;
   private final UnaryCallSettings<CancelJobRequest, Empty> cancelJobSettings;
-  private final UnaryCallSettings<CreateEnvironmentRequest, Operation> createEnvironmentSettings;
-  private final OperationCallSettings<CreateEnvironmentRequest, Environment, OperationMetadata>
-      createEnvironmentOperationSettings;
-  private final UnaryCallSettings<UpdateEnvironmentRequest, Operation> updateEnvironmentSettings;
-  private final OperationCallSettings<UpdateEnvironmentRequest, Environment, OperationMetadata>
-      updateEnvironmentOperationSettings;
-  private final UnaryCallSettings<DeleteEnvironmentRequest, Operation> deleteEnvironmentSettings;
-  private final OperationCallSettings<DeleteEnvironmentRequest, Empty, OperationMetadata>
-      deleteEnvironmentOperationSettings;
-  private final PagedCallSettings<
-          ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
-      listEnvironmentsSettings;
-  private final UnaryCallSettings<GetEnvironmentRequest, Environment> getEnvironmentSettings;
-  private final PagedCallSettings<
-          ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
-      listSessionsSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<ListLakesRequest, ListLakesResponse, Lake>
       LIST_LAKES_PAGE_STR_DESC =
@@ -279,9 +307,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
 
             @Override
             public Iterable<Lake> extractResources(ListLakesResponse payload) {
-              return payload.getLakesList() == null
-                  ? ImmutableList.<Lake>of()
-                  : payload.getLakesList();
+              return payload.getLakesList();
             }
           };
 
@@ -317,9 +343,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
 
             @Override
             public Iterable<Action> extractResources(ListActionsResponse payload) {
-              return payload.getActionsList() == null
-                  ? ImmutableList.<Action>of()
-                  : payload.getActionsList();
+              return payload.getActionsList();
             }
           };
 
@@ -353,9 +377,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
 
             @Override
             public Iterable<Zone> extractResources(ListZonesResponse payload) {
-              return payload.getZonesList() == null
-                  ? ImmutableList.<Zone>of()
-                  : payload.getZonesList();
+              return payload.getZonesList();
             }
           };
 
@@ -391,9 +413,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
 
             @Override
             public Iterable<Action> extractResources(ListActionsResponse payload) {
-              return payload.getActionsList() == null
-                  ? ImmutableList.<Action>of()
-                  : payload.getActionsList();
+              return payload.getActionsList();
             }
           };
 
@@ -427,9 +447,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
 
             @Override
             public Iterable<Asset> extractResources(ListAssetsResponse payload) {
-              return payload.getAssetsList() == null
-                  ? ImmutableList.<Asset>of()
-                  : payload.getAssetsList();
+              return payload.getAssetsList();
             }
           };
 
@@ -465,9 +483,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
 
             @Override
             public Iterable<Action> extractResources(ListActionsResponse payload) {
-              return payload.getActionsList() == null
-                  ? ImmutableList.<Action>of()
-                  : payload.getActionsList();
+              return payload.getActionsList();
             }
           };
 
@@ -501,9 +517,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
 
             @Override
             public Iterable<Task> extractResources(ListTasksResponse payload) {
-              return payload.getTasksList() == null
-                  ? ImmutableList.<Task>of()
-                  : payload.getTasksList();
+              return payload.getTasksList();
             }
           };
 
@@ -537,85 +551,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
 
             @Override
             public Iterable<Job> extractResources(ListJobsResponse payload) {
-              return payload.getJobsList() == null
-                  ? ImmutableList.<Job>of()
-                  : payload.getJobsList();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
-      LIST_ENVIRONMENTS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListEnvironmentsRequest injectToken(
-                ListEnvironmentsRequest payload, String token) {
-              return ListEnvironmentsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListEnvironmentsRequest injectPageSize(
-                ListEnvironmentsRequest payload, int pageSize) {
-              return ListEnvironmentsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListEnvironmentsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListEnvironmentsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Environment> extractResources(ListEnvironmentsResponse payload) {
-              return payload.getEnvironmentsList() == null
-                  ? ImmutableList.<Environment>of()
-                  : payload.getEnvironmentsList();
-            }
-          };
-
-  private static final PagedListDescriptor<ListSessionsRequest, ListSessionsResponse, Session>
-      LIST_SESSIONS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListSessionsRequest, ListSessionsResponse, Session>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListSessionsRequest injectToken(ListSessionsRequest payload, String token) {
-              return ListSessionsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListSessionsRequest injectPageSize(ListSessionsRequest payload, int pageSize) {
-              return ListSessionsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListSessionsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListSessionsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Session> extractResources(ListSessionsResponse payload) {
-              return payload.getSessionsList() == null
-                  ? ImmutableList.<Session>of()
-                  : payload.getSessionsList();
+              return payload.getJobsList();
             }
           };
 
@@ -649,9 +585,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -787,42 +721,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
               PageContext<ListJobsRequest, ListJobsResponse, Job> pageContext =
                   PageContext.create(callable, LIST_JOBS_PAGE_STR_DESC, request, context);
               return ListJobsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
-      LIST_ENVIRONMENTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>() {
-            @Override
-            public ApiFuture<ListEnvironmentsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse> callable,
-                ListEnvironmentsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListEnvironmentsResponse> futureResponse) {
-              PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_ENVIRONMENTS_PAGE_STR_DESC, request, context);
-              return ListEnvironmentsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
-      LIST_SESSIONS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>() {
-            @Override
-            public ApiFuture<ListSessionsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListSessionsRequest, ListSessionsResponse> callable,
-                ListSessionsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListSessionsResponse> futureResponse) {
-              PageContext<ListSessionsRequest, ListSessionsResponse, Session> pageContext =
-                  PageContext.create(callable, LIST_SESSIONS_PAGE_STR_DESC, request, context);
-              return ListSessionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1061,57 +959,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     return cancelJobSettings;
   }
 
-  /** Returns the object with the settings used for calls to createEnvironment. */
-  public UnaryCallSettings<CreateEnvironmentRequest, Operation> createEnvironmentSettings() {
-    return createEnvironmentSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createEnvironment. */
-  public OperationCallSettings<CreateEnvironmentRequest, Environment, OperationMetadata>
-      createEnvironmentOperationSettings() {
-    return createEnvironmentOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateEnvironment. */
-  public UnaryCallSettings<UpdateEnvironmentRequest, Operation> updateEnvironmentSettings() {
-    return updateEnvironmentSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateEnvironment. */
-  public OperationCallSettings<UpdateEnvironmentRequest, Environment, OperationMetadata>
-      updateEnvironmentOperationSettings() {
-    return updateEnvironmentOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteEnvironment. */
-  public UnaryCallSettings<DeleteEnvironmentRequest, Operation> deleteEnvironmentSettings() {
-    return deleteEnvironmentSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteEnvironment. */
-  public OperationCallSettings<DeleteEnvironmentRequest, Empty, OperationMetadata>
-      deleteEnvironmentOperationSettings() {
-    return deleteEnvironmentOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listEnvironments. */
-  public PagedCallSettings<
-          ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
-      listEnvironmentsSettings() {
-    return listEnvironmentsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getEnvironment. */
-  public UnaryCallSettings<GetEnvironmentRequest, Environment> getEnvironmentSettings() {
-    return getEnvironmentSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listSessions. */
-  public PagedCallSettings<ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
-      listSessionsSettings() {
-    return listSessionsSettings;
-  }
-
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1121,6 +968,22 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
   /** Returns the object with the settings used for calls to getLocation. */
   public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
     return getLocationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   public DataplexServiceStub createStub() throws IOException {
@@ -1139,15 +1002,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -1160,6 +1014,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "dataplex.googleapis.com:443";
   }
@@ -1281,20 +1136,20 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     runTaskSettings = settingsBuilder.runTaskSettings().build();
     getJobSettings = settingsBuilder.getJobSettings().build();
     cancelJobSettings = settingsBuilder.cancelJobSettings().build();
-    createEnvironmentSettings = settingsBuilder.createEnvironmentSettings().build();
-    createEnvironmentOperationSettings =
-        settingsBuilder.createEnvironmentOperationSettings().build();
-    updateEnvironmentSettings = settingsBuilder.updateEnvironmentSettings().build();
-    updateEnvironmentOperationSettings =
-        settingsBuilder.updateEnvironmentOperationSettings().build();
-    deleteEnvironmentSettings = settingsBuilder.deleteEnvironmentSettings().build();
-    deleteEnvironmentOperationSettings =
-        settingsBuilder.deleteEnvironmentOperationSettings().build();
-    listEnvironmentsSettings = settingsBuilder.listEnvironmentsSettings().build();
-    getEnvironmentSettings = settingsBuilder.getEnvironmentSettings().build();
-    listSessionsSettings = settingsBuilder.listSessionsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-dataplex")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for DataplexServiceStubSettings. */
@@ -1367,32 +1222,14 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     private final UnaryCallSettings.Builder<RunTaskRequest, RunTaskResponse> runTaskSettings;
     private final UnaryCallSettings.Builder<GetJobRequest, Job> getJobSettings;
     private final UnaryCallSettings.Builder<CancelJobRequest, Empty> cancelJobSettings;
-    private final UnaryCallSettings.Builder<CreateEnvironmentRequest, Operation>
-        createEnvironmentSettings;
-    private final OperationCallSettings.Builder<
-            CreateEnvironmentRequest, Environment, OperationMetadata>
-        createEnvironmentOperationSettings;
-    private final UnaryCallSettings.Builder<UpdateEnvironmentRequest, Operation>
-        updateEnvironmentSettings;
-    private final OperationCallSettings.Builder<
-            UpdateEnvironmentRequest, Environment, OperationMetadata>
-        updateEnvironmentOperationSettings;
-    private final UnaryCallSettings.Builder<DeleteEnvironmentRequest, Operation>
-        deleteEnvironmentSettings;
-    private final OperationCallSettings.Builder<DeleteEnvironmentRequest, Empty, OperationMetadata>
-        deleteEnvironmentOperationSettings;
-    private final PagedCallSettings.Builder<
-            ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
-        listEnvironmentsSettings;
-    private final UnaryCallSettings.Builder<GetEnvironmentRequest, Environment>
-        getEnvironmentSettings;
-    private final PagedCallSettings.Builder<
-            ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
-        listSessionsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
     private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1418,32 +1255,32 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_6_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
@@ -1497,17 +1334,11 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
       runTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       cancelJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      createEnvironmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      createEnvironmentOperationSettings = OperationCallSettings.newBuilder();
-      updateEnvironmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      updateEnvironmentOperationSettings = OperationCallSettings.newBuilder();
-      deleteEnvironmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      deleteEnvironmentOperationSettings = OperationCallSettings.newBuilder();
-      listEnvironmentsSettings = PagedCallSettings.newBuilder(LIST_ENVIRONMENTS_PAGE_STR_FACT);
-      getEnvironmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      listSessionsSettings = PagedCallSettings.newBuilder(LIST_SESSIONS_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1538,14 +1369,11 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
               runTaskSettings,
               getJobSettings,
               cancelJobSettings,
-              createEnvironmentSettings,
-              updateEnvironmentSettings,
-              deleteEnvironmentSettings,
-              listEnvironmentsSettings,
-              getEnvironmentSettings,
-              listSessionsSettings,
               listLocationsSettings,
-              getLocationSettings);
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -1591,17 +1419,11 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
       runTaskSettings = settings.runTaskSettings.toBuilder();
       getJobSettings = settings.getJobSettings.toBuilder();
       cancelJobSettings = settings.cancelJobSettings.toBuilder();
-      createEnvironmentSettings = settings.createEnvironmentSettings.toBuilder();
-      createEnvironmentOperationSettings = settings.createEnvironmentOperationSettings.toBuilder();
-      updateEnvironmentSettings = settings.updateEnvironmentSettings.toBuilder();
-      updateEnvironmentOperationSettings = settings.updateEnvironmentOperationSettings.toBuilder();
-      deleteEnvironmentSettings = settings.deleteEnvironmentSettings.toBuilder();
-      deleteEnvironmentOperationSettings = settings.deleteEnvironmentOperationSettings.toBuilder();
-      listEnvironmentsSettings = settings.listEnvironmentsSettings.toBuilder();
-      getEnvironmentSettings = settings.getEnvironmentSettings.toBuilder();
-      listSessionsSettings = settings.listSessionsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1632,14 +1454,11 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
               runTaskSettings,
               getJobSettings,
               cancelJobSettings,
-              createEnvironmentSettings,
-              updateEnvironmentSettings,
-              deleteEnvironmentSettings,
-              listEnvironmentsSettings,
-              getEnvironmentSettings,
-              listSessionsSettings,
               listLocationsSettings,
-              getLocationSettings);
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -1803,42 +1622,27 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
 
       builder
-          .createEnvironmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
-
-      builder
-          .updateEnvironmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
-
-      builder
-          .deleteEnvironmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
-
-      builder
-          .listEnvironmentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getEnvironmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
-          .listSessionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1855,13 +1659,13 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1877,13 +1681,13 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1900,13 +1704,13 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1922,13 +1726,13 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1944,13 +1748,13 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1967,13 +1771,13 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1990,13 +1794,13 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2013,13 +1817,13 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2036,13 +1840,13 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2058,13 +1862,13 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2080,13 +1884,13 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2103,85 +1907,13 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      builder
-          .createEnvironmentOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateEnvironmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Environment.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
-                      .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      builder
-          .updateEnvironmentOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<UpdateEnvironmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Environment.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
-                      .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      builder
-          .deleteEnvironmentOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DeleteEnvironmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
-                      .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -2420,61 +2152,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
       return cancelJobSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createEnvironment. */
-    public UnaryCallSettings.Builder<CreateEnvironmentRequest, Operation>
-        createEnvironmentSettings() {
-      return createEnvironmentSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to createEnvironment. */
-    public OperationCallSettings.Builder<CreateEnvironmentRequest, Environment, OperationMetadata>
-        createEnvironmentOperationSettings() {
-      return createEnvironmentOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateEnvironment. */
-    public UnaryCallSettings.Builder<UpdateEnvironmentRequest, Operation>
-        updateEnvironmentSettings() {
-      return updateEnvironmentSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateEnvironment. */
-    public OperationCallSettings.Builder<UpdateEnvironmentRequest, Environment, OperationMetadata>
-        updateEnvironmentOperationSettings() {
-      return updateEnvironmentOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteEnvironment. */
-    public UnaryCallSettings.Builder<DeleteEnvironmentRequest, Operation>
-        deleteEnvironmentSettings() {
-      return deleteEnvironmentSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteEnvironment. */
-    public OperationCallSettings.Builder<DeleteEnvironmentRequest, Empty, OperationMetadata>
-        deleteEnvironmentOperationSettings() {
-      return deleteEnvironmentOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listEnvironments. */
-    public PagedCallSettings.Builder<
-            ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
-        listEnvironmentsSettings() {
-      return listEnvironmentsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getEnvironment. */
-    public UnaryCallSettings.Builder<GetEnvironmentRequest, Environment> getEnvironmentSettings() {
-      return getEnvironmentSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listSessions. */
-    public PagedCallSettings.Builder<
-            ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
-        listSessionsSettings() {
-      return listSessionsSettings;
-    }
-
     /** Returns the builder for the settings used for calls to listLocations. */
     public PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -2487,13 +2164,20 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
       return getLocationSettings;
     }
 
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

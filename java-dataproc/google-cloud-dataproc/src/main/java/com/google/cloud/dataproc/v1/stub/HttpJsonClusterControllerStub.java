@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -207,8 +207,7 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request
-                                          .toBuilder()
+                                      request.toBuilder()
                                           .clearClusterName()
                                           .clearProjectId()
                                           .clearRegion()
@@ -258,8 +257,7 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request
-                                          .toBuilder()
+                                      request.toBuilder()
                                           .clearClusterName()
                                           .clearProjectId()
                                           .clearRegion()
@@ -425,8 +423,7 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request
-                                          .toBuilder()
+                                      request.toBuilder()
                                           .clearClusterName()
                                           .clearProjectId()
                                           .clearRegion()
@@ -801,6 +798,7 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -812,6 +810,7 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -824,6 +823,7 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createClusterCallable =

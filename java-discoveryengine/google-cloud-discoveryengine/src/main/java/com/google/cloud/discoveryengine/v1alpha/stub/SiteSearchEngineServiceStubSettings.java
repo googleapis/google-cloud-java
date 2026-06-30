@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import static com.google.cloud.discoveryengine.v1alpha.SiteSearchEngineServiceCl
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -38,6 +39,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -68,11 +70,16 @@ import com.google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusReq
 import com.google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusResponse;
 import com.google.cloud.discoveryengine.v1alpha.GetSiteSearchEngineRequest;
 import com.google.cloud.discoveryengine.v1alpha.GetTargetSiteRequest;
+import com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest;
+import com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse;
 import com.google.cloud.discoveryengine.v1alpha.ListTargetSitesRequest;
 import com.google.cloud.discoveryengine.v1alpha.ListTargetSitesResponse;
 import com.google.cloud.discoveryengine.v1alpha.RecrawlUrisMetadata;
 import com.google.cloud.discoveryengine.v1alpha.RecrawlUrisRequest;
 import com.google.cloud.discoveryengine.v1alpha.RecrawlUrisResponse;
+import com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataMetadata;
+import com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest;
+import com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataResponse;
 import com.google.cloud.discoveryengine.v1alpha.SiteSearchEngine;
 import com.google.cloud.discoveryengine.v1alpha.TargetSite;
 import com.google.cloud.discoveryengine.v1alpha.UpdateTargetSiteMetadata;
@@ -84,9 +91,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -104,7 +111,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getSiteSearchEngine to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getSiteSearchEngine:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -121,14 +130,52 @@ import org.threeten.bp.Duration;
  *             .getSiteSearchEngineSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * SiteSearchEngineServiceStubSettings siteSearchEngineServiceSettings =
  *     siteSearchEngineServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createTargetSite:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * SiteSearchEngineServiceStubSettings.Builder siteSearchEngineServiceSettingsBuilder =
+ *     SiteSearchEngineServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * siteSearchEngineServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class SiteSearchEngineServiceStubSettings
     extends StubSettings<SiteSearchEngineServiceStubSettings> {
   /** The default scopes of the service. */
@@ -186,6 +233,16 @@ public class SiteSearchEngineServiceStubSettings
           FetchDomainVerificationStatusResponse,
           FetchDomainVerificationStatusPagedResponse>
       fetchDomainVerificationStatusSettings;
+  private final UnaryCallSettings<SetUriPatternDocumentDataRequest, Operation>
+      setUriPatternDocumentDataSettings;
+  private final OperationCallSettings<
+          SetUriPatternDocumentDataRequest,
+          SetUriPatternDocumentDataResponse,
+          SetUriPatternDocumentDataMetadata>
+      setUriPatternDocumentDataOperationSettings;
+  private final UnaryCallSettings<
+          GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>
+      getUriPatternDocumentDataSettings;
 
   private static final PagedListDescriptor<
           ListTargetSitesRequest, ListTargetSitesResponse, TargetSite>
@@ -220,9 +277,7 @@ public class SiteSearchEngineServiceStubSettings
 
             @Override
             public Iterable<TargetSite> extractResources(ListTargetSitesResponse payload) {
-              return payload.getTargetSitesList() == null
-                  ? ImmutableList.<TargetSite>of()
-                  : payload.getTargetSitesList();
+              return payload.getTargetSitesList();
             }
           };
 
@@ -267,9 +322,7 @@ public class SiteSearchEngineServiceStubSettings
             @Override
             public Iterable<TargetSite> extractResources(
                 FetchDomainVerificationStatusResponse payload) {
-              return payload.getTargetSitesList() == null
-                  ? ImmutableList.<TargetSite>of()
-                  : payload.getTargetSitesList();
+              return payload.getTargetSitesList();
             }
           };
 
@@ -453,6 +506,27 @@ public class SiteSearchEngineServiceStubSettings
     return fetchDomainVerificationStatusSettings;
   }
 
+  /** Returns the object with the settings used for calls to setUriPatternDocumentData. */
+  public UnaryCallSettings<SetUriPatternDocumentDataRequest, Operation>
+      setUriPatternDocumentDataSettings() {
+    return setUriPatternDocumentDataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setUriPatternDocumentData. */
+  public OperationCallSettings<
+          SetUriPatternDocumentDataRequest,
+          SetUriPatternDocumentDataResponse,
+          SetUriPatternDocumentDataMetadata>
+      setUriPatternDocumentDataOperationSettings() {
+    return setUriPatternDocumentDataOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getUriPatternDocumentData. */
+  public UnaryCallSettings<GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>
+      getUriPatternDocumentDataSettings() {
+    return getUriPatternDocumentDataSettings;
+  }
+
   public SiteSearchEngineServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -469,15 +543,6 @@ public class SiteSearchEngineServiceStubSettings
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -490,6 +555,7 @@ public class SiteSearchEngineServiceStubSettings
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "discoveryengine.googleapis.com:443";
   }
@@ -597,6 +663,19 @@ public class SiteSearchEngineServiceStubSettings
         settingsBuilder.batchVerifyTargetSitesOperationSettings().build();
     fetchDomainVerificationStatusSettings =
         settingsBuilder.fetchDomainVerificationStatusSettings().build();
+    setUriPatternDocumentDataSettings = settingsBuilder.setUriPatternDocumentDataSettings().build();
+    setUriPatternDocumentDataOperationSettings =
+        settingsBuilder.setUriPatternDocumentDataOperationSettings().build();
+    getUriPatternDocumentDataSettings = settingsBuilder.getUriPatternDocumentDataSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-discoveryengine")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for SiteSearchEngineServiceStubSettings. */
@@ -661,6 +740,16 @@ public class SiteSearchEngineServiceStubSettings
             FetchDomainVerificationStatusResponse,
             FetchDomainVerificationStatusPagedResponse>
         fetchDomainVerificationStatusSettings;
+    private final UnaryCallSettings.Builder<SetUriPatternDocumentDataRequest, Operation>
+        setUriPatternDocumentDataSettings;
+    private final OperationCallSettings.Builder<
+            SetUriPatternDocumentDataRequest,
+            SetUriPatternDocumentDataResponse,
+            SetUriPatternDocumentDataMetadata>
+        setUriPatternDocumentDataOperationSettings;
+    private final UnaryCallSettings.Builder<
+            GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>
+        getUriPatternDocumentDataSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -709,6 +798,9 @@ public class SiteSearchEngineServiceStubSettings
       batchVerifyTargetSitesOperationSettings = OperationCallSettings.newBuilder();
       fetchDomainVerificationStatusSettings =
           PagedCallSettings.newBuilder(FETCH_DOMAIN_VERIFICATION_STATUS_PAGE_STR_FACT);
+      setUriPatternDocumentDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setUriPatternDocumentDataOperationSettings = OperationCallSettings.newBuilder();
+      getUriPatternDocumentDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -723,7 +815,9 @@ public class SiteSearchEngineServiceStubSettings
               disableAdvancedSiteSearchSettings,
               recrawlUrisSettings,
               batchVerifyTargetSitesSettings,
-              fetchDomainVerificationStatusSettings);
+              fetchDomainVerificationStatusSettings,
+              setUriPatternDocumentDataSettings,
+              getUriPatternDocumentDataSettings);
       initDefaults(this);
     }
 
@@ -755,6 +849,10 @@ public class SiteSearchEngineServiceStubSettings
           settings.batchVerifyTargetSitesOperationSettings.toBuilder();
       fetchDomainVerificationStatusSettings =
           settings.fetchDomainVerificationStatusSettings.toBuilder();
+      setUriPatternDocumentDataSettings = settings.setUriPatternDocumentDataSettings.toBuilder();
+      setUriPatternDocumentDataOperationSettings =
+          settings.setUriPatternDocumentDataOperationSettings.toBuilder();
+      getUriPatternDocumentDataSettings = settings.getUriPatternDocumentDataSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -769,7 +867,9 @@ public class SiteSearchEngineServiceStubSettings
               disableAdvancedSiteSearchSettings,
               recrawlUrisSettings,
               batchVerifyTargetSitesSettings,
-              fetchDomainVerificationStatusSettings);
+              fetchDomainVerificationStatusSettings,
+              setUriPatternDocumentDataSettings,
+              getUriPatternDocumentDataSettings);
     }
 
     private static Builder createDefault() {
@@ -858,6 +958,16 @@ public class SiteSearchEngineServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .setUriPatternDocumentDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getUriPatternDocumentDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .createTargetSiteOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -872,13 +982,13 @@ public class SiteSearchEngineServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -898,13 +1008,13 @@ public class SiteSearchEngineServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -922,13 +1032,13 @@ public class SiteSearchEngineServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -946,13 +1056,13 @@ public class SiteSearchEngineServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -972,13 +1082,13 @@ public class SiteSearchEngineServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -999,13 +1109,13 @@ public class SiteSearchEngineServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1022,13 +1132,13 @@ public class SiteSearchEngineServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1048,13 +1158,40 @@ public class SiteSearchEngineServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .setUriPatternDocumentDataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetUriPatternDocumentDataRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  SetUriPatternDocumentDataResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  SetUriPatternDocumentDataMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1212,13 +1349,26 @@ public class SiteSearchEngineServiceStubSettings
       return fetchDomainVerificationStatusSettings;
     }
 
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
+    /** Returns the builder for the settings used for calls to setUriPatternDocumentData. */
+    public UnaryCallSettings.Builder<SetUriPatternDocumentDataRequest, Operation>
+        setUriPatternDocumentDataSettings() {
+      return setUriPatternDocumentDataSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setUriPatternDocumentData. */
+    public OperationCallSettings.Builder<
+            SetUriPatternDocumentDataRequest,
+            SetUriPatternDocumentDataResponse,
+            SetUriPatternDocumentDataMetadata>
+        setUriPatternDocumentDataOperationSettings() {
+      return setUriPatternDocumentDataOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getUriPatternDocumentData. */
+    public UnaryCallSettings.Builder<
+            GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>
+        getUriPatternDocumentDataSettings() {
+      return getUriPatternDocumentDataSettings;
     }
 
     @Override

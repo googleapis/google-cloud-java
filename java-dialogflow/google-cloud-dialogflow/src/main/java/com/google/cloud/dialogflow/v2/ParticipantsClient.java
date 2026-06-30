@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -156,8 +156,10 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> analyzeContent(ParticipantName participant, AudioInput audioInput)
  *           <li><p> analyzeContent(ParticipantName participant, EventInput eventInput)
  *           <li><p> analyzeContent(ParticipantName participant, TextInput textInput)
+ *           <li><p> analyzeContent(String participant, AudioInput audioInput)
  *           <li><p> analyzeContent(String participant, EventInput eventInput)
  *           <li><p> analyzeContent(String participant, TextInput textInput)
  *      </ul>
@@ -237,8 +239,24 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> SuggestKnowledgeAssist</td>
+ *      <td><p> Gets knowledge assist suggestions based on historical messages.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> suggestKnowledgeAssist(SuggestKnowledgeAssistRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> suggestKnowledgeAssistCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -908,6 +926,47 @@ public class ParticipantsClient implements BackgroundResource {
    *   ParticipantName participant =
    *       ParticipantName.ofProjectConversationParticipantName(
    *           "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
+   *   AudioInput audioInput = AudioInput.newBuilder().build();
+   *   AnalyzeContentResponse response = participantsClient.analyzeContent(participant, audioInput);
+   * }
+   * }</pre>
+   *
+   * @param participant Required. The name of the participant this text comes from. Format:
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
+   *     ID&gt;/participants/&lt;Participant ID&gt;`.
+   * @param audioInput The natural language speech audio to be processed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeContentResponse analyzeContent(
+      ParticipantName participant, AudioInput audioInput) {
+    AnalyzeContentRequest request =
+        AnalyzeContentRequest.newBuilder()
+            .setParticipant(participant == null ? null : participant.toString())
+            .setAudioInput(audioInput)
+            .build();
+    return analyzeContent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a text (chat, for example), or audio (phone recording, for example) message from a
+   * participant into the conversation.
+   *
+   * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   ParticipantName participant =
+   *       ParticipantName.ofProjectConversationParticipantName(
+   *           "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
    *   EventInput eventInput = EventInput.newBuilder().build();
    *   AnalyzeContentResponse response = participantsClient.analyzeContent(participant, eventInput);
    * }
@@ -966,6 +1025,47 @@ public class ParticipantsClient implements BackgroundResource {
         AnalyzeContentRequest.newBuilder()
             .setParticipant(participant == null ? null : participant.toString())
             .setTextInput(textInput)
+            .build();
+    return analyzeContent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a text (chat, for example), or audio (phone recording, for example) message from a
+   * participant into the conversation.
+   *
+   * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   String participant =
+   *       ParticipantName.ofProjectConversationParticipantName(
+   *               "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *           .toString();
+   *   AudioInput audioInput = AudioInput.newBuilder().build();
+   *   AnalyzeContentResponse response = participantsClient.analyzeContent(participant, audioInput);
+   * }
+   * }</pre>
+   *
+   * @param participant Required. The name of the participant this text comes from. Format:
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
+   *     ID&gt;/participants/&lt;Participant ID&gt;`.
+   * @param audioInput The natural language speech audio to be processed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeContentResponse analyzeContent(String participant, AudioInput audioInput) {
+    AnalyzeContentRequest request =
+        AnalyzeContentRequest.newBuilder()
+            .setParticipant(participant)
+            .setAudioInput(audioInput)
             .build();
     return analyzeContent(request);
   }
@@ -1171,6 +1271,7 @@ public class ParticipantsClient implements BackgroundResource {
    *           .setCxParameters(Struct.newBuilder().build())
    *           .setEnableExtendedStreaming(true)
    *           .setEnablePartialAutomatedAgentReply(true)
+   *           .setOutputMultipleUtterances(true)
    *           .setEnableDebuggingInfo(true)
    *           .build();
    *   bidiStream.send(request);
@@ -1607,7 +1708,95 @@ public class ParticipantsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Gets knowledge assist suggestions based on historical messages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   SuggestKnowledgeAssistRequest request =
+   *       SuggestKnowledgeAssistRequest.newBuilder()
+   *           .setParent(
+   *               ParticipantName.ofProjectConversationParticipantName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *                   .toString())
+   *           .setLatestMessage(
+   *               MessageName.ofProjectConversationMessageName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *                   .toString())
+   *           .setContextSize(1116903569)
+   *           .setPreviousSuggestedQuery("previousSuggestedQuery-1914206660")
+   *           .build();
+   *   SuggestKnowledgeAssistResponse response = participantsClient.suggestKnowledgeAssist(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SuggestKnowledgeAssistResponse suggestKnowledgeAssist(
+      SuggestKnowledgeAssistRequest request) {
+    return suggestKnowledgeAssistCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets knowledge assist suggestions based on historical messages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   SuggestKnowledgeAssistRequest request =
+   *       SuggestKnowledgeAssistRequest.newBuilder()
+   *           .setParent(
+   *               ParticipantName.ofProjectConversationParticipantName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *                   .toString())
+   *           .setLatestMessage(
+   *               MessageName.ofProjectConversationMessageName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *                   .toString())
+   *           .setContextSize(1116903569)
+   *           .setPreviousSuggestedQuery("previousSuggestedQuery-1914206660")
+   *           .build();
+   *   ApiFuture<SuggestKnowledgeAssistResponse> future =
+   *       participantsClient.suggestKnowledgeAssistCallable().futureCall(request);
+   *   // Do something.
+   *   SuggestKnowledgeAssistResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistCallable() {
+    return stub.suggestKnowledgeAssistCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1642,6 +1831,18 @@ public class ParticipantsClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1675,6 +1876,18 @@ public class ParticipantsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

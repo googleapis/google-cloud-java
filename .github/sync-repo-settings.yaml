@@ -12,13 +12,14 @@ branchProtectionRules:
       - units (11)
       - units (17)
       - cla/google
-      - enforcer
       - lint
-      - OwlBot Post Processor
       - 'Kokoro - Test: Integration'
-      - 'Kokoro - Test: Java GraalVM Native Image'
-      - 'Kokoro - Test: Java 17 GraalVM Native Image'
+      - 'Kokoro - Test: GraalVM Native Image A'
+      - 'Kokoro - Test: GraalVM Native Image B'
+      - 'Kokoro - Test: GraalVM Native Image C'
       - header-check
+      - library_generation
+      - unmanaged_dependency_check
   - pattern: 1.0.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -31,7 +32,6 @@ branchProtectionRules:
       - cla/google
       - enforcer
       - lint
-      - OwlBot Post Processor
       - 'Kokoro - Test: Integration'
   - pattern: 1.13.x
     isAdminEnforced: true
@@ -45,12 +45,115 @@ branchProtectionRules:
       - cla/google
       - enforcer
       - lint
+      - 'Kokoro - Test: Integration'
+  - pattern: 1.25.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - units (8)
+      - units (11)
+      - units (17)
+      - cla/google
+      - enforcer
+      - lint
       - OwlBot Post Processor
       - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: GraalVM Native Image A'
+      - 'Kokoro - Test: GraalVM Native Image B'
+      - header-check
+  - pattern: 1.37.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - units (8)
+      - units (11)
+      - units (17)
+      - cla/google
+      - enforcer
+      - lint
+      - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: GraalVM Native Image A'
+      - 'Kokoro - Test: GraalVM Native Image B'
+      - header-check
+      - library_generation
+  - pattern: 1.53.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - units (8)
+      - units (11)
+      - units (17)
+      - cla/google
+      - lint
+      - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: GraalVM Native Image A'
+      - 'Kokoro - Test: GraalVM Native Image B'
+      - header-check
+      - library_generation
+      - unmanaged_dependency_check
+  - pattern: 1.61.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - units (8)
+      - units (11)
+      - units (17)
+      - cla/google
+      - lint
+      - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: GraalVM Native Image A'
+      - 'Kokoro - Test: GraalVM Native Image B'
+      - 'Kokoro - Test: GraalVM Native Image C'
+      - header-check
+      - library_generation
+      - unmanaged_dependency_check
+  - pattern: 1.58.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - units (8)
+      - units (11)
+      - units (17)
+      - cla/google
+      - lint
+      - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: GraalVM Native Image A'
+      - 'Kokoro - Test: GraalVM Native Image B'
+      - 'Kokoro - Test: GraalVM Native Image C'
+      - header-check
+      - library_generation
+      - unmanaged_dependency_check
+  - pattern: datastore-2.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - split-units (java-datastore, 8)
+      - split-units (java-datastore, 11)
+      - split-units (java-datastore, 17)
+      - split-units (java-datastore, 21)
+      - split-units (java-datastore, 25)
+      - split-clirr (java-datastore)
+      - cla/google
+      - lint
+      - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: Datastore Integration'
+      - 'Kokoro - Test: Datastore GraalVM Native Image'
 permissionRules:
   - team: yoshi-admins
     permission: admin
   - team: yoshi-java-admins
     permission: admin
-  - team: yoshi-java
+  - team: cloud-sdk-java-team
     permission: push

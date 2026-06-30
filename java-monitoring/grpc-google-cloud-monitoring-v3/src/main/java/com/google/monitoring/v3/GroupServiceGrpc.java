@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * from the infrastructure.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/monitoring/v3/group_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GroupServiceGrpc {
 
@@ -303,6 +300,19 @@ public final class GroupServiceGrpc {
           }
         };
     return GroupServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static GroupServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<GroupServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<GroupServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public GroupServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new GroupServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return GroupServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -588,6 +598,115 @@ public final class GroupServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service GroupService.
+   *
+   * <pre>
+   * The Group API lets you inspect and manage your
+   * [groups](#google.monitoring.v3.Group).
+   * A group is a named filter that is used to identify
+   * a collection of monitored resources. Groups are typically used to
+   * mirror the physical and/or logical topology of the environment.
+   * Because group membership is computed dynamically, monitored
+   * resources that are started in the future are automatically placed
+   * in matching groups. By using a group to name monitored resources in,
+   * for example, an alert policy, the target of that alert policy is
+   * updated automatically as monitored resources are added and removed
+   * from the infrastructure.
+   * </pre>
+   */
+  public static final class GroupServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<GroupServiceBlockingV2Stub> {
+    private GroupServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected GroupServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new GroupServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the existing groups.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ListGroupsResponse listGroups(
+        com.google.monitoring.v3.ListGroupsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a single group.
+     * </pre>
+     */
+    public com.google.monitoring.v3.Group getGroup(com.google.monitoring.v3.GetGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new group.
+     * </pre>
+     */
+    public com.google.monitoring.v3.Group createGroup(
+        com.google.monitoring.v3.CreateGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing group.
+     * You can change any group attributes except `name`.
+     * </pre>
+     */
+    public com.google.monitoring.v3.Group updateGroup(
+        com.google.monitoring.v3.UpdateGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing group.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteGroup(
+        com.google.monitoring.v3.DeleteGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the monitored resources that are members of a group.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ListGroupMembersResponse listGroupMembers(
+        com.google.monitoring.v3.ListGroupMembersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListGroupMembersMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service GroupService.
    *
    * <pre>
    * The Group API lets you inspect and manage your

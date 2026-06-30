@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,6 +79,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   ProtoUtils.marshaller(ListMembershipsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMembershipsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMembershipRequest, Membership>
@@ -90,6 +91,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMembershipRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Membership.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMembershipRequest, Operation>
@@ -101,6 +103,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMembershipRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMembershipRequest, Operation>
@@ -112,6 +115,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMembershipRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateMembershipRequest, Operation>
@@ -123,6 +127,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateMembershipRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -137,6 +142,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   ProtoUtils.marshaller(GenerateConnectManifestRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateConnectManifestResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ValidateExclusivityRequest, ValidateExclusivityResponse>
@@ -149,6 +155,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   ProtoUtils.marshaller(ValidateExclusivityRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ValidateExclusivityResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -163,6 +170,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   ProtoUtils.marshaller(GenerateExclusivityManifestRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateExclusivityManifestResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -174,6 +182,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -182,6 +191,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -190,6 +200,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -198,6 +209,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -209,6 +221,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListMembershipsRequest, ListMembershipsResponse>
@@ -296,6 +309,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMembershipRequest, Membership> getMembershipTransportSettings =
         GrpcCallSettings.<GetMembershipRequest, Membership>newBuilder()
@@ -306,6 +320,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateMembershipRequest, Operation> createMembershipTransportSettings =
         GrpcCallSettings.<CreateMembershipRequest, Operation>newBuilder()
@@ -316,6 +331,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteMembershipRequest, Operation> deleteMembershipTransportSettings =
         GrpcCallSettings.<DeleteMembershipRequest, Operation>newBuilder()
@@ -326,6 +342,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateMembershipRequest, Operation> updateMembershipTransportSettings =
         GrpcCallSettings.<UpdateMembershipRequest, Operation>newBuilder()
@@ -336,6 +353,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateConnectManifestRequest, GenerateConnectManifestResponse>
         generateConnectManifestTransportSettings =
@@ -348,6 +366,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ValidateExclusivityRequest, ValidateExclusivityResponse>
         validateExclusivityTransportSettings =
@@ -359,6 +378,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GenerateExclusivityManifestRequest, GenerateExclusivityManifestResponse>
         generateExclusivityManifestTransportSettings =
@@ -372,6 +392,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -402,6 +423,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -412,6 +434,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -423,6 +446,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listMembershipsCallable =

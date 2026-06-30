@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/rapidmigrationassessment/v1/rapidmigrationassessment.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RapidMigrationAssessmentGrpc {
 
@@ -527,6 +524,19 @@ public final class RapidMigrationAssessmentGrpc {
     return RapidMigrationAssessmentStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static RapidMigrationAssessmentBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<RapidMigrationAssessmentBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RapidMigrationAssessmentBlockingV2Stub>() {
+          @java.lang.Override
+          public RapidMigrationAssessmentBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RapidMigrationAssessmentBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return RapidMigrationAssessmentBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -658,7 +668,7 @@ public final class RapidMigrationAssessmentGrpc {
      *
      * <pre>
      * Deletes a single Collector - changes state of collector to "Deleting".
-     * Background jobs does final deletion thorugh producer api.
+     * Background jobs does final deletion through producer API.
      * </pre>
      */
     default void deleteCollector(
@@ -852,7 +862,7 @@ public final class RapidMigrationAssessmentGrpc {
      *
      * <pre>
      * Deletes a single Collector - changes state of collector to "Deleting".
-     * Background jobs does final deletion thorugh producer api.
+     * Background jobs does final deletion through producer API.
      * </pre>
      */
     public void deleteCollector(
@@ -915,6 +925,170 @@ public final class RapidMigrationAssessmentGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service RapidMigrationAssessment.
+   *
+   * <pre>
+   * Service describing handlers for resources.
+   * </pre>
+   */
+  public static final class RapidMigrationAssessmentBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<RapidMigrationAssessmentBlockingV2Stub> {
+    private RapidMigrationAssessmentBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected RapidMigrationAssessmentBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new RapidMigrationAssessmentBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a Collector to manage the on-prem appliance which collects
+     * information about Customer assets.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCollector(
+        com.google.cloud.rapidmigrationassessment.v1.CreateCollectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateCollectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Annotation
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAnnotation(
+        com.google.cloud.rapidmigrationassessment.v1.CreateAnnotationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAnnotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Annotation.
+     * </pre>
+     */
+    public com.google.cloud.rapidmigrationassessment.v1.Annotation getAnnotation(
+        com.google.cloud.rapidmigrationassessment.v1.GetAnnotationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAnnotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Collectors in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.rapidmigrationassessment.v1.ListCollectorsResponse listCollectors(
+        com.google.cloud.rapidmigrationassessment.v1.ListCollectorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListCollectorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Collector.
+     * </pre>
+     */
+    public com.google.cloud.rapidmigrationassessment.v1.Collector getCollector(
+        com.google.cloud.rapidmigrationassessment.v1.GetCollectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetCollectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Collector.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCollector(
+        com.google.cloud.rapidmigrationassessment.v1.UpdateCollectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateCollectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Collector - changes state of collector to "Deleting".
+     * Background jobs does final deletion through producer API.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCollector(
+        com.google.cloud.rapidmigrationassessment.v1.DeleteCollectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteCollectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes the given collector.
+     * </pre>
+     */
+    public com.google.longrunning.Operation resumeCollector(
+        com.google.cloud.rapidmigrationassessment.v1.ResumeCollectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getResumeCollectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Registers the given collector.
+     * </pre>
+     */
+    public com.google.longrunning.Operation registerCollector(
+        com.google.cloud.rapidmigrationassessment.v1.RegisterCollectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRegisterCollectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses the given collector.
+     * </pre>
+     */
+    public com.google.longrunning.Operation pauseCollector(
+        com.google.cloud.rapidmigrationassessment.v1.PauseCollectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getPauseCollectorMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * RapidMigrationAssessment.
    *
    * <pre>
    * Service describing handlers for resources.
@@ -1017,7 +1191,7 @@ public final class RapidMigrationAssessmentGrpc {
      *
      * <pre>
      * Deletes a single Collector - changes state of collector to "Deleting".
-     * Background jobs does final deletion thorugh producer api.
+     * Background jobs does final deletion through producer API.
      * </pre>
      */
     public com.google.longrunning.Operation deleteCollector(
@@ -1177,7 +1351,7 @@ public final class RapidMigrationAssessmentGrpc {
      *
      * <pre>
      * Deletes a single Collector - changes state of collector to "Deleting".
-     * Background jobs does final deletion thorugh producer api.
+     * Background jobs does final deletion through producer API.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

@@ -1,0 +1,10 @@
+[
+  {
+    "name": "com.google.protobuf.RuntimeVersion",
+    "fields" : [
+      { "name" : "MAJOR" },
+      { "name" : "MINOR" },
+      { "name" : "PATCH" }
+    ]
+  }
+]

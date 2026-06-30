@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -117,4 +117,11 @@ message Channel {
       type: "cloudkms.googleapis.com/CryptoKey"
     }
   ];
+
+  // Output only. Whether or not this Channel satisfies the requirements of
+  // physical zone separation
+  bool satisfies_pzs = 12 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Optional. Resource labels.
+  map<string, string> labels = 13 [(google.api.field_behavior) = OPTIONAL];
 }

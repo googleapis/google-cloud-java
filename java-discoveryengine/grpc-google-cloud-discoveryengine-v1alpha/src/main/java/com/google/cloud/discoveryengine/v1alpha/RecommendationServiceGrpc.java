@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for making recommendations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/recommendation_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RecommendationServiceGrpc {
 
@@ -94,6 +91,19 @@ public final class RecommendationServiceGrpc {
           }
         };
     return RecommendationServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static RecommendationServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<RecommendationServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RecommendationServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public RecommendationServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RecommendationServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return RecommendationServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -201,6 +211,41 @@ public final class RecommendationServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service RecommendationService.
+   *
+   * <pre>
+   * Service for making recommendations.
+   * </pre>
+   */
+  public static final class RecommendationServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<RecommendationServiceBlockingV2Stub> {
+    private RecommendationServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected RecommendationServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new RecommendationServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Makes a recommendation, which requires a contextual user event.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.RecommendResponse recommend(
+        com.google.cloud.discoveryengine.v1alpha.RecommendRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRecommendMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service RecommendationService.
    *
    * <pre>
    * Service for making recommendations.

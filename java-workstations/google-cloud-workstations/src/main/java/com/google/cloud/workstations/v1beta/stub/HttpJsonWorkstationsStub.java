@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,8 @@ import com.google.cloud.workstations.v1beta.ListWorkstationConfigsResponse;
 import com.google.cloud.workstations.v1beta.ListWorkstationsRequest;
 import com.google.cloud.workstations.v1beta.ListWorkstationsResponse;
 import com.google.cloud.workstations.v1beta.OperationMetadata;
+import com.google.cloud.workstations.v1beta.PushCredentialsMetadata;
+import com.google.cloud.workstations.v1beta.PushCredentialsRequest;
 import com.google.cloud.workstations.v1beta.StartWorkstationRequest;
 import com.google.cloud.workstations.v1beta.StopWorkstationRequest;
 import com.google.cloud.workstations.v1beta.UpdateWorkstationClusterRequest;
@@ -96,6 +98,7 @@ import javax.annotation.Generated;
 public class HttpJsonWorkstationsStub extends WorkstationsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
+          .add(PushCredentialsMetadata.getDescriptor())
           .add(WorkstationCluster.getDescriptor())
           .add(WorkstationConfig.getDescriptor())
           .add(Workstation.getDescriptor())
@@ -162,6 +165,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListWorkstationClustersRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -374,6 +378,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListWorkstationConfigsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -622,6 +627,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListWorkstationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -925,6 +931,48 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<PushCredentialsRequest, Operation>
+      pushCredentialsMethodDescriptor =
+          ApiMethodDescriptor.<PushCredentialsRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.workstations.v1beta.Workstations/PushCredentials")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PushCredentialsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{workstation=projects/*/locations/*/workstationClusters/*/workstationConfigs/*/workstations/*}:pushCredentials",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PushCredentialsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "workstation", request.getWorkstation());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PushCredentialsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearWorkstation().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PushCredentialsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<SetIamPolicyRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
@@ -1113,6 +1161,9 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
       stopWorkstationOperationCallable;
   private final UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenCallable;
+  private final UnaryCallable<PushCredentialsRequest, Operation> pushCredentialsCallable;
+  private final OperationCallable<PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+      pushCredentialsOperationCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -1199,6 +1250,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListWorkstationClustersRequest, ListWorkstationClustersResponse>
         listWorkstationClustersTransportSettings =
@@ -1212,6 +1264,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateWorkstationClusterRequest, Operation>
         createWorkstationClusterTransportSettings =
@@ -1224,6 +1277,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateWorkstationClusterRequest, Operation>
         updateWorkstationClusterTransportSettings =
@@ -1250,6 +1304,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetWorkstationConfigRequest, WorkstationConfig>
         getWorkstationConfigTransportSettings =
@@ -1262,6 +1317,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListWorkstationConfigsRequest, ListWorkstationConfigsResponse>
         listWorkstationConfigsTransportSettings =
@@ -1275,6 +1331,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListUsableWorkstationConfigsRequest, ListUsableWorkstationConfigsResponse>
         listUsableWorkstationConfigsTransportSettings =
@@ -1289,6 +1346,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateWorkstationConfigRequest, Operation>
         createWorkstationConfigTransportSettings =
@@ -1301,6 +1359,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateWorkstationConfigRequest, Operation>
         updateWorkstationConfigTransportSettings =
@@ -1327,6 +1386,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetWorkstationRequest, Workstation> getWorkstationTransportSettings =
         HttpJsonCallSettings.<GetWorkstationRequest, Workstation>newBuilder()
@@ -1338,6 +1398,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListWorkstationsRequest, ListWorkstationsResponse>
         listWorkstationsTransportSettings =
@@ -1350,6 +1411,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListUsableWorkstationsRequest, ListUsableWorkstationsResponse>
         listUsableWorkstationsTransportSettings =
@@ -1363,6 +1425,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateWorkstationRequest, Operation> createWorkstationTransportSettings =
         HttpJsonCallSettings.<CreateWorkstationRequest, Operation>newBuilder()
@@ -1374,6 +1437,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateWorkstationRequest, Operation> updateWorkstationTransportSettings =
         HttpJsonCallSettings.<UpdateWorkstationRequest, Operation>newBuilder()
@@ -1397,6 +1461,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StartWorkstationRequest, Operation> startWorkstationTransportSettings =
         HttpJsonCallSettings.<StartWorkstationRequest, Operation>newBuilder()
@@ -1408,6 +1473,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StopWorkstationRequest, Operation> stopWorkstationTransportSettings =
         HttpJsonCallSettings.<StopWorkstationRequest, Operation>newBuilder()
@@ -1419,6 +1485,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
         generateAccessTokenTransportSettings =
@@ -1432,7 +1499,20 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("workstation", String.valueOf(request.getWorkstation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkstation())
                 .build();
+    HttpJsonCallSettings<PushCredentialsRequest, Operation> pushCredentialsTransportSettings =
+        HttpJsonCallSettings.<PushCredentialsRequest, Operation>newBuilder()
+            .setMethodDescriptor(pushCredentialsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workstation", String.valueOf(request.getWorkstation()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getWorkstation())
+            .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
@@ -1443,6 +1523,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1454,6 +1535,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1466,6 +1548,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.getWorkstationClusterCallable =
@@ -1649,6 +1732,15 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
             generateAccessTokenTransportSettings,
             settings.generateAccessTokenSettings(),
             clientContext);
+    this.pushCredentialsCallable =
+        callableFactory.createUnaryCallable(
+            pushCredentialsTransportSettings, settings.pushCredentialsSettings(), clientContext);
+    this.pushCredentialsOperationCallable =
+        callableFactory.createOperationCallable(
+            pushCredentialsTransportSettings,
+            settings.pushCredentialsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -1688,6 +1780,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
     methodDescriptors.add(startWorkstationMethodDescriptor);
     methodDescriptors.add(stopWorkstationMethodDescriptor);
     methodDescriptors.add(generateAccessTokenMethodDescriptor);
+    methodDescriptors.add(pushCredentialsMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
@@ -1907,6 +2000,17 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
   public UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenCallable() {
     return generateAccessTokenCallable;
+  }
+
+  @Override
+  public UnaryCallable<PushCredentialsRequest, Operation> pushCredentialsCallable() {
+    return pushCredentialsCallable;
+  }
+
+  @Override
+  public OperationCallable<PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+      pushCredentialsOperationCallable() {
+    return pushCredentialsOperationCallable;
   }
 
   @Override

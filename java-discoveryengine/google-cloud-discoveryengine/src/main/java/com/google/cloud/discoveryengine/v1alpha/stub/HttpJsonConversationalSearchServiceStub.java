@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -545,6 +545,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetSessionRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(
+                            fields, "includeAnswerDetails", request.getIncludeAnswerDetails());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
@@ -676,6 +678,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateConversationRequest, Conversation>
         createConversationTransportSettings =
@@ -688,6 +691,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteConversationRequest, Empty> deleteConversationTransportSettings =
         HttpJsonCallSettings.<DeleteConversationRequest, Empty>newBuilder()
@@ -699,6 +703,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateConversationRequest, Conversation>
         updateConversationTransportSettings =
@@ -723,6 +728,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListConversationsRequest, ListConversationsResponse>
         listConversationsTransportSettings =
@@ -735,6 +741,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQueryTransportSettings =
         HttpJsonCallSettings.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
@@ -746,6 +753,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                   builder.add("serving_config", String.valueOf(request.getServingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
     HttpJsonCallSettings<GetAnswerRequest, Answer> getAnswerTransportSettings =
         HttpJsonCallSettings.<GetAnswerRequest, Answer>newBuilder()
@@ -757,6 +765,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateSessionRequest, Session> createSessionTransportSettings =
         HttpJsonCallSettings.<CreateSessionRequest, Session>newBuilder()
@@ -768,6 +777,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteSessionRequest, Empty> deleteSessionTransportSettings =
         HttpJsonCallSettings.<DeleteSessionRequest, Empty>newBuilder()
@@ -779,6 +789,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateSessionRequest, Session> updateSessionTransportSettings =
         HttpJsonCallSettings.<UpdateSessionRequest, Session>newBuilder()
@@ -801,6 +812,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSessionsRequest, ListSessionsResponse> listSessionsTransportSettings =
         HttpJsonCallSettings.<ListSessionsRequest, ListSessionsResponse>newBuilder()
@@ -812,6 +824,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.converseConversationCallable =

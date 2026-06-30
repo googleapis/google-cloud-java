@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.aiplatform.v1;
 
 import static com.google.cloud.aiplatform.v1.NotebookServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.aiplatform.v1.NotebookServiceClient.ListNotebookExecutionJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1.NotebookServiceClient.ListNotebookRuntimeTemplatesPagedResponse;
 import static com.google.cloud.aiplatform.v1.NotebookServiceClient.ListNotebookRuntimesPagedResponse;
 
@@ -62,7 +63,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getNotebookRuntimeTemplate to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getNotebookRuntimeTemplate:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -79,9 +82,46 @@ import javax.annotation.Generated;
  *             .getNotebookRuntimeTemplateSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * NotebookServiceSettings notebookServiceSettings = notebookServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createNotebookRuntimeTemplate:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * NotebookServiceSettings.Builder notebookServiceSettingsBuilder =
+ *     NotebookServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * notebookServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -131,6 +171,13 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
       deleteNotebookRuntimeTemplateOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings())
         .deleteNotebookRuntimeTemplateOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateNotebookRuntimeTemplate. */
+  public UnaryCallSettings<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+      updateNotebookRuntimeTemplateSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings())
+        .updateNotebookRuntimeTemplateSettings();
   }
 
   /** Returns the object with the settings used for calls to assignNotebookRuntime. */
@@ -204,6 +251,64 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
       startNotebookRuntimeOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings())
         .startNotebookRuntimeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopNotebookRuntime. */
+  public UnaryCallSettings<StopNotebookRuntimeRequest, Operation> stopNotebookRuntimeSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).stopNotebookRuntimeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopNotebookRuntime. */
+  public OperationCallSettings<
+          StopNotebookRuntimeRequest,
+          StopNotebookRuntimeResponse,
+          StopNotebookRuntimeOperationMetadata>
+      stopNotebookRuntimeOperationSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).stopNotebookRuntimeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createNotebookExecutionJob. */
+  public UnaryCallSettings<CreateNotebookExecutionJobRequest, Operation>
+      createNotebookExecutionJobSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).createNotebookExecutionJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createNotebookExecutionJob. */
+  public OperationCallSettings<
+          CreateNotebookExecutionJobRequest,
+          NotebookExecutionJob,
+          CreateNotebookExecutionJobOperationMetadata>
+      createNotebookExecutionJobOperationSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings())
+        .createNotebookExecutionJobOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getNotebookExecutionJob. */
+  public UnaryCallSettings<GetNotebookExecutionJobRequest, NotebookExecutionJob>
+      getNotebookExecutionJobSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).getNotebookExecutionJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listNotebookExecutionJobs. */
+  public PagedCallSettings<
+          ListNotebookExecutionJobsRequest,
+          ListNotebookExecutionJobsResponse,
+          ListNotebookExecutionJobsPagedResponse>
+      listNotebookExecutionJobsSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).listNotebookExecutionJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNotebookExecutionJob. */
+  public UnaryCallSettings<DeleteNotebookExecutionJobRequest, Operation>
+      deleteNotebookExecutionJobSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).deleteNotebookExecutionJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNotebookExecutionJob. */
+  public OperationCallSettings<DeleteNotebookExecutionJobRequest, Empty, DeleteOperationMetadata>
+      deleteNotebookExecutionJobOperationSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings())
+        .deleteNotebookExecutionJobOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -372,6 +477,12 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
       return getStubSettingsBuilder().deleteNotebookRuntimeTemplateOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateNotebookRuntimeTemplate. */
+    public UnaryCallSettings.Builder<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+        updateNotebookRuntimeTemplateSettings() {
+      return getStubSettingsBuilder().updateNotebookRuntimeTemplateSettings();
+    }
+
     /** Returns the builder for the settings used for calls to assignNotebookRuntime. */
     public UnaryCallSettings.Builder<AssignNotebookRuntimeRequest, Operation>
         assignNotebookRuntimeSettings() {
@@ -441,6 +552,64 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
             StartNotebookRuntimeOperationMetadata>
         startNotebookRuntimeOperationSettings() {
       return getStubSettingsBuilder().startNotebookRuntimeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopNotebookRuntime. */
+    public UnaryCallSettings.Builder<StopNotebookRuntimeRequest, Operation>
+        stopNotebookRuntimeSettings() {
+      return getStubSettingsBuilder().stopNotebookRuntimeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopNotebookRuntime. */
+    public OperationCallSettings.Builder<
+            StopNotebookRuntimeRequest,
+            StopNotebookRuntimeResponse,
+            StopNotebookRuntimeOperationMetadata>
+        stopNotebookRuntimeOperationSettings() {
+      return getStubSettingsBuilder().stopNotebookRuntimeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createNotebookExecutionJob. */
+    public UnaryCallSettings.Builder<CreateNotebookExecutionJobRequest, Operation>
+        createNotebookExecutionJobSettings() {
+      return getStubSettingsBuilder().createNotebookExecutionJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createNotebookExecutionJob. */
+    public OperationCallSettings.Builder<
+            CreateNotebookExecutionJobRequest,
+            NotebookExecutionJob,
+            CreateNotebookExecutionJobOperationMetadata>
+        createNotebookExecutionJobOperationSettings() {
+      return getStubSettingsBuilder().createNotebookExecutionJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getNotebookExecutionJob. */
+    public UnaryCallSettings.Builder<GetNotebookExecutionJobRequest, NotebookExecutionJob>
+        getNotebookExecutionJobSettings() {
+      return getStubSettingsBuilder().getNotebookExecutionJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listNotebookExecutionJobs. */
+    public PagedCallSettings.Builder<
+            ListNotebookExecutionJobsRequest,
+            ListNotebookExecutionJobsResponse,
+            ListNotebookExecutionJobsPagedResponse>
+        listNotebookExecutionJobsSettings() {
+      return getStubSettingsBuilder().listNotebookExecutionJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNotebookExecutionJob. */
+    public UnaryCallSettings.Builder<DeleteNotebookExecutionJobRequest, Operation>
+        deleteNotebookExecutionJobSettings() {
+      return getStubSettingsBuilder().deleteNotebookExecutionJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNotebookExecutionJob. */
+    public OperationCallSettings.Builder<
+            DeleteNotebookExecutionJobRequest, Empty, DeleteOperationMetadata>
+        deleteNotebookExecutionJobOperationSettings() {
+      return getStubSettingsBuilder().deleteNotebookExecutionJobOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

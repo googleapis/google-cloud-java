@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -454,6 +454,7 @@ public class HttpJsonExperimentsStub extends ExperimentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetExperimentRequest, Experiment> getExperimentTransportSettings =
         HttpJsonCallSettings.<GetExperimentRequest, Experiment>newBuilder()
@@ -465,6 +466,7 @@ public class HttpJsonExperimentsStub extends ExperimentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateExperimentRequest, Experiment> createExperimentTransportSettings =
         HttpJsonCallSettings.<CreateExperimentRequest, Experiment>newBuilder()
@@ -476,6 +478,7 @@ public class HttpJsonExperimentsStub extends ExperimentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateExperimentRequest, Experiment> updateExperimentTransportSettings =
         HttpJsonCallSettings.<UpdateExperimentRequest, Experiment>newBuilder()
@@ -498,6 +501,7 @@ public class HttpJsonExperimentsStub extends ExperimentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StartExperimentRequest, Experiment> startExperimentTransportSettings =
         HttpJsonCallSettings.<StartExperimentRequest, Experiment>newBuilder()
@@ -509,6 +513,7 @@ public class HttpJsonExperimentsStub extends ExperimentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StopExperimentRequest, Experiment> stopExperimentTransportSettings =
         HttpJsonCallSettings.<StopExperimentRequest, Experiment>newBuilder()
@@ -520,6 +525,7 @@ public class HttpJsonExperimentsStub extends ExperimentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

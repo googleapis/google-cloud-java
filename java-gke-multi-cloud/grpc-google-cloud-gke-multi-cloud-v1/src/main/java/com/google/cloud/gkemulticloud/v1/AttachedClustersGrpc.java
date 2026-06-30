@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * infrastructure.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/gkemulticloud/v1/attached_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AttachedClustersGrpc {
 
@@ -512,6 +509,19 @@ public final class AttachedClustersGrpc {
     return AttachedClustersStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AttachedClustersBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AttachedClustersBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AttachedClustersBlockingV2Stub>() {
+          @java.lang.Override
+          public AttachedClustersBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AttachedClustersBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AttachedClustersBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -917,6 +927,180 @@ public final class AttachedClustersGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AttachedClusters.
+   *
+   * <pre>
+   * The AttachedClusters API provides a single centrally managed service
+   * to register and manage Anthos attached clusters that run on customer's owned
+   * infrastructure.
+   * </pre>
+   */
+  public static final class AttachedClustersBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AttachedClustersBlockingV2Stub> {
+    private AttachedClustersBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AttachedClustersBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AttachedClustersBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new
+     * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
+     * on a given Google Cloud Platform project and region.
+     * If successful, the response contains a newly created
+     * [Operation][google.longrunning.Operation] resource that can be
+     * described to track the status of the operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAttachedCluster(
+        com.google.cloud.gkemulticloud.v1.CreateAttachedClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAttachedClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an
+     * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster].
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAttachedCluster(
+        com.google.cloud.gkemulticloud.v1.UpdateAttachedClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAttachedClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports creates a new
+     * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
+     * by importing an existing Fleet Membership resource.
+     * Attached Clusters created before the introduction of the Anthos Multi-Cloud
+     * API can be imported through this method.
+     * If successful, the response contains a newly created
+     * [Operation][google.longrunning.Operation] resource that can be
+     * described to track the status of the operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importAttachedCluster(
+        com.google.cloud.gkemulticloud.v1.ImportAttachedClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getImportAttachedClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a specific
+     * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AttachedCluster getAttachedCluster(
+        com.google.cloud.gkemulticloud.v1.GetAttachedClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAttachedClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]
+     * resources on a given Google Cloud project and region.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.ListAttachedClustersResponse listAttachedClusters(
+        com.google.cloud.gkemulticloud.v1.ListAttachedClustersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAttachedClustersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific
+     * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource.
+     * If successful, the response contains a newly created
+     * [Operation][google.longrunning.Operation] resource that can be
+     * described to track the status of the operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAttachedCluster(
+        com.google.cloud.gkemulticloud.v1.DeleteAttachedClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteAttachedClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information, such as supported Kubernetes versions, on a given
+     * Google Cloud location.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AttachedServerConfig getAttachedServerConfig(
+        com.google.cloud.gkemulticloud.v1.GetAttachedServerConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAttachedServerConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates the install manifest to be installed on the target cluster.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestResponse
+        generateAttachedClusterInstallManifest(
+            com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getGenerateAttachedClusterInstallManifestMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an access token for a cluster agent.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse
+        generateAttachedClusterAgentToken(
+            com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGenerateAttachedClusterAgentTokenMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AttachedClusters.
    *
    * <pre>
    * The AttachedClusters API provides a single centrally managed service

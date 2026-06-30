@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,19 +23,25 @@ import static com.google.cloud.dialogflow.cx.v3beta1.PlaybooksClient.ListPlayboo
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -49,14 +55,20 @@ import com.google.cloud.dialogflow.cx.v3beta1.CreatePlaybookRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.CreatePlaybookVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeletePlaybookRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeletePlaybookVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.GetPlaybookRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.GetPlaybookVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.ListPlaybookVersionsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListPlaybookVersionsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.ListPlaybooksRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListPlaybooksResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.Playbook;
 import com.google.cloud.dialogflow.cx.v3beta1.PlaybookVersion;
+import com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdatePlaybookRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -66,11 +78,13 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Struct;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -87,7 +101,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createPlaybook to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createPlaybook:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -103,13 +119,50 @@ import org.threeten.bp.Duration;
  *             .createPlaybookSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * PlaybooksStubSettings playbooksSettings = playbooksSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for exportPlaybook:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * PlaybooksStubSettings.Builder playbooksSettingsBuilder = PlaybooksStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * playbooksSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -124,11 +177,19 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
           ListPlaybooksRequest, ListPlaybooksResponse, ListPlaybooksPagedResponse>
       listPlaybooksSettings;
   private final UnaryCallSettings<GetPlaybookRequest, Playbook> getPlaybookSettings;
+  private final UnaryCallSettings<ExportPlaybookRequest, Operation> exportPlaybookSettings;
+  private final OperationCallSettings<ExportPlaybookRequest, ExportPlaybookResponse, Struct>
+      exportPlaybookOperationSettings;
+  private final UnaryCallSettings<ImportPlaybookRequest, Operation> importPlaybookSettings;
+  private final OperationCallSettings<ImportPlaybookRequest, ImportPlaybookResponse, Struct>
+      importPlaybookOperationSettings;
   private final UnaryCallSettings<UpdatePlaybookRequest, Playbook> updatePlaybookSettings;
   private final UnaryCallSettings<CreatePlaybookVersionRequest, PlaybookVersion>
       createPlaybookVersionSettings;
   private final UnaryCallSettings<GetPlaybookVersionRequest, PlaybookVersion>
       getPlaybookVersionSettings;
+  private final UnaryCallSettings<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
+      restorePlaybookVersionSettings;
   private final PagedCallSettings<
           ListPlaybookVersionsRequest,
           ListPlaybookVersionsResponse,
@@ -171,9 +232,7 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
 
             @Override
             public Iterable<Playbook> extractResources(ListPlaybooksResponse payload) {
-              return payload.getPlaybooksList() == null
-                  ? ImmutableList.<Playbook>of()
-                  : payload.getPlaybooksList();
+              return payload.getPlaybooksList();
             }
           };
 
@@ -212,9 +271,7 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
             @Override
             public Iterable<PlaybookVersion> extractResources(
                 ListPlaybookVersionsResponse payload) {
-              return payload.getPlaybookVersionsList() == null
-                  ? ImmutableList.<PlaybookVersion>of()
-                  : payload.getPlaybookVersionsList();
+              return payload.getPlaybookVersionsList();
             }
           };
 
@@ -248,9 +305,7 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -333,6 +388,28 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
     return getPlaybookSettings;
   }
 
+  /** Returns the object with the settings used for calls to exportPlaybook. */
+  public UnaryCallSettings<ExportPlaybookRequest, Operation> exportPlaybookSettings() {
+    return exportPlaybookSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportPlaybook. */
+  public OperationCallSettings<ExportPlaybookRequest, ExportPlaybookResponse, Struct>
+      exportPlaybookOperationSettings() {
+    return exportPlaybookOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importPlaybook. */
+  public UnaryCallSettings<ImportPlaybookRequest, Operation> importPlaybookSettings() {
+    return importPlaybookSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importPlaybook. */
+  public OperationCallSettings<ImportPlaybookRequest, ImportPlaybookResponse, Struct>
+      importPlaybookOperationSettings() {
+    return importPlaybookOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to updatePlaybook. */
   public UnaryCallSettings<UpdatePlaybookRequest, Playbook> updatePlaybookSettings() {
     return updatePlaybookSettings;
@@ -348,6 +425,12 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
   public UnaryCallSettings<GetPlaybookVersionRequest, PlaybookVersion>
       getPlaybookVersionSettings() {
     return getPlaybookVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restorePlaybookVersion. */
+  public UnaryCallSettings<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
+      restorePlaybookVersionSettings() {
+    return restorePlaybookVersionSettings;
   }
 
   /** Returns the object with the settings used for calls to listPlaybookVersions. */
@@ -391,15 +474,6 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -412,6 +486,7 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "dialogflow.googleapis.com:443";
   }
@@ -496,13 +571,27 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
     deletePlaybookSettings = settingsBuilder.deletePlaybookSettings().build();
     listPlaybooksSettings = settingsBuilder.listPlaybooksSettings().build();
     getPlaybookSettings = settingsBuilder.getPlaybookSettings().build();
+    exportPlaybookSettings = settingsBuilder.exportPlaybookSettings().build();
+    exportPlaybookOperationSettings = settingsBuilder.exportPlaybookOperationSettings().build();
+    importPlaybookSettings = settingsBuilder.importPlaybookSettings().build();
+    importPlaybookOperationSettings = settingsBuilder.importPlaybookOperationSettings().build();
     updatePlaybookSettings = settingsBuilder.updatePlaybookSettings().build();
     createPlaybookVersionSettings = settingsBuilder.createPlaybookVersionSettings().build();
     getPlaybookVersionSettings = settingsBuilder.getPlaybookVersionSettings().build();
+    restorePlaybookVersionSettings = settingsBuilder.restorePlaybookVersionSettings().build();
     listPlaybookVersionsSettings = settingsBuilder.listPlaybookVersionsSettings().build();
     deletePlaybookVersionSettings = settingsBuilder.deletePlaybookVersionSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-dialogflow-cx")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for PlaybooksStubSettings. */
@@ -514,11 +603,24 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
             ListPlaybooksRequest, ListPlaybooksResponse, ListPlaybooksPagedResponse>
         listPlaybooksSettings;
     private final UnaryCallSettings.Builder<GetPlaybookRequest, Playbook> getPlaybookSettings;
+    private final UnaryCallSettings.Builder<ExportPlaybookRequest, Operation>
+        exportPlaybookSettings;
+    private final OperationCallSettings.Builder<
+            ExportPlaybookRequest, ExportPlaybookResponse, Struct>
+        exportPlaybookOperationSettings;
+    private final UnaryCallSettings.Builder<ImportPlaybookRequest, Operation>
+        importPlaybookSettings;
+    private final OperationCallSettings.Builder<
+            ImportPlaybookRequest, ImportPlaybookResponse, Struct>
+        importPlaybookOperationSettings;
     private final UnaryCallSettings.Builder<UpdatePlaybookRequest, Playbook> updatePlaybookSettings;
     private final UnaryCallSettings.Builder<CreatePlaybookVersionRequest, PlaybookVersion>
         createPlaybookVersionSettings;
     private final UnaryCallSettings.Builder<GetPlaybookVersionRequest, PlaybookVersion>
         getPlaybookVersionSettings;
+    private final UnaryCallSettings.Builder<
+            RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
+        restorePlaybookVersionSettings;
     private final PagedCallSettings.Builder<
             ListPlaybookVersionsRequest,
             ListPlaybookVersionsResponse,
@@ -549,13 +651,13 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -572,9 +674,14 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
       deletePlaybookSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listPlaybooksSettings = PagedCallSettings.newBuilder(LIST_PLAYBOOKS_PAGE_STR_FACT);
       getPlaybookSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportPlaybookSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportPlaybookOperationSettings = OperationCallSettings.newBuilder();
+      importPlaybookSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importPlaybookOperationSettings = OperationCallSettings.newBuilder();
       updatePlaybookSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createPlaybookVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getPlaybookVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      restorePlaybookVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listPlaybookVersionsSettings =
           PagedCallSettings.newBuilder(LIST_PLAYBOOK_VERSIONS_PAGE_STR_FACT);
       deletePlaybookVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -587,9 +694,12 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
               deletePlaybookSettings,
               listPlaybooksSettings,
               getPlaybookSettings,
+              exportPlaybookSettings,
+              importPlaybookSettings,
               updatePlaybookSettings,
               createPlaybookVersionSettings,
               getPlaybookVersionSettings,
+              restorePlaybookVersionSettings,
               listPlaybookVersionsSettings,
               deletePlaybookVersionSettings,
               listLocationsSettings,
@@ -604,9 +714,14 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
       deletePlaybookSettings = settings.deletePlaybookSettings.toBuilder();
       listPlaybooksSettings = settings.listPlaybooksSettings.toBuilder();
       getPlaybookSettings = settings.getPlaybookSettings.toBuilder();
+      exportPlaybookSettings = settings.exportPlaybookSettings.toBuilder();
+      exportPlaybookOperationSettings = settings.exportPlaybookOperationSettings.toBuilder();
+      importPlaybookSettings = settings.importPlaybookSettings.toBuilder();
+      importPlaybookOperationSettings = settings.importPlaybookOperationSettings.toBuilder();
       updatePlaybookSettings = settings.updatePlaybookSettings.toBuilder();
       createPlaybookVersionSettings = settings.createPlaybookVersionSettings.toBuilder();
       getPlaybookVersionSettings = settings.getPlaybookVersionSettings.toBuilder();
+      restorePlaybookVersionSettings = settings.restorePlaybookVersionSettings.toBuilder();
       listPlaybookVersionsSettings = settings.listPlaybookVersionsSettings.toBuilder();
       deletePlaybookVersionSettings = settings.deletePlaybookVersionSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
@@ -618,9 +733,12 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
               deletePlaybookSettings,
               listPlaybooksSettings,
               getPlaybookSettings,
+              exportPlaybookSettings,
+              importPlaybookSettings,
               updatePlaybookSettings,
               createPlaybookVersionSettings,
               getPlaybookVersionSettings,
+              restorePlaybookVersionSettings,
               listPlaybookVersionsSettings,
               deletePlaybookVersionSettings,
               listLocationsSettings,
@@ -673,6 +791,16 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .exportPlaybookSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .importPlaybookSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .updatePlaybookSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -684,6 +812,11 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
 
       builder
           .getPlaybookVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .restorePlaybookVersionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -706,6 +839,54 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
           .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .exportPlaybookOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExportPlaybookRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExportPlaybookResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .importPlaybookOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ImportPlaybookRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ImportPlaybookResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -747,6 +928,28 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
       return getPlaybookSettings;
     }
 
+    /** Returns the builder for the settings used for calls to exportPlaybook. */
+    public UnaryCallSettings.Builder<ExportPlaybookRequest, Operation> exportPlaybookSettings() {
+      return exportPlaybookSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportPlaybook. */
+    public OperationCallSettings.Builder<ExportPlaybookRequest, ExportPlaybookResponse, Struct>
+        exportPlaybookOperationSettings() {
+      return exportPlaybookOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importPlaybook. */
+    public UnaryCallSettings.Builder<ImportPlaybookRequest, Operation> importPlaybookSettings() {
+      return importPlaybookSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importPlaybook. */
+    public OperationCallSettings.Builder<ImportPlaybookRequest, ImportPlaybookResponse, Struct>
+        importPlaybookOperationSettings() {
+      return importPlaybookOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updatePlaybook. */
     public UnaryCallSettings.Builder<UpdatePlaybookRequest, Playbook> updatePlaybookSettings() {
       return updatePlaybookSettings;
@@ -762,6 +965,12 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
     public UnaryCallSettings.Builder<GetPlaybookVersionRequest, PlaybookVersion>
         getPlaybookVersionSettings() {
       return getPlaybookVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restorePlaybookVersion. */
+    public UnaryCallSettings.Builder<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
+        restorePlaybookVersionSettings() {
+      return restorePlaybookVersionSettings;
     }
 
     /** Returns the builder for the settings used for calls to listPlaybookVersions. */
@@ -789,15 +998,6 @@ public class PlaybooksStubSettings extends StubSettings<PlaybooksStubSettings> {
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getLocationSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

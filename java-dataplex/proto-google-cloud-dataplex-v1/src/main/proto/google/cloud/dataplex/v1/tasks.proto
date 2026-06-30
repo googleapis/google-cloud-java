@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -215,10 +215,9 @@ message Task {
       // named process arguments (`--key=value`).
       string python_script_file = 102;
 
-      // A reference to a query file. This can be the Cloud Storage URI of the
-      // query file or it can the path to a SqlScript Content. The execution
-      // args are used to declare a set of script variables
-      // (`set key="value";`).
+      // A reference to a query file. This should be the Cloud Storage URI of
+      // the query file. The execution args are used to declare a set of script
+      // variables (`set key="value";`).
       string sql_script_file = 104;
 
       // The query text.
@@ -359,7 +358,7 @@ message Job {
     // The job is no longer running due to an error.
     FAILED = 5;
 
-    // The job was cancelled outside of Dataplex.
+    // The job was cancelled outside of Dataplex Universal Catalog.
     ABORTED = 6;
   }
 
@@ -368,8 +367,8 @@ message Job {
     // The trigger is unspecified.
     TRIGGER_UNSPECIFIED = 0;
 
-    // The job was triggered by Dataplex based on trigger spec from task
-    // definition.
+    // The job was triggered by Dataplex Universal Catalog based on trigger spec
+    // from task definition.
     TASK_CONFIG = 1;
 
     // The job was triggered by the explicit call of Task API.

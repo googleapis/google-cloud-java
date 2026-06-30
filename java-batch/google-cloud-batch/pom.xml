@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-batch</artifactId>
-  <version>0.42.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-batch:current} -->
+  <version>0.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-batch:current} -->
   <packaging>jar</packaging>
   <name>Google Google Cloud Batch</name>
   <description>Google Cloud Batch n/a</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-batch-parent</artifactId>
-    <version>0.42.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-batch:current} -->
+    <version>0.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-batch:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-batch</site.installationModule>
@@ -40,14 +40,22 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-batch-v1alpha</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-common-protos</artifactId>
+      <artifactId>proto-google-cloud-batch-v1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-batch-v1alpha</artifactId>
@@ -55,15 +63,18 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-batch-v1</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-iam-v1</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-batch-v1</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -93,11 +104,6 @@
       <scope>test</scope>
     </dependency>
 
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-batch-v1</artifactId>
-      <scope>test</scope>
-    </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

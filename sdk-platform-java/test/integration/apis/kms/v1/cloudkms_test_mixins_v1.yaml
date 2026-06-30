@@ -1,0 +1,86 @@
+type: google.api.Service
+config_version: 3
+name: cloudkms.googleapis.com
+title: Cloud Key Management Service (KMS) API
+
+apis:
+- name: google.cloud.kms.v1.KeyManagementService
+- name: google.cloud.location.Locations
+- name: google.iam.v1.IAMPolicy
+
+types:
+- name: google.cloud.kms.v1.LocationMetadata
+
+documentation:
+  summary: |-
+    Manages keys and performs cryptographic operations in a central cloud
+    service, for direct use by other cloud resources and applications.
+  rules:
+  # This RPC shouldn't appear in the proto, since it's been clobered by KMS's definition in the proto.
+  - selector: google.iam.v1.IAMPolicy.GetIamPolicy
+    description: |-
+      Gets the access control policy for a resource. Returns an empty policy
+      if the resource exists and does not have a policy set.
+
+  # This RPC shouldn't appear in the proto, since it's not in the HTTP rules list below,
+  # even though the documentation field is set.
+  - selector: google.iam.v1.IAMPolicy.SetIamPolicy
+    description: |-
+      Sets the access control policy on the specified resource. Replaces
+      any existing policy.
+
+      Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`
+      errors.
+
+  # Test the overriding of comments.
+  - selector: google.iam.v1.IAMPolicy.TestIamPermissions
+    description: |-
+      This is a different comment for TestIamPermissions in the yaml file that should clobber the documentation in iam_policy.proto.
+
+http:
+  rules:
+  - selector: google.cloud.location.Locations.GetLocation
+    get: "/v1/{name=locations/*}"
+    body: '*'
+  # Test different HTTP verbs.
+  - selector: google.cloud.location.Locations.ListLocations
+    get: "/v1/{filter=*/*}/locations"
+    body: '*'
+    additional_bindings:
+      - post: '/v1/{page_size=*}'
+        body: '*'
+  - selector: google.iam.v1.IAMPolicy.GetIamPolicy
+    get: '/v1/{resource=projects/*/locations/*/keyRings/*}:getIamPolicy'
+    additional_bindings:
+    - get: '/v1/{resource=projects/*/locations/*/keyRings/*/cryptoKeys/*}:getIamPolicy'
+    - get: '/v1/{resource=projects/*/locations/*/keyRings/*/importJobs/*}:getIamPolicy'
+  # Test the omission of SetIamPolicy - this should no longer appear in the generated client.
+#  - selector: google.iam.v1.IAMPolicy.SetIamPolicy
+#    post: '/v1/{resource=projects/*/locations/*/keyRings/*}:setIamPolicy'
+#    body: '*'
+#    additional_bindings:
+#    - post: '/v1/{resource=projects/*/locations/*/keyRings/*/cryptoKeys/*}:setIamPolicy'
+#      body: '*'
+#    - post: '/v1/{resource=projects/*/locations/*/keyRings/*/importJobs/*}:setIamPolicy'
+#      body: '*'
+  - selector: google.iam.v1.IAMPolicy.TestIamPermissions
+    post: '/v1/{resource=projects/*/locations/*/keyRings/*}:testIamPermissions'
+    body: '*'
+    additional_bindings:
+    - post: '/v1/{resource=projects/*/locations/*/keyRings/*/cryptoKeys/*}:testIamPermissions'
+      body: '*'
+    - post: '/v1/{resource=projects/*/locations/*/keyRings/*/importJobs/*}:testIamPermissions'
+      body: '*'
+
+authentication:
+  rules:
+  - selector: 'google.cloud.kms.v1.KeyManagementService.*'
+    oauth:
+      canonical_scopes: |-
+        https://www.googleapis.com/auth/cloud-platform,
+        https://www.googleapis.com/auth/cloudkms
+  - selector: 'google.iam.v1.IAMPolicy.*'
+    oauth:
+      canonical_scopes: |-
+        https://www.googleapis.com/auth/cloud-platform,
+        https://www.googleapis.com/auth/cloudkms

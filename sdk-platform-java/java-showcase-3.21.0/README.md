@@ -1,0 +1,2 @@
+This is a copy of [GAPIC Showcase](https://github.com/googleapis/gapic-showcase) with protobuf 3.21.0 gen code.
+This is intended to test the compatibility between protobuf-java runtime v4.33.0 and gen code 3.21.0.  

@@ -1,0 +1,17 @@
+{
+  "api_shortname": "workloadmanager",
+  "name_pretty": "Workload Manager API",
+  "product_documentation": "https://docs.cloud.google.com/workload-manager/docs",
+  "api_description": "Workload Manager is a service that provides tooling for enterprise workloads to automate the deployment and validation of your workloads against best practices and recommendations.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-workloadmanager/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-workloadmanager",
+  "distribution_name": "com.google.cloud:google-cloud-workloadmanager",
+  "api_id": "workloadmanager.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true,
+  "rpc_documentation": "https://docs.cloud.google.com/workload-manager/docs/reference/rest"
+}

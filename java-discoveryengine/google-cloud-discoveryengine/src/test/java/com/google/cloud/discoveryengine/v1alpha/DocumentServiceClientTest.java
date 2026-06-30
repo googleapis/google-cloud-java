@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,6 +106,7 @@ public class DocumentServiceClientTest {
             .setDerivedStructData(Struct.newBuilder().build())
             .setAclInfo(Document.AclInfo.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
+            .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -158,6 +159,7 @@ public class DocumentServiceClientTest {
             .setDerivedStructData(Struct.newBuilder().build())
             .setAclInfo(Document.AclInfo.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
+            .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -298,6 +300,7 @@ public class DocumentServiceClientTest {
             .setDerivedStructData(Struct.newBuilder().build())
             .setAclInfo(Document.AclInfo.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
+            .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -356,6 +359,7 @@ public class DocumentServiceClientTest {
             .setDerivedStructData(Struct.newBuilder().build())
             .setAclInfo(Document.AclInfo.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
+            .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -410,6 +414,7 @@ public class DocumentServiceClientTest {
             .setDerivedStructData(Struct.newBuilder().build())
             .setAclInfo(Document.AclInfo.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
+            .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -559,6 +564,7 @@ public class DocumentServiceClientTest {
     Assert.assertEquals(request.getSpannerSource(), actualRequest.getSpannerSource());
     Assert.assertEquals(request.getCloudSqlSource(), actualRequest.getCloudSqlSource());
     Assert.assertEquals(request.getFirestoreSource(), actualRequest.getFirestoreSource());
+    Assert.assertEquals(request.getAlloyDbSource(), actualRequest.getAlloyDbSource());
     Assert.assertEquals(request.getBigtableSource(), actualRequest.getBigtableSource());
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getErrorConfig(), actualRequest.getErrorConfig());
@@ -632,6 +638,7 @@ public class DocumentServiceClientTest {
     PurgeDocumentsRequest actualRequest = ((PurgeDocumentsRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getGcsSource(), actualRequest.getGcsSource());
+    Assert.assertEquals(request.getInlineSource(), actualRequest.getInlineSource());
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
     Assert.assertEquals(request.getErrorConfig(), actualRequest.getErrorConfig());
@@ -749,6 +756,90 @@ public class DocumentServiceClientTest {
     try {
       String name = "name3373707";
       client.getProcessedDocument(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchGetDocumentsMetadataTest() throws Exception {
+    BatchGetDocumentsMetadataResponse expectedResponse =
+        BatchGetDocumentsMetadataResponse.newBuilder()
+            .addAllDocumentsMetadata(
+                new ArrayList<BatchGetDocumentsMetadataResponse.DocumentMetadata>())
+            .build();
+    mockDocumentService.addResponse(expectedResponse);
+
+    BranchName parent =
+        BranchName.ofProjectLocationDataStoreBranchName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+
+    BatchGetDocumentsMetadataResponse actualResponse = client.batchGetDocumentsMetadata(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchGetDocumentsMetadataRequest actualRequest =
+        ((BatchGetDocumentsMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchGetDocumentsMetadataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      BranchName parent =
+          BranchName.ofProjectLocationDataStoreBranchName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+      client.batchGetDocumentsMetadata(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchGetDocumentsMetadataTest2() throws Exception {
+    BatchGetDocumentsMetadataResponse expectedResponse =
+        BatchGetDocumentsMetadataResponse.newBuilder()
+            .addAllDocumentsMetadata(
+                new ArrayList<BatchGetDocumentsMetadataResponse.DocumentMetadata>())
+            .build();
+    mockDocumentService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    BatchGetDocumentsMetadataResponse actualResponse = client.batchGetDocumentsMetadata(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchGetDocumentsMetadataRequest actualRequest =
+        ((BatchGetDocumentsMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchGetDocumentsMetadataExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.batchGetDocumentsMetadata(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

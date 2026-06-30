@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPag
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeployPoliciesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListReleasesPagedResponse;
@@ -29,6 +30,7 @@ import static com.google.cloud.deploy.v1.CloudDeployClient.ListTargetsPagedRespo
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -45,6 +47,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -71,6 +74,7 @@ import com.google.cloud.deploy.v1.Config;
 import com.google.cloud.deploy.v1.CreateAutomationRequest;
 import com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.CreateDeployPolicyRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.CreateTargetRequest;
@@ -78,13 +82,16 @@ import com.google.cloud.deploy.v1.CustomTargetType;
 import com.google.cloud.deploy.v1.DeleteAutomationRequest;
 import com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.DeleteDeployPolicyRequest;
 import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
+import com.google.cloud.deploy.v1.DeployPolicy;
 import com.google.cloud.deploy.v1.GetAutomationRequest;
 import com.google.cloud.deploy.v1.GetAutomationRunRequest;
 import com.google.cloud.deploy.v1.GetConfigRequest;
 import com.google.cloud.deploy.v1.GetCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.GetDeployPolicyRequest;
 import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
 import com.google.cloud.deploy.v1.GetRolloutRequest;
@@ -100,6 +107,8 @@ import com.google.cloud.deploy.v1.ListCustomTargetTypesRequest;
 import com.google.cloud.deploy.v1.ListCustomTargetTypesResponse;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
+import com.google.cloud.deploy.v1.ListDeployPoliciesRequest;
+import com.google.cloud.deploy.v1.ListDeployPoliciesResponse;
 import com.google.cloud.deploy.v1.ListJobRunsRequest;
 import com.google.cloud.deploy.v1.ListJobRunsResponse;
 import com.google.cloud.deploy.v1.ListReleasesRequest;
@@ -121,6 +130,7 @@ import com.google.cloud.deploy.v1.TerminateJobRunResponse;
 import com.google.cloud.deploy.v1.UpdateAutomationRequest;
 import com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.UpdateDeployPolicyRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -138,9 +148,9 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -157,7 +167,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getDeliveryPipeline to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getDeliveryPipeline:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -174,12 +186,50 @@ import org.threeten.bp.Duration;
  *             .getDeliveryPipelineSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * CloudDeployStubSettings cloudDeploySettings = cloudDeploySettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createDeliveryPipeline:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * CloudDeployStubSettings.Builder cloudDeploySettingsBuilder =
+ *     CloudDeployStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * cloudDeploySettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -250,6 +300,19 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       createReleaseOperationSettings;
   private final UnaryCallSettings<AbandonReleaseRequest, AbandonReleaseResponse>
       abandonReleaseSettings;
+  private final UnaryCallSettings<CreateDeployPolicyRequest, Operation> createDeployPolicySettings;
+  private final OperationCallSettings<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      createDeployPolicyOperationSettings;
+  private final UnaryCallSettings<UpdateDeployPolicyRequest, Operation> updateDeployPolicySettings;
+  private final OperationCallSettings<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      updateDeployPolicyOperationSettings;
+  private final UnaryCallSettings<DeleteDeployPolicyRequest, Operation> deleteDeployPolicySettings;
+  private final OperationCallSettings<DeleteDeployPolicyRequest, Empty, OperationMetadata>
+      deleteDeployPolicyOperationSettings;
+  private final PagedCallSettings<
+          ListDeployPoliciesRequest, ListDeployPoliciesResponse, ListDeployPoliciesPagedResponse>
+      listDeployPoliciesSettings;
+  private final UnaryCallSettings<GetDeployPolicyRequest, DeployPolicy> getDeployPolicySettings;
   private final UnaryCallSettings<ApproveRolloutRequest, ApproveRolloutResponse>
       approveRolloutSettings;
   private final UnaryCallSettings<AdvanceRolloutRequest, AdvanceRolloutResponse>
@@ -334,9 +397,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
             @Override
             public Iterable<DeliveryPipeline> extractResources(
                 ListDeliveryPipelinesResponse payload) {
-              return payload.getDeliveryPipelinesList() == null
-                  ? ImmutableList.<DeliveryPipeline>of()
-                  : payload.getDeliveryPipelinesList();
+              return payload.getDeliveryPipelinesList();
             }
           };
 
@@ -370,9 +431,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
 
             @Override
             public Iterable<Target> extractResources(ListTargetsResponse payload) {
-              return payload.getTargetsList() == null
-                  ? ImmutableList.<Target>of()
-                  : payload.getTargetsList();
+              return payload.getTargetsList();
             }
           };
 
@@ -411,9 +470,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
             @Override
             public Iterable<CustomTargetType> extractResources(
                 ListCustomTargetTypesResponse payload) {
-              return payload.getCustomTargetTypesList() == null
-                  ? ImmutableList.<CustomTargetType>of()
-                  : payload.getCustomTargetTypesList();
+              return payload.getCustomTargetTypesList();
             }
           };
 
@@ -447,9 +504,45 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
 
             @Override
             public Iterable<Release> extractResources(ListReleasesResponse payload) {
-              return payload.getReleasesList() == null
-                  ? ImmutableList.<Release>of()
-                  : payload.getReleasesList();
+              return payload.getReleasesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDeployPoliciesRequest, ListDeployPoliciesResponse, DeployPolicy>
+      LIST_DEPLOY_POLICIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDeployPoliciesRequest, ListDeployPoliciesResponse, DeployPolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDeployPoliciesRequest injectToken(
+                ListDeployPoliciesRequest payload, String token) {
+              return ListDeployPoliciesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDeployPoliciesRequest injectPageSize(
+                ListDeployPoliciesRequest payload, int pageSize) {
+              return ListDeployPoliciesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDeployPoliciesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDeployPoliciesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DeployPolicy> extractResources(ListDeployPoliciesResponse payload) {
+              return payload.getDeployPoliciesList();
             }
           };
 
@@ -483,9 +576,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
 
             @Override
             public Iterable<Rollout> extractResources(ListRolloutsResponse payload) {
-              return payload.getRolloutsList() == null
-                  ? ImmutableList.<Rollout>of()
-                  : payload.getRolloutsList();
+              return payload.getRolloutsList();
             }
           };
 
@@ -519,9 +610,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
 
             @Override
             public Iterable<JobRun> extractResources(ListJobRunsResponse payload) {
-              return payload.getJobRunsList() == null
-                  ? ImmutableList.<JobRun>of()
-                  : payload.getJobRunsList();
+              return payload.getJobRunsList();
             }
           };
 
@@ -558,9 +647,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
 
             @Override
             public Iterable<Automation> extractResources(ListAutomationsResponse payload) {
-              return payload.getAutomationsList() == null
-                  ? ImmutableList.<Automation>of()
-                  : payload.getAutomationsList();
+              return payload.getAutomationsList();
             }
           };
 
@@ -598,9 +685,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
 
             @Override
             public Iterable<AutomationRun> extractResources(ListAutomationRunsResponse payload) {
-              return payload.getAutomationRunsList() == null
-                  ? ImmutableList.<AutomationRun>of()
-                  : payload.getAutomationRunsList();
+              return payload.getAutomationRunsList();
             }
           };
 
@@ -634,9 +719,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -719,6 +802,27 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               PageContext<ListReleasesRequest, ListReleasesResponse, Release> pageContext =
                   PageContext.create(callable, LIST_RELEASES_PAGE_STR_DESC, request, context);
               return ListReleasesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDeployPoliciesRequest, ListDeployPoliciesResponse, ListDeployPoliciesPagedResponse>
+      LIST_DEPLOY_POLICIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDeployPoliciesRequest,
+              ListDeployPoliciesResponse,
+              ListDeployPoliciesPagedResponse>() {
+            @Override
+            public ApiFuture<ListDeployPoliciesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesResponse> callable,
+                ListDeployPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDeployPoliciesResponse> futureResponse) {
+              PageContext<ListDeployPoliciesRequest, ListDeployPoliciesResponse, DeployPolicy>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_DEPLOY_POLICIES_PAGE_STR_DESC, request, context);
+              return ListDeployPoliciesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -989,6 +1093,51 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     return abandonReleaseSettings;
   }
 
+  /** Returns the object with the settings used for calls to createDeployPolicy. */
+  public UnaryCallSettings<CreateDeployPolicyRequest, Operation> createDeployPolicySettings() {
+    return createDeployPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDeployPolicy. */
+  public OperationCallSettings<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      createDeployPolicyOperationSettings() {
+    return createDeployPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDeployPolicy. */
+  public UnaryCallSettings<UpdateDeployPolicyRequest, Operation> updateDeployPolicySettings() {
+    return updateDeployPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDeployPolicy. */
+  public OperationCallSettings<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      updateDeployPolicyOperationSettings() {
+    return updateDeployPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDeployPolicy. */
+  public UnaryCallSettings<DeleteDeployPolicyRequest, Operation> deleteDeployPolicySettings() {
+    return deleteDeployPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDeployPolicy. */
+  public OperationCallSettings<DeleteDeployPolicyRequest, Empty, OperationMetadata>
+      deleteDeployPolicyOperationSettings() {
+    return deleteDeployPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDeployPolicies. */
+  public PagedCallSettings<
+          ListDeployPoliciesRequest, ListDeployPoliciesResponse, ListDeployPoliciesPagedResponse>
+      listDeployPoliciesSettings() {
+    return listDeployPoliciesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDeployPolicy. */
+  public UnaryCallSettings<GetDeployPolicyRequest, DeployPolicy> getDeployPolicySettings() {
+    return getDeployPolicySettings;
+  }
+
   /** Returns the object with the settings used for calls to approveRollout. */
   public UnaryCallSettings<ApproveRolloutRequest, ApproveRolloutResponse> approveRolloutSettings() {
     return approveRolloutSettings;
@@ -1164,15 +1313,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -1185,6 +1325,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "clouddeploy.googleapis.com:443";
   }
@@ -1303,6 +1444,17 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     createReleaseSettings = settingsBuilder.createReleaseSettings().build();
     createReleaseOperationSettings = settingsBuilder.createReleaseOperationSettings().build();
     abandonReleaseSettings = settingsBuilder.abandonReleaseSettings().build();
+    createDeployPolicySettings = settingsBuilder.createDeployPolicySettings().build();
+    createDeployPolicyOperationSettings =
+        settingsBuilder.createDeployPolicyOperationSettings().build();
+    updateDeployPolicySettings = settingsBuilder.updateDeployPolicySettings().build();
+    updateDeployPolicyOperationSettings =
+        settingsBuilder.updateDeployPolicyOperationSettings().build();
+    deleteDeployPolicySettings = settingsBuilder.deleteDeployPolicySettings().build();
+    deleteDeployPolicyOperationSettings =
+        settingsBuilder.deleteDeployPolicyOperationSettings().build();
+    listDeployPoliciesSettings = settingsBuilder.listDeployPoliciesSettings().build();
+    getDeployPolicySettings = settingsBuilder.getDeployPolicySettings().build();
     approveRolloutSettings = settingsBuilder.approveRolloutSettings().build();
     advanceRolloutSettings = settingsBuilder.advanceRolloutSettings().build();
     cancelRolloutSettings = settingsBuilder.cancelRolloutSettings().build();
@@ -1332,6 +1484,15 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-deploy")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for CloudDeployStubSettings. */
@@ -1405,6 +1566,25 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
         createReleaseOperationSettings;
     private final UnaryCallSettings.Builder<AbandonReleaseRequest, AbandonReleaseResponse>
         abandonReleaseSettings;
+    private final UnaryCallSettings.Builder<CreateDeployPolicyRequest, Operation>
+        createDeployPolicySettings;
+    private final OperationCallSettings.Builder<
+            CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+        createDeployPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateDeployPolicyRequest, Operation>
+        updateDeployPolicySettings;
+    private final OperationCallSettings.Builder<
+            UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+        updateDeployPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteDeployPolicyRequest, Operation>
+        deleteDeployPolicySettings;
+    private final OperationCallSettings.Builder<DeleteDeployPolicyRequest, Empty, OperationMetadata>
+        deleteDeployPolicyOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListDeployPoliciesRequest, ListDeployPoliciesResponse, ListDeployPoliciesPagedResponse>
+        listDeployPoliciesSettings;
+    private final UnaryCallSettings.Builder<GetDeployPolicyRequest, DeployPolicy>
+        getDeployPolicySettings;
     private final UnaryCallSettings.Builder<ApproveRolloutRequest, ApproveRolloutResponse>
         approveRolloutSettings;
     private final UnaryCallSettings.Builder<AdvanceRolloutRequest, AdvanceRolloutResponse>
@@ -1482,21 +1662,21 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
@@ -1543,6 +1723,14 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       createReleaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createReleaseOperationSettings = OperationCallSettings.newBuilder();
       abandonReleaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDeployPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDeployPolicyOperationSettings = OperationCallSettings.newBuilder();
+      updateDeployPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDeployPolicyOperationSettings = OperationCallSettings.newBuilder();
+      deleteDeployPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteDeployPolicyOperationSettings = OperationCallSettings.newBuilder();
+      listDeployPoliciesSettings = PagedCallSettings.newBuilder(LIST_DEPLOY_POLICIES_PAGE_STR_FACT);
+      getDeployPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       approveRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       advanceRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       cancelRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1595,6 +1783,11 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               getReleaseSettings,
               createReleaseSettings,
               abandonReleaseSettings,
+              createDeployPolicySettings,
+              updateDeployPolicySettings,
+              deleteDeployPolicySettings,
+              listDeployPoliciesSettings,
+              getDeployPolicySettings,
               approveRolloutSettings,
               advanceRolloutSettings,
               cancelRolloutSettings,
@@ -1662,6 +1855,17 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       createReleaseSettings = settings.createReleaseSettings.toBuilder();
       createReleaseOperationSettings = settings.createReleaseOperationSettings.toBuilder();
       abandonReleaseSettings = settings.abandonReleaseSettings.toBuilder();
+      createDeployPolicySettings = settings.createDeployPolicySettings.toBuilder();
+      createDeployPolicyOperationSettings =
+          settings.createDeployPolicyOperationSettings.toBuilder();
+      updateDeployPolicySettings = settings.updateDeployPolicySettings.toBuilder();
+      updateDeployPolicyOperationSettings =
+          settings.updateDeployPolicyOperationSettings.toBuilder();
+      deleteDeployPolicySettings = settings.deleteDeployPolicySettings.toBuilder();
+      deleteDeployPolicyOperationSettings =
+          settings.deleteDeployPolicyOperationSettings.toBuilder();
+      listDeployPoliciesSettings = settings.listDeployPoliciesSettings.toBuilder();
+      getDeployPolicySettings = settings.getDeployPolicySettings.toBuilder();
       approveRolloutSettings = settings.approveRolloutSettings.toBuilder();
       advanceRolloutSettings = settings.advanceRolloutSettings.toBuilder();
       cancelRolloutSettings = settings.cancelRolloutSettings.toBuilder();
@@ -1714,6 +1918,11 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               getReleaseSettings,
               createReleaseSettings,
               abandonReleaseSettings,
+              createDeployPolicySettings,
+              updateDeployPolicySettings,
+              deleteDeployPolicySettings,
+              listDeployPoliciesSettings,
+              getDeployPolicySettings,
               approveRolloutSettings,
               advanceRolloutSettings,
               cancelRolloutSettings,
@@ -1867,6 +2076,31 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .createDeployPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateDeployPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteDeployPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listDeployPoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDeployPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .approveRolloutSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -2006,13 +2240,13 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2030,13 +2264,13 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2054,13 +2288,13 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2078,13 +2312,13 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2102,13 +2336,13 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2126,13 +2360,13 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2150,13 +2384,13 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2174,13 +2408,13 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2198,13 +2432,13 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2222,13 +2456,85 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createDeployPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateDeployPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DeployPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateDeployPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateDeployPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DeployPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteDeployPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteDeployPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2246,13 +2552,13 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2270,13 +2576,13 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2294,13 +2600,13 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2318,13 +2624,13 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -2531,6 +2837,55 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       return abandonReleaseSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createDeployPolicy. */
+    public UnaryCallSettings.Builder<CreateDeployPolicyRequest, Operation>
+        createDeployPolicySettings() {
+      return createDeployPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDeployPolicy. */
+    public OperationCallSettings.Builder<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+        createDeployPolicyOperationSettings() {
+      return createDeployPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDeployPolicy. */
+    public UnaryCallSettings.Builder<UpdateDeployPolicyRequest, Operation>
+        updateDeployPolicySettings() {
+      return updateDeployPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDeployPolicy. */
+    public OperationCallSettings.Builder<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+        updateDeployPolicyOperationSettings() {
+      return updateDeployPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDeployPolicy. */
+    public UnaryCallSettings.Builder<DeleteDeployPolicyRequest, Operation>
+        deleteDeployPolicySettings() {
+      return deleteDeployPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDeployPolicy. */
+    public OperationCallSettings.Builder<DeleteDeployPolicyRequest, Empty, OperationMetadata>
+        deleteDeployPolicyOperationSettings() {
+      return deleteDeployPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDeployPolicies. */
+    public PagedCallSettings.Builder<
+            ListDeployPoliciesRequest, ListDeployPoliciesResponse, ListDeployPoliciesPagedResponse>
+        listDeployPoliciesSettings() {
+      return listDeployPoliciesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDeployPolicy. */
+    public UnaryCallSettings.Builder<GetDeployPolicyRequest, DeployPolicy>
+        getDeployPolicySettings() {
+      return getDeployPolicySettings;
+    }
+
     /** Returns the builder for the settings used for calls to approveRollout. */
     public UnaryCallSettings.Builder<ApproveRolloutRequest, ApproveRolloutResponse>
         approveRolloutSettings() {
@@ -2698,15 +3053,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

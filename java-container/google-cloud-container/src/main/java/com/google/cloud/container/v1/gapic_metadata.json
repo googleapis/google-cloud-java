@@ -34,6 +34,12 @@
             "DeleteNodePool": {
               "methods": ["deleteNodePool", "deleteNodePool", "deleteNodePool", "deleteNodePoolCallable"]
             },
+            "FetchClusterUpgradeInfo": {
+              "methods": ["fetchClusterUpgradeInfo", "fetchClusterUpgradeInfo", "fetchClusterUpgradeInfoCallable"]
+            },
+            "FetchNodePoolUpgradeInfo": {
+              "methods": ["fetchNodePoolUpgradeInfo", "fetchNodePoolUpgradeInfo", "fetchNodePoolUpgradeInfoCallable"]
+            },
             "GetCluster": {
               "methods": ["getCluster", "getCluster", "getCluster", "getClusterCallable"]
             },
@@ -56,7 +62,7 @@
               "methods": ["listNodePools", "listNodePools", "listNodePools", "listNodePoolsCallable"]
             },
             "ListOperations": {
-              "methods": ["listOperations", "listOperations", "listOperationsCallable"]
+              "methods": ["listOperations", "listOperations", "listOperations", "listOperationsCallable"]
             },
             "ListUsableSubnetworks": {
               "methods": ["listUsableSubnetworks", "listUsableSubnetworksPagedCallable", "listUsableSubnetworksCallable"]

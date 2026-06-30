@@ -15,6 +15,67 @@
     <differenceType>7012</differenceType>
     <className>com/google/containeranalysis/v1beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/containeranalysis/v1beta1/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/containeranalysis/v1beta1/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/containeranalysis/v1beta1/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/containeranalysis/v1beta1/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/containeranalysis/v1beta1/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/containeranalysis/v1beta1/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/containeranalysis/v1beta1/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/containeranalysis/v1beta1/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/containeranalysis/v1beta1/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/containeranalysis/v1beta1/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/*OrBuilder</className>
@@ -29,6 +90,67 @@
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/attestation/*OrBuilder</className>
@@ -43,6 +165,67 @@
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/attestation/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/attestation/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/attestation/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/attestation/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/attestation/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/attestation/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/attestation/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/attestation/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/attestation/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/attestation/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/attestation/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/build/*OrBuilder</className>
@@ -57,6 +240,67 @@
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/build/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/build/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/build/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/build/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/build/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/build/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/build/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/build/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/build/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/build/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/build/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/common/*OrBuilder</className>
@@ -71,6 +315,67 @@
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/common/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/common/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/common/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/common/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/common/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/common/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/common/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/common/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/common/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/common/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/common/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/deployment/*OrBuilder</className>
@@ -85,6 +390,67 @@
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/deployment/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/deployment/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/deployment/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/deployment/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/deployment/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/deployment/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/deployment/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/deployment/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/deployment/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/deployment/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/deployment/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/discovery/*OrBuilder</className>
@@ -99,6 +465,67 @@
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/discovery/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/discovery/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/discovery/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/discovery/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/discovery/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/discovery/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/discovery/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/discovery/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/discovery/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/discovery/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/discovery/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/image/*OrBuilder</className>
@@ -113,6 +540,67 @@
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/image/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/image/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/image/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/image/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/image/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/image/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/image/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/image/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/image/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/image/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/image/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/pkg/*OrBuilder</className>
@@ -127,6 +615,67 @@
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/pkg/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/pkg/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/pkg/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/pkg/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/pkg/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/pkg/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/pkg/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/pkg/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/pkg/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/pkg/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/pkg/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/provenance/*OrBuilder</className>
@@ -141,6 +690,67 @@
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/provenance/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/provenance/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/provenance/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/provenance/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/provenance/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/provenance/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/provenance/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/provenance/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/provenance/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/provenance/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/provenance/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/source/*OrBuilder</className>
@@ -155,6 +765,67 @@
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/source/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/source/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/source/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/source/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/source/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/source/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/source/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/source/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/source/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/source/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/source/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/vulnerability/*OrBuilder</className>
@@ -169,5 +840,66 @@
     <differenceType>7012</differenceType>
     <className>io/grafeas/v1beta1/vulnerability/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/vulnerability/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/vulnerability/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/vulnerability/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/vulnerability/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/vulnerability/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/vulnerability/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/vulnerability/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/vulnerability/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/vulnerability/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>io/grafeas/v1beta1/vulnerability/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>
 </differences>

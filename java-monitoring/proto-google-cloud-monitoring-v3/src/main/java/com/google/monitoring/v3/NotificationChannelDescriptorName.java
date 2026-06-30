@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -315,7 +315,8 @@ public class NotificationChannelDescriptorName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               notificationChannelDescriptorName.pathTemplate, PROJECT_CHANNEL_DESCRIPTOR),
-          "toBuilder is only supported when NotificationChannelDescriptorName has the pattern of projects/{project}/notificationChannelDescriptors/{channel_descriptor}");
+          "toBuilder is only supported when NotificationChannelDescriptorName has the pattern of"
+              + " projects/{project}/notificationChannelDescriptors/{channel_descriptor}");
       this.project = notificationChannelDescriptorName.project;
       this.channelDescriptor = notificationChannelDescriptorName.channelDescriptor;
     }

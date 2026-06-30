@@ -1,0 +1,53 @@
+private static final BatchingDescriptor<WriteLogEntriesRequest, WriteLogEntriesResponse> WRITE_LOG_ENTRIES_BATCHING_DESC = new BatchingDescriptor<WriteLogEntriesRequest, WriteLogEntriesResponse>() {
+@Override
+public PartitionKey getBatchPartitionKey(WriteLogEntriesRequest request) {
+return new PartitionKey(request.getLogName(), request.getResource(), request.getLabels());
+}
+
+@Override
+public RequestBuilder<WriteLogEntriesRequest> getRequestBuilder() {
+return new RequestBuilder<WriteLogEntriesRequest>() {
+private WriteLogEntriesRequest.Builder builder;
+@Override
+public void appendRequest(WriteLogEntriesRequest request) {
+if (builder == null) {
+builder = request.toBuilder();
+} else {
+builder.addAllEntries(request.getEntriesList());
+}
+}
+
+@Override
+public WriteLogEntriesRequest build() {
+return builder.build();
+}
+
+};
+}
+
+@Override
+public void splitResponse(WriteLogEntriesResponse batchResponse, Collection<? extends BatchedRequestIssuer<WriteLogEntriesResponse>> batch) {
+for (BatchedRequestIssuer<WriteLogEntriesResponse> responder : batch) {
+WriteLogEntriesResponse response = WriteLogEntriesResponse.newBuilder().build();
+responder.setResponse(response);
+}
+}
+
+@Override
+public void splitException(Throwable throwable, Collection<? extends BatchedRequestIssuer<WriteLogEntriesResponse>> batch) {
+for (BatchedRequestIssuer<WriteLogEntriesResponse> responder : batch) {
+responder.setException(throwable);
+}
+}
+
+@Override
+public long countElements(WriteLogEntriesRequest request) {
+return request.getEntriesCount();
+}
+
+@Override
+public long countBytes(WriteLogEntriesRequest request) {
+return request.getSerializedSize();
+}
+
+}

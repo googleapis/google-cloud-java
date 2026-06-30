@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import "google/cloud/aiplatform/v1beta1/operation.proto";
 import "google/cloud/aiplatform/v1beta1/reasoning_engine.proto";
 import "google/longrunning/operations.proto";
 import "google/protobuf/empty.proto";
+import "google/protobuf/field_mask.proto";
 
 option csharp_namespace = "Google.Cloud.AIPlatform.V1Beta1";
 option go_package = "cloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aiplatformpb";
@@ -45,6 +46,10 @@ service ReasoningEngineService {
     option (google.api.http) = {
       post: "/v1beta1/{parent=projects/*/locations/*}/reasoningEngines"
       body: "reasoning_engine"
+      additional_bindings {
+        post: "/v1beta1/reasoningEngines"
+        body: "reasoning_engine"
+      }
     };
     option (google.api.method_signature) = "parent,reasoning_engine";
     option (google.longrunning.operation_info) = {
@@ -57,6 +62,7 @@ service ReasoningEngineService {
   rpc GetReasoningEngine(GetReasoningEngineRequest) returns (ReasoningEngine) {
     option (google.api.http) = {
       get: "/v1beta1/{name=projects/*/locations/*/reasoningEngines/*}"
+      additional_bindings { get: "/v1beta1/{name=reasoningEngines/*}" }
     };
     option (google.api.method_signature) = "name";
   }
@@ -66,8 +72,27 @@ service ReasoningEngineService {
       returns (ListReasoningEnginesResponse) {
     option (google.api.http) = {
       get: "/v1beta1/{parent=projects/*/locations/*}/reasoningEngines"
+      additional_bindings { get: "/v1beta1/reasoningEngines" }
     };
     option (google.api.method_signature) = "parent";
+  }
+
+  // Updates a reasoning engine.
+  rpc UpdateReasoningEngine(UpdateReasoningEngineRequest)
+      returns (google.longrunning.Operation) {
+    option (google.api.http) = {
+      patch: "/v1beta1/{reasoning_engine.name=projects/*/locations/*/reasoningEngines/*}"
+      body: "reasoning_engine"
+      additional_bindings {
+        patch: "/v1beta1/{reasoning_engine.name=reasoningEngines/*}"
+        body: "reasoning_engine"
+      }
+    };
+    option (google.api.method_signature) = "reasoning_engine,update_mask";
+    option (google.longrunning.operation_info) = {
+      response_type: "ReasoningEngine"
+      metadata_type: "UpdateReasoningEngineOperationMetadata"
+    };
   }
 
   // Deletes a reasoning engine.
@@ -75,6 +100,7 @@ service ReasoningEngineService {
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
       delete: "/v1beta1/{name=projects/*/locations/*/reasoningEngines/*}"
+      additional_bindings { delete: "/v1beta1/{name=reasoningEngines/*}" }
     };
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
@@ -120,6 +146,25 @@ message GetReasoningEngineRequest {
       type: "aiplatform.googleapis.com/ReasoningEngine"
     }
   ];
+}
+
+// Request message for
+// [ReasoningEngineService.UpdateReasoningEngine][google.cloud.aiplatform.v1beta1.ReasoningEngineService.UpdateReasoningEngine].
+message UpdateReasoningEngineRequest {
+  // Required. The ReasoningEngine which replaces the resource on the server.
+  ReasoningEngine reasoning_engine = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. Mask specifying which fields to update.
+  google.protobuf.FieldMask update_mask = 2
+      [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Details of
+// [ReasoningEngineService.UpdateReasoningEngine][google.cloud.aiplatform.v1beta1.ReasoningEngineService.UpdateReasoningEngine]
+// operation.
+message UpdateReasoningEngineOperationMetadata {
+  // The common part of the operation metadata.
+  GenericOperationMetadata generic_metadata = 1;
 }
 
 // Request message for
@@ -170,4 +215,9 @@ message DeleteReasoningEngineRequest {
       type: "aiplatform.googleapis.com/ReasoningEngine"
     }
   ];
+
+  // Optional. If set to true, child resources of this reasoning engine will
+  // also be deleted. Otherwise, the request will fail with FAILED_PRECONDITION
+  // error when the reasoning engine has undeleted child resources.
+  bool force = 2 [(google.api.field_behavior) = OPTIONAL];
 }

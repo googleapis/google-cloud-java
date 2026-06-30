@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.cloud.compute.v1.Snapshot;
 import com.google.cloud.compute.v1.SnapshotList;
 import com.google.cloud.compute.v1.TestIamPermissionsSnapshotRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateKmsKeySnapshotRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -93,6 +94,15 @@ public abstract class SnapshotsStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsSnapshotRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public OperationCallable<UpdateKmsKeySnapshotRequest, Operation, Operation>
+      updateKmsKeyOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateKmsKeyOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateKmsKeySnapshotRequest, Operation> updateKmsKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateKmsKeyCallable()");
   }
 
   @Override

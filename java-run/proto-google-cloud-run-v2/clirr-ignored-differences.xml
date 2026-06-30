@@ -16,68 +16,65 @@
     <className>com/google/cloud/run/v2/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/run/v2/CloudSqlInstance*</className>
-    <method>* *Connections*(*)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/run/v2/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/run/v2/Condition*</className>
-    <method>* *Reason*(*)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/run/v2/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/run/v2/Revision*</className>
-    <method>* *Confidential*(*)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/run/v2/**</className>
+    <method>* clear()</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/run/v2/Revision*</className>
-    <method>* *ContainerConcurrency*(*)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/run/v2/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/run/v2/UpdateServiceRequest*</className>
-    <method>* *UpdateMask*(*)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/run/v2/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/cloud/run/v2/*</className>
-    <field>*_FIELD_NUMBER</field>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/run/v2/**</className>
+    <method>* clone()</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/cloud/run/v2/*</className>
-    <field>*_VALUE</field>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/run/v2/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>6001</differenceType>
-    <className>com/google/cloud/run/v2/*</className>
-    <field>BUILD_STEP_FAILED</field>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/run/v2/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>6001</differenceType>
-    <className>com/google/cloud/run/v2/*</className>
-    <field>ROUTE_MISSING</field>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/run/v2/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>6001</differenceType>
-    <className>com/google/cloud/run/v2/*</className>
-    <field>DOMAIN_MAPPING_REASON</field>
-  </difference>
-  <difference>
-    <differenceType>6001</differenceType>
-    <className>com/google/cloud/run/v2/*</className>
-    <field>INTERNAL_REASON</field>
-  </difference>
-  <difference>
-    <differenceType>6001</differenceType>
-    <className>com/google/cloud/run/v2/*</className>
-    <field>EXECUTION_ENVIRONMENT_DEFAULT</field>
-  </difference>
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/cloud/run/v2/Condition*</className>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/run/v2/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>
 </differences>

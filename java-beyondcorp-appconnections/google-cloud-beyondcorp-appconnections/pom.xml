@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-beyondcorp-appconnections</artifactId>
-  <version>0.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-appconnections:current} -->
+  <version>0.92.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-appconnections:current} -->
   <packaging>jar</packaging>
   <name>Google BeyondCorp AppConnections</name>
   <description>BeyondCorp AppConnections is Google's implementation of the zero trust model. It builds upon a decade of experience at Google, combined with ideas and best practices from the community. By shifting access controls from the network perimeter to individual users, BeyondCorp enables secure work from virtually any location without the need for a traditional VPN.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-beyondcorp-appconnections-parent</artifactId>
-    <version>0.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-appconnections:current} -->
+    <version>0.92.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-appconnections:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-beyondcorp-appconnections</site.installationModule>
@@ -41,10 +41,12 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-beyondcorp-appconnections-v1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -60,6 +62,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -68,6 +71,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>
@@ -81,11 +85,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-beyondcorp-appconnections-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

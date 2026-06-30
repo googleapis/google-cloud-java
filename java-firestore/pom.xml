@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-firestore-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>3.44.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-firestore:current} -->
+  <name>Google Cloud Firestore Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java</url>
+  <description>
+    Java idiomatic client for Google Cloud Platform services.
+  </description>
+
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-jar-parent</artifactId>
+    <version>1.88.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
+  </parent>
+
+  <developers>
+    <developer>
+      <id>garrettjonesgoogle</id>
+      <name>Garrett Jones</name>
+      <email>garrettjones@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>pongad</id>
+      <name>Michael Darakananda</name>
+      <email>pongad@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>shinfan</id>
+      <name>Shin Fan</name>
+      <email>shinfan@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>michaelbausor</id>
+      <name>Micheal Bausor</name>
+      <email>michaelbausor@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>vam-google</id>
+      <name>Vadym Matsishevskyi</name>
+      <email>vam@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>tswast</id>
+      <name>Tim Swast</name>
+      <email>tswast@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>neozwu</id>
+      <name>Neo Wu</name>
+      <email>neowu@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>lesv</id>
+      <name>Les Vogel</name>
+      <email>lesv@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>schmidt_sebastian</id>
+      <name>Sebastian Schmidt</name>
+      <email>mrschmidt@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>andreamlin</id>
+      <name>Andrea Lin</name>
+      <email>andrealin@google.com</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>hzyi-google</id>
+      <name>Hanzhen Yi</name>
+      <email>hzyi@google.com</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <organization>
+    <name>Google LLC</name>
+  </organization>
+  <scm>
+    <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
+    <url>https://github.com/googleapis/google-cloud-java</url>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <url>https://github.com/googleapis/google-cloud-java/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <github.global.server>github</github.global.server>
+    <site.installationModule>google-cloud-firestore-parent</site.installationModule>
+    <project.javadoc.protobufBaseURL>https://googleapis.dev/java/google-api-grpc/latest</project.javadoc.protobufBaseURL>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-firestore-admin-v1</artifactId>
+        <version>3.44.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-firestore-admin-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-firestore</artifactId>
+        <version>3.44.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-firestore:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>proto-google-cloud-firestore-bundle-v1</artifactId>
+        <version>3.44.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-firestore:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-firestore-v1</artifactId>
+        <version>3.44.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-firestore-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-firestore-admin-v1</artifactId>
+        <version>3.44.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-firestore-admin-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-firestore-v1</artifactId>
+        <version>3.44.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-firestore-v1:current} -->
+      </dependency>
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.13.2</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.truth</groupId>
+        <artifactId>truth</artifactId>
+        <version>1.4.4</version>
+        <scope>test</scope>
+        <exclusions>
+          <exclusion>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker-qual</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>google-cloud-firestore</module>
+    <module>grpc-google-cloud-firestore-admin-v1</module>
+    <module>grpc-google-cloud-firestore-v1</module>
+    <module>proto-google-cloud-firestore-admin-v1</module>
+    <module>proto-google-cloud-firestore-v1</module>
+    <module>proto-google-cloud-firestore-bundle-v1</module>
+    <module>google-cloud-firestore-admin</module>
+    <module>google-cloud-firestore-bom</module>
+  </modules>
+
+  <profiles>
+    <profile>
+      <id>enable-samples</id>
+      <modules>
+        <module>samples</module>
+      </modules>
+    </profile>
+    <profile>
+      <!-- cloud RAD generation -->
+      <id>docFX</id>
+      <properties>
+        <!-- exclude file causing error generating doc -->
+        <sourceFileExclude>com/google/cloud/firestore/v1/package-info.java</sourceFileExclude>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <configuration>
+              <sourceFileExcludes>
+                <exclude>${sourceFileExclude}</exclude>
+              </sourceFileExcludes>
+            </configuration>
+            <executions>
+              <execution>
+                <id>aggregate</id>
+                <goals>
+                  <goal>aggregate</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>bulkTests</id>
+      <properties>
+        <skipTests>true</skipTests>
+      </properties>
+    </profile>
+  </profiles>
+</project>

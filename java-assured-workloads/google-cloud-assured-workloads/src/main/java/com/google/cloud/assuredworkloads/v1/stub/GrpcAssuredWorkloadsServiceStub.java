@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,6 +69,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkloadRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateWorkloadRequest, Workload>
@@ -80,6 +81,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWorkloadRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Workload.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -94,6 +96,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   ProtoUtils.marshaller(RestrictAllowedResourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RestrictAllowedResourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWorkloadRequest, Empty>
@@ -105,6 +108,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkloadRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWorkloadRequest, Workload> getWorkloadMethodDescriptor =
@@ -113,6 +117,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
           .setFullMethodName("google.cloud.assuredworkloads.v1.AssuredWorkloadsService/GetWorkload")
           .setRequestMarshaller(ProtoUtils.marshaller(GetWorkloadRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Workload.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListWorkloadsRequest, ListWorkloadsResponse>
@@ -125,6 +130,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   ProtoUtils.marshaller(ListWorkloadsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkloadsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListViolationsRequest, ListViolationsResponse>
@@ -137,6 +143,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   ProtoUtils.marshaller(ListViolationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListViolationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetViolationRequest, Violation>
@@ -147,6 +154,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   "google.cloud.assuredworkloads.v1.AssuredWorkloadsService/GetViolation")
               .setRequestMarshaller(ProtoUtils.marshaller(GetViolationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Violation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
@@ -159,6 +167,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   ProtoUtils.marshaller(AcknowledgeViolationRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AcknowledgeViolationResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateWorkloadRequest, Operation> createWorkloadCallable;
@@ -233,6 +242,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateWorkloadRequest, Workload> updateWorkloadTransportSettings =
         GrpcCallSettings.<UpdateWorkloadRequest, Workload>newBuilder()
@@ -265,6 +275,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetWorkloadRequest, Workload> getWorkloadTransportSettings =
         GrpcCallSettings.<GetWorkloadRequest, Workload>newBuilder()
@@ -275,6 +286,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsTransportSettings =
         GrpcCallSettings.<ListWorkloadsRequest, ListWorkloadsResponse>newBuilder()
@@ -285,15 +297,18 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListViolationsRequest, ListViolationsResponse>
         listViolationsTransportSettings =
             GrpcCallSettings.<ListViolationsRequest, ListViolationsResponse>newBuilder()
                 .setMethodDescriptor(listViolationsMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetViolationRequest, Violation> getViolationTransportSettings =
         GrpcCallSettings.<GetViolationRequest, Violation>newBuilder()
             .setMethodDescriptor(getViolationMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
         acknowledgeViolationTransportSettings =

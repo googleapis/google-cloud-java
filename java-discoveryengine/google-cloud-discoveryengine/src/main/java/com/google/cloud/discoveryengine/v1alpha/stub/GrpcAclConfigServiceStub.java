@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,7 @@ public class GrpcAclConfigServiceStub extends AclConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAclConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AclConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAclConfigRequest, AclConfig>
@@ -62,6 +63,7 @@ public class GrpcAclConfigServiceStub extends AclConfigServiceStub {
                   "google.cloud.discoveryengine.v1alpha.AclConfigService/GetAclConfig")
               .setRequestMarshaller(ProtoUtils.marshaller(GetAclConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AclConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<UpdateAclConfigRequest, AclConfig> updateAclConfigCallable;
@@ -130,6 +132,7 @@ public class GrpcAclConfigServiceStub extends AclConfigServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.updateAclConfigCallable =

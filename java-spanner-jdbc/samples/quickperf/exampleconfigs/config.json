@@ -1,0 +1,9 @@
+{
+    "project": "xxxx",
+    "instance": "xxx",
+    "database": "xxx",
+    "threads": 1,
+    "iterations": 100,
+    "query": "SELECT 1",
+    "writeMetricToFile": false
+}

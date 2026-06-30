@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,6 +75,27 @@ public class MockCaseAttachmentServiceImpl extends CaseAttachmentServiceImplBase
                   "Unrecognized response type %s for method ListAttachments, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAttachmentsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAttachment(
+      GetAttachmentRequest request, StreamObserver<Attachment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Attachment) {
+      requests.add(request);
+      responseObserver.onNext(((Attachment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAttachment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Attachment.class.getName(),
                   Exception.class.getName())));
     }
   }

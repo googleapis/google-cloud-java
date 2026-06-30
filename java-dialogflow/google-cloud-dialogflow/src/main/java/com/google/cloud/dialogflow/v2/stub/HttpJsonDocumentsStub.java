@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -594,6 +594,7 @@ public class HttpJsonDocumentsStub extends DocumentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDocumentRequest, Document> getDocumentTransportSettings =
         HttpJsonCallSettings.<GetDocumentRequest, Document>newBuilder()
@@ -605,6 +606,7 @@ public class HttpJsonDocumentsStub extends DocumentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDocumentRequest, Operation> createDocumentTransportSettings =
         HttpJsonCallSettings.<CreateDocumentRequest, Operation>newBuilder()
@@ -616,6 +618,7 @@ public class HttpJsonDocumentsStub extends DocumentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ImportDocumentsRequest, Operation> importDocumentsTransportSettings =
         HttpJsonCallSettings.<ImportDocumentsRequest, Operation>newBuilder()
@@ -627,6 +630,7 @@ public class HttpJsonDocumentsStub extends DocumentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteDocumentRequest, Operation> deleteDocumentTransportSettings =
         HttpJsonCallSettings.<DeleteDocumentRequest, Operation>newBuilder()
@@ -638,6 +642,7 @@ public class HttpJsonDocumentsStub extends DocumentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateDocumentRequest, Operation> updateDocumentTransportSettings =
         HttpJsonCallSettings.<UpdateDocumentRequest, Operation>newBuilder()
@@ -660,6 +665,7 @@ public class HttpJsonDocumentsStub extends DocumentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExportDocumentRequest, Operation> exportDocumentTransportSettings =
         HttpJsonCallSettings.<ExportDocumentRequest, Operation>newBuilder()
@@ -671,6 +677,7 @@ public class HttpJsonDocumentsStub extends DocumentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

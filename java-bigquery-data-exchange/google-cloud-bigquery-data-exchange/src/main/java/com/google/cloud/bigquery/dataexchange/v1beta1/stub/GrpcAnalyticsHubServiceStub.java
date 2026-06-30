@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,6 +83,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   ProtoUtils.marshaller(ListDataExchangesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataExchangesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListOrgDataExchangesRequest, ListOrgDataExchangesResponse>
@@ -95,6 +96,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   ProtoUtils.marshaller(ListOrgDataExchangesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOrgDataExchangesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataExchangeRequest, DataExchange>
@@ -106,6 +108,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataExchangeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataExchange.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDataExchangeRequest, DataExchange>
@@ -117,6 +120,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataExchangeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataExchange.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataExchangeRequest, DataExchange>
@@ -128,6 +132,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataExchangeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataExchange.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataExchangeRequest, Empty>
@@ -139,6 +144,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataExchangeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListListingsRequest, ListListingsResponse>
@@ -150,6 +156,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListListingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListListingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetListingRequest, Listing> getListingMethodDescriptor =
@@ -159,6 +166,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
               "google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService/GetListing")
           .setRequestMarshaller(ProtoUtils.marshaller(GetListingRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Listing.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateListingRequest, Listing>
@@ -170,6 +178,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateListingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Listing.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateListingRequest, Listing>
@@ -181,6 +190,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateListingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Listing.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteListingRequest, Empty> deleteListingMethodDescriptor =
@@ -190,6 +200,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
               "google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService/DeleteListing")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteListingRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SubscribeListingRequest, SubscribeListingResponse>
@@ -202,6 +213,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   ProtoUtils.marshaller(SubscribeListingRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SubscribeListingResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -211,6 +223,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
               "google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -220,6 +233,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
               "google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -232,6 +246,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -243,6 +258,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -251,6 +267,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListDataExchangesRequest, ListDataExchangesResponse>
@@ -337,6 +354,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListOrgDataExchangesRequest, ListOrgDataExchangesResponse>
         listOrgDataExchangesTransportSettings =
@@ -358,6 +376,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDataExchangeRequest, DataExchange> createDataExchangeTransportSettings =
         GrpcCallSettings.<CreateDataExchangeRequest, DataExchange>newBuilder()
@@ -368,6 +387,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDataExchangeRequest, DataExchange> updateDataExchangeTransportSettings =
         GrpcCallSettings.<UpdateDataExchangeRequest, DataExchange>newBuilder()
@@ -389,6 +409,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListListingsRequest, ListListingsResponse> listListingsTransportSettings =
         GrpcCallSettings.<ListListingsRequest, ListListingsResponse>newBuilder()
@@ -399,6 +420,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetListingRequest, Listing> getListingTransportSettings =
         GrpcCallSettings.<GetListingRequest, Listing>newBuilder()
@@ -409,6 +431,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateListingRequest, Listing> createListingTransportSettings =
         GrpcCallSettings.<CreateListingRequest, Listing>newBuilder()
@@ -419,6 +442,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateListingRequest, Listing> updateListingTransportSettings =
         GrpcCallSettings.<UpdateListingRequest, Listing>newBuilder()
@@ -439,6 +463,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SubscribeListingRequest, SubscribeListingResponse>
         subscribeListingTransportSettings =
@@ -450,6 +475,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -460,6 +486,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -470,6 +497,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -481,6 +509,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

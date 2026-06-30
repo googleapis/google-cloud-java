@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.aiplatform.v1beta1.stub;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelVersionCheckpointsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelsPagedResponse;
 
@@ -52,6 +53,8 @@ import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelVersionsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelVersionsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelsRequest;
@@ -60,6 +63,8 @@ import com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest;
 import com.google.cloud.aiplatform.v1beta1.Model;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluation;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice;
+import com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest;
+import com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetResponse;
@@ -100,6 +105,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/UploadModel")
           .setRequestMarshaller(ProtoUtils.marshaller(UploadModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetModelRequest, Model> getModelMethodDescriptor =
@@ -108,6 +114,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/GetModel")
           .setRequestMarshaller(ProtoUtils.marshaller(GetModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListModelsRequest, ListModelsResponse>
@@ -117,6 +124,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/ListModels")
               .setRequestMarshaller(ProtoUtils.marshaller(ListModelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListModelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListModelVersionsRequest, ListModelVersionsResponse>
@@ -128,6 +136,22 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(ListModelVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListModelVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>
+      listModelVersionCheckpointsMethodDescriptor =
+          MethodDescriptor
+              .<ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.ModelService/ListModelVersionCheckpoints")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListModelVersionCheckpointsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListModelVersionCheckpointsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateModelRequest, Model> updateModelMethodDescriptor =
@@ -136,6 +160,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/UpdateModel")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateExplanationDatasetRequest, Operation>
@@ -147,6 +172,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateExplanationDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteModelRequest, Operation> deleteModelMethodDescriptor =
@@ -155,6 +181,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/DeleteModel")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteModelVersionRequest, Operation>
@@ -165,6 +192,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteModelVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MergeVersionAliasesRequest, Model>
@@ -175,6 +203,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MergeVersionAliasesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportModelRequest, Operation> exportModelMethodDescriptor =
@@ -183,6 +212,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/ExportModel")
           .setRequestMarshaller(ProtoUtils.marshaller(ExportModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CopyModelRequest, Operation> copyModelMethodDescriptor =
@@ -191,6 +221,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/CopyModel")
           .setRequestMarshaller(ProtoUtils.marshaller(CopyModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ImportModelEvaluationRequest, ModelEvaluation>
@@ -202,6 +233,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportModelEvaluationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ModelEvaluation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -219,6 +251,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       BatchImportModelEvaluationSlicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -236,6 +269,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       BatchImportEvaluatedAnnotationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetModelEvaluationRequest, ModelEvaluation>
@@ -246,6 +280,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetModelEvaluationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ModelEvaluation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
@@ -258,6 +293,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(ListModelEvaluationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListModelEvaluationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetModelEvaluationSliceRequest, ModelEvaluationSlice>
@@ -270,6 +306,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(GetModelEvaluationSliceRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ModelEvaluationSlice.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -284,6 +321,19 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(ListModelEvaluationSlicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListModelEvaluationSlicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<RecommendSpecRequest, RecommendSpecResponse>
+      recommendSpecMethodDescriptor =
+          MethodDescriptor.<RecommendSpecRequest, RecommendSpecResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/RecommendSpec")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RecommendSpecRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RecommendSpecResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -295,6 +345,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -303,6 +354,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -311,6 +363,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -319,6 +372,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -330,6 +384,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<UploadModelRequest, Operation> uploadModelCallable;
@@ -343,6 +398,12 @@ public class GrpcModelServiceStub extends ModelServiceStub {
       listModelVersionsCallable;
   private final UnaryCallable<ListModelVersionsRequest, ListModelVersionsPagedResponse>
       listModelVersionsPagedCallable;
+  private final UnaryCallable<
+          ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>
+      listModelVersionCheckpointsCallable;
+  private final UnaryCallable<
+          ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsPagedResponse>
+      listModelVersionCheckpointsPagedCallable;
   private final UnaryCallable<UpdateModelRequest, Model> updateModelCallable;
   private final UnaryCallable<UpdateExplanationDatasetRequest, Operation>
       updateExplanationDatasetCallable;
@@ -386,6 +447,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   private final UnaryCallable<
           ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesPagedResponse>
       listModelEvaluationSlicesPagedCallable;
+  private final UnaryCallable<RecommendSpecRequest, RecommendSpecResponse> recommendSpecCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -446,6 +508,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetModelRequest, Model> getModelTransportSettings =
         GrpcCallSettings.<GetModelRequest, Model>newBuilder()
@@ -456,6 +519,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListModelsRequest, ListModelsResponse> listModelsTransportSettings =
         GrpcCallSettings.<ListModelsRequest, ListModelsResponse>newBuilder()
@@ -466,6 +530,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListModelVersionsRequest, ListModelVersionsResponse>
         listModelVersionsTransportSettings =
@@ -477,6 +542,21 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>
+        listModelVersionCheckpointsTransportSettings =
+            GrpcCallSettings
+                .<ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listModelVersionCheckpointsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateModelRequest, Model> updateModelTransportSettings =
         GrpcCallSettings.<UpdateModelRequest, Model>newBuilder()
@@ -498,6 +578,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                       builder.add("model", String.valueOf(request.getModel()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getModel())
                 .build();
     GrpcCallSettings<DeleteModelRequest, Operation> deleteModelTransportSettings =
         GrpcCallSettings.<DeleteModelRequest, Operation>newBuilder()
@@ -508,6 +589,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteModelVersionRequest, Operation> deleteModelVersionTransportSettings =
         GrpcCallSettings.<DeleteModelVersionRequest, Operation>newBuilder()
@@ -518,6 +600,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<MergeVersionAliasesRequest, Model> mergeVersionAliasesTransportSettings =
         GrpcCallSettings.<MergeVersionAliasesRequest, Model>newBuilder()
@@ -528,6 +611,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportModelRequest, Operation> exportModelTransportSettings =
         GrpcCallSettings.<ExportModelRequest, Operation>newBuilder()
@@ -538,6 +622,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CopyModelRequest, Operation> copyModelTransportSettings =
         GrpcCallSettings.<CopyModelRequest, Operation>newBuilder()
@@ -548,6 +633,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParentModel())
             .build();
     GrpcCallSettings<ImportModelEvaluationRequest, ModelEvaluation>
         importModelEvaluationTransportSettings =
@@ -559,6 +645,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             BatchImportModelEvaluationSlicesRequest, BatchImportModelEvaluationSlicesResponse>
@@ -573,6 +660,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             BatchImportEvaluatedAnnotationsRequest, BatchImportEvaluatedAnnotationsResponse>
@@ -587,6 +675,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetModelEvaluationRequest, ModelEvaluation>
         getModelEvaluationTransportSettings =
@@ -598,6 +687,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
         listModelEvaluationsTransportSettings =
@@ -609,6 +699,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetModelEvaluationSliceRequest, ModelEvaluationSlice>
         getModelEvaluationSliceTransportSettings =
@@ -620,6 +711,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse>
         listModelEvaluationSlicesTransportSettings =
@@ -632,7 +724,19 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<RecommendSpecRequest, RecommendSpecResponse> recommendSpecTransportSettings =
+        GrpcCallSettings.<RecommendSpecRequest, RecommendSpecResponse>newBuilder()
+            .setMethodDescriptor(recommendSpecMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -662,6 +766,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -672,6 +777,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -683,6 +789,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.uploadModelCallable =
@@ -712,6 +819,16 @@ public class GrpcModelServiceStub extends ModelServiceStub {
         callableFactory.createPagedCallable(
             listModelVersionsTransportSettings,
             settings.listModelVersionsSettings(),
+            clientContext);
+    this.listModelVersionCheckpointsCallable =
+        callableFactory.createUnaryCallable(
+            listModelVersionCheckpointsTransportSettings,
+            settings.listModelVersionCheckpointsSettings(),
+            clientContext);
+    this.listModelVersionCheckpointsPagedCallable =
+        callableFactory.createPagedCallable(
+            listModelVersionCheckpointsTransportSettings,
+            settings.listModelVersionCheckpointsSettings(),
             clientContext);
     this.updateModelCallable =
         callableFactory.createUnaryCallable(
@@ -815,6 +932,9 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             listModelEvaluationSlicesTransportSettings,
             settings.listModelEvaluationSlicesSettings(),
             clientContext);
+    this.recommendSpecCallable =
+        callableFactory.createUnaryCallable(
+            recommendSpecTransportSettings, settings.recommendSpecSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -880,6 +1000,18 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   public UnaryCallable<ListModelVersionsRequest, ListModelVersionsPagedResponse>
       listModelVersionsPagedCallable() {
     return listModelVersionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>
+      listModelVersionCheckpointsCallable() {
+    return listModelVersionCheckpointsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsPagedResponse>
+      listModelVersionCheckpointsPagedCallable() {
+    return listModelVersionCheckpointsPagedCallable;
   }
 
   @Override
@@ -1004,6 +1136,11 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   public UnaryCallable<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesPagedResponse>
       listModelEvaluationSlicesPagedCallable() {
     return listModelEvaluationSlicesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<RecommendSpecRequest, RecommendSpecResponse> recommendSpecCallable() {
+    return recommendSpecCallable;
   }
 
   @Override

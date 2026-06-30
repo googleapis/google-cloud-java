@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,6 +70,7 @@ public class GrpcFoldersStub extends FoldersStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.Folders/GetFolder")
           .setRequestMarshaller(ProtoUtils.marshaller(GetFolderRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Folder.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListFoldersRequest, ListFoldersResponse>
@@ -80,6 +81,7 @@ public class GrpcFoldersStub extends FoldersStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListFoldersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFoldersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchFoldersRequest, SearchFoldersResponse>
@@ -91,6 +93,7 @@ public class GrpcFoldersStub extends FoldersStub {
                   ProtoUtils.marshaller(SearchFoldersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchFoldersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFolderRequest, Operation>
@@ -100,6 +103,7 @@ public class GrpcFoldersStub extends FoldersStub {
               .setFullMethodName("google.cloud.resourcemanager.v3.Folders/CreateFolder")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateFolderRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFolderRequest, Operation>
@@ -109,6 +113,7 @@ public class GrpcFoldersStub extends FoldersStub {
               .setFullMethodName("google.cloud.resourcemanager.v3.Folders/UpdateFolder")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateFolderRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MoveFolderRequest, Operation> moveFolderMethodDescriptor =
@@ -117,6 +122,7 @@ public class GrpcFoldersStub extends FoldersStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.Folders/MoveFolder")
           .setRequestMarshaller(ProtoUtils.marshaller(MoveFolderRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteFolderRequest, Operation>
@@ -126,6 +132,7 @@ public class GrpcFoldersStub extends FoldersStub {
               .setFullMethodName("google.cloud.resourcemanager.v3.Folders/DeleteFolder")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteFolderRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeleteFolderRequest, Operation>
@@ -136,6 +143,7 @@ public class GrpcFoldersStub extends FoldersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeleteFolderRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -144,6 +152,7 @@ public class GrpcFoldersStub extends FoldersStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.Folders/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -152,6 +161,7 @@ public class GrpcFoldersStub extends FoldersStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.Folders/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -163,6 +173,7 @@ public class GrpcFoldersStub extends FoldersStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetFolderRequest, Folder> getFolderCallable;
@@ -240,10 +251,12 @@ public class GrpcFoldersStub extends FoldersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFoldersRequest, ListFoldersResponse> listFoldersTransportSettings =
         GrpcCallSettings.<ListFoldersRequest, ListFoldersResponse>newBuilder()
             .setMethodDescriptor(listFoldersMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SearchFoldersRequest, SearchFoldersResponse> searchFoldersTransportSettings =
         GrpcCallSettings.<SearchFoldersRequest, SearchFoldersResponse>newBuilder()
@@ -272,6 +285,7 @@ public class GrpcFoldersStub extends FoldersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteFolderRequest, Operation> deleteFolderTransportSettings =
         GrpcCallSettings.<DeleteFolderRequest, Operation>newBuilder()
@@ -282,6 +296,7 @@ public class GrpcFoldersStub extends FoldersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeleteFolderRequest, Operation> undeleteFolderTransportSettings =
         GrpcCallSettings.<UndeleteFolderRequest, Operation>newBuilder()
@@ -292,6 +307,7 @@ public class GrpcFoldersStub extends FoldersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -302,6 +318,7 @@ public class GrpcFoldersStub extends FoldersStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -312,6 +329,7 @@ public class GrpcFoldersStub extends FoldersStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -323,6 +341,7 @@ public class GrpcFoldersStub extends FoldersStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.getFolderCallable =

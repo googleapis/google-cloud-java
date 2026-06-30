@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,24 +18,37 @@ package com.google.analytics.data.v1alpha.stub;
 
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListAudienceListsPagedResponse;
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRecurringAudienceListsPagedResponse;
+import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListReportTasksPagedResponse;
 
 import com.google.analytics.data.v1alpha.AudienceList;
 import com.google.analytics.data.v1alpha.AudienceListMetadata;
 import com.google.analytics.data.v1alpha.CreateAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest;
+import com.google.analytics.data.v1alpha.CreateReportTaskRequest;
 import com.google.analytics.data.v1alpha.GetAudienceListRequest;
+import com.google.analytics.data.v1alpha.GetMetadataRequest;
+import com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest;
 import com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest;
+import com.google.analytics.data.v1alpha.GetReportTaskRequest;
 import com.google.analytics.data.v1alpha.ListAudienceListsRequest;
 import com.google.analytics.data.v1alpha.ListAudienceListsResponse;
 import com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest;
 import com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse;
+import com.google.analytics.data.v1alpha.ListReportTasksRequest;
+import com.google.analytics.data.v1alpha.ListReportTasksResponse;
+import com.google.analytics.data.v1alpha.Metadata;
+import com.google.analytics.data.v1alpha.PropertyQuotasSnapshot;
 import com.google.analytics.data.v1alpha.QueryAudienceListRequest;
 import com.google.analytics.data.v1alpha.QueryAudienceListResponse;
+import com.google.analytics.data.v1alpha.QueryReportTaskRequest;
+import com.google.analytics.data.v1alpha.QueryReportTaskResponse;
 import com.google.analytics.data.v1alpha.RecurringAudienceList;
+import com.google.analytics.data.v1alpha.ReportTask;
+import com.google.analytics.data.v1alpha.ReportTaskMetadata;
 import com.google.analytics.data.v1alpha.RunFunnelReportRequest;
 import com.google.analytics.data.v1alpha.RunFunnelReportResponse;
-import com.google.analytics.data.v1alpha.SheetExportAudienceListRequest;
-import com.google.analytics.data.v1alpha.SheetExportAudienceListResponse;
+import com.google.analytics.data.v1alpha.RunReportRequest;
+import com.google.analytics.data.v1alpha.RunReportResponse;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -71,6 +84,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(RunFunnelReportRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RunFunnelReportResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAudienceListRequest, Operation>
@@ -82,6 +96,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAudienceListRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<QueryAudienceListRequest, QueryAudienceListResponse>
@@ -94,20 +109,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(QueryAudienceListRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryAudienceListResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<
-          SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-      sheetExportAudienceListMethodDescriptor =
-          MethodDescriptor
-              .<SheetExportAudienceListRequest, SheetExportAudienceListResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.data.v1alpha.AlphaAnalyticsData/SheetExportAudienceList")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(SheetExportAudienceListRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(SheetExportAudienceListResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAudienceListRequest, AudienceList>
@@ -118,6 +120,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAudienceListRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AudienceList.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAudienceListsRequest, ListAudienceListsResponse>
@@ -130,6 +133,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(ListAudienceListsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAudienceListsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRecurringAudienceListRequest, RecurringAudienceList>
@@ -142,6 +146,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(CreateRecurringAudienceListRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RecurringAudienceList.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRecurringAudienceListRequest, RecurringAudienceList>
@@ -154,6 +159,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(GetRecurringAudienceListRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RecurringAudienceList.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -168,7 +174,87 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(ListRecurringAudienceListsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRecurringAudienceListsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
+
+  private static final MethodDescriptor<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
+      getPropertyQuotasSnapshotMethodDescriptor =
+          MethodDescriptor.<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.data.v1alpha.AlphaAnalyticsData/GetPropertyQuotasSnapshot")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetPropertyQuotasSnapshotRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PropertyQuotasSnapshot.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateReportTaskRequest, Operation>
+      createReportTaskMethodDescriptor =
+          MethodDescriptor.<CreateReportTaskRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.data.v1alpha.AlphaAnalyticsData/CreateReportTask")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateReportTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<QueryReportTaskRequest, QueryReportTaskResponse>
+      queryReportTaskMethodDescriptor =
+          MethodDescriptor.<QueryReportTaskRequest, QueryReportTaskResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.analytics.data.v1alpha.AlphaAnalyticsData/QueryReportTask")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(QueryReportTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(QueryReportTaskResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetReportTaskRequest, ReportTask>
+      getReportTaskMethodDescriptor =
+          MethodDescriptor.<GetReportTaskRequest, ReportTask>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.analytics.data.v1alpha.AlphaAnalyticsData/GetReportTask")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetReportTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ReportTask.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListReportTasksRequest, ListReportTasksResponse>
+      listReportTasksMethodDescriptor =
+          MethodDescriptor.<ListReportTasksRequest, ListReportTasksResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.analytics.data.v1alpha.AlphaAnalyticsData/ListReportTasks")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListReportTasksRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListReportTasksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<RunReportRequest, RunReportResponse>
+      runReportMethodDescriptor =
+          MethodDescriptor.<RunReportRequest, RunReportResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.analytics.data.v1alpha.AlphaAnalyticsData/RunReport")
+              .setRequestMarshaller(ProtoUtils.marshaller(RunReportRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RunReportResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetMetadataRequest, Metadata> getMetadataMethodDescriptor =
+      MethodDescriptor.<GetMetadataRequest, Metadata>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.analytics.data.v1alpha.AlphaAnalyticsData/GetMetadata")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetMetadataRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Metadata.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
 
   private final UnaryCallable<RunFunnelReportRequest, RunFunnelReportResponse>
       runFunnelReportCallable;
@@ -177,8 +263,6 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
       createAudienceListOperationCallable;
   private final UnaryCallable<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListCallable;
-  private final UnaryCallable<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-      sheetExportAudienceListCallable;
   private final UnaryCallable<GetAudienceListRequest, AudienceList> getAudienceListCallable;
   private final UnaryCallable<ListAudienceListsRequest, ListAudienceListsResponse>
       listAudienceListsCallable;
@@ -193,6 +277,20 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   private final UnaryCallable<
           ListRecurringAudienceListsRequest, ListRecurringAudienceListsPagedResponse>
       listRecurringAudienceListsPagedCallable;
+  private final UnaryCallable<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
+      getPropertyQuotasSnapshotCallable;
+  private final UnaryCallable<CreateReportTaskRequest, Operation> createReportTaskCallable;
+  private final OperationCallable<CreateReportTaskRequest, ReportTask, ReportTaskMetadata>
+      createReportTaskOperationCallable;
+  private final UnaryCallable<QueryReportTaskRequest, QueryReportTaskResponse>
+      queryReportTaskCallable;
+  private final UnaryCallable<GetReportTaskRequest, ReportTask> getReportTaskCallable;
+  private final UnaryCallable<ListReportTasksRequest, ListReportTasksResponse>
+      listReportTasksCallable;
+  private final UnaryCallable<ListReportTasksRequest, ListReportTasksPagedResponse>
+      listReportTasksPagedCallable;
+  private final UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable;
+  private final UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -258,23 +356,12 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<QueryAudienceListRequest, QueryAudienceListResponse>
         queryAudienceListTransportSettings =
             GrpcCallSettings.<QueryAudienceListRequest, QueryAudienceListResponse>newBuilder()
                 .setMethodDescriptor(queryAudienceListMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
-    GrpcCallSettings<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-        sheetExportAudienceListTransportSettings =
-            GrpcCallSettings
-                .<SheetExportAudienceListRequest, SheetExportAudienceListResponse>newBuilder()
-                .setMethodDescriptor(sheetExportAudienceListMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -291,6 +378,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAudienceListsRequest, ListAudienceListsResponse>
         listAudienceListsTransportSettings =
@@ -302,6 +390,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateRecurringAudienceListRequest, RecurringAudienceList>
         createRecurringAudienceListTransportSettings =
@@ -313,6 +402,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRecurringAudienceListRequest, RecurringAudienceList>
         getRecurringAudienceListTransportSettings =
@@ -324,6 +414,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>
         listRecurringAudienceListsTransportSettings =
@@ -336,7 +427,86 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
+        getPropertyQuotasSnapshotTransportSettings =
+            GrpcCallSettings.<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>newBuilder()
+                .setMethodDescriptor(getPropertyQuotasSnapshotMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<CreateReportTaskRequest, Operation> createReportTaskTransportSettings =
+        GrpcCallSettings.<CreateReportTaskRequest, Operation>newBuilder()
+            .setMethodDescriptor(createReportTaskMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<QueryReportTaskRequest, QueryReportTaskResponse>
+        queryReportTaskTransportSettings =
+            GrpcCallSettings.<QueryReportTaskRequest, QueryReportTaskResponse>newBuilder()
+                .setMethodDescriptor(queryReportTaskMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetReportTaskRequest, ReportTask> getReportTaskTransportSettings =
+        GrpcCallSettings.<GetReportTaskRequest, ReportTask>newBuilder()
+            .setMethodDescriptor(getReportTaskMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListReportTasksRequest, ListReportTasksResponse>
+        listReportTasksTransportSettings =
+            GrpcCallSettings.<ListReportTasksRequest, ListReportTasksResponse>newBuilder()
+                .setMethodDescriptor(listReportTasksMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<RunReportRequest, RunReportResponse> runReportTransportSettings =
+        GrpcCallSettings.<RunReportRequest, RunReportResponse>newBuilder()
+            .setMethodDescriptor(runReportMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("property", String.valueOf(request.getProperty()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetMetadataRequest, Metadata> getMetadataTransportSettings =
+        GrpcCallSettings.<GetMetadataRequest, Metadata>newBuilder()
+            .setMethodDescriptor(getMetadataMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
 
     this.runFunnelReportCallable =
         callableFactory.createUnaryCallable(
@@ -356,11 +526,6 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
         callableFactory.createUnaryCallable(
             queryAudienceListTransportSettings,
             settings.queryAudienceListSettings(),
-            clientContext);
-    this.sheetExportAudienceListCallable =
-        callableFactory.createUnaryCallable(
-            sheetExportAudienceListTransportSettings,
-            settings.sheetExportAudienceListSettings(),
             clientContext);
     this.getAudienceListCallable =
         callableFactory.createUnaryCallable(
@@ -395,6 +560,38 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
             listRecurringAudienceListsTransportSettings,
             settings.listRecurringAudienceListsSettings(),
             clientContext);
+    this.getPropertyQuotasSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            getPropertyQuotasSnapshotTransportSettings,
+            settings.getPropertyQuotasSnapshotSettings(),
+            clientContext);
+    this.createReportTaskCallable =
+        callableFactory.createUnaryCallable(
+            createReportTaskTransportSettings, settings.createReportTaskSettings(), clientContext);
+    this.createReportTaskOperationCallable =
+        callableFactory.createOperationCallable(
+            createReportTaskTransportSettings,
+            settings.createReportTaskOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.queryReportTaskCallable =
+        callableFactory.createUnaryCallable(
+            queryReportTaskTransportSettings, settings.queryReportTaskSettings(), clientContext);
+    this.getReportTaskCallable =
+        callableFactory.createUnaryCallable(
+            getReportTaskTransportSettings, settings.getReportTaskSettings(), clientContext);
+    this.listReportTasksCallable =
+        callableFactory.createUnaryCallable(
+            listReportTasksTransportSettings, settings.listReportTasksSettings(), clientContext);
+    this.listReportTasksPagedCallable =
+        callableFactory.createPagedCallable(
+            listReportTasksTransportSettings, settings.listReportTasksSettings(), clientContext);
+    this.runReportCallable =
+        callableFactory.createUnaryCallable(
+            runReportTransportSettings, settings.runReportSettings(), clientContext);
+    this.getMetadataCallable =
+        callableFactory.createUnaryCallable(
+            getMetadataTransportSettings, settings.getMetadataSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -424,12 +621,6 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   public UnaryCallable<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListCallable() {
     return queryAudienceListCallable;
-  }
-
-  @Override
-  public UnaryCallable<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-      sheetExportAudienceListCallable() {
-    return sheetExportAudienceListCallable;
   }
 
   @Override
@@ -471,6 +662,54 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   public UnaryCallable<ListRecurringAudienceListsRequest, ListRecurringAudienceListsPagedResponse>
       listRecurringAudienceListsPagedCallable() {
     return listRecurringAudienceListsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
+      getPropertyQuotasSnapshotCallable() {
+    return getPropertyQuotasSnapshotCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateReportTaskRequest, Operation> createReportTaskCallable() {
+    return createReportTaskCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateReportTaskRequest, ReportTask, ReportTaskMetadata>
+      createReportTaskOperationCallable() {
+    return createReportTaskOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryReportTaskRequest, QueryReportTaskResponse> queryReportTaskCallable() {
+    return queryReportTaskCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetReportTaskRequest, ReportTask> getReportTaskCallable() {
+    return getReportTaskCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReportTasksRequest, ListReportTasksResponse> listReportTasksCallable() {
+    return listReportTasksCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReportTasksRequest, ListReportTasksPagedResponse>
+      listReportTasksPagedCallable() {
+    return listReportTasksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable() {
+    return runReportCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable() {
+    return getMetadataCallable;
   }
 
   @Override

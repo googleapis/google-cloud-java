@@ -13,6 +13,9 @@
             "ListVoices": {
               "methods": ["listVoices", "listVoices", "listVoicesCallable"]
             },
+            "StreamingSynthesize": {
+              "methods": ["streamingSynthesizeCallable"]
+            },
             "SynthesizeSpeech": {
               "methods": ["synthesizeSpeech", "synthesizeSpeech", "synthesizeSpeechCallable"]
             }

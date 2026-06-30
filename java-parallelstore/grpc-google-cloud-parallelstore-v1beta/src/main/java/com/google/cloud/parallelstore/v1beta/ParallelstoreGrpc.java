@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,9 +35,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * * `projects/12345/locations/us-central1-c/instances/my-parallelstore-share`
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/parallelstore/v1beta/parallelstore.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ParallelstoreGrpc {
 
@@ -277,6 +274,92 @@ public final class ParallelstoreGrpc {
     return getDeleteInstanceMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.parallelstore.v1beta.ImportDataRequest, com.google.longrunning.Operation>
+      getImportDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportData",
+      requestType = com.google.cloud.parallelstore.v1beta.ImportDataRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.parallelstore.v1beta.ImportDataRequest, com.google.longrunning.Operation>
+      getImportDataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.parallelstore.v1beta.ImportDataRequest,
+            com.google.longrunning.Operation>
+        getImportDataMethod;
+    if ((getImportDataMethod = ParallelstoreGrpc.getImportDataMethod) == null) {
+      synchronized (ParallelstoreGrpc.class) {
+        if ((getImportDataMethod = ParallelstoreGrpc.getImportDataMethod) == null) {
+          ParallelstoreGrpc.getImportDataMethod =
+              getImportDataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.parallelstore.v1beta.ImportDataRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportData"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parallelstore.v1beta.ImportDataRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new ParallelstoreMethodDescriptorSupplier("ImportData"))
+                      .build();
+        }
+      }
+    }
+    return getImportDataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.parallelstore.v1beta.ExportDataRequest, com.google.longrunning.Operation>
+      getExportDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportData",
+      requestType = com.google.cloud.parallelstore.v1beta.ExportDataRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.parallelstore.v1beta.ExportDataRequest, com.google.longrunning.Operation>
+      getExportDataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.parallelstore.v1beta.ExportDataRequest,
+            com.google.longrunning.Operation>
+        getExportDataMethod;
+    if ((getExportDataMethod = ParallelstoreGrpc.getExportDataMethod) == null) {
+      synchronized (ParallelstoreGrpc.class) {
+        if ((getExportDataMethod = ParallelstoreGrpc.getExportDataMethod) == null) {
+          ParallelstoreGrpc.getExportDataMethod =
+              getExportDataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.parallelstore.v1beta.ExportDataRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportData"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parallelstore.v1beta.ExportDataRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new ParallelstoreMethodDescriptorSupplier("ExportData"))
+                      .build();
+        }
+      }
+    }
+    return getExportDataMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ParallelstoreStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ParallelstoreStub> factory =
@@ -288,6 +371,19 @@ public final class ParallelstoreGrpc {
           }
         };
     return ParallelstoreStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ParallelstoreBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ParallelstoreBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ParallelstoreBlockingV2Stub>() {
+          @java.lang.Override
+          public ParallelstoreBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ParallelstoreBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ParallelstoreBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -342,7 +438,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Lists Instances in a given project and location.
+     * Lists all instances in a given project and location.
      * </pre>
      */
     default void listInstances(
@@ -357,7 +453,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Instance.
+     * Gets details of a single instance.
      * </pre>
      */
     default void getInstance(
@@ -386,7 +482,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of a single Instance.
+     * Updates the parameters of a single instance.
      * </pre>
      */
     default void updateInstance(
@@ -400,7 +496,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Deletes a single Instance.
+     * Deletes a single instance.
      * </pre>
      */
     default void deleteInstance(
@@ -408,6 +504,32 @@ public final class ParallelstoreGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies data from Cloud Storage to Parallelstore.
+     * </pre>
+     */
+    default void importData(
+        com.google.cloud.parallelstore.v1beta.ImportDataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getImportDataMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies data from Parallelstore to Cloud Storage.
+     * </pre>
+     */
+    default void exportData(
+        com.google.cloud.parallelstore.v1beta.ExportDataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExportDataMethod(), responseObserver);
     }
   }
 
@@ -471,7 +593,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Lists Instances in a given project and location.
+     * Lists all instances in a given project and location.
      * </pre>
      */
     public void listInstances(
@@ -488,7 +610,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Instance.
+     * Gets details of a single instance.
      * </pre>
      */
     public void getInstance(
@@ -521,7 +643,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of a single Instance.
+     * Updates the parameters of a single instance.
      * </pre>
      */
     public void updateInstance(
@@ -537,7 +659,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Deletes a single Instance.
+     * Deletes a single instance.
      * </pre>
      */
     public void deleteInstance(
@@ -548,10 +670,167 @@ public final class ParallelstoreGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies data from Cloud Storage to Parallelstore.
+     * </pre>
+     */
+    public void importData(
+        com.google.cloud.parallelstore.v1beta.ImportDataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getImportDataMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies data from Parallelstore to Cloud Storage.
+     * </pre>
+     */
+    public void exportData(
+        com.google.cloud.parallelstore.v1beta.ExportDataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportDataMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Parallelstore.
+   *
+   * <pre>
+   * Service describing handlers for resources
+   * Configures and manages parallelstore resources.
+   * Parallelstore service.
+   * The `parallelstore.googleapis.com` service implements the parallelstore API
+   * and defines the following resource model for managing instances:
+   * * The service works with a collection of cloud projects, named: `/projects/&#42;`
+   * * Each project has a collection of available locations, named: `/locations/&#42;`
+   * * Each location has a collection of instances named `/instances/&#42;`.
+   * * Parallelstore instances are resources of the form:
+   *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+   * Note that location_id must be a Google Cloud `zone`; for example:
+   * * `projects/12345/locations/us-central1-c/instances/my-parallelstore-share`
+   * </pre>
+   */
+  public static final class ParallelstoreBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ParallelstoreBlockingV2Stub> {
+    private ParallelstoreBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ParallelstoreBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ParallelstoreBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all instances in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.parallelstore.v1beta.ListInstancesResponse listInstances(
+        com.google.cloud.parallelstore.v1beta.ListInstancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListInstancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single instance.
+     * </pre>
+     */
+    public com.google.cloud.parallelstore.v1beta.Instance getInstance(
+        com.google.cloud.parallelstore.v1beta.GetInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Parallelstore instance in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createInstance(
+        com.google.cloud.parallelstore.v1beta.CreateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateInstance(
+        com.google.cloud.parallelstore.v1beta.UpdateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteInstance(
+        com.google.cloud.parallelstore.v1beta.DeleteInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies data from Cloud Storage to Parallelstore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importData(
+        com.google.cloud.parallelstore.v1beta.ImportDataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getImportDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies data from Parallelstore to Cloud Storage.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportData(
+        com.google.cloud.parallelstore.v1beta.ExportDataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportDataMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Parallelstore.
    *
    * <pre>
    * Service describing handlers for resources
@@ -584,7 +863,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Lists Instances in a given project and location.
+     * Lists all instances in a given project and location.
      * </pre>
      */
     public com.google.cloud.parallelstore.v1beta.ListInstancesResponse listInstances(
@@ -597,7 +876,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Instance.
+     * Gets details of a single instance.
      * </pre>
      */
     public com.google.cloud.parallelstore.v1beta.Instance getInstance(
@@ -623,7 +902,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of a single Instance.
+     * Updates the parameters of a single instance.
      * </pre>
      */
     public com.google.longrunning.Operation updateInstance(
@@ -636,13 +915,39 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Deletes a single Instance.
+     * Deletes a single instance.
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(
         com.google.cloud.parallelstore.v1beta.DeleteInstanceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies data from Cloud Storage to Parallelstore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importData(
+        com.google.cloud.parallelstore.v1beta.ImportDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies data from Parallelstore to Cloud Storage.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportData(
+        com.google.cloud.parallelstore.v1beta.ExportDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportDataMethod(), getCallOptions(), request);
     }
   }
 
@@ -680,7 +985,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Lists Instances in a given project and location.
+     * Lists all instances in a given project and location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -694,7 +999,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Instance.
+     * Gets details of a single instance.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -721,7 +1026,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of a single Instance.
+     * Updates the parameters of a single instance.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -734,13 +1039,39 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Deletes a single Instance.
+     * Deletes a single instance.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteInstance(com.google.cloud.parallelstore.v1beta.DeleteInstanceRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteInstanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies data from Cloud Storage to Parallelstore.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        importData(com.google.cloud.parallelstore.v1beta.ImportDataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getImportDataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies data from Parallelstore to Cloud Storage.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportData(com.google.cloud.parallelstore.v1beta.ExportDataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportDataMethod(), getCallOptions()), request);
     }
   }
 
@@ -749,6 +1080,8 @@ public final class ParallelstoreGrpc {
   private static final int METHODID_CREATE_INSTANCE = 2;
   private static final int METHODID_UPDATE_INSTANCE = 3;
   private static final int METHODID_DELETE_INSTANCE = 4;
+  private static final int METHODID_IMPORT_DATA = 5;
+  private static final int METHODID_EXPORT_DATA = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -793,6 +1126,16 @@ public final class ParallelstoreGrpc {
         case METHODID_DELETE_INSTANCE:
           serviceImpl.deleteInstance(
               (com.google.cloud.parallelstore.v1beta.DeleteInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_IMPORT_DATA:
+          serviceImpl.importData(
+              (com.google.cloud.parallelstore.v1beta.ImportDataRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_DATA:
+          serviceImpl.exportData(
+              (com.google.cloud.parallelstore.v1beta.ExportDataRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -845,6 +1188,18 @@ public final class ParallelstoreGrpc {
                 new MethodHandlers<
                     com.google.cloud.parallelstore.v1beta.DeleteInstanceRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_INSTANCE)))
+        .addMethod(
+            getImportDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.parallelstore.v1beta.ImportDataRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_DATA)))
+        .addMethod(
+            getExportDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.parallelstore.v1beta.ExportDataRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_DATA)))
         .build();
   }
 
@@ -901,6 +1256,8 @@ public final class ParallelstoreGrpc {
                       .addMethod(getCreateInstanceMethod())
                       .addMethod(getUpdateInstanceMethod())
                       .addMethod(getDeleteInstanceMethod())
+                      .addMethod(getImportDataMethod())
+                      .addMethod(getExportDataMethod())
                       .build();
         }
       }

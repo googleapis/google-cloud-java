@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,6 +74,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   ProtoUtils.marshaller(SearchDomainsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchDomainsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -87,6 +88,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   ProtoUtils.marshaller(RetrieveRegisterParametersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RetrieveRegisterParametersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RegisterDomainRequest, Operation>
@@ -97,6 +99,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RegisterDomainRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -110,6 +113,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   ProtoUtils.marshaller(RetrieveTransferParametersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RetrieveTransferParametersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TransferDomainRequest, Operation>
@@ -120,6 +124,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(TransferDomainRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRegistrationsRequest, ListRegistrationsResponse>
@@ -131,6 +136,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   ProtoUtils.marshaller(ListRegistrationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRegistrationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRegistrationRequest, Registration>
@@ -141,6 +147,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRegistrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Registration.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRegistrationRequest, Operation>
@@ -151,6 +158,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRegistrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ConfigureManagementSettingsRequest, Operation>
@@ -161,6 +169,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ConfigureManagementSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ConfigureDnsSettingsRequest, Operation>
@@ -171,6 +180,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ConfigureDnsSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ConfigureContactSettingsRequest, Operation>
@@ -181,6 +191,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ConfigureContactSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportRegistrationRequest, Operation>
@@ -191,6 +202,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportRegistrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRegistrationRequest, Operation>
@@ -201,6 +213,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRegistrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RetrieveAuthorizationCodeRequest, AuthorizationCode>
@@ -211,6 +224,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RetrieveAuthorizationCodeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AuthorizationCode.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResetAuthorizationCodeRequest, AuthorizationCode>
@@ -221,6 +235,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResetAuthorizationCodeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AuthorizationCode.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<SearchDomainsRequest, SearchDomainsResponse> searchDomainsCallable;
@@ -313,6 +328,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   builder.add("location", String.valueOf(request.getLocation()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getLocation())
             .build();
     GrpcCallSettings<RetrieveRegisterParametersRequest, RetrieveRegisterParametersResponse>
         retrieveRegisterParametersTransportSettings =
@@ -325,6 +341,7 @@ public class GrpcDomainsStub extends DomainsStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     GrpcCallSettings<RegisterDomainRequest, Operation> registerDomainTransportSettings =
         GrpcCallSettings.<RegisterDomainRequest, Operation>newBuilder()
@@ -335,6 +352,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>
         retrieveTransferParametersTransportSettings =
@@ -347,6 +365,7 @@ public class GrpcDomainsStub extends DomainsStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     GrpcCallSettings<TransferDomainRequest, Operation> transferDomainTransportSettings =
         GrpcCallSettings.<TransferDomainRequest, Operation>newBuilder()
@@ -357,6 +376,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListRegistrationsRequest, ListRegistrationsResponse>
         listRegistrationsTransportSettings =
@@ -368,6 +388,7 @@ public class GrpcDomainsStub extends DomainsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRegistrationRequest, Registration> getRegistrationTransportSettings =
         GrpcCallSettings.<GetRegistrationRequest, Registration>newBuilder()
@@ -378,6 +399,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateRegistrationRequest, Operation> updateRegistrationTransportSettings =
         GrpcCallSettings.<UpdateRegistrationRequest, Operation>newBuilder()
@@ -400,6 +422,7 @@ public class GrpcDomainsStub extends DomainsStub {
                       builder.add("registration", String.valueOf(request.getRegistration()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRegistration())
                 .build();
     GrpcCallSettings<ConfigureDnsSettingsRequest, Operation> configureDnsSettingsTransportSettings =
         GrpcCallSettings.<ConfigureDnsSettingsRequest, Operation>newBuilder()
@@ -410,6 +433,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   builder.add("registration", String.valueOf(request.getRegistration()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRegistration())
             .build();
     GrpcCallSettings<ConfigureContactSettingsRequest, Operation>
         configureContactSettingsTransportSettings =
@@ -421,6 +445,7 @@ public class GrpcDomainsStub extends DomainsStub {
                       builder.add("registration", String.valueOf(request.getRegistration()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRegistration())
                 .build();
     GrpcCallSettings<ExportRegistrationRequest, Operation> exportRegistrationTransportSettings =
         GrpcCallSettings.<ExportRegistrationRequest, Operation>newBuilder()
@@ -431,6 +456,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteRegistrationRequest, Operation> deleteRegistrationTransportSettings =
         GrpcCallSettings.<DeleteRegistrationRequest, Operation>newBuilder()
@@ -441,6 +467,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RetrieveAuthorizationCodeRequest, AuthorizationCode>
         retrieveAuthorizationCodeTransportSettings =
@@ -452,6 +479,7 @@ public class GrpcDomainsStub extends DomainsStub {
                       builder.add("registration", String.valueOf(request.getRegistration()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRegistration())
                 .build();
     GrpcCallSettings<ResetAuthorizationCodeRequest, AuthorizationCode>
         resetAuthorizationCodeTransportSettings =
@@ -463,6 +491,7 @@ public class GrpcDomainsStub extends DomainsStub {
                       builder.add("registration", String.valueOf(request.getRegistration()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRegistration())
                 .build();
 
     this.searchDomainsCallable =

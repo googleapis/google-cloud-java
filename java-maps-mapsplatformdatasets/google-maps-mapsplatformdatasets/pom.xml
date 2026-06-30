@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-mapsplatformdatasets</artifactId>
-  <version>0.31.0-SNAPSHOT</version><!-- {x-version-update:google-maps-mapsplatformdatasets:current} -->
+  <version>0.83.0-SNAPSHOT</version><!-- {x-version-update:google-maps-mapsplatformdatasets:current} -->
   <packaging>jar</packaging>
   <name>Google Maps Platform Datasets API</name>
   <description>Maps Platform Datasets API The Maps Platform Datasets API enables developers to ingest geospatially-tied datasets
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-mapsplatformdatasets-parent</artifactId>
-    <version>0.31.0-SNAPSHOT</version><!-- {x-version-update:google-maps-mapsplatformdatasets:current} -->
+    <version>0.83.0-SNAPSHOT</version><!-- {x-version-update:google-maps-mapsplatformdatasets:current} -->
   </parent>
   <properties>
     <site.installationModule>google-maps-mapsplatformdatasets</site.installationModule>
@@ -42,14 +42,12 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.maps.api.grpc</groupId>
       <artifactId>proto-google-maps-mapsplatformdatasets-v1</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.google.maps.api.grpc</groupId>
-      <artifactId>proto-google-maps-mapsplatformdatasets-v1alpha</artifactId>
-    </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -69,12 +67,15 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.maps.api.grpc</groupId>
       <artifactId>grpc-google-maps-mapsplatformdatasets-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-iam-v1</artifactId>
@@ -82,6 +83,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>
@@ -95,11 +97,6 @@
       <scope>test</scope>
     </dependency>
 
-    <dependency>
-      <groupId>com.google.maps.api.grpc</groupId>
-      <artifactId>grpc-google-maps-mapsplatformdatasets-v1alpha</artifactId>
-      <scope>test</scope>
-    </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

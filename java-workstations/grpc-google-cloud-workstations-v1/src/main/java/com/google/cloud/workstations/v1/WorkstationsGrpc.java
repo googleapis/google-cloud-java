@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for interacting with Cloud Workstations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/workstations/v1/workstations.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class WorkstationsGrpc {
 
@@ -1013,6 +1010,19 @@ public final class WorkstationsGrpc {
     return WorkstationsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static WorkstationsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<WorkstationsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<WorkstationsBlockingV2Stub>() {
+          @java.lang.Override
+          public WorkstationsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new WorkstationsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return WorkstationsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1334,6 +1344,8 @@ public final class WorkstationsGrpc {
      * <pre>
      * Returns a short-lived credential that can be used to send authenticated and
      * authorized traffic to a workstation.
+     * Once generated this token cannot be revoked and is good for the lifetime
+     * of the token.
      * </pre>
      */
     default void generateAccessToken(
@@ -1701,6 +1713,8 @@ public final class WorkstationsGrpc {
      * <pre>
      * Returns a short-lived credential that can be used to send authenticated and
      * authorized traffic to a workstation.
+     * Once generated this token cannot be revoked and is good for the lifetime
+     * of the token.
      * </pre>
      */
     public void generateAccessToken(
@@ -1716,6 +1730,312 @@ public final class WorkstationsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Workstations.
+   *
+   * <pre>
+   * Service for interacting with Cloud Workstations.
+   * </pre>
+   */
+  public static final class WorkstationsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<WorkstationsBlockingV2Stub> {
+    private WorkstationsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected WorkstationsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new WorkstationsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the requested workstation cluster.
+     * </pre>
+     */
+    public com.google.cloud.workstations.v1.WorkstationCluster getWorkstationCluster(
+        com.google.cloud.workstations.v1.GetWorkstationClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetWorkstationClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns all workstation clusters in the specified location.
+     * </pre>
+     */
+    public com.google.cloud.workstations.v1.ListWorkstationClustersResponse listWorkstationClusters(
+        com.google.cloud.workstations.v1.ListWorkstationClustersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListWorkstationClustersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new workstation cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createWorkstationCluster(
+        com.google.cloud.workstations.v1.CreateWorkstationClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateWorkstationClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing workstation cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateWorkstationCluster(
+        com.google.cloud.workstations.v1.UpdateWorkstationClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateWorkstationClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified workstation cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteWorkstationCluster(
+        com.google.cloud.workstations.v1.DeleteWorkstationClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteWorkstationClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the requested workstation configuration.
+     * </pre>
+     */
+    public com.google.cloud.workstations.v1.WorkstationConfig getWorkstationConfig(
+        com.google.cloud.workstations.v1.GetWorkstationConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetWorkstationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns all workstation configurations in the specified cluster.
+     * </pre>
+     */
+    public com.google.cloud.workstations.v1.ListWorkstationConfigsResponse listWorkstationConfigs(
+        com.google.cloud.workstations.v1.ListWorkstationConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListWorkstationConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns all workstation configurations in the specified cluster on which
+     * the caller has the "workstations.workstation.create" permission.
+     * </pre>
+     */
+    public com.google.cloud.workstations.v1.ListUsableWorkstationConfigsResponse
+        listUsableWorkstationConfigs(
+            com.google.cloud.workstations.v1.ListUsableWorkstationConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListUsableWorkstationConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new workstation configuration.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createWorkstationConfig(
+        com.google.cloud.workstations.v1.CreateWorkstationConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateWorkstationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing workstation configuration.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateWorkstationConfig(
+        com.google.cloud.workstations.v1.UpdateWorkstationConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateWorkstationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified workstation configuration.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteWorkstationConfig(
+        com.google.cloud.workstations.v1.DeleteWorkstationConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteWorkstationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the requested workstation.
+     * </pre>
+     */
+    public com.google.cloud.workstations.v1.Workstation getWorkstation(
+        com.google.cloud.workstations.v1.GetWorkstationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetWorkstationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns all Workstations using the specified workstation configuration.
+     * </pre>
+     */
+    public com.google.cloud.workstations.v1.ListWorkstationsResponse listWorkstations(
+        com.google.cloud.workstations.v1.ListWorkstationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListWorkstationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns all workstations using the specified workstation configuration
+     * on which the caller has the "workstations.workstations.use" permission.
+     * </pre>
+     */
+    public com.google.cloud.workstations.v1.ListUsableWorkstationsResponse listUsableWorkstations(
+        com.google.cloud.workstations.v1.ListUsableWorkstationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListUsableWorkstationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new workstation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createWorkstation(
+        com.google.cloud.workstations.v1.CreateWorkstationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateWorkstationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing workstation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateWorkstation(
+        com.google.cloud.workstations.v1.UpdateWorkstationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateWorkstationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified workstation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteWorkstation(
+        com.google.cloud.workstations.v1.DeleteWorkstationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteWorkstationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts running a workstation so that users can connect to it.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startWorkstation(
+        com.google.cloud.workstations.v1.StartWorkstationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStartWorkstationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops running a workstation, reducing costs.
+     * </pre>
+     */
+    public com.google.longrunning.Operation stopWorkstation(
+        com.google.cloud.workstations.v1.StopWorkstationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStopWorkstationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a short-lived credential that can be used to send authenticated and
+     * authorized traffic to a workstation.
+     * Once generated this token cannot be revoked and is good for the lifetime
+     * of the token.
+     * </pre>
+     */
+    public com.google.cloud.workstations.v1.GenerateAccessTokenResponse generateAccessToken(
+        com.google.cloud.workstations.v1.GenerateAccessTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGenerateAccessTokenMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Workstations.
    *
    * <pre>
    * Service for interacting with Cloud Workstations.
@@ -1989,6 +2309,8 @@ public final class WorkstationsGrpc {
      * <pre>
      * Returns a short-lived credential that can be used to send authenticated and
      * authorized traffic to a workstation.
+     * Once generated this token cannot be revoked and is good for the lifetime
+     * of the token.
      * </pre>
      */
     public com.google.cloud.workstations.v1.GenerateAccessTokenResponse generateAccessToken(
@@ -2291,6 +2613,8 @@ public final class WorkstationsGrpc {
      * <pre>
      * Returns a short-lived credential that can be used to send authenticated and
      * authorized traffic to a workstation.
+     * Once generated this token cannot be revoked and is good for the lifetime
+     * of the token.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

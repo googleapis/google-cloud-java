@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for modifying Control.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2beta/control_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ControlServiceGrpc {
 
@@ -273,6 +270,19 @@ public final class ControlServiceGrpc {
     return ControlServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ControlServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ControlServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ControlServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ControlServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ControlServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ControlServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -515,6 +525,103 @@ public final class ControlServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ControlService.
+   *
+   * <pre>
+   * Service for modifying Control.
+   * </pre>
+   */
+  public static final class ControlServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ControlServiceBlockingV2Stub> {
+    private ControlServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ControlServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ControlServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Control.
+     * If the [Control][google.cloud.retail.v2beta.Control] to create already
+     * exists, an ALREADY_EXISTS error is returned.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.Control createControl(
+        com.google.cloud.retail.v2beta.CreateControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateControlMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Control.
+     * If the [Control][google.cloud.retail.v2beta.Control] to delete does not
+     * exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteControl(
+        com.google.cloud.retail.v2beta.DeleteControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteControlMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Control.
+     * [Control][google.cloud.retail.v2beta.Control] cannot be set to a different
+     * oneof field, if so an INVALID_ARGUMENT is returned. If the
+     * [Control][google.cloud.retail.v2beta.Control] to update does not exist, a
+     * NOT_FOUND error is returned.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.Control updateControl(
+        com.google.cloud.retail.v2beta.UpdateControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateControlMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Control.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.Control getControl(
+        com.google.cloud.retail.v2beta.GetControlRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetControlMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Controls by their parent
+     * [Catalog][google.cloud.retail.v2beta.Catalog].
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.ListControlsResponse listControls(
+        com.google.cloud.retail.v2beta.ListControlsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListControlsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ControlService.
    *
    * <pre>
    * Service for modifying Control.

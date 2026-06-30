@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.google.cloud.discoveryengine.v1.SearchRequest;
 import com.google.cloud.discoveryengine.v1.SearchResponse;
 import com.google.cloud.discoveryengine.v1.SearchServiceClient;
 import com.google.cloud.discoveryengine.v1.ServingConfigName;
+import com.google.cloud.discoveryengine.v1.SessionName;
 import com.google.cloud.discoveryengine.v1.UserInfo;
 import com.google.protobuf.Value;
 import java.util.ArrayList;
@@ -51,15 +52,18 @@ public class SyncSearch {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setQuery("query107944136")
+              .addAllPageCategories(new ArrayList<String>())
               .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
+              .setOneBoxPageSize(1988477988)
               .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
               .setFilter("filter-1274492040")
               .setCanonicalFilter("canonicalFilter-722283124")
               .setOrderBy("orderBy-1207110587")
               .setUserInfo(UserInfo.newBuilder().build())
+              .setLanguageCode("languageCode-2092349083")
               .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
               .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
               .putAllParams(new HashMap<String, Value>())
@@ -67,8 +71,20 @@ public class SyncSearch {
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
               .setUserPseudoId("userPseudoId-1155274652")
               .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+              .setRankingExpression("rankingExpression2110320494")
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
+              .setNaturalLanguageQueryUnderstandingSpec(
+                  SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
+              .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+              .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+              .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
+              .setSession(
+                  SessionName.ofProjectLocationDataStoreSessionName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                      .toString())
+              .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+              .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
               .build();
       for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
         // doThingsWith(element);

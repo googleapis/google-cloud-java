@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteRegionHealthCheckRequest;
 import com.google.cloud.compute.v1.GetRegionHealthCheckRequest;
 import com.google.cloud.compute.v1.HealthCheck;
@@ -41,6 +42,8 @@ import com.google.cloud.compute.v1.ListRegionHealthChecksRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchRegionHealthCheckRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionHealthCheckRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateRegionHealthCheckRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -317,6 +320,50 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionHealthChecks/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<TestIamPermissionsRegionHealthCheckRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/healthChecks/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRegionHealthCheckRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRegionHealthCheckRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<UpdateRegionHealthCheckRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateRegionHealthCheckRequest, Operation>newBuilder()
@@ -387,6 +434,8 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
   private final UnaryCallable<PatchRegionHealthCheckRequest, Operation> patchCallable;
   private final OperationCallable<PatchRegionHealthCheckRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
   private final UnaryCallable<UpdateRegionHealthCheckRequest, Operation> updateCallable;
   private final OperationCallable<UpdateRegionHealthCheckRequest, Operation, Operation>
       updateOperationCallable;
@@ -394,6 +443,21 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/healthChecks/{health_check}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/healthChecks/{health_check}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/healthChecks/{health_check}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/healthChecks/{resource}");
+  private static final PathTemplate UPDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/healthChecks/{health_check}");
 
   public static final HttpJsonRegionHealthChecksStub create(RegionHealthChecksStubSettings settings)
       throws IOException {
@@ -448,6 +512,15 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "health_check", String.valueOf(request.getHealthCheck()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetRegionHealthCheckRequest, HealthCheck> getTransportSettings =
         HttpJsonCallSettings.<GetRegionHealthCheckRequest, HealthCheck>newBuilder()
@@ -461,6 +534,15 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "health_check", String.valueOf(request.getHealthCheck()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertRegionHealthCheckRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionHealthCheckRequest, Operation>newBuilder()
@@ -473,6 +555,13 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListRegionHealthChecksRequest, HealthCheckList> listTransportSettings =
         HttpJsonCallSettings.<ListRegionHealthChecksRequest, HealthCheckList>newBuilder()
@@ -484,6 +573,13 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<PatchRegionHealthCheckRequest, Operation> patchTransportSettings =
@@ -498,7 +594,40 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "health_check", String.valueOf(request.getHealthCheck()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
+    HttpJsonCallSettings<TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
     HttpJsonCallSettings<UpdateRegionHealthCheckRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateRegionHealthCheckRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
@@ -510,6 +639,15 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "health_check", String.valueOf(request.getHealthCheck()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return UPDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 
@@ -549,6 +687,11 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
@@ -571,6 +714,7 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
@@ -621,6 +765,12 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
   public OperationCallable<PatchRegionHealthCheckRequest, Operation, Operation>
       patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

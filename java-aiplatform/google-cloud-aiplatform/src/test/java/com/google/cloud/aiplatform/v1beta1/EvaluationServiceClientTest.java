@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -38,6 +39,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
@@ -49,6 +51,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -102,12 +105,19 @@ public class EvaluationServiceClientTest {
 
   @Test
   public void evaluateInstancesTest() throws Exception {
-    EvaluateInstancesResponse expectedResponse = EvaluateInstancesResponse.newBuilder().build();
+    EvaluateInstancesResponse expectedResponse =
+        EvaluateInstancesResponse.newBuilder()
+            .addAllMetricResults(new ArrayList<MetricResult>())
+            .build();
     mockEvaluationService.addResponse(expectedResponse);
 
     EvaluateInstancesRequest request =
         EvaluateInstancesRequest.newBuilder()
             .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .addAllMetrics(new ArrayList<Metric>())
+            .addAllMetricSources(new ArrayList<MetricSource>())
+            .setInstance(EvaluationInstance.newBuilder().build())
+            .setAutoraterConfig(AutoraterConfig.newBuilder().build())
             .build();
 
     EvaluateInstancesResponse actualResponse = client.evaluateInstances(request);
@@ -150,13 +160,36 @@ public class EvaluationServiceClientTest {
     Assert.assertEquals(
         request.getQuestionAnsweringCorrectnessInput(),
         actualRequest.getQuestionAnsweringCorrectnessInput());
+    Assert.assertEquals(request.getPointwiseMetricInput(), actualRequest.getPointwiseMetricInput());
+    Assert.assertEquals(request.getPairwiseMetricInput(), actualRequest.getPairwiseMetricInput());
     Assert.assertEquals(request.getToolCallValidInput(), actualRequest.getToolCallValidInput());
     Assert.assertEquals(request.getToolNameMatchInput(), actualRequest.getToolNameMatchInput());
     Assert.assertEquals(
         request.getToolParameterKeyMatchInput(), actualRequest.getToolParameterKeyMatchInput());
     Assert.assertEquals(
         request.getToolParameterKvMatchInput(), actualRequest.getToolParameterKvMatchInput());
+    Assert.assertEquals(request.getCometInput(), actualRequest.getCometInput());
+    Assert.assertEquals(request.getMetricxInput(), actualRequest.getMetricxInput());
+    Assert.assertEquals(
+        request.getTrajectoryExactMatchInput(), actualRequest.getTrajectoryExactMatchInput());
+    Assert.assertEquals(
+        request.getTrajectoryInOrderMatchInput(), actualRequest.getTrajectoryInOrderMatchInput());
+    Assert.assertEquals(
+        request.getTrajectoryAnyOrderMatchInput(), actualRequest.getTrajectoryAnyOrderMatchInput());
+    Assert.assertEquals(
+        request.getTrajectoryPrecisionInput(), actualRequest.getTrajectoryPrecisionInput());
+    Assert.assertEquals(
+        request.getTrajectoryRecallInput(), actualRequest.getTrajectoryRecallInput());
+    Assert.assertEquals(
+        request.getTrajectorySingleToolUseInput(), actualRequest.getTrajectorySingleToolUseInput());
+    Assert.assertEquals(
+        request.getRubricBasedInstructionFollowingInput(),
+        actualRequest.getRubricBasedInstructionFollowingInput());
     Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
+    Assert.assertEquals(request.getMetricsList(), actualRequest.getMetricsList());
+    Assert.assertEquals(request.getMetricSourcesList(), actualRequest.getMetricSourcesList());
+    Assert.assertEquals(request.getInstance(), actualRequest.getInstance());
+    Assert.assertEquals(request.getAutoraterConfig(), actualRequest.getAutoraterConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -172,8 +205,136 @@ public class EvaluationServiceClientTest {
       EvaluateInstancesRequest request =
           EvaluateInstancesRequest.newBuilder()
               .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .addAllMetrics(new ArrayList<Metric>())
+              .addAllMetricSources(new ArrayList<MetricSource>())
+              .setInstance(EvaluationInstance.newBuilder().build())
+              .setAutoraterConfig(AutoraterConfig.newBuilder().build())
               .build();
       client.evaluateInstances(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void evaluateDatasetTest() throws Exception {
+    EvaluateDatasetResponse expectedResponse =
+        EvaluateDatasetResponse.newBuilder()
+            .setAggregationOutput(AggregationOutput.newBuilder().build())
+            .setOutputInfo(OutputInfo.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("evaluateDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEvaluationService.addResponse(resultOperation);
+
+    EvaluateDatasetRequest request =
+        EvaluateDatasetRequest.newBuilder()
+            .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setDataset(EvaluationDataset.newBuilder().build())
+            .addAllMetrics(new ArrayList<Metric>())
+            .setOutputConfig(OutputConfig.newBuilder().build())
+            .setAutoraterConfig(AutoraterConfig.newBuilder().build())
+            .build();
+
+    EvaluateDatasetResponse actualResponse = client.evaluateDatasetAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEvaluationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EvaluateDatasetRequest actualRequest = ((EvaluateDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
+    Assert.assertEquals(request.getDataset(), actualRequest.getDataset());
+    Assert.assertEquals(request.getMetricsList(), actualRequest.getMetricsList());
+    Assert.assertEquals(request.getOutputConfig(), actualRequest.getOutputConfig());
+    Assert.assertEquals(request.getAutoraterConfig(), actualRequest.getAutoraterConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void evaluateDatasetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEvaluationService.addException(exception);
+
+    try {
+      EvaluateDatasetRequest request =
+          EvaluateDatasetRequest.newBuilder()
+              .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setDataset(EvaluationDataset.newBuilder().build())
+              .addAllMetrics(new ArrayList<Metric>())
+              .setOutputConfig(OutputConfig.newBuilder().build())
+              .setAutoraterConfig(AutoraterConfig.newBuilder().build())
+              .build();
+      client.evaluateDatasetAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void generateInstanceRubricsTest() throws Exception {
+    GenerateInstanceRubricsResponse expectedResponse =
+        GenerateInstanceRubricsResponse.newBuilder()
+            .addAllGeneratedRubrics(new ArrayList<Rubric>())
+            .build();
+    mockEvaluationService.addResponse(expectedResponse);
+
+    GenerateInstanceRubricsRequest request =
+        GenerateInstanceRubricsRequest.newBuilder()
+            .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .addAllContents(new ArrayList<Content>())
+            .setPredefinedRubricGenerationSpec(PredefinedMetricSpec.newBuilder().build())
+            .setRubricGenerationSpec(RubricGenerationSpec.newBuilder().build())
+            .setAgentConfig(EvaluationInstance.DeprecatedAgentConfig.newBuilder().build())
+            .build();
+
+    GenerateInstanceRubricsResponse actualResponse = client.generateInstanceRubrics(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEvaluationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateInstanceRubricsRequest actualRequest =
+        ((GenerateInstanceRubricsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
+    Assert.assertEquals(request.getContentsList(), actualRequest.getContentsList());
+    Assert.assertEquals(
+        request.getPredefinedRubricGenerationSpec(),
+        actualRequest.getPredefinedRubricGenerationSpec());
+    Assert.assertEquals(request.getRubricGenerationSpec(), actualRequest.getRubricGenerationSpec());
+    Assert.assertEquals(request.getAgentConfig(), actualRequest.getAgentConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateInstanceRubricsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEvaluationService.addException(exception);
+
+    try {
+      GenerateInstanceRubricsRequest request =
+          GenerateInstanceRubricsRequest.newBuilder()
+              .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .addAllContents(new ArrayList<Content>())
+              .setPredefinedRubricGenerationSpec(PredefinedMetricSpec.newBuilder().build())
+              .setRubricGenerationSpec(RubricGenerationSpec.newBuilder().build())
+              .setAgentConfig(EvaluationInstance.DeprecatedAgentConfig.newBuilder().build())
+              .build();
+      client.generateInstanceRubrics(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

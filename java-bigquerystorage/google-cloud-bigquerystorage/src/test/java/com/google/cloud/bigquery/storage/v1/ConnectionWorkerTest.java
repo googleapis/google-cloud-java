@@ -1,0 +1,1727 @@
+/*
+ * Copyright 2022 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.cloud.bigquery.storage.v1;
+
+import static com.google.common.truth.Truth.assertThat;
+import static java.nio.charset.StandardCharsets.UTF_8;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import com.google.api.core.ApiFuture;
+import com.google.api.gax.batching.FlowController;
+import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.testing.MockGrpcService;
+import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.cloud.bigquery.storage.test.Test.ComplicateType;
+import com.google.cloud.bigquery.storage.test.Test.FooType;
+import com.google.cloud.bigquery.storage.test.Test.InnerType;
+import com.google.cloud.bigquery.storage.v1.ConnectionWorker.Load;
+import com.google.protobuf.ByteString;
+import com.google.protobuf.DescriptorProtos;
+import com.google.protobuf.Int64Value;
+import io.grpc.Status;
+import io.grpc.Status.Code;
+import io.grpc.StatusRuntimeException;
+import io.opentelemetry.api.common.Attributes;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.nio.channels.Channels;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Supplier;
+import java.util.logging.Logger;
+import org.apache.arrow.memory.RootAllocator;
+import org.apache.arrow.vector.VarCharVector;
+import org.apache.arrow.vector.VectorSchemaRoot;
+import org.apache.arrow.vector.VectorUnloader;
+import org.apache.arrow.vector.ipc.ReadChannel;
+import org.apache.arrow.vector.ipc.WriteChannel;
+import org.apache.arrow.vector.ipc.message.ArrowRecordBatch;
+import org.apache.arrow.vector.ipc.message.MessageSerializer;
+import org.apache.arrow.vector.types.pojo.ArrowType;
+import org.apache.arrow.vector.types.pojo.Field;
+import org.apache.arrow.vector.types.pojo.FieldType;
+import org.apache.arrow.vector.types.pojo.Schema;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
+
+@Execution(ExecutionMode.SAME_THREAD)
+class ConnectionWorkerTest {
+  private static final Logger log = Logger.getLogger(StreamWriter.class.getName());
+  private static final String TEST_STREAM_1 = "projects/p1/datasets/d1/tables/t1/streams/s1";
+  private static final String TEST_STREAM_2 = "projects/p2/datasets/d2/tables/t2/streams/s2";
+  private static final String TEST_TRACE_ID = "DATAFLOW:job_id";
+  private static final RetrySettings retrySettings =
+      RetrySettings.newBuilder()
+          .setInitialRetryDelayDuration(java.time.Duration.ofMillis(500))
+          .setRetryDelayMultiplier(1.1)
+          .setMaxAttempts(3)
+          .setMaxRetryDelayDuration(java.time.Duration.ofMinutes(5))
+          .build();
+
+  private FakeBigQueryWrite testBigQueryWrite;
+  private FakeScheduledExecutorService fakeExecutor;
+  private static MockServiceHelper serviceHelper;
+  private BigQueryWriteClient client;
+
+  @BeforeEach
+  void setUp() throws Exception {
+    testBigQueryWrite = new FakeBigQueryWrite();
+    ConnectionWorker.setMaxInflightQueueWaitTime(300000);
+    ConnectionWorker.setMaxInflightRequestWaitTime(Duration.ofMinutes(10));
+    ConnectionWorker.Load.setOverwhelmedCountsThreshold(0.2);
+    ConnectionWorker.Load.setOverwhelmedBytesThreshold(0.2);
+    ConnectionWorker.Load.setOverwhelmedTimeSinceLastCallbackThreshold(Duration.ofSeconds(3));
+    serviceHelper =
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(testBigQueryWrite));
+    serviceHelper.start();
+    fakeExecutor = new FakeScheduledExecutorService();
+    testBigQueryWrite.setExecutor(fakeExecutor);
+    client =
+        BigQueryWriteClient.create(
+            BigQueryWriteSettings.newBuilder()
+                .setCredentialsProvider(NoCredentialsProvider.create())
+                .setTransportChannelProvider(serviceHelper.createChannelProvider())
+                .build());
+  }
+
+  @AfterEach
+  void cleanUp() throws InterruptedException {
+    serviceHelper.stop();
+
+    client.close();
+    client.awaitTermination(10, TimeUnit.SECONDS);
+  }
+
+  @Test
+  void testMultiplexedAppendSuccess_NonNullTraceId() throws Exception {
+    testMultiplexedIngestion(
+        /* sw1TraceId= */ "header_1:trailer_1",
+        /* sw2TraceId= */ "header_2:trailer_2",
+        /* expectedSW1TraceId= */ "java-streamwriter(:.+)? header_1:trailer_1",
+        /* expectedSW2TraceId= */ "java-streamwriter(:.+)? header_2:trailer_2");
+  }
+
+  @Test
+  void testMultiplexedAppendSuccess_EmptyTraceId() throws Exception {
+    testMultiplexedIngestion(
+        /* sw1TraceId= */ "header_1:trailer_1",
+        /* sw2TraceId= */ "",
+        /* expectedSW1TraceId= */ "java-streamwriter(:.+)? header_1:trailer_1",
+        /* expectedSW2TraceId= */ "java-streamwriter(:.+)?");
+  }
+
+  private void testMultiplexedIngestion(
+      String sw1TraceId, String sw2TraceId, String expectedSW1TraceId, String expectedSW2TraceId)
+      throws Exception {
+    try (ConnectionWorker connectionWorker = createMultiplexedConnectionWorker()) {
+      long appendCount = 20;
+      for (long i = 0; i < appendCount; i++) {
+        testBigQueryWrite.addResponse(createAppendResponse(i));
+      }
+      List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+      // SW1 has not trace id, SW2 does
+      StreamWriter.Builder sw1Builder =
+          StreamWriter.newBuilder(TEST_STREAM_1, client)
+              .setWriterSchema(createProtoSchema("foo"))
+              .setLocation("us");
+      StreamWriter.Builder sw2Builder =
+          StreamWriter.newBuilder(TEST_STREAM_2, client)
+              .setWriterSchema(createProtoSchema("complicate"))
+              .setLocation("us");
+      if (!sw1TraceId.isEmpty()) {
+        sw1Builder.setTraceId(sw1TraceId);
+      }
+      if (!sw2TraceId.isEmpty()) {
+        sw2Builder.setTraceId(sw2TraceId);
+      }
+      StreamWriter sw1 = sw1Builder.build();
+      StreamWriter sw2 = sw2Builder.build();
+
+      // We do a pattern of:
+      // send to stream1, string1
+      // send to stream1, string2
+      // send to stream2, string3
+      // send to stream2, string4
+      // send to stream1, string5
+      // ...
+      for (long i = 0; i < appendCount; i++) {
+        switch ((int) i % 4) {
+          case 0:
+          case 1:
+            ProtoRows rows = createFooProtoRows(new String[] {String.valueOf(i)});
+            futures.add(
+                sendTestMessage(
+                    connectionWorker,
+                    sw1,
+                    createFooProtoRows(new String[] {String.valueOf(i)}),
+                    i));
+            break;
+          case 2:
+          case 3:
+            futures.add(
+                sendTestMessage(
+                    connectionWorker,
+                    sw2,
+                    createComplicateTypeProtoRows(new String[] {String.valueOf(i)}),
+                    i));
+            break;
+          default: // fall out
+            break;
+        }
+      }
+      // In the real world the response won't contain offset for default stream, but we use offset
+      // here just to test response.
+      for (int i = 0; i < appendCount; i++) {
+        Int64Value offset = futures.get(i).get().getAppendResult().getOffset();
+        assertThat(offset).isEqualTo(Int64Value.of(i));
+      }
+      assertThat(testBigQueryWrite.getAppendRequests().size()).isEqualTo(appendCount);
+      for (int i = 0; i < appendCount; i++) {
+        AppendRowsRequest serverRequest = testBigQueryWrite.getAppendRequests().get(i);
+        assertThat(serverRequest.getProtoRows().getRows().getSerializedRowsCount())
+            .isGreaterThan(0);
+        assertThat(serverRequest.getOffset().getValue()).isEqualTo(i);
+
+        // We will get the request as the pattern of:
+        // (writer_stream: t1, schema: t1)
+        // (writer_stream: t1, schema: _)
+        // (writer_stream: t2, schema: t2) -> multiplexing entered.
+        // (writer_stream: t2, schema: _)
+        // (writer_stream: t1, schema: t1)
+        // (writer_stream: t1, schema: _)
+        switch (i % 4) {
+          case 0:
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
+            assertThat(
+                    serverRequest.getProtoRows().getWriterSchema().getProtoDescriptor().getName())
+                .isEqualTo("foo");
+            assertThat(serverRequest.getTraceId()).matches(expectedSW1TraceId);
+            break;
+          case 1:
+            // The write stream is empty until we enter multiplexing.
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
+            // Schema is empty if not at the first request after table switch.
+            assertThat(serverRequest.getProtoRows().hasWriterSchema()).isFalse();
+            assertThat(serverRequest.getTraceId()).isEmpty();
+            break;
+          case 2:
+            // Stream name is always populated after multiplexing.
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_2);
+            // Schema is populated after table switch.
+            assertThat(
+                    serverRequest.getProtoRows().getWriterSchema().getProtoDescriptor().getName())
+                .isEqualTo("complicate");
+            assertThat(serverRequest.getTraceId()).matches(expectedSW2TraceId);
+            break;
+          case 3:
+            // Schema is empty if not at the first request after table switch.
+            assertThat(serverRequest.getProtoRows().hasWriterSchema()).isFalse();
+            // Stream name is always populated after multiplexing.
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_2);
+            assertThat(serverRequest.getTraceId()).isEmpty();
+            break;
+          default: // fall out
+            break;
+        }
+      }
+
+      assertThat(connectionWorker.getLoad().destinationCount()).isEqualTo(2);
+      assertThat(connectionWorker.getLoad().inFlightRequestsBytes()).isEqualTo(0);
+    }
+  }
+
+  @Test
+  void testMultiplexedAppendSuccess_MixEmptyAndNonEmptyTraceId() throws Exception {}
+
+  @Test
+  void testAppendInSameStream_switchSchema() throws Exception {
+    try (ConnectionWorker connectionWorker = createMultiplexedConnectionWorker()) {
+      long appendCount = 20;
+      for (long i = 0; i < appendCount; i++) {
+        testBigQueryWrite.addResponse(createAppendResponse(i));
+      }
+      List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+
+      // Schema1 and schema2 are the same content, but different instance.
+      ProtoSchema schema1 = createProtoSchema("foo");
+      ProtoSchema schema2 = createProtoSchema("foo");
+      // Schema3 is a different schema
+      ProtoSchema schema3 = createProtoSchema("bar");
+
+      // We do a pattern of:
+      // send to stream1, schema1
+      // send to stream1, schema2
+      // send to stream1, schema3
+      // send to stream1, schema3
+      // send to stream1, schema1
+      // ...
+      StreamWriter sw1 =
+          StreamWriter.newBuilder(TEST_STREAM_1, client)
+              .setLocation("us")
+              .setWriterSchema(schema1)
+              .build();
+      StreamWriter sw2 =
+          StreamWriter.newBuilder(TEST_STREAM_1, client)
+              .setLocation("us")
+              .setWriterSchema(schema2)
+              .build();
+      StreamWriter sw3 =
+          StreamWriter.newBuilder(TEST_STREAM_1, client)
+              .setLocation("us")
+              .setWriterSchema(schema3)
+              .build();
+      for (long i = 0; i < appendCount; i++) {
+        switch ((int) i % 4) {
+          case 0:
+            futures.add(
+                sendTestMessage(
+                    connectionWorker,
+                    sw1,
+                    createFooProtoRows(new String[] {String.valueOf(i)}),
+                    i));
+            break;
+          case 1:
+            futures.add(
+                sendTestMessage(
+                    connectionWorker,
+                    sw2,
+                    createFooProtoRows(new String[] {String.valueOf(i)}),
+                    i));
+            break;
+          case 2:
+          case 3:
+            futures.add(
+                sendTestMessage(
+                    connectionWorker,
+                    sw3,
+                    createFooProtoRows(new String[] {String.valueOf(i)}),
+                    i));
+            break;
+          default: // fall out
+            break;
+        }
+      }
+      // In the real world the response won't contain offset for default stream, but we use offset
+      // here just to test response.
+      for (int i = 0; i < appendCount; i++) {
+        Int64Value offset = futures.get(i).get().getAppendResult().getOffset();
+        assertThat(offset).isEqualTo(Int64Value.of(i));
+      }
+      assertThat(testBigQueryWrite.getAppendRequests().size()).isEqualTo(appendCount);
+      for (int i = 0; i < appendCount; i++) {
+        AppendRowsRequest serverRequest = testBigQueryWrite.getAppendRequests().get(i);
+        assertThat(serverRequest.getProtoRows().getRows().getSerializedRowsCount())
+            .isGreaterThan(0);
+        assertThat(serverRequest.getOffset().getValue()).isEqualTo(i);
+
+        // We will get the request as the pattern of:
+        // (writer_stream: t1, schema: schema1)
+        // (writer_stream: t1, schema: _)
+        // (writer_stream: t1, schema: schema3)
+        // (writer_stream: t1, schema: _)
+        // (writer_stream: t1, schema: schema1)
+        // (writer_stream: t1, schema: _)
+        switch (i % 4) {
+          case 0:
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
+            assertThat(
+                    serverRequest.getProtoRows().getWriterSchema().getProtoDescriptor().getName())
+                .isEqualTo("foo");
+            break;
+          case 1:
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
+            // Schema is empty if not at the first request after table switch.
+            assertThat(serverRequest.getProtoRows().hasWriterSchema()).isFalse();
+            break;
+          case 2:
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
+            // Schema is populated after table switch.
+            assertThat(
+                    serverRequest.getProtoRows().getWriterSchema().getProtoDescriptor().getName())
+                .isEqualTo("bar");
+            break;
+          case 3:
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
+            // Schema is empty if not at the first request after table switch.
+            assertThat(serverRequest.getProtoRows().hasWriterSchema()).isFalse();
+            break;
+          default: // fall out
+            break;
+        }
+      }
+
+      assertThat(connectionWorker.getLoad().destinationCount()).isEqualTo(1);
+      assertThat(connectionWorker.getLoad().inFlightRequestsBytes()).isEqualTo(0);
+    }
+  }
+
+  @Test
+  void testAppendInSameStreamSwitchArrowSchema() throws Exception {
+    try (ConnectionWorker connectionWorker = createMultiplexedConnectionWorker()) {
+      long appendCount = 60;
+      for (long i = 0; i < appendCount; i++) {
+        testBigQueryWrite.addResponse(createAppendResponse(i));
+      }
+      List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+
+      // Schema1 and schema2 are the same content, but different instance.
+      ArrowSchema schema1 = createArrowSchema("col1");
+      ArrowSchema schema2 = createArrowSchema("col1");
+      // Schema3 is a different schema
+      ArrowSchema schema3 = createArrowSchema("col2");
+
+      // We do a pattern of:
+      // send to stream1, schema1
+      // send to stream1, schema2
+      // send to stream1, schema3
+      // send to stream1, schema3
+      // send to stream1, schema1
+      // ...
+      StreamWriter sw1 =
+          StreamWriter.newBuilder(TEST_STREAM_1, client)
+              .setLocation("us")
+              .setWriterSchema(schema1)
+              .build();
+      StreamWriter sw2 =
+          StreamWriter.newBuilder(TEST_STREAM_1, client)
+              .setLocation("us")
+              .setWriterSchema(schema2)
+              .build();
+      StreamWriter sw3 =
+          StreamWriter.newBuilder(TEST_STREAM_1, client)
+              .setLocation("us")
+              .setWriterSchema(schema3)
+              .build();
+      for (long i = 0; i < appendCount; i++) {
+        switch ((int) i % 4) {
+          case 0:
+            futures.add(
+                sendTestMessage(
+                    connectionWorker,
+                    sw1,
+                    createArrowRecordBatch(schema1, new String[] {String.valueOf(i)}),
+                    i));
+            break;
+          case 1:
+            futures.add(
+                sendTestMessage(
+                    connectionWorker,
+                    sw2,
+                    createArrowRecordBatch(schema2, new String[] {String.valueOf(i)}),
+                    i));
+            break;
+          case 2:
+          case 3:
+            futures.add(
+                sendTestMessage(
+                    connectionWorker,
+                    sw3,
+                    createArrowRecordBatch(schema3, new String[] {String.valueOf(i)}),
+                    i));
+            break;
+          default: // fall out
+            break;
+        }
+      }
+      // In the real world the response won't contain offset for default stream, but we use offset
+      // here just to test response.
+      for (int i = 0; i < appendCount; i++) {
+        Int64Value offset = futures.get(i).get().getAppendResult().getOffset();
+        assertThat(offset).isEqualTo(Int64Value.of(i));
+      }
+      assertThat(testBigQueryWrite.getAppendRequests().size()).isEqualTo(appendCount);
+      for (int i = 0; i < appendCount; i++) {
+        AppendRowsRequest serverRequest = testBigQueryWrite.getAppendRequests().get(i);
+        assertThat(serverRequest.getArrowRows().getRows().getSerializedRecordBatch().size())
+            .isGreaterThan(0);
+        assertThat(serverRequest.getOffset().getValue()).isEqualTo(i);
+
+        // Since schema 1 equals schema 2, we will get the request as the pattern of:
+        // (writer_stream: TEST_STREAM_1, schema: schema1)
+        // (writer_stream: TEST_STREAM_1, schema: _)
+        // (writer_stream: TEST_STREAM_1, schema: schema3)
+        // (writer_stream: TEST_STREAM_1, schema: _)
+        // (writer_stream: TEST_STREAM_1, schema: schema1)
+        // (writer_stream: TEST_STREAM_1, schema: _)
+        switch (i % 4) {
+          case 0:
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
+            assertThat(serverRequest.getArrowRows().getWriterSchema()).isEqualTo(schema1);
+            break;
+          case 1:
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
+            // Schema is empty if not at the first request after table switch.
+            assertThat(serverRequest.getArrowRows().hasWriterSchema()).isFalse();
+            break;
+          case 2:
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
+            // Schema is populated after table switch.
+            assertThat(serverRequest.getArrowRows().getWriterSchema()).isEqualTo(schema3);
+            break;
+          case 3:
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
+            // Schema is empty if not at the first request after table switch.
+            assertThat(serverRequest.getArrowRows().hasWriterSchema()).isFalse();
+            break;
+          default: // fall out
+            break;
+        }
+      }
+
+      assertThat(connectionWorker.getLoad().destinationCount()).isEqualTo(1);
+      assertThat(connectionWorker.getLoad().inFlightRequestsBytes()).isEqualTo(0);
+    }
+  }
+
+  @Test
+  void testAppendButInflightQueueFull() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            "us",
+            createProtoSchema("foo"),
+            6,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /* isMultiplexing= */ false);
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofSeconds(1));
+    ConnectionWorker.setMaxInflightQueueWaitTime(500);
+
+    long appendCount = 6;
+    for (int i = 0; i < appendCount; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+
+    // In total insert 6 requests, since the max queue size is 5 we will stuck at the 6th request.
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    for (int i = 0; i < appendCount; i++) {
+      long startTime = System.currentTimeMillis();
+      // At the last request we wait more than 500 millisecond for inflight quota.
+      if (i == 5) {
+        assertThrows(
+            StatusRuntimeException.class,
+            () -> {
+              sendTestMessage(
+                  connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(5)}), 5);
+            });
+        long timeDiff = System.currentTimeMillis() - startTime;
+        assertEquals(connectionWorker.getLoad().inFlightRequestsCount(), 5);
+        assertTrue(timeDiff > 500);
+      } else {
+        futures.add(
+            sendTestMessage(
+                connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(i)}), i));
+        assertEquals(connectionWorker.getLoad().inFlightRequestsCount(), i + 1);
+      }
+    }
+
+    for (int i = 0; i < appendCount - 1; i++) {
+      assertEquals(i, futures.get(i).get().getAppendResult().getOffset().getValue());
+    }
+  }
+
+  @Test
+  void testThrowExceptionWhileWithinAppendLoop() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            "us",
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /* isMultiplexing= */ true);
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofSeconds(1));
+    ConnectionWorker.setMaxInflightQueueWaitTime(500);
+
+    long appendCount = 10;
+    for (int i = 0; i < appendCount; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+    connectionWorker.setTestOnlyRunTimeExceptionInAppendLoop(
+        new RuntimeException("Any exception can happen."));
+    // Sleep 1 second before erroring out.
+    connectionWorker.setTestOnlyAppendLoopSleepTime(1000L);
+
+    // In total insert 5 requests,
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    for (int i = 0; i < appendCount; i++) {
+      futures.add(
+          sendTestMessage(
+              connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(i)}), i));
+      assertEquals(connectionWorker.getLoad().inFlightRequestsCount(), i + 1);
+    }
+
+    for (int i = 0; i < appendCount; i++) {
+      int finalI = i;
+      ExecutionException ex =
+          assertThrows(
+              ExecutionException.class,
+              () -> futures.get(finalI).get().getAppendResult().getOffset().getValue());
+      if (i == 0) {
+        assertThat(ex.getCause()).hasMessageThat().contains("Any exception can happen.");
+      } else {
+        assertThat(ex.getCause()).hasMessageThat().contains("Connection is aborted due to ");
+      }
+    }
+
+    // The future append will directly fail.
+    ExecutionException ex =
+        assertThrows(
+            ExecutionException.class,
+            () ->
+                sendTestMessage(
+                        connectionWorker,
+                        sw1,
+                        createFooProtoRows(new String[] {String.valueOf(100)}),
+                        100)
+                    .get());
+    assertThat(ex.getCause()).hasMessageThat().contains("Any exception can happen.");
+  }
+
+  @Test
+  void testLocationMismatch() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setWriterSchema(schema1)
+            .setLocation("eu")
+            .build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            "us",
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /* isMultiplexing= */ true);
+    StatusRuntimeException ex =
+        assertThrows(
+            StatusRuntimeException.class,
+            () ->
+                sendTestMessage(
+                    connectionWorker,
+                    sw1,
+                    createFooProtoRows(new String[] {String.valueOf(0)}),
+                    0));
+    assertEquals(
+        "INVALID_ARGUMENT: StreamWriter with location eu is scheduled to use a connection with"
+            + " location us",
+        ex.getMessage());
+  }
+
+  @Test
+  void testStreamNameMismatch() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(schema1).build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_2,
+            null,
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /* isMultiplexing= */ true);
+    StatusRuntimeException ex =
+        assertThrows(
+            StatusRuntimeException.class,
+            () ->
+                sendTestMessage(
+                    connectionWorker,
+                    sw1,
+                    createFooProtoRows(new String[] {String.valueOf(0)}),
+                    0));
+    assertEquals(
+        "INVALID_ARGUMENT: StreamWriter with stream name"
+            + " projects/p1/datasets/d1/tables/t1/streams/s1 is scheduled to use a connection with"
+            + " stream name projects/p2/datasets/d2/tables/t2/streams/s2",
+        ex.getMessage());
+  }
+
+  @Test
+  void testExponentialBackoff() throws Exception {
+    assertThat(ConnectionWorker.calculateSleepTimeMilli(0)).isEqualTo(50);
+    assertThat(ConnectionWorker.calculateSleepTimeMilli(5)).isEqualTo(1600);
+    assertThat(ConnectionWorker.calculateSleepTimeMilli(100)).isEqualTo(60000);
+  }
+
+  private AppendRowsResponse createAppendResponse(long offset) {
+    return AppendRowsResponse.newBuilder()
+        .setAppendResult(
+            AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(offset)).build())
+        .build();
+  }
+
+  private AppendRowsResponse createAppendResponseWithError(Status.Code code, String message) {
+    return AppendRowsResponse.newBuilder()
+        .setError(com.google.rpc.Status.newBuilder().setCode(code.value()).setMessage(message))
+        .build();
+  }
+
+  private ConnectionWorker createMultiplexedConnectionWorker() throws IOException {
+    // By default use only the first table as table reference.
+    return createMultiplexedConnectionWorker(
+        TEST_STREAM_1, TEST_TRACE_ID, 100, 1000, java.time.Duration.ofSeconds(5));
+  }
+
+  private ConnectionWorker createMultiplexedConnectionWorker(
+      String streamName,
+      String traceId,
+      long maxRequests,
+      long maxBytes,
+      java.time.Duration maxRetryDuration)
+      throws IOException {
+    return new ConnectionWorker(
+        streamName,
+        "us",
+        createProtoSchema("foo"),
+        maxRequests,
+        maxBytes,
+        maxRetryDuration,
+        FlowController.LimitExceededBehavior.Block,
+        TEST_TRACE_ID,
+        null,
+        client.getSettings(),
+        retrySettings,
+        /* enableRequestProfiler= */ false,
+        /* enableOpenTelemetry= */ false,
+        /* isMultiplexing= */ true);
+  }
+
+  private ProtoSchema createProtoSchema(String protoName) {
+    return ProtoSchema.newBuilder()
+        .setProtoDescriptor(
+            DescriptorProtos.DescriptorProto.newBuilder()
+                .setName(protoName)
+                .addField(
+                    DescriptorProtos.FieldDescriptorProto.newBuilder()
+                        .setName("foo")
+                        .setType(DescriptorProtos.FieldDescriptorProto.Type.TYPE_STRING)
+                        .setNumber(1)
+                        .build())
+                .build())
+        .build();
+  }
+
+  private ApiFuture<AppendRowsResponse> sendTestMessage(
+      ConnectionWorker connectionWorker,
+      StreamWriter streamWriter,
+      ProtoRows protoRows,
+      long offset) {
+    return connectionWorker.append(
+        streamWriter,
+        AppendFormats.AppendRowsData.of(protoRows),
+        offset,
+        /* requestUniqueId= */ "request_" + offset);
+  }
+
+  private ApiFuture<AppendRowsResponse> sendTestMessage(
+      ConnectionWorker connectionWorker,
+      StreamWriter streamWriter,
+      com.google.cloud.bigquery.storage.v1.ArrowRecordBatch arrowRecordBatch,
+      long offset) {
+    return connectionWorker.append(
+        streamWriter,
+        AppendFormats.AppendRowsData.of(arrowRecordBatch),
+        offset,
+        /* requestUniqueId= */ "request_" + offset);
+  }
+
+  private ProtoRows createFooProtoRows(String[] messages) {
+    ProtoRows.Builder rowsBuilder = ProtoRows.newBuilder();
+    for (String message : messages) {
+      FooType foo = FooType.newBuilder().setFoo(message).build();
+      rowsBuilder.addSerializedRows(foo.toByteString());
+    }
+    return rowsBuilder.build();
+  }
+
+  private ProtoRows createComplicateTypeProtoRows(String[] messages) {
+    ProtoRows.Builder rowsBuilder = ProtoRows.newBuilder();
+    for (String message : messages) {
+      ComplicateType complicateType =
+          ComplicateType.newBuilder()
+              .setInnerType(InnerType.newBuilder().addValue(message))
+              .build();
+      rowsBuilder.addSerializedRows(complicateType.toByteString());
+    }
+    return rowsBuilder.build();
+  }
+
+  private ArrowSchema createArrowSchema(String fieldName) {
+    Field col = new Field(fieldName, FieldType.nullable(new ArrowType.Utf8()), null);
+    Schema arrowSchema = new Schema(Arrays.asList(col));
+    final ByteArrayOutputStream out = new ByteArrayOutputStream();
+    try {
+      MessageSerializer.serialize(new WriteChannel(Channels.newChannel(out)), arrowSchema);
+    } catch (IOException e) {
+      throw new IllegalStateException("Failed to serialize arrow schema.", e);
+    }
+    byte[] bytes = out.toByteArray();
+    return ArrowSchema.newBuilder().setSerializedSchema(ByteString.copyFrom(bytes)).build();
+  }
+
+  private com.google.cloud.bigquery.storage.v1.ArrowRecordBatch createArrowRecordBatch(
+      ArrowSchema arrowSchema, String[] messages) {
+    try {
+      Schema schema =
+          MessageSerializer.deserializeSchema(
+              new ReadChannel(
+                  Channels.newChannel(
+                      new ByteArrayInputStream(arrowSchema.getSerializedSchema().toByteArray()))));
+      try (VectorSchemaRoot vectorSchemaRoot =
+          VectorSchemaRoot.create(schema, new RootAllocator())) {
+        VarCharVector varCharVector = (VarCharVector) vectorSchemaRoot.getVector(0);
+        varCharVector.allocateNew(messages.length);
+        for (int i = 0; i < messages.length; i++) {
+          varCharVector.set(i, messages[i].getBytes(UTF_8));
+        }
+        vectorSchemaRoot.setRowCount(messages.length);
+
+        VectorUnloader vectorUnloader = new VectorUnloader(vectorSchemaRoot);
+        try (final ArrowRecordBatch recordBatch = vectorUnloader.getRecordBatch()) {
+          final ByteArrayOutputStream out = new ByteArrayOutputStream();
+          MessageSerializer.serialize(new WriteChannel(Channels.newChannel(out)), recordBatch);
+          ByteString serialized = ByteString.copyFrom(out.toByteArray());
+          return com.google.cloud.bigquery.storage.v1.ArrowRecordBatch.newBuilder()
+              .setSerializedRecordBatch(serialized)
+              .build();
+        }
+      }
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  @Test
+  void testLoadCompare_compareLoad() {
+    // In flight bytes bucket is split as per 1024 requests per bucket.
+    // When in flight bytes is in lower bucket, even destination count is higher and request count
+    // is higher, the load is still smaller.
+    Load load1 = ConnectionWorker.Load.create(Duration.ZERO, 1000, 2000, 100, 1000, 10);
+    Load load2 = ConnectionWorker.Load.create(Duration.ZERO, 2000, 1000, 10, 1000, 10);
+    assertThat(Load.LOAD_COMPARATOR.compare(load1, load2)).isLessThan(0);
+
+    // In flight bytes in the same bucke of request bytes will compare request count.
+    Load load3 = ConnectionWorker.Load.create(Duration.ZERO, 1, 300, 10, 0, 10);
+    Load load4 = ConnectionWorker.Load.create(Duration.ZERO, 10, 1, 10, 0, 10);
+    assertThat(Load.LOAD_COMPARATOR.compare(load3, load4)).isGreaterThan(0);
+
+    // In flight request and bytes in the same bucket will compare the destination count.
+    Load load5 = ConnectionWorker.Load.create(Duration.ZERO, 200, 1, 10, 1000, 10);
+    Load load6 = ConnectionWorker.Load.create(Duration.ZERO, 100, 10, 10, 1000, 10);
+    assertThat(Load.LOAD_COMPARATOR.compare(load5, load6) == 0).isTrue();
+
+    // timeSinceLastCallback has the highest priority.
+    // load7 has higher timeSinceLastCallback (2s -> bucket 2) but lower other parameters.
+    // load8 has lower timeSinceLastCallback (0s -> bucket 0) but higher other parameters.
+    Load load7 = ConnectionWorker.Load.create(Duration.ofSeconds(2), 0, 0, 0, 10, 10);
+    Load load8 = ConnectionWorker.Load.create(Duration.ZERO, 10000, 10000, 100, 10, 10);
+    assertThat(Load.LOAD_COMPARATOR.compare(load7, load8)).isGreaterThan(0);
+  }
+
+  @Test
+  void testLoadIsOverWhelmed() {
+    // In-flight requests, bytes, and timeSinceLastCallback are considered in overwhelmed
+    // calculation.
+
+    // Overwhelmed by request count
+    Load load1 = ConnectionWorker.Load.create(Duration.ZERO, 60, 10, 100, 90, 100);
+    assertThat(load1.isOverwhelmed()).isTrue();
+
+    // Not overwhelmed
+    Load load2 = ConnectionWorker.Load.create(Duration.ZERO, 1, 1, 100, 100, 100);
+    assertThat(load2.isOverwhelmed()).isFalse();
+
+    // Under threshold (3s) for timeSinceLastCallback
+    Load load3 = ConnectionWorker.Load.create(Duration.ofSeconds(2), 0, 0, 0, 100, 100);
+    assertThat(load3.isOverwhelmed()).isFalse();
+
+    // Over threshold (3s) for timeSinceLastCallback
+    Load load4 = ConnectionWorker.Load.create(Duration.ofSeconds(4), 0, 0, 0, 100, 100);
+    assertThat(load4.isOverwhelmed()).isTrue();
+  }
+
+  @Test
+  void testGetLoad_timeSinceLastCallback() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(schema1).build();
+    try (ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            null,
+            createProtoSchema("foo"),
+            10,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /*isMultiplexing*/ false)) {
+
+      // Initially empty, should be zero.
+      assertThat(connectionWorker.getLoad().timeSinceLastCallback()).isEqualTo(Duration.ZERO);
+
+      // Keep response in flight
+      testBigQueryWrite.setResponseSleep(java.time.Duration.ofSeconds(5));
+
+      // Send a message
+      ApiFuture<AppendRowsResponse> future =
+          sendTestMessage(connectionWorker, sw1, createFooProtoRows(new String[] {"hello"}), 0);
+
+      // Wait a bit to ensure it is sent and in flight queue
+      Thread.sleep(500);
+
+      Load load = connectionWorker.getLoad();
+      assertThat(load.timeSinceLastCallback()).isGreaterThan(Duration.ZERO);
+      assertThat(load.timeSinceLastCallback())
+          .isLessThan(Duration.ofSeconds(2)); // Should be around 500ms
+    }
+  }
+
+  @Test
+  void testLoadCompare_timeSinceLastCallback() {
+    // Same bytes, same count, same destination, different timeSinceLastCallback
+    // Bucketed by 1 second (1000ms).
+
+    // 100ms and 200ms are in the same bucket (0).
+    Load load1 = ConnectionWorker.Load.create(Duration.ofMillis(100), 0, 0, 0, 0, 0);
+    Load load2 = ConnectionWorker.Load.create(Duration.ofMillis(200), 0, 0, 0, 0, 0);
+    assertThat(Load.LOAD_COMPARATOR.compare(load1, load2)).isEqualTo(0);
+
+    // 100ms and 1200ms are in different buckets (0 vs 1).
+    Load load3 = ConnectionWorker.Load.create(Duration.ofMillis(1200), 0, 0, 0, 0, 0);
+    assertThat(Load.LOAD_COMPARATOR.compare(load1, load3)).isLessThan(0);
+    assertThat(Load.LOAD_COMPARATOR.compare(load3, load1)).isGreaterThan(0);
+  }
+
+  @Test
+  void testTestLoadCompare_timeSinceLastCallback() {
+    // TEST_LOAD_COMPARATOR compares timeSinceLastCallback unbucketed.
+    // 1s and 2s should be different.
+    Load load1 = ConnectionWorker.Load.create(Duration.ofSeconds(1), 0, 0, 0, 0, 0);
+    Load load2 = ConnectionWorker.Load.create(Duration.ofSeconds(2), 0, 0, 0, 0, 0);
+    assertThat(Load.TEST_LOAD_COMPARATOR.compare(load1, load2)).isLessThan(0);
+    assertThat(Load.TEST_LOAD_COMPARATOR.compare(load2, load1)).isGreaterThan(0);
+  }
+
+  @Test
+  void testThrowExceptionWhileWithinAppendLoop_MaxWaitTimeExceed() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    ConnectionWorker.setMaxInflightRequestWaitTime(Duration.ofSeconds(1));
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(schema1).build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            null,
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /*isMultiplexing*/ false);
+    java.time.Duration durationSleep = java.time.Duration.ofSeconds(2);
+    testBigQueryWrite.setResponseSleep(durationSleep);
+
+    long appendCount = 2;
+    for (int i = 0; i < appendCount; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+
+    // In total insert 'appendCount' requests,
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    for (int i = 0; i < appendCount; i++) {
+      futures.add(
+          sendTestMessage(
+              connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(i)}), i));
+      assertEquals(connectionWorker.getLoad().inFlightRequestsCount(), i + 1);
+    }
+
+    for (int i = 0; i < appendCount; i++) {
+      int finalI = i;
+      ExecutionException ex =
+          assertThrows(
+              ExecutionException.class,
+              () -> futures.get(finalI).get().getAppendResult().getOffset().getValue());
+      if (i == 0) {
+        assertThat(ex.getCause()).hasMessageThat().contains("Request has waited in inflight queue");
+      } else {
+        assertThat(ex.getCause()).hasMessageThat().contains("Connection is aborted due to ");
+      }
+    }
+
+    // The future append will directly fail.
+    ExecutionException ex =
+        assertThrows(
+            ExecutionException.class,
+            () ->
+                sendTestMessage(
+                        connectionWorker,
+                        sw1,
+                        createFooProtoRows(new String[] {String.valueOf(100)}),
+                        100)
+                    .get());
+    assertThat(ex.getCause()).hasMessageThat().contains("Request has waited in inflight queue");
+
+    // Verify we can shutdown normally within the expected time.
+    long startCloseTime = System.currentTimeMillis();
+    connectionWorker.close();
+    long timeDiff = System.currentTimeMillis() - startCloseTime;
+    assertTrue(
+        timeDiff <= (appendCount * durationSleep.toMillis()),
+        "timeDiff: "
+            + timeDiff
+            + " is more than total durationSleep: "
+            + (appendCount * durationSleep.toMillis()));
+    assertTrue(connectionWorker.isUserClosed());
+  }
+
+  @Test
+  void testLongTimeIdleWontFail() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    ConnectionWorker.setMaxInflightRequestWaitTime(Duration.ofSeconds(1));
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(schema1).build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            null,
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /*isMultiplexing*/ false);
+
+    long appendCount = 10;
+    for (int i = 0; i < appendCount * 2; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+
+    // In total insert 5 requests,
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    for (int i = 0; i < appendCount; i++) {
+      futures.add(
+          sendTestMessage(
+              connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(i)}), i));
+    }
+    // Sleep 2 seconds to make sure request queue is empty.
+    Thread.sleep(2000);
+    assertEquals(connectionWorker.getLoad().inFlightRequestsCount(), 0);
+    for (int i = 0; i < appendCount; i++) {
+      futures.add(
+          sendTestMessage(
+              connectionWorker,
+              sw1,
+              createFooProtoRows(new String[] {String.valueOf(i)}),
+              i + appendCount));
+    }
+    for (int i = 0; i < appendCount * 2; i++) {
+      assertEquals(i, futures.get(i).get().getAppendResult().getOffset().getValue());
+    }
+  }
+
+  private void exerciseOpenTelemetryAttributesWithStreamNames(String streamName, String expected)
+      throws Exception {
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            streamName,
+            null,
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            null,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ true,
+            /*isMultiplexing*/ false);
+
+    Attributes attributes = connectionWorker.getTelemetryAttributes();
+    String attributesTableId = attributes.get(TelemetryMetrics.telemetryKeyTableId);
+    assertEquals(expected, attributesTableId);
+  }
+
+  @Test
+  void testOpenTelemetryAttributesWithStreamNames() throws Exception {
+    exerciseOpenTelemetryAttributesWithStreamNames(
+        "projects/my_project/datasets/my_dataset/tables/my_table/streams/my_stream",
+        "projects/my_project/datasets/my_dataset/tables/my_table");
+    exerciseOpenTelemetryAttributesWithStreamNames(
+        "projects/my_project/datasets/my_dataset/tables/my_table/",
+        "projects/my_project/datasets/my_dataset/tables/my_table");
+    exerciseOpenTelemetryAttributesWithStreamNames(
+        "projects/my_project/datasets/my_dataset/tables/", null);
+  }
+
+  void checkOpenTelemetryTraceIdAttribute(Attributes attributes, int index, String expected) {
+    String attributesTraceId = attributes.get(TelemetryMetrics.telemetryKeysTraceId.get(index));
+    assertEquals(expected, attributesTraceId);
+  }
+
+  void exerciseOpenTelemetryAttributesWithTraceId(
+      String traceId, String expectedField1, String expectedField2, String expectedField3)
+      throws Exception {
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            null,
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            traceId,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ true,
+            /*isMultiplexing*/ false);
+
+    Attributes attributes = connectionWorker.getTelemetryAttributes();
+    checkOpenTelemetryTraceIdAttribute(attributes, 0, expectedField1);
+    checkOpenTelemetryTraceIdAttribute(attributes, 1, expectedField2);
+    checkOpenTelemetryTraceIdAttribute(attributes, 2, expectedField3);
+  }
+
+  @Test
+  void testOpenTelemetryAttributesWithTraceId() throws Exception {
+    exerciseOpenTelemetryAttributesWithTraceId(null, null, null, null);
+    exerciseOpenTelemetryAttributesWithTraceId("a:b:c", null, null, null);
+    exerciseOpenTelemetryAttributesWithTraceId(
+        "java-streamwriter:HEAD+20240508-1544"
+            + " Dataflow:monorail-c-multi:2024-05-08_11_44_34-6968230696879535523:1972585693681960752",
+        "monorail-c-multi",
+        "2024-05-08_11_44_34-6968230696879535523",
+        "1972585693681960752");
+    exerciseOpenTelemetryAttributesWithTraceId(
+        "Dataflow:2024-04-26_23_19_08-12221961051154168466",
+        "2024-04-26_23_19_08-12221961051154168466",
+        null,
+        null);
+    exerciseOpenTelemetryAttributesWithTraceId(
+        "Dataflow:writeapi3:2024-04-03_03_49_33-845412829237675723:63737042897365355",
+        "writeapi3",
+        "2024-04-03_03_49_33-845412829237675723",
+        "63737042897365355");
+    exerciseOpenTelemetryAttributesWithTraceId(
+        "java-streamwriter"
+            + " Dataflow:pubsub-to-bq-staging-tongruil-1024-static:2024-05-14_15_13_14-5530509399715326669:4531186922674871499",
+        "pubsub-to-bq-staging-tongruil-1024-static",
+        "2024-05-14_15_13_14-5530509399715326669",
+        "4531186922674871499");
+    exerciseOpenTelemetryAttributesWithTraceId("a:b dataflow :c", null, null, null);
+    exerciseOpenTelemetryAttributesWithTraceId("a:b dataflow:c:d", "c", "d", null);
+  }
+
+  @Test
+  void testDoubleDisconnectWithShorterRetryDuration() throws Exception {
+    // simulate server disconnect due to idle stream
+    testBigQueryWrite.setFailedStatus(
+        Status.ABORTED.withDescription(
+            "Closing the stream because it has been inactive for 600 seconds."));
+    testBigQueryWrite.setCloseEveryNAppends(1);
+    testBigQueryWrite.setTimesToClose(
+        2); // Total of 2 connection failures. The time interval between the processing of these
+    // failures will exceed the configured maxRetryDuration.
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            "us",
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofMillis(1), // very small maxRetryDuration
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /*isMultiplexing*/ false);
+
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    futures.add(
+        sendTestMessage(
+            connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(0)}), 0));
+
+    assertEquals(0, futures.get(0).get().getAppendResult().getOffset().getValue());
+  }
+
+  @Test
+  void testHealthCheck() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            "us",
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /* isMultiplexing= */ true);
+    int msecResponseDelay = 500;
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofMillis(msecResponseDelay));
+
+    int appendCount = 3;
+    long sizePerRequest = 27;
+    for (int i = 0; i < appendCount; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    for (int i = 0; i < appendCount; i++) {
+      futures.add(
+          sendTestMessage(
+              connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(i)}), i));
+    }
+    // Sleep for quarter second to ensure requests are queued
+    Thread.sleep(250);
+    ConnectionWorker.HealthCheckMetrics.HealthCheckFields healthCheckFields =
+        connectionWorker.gatherTestOnlyHealthCheckMetrics();
+    assertTrue(
+        healthCheckFields.msecLongestResponseWaitTime > 1
+            && healthCheckFields.msecLongestResponseWaitTime < msecResponseDelay);
+    assertEquals(appendCount, healthCheckFields.queuedRequestCountMax);
+    assertEquals(appendCount * sizePerRequest, healthCheckFields.inflightBytes);
+    assertEquals("MULTIPLEXING", healthCheckFields.streamName);
+    assertEquals(connectionWorker.getWriterId(), healthCheckFields.writerId);
+
+    // Wait for responses to arrive
+    for (ApiFuture<AppendRowsResponse> future : futures) {
+      future.get();
+    }
+
+    // Ensure connection is closed
+    connectionWorker.close();
+
+    healthCheckFields = connectionWorker.gatherTestOnlyHealthCheckMetrics();
+    assertTrue(healthCheckFields.msecMaxLatency >= msecResponseDelay);
+    assertTrue(healthCheckFields.msecAvgLatency >= msecResponseDelay);
+    assertTrue(healthCheckFields.msecMaxLatency >= healthCheckFields.msecAvgLatency);
+    assertTrue(healthCheckFields.sendBps > 0L);
+    assertTrue(healthCheckFields.receiveBps > 0L);
+    assertTrue(healthCheckFields.responseCodes.containsKey(Status.Code.OK.value()));
+    assertEquals(appendCount, healthCheckFields.responseCodes.get(Status.Code.OK.value()));
+    assertEquals(appendCount, healthCheckFields.requestsSentCount);
+    assertEquals(appendCount, healthCheckFields.responseCount);
+    assertEquals(appendCount, healthCheckFields.queuedRequestCountMax);
+    assertEquals(0, healthCheckFields.queuedRetryCountMax);
+    assertEquals(false, healthCheckFields.isConnected);
+    assertTrue(healthCheckFields.connectionAttemptCount > 0);
+    assertTrue(healthCheckFields.connectionClosedCount > 0);
+  }
+
+  @Test
+  void testLocationName() throws Exception {
+    assertEquals(
+        "projects/p1/locations/us", ConnectionWorker.getRoutingHeader(TEST_STREAM_1, "us"));
+  }
+
+  @Test
+  void testHealthCheckThresholds() throws Exception {
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            "us",
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /* isMultiplexing= */ true);
+    ConnectionWorker.HealthCheckMetrics.HealthCheckFields fields =
+        connectionWorker.gatherTestOnlyHealthCheckMetrics();
+
+    // Default everything to zero/healthy
+    fields.msecLongestResponseWaitTime = 0;
+    fields.msecMaxLatency = 0;
+    fields.msecAvgLatency = 0;
+    fields.sendBps = 0;
+    fields.receiveBps = 0;
+    fields.responseCodes.clear();
+    fields.requestsSentCount = 0;
+    fields.responseCount = 0;
+    fields.queuedRequestCountMax = 0;
+    fields.queuedRetryCountMax = 0;
+    fields.inflightBytes = 0;
+    fields.connectionAttemptCount = 0;
+    fields.connectionClosedCount = 0;
+    fields.isConnected = false;
+
+    // Should be healthy with default values
+    assertEquals(false, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+
+    // msecLongestResponseWaitTime >= responseWaitTimeThreshold (5000)
+    fields.msecLongestResponseWaitTime = 5000;
+    assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+    fields.msecLongestResponseWaitTime = 0;
+
+    // msecMaxLatency >= latencyThreshold (5000)
+    fields.msecMaxLatency = 5000;
+    assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+    fields.msecMaxLatency = 0;
+
+    // Division by zero check (allResponses == 0) -> should not crash and be false
+    fields.responseCodes.clear();
+    assertEquals(false, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+
+    // Trigger percentErrorResponsesThreshold (10%)
+    fields.responseCodes.put(Status.Code.OK.value(), 8);
+    fields.responseCodes.put(Status.Code.INTERNAL.value(), 2); // 2/10 = 20%
+    assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+    fields.responseCodes.clear();
+
+    // Healthy response codes
+    fields.responseCodes.put(Status.Code.OK.value(), 10);
+    assertEquals(false, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+    fields.responseCodes.clear();
+
+    // queuedRequestCountMax >= queuedRequestsThreshold (100)
+    fields.queuedRequestCountMax = 100;
+    assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+    fields.queuedRequestCountMax = 0;
+
+    // Division by zero check (queuedRequestCountMax == 0) -> should not crash
+    // and be false
+    fields.queuedRequestCountMax = 0;
+    fields.queuedRetryCountMax = 10;
+    assertEquals(false, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+
+    // Trigger percentRetriesThreshold (25%)
+    fields.queuedRequestCountMax = 10;
+    fields.queuedRetryCountMax = 3; // 3/10 = 30%
+    assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+    fields.queuedRequestCountMax = 0;
+    fields.queuedRetryCountMax = 0;
+
+    // inflightBytes >= queuedBytesThreshold (52428800)
+    fields.inflightBytes = 50 * 1024 * 1024;
+    assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+    fields.inflightBytes = 0;
+
+    // connectionAttemptCount >= connectionAttemptThreshold (1)
+    fields.connectionAttemptCount = 1;
+    assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+    fields.connectionAttemptCount = 0;
+
+    // connectionClosedCount >= connectionCloseThreshold (1)
+    fields.connectionClosedCount = 1;
+    assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+  }
+
+  @Test
+  void testInflightRetryCountHealthMetric() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            "us",
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /* isMultiplexing= */ true);
+    connectionWorker.setTestOnlyHealthCheckInterval(Duration.ofSeconds(10));
+
+    // Simulate a retriable error
+    int msecResponseDelay = 1000;
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofMillis(msecResponseDelay));
+
+    // Add responses for the retries and the final success
+    testBigQueryWrite.addResponse(
+        createAppendResponseWithError(Status.INTERNAL.getCode(), "force the first retry"));
+    testBigQueryWrite.addResponse(
+        createAppendResponseWithError(Status.INTERNAL.getCode(), "force the second retry"));
+    testBigQueryWrite.addResponse(createAppendResponse(-1));
+
+    ApiFuture<AppendRowsResponse> future =
+        sendTestMessage(
+            connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(0)}), -1);
+
+    // Wait for the initial failure and retry to be enqueued
+    Thread.sleep(1500);
+
+    ConnectionWorker.HealthCheckMetrics.HealthCheckFields healthCheckFields =
+        connectionWorker.gatherTestOnlyHealthCheckMetrics();
+    assertEquals(1, healthCheckFields.queuedRequestCountMax);
+    assertEquals(1, healthCheckFields.queuedRetryCountMax);
+    assertTrue(healthCheckFields.responseCodes.containsKey(Code.INTERNAL.value()));
+    assertEquals(1, healthCheckFields.responseCodes.get(Code.INTERNAL.value()));
+    assertFalse(healthCheckFields.responseCodes.containsKey(Status.Code.OK.value()));
+    assertEquals("MULTIPLEXING", healthCheckFields.streamName);
+    assertEquals(Duration.ofSeconds(10).toString(), healthCheckFields.windowDuration);
+
+    // Allow the retries to complete successfully
+    future.get();
+
+    healthCheckFields = connectionWorker.gatherTestOnlyHealthCheckMetrics();
+    assertEquals(1, healthCheckFields.queuedRequestCountMax);
+    assertEquals(1, healthCheckFields.queuedRetryCountMax);
+    assertTrue(healthCheckFields.responseCodes.containsKey(Code.INTERNAL.value()));
+    assertEquals(2, healthCheckFields.responseCodes.get(Code.INTERNAL.value()));
+    assertTrue(healthCheckFields.responseCodes.containsKey(Status.Code.OK.value()));
+    assertEquals(1, healthCheckFields.responseCodes.get(Status.Code.OK.value()));
+  }
+
+  private static class DummyResponseSupplierWillFailThenSucceed
+      implements Supplier<FakeBigQueryWriteImpl.Response> {
+
+    private final int totalFailCount;
+    private int failCount;
+    private final com.google.rpc.Status failStatus;
+    private final FakeBigQueryWriteImpl.Response response;
+
+    DummyResponseSupplierWillFailThenSucceed(
+        FakeBigQueryWriteImpl.Response response,
+        int totalFailCount,
+        com.google.rpc.Status failStatus) {
+      this.totalFailCount = totalFailCount;
+      this.response = response;
+      this.failStatus = failStatus;
+      this.failCount = 0;
+    }
+
+    @Override
+    public FakeBigQueryWriteImpl.Response get() {
+      if (failCount >= totalFailCount) {
+        return response;
+      }
+      failCount++;
+      return new FakeBigQueryWriteImpl.Response(
+          AppendRowsResponse.newBuilder().setError(this.failStatus).build());
+    }
+  }
+
+  private ConnectionWorker createConnectionWorker() throws IOException {
+    return new ConnectionWorker(
+        TEST_STREAM_1,
+        "us",
+        createProtoSchema("foo"),
+        100000,
+        100000,
+        Duration.ofSeconds(100),
+        FlowController.LimitExceededBehavior.Block,
+        TEST_TRACE_ID,
+        null,
+        client.getSettings(),
+        retrySettings,
+        /* enableRequestProfiler= */ false,
+        /* enableOpenTelemetry= */ false,
+        /* isMultiplexing= */ false);
+  }
+
+  @Test
+  void testInflightRetryCountHealthMetricExactlyOnce() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            "us",
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /* isMultiplexing= */ false);
+
+    // Simulate a retriable error
+    int msecResponseDelay = 1000;
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofMillis(msecResponseDelay));
+
+    // Add responses for the retries and the final success
+    testBigQueryWrite.addResponse(
+        new DummyResponseSupplierWillFailThenSucceed(
+            new FakeBigQueryWriteImpl.Response(createAppendResponse(0)),
+            /* totalFailCount= */ 1,
+            com.google.rpc.Status.newBuilder().setCode(Code.INTERNAL.ordinal()).build()));
+    testBigQueryWrite.addResponse(createAppendResponse(1));
+
+    ApiFuture<AppendRowsResponse> future1 =
+        sendTestMessage(
+            connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(0)}), 0);
+    ApiFuture<AppendRowsResponse> future2 =
+        sendTestMessage(
+            connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(1)}), 1);
+
+    // Wait for the initial failure and retry to be enqueued
+    Thread.sleep(1500);
+
+    ConnectionWorker.HealthCheckMetrics.HealthCheckFields healthCheckFields =
+        connectionWorker.gatherTestOnlyHealthCheckMetrics();
+    assertEquals(2, healthCheckFields.queuedRequestCountMax);
+    assertEquals(
+        1,
+        healthCheckFields
+            .queuedRetryCountMax); // Only the failed request is included in the retry count, even
+    // though all inflight requests are resent.
+    assertTrue(healthCheckFields.responseCodes.containsKey(Code.INTERNAL.value()));
+    assertEquals(1, healthCheckFields.responseCodes.get(Code.INTERNAL.value()));
+    assertFalse(healthCheckFields.responseCodes.containsKey(Status.Code.OK.value()));
+
+    // Allow the retries to complete successfully
+    future2.get();
+
+    healthCheckFields = connectionWorker.gatherTestOnlyHealthCheckMetrics();
+    assertEquals(2, healthCheckFields.queuedRequestCountMax);
+    assertEquals(1, healthCheckFields.queuedRetryCountMax);
+    assertTrue(healthCheckFields.responseCodes.containsKey(Code.INTERNAL.value()));
+    assertEquals(1, healthCheckFields.responseCodes.get(Code.INTERNAL.value()));
+    assertTrue(healthCheckFields.responseCodes.containsKey(Status.Code.OK.value()));
+    assertEquals(3, healthCheckFields.responseCodes.get(Status.Code.OK.value()));
+    assertEquals("projects/p1/datasets/d1/tables/t1/streams/s1", healthCheckFields.streamName);
+  }
+
+  @Test
+  void testEarliestSendTime_outstandingRequest() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
+    try (ConnectionWorker connectionWorker = createConnectionWorker()) {
+      // Stuck response to keep request in flight
+      testBigQueryWrite.setResponseSleep(java.time.Duration.ofSeconds(10));
+      testBigQueryWrite.addResponse(createAppendResponse(0));
+
+      Instant beforeSend = Instant.now();
+      ApiFuture<AppendRowsResponse> future =
+          sendTestMessage(connectionWorker, sw1, createFooProtoRows(new String[] {"0"}), 0);
+
+      // Wait a bit to ensure it is sent and send time is captured
+      Thread.sleep(500);
+      Instant afterSend = Instant.now();
+
+      Instant earliestSendTime = connectionWorker.getEarliestSendTime();
+      assertThat(earliestSendTime).isNotNull();
+      assertThat(earliestSendTime).isAtLeast(beforeSend);
+      assertThat(earliestSendTime).isAtMost(afterSend);
+
+      // Clean up
+      testBigQueryWrite.setResponseSleep(java.time.Duration.ZERO);
+      future.get();
+    }
+  }
+
+  @Test
+  void testEarliestSendTime_requestSuccess() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
+    try (ConnectionWorker connectionWorker = createConnectionWorker()) {
+      testBigQueryWrite.addResponse(createAppendResponse(0));
+
+      ApiFuture<AppendRowsResponse> future =
+          sendTestMessage(connectionWorker, sw1, createFooProtoRows(new String[] {"0"}), 0);
+
+      // Wait for success response
+      future.get();
+
+      // Verify state is NULL
+      assertThat(connectionWorker.getEarliestSendTime()).isNull();
+    }
+  }
+
+  @Test
+  void testEarliestSendTime_retryScenario() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
+    try (ConnectionWorker connectionWorker = createConnectionWorker()) {
+      // Stuck first response to ensure we can capture send time
+      testBigQueryWrite.setResponseSleep(java.time.Duration.ofMillis(500));
+
+      // Fail enough times to exhaust retries (maxAttempts + 1)
+      testBigQueryWrite.addResponse(
+          new DummyResponseSupplierWillFailThenSucceed(
+              new FakeBigQueryWriteImpl.Response(createAppendResponse(0)),
+              /* totalFailCount= */ retrySettings.getMaxAttempts() + 1,
+              com.google.rpc.Status.newBuilder().setCode(Code.INTERNAL.ordinal()).build()));
+
+      Instant beforeSend = Instant.now();
+      ApiFuture<AppendRowsResponse> future =
+          sendTestMessage(connectionWorker, sw1, createFooProtoRows(new String[] {"0"}), 0);
+
+      // Wait for first attempt to be sent (response sleep is 500ms)
+      Thread.sleep(200);
+      Instant afterSend = Instant.now();
+
+      Instant earliestSendTime = connectionWorker.getEarliestSendTime();
+      assertThat(earliestSendTime).isNotNull();
+      assertThat(earliestSendTime).isAtLeast(beforeSend);
+      assertThat(earliestSendTime).isAtMost(afterSend);
+
+      // Wait for first response to arrive (500ms) and retry to be scheduled.
+      // Retry will be scheduled with 500ms delay (initialRetryDelay).
+      // So it will be sent at ~1000ms.
+      // We check state at 800ms (after first failure but before retry is sent).
+      Thread.sleep(600); // 200ms + 600ms = 800ms from start.
+
+      Instant earliestSendTimeAfterFirstFailure = connectionWorker.getEarliestSendTime();
+      assertThat(earliestSendTimeAfterFirstFailure).isEqualTo(earliestSendTime);
+
+      // Wait for all retries to exhaust and fail.
+      ExecutionException ex =
+          assertThrows(
+              ExecutionException.class,
+              () -> {
+                future.get(5, TimeUnit.SECONDS);
+              });
+      assertThat(ex.getCause()).isInstanceOf(StatusRuntimeException.class);
+      assertThat(((StatusRuntimeException) ex.getCause()).getStatus().getCode())
+          .isEqualTo(Code.INTERNAL);
+
+      // Once exhausted, state should be null
+      assertThat(connectionWorker.getEarliestSendTime()).isNull();
+    }
+  }
+}

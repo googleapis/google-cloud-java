@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,6 +93,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceRequest, Service> getServiceMethodDescriptor =
@@ -101,6 +102,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
           .setFullMethodName("google.cloud.metastore.v1.DataprocMetastore/GetService")
           .setRequestMarshaller(ProtoUtils.marshaller(GetServiceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateServiceRequest, Operation>
@@ -111,6 +113,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateServiceRequest, Operation>
@@ -121,6 +124,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceRequest, Operation>
@@ -131,6 +135,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMetadataImportsRequest, ListMetadataImportsResponse>
@@ -142,6 +147,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   ProtoUtils.marshaller(ListMetadataImportsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMetadataImportsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMetadataImportRequest, MetadataImport>
@@ -152,6 +158,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMetadataImportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MetadataImport.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMetadataImportRequest, Operation>
@@ -162,6 +169,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMetadataImportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateMetadataImportRequest, Operation>
@@ -172,6 +180,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateMetadataImportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportMetadataRequest, Operation>
@@ -182,6 +191,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportMetadataRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RestoreServiceRequest, Operation>
@@ -192,6 +202,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RestoreServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
@@ -202,6 +213,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListBackupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
@@ -210,6 +222,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
           .setFullMethodName("google.cloud.metastore.v1.DataprocMetastore/GetBackup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBackupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateBackupRequest, Operation>
@@ -219,6 +232,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setFullMethodName("google.cloud.metastore.v1.DataprocMetastore/CreateBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupRequest, Operation>
@@ -228,6 +242,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setFullMethodName("google.cloud.metastore.v1.DataprocMetastore/DeleteBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<QueryMetadataRequest, Operation>
@@ -238,6 +253,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(QueryMetadataRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MoveTableToDatabaseRequest, Operation>
@@ -248,6 +264,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MoveTableToDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AlterMetadataResourceLocationRequest, Operation>
@@ -259,6 +276,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AlterMetadataResourceLocationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -270,6 +288,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -278,6 +297,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -286,6 +306,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -294,6 +315,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -305,6 +327,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable;
@@ -423,6 +446,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
         GrpcCallSettings.<GetServiceRequest, Service>newBuilder()
@@ -433,6 +457,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateServiceRequest, Operation> createServiceTransportSettings =
         GrpcCallSettings.<CreateServiceRequest, Operation>newBuilder()
@@ -443,6 +468,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateServiceRequest, Operation> updateServiceTransportSettings =
         GrpcCallSettings.<UpdateServiceRequest, Operation>newBuilder()
@@ -463,6 +489,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMetadataImportsRequest, ListMetadataImportsResponse>
         listMetadataImportsTransportSettings =
@@ -474,6 +501,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMetadataImportRequest, MetadataImport> getMetadataImportTransportSettings =
         GrpcCallSettings.<GetMetadataImportRequest, MetadataImport>newBuilder()
@@ -484,6 +512,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateMetadataImportRequest, Operation> createMetadataImportTransportSettings =
         GrpcCallSettings.<CreateMetadataImportRequest, Operation>newBuilder()
@@ -494,6 +523,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateMetadataImportRequest, Operation> updateMetadataImportTransportSettings =
         GrpcCallSettings.<UpdateMetadataImportRequest, Operation>newBuilder()
@@ -516,6 +546,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("service", String.valueOf(request.getService()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getService())
             .build();
     GrpcCallSettings<RestoreServiceRequest, Operation> restoreServiceTransportSettings =
         GrpcCallSettings.<RestoreServiceRequest, Operation>newBuilder()
@@ -526,6 +557,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("service", String.valueOf(request.getService()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getService())
             .build();
     GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -536,6 +568,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         GrpcCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -546,6 +579,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
         GrpcCallSettings.<CreateBackupRequest, Operation>newBuilder()
@@ -556,6 +590,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
         GrpcCallSettings.<DeleteBackupRequest, Operation>newBuilder()
@@ -566,6 +601,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<QueryMetadataRequest, Operation> queryMetadataTransportSettings =
         GrpcCallSettings.<QueryMetadataRequest, Operation>newBuilder()
@@ -576,6 +612,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("service", String.valueOf(request.getService()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getService())
             .build();
     GrpcCallSettings<MoveTableToDatabaseRequest, Operation> moveTableToDatabaseTransportSettings =
         GrpcCallSettings.<MoveTableToDatabaseRequest, Operation>newBuilder()
@@ -586,6 +623,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("service", String.valueOf(request.getService()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getService())
             .build();
     GrpcCallSettings<AlterMetadataResourceLocationRequest, Operation>
         alterMetadataResourceLocationTransportSettings =
@@ -597,6 +635,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                       builder.add("service", String.valueOf(request.getService()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getService())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -627,6 +666,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -637,6 +677,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -648,6 +689,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listServicesCallable =

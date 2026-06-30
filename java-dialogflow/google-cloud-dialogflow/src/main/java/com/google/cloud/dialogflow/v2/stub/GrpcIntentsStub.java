@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +67,7 @@ public class GrpcIntentsStub extends IntentsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListIntentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIntentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIntentRequest, Intent> getIntentMethodDescriptor =
@@ -75,6 +76,7 @@ public class GrpcIntentsStub extends IntentsStub {
           .setFullMethodName("google.cloud.dialogflow.v2.Intents/GetIntent")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIntentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Intent.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateIntentRequest, Intent> createIntentMethodDescriptor =
@@ -83,6 +85,7 @@ public class GrpcIntentsStub extends IntentsStub {
           .setFullMethodName("google.cloud.dialogflow.v2.Intents/CreateIntent")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateIntentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Intent.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateIntentRequest, Intent> updateIntentMethodDescriptor =
@@ -91,6 +94,7 @@ public class GrpcIntentsStub extends IntentsStub {
           .setFullMethodName("google.cloud.dialogflow.v2.Intents/UpdateIntent")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateIntentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Intent.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteIntentRequest, Empty> deleteIntentMethodDescriptor =
@@ -99,6 +103,7 @@ public class GrpcIntentsStub extends IntentsStub {
           .setFullMethodName("google.cloud.dialogflow.v2.Intents/DeleteIntent")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteIntentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchUpdateIntentsRequest, Operation>
@@ -109,6 +114,7 @@ public class GrpcIntentsStub extends IntentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchUpdateIntentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchDeleteIntentsRequest, Operation>
@@ -119,6 +125,7 @@ public class GrpcIntentsStub extends IntentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchDeleteIntentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -130,6 +137,7 @@ public class GrpcIntentsStub extends IntentsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -138,6 +146,7 @@ public class GrpcIntentsStub extends IntentsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListIntentsRequest, ListIntentsResponse> listIntentsCallable;
@@ -206,6 +215,7 @@ public class GrpcIntentsStub extends IntentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetIntentRequest, Intent> getIntentTransportSettings =
         GrpcCallSettings.<GetIntentRequest, Intent>newBuilder()
@@ -216,6 +226,7 @@ public class GrpcIntentsStub extends IntentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateIntentRequest, Intent> createIntentTransportSettings =
         GrpcCallSettings.<CreateIntentRequest, Intent>newBuilder()
@@ -226,6 +237,7 @@ public class GrpcIntentsStub extends IntentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateIntentRequest, Intent> updateIntentTransportSettings =
         GrpcCallSettings.<UpdateIntentRequest, Intent>newBuilder()
@@ -246,6 +258,7 @@ public class GrpcIntentsStub extends IntentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchUpdateIntentsRequest, Operation> batchUpdateIntentsTransportSettings =
         GrpcCallSettings.<BatchUpdateIntentsRequest, Operation>newBuilder()
@@ -256,6 +269,7 @@ public class GrpcIntentsStub extends IntentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsTransportSettings =
         GrpcCallSettings.<BatchDeleteIntentsRequest, Operation>newBuilder()
@@ -266,6 +280,7 @@ public class GrpcIntentsStub extends IntentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

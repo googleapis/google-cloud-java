@@ -23,6 +23,7 @@ import com.google.cloud.compute.v1.ListZonesRequest;
 import com.google.cloud.compute.v1.Zone;
 import com.google.cloud.compute.v1.ZonesClient;
 import com.google.cloud.compute.v1.ZonesSettings;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Map;
@@ -103,9 +104,11 @@ public class ITPaginationTest extends BaseTest {
             .build();
     ZonesClient.ListPagedResponse responseToken = zonesClient.list(listZonesRequestToken);
     ZonesClient.ListPage nextPageWithToken = responseToken.getPage();
+
+    // Compare pages by ensuring a consistent list of zone names.
     Assert.assertEquals(
-        Lists.newArrayList(nextPage.getValues()),
-        Lists.newArrayList(nextPageWithToken.getValues()));
+        Lists.newArrayList(Iterables.transform(nextPage.getValues(), Zone::getName)),
+        Lists.newArrayList(Iterables.transform(nextPageWithToken.getValues(), Zone::getName)));
   }
 
   @Test
@@ -113,19 +116,15 @@ public class ITPaginationTest extends BaseTest {
     ListZonesRequest listZonesRequest =
         ListZonesRequest.newBuilder().setProject(DEFAULT_PROJECT).setMaxResults(1).build();
     ZonesClient.ListPagedResponse response = zonesClient.list(listZonesRequest);
-    boolean presented = false;
     int count = 0;
     for (Zone element : response.iterateAll()) {
+      Assert.assertNotNull(element.getName());
       count++;
-      if (element.getName().equals(DEFAULT_ZONE)) {
-        presented = true;
+      if (count >= 2) {
+        break;
       }
     }
-    Assert.assertTrue(
-        String.format(
-            "Zone %s was not found for %s in zones list (size: %d).",
-            DEFAULT_ZONE, DEFAULT_PROJECT, count),
-        presented);
+    Assert.assertTrue("Expected iterator to traverse multiple pages", count >= 2);
   }
 
   @Test

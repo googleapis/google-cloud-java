@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.maps.mapsplatformdatasets.v1.stub;
 
+import static com.google.maps.mapsplatformdatasets.v1.MapsPlatformDatasetsClient.FetchDatasetErrorsPagedResponse;
 import static com.google.maps.mapsplatformdatasets.v1.MapsPlatformDatasetsClient.ListDatasetsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -29,6 +30,8 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.maps.mapsplatformdatasets.v1.CreateDatasetRequest;
 import com.google.maps.mapsplatformdatasets.v1.Dataset;
 import com.google.maps.mapsplatformdatasets.v1.DeleteDatasetRequest;
+import com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest;
+import com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse;
 import com.google.maps.mapsplatformdatasets.v1.GetDatasetRequest;
 import com.google.maps.mapsplatformdatasets.v1.ListDatasetsRequest;
 import com.google.maps.mapsplatformdatasets.v1.ListDatasetsResponse;
@@ -57,6 +60,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDatasetMetadataRequest, Dataset>
@@ -68,6 +72,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDatasetMetadataRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDatasetRequest, Dataset> getDatasetMethodDescriptor =
@@ -76,7 +81,21 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
           .setFullMethodName("google.maps.mapsplatformdatasets.v1.MapsPlatformDatasets/GetDataset")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDatasetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
+      fetchDatasetErrorsMethodDescriptor =
+          MethodDescriptor.<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.maps.mapsplatformdatasets.v1.MapsPlatformDatasets/FetchDatasetErrors")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchDatasetErrorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FetchDatasetErrorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<ListDatasetsRequest, ListDatasetsResponse>
       listDatasetsMethodDescriptor =
@@ -87,6 +106,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListDatasetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatasetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDatasetRequest, Empty> deleteDatasetMethodDescriptor =
@@ -96,11 +116,16 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
               "google.maps.mapsplatformdatasets.v1.MapsPlatformDatasets/DeleteDataset")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteDatasetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateDatasetRequest, Dataset> createDatasetCallable;
   private final UnaryCallable<UpdateDatasetMetadataRequest, Dataset> updateDatasetMetadataCallable;
   private final UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable;
+  private final UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
+      fetchDatasetErrorsCallable;
+  private final UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsPagedResponse>
+      fetchDatasetErrorsPagedCallable;
   private final UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> listDatasetsCallable;
   private final UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse>
       listDatasetsPagedCallable;
@@ -159,6 +184,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDatasetMetadataRequest, Dataset> updateDatasetMetadataTransportSettings =
         GrpcCallSettings.<UpdateDatasetMetadataRequest, Dataset>newBuilder()
@@ -179,7 +205,20 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
+        fetchDatasetErrorsTransportSettings =
+            GrpcCallSettings.<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>newBuilder()
+                .setMethodDescriptor(fetchDatasetErrorsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("dataset", String.valueOf(request.getDataset()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getDataset())
+                .build();
     GrpcCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
         GrpcCallSettings.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
             .setMethodDescriptor(listDatasetsMethodDescriptor)
@@ -189,6 +228,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteDatasetRequest, Empty> deleteDatasetTransportSettings =
         GrpcCallSettings.<DeleteDatasetRequest, Empty>newBuilder()
@@ -199,6 +239,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createDatasetCallable =
@@ -212,6 +253,16 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
     this.getDatasetCallable =
         callableFactory.createUnaryCallable(
             getDatasetTransportSettings, settings.getDatasetSettings(), clientContext);
+    this.fetchDatasetErrorsCallable =
+        callableFactory.createUnaryCallable(
+            fetchDatasetErrorsTransportSettings,
+            settings.fetchDatasetErrorsSettings(),
+            clientContext);
+    this.fetchDatasetErrorsPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchDatasetErrorsTransportSettings,
+            settings.fetchDatasetErrorsSettings(),
+            clientContext);
     this.listDatasetsCallable =
         callableFactory.createUnaryCallable(
             listDatasetsTransportSettings, settings.listDatasetsSettings(), clientContext);
@@ -243,6 +294,18 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
   @Override
   public UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable() {
     return getDatasetCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
+      fetchDatasetErrorsCallable() {
+    return fetchDatasetErrorsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsPagedResponse>
+      fetchDatasetErrorsPagedCallable() {
+    return fetchDatasetErrorsPagedCallable;
   }
 
   @Override

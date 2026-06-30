@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -381,6 +381,7 @@ public class HttpJsonBinauthzManagementServiceV1Stub extends BinauthzManagementS
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<Service.UpdatePolicyRequest, Resources.Policy>
         updatePolicyTransportSettings =
@@ -405,6 +406,7 @@ public class HttpJsonBinauthzManagementServiceV1Stub extends BinauthzManagementS
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<Service.GetAttestorRequest, Resources.Attestor>
         getAttestorTransportSettings =
@@ -417,6 +419,7 @@ public class HttpJsonBinauthzManagementServiceV1Stub extends BinauthzManagementS
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<Service.UpdateAttestorRequest, Resources.Attestor>
         updateAttestorTransportSettings =
@@ -442,6 +445,7 @@ public class HttpJsonBinauthzManagementServiceV1Stub extends BinauthzManagementS
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<Service.DeleteAttestorRequest, Empty> deleteAttestorTransportSettings =
         HttpJsonCallSettings.<Service.DeleteAttestorRequest, Empty>newBuilder()
@@ -453,6 +457,7 @@ public class HttpJsonBinauthzManagementServiceV1Stub extends BinauthzManagementS
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getPolicyCallable =

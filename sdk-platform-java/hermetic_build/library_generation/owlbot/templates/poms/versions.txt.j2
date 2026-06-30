@@ -1,0 +1,4 @@
+# Format:
+# module:released-version:current-version
+{% for module in modules %}
+{{module.artifact_id}}:{% if module.release_version %}{{module.release_version}}{% else %}{{module.version}}{% endif %}:{{module.version}}{% endfor %}

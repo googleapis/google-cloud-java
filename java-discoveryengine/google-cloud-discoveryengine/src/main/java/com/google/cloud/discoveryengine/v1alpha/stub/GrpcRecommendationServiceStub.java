@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ public class GrpcRecommendationServiceStub extends RecommendationServiceStub {
                   "google.cloud.discoveryengine.v1alpha.RecommendationService/Recommend")
               .setRequestMarshaller(ProtoUtils.marshaller(RecommendRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RecommendResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<RecommendRequest, RecommendResponse> recommendCallable;
@@ -107,6 +108,7 @@ public class GrpcRecommendationServiceStub extends RecommendationServiceStub {
                   builder.add("serving_config", String.valueOf(request.getServingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
 
     this.recommendCallable =

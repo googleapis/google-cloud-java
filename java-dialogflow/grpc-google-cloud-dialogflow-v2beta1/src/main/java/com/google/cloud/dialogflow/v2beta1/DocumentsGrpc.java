@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Documents][google.cloud.dialogflow.v2beta1.Document].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2beta1/document.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DocumentsGrpc {
 
@@ -362,6 +359,19 @@ public final class DocumentsGrpc {
           }
         };
     return DocumentsStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DocumentsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DocumentsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DocumentsBlockingV2Stub>() {
+          @java.lang.Override
+          public DocumentsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DocumentsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DocumentsBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -758,6 +768,177 @@ public final class DocumentsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Documents.
+   *
+   * <pre>
+   * Service for managing knowledge
+   * [Documents][google.cloud.dialogflow.v2beta1.Document].
+   * </pre>
+   */
+  public static final class DocumentsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DocumentsBlockingV2Stub> {
+    private DocumentsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DocumentsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DocumentsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all documents of the knowledge base.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse listDocuments(
+        com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Document getDocument(
+        com.google.cloud.dialogflow.v2beta1.GetDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new document.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDocument(
+        com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create documents by importing data from external sources.
+     * Dialogflow supports up to 350 documents in each request. If you try to
+     * import more, Dialogflow will return an error.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`:
+     * [ImportDocumentsResponse][google.cloud.dialogflow.v2beta1.ImportDocumentsResponse]
+     * </pre>
+     */
+    public com.google.longrunning.Operation importDocuments(
+        com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getImportDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified document.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDocument(
+        com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified document.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDocument(
+        com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reloads the specified document from its specified source, content_uri or
+     * content. The previously loaded content of the document will be deleted.
+     * Note: Even when the content of the document has not changed, there still
+     * may be side effects because of internal implementation changes.
+     * Note: If the document source is Google Cloud Storage URI, its metadata will
+     * be replaced with the custom metadata from Google Cloud Storage if the
+     * `import_gcs_custom_metadata` field is set to true in the request.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation reloadDocument(
+        com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getReloadDocumentMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Documents.
    *
    * <pre>
    * Service for managing knowledge

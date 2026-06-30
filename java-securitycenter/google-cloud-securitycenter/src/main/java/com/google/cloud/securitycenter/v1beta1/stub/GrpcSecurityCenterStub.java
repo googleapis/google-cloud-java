@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1beta1.SecurityCenter/CreateSource")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateFindingRequest, Finding>
@@ -94,6 +95,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -102,6 +104,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1beta1.SecurityCenter/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetOrganizationSettingsRequest, OrganizationSettings>
@@ -114,6 +117,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(GetOrganizationSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OrganizationSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSourceRequest, Source> getSourceMethodDescriptor =
@@ -122,6 +126,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1beta1.SecurityCenter/GetSource")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GroupAssetsRequest, GroupAssetsResponse>
@@ -132,6 +137,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GroupAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GroupAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GroupFindingsRequest, GroupFindingsResponse>
@@ -143,6 +149,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(GroupFindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GroupFindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAssetsRequest, ListAssetsResponse>
@@ -152,6 +159,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setFullMethodName("google.cloud.securitycenter.v1beta1.SecurityCenter/ListAssets")
               .setRequestMarshaller(ProtoUtils.marshaller(ListAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFindingsRequest, ListFindingsResponse>
@@ -162,6 +170,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListFindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSourcesRequest, ListSourcesResponse>
@@ -172,6 +181,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunAssetDiscoveryRequest, Operation>
@@ -183,6 +193,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RunAssetDiscoveryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetFindingStateRequest, Finding>
@@ -194,6 +205,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetFindingStateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -202,6 +214,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1beta1.SecurityCenter/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -214,6 +227,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFindingRequest, Finding>
@@ -224,6 +238,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateOrganizationSettingsRequest, OrganizationSettings>
@@ -236,6 +251,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(UpdateOrganizationSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OrganizationSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSourceRequest, Source> updateSourceMethodDescriptor =
@@ -244,6 +260,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1beta1.SecurityCenter/UpdateSource")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSecurityMarksRequest, SecurityMarks>
@@ -255,6 +272,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSecurityMarksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecurityMarks.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateSourceRequest, Source> createSourceCallable;
@@ -344,6 +362,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateFindingRequest, Finding> createFindingTransportSettings =
         GrpcCallSettings.<CreateFindingRequest, Finding>newBuilder()
@@ -354,6 +373,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -364,6 +384,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
         getOrganizationSettingsTransportSettings =
@@ -375,6 +396,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetSourceRequest, Source> getSourceTransportSettings =
         GrpcCallSettings.<GetSourceRequest, Source>newBuilder()
@@ -385,6 +407,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GroupAssetsRequest, GroupAssetsResponse> groupAssetsTransportSettings =
         GrpcCallSettings.<GroupAssetsRequest, GroupAssetsResponse>newBuilder()
@@ -395,6 +418,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GroupFindingsRequest, GroupFindingsResponse> groupFindingsTransportSettings =
         GrpcCallSettings.<GroupFindingsRequest, GroupFindingsResponse>newBuilder()
@@ -405,6 +429,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         GrpcCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
@@ -415,6 +440,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
         GrpcCallSettings.<ListFindingsRequest, ListFindingsResponse>newBuilder()
@@ -425,6 +451,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListSourcesRequest, ListSourcesResponse> listSourcesTransportSettings =
         GrpcCallSettings.<ListSourcesRequest, ListSourcesResponse>newBuilder()
@@ -435,6 +462,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RunAssetDiscoveryRequest, Operation> runAssetDiscoveryTransportSettings =
         GrpcCallSettings.<RunAssetDiscoveryRequest, Operation>newBuilder()
@@ -445,6 +473,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SetFindingStateRequest, Finding> setFindingStateTransportSettings =
         GrpcCallSettings.<SetFindingStateRequest, Finding>newBuilder()
@@ -455,6 +484,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -465,6 +495,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -476,6 +507,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<UpdateFindingRequest, Finding> updateFindingTransportSettings =
         GrpcCallSettings.<UpdateFindingRequest, Finding>newBuilder()

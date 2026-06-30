@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,8 @@ import com.google.cloud.aiplatform.v1beta1.GetReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1beta1.ListReasoningEnginesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListReasoningEnginesResponse;
 import com.google.cloud.aiplatform.v1beta1.ReasoningEngine;
+import com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -72,6 +74,7 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReasoningEngineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReasoningEngineRequest, ReasoningEngine>
@@ -83,6 +86,7 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetReasoningEngineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReasoningEngine.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReasoningEnginesRequest, ListReasoningEnginesResponse>
@@ -95,6 +99,19 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
                   ProtoUtils.marshaller(ListReasoningEnginesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReasoningEnginesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateReasoningEngineRequest, Operation>
+      updateReasoningEngineMethodDescriptor =
+          MethodDescriptor.<UpdateReasoningEngineRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.ReasoningEngineService/UpdateReasoningEngine")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateReasoningEngineRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteReasoningEngineRequest, Operation>
@@ -106,6 +123,7 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteReasoningEngineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -117,6 +135,7 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -125,6 +144,7 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -133,6 +153,7 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -141,6 +162,7 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -152,6 +174,7 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateReasoningEngineRequest, Operation>
@@ -165,6 +188,11 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
       listReasoningEnginesCallable;
   private final UnaryCallable<ListReasoningEnginesRequest, ListReasoningEnginesPagedResponse>
       listReasoningEnginesPagedCallable;
+  private final UnaryCallable<UpdateReasoningEngineRequest, Operation>
+      updateReasoningEngineCallable;
+  private final OperationCallable<
+          UpdateReasoningEngineRequest, ReasoningEngine, UpdateReasoningEngineOperationMetadata>
+      updateReasoningEngineOperationCallable;
   private final UnaryCallable<DeleteReasoningEngineRequest, Operation>
       deleteReasoningEngineCallable;
   private final OperationCallable<DeleteReasoningEngineRequest, Empty, DeleteOperationMetadata>
@@ -232,6 +260,7 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetReasoningEngineRequest, ReasoningEngine>
         getReasoningEngineTransportSettings =
@@ -243,6 +272,7 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListReasoningEnginesRequest, ListReasoningEnginesResponse>
         listReasoningEnginesTransportSettings =
@@ -252,6 +282,20 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateReasoningEngineRequest, Operation>
+        updateReasoningEngineTransportSettings =
+            GrpcCallSettings.<UpdateReasoningEngineRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateReasoningEngineMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "reasoning_engine.name",
+                          String.valueOf(request.getReasoningEngine().getName()));
                       return builder.build();
                     })
                 .build();
@@ -265,6 +309,7 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -295,6 +340,7 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -305,6 +351,7 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -316,6 +363,7 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createReasoningEngineCallable =
@@ -344,6 +392,17 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
             listReasoningEnginesTransportSettings,
             settings.listReasoningEnginesSettings(),
             clientContext);
+    this.updateReasoningEngineCallable =
+        callableFactory.createUnaryCallable(
+            updateReasoningEngineTransportSettings,
+            settings.updateReasoningEngineSettings(),
+            clientContext);
+    this.updateReasoningEngineOperationCallable =
+        callableFactory.createOperationCallable(
+            updateReasoningEngineTransportSettings,
+            settings.updateReasoningEngineOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteReasoningEngineCallable =
         callableFactory.createUnaryCallable(
             deleteReasoningEngineTransportSettings,
@@ -411,6 +470,18 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
   public UnaryCallable<ListReasoningEnginesRequest, ListReasoningEnginesPagedResponse>
       listReasoningEnginesPagedCallable() {
     return listReasoningEnginesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateReasoningEngineRequest, Operation> updateReasoningEngineCallable() {
+    return updateReasoningEngineCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateReasoningEngineRequest, ReasoningEngine, UpdateReasoningEngineOperationMetadata>
+      updateReasoningEngineOperationCallable() {
+    return updateReasoningEngineOperationCallable;
   }
 
   @Override

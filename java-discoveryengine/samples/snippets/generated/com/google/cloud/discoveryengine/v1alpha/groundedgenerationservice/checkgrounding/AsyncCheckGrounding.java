@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.cloud.discoveryengine.v1alpha.GroundedGenerationServiceClient;
 import com.google.cloud.discoveryengine.v1alpha.GroundingConfigName;
 import com.google.cloud.discoveryengine.v1alpha.GroundingFact;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AsyncCheckGrounding {
 
@@ -48,6 +49,7 @@ public class AsyncCheckGrounding {
               .setAnswerCandidate("answerCandidate-292402331")
               .addAllFacts(new ArrayList<GroundingFact>())
               .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       ApiFuture<CheckGroundingResponse> future =
           groundedGenerationServiceClient.checkGroundingCallable().futureCall(request);

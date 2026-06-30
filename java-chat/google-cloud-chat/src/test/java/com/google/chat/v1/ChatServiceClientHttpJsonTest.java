@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,16 @@
 
 package com.google.chat.v1;
 
+import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -105,6 +111,7 @@ public class ChatServiceClientHttpJsonTest {
             .addAllAttachment(new ArrayList<Attachment>())
             .setMatchedUrl(MatchedUrl.newBuilder().build())
             .setThreadReply(true)
+            .setSilent(true)
             .setClientAssignedMessageId("clientAssignedMessageId-750462775")
             .addAllEmojiReactionSummaries(new ArrayList<EmojiReactionSummary>())
             .setPrivateMessageViewer(User.newBuilder().build())
@@ -178,6 +185,7 @@ public class ChatServiceClientHttpJsonTest {
             .addAllAttachment(new ArrayList<Attachment>())
             .setMatchedUrl(MatchedUrl.newBuilder().build())
             .setThreadReply(true)
+            .setSilent(true)
             .setClientAssignedMessageId("clientAssignedMessageId-750462775")
             .addAllEmojiReactionSummaries(new ArrayList<EmojiReactionSummary>())
             .setPrivateMessageViewer(User.newBuilder().build())
@@ -543,6 +551,7 @@ public class ChatServiceClientHttpJsonTest {
             .addAllAttachment(new ArrayList<Attachment>())
             .setMatchedUrl(MatchedUrl.newBuilder().build())
             .setThreadReply(true)
+            .setSilent(true)
             .setClientAssignedMessageId("clientAssignedMessageId-750462775")
             .addAllEmojiReactionSummaries(new ArrayList<EmojiReactionSummary>())
             .setPrivateMessageViewer(User.newBuilder().build())
@@ -612,6 +621,7 @@ public class ChatServiceClientHttpJsonTest {
             .addAllAttachment(new ArrayList<Attachment>())
             .setMatchedUrl(MatchedUrl.newBuilder().build())
             .setThreadReply(true)
+            .setSilent(true)
             .setClientAssignedMessageId("clientAssignedMessageId-750462775")
             .addAllEmojiReactionSummaries(new ArrayList<EmojiReactionSummary>())
             .setPrivateMessageViewer(User.newBuilder().build())
@@ -681,6 +691,7 @@ public class ChatServiceClientHttpJsonTest {
             .addAllAttachment(new ArrayList<Attachment>())
             .setMatchedUrl(MatchedUrl.newBuilder().build())
             .setThreadReply(true)
+            .setSilent(true)
             .setClientAssignedMessageId("clientAssignedMessageId-750462775")
             .addAllEmojiReactionSummaries(new ArrayList<EmojiReactionSummary>())
             .setPrivateMessageViewer(User.newBuilder().build())
@@ -712,6 +723,7 @@ public class ChatServiceClientHttpJsonTest {
             .addAllAttachment(new ArrayList<Attachment>())
             .setMatchedUrl(MatchedUrl.newBuilder().build())
             .setThreadReply(true)
+            .setSilent(true)
             .setClientAssignedMessageId("clientAssignedMessageId-750462775")
             .addAllEmojiReactionSummaries(new ArrayList<EmojiReactionSummary>())
             .setPrivateMessageViewer(User.newBuilder().build())
@@ -769,6 +781,7 @@ public class ChatServiceClientHttpJsonTest {
               .addAllAttachment(new ArrayList<Attachment>())
               .setMatchedUrl(MatchedUrl.newBuilder().build())
               .setThreadReply(true)
+              .setSilent(true)
               .setClientAssignedMessageId("clientAssignedMessageId-750462775")
               .addAllEmojiReactionSummaries(new ArrayList<EmojiReactionSummary>())
               .setPrivateMessageViewer(User.newBuilder().build())
@@ -1067,6 +1080,61 @@ public class ChatServiceClientHttpJsonTest {
   }
 
   @Test
+  public void searchSpacesTest() throws Exception {
+    Space responsesElement = Space.newBuilder().build();
+    SearchSpacesResponse expectedResponse =
+        SearchSpacesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSpaces(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SearchSpacesPagedResponse pagedListResponse = client.searchSpaces();
+
+    List<Space> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSpacesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void searchSpacesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SearchSpacesRequest request =
+          SearchSpacesRequest.newBuilder()
+              .setUseAdminAccess(true)
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setQuery("query107944136")
+              .setOrderBy("orderBy-1207110587")
+              .build();
+      client.searchSpaces(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getSpaceTest() throws Exception {
     Space expectedResponse =
         Space.newBuilder()
@@ -1079,7 +1147,13 @@ public class ChatServiceClientHttpJsonTest {
             .setSpaceHistoryState(HistoryState.forNumber(0))
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLastActiveTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setMembershipCount(Space.MembershipCount.newBuilder().build())
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
+            .setSpaceUri("spaceUri2047440518")
+            .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1132,7 +1206,13 @@ public class ChatServiceClientHttpJsonTest {
             .setSpaceHistoryState(HistoryState.forNumber(0))
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLastActiveTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setMembershipCount(Space.MembershipCount.newBuilder().build())
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
+            .setSpaceUri("spaceUri2047440518")
+            .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1185,7 +1265,13 @@ public class ChatServiceClientHttpJsonTest {
             .setSpaceHistoryState(HistoryState.forNumber(0))
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLastActiveTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setMembershipCount(Space.MembershipCount.newBuilder().build())
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
+            .setSpaceUri("spaceUri2047440518")
+            .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1238,7 +1324,13 @@ public class ChatServiceClientHttpJsonTest {
             .setSpaceHistoryState(HistoryState.forNumber(0))
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLastActiveTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setMembershipCount(Space.MembershipCount.newBuilder().build())
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
+            .setSpaceUri("spaceUri2047440518")
+            .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1301,7 +1393,13 @@ public class ChatServiceClientHttpJsonTest {
             .setSpaceHistoryState(HistoryState.forNumber(0))
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLastActiveTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setMembershipCount(Space.MembershipCount.newBuilder().build())
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
+            .setSpaceUri("spaceUri2047440518")
+            .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1316,7 +1414,13 @@ public class ChatServiceClientHttpJsonTest {
             .setSpaceHistoryState(HistoryState.forNumber(0))
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLastActiveTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setMembershipCount(Space.MembershipCount.newBuilder().build())
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
+            .setSpaceUri("spaceUri2047440518")
+            .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1357,7 +1461,13 @@ public class ChatServiceClientHttpJsonTest {
               .setSpaceHistoryState(HistoryState.forNumber(0))
               .setImportMode(true)
               .setCreateTime(Timestamp.newBuilder().build())
+              .setLastActiveTime(Timestamp.newBuilder().build())
               .setAdminInstalled(true)
+              .setMembershipCount(Space.MembershipCount.newBuilder().build())
+              .setAccessSettings(Space.AccessSettings.newBuilder().build())
+              .setCustomer("customer606175198")
+              .setSpaceUri("spaceUri2047440518")
+              .setImportModeExpireTime(Timestamp.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSpace(space, updateMask);
@@ -1506,7 +1616,13 @@ public class ChatServiceClientHttpJsonTest {
             .setSpaceHistoryState(HistoryState.forNumber(0))
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLastActiveTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setMembershipCount(Space.MembershipCount.newBuilder().build())
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
+            .setSpaceUri("spaceUri2047440518")
+            .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1542,6 +1658,68 @@ public class ChatServiceClientHttpJsonTest {
       FindDirectMessageRequest request =
           FindDirectMessageRequest.newBuilder().setName("name3373707").build();
       client.findDirectMessage(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void findGroupChatsTest() throws Exception {
+    Space responsesElement = Space.newBuilder().build();
+    FindGroupChatsResponse expectedResponse =
+        FindGroupChatsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSpaces(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FindGroupChatsRequest request =
+        FindGroupChatsRequest.newBuilder()
+            .addAllUsers(new ArrayList<String>())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .setSpaceView(SpaceView.forNumber(0))
+            .build();
+
+    FindGroupChatsPagedResponse pagedListResponse = client.findGroupChats(request);
+
+    List<Space> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSpacesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void findGroupChatsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FindGroupChatsRequest request =
+          FindGroupChatsRequest.newBuilder()
+              .addAllUsers(new ArrayList<String>())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setSpaceView(SpaceView.forNumber(0))
+              .build();
+      client.findGroupChats(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -1638,6 +1816,64 @@ public class ChatServiceClientHttpJsonTest {
       String parent = "spaces/space-3870";
       Membership membership = Membership.newBuilder().build();
       client.createMembership(parent, membership);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateMembershipTest() throws Exception {
+    Membership expectedResponse =
+        Membership.newBuilder()
+            .setName(MembershipName.of("[SPACE]", "[MEMBER]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Membership membership =
+        Membership.newBuilder()
+            .setName(MembershipName.of("[SPACE]", "[MEMBER]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Membership actualResponse = client.updateMembership(membership, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateMembershipExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Membership membership =
+          Membership.newBuilder()
+              .setName(MembershipName.of("[SPACE]", "[MEMBER]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setDeleteTime(Timestamp.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateMembership(membership, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -2006,6 +2242,1521 @@ public class ChatServiceClientHttpJsonTest {
     try {
       String name = "spaces/space-9479/messages/message-9479/reactions/reaction-9479";
       client.deleteReaction(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCustomEmojiTest() throws Exception {
+    CustomEmoji expectedResponse =
+        CustomEmoji.newBuilder()
+            .setName(CustomEmojiName.of("[CUSTOM_EMOJI]").toString())
+            .setUid("uid115792")
+            .setEmojiName("emojiName1686232049")
+            .setTemporaryImageUri("temporaryImageUri-1892195454")
+            .setPayload(CustomEmoji.CustomEmojiPayload.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CustomEmoji customEmoji = CustomEmoji.newBuilder().build();
+
+    CustomEmoji actualResponse = client.createCustomEmoji(customEmoji);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCustomEmojiExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomEmoji customEmoji = CustomEmoji.newBuilder().build();
+      client.createCustomEmoji(customEmoji);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCustomEmojiTest() throws Exception {
+    CustomEmoji expectedResponse =
+        CustomEmoji.newBuilder()
+            .setName(CustomEmojiName.of("[CUSTOM_EMOJI]").toString())
+            .setUid("uid115792")
+            .setEmojiName("emojiName1686232049")
+            .setTemporaryImageUri("temporaryImageUri-1892195454")
+            .setPayload(CustomEmoji.CustomEmojiPayload.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CustomEmojiName name = CustomEmojiName.of("[CUSTOM_EMOJI]");
+
+    CustomEmoji actualResponse = client.getCustomEmoji(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getCustomEmojiExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomEmojiName name = CustomEmojiName.of("[CUSTOM_EMOJI]");
+      client.getCustomEmoji(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCustomEmojiTest2() throws Exception {
+    CustomEmoji expectedResponse =
+        CustomEmoji.newBuilder()
+            .setName(CustomEmojiName.of("[CUSTOM_EMOJI]").toString())
+            .setUid("uid115792")
+            .setEmojiName("emojiName1686232049")
+            .setTemporaryImageUri("temporaryImageUri-1892195454")
+            .setPayload(CustomEmoji.CustomEmojiPayload.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "customEmojis/customEmoji-6372";
+
+    CustomEmoji actualResponse = client.getCustomEmoji(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getCustomEmojiExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "customEmojis/customEmoji-6372";
+      client.getCustomEmoji(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listCustomEmojisTest() throws Exception {
+    CustomEmoji responsesElement = CustomEmoji.newBuilder().build();
+    ListCustomEmojisResponse expectedResponse =
+        ListCustomEmojisResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCustomEmojis(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ListCustomEmojisPagedResponse pagedListResponse = client.listCustomEmojis();
+
+    List<CustomEmoji> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCustomEmojisList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listCustomEmojisExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ListCustomEmojisRequest request =
+          ListCustomEmojisRequest.newBuilder()
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
+              .build();
+      client.listCustomEmojis(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteCustomEmojiTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    CustomEmojiName name = CustomEmojiName.of("[CUSTOM_EMOJI]");
+
+    client.deleteCustomEmoji(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteCustomEmojiExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomEmojiName name = CustomEmojiName.of("[CUSTOM_EMOJI]");
+      client.deleteCustomEmoji(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteCustomEmojiTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "customEmojis/customEmoji-6372";
+
+    client.deleteCustomEmoji(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteCustomEmojiExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "customEmojis/customEmoji-6372";
+      client.deleteCustomEmoji(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSpaceReadStateTest() throws Exception {
+    SpaceReadState expectedResponse =
+        SpaceReadState.newBuilder()
+            .setName(SpaceReadStateName.of("[USER]", "[SPACE]").toString())
+            .setLastReadTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SpaceReadStateName name = SpaceReadStateName.of("[USER]", "[SPACE]");
+
+    SpaceReadState actualResponse = client.getSpaceReadState(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSpaceReadStateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SpaceReadStateName name = SpaceReadStateName.of("[USER]", "[SPACE]");
+      client.getSpaceReadState(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSpaceReadStateTest2() throws Exception {
+    SpaceReadState expectedResponse =
+        SpaceReadState.newBuilder()
+            .setName(SpaceReadStateName.of("[USER]", "[SPACE]").toString())
+            .setLastReadTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "users/user-2197/spaces/space-2197/spaceReadState";
+
+    SpaceReadState actualResponse = client.getSpaceReadState(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSpaceReadStateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "users/user-2197/spaces/space-2197/spaceReadState";
+      client.getSpaceReadState(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSpaceReadStateTest() throws Exception {
+    SpaceReadState expectedResponse =
+        SpaceReadState.newBuilder()
+            .setName(SpaceReadStateName.of("[USER]", "[SPACE]").toString())
+            .setLastReadTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SpaceReadState spaceReadState =
+        SpaceReadState.newBuilder()
+            .setName(SpaceReadStateName.of("[USER]", "[SPACE]").toString())
+            .setLastReadTime(Timestamp.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    SpaceReadState actualResponse = client.updateSpaceReadState(spaceReadState, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateSpaceReadStateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SpaceReadState spaceReadState =
+          SpaceReadState.newBuilder()
+              .setName(SpaceReadStateName.of("[USER]", "[SPACE]").toString())
+              .setLastReadTime(Timestamp.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSpaceReadState(spaceReadState, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getThreadReadStateTest() throws Exception {
+    ThreadReadState expectedResponse =
+        ThreadReadState.newBuilder()
+            .setName(ThreadReadStateName.of("[USER]", "[SPACE]", "[THREAD]").toString())
+            .setLastReadTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ThreadReadStateName name = ThreadReadStateName.of("[USER]", "[SPACE]", "[THREAD]");
+
+    ThreadReadState actualResponse = client.getThreadReadState(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getThreadReadStateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ThreadReadStateName name = ThreadReadStateName.of("[USER]", "[SPACE]", "[THREAD]");
+      client.getThreadReadState(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getThreadReadStateTest2() throws Exception {
+    ThreadReadState expectedResponse =
+        ThreadReadState.newBuilder()
+            .setName(ThreadReadStateName.of("[USER]", "[SPACE]", "[THREAD]").toString())
+            .setLastReadTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "users/user-8554/spaces/space-8554/threads/thread-8554/threadReadState";
+
+    ThreadReadState actualResponse = client.getThreadReadState(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getThreadReadStateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "users/user-8554/spaces/space-8554/threads/thread-8554/threadReadState";
+      client.getThreadReadState(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSpaceEventTest() throws Exception {
+    SpaceEvent expectedResponse =
+        SpaceEvent.newBuilder()
+            .setName(SpaceEventName.of("[SPACE]", "[SPACE_EVENT]").toString())
+            .setEventTime(Timestamp.newBuilder().build())
+            .setEventType("eventType31430900")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SpaceEventName name = SpaceEventName.of("[SPACE]", "[SPACE_EVENT]");
+
+    SpaceEvent actualResponse = client.getSpaceEvent(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSpaceEventExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SpaceEventName name = SpaceEventName.of("[SPACE]", "[SPACE_EVENT]");
+      client.getSpaceEvent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSpaceEventTest2() throws Exception {
+    SpaceEvent expectedResponse =
+        SpaceEvent.newBuilder()
+            .setName(SpaceEventName.of("[SPACE]", "[SPACE_EVENT]").toString())
+            .setEventTime(Timestamp.newBuilder().build())
+            .setEventType("eventType31430900")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "spaces/space-8926/spaceEvents/spaceEvent-8926";
+
+    SpaceEvent actualResponse = client.getSpaceEvent(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSpaceEventExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "spaces/space-8926/spaceEvents/spaceEvent-8926";
+      client.getSpaceEvent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSpaceEventsTest() throws Exception {
+    SpaceEvent responsesElement = SpaceEvent.newBuilder().build();
+    ListSpaceEventsResponse expectedResponse =
+        ListSpaceEventsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSpaceEvents(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SpaceName parent = SpaceName.of("[SPACE]");
+    String filter = "filter-1274492040";
+
+    ListSpaceEventsPagedResponse pagedListResponse = client.listSpaceEvents(parent, filter);
+
+    List<SpaceEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSpaceEventsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSpaceEventsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SpaceName parent = SpaceName.of("[SPACE]");
+      String filter = "filter-1274492040";
+      client.listSpaceEvents(parent, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSpaceEventsTest2() throws Exception {
+    SpaceEvent responsesElement = SpaceEvent.newBuilder().build();
+    ListSpaceEventsResponse expectedResponse =
+        ListSpaceEventsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSpaceEvents(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "spaces/space-3870";
+    String filter = "filter-1274492040";
+
+    ListSpaceEventsPagedResponse pagedListResponse = client.listSpaceEvents(parent, filter);
+
+    List<SpaceEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSpaceEventsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSpaceEventsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "spaces/space-3870";
+      String filter = "filter-1274492040";
+      client.listSpaceEvents(parent, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSpaceNotificationSettingTest() throws Exception {
+    SpaceNotificationSetting expectedResponse =
+        SpaceNotificationSetting.newBuilder()
+            .setName(SpaceNotificationSettingName.of("[USER]", "[SPACE]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SpaceNotificationSettingName name = SpaceNotificationSettingName.of("[USER]", "[SPACE]");
+
+    SpaceNotificationSetting actualResponse = client.getSpaceNotificationSetting(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSpaceNotificationSettingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SpaceNotificationSettingName name = SpaceNotificationSettingName.of("[USER]", "[SPACE]");
+      client.getSpaceNotificationSetting(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSpaceNotificationSettingTest2() throws Exception {
+    SpaceNotificationSetting expectedResponse =
+        SpaceNotificationSetting.newBuilder()
+            .setName(SpaceNotificationSettingName.of("[USER]", "[SPACE]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "users/user-8145/spaces/space-8145/spaceNotificationSetting";
+
+    SpaceNotificationSetting actualResponse = client.getSpaceNotificationSetting(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSpaceNotificationSettingExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "users/user-8145/spaces/space-8145/spaceNotificationSetting";
+      client.getSpaceNotificationSetting(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSpaceNotificationSettingTest() throws Exception {
+    SpaceNotificationSetting expectedResponse =
+        SpaceNotificationSetting.newBuilder()
+            .setName(SpaceNotificationSettingName.of("[USER]", "[SPACE]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SpaceNotificationSetting spaceNotificationSetting =
+        SpaceNotificationSetting.newBuilder()
+            .setName(SpaceNotificationSettingName.of("[USER]", "[SPACE]").toString())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    SpaceNotificationSetting actualResponse =
+        client.updateSpaceNotificationSetting(spaceNotificationSetting, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateSpaceNotificationSettingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SpaceNotificationSetting spaceNotificationSetting =
+          SpaceNotificationSetting.newBuilder()
+              .setName(SpaceNotificationSettingName.of("[USER]", "[SPACE]").toString())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSpaceNotificationSetting(spaceNotificationSetting, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSectionTest() throws Exception {
+    Section expectedResponse =
+        Section.newBuilder()
+            .setName(SectionName.of("[USER]", "[SECTION]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSortOrder(-374296211)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    UserName parent = UserName.of("[USER]");
+    Section section = Section.newBuilder().build();
+
+    Section actualResponse = client.createSection(parent, section);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSectionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      UserName parent = UserName.of("[USER]");
+      Section section = Section.newBuilder().build();
+      client.createSection(parent, section);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSectionTest2() throws Exception {
+    Section expectedResponse =
+        Section.newBuilder()
+            .setName(SectionName.of("[USER]", "[SECTION]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSortOrder(-374296211)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "users/user-1015";
+    Section section = Section.newBuilder().build();
+
+    Section actualResponse = client.createSection(parent, section);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSectionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "users/user-1015";
+      Section section = Section.newBuilder().build();
+      client.createSection(parent, section);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSectionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    SectionName name = SectionName.of("[USER]", "[SECTION]");
+
+    client.deleteSection(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSectionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SectionName name = SectionName.of("[USER]", "[SECTION]");
+      client.deleteSection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSectionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "users/user-6096/sections/section-6096";
+
+    client.deleteSection(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSectionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "users/user-6096/sections/section-6096";
+      client.deleteSection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSectionTest() throws Exception {
+    Section expectedResponse =
+        Section.newBuilder()
+            .setName(SectionName.of("[USER]", "[SECTION]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSortOrder(-374296211)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Section section =
+        Section.newBuilder()
+            .setName(SectionName.of("[USER]", "[SECTION]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSortOrder(-374296211)
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Section actualResponse = client.updateSection(section, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateSectionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Section section =
+          Section.newBuilder()
+              .setName(SectionName.of("[USER]", "[SECTION]").toString())
+              .setDisplayName("displayName1714148973")
+              .setSortOrder(-374296211)
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSection(section, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSectionsTest() throws Exception {
+    Section responsesElement = Section.newBuilder().build();
+    ListSectionsResponse expectedResponse =
+        ListSectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSections(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    UserName parent = UserName.of("[USER]");
+
+    ListSectionsPagedResponse pagedListResponse = client.listSections(parent);
+
+    List<Section> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSectionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSectionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      UserName parent = UserName.of("[USER]");
+      client.listSections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSectionsTest2() throws Exception {
+    Section responsesElement = Section.newBuilder().build();
+    ListSectionsResponse expectedResponse =
+        ListSectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSections(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "users/user-1015";
+
+    ListSectionsPagedResponse pagedListResponse = client.listSections(parent);
+
+    List<Section> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSectionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSectionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "users/user-1015";
+      client.listSections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void positionSectionTest() throws Exception {
+    PositionSectionResponse expectedResponse =
+        PositionSectionResponse.newBuilder().setSection(Section.newBuilder().build()).build();
+    mockService.addResponse(expectedResponse);
+
+    PositionSectionRequest request =
+        PositionSectionRequest.newBuilder()
+            .setName(SectionName.of("[USER]", "[SECTION]").toString())
+            .build();
+
+    PositionSectionResponse actualResponse = client.positionSection(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void positionSectionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PositionSectionRequest request =
+          PositionSectionRequest.newBuilder()
+              .setName(SectionName.of("[USER]", "[SECTION]").toString())
+              .build();
+      client.positionSection(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSectionItemsTest() throws Exception {
+    SectionItem responsesElement = SectionItem.newBuilder().build();
+    ListSectionItemsResponse expectedResponse =
+        ListSectionItemsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSectionItems(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SectionName parent = SectionName.of("[USER]", "[SECTION]");
+
+    ListSectionItemsPagedResponse pagedListResponse = client.listSectionItems(parent);
+
+    List<SectionItem> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSectionItemsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSectionItemsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SectionName parent = SectionName.of("[USER]", "[SECTION]");
+      client.listSectionItems(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSectionItemsTest2() throws Exception {
+    SectionItem responsesElement = SectionItem.newBuilder().build();
+    ListSectionItemsResponse expectedResponse =
+        ListSectionItemsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSectionItems(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "users/user-9889/sections/section-9889";
+
+    ListSectionItemsPagedResponse pagedListResponse = client.listSectionItems(parent);
+
+    List<SectionItem> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSectionItemsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSectionItemsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "users/user-9889/sections/section-9889";
+      client.listSectionItems(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void moveSectionItemTest() throws Exception {
+    MoveSectionItemResponse expectedResponse =
+        MoveSectionItemResponse.newBuilder()
+            .setSectionItem(SectionItem.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SectionItemName name = SectionItemName.of("[USER]", "[SECTION]", "[ITEM]");
+    SectionName targetSection = SectionName.of("[USER]", "[SECTION]");
+
+    MoveSectionItemResponse actualResponse = client.moveSectionItem(name, targetSection);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void moveSectionItemExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SectionItemName name = SectionItemName.of("[USER]", "[SECTION]", "[ITEM]");
+      SectionName targetSection = SectionName.of("[USER]", "[SECTION]");
+      client.moveSectionItem(name, targetSection);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void moveSectionItemTest2() throws Exception {
+    MoveSectionItemResponse expectedResponse =
+        MoveSectionItemResponse.newBuilder()
+            .setSectionItem(SectionItem.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SectionItemName name = SectionItemName.of("[USER]", "[SECTION]", "[ITEM]");
+    String targetSection = "targetSection-20778988";
+
+    MoveSectionItemResponse actualResponse = client.moveSectionItem(name, targetSection);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void moveSectionItemExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SectionItemName name = SectionItemName.of("[USER]", "[SECTION]", "[ITEM]");
+      String targetSection = "targetSection-20778988";
+      client.moveSectionItem(name, targetSection);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void moveSectionItemTest3() throws Exception {
+    MoveSectionItemResponse expectedResponse =
+        MoveSectionItemResponse.newBuilder()
+            .setSectionItem(SectionItem.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "users/user-3436/sections/section-3436/items/item-3436";
+    SectionName targetSection = SectionName.of("[USER]", "[SECTION]");
+
+    MoveSectionItemResponse actualResponse = client.moveSectionItem(name, targetSection);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void moveSectionItemExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "users/user-3436/sections/section-3436/items/item-3436";
+      SectionName targetSection = SectionName.of("[USER]", "[SECTION]");
+      client.moveSectionItem(name, targetSection);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void moveSectionItemTest4() throws Exception {
+    MoveSectionItemResponse expectedResponse =
+        MoveSectionItemResponse.newBuilder()
+            .setSectionItem(SectionItem.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "users/user-3436/sections/section-3436/items/item-3436";
+    String targetSection = "targetSection-20778988";
+
+    MoveSectionItemResponse actualResponse = client.moveSectionItem(name, targetSection);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void moveSectionItemExceptionTest4() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "users/user-3436/sections/section-3436/items/item-3436";
+      String targetSection = "targetSection-20778988";
+      client.moveSectionItem(name, targetSection);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

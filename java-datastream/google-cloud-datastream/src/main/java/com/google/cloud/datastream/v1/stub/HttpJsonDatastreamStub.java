@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,6 +72,7 @@ import com.google.cloud.datastream.v1.LookupStreamObjectRequest;
 import com.google.cloud.datastream.v1.OperationMetadata;
 import com.google.cloud.datastream.v1.PrivateConnection;
 import com.google.cloud.datastream.v1.Route;
+import com.google.cloud.datastream.v1.RunStreamRequest;
 import com.google.cloud.datastream.v1.StartBackfillJobRequest;
 import com.google.cloud.datastream.v1.StartBackfillJobResponse;
 import com.google.cloud.datastream.v1.StopBackfillJobRequest;
@@ -561,6 +562,45 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<RunStreamRequest, Operation> runStreamMethodDescriptor =
+      ApiMethodDescriptor.<RunStreamRequest, Operation>newBuilder()
+          .setFullMethodName("google.cloud.datastream.v1.Datastream/RunStream")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<RunStreamRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/streams/*}:run",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<RunStreamRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<RunStreamRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().clearName().build(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Operation>newBuilder()
+                  .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .setOperationSnapshotFactory(
+              (RunStreamRequest request, Operation response) ->
+                  HttpJsonOperationSnapshot.create(response))
+          .build();
+
   private static final ApiMethodDescriptor<GetStreamObjectRequest, StreamObject>
       getStreamObjectMethodDescriptor =
           ApiMethodDescriptor.<GetStreamObjectRequest, StreamObject>newBuilder()
@@ -804,6 +844,8 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             serializer.putQueryParam(
                                 fields, "privateConnectionId", request.getPrivateConnectionId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -1190,6 +1232,9 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
   private final UnaryCallable<DeleteStreamRequest, Operation> deleteStreamCallable;
   private final OperationCallable<DeleteStreamRequest, Empty, OperationMetadata>
       deleteStreamOperationCallable;
+  private final UnaryCallable<RunStreamRequest, Operation> runStreamCallable;
+  private final OperationCallable<RunStreamRequest, Stream, OperationMetadata>
+      runStreamOperationCallable;
   private final UnaryCallable<GetStreamObjectRequest, StreamObject> getStreamObjectCallable;
   private final UnaryCallable<LookupStreamObjectRequest, StreamObject> lookupStreamObjectCallable;
   private final UnaryCallable<ListStreamObjectsRequest, ListStreamObjectsResponse>
@@ -1314,6 +1359,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetConnectionProfileRequest, ConnectionProfile>
         getConnectionProfileTransportSettings =
@@ -1326,6 +1372,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateConnectionProfileRequest, Operation>
         createConnectionProfileTransportSettings =
@@ -1338,6 +1385,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateConnectionProfileRequest, Operation>
         updateConnectionProfileTransportSettings =
@@ -1364,6 +1412,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DiscoverConnectionProfileRequest, DiscoverConnectionProfileResponse>
         discoverConnectionProfileTransportSettings =
@@ -1377,6 +1426,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListStreamsRequest, ListStreamsResponse> listStreamsTransportSettings =
         HttpJsonCallSettings.<ListStreamsRequest, ListStreamsResponse>newBuilder()
@@ -1388,6 +1438,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetStreamRequest, Stream> getStreamTransportSettings =
         HttpJsonCallSettings.<GetStreamRequest, Stream>newBuilder()
@@ -1399,6 +1450,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateStreamRequest, Operation> createStreamTransportSettings =
         HttpJsonCallSettings.<CreateStreamRequest, Operation>newBuilder()
@@ -1410,6 +1462,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateStreamRequest, Operation> updateStreamTransportSettings =
         HttpJsonCallSettings.<UpdateStreamRequest, Operation>newBuilder()
@@ -1432,6 +1485,19 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<RunStreamRequest, Operation> runStreamTransportSettings =
+        HttpJsonCallSettings.<RunStreamRequest, Operation>newBuilder()
+            .setMethodDescriptor(runStreamMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetStreamObjectRequest, StreamObject> getStreamObjectTransportSettings =
         HttpJsonCallSettings.<GetStreamObjectRequest, StreamObject>newBuilder()
@@ -1443,6 +1509,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<LookupStreamObjectRequest, StreamObject>
         lookupStreamObjectTransportSettings =
@@ -1455,6 +1522,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListStreamObjectsRequest, ListStreamObjectsResponse>
         listStreamObjectsTransportSettings =
@@ -1467,6 +1535,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<StartBackfillJobRequest, StartBackfillJobResponse>
         startBackfillJobTransportSettings =
@@ -1479,6 +1548,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("object", String.valueOf(request.getObject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getObject())
                 .build();
     HttpJsonCallSettings<StopBackfillJobRequest, StopBackfillJobResponse>
         stopBackfillJobTransportSettings =
@@ -1491,6 +1561,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("object", String.valueOf(request.getObject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getObject())
                 .build();
     HttpJsonCallSettings<FetchStaticIpsRequest, FetchStaticIpsResponse>
         fetchStaticIpsTransportSettings =
@@ -1503,6 +1574,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreatePrivateConnectionRequest, Operation>
         createPrivateConnectionTransportSettings =
@@ -1515,6 +1587,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPrivateConnectionRequest, PrivateConnection>
         getPrivateConnectionTransportSettings =
@@ -1527,6 +1600,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
         listPrivateConnectionsTransportSettings =
@@ -1540,6 +1614,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeletePrivateConnectionRequest, Operation>
         deletePrivateConnectionTransportSettings =
@@ -1552,6 +1627,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateRouteRequest, Operation> createRouteTransportSettings =
         HttpJsonCallSettings.<CreateRouteRequest, Operation>newBuilder()
@@ -1563,6 +1639,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetRouteRequest, Route> getRouteTransportSettings =
         HttpJsonCallSettings.<GetRouteRequest, Route>newBuilder()
@@ -1574,6 +1651,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRoutesRequest, ListRoutesResponse> listRoutesTransportSettings =
         HttpJsonCallSettings.<ListRoutesRequest, ListRoutesResponse>newBuilder()
@@ -1585,6 +1663,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteRouteRequest, Operation> deleteRouteTransportSettings =
         HttpJsonCallSettings.<DeleteRouteRequest, Operation>newBuilder()
@@ -1596,6 +1675,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -1708,6 +1788,15 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
         callableFactory.createOperationCallable(
             deleteStreamTransportSettings,
             settings.deleteStreamOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.runStreamCallable =
+        callableFactory.createUnaryCallable(
+            runStreamTransportSettings, settings.runStreamSettings(), clientContext);
+    this.runStreamOperationCallable =
+        callableFactory.createOperationCallable(
+            runStreamTransportSettings,
+            settings.runStreamOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.getStreamObjectCallable =
@@ -1832,6 +1921,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
     methodDescriptors.add(createStreamMethodDescriptor);
     methodDescriptors.add(updateStreamMethodDescriptor);
     methodDescriptors.add(deleteStreamMethodDescriptor);
+    methodDescriptors.add(runStreamMethodDescriptor);
     methodDescriptors.add(getStreamObjectMethodDescriptor);
     methodDescriptors.add(lookupStreamObjectMethodDescriptor);
     methodDescriptors.add(listStreamObjectsMethodDescriptor);
@@ -1961,6 +2051,17 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
   public OperationCallable<DeleteStreamRequest, Empty, OperationMetadata>
       deleteStreamOperationCallable() {
     return deleteStreamOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunStreamRequest, Operation> runStreamCallable() {
+    return runStreamCallable;
+  }
+
+  @Override
+  public OperationCallable<RunStreamRequest, Stream, OperationMetadata>
+      runStreamOperationCallable() {
+    return runStreamOperationCallable;
   }
 
   @Override

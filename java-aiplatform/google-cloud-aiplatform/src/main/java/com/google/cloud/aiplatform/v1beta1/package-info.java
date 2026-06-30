@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,8 +93,30 @@
  *   EvaluateInstancesRequest request =
  *       EvaluateInstancesRequest.newBuilder()
  *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+ *           .addAllMetrics(new ArrayList<Metric>())
+ *           .addAllMetricSources(new ArrayList<MetricSource>())
+ *           .setInstance(EvaluationInstance.newBuilder().build())
+ *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
  *           .build();
  *   EvaluateInstancesResponse response = evaluationServiceClient.evaluateInstances(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ExampleStoreServiceClient =======================
+ *
+ * <p>Service Description: A service for managing and retrieving few-shot examples.
+ *
+ * <p>Sample for ExampleStoreServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ExampleStoreServiceClient exampleStoreServiceClient = ExampleStoreServiceClient.create()) {
+ *   ExampleStoreName name = ExampleStoreName.of("[PROJECT]", "[LOCATION]", "[EXAMPLE_STORE]");
+ *   ExampleStore response = exampleStoreServiceClient.getExampleStore(name);
  * }
  * }</pre>
  *
@@ -240,6 +262,44 @@
  * }
  * }</pre>
  *
+ * <p>======================= GenAiCacheServiceClient =======================
+ *
+ * <p>Service Description: Service for managing Vertex AI's CachedContent resource.
+ *
+ * <p>Sample for GenAiCacheServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (GenAiCacheServiceClient genAiCacheServiceClient = GenAiCacheServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   CachedContent cachedContent = CachedContent.newBuilder().build();
+ *   CachedContent response = genAiCacheServiceClient.createCachedContent(parent, cachedContent);
+ * }
+ * }</pre>
+ *
+ * <p>======================= GenAiTuningServiceClient =======================
+ *
+ * <p>Service Description: A service for creating and managing GenAI Tuning Jobs.
+ *
+ * <p>Sample for GenAiTuningServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (GenAiTuningServiceClient genAiTuningServiceClient = GenAiTuningServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   TuningJob tuningJob = TuningJob.newBuilder().build();
+ *   TuningJob response = genAiTuningServiceClient.createTuningJob(parent, tuningJob);
+ * }
+ * }</pre>
+ *
  * <p>======================= IndexEndpointServiceClient =======================
  *
  * <p>Service Description: A service for managing Vertex AI's IndexEndpoints.
@@ -339,6 +399,24 @@
  *           .setReturnFullDatapoint(true)
  *           .build();
  *   FindNeighborsResponse response = matchServiceClient.findNeighbors(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= MemoryBankServiceClient =======================
+ *
+ * <p>Service Description: A service for managing memories for LLM applications.
+ *
+ * <p>Sample for MemoryBankServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (MemoryBankServiceClient memoryBankServiceClient = MemoryBankServiceClient.create()) {
+ *   MemoryName name = MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
+ *   Memory response = memoryBankServiceClient.getMemory(name);
  * }
  * }</pre>
  *
@@ -454,6 +532,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= OnlineEvaluatorServiceClient =======================
+ *
+ * <p>Service Description: This service is used to create and manage Vertex AI OnlineEvaluators.
+ *
+ * <p>Sample for OnlineEvaluatorServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (OnlineEvaluatorServiceClient onlineEvaluatorServiceClient =
+ *     OnlineEvaluatorServiceClient.create()) {
+ *   OnlineEvaluatorName name =
+ *       OnlineEvaluatorName.of("[PROJECT]", "[LOCATION]", "[ONLINE_EVALUATOR]");
+ *   OnlineEvaluator response = onlineEvaluatorServiceClient.getOnlineEvaluator(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= PersistentResourceServiceClient =======================
  *
  * <p>Service Description: A service for managing Vertex AI's machine learning PersistentResource.
@@ -537,9 +635,32 @@
  *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
  *                   .toString())
  *           .setInput(Struct.newBuilder().build())
+ *           .setClassMethod("classMethod-937857927")
  *           .build();
  *   QueryReasoningEngineResponse response =
  *       reasoningEngineExecutionServiceClient.queryReasoningEngine(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ReasoningEngineRuntimeRevisionServiceClient =======================
+ *
+ * <p>Service Description: Manages Vertex AI's Reasoning Engine Revisions.
+ *
+ * <p>Sample for ReasoningEngineRuntimeRevisionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ReasoningEngineRuntimeRevisionServiceClient reasoningEngineRuntimeRevisionServiceClient =
+ *     ReasoningEngineRuntimeRevisionServiceClient.create()) {
+ *   ReasoningEngineRuntimeRevisionName name =
+ *       ReasoningEngineRuntimeRevisionName.of(
+ *           "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[RUNTIME_REVISION]");
+ *   ReasoningEngineRuntimeRevision response =
+ *       reasoningEngineRuntimeRevisionServiceClient.getReasoningEngineRuntimeRevision(name);
  * }
  * }</pre>
  *
@@ -580,6 +701,25 @@
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Schedule schedule = Schedule.newBuilder().build();
  *   Schedule response = scheduleServiceClient.createSchedule(parent, schedule);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SessionServiceClient =======================
+ *
+ * <p>Service Description: The service that manages Vertex Session related resources.
+ *
+ * <p>Sample for SessionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
+ *   SessionName name =
+ *       SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
+ *   Session response = sessionServiceClient.getSession(name);
  * }
  * }</pre>
  *

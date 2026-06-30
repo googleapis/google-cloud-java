@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -472,8 +472,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request
-                                          .toBuilder()
+                                      request.toBuilder()
                                           .clearDestinationParent()
                                           .clearName()
                                           .build(),
@@ -562,6 +561,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListBillingAccountsRequest, ListBillingAccountsResponse>
         listBillingAccountsTransportSettings =
@@ -587,6 +587,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateBillingAccountRequest, BillingAccount>
         createBillingAccountTransportSettings =
@@ -612,6 +613,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetProjectBillingInfoRequest, ProjectBillingInfo>
         getProjectBillingInfoTransportSettings =
@@ -624,6 +626,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateProjectBillingInfoRequest, ProjectBillingInfo>
         updateProjectBillingInfoTransportSettings =
@@ -647,6 +650,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -658,6 +662,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -670,6 +675,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     HttpJsonCallSettings<MoveBillingAccountRequest, BillingAccount>
         moveBillingAccountTransportSettings =
@@ -684,6 +690,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.getBillingAccountCallable =

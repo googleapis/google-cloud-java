@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServingConfigRequest, ServingConfig>
@@ -67,6 +68,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListServingConfigsRequest, ListServingConfigsResponse>
@@ -79,6 +81,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                   ProtoUtils.marshaller(ListServingConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServingConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<UpdateServingConfigRequest, ServingConfig>
@@ -155,6 +158,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListServingConfigsRequest, ListServingConfigsResponse>
         listServingConfigsTransportSettings =
@@ -166,6 +170,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.updateServingConfigCallable =

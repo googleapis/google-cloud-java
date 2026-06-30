@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,14 +17,17 @@
 package com.google.cloud.dlp.v2.stub;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListColumnDataProfilesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListConnectionsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListFileStoreDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListProjectDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListStoredInfoTypesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListTableDataProfilesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.SearchConnectionsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -37,6 +40,8 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.ColumnDataProfile;
+import com.google.privacy.dlp.v2.Connection;
+import com.google.privacy.dlp.v2.CreateConnectionRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -46,19 +51,25 @@ import com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
+import com.google.privacy.dlp.v2.DeleteConnectionRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
+import com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.DeleteTableDataProfileRequest;
 import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
+import com.google.privacy.dlp.v2.FileStoreDataProfile;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
+import com.google.privacy.dlp.v2.GetConnectionRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
+import com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
 import com.google.privacy.dlp.v2.GetProjectDataProfileRequest;
@@ -73,12 +84,16 @@ import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.ListColumnDataProfilesRequest;
 import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
+import com.google.privacy.dlp.v2.ListConnectionsRequest;
+import com.google.privacy.dlp.v2.ListConnectionsResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListInfoTypesResponse;
 import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
@@ -96,8 +111,11 @@ import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
+import com.google.privacy.dlp.v2.SearchConnectionsRequest;
+import com.google.privacy.dlp.v2.SearchConnectionsResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.TableDataProfile;
+import com.google.privacy.dlp.v2.UpdateConnectionRequest;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
@@ -127,6 +145,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(InspectContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(InspectContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RedactImageRequest, RedactImageResponse>
@@ -137,6 +156,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(RedactImageRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RedactImageResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeidentifyContentRequest, DeidentifyContentResponse>
@@ -148,6 +168,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(DeidentifyContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DeidentifyContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReidentifyContentRequest, ReidentifyContentResponse>
@@ -159,6 +180,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ReidentifyContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReidentifyContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListInfoTypesRequest, ListInfoTypesResponse>
@@ -170,6 +192,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListInfoTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInfoTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateInspectTemplateRequest, InspectTemplate>
@@ -180,6 +203,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateInspectTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InspectTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateInspectTemplateRequest, InspectTemplate>
@@ -190,6 +214,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateInspectTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InspectTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInspectTemplateRequest, InspectTemplate>
@@ -200,6 +225,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetInspectTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InspectTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListInspectTemplatesRequest, ListInspectTemplatesResponse>
@@ -211,6 +237,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListInspectTemplatesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInspectTemplatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteInspectTemplateRequest, Empty>
@@ -221,6 +248,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteInspectTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDeidentifyTemplateRequest, DeidentifyTemplate>
@@ -231,6 +259,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDeidentifyTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeidentifyTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDeidentifyTemplateRequest, DeidentifyTemplate>
@@ -241,6 +270,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDeidentifyTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeidentifyTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDeidentifyTemplateRequest, DeidentifyTemplate>
@@ -251,6 +281,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDeidentifyTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeidentifyTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -264,6 +295,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListDeidentifyTemplatesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeidentifyTemplatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDeidentifyTemplateRequest, Empty>
@@ -274,6 +306,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDeidentifyTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateJobTriggerRequest, JobTrigger>
@@ -284,6 +317,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobTrigger.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateJobTriggerRequest, JobTrigger>
@@ -294,6 +328,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobTrigger.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<HybridInspectJobTriggerRequest, HybridInspectResponse>
@@ -305,6 +340,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(HybridInspectJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(HybridInspectResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetJobTriggerRequest, JobTrigger>
@@ -315,6 +351,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobTrigger.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListJobTriggersRequest, ListJobTriggersResponse>
@@ -326,6 +363,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListJobTriggersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListJobTriggersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteJobTriggerRequest, Empty>
@@ -336,6 +374,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ActivateJobTriggerRequest, DlpJob>
@@ -346,6 +385,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ActivateJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DlpJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDiscoveryConfigRequest, DiscoveryConfig>
@@ -356,6 +396,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDiscoveryConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DiscoveryConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDiscoveryConfigRequest, DiscoveryConfig>
@@ -366,6 +407,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDiscoveryConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DiscoveryConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDiscoveryConfigRequest, DiscoveryConfig>
@@ -376,6 +418,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDiscoveryConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DiscoveryConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
@@ -387,6 +430,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListDiscoveryConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDiscoveryConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDiscoveryConfigRequest, Empty>
@@ -397,6 +441,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDiscoveryConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDlpJobRequest, DlpJob> createDlpJobMethodDescriptor =
@@ -405,6 +450,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
           .setFullMethodName("google.privacy.dlp.v2.DlpService/CreateDlpJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateDlpJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(DlpJob.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListDlpJobsRequest, ListDlpJobsResponse>
@@ -415,6 +461,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListDlpJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDlpJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDlpJobRequest, DlpJob> getDlpJobMethodDescriptor =
@@ -423,6 +470,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
           .setFullMethodName("google.privacy.dlp.v2.DlpService/GetDlpJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDlpJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(DlpJob.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteDlpJobRequest, Empty> deleteDlpJobMethodDescriptor =
@@ -431,6 +479,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
           .setFullMethodName("google.privacy.dlp.v2.DlpService/DeleteDlpJob")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteDlpJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CancelDlpJobRequest, Empty> cancelDlpJobMethodDescriptor =
@@ -439,6 +488,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
           .setFullMethodName("google.privacy.dlp.v2.DlpService/CancelDlpJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CancelDlpJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateStoredInfoTypeRequest, StoredInfoType>
@@ -449,6 +499,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateStoredInfoTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(StoredInfoType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateStoredInfoTypeRequest, StoredInfoType>
@@ -459,6 +510,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateStoredInfoTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(StoredInfoType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetStoredInfoTypeRequest, StoredInfoType>
@@ -469,6 +521,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetStoredInfoTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(StoredInfoType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>
@@ -480,6 +533,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListStoredInfoTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListStoredInfoTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteStoredInfoTypeRequest, Empty>
@@ -490,6 +544,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteStoredInfoTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -503,6 +558,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListProjectDataProfilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProjectDataProfilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTableDataProfilesRequest, ListTableDataProfilesResponse>
@@ -514,6 +570,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListTableDataProfilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTableDataProfilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -527,6 +584,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListColumnDataProfilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListColumnDataProfilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProjectDataProfileRequest, ProjectDataProfile>
@@ -537,6 +595,44 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetProjectDataProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProjectDataProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+      listFileStoreDataProfilesMethodDescriptor =
+          MethodDescriptor
+              .<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/ListFileStoreDataProfiles")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListFileStoreDataProfilesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListFileStoreDataProfilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileMethodDescriptor =
+          MethodDescriptor.<GetFileStoreDataProfileRequest, FileStoreDataProfile>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/GetFileStoreDataProfile")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetFileStoreDataProfileRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FileStoreDataProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileMethodDescriptor =
+          MethodDescriptor.<DeleteFileStoreDataProfileRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/DeleteFileStoreDataProfile")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteFileStoreDataProfileRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTableDataProfileRequest, TableDataProfile>
@@ -547,6 +643,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTableDataProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TableDataProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetColumnDataProfileRequest, ColumnDataProfile>
@@ -557,6 +654,18 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetColumnDataProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ColumnDataProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteTableDataProfileRequest, Empty>
+      deleteTableDataProfileMethodDescriptor =
+          MethodDescriptor.<DeleteTableDataProfileRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/DeleteTableDataProfile")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteTableDataProfileRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<HybridInspectDlpJobRequest, HybridInspectResponse>
@@ -568,6 +677,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(HybridInspectDlpJobRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(HybridInspectResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FinishDlpJobRequest, Empty> finishDlpJobMethodDescriptor =
@@ -576,7 +686,76 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
           .setFullMethodName("google.privacy.dlp.v2.DlpService/FinishDlpJob")
           .setRequestMarshaller(ProtoUtils.marshaller(FinishDlpJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<CreateConnectionRequest, Connection>
+      createConnectionMethodDescriptor =
+          MethodDescriptor.<CreateConnectionRequest, Connection>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/CreateConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetConnectionRequest, Connection>
+      getConnectionMethodDescriptor =
+          MethodDescriptor.<GetConnectionRequest, Connection>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/GetConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListConnectionsRequest, ListConnectionsResponse>
+      listConnectionsMethodDescriptor =
+          MethodDescriptor.<ListConnectionsRequest, ListConnectionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/ListConnections")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListConnectionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<SearchConnectionsRequest, SearchConnectionsResponse>
+      searchConnectionsMethodDescriptor =
+          MethodDescriptor.<SearchConnectionsRequest, SearchConnectionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/SearchConnections")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SearchConnectionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteConnectionRequest, Empty>
+      deleteConnectionMethodDescriptor =
+          MethodDescriptor.<DeleteConnectionRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/DeleteConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateConnectionRequest, Connection>
+      updateConnectionMethodDescriptor =
+          MethodDescriptor.<UpdateConnectionRequest, Connection>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/UpdateConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private final UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable;
   private final UnaryCallable<RedactImageRequest, RedactImageResponse> redactImageCallable;
@@ -661,13 +840,35 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
       listColumnDataProfilesPagedCallable;
   private final UnaryCallable<GetProjectDataProfileRequest, ProjectDataProfile>
       getProjectDataProfileCallable;
+  private final UnaryCallable<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+      listFileStoreDataProfilesCallable;
+  private final UnaryCallable<
+          ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesPagedResponse>
+      listFileStoreDataProfilesPagedCallable;
+  private final UnaryCallable<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileCallable;
+  private final UnaryCallable<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileCallable;
   private final UnaryCallable<GetTableDataProfileRequest, TableDataProfile>
       getTableDataProfileCallable;
   private final UnaryCallable<GetColumnDataProfileRequest, ColumnDataProfile>
       getColumnDataProfileCallable;
+  private final UnaryCallable<DeleteTableDataProfileRequest, Empty> deleteTableDataProfileCallable;
   private final UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
       hybridInspectDlpJobCallable;
   private final UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable;
+  private final UnaryCallable<CreateConnectionRequest, Connection> createConnectionCallable;
+  private final UnaryCallable<GetConnectionRequest, Connection> getConnectionCallable;
+  private final UnaryCallable<ListConnectionsRequest, ListConnectionsResponse>
+      listConnectionsCallable;
+  private final UnaryCallable<ListConnectionsRequest, ListConnectionsPagedResponse>
+      listConnectionsPagedCallable;
+  private final UnaryCallable<SearchConnectionsRequest, SearchConnectionsResponse>
+      searchConnectionsCallable;
+  private final UnaryCallable<SearchConnectionsRequest, SearchConnectionsPagedResponse>
+      searchConnectionsPagedCallable;
+  private final UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable;
+  private final UnaryCallable<UpdateConnectionRequest, Connection> updateConnectionCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -721,6 +922,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<RedactImageRequest, RedactImageResponse> redactImageTransportSettings =
         GrpcCallSettings.<RedactImageRequest, RedactImageResponse>newBuilder()
@@ -731,6 +933,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeidentifyContentRequest, DeidentifyContentResponse>
         deidentifyContentTransportSettings =
@@ -742,6 +945,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ReidentifyContentRequest, ReidentifyContentResponse>
         reidentifyContentTransportSettings =
@@ -753,6 +957,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListInfoTypesRequest, ListInfoTypesResponse> listInfoTypesTransportSettings =
         GrpcCallSettings.<ListInfoTypesRequest, ListInfoTypesResponse>newBuilder()
@@ -774,6 +979,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateInspectTemplateRequest, InspectTemplate>
         updateInspectTemplateTransportSettings =
@@ -785,6 +991,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetInspectTemplateRequest, InspectTemplate>
         getInspectTemplateTransportSettings =
@@ -796,6 +1003,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListInspectTemplatesRequest, ListInspectTemplatesResponse>
         listInspectTemplatesTransportSettings =
@@ -807,6 +1015,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteInspectTemplateRequest, Empty> deleteInspectTemplateTransportSettings =
         GrpcCallSettings.<DeleteInspectTemplateRequest, Empty>newBuilder()
@@ -817,6 +1026,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDeidentifyTemplateRequest, DeidentifyTemplate>
         createDeidentifyTemplateTransportSettings =
@@ -828,6 +1038,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateDeidentifyTemplateRequest, DeidentifyTemplate>
         updateDeidentifyTemplateTransportSettings =
@@ -839,6 +1050,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetDeidentifyTemplateRequest, DeidentifyTemplate>
         getDeidentifyTemplateTransportSettings =
@@ -850,6 +1062,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse>
         listDeidentifyTemplatesTransportSettings =
@@ -862,6 +1075,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteDeidentifyTemplateRequest, Empty>
         deleteDeidentifyTemplateTransportSettings =
@@ -873,6 +1087,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateJobTriggerRequest, JobTrigger> createJobTriggerTransportSettings =
         GrpcCallSettings.<CreateJobTriggerRequest, JobTrigger>newBuilder()
@@ -883,6 +1098,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerTransportSettings =
         GrpcCallSettings.<UpdateJobTriggerRequest, JobTrigger>newBuilder()
@@ -893,6 +1109,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<HybridInspectJobTriggerRequest, HybridInspectResponse>
         hybridInspectJobTriggerTransportSettings =
@@ -904,6 +1121,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetJobTriggerRequest, JobTrigger> getJobTriggerTransportSettings =
         GrpcCallSettings.<GetJobTriggerRequest, JobTrigger>newBuilder()
@@ -914,6 +1132,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListJobTriggersRequest, ListJobTriggersResponse>
         listJobTriggersTransportSettings =
@@ -925,6 +1144,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteJobTriggerRequest, Empty> deleteJobTriggerTransportSettings =
         GrpcCallSettings.<DeleteJobTriggerRequest, Empty>newBuilder()
@@ -935,6 +1155,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ActivateJobTriggerRequest, DlpJob> activateJobTriggerTransportSettings =
         GrpcCallSettings.<ActivateJobTriggerRequest, DlpJob>newBuilder()
@@ -945,6 +1166,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDiscoveryConfigRequest, DiscoveryConfig>
         createDiscoveryConfigTransportSettings =
@@ -956,6 +1178,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateDiscoveryConfigRequest, DiscoveryConfig>
         updateDiscoveryConfigTransportSettings =
@@ -967,6 +1190,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetDiscoveryConfigRequest, DiscoveryConfig>
         getDiscoveryConfigTransportSettings =
@@ -978,6 +1202,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
         listDiscoveryConfigsTransportSettings =
@@ -989,6 +1214,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteDiscoveryConfigRequest, Empty> deleteDiscoveryConfigTransportSettings =
         GrpcCallSettings.<DeleteDiscoveryConfigRequest, Empty>newBuilder()
@@ -999,6 +1225,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDlpJobRequest, DlpJob> createDlpJobTransportSettings =
         GrpcCallSettings.<CreateDlpJobRequest, DlpJob>newBuilder()
@@ -1009,6 +1236,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListDlpJobsRequest, ListDlpJobsResponse> listDlpJobsTransportSettings =
         GrpcCallSettings.<ListDlpJobsRequest, ListDlpJobsResponse>newBuilder()
@@ -1019,6 +1247,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetDlpJobRequest, DlpJob> getDlpJobTransportSettings =
         GrpcCallSettings.<GetDlpJobRequest, DlpJob>newBuilder()
@@ -1029,6 +1258,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteDlpJobRequest, Empty> deleteDlpJobTransportSettings =
         GrpcCallSettings.<DeleteDlpJobRequest, Empty>newBuilder()
@@ -1039,6 +1269,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CancelDlpJobRequest, Empty> cancelDlpJobTransportSettings =
         GrpcCallSettings.<CancelDlpJobRequest, Empty>newBuilder()
@@ -1049,6 +1280,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateStoredInfoTypeRequest, StoredInfoType>
         createStoredInfoTypeTransportSettings =
@@ -1060,6 +1292,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateStoredInfoTypeRequest, StoredInfoType>
         updateStoredInfoTypeTransportSettings =
@@ -1071,6 +1304,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetStoredInfoTypeRequest, StoredInfoType> getStoredInfoTypeTransportSettings =
         GrpcCallSettings.<GetStoredInfoTypeRequest, StoredInfoType>newBuilder()
@@ -1081,6 +1315,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>
         listStoredInfoTypesTransportSettings =
@@ -1092,6 +1327,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeTransportSettings =
         GrpcCallSettings.<DeleteStoredInfoTypeRequest, Empty>newBuilder()
@@ -1102,6 +1338,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListProjectDataProfilesRequest, ListProjectDataProfilesResponse>
         listProjectDataProfilesTransportSettings =
@@ -1114,6 +1351,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListTableDataProfilesRequest, ListTableDataProfilesResponse>
         listTableDataProfilesTransportSettings =
@@ -1126,6 +1364,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListColumnDataProfilesRequest, ListColumnDataProfilesResponse>
         listColumnDataProfilesTransportSettings =
@@ -1138,6 +1377,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetProjectDataProfileRequest, ProjectDataProfile>
         getProjectDataProfileTransportSettings =
@@ -1149,6 +1389,44 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+        listFileStoreDataProfilesTransportSettings =
+            GrpcCallSettings
+                .<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>newBuilder()
+                .setMethodDescriptor(listFileStoreDataProfilesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+        getFileStoreDataProfileTransportSettings =
+            GrpcCallSettings.<GetFileStoreDataProfileRequest, FileStoreDataProfile>newBuilder()
+                .setMethodDescriptor(getFileStoreDataProfileMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<DeleteFileStoreDataProfileRequest, Empty>
+        deleteFileStoreDataProfileTransportSettings =
+            GrpcCallSettings.<DeleteFileStoreDataProfileRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteFileStoreDataProfileMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetTableDataProfileRequest, TableDataProfile>
         getTableDataProfileTransportSettings =
@@ -1160,6 +1438,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetColumnDataProfileRequest, ColumnDataProfile>
         getColumnDataProfileTransportSettings =
@@ -1171,7 +1450,19 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
+    GrpcCallSettings<DeleteTableDataProfileRequest, Empty> deleteTableDataProfileTransportSettings =
+        GrpcCallSettings.<DeleteTableDataProfileRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTableDataProfileMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     GrpcCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
         hybridInspectDlpJobTransportSettings =
             GrpcCallSettings.<HybridInspectDlpJobRequest, HybridInspectResponse>newBuilder()
@@ -1182,6 +1473,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<FinishDlpJobRequest, Empty> finishDlpJobTransportSettings =
         GrpcCallSettings.<FinishDlpJobRequest, Empty>newBuilder()
@@ -1192,6 +1484,75 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<CreateConnectionRequest, Connection> createConnectionTransportSettings =
+        GrpcCallSettings.<CreateConnectionRequest, Connection>newBuilder()
+            .setMethodDescriptor(createConnectionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<GetConnectionRequest, Connection> getConnectionTransportSettings =
+        GrpcCallSettings.<GetConnectionRequest, Connection>newBuilder()
+            .setMethodDescriptor(getConnectionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListConnectionsRequest, ListConnectionsResponse>
+        listConnectionsTransportSettings =
+            GrpcCallSettings.<ListConnectionsRequest, ListConnectionsResponse>newBuilder()
+                .setMethodDescriptor(listConnectionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<SearchConnectionsRequest, SearchConnectionsResponse>
+        searchConnectionsTransportSettings =
+            GrpcCallSettings.<SearchConnectionsRequest, SearchConnectionsResponse>newBuilder()
+                .setMethodDescriptor(searchConnectionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<DeleteConnectionRequest, Empty> deleteConnectionTransportSettings =
+        GrpcCallSettings.<DeleteConnectionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteConnectionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<UpdateConnectionRequest, Connection> updateConnectionTransportSettings =
+        GrpcCallSettings.<UpdateConnectionRequest, Connection>newBuilder()
+            .setMethodDescriptor(updateConnectionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.inspectContentCallable =
@@ -1414,6 +1775,26 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             getProjectDataProfileTransportSettings,
             settings.getProjectDataProfileSettings(),
             clientContext);
+    this.listFileStoreDataProfilesCallable =
+        callableFactory.createUnaryCallable(
+            listFileStoreDataProfilesTransportSettings,
+            settings.listFileStoreDataProfilesSettings(),
+            clientContext);
+    this.listFileStoreDataProfilesPagedCallable =
+        callableFactory.createPagedCallable(
+            listFileStoreDataProfilesTransportSettings,
+            settings.listFileStoreDataProfilesSettings(),
+            clientContext);
+    this.getFileStoreDataProfileCallable =
+        callableFactory.createUnaryCallable(
+            getFileStoreDataProfileTransportSettings,
+            settings.getFileStoreDataProfileSettings(),
+            clientContext);
+    this.deleteFileStoreDataProfileCallable =
+        callableFactory.createUnaryCallable(
+            deleteFileStoreDataProfileTransportSettings,
+            settings.deleteFileStoreDataProfileSettings(),
+            clientContext);
     this.getTableDataProfileCallable =
         callableFactory.createUnaryCallable(
             getTableDataProfileTransportSettings,
@@ -1424,6 +1805,11 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             getColumnDataProfileTransportSettings,
             settings.getColumnDataProfileSettings(),
             clientContext);
+    this.deleteTableDataProfileCallable =
+        callableFactory.createUnaryCallable(
+            deleteTableDataProfileTransportSettings,
+            settings.deleteTableDataProfileSettings(),
+            clientContext);
     this.hybridInspectDlpJobCallable =
         callableFactory.createUnaryCallable(
             hybridInspectDlpJobTransportSettings,
@@ -1432,6 +1818,34 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     this.finishDlpJobCallable =
         callableFactory.createUnaryCallable(
             finishDlpJobTransportSettings, settings.finishDlpJobSettings(), clientContext);
+    this.createConnectionCallable =
+        callableFactory.createUnaryCallable(
+            createConnectionTransportSettings, settings.createConnectionSettings(), clientContext);
+    this.getConnectionCallable =
+        callableFactory.createUnaryCallable(
+            getConnectionTransportSettings, settings.getConnectionSettings(), clientContext);
+    this.listConnectionsCallable =
+        callableFactory.createUnaryCallable(
+            listConnectionsTransportSettings, settings.listConnectionsSettings(), clientContext);
+    this.listConnectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listConnectionsTransportSettings, settings.listConnectionsSettings(), clientContext);
+    this.searchConnectionsCallable =
+        callableFactory.createUnaryCallable(
+            searchConnectionsTransportSettings,
+            settings.searchConnectionsSettings(),
+            clientContext);
+    this.searchConnectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            searchConnectionsTransportSettings,
+            settings.searchConnectionsSettings(),
+            clientContext);
+    this.deleteConnectionCallable =
+        callableFactory.createUnaryCallable(
+            deleteConnectionTransportSettings, settings.deleteConnectionSettings(), clientContext);
+    this.updateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            updateConnectionTransportSettings, settings.updateConnectionSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1718,6 +2132,30 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   }
 
   @Override
+  public UnaryCallable<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+      listFileStoreDataProfilesCallable() {
+    return listFileStoreDataProfilesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesPagedResponse>
+      listFileStoreDataProfilesPagedCallable() {
+    return listFileStoreDataProfilesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileCallable() {
+    return getFileStoreDataProfileCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileCallable() {
+    return deleteFileStoreDataProfileCallable;
+  }
+
+  @Override
   public UnaryCallable<GetTableDataProfileRequest, TableDataProfile> getTableDataProfileCallable() {
     return getTableDataProfileCallable;
   }
@@ -1729,6 +2167,11 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   }
 
   @Override
+  public UnaryCallable<DeleteTableDataProfileRequest, Empty> deleteTableDataProfileCallable() {
+    return deleteTableDataProfileCallable;
+  }
+
+  @Override
   public UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
       hybridInspectDlpJobCallable() {
     return hybridInspectDlpJobCallable;
@@ -1737,6 +2180,49 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   @Override
   public UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable() {
     return finishDlpJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateConnectionRequest, Connection> createConnectionCallable() {
+    return createConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetConnectionRequest, Connection> getConnectionCallable() {
+    return getConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListConnectionsRequest, ListConnectionsResponse> listConnectionsCallable() {
+    return listConnectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListConnectionsRequest, ListConnectionsPagedResponse>
+      listConnectionsPagedCallable() {
+    return listConnectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchConnectionsRequest, SearchConnectionsResponse>
+      searchConnectionsCallable() {
+    return searchConnectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchConnectionsRequest, SearchConnectionsPagedResponse>
+      searchConnectionsPagedCallable() {
+    return searchConnectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable() {
+    return deleteConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateConnectionRequest, Connection> updateConnectionCallable() {
+    return updateConnectionCallable;
   }
 
   @Override

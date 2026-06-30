@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,7 +51,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -67,9 +69,45 @@ import javax.annotation.Generated;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * InstancesSettings instancesSettings = instancesSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for addAccessConfig:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * InstancesSettings.Builder instancesSettingsBuilder = InstancesSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * instancesSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -84,6 +122,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
   public OperationCallSettings<AddAccessConfigInstanceRequest, Operation, Operation>
       addAccessConfigOperationSettings() {
     return ((InstancesStubSettings) getStubSettings()).addAccessConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addNetworkInterface. */
+  public UnaryCallSettings<AddNetworkInterfaceInstanceRequest, Operation>
+      addNetworkInterfaceSettings() {
+    return ((InstancesStubSettings) getStubSettings()).addNetworkInterfaceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addNetworkInterface. */
+  public OperationCallSettings<AddNetworkInterfaceInstanceRequest, Operation, Operation>
+      addNetworkInterfaceOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).addNetworkInterfaceOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to addResourcePolicies. */
@@ -148,6 +198,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
   public OperationCallSettings<DeleteAccessConfigInstanceRequest, Operation, Operation>
       deleteAccessConfigOperationSettings() {
     return ((InstancesStubSettings) getStubSettings()).deleteAccessConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNetworkInterface. */
+  public UnaryCallSettings<DeleteNetworkInterfaceInstanceRequest, Operation>
+      deleteNetworkInterfaceSettings() {
+    return ((InstancesStubSettings) getStubSettings()).deleteNetworkInterfaceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNetworkInterface. */
+  public OperationCallSettings<DeleteNetworkInterfaceInstanceRequest, Operation, Operation>
+      deleteNetworkInterfaceOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).deleteNetworkInterfaceOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to detachDisk. */
@@ -246,6 +308,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
   public OperationCallSettings<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
       removeResourcePoliciesOperationSettings() {
     return ((InstancesStubSettings) getStubSettings()).removeResourcePoliciesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to reportHostAsFaulty. */
+  public UnaryCallSettings<ReportHostAsFaultyInstanceRequest, Operation>
+      reportHostAsFaultySettings() {
+    return ((InstancesStubSettings) getStubSettings()).reportHostAsFaultySettings();
+  }
+
+  /** Returns the object with the settings used for calls to reportHostAsFaulty. */
+  public OperationCallSettings<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+      reportHostAsFaultyOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).reportHostAsFaultyOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to reset. */
@@ -664,6 +738,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().addAccessConfigOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to addNetworkInterface. */
+    public UnaryCallSettings.Builder<AddNetworkInterfaceInstanceRequest, Operation>
+        addNetworkInterfaceSettings() {
+      return getStubSettingsBuilder().addNetworkInterfaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addNetworkInterface. */
+    public OperationCallSettings.Builder<AddNetworkInterfaceInstanceRequest, Operation, Operation>
+        addNetworkInterfaceOperationSettings() {
+      return getStubSettingsBuilder().addNetworkInterfaceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to addResourcePolicies. */
     public UnaryCallSettings.Builder<AddResourcePoliciesInstanceRequest, Operation>
         addResourcePoliciesSettings() {
@@ -726,6 +812,19 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     public OperationCallSettings.Builder<DeleteAccessConfigInstanceRequest, Operation, Operation>
         deleteAccessConfigOperationSettings() {
       return getStubSettingsBuilder().deleteAccessConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNetworkInterface. */
+    public UnaryCallSettings.Builder<DeleteNetworkInterfaceInstanceRequest, Operation>
+        deleteNetworkInterfaceSettings() {
+      return getStubSettingsBuilder().deleteNetworkInterfaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNetworkInterface. */
+    public OperationCallSettings.Builder<
+            DeleteNetworkInterfaceInstanceRequest, Operation, Operation>
+        deleteNetworkInterfaceOperationSettings() {
+      return getStubSettingsBuilder().deleteNetworkInterfaceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to detachDisk. */
@@ -828,6 +927,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
             RemoveResourcePoliciesInstanceRequest, Operation, Operation>
         removeResourcePoliciesOperationSettings() {
       return getStubSettingsBuilder().removeResourcePoliciesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to reportHostAsFaulty. */
+    public UnaryCallSettings.Builder<ReportHostAsFaultyInstanceRequest, Operation>
+        reportHostAsFaultySettings() {
+      return getStubSettingsBuilder().reportHostAsFaultySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to reportHostAsFaulty. */
+    public OperationCallSettings.Builder<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+        reportHostAsFaultyOperationSettings() {
+      return getStubSettingsBuilder().reportHostAsFaultyOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to reset. */

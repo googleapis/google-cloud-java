@@ -17,7 +17,6 @@
 from typing import List, Optional
 from glob import glob
 import json
-import requests
 
 class CloudClient:
   repo: str = None
@@ -41,6 +40,8 @@ class CloudClient:
   # For sorting, we want to sort by release level, then API pretty_name
   def __lt__(self, other):
     if self.release_level == other.release_level:
+      if self.title == other.title:
+        return (self.artifact_id or "") < (other.artifact_id or "")
       return self.title < other.title
 
     return other.release_level < self.release_level
@@ -88,16 +89,6 @@ def generate_table_contents(clients: List[CloudClient]) -> List[str]:
   return content_rows + [client_row(client) for client in clients]
 
 
-REPO_METADATA_URL_FORMAT = "https://raw.githubusercontent.com/{repo_slug}/main/.repo-metadata.json"
-
-def client_for_repo(repo_slug) -> Optional[CloudClient]:
-  url = REPO_METADATA_URL_FORMAT.format(repo_slug=repo_slug)
-  response = requests.get(url)
-  if response.status_code != requests.codes.ok:
-    return
-
-  return CloudClient(response.json())
-
 def client_for_module(module) -> Optional[CloudClient]:
   with open ('%s/.repo-metadata.json' % module, "r") as metadata_file:
     data = json.load(metadata_file)
@@ -115,39 +106,23 @@ REPO_EXCLUSION = [
   'java-grafeas',
   'java-notification',
   'java-shared-config',
-  'java-shared-dependencies'
+  'java-shared-dependencies',
+  'java-samples',
+  'java-showcase',
+  'java-vertexai'
 ]
 
 LIBRARIES_IN_MONOREPO = glob("java-*")
 
-def allowed_remote_repo(repo) -> bool:
-  return (repo['language'].lower() == 'java'
-          and repo['full_name'].startswith('googleapis/java-')
-          and repo['full_name'] not in
-          [ 'googleapis/%s' % repo for repo in (REPO_EXCLUSION + LIBRARIES_IN_MONOREPO)])
-
-def _fetch_repo_list(page):
-  url = "https://api.github.com/search/repositories"
-  response = requests.get(url, params = {
-    'q': 'org:googleapis is:public archived:false language:java',
-    'per_page': 100,
-    'page': page,
-  })
-  return response.json()['items']
-
 def all_clients() -> List[CloudClient]:
-  page = 1
   clients = []
-  while (True):
-    repos = _fetch_repo_list(page)
-    if not repos:
-      break
-    clients.extend([client_for_repo(repo['full_name']) for repo in repos if allowed_remote_repo(repo)])
-    page += 1
-  clients.extend([client_for_module(module) for module in LIBRARIES_IN_MONOREPO if
-                  module not in REPO_EXCLUSION])
+  for module in sorted(LIBRARIES_IN_MONOREPO):
+    if module not in REPO_EXCLUSION:
+      client = client_for_module(module)
+      if client:
+        clients.append(client)
 
-  return [client for client in clients if client]
+  return clients
 
 
 clients = sorted(all_clients())

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,6 +83,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNamespaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Namespace.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListNamespacesRequest, ListNamespacesResponse>
@@ -95,6 +96,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   ProtoUtils.marshaller(ListNamespacesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNamespacesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNamespaceRequest, Namespace>
@@ -105,6 +107,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   "google.cloud.servicedirectory.v1.RegistrationService/GetNamespace")
               .setRequestMarshaller(ProtoUtils.marshaller(GetNamespaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Namespace.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateNamespaceRequest, Namespace>
@@ -116,6 +119,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateNamespaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Namespace.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNamespaceRequest, Empty>
@@ -127,6 +131,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNamespaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServiceRequest, Service>
@@ -138,6 +143,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListServicesRequest, ListServicesResponse>
@@ -149,6 +155,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceRequest, Service> getServiceMethodDescriptor =
@@ -157,6 +164,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
           .setFullMethodName("google.cloud.servicedirectory.v1.RegistrationService/GetService")
           .setRequestMarshaller(ProtoUtils.marshaller(GetServiceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateServiceRequest, Service>
@@ -168,6 +176,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceRequest, Empty> deleteServiceMethodDescriptor =
@@ -176,6 +185,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
           .setFullMethodName("google.cloud.servicedirectory.v1.RegistrationService/DeleteService")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteServiceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateEndpointRequest, Endpoint>
@@ -187,6 +197,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEndpointsRequest, ListEndpointsResponse>
@@ -199,6 +210,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   ProtoUtils.marshaller(ListEndpointsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEndpointsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEndpointRequest, Endpoint> getEndpointMethodDescriptor =
@@ -207,6 +219,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
           .setFullMethodName("google.cloud.servicedirectory.v1.RegistrationService/GetEndpoint")
           .setRequestMarshaller(ProtoUtils.marshaller(GetEndpointRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateEndpointRequest, Endpoint>
@@ -218,6 +231,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEndpointRequest, Empty>
@@ -229,6 +243,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -237,6 +252,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
           .setFullMethodName("google.cloud.servicedirectory.v1.RegistrationService/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -245,6 +261,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
           .setFullMethodName("google.cloud.servicedirectory.v1.RegistrationService/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -257,6 +274,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -268,6 +286,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -276,6 +295,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateNamespaceRequest, Namespace> createNamespaceCallable;
@@ -361,6 +381,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListNamespacesRequest, ListNamespacesResponse>
         listNamespacesTransportSettings =
@@ -372,6 +393,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetNamespaceRequest, Namespace> getNamespaceTransportSettings =
         GrpcCallSettings.<GetNamespaceRequest, Namespace>newBuilder()
@@ -382,6 +404,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateNamespaceRequest, Namespace> updateNamespaceTransportSettings =
         GrpcCallSettings.<UpdateNamespaceRequest, Namespace>newBuilder()
@@ -402,6 +425,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateServiceRequest, Service> createServiceTransportSettings =
         GrpcCallSettings.<CreateServiceRequest, Service>newBuilder()
@@ -412,6 +436,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
         GrpcCallSettings.<ListServicesRequest, ListServicesResponse>newBuilder()
@@ -422,6 +447,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
         GrpcCallSettings.<GetServiceRequest, Service>newBuilder()
@@ -432,6 +458,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateServiceRequest, Service> updateServiceTransportSettings =
         GrpcCallSettings.<UpdateServiceRequest, Service>newBuilder()
@@ -452,6 +479,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEndpointRequest, Endpoint> createEndpointTransportSettings =
         GrpcCallSettings.<CreateEndpointRequest, Endpoint>newBuilder()
@@ -462,6 +490,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListEndpointsRequest, ListEndpointsResponse> listEndpointsTransportSettings =
         GrpcCallSettings.<ListEndpointsRequest, ListEndpointsResponse>newBuilder()
@@ -472,6 +501,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetEndpointRequest, Endpoint> getEndpointTransportSettings =
         GrpcCallSettings.<GetEndpointRequest, Endpoint>newBuilder()
@@ -482,6 +512,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateEndpointRequest, Endpoint> updateEndpointTransportSettings =
         GrpcCallSettings.<UpdateEndpointRequest, Endpoint>newBuilder()
@@ -502,6 +533,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -512,6 +544,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -522,6 +555,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -533,6 +567,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

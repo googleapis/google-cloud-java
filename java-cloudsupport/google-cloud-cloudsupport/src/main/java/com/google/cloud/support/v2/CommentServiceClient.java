@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListComments</td>
- *      <td><p> Retrieve all Comments associated with the Case object.</td>
+ *      <td><p> List all the comments associated with a case.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -84,7 +84,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateComment</td>
- *      <td><p> Add a new comment to the specified Case. The comment object must have the following fields set: body.</td>
+ *      <td><p> Add a new comment to a case.
+ * <p>  The comment must have the following fields set: `body`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -98,6 +99,32 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> createCommentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetComment</td>
+ *      <td><p> Retrieve a comment.
+ * <p>  EXAMPLES:
+ * <p>  cURL:
+ * <p>  ```shell comment="projects/some-project/cases/43595344/comments/234567890" curl \\\\   --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\   "https://cloudsupport.googleapis.com/v2/$comment" ```
+ * <p>  Python:
+ * <p>  ```python import googleapiclient.discovery
+ * <p>  api_version = "v2" supportApiService = googleapiclient.discovery.build(     serviceName="cloudsupport",     version=api_version,     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", )
+ * <p>  request = supportApiService.cases().comments().get(     name="projects/some-project/cases/43595344/comments/234567890", ) print(request.execute()) ```</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getComment(GetCommentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getComment(CommentName name)
+ *           <li><p> getComment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getCommentCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -208,7 +235,7 @@ public class CommentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all Comments associated with the Case object.
+   * List all the comments associated with a case.
    *
    * <p>Sample code:
    *
@@ -226,7 +253,7 @@ public class CommentServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of Case object for which comments should be listed.
+   * @param parent Required. The name of the case for which to list comments.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCommentsPagedResponse listComments(CaseName parent) {
@@ -239,7 +266,7 @@ public class CommentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all Comments associated with the Case object.
+   * List all the comments associated with a case.
    *
    * <p>Sample code:
    *
@@ -257,7 +284,7 @@ public class CommentServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of Case object for which comments should be listed.
+   * @param parent Required. The name of the case for which to list comments.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCommentsPagedResponse listComments(String parent) {
@@ -267,7 +294,7 @@ public class CommentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all Comments associated with the Case object.
+   * List all the comments associated with a case.
    *
    * <p>Sample code:
    *
@@ -299,7 +326,7 @@ public class CommentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all Comments associated with the Case object.
+   * List all the comments associated with a case.
    *
    * <p>Sample code:
    *
@@ -332,7 +359,7 @@ public class CommentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all Comments associated with the Case object.
+   * List all the comments associated with a case.
    *
    * <p>Sample code:
    *
@@ -370,8 +397,9 @@ public class CommentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Add a new comment to the specified Case. The comment object must have the following fields set:
-   * body.
+   * Add a new comment to a case.
+   *
+   * <p>The comment must have the following fields set: `body`.
    *
    * <p>Sample code:
    *
@@ -388,8 +416,8 @@ public class CommentServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of Case to which this comment should be added.
-   * @param comment Required. The Comment object to be added to this Case.
+   * @param parent Required. The name of the case to which the comment should be added.
+   * @param comment Required. The comment to be added.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Comment createComment(CaseName parent, Comment comment) {
@@ -403,8 +431,9 @@ public class CommentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Add a new comment to the specified Case. The comment object must have the following fields set:
-   * body.
+   * Add a new comment to a case.
+   *
+   * <p>The comment must have the following fields set: `body`.
    *
    * <p>Sample code:
    *
@@ -421,8 +450,8 @@ public class CommentServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of Case to which this comment should be added.
-   * @param comment Required. The Comment object to be added to this Case.
+   * @param parent Required. The name of the case to which the comment should be added.
+   * @param comment Required. The comment to be added.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Comment createComment(String parent, Comment comment) {
@@ -433,8 +462,9 @@ public class CommentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Add a new comment to the specified Case. The comment object must have the following fields set:
-   * body.
+   * Add a new comment to a case.
+   *
+   * <p>The comment must have the following fields set: `body`.
    *
    * <p>Sample code:
    *
@@ -463,8 +493,9 @@ public class CommentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Add a new comment to the specified Case. The comment object must have the following fields set:
-   * body.
+   * Add a new comment to a case.
+   *
+   * <p>The comment must have the following fields set: `body`.
    *
    * <p>Sample code:
    *
@@ -488,6 +519,201 @@ public class CommentServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateCommentRequest, Comment> createCommentCallable() {
     return stub.createCommentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a comment.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell comment="projects/some-project/cases/43595344/comments/234567890" curl \\\\
+   * --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\
+   * "https://cloudsupport.googleapis.com/v2/$comment" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.cases().comments().get(
+   * name="projects/some-project/cases/43595344/comments/234567890", ) print(request.execute()) ```
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommentServiceClient commentServiceClient = CommentServiceClient.create()) {
+   *   CommentName name =
+   *       CommentName.ofOrganizationCaseCommentName("[ORGANIZATION]", "[CASE]", "[COMMENT]");
+   *   Comment response = commentServiceClient.getComment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the comment to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Comment getComment(CommentName name) {
+    GetCommentRequest request =
+        GetCommentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getComment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a comment.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell comment="projects/some-project/cases/43595344/comments/234567890" curl \\\\
+   * --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\
+   * "https://cloudsupport.googleapis.com/v2/$comment" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.cases().comments().get(
+   * name="projects/some-project/cases/43595344/comments/234567890", ) print(request.execute()) ```
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommentServiceClient commentServiceClient = CommentServiceClient.create()) {
+   *   String name =
+   *       CommentName.ofOrganizationCaseCommentName("[ORGANIZATION]", "[CASE]", "[COMMENT]")
+   *           .toString();
+   *   Comment response = commentServiceClient.getComment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the comment to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Comment getComment(String name) {
+    GetCommentRequest request = GetCommentRequest.newBuilder().setName(name).build();
+    return getComment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a comment.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell comment="projects/some-project/cases/43595344/comments/234567890" curl \\\\
+   * --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\
+   * "https://cloudsupport.googleapis.com/v2/$comment" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.cases().comments().get(
+   * name="projects/some-project/cases/43595344/comments/234567890", ) print(request.execute()) ```
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommentServiceClient commentServiceClient = CommentServiceClient.create()) {
+   *   GetCommentRequest request =
+   *       GetCommentRequest.newBuilder()
+   *           .setName(
+   *               CommentName.ofOrganizationCaseCommentName("[ORGANIZATION]", "[CASE]", "[COMMENT]")
+   *                   .toString())
+   *           .build();
+   *   Comment response = commentServiceClient.getComment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Comment getComment(GetCommentRequest request) {
+    return getCommentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a comment.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell comment="projects/some-project/cases/43595344/comments/234567890" curl \\\\
+   * --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\
+   * "https://cloudsupport.googleapis.com/v2/$comment" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.cases().comments().get(
+   * name="projects/some-project/cases/43595344/comments/234567890", ) print(request.execute()) ```
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommentServiceClient commentServiceClient = CommentServiceClient.create()) {
+   *   GetCommentRequest request =
+   *       GetCommentRequest.newBuilder()
+   *           .setName(
+   *               CommentName.ofOrganizationCaseCommentName("[ORGANIZATION]", "[CASE]", "[COMMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Comment> future = commentServiceClient.getCommentCallable().futureCall(request);
+   *   // Do something.
+   *   Comment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetCommentRequest, Comment> getCommentCallable() {
+    return stub.getCommentCallable();
   }
 
   @Override

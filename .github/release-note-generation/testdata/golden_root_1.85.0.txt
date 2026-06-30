@@ -1,0 +1,46 @@
+## [1.85.0](https://github.com/googleapis/google-cloud-java/compare/6bef068b4d8...v1.85.0) (2026-04-13)
+
+### Features
+
+* feat: [chronicle] Add DataTableService to Chronicle v1 Client Libraries [googleapis/googleapis@e182cf5](https://github.com/googleapis/googleapis/commit/e182cf5152967047b763fd88f03094cfc836d194) ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* feat: [vectorsearch] Added CMEK support ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* feat: [vectorsearch] Added UpdateIndex support ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* feat: [discoveryengine] add AUTO condition to SearchAsYouTypeSpec in v1alpha and v1beta [googleapis/googleapis@f01ba6b](https://github.com/googleapis/googleapis/commit/f01ba6bda9ef3a45069a699767ee7dc46f30028a) ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* feat: [kms] support external-μ in the Digest [googleapis/googleapis@7fbf256](https://github.com/googleapis/googleapis/commit/7fbf256c9ee4e580bc2ffa825d8d41263d9462d3) ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* feat: [kms] add a variable to SingleTenantHsmInstanceCreate to control whether future key portability features will be usable on the instance [googleapis/googleapis@bc600b8](https://github.com/googleapis/googleapis/commit/bc600b8b72913d10eaf1793a0845643fda94e4eb) ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* feat: [databasecenter] Add support for BigQuery datasets and reservations ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* feat: [databasecenter] Introduce resource affiliation and lineage tracking ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* feat: [databasecenter] Enhance maintenance information with state, upcoming maintenance, and failure reasons [googleapis/googleapis@7f9e9ff](https://github.com/googleapis/googleapis/commit/7f9e9ff15720fac72c4ba3212343ba6e6102c920) ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* feat: [shopping-merchant-inventories] a new field `base64_encoded_name` is added to the `LocalInventory` message ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* feat: [shopping-merchant-inventories] new field `base64_encoded_name` is added to the `RegionalInventory` message [googleapis/googleapis@6db5d2e](https://github.com/googleapis/googleapis/commit/6db5d2e6bc3a762fccebbcbcfb8681a6ebaf008e) ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* feat: [dataplex] Allow Data Documentation DataScans to support BigQuery Dataset resources in addition to BigQuery table resources ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* feat: [dataproc] Add `Engine` field to support LightningEngine in clusters and add support for stop ttl [googleapis/googleapis@2da8658](https://github.com/googleapis/googleapis/commit/2da86587126416eb48d561cd800bb03afa2f501a) ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* feat: [shopping-merchant-products] a new field `base64_encoded_name` is added to the `Product` message ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* feat: [shopping-merchant-products] new fields - `base64_encoded_name` and `base64_encoded_product` added to the `ProductInput` message ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* feat: [infra-manager] adding DeploymentGroups, you can now manage deployment of multiple module root dependencies in a single DAG [googleapis/googleapis@f5cb7af](https://github.com/googleapis/googleapis/commit/f5cb7afc40b63d52f43bc306cb9b64a87b681aea) ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* feat: [appoptimize] new module for appoptimize (#12768) ([050187d](https://github.com/googleapis/google-cloud-java/commit/050187d934fc78139ec2790c04dd4c1e256591d4))
+
+### Bug Fixes
+
+* fix: update appoptimize version to 0.0.1 to match released repo (#12782) ([80dfac6](https://github.com/googleapis/google-cloud-java/commit/80dfac6773bfe7e41e1d3f659fa5c9953a4fd83b))
+* fix(deps): update the Java code generator (gapic-generator-java) to 2.69.0 ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* fix(bqjdbc): lazily instantiate Statement in BigQueryDatabaseMetaData (#12752) ([72e5508](https://github.com/googleapis/google-cloud-java/commit/72e5508669ea48cde28f02adfeedfb05cd73fc57))
+* fix(gdch): support EC private keys (#1896) ([bf926fb](https://github.com/googleapis/google-cloud-java/commit/bf926fb23a0ee32b5563af7671af3776ca670126))
+* fix(auth): Address ClientSideCredentialAccessBoundary RefreshTask race condition (#12681) ([30088d2](https://github.com/googleapis/google-cloud-java/commit/30088d2140184b64e841b9864a2b9518f797a686))
+
+### Documentation
+
+* docs: [vectorsearch] Updated documentation for listing locations ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* docs: [vectorsearch] Updated documentation for Collection.data_schema [googleapis/googleapis@8d0f6d8](https://github.com/googleapis/googleapis/commit/8d0f6d8615c72d1907aeec8984d68df50fb6b697) ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* docs: [shopping-merchant-inventories] A comment for field `name` in message `.google.shopping.merchant.products.v1.LocalInventory` is changed ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* docs: [shopping-merchant-inventories] A comment for field `name` in message `.google.shopping.merchant.products.v1.RegionalInventory` is changed ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* docs: [dataplex] A comment for message `DataDocumentationResult` is changed ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* docs: [dataplex] A comment for field `table_result` in message `.google.cloud.dataplex.v1.DataDocumentationResult` is changed [googleapis/googleapis@1991351](https://github.com/googleapis/googleapis/commit/19913519dae24b82f58b8f1b43822c2c020a123c) ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* docs: [network-management] Update comment for the `region` field in `RouteInfo` [googleapis/googleapis@66fcc02](https://github.com/googleapis/googleapis/commit/66fcc021fec9e5249e69da17068bea999f113622) chore: [dialogflow-cx] Add ruby_package to missing proto files in google-cloud-dialogflow-cx-v3 [googleapis/googleapis@b6669d7](https://github.com/googleapis/googleapis/commit/b6669d761c84c04682270ae5610106eb81ce1706) ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* docs: [shopping-merchant-products] A comment for field `name` in message `.google.shopping.merchant.products.v1.ProductInput` is changed ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* docs: [shopping-merchant-products] A comment for field `name` in message `.google.shopping.merchant.products.v1.Product` is changed [googleapis/googleapis@2aba484](https://github.com/googleapis/googleapis/commit/2aba48492ae471bfb717f5e9c5a190b7cc1c6636) ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+
+### Dependencies
+
+* build(deps): upgrade grpc-gcp to 1.10.0 (#12772) ([bb60a6e](https://github.com/googleapis/google-cloud-java/commit/bb60a6ea1a3481bd582e5c45503d2e578740e61c))
+

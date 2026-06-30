@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * structured information from unstructured or semi-structured documents.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/documentai/v1/document_processor_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DocumentProcessorServiceGrpc {
 
@@ -1132,6 +1129,19 @@ public final class DocumentProcessorServiceGrpc {
     return DocumentProcessorServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DocumentProcessorServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DocumentProcessorServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DocumentProcessorServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public DocumentProcessorServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DocumentProcessorServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DocumentProcessorServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1373,7 +1383,11 @@ public final class DocumentProcessorServiceGrpc {
      * <pre>
      * Creates a processor from the
      * [ProcessorType][google.cloud.documentai.v1.ProcessorType] provided. The
-     * processor will be at `ENABLED` state by default after its creation.
+     * processor will be at `ENABLED` state by default after its creation. Note
+     * that this method requires the `documentai.processors.create` permission on
+     * the project, which is highly privileged. A user or service account with
+     * this permission can create new processors that can interact with any gcs
+     * bucket in your project.
      * </pre>
      */
     default void createProcessor(
@@ -1772,7 +1786,11 @@ public final class DocumentProcessorServiceGrpc {
      * <pre>
      * Creates a processor from the
      * [ProcessorType][google.cloud.documentai.v1.ProcessorType] provided. The
-     * processor will be at `ENABLED` state by default after its creation.
+     * processor will be at `ENABLED` state by default after its creation. Note
+     * that this method requires the `documentai.processors.create` permission on
+     * the project, which is highly privileged. A user or service account with
+     * this permission can create new processors that can interact with any gcs
+     * bucket in your project.
      * </pre>
      */
     public void createProcessor(
@@ -1923,6 +1941,355 @@ public final class DocumentProcessorServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DocumentProcessorService.
+   *
+   * <pre>
+   * Service to call Document AI to process documents according to the
+   * processor's definition. Processors are built using state-of-the-art Google
+   * AI such as natural language, computer vision, and translation to extract
+   * structured information from unstructured or semi-structured documents.
+   * </pre>
+   */
+  public static final class DocumentProcessorServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DocumentProcessorServiceBlockingV2Stub> {
+    private DocumentProcessorServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DocumentProcessorServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DocumentProcessorServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Processes a single document.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1.ProcessResponse processDocument(
+        com.google.cloud.documentai.v1.ProcessRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getProcessDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * LRO endpoint to batch process many documents. The output is written
+     * to Cloud Storage as JSON in the [Document] format.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchProcessDocuments(
+        com.google.cloud.documentai.v1.BatchProcessRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchProcessDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches processor types. Note that we don't use
+     * [ListProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.ListProcessorTypes]
+     * here, because it isn't paginated.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1.FetchProcessorTypesResponse fetchProcessorTypes(
+        com.google.cloud.documentai.v1.FetchProcessorTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchProcessorTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the processor types that exist.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1.ListProcessorTypesResponse listProcessorTypes(
+        com.google.cloud.documentai.v1.ListProcessorTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListProcessorTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a processor type detail.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1.ProcessorType getProcessorType(
+        com.google.cloud.documentai.v1.GetProcessorTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetProcessorTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all processors which belong to this project.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1.ListProcessorsResponse listProcessors(
+        com.google.cloud.documentai.v1.ListProcessorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListProcessorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a processor detail.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1.Processor getProcessor(
+        com.google.cloud.documentai.v1.GetProcessorRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetProcessorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Trains a new processor version.
+     * Operation metadata is returned as
+     * [TrainProcessorVersionMetadata][google.cloud.documentai.v1.TrainProcessorVersionMetadata].
+     * </pre>
+     */
+    public com.google.longrunning.Operation trainProcessorVersion(
+        com.google.cloud.documentai.v1.TrainProcessorVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTrainProcessorVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a processor version detail.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1.ProcessorVersion getProcessorVersion(
+        com.google.cloud.documentai.v1.GetProcessorVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetProcessorVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all versions of a processor.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1.ListProcessorVersionsResponse listProcessorVersions(
+        com.google.cloud.documentai.v1.ListProcessorVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListProcessorVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the processor version, all artifacts under the processor version
+     * will be deleted.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteProcessorVersion(
+        com.google.cloud.documentai.v1.DeleteProcessorVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteProcessorVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys the processor version.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deployProcessorVersion(
+        com.google.cloud.documentai.v1.DeployProcessorVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeployProcessorVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys the processor version.
+     * </pre>
+     */
+    public com.google.longrunning.Operation undeployProcessorVersion(
+        com.google.cloud.documentai.v1.UndeployProcessorVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUndeployProcessorVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a processor from the
+     * [ProcessorType][google.cloud.documentai.v1.ProcessorType] provided. The
+     * processor will be at `ENABLED` state by default after its creation. Note
+     * that this method requires the `documentai.processors.create` permission on
+     * the project, which is highly privileged. A user or service account with
+     * this permission can create new processors that can interact with any gcs
+     * bucket in your project.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1.Processor createProcessor(
+        com.google.cloud.documentai.v1.CreateProcessorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateProcessorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the processor, unloads all deployed model artifacts if it was
+     * enabled and then deletes all artifacts associated with this processor.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteProcessor(
+        com.google.cloud.documentai.v1.DeleteProcessorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteProcessorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables a processor
+     * </pre>
+     */
+    public com.google.longrunning.Operation enableProcessor(
+        com.google.cloud.documentai.v1.EnableProcessorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getEnableProcessorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables a processor
+     * </pre>
+     */
+    public com.google.longrunning.Operation disableProcessor(
+        com.google.cloud.documentai.v1.DisableProcessorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDisableProcessorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Set the default (active) version of a
+     * [Processor][google.cloud.documentai.v1.Processor] that will be used in
+     * [ProcessDocument][google.cloud.documentai.v1.DocumentProcessorService.ProcessDocument]
+     * and
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments].
+     * </pre>
+     */
+    public com.google.longrunning.Operation setDefaultProcessorVersion(
+        com.google.cloud.documentai.v1.SetDefaultProcessorVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSetDefaultProcessorVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Send a document for Human Review. The input document should be processed by
+     * the specified processor.
+     * </pre>
+     */
+    public com.google.longrunning.Operation reviewDocument(
+        com.google.cloud.documentai.v1.ReviewDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getReviewDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Evaluates a ProcessorVersion against annotated documents, producing an
+     * Evaluation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation evaluateProcessorVersion(
+        com.google.cloud.documentai.v1.EvaluateProcessorVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getEvaluateProcessorVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a specific evaluation.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1.Evaluation getEvaluation(
+        com.google.cloud.documentai.v1.GetEvaluationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEvaluationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a set of evaluations for a given processor version.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1.ListEvaluationsResponse listEvaluations(
+        com.google.cloud.documentai.v1.ListEvaluationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListEvaluationsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * DocumentProcessorService.
    *
    * <pre>
    * Service to call Document AI to process documents according to the
@@ -2125,7 +2492,11 @@ public final class DocumentProcessorServiceGrpc {
      * <pre>
      * Creates a processor from the
      * [ProcessorType][google.cloud.documentai.v1.ProcessorType] provided. The
-     * processor will be at `ENABLED` state by default after its creation.
+     * processor will be at `ENABLED` state by default after its creation. Note
+     * that this method requires the `documentai.processors.create` permission on
+     * the project, which is highly privileged. A user or service account with
+     * this permission can create new processors that can interact with any gcs
+     * bucket in your project.
      * </pre>
      */
     public com.google.cloud.documentai.v1.Processor createProcessor(
@@ -2462,7 +2833,11 @@ public final class DocumentProcessorServiceGrpc {
      * <pre>
      * Creates a processor from the
      * [ProcessorType][google.cloud.documentai.v1.ProcessorType] provided. The
-     * processor will be at `ENABLED` state by default after its creation.
+     * processor will be at `ENABLED` state by default after its creation. Note
+     * that this method requires the `documentai.processors.create` permission on
+     * the project, which is highly privileged. A user or service account with
+     * this permission can create new processors that can interact with any gcs
+     * bucket in your project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

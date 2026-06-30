@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for ingesting end user actions on the customer website.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2beta/user_event_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class UserEventServiceGrpc {
 
@@ -212,6 +209,50 @@ public final class UserEventServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2beta.ExportUserEventsRequest, com.google.longrunning.Operation>
+      getExportUserEventsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportUserEvents",
+      requestType = com.google.cloud.retail.v2beta.ExportUserEventsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2beta.ExportUserEventsRequest, com.google.longrunning.Operation>
+      getExportUserEventsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.retail.v2beta.ExportUserEventsRequest,
+            com.google.longrunning.Operation>
+        getExportUserEventsMethod;
+    if ((getExportUserEventsMethod = UserEventServiceGrpc.getExportUserEventsMethod) == null) {
+      synchronized (UserEventServiceGrpc.class) {
+        if ((getExportUserEventsMethod = UserEventServiceGrpc.getExportUserEventsMethod) == null) {
+          UserEventServiceGrpc.getExportUserEventsMethod =
+              getExportUserEventsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.retail.v2beta.ExportUserEventsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportUserEvents"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.retail.v2beta.ExportUserEventsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new UserEventServiceMethodDescriptorSupplier("ExportUserEvents"))
+                      .build();
+        }
+      }
+    }
+    return getExportUserEventsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.retail.v2beta.RejoinUserEventsRequest, com.google.longrunning.Operation>
       getRejoinUserEventsMethod;
 
@@ -266,6 +307,19 @@ public final class UserEventServiceGrpc {
           }
         };
     return UserEventServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static UserEventServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<UserEventServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<UserEventServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public UserEventServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new UserEventServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return UserEventServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -323,8 +377,9 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Writes a single user event from the browser. This uses a GET request to
-     * due to browser restriction of POST-ing to a 3rd party domain.
+     * Writes a single user event from the browser.
+     * For larger user event payload over 16 KB, the POST method should be used
+     * instead, otherwise a 400 Bad Request error is returned.
      * This method is used only by the Retail API JavaScript pixel and Google Tag
      * Manager. Users should not call this method directly.
      * </pre>
@@ -370,6 +425,22 @@ public final class UserEventServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getImportUserEventsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports user events.
+     * `Operation.response` is of type `ExportResponse`.
+     * `Operation.metadata` is of type `ExportMetadata`.
+     * </pre>
+     */
+    default void exportUserEvents(
+        com.google.cloud.retail.v2beta.ExportUserEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportUserEventsMethod(), responseObserver);
     }
 
     /**
@@ -448,8 +519,9 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Writes a single user event from the browser. This uses a GET request to
-     * due to browser restriction of POST-ing to a 3rd party domain.
+     * Writes a single user event from the browser.
+     * For larger user event payload over 16 KB, the POST method should be used
+     * instead, otherwise a 400 Bad Request error is returned.
      * This method is used only by the Retail API JavaScript pixel and Google Tag
      * Manager. Users should not call this method directly.
      * </pre>
@@ -507,6 +579,24 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
+     * Exports user events.
+     * `Operation.response` is of type `ExportResponse`.
+     * `Operation.metadata` is of type `ExportMetadata`.
+     * </pre>
+     */
+    public void exportUserEvents(
+        com.google.cloud.retail.v2beta.ExportUserEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportUserEventsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Starts a user-event rejoin operation with latest product catalog. Events
      * are not annotated with detailed product information for products that are
      * missing from the catalog when the user event is ingested. These
@@ -529,6 +619,132 @@ public final class UserEventServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service UserEventService.
+   *
+   * <pre>
+   * Service for ingesting end user actions on the customer website.
+   * </pre>
+   */
+  public static final class UserEventServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<UserEventServiceBlockingV2Stub> {
+    private UserEventServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected UserEventServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new UserEventServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Writes a single user event.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.UserEvent writeUserEvent(
+        com.google.cloud.retail.v2beta.WriteUserEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getWriteUserEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Writes a single user event from the browser.
+     * For larger user event payload over 16 KB, the POST method should be used
+     * instead, otherwise a 400 Bad Request error is returned.
+     * This method is used only by the Retail API JavaScript pixel and Google Tag
+     * Manager. Users should not call this method directly.
+     * </pre>
+     */
+    public com.google.api.HttpBody collectUserEvent(
+        com.google.cloud.retail.v2beta.CollectUserEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCollectUserEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes permanently all user events specified by the filter provided.
+     * Depending on the number of events specified by the filter, this operation
+     * could take hours or days to complete. To test a filter, use the list
+     * command first.
+     * </pre>
+     */
+    public com.google.longrunning.Operation purgeUserEvents(
+        com.google.cloud.retail.v2beta.PurgeUserEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getPurgeUserEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bulk import of User events. Request processing might be
+     * synchronous. Events that already exist are skipped.
+     * Use this method for backfilling historical user events.
+     * `Operation.response` is of type `ImportResponse`. Note that it is
+     * possible for a subset of the items to be successfully inserted.
+     * `Operation.metadata` is of type `ImportMetadata`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importUserEvents(
+        com.google.cloud.retail.v2beta.ImportUserEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getImportUserEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports user events.
+     * `Operation.response` is of type `ExportResponse`.
+     * `Operation.metadata` is of type `ExportMetadata`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportUserEvents(
+        com.google.cloud.retail.v2beta.ExportUserEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportUserEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a user-event rejoin operation with latest product catalog. Events
+     * are not annotated with detailed product information for products that are
+     * missing from the catalog when the user event is ingested. These
+     * events are stored as unjoined events with limited usage on training and
+     * serving. You can use this method to start a join operation on specified
+     * events with the latest version of product catalog. You can also use this
+     * method to correct events joined with the wrong product catalog. A rejoin
+     * operation can take hours or days to complete.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rejoinUserEvents(
+        com.google.cloud.retail.v2beta.RejoinUserEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRejoinUserEventsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service UserEventService.
    *
    * <pre>
    * Service for ingesting end user actions on the customer website.
@@ -563,8 +779,9 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Writes a single user event from the browser. This uses a GET request to
-     * due to browser restriction of POST-ing to a 3rd party domain.
+     * Writes a single user event from the browser.
+     * For larger user event payload over 16 KB, the POST method should be used
+     * instead, otherwise a 400 Bad Request error is returned.
      * This method is used only by the Retail API JavaScript pixel and Google Tag
      * Manager. Users should not call this method directly.
      * </pre>
@@ -607,6 +824,21 @@ public final class UserEventServiceGrpc {
         com.google.cloud.retail.v2beta.ImportUserEventsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getImportUserEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports user events.
+     * `Operation.response` is of type `ExportResponse`.
+     * `Operation.metadata` is of type `ExportMetadata`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportUserEvents(
+        com.google.cloud.retail.v2beta.ExportUserEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportUserEventsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -667,8 +899,9 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Writes a single user event from the browser. This uses a GET request to
-     * due to browser restriction of POST-ing to a 3rd party domain.
+     * Writes a single user event from the browser.
+     * For larger user event payload over 16 KB, the POST method should be used
+     * instead, otherwise a 400 Bad Request error is returned.
      * This method is used only by the Retail API JavaScript pixel and Google Tag
      * Manager. Users should not call this method directly.
      * </pre>
@@ -717,6 +950,21 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
+     * Exports user events.
+     * `Operation.response` is of type `ExportResponse`.
+     * `Operation.metadata` is of type `ExportMetadata`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportUserEvents(com.google.cloud.retail.v2beta.ExportUserEventsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportUserEventsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Starts a user-event rejoin operation with latest product catalog. Events
      * are not annotated with detailed product information for products that are
      * missing from the catalog when the user event is ingested. These
@@ -738,7 +986,8 @@ public final class UserEventServiceGrpc {
   private static final int METHODID_COLLECT_USER_EVENT = 1;
   private static final int METHODID_PURGE_USER_EVENTS = 2;
   private static final int METHODID_IMPORT_USER_EVENTS = 3;
-  private static final int METHODID_REJOIN_USER_EVENTS = 4;
+  private static final int METHODID_EXPORT_USER_EVENTS = 4;
+  private static final int METHODID_REJOIN_USER_EVENTS = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -776,6 +1025,11 @@ public final class UserEventServiceGrpc {
         case METHODID_IMPORT_USER_EVENTS:
           serviceImpl.importUserEvents(
               (com.google.cloud.retail.v2beta.ImportUserEventsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_USER_EVENTS:
+          serviceImpl.exportUserEvents(
+              (com.google.cloud.retail.v2beta.ExportUserEventsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_REJOIN_USER_EVENTS:
@@ -825,6 +1079,12 @@ public final class UserEventServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.retail.v2beta.ImportUserEventsRequest,
                     com.google.longrunning.Operation>(service, METHODID_IMPORT_USER_EVENTS)))
+        .addMethod(
+            getExportUserEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.ExportUserEventsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_USER_EVENTS)))
         .addMethod(
             getRejoinUserEventsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -886,6 +1146,7 @@ public final class UserEventServiceGrpc {
                       .addMethod(getCollectUserEventMethod())
                       .addMethod(getPurgeUserEventsMethod())
                       .addMethod(getImportUserEventsMethod())
+                      .addMethod(getExportUserEventsMethod())
                       .addMethod(getRejoinUserEventsMethod())
                       .build();
         }

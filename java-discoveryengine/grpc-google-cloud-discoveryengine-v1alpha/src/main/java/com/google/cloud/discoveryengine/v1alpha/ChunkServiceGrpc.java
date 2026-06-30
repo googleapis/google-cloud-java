@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * customer's unstructured data.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/chunk_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ChunkServiceGrpc {
 
@@ -140,6 +137,19 @@ public final class ChunkServiceGrpc {
           }
         };
     return ChunkServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ChunkServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ChunkServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ChunkServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ChunkServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ChunkServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ChunkServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -281,6 +291,56 @@ public final class ChunkServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ChunkService.
+   *
+   * <pre>
+   * Service for displaying processed
+   * [Chunk][google.cloud.discoveryengine.v1alpha.Chunk] information of the
+   * customer's unstructured data.
+   * </pre>
+   */
+  public static final class ChunkServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ChunkServiceBlockingV2Stub> {
+    private ChunkServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ChunkServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ChunkServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a [Document][google.cloud.discoveryengine.v1alpha.Document].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Chunk getChunk(
+        com.google.cloud.discoveryengine.v1alpha.GetChunkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetChunkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a list of [Chunk][google.cloud.discoveryengine.v1alpha.Chunk]s.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.ListChunksResponse listChunks(
+        com.google.cloud.discoveryengine.v1alpha.ListChunksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListChunksMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ChunkService.
    *
    * <pre>
    * Service for displaying processed

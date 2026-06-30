@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,7 +104,9 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setAclInfo(Document.AclInfo.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
+            .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -155,7 +157,9 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setAclInfo(Document.AclInfo.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
+            .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -294,7 +298,9 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setAclInfo(Document.AclInfo.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
+            .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -351,7 +357,9 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setAclInfo(Document.AclInfo.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
+            .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -404,7 +412,9 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setAclInfo(Document.AclInfo.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
+            .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -538,6 +548,7 @@ public class DocumentServiceClientTest {
             .setUpdateMask(FieldMask.newBuilder().build())
             .setAutoGenerateIds(true)
             .setIdField("idField1629396127")
+            .setForceRefreshContent(true)
             .build();
 
     ImportDocumentsResponse actualResponse = client.importDocumentsAsync(request).get();
@@ -554,6 +565,7 @@ public class DocumentServiceClientTest {
     Assert.assertEquals(request.getSpannerSource(), actualRequest.getSpannerSource());
     Assert.assertEquals(request.getCloudSqlSource(), actualRequest.getCloudSqlSource());
     Assert.assertEquals(request.getFirestoreSource(), actualRequest.getFirestoreSource());
+    Assert.assertEquals(request.getAlloyDbSource(), actualRequest.getAlloyDbSource());
     Assert.assertEquals(request.getBigtableSource(), actualRequest.getBigtableSource());
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getErrorConfig(), actualRequest.getErrorConfig());
@@ -561,6 +573,7 @@ public class DocumentServiceClientTest {
     Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
     Assert.assertEquals(request.getAutoGenerateIds(), actualRequest.getAutoGenerateIds());
     Assert.assertEquals(request.getIdField(), actualRequest.getIdField());
+    Assert.assertEquals(request.getForceRefreshContent(), actualRequest.getForceRefreshContent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -583,6 +596,7 @@ public class DocumentServiceClientTest {
               .setUpdateMask(FieldMask.newBuilder().build())
               .setAutoGenerateIds(true)
               .setIdField("idField1629396127")
+              .setForceRefreshContent(true)
               .build();
       client.importDocumentsAsync(request).get();
       Assert.fail("No exception raised");
@@ -615,6 +629,7 @@ public class DocumentServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                     .toString())
             .setFilter("filter-1274492040")
+            .setErrorConfig(PurgeErrorConfig.newBuilder().build())
             .setForce(true)
             .build();
 
@@ -625,8 +640,11 @@ public class DocumentServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     PurgeDocumentsRequest actualRequest = ((PurgeDocumentsRequest) actualRequests.get(0));
 
+    Assert.assertEquals(request.getGcsSource(), actualRequest.getGcsSource());
+    Assert.assertEquals(request.getInlineSource(), actualRequest.getInlineSource());
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getErrorConfig(), actualRequest.getErrorConfig());
     Assert.assertEquals(request.getForce(), actualRequest.getForce());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -647,6 +665,7 @@ public class DocumentServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setFilter("filter-1274492040")
+              .setErrorConfig(PurgeErrorConfig.newBuilder().build())
               .setForce(true)
               .build();
       client.purgeDocumentsAsync(request).get();
@@ -655,6 +674,90 @@ public class DocumentServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchGetDocumentsMetadataTest() throws Exception {
+    BatchGetDocumentsMetadataResponse expectedResponse =
+        BatchGetDocumentsMetadataResponse.newBuilder()
+            .addAllDocumentsMetadata(
+                new ArrayList<BatchGetDocumentsMetadataResponse.DocumentMetadata>())
+            .build();
+    mockDocumentService.addResponse(expectedResponse);
+
+    BranchName parent =
+        BranchName.ofProjectLocationDataStoreBranchName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+
+    BatchGetDocumentsMetadataResponse actualResponse = client.batchGetDocumentsMetadata(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchGetDocumentsMetadataRequest actualRequest =
+        ((BatchGetDocumentsMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchGetDocumentsMetadataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      BranchName parent =
+          BranchName.ofProjectLocationDataStoreBranchName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+      client.batchGetDocumentsMetadata(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchGetDocumentsMetadataTest2() throws Exception {
+    BatchGetDocumentsMetadataResponse expectedResponse =
+        BatchGetDocumentsMetadataResponse.newBuilder()
+            .addAllDocumentsMetadata(
+                new ArrayList<BatchGetDocumentsMetadataResponse.DocumentMetadata>())
+            .build();
+    mockDocumentService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    BatchGetDocumentsMetadataResponse actualResponse = client.batchGetDocumentsMetadata(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchGetDocumentsMetadataRequest actualRequest =
+        ((BatchGetDocumentsMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchGetDocumentsMetadataExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.batchGetDocumentsMetadata(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

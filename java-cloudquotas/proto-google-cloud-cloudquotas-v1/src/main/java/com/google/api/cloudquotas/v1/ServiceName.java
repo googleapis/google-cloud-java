@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -345,7 +345,8 @@ public class ServiceName implements ResourceName {
     private Builder(ServiceName serviceName) {
       Preconditions.checkArgument(
           Objects.equals(serviceName.pathTemplate, PROJECT_LOCATION_SERVICE),
-          "toBuilder is only supported when ServiceName has the pattern of projects/{project}/locations/{location}/services/{service}");
+          "toBuilder is only supported when ServiceName has the pattern of"
+              + " projects/{project}/locations/{location}/services/{service}");
       this.project = serviceName.project;
       this.location = serviceName.location;
       this.service = serviceName.service;

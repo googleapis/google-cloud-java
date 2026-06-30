@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                   ProtoUtils.marshaller(ListUptimeCheckConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUptimeCheckConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetUptimeCheckConfigRequest, UptimeCheckConfig>
@@ -72,6 +73,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetUptimeCheckConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UptimeCheckConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateUptimeCheckConfigRequest, UptimeCheckConfig>
@@ -82,6 +84,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateUptimeCheckConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UptimeCheckConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
@@ -92,6 +95,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateUptimeCheckConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UptimeCheckConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteUptimeCheckConfigRequest, Empty>
@@ -102,6 +106,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteUptimeCheckConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse>
@@ -113,6 +118,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                   ProtoUtils.marshaller(ListUptimeCheckIpsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUptimeCheckIpsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse>
@@ -187,6 +193,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetUptimeCheckConfigRequest, UptimeCheckConfig>
         getUptimeCheckConfigTransportSettings =
@@ -198,6 +205,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateUptimeCheckConfigRequest, UptimeCheckConfig>
         createUptimeCheckConfigTransportSettings =
@@ -209,6 +217,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
         updateUptimeCheckConfigTransportSettings =
@@ -233,6 +242,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse>
         listUptimeCheckIpsTransportSettings =

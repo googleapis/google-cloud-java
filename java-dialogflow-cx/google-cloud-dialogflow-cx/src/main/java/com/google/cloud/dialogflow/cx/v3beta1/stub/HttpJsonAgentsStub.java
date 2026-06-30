@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -667,6 +667,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetAgentRequest, Agent> getAgentTransportSettings =
         HttpJsonCallSettings.<GetAgentRequest, Agent>newBuilder()
@@ -678,6 +679,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateAgentRequest, Agent> createAgentTransportSettings =
         HttpJsonCallSettings.<CreateAgentRequest, Agent>newBuilder()
@@ -689,6 +691,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateAgentRequest, Agent> updateAgentTransportSettings =
         HttpJsonCallSettings.<UpdateAgentRequest, Agent>newBuilder()
@@ -711,6 +714,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExportAgentRequest, Operation> exportAgentTransportSettings =
         HttpJsonCallSettings.<ExportAgentRequest, Operation>newBuilder()
@@ -722,6 +726,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RestoreAgentRequest, Operation> restoreAgentTransportSettings =
         HttpJsonCallSettings.<RestoreAgentRequest, Operation>newBuilder()
@@ -733,6 +738,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ValidateAgentRequest, AgentValidationResult>
         validateAgentTransportSettings =
@@ -745,6 +751,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetAgentValidationResultRequest, AgentValidationResult>
         getAgentValidationResultTransportSettings =
@@ -758,6 +765,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetGenerativeSettingsRequest, GenerativeSettings>
         getGenerativeSettingsTransportSettings =
@@ -770,6 +778,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateGenerativeSettingsRequest, GenerativeSettings>
         updateGenerativeSettingsTransportSettings =

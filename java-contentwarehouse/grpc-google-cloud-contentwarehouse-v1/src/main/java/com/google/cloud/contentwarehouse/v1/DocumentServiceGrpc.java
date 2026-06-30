@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * This service lets you manage document.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/contentwarehouse/v1/document_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DocumentServiceGrpc {
 
@@ -417,6 +414,19 @@ public final class DocumentServiceGrpc {
     return DocumentServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DocumentServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DocumentServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DocumentServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public DocumentServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DocumentServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DocumentServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -754,6 +764,145 @@ public final class DocumentServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DocumentService.
+   *
+   * <pre>
+   * This service lets you manage document.
+   * </pre>
+   */
+  public static final class DocumentServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DocumentServiceBlockingV2Stub> {
+    private DocumentServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DocumentServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DocumentServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a document.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.CreateDocumentResponse createDocument(
+        com.google.cloud.contentwarehouse.v1.CreateDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a document. Returns NOT_FOUND if the document does not exist.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.Document getDocument(
+        com.google.cloud.contentwarehouse.v1.GetDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a document. Returns INVALID_ARGUMENT if the name of the document
+     * is non-empty and does not equal the existing name.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.UpdateDocumentResponse updateDocument(
+        com.google.cloud.contentwarehouse.v1.UpdateDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a document. Returns NOT_FOUND if the document does not exist.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDocument(
+        com.google.cloud.contentwarehouse.v1.DeleteDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches for documents using provided
+     * [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
+     * This call only returns documents that the caller has permission to search
+     * against.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse searchDocuments(
+        com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSearchDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lock the document so the document cannot be updated by other users.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.Document lockDocument(
+        com.google.cloud.contentwarehouse.v1.LockDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getLockDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a resource. Returns NOT_FOUND error if
+     * the resource does not exist. Returns an empty policy if the resource exists
+     * but does not have a policy set.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.FetchAclResponse fetchAcl(
+        com.google.cloud.contentwarehouse.v1.FetchAclRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchAclMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy for a resource. Replaces any existing
+     * policy.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.SetAclResponse setAcl(
+        com.google.cloud.contentwarehouse.v1.SetAclRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSetAclMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DocumentService.
    *
    * <pre>
    * This service lets you manage document.

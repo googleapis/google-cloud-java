@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,11 +96,19 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                             ProtoRestSerializer<CreateDataStoreRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
+                                fields, "cmekConfigName", request.getCmekConfigName());
+                            serializer.putQueryParam(
                                 fields,
                                 "createAdvancedSiteSearch",
                                 request.getCreateAdvancedSiteSearch());
                             serializer.putQueryParam(
                                 fields, "dataStoreId", request.getDataStoreId());
+                            serializer.putQueryParam(
+                                fields, "disableCmek", request.getDisableCmek());
+                            serializer.putQueryParam(
+                                fields,
+                                "skipDefaultSchemaCreation",
+                                request.getSkipDefaultSchemaCreation());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -335,6 +343,26 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
             typeRegistry,
             ImmutableMap.<String, HttpRule>builder()
                 .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1/{name=projects/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/collections/*/engines/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/dataStores/*/branches/*/operations/*}:cancel")
+                                .build())
+                        .build())
+                .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet("/v1/{name=projects/*/operations/*}")
@@ -397,6 +425,11 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1/{name=projects/*/locations/*/dataStores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/identityMappingStores/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -472,6 +505,11 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/identityMappingStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1/{name=projects/*/locations/*}/operations")
                                 .build())
                         .addAdditionalBindings(
@@ -491,6 +529,7 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getCmekConfigName())
             .build();
     HttpJsonCallSettings<GetDataStoreRequest, DataStore> getDataStoreTransportSettings =
         HttpJsonCallSettings.<GetDataStoreRequest, DataStore>newBuilder()
@@ -502,6 +541,7 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDataStoresRequest, ListDataStoresResponse>
         listDataStoresTransportSettings =
@@ -514,6 +554,7 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteDataStoreRequest, Operation> deleteDataStoreTransportSettings =
         HttpJsonCallSettings.<DeleteDataStoreRequest, Operation>newBuilder()
@@ -525,6 +566,7 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateDataStoreRequest, DataStore> updateDataStoreTransportSettings =
         HttpJsonCallSettings.<UpdateDataStoreRequest, DataStore>newBuilder()

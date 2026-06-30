@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing Acl Configuration.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/acl_config_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AclConfigServiceGrpc {
 
@@ -143,6 +140,19 @@ public final class AclConfigServiceGrpc {
     return AclConfigServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AclConfigServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AclConfigServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AclConfigServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public AclConfigServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AclConfigServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AclConfigServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -184,7 +194,7 @@ public final class AclConfigServiceGrpc {
      *
      *
      * <pre>
-     * Default Acl Configuration for use in a location of a customer's project.
+     * Default ACL configuration for use in a location of a customer's project.
      * Updates will only reflect to new data stores. Existing data stores will
      * still use the old value.
      * </pre>
@@ -251,7 +261,7 @@ public final class AclConfigServiceGrpc {
      *
      *
      * <pre>
-     * Default Acl Configuration for use in a location of a customer's project.
+     * Default ACL configuration for use in a location of a customer's project.
      * Updates will only reflect to new data stores. Existing data stores will
      * still use the old value.
      * </pre>
@@ -291,6 +301,57 @@ public final class AclConfigServiceGrpc {
    * Service for managing Acl Configuration.
    * </pre>
    */
+  public static final class AclConfigServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AclConfigServiceBlockingV2Stub> {
+    private AclConfigServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AclConfigServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AclConfigServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default ACL configuration for use in a location of a customer's project.
+     * Updates will only reflect to new data stores. Existing data stores will
+     * still use the old value.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.AclConfig updateAclConfig(
+        com.google.cloud.discoveryengine.v1alpha.UpdateAclConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAclConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the [AclConfig][google.cloud.discoveryengine.v1alpha.AclConfig].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.AclConfig getAclConfig(
+        com.google.cloud.discoveryengine.v1alpha.GetAclConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAclConfigMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AclConfigService.
+   *
+   * <pre>
+   * Service for managing Acl Configuration.
+   * </pre>
+   */
   public static final class AclConfigServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<AclConfigServiceBlockingStub> {
     private AclConfigServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -307,7 +368,7 @@ public final class AclConfigServiceGrpc {
      *
      *
      * <pre>
-     * Default Acl Configuration for use in a location of a customer's project.
+     * Default ACL configuration for use in a location of a customer's project.
      * Updates will only reflect to new data stores. Existing data stores will
      * still use the old value.
      * </pre>
@@ -355,7 +416,7 @@ public final class AclConfigServiceGrpc {
      *
      *
      * <pre>
-     * Default Acl Configuration for use in a location of a customer's project.
+     * Default ACL configuration for use in a location of a customer's project.
      * Updates will only reflect to new data stores. Existing data stores will
      * still use the old value.
      * </pre>

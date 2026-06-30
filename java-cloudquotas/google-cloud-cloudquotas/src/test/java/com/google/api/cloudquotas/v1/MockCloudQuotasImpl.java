@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -115,7 +115,8 @@ public class MockCloudQuotasImpl extends CloudQuotasImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListQuotaPreferences, expected %s or %s",
+                  "Unrecognized response type %s for method ListQuotaPreferences, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListQuotaPreferencesResponse.class.getName(),
                   Exception.class.getName())));
@@ -157,7 +158,8 @@ public class MockCloudQuotasImpl extends CloudQuotasImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateQuotaPreference, expected %s or %s",
+                  "Unrecognized response type %s for method CreateQuotaPreference, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   QuotaPreference.class.getName(),
                   Exception.class.getName())));
@@ -178,7 +180,8 @@ public class MockCloudQuotasImpl extends CloudQuotasImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateQuotaPreference, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateQuotaPreference, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   QuotaPreference.class.getName(),
                   Exception.class.getName())));

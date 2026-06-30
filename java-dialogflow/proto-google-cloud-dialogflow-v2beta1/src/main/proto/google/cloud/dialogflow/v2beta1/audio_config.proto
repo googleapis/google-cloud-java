@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/protobuf/duration.proto";
 
-option cc_enable_arenas = true;
 option csharp_namespace = "Google.Cloud.Dialogflow.V2Beta1";
 option go_package = "cloud.google.com/go/dialogflow/apiv2beta1/dialogflowpb;dialogflowpb";
 option java_multiple_files = true;
@@ -110,8 +109,8 @@ message SpeechWordInfo {
 //   phase.
 //
 // The client provides this configuration in terms of the durations of those
-// two phases. The durations are measured in terms of the audio length from
-// the start of the input audio.
+// two phases. The durations are measured in terms of the audio length from the
+// start of the input audio.
 //
 // The flow goes like below:
 //
@@ -152,6 +151,8 @@ message InputAudioConfig {
   // Support](https://cloud.google.com/dialogflow/docs/reference/language)
   // for a list of the currently supported language codes. Note that queries in
   // the same session do not necessarily need to specify the same language.
+  // If not set, the language is inferred from the
+  // [ConversationProfile.stt_config][google.cloud.dialogflow.v2beta1.ConversationProfile.stt_config].
   string language_code = 3 [(google.api.field_behavior) = REQUIRED];
 
   // If `true`, Dialogflow returns
@@ -216,6 +217,15 @@ message InputAudioConfig {
   // Enable automatic punctuation option at the speech backend.
   bool enable_automatic_punctuation = 17;
 
+  // If set, use this no-speech timeout when the agent does not provide a
+  // no-speech timeout itself.
+  google.protobuf.Duration default_no_speech_timeout = 18;
+
+  // A collection of phrase set resources to use for speech adaptation.
+  repeated string phrase_sets = 20 [(google.api.resource_reference) = {
+    type: "speech.googleapis.com/PhraseSet"
+  }];
+
   // If `true`, the request will opt out for STT conformer model migration.
   // This field will be deprecated once force migration takes place in June
   // 2024. Please refer to [Dialogflow ES Speech model
@@ -273,6 +283,38 @@ message SynthesizeSpeechConfig {
 
   // Optional. The desired voice of the synthesized audio.
   VoiceSelectionParams voice = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The custom pronunciations for the synthesized audio.
+  repeated CustomPronunciationParams pronunciations = 6;
+}
+
+// Pronunciation customization for a phrase.
+message CustomPronunciationParams {
+  // The phonetic encoding of the phrase.
+  enum PhoneticEncoding {
+    // Not specified.
+    PHONETIC_ENCODING_UNSPECIFIED = 0;
+
+    // IPA, such as apple -> ˈæpəl.
+    // https://en.wikipedia.org/wiki/International_Phonetic_Alphabet
+    PHONETIC_ENCODING_IPA = 1;
+
+    // X-SAMPA, such as apple -> "{p@l".
+    // https://en.wikipedia.org/wiki/X-SAMPA
+    PHONETIC_ENCODING_X_SAMPA = 2;
+  }
+
+  // The phrase to which the customization is applied.
+  // The phrase can be multiple words, such as proper nouns, but shouldn't span
+  // the length of the sentence.
+  string phrase = 1;
+
+  // The phonetic encoding of the phrase.
+  PhoneticEncoding phonetic_encoding = 2;
+
+  // The pronunciation of the phrase. This must be in the phonetic encoding
+  // specified above.
+  string pronunciation = 3;
 }
 
 // Instructs the speech synthesizer how to generate the output audio content.
@@ -338,7 +380,42 @@ message SpeechToTextConfig {
   // for model selection.
   string model = 2;
 
-  // Use timeout based endpointing, interpreting endpointer sensitivy as
+  // List of names of Cloud Speech phrase sets that are used for transcription.
+  // For phrase set limitations, please refer to [Cloud Speech API quotas and
+  // limits](https://cloud.google.com/speech-to-text/quotas#content).
+  repeated string phrase_sets = 4 [(google.api.resource_reference) = {
+    type: "speech.googleapis.com/PhraseSet"
+  }];
+
+  // Audio encoding of the audio content to process.
+  AudioEncoding audio_encoding = 6;
+
+  // Sample rate (in Hertz) of the audio content sent in the query.
+  // Refer to
+  // [Cloud Speech API
+  // documentation](https://cloud.google.com/speech-to-text/docs/basics) for
+  // more details.
+  int32 sample_rate_hertz = 7;
+
+  // The language of the supplied audio. Dialogflow does not do  translations.
+  // See [Language
+  // Support](https://cloud.google.com/dialogflow/docs/reference/language)
+  // for a list of the currently supported language codes. Note that queries in
+  // the same session do not necessarily need to specify the same language.
+  // If not specified, the default language configured at
+  // [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
+  // is used.
+  string language_code = 8;
+
+  // If `true`, Dialogflow returns
+  // [SpeechWordInfo][google.cloud.dialogflow.v2beta1.SpeechWordInfo] in
+  // [StreamingRecognitionResult][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult]
+  // with information about the recognized speech words, e.g. start and end time
+  // offsets. If false or unspecified, Speech doesn't return any word-level
+  // information.
+  bool enable_word_info = 9;
+
+  // Use timeout based endpointing, interpreting endpointer sensitivity as
   // seconds of timeout value.
   bool use_timeout_based_endpointing = 11;
 }
@@ -445,6 +522,9 @@ enum AudioEncoding {
   // is replaced with a single byte containing the block length. Only Speex
   // wideband is supported. `sample_rate_hertz` must be 16000.
   AUDIO_ENCODING_SPEEX_WITH_HEADER_BYTE = 7;
+
+  // 8-bit samples that compand 13-bit audio samples using G.711 PCMU/a-law.
+  AUDIO_ENCODING_ALAW = 8;
 }
 
 // Variant of the specified [Speech
@@ -517,8 +597,8 @@ enum OutputAudioEncoding {
   // Audio content returned as LINEAR16 also contains a WAV header.
   OUTPUT_AUDIO_ENCODING_LINEAR_16 = 1;
 
-  // MP3 audio at 32kbps.
-  OUTPUT_AUDIO_ENCODING_MP3 = 2;
+  // MP3 audio at 64kbps.
+  OUTPUT_AUDIO_ENCODING_MP3 = 2 [deprecated = true];
 
   // MP3 audio at 64kbps.
   OUTPUT_AUDIO_ENCODING_MP3_64_KBPS = 4;
@@ -531,4 +611,7 @@ enum OutputAudioEncoding {
 
   // 8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
   OUTPUT_AUDIO_ENCODING_MULAW = 5;
+
+  // 8-bit samples that compand 13-bit audio samples using G.711 PCMU/a-law.
+  OUTPUT_AUDIO_ENCODING_ALAW = 6;
 }

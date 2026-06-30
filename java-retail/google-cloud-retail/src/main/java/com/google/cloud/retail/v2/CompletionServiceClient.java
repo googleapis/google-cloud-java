@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,7 @@ import javax.annotation.Generated;
  *           .setDeviceType("deviceType781190832")
  *           .setDataset("dataset1443214456")
  *           .setMaxSuggestions(618824852)
+ *           .setEnableAttributeSuggestions(true)
  *           .setEntity("entity-1298275357")
  *           .build();
  *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
@@ -263,6 +264,7 @@ public class CompletionServiceClient implements BackgroundResource {
    *           .setDeviceType("deviceType781190832")
    *           .setDataset("dataset1443214456")
    *           .setMaxSuggestions(618824852)
+   *           .setEnableAttributeSuggestions(true)
    *           .setEntity("entity-1298275357")
    *           .build();
    *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
@@ -301,6 +303,7 @@ public class CompletionServiceClient implements BackgroundResource {
    *           .setDeviceType("deviceType781190832")
    *           .setDataset("dataset1443214456")
    *           .setMaxSuggestions(618824852)
+   *           .setEnableAttributeSuggestions(true)
    *           .setEntity("entity-1298275357")
    *           .build();
    *   ApiFuture<CompleteQueryResponse> future =

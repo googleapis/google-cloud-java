@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <!-- add default stream methods to `Page` interface -->
+    <differenceType>7012</differenceType>
+    <className>com/google/api/gax/paging/Page</className>
+    <method>* stream*(*)</method>
+  </difference>
+  <difference>
+    <!-- add gdchApiAudience to ClientContext -->
+    <differenceType>7013</differenceType>
+    <className>com/google/api/gax/rpc/*</className>
+    <method>* *Gdch*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/api/gax/rpc/ServerStreamingCallSettings$Builder</className>
+    <method>*setWaitTimeout*</method>
+    <to>com.google.api.gax.rpc.ServerStreamingCallSettings$Builder</to>
+  </difference>
+  <difference>
+    <differenceType>7014</differenceType>
+    <className>com/google/api/gax/*/*</className>
+    <method>org.threeten.bp.Duration *(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7014</differenceType>
+    <className>com/google/api/gax/*/*</className>
+    <method>* *(org.threeten.bp.Duration)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/api/gax/*/*</className>
+    <method>java.time.Duration *Duration(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/api/gax/*/*</className>
+    <method>* set*Duration(*)</method>
+  </difference>
+  <difference>
+    <!-- We produced an internal change of method definition-->
+    <differenceType>7005</differenceType>
+    <className>com/google/api/gax/retrying/DirectRetryingExecutor</className>
+    <method>* sleep(*org.threeten.bp.Duration*)</method>
+    <to>*</to>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/api/gax/*/*</className>
+    <method>* get*Duration()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/api/gax/*/*</className>
+    <method>* *(java.time.Duration)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/api/gax/tracing/*</className>
+    <method>* attemptFailedDuration(java.lang.Throwable, java.time.Duration)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/api/gax/*/*</className>
+    <method>*org.threeten.bp.Duration *()</method>
+  </difference>
+  <!-- Add a default Endpoint Getter -->
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/api/gax/rpc/TransportChannelProvider</className>
+    <method>* getEndpoint()</method>
+  </difference>
+  <!-- Add Universe Domain to ClientContext -->
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/api/gax/rpc/ClientContext*</className>
+    <method>* *UniverseDomain*(*)</method>
+  </difference>
+  <!-- Add Endpoint Context to ApiCallContext -->
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/api/gax/rpc/ApiCallContext</className>
+    <method>* withEndpointContext(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/api/gax/rpc/ApiCallContext</className>
+    <method>* validateUniverseDomain()</method>
+  </difference>
+  <difference>
+    <differenceType>7009</differenceType>
+    <className>com/google/api/gax/rpc/StubSettings</className>
+    <method>* getServiceName()</method>
+  </difference>
+  <!-- Ignore all field name changes as MetricsTracer is InternalApi -->
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/api/gax/tracing/MetricsTracer</className>
+    <field>*</field>
+  </difference>
+  <!-- Ignore method additions to an InternalExtensionOnly interface-->
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/api/gax/batching/Batcher</className>
+    <method>*</method>
+  </difference>
+  <!-- Ignore abstract method addition to an EndpointContext (InternalApi) -->
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/api/gax/rpc/EndpointContext</className>
+    <method>* useS2A()</method>
+  </difference>
+  <!-- Ignore method addition to TransportChannelProvider interface (InternalExtensionOnly) -->
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/api/gax/rpc/TransportChannelProvider</className>
+    <method>* withUseS2A(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/api/gax/rpc/TransportChannelProvider</className>
+    <method>* withMtlsEndpoint(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/api/gax/rpc/TransportChannelProvider</className>
+    <method>* needsMtlsEndpoint()</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/api/gax/rpc/EndpointContext</className>
+    <method>com.google.api.gax.rpc.mtls.CertificateBasedAccess certificateBasedAccess()</method>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/api/gax/rpc/EndpointContext</className>
+    <method>com.google.api.gax.rpc.mtls.MtlsProvider mtlsProvider()</method>Add commentMore actions
+    <to>com.google.auth.mtls.MtlsProvider</to>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/api/gax/rpc/EndpointContext$Builder</className>
+    <method>com.google.api.gax.rpc.EndpointContext$Builder setCertificateBasedAccess(com.google.api.gax.rpc.mtls.CertificateBasedAccess)</method>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/api/gax/rpc/EndpointContext$Builder</className>
+    <method>com.google.api.gax.rpc.EndpointContext$Builder setMtlsProvider(com.google.api.gax.rpc.mtls.MtlsProvider)</method>
+    <to>com.google.api.gax.rpc.EndpointContext$Builder setMtlsProvider(com.google.auth.mtls.MtlsProvider)</to>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/api/gax/rpc/TransportChannelProvider</className>
+    <method>* needsBackgroundExecutor()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/api/gax/rpc/TransportChannelProvider</className>
+    <method>* withBackgroundExecutor(*)</method>
+  </difference>
+</differences>

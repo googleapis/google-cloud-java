@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.devicestreaming.v1",
+  "libraryPackage": "com.google.cloud.devicestreaming.v1",
+  "services": {
+    "DirectAccessService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DirectAccessServiceClient",
+          "rpcs": {
+            "AdbConnect": {
+              "methods": ["adbConnectCallable"]
+            },
+            "CancelDeviceSession": {
+              "methods": ["cancelDeviceSession", "cancelDeviceSessionCallable"]
+            },
+            "CreateDeviceSession": {
+              "methods": ["createDeviceSession", "createDeviceSession", "createDeviceSession", "createDeviceSessionCallable"]
+            },
+            "GetDeviceSession": {
+              "methods": ["getDeviceSession", "getDeviceSession", "getDeviceSession", "getDeviceSessionCallable"]
+            },
+            "ListDeviceSessions": {
+              "methods": ["listDeviceSessions", "listDeviceSessions", "listDeviceSessions", "listDeviceSessionsPagedCallable", "listDeviceSessionsCallable"]
+            },
+            "UpdateDeviceSession": {
+              "methods": ["updateDeviceSession", "updateDeviceSession", "updateDeviceSessionCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

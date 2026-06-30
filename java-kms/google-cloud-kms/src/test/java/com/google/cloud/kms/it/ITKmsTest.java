@@ -16,81 +16,65 @@
 
 package com.google.cloud.kms.it;
 
-import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.ServiceOptions;
+import static org.junit.Assert.assertEquals;
+
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
 import com.google.cloud.kms.v1.GetKeyRingRequest;
-import com.google.cloud.kms.v1.KeyManagementServiceGrpc;
+import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.cloud.kms.v1.KeyRing;
 import com.google.cloud.kms.v1.KeyRingName;
 import com.google.cloud.kms.v1.LocationName;
-import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
-import io.grpc.Metadata;
-import io.grpc.Status;
-import io.grpc.StatusRuntimeException;
-import io.grpc.auth.MoreCallCredentials;
-import io.grpc.stub.MetadataUtils;
 import java.io.IOException;
-import org.junit.Assert;
+import java.util.concurrent.TimeUnit;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 public class ITKmsTest {
+
+  private KeyManagementServiceClient kmsClient;
+  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String KMS_KEY_RING_LOCATION = "us";
-  private static final String KMS_KEY_RING_NAME = "gcs_test_kms_key_ring";
-  private static Metadata requestParamsHeader = new Metadata();
-  private static Metadata.Key<String> requestParamsKey =
-      Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER);
-  private static KeyManagementServiceGrpc.KeyManagementServiceBlockingStub kmsStub;
+  private static final String KMS_KEY_RING_ID = "gcs_test_kms_key_ring";
+  private static final String KMS_KEY_RING_NAME =
+      KeyRingName.of(PROJECT_ID, KMS_KEY_RING_LOCATION, KMS_KEY_RING_ID).toString();
 
   @Before
   public void setUp() throws IOException {
-    GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
-    ManagedChannel kmsChannel =
-        ManagedChannelBuilder.forTarget("cloudkms.googleapis.com:443").build();
-    kmsStub =
-        KeyManagementServiceGrpc.newBlockingStub(kmsChannel)
-            .withCallCredentials(MoreCallCredentials.from(credentials));
+    kmsClient = KeyManagementServiceClient.create();
+
+    String parent = LocationName.of(PROJECT_ID, KMS_KEY_RING_LOCATION).toString();
+    KeyManagementServiceClient.ListKeyRingsPagedResponse listKeyRingsPagedResponse =
+        kmsClient.listKeyRings(parent);
+    boolean foundTestKeyRing = false;
+    for (KeyRing keyRing : listKeyRingsPagedResponse.iterateAll()) {
+      // keyRing.getName() returns the fully qualified name and not the ID
+      if (KMS_KEY_RING_NAME.equals(keyRing.getName())) {
+        foundTestKeyRing = true;
+      }
+    }
+    // Only create the test key ring if it doesn't exist
+    if (!foundTestKeyRing) {
+      kmsClient.createKeyRing(
+          CreateKeyRingRequest.newBuilder()
+              .setParent(parent)
+              .setKeyRingId(KMS_KEY_RING_ID)
+              .setKeyRing(KeyRing.newBuilder().build())
+              .build());
+    }
+  }
+
+  @After
+  public void cleanUp() throws InterruptedException {
+    kmsClient.close();
+    kmsClient.awaitTermination(10, TimeUnit.SECONDS);
   }
 
   @Test
-  public void ensureKmsKeyRingExists() {
-    String projectId = ServiceOptions.getDefaultProjectId();
-    KeyRing keyRing = getKeyRing(kmsStub, projectId);
-    Assert.assertNotNull(keyRing);
-  }
-
-  private static KeyRing getKeyRing(
-      KeyManagementServiceGrpc.KeyManagementServiceBlockingStub kmsStub, String projectId)
-      throws StatusRuntimeException {
-    String kmsKeyRingResourcePath =
-        KeyRingName.of(projectId, ITKmsTest.KMS_KEY_RING_LOCATION, ITKmsTest.KMS_KEY_RING_NAME)
-            .toString();
-    try {
-      GetKeyRingRequest getKeyRingRequest =
-          GetKeyRingRequest.newBuilder().setName(kmsKeyRingResourcePath).build();
-      requestParamsHeader.put(requestParamsKey, "name=" + kmsKeyRingResourcePath);
-      KeyManagementServiceGrpc.KeyManagementServiceBlockingStub stubForGetKeyRing =
-          kmsStub.withInterceptors(MetadataUtils.newAttachHeadersInterceptor(requestParamsHeader));
-      return stubForGetKeyRing.getKeyRing(getKeyRingRequest);
-    } catch (StatusRuntimeException ex) {
-      if (ex.getStatus().getCode() == Status.Code.NOT_FOUND) {
-        String keyRingParent =
-            LocationName.of(projectId, ITKmsTest.KMS_KEY_RING_LOCATION).toString();
-        CreateKeyRingRequest createKeyRingRequest =
-            CreateKeyRingRequest.newBuilder()
-                .setParent(keyRingParent)
-                .setKeyRingId(ITKmsTest.KMS_KEY_RING_NAME)
-                .build();
-        requestParamsHeader.put(requestParamsKey, "parent=" + keyRingParent);
-        KeyManagementServiceGrpc.KeyManagementServiceBlockingStub stubForCreateKeyRing =
-            kmsStub.withInterceptors(
-                MetadataUtils.newAttachHeadersInterceptor(requestParamsHeader));
-        return stubForCreateKeyRing.createKeyRing(createKeyRingRequest);
-      } else {
-        throw ex;
-      }
-    }
+  public void getKeyRing() {
+    GetKeyRingRequest getKeyRingRequest =
+        GetKeyRingRequest.newBuilder().setName(KMS_KEY_RING_NAME).build();
+    KeyRing keyRing = kmsClient.getKeyRing(getKeyRingRequest);
+    assertEquals(KMS_KEY_RING_NAME, keyRing.getName());
   }
 }

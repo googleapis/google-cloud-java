@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -264,7 +264,8 @@ public class CompanyName implements ResourceName {
     private Builder(CompanyName companyName) {
       Preconditions.checkArgument(
           Objects.equals(companyName.pathTemplate, PROJECT_TENANT_COMPANY),
-          "toBuilder is only supported when CompanyName has the pattern of projects/{project}/tenants/{tenant}/companies/{company}");
+          "toBuilder is only supported when CompanyName has the pattern of"
+              + " projects/{project}/tenants/{tenant}/companies/{company}");
       this.project = companyName.project;
       this.tenant = companyName.tenant;
       this.company = companyName.company;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -420,6 +420,7 @@ public class HttpJsonDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateDataPolicyRequest, DataPolicy> updateDataPolicyTransportSettings =
         HttpJsonCallSettings.<UpdateDataPolicyRequest, DataPolicy>newBuilder()
@@ -443,6 +444,7 @@ public class HttpJsonDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetDataPolicyRequest, DataPolicy> getDataPolicyTransportSettings =
         HttpJsonCallSettings.<GetDataPolicyRequest, DataPolicy>newBuilder()
@@ -454,6 +456,7 @@ public class HttpJsonDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDataPoliciesRequest, ListDataPoliciesResponse>
         listDataPoliciesTransportSettings =
@@ -466,6 +469,7 @@ public class HttpJsonDataPolicyServiceStub extends DataPolicyServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -477,6 +481,7 @@ public class HttpJsonDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -488,6 +493,7 @@ public class HttpJsonDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -500,6 +506,7 @@ public class HttpJsonDataPolicyServiceStub extends DataPolicyServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createDataPolicyCallable =

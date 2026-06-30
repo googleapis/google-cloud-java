@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -117,6 +117,7 @@ public class BetaAnalyticsDataClientTest {
             .setCohortSpec(CohortSpec.newBuilder().build())
             .setKeepEmptyRows(true)
             .setReturnPropertyQuota(true)
+            .addAllComparisons(new ArrayList<Comparison>())
             .build();
 
     RunReportResponse actualResponse = client.runReport(request);
@@ -141,6 +142,7 @@ public class BetaAnalyticsDataClientTest {
     Assert.assertEquals(request.getCohortSpec(), actualRequest.getCohortSpec());
     Assert.assertEquals(request.getKeepEmptyRows(), actualRequest.getKeepEmptyRows());
     Assert.assertEquals(request.getReturnPropertyQuota(), actualRequest.getReturnPropertyQuota());
+    Assert.assertEquals(request.getComparisonsList(), actualRequest.getComparisonsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -169,6 +171,7 @@ public class BetaAnalyticsDataClientTest {
               .setCohortSpec(CohortSpec.newBuilder().build())
               .setKeepEmptyRows(true)
               .setReturnPropertyQuota(true)
+              .addAllComparisons(new ArrayList<Comparison>())
               .build();
       client.runReport(request);
       Assert.fail("No exception raised");
@@ -205,6 +208,7 @@ public class BetaAnalyticsDataClientTest {
             .setCohortSpec(CohortSpec.newBuilder().build())
             .setKeepEmptyRows(true)
             .setReturnPropertyQuota(true)
+            .addAllComparisons(new ArrayList<Comparison>())
             .build();
 
     RunPivotReportResponse actualResponse = client.runPivotReport(request);
@@ -225,6 +229,7 @@ public class BetaAnalyticsDataClientTest {
     Assert.assertEquals(request.getCohortSpec(), actualRequest.getCohortSpec());
     Assert.assertEquals(request.getKeepEmptyRows(), actualRequest.getKeepEmptyRows());
     Assert.assertEquals(request.getReturnPropertyQuota(), actualRequest.getReturnPropertyQuota());
+    Assert.assertEquals(request.getComparisonsList(), actualRequest.getComparisonsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -250,6 +255,7 @@ public class BetaAnalyticsDataClientTest {
               .setCohortSpec(CohortSpec.newBuilder().build())
               .setKeepEmptyRows(true)
               .setReturnPropertyQuota(true)
+              .addAllComparisons(new ArrayList<Comparison>())
               .build();
       client.runPivotReport(request);
       Assert.fail("No exception raised");
@@ -362,6 +368,7 @@ public class BetaAnalyticsDataClientTest {
             .setName(MetadataName.of("[PROPERTY]").toString())
             .addAllDimensions(new ArrayList<DimensionMetadata>())
             .addAllMetrics(new ArrayList<MetricMetadata>())
+            .addAllComparisons(new ArrayList<ComparisonMetadata>())
             .build();
     mockBetaAnalyticsData.addResponse(expectedResponse);
 
@@ -402,6 +409,7 @@ public class BetaAnalyticsDataClientTest {
             .setName(MetadataName.of("[PROPERTY]").toString())
             .addAllDimensions(new ArrayList<DimensionMetadata>())
             .addAllMetrics(new ArrayList<MetricMetadata>())
+            .addAllComparisons(new ArrayList<ComparisonMetadata>())
             .build();
     mockBetaAnalyticsData.addResponse(expectedResponse);
 

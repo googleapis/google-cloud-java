@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,11 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.geo.type.Viewport;
 import com.google.protobuf.AbstractMessage;
+import com.google.type.Date;
 import com.google.type.LatLng;
 import com.google.type.LocalizedText;
+import com.google.type.PostalAddress;
+import com.google.type.TimeZone;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -82,7 +85,10 @@ public class PlacesClientTest {
   @Test
   public void searchNearbyTest() throws Exception {
     SearchNearbyResponse expectedResponse =
-        SearchNearbyResponse.newBuilder().addAllPlaces(new ArrayList<Place>()).build();
+        SearchNearbyResponse.newBuilder()
+            .addAllPlaces(new ArrayList<Place>())
+            .addAllRoutingSummaries(new ArrayList<RoutingSummary>())
+            .build();
     mockPlaces.addResponse(expectedResponse);
 
     SearchNearbyRequest request =
@@ -95,6 +101,8 @@ public class PlacesClientTest {
             .addAllExcludedPrimaryTypes(new ArrayList<String>())
             .setMaxResultCount(-1736124056)
             .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
+            .setRoutingParameters(RoutingParameters.newBuilder().build())
+            .setIncludeFutureOpeningBusinesses(true)
             .build();
 
     SearchNearbyResponse actualResponse = client.searchNearby(request);
@@ -115,6 +123,10 @@ public class PlacesClientTest {
     Assert.assertEquals(request.getMaxResultCount(), actualRequest.getMaxResultCount());
     Assert.assertEquals(request.getLocationRestriction(), actualRequest.getLocationRestriction());
     Assert.assertEquals(request.getRankPreference(), actualRequest.getRankPreference());
+    Assert.assertEquals(request.getRoutingParameters(), actualRequest.getRoutingParameters());
+    Assert.assertEquals(
+        request.getIncludeFutureOpeningBusinesses(),
+        actualRequest.getIncludeFutureOpeningBusinesses());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -137,6 +149,8 @@ public class PlacesClientTest {
               .addAllExcludedPrimaryTypes(new ArrayList<String>())
               .setMaxResultCount(-1736124056)
               .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
+              .setRoutingParameters(RoutingParameters.newBuilder().build())
+              .setIncludeFutureOpeningBusinesses(true)
               .build();
       client.searchNearby(request);
       Assert.fail("No exception raised");
@@ -148,7 +162,11 @@ public class PlacesClientTest {
   @Test
   public void searchTextTest() throws Exception {
     SearchTextResponse expectedResponse =
-        SearchTextResponse.newBuilder().addAllPlaces(new ArrayList<Place>()).build();
+        SearchTextResponse.newBuilder()
+            .addAllPlaces(new ArrayList<Place>())
+            .addAllRoutingSummaries(new ArrayList<RoutingSummary>())
+            .addAllContextualContents(new ArrayList<ContextualContent>())
+            .build();
     mockPlaces.addResponse(expectedResponse);
 
     SearchTextRequest request =
@@ -165,6 +183,11 @@ public class PlacesClientTest {
             .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
             .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
             .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
+            .setRoutingParameters(RoutingParameters.newBuilder().build())
+            .setSearchAlongRouteParameters(
+                SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
+            .setIncludePureServiceAreaBusinesses(true)
+            .setIncludeFutureOpeningBusinesses(true)
             .build();
 
     SearchTextResponse actualResponse = client.searchText(request);
@@ -187,6 +210,15 @@ public class PlacesClientTest {
     Assert.assertEquals(request.getLocationBias(), actualRequest.getLocationBias());
     Assert.assertEquals(request.getLocationRestriction(), actualRequest.getLocationRestriction());
     Assert.assertEquals(request.getEvOptions(), actualRequest.getEvOptions());
+    Assert.assertEquals(request.getRoutingParameters(), actualRequest.getRoutingParameters());
+    Assert.assertEquals(
+        request.getSearchAlongRouteParameters(), actualRequest.getSearchAlongRouteParameters());
+    Assert.assertEquals(
+        request.getIncludePureServiceAreaBusinesses(),
+        actualRequest.getIncludePureServiceAreaBusinesses());
+    Assert.assertEquals(
+        request.getIncludeFutureOpeningBusinesses(),
+        actualRequest.getIncludeFutureOpeningBusinesses());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -213,6 +245,11 @@ public class PlacesClientTest {
               .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
               .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
               .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
+              .setRoutingParameters(RoutingParameters.newBuilder().build())
+              .setSearchAlongRouteParameters(
+                  SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
+              .setIncludePureServiceAreaBusinesses(true)
+              .setIncludeFutureOpeningBusinesses(true)
               .build();
       client.searchText(request);
       Assert.fail("No exception raised");
@@ -309,10 +346,12 @@ public class PlacesClientTest {
             .addAllTypes(new ArrayList<String>())
             .setPrimaryType("primaryType-867549092")
             .setPrimaryTypeDisplayName(LocalizedText.newBuilder().build())
+            .setGoogleMapsTypeLabel(LocalizedText.newBuilder().build())
             .setNationalPhoneNumber("nationalPhoneNumber-1432446651")
             .setInternationalPhoneNumber("internationalPhoneNumber-74125591")
             .setFormattedAddress("formattedAddress1036810136")
             .setShortFormattedAddress("shortFormattedAddress282445876")
+            .setPostalAddress(PostalAddress.newBuilder().build())
             .addAllAddressComponents(new ArrayList<Place.AddressComponent>())
             .setPlusCode(Place.PlusCode.newBuilder().build())
             .setLocation(LatLng.newBuilder().build())
@@ -323,8 +362,10 @@ public class PlacesClientTest {
             .addAllReviews(new ArrayList<Review>())
             .setRegularOpeningHours(Place.OpeningHours.newBuilder().build())
             .setUtcOffsetMinutes(1046614318)
+            .setTimeZone(TimeZone.newBuilder().build())
             .addAllPhotos(new ArrayList<Photo>())
             .setAdrFormatAddress("adrFormatAddress1685861262")
+            .setOpeningDate(Date.newBuilder().build())
             .setPriceLevel(PriceLevel.forNumber(0))
             .addAllAttributions(new ArrayList<Place.Attribution>())
             .setUserRatingCount(-1453311007)
@@ -363,6 +404,19 @@ public class PlacesClientTest {
             .setAccessibilityOptions(Place.AccessibilityOptions.newBuilder().build())
             .setFuelOptions(FuelOptions.newBuilder().build())
             .setEvChargeOptions(EVChargeOptions.newBuilder().build())
+            .setGenerativeSummary(Place.GenerativeSummary.newBuilder().build())
+            .addAllContainingPlaces(new ArrayList<Place.ContainingPlace>())
+            .setPureServiceAreaBusiness(true)
+            .setAddressDescriptor(AddressDescriptor.newBuilder().build())
+            .setGoogleMapsLinks(Place.GoogleMapsLinks.newBuilder().build())
+            .setPriceRange(PriceRange.newBuilder().build())
+            .setReviewSummary(Place.ReviewSummary.newBuilder().build())
+            .setEvChargeAmenitySummary(Place.EvChargeAmenitySummary.newBuilder().build())
+            .setNeighborhoodSummary(Place.NeighborhoodSummary.newBuilder().build())
+            .setConsumerAlert(Place.ConsumerAlert.newBuilder().build())
+            .setMovedPlace(PlaceName.of("[PLACE_ID]").toString())
+            .setMovedPlaceId("movedPlaceId-933251505")
+            .setTransitStation(TransitStation.newBuilder().build())
             .build();
     mockPlaces.addResponse(expectedResponse);
 
@@ -406,10 +460,12 @@ public class PlacesClientTest {
             .addAllTypes(new ArrayList<String>())
             .setPrimaryType("primaryType-867549092")
             .setPrimaryTypeDisplayName(LocalizedText.newBuilder().build())
+            .setGoogleMapsTypeLabel(LocalizedText.newBuilder().build())
             .setNationalPhoneNumber("nationalPhoneNumber-1432446651")
             .setInternationalPhoneNumber("internationalPhoneNumber-74125591")
             .setFormattedAddress("formattedAddress1036810136")
             .setShortFormattedAddress("shortFormattedAddress282445876")
+            .setPostalAddress(PostalAddress.newBuilder().build())
             .addAllAddressComponents(new ArrayList<Place.AddressComponent>())
             .setPlusCode(Place.PlusCode.newBuilder().build())
             .setLocation(LatLng.newBuilder().build())
@@ -420,8 +476,10 @@ public class PlacesClientTest {
             .addAllReviews(new ArrayList<Review>())
             .setRegularOpeningHours(Place.OpeningHours.newBuilder().build())
             .setUtcOffsetMinutes(1046614318)
+            .setTimeZone(TimeZone.newBuilder().build())
             .addAllPhotos(new ArrayList<Photo>())
             .setAdrFormatAddress("adrFormatAddress1685861262")
+            .setOpeningDate(Date.newBuilder().build())
             .setPriceLevel(PriceLevel.forNumber(0))
             .addAllAttributions(new ArrayList<Place.Attribution>())
             .setUserRatingCount(-1453311007)
@@ -460,6 +518,19 @@ public class PlacesClientTest {
             .setAccessibilityOptions(Place.AccessibilityOptions.newBuilder().build())
             .setFuelOptions(FuelOptions.newBuilder().build())
             .setEvChargeOptions(EVChargeOptions.newBuilder().build())
+            .setGenerativeSummary(Place.GenerativeSummary.newBuilder().build())
+            .addAllContainingPlaces(new ArrayList<Place.ContainingPlace>())
+            .setPureServiceAreaBusiness(true)
+            .setAddressDescriptor(AddressDescriptor.newBuilder().build())
+            .setGoogleMapsLinks(Place.GoogleMapsLinks.newBuilder().build())
+            .setPriceRange(PriceRange.newBuilder().build())
+            .setReviewSummary(Place.ReviewSummary.newBuilder().build())
+            .setEvChargeAmenitySummary(Place.EvChargeAmenitySummary.newBuilder().build())
+            .setNeighborhoodSummary(Place.NeighborhoodSummary.newBuilder().build())
+            .setConsumerAlert(Place.ConsumerAlert.newBuilder().build())
+            .setMovedPlace(PlaceName.of("[PLACE_ID]").toString())
+            .setMovedPlaceId("movedPlaceId-933251505")
+            .setTransitStation(TransitStation.newBuilder().build())
             .build();
     mockPlaces.addResponse(expectedResponse);
 
@@ -515,6 +586,8 @@ public class PlacesClientTest {
             .setInputOffset(1010406056)
             .setIncludeQueryPredictions(true)
             .setSessionToken("sessionToken-696552189")
+            .setIncludePureServiceAreaBusinesses(true)
+            .setIncludeFutureOpeningBusinesses(true)
             .build();
 
     AutocompletePlacesResponse actualResponse = client.autocompletePlaces(request);
@@ -538,6 +611,12 @@ public class PlacesClientTest {
     Assert.assertEquals(
         request.getIncludeQueryPredictions(), actualRequest.getIncludeQueryPredictions());
     Assert.assertEquals(request.getSessionToken(), actualRequest.getSessionToken());
+    Assert.assertEquals(
+        request.getIncludePureServiceAreaBusinesses(),
+        actualRequest.getIncludePureServiceAreaBusinesses());
+    Assert.assertEquals(
+        request.getIncludeFutureOpeningBusinesses(),
+        actualRequest.getIncludeFutureOpeningBusinesses());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -564,6 +643,8 @@ public class PlacesClientTest {
               .setInputOffset(1010406056)
               .setIncludeQueryPredictions(true)
               .setSessionToken("sessionToken-696552189")
+              .setIncludePureServiceAreaBusinesses(true)
+              .setIncludeFutureOpeningBusinesses(true)
               .build();
       client.autocompletePlaces(request);
       Assert.fail("No exception raised");

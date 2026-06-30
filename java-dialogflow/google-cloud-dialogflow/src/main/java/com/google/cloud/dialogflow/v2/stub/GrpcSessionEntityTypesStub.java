@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                   ProtoUtils.marshaller(ListSessionEntityTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSessionEntityTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSessionEntityTypeRequest, SessionEntityType>
@@ -76,6 +77,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSessionEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SessionEntityType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSessionEntityTypeRequest, SessionEntityType>
@@ -87,6 +89,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSessionEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SessionEntityType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSessionEntityTypeRequest, SessionEntityType>
@@ -98,6 +101,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSessionEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SessionEntityType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSessionEntityTypeRequest, Empty>
@@ -109,6 +113,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSessionEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -120,6 +125,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -128,6 +134,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>
@@ -202,6 +209,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetSessionEntityTypeRequest, SessionEntityType>
         getSessionEntityTypeTransportSettings =
@@ -213,6 +221,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateSessionEntityTypeRequest, SessionEntityType>
         createSessionEntityTypeTransportSettings =
@@ -224,6 +233,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateSessionEntityTypeRequest, SessionEntityType>
         updateSessionEntityTypeTransportSettings =
@@ -248,6 +258,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

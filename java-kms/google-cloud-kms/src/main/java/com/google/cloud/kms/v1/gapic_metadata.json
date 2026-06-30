@@ -5,6 +5,72 @@
   "protoPackage": "google.cloud.kms.v1",
   "libraryPackage": "com.google.cloud.kms.v1",
   "services": {
+    "Autokey": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AutokeyClient",
+          "rpcs": {
+            "CreateKeyHandle": {
+              "methods": ["createKeyHandleAsync", "createKeyHandleAsync", "createKeyHandleAsync", "createKeyHandleOperationCallable", "createKeyHandleCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetKeyHandle": {
+              "methods": ["getKeyHandle", "getKeyHandle", "getKeyHandle", "getKeyHandleCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListKeyHandles": {
+              "methods": ["listKeyHandles", "listKeyHandles", "listKeyHandles", "listKeyHandlesPagedCallable", "listKeyHandlesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "AutokeyAdmin": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AutokeyAdminClient",
+          "rpcs": {
+            "GetAutokeyConfig": {
+              "methods": ["getAutokeyConfig", "getAutokeyConfig", "getAutokeyConfig", "getAutokeyConfigCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "ShowEffectiveAutokeyConfig": {
+              "methods": ["showEffectiveAutokeyConfig", "showEffectiveAutokeyConfig", "showEffectiveAutokeyConfig", "showEffectiveAutokeyConfigCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateAutokeyConfig": {
+              "methods": ["updateAutokeyConfig", "updateAutokeyConfig", "updateAutokeyConfigCallable"]
+            }
+          }
+        }
+      }
+    },
     "EkmService": {
       "clients": {
         "grpc": {
@@ -50,6 +116,57 @@
         }
       }
     },
+    "HsmManagement": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HsmManagementClient",
+          "rpcs": {
+            "ApproveSingleTenantHsmInstanceProposal": {
+              "methods": ["approveSingleTenantHsmInstanceProposal", "approveSingleTenantHsmInstanceProposal", "approveSingleTenantHsmInstanceProposal", "approveSingleTenantHsmInstanceProposalCallable"]
+            },
+            "CreateSingleTenantHsmInstance": {
+              "methods": ["createSingleTenantHsmInstanceAsync", "createSingleTenantHsmInstanceAsync", "createSingleTenantHsmInstanceAsync", "createSingleTenantHsmInstanceOperationCallable", "createSingleTenantHsmInstanceCallable"]
+            },
+            "CreateSingleTenantHsmInstanceProposal": {
+              "methods": ["createSingleTenantHsmInstanceProposalAsync", "createSingleTenantHsmInstanceProposalAsync", "createSingleTenantHsmInstanceProposalAsync", "createSingleTenantHsmInstanceProposalOperationCallable", "createSingleTenantHsmInstanceProposalCallable"]
+            },
+            "DeleteSingleTenantHsmInstanceProposal": {
+              "methods": ["deleteSingleTenantHsmInstanceProposal", "deleteSingleTenantHsmInstanceProposal", "deleteSingleTenantHsmInstanceProposal", "deleteSingleTenantHsmInstanceProposalCallable"]
+            },
+            "ExecuteSingleTenantHsmInstanceProposal": {
+              "methods": ["executeSingleTenantHsmInstanceProposalAsync", "executeSingleTenantHsmInstanceProposalAsync", "executeSingleTenantHsmInstanceProposalAsync", "executeSingleTenantHsmInstanceProposalOperationCallable", "executeSingleTenantHsmInstanceProposalCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetSingleTenantHsmInstance": {
+              "methods": ["getSingleTenantHsmInstance", "getSingleTenantHsmInstance", "getSingleTenantHsmInstance", "getSingleTenantHsmInstanceCallable"]
+            },
+            "GetSingleTenantHsmInstanceProposal": {
+              "methods": ["getSingleTenantHsmInstanceProposal", "getSingleTenantHsmInstanceProposal", "getSingleTenantHsmInstanceProposal", "getSingleTenantHsmInstanceProposalCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListSingleTenantHsmInstanceProposals": {
+              "methods": ["listSingleTenantHsmInstanceProposals", "listSingleTenantHsmInstanceProposals", "listSingleTenantHsmInstanceProposals", "listSingleTenantHsmInstanceProposalsPagedCallable", "listSingleTenantHsmInstanceProposalsCallable"]
+            },
+            "ListSingleTenantHsmInstances": {
+              "methods": ["listSingleTenantHsmInstances", "listSingleTenantHsmInstances", "listSingleTenantHsmInstances", "listSingleTenantHsmInstancesPagedCallable", "listSingleTenantHsmInstancesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "KeyManagementService": {
       "clients": {
         "grpc": {
@@ -73,8 +190,17 @@
             "CreateKeyRing": {
               "methods": ["createKeyRing", "createKeyRing", "createKeyRing", "createKeyRingCallable"]
             },
+            "Decapsulate": {
+              "methods": ["decapsulate", "decapsulateCallable"]
+            },
             "Decrypt": {
               "methods": ["decrypt", "decrypt", "decrypt", "decryptCallable"]
+            },
+            "DeleteCryptoKey": {
+              "methods": ["deleteCryptoKeyAsync", "deleteCryptoKeyAsync", "deleteCryptoKeyAsync", "deleteCryptoKeyOperationCallable", "deleteCryptoKeyCallable"]
+            },
+            "DeleteCryptoKeyVersion": {
+              "methods": ["deleteCryptoKeyVersionAsync", "deleteCryptoKeyVersionAsync", "deleteCryptoKeyVersionAsync", "deleteCryptoKeyVersionOperationCallable", "deleteCryptoKeyVersionCallable"]
             },
             "DestroyCryptoKeyVersion": {
               "methods": ["destroyCryptoKeyVersion", "destroyCryptoKeyVersion", "destroyCryptoKeyVersion", "destroyCryptoKeyVersionCallable"]
@@ -106,6 +232,9 @@
             "GetPublicKey": {
               "methods": ["getPublicKey", "getPublicKey", "getPublicKey", "getPublicKeyCallable"]
             },
+            "GetRetiredResource": {
+              "methods": ["getRetiredResource", "getRetiredResource", "getRetiredResource", "getRetiredResourceCallable"]
+            },
             "ImportCryptoKeyVersion": {
               "methods": ["importCryptoKeyVersion", "importCryptoKeyVersionCallable"]
             },
@@ -123,6 +252,9 @@
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListRetiredResources": {
+              "methods": ["listRetiredResources", "listRetiredResources", "listRetiredResources", "listRetiredResourcesPagedCallable", "listRetiredResourcesCallable"]
             },
             "MacSign": {
               "methods": ["macSign", "macSign", "macSign", "macSignCallable"]

@@ -10,7 +10,7 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-security-private-ca",
   "distribution_name": "com.google.cloud:google-cloud-security-private-ca",
-  "api_id": "security-privateca.googleapis.com",
+  "api_id": "privateca.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true,
   "rest_documentation": "https://cloud.google.com/certificate-authority-service/docs/reference/rest",

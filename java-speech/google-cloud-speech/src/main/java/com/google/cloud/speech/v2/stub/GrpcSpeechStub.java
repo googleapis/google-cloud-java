@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,6 +92,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRecognizerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRecognizersRequest, ListRecognizersResponse>
@@ -103,6 +104,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   ProtoUtils.marshaller(ListRecognizersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRecognizersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRecognizerRequest, Recognizer>
@@ -113,6 +115,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRecognizerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recognizer.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRecognizerRequest, Operation>
@@ -123,6 +126,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRecognizerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRecognizerRequest, Operation>
@@ -133,6 +137,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRecognizerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeleteRecognizerRequest, Operation>
@@ -143,6 +148,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeleteRecognizerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RecognizeRequest, RecognizeResponse>
@@ -152,6 +158,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setFullMethodName("google.cloud.speech.v2.Speech/Recognize")
               .setRequestMarshaller(ProtoUtils.marshaller(RecognizeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RecognizeResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StreamingRecognizeRequest, StreamingRecognizeResponse>
@@ -163,6 +170,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   ProtoUtils.marshaller(StreamingRecognizeRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingRecognizeResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchRecognizeRequest, Operation>
@@ -173,6 +181,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchRecognizeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConfigRequest, Config> getConfigMethodDescriptor =
@@ -181,6 +190,7 @@ public class GrpcSpeechStub extends SpeechStub {
           .setFullMethodName("google.cloud.speech.v2.Speech/GetConfig")
           .setRequestMarshaller(ProtoUtils.marshaller(GetConfigRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Config.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateConfigRequest, Config> updateConfigMethodDescriptor =
@@ -189,6 +199,7 @@ public class GrpcSpeechStub extends SpeechStub {
           .setFullMethodName("google.cloud.speech.v2.Speech/UpdateConfig")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateConfigRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Config.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateCustomClassRequest, Operation>
@@ -199,6 +210,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCustomClassesRequest, ListCustomClassesResponse>
@@ -210,6 +222,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   ProtoUtils.marshaller(ListCustomClassesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomClassesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomClassRequest, CustomClass>
@@ -220,6 +233,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomClass.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCustomClassRequest, Operation>
@@ -230,6 +244,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCustomClassRequest, Operation>
@@ -240,6 +255,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeleteCustomClassRequest, Operation>
@@ -250,6 +266,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeleteCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePhraseSetRequest, Operation>
@@ -260,6 +277,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPhraseSetsRequest, ListPhraseSetsResponse>
@@ -271,6 +289,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   ProtoUtils.marshaller(ListPhraseSetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPhraseSetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPhraseSetRequest, PhraseSet>
@@ -280,6 +299,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setFullMethodName("google.cloud.speech.v2.Speech/GetPhraseSet")
               .setRequestMarshaller(ProtoUtils.marshaller(GetPhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PhraseSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePhraseSetRequest, Operation>
@@ -290,6 +310,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePhraseSetRequest, Operation>
@@ -300,6 +321,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeletePhraseSetRequest, Operation>
@@ -310,6 +332,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeletePhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -321,6 +344,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -329,6 +353,7 @@ public class GrpcSpeechStub extends SpeechStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateRecognizerRequest, Operation> createRecognizerCallable;
@@ -442,6 +467,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListRecognizersRequest, ListRecognizersResponse>
         listRecognizersTransportSettings =
@@ -453,6 +479,7 @@ public class GrpcSpeechStub extends SpeechStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRecognizerRequest, Recognizer> getRecognizerTransportSettings =
         GrpcCallSettings.<GetRecognizerRequest, Recognizer>newBuilder()
@@ -463,6 +490,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateRecognizerRequest, Operation> updateRecognizerTransportSettings =
         GrpcCallSettings.<UpdateRecognizerRequest, Operation>newBuilder()
@@ -483,6 +511,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeleteRecognizerRequest, Operation> undeleteRecognizerTransportSettings =
         GrpcCallSettings.<UndeleteRecognizerRequest, Operation>newBuilder()
@@ -493,6 +522,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RecognizeRequest, RecognizeResponse> recognizeTransportSettings =
         GrpcCallSettings.<RecognizeRequest, RecognizeResponse>newBuilder()
@@ -503,11 +533,13 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("recognizer", String.valueOf(request.getRecognizer()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRecognizer())
             .build();
     GrpcCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
         streamingRecognizeTransportSettings =
             GrpcCallSettings.<StreamingRecognizeRequest, StreamingRecognizeResponse>newBuilder()
                 .setMethodDescriptor(streamingRecognizeMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getRecognizer())
                 .build();
     GrpcCallSettings<BatchRecognizeRequest, Operation> batchRecognizeTransportSettings =
         GrpcCallSettings.<BatchRecognizeRequest, Operation>newBuilder()
@@ -518,6 +550,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("recognizer", String.valueOf(request.getRecognizer()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRecognizer())
             .build();
     GrpcCallSettings<GetConfigRequest, Config> getConfigTransportSettings =
         GrpcCallSettings.<GetConfigRequest, Config>newBuilder()
@@ -528,6 +561,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateConfigRequest, Config> updateConfigTransportSettings =
         GrpcCallSettings.<UpdateConfigRequest, Config>newBuilder()
@@ -548,6 +582,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListCustomClassesRequest, ListCustomClassesResponse>
         listCustomClassesTransportSettings =
@@ -559,6 +594,7 @@ public class GrpcSpeechStub extends SpeechStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCustomClassRequest, CustomClass> getCustomClassTransportSettings =
         GrpcCallSettings.<GetCustomClassRequest, CustomClass>newBuilder()
@@ -569,6 +605,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateCustomClassRequest, Operation> updateCustomClassTransportSettings =
         GrpcCallSettings.<UpdateCustomClassRequest, Operation>newBuilder()
@@ -590,6 +627,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeleteCustomClassRequest, Operation> undeleteCustomClassTransportSettings =
         GrpcCallSettings.<UndeleteCustomClassRequest, Operation>newBuilder()
@@ -600,6 +638,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreatePhraseSetRequest, Operation> createPhraseSetTransportSettings =
         GrpcCallSettings.<CreatePhraseSetRequest, Operation>newBuilder()
@@ -610,6 +649,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListPhraseSetsRequest, ListPhraseSetsResponse>
         listPhraseSetsTransportSettings =
@@ -621,6 +661,7 @@ public class GrpcSpeechStub extends SpeechStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPhraseSetRequest, PhraseSet> getPhraseSetTransportSettings =
         GrpcCallSettings.<GetPhraseSetRequest, PhraseSet>newBuilder()
@@ -631,6 +672,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdatePhraseSetRequest, Operation> updatePhraseSetTransportSettings =
         GrpcCallSettings.<UpdatePhraseSetRequest, Operation>newBuilder()
@@ -651,6 +693,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeletePhraseSetRequest, Operation> undeletePhraseSetTransportSettings =
         GrpcCallSettings.<UndeletePhraseSetRequest, Operation>newBuilder()
@@ -661,6 +704,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,6 +71,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListMonitoredResourceDescriptorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -85,6 +86,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   ProtoUtils.marshaller(GetMonitoredResourceDescriptorRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(MonitoredResourceDescriptor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
@@ -96,6 +98,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   ProtoUtils.marshaller(ListMetricDescriptorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMetricDescriptorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMetricDescriptorRequest, MetricDescriptor>
@@ -106,6 +109,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMetricDescriptorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MetricDescriptor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMetricDescriptorRequest, MetricDescriptor>
@@ -116,6 +120,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMetricDescriptorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MetricDescriptor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMetricDescriptorRequest, Empty>
@@ -126,6 +131,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMetricDescriptorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTimeSeriesRequest, ListTimeSeriesResponse>
@@ -137,6 +143,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   ProtoUtils.marshaller(ListTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTimeSeriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTimeSeriesRequest, Empty>
@@ -147,6 +154,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTimeSeriesRequest, Empty>
@@ -157,6 +165,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<
@@ -237,6 +246,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
         getMonitoredResourceDescriptorTransportSettings =
@@ -249,6 +259,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
         listMetricDescriptorsTransportSettings =
@@ -261,6 +272,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetMetricDescriptorRequest, MetricDescriptor>
         getMetricDescriptorTransportSettings =
@@ -272,6 +284,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateMetricDescriptorRequest, MetricDescriptor>
         createMetricDescriptorTransportSettings =
@@ -283,6 +296,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteMetricDescriptorRequest, Empty> deleteMetricDescriptorTransportSettings =
         GrpcCallSettings.<DeleteMetricDescriptorRequest, Empty>newBuilder()
@@ -293,6 +307,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTimeSeriesRequest, ListTimeSeriesResponse>
         listTimeSeriesTransportSettings =
@@ -304,6 +319,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateTimeSeriesRequest, Empty> createTimeSeriesTransportSettings =
         GrpcCallSettings.<CreateTimeSeriesRequest, Empty>newBuilder()
@@ -314,6 +330,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTimeSeriesRequest, Empty> createServiceTimeSeriesTransportSettings =
         GrpcCallSettings.<CreateTimeSeriesRequest, Empty>newBuilder()
@@ -324,6 +341,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listMonitoredResourceDescriptorsCallable =

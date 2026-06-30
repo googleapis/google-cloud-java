@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -37,7 +37,6 @@ option ruby_package = "Google::Apps::Events::Subscriptions::V1";
 service SubscriptionsService {
   option (google.api.default_host) = "workspaceevents.googleapis.com";
   option (google.api.oauth_scopes) =
-      "https://www.googleapis.com/auth/chat.bot,"
       "https://www.googleapis.com/auth/chat.memberships,"
       "https://www.googleapis.com/auth/chat.memberships.readonly,"
       "https://www.googleapis.com/auth/chat.messages,"

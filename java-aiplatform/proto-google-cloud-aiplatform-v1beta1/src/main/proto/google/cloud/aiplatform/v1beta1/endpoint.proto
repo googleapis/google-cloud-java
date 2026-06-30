@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,6 +22,8 @@ import "google/cloud/aiplatform/v1beta1/encryption_spec.proto";
 import "google/cloud/aiplatform/v1beta1/explanation.proto";
 import "google/cloud/aiplatform/v1beta1/io.proto";
 import "google/cloud/aiplatform/v1beta1/machine_resources.proto";
+import "google/cloud/aiplatform/v1beta1/service_networking.proto";
+import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 
 option csharp_namespace = "Google.Cloud.AIPlatform.V1Beta1";
@@ -126,6 +128,14 @@ message Endpoint {
   // can be set.
   bool enable_private_service_connect = 17 [deprecated = true];
 
+  // Optional. Configuration for private service connect.
+  //
+  // [network][google.cloud.aiplatform.v1beta1.Endpoint.network] and
+  // [private_service_connect_config][google.cloud.aiplatform.v1beta1.Endpoint.private_service_connect_config]
+  // are mutually exclusive.
+  PrivateServiceConnectConfig private_service_connect_config = 21
+      [(google.api.field_behavior) = OPTIONAL];
+
   // Output only. Resource name of the Model Monitoring job associated with this
   // Endpoint if monitoring is enabled by
   // [JobService.CreateModelDeploymentMonitoringJob][google.cloud.aiplatform.v1beta1.JobService.CreateModelDeploymentMonitoringJob].
@@ -141,10 +151,59 @@ message Endpoint {
   // Configures the request-response logging for online prediction.
   PredictRequestResponseLoggingConfig predict_request_response_logging_config =
       18;
+
+  // If true, the endpoint will be exposed through a dedicated
+  // DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS
+  // will be isolated from other users' traffic and will have better performance
+  // and reliability.
+  // Note: Once you enabled dedicated endpoint, you won't be able to send
+  // request to the shared DNS {region}-aiplatform.googleapis.com. The
+  // limitation will be removed soon.
+  bool dedicated_endpoint_enabled = 24;
+
+  // Output only. DNS of the dedicated endpoint. Will only be populated if
+  // dedicated_endpoint_enabled is true. Depending on the features enabled, uid
+  // might be a random number or a string. For example, if fast_tryout is
+  // enabled, uid will be fasttryout. Format:
+  // `https://{endpoint_id}.{region}-{uid}.prediction.vertexai.goog`.
+  string dedicated_endpoint_dns = 25
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Configurations that are applied to the endpoint for online prediction.
+  ClientConnectionConfig client_connection_config = 23;
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzs = 27 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzi = 28 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Optional. Configuration for GenAiAdvancedFeatures. If the endpoint is
+  // serving GenAI models, advanced features like native RAG integration can be
+  // configured. Currently, only Model Garden models are supported.
+  GenAiAdvancedFeaturesConfig gen_ai_advanced_features_config = 29
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // If true, the model server will be isolated from the external internet.
+  bool private_model_server_enabled = 30;
 }
 
 // A deployment of a Model. Endpoints contain one or more DeployedModels.
 message DeployedModel {
+  // Runtime status of the deployed model.
+  message Status {
+    // Output only. The latest deployed model's status message (if any).
+    string message = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+    // Output only. The time at which the status was last updated.
+    google.protobuf.Timestamp last_update_time = 2
+        [(google.api.field_behavior) = OUTPUT_ONLY];
+
+    // Output only. The number of available replicas of the deployed model.
+    int32 available_replica_count = 3
+        [(google.api.field_behavior) = OUTPUT_ONLY];
+  }
+
   // The prediction (for example, the machine) resources that the DeployedModel
   // uses. The user is billed for the resources (at least their minimal amount)
   // even if the DeployedModel receives no traffic.
@@ -166,6 +225,10 @@ message DeployedModel {
     string shared_resources = 17 [(google.api.resource_reference) = {
       type: "aiplatform.googleapis.com/DeploymentResourcePool"
     }];
+
+    // Optional. Resources for a full fine tuned model.
+    FullFineTunedResources full_fine_tuned_resources = 36
+        [(google.api.field_behavior) = OPTIONAL];
   }
 
   // Immutable. The ID of the DeployedModel. If not provided upon deployment,
@@ -174,9 +237,8 @@ message DeployedModel {
   // This value should be 1-10 characters, and valid characters are `/[0-9]/`.
   string id = 1 [(google.api.field_behavior) = IMMUTABLE];
 
-  // Required. The resource name of the Model that this is the deployment of.
-  // Note that the Model may be in a different location than the DeployedModel's
-  // Endpoint.
+  // The resource name of the Model that this is the deployment of. Note that
+  // the Model may be in a different location than the DeployedModel's Endpoint.
   //
   // The resource name may contain version id or version alias to specify the
   // version.
@@ -184,12 +246,9 @@ message DeployedModel {
   //              or
   //            `projects/{project}/locations/{location}/models/{model}@golden`
   // if no version is specified, the default version will be deployed.
-  string model = 2 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference) = {
-      type: "aiplatform.googleapis.com/Model"
-    }
-  ];
+  string model = 2 [(google.api.resource_reference) = {
+    type: "aiplatform.googleapis.com/Model"
+  }];
 
   // Output only. The version ID of the model that is deployed.
   string model_version_id = 18 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -243,6 +302,15 @@ message DeployedModel {
   // Only supported for custom-trained Models and AutoML Tabular Models.
   bool enable_container_logging = 12;
 
+  // For custom-trained Models and AutoML Tabular Models, the container of the
+  // DeployedModel instances will send `stderr` and `stdout` streams to
+  // Cloud Logging by default. Please note that the logs incur cost,
+  // which are subject to [Cloud Logging
+  // pricing](https://cloud.google.com/logging/pricing).
+  //
+  // User can disable container logging by setting this flag to true.
+  bool disable_container_logging = 15;
+
   // If true, online prediction access logs are sent to Cloud
   // Logging.
   // These logs are like standard server access logs, containing
@@ -259,6 +327,26 @@ message DeployedModel {
   // [network][google.cloud.aiplatform.v1beta1.Endpoint.network] is configured.
   PrivateEndpoints private_endpoints = 14
       [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Configuration for faster model deployment.
+  FasterDeploymentConfig faster_deployment_config = 23;
+
+  // Options for configuring rolling deployments.
+  RolloutOptions rollout_options = 25;
+
+  // Output only. Runtime status of the deployed model.
+  Status status = 26 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // System labels to apply to Model Garden deployments.
+  // System labels are managed by Google for internal use only.
+  map<string, string> system_labels = 28;
+
+  // The checkpoint id of the model.
+  string checkpoint_id = 29;
+
+  // Optional. Spec for configuring speculative decoding.
+  SpeculativeDecodingSpec speculative_decoding_spec = 30
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // PrivateEndpoints proto is used to provide paths for users to send
@@ -297,4 +385,134 @@ message PredictRequestResponseLoggingConfig {
   // most special characters will become underscores). If no table name is
   // given, a new table will be created with name `request_response_logging`
   BigQueryDestination bigquery_destination = 3;
+
+  // Output only. The schema version used in creating the BigQuery table for the
+  // request response logging. The versions are "v1" and "v2". The current
+  // default version is "v1".
+  string request_response_logging_schema_version = 4
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // This field is used for large models. If true, in addition to the
+  // original large model logs, logs will be converted in OTel schema format,
+  // and saved in otel_log column. Default value is false.
+  bool enable_otel_logging = 6;
+}
+
+// This message contains configs of a publisher model.
+message PublisherModelConfig {
+  // A model provider (publisher) that prediction data may be shared with.
+  enum ModelProvider {
+    // Unspecified model provider.
+    MODEL_PROVIDER_UNSPECIFIED = 0;
+
+    // Anthropic.
+    ANTHROPIC = 1;
+  }
+
+  // The prediction request/response logging config.
+  PredictRequestResponseLoggingConfig logging_config = 3;
+
+  // Optional. The model provider (publisher) for which the customer has enabled
+  // data sharing. For publisher models that are configured to require data
+  // sharing, a prediction request is only allowed when the model's publisher
+  // matches this provider. Otherwise, the request is rejected.
+  ModelProvider data_sharing_enabled_provider = 4
+      [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Configurations (e.g. inference timeout) that are applied on your endpoints.
+message ClientConnectionConfig {
+  // Customizable online prediction request timeout.
+  google.protobuf.Duration inference_timeout = 1;
+}
+
+// Configuration for faster model deployment.
+message FasterDeploymentConfig {
+  // If true, enable fast tryout feature for this deployed model.
+  bool fast_tryout_enabled = 2;
+}
+
+// Configuration for rolling deployments.
+message RolloutOptions {
+  // Configures how many replicas are allowed to be unavailable during a rolling
+  // deployment.
+  oneof max_unavailable {
+    // Absolute count of replicas allowed to be unavailable.
+    int32 max_unavailable_replicas = 3;
+
+    // Percentage of replicas allowed to be unavailable.
+    // For autoscaling deployments, this refers to the target replica count.
+    int32 max_unavailable_percentage = 4;
+  }
+
+  // Configures how many additional replicas can be provisioned during a rolling
+  // deployment.
+  oneof max_surge {
+    // Absolute count of allowed additional replicas.
+    int32 max_surge_replicas = 5;
+
+    // Percentage of allowed additional replicas.
+    // For autoscaling deployments, this refers to the target replica count.
+    int32 max_surge_percentage = 6;
+  }
+
+  // ID of the DeployedModel that this deployment should replace.
+  string previous_deployed_model = 1;
+
+  // Output only. Read-only. Revision number determines the relative priority of
+  // DeployedModels in the same rollout. The DeployedModel with the largest
+  // revision number specifies the intended state of the deployment.
+  int32 revision_number = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// Configuration for GenAiAdvancedFeatures.
+message GenAiAdvancedFeaturesConfig {
+  // Configuration for Retrieval Augmented Generation feature.
+  message RagConfig {
+    // If true, enable Retrieval Augmented Generation in ChatCompletion request.
+    // Once enabled, the endpoint will be identified as GenAI endpoint and
+    // Arthedain router will be used.
+    bool enable_rag = 1;
+  }
+
+  // Configuration for Retrieval Augmented Generation feature.
+  RagConfig rag_config = 1;
+}
+
+// Configuration for Speculative Decoding.
+message SpeculativeDecodingSpec {
+  // Draft model speculation works by using the smaller model to generate
+  // candidate tokens for speculative decoding.
+  message DraftModelSpeculation {
+    // Required. The resource name of the draft model.
+    string draft_model = 1 [
+      (google.api.field_behavior) = REQUIRED,
+      (google.api.resource_reference) = {
+        type: "aiplatform.googleapis.com/Model"
+      }
+    ];
+  }
+
+  // N-Gram speculation works by trying to find matching tokens in the
+  // previous prompt sequence and use those as speculation for generating
+  // new tokens.
+  message NgramSpeculation {
+    // The number of last N input tokens used as ngram to search/match
+    // against the previous prompt sequence.
+    // This is equal to the N in N-Gram.
+    // The default value is 3 if not specified.
+    int32 ngram_size = 1;
+  }
+
+  // The type of speculation method to use.
+  oneof speculation {
+    // draft model speculation.
+    DraftModelSpeculation draft_model_speculation = 2;
+
+    // N-Gram speculation.
+    NgramSpeculation ngram_speculation = 3;
+  }
+
+  // The number of speculative tokens to generate at each step.
+  int32 speculative_token_count = 1;
 }

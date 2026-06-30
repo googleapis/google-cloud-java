@@ -1,0 +1,114 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.firestore.admin.v1",
+  "libraryPackage": "com.google.cloud.firestore.v1",
+  "services": {
+    "FirestoreAdmin": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FirestoreAdminClient",
+          "rpcs": {
+            "BulkDeleteDocuments": {
+              "methods": ["bulkDeleteDocumentsAsync", "bulkDeleteDocumentsAsync", "bulkDeleteDocumentsAsync", "bulkDeleteDocumentsOperationCallable", "bulkDeleteDocumentsCallable"]
+            },
+            "CloneDatabase": {
+              "methods": ["cloneDatabaseAsync", "cloneDatabaseOperationCallable", "cloneDatabaseCallable"]
+            },
+            "CreateBackupSchedule": {
+              "methods": ["createBackupSchedule", "createBackupSchedule", "createBackupSchedule", "createBackupScheduleCallable"]
+            },
+            "CreateDatabase": {
+              "methods": ["createDatabaseAsync", "createDatabaseAsync", "createDatabaseAsync", "createDatabaseOperationCallable", "createDatabaseCallable"]
+            },
+            "CreateIndex": {
+              "methods": ["createIndexAsync", "createIndexAsync", "createIndexAsync", "createIndexOperationCallable", "createIndexCallable"]
+            },
+            "CreateUserCreds": {
+              "methods": ["createUserCreds", "createUserCreds", "createUserCreds", "createUserCredsCallable"]
+            },
+            "DeleteBackup": {
+              "methods": ["deleteBackup", "deleteBackup", "deleteBackup", "deleteBackupCallable"]
+            },
+            "DeleteBackupSchedule": {
+              "methods": ["deleteBackupSchedule", "deleteBackupSchedule", "deleteBackupSchedule", "deleteBackupScheduleCallable"]
+            },
+            "DeleteDatabase": {
+              "methods": ["deleteDatabaseAsync", "deleteDatabaseAsync", "deleteDatabaseAsync", "deleteDatabaseOperationCallable", "deleteDatabaseCallable"]
+            },
+            "DeleteIndex": {
+              "methods": ["deleteIndex", "deleteIndex", "deleteIndex", "deleteIndexCallable"]
+            },
+            "DeleteUserCreds": {
+              "methods": ["deleteUserCreds", "deleteUserCreds", "deleteUserCreds", "deleteUserCredsCallable"]
+            },
+            "DisableUserCreds": {
+              "methods": ["disableUserCreds", "disableUserCreds", "disableUserCreds", "disableUserCredsCallable"]
+            },
+            "EnableUserCreds": {
+              "methods": ["enableUserCreds", "enableUserCreds", "enableUserCreds", "enableUserCredsCallable"]
+            },
+            "ExportDocuments": {
+              "methods": ["exportDocumentsAsync", "exportDocumentsAsync", "exportDocumentsAsync", "exportDocumentsOperationCallable", "exportDocumentsCallable"]
+            },
+            "GetBackup": {
+              "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
+            },
+            "GetBackupSchedule": {
+              "methods": ["getBackupSchedule", "getBackupSchedule", "getBackupSchedule", "getBackupScheduleCallable"]
+            },
+            "GetDatabase": {
+              "methods": ["getDatabase", "getDatabase", "getDatabase", "getDatabaseCallable"]
+            },
+            "GetField": {
+              "methods": ["getField", "getField", "getField", "getFieldCallable"]
+            },
+            "GetIndex": {
+              "methods": ["getIndex", "getIndex", "getIndex", "getIndexCallable"]
+            },
+            "GetUserCreds": {
+              "methods": ["getUserCreds", "getUserCreds", "getUserCreds", "getUserCredsCallable"]
+            },
+            "ImportDocuments": {
+              "methods": ["importDocumentsAsync", "importDocumentsAsync", "importDocumentsAsync", "importDocumentsOperationCallable", "importDocumentsCallable"]
+            },
+            "ListBackupSchedules": {
+              "methods": ["listBackupSchedules", "listBackupSchedules", "listBackupSchedules", "listBackupSchedulesCallable"]
+            },
+            "ListBackups": {
+              "methods": ["listBackups", "listBackups", "listBackups", "listBackupsCallable"]
+            },
+            "ListDatabases": {
+              "methods": ["listDatabases", "listDatabases", "listDatabases", "listDatabasesCallable"]
+            },
+            "ListFields": {
+              "methods": ["listFields", "listFields", "listFields", "listFieldsPagedCallable", "listFieldsCallable"]
+            },
+            "ListIndexes": {
+              "methods": ["listIndexes", "listIndexes", "listIndexes", "listIndexesPagedCallable", "listIndexesCallable"]
+            },
+            "ListUserCreds": {
+              "methods": ["listUserCreds", "listUserCreds", "listUserCreds", "listUserCredsCallable"]
+            },
+            "ResetUserPassword": {
+              "methods": ["resetUserPassword", "resetUserPassword", "resetUserPassword", "resetUserPasswordCallable"]
+            },
+            "RestoreDatabase": {
+              "methods": ["restoreDatabaseAsync", "restoreDatabaseOperationCallable", "restoreDatabaseCallable"]
+            },
+            "UpdateBackupSchedule": {
+              "methods": ["updateBackupSchedule", "updateBackupSchedule", "updateBackupScheduleCallable"]
+            },
+            "UpdateDatabase": {
+              "methods": ["updateDatabaseAsync", "updateDatabaseAsync", "updateDatabaseOperationCallable", "updateDatabaseCallable"]
+            },
+            "UpdateField": {
+              "methods": ["updateFieldAsync", "updateFieldAsync", "updateFieldOperationCallable", "updateFieldCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

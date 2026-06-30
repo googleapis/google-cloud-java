@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Registry.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/apigeeregistry/v1/provisioning_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ProvisioningGrpc {
 
@@ -184,6 +181,19 @@ public final class ProvisioningGrpc {
           }
         };
     return ProvisioningStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ProvisioningBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ProvisioningBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ProvisioningBlockingV2Stub>() {
+          @java.lang.Override
+          public ProvisioningBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ProvisioningBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ProvisioningBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -354,6 +364,69 @@ public final class ProvisioningGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Provisioning.
+   *
+   * <pre>
+   * The service that is used for managing the data plane provisioning of the
+   * Registry.
+   * </pre>
+   */
+  public static final class ProvisioningBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ProvisioningBlockingV2Stub> {
+    private ProvisioningBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ProvisioningBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ProvisioningBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions instance resources for the Registry.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createInstance(
+        com.google.cloud.apigeeregistry.v1.CreateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the Registry instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteInstance(
+        com.google.cloud.apigeeregistry.v1.DeleteInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Instance.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.Instance getInstance(
+        com.google.cloud.apigeeregistry.v1.GetInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetInstanceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Provisioning.
    *
    * <pre>
    * The service that is used for managing the data plane provisioning of the

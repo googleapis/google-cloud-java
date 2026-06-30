@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,12 +26,15 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1beta.CreateServingConfigRequest;
+import com.google.cloud.discoveryengine.v1beta.DeleteServingConfigRequest;
 import com.google.cloud.discoveryengine.v1beta.GetServingConfigRequest;
 import com.google.cloud.discoveryengine.v1beta.ListServingConfigsRequest;
 import com.google.cloud.discoveryengine.v1beta.ListServingConfigsResponse;
 import com.google.cloud.discoveryengine.v1beta.ServingConfig;
 import com.google.cloud.discoveryengine.v1beta.UpdateServingConfigRequest;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -47,6 +50,30 @@ import javax.annotation.Generated;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
+  private static final MethodDescriptor<CreateServingConfigRequest, ServingConfig>
+      createServingConfigMethodDescriptor =
+          MethodDescriptor.<CreateServingConfigRequest, ServingConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.ServingConfigService/CreateServingConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateServingConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ServingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteServingConfigRequest, Empty>
+      deleteServingConfigMethodDescriptor =
+          MethodDescriptor.<DeleteServingConfigRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.ServingConfigService/DeleteServingConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteServingConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<UpdateServingConfigRequest, ServingConfig>
       updateServingConfigMethodDescriptor =
           MethodDescriptor.<UpdateServingConfigRequest, ServingConfig>newBuilder()
@@ -56,6 +83,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServingConfigRequest, ServingConfig>
@@ -67,6 +95,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListServingConfigsRequest, ListServingConfigsResponse>
@@ -79,8 +108,12 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                   ProtoUtils.marshaller(ListServingConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServingConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
+  private final UnaryCallable<CreateServingConfigRequest, ServingConfig>
+      createServingConfigCallable;
+  private final UnaryCallable<DeleteServingConfigRequest, Empty> deleteServingConfigCallable;
   private final UnaryCallable<UpdateServingConfigRequest, ServingConfig>
       updateServingConfigCallable;
   private final UnaryCallable<GetServingConfigRequest, ServingConfig> getServingConfigCallable;
@@ -133,6 +166,29 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<CreateServingConfigRequest, ServingConfig>
+        createServingConfigTransportSettings =
+            GrpcCallSettings.<CreateServingConfigRequest, ServingConfig>newBuilder()
+                .setMethodDescriptor(createServingConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<DeleteServingConfigRequest, Empty> deleteServingConfigTransportSettings =
+        GrpcCallSettings.<DeleteServingConfigRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteServingConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     GrpcCallSettings<UpdateServingConfigRequest, ServingConfig>
         updateServingConfigTransportSettings =
             GrpcCallSettings.<UpdateServingConfigRequest, ServingConfig>newBuilder()
@@ -155,6 +211,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListServingConfigsRequest, ListServingConfigsResponse>
         listServingConfigsTransportSettings =
@@ -166,8 +223,19 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
+    this.createServingConfigCallable =
+        callableFactory.createUnaryCallable(
+            createServingConfigTransportSettings,
+            settings.createServingConfigSettings(),
+            clientContext);
+    this.deleteServingConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteServingConfigTransportSettings,
+            settings.deleteServingConfigSettings(),
+            clientContext);
     this.updateServingConfigCallable =
         callableFactory.createUnaryCallable(
             updateServingConfigTransportSettings,
@@ -193,6 +261,16 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
 
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<CreateServingConfigRequest, ServingConfig> createServingConfigCallable() {
+    return createServingConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteServingConfigRequest, Empty> deleteServingConfigCallable() {
+    return deleteServingConfigCallable;
   }
 
   @Override

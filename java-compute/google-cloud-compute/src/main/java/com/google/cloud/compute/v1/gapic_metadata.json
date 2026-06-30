@@ -48,6 +48,21 @@
             },
             "SetLabels": {
               "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Advice": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdviceClient",
+          "rpcs": {
+            "CalendarMode": {
+              "methods": ["calendarMode", "calendarMode", "calendarModeCallable"]
             }
           }
         }
@@ -76,6 +91,9 @@
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
@@ -90,6 +108,9 @@
           "rpcs": {
             "AddSignedUrlKey": {
               "methods": ["addSignedUrlKeyAsync", "addSignedUrlKeyAsync", "addSignedUrlKeyOperationCallable", "addSignedUrlKeyCallable"]
+            },
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
               "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
@@ -108,6 +129,9 @@
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "ListUsable": {
+              "methods": ["listUsable", "listUsable", "listUsablePagedCallable", "listUsableCallable"]
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
@@ -148,6 +172,9 @@
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
+            "GetEffectiveSecurityPolicies": {
+              "methods": ["getEffectiveSecurityPolicies", "getEffectiveSecurityPolicies", "getEffectiveSecurityPoliciesCallable"]
+            },
             "GetHealth": {
               "methods": ["getHealth", "getHealth", "getHealthCallable"]
             },
@@ -185,6 +212,30 @@
         }
       }
     },
+    "CrossSiteNetworks": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CrossSiteNetworksClient",
+          "rpcs": {
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            }
+          }
+        }
+      }
+    },
     "DiskTypes": {
       "clients": {
         "grpc": {
@@ -216,6 +267,9 @@
             },
             "BulkInsert": {
               "methods": ["bulkInsertAsync", "bulkInsertAsync", "bulkInsertOperationCallable", "bulkInsertCallable"]
+            },
+            "BulkSetLabels": {
+              "methods": ["bulkSetLabelsAsync", "bulkSetLabelsAsync", "bulkSetLabelsOperationCallable", "bulkSetLabelsCallable"]
             },
             "CreateSnapshot": {
               "methods": ["createSnapshotAsync", "createSnapshotAsync", "createSnapshotOperationCallable", "createSnapshotCallable"]
@@ -261,6 +315,9 @@
             },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
+            },
+            "UpdateKmsKey": {
+              "methods": ["updateKmsKeyAsync", "updateKmsKeyAsync", "updateKmsKeyOperationCallable", "updateKmsKeyCallable"]
             }
           }
         }
@@ -376,6 +433,9 @@
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
@@ -416,6 +476,36 @@
         }
       }
     },
+    "FutureReservations": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FutureReservationsClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
+            "Cancel": {
+              "methods": ["cancelAsync", "cancelAsync", "cancelOperationCallable", "cancelCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Update": {
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
+            }
+          }
+        }
+      }
+    },
     "GlobalAddresses": {
       "clients": {
         "grpc": {
@@ -438,6 +528,9 @@
             },
             "SetLabels": {
               "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -569,6 +662,33 @@
         }
       }
     },
+    "GlobalVmExtensionPolicies": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GlobalVmExtensionPoliciesClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Update": {
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
+            }
+          }
+        }
+      }
+    },
     "HealthChecks": {
       "clients": {
         "grpc": {
@@ -591,6 +711,9 @@
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
@@ -653,6 +776,30 @@
         }
       }
     },
+    "InstanceGroupManagerResizeRequests": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "InstanceGroupManagerResizeRequestsClient",
+          "rpcs": {
+            "Cancel": {
+              "methods": ["cancelAsync", "cancelAsync", "cancelOperationCallable", "cancelCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      }
+    },
     "InstanceGroupManagers": {
       "clients": {
         "grpc": {
@@ -709,11 +856,23 @@
             "Resize": {
               "methods": ["resizeAsync", "resizeAsync", "resizeOperationCallable", "resizeCallable"]
             },
+            "ResumeInstances": {
+              "methods": ["resumeInstancesAsync", "resumeInstancesAsync", "resumeInstancesOperationCallable", "resumeInstancesCallable"]
+            },
             "SetInstanceTemplate": {
               "methods": ["setInstanceTemplateAsync", "setInstanceTemplateAsync", "setInstanceTemplateOperationCallable", "setInstanceTemplateCallable"]
             },
             "SetTargetPools": {
               "methods": ["setTargetPoolsAsync", "setTargetPoolsAsync", "setTargetPoolsOperationCallable", "setTargetPoolsCallable"]
+            },
+            "StartInstances": {
+              "methods": ["startInstancesAsync", "startInstancesAsync", "startInstancesOperationCallable", "startInstancesCallable"]
+            },
+            "StopInstances": {
+              "methods": ["stopInstancesAsync", "stopInstancesAsync", "stopInstancesOperationCallable", "stopInstancesCallable"]
+            },
+            "SuspendInstances": {
+              "methods": ["suspendInstancesAsync", "suspendInstancesAsync", "suspendInstancesOperationCallable", "suspendInstancesCallable"]
             },
             "UpdatePerInstanceConfigs": {
               "methods": ["updatePerInstanceConfigsAsync", "updatePerInstanceConfigsAsync", "updatePerInstanceConfigsOperationCallable", "updatePerInstanceConfigsCallable"]
@@ -753,6 +912,24 @@
             },
             "SetNamedPorts": {
               "methods": ["setNamedPortsAsync", "setNamedPortsAsync", "setNamedPortsOperationCallable", "setNamedPortsCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "InstanceSettingsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "InstanceSettingsServiceClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             }
           }
         }
@@ -799,6 +976,9 @@
             "AddAccessConfig": {
               "methods": ["addAccessConfigAsync", "addAccessConfigAsync", "addAccessConfigOperationCallable", "addAccessConfigCallable"]
             },
+            "AddNetworkInterface": {
+              "methods": ["addNetworkInterfaceAsync", "addNetworkInterfaceAsync", "addNetworkInterfaceOperationCallable", "addNetworkInterfaceCallable"]
+            },
             "AddResourcePolicies": {
               "methods": ["addResourcePoliciesAsync", "addResourcePoliciesAsync", "addResourcePoliciesOperationCallable", "addResourcePoliciesCallable"]
             },
@@ -816,6 +996,9 @@
             },
             "DeleteAccessConfig": {
               "methods": ["deleteAccessConfigAsync", "deleteAccessConfigAsync", "deleteAccessConfigOperationCallable", "deleteAccessConfigCallable"]
+            },
+            "DeleteNetworkInterface": {
+              "methods": ["deleteNetworkInterfaceAsync", "deleteNetworkInterfaceAsync", "deleteNetworkInterfaceOperationCallable", "deleteNetworkInterfaceCallable"]
             },
             "DetachDisk": {
               "methods": ["detachDiskAsync", "detachDiskAsync", "detachDiskOperationCallable", "detachDiskCallable"]
@@ -855,6 +1038,9 @@
             },
             "RemoveResourcePolicies": {
               "methods": ["removeResourcePoliciesAsync", "removeResourcePoliciesAsync", "removeResourcePoliciesOperationCallable", "removeResourcePoliciesCallable"]
+            },
+            "ReportHostAsFaulty": {
+              "methods": ["reportHostAsFaultyAsync", "reportHostAsFaultyAsync", "reportHostAsFaultyOperationCallable", "reportHostAsFaultyCallable"]
             },
             "Reset": {
               "methods": ["resetAsync", "resetAsync", "resetOperationCallable", "resetCallable"]
@@ -944,6 +1130,36 @@
         }
       }
     },
+    "InstantSnapshotGroups": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "InstantSnapshotGroupsClient",
+          "rpcs": {
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "InstantSnapshots": {
       "clients": {
         "grpc": {
@@ -980,6 +1196,42 @@
         }
       }
     },
+    "InterconnectAttachmentGroups": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "InterconnectAttachmentGroupsClient",
+          "rpcs": {
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetOperationalStatus": {
+              "methods": ["getOperationalStatus", "getOperationalStatus", "getOperationalStatusCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "InterconnectAttachments": {
       "clients": {
         "grpc": {
@@ -1005,6 +1257,45 @@
             },
             "SetLabels": {
               "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "InterconnectGroups": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "InterconnectGroupsClient",
+          "rpcs": {
+            "CreateMembers": {
+              "methods": ["createMembersAsync", "createMembersAsync", "createMembersOperationCallable", "createMembersCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetOperationalStatus": {
+              "methods": ["getOperationalStatus", "getOperationalStatus", "getOperationalStatusCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -1081,6 +1372,12 @@
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
@@ -1113,6 +1410,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "Update": {
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }
@@ -1140,6 +1440,9 @@
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SetLabels": {
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
@@ -1270,8 +1573,14 @@
             "AddAssociation": {
               "methods": ["addAssociationAsync", "addAssociationAsync", "addAssociationOperationCallable", "addAssociationCallable"]
             },
+            "AddPacketMirroringRule": {
+              "methods": ["addPacketMirroringRuleAsync", "addPacketMirroringRuleAsync", "addPacketMirroringRuleOperationCallable", "addPacketMirroringRuleCallable"]
+            },
             "AddRule": {
               "methods": ["addRuleAsync", "addRuleAsync", "addRuleOperationCallable", "addRuleCallable"]
+            },
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "CloneRules": {
               "methods": ["cloneRulesAsync", "cloneRulesAsync", "cloneRulesOperationCallable", "cloneRulesCallable"]
@@ -1288,6 +1597,9 @@
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
+            "GetPacketMirroringRule": {
+              "methods": ["getPacketMirroringRule", "getPacketMirroringRule", "getPacketMirroringRuleCallable"]
+            },
             "GetRule": {
               "methods": ["getRule", "getRule", "getRuleCallable"]
             },
@@ -1300,11 +1612,17 @@
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
+            "PatchPacketMirroringRule": {
+              "methods": ["patchPacketMirroringRuleAsync", "patchPacketMirroringRuleAsync", "patchPacketMirroringRuleOperationCallable", "patchPacketMirroringRuleCallable"]
+            },
             "PatchRule": {
               "methods": ["patchRuleAsync", "patchRuleAsync", "patchRuleOperationCallable", "patchRuleCallable"]
             },
             "RemoveAssociation": {
               "methods": ["removeAssociationAsync", "removeAssociationAsync", "removeAssociationOperationCallable", "removeAssociationCallable"]
+            },
+            "RemovePacketMirroringRule": {
+              "methods": ["removePacketMirroringRuleAsync", "removePacketMirroringRuleAsync", "removePacketMirroringRuleOperationCallable", "removePacketMirroringRuleCallable"]
             },
             "RemoveRule": {
               "methods": ["removeRuleAsync", "removeRuleAsync", "removeRuleOperationCallable", "removeRuleCallable"]
@@ -1319,6 +1637,21 @@
         }
       }
     },
+    "NetworkProfiles": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "NetworkProfilesClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      }
+    },
     "Networks": {
       "clients": {
         "grpc": {
@@ -1326,6 +1659,9 @@
           "rpcs": {
             "AddPeering": {
               "methods": ["addPeeringAsync", "addPeeringAsync", "addPeeringOperationCallable", "addPeeringCallable"]
+            },
+            "CancelRequestRemovePeering": {
+              "methods": ["cancelRequestRemovePeeringAsync", "cancelRequestRemovePeeringAsync", "cancelRequestRemovePeeringOperationCallable", "cancelRequestRemovePeeringCallable"]
             },
             "Delete": {
               "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
@@ -1350,6 +1686,9 @@
             },
             "RemovePeering": {
               "methods": ["removePeeringAsync", "removePeeringAsync", "removePeeringOperationCallable", "removePeeringCallable"]
+            },
+            "RequestRemovePeering": {
+              "methods": ["requestRemovePeeringAsync", "requestRemovePeeringAsync", "requestRemovePeeringOperationCallable", "requestRemovePeeringCallable"]
             },
             "SwitchToCustomMode": {
               "methods": ["switchToCustomModeAsync", "switchToCustomModeAsync", "switchToCustomModeOperationCallable", "switchToCustomModeCallable"]
@@ -1395,6 +1734,9 @@
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "PerformMaintenance": {
+              "methods": ["performMaintenanceAsync", "performMaintenanceAsync", "performMaintenanceOperationCallable", "performMaintenanceCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
@@ -1463,6 +1805,63 @@
         }
       }
     },
+    "OrganizationSecurityPolicies": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OrganizationSecurityPoliciesClient",
+          "rpcs": {
+            "AddAssociation": {
+              "methods": ["addAssociationAsync", "addAssociationAsync", "addAssociationOperationCallable", "addAssociationCallable"]
+            },
+            "AddRule": {
+              "methods": ["addRuleAsync", "addRuleAsync", "addRuleOperationCallable", "addRuleCallable"]
+            },
+            "CopyRules": {
+              "methods": ["copyRulesAsync", "copyRulesAsync", "copyRulesOperationCallable", "copyRulesCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetAssociation": {
+              "methods": ["getAssociation", "getAssociation", "getAssociationCallable"]
+            },
+            "GetRule": {
+              "methods": ["getRule", "getRule", "getRuleCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "ListAssociations": {
+              "methods": ["listAssociations", "listAssociations", "listAssociationsCallable"]
+            },
+            "ListPreconfiguredExpressionSets": {
+              "methods": ["listPreconfiguredExpressionSets", "listPreconfiguredExpressionSets", "listPreconfiguredExpressionSetsCallable"]
+            },
+            "Move": {
+              "methods": ["moveAsync", "moveAsync", "moveOperationCallable", "moveCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "PatchRule": {
+              "methods": ["patchRuleAsync", "patchRuleAsync", "patchRuleOperationCallable", "patchRuleCallable"]
+            },
+            "RemoveAssociation": {
+              "methods": ["removeAssociationAsync", "removeAssociationAsync", "removeAssociationOperationCallable", "removeAssociationCallable"]
+            },
+            "RemoveRule": {
+              "methods": ["removeRuleAsync", "removeRuleAsync", "removeRuleOperationCallable", "removeRuleCallable"]
+            }
+          }
+        }
+      }
+    },
     "PacketMirrorings": {
       "clients": {
         "grpc": {
@@ -1488,6 +1887,24 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "PreviewFeatures": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PreviewFeaturesClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Update": {
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }
@@ -1627,8 +2044,47 @@
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RegionBackendBuckets": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionBackendBucketsClient",
+          "rpcs": {
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "ListUsable": {
+              "methods": ["listUsable", "listUsable", "listUsablePagedCallable", "listUsableCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -1698,6 +2154,39 @@
             },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RegionCompositeHealthChecks": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionCompositeHealthChecksClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetHealth": {
+              "methods": ["getHealth", "getHealth", "getHealthCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -1773,16 +2262,22 @@
             },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
+            },
+            "UpdateKmsKey": {
+              "methods": ["updateKmsKeyAsync", "updateKmsKeyAsync", "updateKmsKeyOperationCallable", "updateKmsKeyCallable"]
             }
           }
         }
       }
     },
-    "RegionHealthCheckServices": {
+    "RegionHealthAggregationPolicies": {
       "clients": {
         "grpc": {
-          "libraryClient": "RegionHealthCheckServicesClient",
+          "libraryClient": "RegionHealthAggregationPoliciesClient",
           "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
             "Delete": {
               "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
@@ -1797,6 +2292,39 @@
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RegionHealthCheckServices": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionHealthCheckServicesClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -1822,8 +2350,68 @@
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RegionHealthSources": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionHealthSourcesClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetHealth": {
+              "methods": ["getHealth", "getHealth", "getHealthCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RegionInstanceGroupManagerResizeRequests": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionInstanceGroupManagerResizeRequestsClient",
+          "rpcs": {
+            "Cancel": {
+              "methods": ["cancelAsync", "cancelAsync", "cancelOperationCallable", "cancelCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
             }
           }
         }
@@ -1882,11 +2470,23 @@
             "Resize": {
               "methods": ["resizeAsync", "resizeAsync", "resizeOperationCallable", "resizeCallable"]
             },
+            "ResumeInstances": {
+              "methods": ["resumeInstancesAsync", "resumeInstancesAsync", "resumeInstancesOperationCallable", "resumeInstancesCallable"]
+            },
             "SetInstanceTemplate": {
               "methods": ["setInstanceTemplateAsync", "setInstanceTemplateAsync", "setInstanceTemplateOperationCallable", "setInstanceTemplateCallable"]
             },
             "SetTargetPools": {
               "methods": ["setTargetPoolsAsync", "setTargetPoolsAsync", "setTargetPoolsOperationCallable", "setTargetPoolsCallable"]
+            },
+            "StartInstances": {
+              "methods": ["startInstancesAsync", "startInstancesAsync", "startInstancesOperationCallable", "startInstancesCallable"]
+            },
+            "StopInstances": {
+              "methods": ["stopInstancesAsync", "stopInstancesAsync", "stopInstancesOperationCallable", "stopInstancesCallable"]
+            },
+            "SuspendInstances": {
+              "methods": ["suspendInstancesAsync", "suspendInstancesAsync", "suspendInstancesOperationCallable", "suspendInstancesCallable"]
             },
             "UpdatePerInstanceConfigs": {
               "methods": ["updatePerInstanceConfigsAsync", "updatePerInstanceConfigsAsync", "updatePerInstanceConfigsOperationCallable", "updatePerInstanceConfigsCallable"]
@@ -1911,6 +2511,9 @@
             },
             "SetNamedPorts": {
               "methods": ["setNamedPortsAsync", "setNamedPortsAsync", "setNamedPortsOperationCallable", "setNamedPortsCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -1944,6 +2547,36 @@
           "rpcs": {
             "BulkInsert": {
               "methods": ["bulkInsertAsync", "bulkInsertAsync", "bulkInsertOperationCallable", "bulkInsertCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RegionInstantSnapshotGroups": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionInstantSnapshotGroupsClient",
+          "rpcs": {
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -2077,6 +2710,9 @@
         "grpc": {
           "libraryClient": "RegionNotificationEndpointsClient",
           "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
             "Delete": {
               "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
@@ -2088,6 +2724,9 @@
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -2145,6 +2784,60 @@
             },
             "RemoveRule": {
               "methods": ["removeRuleAsync", "removeRuleAsync", "removeRuleOperationCallable", "removeRuleCallable"]
+            },
+            "SetLabels": {
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RegionSnapshotSettings": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionSnapshotSettingsClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RegionSnapshots": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionSnapshotsClient",
+          "rpcs": {
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SetLabels": {
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateKmsKey": {
+              "methods": ["updateKmsKeyAsync", "updateKmsKeyAsync", "updateKmsKeyOperationCallable", "updateKmsKeyCallable"]
             }
           }
         }
@@ -2330,6 +3023,87 @@
         }
       }
     },
+    "ReservationBlocks": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReservationBlocksClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "PerformMaintenance": {
+              "methods": ["performMaintenanceAsync", "performMaintenanceAsync", "performMaintenanceOperationCallable", "performMaintenanceCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ReservationSlots": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReservationSlotsClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetVersion": {
+              "methods": ["getVersionAsync", "getVersionAsync", "getVersionOperationCallable", "getVersionCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Update": {
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ReservationSubBlocks": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReservationSubBlocksClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetVersion": {
+              "methods": ["getVersionAsync", "getVersionAsync", "getVersionOperationCallable", "getVersionCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "PerformMaintenance": {
+              "methods": ["performMaintenanceAsync", "performMaintenanceAsync", "performMaintenanceOperationCallable", "performMaintenanceCallable"]
+            },
+            "ReportFaulty": {
+              "methods": ["reportFaultyAsync", "reportFaultyAsync", "reportFaultyOperationCallable", "reportFaultyCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "Reservations": {
       "clients": {
         "grpc": {
@@ -2352,6 +3126,9 @@
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "PerformMaintenance": {
+              "methods": ["performMaintenanceAsync", "performMaintenanceAsync", "performMaintenanceOperationCallable", "performMaintenanceCallable"]
             },
             "Resize": {
               "methods": ["resizeAsync", "resizeAsync", "resizeOperationCallable", "resizeCallable"]
@@ -2405,6 +3182,48 @@
         }
       }
     },
+    "RolloutPlans": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RolloutPlansClient",
+          "rpcs": {
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Rollouts": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RolloutsClient",
+          "rpcs": {
+            "Cancel": {
+              "methods": ["cancelAsync", "cancelAsync", "cancelOperationCallable", "cancelCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      }
+    },
     "Routers": {
       "clients": {
         "grpc": {
@@ -2416,6 +3235,9 @@
             "Delete": {
               "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
+            "DeleteRoutePolicy": {
+              "methods": ["deleteRoutePolicyAsync", "deleteRoutePolicyAsync", "deleteRoutePolicyOperationCallable", "deleteRoutePolicyCallable"]
+            },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
@@ -2424,6 +3246,9 @@
             },
             "GetNatMappingInfo": {
               "methods": ["getNatMappingInfo", "getNatMappingInfo", "getNatMappingInfoPagedCallable", "getNatMappingInfoCallable"]
+            },
+            "GetRoutePolicy": {
+              "methods": ["getRoutePolicy", "getRoutePolicy", "getRoutePolicyCallable"]
             },
             "GetRouterStatus": {
               "methods": ["getRouterStatus", "getRouterStatus", "getRouterStatusCallable"]
@@ -2434,14 +3259,26 @@
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
+            "ListBgpRoutes": {
+              "methods": ["listBgpRoutes", "listBgpRoutes", "listBgpRoutesPagedCallable", "listBgpRoutesCallable"]
+            },
+            "ListRoutePolicies": {
+              "methods": ["listRoutePolicies", "listRoutePolicies", "listRoutePoliciesPagedCallable", "listRoutePoliciesCallable"]
+            },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "PatchRoutePolicy": {
+              "methods": ["patchRoutePolicyAsync", "patchRoutePolicyAsync", "patchRoutePolicyOperationCallable", "patchRoutePolicyCallable"]
             },
             "Preview": {
               "methods": ["preview", "preview", "previewCallable"]
             },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
+            },
+            "UpdateRoutePolicy": {
+              "methods": ["updateRoutePolicyAsync", "updateRoutePolicyAsync", "updateRoutePolicyOperationCallable", "updateRoutePolicyCallable"]
             }
           }
         }
@@ -2463,6 +3300,9 @@
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -2592,6 +3432,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateKmsKey": {
+              "methods": ["updateKmsKeyAsync", "updateKmsKeyAsync", "updateKmsKeyOperationCallable", "updateKmsKeyCallable"]
             }
           }
         }
@@ -2646,6 +3489,63 @@
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            }
+          }
+        }
+      }
+    },
+    "StoragePoolTypes": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StoragePoolTypesClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      }
+    },
+    "StoragePools": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StoragePoolsClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "ListDisks": {
+              "methods": ["listDisks", "listDisks", "listDisksPagedCallable", "listDisksCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "Update": {
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }
@@ -2814,6 +3714,9 @@
             },
             "SetSecurityPolicy": {
               "methods": ["setSecurityPolicyAsync", "setSecurityPolicyAsync", "setSecurityPolicyOperationCallable", "setSecurityPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -2859,6 +3762,9 @@
             },
             "SetSecurityPolicy": {
               "methods": ["setSecurityPolicyAsync", "setSecurityPolicyAsync", "setSecurityPolicyOperationCallable", "setSecurityPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -2895,6 +3801,9 @@
             },
             "SetSslPolicy": {
               "methods": ["setSslPolicyAsync", "setSslPolicyAsync", "setSslPolicyOperationCallable", "setSslPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -2925,6 +3834,9 @@
             },
             "SetProxyHeader": {
               "methods": ["setProxyHeaderAsync", "setProxyHeaderAsync", "setProxyHeaderOperationCallable", "setProxyHeaderCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -2982,6 +3894,9 @@
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
@@ -3053,6 +3968,30 @@
         }
       }
     },
+    "WireGroups": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "WireGroupsClient",
+          "rpcs": {
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            }
+          }
+        }
+      }
+    },
     "ZoneOperations": {
       "clients": {
         "grpc": {
@@ -3069,6 +4008,30 @@
             },
             "Wait": {
               "methods": ["wait", "wait", "waitCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ZoneVmExtensionPolicies": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ZoneVmExtensionPoliciesClient",
+          "rpcs": {
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Update": {
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.recaptchaenterprise.v1;
 
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListIpOverridesPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupMembershipsPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupsPagedResponse;
@@ -34,6 +35,8 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.recaptchaenterprise.v1.stub.RecaptchaEnterpriseServiceStubSettings;
 import com.google.protobuf.Empty;
+import com.google.recaptchaenterprise.v1.AddIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.AddIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
@@ -49,6 +52,8 @@ import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
+import com.google.recaptchaenterprise.v1.ListIpOverridesRequest;
+import com.google.recaptchaenterprise.v1.ListIpOverridesResponse;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -57,6 +62,8 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
@@ -85,7 +92,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createAssessment to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createAssessment:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -102,11 +111,22 @@ import javax.annotation.Generated;
  *             .createAssessmentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * RecaptchaEnterpriseServiceSettings recaptchaEnterpriseServiceSettings =
  *     recaptchaEnterpriseServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class RecaptchaEnterpriseServiceSettings
@@ -160,6 +180,24 @@ public class RecaptchaEnterpriseServiceSettings
   /** Returns the object with the settings used for calls to migrateKey. */
   public UnaryCallSettings<MigrateKeyRequest, Key> migrateKeySettings() {
     return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings()).migrateKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to addIpOverride. */
+  public UnaryCallSettings<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideSettings() {
+    return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings()).addIpOverrideSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeIpOverride. */
+  public UnaryCallSettings<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
+      removeIpOverrideSettings() {
+    return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings()).removeIpOverrideSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listIpOverrides. */
+  public PagedCallSettings<
+          ListIpOverridesRequest, ListIpOverridesResponse, ListIpOverridesPagedResponse>
+      listIpOverridesSettings() {
+    return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings()).listIpOverridesSettings();
   }
 
   /** Returns the object with the settings used for calls to getMetrics. */
@@ -386,6 +424,25 @@ public class RecaptchaEnterpriseServiceSettings
     /** Returns the builder for the settings used for calls to migrateKey. */
     public UnaryCallSettings.Builder<MigrateKeyRequest, Key> migrateKeySettings() {
       return getStubSettingsBuilder().migrateKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addIpOverride. */
+    public UnaryCallSettings.Builder<AddIpOverrideRequest, AddIpOverrideResponse>
+        addIpOverrideSettings() {
+      return getStubSettingsBuilder().addIpOverrideSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeIpOverride. */
+    public UnaryCallSettings.Builder<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
+        removeIpOverrideSettings() {
+      return getStubSettingsBuilder().removeIpOverrideSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listIpOverrides. */
+    public PagedCallSettings.Builder<
+            ListIpOverridesRequest, ListIpOverridesResponse, ListIpOverridesPagedResponse>
+        listIpOverridesSettings() {
+      return getStubSettingsBuilder().listIpOverridesSettings();
     }
 
     /** Returns the builder for the settings used for calls to getMetrics. */

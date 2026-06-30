@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,9 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.BackendBucketsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.BackendBucketsClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.BackendBucketsClient.ListUsablePagedResponse;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -32,15 +34,20 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AddSignedUrlKeyBackendBucketRequest;
+import com.google.cloud.compute.v1.AggregatedListBackendBucketsRequest;
 import com.google.cloud.compute.v1.BackendBucket;
+import com.google.cloud.compute.v1.BackendBucketAggregatedList;
 import com.google.cloud.compute.v1.BackendBucketList;
+import com.google.cloud.compute.v1.BackendBucketListUsable;
 import com.google.cloud.compute.v1.DeleteBackendBucketRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendBucketRequest;
 import com.google.cloud.compute.v1.GetBackendBucketRequest;
 import com.google.cloud.compute.v1.GetIamPolicyBackendBucketRequest;
 import com.google.cloud.compute.v1.InsertBackendBucketRequest;
 import com.google.cloud.compute.v1.ListBackendBucketsRequest;
+import com.google.cloud.compute.v1.ListUsableBackendBucketsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchBackendBucketRequest;
@@ -124,6 +131,70 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                         .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
                         .build();
                   })
+              .build();
+
+  private static final ApiMethodDescriptor<
+          AggregatedListBackendBucketsRequest, BackendBucketAggregatedList>
+      aggregatedListMethodDescriptor =
+          ApiMethodDescriptor
+              .<AggregatedListBackendBucketsRequest, BackendBucketAggregatedList>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.BackendBuckets/AggregatedList")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AggregatedListBackendBucketsRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/aggregated/backendBuckets",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListBackendBucketsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListBackendBucketsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
+                            }
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
+                            }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BackendBucketAggregatedList>newBuilder()
+                      .setDefaultInstance(BackendBucketAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<DeleteBackendBucketRequest, Operation>
@@ -408,6 +479,58 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ListUsableBackendBucketsRequest, BackendBucketListUsable>
+      listUsableMethodDescriptor =
+          ApiMethodDescriptor.<ListUsableBackendBucketsRequest, BackendBucketListUsable>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.BackendBuckets/ListUsable")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListUsableBackendBucketsRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/backendBuckets/listUsable",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListUsableBackendBucketsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListUsableBackendBucketsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
+                            }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BackendBucketListUsable>newBuilder()
+                      .setDefaultInstance(BackendBucketListUsable.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<PatchBackendBucketRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchBackendBucketRequest, Operation>newBuilder()
@@ -663,6 +786,10 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
       addSignedUrlKeyCallable;
   private final OperationCallable<AddSignedUrlKeyBackendBucketRequest, Operation, Operation>
       addSignedUrlKeyOperationCallable;
+  private final UnaryCallable<AggregatedListBackendBucketsRequest, BackendBucketAggregatedList>
+      aggregatedListCallable;
+  private final UnaryCallable<AggregatedListBackendBucketsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable;
   private final UnaryCallable<DeleteBackendBucketRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteBackendBucketRequest, Operation, Operation>
       deleteOperationCallable;
@@ -677,6 +804,10 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
       insertOperationCallable;
   private final UnaryCallable<ListBackendBucketsRequest, BackendBucketList> listCallable;
   private final UnaryCallable<ListBackendBucketsRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<ListUsableBackendBucketsRequest, BackendBucketListUsable>
+      listUsableCallable;
+  private final UnaryCallable<ListUsableBackendBucketsRequest, ListUsablePagedResponse>
+      listUsablePagedCallable;
   private final UnaryCallable<PatchBackendBucketRequest, Operation> patchCallable;
   private final OperationCallable<PatchBackendBucketRequest, Operation, Operation>
       patchOperationCallable;
@@ -694,6 +825,35 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate ADD_SIGNED_URL_KEY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendBuckets/{backend_bucket}");
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendBuckets/{backend_bucket}");
+  private static final PathTemplate DELETE_SIGNED_URL_KEY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendBuckets/{backend_bucket}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendBuckets/{backend_bucket}");
+  private static final PathTemplate GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendBuckets/{resource}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_USABLE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendBuckets/{backend_bucket}");
+  private static final PathTemplate SET_EDGE_SECURITY_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendBuckets/{backend_bucket}");
+  private static final PathTemplate SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendBuckets/{resource}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendBuckets/{resource}");
+  private static final PathTemplate UPDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendBuckets/{backend_bucket}");
 
   public static final HttpJsonBackendBucketsStub create(BackendBucketsStubSettings settings)
       throws IOException {
@@ -748,6 +908,35 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "backend_bucket", String.valueOf(request.getBackendBucket()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return ADD_SIGNED_URL_KEY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
+    HttpJsonCallSettings<AggregatedListBackendBucketsRequest, BackendBucketAggregatedList>
+        aggregatedListTransportSettings =
+            HttpJsonCallSettings
+                .<AggregatedListBackendBucketsRequest, BackendBucketAggregatedList>newBuilder()
+                .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteBackendBucketRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteBackendBucketRequest, Operation>newBuilder()
@@ -759,6 +948,14 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                   builder.add("backend_bucket", String.valueOf(request.getBackendBucket()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "backend_bucket", String.valueOf(request.getBackendBucket()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<DeleteSignedUrlKeyBackendBucketRequest, Operation>
@@ -773,6 +970,15 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "backend_bucket", String.valueOf(request.getBackendBucket()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return DELETE_SIGNED_URL_KEY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetBackendBucketRequest, BackendBucket> getTransportSettings =
         HttpJsonCallSettings.<GetBackendBucketRequest, BackendBucket>newBuilder()
@@ -784,6 +990,14 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                   builder.add("backend_bucket", String.valueOf(request.getBackendBucket()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "backend_bucket", String.valueOf(request.getBackendBucket()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetIamPolicyBackendBucketRequest, Policy> getIamPolicyTransportSettings =
@@ -797,6 +1011,13 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertBackendBucketRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertBackendBucketRequest, Operation>newBuilder()
@@ -807,6 +1028,12 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListBackendBucketsRequest, BackendBucketList> listTransportSettings =
@@ -819,7 +1046,32 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
+    HttpJsonCallSettings<ListUsableBackendBucketsRequest, BackendBucketListUsable>
+        listUsableTransportSettings =
+            HttpJsonCallSettings
+                .<ListUsableBackendBucketsRequest, BackendBucketListUsable>newBuilder()
+                .setMethodDescriptor(listUsableMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return LIST_USABLE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
+                .build();
     HttpJsonCallSettings<PatchBackendBucketRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchBackendBucketRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
@@ -830,6 +1082,14 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                   builder.add("backend_bucket", String.valueOf(request.getBackendBucket()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "backend_bucket", String.valueOf(request.getBackendBucket()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetEdgeSecurityPolicyBackendBucketRequest, Operation>
@@ -844,6 +1104,15 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "backend_bucket", String.valueOf(request.getBackendBucket()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return SET_EDGE_SECURITY_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetIamPolicyBackendBucketRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyBackendBucketRequest, Policy>newBuilder()
@@ -855,6 +1124,13 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<TestIamPermissionsBackendBucketRequest, TestPermissionsResponse>
@@ -870,6 +1146,14 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<UpdateBackendBucketRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateBackendBucketRequest, Operation>newBuilder()
@@ -882,6 +1166,14 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "backend_bucket", String.valueOf(request.getBackendBucket()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return UPDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
 
     this.addSignedUrlKeyCallable =
@@ -893,6 +1185,12 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
             settings.addSignedUrlKeyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.aggregatedListCallable =
+        callableFactory.createUnaryCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
+    this.aggregatedListPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
@@ -934,6 +1232,12 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.listUsableCallable =
+        callableFactory.createUnaryCallable(
+            listUsableTransportSettings, settings.listUsableSettings(), clientContext);
+    this.listUsablePagedCallable =
+        callableFactory.createPagedCallable(
+            listUsableTransportSettings, settings.listUsableSettings(), clientContext);
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
@@ -980,12 +1284,14 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(addSignedUrlKeyMethodDescriptor);
+    methodDescriptors.add(aggregatedListMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(deleteSignedUrlKeyMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listUsableMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
     methodDescriptors.add(setEdgeSecurityPolicyMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -1003,6 +1309,18 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
   public OperationCallable<AddSignedUrlKeyBackendBucketRequest, Operation, Operation>
       addSignedUrlKeyOperationCallable() {
     return addSignedUrlKeyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregatedListBackendBucketsRequest, BackendBucketAggregatedList>
+      aggregatedListCallable() {
+    return aggregatedListCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregatedListBackendBucketsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
   }
 
   @Override
@@ -1057,6 +1375,18 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
   @Override
   public UnaryCallable<ListBackendBucketsRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUsableBackendBucketsRequest, BackendBucketListUsable>
+      listUsableCallable() {
+    return listUsableCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUsableBackendBucketsRequest, ListUsablePagedResponse>
+      listUsablePagedCallable() {
+    return listUsablePagedCallable;
   }
 
   @Override

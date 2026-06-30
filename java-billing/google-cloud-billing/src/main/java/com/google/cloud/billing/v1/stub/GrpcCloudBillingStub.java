@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,6 +66,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBillingAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BillingAccount.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBillingAccountsRequest, ListBillingAccountsResponse>
@@ -77,6 +78,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                   ProtoUtils.marshaller(ListBillingAccountsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBillingAccountsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBillingAccountRequest, BillingAccount>
@@ -87,6 +89,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBillingAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BillingAccount.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBillingAccountRequest, BillingAccount>
@@ -97,6 +100,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBillingAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BillingAccount.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -110,6 +114,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                   ProtoUtils.marshaller(ListProjectBillingInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProjectBillingInfoResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProjectBillingInfoRequest, ProjectBillingInfo>
@@ -120,6 +125,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetProjectBillingInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProjectBillingInfo.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateProjectBillingInfoRequest, ProjectBillingInfo>
@@ -130,6 +136,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProjectBillingInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProjectBillingInfo.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -138,6 +145,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
           .setFullMethodName("google.cloud.billing.v1.CloudBilling/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -146,6 +154,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
           .setFullMethodName("google.cloud.billing.v1.CloudBilling/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -157,6 +166,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MoveBillingAccountRequest, BillingAccount>
@@ -167,6 +177,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MoveBillingAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BillingAccount.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetBillingAccountRequest, BillingAccount> getBillingAccountCallable;
@@ -243,6 +254,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBillingAccountsRequest, ListBillingAccountsResponse>
         listBillingAccountsTransportSettings =
@@ -265,6 +277,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateBillingAccountRequest, BillingAccount>
         createBillingAccountTransportSettings =
@@ -288,6 +301,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetProjectBillingInfoRequest, ProjectBillingInfo>
         getProjectBillingInfoTransportSettings =
@@ -299,6 +313,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateProjectBillingInfoRequest, ProjectBillingInfo>
         updateProjectBillingInfoTransportSettings =
@@ -320,6 +335,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -330,6 +346,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -341,6 +358,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<MoveBillingAccountRequest, BillingAccount>
         moveBillingAccountTransportSettings =
@@ -354,6 +372,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.getBillingAccountCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.analyticshub.v1;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListDataExchangesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListListingsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListOrgDataExchangesPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListQueryTemplatesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSharedResourceSubscriptionsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSubscriptionsPagedResponse;
 
@@ -62,7 +63,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getDataExchange to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getDataExchange:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -79,10 +82,47 @@ import javax.annotation.Generated;
  *             .getDataExchangeSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * AnalyticsHubServiceSettings analyticsHubServiceSettings =
  *     analyticsHubServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for subscribeDataExchange:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * AnalyticsHubServiceSettings.Builder analyticsHubServiceSettingsBuilder =
+ *     AnalyticsHubServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * analyticsHubServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -237,6 +277,47 @@ public class AnalyticsHubServiceSettings extends ClientSettings<AnalyticsHubServ
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return ((AnalyticsHubServiceStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createQueryTemplate. */
+  public UnaryCallSettings<CreateQueryTemplateRequest, QueryTemplate>
+      createQueryTemplateSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).createQueryTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getQueryTemplate. */
+  public UnaryCallSettings<GetQueryTemplateRequest, QueryTemplate> getQueryTemplateSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).getQueryTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listQueryTemplates. */
+  public PagedCallSettings<
+          ListQueryTemplatesRequest, ListQueryTemplatesResponse, ListQueryTemplatesPagedResponse>
+      listQueryTemplatesSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).listQueryTemplatesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateQueryTemplate. */
+  public UnaryCallSettings<UpdateQueryTemplateRequest, QueryTemplate>
+      updateQueryTemplateSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).updateQueryTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteQueryTemplate. */
+  public UnaryCallSettings<DeleteQueryTemplateRequest, Empty> deleteQueryTemplateSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).deleteQueryTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to submitQueryTemplate. */
+  public UnaryCallSettings<SubmitQueryTemplateRequest, QueryTemplate>
+      submitQueryTemplateSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).submitQueryTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to approveQueryTemplate. */
+  public UnaryCallSettings<ApproveQueryTemplateRequest, QueryTemplate>
+      approveQueryTemplateSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).approveQueryTemplateSettings();
   }
 
   public static final AnalyticsHubServiceSettings create(AnalyticsHubServiceStubSettings stub)
@@ -504,6 +585,49 @@ public class AnalyticsHubServiceSettings extends ClientSettings<AnalyticsHubServ
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createQueryTemplate. */
+    public UnaryCallSettings.Builder<CreateQueryTemplateRequest, QueryTemplate>
+        createQueryTemplateSettings() {
+      return getStubSettingsBuilder().createQueryTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getQueryTemplate. */
+    public UnaryCallSettings.Builder<GetQueryTemplateRequest, QueryTemplate>
+        getQueryTemplateSettings() {
+      return getStubSettingsBuilder().getQueryTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listQueryTemplates. */
+    public PagedCallSettings.Builder<
+            ListQueryTemplatesRequest, ListQueryTemplatesResponse, ListQueryTemplatesPagedResponse>
+        listQueryTemplatesSettings() {
+      return getStubSettingsBuilder().listQueryTemplatesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateQueryTemplate. */
+    public UnaryCallSettings.Builder<UpdateQueryTemplateRequest, QueryTemplate>
+        updateQueryTemplateSettings() {
+      return getStubSettingsBuilder().updateQueryTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteQueryTemplate. */
+    public UnaryCallSettings.Builder<DeleteQueryTemplateRequest, Empty>
+        deleteQueryTemplateSettings() {
+      return getStubSettingsBuilder().deleteQueryTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to submitQueryTemplate. */
+    public UnaryCallSettings.Builder<SubmitQueryTemplateRequest, QueryTemplate>
+        submitQueryTemplateSettings() {
+      return getStubSettingsBuilder().submitQueryTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to approveQueryTemplate. */
+    public UnaryCallSettings.Builder<ApproveQueryTemplateRequest, QueryTemplate>
+        approveQueryTemplateSettings() {
+      return getStubSettingsBuilder().approveQueryTemplateSettings();
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,7 +71,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AbandonInstances</td>
- *      <td><p> Flags the specified instances to be removed from the managed instance group. Abandoning an instance does not delete the instance, but it does remove the instance from any target pools that are applied by the managed instance group. This method reduces the targetSize of the managed instance group by the number of instances that you abandon. This operation is marked as DONE when the action is scheduled even if the instances have not yet been removed from the group. You must separately verify the status of the abandoning action with the listmanagedinstances method. If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000 instances with this method per request.</td>
+ *      <td><p> Flags the specified instances to be removed from the managed instance group. Abandoning an instance does not delete the instance, but it does remove the instance from any target pools that are applied by the managed instance group. This method reduces thetargetSize of the managed instance group by the number of instances that you abandon. This operation is marked asDONE when the action is scheduled even if the instances have not yet been removed from the group. You must separately verify the status of the abandoning action with thelistmanagedinstances method.
+ * <p>  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.
+ * <p>  You can specify a maximum of 1000 instances with this method per request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -90,7 +92,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedList</td>
- *      <td><p> Retrieves the list of managed instance groups and groups them by zone. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td><p> Retrieves the list of managed instance groups and groups them by zone.
+ * <p>  To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -128,7 +131,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateInstances</td>
- *      <td><p> Creates instances with per-instance configurations in this managed instance group. Instances are created using the current instance template. The create instances operation is marked DONE if the createInstances request is successful. The underlying actions take additional time. You must separately verify the status of the creating or actions with the listmanagedinstances method.</td>
+ *      <td><p> Creates instances with per-instance configurations in this managed instance group. Instances are created using the current instance template. Thecreate instances operation is marked DONE if thecreateInstances request is successful. The underlying actions take additional time. You must separately verify the status of thecreating or actions with the listmanagedinstances method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -166,7 +169,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteInstances</td>
- *      <td><p> Flags the specified instances in the managed instance group for immediate deletion. The instances are also removed from any target pools of which they were a member. This method reduces the targetSize of the managed instance group by the number of instances that you delete. This operation is marked as DONE when the action is scheduled even if the instances are still being deleted. You must separately verify the status of the deleting action with the listmanagedinstances method. If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000 instances with this method per request.</td>
+ *      <td><p> Flags the specified instances in the managed instance group for immediate deletion. The instances are also removed from any target pools of which they were a member. This method reduces thetargetSize of the managed instance group by the number of instances that you delete. This operation is marked as DONE when the action is scheduled even if the instances are still being deleted. You must separately verify the status of the deleting action with thelistmanagedinstances method.
+ * <p>  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.
+ * <p>  You can specify a maximum of 1000 instances with this method per request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -222,7 +227,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Insert</td>
- *      <td><p> Creates a managed instance group using the information that you specify in the request. After the group is created, instances in the group are created using the specified instance template. This operation is marked as DONE when the group is created even if the instances in the group have not yet been created. You must separately verify the status of the individual instances with the listmanagedinstances method. A managed instance group can have up to 1000 VM instances per group. Please contact Cloud Support if you need an increase in this limit.</td>
+ *      <td><p> Creates a managed instance group using the information that you specify in the request. After the group is created, instances in the group are created using the specified instance template. This operation is marked as DONE when the group is created even if the instances in the group have not yet been created. You must separately verify the status of the individual instances with thelistmanagedinstances method.
+ * <p>  A managed instance group can have up to 1000 VM instances per group. Please contact Cloud Support if you need an increase in this limit.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -317,7 +323,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Patch</td>
- *      <td><p> Updates a managed instance group using the information that you specify in the request. This operation is marked as DONE when the group is patched even if the instances in the group are still in the process of being patched. You must separately verify the status of the individual instances with the listManagedInstances method. This method supports PATCH semantics and uses the JSON merge patch format and processing rules. If you update your group to specify a new template or instance configuration, it's possible that your intended specification for each VM in the group is different from the current state of that VM. To learn how to apply an updated configuration to the VMs in a MIG, see Updating instances in a MIG.</td>
+ *      <td><p> Updates a managed instance group using the information that you specify in the request. This operation is marked as DONE when the group is patched even if the instances in the group are still in the process of being patched. You must separately verify the status of the individual instances with thelistManagedInstances method. This method supportsPATCH semantics and uses theJSON merge patch format and processing rules.
+ * <p>  If you update your group to specify a new template or instance configuration, it's possible that your intended specification for each VM in the group is different from the current state of that VM. To learn how to apply an updated configuration to the VMs in a MIG, seeUpdating instances in a MIG.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -355,7 +362,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> RecreateInstances</td>
- *      <td><p> Flags the specified VM instances in the managed instance group to be immediately recreated. Each instance is recreated using the group's current configuration. This operation is marked as DONE when the flag is set even if the instances have not yet been recreated. You must separately verify the status of each instance by checking its currentAction field; for more information, see Checking the status of managed instances. If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000 instances with this method per request.</td>
+ *      <td><p> Flags the specified VM instances in the managed instance group to be immediately recreated. Each instance is recreated using the group's current configuration. This operation is marked as DONE when the flag is set even if the instances have not yet been recreated. You must separately verify the status of each instance by checking itscurrentAction field; for more information, see Checking the status of managed instances.
+ * <p>  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.
+ * <p>  You can specify a maximum of 1000 instances with this method per request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -374,7 +383,11 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Resize</td>
- *      <td><p> Resizes the managed instance group. If you increase the size, the group creates new instances using the current instance template. If you decrease the size, the group deletes instances. The resize operation is marked DONE when the resize actions are scheduled even if the group has not yet added or deleted any instances. You must separately verify the status of the creating or deleting actions with the listmanagedinstances method. When resizing down, the instance group arbitrarily chooses the order in which VMs are deleted. The group takes into account some VM attributes when making the selection including: + The status of the VM instance. + The health of the VM instance. + The instance template version the VM is based on. + For regional managed instance groups, the location of the VM instance. This list is subject to change. If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.</td>
+ *      <td><p> Resizes the managed instance group. If you increase the size, the group creates new instances using the current instance template. If you decrease the size, the group deletes instances. The resize operation is markedDONE when the resize actions are scheduled even if the group has not yet added or deleted any instances. You must separately verify the status of the creating or deleting actions with thelistmanagedinstances method.
+ * <p>  When resizing down, the instance group arbitrarily chooses the order in which VMs are deleted. The group takes into account some VM attributes when making the selection including:
+ * <p>  + The status of the VM instance. + The health of the VM instance. + The instance template version the VM is based on. + For regional managed instance groups, the location of the VM instance.
+ * <p>  This list is subject to change.
+ * <p>  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -392,8 +405,30 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ResumeInstances</td>
+ *      <td><p> Flags the specified instances in the managed instance group to be resumed. This method increases thetargetSize and decreases the targetSuspendedSize of the managed instance group by the number of instances that you resume. The resumeInstances operation is marked DONE if the resumeInstances request is successful. The underlying actions take additional time. You must separately verify the status of theRESUMING action with thelistmanagedinstances method.
+ * <p>  In this request, you can only specify instances that are suspended. For example, if an instance was previously suspended using the suspendInstances method, it can be resumed using the resumeInstances method.
+ * <p>  If a health check is attached to the managed instance group, the specified instances will be verified as healthy after they are resumed.
+ * <p>  You can specify a maximum of 1000 instances with this method per request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> resumeInstancesAsync(ResumeInstancesInstanceGroupManagerRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> resumeInstancesAsync(String project, String zone, String instanceGroupManager, InstanceGroupManagersResumeInstancesRequest instanceGroupManagersResumeInstancesRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> resumeInstancesOperationCallable()
+ *           <li><p> resumeInstancesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> SetInstanceTemplate</td>
- *      <td><p> Specifies the instance template to use when creating new instances in this group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.</td>
+ *      <td><p> Specifies the instance template to use when creating new instances in this group. The templates for existing instances in the group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -412,7 +447,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SetTargetPools</td>
- *      <td><p> Modifies the target pools to which all instances in this managed instance group are assigned. The target pools automatically apply to all of the instances in the managed instance group. This operation is marked DONE when you make the request even if the instances have not yet been added to their target pools. The change might take some time to apply to all of the instances in the group depending on the size of the group.</td>
+ *      <td><p> Modifies the target pools to which all instances in this managed instance group are assigned. The target pools automatically apply to all of the instances in the managed instance group. This operation is markedDONE when you make the request even if the instances have not yet been added to their target pools. The change might take some time to apply to all of the instances in the group depending on the size of the group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -426,6 +461,74 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> setTargetPoolsOperationCallable()
  *           <li><p> setTargetPoolsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StartInstances</td>
+ *      <td><p> Flags the specified instances in the managed instance group to be started. This method increases thetargetSize and decreases the targetStoppedSize of the managed instance group by the number of instances that you start. The startInstances operation is marked DONE if the startInstances request is successful. The underlying actions take additional time. You must separately verify the status of theSTARTING action with thelistmanagedinstances method.
+ * <p>  In this request, you can only specify instances that are stopped. For example, if an instance was previously stopped using the stopInstances method, it can be started using the startInstances method.
+ * <p>  If a health check is attached to the managed instance group, the specified instances will be verified as healthy after they are started.
+ * <p>  You can specify a maximum of 1000 instances with this method per request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> startInstancesAsync(StartInstancesInstanceGroupManagerRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> startInstancesAsync(String project, String zone, String instanceGroupManager, InstanceGroupManagersStartInstancesRequest instanceGroupManagersStartInstancesRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> startInstancesOperationCallable()
+ *           <li><p> startInstancesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StopInstances</td>
+ *      <td><p> Flags the specified instances in the managed instance group to be immediately stopped. You can only specify instances that are running in this request. This method reduces thetargetSize and increases the targetStoppedSize of the managed instance group by the number of instances that you stop. The stopInstances operation is marked DONE if the stopInstances request is successful. The underlying actions take additional time. You must separately verify the status of theSTOPPING action with thelistmanagedinstances method.
+ * <p>  If the standbyPolicy.initialDelaySec field is set, the group delays stopping the instances until initialDelaySec have passed from instance.creationTimestamp (that is, when the instance was created). This delay gives your application time to set itself up and initialize on the instance. If more thaninitialDelaySec seconds have passed sinceinstance.creationTimestamp when this method is called, there will be zero delay.
+ * <p>  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is stopped.
+ * <p>  Stopped instances can be started using the startInstances method.
+ * <p>  You can specify a maximum of 1000 instances with this method per request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> stopInstancesAsync(StopInstancesInstanceGroupManagerRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> stopInstancesAsync(String project, String zone, String instanceGroupManager, InstanceGroupManagersStopInstancesRequest instanceGroupManagersStopInstancesRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> stopInstancesOperationCallable()
+ *           <li><p> stopInstancesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SuspendInstances</td>
+ *      <td><p> Flags the specified instances in the managed instance group to be immediately suspended. You can only specify instances that are running in this request. This method reduces thetargetSize and increases the targetSuspendedSize of the managed instance group by the number of instances that you suspend. The suspendInstances operation is marked DONE if the suspendInstances request is successful. The underlying actions take additional time. You must separately verify the status of theSUSPENDING action with thelistmanagedinstances method.
+ * <p>  If the standbyPolicy.initialDelaySec field is set, the group delays suspension of the instances until initialDelaySec have passed from instance.creationTimestamp (that is, when the instance was created). This delay gives your application time to set itself up and initialize on the instance. If more thaninitialDelaySec seconds have passed sinceinstance.creationTimestamp when this method is called, there will be zero delay.
+ * <p>  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is suspended.
+ * <p>  Suspended instances can be resumed using the resumeInstances method.
+ * <p>  You can specify a maximum of 1000 instances with this method per request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> suspendInstancesAsync(SuspendInstancesInstanceGroupManagerRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> suspendInstancesAsync(String project, String zone, String instanceGroupManager, InstanceGroupManagersSuspendInstancesRequest instanceGroupManagersSuspendInstancesRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> suspendInstancesOperationCallable()
+ *           <li><p> suspendInstancesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -545,14 +648,17 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   /**
    * Flags the specified instances to be removed from the managed instance group. Abandoning an
    * instance does not delete the instance, but it does remove the instance from any target pools
-   * that are applied by the managed instance group. This method reduces the targetSize of the
-   * managed instance group by the number of instances that you abandon. This operation is marked as
-   * DONE when the action is scheduled even if the instances have not yet been removed from the
-   * group. You must separately verify the status of the abandoning action with the
-   * listmanagedinstances method. If the group is part of a backend service that has enabled
-   * connection draining, it can take up to 60 seconds after the connection draining duration has
-   * elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000
-   * instances with this method per request.
+   * that are applied by the managed instance group. This method reduces thetargetSize of the
+   * managed instance group by the number of instances that you abandon. This operation is marked
+   * asDONE when the action is scheduled even if the instances have not yet been removed from the
+   * group. You must separately verify the status of the abandoning action with
+   * thelistmanagedinstances method.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * removed or deleted.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -582,7 +688,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located.
+   * @param zone The name of thezone where the managed instance group is located.
    * @param instanceGroupManager The name of the managed instance group.
    * @param instanceGroupManagersAbandonInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -608,14 +714,17 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   /**
    * Flags the specified instances to be removed from the managed instance group. Abandoning an
    * instance does not delete the instance, but it does remove the instance from any target pools
-   * that are applied by the managed instance group. This method reduces the targetSize of the
-   * managed instance group by the number of instances that you abandon. This operation is marked as
-   * DONE when the action is scheduled even if the instances have not yet been removed from the
-   * group. You must separately verify the status of the abandoning action with the
-   * listmanagedinstances method. If the group is part of a backend service that has enabled
-   * connection draining, it can take up to 60 seconds after the connection draining duration has
-   * elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000
-   * instances with this method per request.
+   * that are applied by the managed instance group. This method reduces thetargetSize of the
+   * managed instance group by the number of instances that you abandon. This operation is marked
+   * asDONE when the action is scheduled even if the instances have not yet been removed from the
+   * group. You must separately verify the status of the abandoning action with
+   * thelistmanagedinstances method.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * removed or deleted.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -652,14 +761,17 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   /**
    * Flags the specified instances to be removed from the managed instance group. Abandoning an
    * instance does not delete the instance, but it does remove the instance from any target pools
-   * that are applied by the managed instance group. This method reduces the targetSize of the
-   * managed instance group by the number of instances that you abandon. This operation is marked as
-   * DONE when the action is scheduled even if the instances have not yet been removed from the
-   * group. You must separately verify the status of the abandoning action with the
-   * listmanagedinstances method. If the group is part of a backend service that has enabled
-   * connection draining, it can take up to 60 seconds after the connection draining duration has
-   * elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000
-   * instances with this method per request.
+   * that are applied by the managed instance group. This method reduces thetargetSize of the
+   * managed instance group by the number of instances that you abandon. This operation is marked
+   * asDONE when the action is scheduled even if the instances have not yet been removed from the
+   * group. You must separately verify the status of the abandoning action with
+   * thelistmanagedinstances method.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * removed or deleted.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -696,14 +808,17 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   /**
    * Flags the specified instances to be removed from the managed instance group. Abandoning an
    * instance does not delete the instance, but it does remove the instance from any target pools
-   * that are applied by the managed instance group. This method reduces the targetSize of the
-   * managed instance group by the number of instances that you abandon. This operation is marked as
-   * DONE when the action is scheduled even if the instances have not yet been removed from the
-   * group. You must separately verify the status of the abandoning action with the
-   * listmanagedinstances method. If the group is part of a backend service that has enabled
-   * connection draining, it can take up to 60 seconds after the connection draining duration has
-   * elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000
-   * instances with this method per request.
+   * that are applied by the managed instance group. This method reduces thetargetSize of the
+   * managed instance group by the number of instances that you abandon. This operation is marked
+   * asDONE when the action is scheduled even if the instances have not yet been removed from the
+   * group. You must separately verify the status of the abandoning action with
+   * thelistmanagedinstances method.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * removed or deleted.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -738,8 +853,10 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of managed instance groups and groups them by zone. To prevent failure,
-   * Google recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves the list of managed instance groups and groups them by zone.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -770,8 +887,10 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of managed instance groups and groups them by zone. To prevent failure,
-   * Google recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves the list of managed instance groups and groups them by zone.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -811,8 +930,10 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of managed instance groups and groups them by zone. To prevent failure,
-   * Google recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves the list of managed instance groups and groups them by zone.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -852,8 +973,10 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of managed instance groups and groups them by zone. To prevent failure,
-   * Google recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves the list of managed instance groups and groups them by zone.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -930,7 +1053,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located. Should conform to
+   * @param zone The name of thezone where the managed instance group is located. Should conform to
    *     RFC1035.
    * @param instanceGroupManager The name of the managed instance group, should conform to RFC1035.
    * @param instanceGroupManagersApplyUpdatesRequestResource The body resource for this request
@@ -1063,9 +1186,9 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates instances with per-instance configurations in this managed instance group. Instances
-   * are created using the current instance template. The create instances operation is marked DONE
-   * if the createInstances request is successful. The underlying actions take additional time. You
-   * must separately verify the status of the creating or actions with the listmanagedinstances
+   * are created using the current instance template. Thecreate instances operation is marked DONE
+   * if thecreateInstances request is successful. The underlying actions take additional time. You
+   * must separately verify the status of thecreating or actions with the listmanagedinstances
    * method.
    *
    * <p>Sample code:
@@ -1096,7 +1219,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located. It should conform
+   * @param zone The name of thezone where the managed instance group is located. It should conform
    *     to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. It should conform to
    *     RFC1035.
@@ -1123,9 +1246,9 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates instances with per-instance configurations in this managed instance group. Instances
-   * are created using the current instance template. The create instances operation is marked DONE
-   * if the createInstances request is successful. The underlying actions take additional time. You
-   * must separately verify the status of the creating or actions with the listmanagedinstances
+   * are created using the current instance template. Thecreate instances operation is marked DONE
+   * if thecreateInstances request is successful. The underlying actions take additional time. You
+   * must separately verify the status of thecreating or actions with the listmanagedinstances
    * method.
    *
    * <p>Sample code:
@@ -1162,9 +1285,9 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates instances with per-instance configurations in this managed instance group. Instances
-   * are created using the current instance template. The create instances operation is marked DONE
-   * if the createInstances request is successful. The underlying actions take additional time. You
-   * must separately verify the status of the creating or actions with the listmanagedinstances
+   * are created using the current instance template. Thecreate instances operation is marked DONE
+   * if thecreateInstances request is successful. The underlying actions take additional time. You
+   * must separately verify the status of thecreating or actions with the listmanagedinstances
    * method.
    *
    * <p>Sample code:
@@ -1201,9 +1324,9 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates instances with per-instance configurations in this managed instance group. Instances
-   * are created using the current instance template. The create instances operation is marked DONE
-   * if the createInstances request is successful. The underlying actions take additional time. You
-   * must separately verify the status of the creating or actions with the listmanagedinstances
+   * are created using the current instance template. Thecreate instances operation is marked DONE
+   * if thecreateInstances request is successful. The underlying actions take additional time. You
+   * must separately verify the status of thecreating or actions with the listmanagedinstances
    * method.
    *
    * <p>Sample code:
@@ -1262,7 +1385,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located.
+   * @param zone The name of thezone where the managed instance group is located.
    * @param instanceGroupManager The name of the managed instance group to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1385,13 +1508,16 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   /**
    * Flags the specified instances in the managed instance group for immediate deletion. The
    * instances are also removed from any target pools of which they were a member. This method
-   * reduces the targetSize of the managed instance group by the number of instances that you
-   * delete. This operation is marked as DONE when the action is scheduled even if the instances are
-   * still being deleted. You must separately verify the status of the deleting action with the
-   * listmanagedinstances method. If the group is part of a backend service that has enabled
-   * connection draining, it can take up to 60 seconds after the connection draining duration has
-   * elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000
-   * instances with this method per request.
+   * reduces thetargetSize of the managed instance group by the number of instances that you delete.
+   * This operation is marked as DONE when the action is scheduled even if the instances are still
+   * being deleted. You must separately verify the status of the deleting action with
+   * thelistmanagedinstances method.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * removed or deleted.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -1421,7 +1547,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located.
+   * @param zone The name of thezone where the managed instance group is located.
    * @param instanceGroupManager The name of the managed instance group.
    * @param instanceGroupManagersDeleteInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1447,13 +1573,16 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   /**
    * Flags the specified instances in the managed instance group for immediate deletion. The
    * instances are also removed from any target pools of which they were a member. This method
-   * reduces the targetSize of the managed instance group by the number of instances that you
-   * delete. This operation is marked as DONE when the action is scheduled even if the instances are
-   * still being deleted. You must separately verify the status of the deleting action with the
-   * listmanagedinstances method. If the group is part of a backend service that has enabled
-   * connection draining, it can take up to 60 seconds after the connection draining duration has
-   * elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000
-   * instances with this method per request.
+   * reduces thetargetSize of the managed instance group by the number of instances that you delete.
+   * This operation is marked as DONE when the action is scheduled even if the instances are still
+   * being deleted. You must separately verify the status of the deleting action with
+   * thelistmanagedinstances method.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * removed or deleted.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -1490,13 +1619,16 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   /**
    * Flags the specified instances in the managed instance group for immediate deletion. The
    * instances are also removed from any target pools of which they were a member. This method
-   * reduces the targetSize of the managed instance group by the number of instances that you
-   * delete. This operation is marked as DONE when the action is scheduled even if the instances are
-   * still being deleted. You must separately verify the status of the deleting action with the
-   * listmanagedinstances method. If the group is part of a backend service that has enabled
-   * connection draining, it can take up to 60 seconds after the connection draining duration has
-   * elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000
-   * instances with this method per request.
+   * reduces thetargetSize of the managed instance group by the number of instances that you delete.
+   * This operation is marked as DONE when the action is scheduled even if the instances are still
+   * being deleted. You must separately verify the status of the deleting action with
+   * thelistmanagedinstances method.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * removed or deleted.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -1533,13 +1665,16 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   /**
    * Flags the specified instances in the managed instance group for immediate deletion. The
    * instances are also removed from any target pools of which they were a member. This method
-   * reduces the targetSize of the managed instance group by the number of instances that you
-   * delete. This operation is marked as DONE when the action is scheduled even if the instances are
-   * still being deleted. You must separately verify the status of the deleting action with the
-   * listmanagedinstances method. If the group is part of a backend service that has enabled
-   * connection draining, it can take up to 60 seconds after the connection draining duration has
-   * elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000
-   * instances with this method per request.
+   * reduces thetargetSize of the managed instance group by the number of instances that you delete.
+   * This operation is marked as DONE when the action is scheduled even if the instances are still
+   * being deleted. You must separately verify the status of the deleting action with
+   * thelistmanagedinstances method.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * removed or deleted.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -1604,7 +1739,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located. It should conform
+   * @param zone The name of thezone where the managed instance group is located. It should conform
    *     to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. It should conform to
    *     RFC1035.
@@ -1757,7 +1892,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located.
+   * @param zone The name of thezone where the managed instance group is located.
    * @param instanceGroupManager The name of the managed instance group.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1839,8 +1974,10 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * the group is created, instances in the group are created using the specified instance template.
    * This operation is marked as DONE when the group is created even if the instances in the group
    * have not yet been created. You must separately verify the status of the individual instances
-   * with the listmanagedinstances method. A managed instance group can have up to 1000 VM instances
-   * per group. Please contact Cloud Support if you need an increase in this limit.
+   * with thelistmanagedinstances method.
+   *
+   * <p>A managed instance group can have up to 1000 VM instances per group. Please contact Cloud
+   * Support if you need an increase in this limit.
    *
    * <p>Sample code:
    *
@@ -1884,8 +2021,10 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * the group is created, instances in the group are created using the specified instance template.
    * This operation is marked as DONE when the group is created even if the instances in the group
    * have not yet been created. You must separately verify the status of the individual instances
-   * with the listmanagedinstances method. A managed instance group can have up to 1000 VM instances
-   * per group. Please contact Cloud Support if you need an increase in this limit.
+   * with thelistmanagedinstances method.
+   *
+   * <p>A managed instance group can have up to 1000 VM instances per group. Please contact Cloud
+   * Support if you need an increase in this limit.
    *
    * <p>Sample code:
    *
@@ -1922,8 +2061,10 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * the group is created, instances in the group are created using the specified instance template.
    * This operation is marked as DONE when the group is created even if the instances in the group
    * have not yet been created. You must separately verify the status of the individual instances
-   * with the listmanagedinstances method. A managed instance group can have up to 1000 VM instances
-   * per group. Please contact Cloud Support if you need an increase in this limit.
+   * with thelistmanagedinstances method.
+   *
+   * <p>A managed instance group can have up to 1000 VM instances per group. Please contact Cloud
+   * Support if you need an increase in this limit.
    *
    * <p>Sample code:
    *
@@ -1960,8 +2101,10 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * the group is created, instances in the group are created using the specified instance template.
    * This operation is marked as DONE when the group is created even if the instances in the group
    * have not yet been created. You must separately verify the status of the individual instances
-   * with the listmanagedinstances method. A managed instance group can have up to 1000 VM instances
-   * per group. Please contact Cloud Support if you need an increase in this limit.
+   * with thelistmanagedinstances method.
+   *
+   * <p>A managed instance group can have up to 1000 VM instances per group. Please contact Cloud
+   * Support if you need an increase in this limit.
    *
    * <p>Sample code:
    *
@@ -2016,7 +2159,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located.
+   * @param zone The name of thezone where the managed instance group is located.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPagedResponse list(String project, String zone) {
@@ -2176,7 +2319,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located. It should conform
+   * @param zone The name of thezone where the managed instance group is located. It should conform
    *     to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. It must be a string that
    *     meets the requirements in RFC1035, or an unsigned long integer: must match regexp pattern:
@@ -2354,7 +2497,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located.
+   * @param zone The name of thezone where the managed instance group is located.
    * @param instanceGroupManager The name of the managed instance group.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2540,7 +2683,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located. It should conform
+   * @param zone The name of thezone where the managed instance group is located. It should conform
    *     to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. It should conform to
    *     RFC1035.
@@ -2693,11 +2836,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * Updates a managed instance group using the information that you specify in the request. This
    * operation is marked as DONE when the group is patched even if the instances in the group are
    * still in the process of being patched. You must separately verify the status of the individual
-   * instances with the listManagedInstances method. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules. If you update your group to specify a new
-   * template or instance configuration, it's possible that your intended specification for each VM
-   * in the group is different from the current state of that VM. To learn how to apply an updated
-   * configuration to the VMs in a MIG, see Updating instances in a MIG.
+   * instances with thelistManagedInstances method. This method supportsPATCH semantics and uses
+   * theJSON merge patch format and processing rules.
+   *
+   * <p>If you update your group to specify a new template or instance configuration, it's possible
+   * that your intended specification for each VM in the group is different from the current state
+   * of that VM. To learn how to apply an updated configuration to the VMs in a MIG, seeUpdating
+   * instances in a MIG.
    *
    * <p>Sample code:
    *
@@ -2746,11 +2891,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * Updates a managed instance group using the information that you specify in the request. This
    * operation is marked as DONE when the group is patched even if the instances in the group are
    * still in the process of being patched. You must separately verify the status of the individual
-   * instances with the listManagedInstances method. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules. If you update your group to specify a new
-   * template or instance configuration, it's possible that your intended specification for each VM
-   * in the group is different from the current state of that VM. To learn how to apply an updated
-   * configuration to the VMs in a MIG, see Updating instances in a MIG.
+   * instances with thelistManagedInstances method. This method supportsPATCH semantics and uses
+   * theJSON merge patch format and processing rules.
+   *
+   * <p>If you update your group to specify a new template or instance configuration, it's possible
+   * that your intended specification for each VM in the group is different from the current state
+   * of that VM. To learn how to apply an updated configuration to the VMs in a MIG, seeUpdating
+   * instances in a MIG.
    *
    * <p>Sample code:
    *
@@ -2787,11 +2934,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * Updates a managed instance group using the information that you specify in the request. This
    * operation is marked as DONE when the group is patched even if the instances in the group are
    * still in the process of being patched. You must separately verify the status of the individual
-   * instances with the listManagedInstances method. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules. If you update your group to specify a new
-   * template or instance configuration, it's possible that your intended specification for each VM
-   * in the group is different from the current state of that VM. To learn how to apply an updated
-   * configuration to the VMs in a MIG, see Updating instances in a MIG.
+   * instances with thelistManagedInstances method. This method supportsPATCH semantics and uses
+   * theJSON merge patch format and processing rules.
+   *
+   * <p>If you update your group to specify a new template or instance configuration, it's possible
+   * that your intended specification for each VM in the group is different from the current state
+   * of that VM. To learn how to apply an updated configuration to the VMs in a MIG, seeUpdating
+   * instances in a MIG.
    *
    * <p>Sample code:
    *
@@ -2828,11 +2977,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * Updates a managed instance group using the information that you specify in the request. This
    * operation is marked as DONE when the group is patched even if the instances in the group are
    * still in the process of being patched. You must separately verify the status of the individual
-   * instances with the listManagedInstances method. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules. If you update your group to specify a new
-   * template or instance configuration, it's possible that your intended specification for each VM
-   * in the group is different from the current state of that VM. To learn how to apply an updated
-   * configuration to the VMs in a MIG, see Updating instances in a MIG.
+   * instances with thelistManagedInstances method. This method supportsPATCH semantics and uses
+   * theJSON merge patch format and processing rules.
+   *
+   * <p>If you update your group to specify a new template or instance configuration, it's possible
+   * that your intended specification for each VM in the group is different from the current state
+   * of that VM. To learn how to apply an updated configuration to the VMs in a MIG, seeUpdating
+   * instances in a MIG.
    *
    * <p>Sample code:
    *
@@ -2895,7 +3046,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located. It should conform
+   * @param zone The name of thezone where the managed instance group is located. It should conform
    *     to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. It should conform to
    *     RFC1035.
@@ -3036,11 +3187,14 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * Flags the specified VM instances in the managed instance group to be immediately recreated.
    * Each instance is recreated using the group's current configuration. This operation is marked as
    * DONE when the flag is set even if the instances have not yet been recreated. You must
-   * separately verify the status of each instance by checking its currentAction field; for more
-   * information, see Checking the status of managed instances. If the group is part of a backend
-   * service that has enabled connection draining, it can take up to 60 seconds after the connection
-   * draining duration has elapsed before the VM instance is removed or deleted. You can specify a
-   * maximum of 1000 instances with this method per request.
+   * separately verify the status of each instance by checking itscurrentAction field; for more
+   * information, see Checking the status of managed instances.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * removed or deleted.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -3070,7 +3224,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located.
+   * @param zone The name of thezone where the managed instance group is located.
    * @param instanceGroupManager The name of the managed instance group.
    * @param instanceGroupManagersRecreateInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3097,11 +3251,14 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * Flags the specified VM instances in the managed instance group to be immediately recreated.
    * Each instance is recreated using the group's current configuration. This operation is marked as
    * DONE when the flag is set even if the instances have not yet been recreated. You must
-   * separately verify the status of each instance by checking its currentAction field; for more
-   * information, see Checking the status of managed instances. If the group is part of a backend
-   * service that has enabled connection draining, it can take up to 60 seconds after the connection
-   * draining duration has elapsed before the VM instance is removed or deleted. You can specify a
-   * maximum of 1000 instances with this method per request.
+   * separately verify the status of each instance by checking itscurrentAction field; for more
+   * information, see Checking the status of managed instances.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * removed or deleted.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -3139,11 +3296,14 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * Flags the specified VM instances in the managed instance group to be immediately recreated.
    * Each instance is recreated using the group's current configuration. This operation is marked as
    * DONE when the flag is set even if the instances have not yet been recreated. You must
-   * separately verify the status of each instance by checking its currentAction field; for more
-   * information, see Checking the status of managed instances. If the group is part of a backend
-   * service that has enabled connection draining, it can take up to 60 seconds after the connection
-   * draining duration has elapsed before the VM instance is removed or deleted. You can specify a
-   * maximum of 1000 instances with this method per request.
+   * separately verify the status of each instance by checking itscurrentAction field; for more
+   * information, see Checking the status of managed instances.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * removed or deleted.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -3181,11 +3341,14 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * Flags the specified VM instances in the managed instance group to be immediately recreated.
    * Each instance is recreated using the group's current configuration. This operation is marked as
    * DONE when the flag is set even if the instances have not yet been recreated. You must
-   * separately verify the status of each instance by checking its currentAction field; for more
-   * information, see Checking the status of managed instances. If the group is part of a backend
-   * service that has enabled connection draining, it can take up to 60 seconds after the connection
-   * draining duration has elapsed before the VM instance is removed or deleted. You can specify a
-   * maximum of 1000 instances with this method per request.
+   * separately verify the status of each instance by checking itscurrentAction field; for more
+   * information, see Checking the status of managed instances.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * removed or deleted.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -3222,16 +3385,22 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   /**
    * Resizes the managed instance group. If you increase the size, the group creates new instances
    * using the current instance template. If you decrease the size, the group deletes instances. The
-   * resize operation is marked DONE when the resize actions are scheduled even if the group has not
+   * resize operation is markedDONE when the resize actions are scheduled even if the group has not
    * yet added or deleted any instances. You must separately verify the status of the creating or
-   * deleting actions with the listmanagedinstances method. When resizing down, the instance group
-   * arbitrarily chooses the order in which VMs are deleted. The group takes into account some VM
-   * attributes when making the selection including: + The status of the VM instance. + The health
-   * of the VM instance. + The instance template version the VM is based on. + For regional managed
-   * instance groups, the location of the VM instance. This list is subject to change. If the group
-   * is part of a backend service that has enabled connection draining, it can take up to 60 seconds
-   * after the connection draining duration has elapsed before the VM instance is removed or
-   * deleted.
+   * deleting actions with thelistmanagedinstances method.
+   *
+   * <p>When resizing down, the instance group arbitrarily chooses the order in which VMs are
+   * deleted. The group takes into account some VM attributes when making the selection including:
+   *
+   * <p>+ The status of the VM instance. + The health of the VM instance. + The instance template
+   * version the VM is based on. + For regional managed instance groups, the location of the VM
+   * instance.
+   *
+   * <p>This list is subject to change.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * removed or deleted.
    *
    * <p>Sample code:
    *
@@ -3253,7 +3422,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located.
+   * @param zone The name of thezone where the managed instance group is located.
    * @param instanceGroupManager The name of the managed instance group.
    * @param size The number of running instances that the managed instance group should maintain at
    *     any given time. The group automatically adds or removes instances to maintain the number of
@@ -3276,16 +3445,22 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   /**
    * Resizes the managed instance group. If you increase the size, the group creates new instances
    * using the current instance template. If you decrease the size, the group deletes instances. The
-   * resize operation is marked DONE when the resize actions are scheduled even if the group has not
+   * resize operation is markedDONE when the resize actions are scheduled even if the group has not
    * yet added or deleted any instances. You must separately verify the status of the creating or
-   * deleting actions with the listmanagedinstances method. When resizing down, the instance group
-   * arbitrarily chooses the order in which VMs are deleted. The group takes into account some VM
-   * attributes when making the selection including: + The status of the VM instance. + The health
-   * of the VM instance. + The instance template version the VM is based on. + For regional managed
-   * instance groups, the location of the VM instance. This list is subject to change. If the group
-   * is part of a backend service that has enabled connection draining, it can take up to 60 seconds
-   * after the connection draining duration has elapsed before the VM instance is removed or
-   * deleted.
+   * deleting actions with thelistmanagedinstances method.
+   *
+   * <p>When resizing down, the instance group arbitrarily chooses the order in which VMs are
+   * deleted. The group takes into account some VM attributes when making the selection including:
+   *
+   * <p>+ The status of the VM instance. + The health of the VM instance. + The instance template
+   * version the VM is based on. + For regional managed instance groups, the location of the VM
+   * instance.
+   *
+   * <p>This list is subject to change.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * removed or deleted.
    *
    * <p>Sample code:
    *
@@ -3321,16 +3496,22 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   /**
    * Resizes the managed instance group. If you increase the size, the group creates new instances
    * using the current instance template. If you decrease the size, the group deletes instances. The
-   * resize operation is marked DONE when the resize actions are scheduled even if the group has not
+   * resize operation is markedDONE when the resize actions are scheduled even if the group has not
    * yet added or deleted any instances. You must separately verify the status of the creating or
-   * deleting actions with the listmanagedinstances method. When resizing down, the instance group
-   * arbitrarily chooses the order in which VMs are deleted. The group takes into account some VM
-   * attributes when making the selection including: + The status of the VM instance. + The health
-   * of the VM instance. + The instance template version the VM is based on. + For regional managed
-   * instance groups, the location of the VM instance. This list is subject to change. If the group
-   * is part of a backend service that has enabled connection draining, it can take up to 60 seconds
-   * after the connection draining duration has elapsed before the VM instance is removed or
-   * deleted.
+   * deleting actions with thelistmanagedinstances method.
+   *
+   * <p>When resizing down, the instance group arbitrarily chooses the order in which VMs are
+   * deleted. The group takes into account some VM attributes when making the selection including:
+   *
+   * <p>+ The status of the VM instance. + The health of the VM instance. + The instance template
+   * version the VM is based on. + For regional managed instance groups, the location of the VM
+   * instance.
+   *
+   * <p>This list is subject to change.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * removed or deleted.
    *
    * <p>Sample code:
    *
@@ -3366,16 +3547,22 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   /**
    * Resizes the managed instance group. If you increase the size, the group creates new instances
    * using the current instance template. If you decrease the size, the group deletes instances. The
-   * resize operation is marked DONE when the resize actions are scheduled even if the group has not
+   * resize operation is markedDONE when the resize actions are scheduled even if the group has not
    * yet added or deleted any instances. You must separately verify the status of the creating or
-   * deleting actions with the listmanagedinstances method. When resizing down, the instance group
-   * arbitrarily chooses the order in which VMs are deleted. The group takes into account some VM
-   * attributes when making the selection including: + The status of the VM instance. + The health
-   * of the VM instance. + The instance template version the VM is based on. + For regional managed
-   * instance groups, the location of the VM instance. This list is subject to change. If the group
-   * is part of a backend service that has enabled connection draining, it can take up to 60 seconds
-   * after the connection draining duration has elapsed before the VM instance is removed or
-   * deleted.
+   * deleting actions with thelistmanagedinstances method.
+   *
+   * <p>When resizing down, the instance group arbitrarily chooses the order in which VMs are
+   * deleted. The group takes into account some VM attributes when making the selection including:
+   *
+   * <p>+ The status of the VM instance. + The health of the VM instance. + The instance template
+   * version the VM is based on. + For regional managed instance groups, the location of the VM
+   * instance.
+   *
+   * <p>This list is subject to change.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * removed or deleted.
    *
    * <p>Sample code:
    *
@@ -3408,9 +3595,220 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Flags the specified instances in the managed instance group to be resumed. This method
+   * increases thetargetSize and decreases the targetSuspendedSize of the managed instance group by
+   * the number of instances that you resume. The resumeInstances operation is marked DONE if the
+   * resumeInstances request is successful. The underlying actions take additional time. You must
+   * separately verify the status of theRESUMING action with thelistmanagedinstances method.
+   *
+   * <p>In this request, you can only specify instances that are suspended. For example, if an
+   * instance was previously suspended using the suspendInstances method, it can be resumed using
+   * the resumeInstances method.
+   *
+   * <p>If a health check is attached to the managed instance group, the specified instances will be
+   * verified as healthy after they are resumed.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   InstanceGroupManagersResumeInstancesRequest
+   *       instanceGroupManagersResumeInstancesRequestResource =
+   *           InstanceGroupManagersResumeInstancesRequest.newBuilder().build();
+   *   Operation response =
+   *       instanceGroupManagersClient
+   *           .resumeInstancesAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersResumeInstancesRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of thezone where the managed instance group is located.
+   * @param instanceGroupManager The name of the managed instance group.
+   * @param instanceGroupManagersResumeInstancesRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> resumeInstancesAsync(
+      String project,
+      String zone,
+      String instanceGroupManager,
+      InstanceGroupManagersResumeInstancesRequest
+          instanceGroupManagersResumeInstancesRequestResource) {
+    ResumeInstancesInstanceGroupManagerRequest request =
+        ResumeInstancesInstanceGroupManagerRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstanceGroupManager(instanceGroupManager)
+            .setInstanceGroupManagersResumeInstancesRequestResource(
+                instanceGroupManagersResumeInstancesRequestResource)
+            .build();
+    return resumeInstancesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be resumed. This method
+   * increases thetargetSize and decreases the targetSuspendedSize of the managed instance group by
+   * the number of instances that you resume. The resumeInstances operation is marked DONE if the
+   * resumeInstances request is successful. The underlying actions take additional time. You must
+   * separately verify the status of theRESUMING action with thelistmanagedinstances method.
+   *
+   * <p>In this request, you can only specify instances that are suspended. For example, if an
+   * instance was previously suspended using the suspendInstances method, it can be resumed using
+   * the resumeInstances method.
+   *
+   * <p>If a health check is attached to the managed instance group, the specified instances will be
+   * verified as healthy after they are resumed.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   ResumeInstancesInstanceGroupManagerRequest request =
+   *       ResumeInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersResumeInstancesRequestResource(
+   *               InstanceGroupManagersResumeInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = instanceGroupManagersClient.resumeInstancesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> resumeInstancesAsync(
+      ResumeInstancesInstanceGroupManagerRequest request) {
+    return resumeInstancesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be resumed. This method
+   * increases thetargetSize and decreases the targetSuspendedSize of the managed instance group by
+   * the number of instances that you resume. The resumeInstances operation is marked DONE if the
+   * resumeInstances request is successful. The underlying actions take additional time. You must
+   * separately verify the status of theRESUMING action with thelistmanagedinstances method.
+   *
+   * <p>In this request, you can only specify instances that are suspended. For example, if an
+   * instance was previously suspended using the suspendInstances method, it can be resumed using
+   * the resumeInstances method.
+   *
+   * <p>If a health check is attached to the managed instance group, the specified instances will be
+   * verified as healthy after they are resumed.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   ResumeInstancesInstanceGroupManagerRequest request =
+   *       ResumeInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersResumeInstancesRequestResource(
+   *               InstanceGroupManagersResumeInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.resumeInstancesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ResumeInstancesInstanceGroupManagerRequest, Operation, Operation>
+      resumeInstancesOperationCallable() {
+    return stub.resumeInstancesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be resumed. This method
+   * increases thetargetSize and decreases the targetSuspendedSize of the managed instance group by
+   * the number of instances that you resume. The resumeInstances operation is marked DONE if the
+   * resumeInstances request is successful. The underlying actions take additional time. You must
+   * separately verify the status of theRESUMING action with thelistmanagedinstances method.
+   *
+   * <p>In this request, you can only specify instances that are suspended. For example, if an
+   * instance was previously suspended using the suspendInstances method, it can be resumed using
+   * the resumeInstances method.
+   *
+   * <p>If a health check is attached to the managed instance group, the specified instances will be
+   * verified as healthy after they are resumed.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   ResumeInstancesInstanceGroupManagerRequest request =
+   *       ResumeInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersResumeInstancesRequestResource(
+   *               InstanceGroupManagersResumeInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instanceGroupManagersClient.resumeInstancesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ResumeInstancesInstanceGroupManagerRequest, Operation>
+      resumeInstancesCallable() {
+    return stub.resumeInstancesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Specifies the instance template to use when creating new instances in this group. The templates
-   * for existing instances in the group do not change unless you run recreateInstances, run
-   * applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
+   * for existing instances in the group do not change unless you run recreateInstances,
+   * runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
    *
    * <p>Sample code:
    *
@@ -3440,7 +3838,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located.
+   * @param zone The name of thezone where the managed instance group is located.
    * @param instanceGroupManager The name of the managed instance group.
    * @param instanceGroupManagersSetInstanceTemplateRequestResource The body resource for this
    *     request
@@ -3466,8 +3864,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Specifies the instance template to use when creating new instances in this group. The templates
-   * for existing instances in the group do not change unless you run recreateInstances, run
-   * applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
+   * for existing instances in the group do not change unless you run recreateInstances,
+   * runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
    *
    * <p>Sample code:
    *
@@ -3503,8 +3901,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Specifies the instance template to use when creating new instances in this group. The templates
-   * for existing instances in the group do not change unless you run recreateInstances, run
-   * applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
+   * for existing instances in the group do not change unless you run recreateInstances,
+   * runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
    *
    * <p>Sample code:
    *
@@ -3541,8 +3939,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Specifies the instance template to use when creating new instances in this group. The templates
-   * for existing instances in the group do not change unless you run recreateInstances, run
-   * applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
+   * for existing instances in the group do not change unless you run recreateInstances,
+   * runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
    *
    * <p>Sample code:
    *
@@ -3579,7 +3977,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   /**
    * Modifies the target pools to which all instances in this managed instance group are assigned.
    * The target pools automatically apply to all of the instances in the managed instance group.
-   * This operation is marked DONE when you make the request even if the instances have not yet been
+   * This operation is markedDONE when you make the request even if the instances have not yet been
    * added to their target pools. The change might take some time to apply to all of the instances
    * in the group depending on the size of the group.
    *
@@ -3611,7 +4009,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located.
+   * @param zone The name of thezone where the managed instance group is located.
    * @param instanceGroupManager The name of the managed instance group.
    * @param instanceGroupManagersSetTargetPoolsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3637,7 +4035,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   /**
    * Modifies the target pools to which all instances in this managed instance group are assigned.
    * The target pools automatically apply to all of the instances in the managed instance group.
-   * This operation is marked DONE when you make the request even if the instances have not yet been
+   * This operation is markedDONE when you make the request even if the instances have not yet been
    * added to their target pools. The change might take some time to apply to all of the instances
    * in the group depending on the size of the group.
    *
@@ -3676,7 +4074,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   /**
    * Modifies the target pools to which all instances in this managed instance group are assigned.
    * The target pools automatically apply to all of the instances in the managed instance group.
-   * This operation is marked DONE when you make the request even if the instances have not yet been
+   * This operation is markedDONE when you make the request even if the instances have not yet been
    * added to their target pools. The change might take some time to apply to all of the instances
    * in the group depending on the size of the group.
    *
@@ -3715,7 +4113,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   /**
    * Modifies the target pools to which all instances in this managed instance group are assigned.
    * The target pools automatically apply to all of the instances in the managed instance group.
-   * This operation is marked DONE when you make the request even if the instances have not yet been
+   * This operation is markedDONE when you make the request even if the instances have not yet been
    * added to their target pools. The change might take some time to apply to all of the instances
    * in the group depending on the size of the group.
    *
@@ -3752,6 +4150,685 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Flags the specified instances in the managed instance group to be started. This method
+   * increases thetargetSize and decreases the targetStoppedSize of the managed instance group by
+   * the number of instances that you start. The startInstances operation is marked DONE if the
+   * startInstances request is successful. The underlying actions take additional time. You must
+   * separately verify the status of theSTARTING action with thelistmanagedinstances method.
+   *
+   * <p>In this request, you can only specify instances that are stopped. For example, if an
+   * instance was previously stopped using the stopInstances method, it can be started using the
+   * startInstances method.
+   *
+   * <p>If a health check is attached to the managed instance group, the specified instances will be
+   * verified as healthy after they are started.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   InstanceGroupManagersStartInstancesRequest
+   *       instanceGroupManagersStartInstancesRequestResource =
+   *           InstanceGroupManagersStartInstancesRequest.newBuilder().build();
+   *   Operation response =
+   *       instanceGroupManagersClient
+   *           .startInstancesAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersStartInstancesRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of thezone where the managed instance group is located.
+   * @param instanceGroupManager The name of the managed instance group.
+   * @param instanceGroupManagersStartInstancesRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> startInstancesAsync(
+      String project,
+      String zone,
+      String instanceGroupManager,
+      InstanceGroupManagersStartInstancesRequest
+          instanceGroupManagersStartInstancesRequestResource) {
+    StartInstancesInstanceGroupManagerRequest request =
+        StartInstancesInstanceGroupManagerRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstanceGroupManager(instanceGroupManager)
+            .setInstanceGroupManagersStartInstancesRequestResource(
+                instanceGroupManagersStartInstancesRequestResource)
+            .build();
+    return startInstancesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be started. This method
+   * increases thetargetSize and decreases the targetStoppedSize of the managed instance group by
+   * the number of instances that you start. The startInstances operation is marked DONE if the
+   * startInstances request is successful. The underlying actions take additional time. You must
+   * separately verify the status of theSTARTING action with thelistmanagedinstances method.
+   *
+   * <p>In this request, you can only specify instances that are stopped. For example, if an
+   * instance was previously stopped using the stopInstances method, it can be started using the
+   * startInstances method.
+   *
+   * <p>If a health check is attached to the managed instance group, the specified instances will be
+   * verified as healthy after they are started.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   StartInstancesInstanceGroupManagerRequest request =
+   *       StartInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersStartInstancesRequestResource(
+   *               InstanceGroupManagersStartInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = instanceGroupManagersClient.startInstancesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> startInstancesAsync(
+      StartInstancesInstanceGroupManagerRequest request) {
+    return startInstancesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be started. This method
+   * increases thetargetSize and decreases the targetStoppedSize of the managed instance group by
+   * the number of instances that you start. The startInstances operation is marked DONE if the
+   * startInstances request is successful. The underlying actions take additional time. You must
+   * separately verify the status of theSTARTING action with thelistmanagedinstances method.
+   *
+   * <p>In this request, you can only specify instances that are stopped. For example, if an
+   * instance was previously stopped using the stopInstances method, it can be started using the
+   * startInstances method.
+   *
+   * <p>If a health check is attached to the managed instance group, the specified instances will be
+   * verified as healthy after they are started.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   StartInstancesInstanceGroupManagerRequest request =
+   *       StartInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersStartInstancesRequestResource(
+   *               InstanceGroupManagersStartInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.startInstancesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<StartInstancesInstanceGroupManagerRequest, Operation, Operation>
+      startInstancesOperationCallable() {
+    return stub.startInstancesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be started. This method
+   * increases thetargetSize and decreases the targetStoppedSize of the managed instance group by
+   * the number of instances that you start. The startInstances operation is marked DONE if the
+   * startInstances request is successful. The underlying actions take additional time. You must
+   * separately verify the status of theSTARTING action with thelistmanagedinstances method.
+   *
+   * <p>In this request, you can only specify instances that are stopped. For example, if an
+   * instance was previously stopped using the stopInstances method, it can be started using the
+   * startInstances method.
+   *
+   * <p>If a health check is attached to the managed instance group, the specified instances will be
+   * verified as healthy after they are started.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   StartInstancesInstanceGroupManagerRequest request =
+   *       StartInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersStartInstancesRequestResource(
+   *               InstanceGroupManagersStartInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instanceGroupManagersClient.startInstancesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StartInstancesInstanceGroupManagerRequest, Operation>
+      startInstancesCallable() {
+    return stub.startInstancesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be immediately stopped. You can
+   * only specify instances that are running in this request. This method reduces thetargetSize and
+   * increases the targetStoppedSize of the managed instance group by the number of instances that
+   * you stop. The stopInstances operation is marked DONE if the stopInstances request is
+   * successful. The underlying actions take additional time. You must separately verify the status
+   * of theSTOPPING action with thelistmanagedinstances method.
+   *
+   * <p>If the standbyPolicy.initialDelaySec field is set, the group delays stopping the instances
+   * until initialDelaySec have passed from instance.creationTimestamp (that is, when the instance
+   * was created). This delay gives your application time to set itself up and initialize on the
+   * instance. If more thaninitialDelaySec seconds have passed sinceinstance.creationTimestamp when
+   * this method is called, there will be zero delay.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * stopped.
+   *
+   * <p>Stopped instances can be started using the startInstances method.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   InstanceGroupManagersStopInstancesRequest instanceGroupManagersStopInstancesRequestResource =
+   *       InstanceGroupManagersStopInstancesRequest.newBuilder().build();
+   *   Operation response =
+   *       instanceGroupManagersClient
+   *           .stopInstancesAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersStopInstancesRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of thezone where the managed instance group is located.
+   * @param instanceGroupManager The name of the managed instance group.
+   * @param instanceGroupManagersStopInstancesRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> stopInstancesAsync(
+      String project,
+      String zone,
+      String instanceGroupManager,
+      InstanceGroupManagersStopInstancesRequest instanceGroupManagersStopInstancesRequestResource) {
+    StopInstancesInstanceGroupManagerRequest request =
+        StopInstancesInstanceGroupManagerRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstanceGroupManager(instanceGroupManager)
+            .setInstanceGroupManagersStopInstancesRequestResource(
+                instanceGroupManagersStopInstancesRequestResource)
+            .build();
+    return stopInstancesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be immediately stopped. You can
+   * only specify instances that are running in this request. This method reduces thetargetSize and
+   * increases the targetStoppedSize of the managed instance group by the number of instances that
+   * you stop. The stopInstances operation is marked DONE if the stopInstances request is
+   * successful. The underlying actions take additional time. You must separately verify the status
+   * of theSTOPPING action with thelistmanagedinstances method.
+   *
+   * <p>If the standbyPolicy.initialDelaySec field is set, the group delays stopping the instances
+   * until initialDelaySec have passed from instance.creationTimestamp (that is, when the instance
+   * was created). This delay gives your application time to set itself up and initialize on the
+   * instance. If more thaninitialDelaySec seconds have passed sinceinstance.creationTimestamp when
+   * this method is called, there will be zero delay.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * stopped.
+   *
+   * <p>Stopped instances can be started using the startInstances method.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   StopInstancesInstanceGroupManagerRequest request =
+   *       StopInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersStopInstancesRequestResource(
+   *               InstanceGroupManagersStopInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = instanceGroupManagersClient.stopInstancesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> stopInstancesAsync(
+      StopInstancesInstanceGroupManagerRequest request) {
+    return stopInstancesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be immediately stopped. You can
+   * only specify instances that are running in this request. This method reduces thetargetSize and
+   * increases the targetStoppedSize of the managed instance group by the number of instances that
+   * you stop. The stopInstances operation is marked DONE if the stopInstances request is
+   * successful. The underlying actions take additional time. You must separately verify the status
+   * of theSTOPPING action with thelistmanagedinstances method.
+   *
+   * <p>If the standbyPolicy.initialDelaySec field is set, the group delays stopping the instances
+   * until initialDelaySec have passed from instance.creationTimestamp (that is, when the instance
+   * was created). This delay gives your application time to set itself up and initialize on the
+   * instance. If more thaninitialDelaySec seconds have passed sinceinstance.creationTimestamp when
+   * this method is called, there will be zero delay.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * stopped.
+   *
+   * <p>Stopped instances can be started using the startInstances method.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   StopInstancesInstanceGroupManagerRequest request =
+   *       StopInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersStopInstancesRequestResource(
+   *               InstanceGroupManagersStopInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.stopInstancesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<StopInstancesInstanceGroupManagerRequest, Operation, Operation>
+      stopInstancesOperationCallable() {
+    return stub.stopInstancesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be immediately stopped. You can
+   * only specify instances that are running in this request. This method reduces thetargetSize and
+   * increases the targetStoppedSize of the managed instance group by the number of instances that
+   * you stop. The stopInstances operation is marked DONE if the stopInstances request is
+   * successful. The underlying actions take additional time. You must separately verify the status
+   * of theSTOPPING action with thelistmanagedinstances method.
+   *
+   * <p>If the standbyPolicy.initialDelaySec field is set, the group delays stopping the instances
+   * until initialDelaySec have passed from instance.creationTimestamp (that is, when the instance
+   * was created). This delay gives your application time to set itself up and initialize on the
+   * instance. If more thaninitialDelaySec seconds have passed sinceinstance.creationTimestamp when
+   * this method is called, there will be zero delay.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * stopped.
+   *
+   * <p>Stopped instances can be started using the startInstances method.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   StopInstancesInstanceGroupManagerRequest request =
+   *       StopInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersStopInstancesRequestResource(
+   *               InstanceGroupManagersStopInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instanceGroupManagersClient.stopInstancesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StopInstancesInstanceGroupManagerRequest, Operation>
+      stopInstancesCallable() {
+    return stub.stopInstancesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be immediately suspended. You
+   * can only specify instances that are running in this request. This method reduces thetargetSize
+   * and increases the targetSuspendedSize of the managed instance group by the number of instances
+   * that you suspend. The suspendInstances operation is marked DONE if the suspendInstances request
+   * is successful. The underlying actions take additional time. You must separately verify the
+   * status of theSUSPENDING action with thelistmanagedinstances method.
+   *
+   * <p>If the standbyPolicy.initialDelaySec field is set, the group delays suspension of the
+   * instances until initialDelaySec have passed from instance.creationTimestamp (that is, when the
+   * instance was created). This delay gives your application time to set itself up and initialize
+   * on the instance. If more thaninitialDelaySec seconds have passed
+   * sinceinstance.creationTimestamp when this method is called, there will be zero delay.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * suspended.
+   *
+   * <p>Suspended instances can be resumed using the resumeInstances method.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   InstanceGroupManagersSuspendInstancesRequest
+   *       instanceGroupManagersSuspendInstancesRequestResource =
+   *           InstanceGroupManagersSuspendInstancesRequest.newBuilder().build();
+   *   Operation response =
+   *       instanceGroupManagersClient
+   *           .suspendInstancesAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersSuspendInstancesRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of thezone where the managed instance group is located.
+   * @param instanceGroupManager The name of the managed instance group.
+   * @param instanceGroupManagersSuspendInstancesRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> suspendInstancesAsync(
+      String project,
+      String zone,
+      String instanceGroupManager,
+      InstanceGroupManagersSuspendInstancesRequest
+          instanceGroupManagersSuspendInstancesRequestResource) {
+    SuspendInstancesInstanceGroupManagerRequest request =
+        SuspendInstancesInstanceGroupManagerRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstanceGroupManager(instanceGroupManager)
+            .setInstanceGroupManagersSuspendInstancesRequestResource(
+                instanceGroupManagersSuspendInstancesRequestResource)
+            .build();
+    return suspendInstancesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be immediately suspended. You
+   * can only specify instances that are running in this request. This method reduces thetargetSize
+   * and increases the targetSuspendedSize of the managed instance group by the number of instances
+   * that you suspend. The suspendInstances operation is marked DONE if the suspendInstances request
+   * is successful. The underlying actions take additional time. You must separately verify the
+   * status of theSUSPENDING action with thelistmanagedinstances method.
+   *
+   * <p>If the standbyPolicy.initialDelaySec field is set, the group delays suspension of the
+   * instances until initialDelaySec have passed from instance.creationTimestamp (that is, when the
+   * instance was created). This delay gives your application time to set itself up and initialize
+   * on the instance. If more thaninitialDelaySec seconds have passed
+   * sinceinstance.creationTimestamp when this method is called, there will be zero delay.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * suspended.
+   *
+   * <p>Suspended instances can be resumed using the resumeInstances method.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   SuspendInstancesInstanceGroupManagerRequest request =
+   *       SuspendInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersSuspendInstancesRequestResource(
+   *               InstanceGroupManagersSuspendInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = instanceGroupManagersClient.suspendInstancesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> suspendInstancesAsync(
+      SuspendInstancesInstanceGroupManagerRequest request) {
+    return suspendInstancesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be immediately suspended. You
+   * can only specify instances that are running in this request. This method reduces thetargetSize
+   * and increases the targetSuspendedSize of the managed instance group by the number of instances
+   * that you suspend. The suspendInstances operation is marked DONE if the suspendInstances request
+   * is successful. The underlying actions take additional time. You must separately verify the
+   * status of theSUSPENDING action with thelistmanagedinstances method.
+   *
+   * <p>If the standbyPolicy.initialDelaySec field is set, the group delays suspension of the
+   * instances until initialDelaySec have passed from instance.creationTimestamp (that is, when the
+   * instance was created). This delay gives your application time to set itself up and initialize
+   * on the instance. If more thaninitialDelaySec seconds have passed
+   * sinceinstance.creationTimestamp when this method is called, there will be zero delay.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * suspended.
+   *
+   * <p>Suspended instances can be resumed using the resumeInstances method.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   SuspendInstancesInstanceGroupManagerRequest request =
+   *       SuspendInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersSuspendInstancesRequestResource(
+   *               InstanceGroupManagersSuspendInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.suspendInstancesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SuspendInstancesInstanceGroupManagerRequest, Operation, Operation>
+      suspendInstancesOperationCallable() {
+    return stub.suspendInstancesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be immediately suspended. You
+   * can only specify instances that are running in this request. This method reduces thetargetSize
+   * and increases the targetSuspendedSize of the managed instance group by the number of instances
+   * that you suspend. The suspendInstances operation is marked DONE if the suspendInstances request
+   * is successful. The underlying actions take additional time. You must separately verify the
+   * status of theSUSPENDING action with thelistmanagedinstances method.
+   *
+   * <p>If the standbyPolicy.initialDelaySec field is set, the group delays suspension of the
+   * instances until initialDelaySec have passed from instance.creationTimestamp (that is, when the
+   * instance was created). This delay gives your application time to set itself up and initialize
+   * on the instance. If more thaninitialDelaySec seconds have passed
+   * sinceinstance.creationTimestamp when this method is called, there will be zero delay.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
+   * suspended.
+   *
+   * <p>Suspended instances can be resumed using the resumeInstances method.
+   *
+   * <p>You can specify a maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   SuspendInstancesInstanceGroupManagerRequest request =
+   *       SuspendInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersSuspendInstancesRequestResource(
+   *               InstanceGroupManagersSuspendInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instanceGroupManagersClient.suspendInstancesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SuspendInstancesInstanceGroupManagerRequest, Operation>
+      suspendInstancesCallable() {
+    return stub.suspendInstancesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Inserts or updates per-instance configurations for the managed instance group.
    * perInstanceConfig.name serves as a key used to distinguish whether to perform insert or patch.
    *
@@ -3783,7 +4860,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located. It should conform
+   * @param zone The name of thezone where the managed instance group is located. It should conform
    *     to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. It should conform to
    *     RFC1035.

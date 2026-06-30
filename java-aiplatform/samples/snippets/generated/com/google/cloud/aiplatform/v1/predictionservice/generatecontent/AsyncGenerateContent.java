@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,14 +18,18 @@ package com.google.cloud.aiplatform.v1.samples;
 
 // [START aiplatform_v1_generated_PredictionService_GenerateContent_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.aiplatform.v1.CachedContentName;
 import com.google.cloud.aiplatform.v1.Content;
 import com.google.cloud.aiplatform.v1.GenerateContentRequest;
 import com.google.cloud.aiplatform.v1.GenerateContentResponse;
 import com.google.cloud.aiplatform.v1.GenerationConfig;
+import com.google.cloud.aiplatform.v1.ModelArmorConfig;
 import com.google.cloud.aiplatform.v1.PredictionServiceClient;
 import com.google.cloud.aiplatform.v1.SafetySetting;
 import com.google.cloud.aiplatform.v1.Tool;
+import com.google.cloud.aiplatform.v1.ToolConfig;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AsyncGenerateContent {
 
@@ -45,8 +49,13 @@ public class AsyncGenerateContent {
               .setModel("model104069929")
               .addAllContents(new ArrayList<Content>())
               .setSystemInstruction(Content.newBuilder().build())
+              .setCachedContent(
+                  CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
               .addAllTools(new ArrayList<Tool>())
+              .setToolConfig(ToolConfig.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
               .addAllSafetySettings(new ArrayList<SafetySetting>())
+              .setModelArmorConfig(ModelArmorConfig.newBuilder().build())
               .setGenerationConfig(GenerationConfig.newBuilder().build())
               .build();
       ApiFuture<GenerateContentResponse> future =

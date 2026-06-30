@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,14 @@ package com.google.cloud.bigquery.analyticshub.v1.stub;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListDataExchangesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListListingsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListOrgDataExchangesPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListQueryTemplatesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSharedResourceSubscriptionsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSubscriptionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -41,6 +43,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -51,14 +54,18 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.bigquery.analyticshub.v1.ApproveQueryTemplateRequest;
 import com.google.cloud.bigquery.analyticshub.v1.CreateDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.CreateListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.CreateQueryTemplateRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DataExchange;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.DeleteQueryTemplateRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.GetQueryTemplateRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesResponse;
@@ -66,16 +73,20 @@ import com.google.cloud.bigquery.analyticshub.v1.ListListingsRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListListingsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesResponse;
+import com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesRequest;
+import com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.Listing;
 import com.google.cloud.bigquery.analyticshub.v1.OperationMetadata;
+import com.google.cloud.bigquery.analyticshub.v1.QueryTemplate;
 import com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionResponse;
 import com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse;
+import com.google.cloud.bigquery.analyticshub.v1.SubmitQueryTemplateRequest;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeResponse;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest;
@@ -83,6 +94,7 @@ import com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse;
 import com.google.cloud.bigquery.analyticshub.v1.Subscription;
 import com.google.cloud.bigquery.analyticshub.v1.UpdateDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.UpdateListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.UpdateQueryTemplateRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -95,9 +107,9 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -114,7 +126,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getDataExchange to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getDataExchange:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -131,13 +145,51 @@ import org.threeten.bp.Duration;
  *             .getDataExchangeSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * AnalyticsHubServiceStubSettings analyticsHubServiceSettings =
  *     analyticsHubServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for subscribeDataExchange:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * AnalyticsHubServiceStubSettings.Builder analyticsHubServiceSettingsBuilder =
+ *     AnalyticsHubServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * analyticsHubServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -197,6 +249,19 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<CreateQueryTemplateRequest, QueryTemplate>
+      createQueryTemplateSettings;
+  private final UnaryCallSettings<GetQueryTemplateRequest, QueryTemplate> getQueryTemplateSettings;
+  private final PagedCallSettings<
+          ListQueryTemplatesRequest, ListQueryTemplatesResponse, ListQueryTemplatesPagedResponse>
+      listQueryTemplatesSettings;
+  private final UnaryCallSettings<UpdateQueryTemplateRequest, QueryTemplate>
+      updateQueryTemplateSettings;
+  private final UnaryCallSettings<DeleteQueryTemplateRequest, Empty> deleteQueryTemplateSettings;
+  private final UnaryCallSettings<SubmitQueryTemplateRequest, QueryTemplate>
+      submitQueryTemplateSettings;
+  private final UnaryCallSettings<ApproveQueryTemplateRequest, QueryTemplate>
+      approveQueryTemplateSettings;
 
   private static final PagedListDescriptor<
           ListDataExchangesRequest, ListDataExchangesResponse, DataExchange>
@@ -232,9 +297,7 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
 
             @Override
             public Iterable<DataExchange> extractResources(ListDataExchangesResponse payload) {
-              return payload.getDataExchangesList() == null
-                  ? ImmutableList.<DataExchange>of()
-                  : payload.getDataExchangesList();
+              return payload.getDataExchangesList();
             }
           };
 
@@ -272,9 +335,7 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
 
             @Override
             public Iterable<DataExchange> extractResources(ListOrgDataExchangesResponse payload) {
-              return payload.getDataExchangesList() == null
-                  ? ImmutableList.<DataExchange>of()
-                  : payload.getDataExchangesList();
+              return payload.getDataExchangesList();
             }
           };
 
@@ -308,9 +369,7 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
 
             @Override
             public Iterable<Listing> extractResources(ListListingsResponse payload) {
-              return payload.getListingsList() == null
-                  ? ImmutableList.<Listing>of()
-                  : payload.getListingsList();
+              return payload.getListingsList();
             }
           };
 
@@ -348,9 +407,7 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
 
             @Override
             public Iterable<Subscription> extractResources(ListSubscriptionsResponse payload) {
-              return payload.getSubscriptionsList() == null
-                  ? ImmutableList.<Subscription>of()
-                  : payload.getSubscriptionsList();
+              return payload.getSubscriptionsList();
             }
           };
 
@@ -397,9 +454,45 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
             @Override
             public Iterable<Subscription> extractResources(
                 ListSharedResourceSubscriptionsResponse payload) {
-              return payload.getSharedResourceSubscriptionsList() == null
-                  ? ImmutableList.<Subscription>of()
-                  : payload.getSharedResourceSubscriptionsList();
+              return payload.getSharedResourceSubscriptionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListQueryTemplatesRequest, ListQueryTemplatesResponse, QueryTemplate>
+      LIST_QUERY_TEMPLATES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListQueryTemplatesRequest, ListQueryTemplatesResponse, QueryTemplate>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListQueryTemplatesRequest injectToken(
+                ListQueryTemplatesRequest payload, String token) {
+              return ListQueryTemplatesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListQueryTemplatesRequest injectPageSize(
+                ListQueryTemplatesRequest payload, int pageSize) {
+              return ListQueryTemplatesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListQueryTemplatesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListQueryTemplatesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<QueryTemplate> extractResources(ListQueryTemplatesResponse payload) {
+              return payload.getQueryTemplatesList();
             }
           };
 
@@ -515,6 +608,27 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
                           context);
               return ListSharedResourceSubscriptionsPagedResponse.createAsync(
                   pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListQueryTemplatesRequest, ListQueryTemplatesResponse, ListQueryTemplatesPagedResponse>
+      LIST_QUERY_TEMPLATES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListQueryTemplatesRequest,
+              ListQueryTemplatesResponse,
+              ListQueryTemplatesPagedResponse>() {
+            @Override
+            public ApiFuture<ListQueryTemplatesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListQueryTemplatesRequest, ListQueryTemplatesResponse> callable,
+                ListQueryTemplatesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListQueryTemplatesResponse> futureResponse) {
+              PageContext<ListQueryTemplatesRequest, ListQueryTemplatesResponse, QueryTemplate>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_QUERY_TEMPLATES_PAGE_STR_DESC, request, context);
+              return ListQueryTemplatesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -665,6 +779,47 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
     return testIamPermissionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to createQueryTemplate. */
+  public UnaryCallSettings<CreateQueryTemplateRequest, QueryTemplate>
+      createQueryTemplateSettings() {
+    return createQueryTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getQueryTemplate. */
+  public UnaryCallSettings<GetQueryTemplateRequest, QueryTemplate> getQueryTemplateSettings() {
+    return getQueryTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listQueryTemplates. */
+  public PagedCallSettings<
+          ListQueryTemplatesRequest, ListQueryTemplatesResponse, ListQueryTemplatesPagedResponse>
+      listQueryTemplatesSettings() {
+    return listQueryTemplatesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateQueryTemplate. */
+  public UnaryCallSettings<UpdateQueryTemplateRequest, QueryTemplate>
+      updateQueryTemplateSettings() {
+    return updateQueryTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteQueryTemplate. */
+  public UnaryCallSettings<DeleteQueryTemplateRequest, Empty> deleteQueryTemplateSettings() {
+    return deleteQueryTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to submitQueryTemplate. */
+  public UnaryCallSettings<SubmitQueryTemplateRequest, QueryTemplate>
+      submitQueryTemplateSettings() {
+    return submitQueryTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to approveQueryTemplate. */
+  public UnaryCallSettings<ApproveQueryTemplateRequest, QueryTemplate>
+      approveQueryTemplateSettings() {
+    return approveQueryTemplateSettings;
+  }
+
   public AnalyticsHubServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -681,15 +836,6 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -702,6 +848,7 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "analyticshub.googleapis.com:443";
   }
@@ -813,6 +960,22 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    createQueryTemplateSettings = settingsBuilder.createQueryTemplateSettings().build();
+    getQueryTemplateSettings = settingsBuilder.getQueryTemplateSettings().build();
+    listQueryTemplatesSettings = settingsBuilder.listQueryTemplatesSettings().build();
+    updateQueryTemplateSettings = settingsBuilder.updateQueryTemplateSettings().build();
+    deleteQueryTemplateSettings = settingsBuilder.deleteQueryTemplateSettings().build();
+    submitQueryTemplateSettings = settingsBuilder.submitQueryTemplateSettings().build();
+    approveQueryTemplateSettings = settingsBuilder.approveQueryTemplateSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-analyticshub")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for AnalyticsHubServiceStubSettings. */
@@ -874,6 +1037,21 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<CreateQueryTemplateRequest, QueryTemplate>
+        createQueryTemplateSettings;
+    private final UnaryCallSettings.Builder<GetQueryTemplateRequest, QueryTemplate>
+        getQueryTemplateSettings;
+    private final PagedCallSettings.Builder<
+            ListQueryTemplatesRequest, ListQueryTemplatesResponse, ListQueryTemplatesPagedResponse>
+        listQueryTemplatesSettings;
+    private final UnaryCallSettings.Builder<UpdateQueryTemplateRequest, QueryTemplate>
+        updateQueryTemplateSettings;
+    private final UnaryCallSettings.Builder<DeleteQueryTemplateRequest, Empty>
+        deleteQueryTemplateSettings;
+    private final UnaryCallSettings.Builder<SubmitQueryTemplateRequest, QueryTemplate>
+        submitQueryTemplateSettings;
+    private final UnaryCallSettings.Builder<ApproveQueryTemplateRequest, QueryTemplate>
+        approveQueryTemplateSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -895,13 +1073,13 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -941,6 +1119,13 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createQueryTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getQueryTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listQueryTemplatesSettings = PagedCallSettings.newBuilder(LIST_QUERY_TEMPLATES_PAGE_STR_FACT);
+      updateQueryTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteQueryTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      submitQueryTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      approveQueryTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -965,7 +1150,14 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
               deleteSubscriptionSettings,
               getIamPolicySettings,
               setIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              createQueryTemplateSettings,
+              getQueryTemplateSettings,
+              listQueryTemplatesSettings,
+              updateQueryTemplateSettings,
+              deleteQueryTemplateSettings,
+              submitQueryTemplateSettings,
+              approveQueryTemplateSettings);
       initDefaults(this);
     }
 
@@ -1001,6 +1193,13 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      createQueryTemplateSettings = settings.createQueryTemplateSettings.toBuilder();
+      getQueryTemplateSettings = settings.getQueryTemplateSettings.toBuilder();
+      listQueryTemplatesSettings = settings.listQueryTemplatesSettings.toBuilder();
+      updateQueryTemplateSettings = settings.updateQueryTemplateSettings.toBuilder();
+      deleteQueryTemplateSettings = settings.deleteQueryTemplateSettings.toBuilder();
+      submitQueryTemplateSettings = settings.submitQueryTemplateSettings.toBuilder();
+      approveQueryTemplateSettings = settings.approveQueryTemplateSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1025,7 +1224,14 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
               deleteSubscriptionSettings,
               getIamPolicySettings,
               setIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              createQueryTemplateSettings,
+              getQueryTemplateSettings,
+              listQueryTemplatesSettings,
+              updateQueryTemplateSettings,
+              deleteQueryTemplateSettings,
+              submitQueryTemplateSettings,
+              approveQueryTemplateSettings);
     }
 
     private static Builder createDefault() {
@@ -1164,6 +1370,41 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .createQueryTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getQueryTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listQueryTemplatesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateQueryTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteQueryTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .submitQueryTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .approveQueryTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .subscribeDataExchangeOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -1179,13 +1420,13 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1204,13 +1445,13 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1228,13 +1469,13 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1410,13 +1651,47 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
       return testIamPermissionsSettings;
     }
 
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
+    /** Returns the builder for the settings used for calls to createQueryTemplate. */
+    public UnaryCallSettings.Builder<CreateQueryTemplateRequest, QueryTemplate>
+        createQueryTemplateSettings() {
+      return createQueryTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getQueryTemplate. */
+    public UnaryCallSettings.Builder<GetQueryTemplateRequest, QueryTemplate>
+        getQueryTemplateSettings() {
+      return getQueryTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listQueryTemplates. */
+    public PagedCallSettings.Builder<
+            ListQueryTemplatesRequest, ListQueryTemplatesResponse, ListQueryTemplatesPagedResponse>
+        listQueryTemplatesSettings() {
+      return listQueryTemplatesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateQueryTemplate. */
+    public UnaryCallSettings.Builder<UpdateQueryTemplateRequest, QueryTemplate>
+        updateQueryTemplateSettings() {
+      return updateQueryTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteQueryTemplate. */
+    public UnaryCallSettings.Builder<DeleteQueryTemplateRequest, Empty>
+        deleteQueryTemplateSettings() {
+      return deleteQueryTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to submitQueryTemplate. */
+    public UnaryCallSettings.Builder<SubmitQueryTemplateRequest, QueryTemplate>
+        submitQueryTemplateSettings() {
+      return submitQueryTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to approveQueryTemplate. */
+    public UnaryCallSettings.Builder<ApproveQueryTemplateRequest, QueryTemplate>
+        approveQueryTemplateSettings() {
+      return approveQueryTemplateSettings;
     }
 
     @Override

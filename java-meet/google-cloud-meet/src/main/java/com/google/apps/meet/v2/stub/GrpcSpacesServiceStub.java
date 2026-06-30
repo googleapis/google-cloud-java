@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
           .setFullMethodName("google.apps.meet.v2.SpacesService/CreateSpace")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSpaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetSpaceRequest, Space> getSpaceMethodDescriptor =
@@ -58,6 +59,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
           .setFullMethodName("google.apps.meet.v2.SpacesService/GetSpace")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSpaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSpaceRequest, Space> updateSpaceMethodDescriptor =
@@ -66,6 +68,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
           .setFullMethodName("google.apps.meet.v2.SpacesService/UpdateSpace")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSpaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<EndActiveConferenceRequest, Empty>
@@ -76,6 +79,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EndActiveConferenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateSpaceRequest, Space> createSpaceCallable;
@@ -138,6 +142,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSpaceRequest, Space> updateSpaceTransportSettings =
         GrpcCallSettings.<UpdateSpaceRequest, Space>newBuilder()
@@ -158,6 +163,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createSpaceCallable =

@@ -1,0 +1,163 @@
+package com.google.testdata.v1.stub;
+
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.protobuf.Empty;
+import com.google.testdata.v1.FibonacciRequest;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * gRPC stub implementation for the DeprecatedService service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
+ */
+@Deprecated
+@Generated("by gapic-generator-java")
+public class GrpcDeprecatedServiceStub extends DeprecatedServiceStub {
+  private static final MethodDescriptor<FibonacciRequest, Empty> fastFibonacciMethodDescriptor =
+      MethodDescriptor.<FibonacciRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.testdata.v1.DeprecatedService/FastFibonacci")
+          .setRequestMarshaller(ProtoUtils.marshaller(FibonacciRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<FibonacciRequest, Empty> slowFibonacciMethodDescriptor =
+      MethodDescriptor.<FibonacciRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.testdata.v1.DeprecatedService/SlowFibonacci")
+          .setRequestMarshaller(ProtoUtils.marshaller(FibonacciRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private final UnaryCallable<FibonacciRequest, Empty> fastFibonacciCallable;
+  private final UnaryCallable<FibonacciRequest, Empty> slowFibonacciCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
+  private final GrpcStubCallableFactory callableFactory;
+
+  public static final GrpcDeprecatedServiceStub create(DeprecatedServiceStubSettings settings)
+      throws IOException {
+    return new GrpcDeprecatedServiceStub(settings, ClientContext.create(settings));
+  }
+
+  public static final GrpcDeprecatedServiceStub create(ClientContext clientContext)
+      throws IOException {
+    return new GrpcDeprecatedServiceStub(
+        DeprecatedServiceStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final GrpcDeprecatedServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcDeprecatedServiceStub(
+        DeprecatedServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
+  /**
+   * Constructs an instance of GrpcDeprecatedServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcDeprecatedServiceStub(
+      DeprecatedServiceStubSettings settings, ClientContext clientContext) throws IOException {
+    this(settings, clientContext, new GrpcDeprecatedServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcDeprecatedServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcDeprecatedServiceStub(
+      DeprecatedServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
+
+    GrpcCallSettings<FibonacciRequest, Empty> fastFibonacciTransportSettings =
+        GrpcCallSettings.<FibonacciRequest, Empty>newBuilder()
+            .setMethodDescriptor(fastFibonacciMethodDescriptor)
+            .build();
+    GrpcCallSettings<FibonacciRequest, Empty> slowFibonacciTransportSettings =
+        GrpcCallSettings.<FibonacciRequest, Empty>newBuilder()
+            .setMethodDescriptor(slowFibonacciMethodDescriptor)
+            .build();
+
+    this.fastFibonacciCallable =
+        callableFactory.createUnaryCallable(
+            fastFibonacciTransportSettings, settings.fastFibonacciSettings(), clientContext);
+    this.slowFibonacciCallable =
+        callableFactory.createUnaryCallable(
+            slowFibonacciTransportSettings, settings.slowFibonacciSettings(), clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<FibonacciRequest, Empty> fastFibonacciCallable() {
+    return fastFibonacciCallable;
+  }
+
+  @Override
+  public UnaryCallable<FibonacciRequest, Empty> slowFibonacciCallable() {
+    return slowFibonacciCallable;
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

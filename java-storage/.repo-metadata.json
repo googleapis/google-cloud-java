@@ -1,0 +1,21 @@
+{
+  "api_shortname": "storage",
+  "name_pretty": "Cloud Storage",
+  "product_documentation": "https://cloud.google.com/storage",
+  "api_description": "is a durable and highly available object storage service. Google Cloud Storage is almost infinitely scalable and guarantees consistency: when a write succeeds, the latest copy of the object will be returned to any GET, globally.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-storage/latest/history",
+  "release_level": "stable",
+  "transport": "http",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-storage",
+  "distribution_name": "com.google.cloud:google-cloud-storage",
+  "api_id": "storage.googleapis.com",
+  "library_type": "GAPIC_COMBO",
+  "requires_billing": true,
+  "codeowner_team": "@googleapis/gcs-team",
+  "excluded_poms": "google-cloud-storage-bom,google-cloud-storage",
+  "issue_tracker": "https://issuetracker.google.com/savedsearches/559782",
+  "extra_versioned_modules": "gapic-google-cloud-storage-v2",
+  "recommended_package": "com.google.cloud.storage"
+}

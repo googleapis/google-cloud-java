@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public class GrpcFulfillmentsStub extends FulfillmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFulfillmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Fulfillment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFulfillmentRequest, Fulfillment>
@@ -67,6 +68,7 @@ public class GrpcFulfillmentsStub extends FulfillmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFulfillmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Fulfillment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -78,6 +80,7 @@ public class GrpcFulfillmentsStub extends FulfillmentsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -86,6 +89,7 @@ public class GrpcFulfillmentsStub extends FulfillmentsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<GetFulfillmentRequest, Fulfillment> getFulfillmentCallable;
@@ -146,6 +150,7 @@ public class GrpcFulfillmentsStub extends FulfillmentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateFulfillmentRequest, Fulfillment> updateFulfillmentTransportSettings =
         GrpcCallSettings.<UpdateFulfillmentRequest, Fulfillment>newBuilder()

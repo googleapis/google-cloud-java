@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.cloud.compute.v1.stub.RegionHealthCheckServicesStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -67,6 +68,26 @@ import javax.annotation.Generated;
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AggregatedList</td>
+ *      <td><p> Retrieves the list of all HealthCheckService resources, regional and global, available to the specified project.
+ * <p>  To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> aggregatedList(AggregatedListRegionHealthCheckServicesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> aggregatedList(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> aggregatedListPagedCallable()
+ *           <li><p> aggregatedListCallable()
+ *      </ul>
+ *       </td>
  *    </tr>
  *    <tr>
  *      <td><p> Delete</td>
@@ -145,7 +166,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Patch</td>
- *      <td><p> Updates the specified regional HealthCheckService resource with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.</td>
+ *      <td><p> Updates the specified regional HealthCheckService resource with the data included in the request.  This method supportsPATCH semantics and uses theJSON merge patch format and processing rules.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -159,6 +180,24 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> patchOperationCallable()
  *           <li><p> patchCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRegionHealthCheckServiceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(String project, String region, String resource, TestPermissionsRequest testPermissionsRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -255,6 +294,180 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
 
   public RegionHealthCheckServicesStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all HealthCheckService resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionHealthCheckServicesClient regionHealthCheckServicesClient =
+   *     RegionHealthCheckServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, HealthCheckServicesScopedList> element :
+   *       regionHealthCheckServicesClient.aggregatedList(project).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param project Name of the project scoping this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregatedListPagedResponse aggregatedList(String project) {
+    AggregatedListRegionHealthCheckServicesRequest request =
+        AggregatedListRegionHealthCheckServicesRequest.newBuilder().setProject(project).build();
+    return aggregatedList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all HealthCheckService resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionHealthCheckServicesClient regionHealthCheckServicesClient =
+   *     RegionHealthCheckServicesClient.create()) {
+   *   AggregatedListRegionHealthCheckServicesRequest request =
+   *       AggregatedListRegionHealthCheckServicesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
+   *           .build();
+   *   for (Map.Entry<String, HealthCheckServicesScopedList> element :
+   *       regionHealthCheckServicesClient.aggregatedList(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregatedListPagedResponse aggregatedList(
+      AggregatedListRegionHealthCheckServicesRequest request) {
+    return aggregatedListPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all HealthCheckService resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionHealthCheckServicesClient regionHealthCheckServicesClient =
+   *     RegionHealthCheckServicesClient.create()) {
+   *   AggregatedListRegionHealthCheckServicesRequest request =
+   *       AggregatedListRegionHealthCheckServicesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, HealthCheckServicesScopedList>> future =
+   *       regionHealthCheckServicesClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, HealthCheckServicesScopedList> element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          AggregatedListRegionHealthCheckServicesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return stub.aggregatedListPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all HealthCheckService resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionHealthCheckServicesClient regionHealthCheckServicesClient =
+   *     RegionHealthCheckServicesClient.create()) {
+   *   AggregatedListRegionHealthCheckServicesRequest request =
+   *       AggregatedListRegionHealthCheckServicesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
+   *           .build();
+   *   while (true) {
+   *     HealthCheckServiceAggregatedList response =
+   *         regionHealthCheckServicesClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, HealthCheckServicesScopedList> element : response.getItemsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          AggregatedListRegionHealthCheckServicesRequest, HealthCheckServiceAggregatedList>
+      aggregatedListCallable() {
+    return stub.aggregatedListCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -800,8 +1013,8 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional HealthCheckService resource with the data included in the
-   * request. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules.
+   * request. This method supportsPATCH semantics and uses theJSON merge patch format and processing
+   * rules.
    *
    * <p>Sample code:
    *
@@ -849,8 +1062,8 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional HealthCheckService resource with the data included in the
-   * request. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules.
+   * request. This method supportsPATCH semantics and uses theJSON merge patch format and processing
+   * rules.
    *
    * <p>Sample code:
    *
@@ -885,8 +1098,8 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional HealthCheckService resource with the data included in the
-   * request. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules.
+   * request. This method supportsPATCH semantics and uses theJSON merge patch format and processing
+   * rules.
    *
    * <p>Sample code:
    *
@@ -921,8 +1134,8 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional HealthCheckService resource with the data included in the
-   * request. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules.
+   * request. This method supportsPATCH semantics and uses theJSON merge patch format and processing
+   * rules.
    *
    * <p>Sample code:
    *
@@ -953,6 +1166,120 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
     return stub.patchCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionHealthCheckServicesClient regionHealthCheckServicesClient =
+   *     RegionHealthCheckServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       regionHealthCheckServicesClient.testIamPermissions(
+   *           project, region, resource, testPermissionsRequestResource);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The name of the region for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestPermissionsResponse testIamPermissions(
+      String project,
+      String region,
+      String resource,
+      TestPermissionsRequest testPermissionsRequestResource) {
+    TestIamPermissionsRegionHealthCheckServiceRequest request =
+        TestIamPermissionsRegionHealthCheckServiceRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setResource(resource)
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionHealthCheckServicesClient regionHealthCheckServicesClient =
+   *     RegionHealthCheckServicesClient.create()) {
+   *   TestIamPermissionsRegionHealthCheckServiceRequest request =
+   *       TestIamPermissionsRegionHealthCheckServiceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   TestPermissionsResponse response =
+   *       regionHealthCheckServicesClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestPermissionsResponse testIamPermissions(
+      TestIamPermissionsRegionHealthCheckServiceRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionHealthCheckServicesClient regionHealthCheckServicesClient =
+   *     RegionHealthCheckServicesClient.create()) {
+   *   TestIamPermissionsRegionHealthCheckServiceRequest request =
+   *       TestIamPermissionsRegionHealthCheckServiceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       regionHealthCheckServicesClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          TestIamPermissionsRegionHealthCheckServiceRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -981,6 +1308,101 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class AggregatedListPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListRegionHealthCheckServicesRequest,
+          HealthCheckServiceAggregatedList,
+          Map.Entry<String, HealthCheckServicesScopedList>,
+          AggregatedListPage,
+          AggregatedListFixedSizeCollection> {
+
+    public static ApiFuture<AggregatedListPagedResponse> createAsync(
+        PageContext<
+                AggregatedListRegionHealthCheckServicesRequest,
+                HealthCheckServiceAggregatedList,
+                Map.Entry<String, HealthCheckServicesScopedList>>
+            context,
+        ApiFuture<HealthCheckServiceAggregatedList> futureResponse) {
+      ApiFuture<AggregatedListPage> futurePage =
+          AggregatedListPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new AggregatedListPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private AggregatedListPagedResponse(AggregatedListPage page) {
+      super(page, AggregatedListFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class AggregatedListPage
+      extends AbstractPage<
+          AggregatedListRegionHealthCheckServicesRequest,
+          HealthCheckServiceAggregatedList,
+          Map.Entry<String, HealthCheckServicesScopedList>,
+          AggregatedListPage> {
+
+    private AggregatedListPage(
+        PageContext<
+                AggregatedListRegionHealthCheckServicesRequest,
+                HealthCheckServiceAggregatedList,
+                Map.Entry<String, HealthCheckServicesScopedList>>
+            context,
+        HealthCheckServiceAggregatedList response) {
+      super(context, response);
+    }
+
+    private static AggregatedListPage createEmptyPage() {
+      return new AggregatedListPage(null, null);
+    }
+
+    @Override
+    protected AggregatedListPage createPage(
+        PageContext<
+                AggregatedListRegionHealthCheckServicesRequest,
+                HealthCheckServiceAggregatedList,
+                Map.Entry<String, HealthCheckServicesScopedList>>
+            context,
+        HealthCheckServiceAggregatedList response) {
+      return new AggregatedListPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<AggregatedListPage> createPageAsync(
+        PageContext<
+                AggregatedListRegionHealthCheckServicesRequest,
+                HealthCheckServiceAggregatedList,
+                Map.Entry<String, HealthCheckServicesScopedList>>
+            context,
+        ApiFuture<HealthCheckServiceAggregatedList> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class AggregatedListFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListRegionHealthCheckServicesRequest,
+          HealthCheckServiceAggregatedList,
+          Map.Entry<String, HealthCheckServicesScopedList>,
+          AggregatedListPage,
+          AggregatedListFixedSizeCollection> {
+
+    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static AggregatedListFixedSizeCollection createEmptyCollection() {
+      return new AggregatedListFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected AggregatedListFixedSizeCollection createCollection(
+        List<AggregatedListPage> pages, int collectionSize) {
+      return new AggregatedListFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListPagedResponse

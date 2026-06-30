@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,8 @@
 package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeatureGroupsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeatureMonitorJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeatureMonitorsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeaturesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListLocationsPagedResponse;
 
@@ -63,7 +65,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getFeatureGroup to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getFeatureGroup:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -80,10 +84,47 @@ import javax.annotation.Generated;
  *             .getFeatureGroupSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * FeatureRegistryServiceSettings featureRegistryServiceSettings =
  *     featureRegistryServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createFeatureGroup:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * FeatureRegistryServiceSettings.Builder featureRegistryServiceSettingsBuilder =
+ *     FeatureRegistryServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * featureRegistryServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
@@ -152,6 +193,21 @@ public class FeatureRegistryServiceSettings extends ClientSettings<FeatureRegist
         .createFeatureOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchCreateFeatures. */
+  public UnaryCallSettings<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings()).batchCreateFeaturesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateFeatures. */
+  public OperationCallSettings<
+          BatchCreateFeaturesRequest,
+          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesOperationSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings())
+        .batchCreateFeaturesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to getFeature. */
   public UnaryCallSettings<GetFeatureRequest, Feature> getFeatureSettings() {
     return ((FeatureRegistryServiceStubSettings) getStubSettings()).getFeatureSettings();
@@ -185,6 +241,79 @@ public class FeatureRegistryServiceSettings extends ClientSettings<FeatureRegist
       deleteFeatureOperationSettings() {
     return ((FeatureRegistryServiceStubSettings) getStubSettings())
         .deleteFeatureOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createFeatureMonitor. */
+  public UnaryCallSettings<CreateFeatureMonitorRequest, Operation> createFeatureMonitorSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings()).createFeatureMonitorSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createFeatureMonitor. */
+  public OperationCallSettings<
+          CreateFeatureMonitorRequest, FeatureMonitor, CreateFeatureMonitorOperationMetadata>
+      createFeatureMonitorOperationSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings())
+        .createFeatureMonitorOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getFeatureMonitor. */
+  public UnaryCallSettings<GetFeatureMonitorRequest, FeatureMonitor> getFeatureMonitorSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings()).getFeatureMonitorSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listFeatureMonitors. */
+  public PagedCallSettings<
+          ListFeatureMonitorsRequest, ListFeatureMonitorsResponse, ListFeatureMonitorsPagedResponse>
+      listFeatureMonitorsSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings()).listFeatureMonitorsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateFeatureMonitor. */
+  public UnaryCallSettings<UpdateFeatureMonitorRequest, Operation> updateFeatureMonitorSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings()).updateFeatureMonitorSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateFeatureMonitor. */
+  public OperationCallSettings<
+          UpdateFeatureMonitorRequest, FeatureMonitor, UpdateFeatureMonitorOperationMetadata>
+      updateFeatureMonitorOperationSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings())
+        .updateFeatureMonitorOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteFeatureMonitor. */
+  public UnaryCallSettings<DeleteFeatureMonitorRequest, Operation> deleteFeatureMonitorSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings()).deleteFeatureMonitorSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteFeatureMonitor. */
+  public OperationCallSettings<DeleteFeatureMonitorRequest, Empty, DeleteOperationMetadata>
+      deleteFeatureMonitorOperationSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings())
+        .deleteFeatureMonitorOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createFeatureMonitorJob. */
+  public UnaryCallSettings<CreateFeatureMonitorJobRequest, FeatureMonitorJob>
+      createFeatureMonitorJobSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings())
+        .createFeatureMonitorJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getFeatureMonitorJob. */
+  public UnaryCallSettings<GetFeatureMonitorJobRequest, FeatureMonitorJob>
+      getFeatureMonitorJobSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings()).getFeatureMonitorJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listFeatureMonitorJobs. */
+  public PagedCallSettings<
+          ListFeatureMonitorJobsRequest,
+          ListFeatureMonitorJobsResponse,
+          ListFeatureMonitorJobsPagedResponse>
+      listFeatureMonitorJobsSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings())
+        .listFeatureMonitorJobsSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -374,6 +503,21 @@ public class FeatureRegistryServiceSettings extends ClientSettings<FeatureRegist
       return getStubSettingsBuilder().createFeatureOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to batchCreateFeatures. */
+    public UnaryCallSettings.Builder<BatchCreateFeaturesRequest, Operation>
+        batchCreateFeaturesSettings() {
+      return getStubSettingsBuilder().batchCreateFeaturesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateFeatures. */
+    public OperationCallSettings.Builder<
+            BatchCreateFeaturesRequest,
+            BatchCreateFeaturesResponse,
+            BatchCreateFeaturesOperationMetadata>
+        batchCreateFeaturesOperationSettings() {
+      return getStubSettingsBuilder().batchCreateFeaturesOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getFeature. */
     public UnaryCallSettings.Builder<GetFeatureRequest, Feature> getFeatureSettings() {
       return getStubSettingsBuilder().getFeatureSettings();
@@ -407,6 +551,81 @@ public class FeatureRegistryServiceSettings extends ClientSettings<FeatureRegist
     public OperationCallSettings.Builder<DeleteFeatureRequest, Empty, DeleteOperationMetadata>
         deleteFeatureOperationSettings() {
       return getStubSettingsBuilder().deleteFeatureOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createFeatureMonitor. */
+    public UnaryCallSettings.Builder<CreateFeatureMonitorRequest, Operation>
+        createFeatureMonitorSettings() {
+      return getStubSettingsBuilder().createFeatureMonitorSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createFeatureMonitor. */
+    public OperationCallSettings.Builder<
+            CreateFeatureMonitorRequest, FeatureMonitor, CreateFeatureMonitorOperationMetadata>
+        createFeatureMonitorOperationSettings() {
+      return getStubSettingsBuilder().createFeatureMonitorOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getFeatureMonitor. */
+    public UnaryCallSettings.Builder<GetFeatureMonitorRequest, FeatureMonitor>
+        getFeatureMonitorSettings() {
+      return getStubSettingsBuilder().getFeatureMonitorSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listFeatureMonitors. */
+    public PagedCallSettings.Builder<
+            ListFeatureMonitorsRequest,
+            ListFeatureMonitorsResponse,
+            ListFeatureMonitorsPagedResponse>
+        listFeatureMonitorsSettings() {
+      return getStubSettingsBuilder().listFeatureMonitorsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateFeatureMonitor. */
+    public UnaryCallSettings.Builder<UpdateFeatureMonitorRequest, Operation>
+        updateFeatureMonitorSettings() {
+      return getStubSettingsBuilder().updateFeatureMonitorSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateFeatureMonitor. */
+    public OperationCallSettings.Builder<
+            UpdateFeatureMonitorRequest, FeatureMonitor, UpdateFeatureMonitorOperationMetadata>
+        updateFeatureMonitorOperationSettings() {
+      return getStubSettingsBuilder().updateFeatureMonitorOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFeatureMonitor. */
+    public UnaryCallSettings.Builder<DeleteFeatureMonitorRequest, Operation>
+        deleteFeatureMonitorSettings() {
+      return getStubSettingsBuilder().deleteFeatureMonitorSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFeatureMonitor. */
+    public OperationCallSettings.Builder<
+            DeleteFeatureMonitorRequest, Empty, DeleteOperationMetadata>
+        deleteFeatureMonitorOperationSettings() {
+      return getStubSettingsBuilder().deleteFeatureMonitorOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createFeatureMonitorJob. */
+    public UnaryCallSettings.Builder<CreateFeatureMonitorJobRequest, FeatureMonitorJob>
+        createFeatureMonitorJobSettings() {
+      return getStubSettingsBuilder().createFeatureMonitorJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getFeatureMonitorJob. */
+    public UnaryCallSettings.Builder<GetFeatureMonitorJobRequest, FeatureMonitorJob>
+        getFeatureMonitorJobSettings() {
+      return getStubSettingsBuilder().getFeatureMonitorJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listFeatureMonitorJobs. */
+    public PagedCallSettings.Builder<
+            ListFeatureMonitorJobsRequest,
+            ListFeatureMonitorJobsResponse,
+            ListFeatureMonitorJobsPagedResponse>
+        listFeatureMonitorJobsSettings() {
+      return getStubSettingsBuilder().listFeatureMonitorJobsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

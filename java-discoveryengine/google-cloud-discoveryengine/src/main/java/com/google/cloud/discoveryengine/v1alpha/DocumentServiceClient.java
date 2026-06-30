@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,7 +169,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ImportDocuments</td>
- *      <td><p> Bulk import of multiple [Document][google.cloud.discoveryengine.v1alpha.Document]s. Request processing may be synchronous. Non-existing items will be created.
+ *      <td><p> Bulk import of multiple [Document][google.cloud.discoveryengine.v1alpha.Document]s. Request processing may be synchronous. Non-existing items are created.
  * <p>  Note: It is possible for a subset of the [Document][google.cloud.discoveryengine.v1alpha.Document]s to be successfully updated.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -216,6 +216,25 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getProcessedDocumentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchGetDocumentsMetadata</td>
+ *      <td><p> Gets index freshness metadata for [Document][google.cloud.discoveryengine.v1alpha.Document]s. Supported for website search only.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchGetDocumentsMetadata(BatchGetDocumentsMetadataRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchGetDocumentsMetadata(BranchName parent)
+ *           <li><p> batchGetDocumentsMetadata(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchGetDocumentsMetadataCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -700,7 +719,7 @@ public class DocumentServiceClient implements BackgroundResource {
    * @param document Required. The [Document][google.cloud.discoveryengine.v1alpha.Document] to
    *     create.
    * @param documentId Required. The ID to use for the
-   *     [Document][google.cloud.discoveryengine.v1alpha.Document], which will become the final
+   *     [Document][google.cloud.discoveryengine.v1alpha.Document], which becomes the final
    *     component of the [Document.name][google.cloud.discoveryengine.v1alpha.Document.name].
    *     <p>If the caller does not have permission to create the
    *     [Document][google.cloud.discoveryengine.v1alpha.Document], regardless of whether or not it
@@ -751,7 +770,7 @@ public class DocumentServiceClient implements BackgroundResource {
    * @param document Required. The [Document][google.cloud.discoveryengine.v1alpha.Document] to
    *     create.
    * @param documentId Required. The ID to use for the
-   *     [Document][google.cloud.discoveryengine.v1alpha.Document], which will become the final
+   *     [Document][google.cloud.discoveryengine.v1alpha.Document], which becomes the final
    *     component of the [Document.name][google.cloud.discoveryengine.v1alpha.Document.name].
    *     <p>If the caller does not have permission to create the
    *     [Document][google.cloud.discoveryengine.v1alpha.Document], regardless of whether or not it
@@ -868,7 +887,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *     [allow_missing][google.cloud.discoveryengine.v1alpha.UpdateDocumentRequest.allow_missing]
    *     is not set, a `NOT_FOUND` error is returned.
    * @param updateMask Indicates which fields in the provided imported 'document' to update. If not
-   *     set, will by default update all fields.
+   *     set, by default updates all fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Document updateDocument(Document document, FieldMask updateMask) {
@@ -1073,7 +1092,7 @@ public class DocumentServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Bulk import of multiple [Document][google.cloud.discoveryengine.v1alpha.Document]s. Request
-   * processing may be synchronous. Non-existing items will be created.
+   * processing may be synchronous. Non-existing items are created.
    *
    * <p>Note: It is possible for a subset of the
    * [Document][google.cloud.discoveryengine.v1alpha.Document]s to be successfully updated.
@@ -1113,7 +1132,7 @@ public class DocumentServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Bulk import of multiple [Document][google.cloud.discoveryengine.v1alpha.Document]s. Request
-   * processing may be synchronous. Non-existing items will be created.
+   * processing may be synchronous. Non-existing items are created.
    *
    * <p>Note: It is possible for a subset of the
    * [Document][google.cloud.discoveryengine.v1alpha.Document]s to be successfully updated.
@@ -1154,7 +1173,7 @@ public class DocumentServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Bulk import of multiple [Document][google.cloud.discoveryengine.v1alpha.Document]s. Request
-   * processing may be synchronous. Non-existing items will be created.
+   * processing may be synchronous. Non-existing items are created.
    *
    * <p>Note: It is possible for a subset of the
    * [Document][google.cloud.discoveryengine.v1alpha.Document]s to be successfully updated.
@@ -1477,6 +1496,142 @@ public class DocumentServiceClient implements BackgroundResource {
   public final UnaryCallable<GetProcessedDocumentRequest, ProcessedDocument>
       getProcessedDocumentCallable() {
     return stub.getProcessedDocumentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets index freshness metadata for [Document][google.cloud.discoveryengine.v1alpha.Document]s.
+   * Supported for website search only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   BranchName parent =
+   *       BranchName.ofProjectLocationDataStoreBranchName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+   *   BatchGetDocumentsMetadataResponse response =
+   *       documentServiceClient.batchGetDocumentsMetadata(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent branch resource name, such as
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchGetDocumentsMetadataResponse batchGetDocumentsMetadata(BranchName parent) {
+    BatchGetDocumentsMetadataRequest request =
+        BatchGetDocumentsMetadataRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return batchGetDocumentsMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets index freshness metadata for [Document][google.cloud.discoveryengine.v1alpha.Document]s.
+   * Supported for website search only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   String parent =
+   *       BranchName.ofProjectLocationDataStoreBranchName(
+   *               "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *           .toString();
+   *   BatchGetDocumentsMetadataResponse response =
+   *       documentServiceClient.batchGetDocumentsMetadata(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent branch resource name, such as
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchGetDocumentsMetadataResponse batchGetDocumentsMetadata(String parent) {
+    BatchGetDocumentsMetadataRequest request =
+        BatchGetDocumentsMetadataRequest.newBuilder().setParent(parent).build();
+    return batchGetDocumentsMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets index freshness metadata for [Document][google.cloud.discoveryengine.v1alpha.Document]s.
+   * Supported for website search only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   BatchGetDocumentsMetadataRequest request =
+   *       BatchGetDocumentsMetadataRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
+   *           .setMatcher(BatchGetDocumentsMetadataRequest.Matcher.newBuilder().build())
+   *           .build();
+   *   BatchGetDocumentsMetadataResponse response =
+   *       documentServiceClient.batchGetDocumentsMetadata(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchGetDocumentsMetadataResponse batchGetDocumentsMetadata(
+      BatchGetDocumentsMetadataRequest request) {
+    return batchGetDocumentsMetadataCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets index freshness metadata for [Document][google.cloud.discoveryengine.v1alpha.Document]s.
+   * Supported for website search only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   BatchGetDocumentsMetadataRequest request =
+   *       BatchGetDocumentsMetadataRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
+   *           .setMatcher(BatchGetDocumentsMetadataRequest.Matcher.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BatchGetDocumentsMetadataResponse> future =
+   *       documentServiceClient.batchGetDocumentsMetadataCallable().futureCall(request);
+   *   // Do something.
+   *   BatchGetDocumentsMetadataResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataCallable() {
+    return stub.batchGetDocumentsMetadataCallable();
   }
 
   @Override

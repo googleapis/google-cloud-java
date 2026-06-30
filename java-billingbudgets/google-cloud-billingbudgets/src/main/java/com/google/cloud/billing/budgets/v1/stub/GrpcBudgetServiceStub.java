@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
           .setFullMethodName("google.cloud.billing.budgets.v1.BudgetService/CreateBudget")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateBudgetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Budget.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateBudgetRequest, Budget> updateBudgetMethodDescriptor =
@@ -62,6 +63,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
           .setFullMethodName("google.cloud.billing.budgets.v1.BudgetService/UpdateBudget")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateBudgetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Budget.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetBudgetRequest, Budget> getBudgetMethodDescriptor =
@@ -70,6 +72,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
           .setFullMethodName("google.cloud.billing.budgets.v1.BudgetService/GetBudget")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBudgetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Budget.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListBudgetsRequest, ListBudgetsResponse>
@@ -80,6 +83,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListBudgetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBudgetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBudgetRequest, Empty> deleteBudgetMethodDescriptor =
@@ -88,6 +92,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
           .setFullMethodName("google.cloud.billing.budgets.v1.BudgetService/DeleteBudget")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteBudgetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateBudgetRequest, Budget> createBudgetCallable;
@@ -149,6 +154,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateBudgetRequest, Budget> updateBudgetTransportSettings =
         GrpcCallSettings.<UpdateBudgetRequest, Budget>newBuilder()
@@ -169,6 +175,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBudgetsRequest, ListBudgetsResponse> listBudgetsTransportSettings =
         GrpcCallSettings.<ListBudgetsRequest, ListBudgetsResponse>newBuilder()
@@ -179,6 +186,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteBudgetRequest, Empty> deleteBudgetTransportSettings =
         GrpcCallSettings.<DeleteBudgetRequest, Empty>newBuilder()
@@ -189,6 +197,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createBudgetCallable =

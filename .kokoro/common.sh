@@ -13,9 +13,37 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# TODO: remove java-core once we figure out how setup_cloud understands Maven's
-# "--also-make-dependents" option. https://github.com/googleapis/google-cloud-java/issues/9088
-excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent' 'java-core')
+commonScriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
+excluded_modules=(
+  'gapic-libraries-bom'
+  'google-cloud-jar-parent'
+  'google-cloud-pom-parent'
+  'java-vertexai'
+  'java-logging'
+  'java-bigquery'
+  'java-bigquery-jdbc'
+  'java-bigquerystorage'
+  'java-datastore'
+  'java-logging-logback'
+  'sdk-platform-java'
+  'sdk-platform-java/java-shared-dependencies/dependency-analyzer'
+  'sdk-platform-java/java-shared-dependencies/dependency-convergence-check'
+  'java-showcase'
+  'sdk-platform-java/java-showcase-3.21.0'
+  'sdk-platform-java/java-showcase-3.25.8'
+  'java-spanner'
+  'java-spanner-jdbc'
+  'google-auth-library-java'
+  'google-auth-library-java/oauth2_http'
+  'java-storage'
+  'java-storage-nio'
+  'java-shared-config'
+  'java-firestore'
+  'java-bigtable'
+  'java-pubsub'
+  'java-common-protos'
+  'java-iam'
+)
 
 function retry_with_backoff {
   attempts_left=$1
@@ -55,6 +83,102 @@ function retry_with_backoff {
   return $exit_code
 }
 
+# Helper function to reliably extract the text between <module> tags strictly
+# within the default <modules> block, natively ignoring <profiles>.
+# Uses a pure Bash loop to avoid spawning slower external processes like awk or sed,
+# and naturally survives single-module components without throwing exit signals.
+function extract_pom_modules() {
+  local pom_file="$1"
+  local modules_list=""
+  local in_profiles=false
+  local in_modules=false
+  
+  while IFS= read -r line || [ -n "$line" ]; do
+    if [[ "$line" == *"<profiles>"* ]]; then
+      in_profiles=true
+    elif [[ "$line" == *"</profiles>"* ]]; then
+      in_profiles=false
+    elif [[ "$line" == *"<modules>"* ]] && [ "$in_profiles" = false ]; then
+      in_modules=true
+    elif [[ "$line" == *"</modules>"* ]] && [ "$in_profiles" = false ]; then
+      in_modules=false
+      break
+    elif [ "$in_modules" = true ] && [[ "$line" == *"<module>"* ]]; then
+      # Extract text between tags
+      local module="${line#*<module>}"
+      module="${module%</module>*}"
+      
+      # Trim whitespace natively
+      module="${module#"${module%%[![:space:]]*}"}"
+      module="${module%"${module##*[![:space:]]}"}"
+      
+      if [ -z "$modules_list" ]; then
+        modules_list="$module"
+      else
+        modules_list="${modules_list} ${module}"
+      fi
+    fi
+  done < "$pom_file"
+  
+  echo "$modules_list"
+}
+
+# Given a folder containing a maven multi-module, assign the variable 'submodules' to a
+# comma-delimited list of <folder>/<submodule>.
+function parse_submodules() {
+  submodules_array=()
+  if [ -f "$1/pom.xml" ]; then
+    local modules
+
+    # Use pure Bash extraction to find the modules in the aggregator pom file.
+    # Faster than invoking mvn help:evaluate to list all the project modules,
+    # cleanly ignores optional <profiles>, and gracefully skips flat POMs.
+    modules=$(extract_pom_modules "$1/pom.xml")
+    if [ -n "$modules" ]; then
+      for submodule in $modules; do
+        # Each entry = <folder>/<submodule>
+        submodules_array+=("$1/${submodule}")
+      done
+    else
+      # If this module contains no submodules, select the module itself.
+      submodules_array+=("$1")
+    fi
+  else
+    echo "Module does not have a pom.xml file: $1"
+    exit 1
+  fi
+
+  # Convert from array to comma-delimited string
+  submodules=$(
+    IFS=,
+    echo "${submodules_array[*]}"
+  )
+  export submodules
+}
+
+# Given a list of folders containing maven multi-modules, assign the variable 'all_submodules' to a
+# comma-delimited list of <folder>/<submodule>.
+#
+# See also parse_submodules()
+function parse_all_submodules() {
+  # Parse the comma-delimited input into an array.
+  IFS=',' read -ra input_modules <<< "$1"
+
+  all_submodules_array=()
+  for module in "${input_modules[@]}"; do
+    # For each module, parse its submodules and store the result in an array.
+    parse_submodules "$module"
+    all_submodules_array+=("$submodules")
+  done
+
+  # Convert from array to comma-delimited string
+  all_submodules=$(
+    IFS=,
+    echo "${all_submodules_array[*]}"
+  )
+  export all_submodules
+}
+
 ## Helper functions
 function now() { date +"%Y-%m-%d %H:%M:%S" | tr -d '\n'; }
 function msg() { println "$*" >&2; }
@@ -78,12 +202,41 @@ function setup_cloud() {
 
   destroy() {
     arguments=$?
+    echo "Exiting via destroy()"
+
+    ## Get the directory of the build script
+    scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+    ## cd to the parent directory, i.e. the root of the git repo
+    cd ${scriptDir}/..
+
     time source ./.cloud/helpers/destroy.sh
     exit $arguments
   }
   trap destroy EXIT
 }
 
+# Prints "true" if this pull pull request is made by Release Please
+# SNAPSHOT pull request.
+# If a CI runs on a Release Please SNAPSHOT pull request, there's no point in running
+# integration tests because it only changes the versions in pom.xml and we merge
+# the pull requests without any additional changes (b/370011322).
+function release_please_snapshot_pull_request() {
+  # Example value: "+google-cloud-java:1.48.0:1.49.0-SNAPSHOT"
+  changedLine=$(git diff origin/main -- versions.txt 2>/dev/null | grep '^+google-cloud-java:')
+  if [[ "$changedLine" =~ "SNAPSHOT"$ ]]; then
+    echo "true"
+  else
+    echo "false"
+  fi
+}
+
+# Sets bash variables for maven_modules and modified_module_list
+# maven_modules is the list of all maven submodules of the root pom
+# modified_module_list is the subset of maven_modules that have been touched
+# in the current pull request
+#
+# The first positional argument is a value true/false. If true (default), then
+# exclude modules from the global exclusion list.
 function generate_modified_modules_list() {
   # Find the files changed from when the PR branched to the last commit
   # Filter for java modules and get all the unique elements
@@ -96,11 +249,19 @@ function generate_modified_modules_list() {
   # Generate the list of valid maven modules
   maven_modules_list=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
   maven_modules=()
-  for module in $maven_modules_list; do
-    if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]]; then
-      maven_modules+=("${module}")
-    fi
-  done
+
+  # If the first argument is "true" (default), then use the module exclusion list
+  use_exclusion_list=${1:-true}
+  if [[ "${use_exclusion_list}" == "true" ]]; then
+    echo "Excluding modules from the global exclusion list"
+    for module in $maven_modules_list; do
+      if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]]; then
+        maven_modules+=("${module}")
+      fi
+    done
+  else
+    maven_modules=(${maven_modules_list[*]})
+  fi
 
   modified_module_list=()
   # If either parent pom.xml is touched, run ITs on all the modules
@@ -110,12 +271,12 @@ function generate_modified_modules_list() {
     modified_module_list=(${maven_modules[*]})
     echo "Testing the entire monorepo"
   else
-    modules=$(echo "${modified_files}" | grep -E 'java-.*' || true)
+    modules=$(echo "${modified_files}" | grep -E '(google-auth|java)-.*' || true)
     printf "Files in java modules:\n%s\n" "${modules}"
     if [[ -n $modules ]]; then
       modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
       for module in $modules; do
-        if [[ ! " ${excluded_modules[*]} " =~ " ${module} " && " ${maven_modules[*]} " =~ " ${module} " ]]; then
+        if [[ " ${maven_modules[*]} " =~ " ${module} " ]]; then
           modified_module_list+=("${module}")
         fi
       done
@@ -125,58 +286,66 @@ function generate_modified_modules_list() {
   fi
 }
 
+# Filters the modified_module_list to only include modules that contain
+# integration test files (matching IT*.java or *IT.java in src/test/java).
+# Not all modules will have ITs written and there is not need to test
+# modules without ITs.
+function filter_modules_with_integration_tests() {
+  filtered_it_module_list=()
+  for module in "${modified_module_list[@]}"; do
+    # 1. Search for files in the Java test directory (*/src/test/java/*)
+    # 2. Filter for ITs that match the typical file name (IT prefix or suffix)
+    # 3. Stop searching when a single file match has been found
+    if find "$module" -path '*/src/test/java/*' \( -name 'IT*.java' -o -name '*IT.java' \) -print -quit 2>/dev/null | grep -q .; then
+      filtered_it_module_list+=("$module")
+    fi
+  done
+  printf "Modules with integration tests:\n"
+  printf "  %s\n" "${filtered_it_module_list[@]}"
+  echo "Found ${#filtered_it_module_list[@]} modules with integration tests (out of ${#modified_module_list[@]} modified modules)"
+}
+
 function run_integration_tests() {
-  printf "Running Integration Tests for:\n%s\n" "$1"
-  # --also-make-dependents to run other modules that use the affected module
-  mvn -B ${INTEGRATION_TEST_ARGS} \
-    -pl "$1" \
-    --also-make-dependents \
-    -ntp \
-    -Penable-integration-tests \
+  printf "Running integration tests for modules:\n%s\n" "$1"
+  parse_all_submodules "$1"
+  printf "Running integration tests for submodules:\n%s\n" "$all_submodules"
+
+  mvn verify -Penable-integration-tests -Pquick-build --projects "$all_submodules" \
+    ${INTEGRATION_TEST_ARGS} \
+    -B -ntp -fae \
+    --also-make \
+    -PbulkTests \
     -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-    -Dcheckstyle.skip=true \
-    -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -Djacoco.skip=true \
+    -Dorg.slf4j.simpleLogger.showDateTime=true \
+    -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -DskipUnitTests=true \
     -Dmaven.wagon.http.retryHandler.count=5 \
-    -fae \
-    -T 1C \
-    verify
+    -T 1C
 
   RETURN_CODE=$?
-  printf "Finished Integration Tests for:\n%s\n" "$1"
+  printf "Finished integration tests for modules:\n%s\n" "$1"
 }
 
 function run_graalvm_tests() {
-  printf "Running GraalVM ITs on:\n%s\n" "$1"
+  printf "Running GraalVM ITs for modules:\n%s\n" "$1"
+  parse_all_submodules "$1"
+  printf "Running GraalVM ITs for submodules:\n%s\n" "$all_submodules"
 
-  mvn -B ${INTEGRATION_TEST_ARGS} \
-    -pl "$1" \
-    --also-make-dependents \
-    -ntp \
+  mvn test -Pnative -Pquick-build --projects "$all_submodules" \
+    ${INTEGRATION_TEST_ARGS} \
+    -B -ntp -fae \
     -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-    -Dcheckstyle.skip=true \
-    -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -Pnative \
-    -fae \
-    test
+    -Dorg.slf4j.simpleLogger.showDateTime=true \
+    -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS
 
   RETURN_CODE=$?
-  printf "Finished Unit and Integration Tests for GraalVM:\n%s\n" "$1"
+  printf "Finished GraalVM ITs for modules:\n%s\n" "$1"
 }
 
 function generate_graalvm_presubmit_modules_list() {
   modules_assigned_list=()
   generate_modified_modules_list
-  if [[ ${#modified_module_list[@]} -gt 0 && ${#modified_module_list[@]} -lt 10 ]]; then
+  if [[ ${#modified_module_list[@]} -gt 0 && ${#modified_module_list[@]} -lt 5 ]]; then
     # If only a few modules have been modified, focus presubmit testing only on them.
     module_list=$(
       IFS=,
@@ -229,18 +398,182 @@ function generate_graalvm_modules_list() {
 }
 
 function install_modules() {
-  retry_with_backoff 3 10 \
-    mvn -B \
-    -ntp \
-    -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-    -Dcheckstyle.skip=true \
-    -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -DskipTests=true \
-    -Djacoco.skip=true \
-    -T 1C \
-    install
+  if [ -z "$1" ]; then
+    mvn install \
+      -B -ntp \
+      -Pquick-build \
+      -DtrimStackTrace=false \
+      -Dorg.slf4j.simpleLogger.showDateTime=true \
+      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+      -DskipTests=true \
+      -Dmaven.javadoc.skip=true \
+      -Dgcloud.download.skip=true \
+      -T 1C
+  else
+    printf "Installing modules:\n%s\n" "$1"
+    parse_all_submodules "$1"
+    printf "Installing submodules:\n%s\n" "$all_submodules"
+
+    always_install_deps_list=(
+      'java-monitoring/google-cloud-monitoring'
+      'java-monitoring/google-cloud-monitoring-bom'
+      'google-auth-library-java/appengine'
+      'google-auth-library-java/bom'
+      'google-auth-library-java/cab-token-generator'
+      'google-auth-library-java/credentials'
+      'google-auth-library-java/oauth2_http'
+      'java-common-protos/grpc-google-common-protos'
+      'java-common-protos/proto-google-common-protos'
+      'java-iam/grpc-google-iam-v1'
+      'java-iam/grpc-google-iam-v2'
+      'java-iam/grpc-google-iam-v2beta'
+      'java-iam/grpc-google-iam-v3'
+      'java-iam/grpc-google-iam-v3beta'
+      'java-iam/proto-google-iam-v1'
+      'java-iam/proto-google-iam-v2'
+      'java-iam/proto-google-iam-v2beta'
+      'java-iam/proto-google-iam-v3'
+      'java-iam/proto-google-iam-v3beta'
+      'sdk-platform-java/java-shared-dependencies'
+      'sdk-platform-java/java-shared-dependencies/first-party-dependencies'
+      'sdk-platform-java/java-shared-dependencies/third-party-dependencies'
+      'sdk-platform-java/gapic-generator-java-bom'
+      'sdk-platform-java/java-core/google-cloud-core-bom'
+      'sdk-platform-java/java-core/google-cloud-core'
+      'sdk-platform-java/java-core/google-cloud-core-grpc'
+      'sdk-platform-java/java-core/google-cloud-core-http'
+      'sdk-platform-java/gax-java/gax-bom'
+      'sdk-platform-java/gax-java/gax'
+      'sdk-platform-java/gax-java/gax-grpc'
+      'sdk-platform-java/gax-java/gax-httpjson'
+    )
+    always_install_deps=$(
+      IFS=,
+      echo "${always_install_deps_list[*]}"
+    )
+    printf "with always_install_deps:\n%s\n" "$all_submodules,$always_install_deps"
+
+    # When working with a maven multi-module project containing other multi-module projects,
+    # to build a module with its dependencies and without building its dependents:
+    # Perform the install command on a grandchild module with the --also-make flag.
+    #
+    # Examples:
+    #
+    #   mvn install --projects java-asset --also-make
+    #      ! Does not work. Maven reactor will not build java-asset's child modules, such as the
+    #        gapic, proto, and grpc modules.
+    #
+    #   mvn install --projects java-kms --also-make-dependents
+    #      ! Does not work. Maven reactor will include java-kmsinventory in its build.
+    #
+    #   mvn install --projects java-kms/google-cloud-kms --also-make
+    #      Correctly builds dependencies without building dependents.
+    mvn install --projects "$all_submodules,$always_install_deps" --also-make \
+      -B -ntp \
+      -Pquick-build \
+      -DtrimStackTrace=false \
+      -Dorg.slf4j.simpleLogger.showDateTime=true \
+      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+      -DskipTests=true \
+      -Dmaven.javadoc.skip=true \
+      -Dgcloud.download.skip=true \
+      -T 1C
+  fi
+}
+
+
+# In the given directory ($1),
+#   update the pom.xml's dependency on the given artifact ($2) to the given version ($3)
+# ex: update_dependency google-cloud-java/google-cloud-jar-parent google-cloud-shared-dependencies 1.2.3
+function update_pom_dependency {
+  pushd "$1" || exit 1
+  xmllint --shell pom.xml &>/dev/null <<EOF
+setns x=http://maven.apache.org/POM/4.0.0
+cd .//x:artifactId[text()="$2"]
+cd ../x:version
+set $3
+save pom.xml
+EOF
+  popd || exit 1
+}
+
+# Find all pom.xml files that declare a specific version for the given artifact ($1)
+function find_all_poms_with_versioned_dependency {
+  poms=($(find . -name pom.xml))
+  for pom in "${poms[@]}"; do
+    if xmllint --xpath "//*[local-name()='artifactId' and text()='$1']/following-sibling::*[local-name()='version']" "$pom" &>/dev/null; then
+      found+=("$pom")
+    fi
+  done
+  POMS=(${found[@]})
+  unset found
+  export POMS
+}
+
+# In the given directory ($1),
+#   find and update all pom.xmls' dependencies on the given artifact ($2) to the given version ($3)
+# ex: update_all_poms_dependency google-cloud-java google-cloud-shared-dependencies 1.2.3
+function update_all_poms_dependency {
+  pushd "$1" || exit 1
+  find_all_poms_with_versioned_dependency "$2"
+  for pom in $POMS; do
+    update_pom_dependency "$(dirname "$pom")" "$2" "$3"
+  done
+  git diff
+  popd || exit 1
+}
+
+# Parse the version of the pom.xml file in the given directory ($1)
+# ex: VERSION=$(parse_pom_version java-shared-dependencies)
+function parse_pom_version {
+  # Namespace (xmlns) prevents xmllint from specifying tag names in XPath
+  result=$(sed -e 's/xmlns=".*"//' "$1/pom.xml" | xmllint --xpath '/project/version/text()' -)
+
+  if [ -z "${result}" ]; then
+    echo "Version is not found in $1"
+    exit 1
+  fi
+  echo "$result"
+}
+
+# ex: find_last_release_version java-bigtable
+# ex: find_last_release_version java-storage 2.22.x
+function find_last_release_version {
+  repo=$1
+  branch=${2-"main"} # Default to using main branch
+  org=${3-"googleapis"}
+  curl -s -o "versions_${repo}.txt" "https://raw.githubusercontent.com/${org}/${repo}/${branch}/versions.txt"
+
+  # First check to see if there's an entry for the overall repo. Used for google-cloud-java.
+  primary_artifact=$(grep -E "^${repo}" "versions_${repo}.txt" | head -n 1)
+  if [ -z "${primary_artifact}" ]; then
+    # Otherwise, use the first google-cloud-* artifact's version.
+    primary_artifact=$(grep -E "^google-cloud-" "versions_$1.txt" | head -n 1)
+  fi
+  if [ -z "${primary_artifact}" ]; then
+    echo "Unable to identify primary artifact for $1"
+    exit 1
+  fi
+
+  parts=($(echo "$primary_artifact" | tr ":" "\n"))
+  echo "${parts[1]}"
+}
+
+# copies settings.xml from the root of sdk-platform-java into Maven's home
+# folder
+function setup_maven_mirror {
+  echo "Setup maven mirror"
+  mkdir -p "${HOME}/.m2"
+  cp "${commonScriptDir}/../settings.xml" "${HOME}/.m2"
+}
+
+function install_repo_modules {
+  target_projects="$1"
+  projects_arg=""
+  if [ -n "${target_projects}" ]; then
+    projects_arg="--projects ${target_projects}"
+  fi
+  echo "Installing this repo's modules to local maven."
+  mvn -q -B -ntp install ${projects_arg} \
+    -Dcheckstyle.skip -Dfmt.skip -DskipTests -T 1C
 }

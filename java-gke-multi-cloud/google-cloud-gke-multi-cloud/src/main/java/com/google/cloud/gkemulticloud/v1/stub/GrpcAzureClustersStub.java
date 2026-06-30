@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,7 +73,10 @@ import javax.annotation.Generated;
  * gRPC stub implementation for the AzureClusters service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class GrpcAzureClustersStub extends AzureClustersStub {
   private static final MethodDescriptor<CreateAzureClientRequest, Operation>
@@ -84,6 +87,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAzureClientRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAzureClientRequest, AzureClient>
@@ -94,6 +98,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAzureClientRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AzureClient.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAzureClientsRequest, ListAzureClientsResponse>
@@ -105,6 +110,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   ProtoUtils.marshaller(ListAzureClientsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAzureClientsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAzureClientRequest, Operation>
@@ -115,6 +121,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAzureClientRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAzureClusterRequest, Operation>
@@ -125,6 +132,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAzureClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAzureClusterRequest, Operation>
@@ -135,6 +143,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAzureClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAzureClusterRequest, AzureCluster>
@@ -145,6 +154,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAzureClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AzureCluster.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAzureClustersRequest, ListAzureClustersResponse>
@@ -156,6 +166,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   ProtoUtils.marshaller(ListAzureClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAzureClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAzureClusterRequest, Operation>
@@ -166,6 +177,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAzureClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -182,6 +194,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       GenerateAzureClusterAgentTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -196,6 +209,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   ProtoUtils.marshaller(GenerateAzureAccessTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateAzureAccessTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAzureNodePoolRequest, Operation>
@@ -206,6 +220,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAzureNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAzureNodePoolRequest, Operation>
@@ -216,6 +231,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAzureNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAzureNodePoolRequest, AzureNodePool>
@@ -226,6 +242,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAzureNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AzureNodePool.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAzureNodePoolsRequest, ListAzureNodePoolsResponse>
@@ -237,6 +254,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   ProtoUtils.marshaller(ListAzureNodePoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAzureNodePoolsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAzureNodePoolRequest, Operation>
@@ -247,6 +265,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAzureNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
@@ -257,6 +276,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAzureOpenIdConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AzureOpenIdConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
@@ -267,6 +287,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAzureJsonWebKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AzureJsonWebKeys.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAzureServerConfigRequest, AzureServerConfig>
@@ -277,6 +298,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAzureServerConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AzureServerConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateAzureClientRequest, Operation> createAzureClientCallable;
@@ -381,6 +403,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAzureClientRequest, AzureClient> getAzureClientTransportSettings =
         GrpcCallSettings.<GetAzureClientRequest, AzureClient>newBuilder()
@@ -391,6 +414,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAzureClientsRequest, ListAzureClientsResponse>
         listAzureClientsTransportSettings =
@@ -402,6 +426,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAzureClientRequest, Operation> deleteAzureClientTransportSettings =
         GrpcCallSettings.<DeleteAzureClientRequest, Operation>newBuilder()
@@ -412,6 +437,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAzureClusterRequest, Operation> createAzureClusterTransportSettings =
         GrpcCallSettings.<CreateAzureClusterRequest, Operation>newBuilder()
@@ -422,6 +448,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAzureClusterRequest, Operation> updateAzureClusterTransportSettings =
         GrpcCallSettings.<UpdateAzureClusterRequest, Operation>newBuilder()
@@ -443,6 +470,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAzureClustersRequest, ListAzureClustersResponse>
         listAzureClustersTransportSettings =
@@ -454,6 +482,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAzureClusterRequest, Operation> deleteAzureClusterTransportSettings =
         GrpcCallSettings.<DeleteAzureClusterRequest, Operation>newBuilder()
@@ -464,6 +493,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
         generateAzureClusterAgentTokenTransportSettings =
@@ -477,6 +507,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                       builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAzureCluster())
                 .build();
     GrpcCallSettings<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
         generateAzureAccessTokenTransportSettings =
@@ -489,6 +520,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                       builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAzureCluster())
                 .build();
     GrpcCallSettings<CreateAzureNodePoolRequest, Operation> createAzureNodePoolTransportSettings =
         GrpcCallSettings.<CreateAzureNodePoolRequest, Operation>newBuilder()
@@ -499,6 +531,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAzureNodePoolRequest, Operation> updateAzureNodePoolTransportSettings =
         GrpcCallSettings.<UpdateAzureNodePoolRequest, Operation>newBuilder()
@@ -520,6 +553,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAzureNodePoolsRequest, ListAzureNodePoolsResponse>
         listAzureNodePoolsTransportSettings =
@@ -531,6 +565,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAzureNodePoolRequest, Operation> deleteAzureNodePoolTransportSettings =
         GrpcCallSettings.<DeleteAzureNodePoolRequest, Operation>newBuilder()
@@ -541,6 +576,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
         getAzureOpenIdConfigTransportSettings =
@@ -552,6 +588,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                       builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAzureCluster())
                 .build();
     GrpcCallSettings<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
         getAzureJsonWebKeysTransportSettings =
@@ -563,6 +600,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                       builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAzureCluster())
                 .build();
     GrpcCallSettings<GetAzureServerConfigRequest, AzureServerConfig>
         getAzureServerConfigTransportSettings =
@@ -574,6 +612,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createAzureClientCallable =

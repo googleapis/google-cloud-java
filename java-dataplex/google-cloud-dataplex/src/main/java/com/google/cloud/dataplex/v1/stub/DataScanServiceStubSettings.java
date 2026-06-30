@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import static com.google.cloud.dataplex.v1.DataScanServiceClient.ListLocationsPa
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -39,6 +40,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -49,6 +51,8 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dataplex.v1.CancelDataScanJobRequest;
+import com.google.cloud.dataplex.v1.CancelDataScanJobResponse;
 import com.google.cloud.dataplex.v1.CreateDataScanRequest;
 import com.google.cloud.dataplex.v1.DataScan;
 import com.google.cloud.dataplex.v1.DataScanJob;
@@ -73,12 +77,17 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -95,7 +104,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getDataScan to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getDataScan:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -112,16 +123,59 @@ import org.threeten.bp.Duration;
  *             .getDataScanSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * DataScanServiceStubSettings dataScanServiceSettings = dataScanServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createDataScan:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * DataScanServiceStubSettings.Builder dataScanServiceSettingsBuilder =
+ *     DataScanServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * dataScanServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
+          .add("https://www.googleapis.com/auth/dataplex.read-write")
+          .add("https://www.googleapis.com/auth/dataplex.readonly")
+          .build();
 
   private final UnaryCallSettings<CreateDataScanRequest, Operation> createDataScanSettings;
   private final OperationCallSettings<CreateDataScanRequest, DataScan, OperationMetadata>
@@ -141,12 +195,18 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
   private final PagedCallSettings<
           ListDataScanJobsRequest, ListDataScanJobsResponse, ListDataScanJobsPagedResponse>
       listDataScanJobsSettings;
+  private final UnaryCallSettings<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobSettings;
   private final UnaryCallSettings<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
       generateDataQualityRulesSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<ListDataScansRequest, ListDataScansResponse, DataScan>
       LIST_DATA_SCANS_PAGE_STR_DESC =
@@ -178,9 +238,7 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
 
             @Override
             public Iterable<DataScan> extractResources(ListDataScansResponse payload) {
-              return payload.getDataScansList() == null
-                  ? ImmutableList.<DataScan>of()
-                  : payload.getDataScansList();
+              return payload.getDataScansList();
             }
           };
 
@@ -218,9 +276,7 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
 
             @Override
             public Iterable<DataScanJob> extractResources(ListDataScanJobsResponse payload) {
-              return payload.getDataScanJobsList() == null
-                  ? ImmutableList.<DataScanJob>of()
-                  : payload.getDataScanJobsList();
+              return payload.getDataScanJobsList();
             }
           };
 
@@ -254,9 +310,7 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -374,6 +428,12 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
     return listDataScanJobsSettings;
   }
 
+  /** Returns the object with the settings used for calls to cancelDataScanJob. */
+  public UnaryCallSettings<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobSettings() {
+    return cancelDataScanJobSettings;
+  }
+
   /** Returns the object with the settings used for calls to generateDataQualityRules. */
   public UnaryCallSettings<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
       generateDataQualityRulesSettings() {
@@ -389,6 +449,22 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
   /** Returns the object with the settings used for calls to getLocation. */
   public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
     return getLocationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   public DataScanServiceStub createStub() throws IOException {
@@ -407,15 +483,6 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -428,6 +495,7 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "dataplex.googleapis.com:443";
   }
@@ -521,9 +589,22 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
     runDataScanSettings = settingsBuilder.runDataScanSettings().build();
     getDataScanJobSettings = settingsBuilder.getDataScanJobSettings().build();
     listDataScanJobsSettings = settingsBuilder.listDataScanJobsSettings().build();
+    cancelDataScanJobSettings = settingsBuilder.cancelDataScanJobSettings().build();
     generateDataQualityRulesSettings = settingsBuilder.generateDataQualityRulesSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-dataplex")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for DataScanServiceStubSettings. */
@@ -552,6 +633,8 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
     private final PagedCallSettings.Builder<
             ListDataScanJobsRequest, ListDataScanJobsResponse, ListDataScanJobsPagedResponse>
         listDataScanJobsSettings;
+    private final UnaryCallSettings.Builder<CancelDataScanJobRequest, CancelDataScanJobResponse>
+        cancelDataScanJobSettings;
     private final UnaryCallSettings.Builder<
             GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
         generateDataQualityRulesSettings;
@@ -559,6 +642,10 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
     private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -597,9 +684,13 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
       runDataScanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getDataScanJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listDataScanJobsSettings = PagedCallSettings.newBuilder(LIST_DATA_SCAN_JOBS_PAGE_STR_FACT);
+      cancelDataScanJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateDataQualityRulesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -611,9 +702,13 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
               runDataScanSettings,
               getDataScanJobSettings,
               listDataScanJobsSettings,
+              cancelDataScanJobSettings,
               generateDataQualityRulesSettings,
               listLocationsSettings,
-              getLocationSettings);
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -631,9 +726,13 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
       runDataScanSettings = settings.runDataScanSettings.toBuilder();
       getDataScanJobSettings = settings.getDataScanJobSettings.toBuilder();
       listDataScanJobsSettings = settings.listDataScanJobsSettings.toBuilder();
+      cancelDataScanJobSettings = settings.cancelDataScanJobSettings.toBuilder();
       generateDataQualityRulesSettings = settings.generateDataQualityRulesSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -645,9 +744,13 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
               runDataScanSettings,
               getDataScanJobSettings,
               listDataScanJobsSettings,
+              cancelDataScanJobSettings,
               generateDataQualityRulesSettings,
               listLocationsSettings,
-              getLocationSettings);
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -716,6 +819,11 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .cancelDataScanJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .generateDataQualityRulesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -727,6 +835,21 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
 
       builder
           .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -745,13 +868,13 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -769,13 +892,13 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -793,13 +916,13 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -883,6 +1006,12 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
       return listDataScanJobsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to cancelDataScanJob. */
+    public UnaryCallSettings.Builder<CancelDataScanJobRequest, CancelDataScanJobResponse>
+        cancelDataScanJobSettings() {
+      return cancelDataScanJobSettings;
+    }
+
     /** Returns the builder for the settings used for calls to generateDataQualityRules. */
     public UnaryCallSettings.Builder<
             GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
@@ -902,13 +1031,20 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
       return getLocationSettings;
     }
 
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

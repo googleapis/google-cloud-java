@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,6 +122,7 @@ public class ScheduleServiceClientTest {
             .setLastPauseTime(Timestamp.newBuilder().build())
             .setLastResumeTime(Timestamp.newBuilder().build())
             .setMaxConcurrentRunCount(-1478623794)
+            .setMaxConcurrentActiveRunCount(-2066355825)
             .setAllowQueueing(true)
             .setCatchUp(true)
             .setLastScheduledRunResponse(Schedule.RunResponse.newBuilder().build())
@@ -177,6 +178,7 @@ public class ScheduleServiceClientTest {
             .setLastPauseTime(Timestamp.newBuilder().build())
             .setLastResumeTime(Timestamp.newBuilder().build())
             .setMaxConcurrentRunCount(-1478623794)
+            .setMaxConcurrentActiveRunCount(-2066355825)
             .setAllowQueueing(true)
             .setCatchUp(true)
             .setLastScheduledRunResponse(Schedule.RunResponse.newBuilder().build())
@@ -316,6 +318,7 @@ public class ScheduleServiceClientTest {
             .setLastPauseTime(Timestamp.newBuilder().build())
             .setLastResumeTime(Timestamp.newBuilder().build())
             .setMaxConcurrentRunCount(-1478623794)
+            .setMaxConcurrentActiveRunCount(-2066355825)
             .setAllowQueueing(true)
             .setCatchUp(true)
             .setLastScheduledRunResponse(Schedule.RunResponse.newBuilder().build())
@@ -368,6 +371,7 @@ public class ScheduleServiceClientTest {
             .setLastPauseTime(Timestamp.newBuilder().build())
             .setLastResumeTime(Timestamp.newBuilder().build())
             .setMaxConcurrentRunCount(-1478623794)
+            .setMaxConcurrentActiveRunCount(-2066355825)
             .setAllowQueueing(true)
             .setCatchUp(true)
             .setLastScheduledRunResponse(Schedule.RunResponse.newBuilder().build())
@@ -718,6 +722,7 @@ public class ScheduleServiceClientTest {
             .setLastPauseTime(Timestamp.newBuilder().build())
             .setLastResumeTime(Timestamp.newBuilder().build())
             .setMaxConcurrentRunCount(-1478623794)
+            .setMaxConcurrentActiveRunCount(-2066355825)
             .setAllowQueueing(true)
             .setCatchUp(true)
             .setLastScheduledRunResponse(Schedule.RunResponse.newBuilder().build())

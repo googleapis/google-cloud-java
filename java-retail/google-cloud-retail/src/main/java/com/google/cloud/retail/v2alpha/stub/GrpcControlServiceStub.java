@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateControlRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Control.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteControlRequest, Empty> deleteControlMethodDescriptor =
@@ -66,6 +67,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
           .setFullMethodName("google.cloud.retail.v2alpha.ControlService/DeleteControl")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteControlRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateControlRequest, Control>
@@ -76,6 +78,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateControlRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Control.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetControlRequest, Control> getControlMethodDescriptor =
@@ -84,6 +87,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
           .setFullMethodName("google.cloud.retail.v2alpha.ControlService/GetControl")
           .setRequestMarshaller(ProtoUtils.marshaller(GetControlRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Control.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListControlsRequest, ListControlsResponse>
@@ -94,6 +98,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListControlsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListControlsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateControlRequest, Control> createControlCallable;
@@ -157,6 +162,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteControlRequest, Empty> deleteControlTransportSettings =
         GrpcCallSettings.<DeleteControlRequest, Empty>newBuilder()
@@ -167,6 +173,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateControlRequest, Control> updateControlTransportSettings =
         GrpcCallSettings.<UpdateControlRequest, Control>newBuilder()
@@ -187,6 +194,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListControlsRequest, ListControlsResponse> listControlsTransportSettings =
         GrpcCallSettings.<ListControlsRequest, ListControlsResponse>newBuilder()
@@ -197,6 +205,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createControlCallable =

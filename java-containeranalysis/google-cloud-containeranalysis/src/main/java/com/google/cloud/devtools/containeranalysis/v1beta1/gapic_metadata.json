@@ -1,0 +1,87 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "grafeas.v1beta1",
+  "libraryPackage": "com.google.cloud.devtools.containeranalysis.v1beta1",
+  "services": {
+    "ContainerAnalysisV1Beta1": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ContainerAnalysisV1Beta1Client",
+          "rpcs": {
+            "ExportSBOM": {
+              "methods": ["exportSBOM", "exportSBOMCallable"]
+            },
+            "GeneratePackagesSummary": {
+              "methods": ["generatePackagesSummary", "generatePackagesSummaryCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "GrafeasV1Beta1": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GrafeasV1Beta1Client",
+          "rpcs": {
+            "BatchCreateNotes": {
+              "methods": ["batchCreateNotes", "batchCreateNotesCallable"]
+            },
+            "BatchCreateOccurrences": {
+              "methods": ["batchCreateOccurrences", "batchCreateOccurrencesCallable"]
+            },
+            "CreateNote": {
+              "methods": ["createNote", "createNoteCallable"]
+            },
+            "CreateOccurrence": {
+              "methods": ["createOccurrence", "createOccurrenceCallable"]
+            },
+            "DeleteNote": {
+              "methods": ["deleteNote", "deleteNoteCallable"]
+            },
+            "DeleteOccurrence": {
+              "methods": ["deleteOccurrence", "deleteOccurrenceCallable"]
+            },
+            "GetNote": {
+              "methods": ["getNote", "getNoteCallable"]
+            },
+            "GetOccurrence": {
+              "methods": ["getOccurrence", "getOccurrenceCallable"]
+            },
+            "GetOccurrenceNote": {
+              "methods": ["getOccurrenceNote", "getOccurrenceNoteCallable"]
+            },
+            "GetVulnerabilityOccurrencesSummary": {
+              "methods": ["getVulnerabilityOccurrencesSummary", "getVulnerabilityOccurrencesSummaryCallable"]
+            },
+            "ListNoteOccurrences": {
+              "methods": ["listNoteOccurrences", "listNoteOccurrencesPagedCallable", "listNoteOccurrencesCallable"]
+            },
+            "ListNotes": {
+              "methods": ["listNotes", "listNotesPagedCallable", "listNotesCallable"]
+            },
+            "ListOccurrences": {
+              "methods": ["listOccurrences", "listOccurrencesPagedCallable", "listOccurrencesCallable"]
+            },
+            "UpdateNote": {
+              "methods": ["updateNote", "updateNoteCallable"]
+            },
+            "UpdateOccurrence": {
+              "methods": ["updateOccurrence", "updateOccurrenceCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -13,6 +13,9 @@
             "CompleteImportSpace": {
               "methods": ["completeImportSpace", "completeImportSpaceCallable"]
             },
+            "CreateCustomEmoji": {
+              "methods": ["createCustomEmoji", "createCustomEmoji", "createCustomEmojiCallable"]
+            },
             "CreateMembership": {
               "methods": ["createMembership", "createMembership", "createMembership", "createMembershipCallable"]
             },
@@ -22,8 +25,14 @@
             "CreateReaction": {
               "methods": ["createReaction", "createReaction", "createReaction", "createReactionCallable"]
             },
+            "CreateSection": {
+              "methods": ["createSection", "createSection", "createSection", "createSectionCallable"]
+            },
             "CreateSpace": {
               "methods": ["createSpace", "createSpace", "createSpaceCallable"]
+            },
+            "DeleteCustomEmoji": {
+              "methods": ["deleteCustomEmoji", "deleteCustomEmoji", "deleteCustomEmoji", "deleteCustomEmojiCallable"]
             },
             "DeleteMembership": {
               "methods": ["deleteMembership", "deleteMembership", "deleteMembership", "deleteMembershipCallable"]
@@ -34,14 +43,23 @@
             "DeleteReaction": {
               "methods": ["deleteReaction", "deleteReaction", "deleteReaction", "deleteReactionCallable"]
             },
+            "DeleteSection": {
+              "methods": ["deleteSection", "deleteSection", "deleteSection", "deleteSectionCallable"]
+            },
             "DeleteSpace": {
               "methods": ["deleteSpace", "deleteSpace", "deleteSpace", "deleteSpaceCallable"]
             },
             "FindDirectMessage": {
               "methods": ["findDirectMessage", "findDirectMessageCallable"]
             },
+            "FindGroupChats": {
+              "methods": ["findGroupChats", "findGroupChatsPagedCallable", "findGroupChatsCallable"]
+            },
             "GetAttachment": {
               "methods": ["getAttachment", "getAttachment", "getAttachment", "getAttachmentCallable"]
+            },
+            "GetCustomEmoji": {
+              "methods": ["getCustomEmoji", "getCustomEmoji", "getCustomEmoji", "getCustomEmojiCallable"]
             },
             "GetMembership": {
               "methods": ["getMembership", "getMembership", "getMembership", "getMembershipCallable"]
@@ -52,6 +70,21 @@
             "GetSpace": {
               "methods": ["getSpace", "getSpace", "getSpace", "getSpaceCallable"]
             },
+            "GetSpaceEvent": {
+              "methods": ["getSpaceEvent", "getSpaceEvent", "getSpaceEvent", "getSpaceEventCallable"]
+            },
+            "GetSpaceNotificationSetting": {
+              "methods": ["getSpaceNotificationSetting", "getSpaceNotificationSetting", "getSpaceNotificationSetting", "getSpaceNotificationSettingCallable"]
+            },
+            "GetSpaceReadState": {
+              "methods": ["getSpaceReadState", "getSpaceReadState", "getSpaceReadState", "getSpaceReadStateCallable"]
+            },
+            "GetThreadReadState": {
+              "methods": ["getThreadReadState", "getThreadReadState", "getThreadReadState", "getThreadReadStateCallable"]
+            },
+            "ListCustomEmojis": {
+              "methods": ["listCustomEmojis", "listCustomEmojis", "listCustomEmojisPagedCallable", "listCustomEmojisCallable"]
+            },
             "ListMemberships": {
               "methods": ["listMemberships", "listMemberships", "listMemberships", "listMembershipsPagedCallable", "listMembershipsCallable"]
             },
@@ -61,17 +94,47 @@
             "ListReactions": {
               "methods": ["listReactions", "listReactions", "listReactions", "listReactionsPagedCallable", "listReactionsCallable"]
             },
+            "ListSectionItems": {
+              "methods": ["listSectionItems", "listSectionItems", "listSectionItems", "listSectionItemsPagedCallable", "listSectionItemsCallable"]
+            },
+            "ListSections": {
+              "methods": ["listSections", "listSections", "listSections", "listSectionsPagedCallable", "listSectionsCallable"]
+            },
+            "ListSpaceEvents": {
+              "methods": ["listSpaceEvents", "listSpaceEvents", "listSpaceEvents", "listSpaceEventsPagedCallable", "listSpaceEventsCallable"]
+            },
             "ListSpaces": {
               "methods": ["listSpaces", "listSpaces", "listSpacesPagedCallable", "listSpacesCallable"]
+            },
+            "MoveSectionItem": {
+              "methods": ["moveSectionItem", "moveSectionItem", "moveSectionItem", "moveSectionItem", "moveSectionItem", "moveSectionItemCallable"]
+            },
+            "PositionSection": {
+              "methods": ["positionSection", "positionSectionCallable"]
+            },
+            "SearchSpaces": {
+              "methods": ["searchSpaces", "searchSpaces", "searchSpacesPagedCallable", "searchSpacesCallable"]
             },
             "SetUpSpace": {
               "methods": ["setUpSpace", "setUpSpaceCallable"]
             },
+            "UpdateMembership": {
+              "methods": ["updateMembership", "updateMembership", "updateMembershipCallable"]
+            },
             "UpdateMessage": {
               "methods": ["updateMessage", "updateMessage", "updateMessageCallable"]
             },
+            "UpdateSection": {
+              "methods": ["updateSection", "updateSection", "updateSectionCallable"]
+            },
             "UpdateSpace": {
               "methods": ["updateSpace", "updateSpace", "updateSpaceCallable"]
+            },
+            "UpdateSpaceNotificationSetting": {
+              "methods": ["updateSpaceNotificationSetting", "updateSpaceNotificationSetting", "updateSpaceNotificationSettingCallable"]
+            },
+            "UpdateSpaceReadState": {
+              "methods": ["updateSpaceReadState", "updateSpaceReadState", "updateSpaceReadStateCallable"]
             },
             "UploadAttachment": {
               "methods": ["uploadAttachment", "uploadAttachmentCallable"]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -253,7 +253,8 @@ public class BuildName implements ResourceName {
     private Builder(BuildName buildName) {
       Preconditions.checkArgument(
           Objects.equals(buildName.pathTemplate, PROJECT_BUILD),
-          "toBuilder is only supported when BuildName has the pattern of projects/{project}/builds/{build}");
+          "toBuilder is only supported when BuildName has the pattern of"
+              + " projects/{project}/builds/{build}");
       this.project = buildName.project;
       this.build = buildName.build;
     }

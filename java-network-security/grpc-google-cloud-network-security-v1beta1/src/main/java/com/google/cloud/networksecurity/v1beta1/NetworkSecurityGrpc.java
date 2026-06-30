@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * information.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/networksecurity/v1beta1/network_security.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class NetworkSecurityGrpc {
 
@@ -798,6 +795,19 @@ public final class NetworkSecurityGrpc {
     return NetworkSecurityStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static NetworkSecurityBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<NetworkSecurityBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<NetworkSecurityBlockingV2Stub>() {
+          @java.lang.Override
+          public NetworkSecurityBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new NetworkSecurityBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return NetworkSecurityBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1347,6 +1357,242 @@ public final class NetworkSecurityGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service NetworkSecurity.
+   *
+   * <pre>
+   * Network Security API provides resources to configure authentication and
+   * authorization policies. Refer to per API resource documentation for more
+   * information.
+   * </pre>
+   */
+  public static final class NetworkSecurityBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<NetworkSecurityBlockingV2Stub> {
+    private NetworkSecurityBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected NetworkSecurityBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new NetworkSecurityBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AuthorizationPolicies in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networksecurity.v1beta1.ListAuthorizationPoliciesResponse
+        listAuthorizationPolicies(
+            com.google.cloud.networksecurity.v1beta1.ListAuthorizationPoliciesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAuthorizationPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AuthorizationPolicy.
+     * </pre>
+     */
+    public com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy getAuthorizationPolicy(
+        com.google.cloud.networksecurity.v1beta1.GetAuthorizationPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAuthorizationPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AuthorizationPolicy in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAuthorizationPolicy(
+        com.google.cloud.networksecurity.v1beta1.CreateAuthorizationPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAuthorizationPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AuthorizationPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAuthorizationPolicy(
+        com.google.cloud.networksecurity.v1beta1.UpdateAuthorizationPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAuthorizationPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AuthorizationPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAuthorizationPolicy(
+        com.google.cloud.networksecurity.v1beta1.DeleteAuthorizationPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteAuthorizationPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ServerTlsPolicies in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networksecurity.v1beta1.ListServerTlsPoliciesResponse
+        listServerTlsPolicies(
+            com.google.cloud.networksecurity.v1beta1.ListServerTlsPoliciesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListServerTlsPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ServerTlsPolicy.
+     * </pre>
+     */
+    public com.google.cloud.networksecurity.v1beta1.ServerTlsPolicy getServerTlsPolicy(
+        com.google.cloud.networksecurity.v1beta1.GetServerTlsPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetServerTlsPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ServerTlsPolicy in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createServerTlsPolicy(
+        com.google.cloud.networksecurity.v1beta1.CreateServerTlsPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateServerTlsPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single ServerTlsPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateServerTlsPolicy(
+        com.google.cloud.networksecurity.v1beta1.UpdateServerTlsPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateServerTlsPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ServerTlsPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteServerTlsPolicy(
+        com.google.cloud.networksecurity.v1beta1.DeleteServerTlsPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteServerTlsPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ClientTlsPolicies in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networksecurity.v1beta1.ListClientTlsPoliciesResponse
+        listClientTlsPolicies(
+            com.google.cloud.networksecurity.v1beta1.ListClientTlsPoliciesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListClientTlsPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ClientTlsPolicy.
+     * </pre>
+     */
+    public com.google.cloud.networksecurity.v1beta1.ClientTlsPolicy getClientTlsPolicy(
+        com.google.cloud.networksecurity.v1beta1.GetClientTlsPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetClientTlsPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ClientTlsPolicy in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createClientTlsPolicy(
+        com.google.cloud.networksecurity.v1beta1.CreateClientTlsPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateClientTlsPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single ClientTlsPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateClientTlsPolicy(
+        com.google.cloud.networksecurity.v1beta1.UpdateClientTlsPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateClientTlsPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ClientTlsPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteClientTlsPolicy(
+        com.google.cloud.networksecurity.v1beta1.DeleteClientTlsPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteClientTlsPolicyMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service NetworkSecurity.
    *
    * <pre>
    * Network Security API provides resources to configure authentication and

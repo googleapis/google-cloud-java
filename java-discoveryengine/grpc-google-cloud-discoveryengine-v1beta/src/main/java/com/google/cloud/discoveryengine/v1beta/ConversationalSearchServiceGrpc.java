@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for conversational search.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1beta/conversational_search_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConversationalSearchServiceGrpc {
 
@@ -390,6 +387,57 @@ public final class ConversationalSearchServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest,
+          com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>
+      getStreamAnswerQueryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamAnswerQuery",
+      requestType = com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest,
+          com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>
+      getStreamAnswerQueryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest,
+            com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>
+        getStreamAnswerQueryMethod;
+    if ((getStreamAnswerQueryMethod = ConversationalSearchServiceGrpc.getStreamAnswerQueryMethod)
+        == null) {
+      synchronized (ConversationalSearchServiceGrpc.class) {
+        if ((getStreamAnswerQueryMethod =
+                ConversationalSearchServiceGrpc.getStreamAnswerQueryMethod)
+            == null) {
+          ConversationalSearchServiceGrpc.getStreamAnswerQueryMethod =
+              getStreamAnswerQueryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest,
+                          com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StreamAnswerQuery"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConversationalSearchServiceMethodDescriptorSupplier(
+                              "StreamAnswerQuery"))
+                      .build();
+        }
+      }
+    }
+    return getStreamAnswerQueryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.discoveryengine.v1beta.GetAnswerRequest,
           com.google.cloud.discoveryengine.v1beta.Answer>
       getGetAnswerMethod;
@@ -680,6 +728,20 @@ public final class ConversationalSearchServiceGrpc {
     return ConversationalSearchServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ConversationalSearchServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ConversationalSearchServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConversationalSearchServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ConversationalSearchServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConversationalSearchServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ConversationalSearchServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -830,6 +892,26 @@ public final class ConversationalSearchServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getAnswerQueryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Answer query method (streaming).
+     * It takes one
+     * [AnswerQueryRequest][google.cloud.discoveryengine.v1beta.AnswerQueryRequest]
+     * and returns multiple
+     * [AnswerQueryResponse][google.cloud.discoveryengine.v1beta.AnswerQueryResponse]
+     * messages in a stream.
+     * </pre>
+     */
+    default void streamAnswerQuery(
+        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStreamAnswerQueryMethod(), responseObserver);
     }
 
     /**
@@ -1097,6 +1179,28 @@ public final class ConversationalSearchServiceGrpc {
      *
      *
      * <pre>
+     * Answer query method (streaming).
+     * It takes one
+     * [AnswerQueryRequest][google.cloud.discoveryengine.v1beta.AnswerQueryRequest]
+     * and returns multiple
+     * [AnswerQueryResponse][google.cloud.discoveryengine.v1beta.AnswerQueryResponse]
+     * messages in a stream.
+     * </pre>
+     */
+    public void streamAnswerQuery(
+        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getStreamAnswerQueryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a Answer.
      * </pre>
      */
@@ -1201,6 +1305,248 @@ public final class ConversationalSearchServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ConversationalSearchService.
+   *
+   * <pre>
+   * Service for conversational search.
+   * </pre>
+   */
+  public static final class ConversationalSearchServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ConversationalSearchServiceBlockingV2Stub> {
+    private ConversationalSearchServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ConversationalSearchServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ConversationalSearchServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Converses a conversation.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.ConverseConversationResponse
+        converseConversation(
+            com.google.cloud.discoveryengine.v1beta.ConverseConversationRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getConverseConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Conversation.
+     * If the [Conversation][google.cloud.discoveryengine.v1beta.Conversation] to
+     * create already exists, an ALREADY_EXISTS error is returned.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Conversation createConversation(
+        com.google.cloud.discoveryengine.v1beta.CreateConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Conversation.
+     * If the [Conversation][google.cloud.discoveryengine.v1beta.Conversation] to
+     * delete does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteConversation(
+        com.google.cloud.discoveryengine.v1beta.DeleteConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Conversation.
+     * [Conversation][google.cloud.discoveryengine.v1beta.Conversation] action
+     * type cannot be changed. If the
+     * [Conversation][google.cloud.discoveryengine.v1beta.Conversation] to update
+     * does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Conversation updateConversation(
+        com.google.cloud.discoveryengine.v1beta.UpdateConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Conversation.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Conversation getConversation(
+        com.google.cloud.discoveryengine.v1beta.GetConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Conversations by their parent
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.ListConversationsResponse listConversations(
+        com.google.cloud.discoveryengine.v1beta.ListConversationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListConversationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Answer query method.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse answerQuery(
+        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAnswerQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Answer query method (streaming).
+     * It takes one
+     * [AnswerQueryRequest][google.cloud.discoveryengine.v1beta.AnswerQueryRequest]
+     * and returns multiple
+     * [AnswerQueryResponse][google.cloud.discoveryengine.v1beta.AnswerQueryResponse]
+     * messages in a stream.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            ?, com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>
+        streamAnswerQuery(com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getStreamAnswerQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Answer.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Answer getAnswer(
+        com.google.cloud.discoveryengine.v1beta.GetAnswerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAnswerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Session.
+     * If the [Session][google.cloud.discoveryengine.v1beta.Session] to create
+     * already exists, an ALREADY_EXISTS error is returned.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Session createSession(
+        com.google.cloud.discoveryengine.v1beta.CreateSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Session.
+     * If the [Session][google.cloud.discoveryengine.v1beta.Session] to delete
+     * does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSession(
+        com.google.cloud.discoveryengine.v1beta.DeleteSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Session.
+     * [Session][google.cloud.discoveryengine.v1beta.Session] action type cannot
+     * be changed. If the [Session][google.cloud.discoveryengine.v1beta.Session]
+     * to update does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Session updateSession(
+        com.google.cloud.discoveryengine.v1beta.UpdateSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Session.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Session getSession(
+        com.google.cloud.discoveryengine.v1beta.GetSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Sessions by their parent
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.ListSessionsResponse listSessions(
+        com.google.cloud.discoveryengine.v1beta.ListSessionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListSessionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * ConversationalSearchService.
    *
    * <pre>
    * Service for conversational search.
@@ -1318,6 +1664,24 @@ public final class ConversationalSearchServiceGrpc {
         com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAnswerQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Answer query method (streaming).
+     * It takes one
+     * [AnswerQueryRequest][google.cloud.discoveryengine.v1beta.AnswerQueryRequest]
+     * and returns multiple
+     * [AnswerQueryResponse][google.cloud.discoveryengine.v1beta.AnswerQueryResponse]
+     * messages in a stream.
+     * </pre>
+     */
+    public java.util.Iterator<com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>
+        streamAnswerQuery(com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getStreamAnswerQueryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1638,12 +2002,13 @@ public final class ConversationalSearchServiceGrpc {
   private static final int METHODID_GET_CONVERSATION = 4;
   private static final int METHODID_LIST_CONVERSATIONS = 5;
   private static final int METHODID_ANSWER_QUERY = 6;
-  private static final int METHODID_GET_ANSWER = 7;
-  private static final int METHODID_CREATE_SESSION = 8;
-  private static final int METHODID_DELETE_SESSION = 9;
-  private static final int METHODID_UPDATE_SESSION = 10;
-  private static final int METHODID_GET_SESSION = 11;
-  private static final int METHODID_LIST_SESSIONS = 12;
+  private static final int METHODID_STREAM_ANSWER_QUERY = 7;
+  private static final int METHODID_GET_ANSWER = 8;
+  private static final int METHODID_CREATE_SESSION = 9;
+  private static final int METHODID_DELETE_SESSION = 10;
+  private static final int METHODID_UPDATE_SESSION = 11;
+  private static final int METHODID_GET_SESSION = 12;
+  private static final int METHODID_LIST_SESSIONS = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1701,6 +2066,13 @@ public final class ConversationalSearchServiceGrpc {
           break;
         case METHODID_ANSWER_QUERY:
           serviceImpl.answerQuery(
+              (com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>)
+                  responseObserver);
+          break;
+        case METHODID_STREAM_ANSWER_QUERY:
+          serviceImpl.streamAnswerQuery(
               (com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>)
@@ -1809,6 +2181,13 @@ public final class ConversationalSearchServiceGrpc {
                     com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>(
                     service, METHODID_ANSWER_QUERY)))
         .addMethod(
+            getStreamAnswerQueryMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest,
+                    com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>(
+                    service, METHODID_STREAM_ANSWER_QUERY)))
+        .addMethod(
             getGetAnswerMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1907,6 +2286,7 @@ public final class ConversationalSearchServiceGrpc {
                       .addMethod(getGetConversationMethod())
                       .addMethod(getListConversationsMethod())
                       .addMethod(getAnswerQueryMethod())
+                      .addMethod(getStreamAnswerQueryMethod())
                       .addMethod(getGetAnswerMethod())
                       .addMethod(getCreateSessionMethod())
                       .addMethod(getDeleteSessionMethod())

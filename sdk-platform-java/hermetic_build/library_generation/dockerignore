@@ -1,0 +1,6 @@
+README.md
+**/__pycache__/
+**/*.egg-info/
+**/output/
+**/build/
+**/google-cloud-java/

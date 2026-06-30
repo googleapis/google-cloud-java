@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,7 @@ public class GrpcRankServiceStub extends RankServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1alpha.RankService/Rank")
           .setRequestMarshaller(ProtoUtils.marshaller(RankRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(RankResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<RankRequest, RankResponse> rankCallable;
@@ -103,6 +104,7 @@ public class GrpcRankServiceStub extends RankServiceStub {
                   builder.add("ranking_config", String.valueOf(request.getRankingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRankingConfig())
             .build();
 
     this.rankCallable =

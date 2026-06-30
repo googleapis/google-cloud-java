@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,12 +20,15 @@ import static com.google.cloud.aiplatform.v1.GenAiTuningServiceClient.ListLocati
 import static com.google.cloud.aiplatform.v1.GenAiTuningServiceClient.ListTuningJobsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.CancelTuningJobRequest;
 import com.google.cloud.aiplatform.v1.CreateTuningJobRequest;
 import com.google.cloud.aiplatform.v1.GetTuningJobRequest;
 import com.google.cloud.aiplatform.v1.ListTuningJobsRequest;
 import com.google.cloud.aiplatform.v1.ListTuningJobsResponse;
+import com.google.cloud.aiplatform.v1.RebaseTunedModelOperationMetadata;
+import com.google.cloud.aiplatform.v1.RebaseTunedModelRequest;
 import com.google.cloud.aiplatform.v1.TuningJob;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -36,6 +39,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -47,6 +52,10 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class GenAiTuningServiceStub implements BackgroundResource {
+
+  public OperationsStub getOperationsStub() {
+    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+  }
 
   public UnaryCallable<CreateTuningJobRequest, TuningJob> createTuningJobCallable() {
     throw new UnsupportedOperationException("Not implemented: createTuningJobCallable()");
@@ -67,6 +76,15 @@ public abstract class GenAiTuningServiceStub implements BackgroundResource {
 
   public UnaryCallable<CancelTuningJobRequest, Empty> cancelTuningJobCallable() {
     throw new UnsupportedOperationException("Not implemented: cancelTuningJobCallable()");
+  }
+
+  public OperationCallable<RebaseTunedModelRequest, TuningJob, RebaseTunedModelOperationMetadata>
+      rebaseTunedModelOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: rebaseTunedModelOperationCallable()");
+  }
+
+  public UnaryCallable<RebaseTunedModelRequest, Operation> rebaseTunedModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: rebaseTunedModelCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

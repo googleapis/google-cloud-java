@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,13 @@
 
 package com.google.cloud.gkebackup.v1;
 
+import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupChannelsPagedResponse;
+import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupPlanBindingsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListLocationsPagedResponse;
+import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestoreChannelsPagedResponse;
+import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestorePlanBindingsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestorePlansPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestoresPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListVolumeBackupsPagedResponse;
@@ -122,6 +126,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setStateReason("stateReason1148834357")
             .setRpoRiskLevel(-1939768030)
             .setRpoRiskReason("rpoRiskReason-1965101372")
+            .setBackupChannel(
+                BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -191,6 +198,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setStateReason("stateReason1148834357")
             .setRpoRiskLevel(-1939768030)
             .setRpoRiskReason("rpoRiskReason-1965101372")
+            .setBackupChannel(
+                BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -360,6 +370,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setStateReason("stateReason1148834357")
             .setRpoRiskLevel(-1939768030)
             .setRpoRiskReason("rpoRiskReason-1965101372")
+            .setBackupChannel(
+                BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -419,6 +432,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setStateReason("stateReason1148834357")
             .setRpoRiskLevel(-1939768030)
             .setRpoRiskReason("rpoRiskReason-1965101372")
+            .setBackupChannel(
+                BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -478,6 +494,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setStateReason("stateReason1148834357")
             .setRpoRiskLevel(-1939768030)
             .setRpoRiskReason("rpoRiskReason-1965101372")
+            .setBackupChannel(
+                BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -505,6 +524,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setStateReason("stateReason1148834357")
             .setRpoRiskLevel(-1939768030)
             .setRpoRiskReason("rpoRiskReason-1965101372")
+            .setBackupChannel(
+                BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -552,6 +574,9 @@ public class BackupForGKEClientHttpJsonTest {
               .setStateReason("stateReason1148834357")
               .setRpoRiskLevel(-1939768030)
               .setRpoRiskReason("rpoRiskReason-1965101372")
+              .setBackupChannel(
+                  BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+              .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupPlanAsync(backupPlan, updateMask).get();
@@ -651,6 +676,725 @@ public class BackupForGKEClientHttpJsonTest {
   }
 
   @Test
+  public void createBackupChannelTest() throws Exception {
+    BackupChannel expectedResponse =
+        BackupChannel.newBuilder()
+            .setName(BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createBackupChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    BackupChannel backupChannel = BackupChannel.newBuilder().build();
+    String backupChannelId = "backupChannelId707614172";
+
+    BackupChannel actualResponse =
+        client.createBackupChannelAsync(parent, backupChannel, backupChannelId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createBackupChannelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      BackupChannel backupChannel = BackupChannel.newBuilder().build();
+      String backupChannelId = "backupChannelId707614172";
+      client.createBackupChannelAsync(parent, backupChannel, backupChannelId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createBackupChannelTest2() throws Exception {
+    BackupChannel expectedResponse =
+        BackupChannel.newBuilder()
+            .setName(BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createBackupChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    BackupChannel backupChannel = BackupChannel.newBuilder().build();
+    String backupChannelId = "backupChannelId707614172";
+
+    BackupChannel actualResponse =
+        client.createBackupChannelAsync(parent, backupChannel, backupChannelId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createBackupChannelExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      BackupChannel backupChannel = BackupChannel.newBuilder().build();
+      String backupChannelId = "backupChannelId707614172";
+      client.createBackupChannelAsync(parent, backupChannel, backupChannelId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listBackupChannelsTest() throws Exception {
+    BackupChannel responsesElement = BackupChannel.newBuilder().build();
+    ListBackupChannelsResponse expectedResponse =
+        ListBackupChannelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackupChannels(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListBackupChannelsPagedResponse pagedListResponse = client.listBackupChannels(parent);
+
+    List<BackupChannel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupChannelsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBackupChannelsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listBackupChannels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBackupChannelsTest2() throws Exception {
+    BackupChannel responsesElement = BackupChannel.newBuilder().build();
+    ListBackupChannelsResponse expectedResponse =
+        ListBackupChannelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackupChannels(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListBackupChannelsPagedResponse pagedListResponse = client.listBackupChannels(parent);
+
+    List<BackupChannel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupChannelsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBackupChannelsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listBackupChannels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupChannelTest() throws Exception {
+    BackupChannel expectedResponse =
+        BackupChannel.newBuilder()
+            .setName(BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BackupChannelName name = BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]");
+
+    BackupChannel actualResponse = client.getBackupChannel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBackupChannelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BackupChannelName name = BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]");
+      client.getBackupChannel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupChannelTest2() throws Exception {
+    BackupChannel expectedResponse =
+        BackupChannel.newBuilder()
+            .setName(BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-5266/locations/location-5266/backupChannels/backupChannel-5266";
+
+    BackupChannel actualResponse = client.getBackupChannel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBackupChannelExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5266/locations/location-5266/backupChannels/backupChannel-5266";
+      client.getBackupChannel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateBackupChannelTest() throws Exception {
+    BackupChannel expectedResponse =
+        BackupChannel.newBuilder()
+            .setName(BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateBackupChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    BackupChannel backupChannel =
+        BackupChannel.newBuilder()
+            .setName(BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    BackupChannel actualResponse = client.updateBackupChannelAsync(backupChannel, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateBackupChannelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BackupChannel backupChannel =
+          BackupChannel.newBuilder()
+              .setName(
+                  BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+              .setDestinationProject("destinationProject-1719758037")
+              .setUid("uid115792")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setDescription("description-1724546052")
+              .setEtag("etag3123477")
+              .setDestinationProjectId("destinationProjectId874937766")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateBackupChannelAsync(backupChannel, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteBackupChannelTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteBackupChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    BackupChannelName name = BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]");
+
+    client.deleteBackupChannelAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteBackupChannelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BackupChannelName name = BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]");
+      client.deleteBackupChannelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteBackupChannelTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteBackupChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-5266/locations/location-5266/backupChannels/backupChannel-5266";
+
+    client.deleteBackupChannelAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteBackupChannelExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5266/locations/location-5266/backupChannels/backupChannel-5266";
+      client.deleteBackupChannelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listBackupPlanBindingsTest() throws Exception {
+    BackupPlanBinding responsesElement = BackupPlanBinding.newBuilder().build();
+    ListBackupPlanBindingsResponse expectedResponse =
+        ListBackupPlanBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackupPlanBindings(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BackupChannelName parent = BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]");
+
+    ListBackupPlanBindingsPagedResponse pagedListResponse = client.listBackupPlanBindings(parent);
+
+    List<BackupPlanBinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupPlanBindingsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBackupPlanBindingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BackupChannelName parent =
+          BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]");
+      client.listBackupPlanBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBackupPlanBindingsTest2() throws Exception {
+    BackupPlanBinding responsesElement = BackupPlanBinding.newBuilder().build();
+    ListBackupPlanBindingsResponse expectedResponse =
+        ListBackupPlanBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackupPlanBindings(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-2941/locations/location-2941/backupChannels/backupChannel-2941";
+
+    ListBackupPlanBindingsPagedResponse pagedListResponse = client.listBackupPlanBindings(parent);
+
+    List<BackupPlanBinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupPlanBindingsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBackupPlanBindingsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-2941/locations/location-2941/backupChannels/backupChannel-2941";
+      client.listBackupPlanBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupPlanBindingTest() throws Exception {
+    BackupPlanBinding expectedResponse =
+        BackupPlanBinding.newBuilder()
+            .setName(
+                BackupPlanBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]", "[BACKUP_PLAN_BINDING]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setBackupPlan(BackupPlanName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]").toString())
+            .setCluster("cluster872092154")
+            .setBackupPlanDetails(BackupPlanBinding.BackupPlanDetails.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BackupPlanBindingName name =
+        BackupPlanBindingName.of(
+            "[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]", "[BACKUP_PLAN_BINDING]");
+
+    BackupPlanBinding actualResponse = client.getBackupPlanBinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBackupPlanBindingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BackupPlanBindingName name =
+          BackupPlanBindingName.of(
+              "[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]", "[BACKUP_PLAN_BINDING]");
+      client.getBackupPlanBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupPlanBindingTest2() throws Exception {
+    BackupPlanBinding expectedResponse =
+        BackupPlanBinding.newBuilder()
+            .setName(
+                BackupPlanBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]", "[BACKUP_PLAN_BINDING]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setBackupPlan(BackupPlanName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]").toString())
+            .setCluster("cluster872092154")
+            .setBackupPlanDetails(BackupPlanBinding.BackupPlanDetails.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-7343/locations/location-7343/backupChannels/backupChannel-7343/backupPlanBindings/backupPlanBinding-7343";
+
+    BackupPlanBinding actualResponse = client.getBackupPlanBinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBackupPlanBindingExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7343/locations/location-7343/backupChannels/backupChannel-7343/backupPlanBindings/backupPlanBinding-7343";
+      client.getBackupPlanBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createBackupTest() throws Exception {
     Backup expectedResponse =
         Backup.newBuilder()
@@ -678,6 +1422,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -754,6 +1501,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -930,6 +1680,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -997,6 +1750,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1066,6 +1822,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1101,6 +1860,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1156,6 +1918,9 @@ public class BackupForGKEClientHttpJsonTest {
               .setDescription("description-1724546052")
               .setPodCount(977657493)
               .setConfigBackupSizeBytes(-606785139)
+              .setPermissiveMode(true)
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupAsync(backup, updateMask).get();
@@ -1376,6 +2141,8 @@ public class BackupForGKEClientHttpJsonTest {
             .setCompleteTime(Timestamp.newBuilder().build())
             .setStateMessage("stateMessage1128185398")
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1437,6 +2204,8 @@ public class BackupForGKEClientHttpJsonTest {
             .setCompleteTime(Timestamp.newBuilder().build())
             .setStateMessage("stateMessage1128185398")
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1493,6 +2262,8 @@ public class BackupForGKEClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setStateReason("stateReason1148834357")
+            .setRestoreChannel(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1557,6 +2328,8 @@ public class BackupForGKEClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setStateReason("stateReason1148834357")
+            .setRestoreChannel(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1721,6 +2494,8 @@ public class BackupForGKEClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setStateReason("stateReason1148834357")
+            .setRestoreChannel(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1775,6 +2550,8 @@ public class BackupForGKEClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setStateReason("stateReason1148834357")
+            .setRestoreChannel(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1829,6 +2606,8 @@ public class BackupForGKEClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setStateReason("stateReason1148834357")
+            .setRestoreChannel(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1851,6 +2630,8 @@ public class BackupForGKEClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setStateReason("stateReason1148834357")
+            .setRestoreChannel(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1894,6 +2675,8 @@ public class BackupForGKEClientHttpJsonTest {
               .putAllLabels(new HashMap<String, String>())
               .setEtag("etag3123477")
               .setStateReason("stateReason1148834357")
+              .setRestoreChannel(
+                  RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateRestorePlanAsync(restorePlan, updateMask).get();
@@ -1993,6 +2776,737 @@ public class BackupForGKEClientHttpJsonTest {
   }
 
   @Test
+  public void createRestoreChannelTest() throws Exception {
+    RestoreChannel expectedResponse =
+        RestoreChannel.newBuilder()
+            .setName(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRestoreChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    RestoreChannel restoreChannel = RestoreChannel.newBuilder().build();
+    String restoreChannelId = "restoreChannelId1139842704";
+
+    RestoreChannel actualResponse =
+        client.createRestoreChannelAsync(parent, restoreChannel, restoreChannelId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createRestoreChannelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      RestoreChannel restoreChannel = RestoreChannel.newBuilder().build();
+      String restoreChannelId = "restoreChannelId1139842704";
+      client.createRestoreChannelAsync(parent, restoreChannel, restoreChannelId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createRestoreChannelTest2() throws Exception {
+    RestoreChannel expectedResponse =
+        RestoreChannel.newBuilder()
+            .setName(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRestoreChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    RestoreChannel restoreChannel = RestoreChannel.newBuilder().build();
+    String restoreChannelId = "restoreChannelId1139842704";
+
+    RestoreChannel actualResponse =
+        client.createRestoreChannelAsync(parent, restoreChannel, restoreChannelId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createRestoreChannelExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      RestoreChannel restoreChannel = RestoreChannel.newBuilder().build();
+      String restoreChannelId = "restoreChannelId1139842704";
+      client.createRestoreChannelAsync(parent, restoreChannel, restoreChannelId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listRestoreChannelsTest() throws Exception {
+    RestoreChannel responsesElement = RestoreChannel.newBuilder().build();
+    ListRestoreChannelsResponse expectedResponse =
+        ListRestoreChannelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreChannels(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListRestoreChannelsPagedResponse pagedListResponse = client.listRestoreChannels(parent);
+
+    List<RestoreChannel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRestoreChannelsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRestoreChannelsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listRestoreChannels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreChannelsTest2() throws Exception {
+    RestoreChannel responsesElement = RestoreChannel.newBuilder().build();
+    ListRestoreChannelsResponse expectedResponse =
+        ListRestoreChannelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreChannels(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListRestoreChannelsPagedResponse pagedListResponse = client.listRestoreChannels(parent);
+
+    List<RestoreChannel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRestoreChannelsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRestoreChannelsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listRestoreChannels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRestoreChannelTest() throws Exception {
+    RestoreChannel expectedResponse =
+        RestoreChannel.newBuilder()
+            .setName(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RestoreChannelName name = RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]");
+
+    RestoreChannel actualResponse = client.getRestoreChannel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRestoreChannelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreChannelName name =
+          RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]");
+      client.getRestoreChannel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRestoreChannelTest2() throws Exception {
+    RestoreChannel expectedResponse =
+        RestoreChannel.newBuilder()
+            .setName(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-7948/locations/location-7948/restoreChannels/restoreChannel-7948";
+
+    RestoreChannel actualResponse = client.getRestoreChannel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRestoreChannelExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7948/locations/location-7948/restoreChannels/restoreChannel-7948";
+      client.getRestoreChannel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateRestoreChannelTest() throws Exception {
+    RestoreChannel expectedResponse =
+        RestoreChannel.newBuilder()
+            .setName(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateRestoreChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RestoreChannel restoreChannel =
+        RestoreChannel.newBuilder()
+            .setName(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    RestoreChannel actualResponse =
+        client.updateRestoreChannelAsync(restoreChannel, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateRestoreChannelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreChannel restoreChannel =
+          RestoreChannel.newBuilder()
+              .setName(
+                  RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
+              .setDestinationProject("destinationProject-1719758037")
+              .setUid("uid115792")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setDescription("description-1724546052")
+              .setEtag("etag3123477")
+              .setDestinationProjectId("destinationProjectId874937766")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateRestoreChannelAsync(restoreChannel, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteRestoreChannelTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRestoreChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RestoreChannelName name = RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]");
+
+    client.deleteRestoreChannelAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteRestoreChannelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreChannelName name =
+          RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]");
+      client.deleteRestoreChannelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteRestoreChannelTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRestoreChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-7948/locations/location-7948/restoreChannels/restoreChannel-7948";
+
+    client.deleteRestoreChannelAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteRestoreChannelExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7948/locations/location-7948/restoreChannels/restoreChannel-7948";
+      client.deleteRestoreChannelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listRestorePlanBindingsTest() throws Exception {
+    RestorePlanBinding responsesElement = RestorePlanBinding.newBuilder().build();
+    ListRestorePlanBindingsResponse expectedResponse =
+        ListRestorePlanBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestorePlanBindings(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RestoreChannelName parent =
+        RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]");
+
+    ListRestorePlanBindingsPagedResponse pagedListResponse = client.listRestorePlanBindings(parent);
+
+    List<RestorePlanBinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRestorePlanBindingsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRestorePlanBindingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreChannelName parent =
+          RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]");
+      client.listRestorePlanBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestorePlanBindingsTest2() throws Exception {
+    RestorePlanBinding responsesElement = RestorePlanBinding.newBuilder().build();
+    ListRestorePlanBindingsResponse expectedResponse =
+        ListRestorePlanBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestorePlanBindings(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-4115/locations/location-4115/restoreChannels/restoreChannel-4115";
+
+    ListRestorePlanBindingsPagedResponse pagedListResponse = client.listRestorePlanBindings(parent);
+
+    List<RestorePlanBinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRestorePlanBindingsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRestorePlanBindingsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-4115/locations/location-4115/restoreChannels/restoreChannel-4115";
+      client.listRestorePlanBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRestorePlanBindingTest() throws Exception {
+    RestorePlanBinding expectedResponse =
+        RestorePlanBinding.newBuilder()
+            .setName(
+                RestorePlanBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]", "[RESTORE_PLAN_BINDING]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRestorePlan(
+                RestorePlanName.of("[PROJECT]", "[LOCATION]", "[RESTORE_PLAN]").toString())
+            .setEtag("etag3123477")
+            .setBackupPlan(BackupPlanName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RestorePlanBindingName name =
+        RestorePlanBindingName.of(
+            "[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]", "[RESTORE_PLAN_BINDING]");
+
+    RestorePlanBinding actualResponse = client.getRestorePlanBinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRestorePlanBindingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestorePlanBindingName name =
+          RestorePlanBindingName.of(
+              "[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]", "[RESTORE_PLAN_BINDING]");
+      client.getRestorePlanBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRestorePlanBindingTest2() throws Exception {
+    RestorePlanBinding expectedResponse =
+        RestorePlanBinding.newBuilder()
+            .setName(
+                RestorePlanBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]", "[RESTORE_PLAN_BINDING]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRestorePlan(
+                RestorePlanName.of("[PROJECT]", "[LOCATION]", "[RESTORE_PLAN]").toString())
+            .setEtag("etag3123477")
+            .setBackupPlan(BackupPlanName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-3173/locations/location-3173/restoreChannels/restoreChannel-3173/restorePlanBindings/restorePlanBinding-3173";
+
+    RestorePlanBinding actualResponse = client.getRestorePlanBinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRestorePlanBindingExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3173/locations/location-3173/restoreChannels/restoreChannel-3173/restorePlanBindings/restorePlanBinding-3173";
+      client.getRestorePlanBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createRestoreTest() throws Exception {
     Restore expectedResponse =
         Restore.newBuilder()
@@ -2014,6 +3528,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2084,6 +3601,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2254,6 +3774,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2315,6 +3838,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2378,6 +3904,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2407,6 +3936,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2457,6 +3989,9 @@ public class BackupForGKEClientHttpJsonTest {
               .setResourcesFailedCount(217904743)
               .setVolumesRestoredCount(1005533068)
               .setEtag("etag3123477")
+              .setFilter(Restore.Filter.newBuilder().build())
+              .addAllVolumeDataRestorePolicyOverrides(
+                  new ArrayList<VolumeDataRestorePolicyOverride>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateRestoreAsync(restore, updateMask).get();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.discoveryengine.v1beta.ConversationalSearchServic
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1beta.Answer;
 import com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest;
@@ -88,6 +89,11 @@ public abstract class ConversationalSearchServiceStub implements BackgroundResou
 
   public UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable() {
     throw new UnsupportedOperationException("Not implemented: answerQueryCallable()");
+  }
+
+  public ServerStreamingCallable<AnswerQueryRequest, AnswerQueryResponse>
+      streamAnswerQueryCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamAnswerQueryCallable()");
   }
 
   public UnaryCallable<GetAnswerRequest, Answer> getAnswerCallable() {

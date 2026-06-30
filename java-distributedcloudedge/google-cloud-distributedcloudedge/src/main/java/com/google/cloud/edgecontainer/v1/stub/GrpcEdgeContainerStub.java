@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,6 +91,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetClusterRequest, Cluster> getClusterMethodDescriptor =
@@ -99,6 +100,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
           .setFullMethodName("google.cloud.edgecontainer.v1.EdgeContainer/GetCluster")
           .setRequestMarshaller(ProtoUtils.marshaller(GetClusterRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Cluster.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateClusterRequest, Operation>
@@ -109,6 +111,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateClusterRequest, Operation>
@@ -119,6 +122,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpgradeClusterRequest, Operation>
@@ -129,6 +133,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpgradeClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteClusterRequest, Operation>
@@ -139,6 +144,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
@@ -150,6 +156,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   ProtoUtils.marshaller(GenerateAccessTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateAccessTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -164,6 +171,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   ProtoUtils.marshaller(GenerateOfflineCredentialRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateOfflineCredentialResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListNodePoolsRequest, ListNodePoolsResponse>
@@ -175,6 +183,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   ProtoUtils.marshaller(ListNodePoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNodePoolsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNodePoolRequest, NodePool> getNodePoolMethodDescriptor =
@@ -183,6 +192,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
           .setFullMethodName("google.cloud.edgecontainer.v1.EdgeContainer/GetNodePool")
           .setRequestMarshaller(ProtoUtils.marshaller(GetNodePoolRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(NodePool.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateNodePoolRequest, Operation>
@@ -193,6 +203,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateNodePoolRequest, Operation>
@@ -203,6 +214,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNodePoolRequest, Operation>
@@ -213,6 +225,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMachinesRequest, ListMachinesResponse>
@@ -223,6 +236,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListMachinesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMachinesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMachineRequest, Machine> getMachineMethodDescriptor =
@@ -231,6 +245,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
           .setFullMethodName("google.cloud.edgecontainer.v1.EdgeContainer/GetMachine")
           .setRequestMarshaller(ProtoUtils.marshaller(GetMachineRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Machine.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListVpnConnectionsRequest, ListVpnConnectionsResponse>
@@ -242,6 +257,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   ProtoUtils.marshaller(ListVpnConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVpnConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVpnConnectionRequest, VpnConnection>
@@ -252,6 +268,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetVpnConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(VpnConnection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateVpnConnectionRequest, Operation>
@@ -262,6 +279,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateVpnConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteVpnConnectionRequest, Operation>
@@ -272,6 +290,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteVpnConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServerConfigRequest, ServerConfig>
@@ -282,6 +301,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServerConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServerConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -293,6 +313,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -301,6 +322,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
@@ -408,6 +430,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         GrpcCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -418,6 +441,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         GrpcCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -428,6 +452,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         GrpcCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -448,6 +473,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
         GrpcCallSettings.<DeleteClusterRequest, Operation>newBuilder()
@@ -458,6 +484,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
         generateAccessTokenTransportSettings =
@@ -469,6 +496,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                       builder.add("cluster", String.valueOf(request.getCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCluster())
                 .build();
     GrpcCallSettings<GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
         generateOfflineCredentialTransportSettings =
@@ -481,6 +509,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                       builder.add("cluster", String.valueOf(request.getCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCluster())
                 .build();
     GrpcCallSettings<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsTransportSettings =
         GrpcCallSettings.<ListNodePoolsRequest, ListNodePoolsResponse>newBuilder()
@@ -491,6 +520,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetNodePoolRequest, NodePool> getNodePoolTransportSettings =
         GrpcCallSettings.<GetNodePoolRequest, NodePool>newBuilder()
@@ -501,6 +531,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateNodePoolRequest, Operation> createNodePoolTransportSettings =
         GrpcCallSettings.<CreateNodePoolRequest, Operation>newBuilder()
@@ -511,6 +542,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateNodePoolRequest, Operation> updateNodePoolTransportSettings =
         GrpcCallSettings.<UpdateNodePoolRequest, Operation>newBuilder()
@@ -531,6 +563,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMachinesRequest, ListMachinesResponse> listMachinesTransportSettings =
         GrpcCallSettings.<ListMachinesRequest, ListMachinesResponse>newBuilder()
@@ -541,6 +574,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetMachineRequest, Machine> getMachineTransportSettings =
         GrpcCallSettings.<GetMachineRequest, Machine>newBuilder()
@@ -551,6 +585,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListVpnConnectionsRequest, ListVpnConnectionsResponse>
         listVpnConnectionsTransportSettings =
@@ -562,6 +597,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetVpnConnectionRequest, VpnConnection> getVpnConnectionTransportSettings =
         GrpcCallSettings.<GetVpnConnectionRequest, VpnConnection>newBuilder()
@@ -572,6 +608,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateVpnConnectionRequest, Operation> createVpnConnectionTransportSettings =
         GrpcCallSettings.<CreateVpnConnectionRequest, Operation>newBuilder()
@@ -582,6 +619,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteVpnConnectionRequest, Operation> deleteVpnConnectionTransportSettings =
         GrpcCallSettings.<DeleteVpnConnectionRequest, Operation>newBuilder()
@@ -592,6 +630,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetServerConfigRequest, ServerConfig> getServerConfigTransportSettings =
         GrpcCallSettings.<GetServerConfigRequest, ServerConfig>newBuilder()
@@ -602,6 +641,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

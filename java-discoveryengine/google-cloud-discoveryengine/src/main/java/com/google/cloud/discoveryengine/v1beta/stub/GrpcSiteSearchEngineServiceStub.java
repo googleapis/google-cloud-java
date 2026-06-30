@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,8 +34,12 @@ import com.google.cloud.discoveryengine.v1beta.BatchCreateTargetSitesResponse;
 import com.google.cloud.discoveryengine.v1beta.BatchVerifyTargetSitesMetadata;
 import com.google.cloud.discoveryengine.v1beta.BatchVerifyTargetSitesRequest;
 import com.google.cloud.discoveryengine.v1beta.BatchVerifyTargetSitesResponse;
+import com.google.cloud.discoveryengine.v1beta.CreateSitemapMetadata;
+import com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest;
 import com.google.cloud.discoveryengine.v1beta.CreateTargetSiteMetadata;
 import com.google.cloud.discoveryengine.v1beta.CreateTargetSiteRequest;
+import com.google.cloud.discoveryengine.v1beta.DeleteSitemapMetadata;
+import com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest;
 import com.google.cloud.discoveryengine.v1beta.DeleteTargetSiteMetadata;
 import com.google.cloud.discoveryengine.v1beta.DeleteTargetSiteRequest;
 import com.google.cloud.discoveryengine.v1beta.DisableAdvancedSiteSearchMetadata;
@@ -46,6 +50,8 @@ import com.google.cloud.discoveryengine.v1beta.EnableAdvancedSiteSearchRequest;
 import com.google.cloud.discoveryengine.v1beta.EnableAdvancedSiteSearchResponse;
 import com.google.cloud.discoveryengine.v1beta.FetchDomainVerificationStatusRequest;
 import com.google.cloud.discoveryengine.v1beta.FetchDomainVerificationStatusResponse;
+import com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest;
+import com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse;
 import com.google.cloud.discoveryengine.v1beta.GetSiteSearchEngineRequest;
 import com.google.cloud.discoveryengine.v1beta.GetTargetSiteRequest;
 import com.google.cloud.discoveryengine.v1beta.ListTargetSitesRequest;
@@ -54,6 +60,7 @@ import com.google.cloud.discoveryengine.v1beta.RecrawlUrisMetadata;
 import com.google.cloud.discoveryengine.v1beta.RecrawlUrisRequest;
 import com.google.cloud.discoveryengine.v1beta.RecrawlUrisResponse;
 import com.google.cloud.discoveryengine.v1beta.SiteSearchEngine;
+import com.google.cloud.discoveryengine.v1beta.Sitemap;
 import com.google.cloud.discoveryengine.v1beta.TargetSite;
 import com.google.cloud.discoveryengine.v1beta.UpdateTargetSiteMetadata;
 import com.google.cloud.discoveryengine.v1beta.UpdateTargetSiteRequest;
@@ -84,6 +91,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSiteSearchEngineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SiteSearchEngine.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTargetSiteRequest, Operation>
@@ -95,6 +103,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTargetSiteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchCreateTargetSitesRequest, Operation>
@@ -106,6 +115,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchCreateTargetSitesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTargetSiteRequest, TargetSite>
@@ -117,6 +127,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTargetSiteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TargetSite.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTargetSiteRequest, Operation>
@@ -128,6 +139,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTargetSiteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTargetSiteRequest, Operation>
@@ -139,6 +151,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTargetSiteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTargetSitesRequest, ListTargetSitesResponse>
@@ -151,6 +164,44 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                   ProtoUtils.marshaller(ListTargetSitesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTargetSitesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateSitemapRequest, Operation>
+      createSitemapMethodDescriptor =
+          MethodDescriptor.<CreateSitemapRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.SiteSearchEngineService/CreateSitemap")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateSitemapRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteSitemapRequest, Operation>
+      deleteSitemapMethodDescriptor =
+          MethodDescriptor.<DeleteSitemapRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.SiteSearchEngineService/DeleteSitemap")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteSitemapRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<FetchSitemapsRequest, FetchSitemapsResponse>
+      fetchSitemapsMethodDescriptor =
+          MethodDescriptor.<FetchSitemapsRequest, FetchSitemapsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.SiteSearchEngineService/FetchSitemaps")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchSitemapsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FetchSitemapsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EnableAdvancedSiteSearchRequest, Operation>
@@ -162,6 +213,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EnableAdvancedSiteSearchRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DisableAdvancedSiteSearchRequest, Operation>
@@ -173,6 +225,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DisableAdvancedSiteSearchRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RecrawlUrisRequest, Operation> recrawlUrisMethodDescriptor =
@@ -182,6 +235,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               "google.cloud.discoveryengine.v1beta.SiteSearchEngineService/RecrawlUris")
           .setRequestMarshaller(ProtoUtils.marshaller(RecrawlUrisRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchVerifyTargetSitesRequest, Operation>
@@ -193,6 +247,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchVerifyTargetSitesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -208,6 +263,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                   ProtoUtils.marshaller(FetchDomainVerificationStatusRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchDomainVerificationStatusResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetSiteSearchEngineRequest, SiteSearchEngine>
@@ -233,6 +289,13 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
       listTargetSitesCallable;
   private final UnaryCallable<ListTargetSitesRequest, ListTargetSitesPagedResponse>
       listTargetSitesPagedCallable;
+  private final UnaryCallable<CreateSitemapRequest, Operation> createSitemapCallable;
+  private final OperationCallable<CreateSitemapRequest, Sitemap, CreateSitemapMetadata>
+      createSitemapOperationCallable;
+  private final UnaryCallable<DeleteSitemapRequest, Operation> deleteSitemapCallable;
+  private final OperationCallable<DeleteSitemapRequest, Empty, DeleteSitemapMetadata>
+      deleteSitemapOperationCallable;
+  private final UnaryCallable<FetchSitemapsRequest, FetchSitemapsResponse> fetchSitemapsCallable;
   private final UnaryCallable<EnableAdvancedSiteSearchRequest, Operation>
       enableAdvancedSiteSearchCallable;
   private final OperationCallable<
@@ -319,6 +382,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateTargetSiteRequest, Operation> createTargetSiteTransportSettings =
         GrpcCallSettings.<CreateTargetSiteRequest, Operation>newBuilder()
@@ -329,6 +393,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchCreateTargetSitesRequest, Operation>
         batchCreateTargetSitesTransportSettings =
@@ -340,6 +405,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTargetSiteRequest, TargetSite> getTargetSiteTransportSettings =
         GrpcCallSettings.<GetTargetSiteRequest, TargetSite>newBuilder()
@@ -350,6 +416,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateTargetSiteRequest, Operation> updateTargetSiteTransportSettings =
         GrpcCallSettings.<UpdateTargetSiteRequest, Operation>newBuilder()
@@ -371,6 +438,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTargetSitesRequest, ListTargetSitesResponse>
         listTargetSitesTransportSettings =
@@ -382,7 +450,41 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<CreateSitemapRequest, Operation> createSitemapTransportSettings =
+        GrpcCallSettings.<CreateSitemapRequest, Operation>newBuilder()
+            .setMethodDescriptor(createSitemapMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<DeleteSitemapRequest, Operation> deleteSitemapTransportSettings =
+        GrpcCallSettings.<DeleteSitemapRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteSitemapMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<FetchSitemapsRequest, FetchSitemapsResponse> fetchSitemapsTransportSettings =
+        GrpcCallSettings.<FetchSitemapsRequest, FetchSitemapsResponse>newBuilder()
+            .setMethodDescriptor(fetchSitemapsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
     GrpcCallSettings<EnableAdvancedSiteSearchRequest, Operation>
         enableAdvancedSiteSearchTransportSettings =
             GrpcCallSettings.<EnableAdvancedSiteSearchRequest, Operation>newBuilder()
@@ -394,6 +496,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                           "site_search_engine", String.valueOf(request.getSiteSearchEngine()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSiteSearchEngine())
                 .build();
     GrpcCallSettings<DisableAdvancedSiteSearchRequest, Operation>
         disableAdvancedSiteSearchTransportSettings =
@@ -406,6 +509,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                           "site_search_engine", String.valueOf(request.getSiteSearchEngine()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSiteSearchEngine())
                 .build();
     GrpcCallSettings<RecrawlUrisRequest, Operation> recrawlUrisTransportSettings =
         GrpcCallSettings.<RecrawlUrisRequest, Operation>newBuilder()
@@ -416,6 +520,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                   builder.add("site_search_engine", String.valueOf(request.getSiteSearchEngine()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSiteSearchEngine())
             .build();
     GrpcCallSettings<BatchVerifyTargetSitesRequest, Operation>
         batchVerifyTargetSitesTransportSettings =
@@ -427,6 +532,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<FetchDomainVerificationStatusRequest, FetchDomainVerificationStatusResponse>
         fetchDomainVerificationStatusTransportSettings =
@@ -441,6 +547,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                           "site_search_engine", String.valueOf(request.getSiteSearchEngine()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSiteSearchEngine())
                 .build();
 
     this.getSiteSearchEngineCallable =
@@ -495,6 +602,27 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
     this.listTargetSitesPagedCallable =
         callableFactory.createPagedCallable(
             listTargetSitesTransportSettings, settings.listTargetSitesSettings(), clientContext);
+    this.createSitemapCallable =
+        callableFactory.createUnaryCallable(
+            createSitemapTransportSettings, settings.createSitemapSettings(), clientContext);
+    this.createSitemapOperationCallable =
+        callableFactory.createOperationCallable(
+            createSitemapTransportSettings,
+            settings.createSitemapOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteSitemapCallable =
+        callableFactory.createUnaryCallable(
+            deleteSitemapTransportSettings, settings.deleteSitemapSettings(), clientContext);
+    this.deleteSitemapOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSitemapTransportSettings,
+            settings.deleteSitemapOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.fetchSitemapsCallable =
+        callableFactory.createUnaryCallable(
+            fetchSitemapsTransportSettings, settings.fetchSitemapsSettings(), clientContext);
     this.enableAdvancedSiteSearchCallable =
         callableFactory.createUnaryCallable(
             enableAdvancedSiteSearchTransportSettings,
@@ -622,6 +750,33 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
   public UnaryCallable<ListTargetSitesRequest, ListTargetSitesPagedResponse>
       listTargetSitesPagedCallable() {
     return listTargetSitesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSitemapRequest, Operation> createSitemapCallable() {
+    return createSitemapCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateSitemapRequest, Sitemap, CreateSitemapMetadata>
+      createSitemapOperationCallable() {
+    return createSitemapOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSitemapRequest, Operation> deleteSitemapCallable() {
+    return deleteSitemapCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSitemapRequest, Empty, DeleteSitemapMetadata>
+      deleteSitemapOperationCallable() {
+    return deleteSitemapOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchSitemapsRequest, FetchSitemapsResponse> fetchSitemapsCallable() {
+    return fetchSitemapsCallable;
   }
 
   @Override

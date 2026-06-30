@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * and SKUs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/billing/v1/cloud_catalog.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudCatalogGrpc {
 
@@ -135,6 +132,19 @@ public final class CloudCatalogGrpc {
           }
         };
     return CloudCatalogStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CloudCatalogBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CloudCatalogBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudCatalogBlockingV2Stub>() {
+          @java.lang.Override
+          public CloudCatalogBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudCatalogBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CloudCatalogBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -279,6 +289,54 @@ public final class CloudCatalogGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CloudCatalog.
+   *
+   * <pre>
+   * A catalog of Google Cloud Platform services and SKUs.
+   * Provides pricing information and metadata on Google Cloud Platform services
+   * and SKUs.
+   * </pre>
+   */
+  public static final class CloudCatalogBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CloudCatalogBlockingV2Stub> {
+    private CloudCatalogBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CloudCatalogBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CloudCatalogBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all public cloud services.
+     * </pre>
+     */
+    public com.google.cloud.billing.v1.ListServicesResponse listServices(
+        com.google.cloud.billing.v1.ListServicesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all publicly available SKUs for a given cloud service.
+     * </pre>
+     */
+    public com.google.cloud.billing.v1.ListSkusResponse listSkus(
+        com.google.cloud.billing.v1.ListSkusRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListSkusMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CloudCatalog.
    *
    * <pre>
    * A catalog of Google Cloud Platform services and SKUs.

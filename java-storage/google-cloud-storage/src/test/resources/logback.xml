@@ -1,0 +1,95 @@
+<!--
+  ~ Copyright 2025 Google LLC
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~       http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<configuration>
+  <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+    <resetJUL>true</resetJUL>
+  </contextListener>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%date %-5.5level [%-24.24thread] %-45.45logger{45} - %message%n</pattern>
+    </encoder>
+  </appender>
+  <appender name="NOEXCEPTION" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%date %-5.5level [%-24.24thread] %-45.45logger{45} - %message%nopex%n</pattern>
+    </encoder>
+  </appender>
+  <logger name="com.google.auth.oauth2.ComputeEngineCredentials" level="info"/>
+  <logger name="io.opencensus" level="info"/>
+  <logger name="io.grpc.ChannelLogger" level="info"/>
+  <!-- Context logs an exception when it's not able to find things, so suppress it's exception -->
+  <logger name="io.grpc.Context" level="info" additivity="false">
+    <appender-ref ref="NOEXCEPTION"/>
+  </logger>
+  <logger name="io.grpc.LoadBalancerRegistry" level="warn"/>
+  <logger name="io.grpc.NameResolverRegistry" level="warn"/>
+  <!--
+  GrpclbNameResolver logs an exception with several of it's messages that aren't
+  useful when you're only interested in the traffic
+  -->
+  <logger name="io.grpc.grpclb.GrpclbNameResolver" level="info" additivity="false">
+    <appender-ref ref="NOEXCEPTION"/>
+  </logger>
+  <logger name="io.grpc.ManagedChannelRegistry" level="info" additivity="false">
+    <appender-ref ref="NOEXCEPTION"/>
+  </logger>
+  <logger name="io.grpc.internal.ManagedChannelImplBuilder" level="info" additivity="false">
+    <appender-ref ref="NOEXCEPTION"/>
+  </logger>
+  <logger name="io.grpc.internal.AbstractManagedChannelImplBuilder" level="warn"/>
+  <logger name="io.grpc.internal.DnsNameResolver" level="warn"/>
+  <!--
+  netty initialization and event loop management appenders,
+  not necessarily what is desired when debugging requests
+  -->
+  <logger name="io.grpc.netty.shaded.io.grpc.netty" level="warn"/>
+  <logger name="io.grpc.netty.shaded.io.netty" level="warn"/>
+  <logger name="io.grpc.netty.shaded.io.netty.buffer" level="warn"/>
+  <logger name="io.grpc.netty.shaded.io.netty.channel.DefaultChannelId" level="warn"/>
+  <logger name="io.grpc.netty.shaded.io.netty.channel.MultithreadEventLoopGroup" level="warn"/>
+  <logger name="io.grpc.netty.shaded.io.netty.handler.ssl" level="warn"/>
+  <logger name="io.grpc.netty.shaded.io.netty.util.NetUtil" level="warn"/>
+  <logger name="io.grpc.netty.shaded.io.netty.util.Recycler" level="warn"/>
+  <logger name="io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector" level="warn"/>
+  <logger name="io.grpc.netty.shaded.io.netty.util.ResourceLeakDetectorFactory" level="warn"/>
+  <logger name="io.grpc.netty.shaded.io.netty.util.internal.CleanerJava6" level="warn"/>
+  <logger name="io.grpc.netty.shaded.io.netty.util.internal.InternalThreadLocalMap" level="warn"/>
+  <logger name="io.grpc.netty.shaded.io.netty.util.internal.NativeLibraryLoader" level="warn"/>
+  <logger name="io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent" level="warn"/>
+  <logger name="io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0" level="warn"/>
+  <logger name="io.perfmark.PerfMark" level="warn"/>
+  <!--
+  jdk11 appender which includes lots of details about ssl cypher suites
+  -->
+  <logger name="jdk.event.security" level="warn"/>
+  <!-- http request logging -->
+  <logger name="sun.net.www.protocol.http.HttpURLConnection" level="warn"/>
+  <logger name="com.google.api.client.http.HttpTransport" level="warn"/>
+  <logger name="com.google.cloud.storage.it.GrpcPlainRequestLoggingInterceptor" level="warn"/>
+  <!-- grpc netty traffic logging -->
+  <!--<logger name="io.grpc.netty.shaded.io.netty.handler.ssl.SslHandler" level="debug"/>-->
+  <!--<logger name="io.grpc.netty.shaded.io.grpc.netty.NettyClientHandler" level="debug"/>-->
+
+  <logger name="com.google.cloud.storage" level="info"/>
+  <logger name="com.google.cloud.storage.it" level="warn"/>
+  <logger name="com.google.cloud.storage.it.runner.registry.Zone" level="info"/>
+  <logger name="com.google.cloud.storage.it.runner.registry.TestBench" level="info"/>
+
+  <root level="info">
+    <appender-ref ref="STDOUT"/>
+  </root>
+</configuration>

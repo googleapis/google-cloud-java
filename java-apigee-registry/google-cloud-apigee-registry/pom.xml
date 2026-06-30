@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-apigee-registry</artifactId>
-  <version>0.42.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
+  <version>0.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
   <packaging>jar</packaging>
   <name>Google Registry API</name>
   <description>Registry API allows teams to upload and share machine-readable descriptions of APIs that are in use and in development.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-apigee-registry-parent</artifactId>
-    <version>0.42.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
+    <version>0.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-apigee-registry</site.installationModule>
@@ -43,6 +43,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -51,12 +52,15 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-apigee-registry-v1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -85,11 +89,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-apigee-registry-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

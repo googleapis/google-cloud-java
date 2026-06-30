@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * REST API for services dealing with spaces.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/apps/meet/v2/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SpacesServiceGrpc {
 
@@ -212,6 +209,19 @@ public final class SpacesServiceGrpc {
     return SpacesServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SpacesServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SpacesServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SpacesServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SpacesServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SpacesServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SpacesServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -267,7 +277,9 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
-     * Gets a space by `space_id` or `meeting_code`.
+     * Gets details about a meeting space.
+     * For an example, see [Get a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
      * </pre>
      */
     default void getSpace(
@@ -280,7 +292,9 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
-     * Updates a space.
+     * Updates details about a meeting space.
+     * For an example, see [Update a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
      * </pre>
      */
     default void updateSpace(
@@ -295,6 +309,8 @@ public final class SpacesServiceGrpc {
      *
      * <pre>
      * Ends an active conference (if there's one).
+     * For an example, see [End active
+     * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
      * </pre>
      */
     default void endActiveConference(
@@ -359,7 +375,9 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
-     * Gets a space by `space_id` or `meeting_code`.
+     * Gets details about a meeting space.
+     * For an example, see [Get a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
      * </pre>
      */
     public void getSpace(
@@ -373,7 +391,9 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
-     * Updates a space.
+     * Updates details about a meeting space.
+     * For an example, see [Update a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
      * </pre>
      */
     public void updateSpace(
@@ -390,6 +410,8 @@ public final class SpacesServiceGrpc {
      *
      * <pre>
      * Ends an active conference (if there's one).
+     * For an example, see [End active
+     * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
      * </pre>
      */
     public void endActiveConference(
@@ -404,6 +426,84 @@ public final class SpacesServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SpacesService.
+   *
+   * <pre>
+   * REST API for services dealing with spaces.
+   * </pre>
+   */
+  public static final class SpacesServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SpacesServiceBlockingV2Stub> {
+    private SpacesServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SpacesServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SpacesServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a space.
+     * </pre>
+     */
+    public com.google.apps.meet.v2.Space createSpace(
+        com.google.apps.meet.v2.CreateSpaceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateSpaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a meeting space.
+     * For an example, see [Get a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
+     * </pre>
+     */
+    public com.google.apps.meet.v2.Space getSpace(com.google.apps.meet.v2.GetSpaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetSpaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates details about a meeting space.
+     * For an example, see [Update a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
+     * </pre>
+     */
+    public com.google.apps.meet.v2.Space updateSpace(
+        com.google.apps.meet.v2.UpdateSpaceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateSpaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Ends an active conference (if there's one).
+     * For an example, see [End active
+     * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
+     * </pre>
+     */
+    public com.google.protobuf.Empty endActiveConference(
+        com.google.apps.meet.v2.EndActiveConferenceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getEndActiveConferenceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SpacesService.
    *
    * <pre>
    * REST API for services dealing with spaces.
@@ -438,7 +538,9 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
-     * Gets a space by `space_id` or `meeting_code`.
+     * Gets details about a meeting space.
+     * For an example, see [Get a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
      * </pre>
      */
     public com.google.apps.meet.v2.Space getSpace(com.google.apps.meet.v2.GetSpaceRequest request) {
@@ -450,7 +552,9 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
-     * Updates a space.
+     * Updates details about a meeting space.
+     * For an example, see [Update a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
      * </pre>
      */
     public com.google.apps.meet.v2.Space updateSpace(
@@ -464,6 +568,8 @@ public final class SpacesServiceGrpc {
      *
      * <pre>
      * Ends an active conference (if there's one).
+     * For an example, see [End active
+     * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
      * </pre>
      */
     public com.google.protobuf.Empty endActiveConference(
@@ -509,7 +615,9 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
-     * Gets a space by `space_id` or `meeting_code`.
+     * Gets details about a meeting space.
+     * For an example, see [Get a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.apps.meet.v2.Space>
@@ -522,7 +630,9 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
-     * Updates a space.
+     * Updates details about a meeting space.
+     * For an example, see [Update a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.apps.meet.v2.Space>
@@ -536,6 +646,8 @@ public final class SpacesServiceGrpc {
      *
      * <pre>
      * Ends an active conference (if there's one).
+     * For an example, see [End active
+     * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

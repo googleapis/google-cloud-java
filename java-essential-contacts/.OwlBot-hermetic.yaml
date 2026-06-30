@@ -19,6 +19,9 @@ deep-remove-regex:
 - "/java-essential-contacts/proto-google-.*/src"
 - "/java-essential-contacts/google-.*/src"
 
+deep-preserve-regex:
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+
 deep-copy-regex:
 - source: "/google/cloud/essentialcontacts/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-essential-contacts/$1/proto-google-cloud-essential-contacts-$1/src"

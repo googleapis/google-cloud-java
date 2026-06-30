@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,7 +94,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListInstances</td>
- *      <td><p> Lists Instances in a given project and location.</td>
+ *      <td><p> Lists all instances in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -114,7 +114,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetInstance</td>
- *      <td><p> Gets details of a single Instance.</td>
+ *      <td><p> Gets details of a single instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -153,7 +153,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateInstance</td>
- *      <td><p> Updates the parameters of a single Instance.</td>
+ *      <td><p> Updates the parameters of a single instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -172,7 +172,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteInstance</td>
- *      <td><p> Deletes a single Instance.</td>
+ *      <td><p> Deletes a single instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -187,6 +187,36 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> deleteInstanceOperationCallable()
  *           <li><p> deleteInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ImportData</td>
+ *      <td><p> Copies data from Cloud Storage to Parallelstore.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> importDataAsync(ImportDataRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> importDataOperationCallable()
+ *           <li><p> importDataCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExportData</td>
+ *      <td><p> Copies data from Parallelstore to Cloud Storage.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportDataAsync(ExportDataRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportDataOperationCallable()
+ *           <li><p> exportDataCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -352,7 +382,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Instances in a given project and location.
+   * Lists all instances in a given project and location.
    *
    * <p>Sample code:
    *
@@ -371,13 +401,9 @@ public class ParallelstoreClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location for which to retrieve instance information, in
-   *     the format `projects/{project_id}/locations/{location}`. For Parallelstore locations map to
-   *     Google Cloud zones, for example
-   *     <ul>
-   *       <li>&#42;us-central1-a&#42;&#42;. To retrieve instance information for all locations, use
-   *           "-" for the `{location}` value.
-   *     </ul>
-   *
+   *     the format `projects/{project_id}/locations/{location}`.
+   *     <p>To retrieve instance information for all locations, use "-" as the value of
+   *     `{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstancesPagedResponse listInstances(LocationName parent) {
@@ -390,7 +416,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Instances in a given project and location.
+   * Lists all instances in a given project and location.
    *
    * <p>Sample code:
    *
@@ -409,13 +435,9 @@ public class ParallelstoreClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location for which to retrieve instance information, in
-   *     the format `projects/{project_id}/locations/{location}`. For Parallelstore locations map to
-   *     Google Cloud zones, for example
-   *     <ul>
-   *       <li>&#42;us-central1-a&#42;&#42;. To retrieve instance information for all locations, use
-   *           "-" for the `{location}` value.
-   *     </ul>
-   *
+   *     the format `projects/{project_id}/locations/{location}`.
+   *     <p>To retrieve instance information for all locations, use "-" as the value of
+   *     `{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstancesPagedResponse listInstances(String parent) {
@@ -425,7 +447,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Instances in a given project and location.
+   * Lists all instances in a given project and location.
    *
    * <p>Sample code:
    *
@@ -459,7 +481,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Instances in a given project and location.
+   * Lists all instances in a given project and location.
    *
    * <p>Sample code:
    *
@@ -494,7 +516,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Instances in a given project and location.
+   * Lists all instances in a given project and location.
    *
    * <p>Sample code:
    *
@@ -534,7 +556,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Instance.
+   * Gets details of a single instance.
    *
    * <p>Sample code:
    *
@@ -562,7 +584,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Instance.
+   * Gets details of a single instance.
    *
    * <p>Sample code:
    *
@@ -589,7 +611,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Instance.
+   * Gets details of a single instance.
    *
    * <p>Sample code:
    *
@@ -617,7 +639,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Instance.
+   * Gets details of a single instance.
    *
    * <p>Sample code:
    *
@@ -664,11 +686,10 @@ public class ParallelstoreClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The instance's project and location, in the format
-   *     `projects/{project}/locations/{location}`. Locations map to Google Cloud zones, for example
-   *     &#42;&#42;us-west1-b&#42;&#42;.
+   *     `projects/{project}/locations/{location}`. Locations map to Google Cloud zones; for
+   *     example, `us-west1-b`.
    * @param instance Required. The instance to create.
-   * @param instanceId Required. The logical name of the Parallelstore instance in the user project
-   *     with the following restrictions:
+   * @param instanceId Required. The name of the Parallelstore instance.
    *     <ul>
    *       <li>Must contain only lowercase letters, numbers, and hyphens.
    *       <li>Must start with a letter.
@@ -712,11 +733,10 @@ public class ParallelstoreClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The instance's project and location, in the format
-   *     `projects/{project}/locations/{location}`. Locations map to Google Cloud zones, for example
-   *     &#42;&#42;us-west1-b&#42;&#42;.
+   *     `projects/{project}/locations/{location}`. Locations map to Google Cloud zones; for
+   *     example, `us-west1-b`.
    * @param instance Required. The instance to create.
-   * @param instanceId Required. The logical name of the Parallelstore instance in the user project
-   *     with the following restrictions:
+   * @param instanceId Required. The name of the Parallelstore instance.
    *     <ul>
    *       <li>Must contain only lowercase letters, numbers, and hyphens.
    *       <li>Must start with a letter.
@@ -835,7 +855,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Instance.
+   * Updates the parameters of a single instance.
    *
    * <p>Sample code:
    *
@@ -852,8 +872,8 @@ public class ParallelstoreClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param instance Required. The instance to update
-   * @param updateMask Required. Mask of fields to update .Field mask is used to specify the fields
+   * @param instance Required. The instance to update.
+   * @param updateMask Required. Mask of fields to update. Field mask is used to specify the fields
    *     to be overwritten in the Instance resource by the update. At least one path must be
    *     supplied in this field. The fields specified in the update_mask are relative to the
    *     resource, not the full request.
@@ -868,7 +888,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Instance.
+   * Updates the parameters of a single instance.
    *
    * <p>Sample code:
    *
@@ -899,7 +919,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Instance.
+   * Updates the parameters of a single instance.
    *
    * <p>Sample code:
    *
@@ -930,7 +950,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Instance.
+   * Updates the parameters of a single instance.
    *
    * <p>Sample code:
    *
@@ -960,7 +980,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Instance.
+   * Deletes a single instance.
    *
    * <p>Sample code:
    *
@@ -987,7 +1007,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Instance.
+   * Deletes a single instance.
    *
    * <p>Sample code:
    *
@@ -1013,7 +1033,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Instance.
+   * Deletes a single instance.
    *
    * <p>Sample code:
    *
@@ -1043,7 +1063,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Instance.
+   * Deletes a single instance.
    *
    * <p>Sample code:
    *
@@ -1073,7 +1093,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Instance.
+   * Deletes a single instance.
    *
    * <p>Sample code:
    *
@@ -1098,6 +1118,194 @@ public class ParallelstoreClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     return stub.deleteInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Copies data from Cloud Storage to Parallelstore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParallelstoreClient parallelstoreClient = ParallelstoreClient.create()) {
+   *   ImportDataRequest request =
+   *       ImportDataRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
+   *           .build();
+   *   ImportDataResponse response = parallelstoreClient.importDataAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportDataResponse, ImportDataMetadata> importDataAsync(
+      ImportDataRequest request) {
+    return importDataOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Copies data from Cloud Storage to Parallelstore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParallelstoreClient parallelstoreClient = ParallelstoreClient.create()) {
+   *   ImportDataRequest request =
+   *       ImportDataRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ImportDataResponse, ImportDataMetadata> future =
+   *       parallelstoreClient.importDataOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ImportDataResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ImportDataRequest, ImportDataResponse, ImportDataMetadata>
+      importDataOperationCallable() {
+    return stub.importDataOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Copies data from Cloud Storage to Parallelstore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParallelstoreClient parallelstoreClient = ParallelstoreClient.create()) {
+   *   ImportDataRequest request =
+   *       ImportDataRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = parallelstoreClient.importDataCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
+    return stub.importDataCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Copies data from Parallelstore to Cloud Storage.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParallelstoreClient parallelstoreClient = ParallelstoreClient.create()) {
+   *   ExportDataRequest request =
+   *       ExportDataRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
+   *           .build();
+   *   ExportDataResponse response = parallelstoreClient.exportDataAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportDataResponse, ExportDataMetadata> exportDataAsync(
+      ExportDataRequest request) {
+    return exportDataOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Copies data from Parallelstore to Cloud Storage.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParallelstoreClient parallelstoreClient = ParallelstoreClient.create()) {
+   *   ExportDataRequest request =
+   *       ExportDataRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ExportDataResponse, ExportDataMetadata> future =
+   *       parallelstoreClient.exportDataOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportDataResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
+      exportDataOperationCallable() {
+    return stub.exportDataOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Copies data from Parallelstore to Cloud Storage.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParallelstoreClient parallelstoreClient = ParallelstoreClient.create()) {
+   *   ExportDataRequest request =
+   *       ExportDataRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = parallelstoreClient.exportDataCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
+    return stub.exportDataCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

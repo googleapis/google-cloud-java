@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,7 @@ public class GrpcMerchantCenterAccountLinkServiceStub extends MerchantCenterAcco
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListMerchantCenterAccountLinksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMerchantCenterAccountLinkRequest, Operation>
@@ -75,6 +76,7 @@ public class GrpcMerchantCenterAccountLinkServiceStub extends MerchantCenterAcco
                   ProtoUtils.marshaller(
                       CreateMerchantCenterAccountLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMerchantCenterAccountLinkRequest, Empty>
@@ -87,6 +89,7 @@ public class GrpcMerchantCenterAccountLinkServiceStub extends MerchantCenterAcco
                   ProtoUtils.marshaller(
                       DeleteMerchantCenterAccountLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<
@@ -161,6 +164,7 @@ public class GrpcMerchantCenterAccountLinkServiceStub extends MerchantCenterAcco
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateMerchantCenterAccountLinkRequest, Operation>
         createMerchantCenterAccountLinkTransportSettings =
@@ -172,6 +176,7 @@ public class GrpcMerchantCenterAccountLinkServiceStub extends MerchantCenterAcco
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteMerchantCenterAccountLinkRequest, Empty>
         deleteMerchantCenterAccountLinkTransportSettings =
@@ -183,6 +188,7 @@ public class GrpcMerchantCenterAccountLinkServiceStub extends MerchantCenterAcco
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.listMerchantCenterAccountLinksCallable =

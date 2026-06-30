@@ -1,0 +1,4 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-java:1.28.0:1.29.0-SNAPSHOT

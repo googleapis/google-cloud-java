@@ -1,0 +1,16 @@
+{
+  "api_shortname": "geocode",
+  "name_pretty": "Geocoding API",
+  "product_documentation": "https://developers.google.com/maps/documentation/geocoding/overview",
+  "api_description": "The Geocoding API is a service that accepts a place as an address, latitude and longitude coordinates, or Place ID.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-maps-geocode/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-maps-geocode",
+  "distribution_name": "com.google.maps:google-maps-geocode",
+  "api_id": "geocode.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

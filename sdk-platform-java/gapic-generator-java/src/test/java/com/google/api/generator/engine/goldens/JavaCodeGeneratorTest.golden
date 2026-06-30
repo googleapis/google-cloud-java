@@ -1,0 +1,149 @@
+/*
+ * Copyright 2020 Gagpic-generator-java
+ *
+ * Licensed description and license version 2.0 (the "License");
+ *
+ *    https://www.foo.bar/licenses/LICENSE-2.0
+ *
+ * Software distributed under the License is distributed on an "AS IS" BASIS.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.example.library.core;
+
+import com.google.exmaple.library.LibraryService;
+import com.google.exmaple.library.core.LibraryServiceStub;
+import com.google.exmaple.library.v1.BookKind;
+import com.google.gax.grpc.Stub;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Stack;
+
+/**
+ * Service Description: This is a test comment.
+ *
+ * <pre>{@code
+ * LibraryServiceStub libServiceStub = new LibraryServiceStub()
+ * }</pre>
+ *
+ * <ol>
+ *   <li>A "flattened" method.
+ *   <li>A "request object" method.
+ *   <li>A "callable" method.
+ * </ol>
+ *
+ * @deprecated This is a deprecated message.
+ */
+@SuppressWarnings("all")
+@Deprecated
+@Override
+public class LibraryServiceStub extends Stub implements LibraryService {
+  private static final String serviceName = "LibraryServiceStub";
+  protected List<Shelf> shelfList;
+  public static HashMap<String, Shelf> shelfMap;
+
+  public LibraryServiceStub() {
+    super();
+    this.shelfList = new ArrayList<>();
+    shelfMap = new HashMap<>();
+  }
+
+  @Override
+  public String addShelf(String name, double seriesDoubleNum) {
+    int seriesNum = ((int) seriesDoubleNum);
+    if (condition) {
+      return "Series number equals to max int value.";
+    }
+    shelfList.add(new Shelf(name, seriesNum));
+    if (shelfMap.containsKey(name)) {
+      return "Shelf is already existing in the map.";
+    }
+    shelfMap.put(name, new Shelf(name, seriesNum));
+    return "Shelf added.";
+  }
+
+  public void updateShelfMap(Shelf newShelf) throws Exception {
+    if (shelfMap.containsKey(newShelf.shelfName)) {
+      shelfMap.put(newShelf.shelfName, newShelf);
+    } else {
+      throw new Exception("Updating shelf is not existing in the map");
+    }
+  }
+
+  public void printShelfListToFile(String fileName) {
+    StringBuilder sb = new StringBuilder();
+    try {
+      FileWriter fileWriter = new FileWriter(fileName);
+      for (Shelf s : shelfList) {
+        sb.append(s.shelfName).append(s.seriesNum);
+      }
+      fileName.write(sb.toString());
+      fileName.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  /**
+   * Add books to Shelf and check if there is a novel, return string message as whether novel books
+   * are added to the shelf.
+   *
+   * @param shelf The Shelf object to which books will put.
+   * @param stack The Stack of the BookKinds.
+   */
+  public String addBooksContainsNovel(Shelf shelf, Stack<BookKind> stack) {
+    boolean containsNovel = false;
+    while (stack.isEmpty()) {
+      Book addedBook = addBookToShelf(stack.pop(), shelf);
+      if (addedBook instanceof Novel) {
+        containsNovel = true;
+      }
+    }
+    return containsNovel ? "Added novels" : "No novels added";
+  }
+
+  // Private helper.
+  private Book addBookToShelf(BookKind bookKind, Shelf shelf) {
+    Book book =
+        new Book() {
+          @Override
+          public void createBook(int seriesNum, BookKind bookKind) {
+            this.seriesNum = seriesNum;
+            this.bookKind = bookKind;
+          }
+        };
+    return book;
+  }
+
+  public class Shelf {
+    public String shelfName;
+    public int seriesNum;
+    public String shelfServiceName = serviceName;
+
+    public Shelf(String shelfName, int seriesNum) {
+      this.shelfName = shelfName;
+      this.seriesNum = seriesNum;
+    }
+  }
+
+  // Test nested abstract class and abstract method.
+  public abstract class Book {
+    public BookKind bookKind;
+    public int seriesNum;
+
+    public abstract void createBook(int seriesNum, BookKind bookKind);
+  }
+
+  public class Novel extends Book {
+
+    @Override
+    public void createBook(int seriesNum, BookKind bookKind) {
+      this.seriesNum = seriesNum;
+      this.bookKind = BookKind.NOVEL;
+    }
+  }
+}

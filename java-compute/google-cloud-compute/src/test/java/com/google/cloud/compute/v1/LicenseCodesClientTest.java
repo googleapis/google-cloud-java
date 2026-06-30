@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,15 +76,25 @@ public class LicenseCodesClientTest {
   public void getTest() throws Exception {
     LicenseCode expectedResponse =
         LicenseCode.newBuilder()
+            .addAllAllowedReplacementLicenses(new ArrayList<String>())
+            .setAppendableToDisk(true)
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setId(3355)
+            .addAllIncompatibleLicenses(new ArrayList<String>())
             .setKind("kind3292052")
             .addAllLicenseAlias(new ArrayList<LicenseCodeLicenseAlias>())
+            .setMinimumRetention(Duration.newBuilder().build())
+            .setMultiTenantOnly(true)
             .setName("name3373707")
+            .setOsLicense(true)
+            .setRemovableFromDisk(true)
+            .addAllRequiredCoattachedLicenses(new ArrayList<String>())
             .setSelfLink("selfLink1191800166")
+            .setSoleTenantOnly(true)
             .setState("state109757585")
             .setTransferable(true)
+            .setUpdateTimestamp("updateTimestamp1260642893")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -120,6 +130,110 @@ public class LicenseCodesClientTest {
       String project = "project-6911";
       String licenseCode = "licenseCode-8220";
       client.get(project, licenseCode);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .addAllBindings(new ArrayList<Binding>())
+            .setEtag("etag3123477")
+            .setIamOwned(true)
+            .setVersion(351608024)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String resource = "resource-756";
+
+    Policy actualResponse = client.getIamPolicy(project, resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String resource = "resource-756";
+      client.getIamPolicy(project, resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .addAllBindings(new ArrayList<Binding>())
+            .setEtag("etag3123477")
+            .setIamOwned(true)
+            .setVersion(351608024)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String resource = "resource-756";
+    GlobalSetPolicyRequest globalSetPolicyRequestResource =
+        GlobalSetPolicyRequest.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicy(project, resource, globalSetPolicyRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String resource = "resource-756";
+      GlobalSetPolicyRequest globalSetPolicyRequestResource =
+          GlobalSetPolicyRequest.newBuilder().build();
+      client.setIamPolicy(project, resource, globalSetPolicyRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

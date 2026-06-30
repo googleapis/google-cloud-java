@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListServiceAttachmentsRequest;
 import com.google.cloud.compute.v1.DeleteServiceAttachmentRequest;
 import com.google.cloud.compute.v1.GetIamPolicyServiceAttachmentRequest;
@@ -211,6 +212,10 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetServiceAttachmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            if (request.hasShowNatIps()) {
+                              serializer.putQueryParam(
+                                  fields, "showNatIps", request.getShowNatIps());
+                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -541,6 +546,28 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}");
+  private static final PathTemplate GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/serviceAttachments/{resource}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}");
+  private static final PathTemplate SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/serviceAttachments/{resource}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/serviceAttachments/{resource}");
+
   public static final HttpJsonServiceAttachmentsStub create(ServiceAttachmentsStubSettings settings)
       throws IOException {
     return new HttpJsonServiceAttachmentsStub(settings, ClientContext.create(settings));
@@ -595,6 +622,13 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteServiceAttachmentRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteServiceAttachmentRequest, Operation>newBuilder()
@@ -608,6 +642,15 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
                   builder.add("service_attachment", String.valueOf(request.getServiceAttachment()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put(
+                      "service_attachment", String.valueOf(request.getServiceAttachment()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetServiceAttachmentRequest, ServiceAttachment> getTransportSettings =
         HttpJsonCallSettings.<GetServiceAttachmentRequest, ServiceAttachment>newBuilder()
@@ -620,6 +663,15 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("service_attachment", String.valueOf(request.getServiceAttachment()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put(
+                      "service_attachment", String.valueOf(request.getServiceAttachment()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetIamPolicyServiceAttachmentRequest, Policy>
@@ -635,6 +687,15 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertServiceAttachmentRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertServiceAttachmentRequest, Operation>newBuilder()
@@ -646,6 +707,13 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListServiceAttachmentsRequest, ServiceAttachmentList>
@@ -660,6 +728,13 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchServiceAttachmentRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchServiceAttachmentRequest, Operation>newBuilder()
@@ -672,6 +747,15 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("service_attachment", String.valueOf(request.getServiceAttachment()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put(
+                      "service_attachment", String.valueOf(request.getServiceAttachment()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetIamPolicyServiceAttachmentRequest, Policy>
@@ -687,6 +771,15 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<TestIamPermissionsServiceAttachmentRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -701,6 +794,15 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
                       builder.add("region", String.valueOf(request.getRegion()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 

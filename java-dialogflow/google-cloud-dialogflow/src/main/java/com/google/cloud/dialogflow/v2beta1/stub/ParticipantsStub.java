@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,8 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest;
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse;
+import com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest;
+import com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse;
 import com.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest;
 import com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse;
 import com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest;
@@ -41,6 +43,8 @@ import com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse;
+import com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest;
+import com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse;
 import com.google.cloud.dialogflow.v2beta1.UpdateParticipantRequest;
@@ -91,6 +95,13 @@ public abstract class ParticipantsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: streamingAnalyzeContentCallable()");
   }
 
+  public BidiStreamingCallable<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: bidiStreamingAnalyzeContentCallable()");
+  }
+
   public UnaryCallable<SuggestArticlesRequest, SuggestArticlesResponse> suggestArticlesCallable() {
     throw new UnsupportedOperationException("Not implemented: suggestArticlesCallable()");
   }
@@ -103,6 +114,11 @@ public abstract class ParticipantsStub implements BackgroundResource {
   public UnaryCallable<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
       suggestSmartRepliesCallable() {
     throw new UnsupportedOperationException("Not implemented: suggestSmartRepliesCallable()");
+  }
+
+  public UnaryCallable<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistCallable() {
+    throw new UnsupportedOperationException("Not implemented: suggestKnowledgeAssistCallable()");
   }
 
   @Deprecated

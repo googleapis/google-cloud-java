@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public class GrpcAdvisoryNotificationsServiceStub extends AdvisoryNotificationsS
                   ProtoUtils.marshaller(ListNotificationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNotificationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNotificationRequest, Notification>
@@ -68,6 +69,7 @@ public class GrpcAdvisoryNotificationsServiceStub extends AdvisoryNotificationsS
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetNotificationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Notification.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSettingsRequest, Settings> getSettingsMethodDescriptor =
@@ -77,6 +79,7 @@ public class GrpcAdvisoryNotificationsServiceStub extends AdvisoryNotificationsS
               "google.cloud.advisorynotifications.v1.AdvisoryNotificationsService/GetSettings")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSettingsRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Settings.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSettingsRequest, Settings>
@@ -88,6 +91,7 @@ public class GrpcAdvisoryNotificationsServiceStub extends AdvisoryNotificationsS
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Settings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListNotificationsRequest, ListNotificationsResponse>
@@ -155,6 +159,7 @@ public class GrpcAdvisoryNotificationsServiceStub extends AdvisoryNotificationsS
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetNotificationRequest, Notification> getNotificationTransportSettings =
         GrpcCallSettings.<GetNotificationRequest, Notification>newBuilder()
@@ -165,6 +170,7 @@ public class GrpcAdvisoryNotificationsServiceStub extends AdvisoryNotificationsS
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetSettingsRequest, Settings> getSettingsTransportSettings =
         GrpcCallSettings.<GetSettingsRequest, Settings>newBuilder()
@@ -175,6 +181,7 @@ public class GrpcAdvisoryNotificationsServiceStub extends AdvisoryNotificationsS
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSettingsRequest, Settings> updateSettingsTransportSettings =
         GrpcCallSettings.<UpdateSettingsRequest, Settings>newBuilder()

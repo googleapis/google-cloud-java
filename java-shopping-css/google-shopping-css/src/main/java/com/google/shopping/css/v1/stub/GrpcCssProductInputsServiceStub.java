@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import com.google.protobuf.Empty;
 import com.google.shopping.css.v1.CssProductInput;
 import com.google.shopping.css.v1.DeleteCssProductInputRequest;
 import com.google.shopping.css.v1.InsertCssProductInputRequest;
+import com.google.shopping.css.v1.UpdateCssProductInputRequest;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -51,6 +52,19 @@ public class GrpcCssProductInputsServiceStub extends CssProductInputsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InsertCssProductInputRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CssProductInput.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateCssProductInputRequest, CssProductInput>
+      updateCssProductInputMethodDescriptor =
+          MethodDescriptor.<UpdateCssProductInputRequest, CssProductInput>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.shopping.css.v1.CssProductInputsService/UpdateCssProductInput")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateCssProductInputRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CssProductInput.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCssProductInputRequest, Empty>
@@ -62,10 +76,13 @@ public class GrpcCssProductInputsServiceStub extends CssProductInputsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCssProductInputRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<InsertCssProductInputRequest, CssProductInput>
       insertCssProductInputCallable;
+  private final UnaryCallable<UpdateCssProductInputRequest, CssProductInput>
+      updateCssProductInputCallable;
   private final UnaryCallable<DeleteCssProductInputRequest, Empty> deleteCssProductInputCallable;
 
   private final BackgroundResource backgroundResources;
@@ -123,6 +140,20 @@ public class GrpcCssProductInputsServiceStub extends CssProductInputsServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateCssProductInputRequest, CssProductInput>
+        updateCssProductInputTransportSettings =
+            GrpcCallSettings.<UpdateCssProductInputRequest, CssProductInput>newBuilder()
+                .setMethodDescriptor(updateCssProductInputMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "css_product_input.name",
+                          String.valueOf(request.getCssProductInput().getName()));
+                      return builder.build();
+                    })
                 .build();
     GrpcCallSettings<DeleteCssProductInputRequest, Empty> deleteCssProductInputTransportSettings =
         GrpcCallSettings.<DeleteCssProductInputRequest, Empty>newBuilder()
@@ -133,12 +164,18 @@ public class GrpcCssProductInputsServiceStub extends CssProductInputsServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.insertCssProductInputCallable =
         callableFactory.createUnaryCallable(
             insertCssProductInputTransportSettings,
             settings.insertCssProductInputSettings(),
+            clientContext);
+    this.updateCssProductInputCallable =
+        callableFactory.createUnaryCallable(
+            updateCssProductInputTransportSettings,
+            settings.updateCssProductInputSettings(),
             clientContext);
     this.deleteCssProductInputCallable =
         callableFactory.createUnaryCallable(
@@ -158,6 +195,12 @@ public class GrpcCssProductInputsServiceStub extends CssProductInputsServiceStub
   public UnaryCallable<InsertCssProductInputRequest, CssProductInput>
       insertCssProductInputCallable() {
     return insertCssProductInputCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCssProductInputRequest, CssProductInput>
+      updateCssProductInputCallable() {
+    return updateCssProductInputCallable;
   }
 
   @Override

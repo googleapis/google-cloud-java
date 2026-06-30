@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
           .setFullMethodName("google.cloud.dataproc.v1.BatchController/CreateBatch")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateBatchRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetBatchRequest, Batch> getBatchMethodDescriptor =
@@ -69,6 +70,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
           .setFullMethodName("google.cloud.dataproc.v1.BatchController/GetBatch")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBatchRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Batch.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListBatchesRequest, ListBatchesResponse>
@@ -79,6 +81,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListBatchesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBatchesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBatchRequest, Empty> deleteBatchMethodDescriptor =
@@ -87,6 +90,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
           .setFullMethodName("google.cloud.dataproc.v1.BatchController/DeleteBatch")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteBatchRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -95,6 +99,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -103,6 +108,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -114,6 +120,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateBatchRequest, Operation> createBatchCallable;
@@ -182,6 +189,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBatchRequest, Batch> getBatchTransportSettings =
         GrpcCallSettings.<GetBatchRequest, Batch>newBuilder()
@@ -192,6 +200,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBatchesRequest, ListBatchesResponse> listBatchesTransportSettings =
         GrpcCallSettings.<ListBatchesRequest, ListBatchesResponse>newBuilder()
@@ -202,6 +211,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteBatchRequest, Empty> deleteBatchTransportSettings =
         GrpcCallSettings.<DeleteBatchRequest, Empty>newBuilder()
@@ -212,6 +222,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -222,6 +233,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -232,6 +244,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -243,6 +256,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createBatchCallable =

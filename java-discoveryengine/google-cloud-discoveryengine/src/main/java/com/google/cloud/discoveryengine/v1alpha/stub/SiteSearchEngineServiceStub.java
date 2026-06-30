@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,16 @@ import com.google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusReq
 import com.google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusResponse;
 import com.google.cloud.discoveryengine.v1alpha.GetSiteSearchEngineRequest;
 import com.google.cloud.discoveryengine.v1alpha.GetTargetSiteRequest;
+import com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest;
+import com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse;
 import com.google.cloud.discoveryengine.v1alpha.ListTargetSitesRequest;
 import com.google.cloud.discoveryengine.v1alpha.ListTargetSitesResponse;
 import com.google.cloud.discoveryengine.v1alpha.RecrawlUrisMetadata;
 import com.google.cloud.discoveryengine.v1alpha.RecrawlUrisRequest;
 import com.google.cloud.discoveryengine.v1alpha.RecrawlUrisResponse;
+import com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataMetadata;
+import com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest;
+import com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataResponse;
 import com.google.cloud.discoveryengine.v1alpha.SiteSearchEngine;
 import com.google.cloud.discoveryengine.v1alpha.TargetSite;
 import com.google.cloud.discoveryengine.v1alpha.UpdateTargetSiteMetadata;
@@ -193,6 +198,25 @@ public abstract class SiteSearchEngineServiceStub implements BackgroundResource 
       fetchDomainVerificationStatusCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: fetchDomainVerificationStatusCallable()");
+  }
+
+  public OperationCallable<
+          SetUriPatternDocumentDataRequest,
+          SetUriPatternDocumentDataResponse,
+          SetUriPatternDocumentDataMetadata>
+      setUriPatternDocumentDataOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setUriPatternDocumentDataOperationCallable()");
+  }
+
+  public UnaryCallable<SetUriPatternDocumentDataRequest, Operation>
+      setUriPatternDocumentDataCallable() {
+    throw new UnsupportedOperationException("Not implemented: setUriPatternDocumentDataCallable()");
+  }
+
+  public UnaryCallable<GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>
+      getUriPatternDocumentDataCallable() {
+    throw new UnsupportedOperationException("Not implemented: getUriPatternDocumentDataCallable()");
   }
 
   @Override

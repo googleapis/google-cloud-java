@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,6 +98,7 @@ public class GrpcIAMStub extends IAMStub {
                   ProtoUtils.marshaller(ListServiceAccountsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServiceAccountsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceAccountRequest, ServiceAccount>
@@ -108,6 +109,7 @@ public class GrpcIAMStub extends IAMStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServiceAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServiceAccount.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServiceAccountRequest, ServiceAccount>
@@ -118,6 +120,7 @@ public class GrpcIAMStub extends IAMStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServiceAccount.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ServiceAccount, ServiceAccount>
@@ -127,6 +130,7 @@ public class GrpcIAMStub extends IAMStub {
               .setFullMethodName("google.iam.admin.v1.IAM/UpdateServiceAccount")
               .setRequestMarshaller(ProtoUtils.marshaller(ServiceAccount.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServiceAccount.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PatchServiceAccountRequest, ServiceAccount>
@@ -137,6 +141,7 @@ public class GrpcIAMStub extends IAMStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PatchServiceAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServiceAccount.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceAccountRequest, Empty>
@@ -147,6 +152,7 @@ public class GrpcIAMStub extends IAMStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -160,6 +166,7 @@ public class GrpcIAMStub extends IAMStub {
                   ProtoUtils.marshaller(UndeleteServiceAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UndeleteServiceAccountResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EnableServiceAccountRequest, Empty>
@@ -170,6 +177,7 @@ public class GrpcIAMStub extends IAMStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EnableServiceAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DisableServiceAccountRequest, Empty>
@@ -180,6 +188,7 @@ public class GrpcIAMStub extends IAMStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DisableServiceAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -193,6 +202,7 @@ public class GrpcIAMStub extends IAMStub {
                   ProtoUtils.marshaller(ListServiceAccountKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServiceAccountKeysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceAccountKeyRequest, ServiceAccountKey>
@@ -203,6 +213,7 @@ public class GrpcIAMStub extends IAMStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServiceAccountKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServiceAccountKey.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServiceAccountKeyRequest, ServiceAccountKey>
@@ -213,6 +224,7 @@ public class GrpcIAMStub extends IAMStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceAccountKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServiceAccountKey.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UploadServiceAccountKeyRequest, ServiceAccountKey>
@@ -223,6 +235,7 @@ public class GrpcIAMStub extends IAMStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UploadServiceAccountKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServiceAccountKey.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceAccountKeyRequest, Empty>
@@ -233,6 +246,7 @@ public class GrpcIAMStub extends IAMStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceAccountKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DisableServiceAccountKeyRequest, Empty>
@@ -243,6 +257,7 @@ public class GrpcIAMStub extends IAMStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DisableServiceAccountKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EnableServiceAccountKeyRequest, Empty>
@@ -253,6 +268,7 @@ public class GrpcIAMStub extends IAMStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EnableServiceAccountKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SignBlobRequest, SignBlobResponse>
@@ -262,6 +278,7 @@ public class GrpcIAMStub extends IAMStub {
               .setFullMethodName("google.iam.admin.v1.IAM/SignBlob")
               .setRequestMarshaller(ProtoUtils.marshaller(SignBlobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SignBlobResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SignJwtRequest, SignJwtResponse> signJwtMethodDescriptor =
@@ -270,6 +287,7 @@ public class GrpcIAMStub extends IAMStub {
           .setFullMethodName("google.iam.admin.v1.IAM/SignJwt")
           .setRequestMarshaller(ProtoUtils.marshaller(SignJwtRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(SignJwtResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -278,6 +296,7 @@ public class GrpcIAMStub extends IAMStub {
           .setFullMethodName("google.iam.admin.v1.IAM/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -286,6 +305,7 @@ public class GrpcIAMStub extends IAMStub {
           .setFullMethodName("google.iam.admin.v1.IAM/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -297,6 +317,7 @@ public class GrpcIAMStub extends IAMStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<QueryGrantableRolesRequest, QueryGrantableRolesResponse>
@@ -308,6 +329,7 @@ public class GrpcIAMStub extends IAMStub {
                   ProtoUtils.marshaller(QueryGrantableRolesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryGrantableRolesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRolesRequest, ListRolesResponse>
@@ -317,6 +339,7 @@ public class GrpcIAMStub extends IAMStub {
               .setFullMethodName("google.iam.admin.v1.IAM/ListRoles")
               .setRequestMarshaller(ProtoUtils.marshaller(ListRolesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListRolesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRoleRequest, Role> getRoleMethodDescriptor =
@@ -325,6 +348,7 @@ public class GrpcIAMStub extends IAMStub {
           .setFullMethodName("google.iam.admin.v1.IAM/GetRole")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRoleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Role.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateRoleRequest, Role> createRoleMethodDescriptor =
@@ -333,6 +357,7 @@ public class GrpcIAMStub extends IAMStub {
           .setFullMethodName("google.iam.admin.v1.IAM/CreateRole")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateRoleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Role.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateRoleRequest, Role> updateRoleMethodDescriptor =
@@ -341,6 +366,7 @@ public class GrpcIAMStub extends IAMStub {
           .setFullMethodName("google.iam.admin.v1.IAM/UpdateRole")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateRoleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Role.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteRoleRequest, Role> deleteRoleMethodDescriptor =
@@ -349,6 +375,7 @@ public class GrpcIAMStub extends IAMStub {
           .setFullMethodName("google.iam.admin.v1.IAM/DeleteRole")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteRoleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Role.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UndeleteRoleRequest, Role> undeleteRoleMethodDescriptor =
@@ -357,6 +384,7 @@ public class GrpcIAMStub extends IAMStub {
           .setFullMethodName("google.iam.admin.v1.IAM/UndeleteRole")
           .setRequestMarshaller(ProtoUtils.marshaller(UndeleteRoleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Role.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<
@@ -370,6 +398,7 @@ public class GrpcIAMStub extends IAMStub {
                   ProtoUtils.marshaller(QueryTestablePermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryTestablePermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -383,6 +412,7 @@ public class GrpcIAMStub extends IAMStub {
                   ProtoUtils.marshaller(QueryAuditableServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryAuditableServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<LintPolicyRequest, LintPolicyResponse>
@@ -392,6 +422,7 @@ public class GrpcIAMStub extends IAMStub {
               .setFullMethodName("google.iam.admin.v1.IAM/LintPolicy")
               .setRequestMarshaller(ProtoUtils.marshaller(LintPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LintPolicyResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListServiceAccountsRequest, ListServiceAccountsResponse>
@@ -496,6 +527,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetServiceAccountRequest, ServiceAccount> getServiceAccountTransportSettings =
         GrpcCallSettings.<GetServiceAccountRequest, ServiceAccount>newBuilder()
@@ -506,6 +538,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateServiceAccountRequest, ServiceAccount>
         createServiceAccountTransportSettings =
@@ -517,6 +550,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ServiceAccount, ServiceAccount> updateServiceAccountTransportSettings =
         GrpcCallSettings.<ServiceAccount, ServiceAccount>newBuilder()
@@ -527,6 +561,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PatchServiceAccountRequest, ServiceAccount>
         patchServiceAccountTransportSettings =
@@ -550,6 +585,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeleteServiceAccountRequest, UndeleteServiceAccountResponse>
         undeleteServiceAccountTransportSettings =
@@ -594,6 +630,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetServiceAccountKeyRequest, ServiceAccountKey>
         getServiceAccountKeyTransportSettings =
@@ -605,6 +642,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateServiceAccountKeyRequest, ServiceAccountKey>
         createServiceAccountKeyTransportSettings =
@@ -616,6 +654,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UploadServiceAccountKeyRequest, ServiceAccountKey>
         uploadServiceAccountKeyTransportSettings =
@@ -638,6 +677,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DisableServiceAccountKeyRequest, Empty>
         disableServiceAccountKeyTransportSettings =
@@ -649,6 +689,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<EnableServiceAccountKeyRequest, Empty>
         enableServiceAccountKeyTransportSettings =
@@ -660,6 +701,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SignBlobRequest, SignBlobResponse> signBlobTransportSettings =
         GrpcCallSettings.<SignBlobRequest, SignBlobResponse>newBuilder()
@@ -670,6 +712,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SignJwtRequest, SignJwtResponse> signJwtTransportSettings =
         GrpcCallSettings.<SignJwtRequest, SignJwtResponse>newBuilder()
@@ -680,6 +723,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -690,6 +734,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -700,6 +745,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -711,6 +757,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<QueryGrantableRolesRequest, QueryGrantableRolesResponse>
         queryGrantableRolesTransportSettings =
@@ -726,6 +773,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetRoleRequest, Role> getRoleTransportSettings =
         GrpcCallSettings.<GetRoleRequest, Role>newBuilder()
@@ -736,6 +784,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateRoleRequest, Role> createRoleTransportSettings =
         GrpcCallSettings.<CreateRoleRequest, Role>newBuilder()
@@ -746,6 +795,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateRoleRequest, Role> updateRoleTransportSettings =
         GrpcCallSettings.<UpdateRoleRequest, Role>newBuilder()
@@ -756,6 +806,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteRoleRequest, Role> deleteRoleTransportSettings =
         GrpcCallSettings.<DeleteRoleRequest, Role>newBuilder()
@@ -766,6 +817,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeleteRoleRequest, Role> undeleteRoleTransportSettings =
         GrpcCallSettings.<UndeleteRoleRequest, Role>newBuilder()
@@ -776,6 +828,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<QueryTestablePermissionsRequest, QueryTestablePermissionsResponse>
         queryTestablePermissionsTransportSettings =

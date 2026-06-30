@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring-metricsscope</artifactId>
-  <version>0.36.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring-metricsscope:current} -->
+  <version>0.88.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring-metricsscope:current} -->
   <packaging>jar</packaging>
   <name>Google Monitoring Metrics Scopes</name>
   <description>Monitoring Metrics Scopes The metrics scope defines the set of Google Cloud projects whose metrics the current Google Cloud project can access.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-monitoring-metricsscope-parent</artifactId>
-    <version>0.36.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring-metricsscope:current} -->
+    <version>0.88.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring-metricsscope:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-monitoring-metricsscope</site.installationModule>
@@ -41,10 +41,12 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-monitoring-metricsscope-v1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -64,6 +66,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -72,6 +75,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>
@@ -85,11 +89,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-monitoring-metricsscope-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

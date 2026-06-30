@@ -1,0 +1,9 @@
+{
+  "cert_provider_command": [
+    "some_binary",
+    "some_argument"
+  ],
+  "device_resource_ids": [
+    "123"
+  ]
+}

@@ -10,7 +10,7 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-translate",
   "distribution_name": "com.google.cloud:google-cloud-translate",
-  "api_id": "translation.googleapis.com",
+  "api_id": "translate.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true,
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559749",

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * the time-varying values of a metric.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/monitoring/v3/query_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class QueryServiceGrpc {
 
@@ -96,6 +93,19 @@ public final class QueryServiceGrpc {
     return QueryServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static QueryServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<QueryServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<QueryServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public QueryServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new QueryServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return QueryServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -139,9 +149,13 @@ public final class QueryServiceGrpc {
      *
      *
      * <pre>
-     * Queries time series using Monitoring Query Language.
+     * Queries time series by using Monitoring Query Language (MQL). We recommend
+     * using PromQL instead of MQL. For more information about the status of MQL,
+     * see the [MQL deprecation
+     * notice](https://cloud.google.com/stackdriver/docs/deprecations/mql).
      * </pre>
      */
+    @java.lang.Deprecated
     default void queryTimeSeries(
         com.google.monitoring.v3.QueryTimeSeriesRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.QueryTimeSeriesResponse>
@@ -193,9 +207,13 @@ public final class QueryServiceGrpc {
      *
      *
      * <pre>
-     * Queries time series using Monitoring Query Language.
+     * Queries time series by using Monitoring Query Language (MQL). We recommend
+     * using PromQL instead of MQL. For more information about the status of MQL,
+     * see the [MQL deprecation
+     * notice](https://cloud.google.com/stackdriver/docs/deprecations/mql).
      * </pre>
      */
+    @java.lang.Deprecated
     public void queryTimeSeries(
         com.google.monitoring.v3.QueryTimeSeriesRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.QueryTimeSeriesResponse>
@@ -209,6 +227,45 @@ public final class QueryServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service QueryService.
+   *
+   * <pre>
+   * The QueryService API is used to manage time series data in Cloud
+   * Monitoring. Time series data is a collection of data points that describes
+   * the time-varying values of a metric.
+   * </pre>
+   */
+  public static final class QueryServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<QueryServiceBlockingV2Stub> {
+    private QueryServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected QueryServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new QueryServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Queries time series by using Monitoring Query Language (MQL). We recommend
+     * using PromQL instead of MQL. For more information about the status of MQL,
+     * see the [MQL deprecation
+     * notice](https://cloud.google.com/stackdriver/docs/deprecations/mql).
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.monitoring.v3.QueryTimeSeriesResponse queryTimeSeries(
+        com.google.monitoring.v3.QueryTimeSeriesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getQueryTimeSeriesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service QueryService.
    *
    * <pre>
    * The QueryService API is used to manage time series data in Cloud
@@ -232,9 +289,13 @@ public final class QueryServiceGrpc {
      *
      *
      * <pre>
-     * Queries time series using Monitoring Query Language.
+     * Queries time series by using Monitoring Query Language (MQL). We recommend
+     * using PromQL instead of MQL. For more information about the status of MQL,
+     * see the [MQL deprecation
+     * notice](https://cloud.google.com/stackdriver/docs/deprecations/mql).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.monitoring.v3.QueryTimeSeriesResponse queryTimeSeries(
         com.google.monitoring.v3.QueryTimeSeriesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -267,9 +328,13 @@ public final class QueryServiceGrpc {
      *
      *
      * <pre>
-     * Queries time series using Monitoring Query Language.
+     * Queries time series by using Monitoring Query Language (MQL). We recommend
+     * using PromQL instead of MQL. For more information about the status of MQL,
+     * see the [MQL deprecation
+     * notice](https://cloud.google.com/stackdriver/docs/deprecations/mql).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.monitoring.v3.QueryTimeSeriesResponse>
         queryTimeSeries(com.google.monitoring.v3.QueryTimeSeriesRequest request) {

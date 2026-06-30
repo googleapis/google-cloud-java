@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,7 +123,12 @@ public class ServicesClientTest {
             .setTemplate(RevisionTemplate.newBuilder().build())
             .addAllTraffic(new ArrayList<TrafficTarget>())
             .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
             .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .setIapEnabled(true)
+            .setMultiRegionSettings(Service.MultiRegionSettings.newBuilder().build())
+            .addAllCustomAudiences(new ArrayList<String>())
             .setObservedGeneration(900833007)
             .setTerminalCondition(Condition.newBuilder().build())
             .addAllConditions(new ArrayList<Condition>())
@@ -133,8 +138,9 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
-            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
+            .setThreatDetectionEnabled(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -208,7 +214,12 @@ public class ServicesClientTest {
             .setTemplate(RevisionTemplate.newBuilder().build())
             .addAllTraffic(new ArrayList<TrafficTarget>())
             .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
             .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .setIapEnabled(true)
+            .setMultiRegionSettings(Service.MultiRegionSettings.newBuilder().build())
+            .addAllCustomAudiences(new ArrayList<String>())
             .setObservedGeneration(900833007)
             .setTerminalCondition(Condition.newBuilder().build())
             .addAllConditions(new ArrayList<Condition>())
@@ -218,8 +229,9 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
-            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
+            .setThreatDetectionEnabled(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -293,7 +305,12 @@ public class ServicesClientTest {
             .setTemplate(RevisionTemplate.newBuilder().build())
             .addAllTraffic(new ArrayList<TrafficTarget>())
             .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
             .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .setIapEnabled(true)
+            .setMultiRegionSettings(Service.MultiRegionSettings.newBuilder().build())
+            .addAllCustomAudiences(new ArrayList<String>())
             .setObservedGeneration(900833007)
             .setTerminalCondition(Condition.newBuilder().build())
             .addAllConditions(new ArrayList<Condition>())
@@ -303,8 +320,9 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
-            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
+            .setThreatDetectionEnabled(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -364,7 +382,12 @@ public class ServicesClientTest {
             .setTemplate(RevisionTemplate.newBuilder().build())
             .addAllTraffic(new ArrayList<TrafficTarget>())
             .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
             .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .setIapEnabled(true)
+            .setMultiRegionSettings(Service.MultiRegionSettings.newBuilder().build())
+            .addAllCustomAudiences(new ArrayList<String>())
             .setObservedGeneration(900833007)
             .setTerminalCondition(Condition.newBuilder().build())
             .addAllConditions(new ArrayList<Condition>())
@@ -374,8 +397,9 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
-            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
+            .setThreatDetectionEnabled(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -523,7 +547,12 @@ public class ServicesClientTest {
             .setTemplate(RevisionTemplate.newBuilder().build())
             .addAllTraffic(new ArrayList<TrafficTarget>())
             .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
             .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .setIapEnabled(true)
+            .setMultiRegionSettings(Service.MultiRegionSettings.newBuilder().build())
+            .addAllCustomAudiences(new ArrayList<String>())
             .setObservedGeneration(900833007)
             .setTerminalCondition(Condition.newBuilder().build())
             .addAllConditions(new ArrayList<Condition>())
@@ -533,8 +562,9 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
-            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
+            .setThreatDetectionEnabled(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -579,6 +609,94 @@ public class ServicesClientTest {
   }
 
   @Test
+  public void updateServiceTest2() throws Exception {
+    Service expectedResponse =
+        Service.newBuilder()
+            .setName(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+            .setDescription("description-1724546052")
+            .setUid("uid115792")
+            .setGeneration(305703192)
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setLastModifier("lastModifier1959003021")
+            .setClient("client-1357712437")
+            .setClientVersion("clientVersion771880589")
+            .setIngress(IngressTraffic.forNumber(0))
+            .setLaunchStage(LaunchStage.forNumber(0))
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setTemplate(RevisionTemplate.newBuilder().build())
+            .addAllTraffic(new ArrayList<TrafficTarget>())
+            .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .setIapEnabled(true)
+            .setMultiRegionSettings(Service.MultiRegionSettings.newBuilder().build())
+            .addAllCustomAudiences(new ArrayList<String>())
+            .setObservedGeneration(900833007)
+            .setTerminalCondition(Condition.newBuilder().build())
+            .addAllConditions(new ArrayList<Condition>())
+            .setLatestReadyRevision(
+                RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
+            .setLatestCreatedRevision(
+                RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
+            .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
+            .setUri("uri116076")
+            .setSatisfiesPzs(true)
+            .setThreatDetectionEnabled(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
+            .setReconciling(true)
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateServiceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockServices.addResponse(resultOperation);
+
+    Service service = Service.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Service actualResponse = client.updateServiceAsync(service, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateServiceRequest actualRequest = ((UpdateServiceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(service, actualRequest.getService());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateServiceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockServices.addException(exception);
+
+    try {
+      Service service = Service.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateServiceAsync(service, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deleteServiceTest() throws Exception {
     Service expectedResponse =
         Service.newBuilder()
@@ -602,7 +720,12 @@ public class ServicesClientTest {
             .setTemplate(RevisionTemplate.newBuilder().build())
             .addAllTraffic(new ArrayList<TrafficTarget>())
             .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
             .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .setIapEnabled(true)
+            .setMultiRegionSettings(Service.MultiRegionSettings.newBuilder().build())
+            .addAllCustomAudiences(new ArrayList<String>())
             .setObservedGeneration(900833007)
             .setTerminalCondition(Condition.newBuilder().build())
             .addAllConditions(new ArrayList<Condition>())
@@ -612,8 +735,9 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
-            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
+            .setThreatDetectionEnabled(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -681,7 +805,12 @@ public class ServicesClientTest {
             .setTemplate(RevisionTemplate.newBuilder().build())
             .addAllTraffic(new ArrayList<TrafficTarget>())
             .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
             .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .setIapEnabled(true)
+            .setMultiRegionSettings(Service.MultiRegionSettings.newBuilder().build())
+            .addAllCustomAudiences(new ArrayList<String>())
             .setObservedGeneration(900833007)
             .setTerminalCondition(Condition.newBuilder().build())
             .addAllConditions(new ArrayList<Condition>())
@@ -691,8 +820,9 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
-            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
+            .setThreatDetectionEnabled(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();

@@ -18,16 +18,18 @@ import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-java.common_templates(monorepo=True, excludes=[
-    ".github/*",
-    ".kokoro/*",
-    "samples/*",
-    "CODE_OF_CONDUCT.md",
-    "CONTRIBUTING.md",
-    "LICENSE",
-    "SECURITY.md",
-    "java.header",
-    "license-checks.xml",
-    "renovate.json",
-    ".gitignore"
+java.common_templates(
+    monorepo=True,
+    excludes=[
+        ".github/*",
+        ".kokoro/*",
+        "samples/*",
+        "CODE_OF_CONDUCT.md",
+        "CONTRIBUTING.md",
+        "LICENSE",
+        "SECURITY.md",
+        "java.header",
+        "license-checks.xml",
+        "renovate.json",
+        ".gitignore"
 ])

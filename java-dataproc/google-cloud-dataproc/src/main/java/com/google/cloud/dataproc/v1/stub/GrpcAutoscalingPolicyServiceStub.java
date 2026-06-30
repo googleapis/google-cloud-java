@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAutoscalingPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AutoscalingPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
@@ -73,6 +74,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAutoscalingPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AutoscalingPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAutoscalingPolicyRequest, AutoscalingPolicy>
@@ -84,6 +86,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAutoscalingPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AutoscalingPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -98,6 +101,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                   ProtoUtils.marshaller(ListAutoscalingPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAutoscalingPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAutoscalingPolicyRequest, Empty>
@@ -109,6 +113,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAutoscalingPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -117,6 +122,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -125,6 +131,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -136,6 +143,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
@@ -210,6 +218,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
         updateAutoscalingPolicyTransportSettings =
@@ -232,6 +241,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse>
         listAutoscalingPoliciesTransportSettings =
@@ -244,6 +254,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAutoscalingPolicyRequest, Empty>
         deleteAutoscalingPolicyTransportSettings =
@@ -255,6 +266,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -265,6 +277,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -275,6 +288,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -286,6 +300,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createAutoscalingPolicyCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to call Cloud DocumentAI to manage document collection (dataset).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/documentai/v1beta3/document_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DocumentServiceGrpc {
 
@@ -380,6 +377,19 @@ public final class DocumentServiceGrpc {
     return DocumentServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DocumentServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DocumentServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DocumentServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public DocumentServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DocumentServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DocumentServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -422,6 +432,11 @@ public final class DocumentServiceGrpc {
      *
      * <pre>
      * Updates metadata associated with a dataset.
+     * Note that this method requires the
+     * `documentai.googleapis.com/datasets.update` permission on the project,
+     * which is highly privileged. A user or service account with this permission
+     * can create new processors that can interact with any gcs bucket in your
+     * project.
      * </pre>
      */
     default void updateDataset(
@@ -559,6 +574,11 @@ public final class DocumentServiceGrpc {
      *
      * <pre>
      * Updates metadata associated with a dataset.
+     * Note that this method requires the
+     * `documentai.googleapis.com/datasets.update` permission on the project,
+     * which is highly privileged. A user or service account with this permission
+     * can create new processors that can interact with any gcs bucket in your
+     * project.
      * </pre>
      */
     public void updateDataset(
@@ -678,6 +698,130 @@ public final class DocumentServiceGrpc {
    * Service to call Cloud DocumentAI to manage document collection (dataset).
    * </pre>
    */
+  public static final class DocumentServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DocumentServiceBlockingV2Stub> {
+    private DocumentServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DocumentServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DocumentServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates metadata associated with a dataset.
+     * Note that this method requires the
+     * `documentai.googleapis.com/datasets.update` permission on the project,
+     * which is highly privileged. A user or service account with this permission
+     * can create new processors that can interact with any gcs bucket in your
+     * project.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDataset(
+        com.google.cloud.documentai.v1beta3.UpdateDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Import documents into a dataset.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importDocuments(
+        com.google.cloud.documentai.v1beta3.ImportDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getImportDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns relevant fields present in the requested document.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1beta3.GetDocumentResponse getDocument(
+        com.google.cloud.documentai.v1beta3.GetDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of documents present in the dataset.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1beta3.ListDocumentsResponse listDocuments(
+        com.google.cloud.documentai.v1beta3.ListDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a set of documents.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchDeleteDocuments(
+        com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchDeleteDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `DatasetSchema` of a `Dataset`.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1beta3.DatasetSchema getDatasetSchema(
+        com.google.cloud.documentai.v1beta3.GetDatasetSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDatasetSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a `DatasetSchema`.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1beta3.DatasetSchema updateDatasetSchema(
+        com.google.cloud.documentai.v1beta3.UpdateDatasetSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDatasetSchemaMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DocumentService.
+   *
+   * <pre>
+   * Service to call Cloud DocumentAI to manage document collection (dataset).
+   * </pre>
+   */
   public static final class DocumentServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<DocumentServiceBlockingStub> {
     private DocumentServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -695,6 +839,11 @@ public final class DocumentServiceGrpc {
      *
      * <pre>
      * Updates metadata associated with a dataset.
+     * Note that this method requires the
+     * `documentai.googleapis.com/datasets.update` permission on the project,
+     * which is highly privileged. A user or service account with this permission
+     * can create new processors that can interact with any gcs bucket in your
+     * project.
      * </pre>
      */
     public com.google.longrunning.Operation updateDataset(
@@ -806,6 +955,11 @@ public final class DocumentServiceGrpc {
      *
      * <pre>
      * Updates metadata associated with a dataset.
+     * Note that this method requires the
+     * `documentai.googleapis.com/datasets.update` permission on the project,
+     * which is highly privileged. A user or service account with this permission
+     * can create new processors that can interact with any gcs bucket in your
+     * project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

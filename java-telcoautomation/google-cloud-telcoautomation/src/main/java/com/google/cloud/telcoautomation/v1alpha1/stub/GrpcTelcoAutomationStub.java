@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,6 +127,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ListOrchestrationClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOrchestrationClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetOrchestrationClusterRequest, OrchestrationCluster>
@@ -139,6 +140,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(GetOrchestrationClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OrchestrationCluster.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateOrchestrationClusterRequest, Operation>
@@ -150,6 +152,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateOrchestrationClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteOrchestrationClusterRequest, Operation>
@@ -161,6 +164,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteOrchestrationClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEdgeSlmsRequest, ListEdgeSlmsResponse>
@@ -172,6 +176,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListEdgeSlmsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEdgeSlmsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEdgeSlmRequest, EdgeSlm> getEdgeSlmMethodDescriptor =
@@ -180,6 +185,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
           .setFullMethodName("google.cloud.telcoautomation.v1alpha1.TelcoAutomation/GetEdgeSlm")
           .setRequestMarshaller(ProtoUtils.marshaller(GetEdgeSlmRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(EdgeSlm.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateEdgeSlmRequest, Operation>
@@ -191,6 +197,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEdgeSlmRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEdgeSlmRequest, Operation>
@@ -202,6 +209,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEdgeSlmRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBlueprintRequest, Blueprint>
@@ -213,6 +221,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBlueprintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Blueprint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBlueprintRequest, Blueprint>
@@ -224,6 +233,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBlueprintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Blueprint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBlueprintRequest, Blueprint>
@@ -234,6 +244,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   "google.cloud.telcoautomation.v1alpha1.TelcoAutomation/GetBlueprint")
               .setRequestMarshaller(ProtoUtils.marshaller(GetBlueprintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Blueprint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBlueprintRequest, Empty>
@@ -245,6 +256,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBlueprintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBlueprintsRequest, ListBlueprintsResponse>
@@ -257,6 +269,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ListBlueprintsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBlueprintsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ApproveBlueprintRequest, Blueprint>
@@ -268,6 +281,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ApproveBlueprintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Blueprint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ProposeBlueprintRequest, Blueprint>
@@ -279,6 +293,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ProposeBlueprintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Blueprint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RejectBlueprintRequest, Blueprint>
@@ -290,6 +305,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RejectBlueprintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Blueprint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -304,6 +320,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ListBlueprintRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBlueprintRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -318,6 +335,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(SearchBlueprintRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchBlueprintRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -332,6 +350,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(SearchDeploymentRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchDeploymentRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -346,6 +365,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(DiscardBlueprintChangesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DiscardBlueprintChangesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPublicBlueprintsRequest, ListPublicBlueprintsResponse>
@@ -358,6 +378,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ListPublicBlueprintsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPublicBlueprintsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPublicBlueprintRequest, PublicBlueprint>
@@ -369,6 +390,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPublicBlueprintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PublicBlueprint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDeploymentRequest, Deployment>
@@ -380,6 +402,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDeploymentRequest, Deployment>
@@ -391,6 +414,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDeploymentRequest, Deployment>
@@ -402,6 +426,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveDeploymentRequest, Empty>
@@ -413,6 +438,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RemoveDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDeploymentsRequest, ListDeploymentsResponse>
@@ -425,6 +451,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ListDeploymentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeploymentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -439,6 +466,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ListDeploymentRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeploymentRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -453,6 +481,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(DiscardDeploymentChangesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DiscardDeploymentChangesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ApplyDeploymentRequest, Deployment>
@@ -464,6 +493,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ApplyDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -478,6 +508,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ComputeDeploymentStatusRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ComputeDeploymentStatusResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RollbackDeploymentRequest, Deployment>
@@ -489,6 +520,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RollbackDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetHydratedDeploymentRequest, HydratedDeployment>
@@ -500,6 +532,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetHydratedDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HydratedDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -514,6 +547,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ListHydratedDeploymentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListHydratedDeploymentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateHydratedDeploymentRequest, HydratedDeployment>
@@ -525,6 +559,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateHydratedDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HydratedDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ApplyHydratedDeploymentRequest, HydratedDeployment>
@@ -536,6 +571,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ApplyHydratedDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HydratedDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -547,6 +583,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -555,6 +592,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListOrchestrationClustersRequest, ListOrchestrationClustersResponse>
@@ -703,6 +741,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetOrchestrationClusterRequest, OrchestrationCluster>
         getOrchestrationClusterTransportSettings =
@@ -714,6 +753,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateOrchestrationClusterRequest, Operation>
         createOrchestrationClusterTransportSettings =
@@ -725,6 +765,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteOrchestrationClusterRequest, Operation>
         deleteOrchestrationClusterTransportSettings =
@@ -736,6 +777,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListEdgeSlmsRequest, ListEdgeSlmsResponse> listEdgeSlmsTransportSettings =
         GrpcCallSettings.<ListEdgeSlmsRequest, ListEdgeSlmsResponse>newBuilder()
@@ -746,6 +788,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetEdgeSlmRequest, EdgeSlm> getEdgeSlmTransportSettings =
         GrpcCallSettings.<GetEdgeSlmRequest, EdgeSlm>newBuilder()
@@ -756,6 +799,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEdgeSlmRequest, Operation> createEdgeSlmTransportSettings =
         GrpcCallSettings.<CreateEdgeSlmRequest, Operation>newBuilder()
@@ -766,6 +810,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteEdgeSlmRequest, Operation> deleteEdgeSlmTransportSettings =
         GrpcCallSettings.<DeleteEdgeSlmRequest, Operation>newBuilder()
@@ -776,6 +821,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateBlueprintRequest, Blueprint> createBlueprintTransportSettings =
         GrpcCallSettings.<CreateBlueprintRequest, Blueprint>newBuilder()
@@ -786,6 +832,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateBlueprintRequest, Blueprint> updateBlueprintTransportSettings =
         GrpcCallSettings.<UpdateBlueprintRequest, Blueprint>newBuilder()
@@ -806,6 +853,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteBlueprintRequest, Empty> deleteBlueprintTransportSettings =
         GrpcCallSettings.<DeleteBlueprintRequest, Empty>newBuilder()
@@ -816,6 +864,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBlueprintsRequest, ListBlueprintsResponse>
         listBlueprintsTransportSettings =
@@ -827,6 +876,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ApproveBlueprintRequest, Blueprint> approveBlueprintTransportSettings =
         GrpcCallSettings.<ApproveBlueprintRequest, Blueprint>newBuilder()
@@ -837,6 +887,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ProposeBlueprintRequest, Blueprint> proposeBlueprintTransportSettings =
         GrpcCallSettings.<ProposeBlueprintRequest, Blueprint>newBuilder()
@@ -847,6 +898,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RejectBlueprintRequest, Blueprint> rejectBlueprintTransportSettings =
         GrpcCallSettings.<RejectBlueprintRequest, Blueprint>newBuilder()
@@ -857,6 +909,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBlueprintRevisionsRequest, ListBlueprintRevisionsResponse>
         listBlueprintRevisionsTransportSettings =
@@ -869,6 +922,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SearchBlueprintRevisionsRequest, SearchBlueprintRevisionsResponse>
         searchBlueprintRevisionsTransportSettings =
@@ -881,6 +935,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SearchDeploymentRevisionsRequest, SearchDeploymentRevisionsResponse>
         searchDeploymentRevisionsTransportSettings =
@@ -893,6 +948,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DiscardBlueprintChangesRequest, DiscardBlueprintChangesResponse>
         discardBlueprintChangesTransportSettings =
@@ -905,6 +961,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListPublicBlueprintsRequest, ListPublicBlueprintsResponse>
         listPublicBlueprintsTransportSettings =
@@ -916,6 +973,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPublicBlueprintRequest, PublicBlueprint>
         getPublicBlueprintTransportSettings =
@@ -927,6 +985,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateDeploymentRequest, Deployment> createDeploymentTransportSettings =
         GrpcCallSettings.<CreateDeploymentRequest, Deployment>newBuilder()
@@ -937,6 +996,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDeploymentRequest, Deployment> updateDeploymentTransportSettings =
         GrpcCallSettings.<UpdateDeploymentRequest, Deployment>newBuilder()
@@ -957,6 +1017,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RemoveDeploymentRequest, Empty> removeDeploymentTransportSettings =
         GrpcCallSettings.<RemoveDeploymentRequest, Empty>newBuilder()
@@ -967,6 +1028,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDeploymentsRequest, ListDeploymentsResponse>
         listDeploymentsTransportSettings =
@@ -978,6 +1040,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListDeploymentRevisionsRequest, ListDeploymentRevisionsResponse>
         listDeploymentRevisionsTransportSettings =
@@ -990,6 +1053,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DiscardDeploymentChangesRequest, DiscardDeploymentChangesResponse>
         discardDeploymentChangesTransportSettings =
@@ -1002,6 +1066,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ApplyDeploymentRequest, Deployment> applyDeploymentTransportSettings =
         GrpcCallSettings.<ApplyDeploymentRequest, Deployment>newBuilder()
@@ -1012,6 +1077,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ComputeDeploymentStatusRequest, ComputeDeploymentStatusResponse>
         computeDeploymentStatusTransportSettings =
@@ -1024,6 +1090,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RollbackDeploymentRequest, Deployment> rollbackDeploymentTransportSettings =
         GrpcCallSettings.<RollbackDeploymentRequest, Deployment>newBuilder()
@@ -1034,6 +1101,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetHydratedDeploymentRequest, HydratedDeployment>
         getHydratedDeploymentTransportSettings =
@@ -1045,6 +1113,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListHydratedDeploymentsRequest, ListHydratedDeploymentsResponse>
         listHydratedDeploymentsTransportSettings =
@@ -1057,6 +1126,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateHydratedDeploymentRequest, HydratedDeployment>
         updateHydratedDeploymentTransportSettings =
@@ -1081,6 +1151,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

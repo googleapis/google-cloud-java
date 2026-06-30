@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -355,7 +355,8 @@ public class RecommenderConfigName implements ResourceName {
     private Builder(RecommenderConfigName recommenderConfigName) {
       Preconditions.checkArgument(
           Objects.equals(recommenderConfigName.pathTemplate, PROJECT_LOCATION_RECOMMENDER),
-          "toBuilder is only supported when RecommenderConfigName has the pattern of projects/{project}/locations/{location}/recommenders/{recommender}/config");
+          "toBuilder is only supported when RecommenderConfigName has the pattern of"
+              + " projects/{project}/locations/{location}/recommenders/{recommender}/config");
       this.project = recommenderConfigName.project;
       this.location = recommenderConfigName.location;
       this.recommender = recommenderConfigName.recommender;

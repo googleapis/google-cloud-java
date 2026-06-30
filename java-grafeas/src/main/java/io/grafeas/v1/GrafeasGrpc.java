@@ -1,5 +1,21 @@
 /*
- * Copyright 2019 The Grafeas Authors. All rights reserved.
+ * Copyright 2026 The Grafeas Authors. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * Copyright 2026 The Grafeas Authors. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,9 +51,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * image with the vulnerability referring to that note.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: grafeas/v1/grafeas.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GrafeasGrpc {
 
@@ -601,6 +614,19 @@ public final class GrafeasGrpc {
     return GrafeasStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static GrafeasBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<GrafeasBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<GrafeasBlockingV2Stub>() {
+          @java.lang.Override
+          public GrafeasBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new GrafeasBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return GrafeasBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1121,6 +1147,223 @@ public final class GrafeasGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Grafeas.
+   *
+   * <pre>
+   * [Grafeas](https://grafeas.io) API.
+   * Retrieves analysis results of Cloud components such as Docker container
+   * images.
+   * Analysis results are stored as a series of occurrences. An `Occurrence`
+   * contains information about a specific analysis instance on a resource. An
+   * occurrence refers to a `Note`. A note contains details describing the
+   * analysis and is generally stored in a separate project, called a `Provider`.
+   * Multiple occurrences can refer to the same note.
+   * For example, an SSL vulnerability could affect multiple images. In this case,
+   * there would be one note for the vulnerability and an occurrence for each
+   * image with the vulnerability referring to that note.
+   * </pre>
+   */
+  public static final class GrafeasBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<GrafeasBlockingV2Stub> {
+    private GrafeasBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected GrafeasBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new GrafeasBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the specified occurrence.
+     * </pre>
+     */
+    public io.grafeas.v1.Occurrence getOccurrence(io.grafeas.v1.GetOccurrenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetOccurrenceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists occurrences for the specified project.
+     * </pre>
+     */
+    public io.grafeas.v1.ListOccurrencesResponse listOccurrences(
+        io.grafeas.v1.ListOccurrencesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListOccurrencesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified occurrence. For example, use this method to delete an
+     * occurrence when the occurrence is no longer applicable for the given
+     * resource.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteOccurrence(io.grafeas.v1.DeleteOccurrenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteOccurrenceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new occurrence.
+     * </pre>
+     */
+    public io.grafeas.v1.Occurrence createOccurrence(io.grafeas.v1.CreateOccurrenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateOccurrenceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new occurrences in batch.
+     * </pre>
+     */
+    public io.grafeas.v1.BatchCreateOccurrencesResponse batchCreateOccurrences(
+        io.grafeas.v1.BatchCreateOccurrencesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchCreateOccurrencesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified occurrence.
+     * </pre>
+     */
+    public io.grafeas.v1.Occurrence updateOccurrence(io.grafeas.v1.UpdateOccurrenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateOccurrenceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the note attached to the specified occurrence. Consumer projects can
+     * use this method to get a note that belongs to a provider project.
+     * </pre>
+     */
+    public io.grafeas.v1.Note getOccurrenceNote(io.grafeas.v1.GetOccurrenceNoteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetOccurrenceNoteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the specified note.
+     * </pre>
+     */
+    public io.grafeas.v1.Note getNote(io.grafeas.v1.GetNoteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetNoteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists notes for the specified project.
+     * </pre>
+     */
+    public io.grafeas.v1.ListNotesResponse listNotes(io.grafeas.v1.ListNotesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListNotesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified note.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteNote(io.grafeas.v1.DeleteNoteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteNoteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new note.
+     * </pre>
+     */
+    public io.grafeas.v1.Note createNote(io.grafeas.v1.CreateNoteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateNoteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new notes in batch.
+     * </pre>
+     */
+    public io.grafeas.v1.BatchCreateNotesResponse batchCreateNotes(
+        io.grafeas.v1.BatchCreateNotesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchCreateNotesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified note.
+     * </pre>
+     */
+    public io.grafeas.v1.Note updateNote(io.grafeas.v1.UpdateNoteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateNoteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists occurrences referencing the specified note. Provider projects can use
+     * this method to get all occurrences across consumer projects referencing the
+     * specified note.
+     * </pre>
+     */
+    public io.grafeas.v1.ListNoteOccurrencesResponse listNoteOccurrences(
+        io.grafeas.v1.ListNoteOccurrencesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListNoteOccurrencesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Grafeas.
    *
    * <pre>
    * [Grafeas](https://grafeas.io) API.

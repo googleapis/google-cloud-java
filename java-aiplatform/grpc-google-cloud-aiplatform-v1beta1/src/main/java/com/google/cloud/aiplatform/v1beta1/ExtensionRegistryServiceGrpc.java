@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for managing Vertex AI's Extension registry.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/extension_registry_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ExtensionRegistryServiceGrpc {
 
@@ -287,6 +284,19 @@ public final class ExtensionRegistryServiceGrpc {
     return ExtensionRegistryServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ExtensionRegistryServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ExtensionRegistryServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ExtensionRegistryServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ExtensionRegistryServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ExtensionRegistryServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ExtensionRegistryServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -519,6 +529,98 @@ public final class ExtensionRegistryServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ExtensionRegistryService.
+   *
+   * <pre>
+   * A service for managing Vertex AI's Extension registry.
+   * </pre>
+   */
+  public static final class ExtensionRegistryServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ExtensionRegistryServiceBlockingV2Stub> {
+    private ExtensionRegistryServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ExtensionRegistryServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ExtensionRegistryServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports an Extension.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importExtension(
+        com.google.cloud.aiplatform.v1beta1.ImportExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getImportExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Extension.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Extension getExtension(
+        com.google.cloud.aiplatform.v1beta1.GetExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Extensions in a location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListExtensionsResponse listExtensions(
+        com.google.cloud.aiplatform.v1beta1.ListExtensionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListExtensionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Extension.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Extension updateExtension(
+        com.google.cloud.aiplatform.v1beta1.UpdateExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Extension.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteExtension(
+        com.google.cloud.aiplatform.v1beta1.DeleteExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteExtensionMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * ExtensionRegistryService.
    *
    * <pre>
    * A service for managing Vertex AI's Extension registry.

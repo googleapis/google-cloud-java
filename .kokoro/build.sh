@@ -37,61 +37,299 @@ RETURN_CODE=0
 
 case ${JOB_TYPE} in
   test)
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+      install_modules "${BUILD_SUBDIR}"
+      echo "Running in subdir: ${BUILD_SUBDIR}"
+      pushd "${BUILD_SUBDIR}"
+      EXTRA_PROFILE_OPTS=()
+    else
+      EXTRA_PROFILE_OPTS=("-PbulkTests")
+      install_modules "sdk-platform-java"
+    fi
+    echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
     retry_with_backoff 3 10 \
-      mvn -B -ntp \
-      -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-      -Dclirr.skip=true \
-      -Denforcer.skip=true \
-      -Dcheckstyle.skip=true \
-      -Dflatten.skip=true \
-      -Danimal.sniffer.skip=true \
-      -Dmaven.wagon.http.retryHandler.count=5 \
-      -T 1C \
-      test
+      mvn install \
+        -B -ntp \
+        -Pquick-build \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -Dmaven.wagon.http.retryHandler.count=5 \
+        --also-make \
+        ${SUREFIRE_JVM_OPT} "${EXTRA_PROFILE_OPTS[@]}"
     RETURN_CODE=$?
+
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "restoring directory"
+      popd
+    fi
     echo "Finished running unit tests"
+    ;;
+  install)
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+      install_modules "${BUILD_SUBDIR}"
+    else
+      install_modules "sdk-platform-java"
+      mvn install \
+        -B -ntp \
+        -Pquick-build \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -Dmaven.wagon.http.retryHandler.count=5 \
+        -DskipTests=true \
+        --also-make \
+        -T 1C
+    fi
     ;;
   integration)
     generate_modified_modules_list
-    if [[ ${#modified_module_list[@]} -gt 0 ]]; then
-      module_list=$(
-        IFS=,
-        echo "${modified_module_list[*]}"
-      )
-      setup_cloud "$module_list"
-      install_modules
-      run_integration_tests "$module_list"
+    if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
+      echo "Skipping integration tests as this is Release Please SNAPSHOT pull request."
+    elif [[ ${#modified_module_list[@]} -gt 0 ]]; then
+      filter_modules_with_integration_tests
+      if [[ ${#filtered_it_module_list[@]} -eq 0 ]]; then
+        echo "No modified modules contain integration tests. Skipping."
+      else
+        module_list=$(
+          IFS=,
+          echo "${filtered_it_module_list[*]}"
+        )
+        setup_cloud "$module_list"
+        install_modules "$module_list"
+        run_integration_tests "$module_list"
+      fi
     else
       echo "No Integration Tests to run"
     fi
     ;;
+  integration-single)
+    generate_modified_modules_list false
+    if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
+      echo "Not running integration checks -- this is Release Please SNAPSHOT pull request."
+    elif [[ ! " ${modified_module_list[*]} " =~ " ${BUILD_SUBDIR} " ]]; then
+      echo "${BUILD_SUBDIR} not modified, skipping split integration test"
+    else
+      echo "${BUILD_SUBDIR} modified, running split integration test"
+      echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+      install_modules "${BUILD_SUBDIR}"
+      echo "Running in subdir: ${BUILD_SUBDIR}"
+      pushd "${BUILD_SUBDIR}"
+
+      if [[ "${BUILD_SUBDIR}" == "java-datastore" ]]; then
+        # Kokoro integration tests use both JDK 11 and JDK 8. Integration
+        # tests require JDK 11 export as JAVA env variable to run cloud datastore
+        # emulator (https://cloud.google.com/sdk/docs/release-notes#39300_2022-07-12).
+        # For Java 8 environment, we will still run the tests using Java 8 with
+        # SUREFIRE_JVM_OPT for Maven surefire plugin:
+        # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
+        if [[ -n "${JAVA11_HOME}"  &&  -n "${JAVA8_HOME}" ]]
+        then
+          export JAVA=${JAVA11_HOME}/bin/java
+          export SUREFIRE_JVM_OPT=-Djvm=${JAVA8_HOME}/bin/java
+        fi
+      fi
+
+      echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
+      echo "INTEGRATION_TEST_ARGS: ${INTEGRATION_TEST_ARGS}"
+      mvn verify -Penable-integration-tests -Pquick-build \
+        --also-make \
+        ${INTEGRATION_TEST_ARGS} \
+        -B -ntp -fae \
+        -DtrimStackTrace=false \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -DskipUnitTests=true \
+        -Dmaven.wagon.http.retryHandler.count=5 \
+        ${SUREFIRE_JVM_OPT}
+
+      RETURN_CODE=$?
+      popd
+      printf "Finished integration tests for modules:\n%s\n" "${BUILD_SUBDIR}"
+    fi
+    ;;
   graalvm-presubmit)
     generate_graalvm_presubmit_modules_list
-    printf "Running GraalVM presubmit checks for:\n%s\n" "${module_list}"
-    setup_cloud "$module_list"
-    install_modules
-    run_graalvm_tests "$module_list"
+    if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
+      echo "Not running GraalVM checks -- this is Release Please SNAPSHOT pull request."
+    else
+      printf "Running GraalVM presubmit checks for:\n%s\n" "${module_list}"
+      setup_cloud "$module_list"
+      install_modules "$module_list"
+      run_graalvm_tests "$module_list"
+    fi
     ;;
   graalvm)
     generate_graalvm_modules_list
-    if [ ! -z "${module_list}" ]; then
+    if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
+      echo "Not running GraalVM checks -- this is Release Please SNAPSHOT pull request."
+    elif [ ! -z "${module_list}" ]; then
       printf "Running GraalVM checks for:\n%s\n" "${module_list}"
       setup_cloud "$module_list"
-      install_modules
+      install_modules "$module_list"
       run_graalvm_tests "$module_list"
     else
       echo "Not running GraalVM checks -- No changes in relevant modules"
     fi
     ;;
-  graalvm17)
-    generate_graalvm_modules_list
-    if [ ! -z "${module_list}" ]; then
-      printf "Running GraalVM 17 checks for:\n%s\n" "${module_list}"
-      setup_cloud "$module_list"
-      install_modules
-      run_graalvm_tests "$module_list"
+  graalvm-single)
+    generate_modified_modules_list false
+    if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
+      echo "Not running GraalVM checks -- this is Release Please SNAPSHOT pull request."
+    elif [[ ! " ${modified_module_list[*]} " =~ " ${BUILD_SUBDIR} " ]]; then
+      echo "${BUILD_SUBDIR} not modified, skipping split GraalVM test"
     else
-      echo "Not running GraalVM 17 checks -- No changes in relevant modules"
+      echo "${BUILD_SUBDIR} modified, running split GraalVM test"
+      echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+      install_modules "${BUILD_SUBDIR}"
+      echo "Running in subdir: ${BUILD_SUBDIR}"
+      pushd "${BUILD_SUBDIR}"
+      echo "INTEGRATION_TEST_ARGS: ${INTEGRATION_TEST_ARGS}"
+      mvn test -Pnative -Pquick-build \
+        --also-make \
+        ${INTEGRATION_TEST_ARGS} \
+        -B -ntp -fae \
+        -DtrimStackTrace=false \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS
+
+      RETURN_CODE=$?
+      popd
+      printf "Finished GraalVM ITs for modules:\n%s\n" "${BUILD_SUBDIR}"
+    fi
+    ;;
+  lint)
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+      install_modules "${BUILD_SUBDIR}"
+      echo "Running in subdir: ${BUILD_SUBDIR}"
+      pushd "${BUILD_SUBDIR}"
+    fi
+
+    MODULE_FILTER=""
+
+    if [ -n "${BUILD_SUBDIR}" ] && ( [ -z "${BASE_SHA}" ] || [ -z "${HEAD_SHA}" ] ); then
+        echo "BASE_SHA or HEAD_SHA is empty, but BUILD_SUBDIR is set. Running full lint check on ${BUILD_SUBDIR}."
+        MODULE_FILTER=""
+    elif [ -n "${BASE_SHA}" ] && [ -n "${HEAD_SHA}" ]; then
+        # Optimize the build by identifying ONLY the Maven modules that contain changed Java source files.
+        # Format those specific modules instead of the entire codebase, reducing format check time.
+        # The --relative flag is when building in the submodule as only files modified in the module
+        # should be accounted for.
+        changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}" --relative)
+        echo "${changed_file_list}"
+
+        has_code_change="false"
+
+        while IFS= read -r changed_file; do
+            # Checks if the line is not empty AND if it matches a .java file
+            if [ -n "${changed_file}" ] && [[ "${changed_file}" == *.java ]]; then
+                echo "Matched: ${changed_file}"
+                has_code_change="true"
+                break
+            fi
+        done <<< "${changed_file_list}"
+
+        if [ "${has_code_change}" == "false" ]; then
+            echo "No java modules affected. Skipping linter check."
+            exit 0
+        fi
+
+        # Compute list of changed Maven modules from changed Java files.
+        # We walk each changed .java file up to its nearest pom.xml to find the correct module.
+        # e.g., if "java-asset/google-cloud-asset/src/main/java/Foo.java" is changed,
+        # it traverses upward until finding "java-asset/google-cloud-asset/pom.xml" and adds that module.
+        changed_modules=()
+        while IFS= read -r changed_file; do
+            if [ -n "${changed_file}" ] && [[ "${changed_file}" == *.java ]]; then
+                dir=$(dirname "${changed_file}")
+                while [ "${dir}" != "." ] && [ ! -f "${dir}/pom.xml" ]; do
+                    dir=$(dirname "${dir}")
+                done
+                if [ -f "${dir}/pom.xml" ] && [ "${dir}" != "." ]; then
+                    # Filter out directories not participating in the default formatting reactor:
+                    # - samples are handwritten by developers
+                    # - benchmarks are handwritten by developers
+                    # - proto-*/grpc-* are generated code and should use the compiler format
+                    # - *-bom/parents are POM-only and contain no Java source
+                    if [[ "${dir}" != *"samples"* ]] && \
+                       [[ "${dir}" != *"java-showcase"* ]] && \
+                       [[ "$(basename "${dir}")" != *"benchmark"* ]] && \
+                       [[ "$(basename "${dir}")" != "proto-google-"* ]] && \
+                       [[ "$(basename "${dir}")" != "grpc-google-"* ]] && \
+                       [[ "$(basename "${dir}")" != *"-bom" ]] && \
+                       [[ "$(basename "${dir}")" != "google-cloud-pom-parent" ]] && \
+                       [[ "$(basename "${dir}")" != "dependency-analyzer" ]] && \
+                       [[ "$(basename "${dir}")" != "dependency-convergence-check" ]] && \
+                       [[ "$(basename "${dir}")" != "unmanaged-dependency-check" ]] && \
+                       [[ "$(basename "${dir}")" != *"test-proxy"* ]] && \
+                       [[ "$(basename "${dir}")" != "google-cloud-jar-parent" ]]; then
+
+                        changed_modules+=("${dir}")
+                    fi
+                fi
+            fi
+        done <<< "${changed_file_list}"
+
+        echo "Changed Modules: ${changed_modules[*]}"
+
+        # Deduplicate the modules using sort -u to pass a concise list of unique modules
+        # via the Maven `-pl` argument.
+        if [ ${#changed_modules[@]} -gt 0 ]; then
+            unique_modules=$(printf '%s\n' "${changed_modules[@]}" | sort -u | paste -sd ',' -)
+            MODULE_FILTER="-pl ${unique_modules}"
+            echo "Formatting only changed modules: ${unique_modules}"
+        fi
+    else
+        echo "BASE_SHA or HEAD_SHA is empty. Cannot continue linting."
+        exit 1
+    fi
+
+    # The lint property is to activate the benchmark profile that declares the
+    # benchmark module in java-bigquery/benchmark. This module is not needed during
+    # other builds or releases.
+    mvn -B -ntp \
+      -T 1C \
+      ${MODULE_FILTER} \
+      -Dlint \
+      com.spotify.fmt:fmt-maven-plugin:check
+    mvn -B -ntp \
+      -T 1C \
+      ${MODULE_FILTER} \
+      -Dlint \
+      checkstyle:check@checkstyle
+
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "restoring directory"
+      popd
+    fi
+    ;;
+  clirr)
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+      install_modules "${BUILD_SUBDIR}"
+      echo "Running in subdir: ${BUILD_SUBDIR}"
+      pushd "${BUILD_SUBDIR}"
+      EXTRA_PROFILE_OPTS=()
+    else
+      install_modules "sdk-platform-java"
+    fi
+    mvn -B -ntp \
+      -Dfmt.skip=true \
+      -Denforcer.skip=true \
+      -Dcheckstyle.skip=true \
+      clirr:check
+    RETURN_CODE=$?
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "restoring directory"
+      popd
     fi
     ;;
   *) ;;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,9 +29,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * - List/Get pending and historical quota preference.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/api/cloudquotas/v1/cloudquotas.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudQuotasGrpc {
 
@@ -335,6 +332,19 @@ public final class CloudQuotasGrpc {
     return CloudQuotasStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CloudQuotasBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CloudQuotasBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudQuotasBlockingV2Stub>() {
+          @java.lang.Override
+          public CloudQuotasBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudQuotasBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CloudQuotasBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -617,6 +627,115 @@ public final class CloudQuotasGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CloudQuotas.
+   *
+   * <pre>
+   * The Cloud Quotas API is an infrastructure service for Google Cloud that lets
+   * service consumers list and manage their resource usage limits.
+   * - List/Get the metadata and current status of the quotas for a service.
+   * - Create/Update quota preferencess that declare the preferred quota values.
+   * - Check the status of a quota preference request.
+   * - List/Get pending and historical quota preference.
+   * </pre>
+   */
+  public static final class CloudQuotasBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CloudQuotasBlockingV2Stub> {
+    private CloudQuotasBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CloudQuotasBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CloudQuotasBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists QuotaInfos of all quotas for a given project, folder or organization.
+     * </pre>
+     */
+    public com.google.api.cloudquotas.v1.ListQuotaInfosResponse listQuotaInfos(
+        com.google.api.cloudquotas.v1.ListQuotaInfosRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListQuotaInfosMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the QuotaInfo of a quota for a project, folder or organization.
+     * </pre>
+     */
+    public com.google.api.cloudquotas.v1.QuotaInfo getQuotaInfo(
+        com.google.api.cloudquotas.v1.GetQuotaInfoRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetQuotaInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists QuotaPreferences in a given project, folder or organization.
+     * </pre>
+     */
+    public com.google.api.cloudquotas.v1.ListQuotaPreferencesResponse listQuotaPreferences(
+        com.google.api.cloudquotas.v1.ListQuotaPreferencesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListQuotaPreferencesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single QuotaPreference.
+     * </pre>
+     */
+    public com.google.api.cloudquotas.v1.QuotaPreference getQuotaPreference(
+        com.google.api.cloudquotas.v1.GetQuotaPreferenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetQuotaPreferenceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new QuotaPreference that declares the desired value for a quota.
+     * </pre>
+     */
+    public com.google.api.cloudquotas.v1.QuotaPreference createQuotaPreference(
+        com.google.api.cloudquotas.v1.CreateQuotaPreferenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateQuotaPreferenceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single QuotaPreference. It can updates the
+     * config in any states, not just the ones pending approval.
+     * </pre>
+     */
+    public com.google.api.cloudquotas.v1.QuotaPreference updateQuotaPreference(
+        com.google.api.cloudquotas.v1.UpdateQuotaPreferenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateQuotaPreferenceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CloudQuotas.
    *
    * <pre>
    * The Cloud Quotas API is an infrastructure service for Google Cloud that lets

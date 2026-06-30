@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServingConfigRequest, Empty>
@@ -72,6 +73,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateServingConfigRequest, ServingConfig>
@@ -83,6 +85,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServingConfigRequest, ServingConfig>
@@ -94,6 +97,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListServingConfigsRequest, ListServingConfigsResponse>
@@ -106,6 +110,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                   ProtoUtils.marshaller(ListServingConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServingConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddControlRequest, ServingConfig>
@@ -115,6 +120,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
               .setFullMethodName("google.cloud.retail.v2alpha.ServingConfigService/AddControl")
               .setRequestMarshaller(ProtoUtils.marshaller(AddControlRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveControlRequest, ServingConfig>
@@ -125,6 +131,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RemoveControlRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateServingConfigRequest, ServingConfig>
@@ -194,6 +201,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteServingConfigRequest, Empty> deleteServingConfigTransportSettings =
         GrpcCallSettings.<DeleteServingConfigRequest, Empty>newBuilder()
@@ -204,6 +212,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateServingConfigRequest, ServingConfig>
         updateServingConfigTransportSettings =
@@ -227,6 +236,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListServingConfigsRequest, ListServingConfigsResponse>
         listServingConfigsTransportSettings =
@@ -238,6 +248,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<AddControlRequest, ServingConfig> addControlTransportSettings =
         GrpcCallSettings.<AddControlRequest, ServingConfig>newBuilder()
@@ -248,6 +259,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                   builder.add("serving_config", String.valueOf(request.getServingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
     GrpcCallSettings<RemoveControlRequest, ServingConfig> removeControlTransportSettings =
         GrpcCallSettings.<RemoveControlRequest, ServingConfig>newBuilder()
@@ -258,6 +270,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                   builder.add("serving_config", String.valueOf(request.getServingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
 
     this.createServingConfigCallable =

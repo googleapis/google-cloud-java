@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AddSignedUrlKeyBackendServiceRequest;
 import com.google.cloud.compute.v1.AggregatedListBackendServicesRequest;
 import com.google.cloud.compute.v1.BackendService;
@@ -44,6 +45,8 @@ import com.google.cloud.compute.v1.BackendServiceListUsable;
 import com.google.cloud.compute.v1.DeleteBackendServiceRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendServiceRequest;
 import com.google.cloud.compute.v1.GetBackendServiceRequest;
+import com.google.cloud.compute.v1.GetEffectiveSecurityPoliciesBackendServiceRequest;
+import com.google.cloud.compute.v1.GetEffectiveSecurityPoliciesBackendServiceResponse;
 import com.google.cloud.compute.v1.GetHealthBackendServiceRequest;
 import com.google.cloud.compute.v1.GetIamPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertBackendServiceRequest;
@@ -331,6 +334,50 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendService>newBuilder()
                       .setDefaultInstance(BackendService.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetEffectiveSecurityPoliciesBackendServiceRequest,
+          GetEffectiveSecurityPoliciesBackendServiceResponse>
+      getEffectiveSecurityPoliciesMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetEffectiveSecurityPoliciesBackendServiceRequest,
+                  GetEffectiveSecurityPoliciesBackendServiceResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.compute.v1.BackendServices/GetEffectiveSecurityPolicies")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetEffectiveSecurityPoliciesBackendServiceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/backendServices/{backendService}/getEffectiveSecurityPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEffectiveSecurityPoliciesBackendServiceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backendService", request.getBackendService());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEffectiveSecurityPoliciesBackendServiceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<GetEffectiveSecurityPoliciesBackendServiceResponse>newBuilder()
+                      .setDefaultInstance(
+                          GetEffectiveSecurityPoliciesBackendServiceResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -901,6 +948,10 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
   private final OperationCallable<DeleteSignedUrlKeyBackendServiceRequest, Operation, Operation>
       deleteSignedUrlKeyOperationCallable;
   private final UnaryCallable<GetBackendServiceRequest, BackendService> getCallable;
+  private final UnaryCallable<
+          GetEffectiveSecurityPoliciesBackendServiceRequest,
+          GetEffectiveSecurityPoliciesBackendServiceResponse>
+      getEffectiveSecurityPoliciesCallable;
   private final UnaryCallable<GetHealthBackendServiceRequest, BackendServiceGroupHealth>
       getHealthCallable;
   private final UnaryCallable<GetIamPolicyBackendServiceRequest, Policy> getIamPolicyCallable;
@@ -934,6 +985,41 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate ADD_SIGNED_URL_KEY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendServices/{backend_service}");
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendServices/{backend_service}");
+  private static final PathTemplate DELETE_SIGNED_URL_KEY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendServices/{backend_service}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendServices/{backend_service}");
+  private static final PathTemplate GET_EFFECTIVE_SECURITY_POLICIES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendServices/{backend_service}");
+  private static final PathTemplate GET_HEALTH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendServices/{backend_service}");
+  private static final PathTemplate GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendServices/{resource}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_USABLE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendServices/{backend_service}");
+  private static final PathTemplate SET_EDGE_SECURITY_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendServices/{backend_service}");
+  private static final PathTemplate SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendServices/{resource}");
+  private static final PathTemplate SET_SECURITY_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendServices/{backend_service}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendServices/{resource}");
+  private static final PathTemplate UPDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/backendServices/{backend_service}");
 
   public static final HttpJsonBackendServicesStub create(BackendServicesStubSettings settings)
       throws IOException {
@@ -988,6 +1074,15 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "backend_service", String.valueOf(request.getBackendService()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return ADD_SIGNED_URL_KEY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<AggregatedListBackendServicesRequest, BackendServiceAggregatedList>
         aggregatedListTransportSettings =
@@ -1001,6 +1096,13 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteBackendServiceRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteBackendServiceRequest, Operation>newBuilder()
@@ -1012,6 +1114,14 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   builder.add("backend_service", String.valueOf(request.getBackendService()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "backend_service", String.valueOf(request.getBackendService()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<DeleteSignedUrlKeyBackendServiceRequest, Operation>
@@ -1026,6 +1136,15 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "backend_service", String.valueOf(request.getBackendService()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return DELETE_SIGNED_URL_KEY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetBackendServiceRequest, BackendService> getTransportSettings =
         HttpJsonCallSettings.<GetBackendServiceRequest, BackendService>newBuilder()
@@ -1038,7 +1157,42 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "backend_service", String.valueOf(request.getBackendService()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
+    HttpJsonCallSettings<
+            GetEffectiveSecurityPoliciesBackendServiceRequest,
+            GetEffectiveSecurityPoliciesBackendServiceResponse>
+        getEffectiveSecurityPoliciesTransportSettings =
+            HttpJsonCallSettings
+                .<GetEffectiveSecurityPoliciesBackendServiceRequest,
+                    GetEffectiveSecurityPoliciesBackendServiceResponse>
+                    newBuilder()
+                .setMethodDescriptor(getEffectiveSecurityPoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("backend_service", String.valueOf(request.getBackendService()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "backend_service", String.valueOf(request.getBackendService()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return GET_EFFECTIVE_SECURITY_POLICIES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
     HttpJsonCallSettings<GetHealthBackendServiceRequest, BackendServiceGroupHealth>
         getHealthTransportSettings =
             HttpJsonCallSettings
@@ -1052,6 +1206,14 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "backend_service", String.valueOf(request.getBackendService()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return GET_HEALTH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetIamPolicyBackendServiceRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyBackendServiceRequest, Policy>newBuilder()
@@ -1064,6 +1226,13 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertBackendServiceRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertBackendServiceRequest, Operation>newBuilder()
@@ -1075,6 +1244,12 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListBackendServicesRequest, BackendServiceList> listTransportSettings =
         HttpJsonCallSettings.<ListBackendServicesRequest, BackendServiceList>newBuilder()
@@ -1085,6 +1260,12 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListUsableBackendServicesRequest, BackendServiceListUsable>
@@ -1099,6 +1280,12 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return LIST_USABLE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchBackendServiceRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchBackendServiceRequest, Operation>newBuilder()
@@ -1110,6 +1297,14 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   builder.add("backend_service", String.valueOf(request.getBackendService()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "backend_service", String.valueOf(request.getBackendService()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetEdgeSecurityPolicyBackendServiceRequest, Operation>
@@ -1124,6 +1319,15 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "backend_service", String.valueOf(request.getBackendService()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return SET_EDGE_SECURITY_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetIamPolicyBackendServiceRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyBackendServiceRequest, Policy>newBuilder()
@@ -1135,6 +1339,13 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetSecurityPolicyBackendServiceRequest, Operation>
@@ -1148,6 +1359,15 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       builder.add("backend_service", String.valueOf(request.getBackendService()));
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "backend_service", String.valueOf(request.getBackendService()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return SET_SECURITY_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<TestIamPermissionsBackendServiceRequest, TestPermissionsResponse>
@@ -1163,6 +1383,14 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<UpdateBackendServiceRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateBackendServiceRequest, Operation>newBuilder()
@@ -1174,6 +1402,14 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   builder.add("backend_service", String.valueOf(request.getBackendService()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "backend_service", String.valueOf(request.getBackendService()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return UPDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 
@@ -1215,6 +1451,11 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
+    this.getEffectiveSecurityPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            getEffectiveSecurityPoliciesTransportSettings,
+            settings.getEffectiveSecurityPoliciesSettings(),
+            clientContext);
     this.getHealthCallable =
         callableFactory.createUnaryCallable(
             getHealthTransportSettings, settings.getHealthSettings(), clientContext);
@@ -1303,6 +1544,7 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(deleteSignedUrlKeyMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getEffectiveSecurityPoliciesMethodDescriptor);
     methodDescriptors.add(getHealthMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
@@ -1366,6 +1608,14 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
   @Override
   public UnaryCallable<GetBackendServiceRequest, BackendService> getCallable() {
     return getCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetEffectiveSecurityPoliciesBackendServiceRequest,
+          GetEffectiveSecurityPoliciesBackendServiceResponse>
+      getEffectiveSecurityPoliciesCallable() {
+    return getEffectiveSecurityPoliciesCallable;
   }
 
   @Override

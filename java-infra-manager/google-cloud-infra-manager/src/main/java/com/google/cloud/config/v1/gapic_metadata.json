@@ -13,17 +13,26 @@
             "CreateDeployment": {
               "methods": ["createDeploymentAsync", "createDeploymentAsync", "createDeploymentAsync", "createDeploymentOperationCallable", "createDeploymentCallable"]
             },
+            "CreateDeploymentGroup": {
+              "methods": ["createDeploymentGroupAsync", "createDeploymentGroupAsync", "createDeploymentGroupAsync", "createDeploymentGroupOperationCallable", "createDeploymentGroupCallable"]
+            },
             "CreatePreview": {
               "methods": ["createPreviewAsync", "createPreviewAsync", "createPreviewAsync", "createPreviewOperationCallable", "createPreviewCallable"]
             },
             "DeleteDeployment": {
               "methods": ["deleteDeploymentAsync", "deleteDeploymentAsync", "deleteDeploymentAsync", "deleteDeploymentOperationCallable", "deleteDeploymentCallable"]
             },
+            "DeleteDeploymentGroup": {
+              "methods": ["deleteDeploymentGroupAsync", "deleteDeploymentGroupAsync", "deleteDeploymentGroupAsync", "deleteDeploymentGroupOperationCallable", "deleteDeploymentGroupCallable"]
+            },
             "DeletePreview": {
               "methods": ["deletePreviewAsync", "deletePreviewAsync", "deletePreviewAsync", "deletePreviewOperationCallable", "deletePreviewCallable"]
             },
             "DeleteStatefile": {
               "methods": ["deleteStatefile", "deleteStatefile", "deleteStatefile", "deleteStatefileCallable"]
+            },
+            "DeprovisionDeploymentGroup": {
+              "methods": ["deprovisionDeploymentGroupAsync", "deprovisionDeploymentGroupAsync", "deprovisionDeploymentGroupAsync", "deprovisionDeploymentGroupOperationCallable", "deprovisionDeploymentGroupCallable"]
             },
             "ExportDeploymentStatefile": {
               "methods": ["exportDeploymentStatefile", "exportDeploymentStatefileCallable"]
@@ -37,8 +46,17 @@
             "ExportRevisionStatefile": {
               "methods": ["exportRevisionStatefile", "exportRevisionStatefileCallable"]
             },
+            "GetAutoMigrationConfig": {
+              "methods": ["getAutoMigrationConfig", "getAutoMigrationConfig", "getAutoMigrationConfig", "getAutoMigrationConfigCallable"]
+            },
             "GetDeployment": {
               "methods": ["getDeployment", "getDeployment", "getDeployment", "getDeploymentCallable"]
+            },
+            "GetDeploymentGroup": {
+              "methods": ["getDeploymentGroup", "getDeploymentGroup", "getDeploymentGroup", "getDeploymentGroupCallable"]
+            },
+            "GetDeploymentGroupRevision": {
+              "methods": ["getDeploymentGroupRevision", "getDeploymentGroupRevision", "getDeploymentGroupRevision", "getDeploymentGroupRevisionCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -52,6 +70,12 @@
             "GetResource": {
               "methods": ["getResource", "getResource", "getResource", "getResourceCallable"]
             },
+            "GetResourceChange": {
+              "methods": ["getResourceChange", "getResourceChange", "getResourceChange", "getResourceChangeCallable"]
+            },
+            "GetResourceDrift": {
+              "methods": ["getResourceDrift", "getResourceDrift", "getResourceDrift", "getResourceDriftCallable"]
+            },
             "GetRevision": {
               "methods": ["getRevision", "getRevision", "getRevision", "getRevisionCallable"]
             },
@@ -61,6 +85,12 @@
             "ImportStatefile": {
               "methods": ["importStatefile", "importStatefile", "importStatefile", "importStatefileCallable"]
             },
+            "ListDeploymentGroupRevisions": {
+              "methods": ["listDeploymentGroupRevisions", "listDeploymentGroupRevisions", "listDeploymentGroupRevisions", "listDeploymentGroupRevisionsPagedCallable", "listDeploymentGroupRevisionsCallable"]
+            },
+            "ListDeploymentGroups": {
+              "methods": ["listDeploymentGroups", "listDeploymentGroups", "listDeploymentGroups", "listDeploymentGroupsPagedCallable", "listDeploymentGroupsCallable"]
+            },
             "ListDeployments": {
               "methods": ["listDeployments", "listDeployments", "listDeployments", "listDeploymentsPagedCallable", "listDeploymentsCallable"]
             },
@@ -69,6 +99,12 @@
             },
             "ListPreviews": {
               "methods": ["listPreviews", "listPreviews", "listPreviews", "listPreviewsPagedCallable", "listPreviewsCallable"]
+            },
+            "ListResourceChanges": {
+              "methods": ["listResourceChanges", "listResourceChanges", "listResourceChanges", "listResourceChangesPagedCallable", "listResourceChangesCallable"]
+            },
+            "ListResourceDrifts": {
+              "methods": ["listResourceDrifts", "listResourceDrifts", "listResourceDrifts", "listResourceDriftsPagedCallable", "listResourceDriftsCallable"]
             },
             "ListResources": {
               "methods": ["listResources", "listResources", "listResources", "listResourcesPagedCallable", "listResourcesCallable"]
@@ -82,6 +118,9 @@
             "LockDeployment": {
               "methods": ["lockDeploymentAsync", "lockDeploymentAsync", "lockDeploymentAsync", "lockDeploymentOperationCallable", "lockDeploymentCallable"]
             },
+            "ProvisionDeploymentGroup": {
+              "methods": ["provisionDeploymentGroupAsync", "provisionDeploymentGroupAsync", "provisionDeploymentGroupAsync", "provisionDeploymentGroupOperationCallable", "provisionDeploymentGroupCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
@@ -91,8 +130,14 @@
             "UnlockDeployment": {
               "methods": ["unlockDeploymentAsync", "unlockDeploymentAsync", "unlockDeploymentAsync", "unlockDeploymentOperationCallable", "unlockDeploymentCallable"]
             },
+            "UpdateAutoMigrationConfig": {
+              "methods": ["updateAutoMigrationConfigAsync", "updateAutoMigrationConfigAsync", "updateAutoMigrationConfigOperationCallable", "updateAutoMigrationConfigCallable"]
+            },
             "UpdateDeployment": {
               "methods": ["updateDeploymentAsync", "updateDeploymentAsync", "updateDeploymentOperationCallable", "updateDeploymentCallable"]
+            },
+            "UpdateDeploymentGroup": {
+              "methods": ["updateDeploymentGroupAsync", "updateDeploymentGroupAsync", "updateDeploymentGroupOperationCallable", "updateDeploymentGroupCallable"]
             }
           }
         }

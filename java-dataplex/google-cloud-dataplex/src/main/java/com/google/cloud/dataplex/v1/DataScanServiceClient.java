@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,11 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -232,8 +237,28 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CancelDataScanJob</td>
+ *      <td><p> Cancels a running/pending DataScan job.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cancelDataScanJob(CancelDataScanJobRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> cancelDataScanJob(DataScanJobName name)
+ *           <li><p> cancelDataScanJob(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cancelDataScanJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GenerateDataQualityRules</td>
- *      <td><p> Generates recommended DataQualityRule from a data profiling DataScan.</td>
+ *      <td><p> Generates recommended data quality rules based on the results of a data profiling scan.
+ * <p>  Use the recommendations to build rules for a data quality scan.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -251,7 +276,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -275,6 +302,50 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
+ * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+ * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -434,9 +505,11 @@ public class DataScanServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the parent location:
    *     `projects/{project}/locations/{location_id}` where `project` refers to a
-   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a GCP region.
+   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a Google Cloud
+   *     region.
    * @param dataScan Required. DataScan resource.
-   * @param dataScanId Required. DataScan identifier.
+   * @param dataScanId Optional. DataScan identifier. If not provided, a unique ID will be generated
+   *     with the prefix "data-scan-".
    *     <ul>
    *       <li>Must contain only lowercase letters, numbers and hyphens.
    *       <li>Must start with a letter.
@@ -481,9 +554,11 @@ public class DataScanServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the parent location:
    *     `projects/{project}/locations/{location_id}` where `project` refers to a
-   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a GCP region.
+   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a Google Cloud
+   *     region.
    * @param dataScan Required. DataScan resource.
-   * @param dataScanId Required. DataScan identifier.
+   * @param dataScanId Optional. DataScan identifier. If not provided, a unique ID will be generated
+   *     with the prefix "data-scan-".
    *     <ul>
    *       <li>Must contain only lowercase letters, numbers and hyphens.
    *       <li>Must start with a letter.
@@ -621,7 +696,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *
    * @param dataScan Required. DataScan resource to be updated.
    *     <p>Only fields specified in `update_mask` are updated.
-   * @param updateMask Required. Mask of fields to update.
+   * @param updateMask Optional. Mask of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DataScan, OperationMetadata> updateDataScanAsync(
@@ -744,7 +819,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the dataScan:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
    *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
-   *     GCP region.
+   *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteDataScanAsync(DataScanName name) {
@@ -774,7 +849,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the dataScan:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
    *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
-   *     GCP region.
+   *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteDataScanAsync(String name) {
@@ -798,6 +873,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *   DeleteDataScanRequest request =
    *       DeleteDataScanRequest.newBuilder()
    *           .setName(DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]").toString())
+   *           .setForce(true)
    *           .build();
    *   dataScanServiceClient.deleteDataScanAsync(request).get();
    * }
@@ -827,6 +903,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *   DeleteDataScanRequest request =
    *       DeleteDataScanRequest.newBuilder()
    *           .setName(DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]").toString())
+   *           .setForce(true)
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       dataScanServiceClient.deleteDataScanOperationCallable().futureCall(request);
@@ -856,6 +933,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *   DeleteDataScanRequest request =
    *       DeleteDataScanRequest.newBuilder()
    *           .setName(DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]").toString())
+   *           .setForce(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       dataScanServiceClient.deleteDataScanCallable().futureCall(request);
@@ -889,7 +967,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the dataScan:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
    *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
-   *     GCP region.
+   *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataScan getDataScan(DataScanName name) {
@@ -919,7 +997,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the dataScan:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
    *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
-   *     GCP region.
+   *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataScan getDataScan(String name) {
@@ -1004,7 +1082,8 @@ public class DataScanServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the parent location:
    *     `projects/{project}/locations/{location_id}` where `project` refers to a
-   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a GCP region.
+   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a Google Cloud
+   *     region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataScansPagedResponse listDataScans(LocationName parent) {
@@ -1037,7 +1116,8 @@ public class DataScanServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the parent location:
    *     `projects/{project}/locations/{location_id}` where `project` refers to a
-   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a GCP region.
+   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a Google Cloud
+   *     region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataScansPagedResponse listDataScans(String parent) {
@@ -1176,7 +1256,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the DataScan:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`. where `project`
    *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
-   *     GCP region.
+   *     Google Cloud region.
    *     <p>Only &#42;&#42;OnDemand&#42;&#42; data scans are allowed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1207,7 +1287,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the DataScan:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`. where `project`
    *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
-   *     GCP region.
+   *     Google Cloud region.
    *     <p>Only &#42;&#42;OnDemand&#42;&#42; data scans are allowed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1293,7 +1373,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the DataScanJob:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/jobs/{data_scan_job_id}`
    *     where `project` refers to a &#42;project_id&#42; or &#42;project_number&#42; and
-   *     `location_id` refers to a GCP region.
+   *     `location_id` refers to a Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataScanJob getDataScanJob(DataScanJobName name) {
@@ -1323,7 +1403,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the DataScanJob:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/jobs/{data_scan_job_id}`
    *     where `project` refers to a &#42;project_id&#42; or &#42;project_number&#42; and
-   *     `location_id` refers to a GCP region.
+   *     `location_id` refers to a Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataScanJob getDataScanJob(String name) {
@@ -1412,7 +1492,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the parent environment:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
    *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
-   *     GCP region.
+   *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataScanJobsPagedResponse listDataScanJobs(DataScanName parent) {
@@ -1446,7 +1526,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the parent environment:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
    *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
-   *     GCP region.
+   *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataScanJobsPagedResponse listDataScanJobs(String parent) {
@@ -1565,7 +1645,129 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Generates recommended DataQualityRule from a data profiling DataScan.
+   * Cancels a running/pending DataScan job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   DataScanJobName name = DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]");
+   *   CancelDataScanJobResponse response = dataScanServiceClient.cancelDataScanJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the DataScanJob:
+   *     `projects/{project_id_or_number}/locations/{location_id}/dataScans/{data_scan_id}/jobs/{data_scan_job_id}`
+   *     where `project_id_or_number` refers to a &#42;project_id&#42; or &#42;project_number&#42;
+   *     and `location_id` refers to a Google Cloud region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelDataScanJobResponse cancelDataScanJob(DataScanJobName name) {
+    CancelDataScanJobRequest request =
+        CancelDataScanJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return cancelDataScanJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a running/pending DataScan job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   String name = DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString();
+   *   CancelDataScanJobResponse response = dataScanServiceClient.cancelDataScanJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the DataScanJob:
+   *     `projects/{project_id_or_number}/locations/{location_id}/dataScans/{data_scan_id}/jobs/{data_scan_job_id}`
+   *     where `project_id_or_number` refers to a &#42;project_id&#42; or &#42;project_number&#42;
+   *     and `location_id` refers to a Google Cloud region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelDataScanJobResponse cancelDataScanJob(String name) {
+    CancelDataScanJobRequest request = CancelDataScanJobRequest.newBuilder().setName(name).build();
+    return cancelDataScanJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a running/pending DataScan job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   CancelDataScanJobRequest request =
+   *       CancelDataScanJobRequest.newBuilder()
+   *           .setName(
+   *               DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString())
+   *           .build();
+   *   CancelDataScanJobResponse response = dataScanServiceClient.cancelDataScanJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelDataScanJobResponse cancelDataScanJob(CancelDataScanJobRequest request) {
+    return cancelDataScanJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a running/pending DataScan job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   CancelDataScanJobRequest request =
+   *       CancelDataScanJobRequest.newBuilder()
+   *           .setName(
+   *               DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString())
+   *           .build();
+   *   ApiFuture<CancelDataScanJobResponse> future =
+   *       dataScanServiceClient.cancelDataScanJobCallable().futureCall(request);
+   *   // Do something.
+   *   CancelDataScanJobResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobCallable() {
+    return stub.cancelDataScanJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates recommended data quality rules based on the results of a data profiling scan.
+   *
+   * <p>Use the recommendations to build rules for a data quality scan.
    *
    * <p>Sample code:
    *
@@ -1582,10 +1784,11 @@ public class DataScanServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name should be either
+   * @param name Required. The name must be one of the following:
    *     <ul>
-   *       <li>the name of a datascan with at least one successful completed data profiling job, or
-   *       <li>the name of a successful completed data profiling datascan job.
+   *       <li>The name of a data scan with at least one successful, completed data profiling job
+   *       <li>The name of a successful, completed data profiling job (a data scan job where the job
+   *           type is data profiling)
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1598,7 +1801,9 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Generates recommended DataQualityRule from a data profiling DataScan.
+   * Generates recommended data quality rules based on the results of a data profiling scan.
+   *
+   * <p>Use the recommendations to build rules for a data quality scan.
    *
    * <p>Sample code:
    *
@@ -1626,7 +1831,9 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Generates recommended DataQualityRule from a data profiling DataScan.
+   * Generates recommended data quality rules based on the results of a data profiling scan.
+   *
+   * <p>Use the recommendations to build rules for a data quality scan.
    *
    * <p>Sample code:
    *
@@ -1654,6 +1861,18 @@ public class DataScanServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1688,6 +1907,18 @@ public class DataScanServiceClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1721,6 +1952,18 @@ public class DataScanServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1805,6 +2048,197 @@ public class DataScanServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     return stub.getLocationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = dataScanServiceClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = dataScanServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = dataScanServiceClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = dataScanServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = dataScanServiceClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       dataScanServiceClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override

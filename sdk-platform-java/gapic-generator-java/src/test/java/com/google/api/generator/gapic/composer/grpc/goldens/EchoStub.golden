@@ -1,0 +1,102 @@
+package com.google.showcase.v1beta1.stub;
+
+import static com.google.showcase.v1beta1.EchoClient.PagedExpandPagedResponse;
+import static com.google.showcase.v1beta1.EchoClient.SimplePagedExpandPagedResponse;
+
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.BidiStreamingCallable;
+import com.google.api.gax.rpc.ClientStreamingCallable;
+import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
+import com.google.showcase.v1beta1.BlockRequest;
+import com.google.showcase.v1beta1.BlockResponse;
+import com.google.showcase.v1beta1.EchoRequest;
+import com.google.showcase.v1beta1.EchoResponse;
+import com.google.showcase.v1beta1.ExpandRequest;
+import com.google.showcase.v1beta1.Object;
+import com.google.showcase.v1beta1.PagedExpandLegacyRequest;
+import com.google.showcase.v1beta1.PagedExpandRequest;
+import com.google.showcase.v1beta1.PagedExpandResponse;
+import com.google.showcase.v1beta1.WaitMetadata;
+import com.google.showcase.v1beta1.WaitRequest;
+import com.google.showcase.v1beta1.WaitResponse;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * Base stub class for the Echo service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@BetaApi
+@Generated("by gapic-generator-java")
+public abstract class EchoStub implements BackgroundResource {
+
+  public OperationsStub getOperationsStub() {
+    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+  }
+
+  public UnaryCallable<EchoRequest, EchoResponse> echoCallable() {
+    throw new UnsupportedOperationException("Not implemented: echoCallable()");
+  }
+
+  public ServerStreamingCallable<ExpandRequest, EchoResponse> expandCallable() {
+    throw new UnsupportedOperationException("Not implemented: expandCallable()");
+  }
+
+  public ClientStreamingCallable<EchoRequest, EchoResponse> collectCallable() {
+    throw new UnsupportedOperationException("Not implemented: collectCallable()");
+  }
+
+  public BidiStreamingCallable<EchoRequest, EchoResponse> chatCallable() {
+    throw new UnsupportedOperationException("Not implemented: chatCallable()");
+  }
+
+  public BidiStreamingCallable<EchoRequest, EchoResponse> chatAgainCallable() {
+    throw new UnsupportedOperationException("Not implemented: chatAgainCallable()");
+  }
+
+  public UnaryCallable<PagedExpandRequest, PagedExpandPagedResponse> pagedExpandPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: pagedExpandPagedCallable()");
+  }
+
+  public UnaryCallable<PagedExpandRequest, PagedExpandResponse> pagedExpandCallable() {
+    throw new UnsupportedOperationException("Not implemented: pagedExpandCallable()");
+  }
+
+  public UnaryCallable<PagedExpandRequest, SimplePagedExpandPagedResponse>
+      simplePagedExpandPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: simplePagedExpandPagedCallable()");
+  }
+
+  public UnaryCallable<PagedExpandRequest, PagedExpandResponse> simplePagedExpandCallable() {
+    throw new UnsupportedOperationException("Not implemented: simplePagedExpandCallable()");
+  }
+
+  public OperationCallable<WaitRequest, WaitResponse, WaitMetadata> waitOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: waitOperationCallable()");
+  }
+
+  public UnaryCallable<WaitRequest, Operation> waitCallable() {
+    throw new UnsupportedOperationException("Not implemented: waitCallable()");
+  }
+
+  public UnaryCallable<BlockRequest, BlockResponse> blockCallable() {
+    throw new UnsupportedOperationException("Not implemented: blockCallable()");
+  }
+
+  public UnaryCallable<EchoRequest, Object> collideNameCallable() {
+    throw new UnsupportedOperationException("Not implemented: collideNameCallable()");
+  }
+
+  public UnaryCallable<PagedExpandLegacyRequest, PagedExpandResponse> pagedExpandLegacyCallable() {
+    throw new UnsupportedOperationException("Not implemented: pagedExpandLegacyCallable()");
+  }
+
+  @Override
+  public abstract void close();
+}

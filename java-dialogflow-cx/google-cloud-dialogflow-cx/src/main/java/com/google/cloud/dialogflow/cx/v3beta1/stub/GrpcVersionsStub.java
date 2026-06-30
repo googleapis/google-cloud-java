@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,6 +70,7 @@ public class GrpcVersionsStub extends VersionsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVersionRequest, Version> getVersionMethodDescriptor =
@@ -78,6 +79,7 @@ public class GrpcVersionsStub extends VersionsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Versions/GetVersion")
           .setRequestMarshaller(ProtoUtils.marshaller(GetVersionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Version.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateVersionRequest, Operation>
@@ -88,6 +90,7 @@ public class GrpcVersionsStub extends VersionsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateVersionRequest, Version>
@@ -98,6 +101,7 @@ public class GrpcVersionsStub extends VersionsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Version.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteVersionRequest, Empty> deleteVersionMethodDescriptor =
@@ -106,6 +110,7 @@ public class GrpcVersionsStub extends VersionsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Versions/DeleteVersion")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteVersionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<LoadVersionRequest, Operation> loadVersionMethodDescriptor =
@@ -114,6 +119,7 @@ public class GrpcVersionsStub extends VersionsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Versions/LoadVersion")
           .setRequestMarshaller(ProtoUtils.marshaller(LoadVersionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CompareVersionsRequest, CompareVersionsResponse>
@@ -125,6 +131,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   ProtoUtils.marshaller(CompareVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CompareVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -136,6 +143,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -144,6 +152,7 @@ public class GrpcVersionsStub extends VersionsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListVersionsRequest, ListVersionsResponse> listVersionsCallable;
@@ -212,6 +221,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetVersionRequest, Version> getVersionTransportSettings =
         GrpcCallSettings.<GetVersionRequest, Version>newBuilder()
@@ -222,6 +232,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateVersionRequest, Operation> createVersionTransportSettings =
         GrpcCallSettings.<CreateVersionRequest, Operation>newBuilder()
@@ -232,6 +243,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateVersionRequest, Version> updateVersionTransportSettings =
         GrpcCallSettings.<UpdateVersionRequest, Version>newBuilder()
@@ -252,6 +264,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<LoadVersionRequest, Operation> loadVersionTransportSettings =
         GrpcCallSettings.<LoadVersionRequest, Operation>newBuilder()
@@ -262,6 +275,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CompareVersionsRequest, CompareVersionsResponse>
         compareVersionsTransportSettings =
@@ -273,6 +287,7 @@ public class GrpcVersionsStub extends VersionsStub {
                       builder.add("base_version", String.valueOf(request.getBaseVersion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getBaseVersion())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

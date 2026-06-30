@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
               .setFullMethodName("google.cloud.tasks.v2.CloudTasks/ListQueues")
               .setRequestMarshaller(ProtoUtils.marshaller(ListQueuesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListQueuesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetQueueRequest, Queue> getQueueMethodDescriptor =
@@ -84,6 +85,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2.CloudTasks/GetQueue")
           .setRequestMarshaller(ProtoUtils.marshaller(GetQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateQueueRequest, Queue> createQueueMethodDescriptor =
@@ -92,6 +94,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2.CloudTasks/CreateQueue")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateQueueRequest, Queue> updateQueueMethodDescriptor =
@@ -100,6 +103,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2.CloudTasks/UpdateQueue")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteQueueRequest, Empty> deleteQueueMethodDescriptor =
@@ -108,6 +112,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2.CloudTasks/DeleteQueue")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<PurgeQueueRequest, Queue> purgeQueueMethodDescriptor =
@@ -116,6 +121,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2.CloudTasks/PurgeQueue")
           .setRequestMarshaller(ProtoUtils.marshaller(PurgeQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<PauseQueueRequest, Queue> pauseQueueMethodDescriptor =
@@ -124,6 +130,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2.CloudTasks/PauseQueue")
           .setRequestMarshaller(ProtoUtils.marshaller(PauseQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ResumeQueueRequest, Queue> resumeQueueMethodDescriptor =
@@ -132,6 +139,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2.CloudTasks/ResumeQueue")
           .setRequestMarshaller(ProtoUtils.marshaller(ResumeQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -140,6 +148,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2.CloudTasks/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -148,6 +157,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2.CloudTasks/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -159,6 +169,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTasksRequest, ListTasksResponse>
@@ -168,6 +179,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
               .setFullMethodName("google.cloud.tasks.v2.CloudTasks/ListTasks")
               .setRequestMarshaller(ProtoUtils.marshaller(ListTasksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTasksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTaskRequest, Task> getTaskMethodDescriptor =
@@ -176,6 +188,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2.CloudTasks/GetTask")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateTaskRequest, Task> createTaskMethodDescriptor =
@@ -184,6 +197,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2.CloudTasks/CreateTask")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteTaskRequest, Empty> deleteTaskMethodDescriptor =
@@ -192,6 +206,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2.CloudTasks/DeleteTask")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RunTaskRequest, Task> runTaskMethodDescriptor =
@@ -200,6 +215,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2.CloudTasks/RunTask")
           .setRequestMarshaller(ProtoUtils.marshaller(RunTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -211,6 +227,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -219,6 +236,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListQueuesRequest, ListQueuesResponse> listQueuesCallable;
@@ -296,6 +314,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetQueueRequest, Queue> getQueueTransportSettings =
         GrpcCallSettings.<GetQueueRequest, Queue>newBuilder()
@@ -306,6 +325,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateQueueRequest, Queue> createQueueTransportSettings =
         GrpcCallSettings.<CreateQueueRequest, Queue>newBuilder()
@@ -316,6 +336,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateQueueRequest, Queue> updateQueueTransportSettings =
         GrpcCallSettings.<UpdateQueueRequest, Queue>newBuilder()
@@ -336,6 +357,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PurgeQueueRequest, Queue> purgeQueueTransportSettings =
         GrpcCallSettings.<PurgeQueueRequest, Queue>newBuilder()
@@ -346,6 +368,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PauseQueueRequest, Queue> pauseQueueTransportSettings =
         GrpcCallSettings.<PauseQueueRequest, Queue>newBuilder()
@@ -356,6 +379,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResumeQueueRequest, Queue> resumeQueueTransportSettings =
         GrpcCallSettings.<ResumeQueueRequest, Queue>newBuilder()
@@ -366,6 +390,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -376,6 +401,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -386,6 +412,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -397,6 +424,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<ListTasksRequest, ListTasksResponse> listTasksTransportSettings =
         GrpcCallSettings.<ListTasksRequest, ListTasksResponse>newBuilder()
@@ -407,6 +435,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTaskRequest, Task> getTaskTransportSettings =
         GrpcCallSettings.<GetTaskRequest, Task>newBuilder()
@@ -417,6 +446,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTaskRequest, Task> createTaskTransportSettings =
         GrpcCallSettings.<CreateTaskRequest, Task>newBuilder()
@@ -427,6 +457,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteTaskRequest, Empty> deleteTaskTransportSettings =
         GrpcCallSettings.<DeleteTaskRequest, Empty>newBuilder()
@@ -437,6 +468,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RunTaskRequest, Task> runTaskTransportSettings =
         GrpcCallSettings.<RunTaskRequest, Task>newBuilder()
@@ -447,6 +479,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +55,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getSiteSearchEngine to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getSiteSearchEngine:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -72,10 +74,47 @@ import javax.annotation.Generated;
  *             .getSiteSearchEngineSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * SiteSearchEngineServiceSettings siteSearchEngineServiceSettings =
  *     siteSearchEngineServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createTargetSite:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * SiteSearchEngineServiceSettings.Builder siteSearchEngineServiceSettingsBuilder =
+ *     SiteSearchEngineServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * siteSearchEngineServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -151,6 +190,35 @@ public class SiteSearchEngineServiceSettings
           ListTargetSitesRequest, ListTargetSitesResponse, ListTargetSitesPagedResponse>
       listTargetSitesSettings() {
     return ((SiteSearchEngineServiceStubSettings) getStubSettings()).listTargetSitesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSitemap. */
+  public UnaryCallSettings<CreateSitemapRequest, Operation> createSitemapSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings()).createSitemapSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSitemap. */
+  public OperationCallSettings<CreateSitemapRequest, Sitemap, CreateSitemapMetadata>
+      createSitemapOperationSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .createSitemapOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSitemap. */
+  public UnaryCallSettings<DeleteSitemapRequest, Operation> deleteSitemapSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings()).deleteSitemapSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSitemap. */
+  public OperationCallSettings<DeleteSitemapRequest, Empty, DeleteSitemapMetadata>
+      deleteSitemapOperationSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .deleteSitemapOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchSitemaps. */
+  public UnaryCallSettings<FetchSitemapsRequest, FetchSitemapsResponse> fetchSitemapsSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings()).fetchSitemapsSettings();
   }
 
   /** Returns the object with the settings used for calls to enableAdvancedSiteSearch. */
@@ -407,6 +475,34 @@ public class SiteSearchEngineServiceSettings
             ListTargetSitesRequest, ListTargetSitesResponse, ListTargetSitesPagedResponse>
         listTargetSitesSettings() {
       return getStubSettingsBuilder().listTargetSitesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSitemap. */
+    public UnaryCallSettings.Builder<CreateSitemapRequest, Operation> createSitemapSettings() {
+      return getStubSettingsBuilder().createSitemapSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSitemap. */
+    public OperationCallSettings.Builder<CreateSitemapRequest, Sitemap, CreateSitemapMetadata>
+        createSitemapOperationSettings() {
+      return getStubSettingsBuilder().createSitemapOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSitemap. */
+    public UnaryCallSettings.Builder<DeleteSitemapRequest, Operation> deleteSitemapSettings() {
+      return getStubSettingsBuilder().deleteSitemapSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSitemap. */
+    public OperationCallSettings.Builder<DeleteSitemapRequest, Empty, DeleteSitemapMetadata>
+        deleteSitemapOperationSettings() {
+      return getStubSettingsBuilder().deleteSitemapOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchSitemaps. */
+    public UnaryCallSettings.Builder<FetchSitemapsRequest, FetchSitemapsResponse>
+        fetchSitemapsSettings() {
+      return getStubSettingsBuilder().fetchSitemapsSettings();
     }
 
     /** Returns the builder for the settings used for calls to enableAdvancedSiteSearch. */

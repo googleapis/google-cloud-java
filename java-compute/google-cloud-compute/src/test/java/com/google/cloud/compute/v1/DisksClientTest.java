@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,6 +90,7 @@ public class DisksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -225,6 +226,7 @@ public class DisksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -294,6 +296,84 @@ public class DisksClientTest {
   }
 
   @Test
+  public void bulkSetLabelsTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String zone = "zone-5246";
+    BulkZoneSetLabelsRequest bulkZoneSetLabelsRequestResource =
+        BulkZoneSetLabelsRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client.bulkSetLabelsAsync(project, zone, bulkZoneSetLabelsRequestResource).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void bulkSetLabelsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String zone = "zone-5246";
+      BulkZoneSetLabelsRequest bulkZoneSetLabelsRequestResource =
+          BulkZoneSetLabelsRequest.newBuilder().build();
+      client.bulkSetLabelsAsync(project, zone, bulkZoneSetLabelsRequestResource).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void createSnapshotTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
@@ -302,6 +382,7 @@ public class DisksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -379,6 +460,7 @@ public class DisksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -448,6 +530,7 @@ public class DisksClientTest {
   public void getTest() throws Exception {
     Disk expectedResponse =
         Disk.newBuilder()
+            .setAccessMode("accessMode-1142222553")
             .setArchitecture("architecture839674195")
             .setAsyncPrimaryDisk(DiskAsyncReplication.newBuilder().build())
             .putAllAsyncSecondaryDisks(new HashMap<String, DiskAsyncReplicationList>())
@@ -493,6 +576,7 @@ public class DisksClientTest {
             .setSourceSnapshotId("sourceSnapshotId-1480876934")
             .setSourceStorageObject("sourceStorageObject1498862911")
             .setStatus("status-892481550")
+            .setStoragePool("storagePool-525690569")
             .setType("type3575610")
             .addAllUsers(new ArrayList<String>())
             .setZone("zone3744684")
@@ -547,7 +631,6 @@ public class DisksClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -601,6 +684,7 @@ public class DisksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -727,6 +811,7 @@ public class DisksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -812,6 +897,7 @@ public class DisksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -888,7 +974,6 @@ public class DisksClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -945,6 +1030,7 @@ public class DisksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -1022,6 +1108,7 @@ public class DisksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -1107,6 +1194,7 @@ public class DisksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -1181,6 +1269,7 @@ public class DisksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -1315,6 +1404,7 @@ public class DisksClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -1377,6 +1467,86 @@ public class DisksClientTest {
       String disk = "disk-4029";
       Disk diskResource = Disk.newBuilder().build();
       client.updateAsync(project, zone, disk, diskResource).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateKmsKeyTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String disk = "disk-4029";
+    DiskUpdateKmsKeyRequest diskUpdateKmsKeyRequestResource =
+        DiskUpdateKmsKeyRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client.updateKmsKeyAsync(project, zone, disk, diskUpdateKmsKeyRequestResource).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateKmsKeyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String disk = "disk-4029";
+      DiskUpdateKmsKeyRequest diskUpdateKmsKeyRequestResource =
+          DiskUpdateKmsKeyRequest.newBuilder().build();
+      client.updateKmsKeyAsync(project, zone, disk, diskUpdateKmsKeyRequestResource).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

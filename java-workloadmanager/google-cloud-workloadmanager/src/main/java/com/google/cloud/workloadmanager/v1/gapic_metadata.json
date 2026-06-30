@@ -1,0 +1,60 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.workloadmanager.v1",
+  "libraryPackage": "com.google.cloud.workloadmanager.v1",
+  "services": {
+    "WorkloadManager": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "WorkloadManagerClient",
+          "rpcs": {
+            "CreateEvaluation": {
+              "methods": ["createEvaluationAsync", "createEvaluationAsync", "createEvaluationAsync", "createEvaluationOperationCallable", "createEvaluationCallable"]
+            },
+            "DeleteEvaluation": {
+              "methods": ["deleteEvaluationAsync", "deleteEvaluationAsync", "deleteEvaluationAsync", "deleteEvaluationOperationCallable", "deleteEvaluationCallable"]
+            },
+            "DeleteExecution": {
+              "methods": ["deleteExecutionAsync", "deleteExecutionAsync", "deleteExecutionAsync", "deleteExecutionOperationCallable", "deleteExecutionCallable"]
+            },
+            "GetEvaluation": {
+              "methods": ["getEvaluation", "getEvaluation", "getEvaluation", "getEvaluationCallable"]
+            },
+            "GetExecution": {
+              "methods": ["getExecution", "getExecution", "getExecution", "getExecutionCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListEvaluations": {
+              "methods": ["listEvaluations", "listEvaluations", "listEvaluations", "listEvaluationsPagedCallable", "listEvaluationsCallable"]
+            },
+            "ListExecutionResults": {
+              "methods": ["listExecutionResults", "listExecutionResults", "listExecutionResultsPagedCallable", "listExecutionResultsCallable"]
+            },
+            "ListExecutions": {
+              "methods": ["listExecutions", "listExecutions", "listExecutions", "listExecutionsPagedCallable", "listExecutionsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListRules": {
+              "methods": ["listRules", "listRules", "listRules", "listRulesCallable"]
+            },
+            "ListScannedResources": {
+              "methods": ["listScannedResources", "listScannedResources", "listScannedResourcesPagedCallable", "listScannedResourcesCallable"]
+            },
+            "RunEvaluation": {
+              "methods": ["runEvaluationAsync", "runEvaluationAsync", "runEvaluationAsync", "runEvaluationOperationCallable", "runEvaluationCallable"]
+            },
+            "UpdateEvaluation": {
+              "methods": ["updateEvaluationAsync", "updateEvaluationAsync", "updateEvaluationOperationCallable", "updateEvaluationCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

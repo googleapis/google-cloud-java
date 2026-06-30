@@ -19,6 +19,9 @@ deep-remove-regex:
 - "/java-mediatranslation/proto-google-.*/src"
 - "/java-mediatranslation/google-.*/src"
 
+deep-preserve-regex:
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+
 deep-copy-regex:
 - source: "/google/cloud/mediatranslation/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-mediatranslation/$1/proto-google-cloud-mediatranslation-$1/src"

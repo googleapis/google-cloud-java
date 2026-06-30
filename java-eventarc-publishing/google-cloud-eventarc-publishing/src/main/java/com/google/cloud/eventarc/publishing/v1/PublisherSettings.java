@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,7 +48,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of publishChannelConnectionEvents to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of publishChannelConnectionEvents:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -64,10 +66,21 @@ import javax.annotation.Generated;
  *             .publishChannelConnectionEventsSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * PublisherSettings publisherSettings = publisherSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class PublisherSettings extends ClientSettings<PublisherSettings> {
@@ -82,6 +95,11 @@ public class PublisherSettings extends ClientSettings<PublisherSettings> {
   /** Returns the object with the settings used for calls to publishEvents. */
   public UnaryCallSettings<PublishEventsRequest, PublishEventsResponse> publishEventsSettings() {
     return ((PublisherStubSettings) getStubSettings()).publishEventsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to publish. */
+  public UnaryCallSettings<PublishRequest, PublishResponse> publishSettings() {
+    return ((PublisherStubSettings) getStubSettings()).publishSettings();
   }
 
   public static final PublisherSettings create(PublisherStubSettings stub) throws IOException {
@@ -206,6 +224,11 @@ public class PublisherSettings extends ClientSettings<PublisherSettings> {
     public UnaryCallSettings.Builder<PublishEventsRequest, PublishEventsResponse>
         publishEventsSettings() {
       return getStubSettingsBuilder().publishEventsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to publish. */
+    public UnaryCallSettings.Builder<PublishRequest, PublishResponse> publishSettings() {
+      return getStubSettingsBuilder().publishSettings();
     }
 
     @Override

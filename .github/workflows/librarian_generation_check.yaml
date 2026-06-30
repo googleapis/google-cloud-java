@@ -1,0 +1,119 @@
+# Copyright 2026 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# This workflow runs a check to ensure that all generated libraries are up-to-date with
+# the latest configuration.
+#
+# Triggers:
+# 1. Push to main: Generates the libraries, checks for git diffs, and fails (creating
+#    a Buganizer/GitHub issue) if any changes are detected.
+# 2. Manual trigger (workflow_dispatch) on a branch (except main): Generates the
+#    libraries and commits the resulting diff directly back to the triggering branch.
+name: Librarian - Generate libraries check / update
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  library_generation:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      issues: write
+    steps:
+    - name: Prevent running manually on main branch
+      if: ${{ github.event_name == 'workflow_dispatch' && github.ref_name == 'main' }}
+      run: |
+        echo "Error: Running this workflow manually on the main branch is not allowed."
+        exit 1
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - uses: actions/setup-go@v5
+      with:
+        go-version: 'stable'
+    - name: Install Librarian
+      run: |
+        V=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
+        echo "Installing librarian version $V"
+        go install github.com/googleapis/librarian/cmd/librarian@$V
+    - name: Install protoc
+      run: |
+        set -e
+        VERSION="33.2"
+        curl -fsSL --retry 5 --retry-delay 15 -o /tmp/protoc.zip "https://github.com/protocolbuffers/protobuf/releases/download/v$VERSION/protoc-$VERSION-linux-x86_64.zip"
+        cd /usr/local
+        sudo unzip -o /tmp/protoc.zip
+        protoc --version
+    - uses: actions/setup-java@v4
+      with:
+        java-version: "17"
+        distribution: "temurin"
+        cache: "maven"
+    - name: Verify Java and Maven installation
+      run: |
+        java -version
+        if ! command -v mvn &> /dev/null; then
+          sudo apt-get update && sudo apt-get install -y maven
+        fi
+        mvn -version
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+        cache: 'pip'
+    - name: Run librarian install
+      run: |
+        librarian install
+        echo "$HOME/.cache/librarian/bin/java_tools/bin" >> $GITHUB_PATH
+    - name: Run librarian generate
+      env:
+        PYTHONPATH: ${{ github.workspace }}/sdk-platform-java/hermetic_build/library_generation/owlbot
+      run: |
+        librarian generate --all
+    - name: Check for generated code changes
+      if: ${{ github.event_name != 'workflow_dispatch' }}
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          git status
+          echo "==================== GIT DIFF ===================="
+          git diff
+          echo "=================================================="
+          echo "Regeneration produced code changes! Please run 'librarian generate --all' to update the generated files."
+          exit 1
+        fi
+    - name: Commit and push changes (manual run only)
+      if: ${{ github.event_name == 'workflow_dispatch' }}
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m "chore: regenerate libraries"
+          git push
+        else
+          echo "No changes to commit"
+        fi
+    - name: Create issue if previous step fails
+      if: ${{ failure() && github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+      uses: googleapis/librarian/.github/actions/create-issue-on-failure@main
+      with:
+        title: "Librarian generate diff check failed on main branch"
+        body: |
+          The librarian generate diff check failed on main branch.
+
+          To keep the `main` branch healthy, please consider **reverting the triggering change** first. Once the revert is merged, you can investigate the failure and submit a new PR with the fix.
+
+          Please check the logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}

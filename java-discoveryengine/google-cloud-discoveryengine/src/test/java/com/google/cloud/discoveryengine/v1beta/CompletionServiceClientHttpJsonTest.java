@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.discoveryengine.v1beta.stub.HttpJsonCompletionServiceStub;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
+import com.google.protobuf.Timestamp;
 import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -135,6 +136,89 @@ public class CompletionServiceClientHttpJsonTest {
               .setIncludeTailSuggestions(true)
               .build();
       client.completeQuery(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void advancedCompleteQueryTest() throws Exception {
+    AdvancedCompleteQueryResponse expectedResponse =
+        AdvancedCompleteQueryResponse.newBuilder()
+            .addAllQuerySuggestions(new ArrayList<AdvancedCompleteQueryResponse.QuerySuggestion>())
+            .setTailMatchTriggered(true)
+            .addAllPeopleSuggestions(
+                new ArrayList<AdvancedCompleteQueryResponse.PersonSuggestion>())
+            .addAllContentSuggestions(
+                new ArrayList<AdvancedCompleteQueryResponse.ContentSuggestion>())
+            .addAllRecentSearchSuggestions(
+                new ArrayList<AdvancedCompleteQueryResponse.RecentSearchSuggestion>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AdvancedCompleteQueryRequest request =
+        AdvancedCompleteQueryRequest.newBuilder()
+            .setCompletionConfig(
+                CompletionConfigName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
+            .setQuery("query107944136")
+            .setQueryModel("queryModel-184930495")
+            .setUserPseudoId("userPseudoId-1155274652")
+            .setUserInfo(UserInfo.newBuilder().build())
+            .setIncludeTailSuggestions(true)
+            .setBoostSpec(AdvancedCompleteQueryRequest.BoostSpec.newBuilder().build())
+            .addAllSuggestionTypes(new ArrayList<AdvancedCompleteQueryRequest.SuggestionType>())
+            .addAllSuggestionTypeSpecs(
+                new ArrayList<AdvancedCompleteQueryRequest.SuggestionTypeSpec>())
+            .addAllExperimentIds(new ArrayList<String>())
+            .build();
+
+    AdvancedCompleteQueryResponse actualResponse = client.advancedCompleteQuery(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void advancedCompleteQueryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AdvancedCompleteQueryRequest request =
+          AdvancedCompleteQueryRequest.newBuilder()
+              .setCompletionConfig(
+                  CompletionConfigName.ofProjectLocationDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                      .toString())
+              .setQuery("query107944136")
+              .setQueryModel("queryModel-184930495")
+              .setUserPseudoId("userPseudoId-1155274652")
+              .setUserInfo(UserInfo.newBuilder().build())
+              .setIncludeTailSuggestions(true)
+              .setBoostSpec(AdvancedCompleteQueryRequest.BoostSpec.newBuilder().build())
+              .addAllSuggestionTypes(new ArrayList<AdvancedCompleteQueryRequest.SuggestionType>())
+              .addAllSuggestionTypeSpecs(
+                  new ArrayList<AdvancedCompleteQueryRequest.SuggestionTypeSpec>())
+              .addAllExperimentIds(new ArrayList<String>())
+              .build();
+      client.advancedCompleteQuery(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -265,6 +349,193 @@ public class CompletionServiceClientHttpJsonTest {
       client.purgeSuggestionDenyListEntriesAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void importCompletionSuggestionsTest() throws Exception {
+    ImportCompletionSuggestionsResponse expectedResponse =
+        ImportCompletionSuggestionsResponse.newBuilder()
+            .addAllErrorSamples(new ArrayList<Status>())
+            .setErrorConfig(ImportErrorConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importCompletionSuggestionsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ImportCompletionSuggestionsRequest request =
+        ImportCompletionSuggestionsRequest.newBuilder()
+            .setParent(
+                DataStoreName.ofProjectLocationCollectionDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+                    .toString())
+            .setErrorConfig(ImportErrorConfig.newBuilder().build())
+            .build();
+
+    ImportCompletionSuggestionsResponse actualResponse =
+        client.importCompletionSuggestionsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importCompletionSuggestionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ImportCompletionSuggestionsRequest request =
+          ImportCompletionSuggestionsRequest.newBuilder()
+              .setParent(
+                  DataStoreName.ofProjectLocationCollectionDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+                      .toString())
+              .setErrorConfig(ImportErrorConfig.newBuilder().build())
+              .build();
+      client.importCompletionSuggestionsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void purgeCompletionSuggestionsTest() throws Exception {
+    PurgeCompletionSuggestionsResponse expectedResponse =
+        PurgeCompletionSuggestionsResponse.newBuilder()
+            .setPurgeSucceeded(true)
+            .addAllErrorSamples(new ArrayList<Status>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("purgeCompletionSuggestionsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    PurgeCompletionSuggestionsRequest request =
+        PurgeCompletionSuggestionsRequest.newBuilder()
+            .setParent(
+                DataStoreName.ofProjectLocationCollectionDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+                    .toString())
+            .build();
+
+    PurgeCompletionSuggestionsResponse actualResponse =
+        client.purgeCompletionSuggestionsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void purgeCompletionSuggestionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PurgeCompletionSuggestionsRequest request =
+          PurgeCompletionSuggestionsRequest.newBuilder()
+              .setParent(
+                  DataStoreName.ofProjectLocationCollectionDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+                      .toString())
+              .build();
+      client.purgeCompletionSuggestionsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void removeSuggestionTest() throws Exception {
+    RemoveSuggestionResponse expectedResponse = RemoveSuggestionResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    RemoveSuggestionRequest request =
+        RemoveSuggestionRequest.newBuilder()
+            .setCompletionConfig(
+                CompletionConfigName.ofProjectLocationCollectionEngineName(
+                        "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]")
+                    .toString())
+            .setUserPseudoId("userPseudoId-1155274652")
+            .setUserInfo(UserInfo.newBuilder().build())
+            .setRemoveTime(Timestamp.newBuilder().build())
+            .build();
+
+    RemoveSuggestionResponse actualResponse = client.removeSuggestion(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void removeSuggestionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RemoveSuggestionRequest request =
+          RemoveSuggestionRequest.newBuilder()
+              .setCompletionConfig(
+                  CompletionConfigName.ofProjectLocationCollectionEngineName(
+                          "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]")
+                      .toString())
+              .setUserPseudoId("userPseudoId-1155274652")
+              .setUserInfo(UserInfo.newBuilder().build())
+              .setRemoveTime(Timestamp.newBuilder().build())
+              .build();
+      client.removeSuggestion(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

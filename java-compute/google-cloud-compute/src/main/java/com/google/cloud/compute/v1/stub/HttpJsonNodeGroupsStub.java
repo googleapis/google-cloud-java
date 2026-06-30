@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AddNodesNodeGroupRequest;
 import com.google.cloud.compute.v1.AggregatedListNodeGroupsRequest;
 import com.google.cloud.compute.v1.DeleteNodeGroupRequest;
@@ -50,6 +51,7 @@ import com.google.cloud.compute.v1.NodeGroupsListNodes;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchNodeGroupRequest;
+import com.google.cloud.compute.v1.PerformMaintenanceNodeGroupRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyNodeGroupRequest;
 import com.google.cloud.compute.v1.SetNodeTemplateNodeGroupRequest;
@@ -594,6 +596,63 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
               })
           .build();
 
+  private static final ApiMethodDescriptor<PerformMaintenanceNodeGroupRequest, Operation>
+      performMaintenanceMethodDescriptor =
+          ApiMethodDescriptor.<PerformMaintenanceNodeGroupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.NodeGroups/PerformMaintenance")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PerformMaintenanceNodeGroupRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/nodeGroups/{nodeGroup}/performMaintenance",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PerformMaintenanceNodeGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PerformMaintenanceNodeGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "nodeGroupsPerformMaintenanceRequestResource",
+                                      request.getNodeGroupsPerformMaintenanceRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PerformMaintenanceNodeGroupRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<SetIamPolicyNodeGroupRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyNodeGroupRequest, Policy>newBuilder()
@@ -820,6 +879,10 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
   private final UnaryCallable<PatchNodeGroupRequest, Operation> patchCallable;
   private final OperationCallable<PatchNodeGroupRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<PerformMaintenanceNodeGroupRequest, Operation>
+      performMaintenanceCallable;
+  private final OperationCallable<PerformMaintenanceNodeGroupRequest, Operation, Operation>
+      performMaintenanceOperationCallable;
   private final UnaryCallable<SetIamPolicyNodeGroupRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<SetNodeTemplateNodeGroupRequest, Operation> setNodeTemplateCallable;
   private final OperationCallable<SetNodeTemplateNodeGroupRequest, Operation, Operation>
@@ -834,6 +897,37 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate ADD_NODES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/nodeGroups/{node_group}");
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/nodeGroups/{node_group}");
+  private static final PathTemplate DELETE_NODES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/nodeGroups/{node_group}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/nodeGroups/{node_group}");
+  private static final PathTemplate GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/nodeGroups/{resource}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate LIST_NODES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/nodeGroups/{node_group}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/nodeGroups/{node_group}");
+  private static final PathTemplate PERFORM_MAINTENANCE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/nodeGroups/{node_group}");
+  private static final PathTemplate SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/nodeGroups/{resource}");
+  private static final PathTemplate SET_NODE_TEMPLATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/nodeGroups/{node_group}");
+  private static final PathTemplate SIMULATE_MAINTENANCE_EVENT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/nodeGroups/{node_group}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/nodeGroups/{resource}");
 
   public static final HttpJsonNodeGroupsStub create(NodeGroupsStubSettings settings)
       throws IOException {
@@ -886,6 +980,14 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("node_group", String.valueOf(request.getNodeGroup()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return ADD_NODES_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<AggregatedListNodeGroupsRequest, NodeGroupAggregatedList>
         aggregatedListTransportSettings =
@@ -898,6 +1000,13 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<DeleteNodeGroupRequest, Operation> deleteTransportSettings =
@@ -912,6 +1021,14 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("node_group", String.valueOf(request.getNodeGroup()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<DeleteNodesNodeGroupRequest, Operation> deleteNodesTransportSettings =
         HttpJsonCallSettings.<DeleteNodesNodeGroupRequest, Operation>newBuilder()
@@ -924,6 +1041,14 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("node_group", String.valueOf(request.getNodeGroup()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return DELETE_NODES_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetNodeGroupRequest, NodeGroup> getTransportSettings =
@@ -938,6 +1063,14 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("node_group", String.valueOf(request.getNodeGroup()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyNodeGroupRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyNodeGroupRequest, Policy>newBuilder()
@@ -951,6 +1084,14 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertNodeGroupRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertNodeGroupRequest, Operation>newBuilder()
@@ -963,6 +1104,13 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListNodeGroupsRequest, NodeGroupList> listTransportSettings =
         HttpJsonCallSettings.<ListNodeGroupsRequest, NodeGroupList>newBuilder()
@@ -974,6 +1122,13 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListNodesNodeGroupsRequest, NodeGroupsListNodes>
@@ -989,6 +1144,15 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "node_group", String.valueOf(request.getNodeGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return LIST_NODES_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchNodeGroupRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchNodeGroupRequest, Operation>newBuilder()
@@ -1002,7 +1166,39 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("node_group", String.valueOf(request.getNodeGroup()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
+    HttpJsonCallSettings<PerformMaintenanceNodeGroupRequest, Operation>
+        performMaintenanceTransportSettings =
+            HttpJsonCallSettings.<PerformMaintenanceNodeGroupRequest, Operation>newBuilder()
+                .setMethodDescriptor(performMaintenanceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("node_group", String.valueOf(request.getNodeGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "node_group", String.valueOf(request.getNodeGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return PERFORM_MAINTENANCE_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
     HttpJsonCallSettings<SetIamPolicyNodeGroupRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyNodeGroupRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
@@ -1014,6 +1210,14 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetNodeTemplateNodeGroupRequest, Operation>
@@ -1029,6 +1233,16 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "node_group", String.valueOf(request.getNodeGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return SET_NODE_TEMPLATE_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SimulateMaintenanceEventNodeGroupRequest, Operation>
         simulateMaintenanceEventTransportSettings =
@@ -1042,6 +1256,16 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "node_group", String.valueOf(request.getNodeGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return SIMULATE_MAINTENANCE_EVENT_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>
@@ -1057,6 +1281,15 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 
@@ -1129,6 +1362,17 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.performMaintenanceCallable =
+        callableFactory.createUnaryCallable(
+            performMaintenanceTransportSettings,
+            settings.performMaintenanceSettings(),
+            clientContext);
+    this.performMaintenanceOperationCallable =
+        callableFactory.createOperationCallable(
+            performMaintenanceTransportSettings,
+            settings.performMaintenanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -1175,6 +1419,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(listNodesMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(performMaintenanceMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(setNodeTemplateMethodDescriptor);
     methodDescriptors.add(simulateMaintenanceEventMethodDescriptor);
@@ -1275,6 +1520,17 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
   @Override
   public OperationCallable<PatchNodeGroupRequest, Operation, Operation> patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PerformMaintenanceNodeGroupRequest, Operation> performMaintenanceCallable() {
+    return performMaintenanceCallable;
+  }
+
+  @Override
+  public OperationCallable<PerformMaintenanceNodeGroupRequest, Operation, Operation>
+      performMaintenanceOperationCallable() {
+    return performMaintenanceOperationCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,8 @@ import static com.google.cloud.dataplex.v1.DataScanServiceClient.ListLocationsPa
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dataplex.v1.CancelDataScanJobRequest;
+import com.google.cloud.dataplex.v1.CancelDataScanJobResponse;
 import com.google.cloud.dataplex.v1.CreateDataScanRequest;
 import com.google.cloud.dataplex.v1.DataScan;
 import com.google.cloud.dataplex.v1.DataScanJob;
@@ -43,6 +45,11 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -123,6 +130,11 @@ public abstract class DataScanServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listDataScanJobsCallable()");
   }
 
+  public UnaryCallable<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelDataScanJobCallable()");
+  }
+
   public UnaryCallable<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
       generateDataQualityRulesCallable() {
     throw new UnsupportedOperationException("Not implemented: generateDataQualityRulesCallable()");
@@ -139,6 +151,19 @@ public abstract class DataScanServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

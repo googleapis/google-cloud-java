@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.discoveryengine.v1beta.EngineServiceClient.ListEn
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -37,6 +38,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -65,12 +67,15 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -88,7 +93,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of updateEngine to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of updateEngine:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -105,17 +112,59 @@ import org.threeten.bp.Duration;
  *             .updateEngineSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * EngineServiceStubSettings engineServiceSettings = engineServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createEngine:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * EngineServiceStubSettings.Builder engineServiceSettingsBuilder =
+ *     EngineServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * engineServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/discoveryengine.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.serving.readwrite")
+          .build();
 
   private final UnaryCallSettings<CreateEngineRequest, Operation> createEngineSettings;
   private final OperationCallSettings<CreateEngineRequest, Engine, CreateEngineMetadata>
@@ -132,6 +181,8 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
   private final UnaryCallSettings<TuneEngineRequest, Operation> tuneEngineSettings;
   private final OperationCallSettings<TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
       tuneEngineOperationSettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
 
   private static final PagedListDescriptor<ListEnginesRequest, ListEnginesResponse, Engine>
       LIST_ENGINES_PAGE_STR_DESC =
@@ -163,9 +214,7 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
 
             @Override
             public Iterable<Engine> extractResources(ListEnginesResponse payload) {
-              return payload.getEnginesList() == null
-                  ? ImmutableList.<Engine>of()
-                  : payload.getEnginesList();
+              return payload.getEnginesList();
             }
           };
 
@@ -245,6 +294,16 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
     return tuneEngineOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
   public EngineServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -261,15 +320,6 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -282,6 +332,7 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "discoveryengine.googleapis.com:443";
   }
@@ -375,6 +426,17 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
     resumeEngineSettings = settingsBuilder.resumeEngineSettings().build();
     tuneEngineSettings = settingsBuilder.tuneEngineSettings().build();
     tuneEngineOperationSettings = settingsBuilder.tuneEngineOperationSettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-discoveryengine")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for EngineServiceStubSettings. */
@@ -397,6 +459,8 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
     private final OperationCallSettings.Builder<
             TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
         tuneEngineOperationSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -435,6 +499,8 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
       resumeEngineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       tuneEngineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       tuneEngineOperationSettings = OperationCallSettings.newBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -445,7 +511,9 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
               listEnginesSettings,
               pauseEngineSettings,
               resumeEngineSettings,
-              tuneEngineSettings);
+              tuneEngineSettings,
+              getIamPolicySettings,
+              setIamPolicySettings);
       initDefaults(this);
     }
 
@@ -463,6 +531,8 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
       resumeEngineSettings = settings.resumeEngineSettings.toBuilder();
       tuneEngineSettings = settings.tuneEngineSettings.toBuilder();
       tuneEngineOperationSettings = settings.tuneEngineOperationSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -473,7 +543,9 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
               listEnginesSettings,
               pauseEngineSettings,
               resumeEngineSettings,
-              tuneEngineSettings);
+              tuneEngineSettings,
+              getIamPolicySettings,
+              setIamPolicySettings);
     }
 
     private static Builder createDefault() {
@@ -542,6 +614,16 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .createEngineOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -556,13 +638,13 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -580,13 +662,13 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -603,13 +685,13 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -690,13 +772,14 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
       return tuneEngineOperationSettings;
     }
 
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -412,7 +412,8 @@ public class ServingConfigName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               servingConfigName.pathTemplate, PROJECT_LOCATION_DATA_STORE_SERVING_CONFIG),
-          "toBuilder is only supported when ServingConfigName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/servingConfigs/{serving_config}");
+          "toBuilder is only supported when ServingConfigName has the pattern of"
+              + " projects/{project}/locations/{location}/dataStores/{data_store}/servingConfigs/{serving_config}");
       this.project = servingConfigName.project;
       this.location = servingConfigName.location;
       this.dataStore = servingConfigName.dataStore;

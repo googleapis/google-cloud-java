@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for managing Vertex AI's machine learning PersistentResource.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/persistent_resource_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PersistentResourceServiceGrpc {
 
@@ -363,6 +360,19 @@ public final class PersistentResourceServiceGrpc {
     return PersistentResourceServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static PersistentResourceServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<PersistentResourceServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PersistentResourceServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public PersistentResourceServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PersistentResourceServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return PersistentResourceServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -624,6 +634,112 @@ public final class PersistentResourceServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service PersistentResourceService.
+   *
+   * <pre>
+   * A service for managing Vertex AI's machine learning PersistentResource.
+   * </pre>
+   */
+  public static final class PersistentResourceServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<PersistentResourceServiceBlockingV2Stub> {
+    private PersistentResourceServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected PersistentResourceServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new PersistentResourceServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a PersistentResource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createPersistentResource(
+        com.google.cloud.aiplatform.v1.CreatePersistentResourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreatePersistentResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a PersistentResource.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.PersistentResource getPersistentResource(
+        com.google.cloud.aiplatform.v1.GetPersistentResourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetPersistentResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists PersistentResources in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListPersistentResourcesResponse listPersistentResources(
+        com.google.cloud.aiplatform.v1.ListPersistentResourcesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListPersistentResourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a PersistentResource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePersistentResource(
+        com.google.cloud.aiplatform.v1.DeletePersistentResourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeletePersistentResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a PersistentResource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updatePersistentResource(
+        com.google.cloud.aiplatform.v1.UpdatePersistentResourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdatePersistentResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reboots a PersistentResource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rebootPersistentResource(
+        com.google.cloud.aiplatform.v1.RebootPersistentResourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRebootPersistentResourceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * PersistentResourceService.
    *
    * <pre>
    * A service for managing Vertex AI's machine learning PersistentResource.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,6 +72,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSpecialistPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSpecialistPoolRequest, SpecialistPool>
@@ -83,6 +84,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSpecialistPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SpecialistPool.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse>
@@ -95,6 +97,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   ProtoUtils.marshaller(ListSpecialistPoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSpecialistPoolsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSpecialistPoolRequest, Operation>
@@ -106,6 +109,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSpecialistPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSpecialistPoolRequest, Operation>
@@ -117,6 +121,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSpecialistPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -128,6 +133,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -136,6 +142,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -144,6 +151,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -152,6 +160,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -163,6 +172,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateSpecialistPoolRequest, Operation> createSpecialistPoolCallable;
@@ -243,6 +253,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSpecialistPoolRequest, SpecialistPool> getSpecialistPoolTransportSettings =
         GrpcCallSettings.<GetSpecialistPoolRequest, SpecialistPool>newBuilder()
@@ -253,6 +264,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse>
         listSpecialistPoolsTransportSettings =
@@ -264,6 +276,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteSpecialistPoolRequest, Operation> deleteSpecialistPoolTransportSettings =
         GrpcCallSettings.<DeleteSpecialistPoolRequest, Operation>newBuilder()
@@ -274,6 +287,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSpecialistPoolRequest, Operation> updateSpecialistPoolTransportSettings =
         GrpcCallSettings.<UpdateSpecialistPoolRequest, Operation>newBuilder()
@@ -316,6 +330,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -326,6 +341,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -337,6 +353,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createSpecialistPoolCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,6 +122,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCustomJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomJobRequest, CustomJob>
@@ -131,6 +132,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1beta1.JobService/GetCustomJob")
               .setRequestMarshaller(ProtoUtils.marshaller(GetCustomJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCustomJobsRequest, ListCustomJobsResponse>
@@ -142,6 +144,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(ListCustomJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCustomJobRequest, Operation>
@@ -152,6 +155,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCustomJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelCustomJobRequest, Empty>
@@ -162,6 +166,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelCustomJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDataLabelingJobRequest, DataLabelingJob>
@@ -172,6 +177,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataLabelingJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataLabelingJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataLabelingJobRequest, DataLabelingJob>
@@ -182,6 +188,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataLabelingJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataLabelingJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>
@@ -193,6 +200,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(ListDataLabelingJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataLabelingJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataLabelingJobRequest, Operation>
@@ -203,6 +211,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataLabelingJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelDataLabelingJobRequest, Empty>
@@ -213,6 +222,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelDataLabelingJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -227,6 +237,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(CreateHyperparameterTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(HyperparameterTuningJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetHyperparameterTuningJobRequest, HyperparameterTuningJob>
@@ -239,6 +250,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(GetHyperparameterTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(HyperparameterTuningJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -254,6 +266,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(ListHyperparameterTuningJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListHyperparameterTuningJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteHyperparameterTuningJobRequest, Operation>
@@ -265,6 +278,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteHyperparameterTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelHyperparameterTuningJobRequest, Empty>
@@ -276,6 +290,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelHyperparameterTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateNasJobRequest, NasJob> createNasJobMethodDescriptor =
@@ -284,6 +299,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.JobService/CreateNasJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateNasJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(NasJob.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetNasJobRequest, NasJob> getNasJobMethodDescriptor =
@@ -292,6 +308,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.JobService/GetNasJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetNasJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(NasJob.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListNasJobsRequest, ListNasJobsResponse>
@@ -302,6 +319,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListNasJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNasJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNasJobRequest, Operation>
@@ -311,6 +329,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1beta1.JobService/DeleteNasJob")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteNasJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelNasJobRequest, Empty> cancelNasJobMethodDescriptor =
@@ -319,6 +338,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.JobService/CancelNasJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CancelNasJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetNasTrialDetailRequest, NasTrialDetail>
@@ -329,6 +349,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetNasTrialDetailRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NasTrialDetail.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListNasTrialDetailsRequest, ListNasTrialDetailsResponse>
@@ -340,6 +361,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(ListNasTrialDetailsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNasTrialDetailsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBatchPredictionJobRequest, BatchPredictionJob>
@@ -351,6 +373,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBatchPredictionJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BatchPredictionJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBatchPredictionJobRequest, BatchPredictionJob>
@@ -361,6 +384,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBatchPredictionJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BatchPredictionJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -375,6 +399,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(ListBatchPredictionJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBatchPredictionJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBatchPredictionJobRequest, Operation>
@@ -386,6 +411,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBatchPredictionJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelBatchPredictionJobRequest, Empty>
@@ -397,6 +423,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelBatchPredictionJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -412,6 +439,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       CreateModelDeploymentMonitoringJobRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ModelDeploymentMonitoringJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -431,6 +459,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       SearchModelDeploymentMonitoringStatsAnomaliesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -446,6 +475,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       GetModelDeploymentMonitoringJobRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ModelDeploymentMonitoringJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -463,6 +493,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListModelDeploymentMonitoringJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateModelDeploymentMonitoringJobRequest, Operation>
@@ -475,6 +506,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(
                       UpdateModelDeploymentMonitoringJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteModelDeploymentMonitoringJobRequest, Operation>
@@ -487,6 +519,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(
                       DeleteModelDeploymentMonitoringJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PauseModelDeploymentMonitoringJobRequest, Empty>
@@ -499,6 +532,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(
                       PauseModelDeploymentMonitoringJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResumeModelDeploymentMonitoringJobRequest, Empty>
@@ -511,6 +545,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(
                       ResumeModelDeploymentMonitoringJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -522,6 +557,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -530,6 +566,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -538,6 +575,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -546,6 +584,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -557,6 +596,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateCustomJobRequest, CustomJob> createCustomJobCallable;
@@ -721,6 +761,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetCustomJobRequest, CustomJob> getCustomJobTransportSettings =
         GrpcCallSettings.<GetCustomJobRequest, CustomJob>newBuilder()
@@ -731,6 +772,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCustomJobsRequest, ListCustomJobsResponse>
         listCustomJobsTransportSettings =
@@ -742,6 +784,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteCustomJobRequest, Operation> deleteCustomJobTransportSettings =
         GrpcCallSettings.<DeleteCustomJobRequest, Operation>newBuilder()
@@ -752,6 +795,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CancelCustomJobRequest, Empty> cancelCustomJobTransportSettings =
         GrpcCallSettings.<CancelCustomJobRequest, Empty>newBuilder()
@@ -762,6 +806,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDataLabelingJobRequest, DataLabelingJob>
         createDataLabelingJobTransportSettings =
@@ -773,6 +818,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDataLabelingJobRequest, DataLabelingJob>
         getDataLabelingJobTransportSettings =
@@ -784,6 +830,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>
         listDataLabelingJobsTransportSettings =
@@ -795,6 +842,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteDataLabelingJobRequest, Operation>
         deleteDataLabelingJobTransportSettings =
@@ -806,6 +854,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CancelDataLabelingJobRequest, Empty> cancelDataLabelingJobTransportSettings =
         GrpcCallSettings.<CancelDataLabelingJobRequest, Empty>newBuilder()
@@ -816,6 +865,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateHyperparameterTuningJobRequest, HyperparameterTuningJob>
         createHyperparameterTuningJobTransportSettings =
@@ -828,6 +878,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetHyperparameterTuningJobRequest, HyperparameterTuningJob>
         getHyperparameterTuningJobTransportSettings =
@@ -840,6 +891,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse>
         listHyperparameterTuningJobsTransportSettings =
@@ -853,6 +905,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteHyperparameterTuningJobRequest, Operation>
         deleteHyperparameterTuningJobTransportSettings =
@@ -864,6 +917,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CancelHyperparameterTuningJobRequest, Empty>
         cancelHyperparameterTuningJobTransportSettings =
@@ -875,6 +929,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateNasJobRequest, NasJob> createNasJobTransportSettings =
         GrpcCallSettings.<CreateNasJobRequest, NasJob>newBuilder()
@@ -885,6 +940,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetNasJobRequest, NasJob> getNasJobTransportSettings =
         GrpcCallSettings.<GetNasJobRequest, NasJob>newBuilder()
@@ -895,6 +951,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListNasJobsRequest, ListNasJobsResponse> listNasJobsTransportSettings =
         GrpcCallSettings.<ListNasJobsRequest, ListNasJobsResponse>newBuilder()
@@ -905,6 +962,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteNasJobRequest, Operation> deleteNasJobTransportSettings =
         GrpcCallSettings.<DeleteNasJobRequest, Operation>newBuilder()
@@ -915,6 +973,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CancelNasJobRequest, Empty> cancelNasJobTransportSettings =
         GrpcCallSettings.<CancelNasJobRequest, Empty>newBuilder()
@@ -925,6 +984,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetNasTrialDetailRequest, NasTrialDetail> getNasTrialDetailTransportSettings =
         GrpcCallSettings.<GetNasTrialDetailRequest, NasTrialDetail>newBuilder()
@@ -935,6 +995,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListNasTrialDetailsRequest, ListNasTrialDetailsResponse>
         listNasTrialDetailsTransportSettings =
@@ -946,6 +1007,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateBatchPredictionJobRequest, BatchPredictionJob>
         createBatchPredictionJobTransportSettings =
@@ -957,6 +1019,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetBatchPredictionJobRequest, BatchPredictionJob>
         getBatchPredictionJobTransportSettings =
@@ -968,6 +1031,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse>
         listBatchPredictionJobsTransportSettings =
@@ -980,6 +1044,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteBatchPredictionJobRequest, Operation>
         deleteBatchPredictionJobTransportSettings =
@@ -991,6 +1056,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CancelBatchPredictionJobRequest, Empty>
         cancelBatchPredictionJobTransportSettings =
@@ -1002,6 +1068,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
         createModelDeploymentMonitoringJobTransportSettings =
@@ -1015,6 +1082,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             SearchModelDeploymentMonitoringStatsAnomaliesRequest,
@@ -1033,6 +1101,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                           String.valueOf(request.getModelDeploymentMonitoringJob()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getModelDeploymentMonitoringJob())
                 .build();
     GrpcCallSettings<GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
         getModelDeploymentMonitoringJobTransportSettings =
@@ -1045,6 +1114,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsResponse>
@@ -1060,6 +1130,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateModelDeploymentMonitoringJobRequest, Operation>
         updateModelDeploymentMonitoringJobTransportSettings =
@@ -1084,6 +1155,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<PauseModelDeploymentMonitoringJobRequest, Empty>
         pauseModelDeploymentMonitoringJobTransportSettings =
@@ -1095,6 +1167,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ResumeModelDeploymentMonitoringJobRequest, Empty>
         resumeModelDeploymentMonitoringJobTransportSettings =
@@ -1106,6 +1179,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1136,6 +1210,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1146,6 +1221,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1157,6 +1233,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createCustomJobCallable =

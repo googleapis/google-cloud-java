@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *   resources, named `workspaces/&#42;`.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/area120/tables/v1alpha1/tables.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TablesServiceGrpc {
 
@@ -599,6 +596,19 @@ public final class TablesServiceGrpc {
     return TablesServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TablesServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TablesServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TablesServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public TablesServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TablesServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TablesServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1049,6 +1059,199 @@ public final class TablesServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TablesService.
+   *
+   * <pre>
+   * The Tables Service provides an API for reading and updating tables.
+   * It defines the following resource model:
+   * - The API has a collection of [Table][google.area120.tables.v1alpha1.Table]
+   *   resources, named `tables/&#42;`
+   * - Each Table has a collection of [Row][google.area120.tables.v1alpha1.Row]
+   *   resources, named `tables/&#42;&#47;rows/&#42;`
+   * - The API has a collection of
+   *   [Workspace][google.area120.tables.v1alpha1.Workspace]
+   *   resources, named `workspaces/&#42;`.
+   * </pre>
+   */
+  public static final class TablesServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TablesServiceBlockingV2Stub> {
+    private TablesServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TablesServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TablesServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a table. Returns NOT_FOUND if the table does not exist.
+     * </pre>
+     */
+    public com.google.area120.tables.v1alpha1.Table getTable(
+        com.google.area120.tables.v1alpha1.GetTableRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists tables for the user.
+     * </pre>
+     */
+    public com.google.area120.tables.v1alpha1.ListTablesResponse listTables(
+        com.google.area120.tables.v1alpha1.ListTablesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTablesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a workspace. Returns NOT_FOUND if the workspace does not exist.
+     * </pre>
+     */
+    public com.google.area120.tables.v1alpha1.Workspace getWorkspace(
+        com.google.area120.tables.v1alpha1.GetWorkspaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetWorkspaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists workspaces for the user.
+     * </pre>
+     */
+    public com.google.area120.tables.v1alpha1.ListWorkspacesResponse listWorkspaces(
+        com.google.area120.tables.v1alpha1.ListWorkspacesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListWorkspacesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a row. Returns NOT_FOUND if the row does not exist in the table.
+     * </pre>
+     */
+    public com.google.area120.tables.v1alpha1.Row getRow(
+        com.google.area120.tables.v1alpha1.GetRowRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetRowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists rows in a table. Returns NOT_FOUND if the table does not exist.
+     * </pre>
+     */
+    public com.google.area120.tables.v1alpha1.ListRowsResponse listRows(
+        com.google.area120.tables.v1alpha1.ListRowsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListRowsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a row.
+     * </pre>
+     */
+    public com.google.area120.tables.v1alpha1.Row createRow(
+        com.google.area120.tables.v1alpha1.CreateRowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateRowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates multiple rows.
+     * </pre>
+     */
+    public com.google.area120.tables.v1alpha1.BatchCreateRowsResponse batchCreateRows(
+        com.google.area120.tables.v1alpha1.BatchCreateRowsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchCreateRowsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a row.
+     * </pre>
+     */
+    public com.google.area120.tables.v1alpha1.Row updateRow(
+        com.google.area120.tables.v1alpha1.UpdateRowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateRowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates multiple rows.
+     * </pre>
+     */
+    public com.google.area120.tables.v1alpha1.BatchUpdateRowsResponse batchUpdateRows(
+        com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchUpdateRowsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a row.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteRow(
+        com.google.area120.tables.v1alpha1.DeleteRowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteRowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes multiple rows.
+     * </pre>
+     */
+    public com.google.protobuf.Empty batchDeleteRows(
+        com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchDeleteRowsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service TablesService.
    *
    * <pre>
    * The Tables Service provides an API for reading and updating tables.

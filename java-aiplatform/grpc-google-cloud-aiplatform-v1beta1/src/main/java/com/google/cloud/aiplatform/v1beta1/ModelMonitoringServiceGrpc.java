@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * `ModelMonitor` resources, `ModelMonitoringJob` resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/model_monitoring_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ModelMonitoringServiceGrpc {
 
@@ -607,6 +604,19 @@ public final class ModelMonitoringServiceGrpc {
     return ModelMonitoringServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ModelMonitoringServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ModelMonitoringServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ModelMonitoringServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ModelMonitoringServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ModelMonitoringServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ModelMonitoringServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1046,6 +1056,190 @@ public final class ModelMonitoringServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ModelMonitoringService.
+   *
+   * <pre>
+   * A service for creating and managing Vertex AI Model moitoring. This includes
+   * `ModelMonitor` resources, `ModelMonitoringJob` resources.
+   * </pre>
+   */
+  public static final class ModelMonitoringServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ModelMonitoringServiceBlockingV2Stub> {
+    private ModelMonitoringServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ModelMonitoringServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ModelMonitoringServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ModelMonitor.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createModelMonitor(
+        com.google.cloud.aiplatform.v1beta1.CreateModelMonitorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateModelMonitorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ModelMonitor.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateModelMonitor(
+        com.google.cloud.aiplatform.v1beta1.UpdateModelMonitorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateModelMonitorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ModelMonitor.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitor getModelMonitor(
+        com.google.cloud.aiplatform.v1beta1.GetModelMonitorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetModelMonitorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ModelMonitors in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListModelMonitorsResponse listModelMonitors(
+        com.google.cloud.aiplatform.v1beta1.ListModelMonitorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListModelMonitorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ModelMonitor.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteModelMonitor(
+        com.google.cloud.aiplatform.v1beta1.DeleteModelMonitorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteModelMonitorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ModelMonitoringJob.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitoringJob createModelMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.CreateModelMonitoringJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateModelMonitoringJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ModelMonitoringJob.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitoringJob getModelMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.GetModelMonitoringJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetModelMonitoringJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ModelMonitoringJobs.
+     * Callers may choose to read across multiple Monitors as per
+     * [AIP-159](https://google.aip.dev/159) by using '-' (the hyphen or dash
+     * character) as a wildcard character instead of modelMonitor id in the
+     * parent. Format
+     * `projects/{project_id}/locations/{location}/moodelMonitors/-/modelMonitoringJobs`
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListModelMonitoringJobsResponse
+        listModelMonitoringJobs(
+            com.google.cloud.aiplatform.v1beta1.ListModelMonitoringJobsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListModelMonitoringJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ModelMonitoringJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteModelMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.DeleteModelMonitoringJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteModelMonitoringJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches Model Monitoring Stats generated within a given time window.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.SearchModelMonitoringStatsResponse
+        searchModelMonitoringStats(
+            com.google.cloud.aiplatform.v1beta1.SearchModelMonitoringStatsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSearchModelMonitoringStatsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the Model Monitoring alerts.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.SearchModelMonitoringAlertsResponse
+        searchModelMonitoringAlerts(
+            com.google.cloud.aiplatform.v1beta1.SearchModelMonitoringAlertsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSearchModelMonitoringAlertsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ModelMonitoringService.
    *
    * <pre>
    * A service for creating and managing Vertex AI Model moitoring. This includes

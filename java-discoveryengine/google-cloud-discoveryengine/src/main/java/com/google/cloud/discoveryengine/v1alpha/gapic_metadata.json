@@ -43,11 +43,41 @@
             "CompleteQuery": {
               "methods": ["completeQuery", "completeQueryCallable"]
             },
+            "ImportCompletionSuggestions": {
+              "methods": ["importCompletionSuggestionsAsync", "importCompletionSuggestionsOperationCallable", "importCompletionSuggestionsCallable"]
+            },
             "ImportSuggestionDenyListEntries": {
               "methods": ["importSuggestionDenyListEntriesAsync", "importSuggestionDenyListEntriesOperationCallable", "importSuggestionDenyListEntriesCallable"]
             },
+            "PurgeCompletionSuggestions": {
+              "methods": ["purgeCompletionSuggestionsAsync", "purgeCompletionSuggestionsOperationCallable", "purgeCompletionSuggestionsCallable"]
+            },
             "PurgeSuggestionDenyListEntries": {
               "methods": ["purgeSuggestionDenyListEntriesAsync", "purgeSuggestionDenyListEntriesOperationCallable", "purgeSuggestionDenyListEntriesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ControlService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ControlServiceClient",
+          "rpcs": {
+            "CreateControl": {
+              "methods": ["createControl", "createControl", "createControl", "createControl", "createControlCallable"]
+            },
+            "DeleteControl": {
+              "methods": ["deleteControl", "deleteControl", "deleteControl", "deleteControlCallable"]
+            },
+            "GetControl": {
+              "methods": ["getControl", "getControl", "getControl", "getControlCallable"]
+            },
+            "ListControls": {
+              "methods": ["listControls", "listControls", "listControls", "listControls", "listControlsPagedCallable", "listControlsCallable"]
+            },
+            "UpdateControl": {
+              "methods": ["updateControl", "updateControl", "updateControlCallable"]
             }
           }
         }
@@ -136,6 +166,9 @@
         "grpc": {
           "libraryClient": "DocumentServiceClient",
           "rpcs": {
+            "BatchGetDocumentsMetadata": {
+              "methods": ["batchGetDocumentsMetadata", "batchGetDocumentsMetadata", "batchGetDocumentsMetadata", "batchGetDocumentsMetadataCallable"]
+            },
             "CreateDocument": {
               "methods": ["createDocument", "createDocument", "createDocument", "createDocumentCallable"]
             },
@@ -209,6 +242,27 @@
         }
       }
     },
+    "EvaluationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EvaluationServiceClient",
+          "rpcs": {
+            "CreateEvaluation": {
+              "methods": ["createEvaluationAsync", "createEvaluationAsync", "createEvaluationAsync", "createEvaluationOperationCallable", "createEvaluationCallable"]
+            },
+            "GetEvaluation": {
+              "methods": ["getEvaluation", "getEvaluation", "getEvaluation", "getEvaluationCallable"]
+            },
+            "ListEvaluationResults": {
+              "methods": ["listEvaluationResults", "listEvaluationResults", "listEvaluationResults", "listEvaluationResultsPagedCallable", "listEvaluationResultsCallable"]
+            },
+            "ListEvaluations": {
+              "methods": ["listEvaluations", "listEvaluations", "listEvaluations", "listEvaluationsPagedCallable", "listEvaluationsCallable"]
+            }
+          }
+        }
+      }
+    },
     "GroundedGenerationService": {
       "clients": {
         "grpc": {
@@ -263,6 +317,57 @@
         }
       }
     },
+    "SampleQueryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SampleQueryServiceClient",
+          "rpcs": {
+            "CreateSampleQuery": {
+              "methods": ["createSampleQuery", "createSampleQuery", "createSampleQuery", "createSampleQueryCallable"]
+            },
+            "DeleteSampleQuery": {
+              "methods": ["deleteSampleQuery", "deleteSampleQuery", "deleteSampleQuery", "deleteSampleQueryCallable"]
+            },
+            "GetSampleQuery": {
+              "methods": ["getSampleQuery", "getSampleQuery", "getSampleQuery", "getSampleQueryCallable"]
+            },
+            "ImportSampleQueries": {
+              "methods": ["importSampleQueriesAsync", "importSampleQueriesOperationCallable", "importSampleQueriesCallable"]
+            },
+            "ListSampleQueries": {
+              "methods": ["listSampleQueries", "listSampleQueries", "listSampleQueries", "listSampleQueriesPagedCallable", "listSampleQueriesCallable"]
+            },
+            "UpdateSampleQuery": {
+              "methods": ["updateSampleQuery", "updateSampleQuery", "updateSampleQueryCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SampleQuerySetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SampleQuerySetServiceClient",
+          "rpcs": {
+            "CreateSampleQuerySet": {
+              "methods": ["createSampleQuerySet", "createSampleQuerySet", "createSampleQuerySet", "createSampleQuerySetCallable"]
+            },
+            "DeleteSampleQuerySet": {
+              "methods": ["deleteSampleQuerySet", "deleteSampleQuerySet", "deleteSampleQuerySet", "deleteSampleQuerySetCallable"]
+            },
+            "GetSampleQuerySet": {
+              "methods": ["getSampleQuerySet", "getSampleQuerySet", "getSampleQuerySet", "getSampleQuerySetCallable"]
+            },
+            "ListSampleQuerySets": {
+              "methods": ["listSampleQuerySets", "listSampleQuerySets", "listSampleQuerySets", "listSampleQuerySetsPagedCallable", "listSampleQuerySetsCallable"]
+            },
+            "UpdateSampleQuerySet": {
+              "methods": ["updateSampleQuerySet", "updateSampleQuerySet", "updateSampleQuerySetCallable"]
+            }
+          }
+        }
+      }
+    },
     "SchemaService": {
       "clients": {
         "grpc": {
@@ -304,6 +409,9 @@
         "grpc": {
           "libraryClient": "SearchTuningServiceClient",
           "rpcs": {
+            "ListCustomModels": {
+              "methods": ["listCustomModels", "listCustomModelsCallable"]
+            },
             "TrainCustomModel": {
               "methods": ["trainCustomModelAsync", "trainCustomModelOperationCallable", "trainCustomModelCallable"]
             }
@@ -324,6 +432,33 @@
             },
             "UpdateServingConfig": {
               "methods": ["updateServingConfig", "updateServingConfig", "updateServingConfigCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SessionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SessionServiceClient",
+          "rpcs": {
+            "CreateSession": {
+              "methods": ["createSession", "createSession", "createSession", "createSessionCallable"]
+            },
+            "DeleteSession": {
+              "methods": ["deleteSession", "deleteSession", "deleteSession", "deleteSessionCallable"]
+            },
+            "GetSession": {
+              "methods": ["getSession", "getSession", "getSession", "getSessionCallable"]
+            },
+            "ListFiles": {
+              "methods": ["listFiles", "listFiles", "listFiles", "listFilesPagedCallable", "listFilesCallable"]
+            },
+            "ListSessions": {
+              "methods": ["listSessions", "listSessions", "listSessions", "listSessionsPagedCallable", "listSessionsCallable"]
+            },
+            "UpdateSession": {
+              "methods": ["updateSession", "updateSession", "updateSessionCallable"]
             }
           }
         }
@@ -361,11 +496,17 @@
             "GetTargetSite": {
               "methods": ["getTargetSite", "getTargetSite", "getTargetSite", "getTargetSiteCallable"]
             },
+            "GetUriPatternDocumentData": {
+              "methods": ["getUriPatternDocumentData", "getUriPatternDocumentDataCallable"]
+            },
             "ListTargetSites": {
               "methods": ["listTargetSites", "listTargetSites", "listTargetSites", "listTargetSitesPagedCallable", "listTargetSitesCallable"]
             },
             "RecrawlUris": {
               "methods": ["recrawlUrisAsync", "recrawlUrisOperationCallable", "recrawlUrisCallable"]
+            },
+            "SetUriPatternDocumentData": {
+              "methods": ["setUriPatternDocumentDataAsync", "setUriPatternDocumentDataOperationCallable", "setUriPatternDocumentDataCallable"]
             },
             "UpdateTargetSite": {
               "methods": ["updateTargetSiteAsync", "updateTargetSiteAsync", "updateTargetSiteOperationCallable", "updateTargetSiteCallable"]

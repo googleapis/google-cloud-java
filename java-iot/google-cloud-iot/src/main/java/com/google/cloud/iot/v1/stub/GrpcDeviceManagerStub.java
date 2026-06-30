@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,6 +81,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDeviceRegistryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeviceRegistry.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDeviceRegistryRequest, DeviceRegistry>
@@ -91,6 +92,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDeviceRegistryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeviceRegistry.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDeviceRegistryRequest, DeviceRegistry>
@@ -101,6 +103,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDeviceRegistryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeviceRegistry.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDeviceRegistryRequest, Empty>
@@ -111,6 +114,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDeviceRegistryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse>
@@ -122,6 +126,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   ProtoUtils.marshaller(ListDeviceRegistriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeviceRegistriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDeviceRequest, Device> createDeviceMethodDescriptor =
@@ -130,6 +135,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
           .setFullMethodName("google.cloud.iot.v1.DeviceManager/CreateDevice")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateDeviceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Device.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetDeviceRequest, Device> getDeviceMethodDescriptor =
@@ -138,6 +144,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
           .setFullMethodName("google.cloud.iot.v1.DeviceManager/GetDevice")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDeviceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Device.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateDeviceRequest, Device> updateDeviceMethodDescriptor =
@@ -146,6 +153,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
           .setFullMethodName("google.cloud.iot.v1.DeviceManager/UpdateDevice")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateDeviceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Device.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteDeviceRequest, Empty> deleteDeviceMethodDescriptor =
@@ -154,6 +162,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
           .setFullMethodName("google.cloud.iot.v1.DeviceManager/DeleteDevice")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteDeviceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListDevicesRequest, ListDevicesResponse>
@@ -164,6 +173,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListDevicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDevicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ModifyCloudToDeviceConfigRequest, DeviceConfig>
@@ -174,6 +184,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ModifyCloudToDeviceConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeviceConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -187,6 +198,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   ProtoUtils.marshaller(ListDeviceConfigVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeviceConfigVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDeviceStatesRequest, ListDeviceStatesResponse>
@@ -198,6 +210,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   ProtoUtils.marshaller(ListDeviceStatesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeviceStatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -206,6 +219,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
           .setFullMethodName("google.cloud.iot.v1.DeviceManager/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -214,6 +228,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
           .setFullMethodName("google.cloud.iot.v1.DeviceManager/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -225,6 +240,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
@@ -236,6 +252,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   ProtoUtils.marshaller(SendCommandToDeviceRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SendCommandToDeviceResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
@@ -247,6 +264,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   ProtoUtils.marshaller(BindDeviceToGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BindDeviceToGatewayResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -260,6 +278,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   ProtoUtils.marshaller(UnbindDeviceFromGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UnbindDeviceFromGatewayResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateDeviceRegistryRequest, DeviceRegistry>
@@ -348,6 +367,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDeviceRegistryRequest, DeviceRegistry> getDeviceRegistryTransportSettings =
         GrpcCallSettings.<GetDeviceRegistryRequest, DeviceRegistry>newBuilder()
@@ -358,6 +378,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDeviceRegistryRequest, DeviceRegistry>
         updateDeviceRegistryTransportSettings =
@@ -381,6 +402,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse>
         listDeviceRegistriesTransportSettings =
@@ -392,6 +414,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateDeviceRequest, Device> createDeviceTransportSettings =
         GrpcCallSettings.<CreateDeviceRequest, Device>newBuilder()
@@ -402,6 +425,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetDeviceRequest, Device> getDeviceTransportSettings =
         GrpcCallSettings.<GetDeviceRequest, Device>newBuilder()
@@ -412,6 +436,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDeviceRequest, Device> updateDeviceTransportSettings =
         GrpcCallSettings.<UpdateDeviceRequest, Device>newBuilder()
@@ -432,6 +457,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDevicesRequest, ListDevicesResponse> listDevicesTransportSettings =
         GrpcCallSettings.<ListDevicesRequest, ListDevicesResponse>newBuilder()
@@ -442,6 +468,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ModifyCloudToDeviceConfigRequest, DeviceConfig>
         modifyCloudToDeviceConfigTransportSettings =
@@ -453,6 +480,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDeviceConfigVersionsRequest, ListDeviceConfigVersionsResponse>
         listDeviceConfigVersionsTransportSettings =
@@ -465,6 +493,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDeviceStatesRequest, ListDeviceStatesResponse>
         listDeviceStatesTransportSettings =
@@ -476,6 +505,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -486,6 +516,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -496,6 +527,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -507,6 +539,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
         sendCommandToDeviceTransportSettings =
@@ -518,6 +551,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
         bindDeviceToGatewayTransportSettings =
@@ -529,6 +563,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
         unbindDeviceFromGatewayTransportSettings =
@@ -541,6 +576,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createDeviceRegistryCallable =

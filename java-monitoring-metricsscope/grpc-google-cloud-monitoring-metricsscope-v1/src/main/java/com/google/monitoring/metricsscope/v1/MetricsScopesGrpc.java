@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * projects and AWS accounts.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/monitoring/metricsscope/v1/metrics_scopes.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MetricsScopesGrpc {
 
@@ -254,6 +251,19 @@ public final class MetricsScopesGrpc {
     return MetricsScopesStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static MetricsScopesBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<MetricsScopesBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<MetricsScopesBlockingV2Stub>() {
+          @java.lang.Override
+          public MetricsScopesBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new MetricsScopesBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return MetricsScopesBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -464,6 +474,88 @@ public final class MetricsScopesGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service MetricsScopes.
+   *
+   * <pre>
+   * Manages Cloud Monitoring Metrics Scopes, and the monitoring of Google Cloud
+   * projects and AWS accounts.
+   * </pre>
+   */
+  public static final class MetricsScopesBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<MetricsScopesBlockingV2Stub> {
+    private MetricsScopesBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected MetricsScopesBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new MetricsScopesBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a specific `Metrics Scope`.
+     * </pre>
+     */
+    public com.google.monitoring.metricsscope.v1.MetricsScope getMetricsScope(
+        com.google.monitoring.metricsscope.v1.GetMetricsScopeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetMetricsScopeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of every `Metrics Scope` that a specific `MonitoredProject`
+     * has been added to. The metrics scope representing the specified monitored
+     * project will always be the first entry in the response.
+     * </pre>
+     */
+    public com.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectResponse
+        listMetricsScopesByMonitoredProject(
+            com.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListMetricsScopesByMonitoredProjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a `MonitoredProject` with the given project ID
+     * to the specified `Metrics Scope`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMonitoredProject(
+        com.google.monitoring.metricsscope.v1.CreateMonitoredProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateMonitoredProjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `MonitoredProject` from the specified `Metrics Scope`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteMonitoredProject(
+        com.google.monitoring.metricsscope.v1.DeleteMonitoredProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteMonitoredProjectMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service MetricsScopes.
    *
    * <pre>
    * Manages Cloud Monitoring Metrics Scopes, and the monitoring of Google Cloud

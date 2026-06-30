@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * method to determine user intent and respond.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3beta1/session.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SessionsGrpc {
 
@@ -334,6 +331,19 @@ public final class SessionsGrpc {
           }
         };
     return SessionsStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SessionsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SessionsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SessionsBlockingV2Stub>() {
+          @java.lang.Override
+          public SessionsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SessionsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SessionsBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -659,6 +669,140 @@ public final class SessionsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Sessions.
+   *
+   * <pre>
+   * A session represents an interaction with a user. You retrieve user input
+   * and pass it to the
+   * [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent]
+   * method to determine user intent and respond.
+   * </pre>
+   */
+  public static final class SessionsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SessionsBlockingV2Stub> {
+    private SessionsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SessionsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SessionsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Processes a natural language query and returns structured, actionable data
+     * as a result. This method is not idempotent, because it may cause session
+     * entity types to be updated, which in turn might affect results of future
+     * queries.
+     * Note: Always use agent versions for production traffic.
+     * See [Versions and
+     * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse detectIntent(
+        com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDetectIntentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Processes a natural language query and returns structured, actionable data
+     * as a result through server-side streaming. Server-side streaming allows
+     * Dialogflow to send [partial
+     * responses](https://cloud.google.com/dialogflow/cx/docs/concept/fulfillment#partial-response)
+     * earlier in a single request.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            ?, com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse>
+        serverStreamingDetectIntent(
+            com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getServerStreamingDetectIntentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Processes a natural language query in audio format in a streaming fashion
+     * and returns structured, actionable data as a result. This method is only
+     * available via the gRPC API (not REST).
+     * Note: Always use agent versions for production traffic.
+     * See [Versions and
+     * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest,
+            com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse>
+        streamingDetectIntent() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamingDetectIntentMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns preliminary intent match results, doesn't change the session
+     * status.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse matchIntent(
+        com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getMatchIntentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fulfills a matched intent returned by
+     * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
+     * Must be called after
+     * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent],
+     * with input from
+     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse].
+     * Otherwise, the behavior is undefined.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentResponse fulfillIntent(
+        com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFulfillIntentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the feedback received from the user for a single turn of the bot
+     * response.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback submitAnswerFeedback(
+        com.google.cloud.dialogflow.cx.v3beta1.SubmitAnswerFeedbackRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSubmitAnswerFeedbackMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Sessions.
    *
    * <pre>
    * A session represents an interaction with a user. You retrieve user input

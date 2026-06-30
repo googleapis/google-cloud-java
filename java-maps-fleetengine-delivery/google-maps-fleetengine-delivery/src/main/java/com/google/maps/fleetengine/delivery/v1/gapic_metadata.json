@@ -1,0 +1,54 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "maps.fleetengine.delivery.v1",
+  "libraryPackage": "com.google.maps.fleetengine.delivery.v1",
+  "services": {
+    "DeliveryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DeliveryServiceClient",
+          "rpcs": {
+            "BatchCreateTasks": {
+              "methods": ["batchCreateTasks", "batchCreateTasksCallable"]
+            },
+            "CreateDeliveryVehicle": {
+              "methods": ["createDeliveryVehicle", "createDeliveryVehicle", "createDeliveryVehicleCallable"]
+            },
+            "CreateTask": {
+              "methods": ["createTask", "createTask", "createTaskCallable"]
+            },
+            "DeleteDeliveryVehicle": {
+              "methods": ["deleteDeliveryVehicle", "deleteDeliveryVehicle", "deleteDeliveryVehicle", "deleteDeliveryVehicleCallable"]
+            },
+            "DeleteTask": {
+              "methods": ["deleteTask", "deleteTask", "deleteTask", "deleteTaskCallable"]
+            },
+            "GetDeliveryVehicle": {
+              "methods": ["getDeliveryVehicle", "getDeliveryVehicle", "getDeliveryVehicle", "getDeliveryVehicleCallable"]
+            },
+            "GetTask": {
+              "methods": ["getTask", "getTask", "getTask", "getTaskCallable"]
+            },
+            "GetTaskTrackingInfo": {
+              "methods": ["getTaskTrackingInfo", "getTaskTrackingInfo", "getTaskTrackingInfo", "getTaskTrackingInfoCallable"]
+            },
+            "ListDeliveryVehicles": {
+              "methods": ["listDeliveryVehicles", "listDeliveryVehicles", "listDeliveryVehicles", "listDeliveryVehiclesPagedCallable", "listDeliveryVehiclesCallable"]
+            },
+            "ListTasks": {
+              "methods": ["listTasks", "listTasks", "listTasks", "listTasksPagedCallable", "listTasksCallable"]
+            },
+            "UpdateDeliveryVehicle": {
+              "methods": ["updateDeliveryVehicle", "updateDeliveryVehicle", "updateDeliveryVehicleCallable"]
+            },
+            "UpdateTask": {
+              "methods": ["updateTask", "updateTask", "updateTaskCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "api_shortname": "spanner-jdbc",
+  "name_pretty": "Google Cloud Spanner JDBC",
+  "product_documentation": "https://cloud.google.com/spanner/docs/use-oss-jdbc",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-spanner-jdbc/latest/history",
+  "release_level": "stable",
+  "language": "java",
+  "min_java_version": 8,
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "google-cloud-java",
+  "distribution_name": "com.google.cloud:google-cloud-spanner-jdbc",
+  "library_type": "OTHER",
+  "codeowner_team": "@googleapis/spanner-team",
+  "recommended_package": "com.google.cloud.spanner.jdbc"
+}

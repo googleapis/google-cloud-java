@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -231,7 +231,8 @@ public class CssProductsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the CSS product to retrieve.
+   * @param name Required. The name of the CSS product to retrieve. Format:
+   *     `accounts/{account}/cssProducts/{css_product}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CssProduct getCssProduct(CssProductName name) {
@@ -260,7 +261,8 @@ public class CssProductsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the CSS product to retrieve.
+   * @param name Required. The name of the CSS product to retrieve. Format:
+   *     `accounts/{account}/cssProducts/{css_product}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CssProduct getCssProduct(String name) {

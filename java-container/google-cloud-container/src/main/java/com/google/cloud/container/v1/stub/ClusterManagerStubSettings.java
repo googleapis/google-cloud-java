@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,16 +20,22 @@ import static com.google.cloud.container.v1.ClusterManagerClient.ListUsableSubne
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.httpjson.GaxHttpJsonProperties;
+import com.google.api.gax.httpjson.HttpJsonTransportChannel;
+import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -47,12 +53,15 @@ import com.google.container.v1.CancelOperationRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
+import com.google.container.v1.ClusterUpgradeInfo;
 import com.google.container.v1.CompleteIPRotationRequest;
 import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.CreateClusterRequest;
 import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
+import com.google.container.v1.FetchClusterUpgradeInfoRequest;
+import com.google.container.v1.FetchNodePoolUpgradeInfoRequest;
 import com.google.container.v1.GetClusterRequest;
 import com.google.container.v1.GetJSONWebKeysRequest;
 import com.google.container.v1.GetJSONWebKeysResponse;
@@ -68,6 +77,7 @@ import com.google.container.v1.ListOperationsResponse;
 import com.google.container.v1.ListUsableSubnetworksRequest;
 import com.google.container.v1.ListUsableSubnetworksResponse;
 import com.google.container.v1.NodePool;
+import com.google.container.v1.NodePoolUpgradeInfo;
 import com.google.container.v1.Operation;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
 import com.google.container.v1.ServerConfig;
@@ -90,9 +100,9 @@ import com.google.container.v1.UpdateNodePoolRequest;
 import com.google.container.v1.UsableSubnetwork;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -109,7 +119,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of listClusters to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of listClusters:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -126,16 +138,32 @@ import org.threeten.bp.Duration;
  *             .listClustersSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ClusterManagerStubSettings clusterManagerSettings = clusterManagerSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/container")
+          .add("https://www.googleapis.com/auth/container.read-only")
+          .build();
 
   private final UnaryCallSettings<ListClustersRequest, ListClustersResponse> listClustersSettings;
   private final UnaryCallSettings<GetClusterRequest, Cluster> getClusterSettings;
@@ -186,6 +214,10 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
   private final UnaryCallSettings<
           CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
       checkAutopilotCompatibilitySettings;
+  private final UnaryCallSettings<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoSettings;
+  private final UnaryCallSettings<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoSettings;
 
   private static final PagedListDescriptor<
           ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
@@ -222,9 +254,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
             @Override
             public Iterable<UsableSubnetwork> extractResources(
                 ListUsableSubnetworksResponse payload) {
-              return payload.getSubnetworksList() == null
-                  ? ImmutableList.<UsableSubnetwork>of()
-                  : payload.getSubnetworksList();
+              return payload.getSubnetworksList();
             }
           };
 
@@ -436,24 +466,32 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     return checkAutopilotCompatibilitySettings;
   }
 
+  /** Returns the object with the settings used for calls to fetchClusterUpgradeInfo. */
+  public UnaryCallSettings<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoSettings() {
+    return fetchClusterUpgradeInfoSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchNodePoolUpgradeInfo. */
+  public UnaryCallSettings<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoSettings() {
+    return fetchNodePoolUpgradeInfoSettings;
+  }
+
   public ClusterManagerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcClusterManagerStub.create(this);
     }
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
+      return HttpJsonClusterManagerStub.create(this);
+    }
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
-  }
-
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
   }
 
   /** Returns the default service name. */
@@ -468,6 +506,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "container.googleapis.com:443";
   }
@@ -489,17 +528,24 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
         .setUseJwtAccessWithScope(true);
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
+  /** Returns a builder for the default gRPC ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     return InstantiatingGrpcChannelProvider.newBuilder()
         .setMaxInboundMessageSize(Integer.MAX_VALUE);
+  }
+
+  /** Returns a builder for the default REST ChannelProvider for this service. */
+  @BetaApi
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
+    return InstantiatingHttpJsonChannelProvider.newBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+  public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
             "gapic", GaxProperties.getLibraryVersion(ClusterManagerStubSettings.class))
@@ -507,9 +553,27 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  /** Returns a new builder for this class. */
+  public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratedLibToken(
+            "gapic", GaxProperties.getLibraryVersion(ClusterManagerStubSettings.class))
+        .setTransportToken(
+            GaxHttpJsonProperties.getHttpJsonTokenName(),
+            GaxHttpJsonProperties.getHttpJsonVersion());
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ClusterManagerStubSettings.defaultGrpcApiClientHeaderProviderBuilder();
+  }
+
+  /** Returns a new gRPC builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
+  }
+
+  /** Returns a new REST builder for this class. */
+  public static Builder newHttpJsonBuilder() {
+    return Builder.createHttpJsonDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -560,6 +624,17 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     listUsableSubnetworksSettings = settingsBuilder.listUsableSubnetworksSettings().build();
     checkAutopilotCompatibilitySettings =
         settingsBuilder.checkAutopilotCompatibilitySettings().build();
+    fetchClusterUpgradeInfoSettings = settingsBuilder.fetchClusterUpgradeInfoSettings().build();
+    fetchNodePoolUpgradeInfoSettings = settingsBuilder.fetchNodePoolUpgradeInfoSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-container")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for ClusterManagerStubSettings. */
@@ -625,6 +700,10 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     private final UnaryCallSettings.Builder<
             CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
         checkAutopilotCompatibilitySettings;
+    private final UnaryCallSettings.Builder<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+        fetchClusterUpgradeInfoSettings;
+    private final UnaryCallSettings.Builder<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+        fetchNodePoolUpgradeInfoSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -649,21 +728,21 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(20000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(20000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(20000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(45000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(45000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(45000L))
-              .setTotalTimeout(Duration.ofMillis(45000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(45000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(45000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
@@ -713,6 +792,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       listUsableSubnetworksSettings =
           PagedCallSettings.newBuilder(LIST_USABLE_SUBNETWORKS_PAGE_STR_FACT);
       checkAutopilotCompatibilitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchClusterUpgradeInfoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchNodePoolUpgradeInfoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -749,7 +830,9 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               setNetworkPolicySettings,
               setMaintenancePolicySettings,
               listUsableSubnetworksSettings,
-              checkAutopilotCompatibilitySettings);
+              checkAutopilotCompatibilitySettings,
+              fetchClusterUpgradeInfoSettings,
+              fetchNodePoolUpgradeInfoSettings);
       initDefaults(this);
     }
 
@@ -791,6 +874,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       listUsableSubnetworksSettings = settings.listUsableSubnetworksSettings.toBuilder();
       checkAutopilotCompatibilitySettings =
           settings.checkAutopilotCompatibilitySettings.toBuilder();
+      fetchClusterUpgradeInfoSettings = settings.fetchClusterUpgradeInfoSettings.toBuilder();
+      fetchNodePoolUpgradeInfoSettings = settings.fetchNodePoolUpgradeInfoSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -827,7 +912,9 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               setNetworkPolicySettings,
               setMaintenancePolicySettings,
               listUsableSubnetworksSettings,
-              checkAutopilotCompatibilitySettings);
+              checkAutopilotCompatibilitySettings,
+              fetchClusterUpgradeInfoSettings,
+              fetchNodePoolUpgradeInfoSettings);
     }
 
     private static Builder createDefault() {
@@ -836,6 +923,18 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder createHttpJsonDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1010,6 +1109,16 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
 
       builder
           .checkAutopilotCompatibilitySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchClusterUpgradeInfoSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchNodePoolUpgradeInfoSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1226,13 +1335,16 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       return checkAutopilotCompatibilitySettings;
     }
 
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
+    /** Returns the builder for the settings used for calls to fetchClusterUpgradeInfo. */
+    public UnaryCallSettings.Builder<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+        fetchClusterUpgradeInfoSettings() {
+      return fetchClusterUpgradeInfoSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchNodePoolUpgradeInfo. */
+    public UnaryCallSettings.Builder<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+        fetchNodePoolUpgradeInfoSettings() {
+      return fetchNodePoolUpgradeInfoSettings;
     }
 
     @Override

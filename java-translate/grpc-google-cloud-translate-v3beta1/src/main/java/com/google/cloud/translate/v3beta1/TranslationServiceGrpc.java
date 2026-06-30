@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Provides natural language translation operations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/translate/v3beta1/translation_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TranslationServiceGrpc {
 
@@ -511,6 +508,53 @@ public final class TranslationServiceGrpc {
     return getDeleteGlossaryMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3beta1.RefineTextRequest,
+          com.google.cloud.translate.v3beta1.RefineTextResponse>
+      getRefineTextMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RefineText",
+      requestType = com.google.cloud.translate.v3beta1.RefineTextRequest.class,
+      responseType = com.google.cloud.translate.v3beta1.RefineTextResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3beta1.RefineTextRequest,
+          com.google.cloud.translate.v3beta1.RefineTextResponse>
+      getRefineTextMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.translate.v3beta1.RefineTextRequest,
+            com.google.cloud.translate.v3beta1.RefineTextResponse>
+        getRefineTextMethod;
+    if ((getRefineTextMethod = TranslationServiceGrpc.getRefineTextMethod) == null) {
+      synchronized (TranslationServiceGrpc.class) {
+        if ((getRefineTextMethod = TranslationServiceGrpc.getRefineTextMethod) == null) {
+          TranslationServiceGrpc.getRefineTextMethod =
+              getRefineTextMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.translate.v3beta1.RefineTextRequest,
+                          com.google.cloud.translate.v3beta1.RefineTextResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RefineText"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3beta1.RefineTextRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3beta1.RefineTextResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TranslationServiceMethodDescriptorSupplier("RefineText"))
+                      .build();
+        }
+      }
+    }
+    return getRefineTextMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static TranslationServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<TranslationServiceStub> factory =
@@ -522,6 +566,19 @@ public final class TranslationServiceGrpc {
           }
         };
     return TranslationServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TranslationServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TranslationServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TranslationServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public TranslationServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TranslationServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TranslationServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -719,6 +776,20 @@ public final class TranslationServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteGlossaryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Refines the input translated text to improve the quality.
+     * </pre>
+     */
+    default void refineText(
+        com.google.cloud.translate.v3beta1.RefineTextRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3beta1.RefineTextResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRefineTextMethod(), responseObserver);
     }
   }
 
@@ -936,10 +1007,215 @@ public final class TranslationServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Refines the input translated text to improve the quality.
+     * </pre>
+     */
+    public void refineText(
+        com.google.cloud.translate.v3beta1.RefineTextRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3beta1.RefineTextResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRefineTextMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TranslationService.
+   *
+   * <pre>
+   * Provides natural language translation operations.
+   * </pre>
+   */
+  public static final class TranslationServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TranslationServiceBlockingV2Stub> {
+    private TranslationServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TranslationServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TranslationServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translates input text and returns translated text.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3beta1.TranslateTextResponse translateText(
+        com.google.cloud.translate.v3beta1.TranslateTextRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTranslateTextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detects the language of text within a request.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3beta1.DetectLanguageResponse detectLanguage(
+        com.google.cloud.translate.v3beta1.DetectLanguageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDetectLanguageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of supported languages for translation.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3beta1.SupportedLanguages getSupportedLanguages(
+        com.google.cloud.translate.v3beta1.GetSupportedLanguagesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetSupportedLanguagesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translates documents in synchronous mode.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3beta1.TranslateDocumentResponse translateDocument(
+        com.google.cloud.translate.v3beta1.TranslateDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTranslateDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translates a large volume of text in asynchronous batch mode.
+     * This function provides real-time output as the inputs are being processed.
+     * If caller cancels a request, the partial results (for an input file, it's
+     * all or nothing) may still be available on the specified output location.
+     * This call returns immediately and you can
+     * use google.longrunning.Operation.name to poll the status of the call.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchTranslateText(
+        com.google.cloud.translate.v3beta1.BatchTranslateTextRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchTranslateTextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translates a large volume of document in asynchronous batch mode.
+     * This function provides real-time output as the inputs are being processed.
+     * If caller cancels a request, the partial results (for an input file, it's
+     * all or nothing) may still be available on the specified output location.
+     * This call returns immediately and you can use
+     * google.longrunning.Operation.name to poll the status of the call.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchTranslateDocument(
+        com.google.cloud.translate.v3beta1.BatchTranslateDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchTranslateDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a glossary and returns the long-running operation. Returns
+     * NOT_FOUND, if the project doesn't exist.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createGlossary(
+        com.google.cloud.translate.v3beta1.CreateGlossaryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateGlossaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't
+     * exist.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3beta1.ListGlossariesResponse listGlossaries(
+        com.google.cloud.translate.v3beta1.ListGlossariesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListGlossariesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a glossary. Returns NOT_FOUND, if the glossary doesn't
+     * exist.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3beta1.Glossary getGlossary(
+        com.google.cloud.translate.v3beta1.GetGlossaryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetGlossaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a glossary, or cancels glossary construction
+     * if the glossary isn't created yet.
+     * Returns NOT_FOUND, if the glossary doesn't exist.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteGlossary(
+        com.google.cloud.translate.v3beta1.DeleteGlossaryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteGlossaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Refines the input translated text to improve the quality.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3beta1.RefineTextResponse refineText(
+        com.google.cloud.translate.v3beta1.RefineTextRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRefineTextMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service TranslationService.
    *
    * <pre>
    * Provides natural language translation operations.
@@ -1101,6 +1377,19 @@ public final class TranslationServiceGrpc {
         com.google.cloud.translate.v3beta1.DeleteGlossaryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteGlossaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Refines the input translated text to improve the quality.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3beta1.RefineTextResponse refineText(
+        com.google.cloud.translate.v3beta1.RefineTextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRefineTextMethod(), getCallOptions(), request);
     }
   }
 
@@ -1275,6 +1564,20 @@ public final class TranslationServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteGlossaryMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Refines the input translated text to improve the quality.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.translate.v3beta1.RefineTextResponse>
+        refineText(com.google.cloud.translate.v3beta1.RefineTextRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRefineTextMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_TRANSLATE_TEXT = 0;
@@ -1287,6 +1590,7 @@ public final class TranslationServiceGrpc {
   private static final int METHODID_LIST_GLOSSARIES = 7;
   private static final int METHODID_GET_GLOSSARY = 8;
   private static final int METHODID_DELETE_GLOSSARY = 9;
+  private static final int METHODID_REFINE_TEXT = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1364,6 +1668,12 @@ public final class TranslationServiceGrpc {
           serviceImpl.deleteGlossary(
               (com.google.cloud.translate.v3beta1.DeleteGlossaryRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_REFINE_TEXT:
+          serviceImpl.refineText(
+              (com.google.cloud.translate.v3beta1.RefineTextRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.translate.v3beta1.RefineTextResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1448,6 +1758,13 @@ public final class TranslationServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.translate.v3beta1.DeleteGlossaryRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_GLOSSARY)))
+        .addMethod(
+            getRefineTextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.translate.v3beta1.RefineTextRequest,
+                    com.google.cloud.translate.v3beta1.RefineTextResponse>(
+                    service, METHODID_REFINE_TEXT)))
         .build();
   }
 
@@ -1509,6 +1826,7 @@ public final class TranslationServiceGrpc {
                       .addMethod(getListGlossariesMethod())
                       .addMethod(getGetGlossaryMethod())
                       .addMethod(getDeleteGlossaryMethod())
+                      .addMethod(getRefineTextMethod())
                       .build();
         }
       }

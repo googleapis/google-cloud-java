@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1beta.ListCustomModelsRequest;
+import com.google.cloud.discoveryengine.v1beta.ListCustomModelsResponse;
 import com.google.cloud.discoveryengine.v1beta.TrainCustomModelMetadata;
 import com.google.cloud.discoveryengine.v1beta.TrainCustomModelRequest;
 import com.google.cloud.discoveryengine.v1beta.TrainCustomModelResponse;
@@ -103,10 +105,47 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ListCustomModelsRequest, ListCustomModelsResponse>
+      listCustomModelsMethodDescriptor =
+          ApiMethodDescriptor.<ListCustomModelsRequest, ListCustomModelsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.SearchTuningService/ListCustomModels")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListCustomModelsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{dataStore=projects/*/locations/*/collections/*/dataStores/*}/customModels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCustomModelsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "dataStore", request.getDataStore());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCustomModelsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListCustomModelsResponse>newBuilder()
+                      .setDefaultInstance(ListCustomModelsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<TrainCustomModelRequest, Operation> trainCustomModelCallable;
   private final OperationCallable<
           TrainCustomModelRequest, TrainCustomModelResponse, TrainCustomModelMetadata>
       trainCustomModelOperationCallable;
+  private final UnaryCallable<ListCustomModelsRequest, ListCustomModelsResponse>
+      listCustomModelsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -159,6 +198,17 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
             typeRegistry,
             ImmutableMap.<String, HttpRule>builder()
                 .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost(
+                            "/v1beta/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1beta/{name=projects/*/locations/*/dataStores/*/branches/*/operations/*}:cancel")
+                                .build())
+                        .build())
+                .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet(
@@ -196,6 +246,11 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/assistants/*/agents/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
                                     "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -220,7 +275,22 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/evaluations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/identityMappingStores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1beta/{name=projects/*/locations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/sampleQuerySets/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -289,6 +359,11 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/identityMappingStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1beta/{name=projects/*/locations/*}/operations")
                                 .build())
                         .addAdditionalBindings(
@@ -308,7 +383,21 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
                   builder.add("data_store", String.valueOf(request.getDataStore()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getDataStore())
             .build();
+    HttpJsonCallSettings<ListCustomModelsRequest, ListCustomModelsResponse>
+        listCustomModelsTransportSettings =
+            HttpJsonCallSettings.<ListCustomModelsRequest, ListCustomModelsResponse>newBuilder()
+                .setMethodDescriptor(listCustomModelsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("data_store", String.valueOf(request.getDataStore()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getDataStore())
+                .build();
 
     this.trainCustomModelCallable =
         callableFactory.createUnaryCallable(
@@ -319,6 +408,9 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
             settings.trainCustomModelOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listCustomModelsCallable =
+        callableFactory.createUnaryCallable(
+            listCustomModelsTransportSettings, settings.listCustomModelsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -328,6 +420,7 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(trainCustomModelMethodDescriptor);
+    methodDescriptors.add(listCustomModelsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -345,6 +438,12 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
           TrainCustomModelRequest, TrainCustomModelResponse, TrainCustomModelMetadata>
       trainCustomModelOperationCallable() {
     return trainCustomModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomModelsRequest, ListCustomModelsResponse>
+      listCustomModelsCallable() {
+    return listCustomModelsCallable;
   }
 
   @Override

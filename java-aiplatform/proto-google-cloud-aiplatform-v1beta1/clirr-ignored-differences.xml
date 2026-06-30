@@ -15,6 +15,67 @@
     <differenceType>7012</differenceType>
     <className>com/google/cloud/aiplatform/v1beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>com/google/cloud/aiplatform/v1beta1/schema/predict/instance/*OrBuilder</className>
@@ -29,6 +90,67 @@
     <differenceType>7012</differenceType>
     <className>com/google/cloud/aiplatform/v1beta1/schema/predict/instance/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/instance/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/instance/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/instance/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/instance/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/instance/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/instance/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/instance/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/instance/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/instance/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/instance/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>com/google/cloud/aiplatform/v1beta1/schema/predict/params/*OrBuilder</className>
@@ -43,6 +165,67 @@
     <differenceType>7012</differenceType>
     <className>com/google/cloud/aiplatform/v1beta1/schema/predict/params/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/params/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/params/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/params/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/params/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/params/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/params/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/params/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/params/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/params/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/params/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*OrBuilder</className>
@@ -57,6 +240,67 @@
     <differenceType>7012</differenceType>
     <className>com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*OrBuilder</className>
@@ -72,43 +316,65 @@
     <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
   <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/ExplanationParameters*</className>
-    <field>SIMILARITY*</field>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>6001</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/ExplanationParameters*</className>
-    <field>SIMILARITY*</field>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/ExplanationParameters*</className>
-    <method>* getSimilarity*(*)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/**</className>
+    <method>* clear()</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/ExplanationParameters*</className>
-    <method>boolean hasSimilarity*(*)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/ExplanationParameters*</className>
-    <method>* clearSimilarity*(*)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/ExplanationParameters*</className>
-    <method>* mergeSimilarity*(*)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/**</className>
+    <method>* clone()</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/ExplanationParameters*</className>
-    <method>* setSimilarity*(*)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/Similarity*</className>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>
 </differences>

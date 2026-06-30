@@ -1,0 +1,45 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.compute.v1small",
+  "libraryPackage": "com.google.cloud.compute.v1small",
+  "services": {
+    "Addresses": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AddressesClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RegionOperations": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionOperationsClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Wait": {
+              "methods": ["wait", "wait", "waitCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

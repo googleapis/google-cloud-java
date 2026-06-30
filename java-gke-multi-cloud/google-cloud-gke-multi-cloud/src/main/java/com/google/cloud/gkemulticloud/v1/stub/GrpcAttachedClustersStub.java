@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +67,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAttachedClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAttachedClusterRequest, Operation>
@@ -78,6 +79,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAttachedClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportAttachedClusterRequest, Operation>
@@ -89,6 +91,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportAttachedClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAttachedClusterRequest, AttachedCluster>
@@ -100,6 +103,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAttachedClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AttachedCluster.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAttachedClustersRequest, ListAttachedClustersResponse>
@@ -112,6 +116,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                   ProtoUtils.marshaller(ListAttachedClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAttachedClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAttachedClusterRequest, Operation>
@@ -123,6 +128,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAttachedClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAttachedServerConfigRequest, AttachedServerConfig>
@@ -135,6 +141,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                   ProtoUtils.marshaller(GetAttachedServerConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AttachedServerConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -154,6 +161,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       GenerateAttachedClusterInstallManifestResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -171,6 +179,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       GenerateAttachedClusterAgentTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateAttachedClusterRequest, Operation>
@@ -259,6 +268,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateAttachedClusterRequest, Operation>
         updateAttachedClusterTransportSettings =
@@ -283,6 +293,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAttachedClusterRequest, AttachedCluster>
         getAttachedClusterTransportSettings =
@@ -294,6 +305,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListAttachedClustersRequest, ListAttachedClustersResponse>
         listAttachedClustersTransportSettings =
@@ -305,6 +317,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAttachedClusterRequest, Operation>
         deleteAttachedClusterTransportSettings =
@@ -316,6 +329,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetAttachedServerConfigRequest, AttachedServerConfig>
         getAttachedServerConfigTransportSettings =
@@ -327,6 +341,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             GenerateAttachedClusterInstallManifestRequest,
@@ -343,6 +358,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
@@ -358,6 +374,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       builder.add("attached_cluster", String.valueOf(request.getAttachedCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAttachedCluster())
                 .build();
 
     this.createAttachedClusterCallable =

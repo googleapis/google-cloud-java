@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,6 +69,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   ProtoUtils.marshaller(ListConstraintsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConstraintsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPoliciesRequest, ListPoliciesResponse>
@@ -79,6 +80,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPolicyRequest, Policy> getPolicyMethodDescriptor =
@@ -87,6 +89,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
           .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/GetPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetEffectivePolicyRequest, Policy>
@@ -97,6 +100,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEffectivePolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePolicyRequest, Policy> createPolicyMethodDescriptor =
@@ -105,6 +109,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
           .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/CreatePolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(CreatePolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdatePolicyRequest, Policy> updatePolicyMethodDescriptor =
@@ -113,6 +118,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
           .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/UpdatePolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdatePolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeletePolicyRequest, Empty> deletePolicyMethodDescriptor =
@@ -121,6 +127,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
           .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/DeletePolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(DeletePolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateCustomConstraintRequest, CustomConstraint>
@@ -131,6 +138,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCustomConstraintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomConstraint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCustomConstraintRequest, CustomConstraint>
@@ -141,6 +149,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCustomConstraintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomConstraint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomConstraintRequest, CustomConstraint>
@@ -151,6 +160,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCustomConstraintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomConstraint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCustomConstraintsRequest, ListCustomConstraintsResponse>
@@ -162,6 +172,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   ProtoUtils.marshaller(ListCustomConstraintsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomConstraintsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCustomConstraintRequest, Empty>
@@ -172,6 +183,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCustomConstraintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListConstraintsRequest, ListConstraintsResponse>
@@ -249,6 +261,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListPoliciesRequest, ListPoliciesResponse> listPoliciesTransportSettings =
         GrpcCallSettings.<ListPoliciesRequest, ListPoliciesResponse>newBuilder()
@@ -259,6 +272,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetPolicyRequest, Policy> getPolicyTransportSettings =
         GrpcCallSettings.<GetPolicyRequest, Policy>newBuilder()
@@ -269,6 +283,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetEffectivePolicyRequest, Policy> getEffectivePolicyTransportSettings =
         GrpcCallSettings.<GetEffectivePolicyRequest, Policy>newBuilder()
@@ -279,6 +294,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreatePolicyRequest, Policy> createPolicyTransportSettings =
         GrpcCallSettings.<CreatePolicyRequest, Policy>newBuilder()
@@ -289,6 +305,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdatePolicyRequest, Policy> updatePolicyTransportSettings =
         GrpcCallSettings.<UpdatePolicyRequest, Policy>newBuilder()
@@ -309,6 +326,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateCustomConstraintRequest, CustomConstraint>
         createCustomConstraintTransportSettings =
@@ -320,6 +338,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateCustomConstraintRequest, CustomConstraint>
         updateCustomConstraintTransportSettings =
@@ -344,6 +363,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListCustomConstraintsRequest, ListCustomConstraintsResponse>
         listCustomConstraintsTransportSettings =
@@ -356,6 +376,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteCustomConstraintRequest, Empty> deleteCustomConstraintTransportSettings =
         GrpcCallSettings.<DeleteCustomConstraintRequest, Empty>newBuilder()
@@ -366,6 +387,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listConstraintsCallable =

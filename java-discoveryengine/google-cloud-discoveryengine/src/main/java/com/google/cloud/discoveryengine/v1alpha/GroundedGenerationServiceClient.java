@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,7 @@ import javax.annotation.Generated;
  *           .setAnswerCandidate("answerCandidate-292402331")
  *           .addAllFacts(new ArrayList<GroundingFact>())
  *           .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+ *           .putAllUserLabels(new HashMap<String, String>())
  *           .build();
  *   CheckGroundingResponse response = groundedGenerationServiceClient.checkGrounding(request);
  * }
@@ -211,6 +212,7 @@ public class GroundedGenerationServiceClient implements BackgroundResource {
    *           .setAnswerCandidate("answerCandidate-292402331")
    *           .addAllFacts(new ArrayList<GroundingFact>())
    *           .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+   *           .putAllUserLabels(new HashMap<String, String>())
    *           .build();
    *   CheckGroundingResponse response = groundedGenerationServiceClient.checkGrounding(request);
    * }
@@ -245,6 +247,7 @@ public class GroundedGenerationServiceClient implements BackgroundResource {
    *           .setAnswerCandidate("answerCandidate-292402331")
    *           .addAllFacts(new ArrayList<GroundingFact>())
    *           .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+   *           .putAllUserLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<CheckGroundingResponse> future =
    *       groundedGenerationServiceClient.checkGroundingCallable().futureCall(request);

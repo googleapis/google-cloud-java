@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,6 +66,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListTagKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTagKeysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTagKeyRequest, TagKey> getTagKeyMethodDescriptor =
@@ -74,6 +75,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.TagKeys/GetTagKey")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTagKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(TagKey.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetNamespacedTagKeyRequest, TagKey>
@@ -84,6 +86,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetNamespacedTagKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagKey.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTagKeyRequest, Operation>
@@ -93,6 +96,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
               .setFullMethodName("google.cloud.resourcemanager.v3.TagKeys/CreateTagKey")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateTagKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTagKeyRequest, Operation>
@@ -102,6 +106,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
               .setFullMethodName("google.cloud.resourcemanager.v3.TagKeys/UpdateTagKey")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateTagKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTagKeyRequest, Operation>
@@ -111,6 +116,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
               .setFullMethodName("google.cloud.resourcemanager.v3.TagKeys/DeleteTagKey")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteTagKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -119,6 +125,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.TagKeys/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -127,6 +134,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.TagKeys/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -138,6 +146,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListTagKeysRequest, ListTagKeysResponse> listTagKeysCallable;
@@ -201,6 +210,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
     GrpcCallSettings<ListTagKeysRequest, ListTagKeysResponse> listTagKeysTransportSettings =
         GrpcCallSettings.<ListTagKeysRequest, ListTagKeysResponse>newBuilder()
             .setMethodDescriptor(listTagKeysMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTagKeyRequest, TagKey> getTagKeyTransportSettings =
         GrpcCallSettings.<GetTagKeyRequest, TagKey>newBuilder()
@@ -211,10 +221,12 @@ public class GrpcTagKeysStub extends TagKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetNamespacedTagKeyRequest, TagKey> getNamespacedTagKeyTransportSettings =
         GrpcCallSettings.<GetNamespacedTagKeyRequest, TagKey>newBuilder()
             .setMethodDescriptor(getNamespacedTagKeyMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTagKeyRequest, Operation> createTagKeyTransportSettings =
         GrpcCallSettings.<CreateTagKeyRequest, Operation>newBuilder()
@@ -239,6 +251,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -249,6 +262,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -259,6 +273,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -270,6 +285,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listTagKeysCallable =

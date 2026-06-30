@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,9 @@ import com.google.cloud.discoveryengine.v1beta.TuneEngineMetadata;
 import com.google.cloud.discoveryengine.v1beta.TuneEngineRequest;
 import com.google.cloud.discoveryengine.v1beta.TuneEngineResponse;
 import com.google.cloud.discoveryengine.v1beta.UpdateEngineRequest;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -108,6 +111,14 @@ public abstract class EngineServiceStub implements BackgroundResource {
 
   public UnaryCallable<TuneEngineRequest, Operation> tuneEngineCallable() {
     throw new UnsupportedOperationException("Not implemented: tuneEngineCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
   }
 
   @Override

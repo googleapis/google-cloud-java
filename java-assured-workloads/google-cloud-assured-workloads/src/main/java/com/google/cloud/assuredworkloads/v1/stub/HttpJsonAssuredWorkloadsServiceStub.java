@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -392,6 +392,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateWorkloadRequest, Workload> updateWorkloadTransportSettings =
         HttpJsonCallSettings.<UpdateWorkloadRequest, Workload>newBuilder()
@@ -427,6 +428,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetWorkloadRequest, Workload> getWorkloadTransportSettings =
         HttpJsonCallSettings.<GetWorkloadRequest, Workload>newBuilder()
@@ -438,6 +440,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListWorkloadsRequest, ListWorkloadsResponse>
         listWorkloadsTransportSettings =
@@ -450,6 +453,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createWorkloadCallable =
@@ -548,20 +552,23 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
   @Override
   public UnaryCallable<ListViolationsRequest, ListViolationsResponse> listViolationsCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: listViolationsCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: listViolationsCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override
   public UnaryCallable<GetViolationRequest, Violation> getViolationCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: getViolationCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: getViolationCallable(). REST transport is not implemented for this method"
+            + " yet.");
   }
 
   @Override
   public UnaryCallable<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
       acknowledgeViolationCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: acknowledgeViolationCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: acknowledgeViolationCallable(). REST transport is not implemented for"
+            + " this method yet.");
   }
 
   @Override

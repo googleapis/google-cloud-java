@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.retail.v2.ModelService/CreateModel")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetModelRequest, Model> getModelMethodDescriptor =
@@ -70,6 +71,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.retail.v2.ModelService/GetModel")
           .setRequestMarshaller(ProtoUtils.marshaller(GetModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<PauseModelRequest, Model> pauseModelMethodDescriptor =
@@ -78,6 +80,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.retail.v2.ModelService/PauseModel")
           .setRequestMarshaller(ProtoUtils.marshaller(PauseModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ResumeModelRequest, Model> resumeModelMethodDescriptor =
@@ -86,6 +89,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.retail.v2.ModelService/ResumeModel")
           .setRequestMarshaller(ProtoUtils.marshaller(ResumeModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteModelRequest, Empty> deleteModelMethodDescriptor =
@@ -94,6 +98,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.retail.v2.ModelService/DeleteModel")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListModelsRequest, ListModelsResponse>
@@ -103,6 +108,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setFullMethodName("google.cloud.retail.v2.ModelService/ListModels")
               .setRequestMarshaller(ProtoUtils.marshaller(ListModelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListModelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateModelRequest, Model> updateModelMethodDescriptor =
@@ -111,6 +117,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.retail.v2.ModelService/UpdateModel")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TuneModelRequest, Operation> tuneModelMethodDescriptor =
@@ -119,6 +126,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.retail.v2.ModelService/TuneModel")
           .setRequestMarshaller(ProtoUtils.marshaller(TuneModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateModelRequest, Operation> createModelCallable;
@@ -186,6 +194,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetModelRequest, Model> getModelTransportSettings =
         GrpcCallSettings.<GetModelRequest, Model>newBuilder()
@@ -196,6 +205,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PauseModelRequest, Model> pauseModelTransportSettings =
         GrpcCallSettings.<PauseModelRequest, Model>newBuilder()
@@ -206,6 +216,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResumeModelRequest, Model> resumeModelTransportSettings =
         GrpcCallSettings.<ResumeModelRequest, Model>newBuilder()
@@ -226,6 +237,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListModelsRequest, ListModelsResponse> listModelsTransportSettings =
         GrpcCallSettings.<ListModelsRequest, ListModelsResponse>newBuilder()
@@ -236,6 +248,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateModelRequest, Model> updateModelTransportSettings =
         GrpcCallSettings.<UpdateModelRequest, Model>newBuilder()
@@ -256,6 +269,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createModelCallable =

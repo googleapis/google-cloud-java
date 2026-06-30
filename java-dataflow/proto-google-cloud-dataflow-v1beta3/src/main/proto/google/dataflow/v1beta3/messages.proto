@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -29,15 +29,12 @@ option java_package = "com.google.dataflow.v1beta3";
 option php_namespace = "Google\\Cloud\\Dataflow\\V1beta3";
 option ruby_package = "Google::Cloud::Dataflow::V1beta3";
 
-// The Dataflow Messages API is used for monitoring the progress of
-// Dataflow jobs.
+// The Dataflow Messages API is used to monitor the progress of Dataflow jobs.
 service MessagesV1Beta3 {
   option (google.api.default_host) = "dataflow.googleapis.com";
   option (google.api.oauth_scopes) =
       "https://www.googleapis.com/auth/cloud-platform,"
-      "https://www.googleapis.com/auth/compute,"
-      "https://www.googleapis.com/auth/compute.readonly,"
-      "https://www.googleapis.com/auth/userinfo.email";
+      "https://www.googleapis.com/auth/compute";
 
   // Request the job status.
   //
@@ -46,7 +43,8 @@ service MessagesV1Beta3 {
   // (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
   // `projects.jobs.messages.list` is not recommended, as you can only request
   // the status of jobs that are running in `us-central1`.
-  rpc ListJobMessages(ListJobMessagesRequest) returns (ListJobMessagesResponse) {
+  rpc ListJobMessages(ListJobMessagesRequest)
+      returns (ListJobMessagesResponse) {
     option (google.api.http) = {
       get: "/v1b3/projects/{project_id}/locations/{location}/jobs/{job_id}/messages"
       additional_bindings {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,9 @@ import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntriesPaged
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryGroupsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryTypesPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataFeedsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataJobsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.LookupEntryLinksPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.SearchEntriesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -36,9 +39,18 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.GetPolicyOptions;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -1942,7 +1954,117 @@ public class CatalogServiceClientTest {
   }
 
   @Test
+  public void modifyEntryTest() throws Exception {
+    Entry expectedResponse =
+        Entry.newBuilder()
+            .setName(EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+            .setEntryType("entryType-479362356")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
+            .setParentEntry("parentEntry991029736")
+            .setFullyQualifiedName("fullyQualifiedName288467357")
+            .setEntrySource(EntrySource.newBuilder().build())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    ModifyEntryRequest request =
+        ModifyEntryRequest.newBuilder()
+            .setName("name3373707")
+            .setEntry(Entry.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .setDeleteMissingAspects(true)
+            .addAllAspectKeys(new ArrayList<String>())
+            .build();
+
+    Entry actualResponse = client.modifyEntry(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ModifyEntryRequest actualRequest = ((ModifyEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getEntry(), actualRequest.getEntry());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertEquals(request.getDeleteMissingAspects(), actualRequest.getDeleteMissingAspects());
+    Assert.assertEquals(request.getAspectKeysList(), actualRequest.getAspectKeysList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void modifyEntryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      ModifyEntryRequest request =
+          ModifyEntryRequest.newBuilder()
+              .setName("name3373707")
+              .setEntry(Entry.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .setDeleteMissingAspects(true)
+              .addAllAspectKeys(new ArrayList<String>())
+              .build();
+      client.modifyEntry(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void searchEntriesTest() throws Exception {
+    SearchEntriesResult responsesElement = SearchEntriesResult.newBuilder().build();
+    SearchEntriesResponse expectedResponse =
+        SearchEntriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResults(Arrays.asList(responsesElement))
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
+    String query = "query107944136";
+
+    SearchEntriesPagedResponse pagedListResponse = client.searchEntries(name, query);
+
+    List<SearchEntriesResult> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResultsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchEntriesRequest actualRequest = ((SearchEntriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(query, actualRequest.getQuery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchEntriesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
+      String query = "query107944136";
+      client.searchEntries(name, query);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchEntriesTest2() throws Exception {
     SearchEntriesResult responsesElement = SearchEntriesResult.newBuilder().build();
     SearchEntriesResponse expectedResponse =
         SearchEntriesResponse.newBuilder()
@@ -1974,7 +2096,7 @@ public class CatalogServiceClientTest {
   }
 
   @Test
-  public void searchEntriesExceptionTest() throws Exception {
+  public void searchEntriesExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockCatalogService.addException(exception);
 
@@ -1985,6 +2107,1244 @@ public class CatalogServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMetadataJobTest() throws Exception {
+    MetadataJob expectedResponse =
+        MetadataJob.newBuilder()
+            .setName(MetadataJobName.of("[PROJECT]", "[LOCATION]", "[METADATAJOB]").toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStatus(MetadataJob.Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMetadataJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCatalogService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    MetadataJob metadataJob = MetadataJob.newBuilder().build();
+    String metadataJobId = "metadataJobId-2021530679";
+
+    MetadataJob actualResponse =
+        client.createMetadataJobAsync(parent, metadataJob, metadataJobId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMetadataJobRequest actualRequest = ((CreateMetadataJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(metadataJob, actualRequest.getMetadataJob());
+    Assert.assertEquals(metadataJobId, actualRequest.getMetadataJobId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMetadataJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      MetadataJob metadataJob = MetadataJob.newBuilder().build();
+      String metadataJobId = "metadataJobId-2021530679";
+      client.createMetadataJobAsync(parent, metadataJob, metadataJobId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createMetadataJobTest2() throws Exception {
+    MetadataJob expectedResponse =
+        MetadataJob.newBuilder()
+            .setName(MetadataJobName.of("[PROJECT]", "[LOCATION]", "[METADATAJOB]").toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStatus(MetadataJob.Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMetadataJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCatalogService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    MetadataJob metadataJob = MetadataJob.newBuilder().build();
+    String metadataJobId = "metadataJobId-2021530679";
+
+    MetadataJob actualResponse =
+        client.createMetadataJobAsync(parent, metadataJob, metadataJobId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMetadataJobRequest actualRequest = ((CreateMetadataJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(metadataJob, actualRequest.getMetadataJob());
+    Assert.assertEquals(metadataJobId, actualRequest.getMetadataJobId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMetadataJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      MetadataJob metadataJob = MetadataJob.newBuilder().build();
+      String metadataJobId = "metadataJobId-2021530679";
+      client.createMetadataJobAsync(parent, metadataJob, metadataJobId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getMetadataJobTest() throws Exception {
+    MetadataJob expectedResponse =
+        MetadataJob.newBuilder()
+            .setName(MetadataJobName.of("[PROJECT]", "[LOCATION]", "[METADATAJOB]").toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStatus(MetadataJob.Status.newBuilder().build())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    MetadataJobName name = MetadataJobName.of("[PROJECT]", "[LOCATION]", "[METADATAJOB]");
+
+    MetadataJob actualResponse = client.getMetadataJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMetadataJobRequest actualRequest = ((GetMetadataJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMetadataJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      MetadataJobName name = MetadataJobName.of("[PROJECT]", "[LOCATION]", "[METADATAJOB]");
+      client.getMetadataJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMetadataJobTest2() throws Exception {
+    MetadataJob expectedResponse =
+        MetadataJob.newBuilder()
+            .setName(MetadataJobName.of("[PROJECT]", "[LOCATION]", "[METADATAJOB]").toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStatus(MetadataJob.Status.newBuilder().build())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    MetadataJob actualResponse = client.getMetadataJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMetadataJobRequest actualRequest = ((GetMetadataJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMetadataJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getMetadataJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMetadataJobsTest() throws Exception {
+    MetadataJob responsesElement = MetadataJob.newBuilder().build();
+    ListMetadataJobsResponse expectedResponse =
+        ListMetadataJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMetadataJobs(Arrays.asList(responsesElement))
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListMetadataJobsPagedResponse pagedListResponse = client.listMetadataJobs(parent);
+
+    List<MetadataJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMetadataJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMetadataJobsRequest actualRequest = ((ListMetadataJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMetadataJobsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listMetadataJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMetadataJobsTest2() throws Exception {
+    MetadataJob responsesElement = MetadataJob.newBuilder().build();
+    ListMetadataJobsResponse expectedResponse =
+        ListMetadataJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMetadataJobs(Arrays.asList(responsesElement))
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListMetadataJobsPagedResponse pagedListResponse = client.listMetadataJobs(parent);
+
+    List<MetadataJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMetadataJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMetadataJobsRequest actualRequest = ((ListMetadataJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMetadataJobsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listMetadataJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelMetadataJobTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    MetadataJobName name = MetadataJobName.of("[PROJECT]", "[LOCATION]", "[METADATAJOB]");
+
+    client.cancelMetadataJob(name);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelMetadataJobRequest actualRequest = ((CancelMetadataJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelMetadataJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      MetadataJobName name = MetadataJobName.of("[PROJECT]", "[LOCATION]", "[METADATAJOB]");
+      client.cancelMetadataJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelMetadataJobTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.cancelMetadataJob(name);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelMetadataJobRequest actualRequest = ((CancelMetadataJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelMetadataJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.cancelMetadataJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEntryLinkTest() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    EntryGroupName parent = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+    EntryLink entryLink = EntryLink.newBuilder().build();
+    String entryLinkId = "entryLinkId-1349584441";
+
+    EntryLink actualResponse = client.createEntryLink(parent, entryLink, entryLinkId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEntryLinkRequest actualRequest = ((CreateEntryLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(entryLink, actualRequest.getEntryLink());
+    Assert.assertEquals(entryLinkId, actualRequest.getEntryLinkId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEntryLinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      EntryGroupName parent = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+      EntryLink entryLink = EntryLink.newBuilder().build();
+      String entryLinkId = "entryLinkId-1349584441";
+      client.createEntryLink(parent, entryLink, entryLinkId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEntryLinkTest2() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    EntryLink entryLink = EntryLink.newBuilder().build();
+    String entryLinkId = "entryLinkId-1349584441";
+
+    EntryLink actualResponse = client.createEntryLink(parent, entryLink, entryLinkId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEntryLinkRequest actualRequest = ((CreateEntryLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(entryLink, actualRequest.getEntryLink());
+    Assert.assertEquals(entryLinkId, actualRequest.getEntryLinkId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEntryLinkExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      EntryLink entryLink = EntryLink.newBuilder().build();
+      String entryLinkId = "entryLinkId-1349584441";
+      client.createEntryLink(parent, entryLink, entryLinkId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateEntryLinkTest() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    EntryLink entryLink = EntryLink.newBuilder().build();
+
+    EntryLink actualResponse = client.updateEntryLink(entryLink);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateEntryLinkRequest actualRequest = ((UpdateEntryLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(entryLink, actualRequest.getEntryLink());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateEntryLinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      EntryLink entryLink = EntryLink.newBuilder().build();
+      client.updateEntryLink(entryLink);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteEntryLinkTest() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    EntryLinkName name =
+        EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]");
+
+    EntryLink actualResponse = client.deleteEntryLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEntryLinkRequest actualRequest = ((DeleteEntryLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteEntryLinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      EntryLinkName name =
+          EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]");
+      client.deleteEntryLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteEntryLinkTest2() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    EntryLink actualResponse = client.deleteEntryLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEntryLinkRequest actualRequest = ((DeleteEntryLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteEntryLinkExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteEntryLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void lookupEntryLinksTest() throws Exception {
+    EntryLink responsesElement = EntryLink.newBuilder().build();
+    LookupEntryLinksResponse expectedResponse =
+        LookupEntryLinksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntryLinks(Arrays.asList(responsesElement))
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    LookupEntryLinksRequest request =
+        LookupEntryLinksRequest.newBuilder()
+            .setName("name3373707")
+            .setEntry(
+                EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+            .addAllEntryLinkTypes(new ArrayList<String>())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    LookupEntryLinksPagedResponse pagedListResponse = client.lookupEntryLinks(request);
+
+    List<EntryLink> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntryLinksList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    LookupEntryLinksRequest actualRequest = ((LookupEntryLinksRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getEntry(), actualRequest.getEntry());
+    Assert.assertEquals(request.getEntryMode(), actualRequest.getEntryMode());
+    Assert.assertEquals(request.getEntryLinkTypesList(), actualRequest.getEntryLinkTypesList());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void lookupEntryLinksExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      LookupEntryLinksRequest request =
+          LookupEntryLinksRequest.newBuilder()
+              .setName("name3373707")
+              .setEntry(
+                  EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+              .addAllEntryLinkTypes(new ArrayList<String>())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.lookupEntryLinks(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void lookupContextTest() throws Exception {
+    LookupContextResponse expectedResponse =
+        LookupContextResponse.newBuilder().setContext("context951530927").build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    LookupContextRequest request =
+        LookupContextRequest.newBuilder()
+            .setName("name3373707")
+            .addAllResources(new ArrayList<String>())
+            .setContext("context951530927")
+            .putAllOptions(new HashMap<String, String>())
+            .build();
+
+    LookupContextResponse actualResponse = client.lookupContext(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    LookupContextRequest actualRequest = ((LookupContextRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getResourcesList(), actualRequest.getResourcesList());
+    Assert.assertEquals(request.getContext(), actualRequest.getContext());
+    Assert.assertEquals(request.getOptionsMap(), actualRequest.getOptionsMap());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void lookupContextExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      LookupContextRequest request =
+          LookupContextRequest.newBuilder()
+              .setName("name3373707")
+              .addAllResources(new ArrayList<String>())
+              .setContext("context951530927")
+              .putAllOptions(new HashMap<String, String>())
+              .build();
+      client.lookupContext(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEntryLinkTest() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    EntryLinkName name =
+        EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]");
+
+    EntryLink actualResponse = client.getEntryLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEntryLinkRequest actualRequest = ((GetEntryLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEntryLinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      EntryLinkName name =
+          EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]");
+      client.getEntryLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEntryLinkTest2() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    EntryLink actualResponse = client.getEntryLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEntryLinkRequest actualRequest = ((GetEntryLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEntryLinkExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getEntryLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMetadataFeedTest() throws Exception {
+    MetadataFeed expectedResponse =
+        MetadataFeed.newBuilder()
+            .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+            .setUid("uid115792")
+            .setScope(MetadataFeed.Scope.newBuilder().build())
+            .setFilters(MetadataFeed.Filters.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMetadataFeedTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCatalogService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    MetadataFeed metadataFeed = MetadataFeed.newBuilder().build();
+    String metadataFeedId = "metadataFeedId1633421160";
+
+    MetadataFeed actualResponse =
+        client.createMetadataFeedAsync(parent, metadataFeed, metadataFeedId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMetadataFeedRequest actualRequest = ((CreateMetadataFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(metadataFeed, actualRequest.getMetadataFeed());
+    Assert.assertEquals(metadataFeedId, actualRequest.getMetadataFeedId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMetadataFeedExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      MetadataFeed metadataFeed = MetadataFeed.newBuilder().build();
+      String metadataFeedId = "metadataFeedId1633421160";
+      client.createMetadataFeedAsync(parent, metadataFeed, metadataFeedId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createMetadataFeedTest2() throws Exception {
+    MetadataFeed expectedResponse =
+        MetadataFeed.newBuilder()
+            .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+            .setUid("uid115792")
+            .setScope(MetadataFeed.Scope.newBuilder().build())
+            .setFilters(MetadataFeed.Filters.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMetadataFeedTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCatalogService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    MetadataFeed metadataFeed = MetadataFeed.newBuilder().build();
+    String metadataFeedId = "metadataFeedId1633421160";
+
+    MetadataFeed actualResponse =
+        client.createMetadataFeedAsync(parent, metadataFeed, metadataFeedId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMetadataFeedRequest actualRequest = ((CreateMetadataFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(metadataFeed, actualRequest.getMetadataFeed());
+    Assert.assertEquals(metadataFeedId, actualRequest.getMetadataFeedId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMetadataFeedExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      MetadataFeed metadataFeed = MetadataFeed.newBuilder().build();
+      String metadataFeedId = "metadataFeedId1633421160";
+      client.createMetadataFeedAsync(parent, metadataFeed, metadataFeedId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getMetadataFeedTest() throws Exception {
+    MetadataFeed expectedResponse =
+        MetadataFeed.newBuilder()
+            .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+            .setUid("uid115792")
+            .setScope(MetadataFeed.Scope.newBuilder().build())
+            .setFilters(MetadataFeed.Filters.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    MetadataFeedName name = MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]");
+
+    MetadataFeed actualResponse = client.getMetadataFeed(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMetadataFeedRequest actualRequest = ((GetMetadataFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMetadataFeedExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      MetadataFeedName name = MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]");
+      client.getMetadataFeed(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMetadataFeedTest2() throws Exception {
+    MetadataFeed expectedResponse =
+        MetadataFeed.newBuilder()
+            .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+            .setUid("uid115792")
+            .setScope(MetadataFeed.Scope.newBuilder().build())
+            .setFilters(MetadataFeed.Filters.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    MetadataFeed actualResponse = client.getMetadataFeed(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMetadataFeedRequest actualRequest = ((GetMetadataFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMetadataFeedExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getMetadataFeed(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMetadataFeedsTest() throws Exception {
+    MetadataFeed responsesElement = MetadataFeed.newBuilder().build();
+    ListMetadataFeedsResponse expectedResponse =
+        ListMetadataFeedsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMetadataFeeds(Arrays.asList(responsesElement))
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListMetadataFeedsPagedResponse pagedListResponse = client.listMetadataFeeds(parent);
+
+    List<MetadataFeed> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMetadataFeedsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMetadataFeedsRequest actualRequest = ((ListMetadataFeedsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMetadataFeedsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listMetadataFeeds(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMetadataFeedsTest2() throws Exception {
+    MetadataFeed responsesElement = MetadataFeed.newBuilder().build();
+    ListMetadataFeedsResponse expectedResponse =
+        ListMetadataFeedsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMetadataFeeds(Arrays.asList(responsesElement))
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListMetadataFeedsPagedResponse pagedListResponse = client.listMetadataFeeds(parent);
+
+    List<MetadataFeed> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMetadataFeedsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMetadataFeedsRequest actualRequest = ((ListMetadataFeedsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMetadataFeedsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listMetadataFeeds(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteMetadataFeedTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteMetadataFeedTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCatalogService.addResponse(resultOperation);
+
+    MetadataFeedName name = MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]");
+
+    client.deleteMetadataFeedAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteMetadataFeedRequest actualRequest = ((DeleteMetadataFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteMetadataFeedExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      MetadataFeedName name = MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]");
+      client.deleteMetadataFeedAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteMetadataFeedTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteMetadataFeedTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCatalogService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteMetadataFeedAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteMetadataFeedRequest actualRequest = ((DeleteMetadataFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteMetadataFeedExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteMetadataFeedAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateMetadataFeedTest() throws Exception {
+    MetadataFeed expectedResponse =
+        MetadataFeed.newBuilder()
+            .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+            .setUid("uid115792")
+            .setScope(MetadataFeed.Scope.newBuilder().build())
+            .setFilters(MetadataFeed.Filters.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateMetadataFeedTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCatalogService.addResponse(resultOperation);
+
+    MetadataFeed metadataFeed = MetadataFeed.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    MetadataFeed actualResponse = client.updateMetadataFeedAsync(metadataFeed, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateMetadataFeedRequest actualRequest = ((UpdateMetadataFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(metadataFeed, actualRequest.getMetadataFeed());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateMetadataFeedExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      MetadataFeed metadataFeed = MetadataFeed.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateMetadataFeedAsync(metadataFeed, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -2083,6 +3443,154 @@ public class CatalogServiceClientTest {
     try {
       GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
       client.getLocation(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockIAMPolicy.addResponse(expectedResponse);
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+            .setPolicy(Policy.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.setIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetIamPolicyRequest actualRequest = ((SetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getPolicy(), actualRequest.getPolicy());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIAMPolicy.addException(exception);
+
+    try {
+      SetIamPolicyRequest request =
+          SetIamPolicyRequest.newBuilder()
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+              .setPolicy(Policy.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.setIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockIAMPolicy.addResponse(expectedResponse);
+
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+            .setOptions(GetPolicyOptions.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.getIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIamPolicyRequest actualRequest = ((GetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIAMPolicy.addException(exception);
+
+    try {
+      GetIamPolicyRequest request =
+          GetIamPolicyRequest.newBuilder()
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+              .setOptions(GetPolicyOptions.newBuilder().build())
+              .build();
+      client.getIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestIamPermissionsResponse expectedResponse =
+        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockIAMPolicy.addResponse(expectedResponse);
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+            .addAllPermissions(new ArrayList<String>())
+            .build();
+
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TestIamPermissionsRequest actualRequest = ((TestIamPermissionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getPermissionsList(), actualRequest.getPermissionsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIAMPolicy.addException(exception);
+
+    try {
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+              .addAllPermissions(new ArrayList<String>())
+              .build();
+      client.testIamPermissions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,12 +90,14 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:write")
+                          "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:write",
+                          "/v1alpha/{parent=projects/*/locations/*}/userEvents:write")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<WriteUserEventRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "writeAsync", request.getWriteAsync());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -130,7 +132,8 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:collect")
+                          "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:collect",
+                          "/v1alpha/{parent=projects/*/locations/*}/userEvents:collect")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -301,6 +304,17 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
             typeRegistry,
             ImmutableMap.<String, HttpRule>builder()
                 .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost(
+                            "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1alpha/{name=projects/*/locations/*/dataStores/*/branches/*/operations/*}:cancel")
+                                .build())
+                        .build())
+                .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet(
@@ -367,7 +381,17 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/identity_mapping_stores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1alpha/{name=projects/*/locations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/sampleQuerySets/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -436,6 +460,11 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/identity_mapping_stores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1alpha/{name=projects/*/locations/*}/operations")
                                 .build())
                         .addAdditionalBindings(
@@ -455,6 +484,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CollectUserEventRequest, HttpBody> collectUserEventTransportSettings =
         HttpJsonCallSettings.<CollectUserEventRequest, HttpBody>newBuilder()
@@ -466,6 +496,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsTransportSettings =
         HttpJsonCallSettings.<PurgeUserEventsRequest, Operation>newBuilder()
@@ -477,6 +508,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ImportUserEventsRequest, Operation> importUserEventsTransportSettings =
         HttpJsonCallSettings.<ImportUserEventsRequest, Operation>newBuilder()
@@ -488,6 +520,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.writeUserEventCallable =

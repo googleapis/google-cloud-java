@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,7 +93,14 @@ public class UserEventServiceClientTest {
     UserEvent expectedResponse =
         UserEvent.newBuilder()
             .setEventType("eventType31430900")
+            .setConversionType("conversionType989646192")
             .setUserPseudoId("userPseudoId-1155274652")
+            .setEngine(
+                EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+            .setDataStore(
+                DataStoreName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
             .setEventTime(Timestamp.newBuilder().build())
             .setUserInfo(UserInfo.newBuilder().build())
             .setDirectUserRequest(true)
@@ -110,6 +117,9 @@ public class UserEventServiceClientTest {
             .addAllPromotionIds(new ArrayList<String>())
             .putAllAttributes(new HashMap<String, CustomAttribute>())
             .setMediaInfo(MediaInfo.newBuilder().build())
+            .addAllPanels(new ArrayList<PanelInfo>())
+            .setFeedback(Feedback.newBuilder().build())
+            .setEntity("entity-1298275357")
             .build();
     mockUserEventService.addResponse(expectedResponse);
 
@@ -120,6 +130,7 @@ public class UserEventServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                     .toString())
             .setUserEvent(UserEvent.newBuilder().build())
+            .setWriteAsync(true)
             .build();
 
     UserEvent actualResponse = client.writeUserEvent(request);
@@ -131,6 +142,7 @@ public class UserEventServiceClientTest {
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getUserEvent(), actualRequest.getUserEvent());
+    Assert.assertEquals(request.getWriteAsync(), actualRequest.getWriteAsync());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -150,6 +162,7 @@ public class UserEventServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                       .toString())
               .setUserEvent(UserEvent.newBuilder().build())
+              .setWriteAsync(true)
               .build();
       client.writeUserEvent(request);
       Assert.fail("No exception raised");
@@ -216,6 +229,68 @@ public class UserEventServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void purgeUserEventsTest() throws Exception {
+    PurgeUserEventsResponse expectedResponse =
+        PurgeUserEventsResponse.newBuilder().setPurgeCount(575305851).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("purgeUserEventsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockUserEventService.addResponse(resultOperation);
+
+    PurgeUserEventsRequest request =
+        PurgeUserEventsRequest.newBuilder()
+            .setParent(
+                DataStoreName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
+            .setFilter("filter-1274492040")
+            .setForce(true)
+            .build();
+
+    PurgeUserEventsResponse actualResponse = client.purgeUserEventsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockUserEventService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PurgeUserEventsRequest actualRequest = ((PurgeUserEventsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getForce(), actualRequest.getForce());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void purgeUserEventsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockUserEventService.addException(exception);
+
+    try {
+      PurgeUserEventsRequest request =
+          PurgeUserEventsRequest.newBuilder()
+              .setParent(
+                  DataStoreName.ofProjectLocationDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                      .toString())
+              .setFilter("filter-1274492040")
+              .setForce(true)
+              .build();
+      client.purgeUserEventsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

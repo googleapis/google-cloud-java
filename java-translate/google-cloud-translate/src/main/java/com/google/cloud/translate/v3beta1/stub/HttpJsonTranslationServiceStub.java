@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,8 @@ import com.google.cloud.translate.v3beta1.GetSupportedLanguagesRequest;
 import com.google.cloud.translate.v3beta1.Glossary;
 import com.google.cloud.translate.v3beta1.ListGlossariesRequest;
 import com.google.cloud.translate.v3beta1.ListGlossariesResponse;
+import com.google.cloud.translate.v3beta1.RefineTextRequest;
+import com.google.cloud.translate.v3beta1.RefineTextResponse;
 import com.google.cloud.translate.v3beta1.SupportedLanguages;
 import com.google.cloud.translate.v3beta1.TranslateDocumentRequest;
 import com.google.cloud.translate.v3beta1.TranslateDocumentResponse;
@@ -478,6 +480,43 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<RefineTextRequest, RefineTextResponse>
+      refineTextMethodDescriptor =
+          ApiMethodDescriptor.<RefineTextRequest, RefineTextResponse>newBuilder()
+              .setFullMethodName("google.cloud.translation.v3beta1.TranslationService/RefineText")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RefineTextRequest>newBuilder()
+                      .setPath(
+                          "/v3beta1/{parent=projects/*/locations/*}:refineText",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RefineTextRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RefineTextRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RefineTextResponse>newBuilder()
+                      .setDefaultInstance(RefineTextResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<TranslateTextRequest, TranslateTextResponse> translateTextCallable;
   private final UnaryCallable<DetectLanguageRequest, DetectLanguageResponse> detectLanguageCallable;
   private final UnaryCallable<GetSupportedLanguagesRequest, SupportedLanguages>
@@ -506,6 +545,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
   private final OperationCallable<
           DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationCallable;
+  private final UnaryCallable<RefineTextRequest, RefineTextResponse> refineTextCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -595,6 +635,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DetectLanguageRequest, DetectLanguageResponse>
         detectLanguageTransportSettings =
@@ -607,6 +648,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetSupportedLanguagesRequest, SupportedLanguages>
         getSupportedLanguagesTransportSettings =
@@ -619,6 +661,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<TranslateDocumentRequest, TranslateDocumentResponse>
         translateDocumentTransportSettings =
@@ -631,6 +674,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchTranslateTextRequest, Operation> batchTranslateTextTransportSettings =
         HttpJsonCallSettings.<BatchTranslateTextRequest, Operation>newBuilder()
@@ -642,6 +686,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<BatchTranslateDocumentRequest, Operation>
         batchTranslateDocumentTransportSettings =
@@ -654,6 +699,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateGlossaryRequest, Operation> createGlossaryTransportSettings =
         HttpJsonCallSettings.<CreateGlossaryRequest, Operation>newBuilder()
@@ -665,6 +711,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListGlossariesRequest, ListGlossariesResponse>
         listGlossariesTransportSettings =
@@ -677,6 +724,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetGlossaryRequest, Glossary> getGlossaryTransportSettings =
         HttpJsonCallSettings.<GetGlossaryRequest, Glossary>newBuilder()
@@ -688,6 +736,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteGlossaryRequest, Operation> deleteGlossaryTransportSettings =
         HttpJsonCallSettings.<DeleteGlossaryRequest, Operation>newBuilder()
@@ -699,6 +748,19 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<RefineTextRequest, RefineTextResponse> refineTextTransportSettings =
+        HttpJsonCallSettings.<RefineTextRequest, RefineTextResponse>newBuilder()
+            .setMethodDescriptor(refineTextMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.translateTextCallable =
@@ -766,6 +828,9 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
             settings.deleteGlossaryOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.refineTextCallable =
+        callableFactory.createUnaryCallable(
+            refineTextTransportSettings, settings.refineTextSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -784,6 +849,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
     methodDescriptors.add(listGlossariesMethodDescriptor);
     methodDescriptors.add(getGlossaryMethodDescriptor);
     methodDescriptors.add(deleteGlossaryMethodDescriptor);
+    methodDescriptors.add(refineTextMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -875,6 +941,11 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
   public OperationCallable<DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationCallable() {
     return deleteGlossaryOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RefineTextRequest, RefineTextResponse> refineTextCallable() {
+    return refineTextCallable;
   }
 
   @Override

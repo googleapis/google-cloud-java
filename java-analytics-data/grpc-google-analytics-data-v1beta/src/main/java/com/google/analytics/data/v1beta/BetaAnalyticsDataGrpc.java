@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Google Analytics reporting data service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/analytics/data/v1beta/analytics_data_api.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BetaAnalyticsDataGrpc {
 
@@ -578,6 +575,19 @@ public final class BetaAnalyticsDataGrpc {
     return BetaAnalyticsDataStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static BetaAnalyticsDataBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BetaAnalyticsDataBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BetaAnalyticsDataBlockingV2Stub>() {
+          @java.lang.Override
+          public BetaAnalyticsDataBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BetaAnalyticsDataBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return BetaAnalyticsDataBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -662,7 +672,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     default void batchRunReports(
@@ -678,7 +688,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple pivot reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     default void batchRunPivotReports(
@@ -695,7 +705,7 @@ public final class BetaAnalyticsDataGrpc {
      * <pre>
      * Returns metadata for dimensions and metrics available in reporting methods.
      * Used to explore the dimensions and metrics. In this method, a Google
-     * Analytics GA4 Property Identifier is specified in the request, and
+     * Analytics property identifier is specified in the request, and
      * the metadata response includes Custom dimensions and metrics as well as
      * Universal metadata.
      * For example if a custom metric with parameter name `levels_unlocked` is
@@ -956,7 +966,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public void batchRunReports(
@@ -974,7 +984,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple pivot reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public void batchRunPivotReports(
@@ -993,7 +1003,7 @@ public final class BetaAnalyticsDataGrpc {
      * <pre>
      * Returns metadata for dimensions and metrics available in reporting methods.
      * Used to explore the dimensions and metrics. In this method, a Google
-     * Analytics GA4 Property Identifier is specified in the request, and
+     * Analytics property identifier is specified in the request, and
      * the metadata response includes Custom dimensions and metrics as well as
      * Universal metadata.
      * For example if a custom metric with parameter name `levels_unlocked` is
@@ -1190,6 +1200,273 @@ public final class BetaAnalyticsDataGrpc {
    * Google Analytics reporting data service.
    * </pre>
    */
+  public static final class BetaAnalyticsDataBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BetaAnalyticsDataBlockingV2Stub> {
+    private BetaAnalyticsDataBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BetaAnalyticsDataBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BetaAnalyticsDataBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized report of your Google Analytics event data. Reports
+     * contain statistics derived from data collected by the Google Analytics
+     * tracking code. The data returned from the API is as a table with columns
+     * for the requested dimensions and metrics. Metrics are individual
+     * measurements of user activity on your property, such as active users or
+     * event count. Dimensions break down metrics across some common criteria,
+     * such as country or event name.
+     * For a guide to constructing requests &amp; understanding responses, see
+     * [Creating a
+     * Report](https://developers.google.com/analytics/devguides/reporting/data/v1/basics).
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.RunReportResponse runReport(
+        com.google.analytics.data.v1beta.RunReportRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRunReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized pivot report of your Google Analytics event data.
+     * Pivot reports are more advanced and expressive formats than regular
+     * reports. In a pivot report, dimensions are only visible if they are
+     * included in a pivot. Multiple pivots can be specified to further dissect
+     * your data.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.RunPivotReportResponse runPivotReport(
+        com.google.analytics.data.v1beta.RunPivotReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRunPivotReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns multiple reports in a batch. All reports must be for the same
+     * Google Analytics property.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.BatchRunReportsResponse batchRunReports(
+        com.google.analytics.data.v1beta.BatchRunReportsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchRunReportsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns multiple pivot reports in a batch. All reports must be for the same
+     * Google Analytics property.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.BatchRunPivotReportsResponse batchRunPivotReports(
+        com.google.analytics.data.v1beta.BatchRunPivotReportsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchRunPivotReportsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns metadata for dimensions and metrics available in reporting methods.
+     * Used to explore the dimensions and metrics. In this method, a Google
+     * Analytics property identifier is specified in the request, and
+     * the metadata response includes Custom dimensions and metrics as well as
+     * Universal metadata.
+     * For example if a custom metric with parameter name `levels_unlocked` is
+     * registered to a property, the Metadata response will contain
+     * `customEvent:levels_unlocked`. Universal metadata are dimensions and
+     * metrics applicable to any property such as `country` and `totalUsers`.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.Metadata getMetadata(
+        com.google.analytics.data.v1beta.GetMetadataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized report of realtime event data for your property.
+     * Events appear in realtime reports seconds after they have been sent to
+     * the Google Analytics. Realtime reports show events and usage data for the
+     * periods of time ranging from the present moment to 30 minutes ago (up to
+     * 60 minutes for Google Analytics 360 properties).
+     * For a guide to constructing realtime requests &amp; understanding responses,
+     * see [Creating a Realtime
+     * Report](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics).
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.RunRealtimeReportResponse runRealtimeReport(
+        com.google.analytics.data.v1beta.RunRealtimeReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRunRealtimeReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This compatibility method lists dimensions and metrics that can be added to
+     * a report request and maintain compatibility. This method fails if the
+     * request's dimensions and metrics are incompatible.
+     * In Google Analytics, reports fail if they request incompatible dimensions
+     * and/or metrics; in that case, you will need to remove dimensions and/or
+     * metrics from the incompatible report until the report is compatible.
+     * The Realtime and Core reports have different compatibility rules. This
+     * method checks compatibility for Core reports.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.CheckCompatibilityResponse checkCompatibility(
+        com.google.analytics.data.v1beta.CheckCompatibilityRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCheckCompatibilityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an audience export for later retrieval. This method quickly returns
+     * the audience export's resource name and initiates a long running
+     * asynchronous request to form an audience export. To export the users in an
+     * audience export, first create the audience export through this method and
+     * then send the audience resource name to the `QueryAudienceExport` method.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * An audience export is a snapshot of the users currently in the audience at
+     * the time of audience export creation. Creating audience exports for one
+     * audience on different days will return different results as users enter and
+     * exit the audience.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572. Audience exports
+     * contain the users in each audience.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAudienceExport(
+        com.google.analytics.data.v1beta.CreateAudienceExportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAudienceExportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves an audience export of users. After creating an audience, the
+     * users are not immediately available for exporting. First, a request to
+     * `CreateAudienceExport` is necessary to create an audience export of users,
+     * and then second, this method is used to retrieve the users in the audience
+     * export.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.QueryAudienceExportResponse queryAudienceExport(
+        com.google.analytics.data.v1beta.QueryAudienceExportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getQueryAudienceExportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets configuration metadata about a specific audience export. This method
+     * can be used to understand an audience export after it has been created.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.AudienceExport getAudienceExport(
+        com.google.analytics.data.v1beta.GetAudienceExportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAudienceExportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all audience exports for a property. This method can be used for you
+     * to find and reuse existing audience exports rather than creating
+     * unnecessary new audience exports. The same audience can have multiple
+     * audience exports that represent the export of users that were in an
+     * audience on different days.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.ListAudienceExportsResponse listAudienceExports(
+        com.google.analytics.data.v1beta.ListAudienceExportsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAudienceExportsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service BetaAnalyticsData.
+   *
+   * <pre>
+   * Google Analytics reporting data service.
+   * </pre>
+   */
   public static final class BetaAnalyticsDataBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<BetaAnalyticsDataBlockingStub> {
     private BetaAnalyticsDataBlockingStub(
@@ -1247,7 +1524,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public com.google.analytics.data.v1beta.BatchRunReportsResponse batchRunReports(
@@ -1261,7 +1538,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple pivot reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public com.google.analytics.data.v1beta.BatchRunPivotReportsResponse batchRunPivotReports(
@@ -1276,7 +1553,7 @@ public final class BetaAnalyticsDataGrpc {
      * <pre>
      * Returns metadata for dimensions and metrics available in reporting methods.
      * Used to explore the dimensions and metrics. In this method, a Google
-     * Analytics GA4 Property Identifier is specified in the request, and
+     * Analytics property identifier is specified in the request, and
      * the metadata response includes Custom dimensions and metrics as well as
      * Universal metadata.
      * For example if a custom metric with parameter name `levels_unlocked` is
@@ -1505,7 +1782,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1520,7 +1797,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple pivot reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1536,7 +1813,7 @@ public final class BetaAnalyticsDataGrpc {
      * <pre>
      * Returns metadata for dimensions and metrics available in reporting methods.
      * Used to explore the dimensions and metrics. In this method, a Google
-     * Analytics GA4 Property Identifier is specified in the request, and
+     * Analytics property identifier is specified in the request, and
      * the metadata response includes Custom dimensions and metrics as well as
      * Universal metadata.
      * For example if a custom metric with parameter name `levels_unlocked` is

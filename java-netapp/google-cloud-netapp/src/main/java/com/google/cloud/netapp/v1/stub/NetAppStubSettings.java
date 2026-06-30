@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,10 @@ import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPaged
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListHostGroupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListQuotaRulesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListReplicationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListStoragePoolsPagedResponse;
@@ -30,6 +32,7 @@ import static com.google.cloud.netapp.v1.NetAppClient.ListVolumesPagedResponse;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -46,6 +49,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -68,7 +72,9 @@ import com.google.cloud.netapp.v1.CreateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.CreateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.CreateBackupRequest;
 import com.google.cloud.netapp.v1.CreateBackupVaultRequest;
+import com.google.cloud.netapp.v1.CreateHostGroupRequest;
 import com.google.cloud.netapp.v1.CreateKmsConfigRequest;
+import com.google.cloud.netapp.v1.CreateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.CreateReplicationRequest;
 import com.google.cloud.netapp.v1.CreateSnapshotRequest;
 import com.google.cloud.netapp.v1.CreateStoragePoolRequest;
@@ -77,21 +83,36 @@ import com.google.cloud.netapp.v1.DeleteActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.DeleteBackupPolicyRequest;
 import com.google.cloud.netapp.v1.DeleteBackupRequest;
 import com.google.cloud.netapp.v1.DeleteBackupVaultRequest;
+import com.google.cloud.netapp.v1.DeleteHostGroupRequest;
 import com.google.cloud.netapp.v1.DeleteKmsConfigRequest;
+import com.google.cloud.netapp.v1.DeleteQuotaRuleRequest;
 import com.google.cloud.netapp.v1.DeleteReplicationRequest;
 import com.google.cloud.netapp.v1.DeleteSnapshotRequest;
 import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
 import com.google.cloud.netapp.v1.DeleteVolumeRequest;
 import com.google.cloud.netapp.v1.EncryptVolumesRequest;
+import com.google.cloud.netapp.v1.EstablishPeeringRequest;
+import com.google.cloud.netapp.v1.EstablishVolumePeeringRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapDeleteRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapDeleteResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapGetRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapGetResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapPatchRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapPatchResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapPostRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapPostResponse;
 import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
 import com.google.cloud.netapp.v1.GetBackupVaultRequest;
+import com.google.cloud.netapp.v1.GetHostGroupRequest;
 import com.google.cloud.netapp.v1.GetKmsConfigRequest;
+import com.google.cloud.netapp.v1.GetQuotaRuleRequest;
 import com.google.cloud.netapp.v1.GetReplicationRequest;
 import com.google.cloud.netapp.v1.GetSnapshotRequest;
 import com.google.cloud.netapp.v1.GetStoragePoolRequest;
 import com.google.cloud.netapp.v1.GetVolumeRequest;
+import com.google.cloud.netapp.v1.HostGroup;
 import com.google.cloud.netapp.v1.KmsConfig;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesRequest;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesResponse;
@@ -101,8 +122,12 @@ import com.google.cloud.netapp.v1.ListBackupVaultsRequest;
 import com.google.cloud.netapp.v1.ListBackupVaultsResponse;
 import com.google.cloud.netapp.v1.ListBackupsRequest;
 import com.google.cloud.netapp.v1.ListBackupsResponse;
+import com.google.cloud.netapp.v1.ListHostGroupsRequest;
+import com.google.cloud.netapp.v1.ListHostGroupsResponse;
 import com.google.cloud.netapp.v1.ListKmsConfigsRequest;
 import com.google.cloud.netapp.v1.ListKmsConfigsResponse;
+import com.google.cloud.netapp.v1.ListQuotaRulesRequest;
+import com.google.cloud.netapp.v1.ListQuotaRulesResponse;
 import com.google.cloud.netapp.v1.ListReplicationsRequest;
 import com.google.cloud.netapp.v1.ListReplicationsResponse;
 import com.google.cloud.netapp.v1.ListSnapshotsRequest;
@@ -112,22 +137,30 @@ import com.google.cloud.netapp.v1.ListStoragePoolsResponse;
 import com.google.cloud.netapp.v1.ListVolumesRequest;
 import com.google.cloud.netapp.v1.ListVolumesResponse;
 import com.google.cloud.netapp.v1.OperationMetadata;
+import com.google.cloud.netapp.v1.QuotaRule;
 import com.google.cloud.netapp.v1.Replication;
+import com.google.cloud.netapp.v1.RestoreBackupFilesRequest;
+import com.google.cloud.netapp.v1.RestoreBackupFilesResponse;
 import com.google.cloud.netapp.v1.ResumeReplicationRequest;
 import com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest;
 import com.google.cloud.netapp.v1.RevertVolumeRequest;
 import com.google.cloud.netapp.v1.Snapshot;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
+import com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest;
+import com.google.cloud.netapp.v1.SyncReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
 import com.google.cloud.netapp.v1.UpdateBackupVaultRequest;
+import com.google.cloud.netapp.v1.UpdateHostGroupRequest;
 import com.google.cloud.netapp.v1.UpdateKmsConfigRequest;
+import com.google.cloud.netapp.v1.UpdateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.UpdateReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateSnapshotRequest;
 import com.google.cloud.netapp.v1.UpdateStoragePoolRequest;
 import com.google.cloud.netapp.v1.UpdateVolumeRequest;
+import com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigResponse;
 import com.google.cloud.netapp.v1.Volume;
@@ -138,9 +171,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -157,7 +190,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getStoragePool to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getStoragePool:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -173,12 +208,49 @@ import org.threeten.bp.Duration;
  *             .getStoragePoolSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * NetAppStubSettings netAppSettings = netAppSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createStoragePool:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * NetAppStubSettings.Builder netAppSettingsBuilder = NetAppStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * netAppSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -197,6 +269,15 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   private final UnaryCallSettings<DeleteStoragePoolRequest, Operation> deleteStoragePoolSettings;
   private final OperationCallSettings<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationSettings;
+  private final UnaryCallSettings<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceSettings;
+  private final OperationCallSettings<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationSettings;
+  private final UnaryCallSettings<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneSettings;
+  private final OperationCallSettings<
+          SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationSettings;
   private final PagedCallSettings<ListVolumesRequest, ListVolumesResponse, ListVolumesPagedResponse>
       listVolumesSettings;
   private final UnaryCallSettings<GetVolumeRequest, Volume> getVolumeSettings;
@@ -212,6 +293,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   private final UnaryCallSettings<RevertVolumeRequest, Operation> revertVolumeSettings;
   private final OperationCallSettings<RevertVolumeRequest, Volume, OperationMetadata>
       revertVolumeOperationSettings;
+  private final UnaryCallSettings<EstablishVolumePeeringRequest, Operation>
+      establishVolumePeeringSettings;
+  private final OperationCallSettings<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+      establishVolumePeeringOperationSettings;
   private final PagedCallSettings<
           ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
       listSnapshotsSettings;
@@ -288,6 +373,12 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   private final OperationCallSettings<
           ReverseReplicationDirectionRequest, Replication, OperationMetadata>
       reverseReplicationDirectionOperationSettings;
+  private final UnaryCallSettings<EstablishPeeringRequest, Operation> establishPeeringSettings;
+  private final OperationCallSettings<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationSettings;
+  private final UnaryCallSettings<SyncReplicationRequest, Operation> syncReplicationSettings;
+  private final OperationCallSettings<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationSettings;
   private final UnaryCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultSettings;
   private final OperationCallSettings<CreateBackupVaultRequest, BackupVault, OperationMetadata>
       createBackupVaultOperationSettings;
@@ -327,6 +418,44 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   private final OperationCallSettings<DeleteBackupPolicyRequest, Empty, OperationMetadata>
       deleteBackupPolicyOperationSettings;
   private final PagedCallSettings<
+          ListQuotaRulesRequest, ListQuotaRulesResponse, ListQuotaRulesPagedResponse>
+      listQuotaRulesSettings;
+  private final UnaryCallSettings<GetQuotaRuleRequest, QuotaRule> getQuotaRuleSettings;
+  private final UnaryCallSettings<CreateQuotaRuleRequest, Operation> createQuotaRuleSettings;
+  private final OperationCallSettings<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationSettings;
+  private final UnaryCallSettings<UpdateQuotaRuleRequest, Operation> updateQuotaRuleSettings;
+  private final OperationCallSettings<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationSettings;
+  private final UnaryCallSettings<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleSettings;
+  private final OperationCallSettings<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationSettings;
+  private final UnaryCallSettings<RestoreBackupFilesRequest, Operation> restoreBackupFilesSettings;
+  private final OperationCallSettings<
+          RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+      restoreBackupFilesOperationSettings;
+  private final PagedCallSettings<
+          ListHostGroupsRequest, ListHostGroupsResponse, ListHostGroupsPagedResponse>
+      listHostGroupsSettings;
+  private final UnaryCallSettings<GetHostGroupRequest, HostGroup> getHostGroupSettings;
+  private final UnaryCallSettings<CreateHostGroupRequest, Operation> createHostGroupSettings;
+  private final OperationCallSettings<CreateHostGroupRequest, HostGroup, OperationMetadata>
+      createHostGroupOperationSettings;
+  private final UnaryCallSettings<UpdateHostGroupRequest, Operation> updateHostGroupSettings;
+  private final OperationCallSettings<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+      updateHostGroupOperationSettings;
+  private final UnaryCallSettings<DeleteHostGroupRequest, Operation> deleteHostGroupSettings;
+  private final OperationCallSettings<DeleteHostGroupRequest, Empty, OperationMetadata>
+      deleteHostGroupOperationSettings;
+  private final UnaryCallSettings<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostSettings;
+  private final UnaryCallSettings<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+      executeOntapGetSettings;
+  private final UnaryCallSettings<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteSettings;
+  private final UnaryCallSettings<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchSettings;
+  private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
@@ -365,9 +494,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<StoragePool> extractResources(ListStoragePoolsResponse payload) {
-              return payload.getStoragePoolsList() == null
-                  ? ImmutableList.<StoragePool>of()
-                  : payload.getStoragePoolsList();
+              return payload.getStoragePoolsList();
             }
           };
 
@@ -401,9 +528,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<Volume> extractResources(ListVolumesResponse payload) {
-              return payload.getVolumesList() == null
-                  ? ImmutableList.<Volume>of()
-                  : payload.getVolumesList();
+              return payload.getVolumesList();
             }
           };
 
@@ -437,9 +562,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<Snapshot> extractResources(ListSnapshotsResponse payload) {
-              return payload.getSnapshotsList() == null
-                  ? ImmutableList.<Snapshot>of()
-                  : payload.getSnapshotsList();
+              return payload.getSnapshotsList();
             }
           };
 
@@ -478,9 +601,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
             @Override
             public Iterable<ActiveDirectory> extractResources(
                 ListActiveDirectoriesResponse payload) {
-              return payload.getActiveDirectoriesList() == null
-                  ? ImmutableList.<ActiveDirectory>of()
-                  : payload.getActiveDirectoriesList();
+              return payload.getActiveDirectoriesList();
             }
           };
 
@@ -515,9 +636,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<KmsConfig> extractResources(ListKmsConfigsResponse payload) {
-              return payload.getKmsConfigsList() == null
-                  ? ImmutableList.<KmsConfig>of()
-                  : payload.getKmsConfigsList();
+              return payload.getKmsConfigsList();
             }
           };
 
@@ -555,9 +674,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<Replication> extractResources(ListReplicationsResponse payload) {
-              return payload.getReplicationsList() == null
-                  ? ImmutableList.<Replication>of()
-                  : payload.getReplicationsList();
+              return payload.getReplicationsList();
             }
           };
 
@@ -595,9 +712,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<BackupVault> extractResources(ListBackupVaultsResponse payload) {
-              return payload.getBackupVaultsList() == null
-                  ? ImmutableList.<BackupVault>of()
-                  : payload.getBackupVaultsList();
+              return payload.getBackupVaultsList();
             }
           };
 
@@ -631,9 +746,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<Backup> extractResources(ListBackupsResponse payload) {
-              return payload.getBackupsList() == null
-                  ? ImmutableList.<Backup>of()
-                  : payload.getBackupsList();
+              return payload.getBackupsList();
             }
           };
 
@@ -671,9 +784,77 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<BackupPolicy> extractResources(ListBackupPoliciesResponse payload) {
-              return payload.getBackupPoliciesList() == null
-                  ? ImmutableList.<BackupPolicy>of()
-                  : payload.getBackupPoliciesList();
+              return payload.getBackupPoliciesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule>
+      LIST_QUOTA_RULES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListQuotaRulesRequest injectToken(ListQuotaRulesRequest payload, String token) {
+              return ListQuotaRulesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListQuotaRulesRequest injectPageSize(
+                ListQuotaRulesRequest payload, int pageSize) {
+              return ListQuotaRulesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListQuotaRulesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListQuotaRulesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<QuotaRule> extractResources(ListQuotaRulesResponse payload) {
+              return payload.getQuotaRulesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup>
+      LIST_HOST_GROUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListHostGroupsRequest injectToken(ListHostGroupsRequest payload, String token) {
+              return ListHostGroupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListHostGroupsRequest injectPageSize(
+                ListHostGroupsRequest payload, int pageSize) {
+              return ListHostGroupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListHostGroupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListHostGroupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<HostGroup> extractResources(ListHostGroupsResponse payload) {
+              return payload.getHostGroupsList();
             }
           };
 
@@ -707,9 +888,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -884,6 +1063,40 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           };
 
   private static final PagedListResponseFactory<
+          ListQuotaRulesRequest, ListQuotaRulesResponse, ListQuotaRulesPagedResponse>
+      LIST_QUOTA_RULES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListQuotaRulesRequest, ListQuotaRulesResponse, ListQuotaRulesPagedResponse>() {
+            @Override
+            public ApiFuture<ListQuotaRulesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesResponse> callable,
+                ListQuotaRulesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListQuotaRulesResponse> futureResponse) {
+              PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> pageContext =
+                  PageContext.create(callable, LIST_QUOTA_RULES_PAGE_STR_DESC, request, context);
+              return ListQuotaRulesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListHostGroupsRequest, ListHostGroupsResponse, ListHostGroupsPagedResponse>
+      LIST_HOST_GROUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListHostGroupsRequest, ListHostGroupsResponse, ListHostGroupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListHostGroupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListHostGroupsRequest, ListHostGroupsResponse> callable,
+                ListHostGroupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListHostGroupsResponse> futureResponse) {
+              PageContext<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup> pageContext =
+                  PageContext.create(callable, LIST_HOST_GROUPS_PAGE_STR_DESC, request, context);
+              return ListHostGroupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -945,6 +1158,30 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     return deleteStoragePoolOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to validateDirectoryService. */
+  public UnaryCallSettings<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceSettings() {
+    return validateDirectoryServiceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to validateDirectoryService. */
+  public OperationCallSettings<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationSettings() {
+    return validateDirectoryServiceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to switchActiveReplicaZone. */
+  public UnaryCallSettings<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneSettings() {
+    return switchActiveReplicaZoneSettings;
+  }
+
+  /** Returns the object with the settings used for calls to switchActiveReplicaZone. */
+  public OperationCallSettings<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationSettings() {
+    return switchActiveReplicaZoneOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listVolumes. */
   public PagedCallSettings<ListVolumesRequest, ListVolumesResponse, ListVolumesPagedResponse>
       listVolumesSettings() {
@@ -998,6 +1235,18 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   public OperationCallSettings<RevertVolumeRequest, Volume, OperationMetadata>
       revertVolumeOperationSettings() {
     return revertVolumeOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to establishVolumePeering. */
+  public UnaryCallSettings<EstablishVolumePeeringRequest, Operation>
+      establishVolumePeeringSettings() {
+    return establishVolumePeeringSettings;
+  }
+
+  /** Returns the object with the settings used for calls to establishVolumePeering. */
+  public OperationCallSettings<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+      establishVolumePeeringOperationSettings() {
+    return establishVolumePeeringOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listSnapshots. */
@@ -1236,6 +1485,28 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     return reverseReplicationDirectionOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to establishPeering. */
+  public UnaryCallSettings<EstablishPeeringRequest, Operation> establishPeeringSettings() {
+    return establishPeeringSettings;
+  }
+
+  /** Returns the object with the settings used for calls to establishPeering. */
+  public OperationCallSettings<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationSettings() {
+    return establishPeeringOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to syncReplication. */
+  public UnaryCallSettings<SyncReplicationRequest, Operation> syncReplicationSettings() {
+    return syncReplicationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to syncReplication. */
+  public OperationCallSettings<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationSettings() {
+    return syncReplicationOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to createBackupVault. */
   public UnaryCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultSettings() {
     return createBackupVaultSettings;
@@ -1370,6 +1641,132 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     return deleteBackupPolicyOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listQuotaRules. */
+  public PagedCallSettings<
+          ListQuotaRulesRequest, ListQuotaRulesResponse, ListQuotaRulesPagedResponse>
+      listQuotaRulesSettings() {
+    return listQuotaRulesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getQuotaRule. */
+  public UnaryCallSettings<GetQuotaRuleRequest, QuotaRule> getQuotaRuleSettings() {
+    return getQuotaRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createQuotaRule. */
+  public UnaryCallSettings<CreateQuotaRuleRequest, Operation> createQuotaRuleSettings() {
+    return createQuotaRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createQuotaRule. */
+  public OperationCallSettings<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationSettings() {
+    return createQuotaRuleOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateQuotaRule. */
+  public UnaryCallSettings<UpdateQuotaRuleRequest, Operation> updateQuotaRuleSettings() {
+    return updateQuotaRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateQuotaRule. */
+  public OperationCallSettings<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationSettings() {
+    return updateQuotaRuleOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteQuotaRule. */
+  public UnaryCallSettings<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleSettings() {
+    return deleteQuotaRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteQuotaRule. */
+  public OperationCallSettings<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationSettings() {
+    return deleteQuotaRuleOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restoreBackupFiles. */
+  public UnaryCallSettings<RestoreBackupFilesRequest, Operation> restoreBackupFilesSettings() {
+    return restoreBackupFilesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restoreBackupFiles. */
+  public OperationCallSettings<
+          RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+      restoreBackupFilesOperationSettings() {
+    return restoreBackupFilesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listHostGroups. */
+  public PagedCallSettings<
+          ListHostGroupsRequest, ListHostGroupsResponse, ListHostGroupsPagedResponse>
+      listHostGroupsSettings() {
+    return listHostGroupsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getHostGroup. */
+  public UnaryCallSettings<GetHostGroupRequest, HostGroup> getHostGroupSettings() {
+    return getHostGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createHostGroup. */
+  public UnaryCallSettings<CreateHostGroupRequest, Operation> createHostGroupSettings() {
+    return createHostGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createHostGroup. */
+  public OperationCallSettings<CreateHostGroupRequest, HostGroup, OperationMetadata>
+      createHostGroupOperationSettings() {
+    return createHostGroupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateHostGroup. */
+  public UnaryCallSettings<UpdateHostGroupRequest, Operation> updateHostGroupSettings() {
+    return updateHostGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateHostGroup. */
+  public OperationCallSettings<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+      updateHostGroupOperationSettings() {
+    return updateHostGroupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteHostGroup. */
+  public UnaryCallSettings<DeleteHostGroupRequest, Operation> deleteHostGroupSettings() {
+    return deleteHostGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteHostGroup. */
+  public OperationCallSettings<DeleteHostGroupRequest, Empty, OperationMetadata>
+      deleteHostGroupOperationSettings() {
+    return deleteHostGroupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to executeOntapPost. */
+  public UnaryCallSettings<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostSettings() {
+    return executeOntapPostSettings;
+  }
+
+  /** Returns the object with the settings used for calls to executeOntapGet. */
+  public UnaryCallSettings<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+      executeOntapGetSettings() {
+    return executeOntapGetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to executeOntapDelete. */
+  public UnaryCallSettings<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteSettings() {
+    return executeOntapDeleteSettings;
+  }
+
+  /** Returns the object with the settings used for calls to executeOntapPatch. */
+  public UnaryCallSettings<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchSettings() {
+    return executeOntapPatchSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1397,15 +1794,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -1418,6 +1806,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "netapp.googleapis.com:443";
   }
@@ -1509,6 +1898,12 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     deleteStoragePoolSettings = settingsBuilder.deleteStoragePoolSettings().build();
     deleteStoragePoolOperationSettings =
         settingsBuilder.deleteStoragePoolOperationSettings().build();
+    validateDirectoryServiceSettings = settingsBuilder.validateDirectoryServiceSettings().build();
+    validateDirectoryServiceOperationSettings =
+        settingsBuilder.validateDirectoryServiceOperationSettings().build();
+    switchActiveReplicaZoneSettings = settingsBuilder.switchActiveReplicaZoneSettings().build();
+    switchActiveReplicaZoneOperationSettings =
+        settingsBuilder.switchActiveReplicaZoneOperationSettings().build();
     listVolumesSettings = settingsBuilder.listVolumesSettings().build();
     getVolumeSettings = settingsBuilder.getVolumeSettings().build();
     createVolumeSettings = settingsBuilder.createVolumeSettings().build();
@@ -1519,6 +1914,9 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     deleteVolumeOperationSettings = settingsBuilder.deleteVolumeOperationSettings().build();
     revertVolumeSettings = settingsBuilder.revertVolumeSettings().build();
     revertVolumeOperationSettings = settingsBuilder.revertVolumeOperationSettings().build();
+    establishVolumePeeringSettings = settingsBuilder.establishVolumePeeringSettings().build();
+    establishVolumePeeringOperationSettings =
+        settingsBuilder.establishVolumePeeringOperationSettings().build();
     listSnapshotsSettings = settingsBuilder.listSnapshotsSettings().build();
     getSnapshotSettings = settingsBuilder.getSnapshotSettings().build();
     createSnapshotSettings = settingsBuilder.createSnapshotSettings().build();
@@ -1569,6 +1967,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
         settingsBuilder.reverseReplicationDirectionSettings().build();
     reverseReplicationDirectionOperationSettings =
         settingsBuilder.reverseReplicationDirectionOperationSettings().build();
+    establishPeeringSettings = settingsBuilder.establishPeeringSettings().build();
+    establishPeeringOperationSettings = settingsBuilder.establishPeeringOperationSettings().build();
+    syncReplicationSettings = settingsBuilder.syncReplicationSettings().build();
+    syncReplicationOperationSettings = settingsBuilder.syncReplicationOperationSettings().build();
     createBackupVaultSettings = settingsBuilder.createBackupVaultSettings().build();
     createBackupVaultOperationSettings =
         settingsBuilder.createBackupVaultOperationSettings().build();
@@ -1599,8 +2001,40 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     deleteBackupPolicySettings = settingsBuilder.deleteBackupPolicySettings().build();
     deleteBackupPolicyOperationSettings =
         settingsBuilder.deleteBackupPolicyOperationSettings().build();
+    listQuotaRulesSettings = settingsBuilder.listQuotaRulesSettings().build();
+    getQuotaRuleSettings = settingsBuilder.getQuotaRuleSettings().build();
+    createQuotaRuleSettings = settingsBuilder.createQuotaRuleSettings().build();
+    createQuotaRuleOperationSettings = settingsBuilder.createQuotaRuleOperationSettings().build();
+    updateQuotaRuleSettings = settingsBuilder.updateQuotaRuleSettings().build();
+    updateQuotaRuleOperationSettings = settingsBuilder.updateQuotaRuleOperationSettings().build();
+    deleteQuotaRuleSettings = settingsBuilder.deleteQuotaRuleSettings().build();
+    deleteQuotaRuleOperationSettings = settingsBuilder.deleteQuotaRuleOperationSettings().build();
+    restoreBackupFilesSettings = settingsBuilder.restoreBackupFilesSettings().build();
+    restoreBackupFilesOperationSettings =
+        settingsBuilder.restoreBackupFilesOperationSettings().build();
+    listHostGroupsSettings = settingsBuilder.listHostGroupsSettings().build();
+    getHostGroupSettings = settingsBuilder.getHostGroupSettings().build();
+    createHostGroupSettings = settingsBuilder.createHostGroupSettings().build();
+    createHostGroupOperationSettings = settingsBuilder.createHostGroupOperationSettings().build();
+    updateHostGroupSettings = settingsBuilder.updateHostGroupSettings().build();
+    updateHostGroupOperationSettings = settingsBuilder.updateHostGroupOperationSettings().build();
+    deleteHostGroupSettings = settingsBuilder.deleteHostGroupSettings().build();
+    deleteHostGroupOperationSettings = settingsBuilder.deleteHostGroupOperationSettings().build();
+    executeOntapPostSettings = settingsBuilder.executeOntapPostSettings().build();
+    executeOntapGetSettings = settingsBuilder.executeOntapGetSettings().build();
+    executeOntapDeleteSettings = settingsBuilder.executeOntapDeleteSettings().build();
+    executeOntapPatchSettings = settingsBuilder.executeOntapPatchSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-netapp")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for NetAppStubSettings. */
@@ -1625,6 +2059,16 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
         deleteStoragePoolSettings;
     private final OperationCallSettings.Builder<DeleteStoragePoolRequest, Empty, OperationMetadata>
         deleteStoragePoolOperationSettings;
+    private final UnaryCallSettings.Builder<ValidateDirectoryServiceRequest, Operation>
+        validateDirectoryServiceSettings;
+    private final OperationCallSettings.Builder<
+            ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+        validateDirectoryServiceOperationSettings;
+    private final UnaryCallSettings.Builder<SwitchActiveReplicaZoneRequest, Operation>
+        switchActiveReplicaZoneSettings;
+    private final OperationCallSettings.Builder<
+            SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+        switchActiveReplicaZoneOperationSettings;
     private final PagedCallSettings.Builder<
             ListVolumesRequest, ListVolumesResponse, ListVolumesPagedResponse>
         listVolumesSettings;
@@ -1641,6 +2085,11 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     private final UnaryCallSettings.Builder<RevertVolumeRequest, Operation> revertVolumeSettings;
     private final OperationCallSettings.Builder<RevertVolumeRequest, Volume, OperationMetadata>
         revertVolumeOperationSettings;
+    private final UnaryCallSettings.Builder<EstablishVolumePeeringRequest, Operation>
+        establishVolumePeeringSettings;
+    private final OperationCallSettings.Builder<
+            EstablishVolumePeeringRequest, Volume, OperationMetadata>
+        establishVolumePeeringOperationSettings;
     private final PagedCallSettings.Builder<
             ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
         listSnapshotsSettings;
@@ -1737,6 +2186,16 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     private final OperationCallSettings.Builder<
             ReverseReplicationDirectionRequest, Replication, OperationMetadata>
         reverseReplicationDirectionOperationSettings;
+    private final UnaryCallSettings.Builder<EstablishPeeringRequest, Operation>
+        establishPeeringSettings;
+    private final OperationCallSettings.Builder<
+            EstablishPeeringRequest, Replication, OperationMetadata>
+        establishPeeringOperationSettings;
+    private final UnaryCallSettings.Builder<SyncReplicationRequest, Operation>
+        syncReplicationSettings;
+    private final OperationCallSettings.Builder<
+            SyncReplicationRequest, Replication, OperationMetadata>
+        syncReplicationOperationSettings;
     private final UnaryCallSettings.Builder<CreateBackupVaultRequest, Operation>
         createBackupVaultSettings;
     private final OperationCallSettings.Builder<
@@ -1789,6 +2248,55 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     private final OperationCallSettings.Builder<DeleteBackupPolicyRequest, Empty, OperationMetadata>
         deleteBackupPolicyOperationSettings;
     private final PagedCallSettings.Builder<
+            ListQuotaRulesRequest, ListQuotaRulesResponse, ListQuotaRulesPagedResponse>
+        listQuotaRulesSettings;
+    private final UnaryCallSettings.Builder<GetQuotaRuleRequest, QuotaRule> getQuotaRuleSettings;
+    private final UnaryCallSettings.Builder<CreateQuotaRuleRequest, Operation>
+        createQuotaRuleSettings;
+    private final OperationCallSettings.Builder<
+            CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+        createQuotaRuleOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateQuotaRuleRequest, Operation>
+        updateQuotaRuleSettings;
+    private final OperationCallSettings.Builder<
+            UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+        updateQuotaRuleOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteQuotaRuleRequest, Operation>
+        deleteQuotaRuleSettings;
+    private final OperationCallSettings.Builder<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+        deleteQuotaRuleOperationSettings;
+    private final UnaryCallSettings.Builder<RestoreBackupFilesRequest, Operation>
+        restoreBackupFilesSettings;
+    private final OperationCallSettings.Builder<
+            RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+        restoreBackupFilesOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListHostGroupsRequest, ListHostGroupsResponse, ListHostGroupsPagedResponse>
+        listHostGroupsSettings;
+    private final UnaryCallSettings.Builder<GetHostGroupRequest, HostGroup> getHostGroupSettings;
+    private final UnaryCallSettings.Builder<CreateHostGroupRequest, Operation>
+        createHostGroupSettings;
+    private final OperationCallSettings.Builder<
+            CreateHostGroupRequest, HostGroup, OperationMetadata>
+        createHostGroupOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateHostGroupRequest, Operation>
+        updateHostGroupSettings;
+    private final OperationCallSettings.Builder<
+            UpdateHostGroupRequest, HostGroup, OperationMetadata>
+        updateHostGroupOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteHostGroupRequest, Operation>
+        deleteHostGroupSettings;
+    private final OperationCallSettings.Builder<DeleteHostGroupRequest, Empty, OperationMetadata>
+        deleteHostGroupOperationSettings;
+    private final UnaryCallSettings.Builder<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+        executeOntapPostSettings;
+    private final UnaryCallSettings.Builder<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+        executeOntapGetSettings;
+    private final UnaryCallSettings.Builder<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+        executeOntapDeleteSettings;
+    private final UnaryCallSettings.Builder<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+        executeOntapPatchSettings;
+    private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
     private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
@@ -1814,21 +2322,21 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
@@ -1851,6 +2359,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       updateStoragePoolOperationSettings = OperationCallSettings.newBuilder();
       deleteStoragePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteStoragePoolOperationSettings = OperationCallSettings.newBuilder();
+      validateDirectoryServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      validateDirectoryServiceOperationSettings = OperationCallSettings.newBuilder();
+      switchActiveReplicaZoneSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      switchActiveReplicaZoneOperationSettings = OperationCallSettings.newBuilder();
       listVolumesSettings = PagedCallSettings.newBuilder(LIST_VOLUMES_PAGE_STR_FACT);
       getVolumeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createVolumeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1861,6 +2373,8 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       deleteVolumeOperationSettings = OperationCallSettings.newBuilder();
       revertVolumeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       revertVolumeOperationSettings = OperationCallSettings.newBuilder();
+      establishVolumePeeringSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      establishVolumePeeringOperationSettings = OperationCallSettings.newBuilder();
       listSnapshotsSettings = PagedCallSettings.newBuilder(LIST_SNAPSHOTS_PAGE_STR_FACT);
       getSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1903,6 +2417,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       resumeReplicationOperationSettings = OperationCallSettings.newBuilder();
       reverseReplicationDirectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       reverseReplicationDirectionOperationSettings = OperationCallSettings.newBuilder();
+      establishPeeringSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      establishPeeringOperationSettings = OperationCallSettings.newBuilder();
+      syncReplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      syncReplicationOperationSettings = OperationCallSettings.newBuilder();
       createBackupVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createBackupVaultOperationSettings = OperationCallSettings.newBuilder();
       getBackupVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1927,6 +2445,28 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       updateBackupPolicyOperationSettings = OperationCallSettings.newBuilder();
       deleteBackupPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteBackupPolicyOperationSettings = OperationCallSettings.newBuilder();
+      listQuotaRulesSettings = PagedCallSettings.newBuilder(LIST_QUOTA_RULES_PAGE_STR_FACT);
+      getQuotaRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createQuotaRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createQuotaRuleOperationSettings = OperationCallSettings.newBuilder();
+      updateQuotaRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateQuotaRuleOperationSettings = OperationCallSettings.newBuilder();
+      deleteQuotaRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteQuotaRuleOperationSettings = OperationCallSettings.newBuilder();
+      restoreBackupFilesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      restoreBackupFilesOperationSettings = OperationCallSettings.newBuilder();
+      listHostGroupsSettings = PagedCallSettings.newBuilder(LIST_HOST_GROUPS_PAGE_STR_FACT);
+      getHostGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createHostGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createHostGroupOperationSettings = OperationCallSettings.newBuilder();
+      updateHostGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateHostGroupOperationSettings = OperationCallSettings.newBuilder();
+      deleteHostGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteHostGroupOperationSettings = OperationCallSettings.newBuilder();
+      executeOntapPostSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      executeOntapGetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      executeOntapDeleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      executeOntapPatchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1937,12 +2477,15 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               getStoragePoolSettings,
               updateStoragePoolSettings,
               deleteStoragePoolSettings,
+              validateDirectoryServiceSettings,
+              switchActiveReplicaZoneSettings,
               listVolumesSettings,
               getVolumeSettings,
               createVolumeSettings,
               updateVolumeSettings,
               deleteVolumeSettings,
               revertVolumeSettings,
+              establishVolumePeeringSettings,
               listSnapshotsSettings,
               getSnapshotSettings,
               createSnapshotSettings,
@@ -1968,6 +2511,8 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               stopReplicationSettings,
               resumeReplicationSettings,
               reverseReplicationDirectionSettings,
+              establishPeeringSettings,
+              syncReplicationSettings,
               createBackupVaultSettings,
               getBackupVaultSettings,
               listBackupVaultsSettings,
@@ -1983,6 +2528,21 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               listBackupPoliciesSettings,
               updateBackupPolicySettings,
               deleteBackupPolicySettings,
+              listQuotaRulesSettings,
+              getQuotaRuleSettings,
+              createQuotaRuleSettings,
+              updateQuotaRuleSettings,
+              deleteQuotaRuleSettings,
+              restoreBackupFilesSettings,
+              listHostGroupsSettings,
+              getHostGroupSettings,
+              createHostGroupSettings,
+              updateHostGroupSettings,
+              deleteHostGroupSettings,
+              executeOntapPostSettings,
+              executeOntapGetSettings,
+              executeOntapDeleteSettings,
+              executeOntapPatchSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1999,6 +2559,12 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       updateStoragePoolOperationSettings = settings.updateStoragePoolOperationSettings.toBuilder();
       deleteStoragePoolSettings = settings.deleteStoragePoolSettings.toBuilder();
       deleteStoragePoolOperationSettings = settings.deleteStoragePoolOperationSettings.toBuilder();
+      validateDirectoryServiceSettings = settings.validateDirectoryServiceSettings.toBuilder();
+      validateDirectoryServiceOperationSettings =
+          settings.validateDirectoryServiceOperationSettings.toBuilder();
+      switchActiveReplicaZoneSettings = settings.switchActiveReplicaZoneSettings.toBuilder();
+      switchActiveReplicaZoneOperationSettings =
+          settings.switchActiveReplicaZoneOperationSettings.toBuilder();
       listVolumesSettings = settings.listVolumesSettings.toBuilder();
       getVolumeSettings = settings.getVolumeSettings.toBuilder();
       createVolumeSettings = settings.createVolumeSettings.toBuilder();
@@ -2009,6 +2575,9 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       deleteVolumeOperationSettings = settings.deleteVolumeOperationSettings.toBuilder();
       revertVolumeSettings = settings.revertVolumeSettings.toBuilder();
       revertVolumeOperationSettings = settings.revertVolumeOperationSettings.toBuilder();
+      establishVolumePeeringSettings = settings.establishVolumePeeringSettings.toBuilder();
+      establishVolumePeeringOperationSettings =
+          settings.establishVolumePeeringOperationSettings.toBuilder();
       listSnapshotsSettings = settings.listSnapshotsSettings.toBuilder();
       getSnapshotSettings = settings.getSnapshotSettings.toBuilder();
       createSnapshotSettings = settings.createSnapshotSettings.toBuilder();
@@ -2055,6 +2624,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           settings.reverseReplicationDirectionSettings.toBuilder();
       reverseReplicationDirectionOperationSettings =
           settings.reverseReplicationDirectionOperationSettings.toBuilder();
+      establishPeeringSettings = settings.establishPeeringSettings.toBuilder();
+      establishPeeringOperationSettings = settings.establishPeeringOperationSettings.toBuilder();
+      syncReplicationSettings = settings.syncReplicationSettings.toBuilder();
+      syncReplicationOperationSettings = settings.syncReplicationOperationSettings.toBuilder();
       createBackupVaultSettings = settings.createBackupVaultSettings.toBuilder();
       createBackupVaultOperationSettings = settings.createBackupVaultOperationSettings.toBuilder();
       getBackupVaultSettings = settings.getBackupVaultSettings.toBuilder();
@@ -2082,6 +2655,29 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       deleteBackupPolicySettings = settings.deleteBackupPolicySettings.toBuilder();
       deleteBackupPolicyOperationSettings =
           settings.deleteBackupPolicyOperationSettings.toBuilder();
+      listQuotaRulesSettings = settings.listQuotaRulesSettings.toBuilder();
+      getQuotaRuleSettings = settings.getQuotaRuleSettings.toBuilder();
+      createQuotaRuleSettings = settings.createQuotaRuleSettings.toBuilder();
+      createQuotaRuleOperationSettings = settings.createQuotaRuleOperationSettings.toBuilder();
+      updateQuotaRuleSettings = settings.updateQuotaRuleSettings.toBuilder();
+      updateQuotaRuleOperationSettings = settings.updateQuotaRuleOperationSettings.toBuilder();
+      deleteQuotaRuleSettings = settings.deleteQuotaRuleSettings.toBuilder();
+      deleteQuotaRuleOperationSettings = settings.deleteQuotaRuleOperationSettings.toBuilder();
+      restoreBackupFilesSettings = settings.restoreBackupFilesSettings.toBuilder();
+      restoreBackupFilesOperationSettings =
+          settings.restoreBackupFilesOperationSettings.toBuilder();
+      listHostGroupsSettings = settings.listHostGroupsSettings.toBuilder();
+      getHostGroupSettings = settings.getHostGroupSettings.toBuilder();
+      createHostGroupSettings = settings.createHostGroupSettings.toBuilder();
+      createHostGroupOperationSettings = settings.createHostGroupOperationSettings.toBuilder();
+      updateHostGroupSettings = settings.updateHostGroupSettings.toBuilder();
+      updateHostGroupOperationSettings = settings.updateHostGroupOperationSettings.toBuilder();
+      deleteHostGroupSettings = settings.deleteHostGroupSettings.toBuilder();
+      deleteHostGroupOperationSettings = settings.deleteHostGroupOperationSettings.toBuilder();
+      executeOntapPostSettings = settings.executeOntapPostSettings.toBuilder();
+      executeOntapGetSettings = settings.executeOntapGetSettings.toBuilder();
+      executeOntapDeleteSettings = settings.executeOntapDeleteSettings.toBuilder();
+      executeOntapPatchSettings = settings.executeOntapPatchSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -2092,12 +2688,15 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               getStoragePoolSettings,
               updateStoragePoolSettings,
               deleteStoragePoolSettings,
+              validateDirectoryServiceSettings,
+              switchActiveReplicaZoneSettings,
               listVolumesSettings,
               getVolumeSettings,
               createVolumeSettings,
               updateVolumeSettings,
               deleteVolumeSettings,
               revertVolumeSettings,
+              establishVolumePeeringSettings,
               listSnapshotsSettings,
               getSnapshotSettings,
               createSnapshotSettings,
@@ -2123,6 +2722,8 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               stopReplicationSettings,
               resumeReplicationSettings,
               reverseReplicationDirectionSettings,
+              establishPeeringSettings,
+              syncReplicationSettings,
               createBackupVaultSettings,
               getBackupVaultSettings,
               listBackupVaultsSettings,
@@ -2138,6 +2739,21 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               listBackupPoliciesSettings,
               updateBackupPolicySettings,
               deleteBackupPolicySettings,
+              listQuotaRulesSettings,
+              getQuotaRuleSettings,
+              createQuotaRuleSettings,
+              updateQuotaRuleSettings,
+              deleteQuotaRuleSettings,
+              restoreBackupFilesSettings,
+              listHostGroupsSettings,
+              getHostGroupSettings,
+              createHostGroupSettings,
+              updateHostGroupSettings,
+              deleteHostGroupSettings,
+              executeOntapPostSettings,
+              executeOntapGetSettings,
+              executeOntapDeleteSettings,
+              executeOntapPatchSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -2193,6 +2809,16 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .validateDirectoryServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .switchActiveReplicaZoneSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listVolumesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -2221,6 +2847,11 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .revertVolumeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .establishVolumePeeringSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listSnapshotsSettings()
@@ -2348,6 +2979,16 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .establishPeeringSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .syncReplicationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .createBackupVaultSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -2423,6 +3064,81 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .listQuotaRulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getQuotaRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createQuotaRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateQuotaRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteQuotaRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .restoreBackupFilesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listHostGroupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getHostGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createHostGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateHostGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteHostGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .executeOntapPostSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .executeOntapGetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .executeOntapDeleteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .executeOntapPatchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -2447,13 +3163,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2471,13 +3187,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2495,13 +3211,61 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .validateDirectoryServiceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ValidateDirectoryServiceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .switchActiveReplicaZoneOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SwitchActiveReplicaZoneRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(StoragePool.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2519,13 +3283,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2543,13 +3307,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2567,13 +3331,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2591,13 +3355,37 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .establishVolumePeeringOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<EstablishVolumePeeringRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Volume.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2615,13 +3403,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2639,13 +3427,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2663,13 +3451,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2687,13 +3475,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2711,13 +3499,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2735,13 +3523,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2759,13 +3547,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2783,13 +3571,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2807,13 +3595,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2831,13 +3619,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2855,13 +3643,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2879,13 +3667,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2903,13 +3691,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2927,13 +3715,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2951,13 +3739,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2976,13 +3764,61 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .establishPeeringOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<EstablishPeeringRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Replication.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .syncReplicationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SyncReplicationRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Replication.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -3000,13 +3836,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -3024,13 +3860,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -3048,13 +3884,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -3072,13 +3908,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -3096,13 +3932,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -3120,13 +3956,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -3144,13 +3980,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -3168,13 +4004,13 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -3192,13 +4028,182 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createQuotaRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateQuotaRuleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(QuotaRule.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateQuotaRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateQuotaRuleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(QuotaRule.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteQuotaRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteQuotaRuleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .restoreBackupFilesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RestoreBackupFilesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  RestoreBackupFilesResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createHostGroupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateHostGroupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(HostGroup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateHostGroupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateHostGroupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(HostGroup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteHostGroupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteHostGroupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -3267,6 +4272,31 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       return deleteStoragePoolOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to validateDirectoryService. */
+    public UnaryCallSettings.Builder<ValidateDirectoryServiceRequest, Operation>
+        validateDirectoryServiceSettings() {
+      return validateDirectoryServiceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to validateDirectoryService. */
+    public OperationCallSettings.Builder<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+        validateDirectoryServiceOperationSettings() {
+      return validateDirectoryServiceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to switchActiveReplicaZone. */
+    public UnaryCallSettings.Builder<SwitchActiveReplicaZoneRequest, Operation>
+        switchActiveReplicaZoneSettings() {
+      return switchActiveReplicaZoneSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to switchActiveReplicaZone. */
+    public OperationCallSettings.Builder<
+            SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+        switchActiveReplicaZoneOperationSettings() {
+      return switchActiveReplicaZoneOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listVolumes. */
     public PagedCallSettings.Builder<
             ListVolumesRequest, ListVolumesResponse, ListVolumesPagedResponse>
@@ -3321,6 +4351,18 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     public OperationCallSettings.Builder<RevertVolumeRequest, Volume, OperationMetadata>
         revertVolumeOperationSettings() {
       return revertVolumeOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to establishVolumePeering. */
+    public UnaryCallSettings.Builder<EstablishVolumePeeringRequest, Operation>
+        establishVolumePeeringSettings() {
+      return establishVolumePeeringSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to establishVolumePeering. */
+    public OperationCallSettings.Builder<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+        establishVolumePeeringOperationSettings() {
+      return establishVolumePeeringOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listSnapshots. */
@@ -3567,6 +4609,29 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       return reverseReplicationDirectionOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to establishPeering. */
+    public UnaryCallSettings.Builder<EstablishPeeringRequest, Operation>
+        establishPeeringSettings() {
+      return establishPeeringSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to establishPeering. */
+    public OperationCallSettings.Builder<EstablishPeeringRequest, Replication, OperationMetadata>
+        establishPeeringOperationSettings() {
+      return establishPeeringOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to syncReplication. */
+    public UnaryCallSettings.Builder<SyncReplicationRequest, Operation> syncReplicationSettings() {
+      return syncReplicationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to syncReplication. */
+    public OperationCallSettings.Builder<SyncReplicationRequest, Replication, OperationMetadata>
+        syncReplicationOperationSettings() {
+      return syncReplicationOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createBackupVault. */
     public UnaryCallSettings.Builder<CreateBackupVaultRequest, Operation>
         createBackupVaultSettings() {
@@ -3709,6 +4774,133 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       return deleteBackupPolicyOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listQuotaRules. */
+    public PagedCallSettings.Builder<
+            ListQuotaRulesRequest, ListQuotaRulesResponse, ListQuotaRulesPagedResponse>
+        listQuotaRulesSettings() {
+      return listQuotaRulesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getQuotaRule. */
+    public UnaryCallSettings.Builder<GetQuotaRuleRequest, QuotaRule> getQuotaRuleSettings() {
+      return getQuotaRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createQuotaRule. */
+    public UnaryCallSettings.Builder<CreateQuotaRuleRequest, Operation> createQuotaRuleSettings() {
+      return createQuotaRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createQuotaRule. */
+    public OperationCallSettings.Builder<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+        createQuotaRuleOperationSettings() {
+      return createQuotaRuleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateQuotaRule. */
+    public UnaryCallSettings.Builder<UpdateQuotaRuleRequest, Operation> updateQuotaRuleSettings() {
+      return updateQuotaRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateQuotaRule. */
+    public OperationCallSettings.Builder<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+        updateQuotaRuleOperationSettings() {
+      return updateQuotaRuleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteQuotaRule. */
+    public UnaryCallSettings.Builder<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleSettings() {
+      return deleteQuotaRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteQuotaRule. */
+    public OperationCallSettings.Builder<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+        deleteQuotaRuleOperationSettings() {
+      return deleteQuotaRuleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restoreBackupFiles. */
+    public UnaryCallSettings.Builder<RestoreBackupFilesRequest, Operation>
+        restoreBackupFilesSettings() {
+      return restoreBackupFilesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restoreBackupFiles. */
+    public OperationCallSettings.Builder<
+            RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+        restoreBackupFilesOperationSettings() {
+      return restoreBackupFilesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listHostGroups. */
+    public PagedCallSettings.Builder<
+            ListHostGroupsRequest, ListHostGroupsResponse, ListHostGroupsPagedResponse>
+        listHostGroupsSettings() {
+      return listHostGroupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getHostGroup. */
+    public UnaryCallSettings.Builder<GetHostGroupRequest, HostGroup> getHostGroupSettings() {
+      return getHostGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createHostGroup. */
+    public UnaryCallSettings.Builder<CreateHostGroupRequest, Operation> createHostGroupSettings() {
+      return createHostGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createHostGroup. */
+    public OperationCallSettings.Builder<CreateHostGroupRequest, HostGroup, OperationMetadata>
+        createHostGroupOperationSettings() {
+      return createHostGroupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateHostGroup. */
+    public UnaryCallSettings.Builder<UpdateHostGroupRequest, Operation> updateHostGroupSettings() {
+      return updateHostGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateHostGroup. */
+    public OperationCallSettings.Builder<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+        updateHostGroupOperationSettings() {
+      return updateHostGroupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteHostGroup. */
+    public UnaryCallSettings.Builder<DeleteHostGroupRequest, Operation> deleteHostGroupSettings() {
+      return deleteHostGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteHostGroup. */
+    public OperationCallSettings.Builder<DeleteHostGroupRequest, Empty, OperationMetadata>
+        deleteHostGroupOperationSettings() {
+      return deleteHostGroupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to executeOntapPost. */
+    public UnaryCallSettings.Builder<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+        executeOntapPostSettings() {
+      return executeOntapPostSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to executeOntapGet. */
+    public UnaryCallSettings.Builder<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+        executeOntapGetSettings() {
+      return executeOntapGetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to executeOntapDelete. */
+    public UnaryCallSettings.Builder<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+        executeOntapDeleteSettings() {
+      return executeOntapDeleteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to executeOntapPatch. */
+    public UnaryCallSettings.Builder<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+        executeOntapPatchSettings() {
+      return executeOntapPatchSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listLocations. */
     public PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -3719,15 +4911,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getLocationSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

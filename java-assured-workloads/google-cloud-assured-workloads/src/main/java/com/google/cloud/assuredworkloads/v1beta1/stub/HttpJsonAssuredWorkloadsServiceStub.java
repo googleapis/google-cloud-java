@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -270,6 +270,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
         restrictAllowedResourcesTransportSettings =
@@ -294,6 +295,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createWorkloadCallable =
@@ -356,26 +358,30 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
   @Override
   public UnaryCallable<UpdateWorkloadRequest, Workload> updateWorkloadCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: updateWorkloadCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: updateWorkloadCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override
   public UnaryCallable<GetWorkloadRequest, Workload> getWorkloadCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: getWorkloadCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: getWorkloadCallable(). REST transport is not implemented for this method"
+            + " yet.");
   }
 
   @Override
   public UnaryCallable<AnalyzeWorkloadMoveRequest, AnalyzeWorkloadMoveResponse>
       analyzeWorkloadMoveCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: analyzeWorkloadMoveCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: analyzeWorkloadMoveCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override
   public UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: listWorkloadsCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: listWorkloadsCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override

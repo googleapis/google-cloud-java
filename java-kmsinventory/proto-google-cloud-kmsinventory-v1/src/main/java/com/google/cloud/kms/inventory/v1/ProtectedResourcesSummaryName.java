@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -347,7 +347,8 @@ public class ProtectedResourcesSummaryName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               protectedResourcesSummaryName.pathTemplate, PROJECT_LOCATION_KEY_RING_CRYPTO_KEY),
-          "toBuilder is only supported when ProtectedResourcesSummaryName has the pattern of projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/protectedResourcesSummary");
+          "toBuilder is only supported when ProtectedResourcesSummaryName has the pattern of"
+              + " projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/protectedResourcesSummary");
       this.project = protectedResourcesSummaryName.project;
       this.location = protectedResourcesSummaryName.location;
       this.keyRing = protectedResourcesSummaryName.keyRing;

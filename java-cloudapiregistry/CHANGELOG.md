@@ -1,0 +1,35 @@
+# Changelog
+
+## 0.7.0 (None)
+
+* No change
+
+
+## 0.6.0 (2026-03-11)
+
+* No change
+
+
+## 0.5.0 (2026-02-25)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.57.0 ([#11956](https://github.com/googleapis/google-cloud-java/issues/11956)) ([62b97e1](https://github.com/googleapis/google-cloud-java/commit/62b97e108eee0f8649c53cef400774f4fca4ffab))
+
+
+## 0.2.0 (2026-01-29)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.56.0 ([#11879](https://github.com/googleapis/google-cloud-java/issues/11879)) ([ac1f018](https://github.com/googleapis/google-cloud-java/commit/ac1f0182ac5b405ca164ac867c8c042322736bef))
+
+
+## 0.1.0 (2026-01-15)
+
+### Features
+
+* new module for cloudapiregistry ([#11864](https://github.com/googleapis/google-cloud-java/issues/11864)) ([37c933f](https://github.com/googleapis/google-cloud-java/commit/37c933fa582fe273b83bf86e940545ea68a31307))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.55.1 ([#11863](https://github.com/googleapis/google-cloud-java/issues/11863)) ([50cda6e](https://github.com/googleapis/google-cloud-java/commit/50cda6ec7be56bf1900737a6aaf12fc494be20c2))

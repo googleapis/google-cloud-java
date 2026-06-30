@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -470,7 +470,8 @@ public class RecommendationName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               recommendationName.pathTemplate, PROJECT_LOCATION_RECOMMENDER_RECOMMENDATION),
-          "toBuilder is only supported when RecommendationName has the pattern of projects/{project}/locations/{location}/recommenders/{recommender}/recommendations/{recommendation}");
+          "toBuilder is only supported when RecommendationName has the pattern of"
+              + " projects/{project}/locations/{location}/recommenders/{recommender}/recommendations/{recommendation}");
       this.project = recommendationName.project;
       this.location = recommendationName.location;
       this.recommender = recommendationName.recommender;

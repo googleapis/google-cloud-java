@@ -1,0 +1,22 @@
+gapic_generator_version: 2.37.0
+protoc_version: 25.2
+googleapis_commitish: 9868a57470a969ffa1d21194a5c05d7a6e4e98cc
+libraries:
+- api_shortname: bigtable
+  name_pretty: Cloud Bigtable
+  api_description: "Java idiomatic client for Cloud Bigtable."
+  product_documentation: "https://cloud.google.com/bigtable"
+  client_documentation: "https://cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/history"
+  issue_tracker: "https://issuetracker.google.com/savedsearches/559777"
+  release_level: "stable"
+  language: "java"
+  repo: "googleapis/java-bigtable"
+  repo_short: "java-bigtable"
+  distribution_name: "com.google.cloud:google-cloud-bigtable"
+  excluded_poms: "google-cloud-bigtable-bom"
+  extra_versioned_modules: "google-cloud-bigtable-emulator,google-cloud-bigtable-emulator-core"
+  codeowner_team: "@googleapis/api-bigtable @googleapis/api-bigtable-partners"
+  library_type: GAPIC_COMBO
+  GAPICs:
+  - proto_path: google/bigtable/admin/v2
+  - proto_path: google/bigtable/v2

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,64 @@
  * A client to Cloud Key Management Service (KMS) API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
+ *
+ * <p>======================= AutokeyClient =======================
+ *
+ * <p>Service Description: Provides interfaces for using [Cloud KMS
+ * Autokey](https://cloud.google.com/kms/help/autokey) to provision new
+ * [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer Managed Encryption Key (CMEK)
+ * use, on-demand. To support certain client tooling, this feature is modeled around a
+ * [KeyHandle][google.cloud.kms.v1.KeyHandle] resource: creating a
+ * [KeyHandle][google.cloud.kms.v1.KeyHandle] in a resource project and given location triggers
+ * Cloud KMS Autokey to provision a [CryptoKey][google.cloud.kms.v1.CryptoKey] in the configured key
+ * project and the same location.
+ *
+ * <p>Prior to use in a given resource project,
+ * [UpdateAutokeyConfig][google.cloud.kms.v1.AutokeyAdmin.UpdateAutokeyConfig] should have been
+ * called on an ancestor folder, setting the key project where Cloud KMS Autokey should create new
+ * [CryptoKeys][google.cloud.kms.v1.CryptoKey]. See documentation for additional prerequisites. To
+ * check what key project, if any, is currently configured on a resource project's ancestor folder,
+ * see [ShowEffectiveAutokeyConfig][google.cloud.kms.v1.AutokeyAdmin.ShowEffectiveAutokeyConfig].
+ *
+ * <p>Sample for AutokeyClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AutokeyClient autokeyClient = AutokeyClient.create()) {
+ *   KeyHandleName name = KeyHandleName.of("[PROJECT]", "[LOCATION]", "[KEY_HANDLE]");
+ *   KeyHandle response = autokeyClient.getKeyHandle(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= AutokeyAdminClient =======================
+ *
+ * <p>Service Description: Provides interfaces for managing [Cloud KMS
+ * Autokey](https://cloud.google.com/kms/help/autokey) folder-level or project-level configurations.
+ * A configuration is inherited by all descendent folders and projects. A configuration at a folder
+ * or project overrides any other configurations in its ancestry. Setting a configuration on a
+ * folder is a prerequisite for Cloud KMS Autokey, so that users working in a descendant project can
+ * request provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer Managed
+ * Encryption Key (CMEK) use, on-demand when using the dedicated key project mode. This is not
+ * required when using the delegated key management mode for same-project keys.
+ *
+ * <p>Sample for AutokeyAdminClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AutokeyAdminClient autokeyAdminClient = AutokeyAdminClient.create()) {
+ *   AutokeyConfig autokeyConfig = AutokeyConfig.newBuilder().build();
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   AutokeyConfig response = autokeyAdminClient.updateAutokeyConfig(autokeyConfig, updateMask);
+ * }
+ * }</pre>
  *
  * <p>======================= EkmServiceClient =======================
  *
@@ -41,6 +99,34 @@
  * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
  *   EkmConnectionName name = EkmConnectionName.of("[PROJECT]", "[LOCATION]", "[EKM_CONNECTION]");
  *   EkmConnection response = ekmServiceClient.getEkmConnection(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= HsmManagementClient =======================
+ *
+ * <p>Service Description: Google Cloud HSM Management Service
+ *
+ * <p>Provides interfaces for managing HSM instances.
+ *
+ * <p>Implements a REST model with the following objects:
+ *
+ * <ul>
+ *   <li>[SingleTenantHsmInstance][google.cloud.kms.v1.SingleTenantHsmInstance]
+ *   <li>[SingleTenantHsmInstanceProposal][google.cloud.kms.v1.SingleTenantHsmInstanceProposal]
+ * </ul>
+ *
+ * <p>Sample for HsmManagementClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (HsmManagementClient hsmManagementClient = HsmManagementClient.create()) {
+ *   SingleTenantHsmInstanceName name =
+ *       SingleTenantHsmInstanceName.of("[PROJECT]", "[LOCATION]", "[SINGLE_TENANT_HSM_INSTANCE]");
+ *   SingleTenantHsmInstance response = hsmManagementClient.getSingleTenantHsmInstance(name);
  * }
  * }</pre>
  *

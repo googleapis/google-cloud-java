@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -593,6 +593,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetEkmConnectionRequest, EkmConnection> getEkmConnectionTransportSettings =
         HttpJsonCallSettings.<GetEkmConnectionRequest, EkmConnection>newBuilder()
@@ -604,6 +605,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateEkmConnectionRequest, EkmConnection>
         createEkmConnectionTransportSettings =
@@ -616,6 +618,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateEkmConnectionRequest, EkmConnection>
         updateEkmConnectionTransportSettings =
@@ -641,6 +644,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigTransportSettings =
         HttpJsonCallSettings.<UpdateEkmConfigRequest, EkmConfig>newBuilder()
@@ -664,6 +668,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -698,6 +703,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -709,6 +715,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -721,6 +728,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listEkmConnectionsCallable =

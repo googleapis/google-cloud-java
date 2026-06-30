@@ -10,14 +10,29 @@
         "grpc": {
           "libraryClient": "SpacesServiceClient",
           "rpcs": {
+            "ConnectActiveConference": {
+              "methods": ["connectActiveConference", "connectActiveConference", "connectActiveConference", "connectActiveConferenceCallable"]
+            },
+            "CreateMember": {
+              "methods": ["createMember", "createMember", "createMember", "createMemberCallable"]
+            },
             "CreateSpace": {
               "methods": ["createSpace", "createSpace", "createSpaceCallable"]
+            },
+            "DeleteMember": {
+              "methods": ["deleteMember", "deleteMember", "deleteMember", "deleteMemberCallable"]
             },
             "EndActiveConference": {
               "methods": ["endActiveConference", "endActiveConference", "endActiveConference", "endActiveConferenceCallable"]
             },
+            "GetMember": {
+              "methods": ["getMember", "getMember", "getMember", "getMemberCallable"]
+            },
             "GetSpace": {
               "methods": ["getSpace", "getSpace", "getSpace", "getSpaceCallable"]
+            },
+            "ListMembers": {
+              "methods": ["listMembers", "listMembers", "listMembers", "listMembersPagedCallable", "listMembersCallable"]
             },
             "UpdateSpace": {
               "methods": ["updateSpace", "updateSpace", "updateSpaceCallable"]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                       ConnectionProto.CreateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ConnectionProto.Connection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -74,6 +75,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                   ProtoUtils.marshaller(ConnectionProto.GetConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ConnectionProto.Connection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -91,6 +93,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ConnectionProto.ListConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -106,6 +109,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                       ConnectionProto.UpdateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ConnectionProto.Connection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ConnectionProto.UpdateConnectionCredentialRequest, Empty>
@@ -118,6 +122,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                   ProtoUtils.marshaller(
                       ConnectionProto.UpdateConnectionCredentialRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ConnectionProto.DeleteConnectionRequest, Empty>
@@ -130,6 +135,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                   ProtoUtils.marshaller(
                       ConnectionProto.DeleteConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -139,6 +145,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
               "google.cloud.bigquery.connection.v1beta1.ConnectionService/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -148,6 +155,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
               "google.cloud.bigquery.connection.v1beta1.ConnectionService/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -160,6 +168,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ConnectionProto.CreateConnectionRequest, ConnectionProto.Connection>
@@ -235,6 +244,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ConnectionProto.GetConnectionRequest, ConnectionProto.Connection>
         getConnectionTransportSettings =
@@ -247,6 +257,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             ConnectionProto.ListConnectionsRequest, ConnectionProto.ListConnectionsResponse>
@@ -261,6 +272,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ConnectionProto.UpdateConnectionRequest, ConnectionProto.Connection>
         updateConnectionTransportSettings =
@@ -273,6 +285,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ConnectionProto.UpdateConnectionCredentialRequest, Empty>
         updateConnectionCredentialTransportSettings =
@@ -295,6 +308,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -305,6 +319,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -315,6 +330,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -326,6 +342,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createConnectionCallable =

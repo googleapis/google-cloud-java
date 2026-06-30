@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSubscriptionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSubscriptionRequest, Operation>
@@ -75,6 +76,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSubscriptionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSubscriptionRequest, Subscription>
@@ -86,6 +88,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSubscriptionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Subscription.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSubscriptionsRequest, ListSubscriptionsResponse>
@@ -98,6 +101,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
                   ProtoUtils.marshaller(ListSubscriptionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSubscriptionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSubscriptionRequest, Operation>
@@ -109,6 +113,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSubscriptionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReactivateSubscriptionRequest, Operation>
@@ -120,6 +125,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReactivateSubscriptionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateSubscriptionRequest, Operation> createSubscriptionCallable;
@@ -201,6 +207,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionTransportSettings =
         GrpcCallSettings.<GetSubscriptionRequest, Subscription>newBuilder()
@@ -211,6 +218,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSubscriptionsRequest, ListSubscriptionsResponse>
         listSubscriptionsTransportSettings =
@@ -238,6 +246,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createSubscriptionCallable =

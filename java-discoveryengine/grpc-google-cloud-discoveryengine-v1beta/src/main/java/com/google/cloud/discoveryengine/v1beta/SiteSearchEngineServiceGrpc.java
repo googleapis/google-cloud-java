@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing site search related resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1beta/site_search_engine_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SiteSearchEngineServiceGrpc {
 
@@ -380,6 +377,145 @@ public final class SiteSearchEngineServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest,
+          com.google.longrunning.Operation>
+      getCreateSitemapMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSitemap",
+      requestType = com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest,
+          com.google.longrunning.Operation>
+      getCreateSitemapMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest,
+            com.google.longrunning.Operation>
+        getCreateSitemapMethod;
+    if ((getCreateSitemapMethod = SiteSearchEngineServiceGrpc.getCreateSitemapMethod) == null) {
+      synchronized (SiteSearchEngineServiceGrpc.class) {
+        if ((getCreateSitemapMethod = SiteSearchEngineServiceGrpc.getCreateSitemapMethod) == null) {
+          SiteSearchEngineServiceGrpc.getCreateSitemapMethod =
+              getCreateSitemapMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateSitemap"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SiteSearchEngineServiceMethodDescriptorSupplier("CreateSitemap"))
+                      .build();
+        }
+      }
+    }
+    return getCreateSitemapMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest,
+          com.google.longrunning.Operation>
+      getDeleteSitemapMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSitemap",
+      requestType = com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest,
+          com.google.longrunning.Operation>
+      getDeleteSitemapMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest,
+            com.google.longrunning.Operation>
+        getDeleteSitemapMethod;
+    if ((getDeleteSitemapMethod = SiteSearchEngineServiceGrpc.getDeleteSitemapMethod) == null) {
+      synchronized (SiteSearchEngineServiceGrpc.class) {
+        if ((getDeleteSitemapMethod = SiteSearchEngineServiceGrpc.getDeleteSitemapMethod) == null) {
+          SiteSearchEngineServiceGrpc.getDeleteSitemapMethod =
+              getDeleteSitemapMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSitemap"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SiteSearchEngineServiceMethodDescriptorSupplier("DeleteSitemap"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSitemapMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest,
+          com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse>
+      getFetchSitemapsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchSitemaps",
+      requestType = com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest,
+          com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse>
+      getFetchSitemapsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest,
+            com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse>
+        getFetchSitemapsMethod;
+    if ((getFetchSitemapsMethod = SiteSearchEngineServiceGrpc.getFetchSitemapsMethod) == null) {
+      synchronized (SiteSearchEngineServiceGrpc.class) {
+        if ((getFetchSitemapsMethod = SiteSearchEngineServiceGrpc.getFetchSitemapsMethod) == null) {
+          SiteSearchEngineServiceGrpc.getFetchSitemapsMethod =
+              getFetchSitemapsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest,
+                          com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FetchSitemaps"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SiteSearchEngineServiceMethodDescriptorSupplier("FetchSitemaps"))
+                      .build();
+        }
+      }
+    }
+    return getFetchSitemapsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.discoveryengine.v1beta.EnableAdvancedSiteSearchRequest,
           com.google.longrunning.Operation>
       getEnableAdvancedSiteSearchMethod;
@@ -651,6 +787,19 @@ public final class SiteSearchEngineServiceGrpc {
     return SiteSearchEngineServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SiteSearchEngineServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SiteSearchEngineServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SiteSearchEngineServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SiteSearchEngineServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SiteSearchEngineServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SiteSearchEngineServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -790,6 +939,50 @@ public final class SiteSearchEngineServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListTargetSitesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Sitemap][google.cloud.discoveryengine.v1beta.Sitemap].
+     * </pre>
+     */
+    default void createSitemap(
+        com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSitemapMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Sitemap][google.cloud.discoveryengine.v1beta.Sitemap].
+     * </pre>
+     */
+    default void deleteSitemap(
+        com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSitemapMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch [Sitemap][google.cloud.discoveryengine.v1beta.Sitemap]s in a
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore].
+     * </pre>
+     */
+    default void fetchSitemaps(
+        com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchSitemapsMethod(), responseObserver);
     }
 
     /**
@@ -1026,6 +1219,56 @@ public final class SiteSearchEngineServiceGrpc {
      *
      *
      * <pre>
+     * Creates a [Sitemap][google.cloud.discoveryengine.v1beta.Sitemap].
+     * </pre>
+     */
+    public void createSitemap(
+        com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateSitemapMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Sitemap][google.cloud.discoveryengine.v1beta.Sitemap].
+     * </pre>
+     */
+    public void deleteSitemap(
+        com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSitemapMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch [Sitemap][google.cloud.discoveryengine.v1beta.Sitemap]s in a
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore].
+     * </pre>
+     */
+    public void fetchSitemaps(
+        com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchSitemapsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Upgrade from basic site search to advanced site search.
      * </pre>
      */
@@ -1111,6 +1354,246 @@ public final class SiteSearchEngineServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SiteSearchEngineService.
+   *
+   * <pre>
+   * Service for managing site search related resources.
+   * </pre>
+   */
+  public static final class SiteSearchEngineServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SiteSearchEngineServiceBlockingV2Stub> {
+    private SiteSearchEngineServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SiteSearchEngineServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SiteSearchEngineServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the
+     * [SiteSearchEngine][google.cloud.discoveryengine.v1beta.SiteSearchEngine].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SiteSearchEngine getSiteSearchEngine(
+        com.google.cloud.discoveryengine.v1beta.GetSiteSearchEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetSiteSearchEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [TargetSite][google.cloud.discoveryengine.v1beta.TargetSite].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTargetSite(
+        com.google.cloud.discoveryengine.v1beta.CreateTargetSiteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateTargetSiteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates [TargetSite][google.cloud.discoveryengine.v1beta.TargetSite] in a
+     * batch.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreateTargetSites(
+        com.google.cloud.discoveryengine.v1beta.BatchCreateTargetSitesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchCreateTargetSitesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a [TargetSite][google.cloud.discoveryengine.v1beta.TargetSite].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.TargetSite getTargetSite(
+        com.google.cloud.discoveryengine.v1beta.GetTargetSiteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTargetSiteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [TargetSite][google.cloud.discoveryengine.v1beta.TargetSite].
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTargetSite(
+        com.google.cloud.discoveryengine.v1beta.UpdateTargetSiteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateTargetSiteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [TargetSite][google.cloud.discoveryengine.v1beta.TargetSite].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTargetSite(
+        com.google.cloud.discoveryengine.v1beta.DeleteTargetSiteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTargetSiteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a list of
+     * [TargetSite][google.cloud.discoveryengine.v1beta.TargetSite]s.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.ListTargetSitesResponse listTargetSites(
+        com.google.cloud.discoveryengine.v1beta.ListTargetSitesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTargetSitesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Sitemap][google.cloud.discoveryengine.v1beta.Sitemap].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSitemap(
+        com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateSitemapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Sitemap][google.cloud.discoveryengine.v1beta.Sitemap].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSitemap(
+        com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteSitemapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch [Sitemap][google.cloud.discoveryengine.v1beta.Sitemap]s in a
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse fetchSitemaps(
+        com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchSitemapsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade from basic site search to advanced site search.
+     * </pre>
+     */
+    public com.google.longrunning.Operation enableAdvancedSiteSearch(
+        com.google.cloud.discoveryengine.v1beta.EnableAdvancedSiteSearchRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getEnableAdvancedSiteSearchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Downgrade from advanced site search to basic site search.
+     * </pre>
+     */
+    public com.google.longrunning.Operation disableAdvancedSiteSearch(
+        com.google.cloud.discoveryengine.v1beta.DisableAdvancedSiteSearchRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDisableAdvancedSiteSearchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Request on-demand recrawl for a list of URIs.
+     * </pre>
+     */
+    public com.google.longrunning.Operation recrawlUris(
+        com.google.cloud.discoveryengine.v1beta.RecrawlUrisRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRecrawlUrisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verify target sites' ownership and validity.
+     * This API sends all the target sites under site search engine for
+     * verification.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchVerifyTargetSites(
+        com.google.cloud.discoveryengine.v1beta.BatchVerifyTargetSitesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchVerifyTargetSitesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of target sites with its domain verification status.
+     * This method can only be called under data store with BASIC_SITE_SEARCH
+     * state at the moment.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.FetchDomainVerificationStatusResponse
+        fetchDomainVerificationStatus(
+            com.google.cloud.discoveryengine.v1beta.FetchDomainVerificationStatusRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchDomainVerificationStatusMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SiteSearchEngineService.
    *
    * <pre>
    * Service for managing site search related resources.
@@ -1221,6 +1704,46 @@ public final class SiteSearchEngineServiceGrpc {
         com.google.cloud.discoveryengine.v1beta.ListTargetSitesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTargetSitesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Sitemap][google.cloud.discoveryengine.v1beta.Sitemap].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSitemap(
+        com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSitemapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Sitemap][google.cloud.discoveryengine.v1beta.Sitemap].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSitemap(
+        com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSitemapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch [Sitemap][google.cloud.discoveryengine.v1beta.Sitemap]s in a
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse fetchSitemaps(
+        com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchSitemapsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1418,6 +1941,47 @@ public final class SiteSearchEngineServiceGrpc {
      *
      *
      * <pre>
+     * Creates a [Sitemap][google.cloud.discoveryengine.v1beta.Sitemap].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createSitemap(com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateSitemapMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Sitemap][google.cloud.discoveryengine.v1beta.Sitemap].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteSitemap(com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSitemapMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch [Sitemap][google.cloud.discoveryengine.v1beta.Sitemap]s in a
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse>
+        fetchSitemaps(com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchSitemapsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Upgrade from basic site search to advanced site search.
      * </pre>
      */
@@ -1497,11 +2061,14 @@ public final class SiteSearchEngineServiceGrpc {
   private static final int METHODID_UPDATE_TARGET_SITE = 4;
   private static final int METHODID_DELETE_TARGET_SITE = 5;
   private static final int METHODID_LIST_TARGET_SITES = 6;
-  private static final int METHODID_ENABLE_ADVANCED_SITE_SEARCH = 7;
-  private static final int METHODID_DISABLE_ADVANCED_SITE_SEARCH = 8;
-  private static final int METHODID_RECRAWL_URIS = 9;
-  private static final int METHODID_BATCH_VERIFY_TARGET_SITES = 10;
-  private static final int METHODID_FETCH_DOMAIN_VERIFICATION_STATUS = 11;
+  private static final int METHODID_CREATE_SITEMAP = 7;
+  private static final int METHODID_DELETE_SITEMAP = 8;
+  private static final int METHODID_FETCH_SITEMAPS = 9;
+  private static final int METHODID_ENABLE_ADVANCED_SITE_SEARCH = 10;
+  private static final int METHODID_DISABLE_ADVANCED_SITE_SEARCH = 11;
+  private static final int METHODID_RECRAWL_URIS = 12;
+  private static final int METHODID_BATCH_VERIFY_TARGET_SITES = 13;
+  private static final int METHODID_FETCH_DOMAIN_VERIFICATION_STATUS = 14;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1558,6 +2125,23 @@ public final class SiteSearchEngineServiceGrpc {
               (com.google.cloud.discoveryengine.v1beta.ListTargetSitesRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.discoveryengine.v1beta.ListTargetSitesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_SITEMAP:
+          serviceImpl.createSitemap(
+              (com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_SITEMAP:
+          serviceImpl.deleteSitemap(
+              (com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_FETCH_SITEMAPS:
+          serviceImpl.fetchSitemaps(
+              (com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse>)
                   responseObserver);
           break;
         case METHODID_ENABLE_ADVANCED_SITE_SEARCH:
@@ -1653,6 +2237,25 @@ public final class SiteSearchEngineServiceGrpc {
                     com.google.cloud.discoveryengine.v1beta.ListTargetSitesResponse>(
                     service, METHODID_LIST_TARGET_SITES)))
         .addMethod(
+            getCreateSitemapMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_SITEMAP)))
+        .addMethod(
+            getDeleteSitemapMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_SITEMAP)))
+        .addMethod(
+            getFetchSitemapsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest,
+                    com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse>(
+                    service, METHODID_FETCH_SITEMAPS)))
+        .addMethod(
             getEnableAdvancedSiteSearchMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1743,6 +2346,9 @@ public final class SiteSearchEngineServiceGrpc {
                       .addMethod(getUpdateTargetSiteMethod())
                       .addMethod(getDeleteTargetSiteMethod())
                       .addMethod(getListTargetSitesMethod())
+                      .addMethod(getCreateSitemapMethod())
+                      .addMethod(getDeleteSitemapMethod())
+                      .addMethod(getFetchSitemapsMethod())
                       .addMethod(getEnableAdvancedSiteSearchMethod())
                       .addMethod(getDisableAdvancedSiteSearchMethod())
                       .addMethod(getRecrawlUrisMethod())

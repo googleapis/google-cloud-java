@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages a collection of models for human agent assistant.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2/conversation_model.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConversationModelsGrpc {
 
@@ -510,6 +507,19 @@ public final class ConversationModelsGrpc {
     return ConversationModelsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ConversationModelsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ConversationModelsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConversationModelsBlockingV2Stub>() {
+          @java.lang.Override
+          public ConversationModelsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConversationModelsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ConversationModelsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -934,6 +944,189 @@ public final class ConversationModelsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ConversationModels.
+   *
+   * <pre>
+   * Manages a collection of models for human agent assistant.
+   * </pre>
+   */
+  public static final class ConversationModelsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ConversationModelsBlockingV2Stub> {
+    private ConversationModelsBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ConversationModelsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ConversationModelsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a model.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [CreateConversationModelOperationMetadata][google.cloud.dialogflow.v2.CreateConversationModelOperationMetadata]
+     * - `response`:
+     * [ConversationModel][google.cloud.dialogflow.v2.ConversationModel]
+     * </pre>
+     */
+    public com.google.longrunning.Operation createConversationModel(
+        com.google.cloud.dialogflow.v2.CreateConversationModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateConversationModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets conversation model.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.ConversationModel getConversationModel(
+        com.google.cloud.dialogflow.v2.GetConversationModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetConversationModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists conversation models.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.ListConversationModelsResponse listConversationModels(
+        com.google.cloud.dialogflow.v2.ListConversationModelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListConversationModelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a model.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [DeleteConversationModelOperationMetadata][google.cloud.dialogflow.v2.DeleteConversationModelOperationMetadata]
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteConversationModel(
+        com.google.cloud.dialogflow.v2.DeleteConversationModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteConversationModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a model. If a model is already deployed, deploying it
+     * has no effect. A model can only serve prediction requests after it gets
+     * deployed. For article suggestion, custom model will not be used unless
+     * it is deployed.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [DeployConversationModelOperationMetadata][google.cloud.dialogflow.v2.DeployConversationModelOperationMetadata]
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     * </pre>
+     */
+    public com.google.longrunning.Operation deployConversationModel(
+        com.google.cloud.dialogflow.v2.DeployConversationModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeployConversationModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a model. If the model is not deployed this method has no effect.
+     * If the model is currently being used:
+     *   - For article suggestion, article suggestion will fallback to the default
+     *     model if model is undeployed.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [UndeployConversationModelOperationMetadata][google.cloud.dialogflow.v2.UndeployConversationModelOperationMetadata]
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     * </pre>
+     */
+    public com.google.longrunning.Operation undeployConversationModel(
+        com.google.cloud.dialogflow.v2.UndeployConversationModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUndeployConversationModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an evaluation of conversation model.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.ConversationModelEvaluation
+        getConversationModelEvaluation(
+            com.google.cloud.dialogflow.v2.GetConversationModelEvaluationRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetConversationModelEvaluationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists evaluations of a conversation model.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.ListConversationModelEvaluationsResponse
+        listConversationModelEvaluations(
+            com.google.cloud.dialogflow.v2.ListConversationModelEvaluationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListConversationModelEvaluationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates evaluation of a conversation model.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createConversationModelEvaluation(
+        com.google.cloud.dialogflow.v2.CreateConversationModelEvaluationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateConversationModelEvaluationMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ConversationModels.
    *
    * <pre>
    * Manages a collection of models for human agent assistant.

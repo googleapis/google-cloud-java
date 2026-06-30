@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
                   ProtoUtils.marshaller(FindNeighborsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FindNeighborsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReadIndexDatapointsRequest, ReadIndexDatapointsResponse>
@@ -73,6 +74,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
                   ProtoUtils.marshaller(ReadIndexDatapointsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReadIndexDatapointsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -84,6 +86,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -92,6 +95,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -100,6 +104,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -108,6 +113,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -119,6 +125,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<FindNeighborsRequest, FindNeighborsResponse> findNeighborsCallable;
@@ -184,6 +191,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
                   builder.add("index_endpoint", String.valueOf(request.getIndexEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getIndexEndpoint())
             .build();
     GrpcCallSettings<ReadIndexDatapointsRequest, ReadIndexDatapointsResponse>
         readIndexDatapointsTransportSettings =
@@ -195,6 +203,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
                       builder.add("index_endpoint", String.valueOf(request.getIndexEndpoint()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getIndexEndpoint())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -225,6 +234,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -235,6 +245,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -246,6 +257,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.findNeighborsCallable =

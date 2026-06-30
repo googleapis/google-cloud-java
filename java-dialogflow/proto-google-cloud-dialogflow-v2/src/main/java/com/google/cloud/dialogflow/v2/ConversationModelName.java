@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -287,7 +287,8 @@ public class ConversationModelName implements ResourceName {
     private Builder(ConversationModelName conversationModelName) {
       Preconditions.checkArgument(
           Objects.equals(conversationModelName.pathTemplate, PROJECT_LOCATION_CONVERSATION_MODEL),
-          "toBuilder is only supported when ConversationModelName has the pattern of projects/{project}/locations/{location}/conversationModels/{conversation_model}");
+          "toBuilder is only supported when ConversationModelName has the pattern of"
+              + " projects/{project}/locations/{location}/conversationModels/{conversation_model}");
       this.project = conversationModelName.project;
       this.location = conversationModelName.location;
       this.conversationModel = conversationModelName.conversationModel;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest;
 import com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesResponse;
@@ -53,16 +54,20 @@ import com.google.cloud.datacatalog.lineage.v1.Process;
 import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest;
 import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventResponse;
 import com.google.cloud.datacatalog.lineage.v1.Run;
+import com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest;
+import com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse;
 import com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest;
 import com.google.cloud.datacatalog.lineage.v1.SearchLinksResponse;
 import com.google.cloud.datacatalog.lineage.v1.UpdateProcessRequest;
 import com.google.cloud.datacatalog.lineage.v1.UpdateRunRequest;
+import com.google.common.base.Strings;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -86,6 +91,7 @@ public class GrpcLineageStub extends LineageStub {
                   ProtoUtils.marshaller(ProcessOpenLineageRunEventRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ProcessOpenLineageRunEventResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateProcessRequest, Process>
@@ -96,6 +102,7 @@ public class GrpcLineageStub extends LineageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateProcessRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Process.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateProcessRequest, Process>
@@ -106,6 +113,7 @@ public class GrpcLineageStub extends LineageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProcessRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Process.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProcessRequest, Process> getProcessMethodDescriptor =
@@ -114,6 +122,7 @@ public class GrpcLineageStub extends LineageStub {
           .setFullMethodName("google.cloud.datacatalog.lineage.v1.Lineage/GetProcess")
           .setRequestMarshaller(ProtoUtils.marshaller(GetProcessRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Process.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListProcessesRequest, ListProcessesResponse>
@@ -125,6 +134,7 @@ public class GrpcLineageStub extends LineageStub {
                   ProtoUtils.marshaller(ListProcessesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProcessesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProcessRequest, Operation>
@@ -135,6 +145,7 @@ public class GrpcLineageStub extends LineageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteProcessRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRunRequest, Run> createRunMethodDescriptor =
@@ -143,6 +154,7 @@ public class GrpcLineageStub extends LineageStub {
           .setFullMethodName("google.cloud.datacatalog.lineage.v1.Lineage/CreateRun")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Run.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateRunRequest, Run> updateRunMethodDescriptor =
@@ -151,6 +163,7 @@ public class GrpcLineageStub extends LineageStub {
           .setFullMethodName("google.cloud.datacatalog.lineage.v1.Lineage/UpdateRun")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Run.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetRunRequest, Run> getRunMethodDescriptor =
@@ -159,6 +172,7 @@ public class GrpcLineageStub extends LineageStub {
           .setFullMethodName("google.cloud.datacatalog.lineage.v1.Lineage/GetRun")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Run.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListRunsRequest, ListRunsResponse>
@@ -168,6 +182,7 @@ public class GrpcLineageStub extends LineageStub {
               .setFullMethodName("google.cloud.datacatalog.lineage.v1.Lineage/ListRuns")
               .setRequestMarshaller(ProtoUtils.marshaller(ListRunsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListRunsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRunRequest, Operation> deleteRunMethodDescriptor =
@@ -176,6 +191,7 @@ public class GrpcLineageStub extends LineageStub {
           .setFullMethodName("google.cloud.datacatalog.lineage.v1.Lineage/DeleteRun")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateLineageEventRequest, LineageEvent>
@@ -186,6 +202,7 @@ public class GrpcLineageStub extends LineageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateLineageEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LineageEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLineageEventRequest, LineageEvent>
@@ -196,6 +213,7 @@ public class GrpcLineageStub extends LineageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetLineageEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LineageEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLineageEventsRequest, ListLineageEventsResponse>
@@ -207,6 +225,7 @@ public class GrpcLineageStub extends LineageStub {
                   ProtoUtils.marshaller(ListLineageEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLineageEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteLineageEventRequest, Empty>
@@ -217,6 +236,7 @@ public class GrpcLineageStub extends LineageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteLineageEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchLinksRequest, SearchLinksResponse>
@@ -227,6 +247,7 @@ public class GrpcLineageStub extends LineageStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SearchLinksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchLinksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -241,6 +262,22 @@ public class GrpcLineageStub extends LineageStub {
                   ProtoUtils.marshaller(BatchSearchLinkProcessesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchSearchLinkProcessesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+      searchLineageStreamingMethodDescriptor =
+          MethodDescriptor
+              .<SearchLineageStreamingRequest, SearchLineageStreamingResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.datacatalog.lineage.v1.Lineage/SearchLineageStreaming")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SearchLineageStreamingRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchLineageStreamingResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
@@ -277,6 +314,9 @@ public class GrpcLineageStub extends LineageStub {
   private final UnaryCallable<
           BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesPagedResponse>
       batchSearchLinkProcessesPagedCallable;
+  private final ServerStreamingCallable<
+          SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+      searchLineageStreamingCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -328,6 +368,15 @@ public class GrpcLineageStub extends LineageStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setRequestMutator(
+                    request -> {
+                      ProcessOpenLineageRunEventRequest.Builder requestBuilder =
+                          request.toBuilder();
+                      if (Strings.isNullOrEmpty(request.getRequestId())) {
+                        requestBuilder.setRequestId(UUID.randomUUID().toString());
+                      }
+                      return requestBuilder.build();
+                    })
                 .build();
     GrpcCallSettings<CreateProcessRequest, Process> createProcessTransportSettings =
         GrpcCallSettings.<CreateProcessRequest, Process>newBuilder()
@@ -338,6 +387,15 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setRequestMutator(
+                request -> {
+                  CreateProcessRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateProcessRequest, Process> updateProcessTransportSettings =
         GrpcCallSettings.<UpdateProcessRequest, Process>newBuilder()
@@ -347,6 +405,14 @@ public class GrpcLineageStub extends LineageStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("process.name", String.valueOf(request.getProcess().getName()));
                   return builder.build();
+                })
+            .setRequestMutator(
+                request -> {
+                  UpdateProcessRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
                 })
             .build();
     GrpcCallSettings<GetProcessRequest, Process> getProcessTransportSettings =
@@ -358,6 +424,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListProcessesRequest, ListProcessesResponse> listProcessesTransportSettings =
         GrpcCallSettings.<ListProcessesRequest, ListProcessesResponse>newBuilder()
@@ -368,6 +435,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteProcessRequest, Operation> deleteProcessTransportSettings =
         GrpcCallSettings.<DeleteProcessRequest, Operation>newBuilder()
@@ -378,6 +446,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateRunRequest, Run> createRunTransportSettings =
         GrpcCallSettings.<CreateRunRequest, Run>newBuilder()
@@ -388,6 +457,15 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setRequestMutator(
+                request -> {
+                  CreateRunRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateRunRequest, Run> updateRunTransportSettings =
         GrpcCallSettings.<UpdateRunRequest, Run>newBuilder()
@@ -408,6 +486,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRunsRequest, ListRunsResponse> listRunsTransportSettings =
         GrpcCallSettings.<ListRunsRequest, ListRunsResponse>newBuilder()
@@ -418,6 +497,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteRunRequest, Operation> deleteRunTransportSettings =
         GrpcCallSettings.<DeleteRunRequest, Operation>newBuilder()
@@ -428,6 +508,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateLineageEventRequest, LineageEvent> createLineageEventTransportSettings =
         GrpcCallSettings.<CreateLineageEventRequest, LineageEvent>newBuilder()
@@ -438,6 +519,15 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setRequestMutator(
+                request -> {
+                  CreateLineageEventRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetLineageEventRequest, LineageEvent> getLineageEventTransportSettings =
         GrpcCallSettings.<GetLineageEventRequest, LineageEvent>newBuilder()
@@ -448,6 +538,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLineageEventsRequest, ListLineageEventsResponse>
         listLineageEventsTransportSettings =
@@ -459,6 +550,7 @@ public class GrpcLineageStub extends LineageStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteLineageEventRequest, Empty> deleteLineageEventTransportSettings =
         GrpcCallSettings.<DeleteLineageEventRequest, Empty>newBuilder()
@@ -469,6 +561,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SearchLinksRequest, SearchLinksResponse> searchLinksTransportSettings =
         GrpcCallSettings.<SearchLinksRequest, SearchLinksResponse>newBuilder()
@@ -479,6 +572,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse>
         batchSearchLinkProcessesTransportSettings =
@@ -491,6 +585,20 @@ public class GrpcLineageStub extends LineageStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+        searchLineageStreamingTransportSettings =
+            GrpcCallSettings
+                .<SearchLineageStreamingRequest, SearchLineageStreamingResponse>newBuilder()
+                .setMethodDescriptor(searchLineageStreamingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.processOpenLineageRunEventCallable =
@@ -584,6 +692,11 @@ public class GrpcLineageStub extends LineageStub {
         callableFactory.createPagedCallable(
             batchSearchLinkProcessesTransportSettings,
             settings.batchSearchLinkProcessesSettings(),
+            clientContext);
+    this.searchLineageStreamingCallable =
+        callableFactory.createServerStreamingCallable(
+            searchLineageStreamingTransportSettings,
+            settings.searchLineageStreamingSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -720,6 +833,12 @@ public class GrpcLineageStub extends LineageStub {
   public UnaryCallable<BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesPagedResponse>
       batchSearchLinkProcessesPagedCallable() {
     return batchSearchLinkProcessesPagedCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+      searchLineageStreamingCallable() {
+    return searchLineageStreamingCallable;
   }
 
   @Override

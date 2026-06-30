@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,6 +72,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Occurrence.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListOccurrencesRequest, ListOccurrencesResponse>
@@ -83,6 +84,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   ProtoUtils.marshaller(ListOccurrencesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOccurrencesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteOccurrenceRequest, Empty>
@@ -93,6 +95,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateOccurrenceRequest, Occurrence>
@@ -103,6 +106,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Occurrence.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -116,6 +120,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   ProtoUtils.marshaller(BatchCreateOccurrencesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchCreateOccurrencesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateOccurrenceRequest, Occurrence>
@@ -126,6 +131,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Occurrence.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetOccurrenceNoteRequest, Note>
@@ -136,6 +142,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetOccurrenceNoteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNoteRequest, Note> getNoteMethodDescriptor =
@@ -144,6 +151,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
           .setFullMethodName("grafeas.v1.Grafeas/GetNote")
           .setRequestMarshaller(ProtoUtils.marshaller(GetNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListNotesRequest, ListNotesResponse>
@@ -153,6 +161,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setFullMethodName("grafeas.v1.Grafeas/ListNotes")
               .setRequestMarshaller(ProtoUtils.marshaller(ListNotesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListNotesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNoteRequest, Empty> deleteNoteMethodDescriptor =
@@ -161,6 +170,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
           .setFullMethodName("grafeas.v1.Grafeas/DeleteNote")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateNoteRequest, Note> createNoteMethodDescriptor =
@@ -169,6 +179,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
           .setFullMethodName("grafeas.v1.Grafeas/CreateNote")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchCreateNotesRequest, BatchCreateNotesResponse>
@@ -180,6 +191,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   ProtoUtils.marshaller(BatchCreateNotesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchCreateNotesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateNoteRequest, Note> updateNoteMethodDescriptor =
@@ -188,6 +200,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
           .setFullMethodName("grafeas.v1.Grafeas/UpdateNote")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>
@@ -199,6 +212,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   ProtoUtils.marshaller(ListNoteOccurrencesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNoteOccurrencesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetOccurrenceRequest, Occurrence> getOccurrenceCallable;
@@ -273,6 +287,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListOccurrencesRequest, ListOccurrencesResponse>
         listOccurrencesTransportSettings =
@@ -284,6 +299,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteOccurrenceRequest, Empty> deleteOccurrenceTransportSettings =
         GrpcCallSettings.<DeleteOccurrenceRequest, Empty>newBuilder()
@@ -294,6 +310,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateOccurrenceRequest, Occurrence> createOccurrenceTransportSettings =
         GrpcCallSettings.<CreateOccurrenceRequest, Occurrence>newBuilder()
@@ -304,6 +321,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
         batchCreateOccurrencesTransportSettings =
@@ -316,6 +334,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateOccurrenceRequest, Occurrence> updateOccurrenceTransportSettings =
         GrpcCallSettings.<UpdateOccurrenceRequest, Occurrence>newBuilder()
@@ -326,6 +345,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetOccurrenceNoteRequest, Note> getOccurrenceNoteTransportSettings =
         GrpcCallSettings.<GetOccurrenceNoteRequest, Note>newBuilder()
@@ -336,6 +356,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetNoteRequest, Note> getNoteTransportSettings =
         GrpcCallSettings.<GetNoteRequest, Note>newBuilder()
@@ -346,6 +367,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListNotesRequest, ListNotesResponse> listNotesTransportSettings =
         GrpcCallSettings.<ListNotesRequest, ListNotesResponse>newBuilder()
@@ -356,6 +378,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteNoteRequest, Empty> deleteNoteTransportSettings =
         GrpcCallSettings.<DeleteNoteRequest, Empty>newBuilder()
@@ -366,6 +389,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateNoteRequest, Note> createNoteTransportSettings =
         GrpcCallSettings.<CreateNoteRequest, Note>newBuilder()
@@ -376,6 +400,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchCreateNotesRequest, BatchCreateNotesResponse>
         batchCreateNotesTransportSettings =
@@ -387,6 +412,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateNoteRequest, Note> updateNoteTransportSettings =
         GrpcCallSettings.<UpdateNoteRequest, Note>newBuilder()
@@ -397,6 +423,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>
         listNoteOccurrencesTransportSettings =
@@ -408,6 +435,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.getOccurrenceCallable =

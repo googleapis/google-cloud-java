@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The interface for Vertex Notebook service (a.k.a. Colab on Workbench).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/notebook_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class NotebookServiceGrpc {
 
@@ -242,6 +239,59 @@ public final class NotebookServiceGrpc {
       }
     }
     return getDeleteNotebookRuntimeTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest,
+          com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>
+      getUpdateNotebookRuntimeTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateNotebookRuntimeTemplate",
+      requestType = com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest,
+          com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>
+      getUpdateNotebookRuntimeTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest,
+            com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>
+        getUpdateNotebookRuntimeTemplateMethod;
+    if ((getUpdateNotebookRuntimeTemplateMethod =
+            NotebookServiceGrpc.getUpdateNotebookRuntimeTemplateMethod)
+        == null) {
+      synchronized (NotebookServiceGrpc.class) {
+        if ((getUpdateNotebookRuntimeTemplateMethod =
+                NotebookServiceGrpc.getUpdateNotebookRuntimeTemplateMethod)
+            == null) {
+          NotebookServiceGrpc.getUpdateNotebookRuntimeTemplateMethod =
+              getUpdateNotebookRuntimeTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest,
+                          com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateNotebookRuntimeTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NotebookServiceMethodDescriptorSupplier(
+                              "UpdateNotebookRuntimeTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateNotebookRuntimeTemplateMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -537,6 +587,259 @@ public final class NotebookServiceGrpc {
     return getStartNotebookRuntimeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.StopNotebookRuntimeRequest,
+          com.google.longrunning.Operation>
+      getStopNotebookRuntimeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StopNotebookRuntime",
+      requestType = com.google.cloud.aiplatform.v1.StopNotebookRuntimeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.StopNotebookRuntimeRequest,
+          com.google.longrunning.Operation>
+      getStopNotebookRuntimeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.StopNotebookRuntimeRequest,
+            com.google.longrunning.Operation>
+        getStopNotebookRuntimeMethod;
+    if ((getStopNotebookRuntimeMethod = NotebookServiceGrpc.getStopNotebookRuntimeMethod) == null) {
+      synchronized (NotebookServiceGrpc.class) {
+        if ((getStopNotebookRuntimeMethod = NotebookServiceGrpc.getStopNotebookRuntimeMethod)
+            == null) {
+          NotebookServiceGrpc.getStopNotebookRuntimeMethod =
+              getStopNotebookRuntimeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.StopNotebookRuntimeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "StopNotebookRuntime"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.StopNotebookRuntimeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NotebookServiceMethodDescriptorSupplier("StopNotebookRuntime"))
+                      .build();
+        }
+      }
+    }
+    return getStopNotebookRuntimeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest,
+          com.google.longrunning.Operation>
+      getCreateNotebookExecutionJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateNotebookExecutionJob",
+      requestType = com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest,
+          com.google.longrunning.Operation>
+      getCreateNotebookExecutionJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest,
+            com.google.longrunning.Operation>
+        getCreateNotebookExecutionJobMethod;
+    if ((getCreateNotebookExecutionJobMethod =
+            NotebookServiceGrpc.getCreateNotebookExecutionJobMethod)
+        == null) {
+      synchronized (NotebookServiceGrpc.class) {
+        if ((getCreateNotebookExecutionJobMethod =
+                NotebookServiceGrpc.getCreateNotebookExecutionJobMethod)
+            == null) {
+          NotebookServiceGrpc.getCreateNotebookExecutionJobMethod =
+              getCreateNotebookExecutionJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateNotebookExecutionJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NotebookServiceMethodDescriptorSupplier("CreateNotebookExecutionJob"))
+                      .build();
+        }
+      }
+    }
+    return getCreateNotebookExecutionJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.GetNotebookExecutionJobRequest,
+          com.google.cloud.aiplatform.v1.NotebookExecutionJob>
+      getGetNotebookExecutionJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetNotebookExecutionJob",
+      requestType = com.google.cloud.aiplatform.v1.GetNotebookExecutionJobRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.NotebookExecutionJob.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.GetNotebookExecutionJobRequest,
+          com.google.cloud.aiplatform.v1.NotebookExecutionJob>
+      getGetNotebookExecutionJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.GetNotebookExecutionJobRequest,
+            com.google.cloud.aiplatform.v1.NotebookExecutionJob>
+        getGetNotebookExecutionJobMethod;
+    if ((getGetNotebookExecutionJobMethod = NotebookServiceGrpc.getGetNotebookExecutionJobMethod)
+        == null) {
+      synchronized (NotebookServiceGrpc.class) {
+        if ((getGetNotebookExecutionJobMethod =
+                NotebookServiceGrpc.getGetNotebookExecutionJobMethod)
+            == null) {
+          NotebookServiceGrpc.getGetNotebookExecutionJobMethod =
+              getGetNotebookExecutionJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.GetNotebookExecutionJobRequest,
+                          com.google.cloud.aiplatform.v1.NotebookExecutionJob>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetNotebookExecutionJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.GetNotebookExecutionJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.NotebookExecutionJob
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NotebookServiceMethodDescriptorSupplier("GetNotebookExecutionJob"))
+                      .build();
+        }
+      }
+    }
+    return getGetNotebookExecutionJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsRequest,
+          com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse>
+      getListNotebookExecutionJobsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListNotebookExecutionJobs",
+      requestType = com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsRequest,
+          com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse>
+      getListNotebookExecutionJobsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsRequest,
+            com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse>
+        getListNotebookExecutionJobsMethod;
+    if ((getListNotebookExecutionJobsMethod =
+            NotebookServiceGrpc.getListNotebookExecutionJobsMethod)
+        == null) {
+      synchronized (NotebookServiceGrpc.class) {
+        if ((getListNotebookExecutionJobsMethod =
+                NotebookServiceGrpc.getListNotebookExecutionJobsMethod)
+            == null) {
+          NotebookServiceGrpc.getListNotebookExecutionJobsMethod =
+              getListNotebookExecutionJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsRequest,
+                          com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListNotebookExecutionJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NotebookServiceMethodDescriptorSupplier("ListNotebookExecutionJobs"))
+                      .build();
+        }
+      }
+    }
+    return getListNotebookExecutionJobsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.DeleteNotebookExecutionJobRequest,
+          com.google.longrunning.Operation>
+      getDeleteNotebookExecutionJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteNotebookExecutionJob",
+      requestType = com.google.cloud.aiplatform.v1.DeleteNotebookExecutionJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.DeleteNotebookExecutionJobRequest,
+          com.google.longrunning.Operation>
+      getDeleteNotebookExecutionJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.DeleteNotebookExecutionJobRequest,
+            com.google.longrunning.Operation>
+        getDeleteNotebookExecutionJobMethod;
+    if ((getDeleteNotebookExecutionJobMethod =
+            NotebookServiceGrpc.getDeleteNotebookExecutionJobMethod)
+        == null) {
+      synchronized (NotebookServiceGrpc.class) {
+        if ((getDeleteNotebookExecutionJobMethod =
+                NotebookServiceGrpc.getDeleteNotebookExecutionJobMethod)
+            == null) {
+          NotebookServiceGrpc.getDeleteNotebookExecutionJobMethod =
+              getDeleteNotebookExecutionJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.DeleteNotebookExecutionJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteNotebookExecutionJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.DeleteNotebookExecutionJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NotebookServiceMethodDescriptorSupplier("DeleteNotebookExecutionJob"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteNotebookExecutionJobMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static NotebookServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<NotebookServiceStub> factory =
@@ -548,6 +851,19 @@ public final class NotebookServiceGrpc {
           }
         };
     return NotebookServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static NotebookServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<NotebookServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<NotebookServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public NotebookServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new NotebookServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return NotebookServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -650,6 +966,21 @@ public final class NotebookServiceGrpc {
      *
      *
      * <pre>
+     * Updates a NotebookRuntimeTemplate.
+     * </pre>
+     */
+    default void updateNotebookRuntimeTemplate(
+        com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateNotebookRuntimeTemplateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Assigns a NotebookRuntime to a user for a particular Notebook file. This
      * method will either returns an existing assignment or generates a new one.
      * </pre>
@@ -731,6 +1062,79 @@ public final class NotebookServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getStartNotebookRuntimeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops a NotebookRuntime.
+     * </pre>
+     */
+    default void stopNotebookRuntime(
+        com.google.cloud.aiplatform.v1.StopNotebookRuntimeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStopNotebookRuntimeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a NotebookExecutionJob.
+     * </pre>
+     */
+    default void createNotebookExecutionJob(
+        com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateNotebookExecutionJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NotebookExecutionJob.
+     * </pre>
+     */
+    default void getNotebookExecutionJob(
+        com.google.cloud.aiplatform.v1.GetNotebookExecutionJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.NotebookExecutionJob>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetNotebookExecutionJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists NotebookExecutionJobs in a Location.
+     * </pre>
+     */
+    default void listNotebookExecutionJobs(
+        com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListNotebookExecutionJobsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a NotebookExecutionJob.
+     * </pre>
+     */
+    default void deleteNotebookExecutionJob(
+        com.google.cloud.aiplatform.v1.DeleteNotebookExecutionJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteNotebookExecutionJobMethod(), responseObserver);
     }
   }
 
@@ -839,6 +1243,23 @@ public final class NotebookServiceGrpc {
      *
      *
      * <pre>
+     * Updates a NotebookRuntimeTemplate.
+     * </pre>
+     */
+    public void updateNotebookRuntimeTemplate(
+        com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateNotebookRuntimeTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Assigns a NotebookRuntime to a user for a particular Notebook file. This
      * method will either returns an existing assignment or generates a new one.
      * </pre>
@@ -933,10 +1354,341 @@ public final class NotebookServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops a NotebookRuntime.
+     * </pre>
+     */
+    public void stopNotebookRuntime(
+        com.google.cloud.aiplatform.v1.StopNotebookRuntimeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStopNotebookRuntimeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a NotebookExecutionJob.
+     * </pre>
+     */
+    public void createNotebookExecutionJob(
+        com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateNotebookExecutionJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NotebookExecutionJob.
+     * </pre>
+     */
+    public void getNotebookExecutionJob(
+        com.google.cloud.aiplatform.v1.GetNotebookExecutionJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.NotebookExecutionJob>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetNotebookExecutionJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists NotebookExecutionJobs in a Location.
+     * </pre>
+     */
+    public void listNotebookExecutionJobs(
+        com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListNotebookExecutionJobsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a NotebookExecutionJob.
+     * </pre>
+     */
+    public void deleteNotebookExecutionJob(
+        com.google.cloud.aiplatform.v1.DeleteNotebookExecutionJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteNotebookExecutionJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service NotebookService.
+   *
+   * <pre>
+   * The interface for Vertex Notebook service (a.k.a. Colab on Workbench).
+   * </pre>
+   */
+  public static final class NotebookServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<NotebookServiceBlockingV2Stub> {
+    private NotebookServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected NotebookServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new NotebookServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a NotebookRuntimeTemplate.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createNotebookRuntimeTemplate(
+        com.google.cloud.aiplatform.v1.CreateNotebookRuntimeTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateNotebookRuntimeTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NotebookRuntimeTemplate.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate getNotebookRuntimeTemplate(
+        com.google.cloud.aiplatform.v1.GetNotebookRuntimeTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetNotebookRuntimeTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists NotebookRuntimeTemplates in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListNotebookRuntimeTemplatesResponse
+        listNotebookRuntimeTemplates(
+            com.google.cloud.aiplatform.v1.ListNotebookRuntimeTemplatesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListNotebookRuntimeTemplatesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a NotebookRuntimeTemplate.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteNotebookRuntimeTemplate(
+        com.google.cloud.aiplatform.v1.DeleteNotebookRuntimeTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteNotebookRuntimeTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a NotebookRuntimeTemplate.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate updateNotebookRuntimeTemplate(
+        com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateNotebookRuntimeTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Assigns a NotebookRuntime to a user for a particular Notebook file. This
+     * method will either returns an existing assignment or generates a new one.
+     * </pre>
+     */
+    public com.google.longrunning.Operation assignNotebookRuntime(
+        com.google.cloud.aiplatform.v1.AssignNotebookRuntimeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAssignNotebookRuntimeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NotebookRuntime.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.NotebookRuntime getNotebookRuntime(
+        com.google.cloud.aiplatform.v1.GetNotebookRuntimeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetNotebookRuntimeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists NotebookRuntimes in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListNotebookRuntimesResponse listNotebookRuntimes(
+        com.google.cloud.aiplatform.v1.ListNotebookRuntimesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListNotebookRuntimesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a NotebookRuntime.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteNotebookRuntime(
+        com.google.cloud.aiplatform.v1.DeleteNotebookRuntimeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteNotebookRuntimeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrades a NotebookRuntime.
+     * </pre>
+     */
+    public com.google.longrunning.Operation upgradeNotebookRuntime(
+        com.google.cloud.aiplatform.v1.UpgradeNotebookRuntimeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpgradeNotebookRuntimeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a NotebookRuntime.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startNotebookRuntime(
+        com.google.cloud.aiplatform.v1.StartNotebookRuntimeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStartNotebookRuntimeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops a NotebookRuntime.
+     * </pre>
+     */
+    public com.google.longrunning.Operation stopNotebookRuntime(
+        com.google.cloud.aiplatform.v1.StopNotebookRuntimeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStopNotebookRuntimeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a NotebookExecutionJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createNotebookExecutionJob(
+        com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateNotebookExecutionJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NotebookExecutionJob.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.NotebookExecutionJob getNotebookExecutionJob(
+        com.google.cloud.aiplatform.v1.GetNotebookExecutionJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetNotebookExecutionJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists NotebookExecutionJobs in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse
+        listNotebookExecutionJobs(
+            com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListNotebookExecutionJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a NotebookExecutionJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteNotebookExecutionJob(
+        com.google.cloud.aiplatform.v1.DeleteNotebookExecutionJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteNotebookExecutionJobMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service NotebookService.
    *
    * <pre>
    * The interface for Vertex Notebook service (a.k.a. Colab on Workbench).
@@ -1005,6 +1757,19 @@ public final class NotebookServiceGrpc {
         com.google.cloud.aiplatform.v1.DeleteNotebookRuntimeTemplateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteNotebookRuntimeTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a NotebookRuntimeTemplate.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate updateNotebookRuntimeTemplate(
+        com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateNotebookRuntimeTemplateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1084,6 +1849,72 @@ public final class NotebookServiceGrpc {
         com.google.cloud.aiplatform.v1.StartNotebookRuntimeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStartNotebookRuntimeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops a NotebookRuntime.
+     * </pre>
+     */
+    public com.google.longrunning.Operation stopNotebookRuntime(
+        com.google.cloud.aiplatform.v1.StopNotebookRuntimeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopNotebookRuntimeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a NotebookExecutionJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createNotebookExecutionJob(
+        com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNotebookExecutionJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NotebookExecutionJob.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.NotebookExecutionJob getNotebookExecutionJob(
+        com.google.cloud.aiplatform.v1.GetNotebookExecutionJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNotebookExecutionJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists NotebookExecutionJobs in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse
+        listNotebookExecutionJobs(
+            com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNotebookExecutionJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a NotebookExecutionJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteNotebookExecutionJob(
+        com.google.cloud.aiplatform.v1.DeleteNotebookExecutionJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNotebookExecutionJobMethod(), getCallOptions(), request);
     }
   }
 
@@ -1170,6 +2001,22 @@ public final class NotebookServiceGrpc {
      *
      *
      * <pre>
+     * Updates a NotebookRuntimeTemplate.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>
+        updateNotebookRuntimeTemplate(
+            com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateNotebookRuntimeTemplateMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Assigns a NotebookRuntime to a user for a particular Notebook file. This
      * method will either returns an existing assignment or generates a new one.
      * </pre>
@@ -1247,18 +2094,95 @@ public final class NotebookServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStartNotebookRuntimeMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops a NotebookRuntime.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        stopNotebookRuntime(com.google.cloud.aiplatform.v1.StopNotebookRuntimeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStopNotebookRuntimeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a NotebookExecutionJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createNotebookExecutionJob(
+            com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateNotebookExecutionJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NotebookExecutionJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.NotebookExecutionJob>
+        getNotebookExecutionJob(
+            com.google.cloud.aiplatform.v1.GetNotebookExecutionJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetNotebookExecutionJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists NotebookExecutionJobs in a Location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse>
+        listNotebookExecutionJobs(
+            com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListNotebookExecutionJobsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a NotebookExecutionJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteNotebookExecutionJob(
+            com.google.cloud.aiplatform.v1.DeleteNotebookExecutionJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteNotebookExecutionJobMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_NOTEBOOK_RUNTIME_TEMPLATE = 0;
   private static final int METHODID_GET_NOTEBOOK_RUNTIME_TEMPLATE = 1;
   private static final int METHODID_LIST_NOTEBOOK_RUNTIME_TEMPLATES = 2;
   private static final int METHODID_DELETE_NOTEBOOK_RUNTIME_TEMPLATE = 3;
-  private static final int METHODID_ASSIGN_NOTEBOOK_RUNTIME = 4;
-  private static final int METHODID_GET_NOTEBOOK_RUNTIME = 5;
-  private static final int METHODID_LIST_NOTEBOOK_RUNTIMES = 6;
-  private static final int METHODID_DELETE_NOTEBOOK_RUNTIME = 7;
-  private static final int METHODID_UPGRADE_NOTEBOOK_RUNTIME = 8;
-  private static final int METHODID_START_NOTEBOOK_RUNTIME = 9;
+  private static final int METHODID_UPDATE_NOTEBOOK_RUNTIME_TEMPLATE = 4;
+  private static final int METHODID_ASSIGN_NOTEBOOK_RUNTIME = 5;
+  private static final int METHODID_GET_NOTEBOOK_RUNTIME = 6;
+  private static final int METHODID_LIST_NOTEBOOK_RUNTIMES = 7;
+  private static final int METHODID_DELETE_NOTEBOOK_RUNTIME = 8;
+  private static final int METHODID_UPGRADE_NOTEBOOK_RUNTIME = 9;
+  private static final int METHODID_START_NOTEBOOK_RUNTIME = 10;
+  private static final int METHODID_STOP_NOTEBOOK_RUNTIME = 11;
+  private static final int METHODID_CREATE_NOTEBOOK_EXECUTION_JOB = 12;
+  private static final int METHODID_GET_NOTEBOOK_EXECUTION_JOB = 13;
+  private static final int METHODID_LIST_NOTEBOOK_EXECUTION_JOBS = 14;
+  private static final int METHODID_DELETE_NOTEBOOK_EXECUTION_JOB = 15;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1300,6 +2224,12 @@ public final class NotebookServiceGrpc {
               (com.google.cloud.aiplatform.v1.DeleteNotebookRuntimeTemplateRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPDATE_NOTEBOOK_RUNTIME_TEMPLATE:
+          serviceImpl.updateNotebookRuntimeTemplate(
+              (com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>)
+                  responseObserver);
+          break;
         case METHODID_ASSIGN_NOTEBOOK_RUNTIME:
           serviceImpl.assignNotebookRuntime(
               (com.google.cloud.aiplatform.v1.AssignNotebookRuntimeRequest) request,
@@ -1331,6 +2261,34 @@ public final class NotebookServiceGrpc {
         case METHODID_START_NOTEBOOK_RUNTIME:
           serviceImpl.startNotebookRuntime(
               (com.google.cloud.aiplatform.v1.StartNotebookRuntimeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_STOP_NOTEBOOK_RUNTIME:
+          serviceImpl.stopNotebookRuntime(
+              (com.google.cloud.aiplatform.v1.StopNotebookRuntimeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_NOTEBOOK_EXECUTION_JOB:
+          serviceImpl.createNotebookExecutionJob(
+              (com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_NOTEBOOK_EXECUTION_JOB:
+          serviceImpl.getNotebookExecutionJob(
+              (com.google.cloud.aiplatform.v1.GetNotebookExecutionJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.NotebookExecutionJob>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_NOTEBOOK_EXECUTION_JOBS:
+          serviceImpl.listNotebookExecutionJobs(
+              (com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_NOTEBOOK_EXECUTION_JOB:
+          serviceImpl.deleteNotebookExecutionJob(
+              (com.google.cloud.aiplatform.v1.DeleteNotebookExecutionJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -1380,6 +2338,13 @@ public final class NotebookServiceGrpc {
                     com.google.longrunning.Operation>(
                     service, METHODID_DELETE_NOTEBOOK_RUNTIME_TEMPLATE)))
         .addMethod(
+            getUpdateNotebookRuntimeTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest,
+                    com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>(
+                    service, METHODID_UPDATE_NOTEBOOK_RUNTIME_TEMPLATE)))
+        .addMethod(
             getAssignNotebookRuntimeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1417,6 +2382,40 @@ public final class NotebookServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.aiplatform.v1.StartNotebookRuntimeRequest,
                     com.google.longrunning.Operation>(service, METHODID_START_NOTEBOOK_RUNTIME)))
+        .addMethod(
+            getStopNotebookRuntimeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.StopNotebookRuntimeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_STOP_NOTEBOOK_RUNTIME)))
+        .addMethod(
+            getCreateNotebookExecutionJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_NOTEBOOK_EXECUTION_JOB)))
+        .addMethod(
+            getGetNotebookExecutionJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetNotebookExecutionJobRequest,
+                    com.google.cloud.aiplatform.v1.NotebookExecutionJob>(
+                    service, METHODID_GET_NOTEBOOK_EXECUTION_JOB)))
+        .addMethod(
+            getListNotebookExecutionJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsRequest,
+                    com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse>(
+                    service, METHODID_LIST_NOTEBOOK_EXECUTION_JOBS)))
+        .addMethod(
+            getDeleteNotebookExecutionJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteNotebookExecutionJobRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_NOTEBOOK_EXECUTION_JOB)))
         .build();
   }
 
@@ -1472,12 +2471,18 @@ public final class NotebookServiceGrpc {
                       .addMethod(getGetNotebookRuntimeTemplateMethod())
                       .addMethod(getListNotebookRuntimeTemplatesMethod())
                       .addMethod(getDeleteNotebookRuntimeTemplateMethod())
+                      .addMethod(getUpdateNotebookRuntimeTemplateMethod())
                       .addMethod(getAssignNotebookRuntimeMethod())
                       .addMethod(getGetNotebookRuntimeMethod())
                       .addMethod(getListNotebookRuntimesMethod())
                       .addMethod(getDeleteNotebookRuntimeMethod())
                       .addMethod(getUpgradeNotebookRuntimeMethod())
                       .addMethod(getStartNotebookRuntimeMethod())
+                      .addMethod(getStopNotebookRuntimeMethod())
+                      .addMethod(getCreateNotebookExecutionJobMethod())
+                      .addMethod(getGetNotebookExecutionJobMethod())
+                      .addMethod(getListNotebookExecutionJobsMethod())
+                      .addMethod(getDeleteNotebookExecutionJobMethod())
                       .build();
         }
       }

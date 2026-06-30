@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * `regions` resource and API to manage regions definitions.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/inventories/v1beta/regionalinventory.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RegionalInventoryServiceGrpc {
 
@@ -214,6 +211,19 @@ public final class RegionalInventoryServiceGrpc {
           }
         };
     return RegionalInventoryServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static RegionalInventoryServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<RegionalInventoryServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RegionalInventoryServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public RegionalInventoryServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RegionalInventoryServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return RegionalInventoryServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -421,6 +431,87 @@ public final class RegionalInventoryServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service RegionalInventoryService.
+   *
+   * <pre>
+   * Service to manage regional inventory for products. There is also separate
+   * `regions` resource and API to manage regions definitions.
+   * </pre>
+   */
+  public static final class RegionalInventoryServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<RegionalInventoryServiceBlockingV2Stub> {
+    private RegionalInventoryServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected RegionalInventoryServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new RegionalInventoryServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the `RegionalInventory` resources for the given product in your
+     * merchant account. The response might contain fewer items than specified by
+     * `pageSize`.  If `pageToken` was returned in previous request, it can be
+     * used to obtain additional results.
+     * `RegionalInventory` resources are listed per product for a given account.
+     * </pre>
+     */
+    public com.google.shopping.merchant.inventories.v1beta.ListRegionalInventoriesResponse
+        listRegionalInventories(
+            com.google.shopping.merchant.inventories.v1beta.ListRegionalInventoriesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListRegionalInventoriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Inserts a `RegionalInventory` to a given product in your
+     * merchant account.
+     * Replaces the full `RegionalInventory` resource if an entry with the same
+     * [`region`][google.shopping.merchant.inventories.v1beta.RegionalInventory.region]
+     * already exists for the product.
+     * It might take up to 30 minutes for the new or updated `RegionalInventory`
+     * resource to appear in products.
+     * </pre>
+     */
+    public com.google.shopping.merchant.inventories.v1beta.RegionalInventory
+        insertRegionalInventory(
+            com.google.shopping.merchant.inventories.v1beta.InsertRegionalInventoryRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getInsertRegionalInventoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `RegionalInventory` resource from the given product
+     * in your merchant account.  It might take up to an hour for the
+     * `RegionalInventory` to be deleted from the specific product.
+     * Once you have received a successful delete response, wait for that
+     * period before attempting a delete again.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteRegionalInventory(
+        com.google.shopping.merchant.inventories.v1beta.DeleteRegionalInventoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteRegionalInventoryMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * RegionalInventoryService.
    *
    * <pre>
    * Service to manage regional inventory for products. There is also separate

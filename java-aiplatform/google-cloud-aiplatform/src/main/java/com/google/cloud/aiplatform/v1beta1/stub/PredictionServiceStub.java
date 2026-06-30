@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ import com.google.cloud.aiplatform.v1beta1.DirectPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.DirectPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.EmbedContentRequest;
+import com.google.cloud.aiplatform.v1beta1.EmbedContentResponse;
 import com.google.cloud.aiplatform.v1beta1.ExplainRequest;
 import com.google.cloud.aiplatform.v1beta1.ExplainResponse;
 import com.google.cloud.aiplatform.v1beta1.GenerateContentRequest;
@@ -42,6 +44,7 @@ import com.google.cloud.aiplatform.v1beta1.StreamDirectPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamDirectPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamDirectRawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamDirectRawPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamRawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest;
@@ -73,6 +76,10 @@ public abstract class PredictionServiceStub implements BackgroundResource {
 
   public UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable() {
     throw new UnsupportedOperationException("Not implemented: rawPredictCallable()");
+  }
+
+  public ServerStreamingCallable<StreamRawPredictRequest, HttpBody> streamRawPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamRawPredictCallable()");
   }
 
   public UnaryCallable<DirectPredictRequest, DirectPredictResponse> directPredictCallable() {
@@ -128,6 +135,10 @@ public abstract class PredictionServiceStub implements BackgroundResource {
 
   public ServerStreamingCallable<ChatCompletionsRequest, HttpBody> chatCompletionsCallable() {
     throw new UnsupportedOperationException("Not implemented: chatCompletionsCallable()");
+  }
+
+  public UnaryCallable<EmbedContentRequest, EmbedContentResponse> embedContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: embedContentCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

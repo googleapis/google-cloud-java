@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -275,6 +275,7 @@ public class HttpJsonAdvisoryNotificationsServiceStub extends AdvisoryNotificati
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetNotificationRequest, Notification> getNotificationTransportSettings =
         HttpJsonCallSettings.<GetNotificationRequest, Notification>newBuilder()
@@ -286,6 +287,7 @@ public class HttpJsonAdvisoryNotificationsServiceStub extends AdvisoryNotificati
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetSettingsRequest, Settings> getSettingsTransportSettings =
         HttpJsonCallSettings.<GetSettingsRequest, Settings>newBuilder()
@@ -297,6 +299,7 @@ public class HttpJsonAdvisoryNotificationsServiceStub extends AdvisoryNotificati
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateSettingsRequest, Settings> updateSettingsTransportSettings =
         HttpJsonCallSettings.<UpdateSettingsRequest, Settings>newBuilder()

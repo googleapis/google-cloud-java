@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.reservation.v1;
 
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListCapacityCommitmentsPagedResponse;
+import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationGroupsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAllAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAssignmentsPagedResponse;
@@ -35,6 +36,11 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.bigquery.reservation.v1.stub.ReservationServiceStubSettings;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -56,7 +62,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createReservation to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createReservation:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -73,11 +81,22 @@ import javax.annotation.Generated;
  *             .createReservationSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ReservationServiceSettings reservationServiceSettings =
  *     reservationServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class ReservationServiceSettings extends ClientSettings<ReservationServiceSettings> {
@@ -107,6 +126,11 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
   /** Returns the object with the settings used for calls to updateReservation. */
   public UnaryCallSettings<UpdateReservationRequest, Reservation> updateReservationSettings() {
     return ((ReservationServiceStubSettings) getStubSettings()).updateReservationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to failoverReservation. */
+  public UnaryCallSettings<FailoverReservationRequest, Reservation> failoverReservationSettings() {
+    return ((ReservationServiceStubSettings) getStubSettings()).failoverReservationSettings();
   }
 
   /** Returns the object with the settings used for calls to createCapacityCommitment. */
@@ -211,6 +235,48 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
   public UnaryCallSettings<UpdateBiReservationRequest, BiReservation>
       updateBiReservationSettings() {
     return ((ReservationServiceStubSettings) getStubSettings()).updateBiReservationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((ReservationServiceStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((ReservationServiceStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((ReservationServiceStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createReservationGroup. */
+  public UnaryCallSettings<CreateReservationGroupRequest, ReservationGroup>
+      createReservationGroupSettings() {
+    return ((ReservationServiceStubSettings) getStubSettings()).createReservationGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getReservationGroup. */
+  public UnaryCallSettings<GetReservationGroupRequest, ReservationGroup>
+      getReservationGroupSettings() {
+    return ((ReservationServiceStubSettings) getStubSettings()).getReservationGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteReservationGroup. */
+  public UnaryCallSettings<DeleteReservationGroupRequest, Empty> deleteReservationGroupSettings() {
+    return ((ReservationServiceStubSettings) getStubSettings()).deleteReservationGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listReservationGroups. */
+  public PagedCallSettings<
+          ListReservationGroupsRequest,
+          ListReservationGroupsResponse,
+          ListReservationGroupsPagedResponse>
+      listReservationGroupsSettings() {
+    return ((ReservationServiceStubSettings) getStubSettings()).listReservationGroupsSettings();
   }
 
   public static final ReservationServiceSettings create(ReservationServiceStubSettings stub)
@@ -354,6 +420,12 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
       return getStubSettingsBuilder().updateReservationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to failoverReservation. */
+    public UnaryCallSettings.Builder<FailoverReservationRequest, Reservation>
+        failoverReservationSettings() {
+      return getStubSettingsBuilder().failoverReservationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createCapacityCommitment. */
     public UnaryCallSettings.Builder<CreateCapacityCommitmentRequest, CapacityCommitment>
         createCapacityCommitmentSettings() {
@@ -460,6 +532,49 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
     public UnaryCallSettings.Builder<UpdateBiReservationRequest, BiReservation>
         updateBiReservationSettings() {
       return getStubSettingsBuilder().updateBiReservationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createReservationGroup. */
+    public UnaryCallSettings.Builder<CreateReservationGroupRequest, ReservationGroup>
+        createReservationGroupSettings() {
+      return getStubSettingsBuilder().createReservationGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getReservationGroup. */
+    public UnaryCallSettings.Builder<GetReservationGroupRequest, ReservationGroup>
+        getReservationGroupSettings() {
+      return getStubSettingsBuilder().getReservationGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteReservationGroup. */
+    public UnaryCallSettings.Builder<DeleteReservationGroupRequest, Empty>
+        deleteReservationGroupSettings() {
+      return getStubSettingsBuilder().deleteReservationGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listReservationGroups. */
+    public PagedCallSettings.Builder<
+            ListReservationGroupsRequest,
+            ListReservationGroupsResponse,
+            ListReservationGroupsPagedResponse>
+        listReservationGroupsSettings() {
+      return getStubSettingsBuilder().listReservationGroupsSettings();
     }
 
     @Override

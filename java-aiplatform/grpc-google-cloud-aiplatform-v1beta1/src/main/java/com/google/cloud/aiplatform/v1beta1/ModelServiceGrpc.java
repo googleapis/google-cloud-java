@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for managing Vertex AI's machine learning Models.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/model_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ModelServiceGrpc {
 
@@ -215,6 +212,58 @@ public final class ModelServiceGrpc {
       }
     }
     return getListModelVersionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest,
+          com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsResponse>
+      getListModelVersionCheckpointsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListModelVersionCheckpoints",
+      requestType = com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest,
+          com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsResponse>
+      getListModelVersionCheckpointsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest,
+            com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsResponse>
+        getListModelVersionCheckpointsMethod;
+    if ((getListModelVersionCheckpointsMethod =
+            ModelServiceGrpc.getListModelVersionCheckpointsMethod)
+        == null) {
+      synchronized (ModelServiceGrpc.class) {
+        if ((getListModelVersionCheckpointsMethod =
+                ModelServiceGrpc.getListModelVersionCheckpointsMethod)
+            == null) {
+          ModelServiceGrpc.getListModelVersionCheckpointsMethod =
+              getListModelVersionCheckpointsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest,
+                          com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListModelVersionCheckpoints"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .ListModelVersionCheckpointsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ModelServiceMethodDescriptorSupplier("ListModelVersionCheckpoints"))
+                      .build();
+        }
+      }
+    }
+    return getListModelVersionCheckpointsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -892,6 +941,53 @@ public final class ModelServiceGrpc {
     return getListModelEvaluationSlicesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest,
+          com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse>
+      getRecommendSpecMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RecommendSpec",
+      requestType = com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest,
+          com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse>
+      getRecommendSpecMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest,
+            com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse>
+        getRecommendSpecMethod;
+    if ((getRecommendSpecMethod = ModelServiceGrpc.getRecommendSpecMethod) == null) {
+      synchronized (ModelServiceGrpc.class) {
+        if ((getRecommendSpecMethod = ModelServiceGrpc.getRecommendSpecMethod) == null) {
+          ModelServiceGrpc.getRecommendSpecMethod =
+              getRecommendSpecMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest,
+                          com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RecommendSpec"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ModelServiceMethodDescriptorSupplier("RecommendSpec"))
+                      .build();
+        }
+      }
+    }
+    return getRecommendSpecMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ModelServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ModelServiceStub> factory =
@@ -903,6 +999,19 @@ public final class ModelServiceGrpc {
           }
         };
     return ModelServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ModelServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ModelServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ModelServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ModelServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ModelServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ModelServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -996,6 +1105,22 @@ public final class ModelServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListModelVersionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists checkpoints of the specified model version.
+     * </pre>
+     */
+    default void listModelVersionCheckpoints(
+        com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListModelVersionCheckpointsMethod(), responseObserver);
     }
 
     /**
@@ -1222,6 +1347,21 @@ public final class ModelServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListModelEvaluationSlicesMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Model's spec recommendations.
+     * </pre>
+     */
+    default void recommendSpec(
+        com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRecommendSpecMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1316,6 +1456,24 @@ public final class ModelServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListModelVersionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists checkpoints of the specified model version.
+     * </pre>
+     */
+    public void listModelVersionCheckpoints(
+        com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListModelVersionCheckpointsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1571,10 +1729,350 @@ public final class ModelServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Model's spec recommendations.
+     * </pre>
+     */
+    public void recommendSpec(
+        com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRecommendSpecMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ModelService.
+   *
+   * <pre>
+   * A service for managing Vertex AI's machine learning Models.
+   * </pre>
+   */
+  public static final class ModelServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ModelServiceBlockingV2Stub> {
+    private ModelServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ModelServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ModelServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Uploads a Model artifact into Vertex AI.
+     * </pre>
+     */
+    public com.google.longrunning.Operation uploadModel(
+        com.google.cloud.aiplatform.v1beta1.UploadModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUploadModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Model.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Model getModel(
+        com.google.cloud.aiplatform.v1beta1.GetModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Models in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListModelsResponse listModels(
+        com.google.cloud.aiplatform.v1beta1.ListModelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListModelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists versions of the specified model.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListModelVersionsResponse listModelVersions(
+        com.google.cloud.aiplatform.v1beta1.ListModelVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListModelVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists checkpoints of the specified model version.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsResponse
+        listModelVersionCheckpoints(
+            com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListModelVersionCheckpointsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Model.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Model updateModel(
+        com.google.cloud.aiplatform.v1beta1.UpdateModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incrementally update the dataset used for an examples model.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateExplanationDataset(
+        com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateExplanationDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Model.
+     * A model cannot be deleted if any
+     * [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint] resource has a
+     * [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] based on the
+     * model in its
+     * [deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models]
+     * field.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteModel(
+        com.google.cloud.aiplatform.v1beta1.DeleteModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Model version.
+     * Model version can only be deleted if there are no
+     * [DeployedModels][google.cloud.aiplatform.v1beta1.DeployedModel] created
+     * from it. Deleting the only version in the Model is not allowed. Use
+     * [DeleteModel][google.cloud.aiplatform.v1beta1.ModelService.DeleteModel] for
+     * deleting the Model instead.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteModelVersion(
+        com.google.cloud.aiplatform.v1beta1.DeleteModelVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteModelVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Merges a set of aliases for a Model version.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Model mergeVersionAliases(
+        com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getMergeVersionAliasesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a trained, exportable Model to a location specified by the
+     * user. A Model is considered to be exportable if it has at least one
+     * [supported export
+     * format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportModel(
+        com.google.cloud.aiplatform.v1beta1.ExportModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies an already existing Vertex AI Model into the specified Location.
+     * The source Model must exist in the same Project.
+     * When copying custom Models, the users themselves are responsible for
+     * [Model.metadata][google.cloud.aiplatform.v1beta1.Model.metadata] content to
+     * be region-agnostic, as well as making sure that any resources (e.g. files)
+     * it depends on remain accessible.
+     * </pre>
+     */
+    public com.google.longrunning.Operation copyModel(
+        com.google.cloud.aiplatform.v1beta1.CopyModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCopyModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports an externally generated ModelEvaluation.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelEvaluation importModelEvaluation(
+        com.google.cloud.aiplatform.v1beta1.ImportModelEvaluationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getImportModelEvaluationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports a list of externally generated ModelEvaluationSlice.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesResponse
+        batchImportModelEvaluationSlices(
+            com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchImportModelEvaluationSlicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports a list of externally generated EvaluatedAnnotations.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchImportEvaluatedAnnotationsResponse
+        batchImportEvaluatedAnnotations(
+            com.google.cloud.aiplatform.v1beta1.BatchImportEvaluatedAnnotationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchImportEvaluatedAnnotationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ModelEvaluation.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelEvaluation getModelEvaluation(
+        com.google.cloud.aiplatform.v1beta1.GetModelEvaluationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetModelEvaluationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ModelEvaluations in a Model.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsResponse listModelEvaluations(
+        com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListModelEvaluationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ModelEvaluationSlice.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice getModelEvaluationSlice(
+        com.google.cloud.aiplatform.v1beta1.GetModelEvaluationSliceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetModelEvaluationSliceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ModelEvaluationSlices in a ModelEvaluation.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse
+        listModelEvaluationSlices(
+            com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListModelEvaluationSlicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Model's spec recommendations.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse recommendSpec(
+        com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRecommendSpecMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ModelService.
    *
    * <pre>
    * A service for managing Vertex AI's machine learning Models.
@@ -1642,6 +2140,20 @@ public final class ModelServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.ListModelVersionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListModelVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists checkpoints of the specified model version.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsResponse
+        listModelVersionCheckpoints(
+            com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListModelVersionCheckpointsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1847,6 +2359,19 @@ public final class ModelServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListModelEvaluationSlicesMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Model's spec recommendations.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse recommendSpec(
+        com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRecommendSpecMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1921,6 +2446,21 @@ public final class ModelServiceGrpc {
         listModelVersions(com.google.cloud.aiplatform.v1beta1.ListModelVersionsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListModelVersionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists checkpoints of the specified model version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsResponse>
+        listModelVersionCheckpoints(
+            com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListModelVersionCheckpointsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2142,26 +2682,42 @@ public final class ModelServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListModelEvaluationSlicesMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Model's spec recommendations.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse>
+        recommendSpec(com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRecommendSpecMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_UPLOAD_MODEL = 0;
   private static final int METHODID_GET_MODEL = 1;
   private static final int METHODID_LIST_MODELS = 2;
   private static final int METHODID_LIST_MODEL_VERSIONS = 3;
-  private static final int METHODID_UPDATE_MODEL = 4;
-  private static final int METHODID_UPDATE_EXPLANATION_DATASET = 5;
-  private static final int METHODID_DELETE_MODEL = 6;
-  private static final int METHODID_DELETE_MODEL_VERSION = 7;
-  private static final int METHODID_MERGE_VERSION_ALIASES = 8;
-  private static final int METHODID_EXPORT_MODEL = 9;
-  private static final int METHODID_COPY_MODEL = 10;
-  private static final int METHODID_IMPORT_MODEL_EVALUATION = 11;
-  private static final int METHODID_BATCH_IMPORT_MODEL_EVALUATION_SLICES = 12;
-  private static final int METHODID_BATCH_IMPORT_EVALUATED_ANNOTATIONS = 13;
-  private static final int METHODID_GET_MODEL_EVALUATION = 14;
-  private static final int METHODID_LIST_MODEL_EVALUATIONS = 15;
-  private static final int METHODID_GET_MODEL_EVALUATION_SLICE = 16;
-  private static final int METHODID_LIST_MODEL_EVALUATION_SLICES = 17;
+  private static final int METHODID_LIST_MODEL_VERSION_CHECKPOINTS = 4;
+  private static final int METHODID_UPDATE_MODEL = 5;
+  private static final int METHODID_UPDATE_EXPLANATION_DATASET = 6;
+  private static final int METHODID_DELETE_MODEL = 7;
+  private static final int METHODID_DELETE_MODEL_VERSION = 8;
+  private static final int METHODID_MERGE_VERSION_ALIASES = 9;
+  private static final int METHODID_EXPORT_MODEL = 10;
+  private static final int METHODID_COPY_MODEL = 11;
+  private static final int METHODID_IMPORT_MODEL_EVALUATION = 12;
+  private static final int METHODID_BATCH_IMPORT_MODEL_EVALUATION_SLICES = 13;
+  private static final int METHODID_BATCH_IMPORT_EVALUATED_ANNOTATIONS = 14;
+  private static final int METHODID_GET_MODEL_EVALUATION = 15;
+  private static final int METHODID_LIST_MODEL_EVALUATIONS = 16;
+  private static final int METHODID_GET_MODEL_EVALUATION_SLICE = 17;
+  private static final int METHODID_LIST_MODEL_EVALUATION_SLICES = 18;
+  private static final int METHODID_RECOMMEND_SPEC = 19;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2202,6 +2758,13 @@ public final class ModelServiceGrpc {
               (com.google.cloud.aiplatform.v1beta1.ListModelVersionsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1beta1.ListModelVersionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_MODEL_VERSION_CHECKPOINTS:
+          serviceImpl.listModelVersionCheckpoints(
+              (com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsResponse>)
                   responseObserver);
           break;
         case METHODID_UPDATE_MODEL:
@@ -2288,6 +2851,13 @@ public final class ModelServiceGrpc {
                       com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse>)
                   responseObserver);
           break;
+        case METHODID_RECOMMEND_SPEC:
+          serviceImpl.recommendSpec(
+              (com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2332,6 +2902,13 @@ public final class ModelServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.ListModelVersionsRequest,
                     com.google.cloud.aiplatform.v1beta1.ListModelVersionsResponse>(
                     service, METHODID_LIST_MODEL_VERSIONS)))
+        .addMethod(
+            getListModelVersionCheckpointsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsResponse>(
+                    service, METHODID_LIST_MODEL_VERSION_CHECKPOINTS)))
         .addMethod(
             getUpdateModelMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2425,6 +3002,13 @@ public final class ModelServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest,
                     com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse>(
                     service, METHODID_LIST_MODEL_EVALUATION_SLICES)))
+        .addMethod(
+            getRecommendSpecMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest,
+                    com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse>(
+                    service, METHODID_RECOMMEND_SPEC)))
         .build();
   }
 
@@ -2480,6 +3064,7 @@ public final class ModelServiceGrpc {
                       .addMethod(getGetModelMethod())
                       .addMethod(getListModelsMethod())
                       .addMethod(getListModelVersionsMethod())
+                      .addMethod(getListModelVersionCheckpointsMethod())
                       .addMethod(getUpdateModelMethod())
                       .addMethod(getUpdateExplanationDatasetMethod())
                       .addMethod(getDeleteModelMethod())
@@ -2494,6 +3079,7 @@ public final class ModelServiceGrpc {
                       .addMethod(getListModelEvaluationsMethod())
                       .addMethod(getGetModelEvaluationSliceMethod())
                       .addMethod(getListModelEvaluationSlicesMethod())
+                      .addMethod(getRecommendSpecMethod())
                       .build();
         }
       }

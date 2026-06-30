@@ -58,6 +58,9 @@
             "ListSnapshots": {
               "methods": ["listSnapshots", "listSnapshots", "listSnapshots", "listSnapshotsPagedCallable", "listSnapshotsCallable"]
             },
+            "PromoteReplica": {
+              "methods": ["promoteReplicaAsync", "promoteReplicaOperationCallable", "promoteReplicaCallable"]
+            },
             "RestoreInstance": {
               "methods": ["restoreInstanceAsync", "restoreInstanceOperationCallable", "restoreInstanceCallable"]
             },

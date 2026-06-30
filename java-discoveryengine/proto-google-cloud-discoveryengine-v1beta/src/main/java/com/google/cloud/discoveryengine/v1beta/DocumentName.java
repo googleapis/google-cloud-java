@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -388,7 +388,8 @@ public class DocumentName implements ResourceName {
     private Builder(DocumentName documentName) {
       Preconditions.checkArgument(
           Objects.equals(documentName.pathTemplate, PROJECT_LOCATION_DATA_STORE_BRANCH_DOCUMENT),
-          "toBuilder is only supported when DocumentName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document}");
+          "toBuilder is only supported when DocumentName has the pattern of"
+              + " projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document}");
       this.project = documentName.project;
       this.location = documentName.location;
       this.dataStore = documentName.dataStore;

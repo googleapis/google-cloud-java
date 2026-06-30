@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,6 +18,8 @@ package google.cloud.aiplatform.v1;
 
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
+import "google/cloud/aiplatform/v1/encryption_spec.proto";
+import "google/cloud/aiplatform/v1/service_networking.proto";
 import "google/protobuf/timestamp.proto";
 
 option csharp_namespace = "Google.Cloud.AIPlatform.V1";
@@ -56,8 +58,35 @@ message FeatureOnlineStore {
       int32 cpu_utilization_target = 3 [(google.api.field_behavior) = OPTIONAL];
     }
 
+    // Metadata of the Bigtable instance. This is used by direct read access to
+    // the Bigtable in tenant project.
+    message BigtableMetadata {
+      // Tenant project ID.
+      string tenant_project_id = 1;
+
+      // The Cloud Bigtable instance id.
+      string instance_id = 2;
+
+      // The Cloud Bigtable table id.
+      string table_id = 3;
+    }
+
     // Required. Autoscaling config applied to Bigtable Instance.
     AutoScaling auto_scaling = 1 [(google.api.field_behavior) = REQUIRED];
+
+    // Optional. Whether direct access to the Bigtable instance is enabled or
+    // not.
+    bool enable_direct_bigtable_access = 3
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Output only. Metadata of the Bigtable instance. Output only.
+    BigtableMetadata bigtable_metadata = 4
+        [(google.api.field_behavior) = OUTPUT_ONLY];
+
+    // Optional. The zone where the underlying Bigtable cluster for the primary
+    // Bigtable instance will be provisioned. Only the zone must be provided.
+    // For example, only "us-central1-a" should be provided.
+    string zone = 5 [(google.api.field_behavior) = OPTIONAL];
   }
 
   // Optimized storage type
@@ -71,6 +100,19 @@ message FeatureOnlineStore {
     // this FeatureOnlineStore
     string public_endpoint_domain_name = 2
         [(google.api.field_behavior) = OUTPUT_ONLY];
+
+    // Optional. Private service connect config. The private service connection
+    // is available only for Optimized storage type, not for embedding
+    // management now. If
+    // [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+    // set to true, customers will use private service connection to send
+    // request. Otherwise, the connection will set to public endpoint.
+    PrivateServiceConnectConfig private_service_connect_config = 3
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Output only. The name of the service attachment resource. Populated if
+    // private service connect is enabled and after FeatureViewSync is created.
+    string service_attachment = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
   }
 
   // Possible states a featureOnlineStore can have.
@@ -140,4 +182,14 @@ message FeatureOnlineStore {
   // is different from common Vertex service endpoint.
   DedicatedServingEndpoint dedicated_serving_endpoint = 10
       [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Customer-managed encryption key spec for data storage. If set,
+  // online store will be secured by this key.
+  EncryptionSpec encryption_spec = 13 [(google.api.field_behavior) = OPTIONAL];
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzs = 15 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzi = 16 [(google.api.field_behavior) = OUTPUT_ONLY];
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -253,7 +253,8 @@ public class AnswerRecordName implements ResourceName {
     private Builder(AnswerRecordName answerRecordName) {
       Preconditions.checkArgument(
           Objects.equals(answerRecordName.pathTemplate, PROJECT_ANSWER_RECORD),
-          "toBuilder is only supported when AnswerRecordName has the pattern of projects/{project}/answerRecords/{answer_record}");
+          "toBuilder is only supported when AnswerRecordName has the pattern of"
+              + " projects/{project}/answerRecords/{answer_record}");
       this.project = answerRecordName.project;
       this.answerRecord = answerRecordName.answerRecord;
     }

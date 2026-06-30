@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.batch.v1alpha.CancelJobRequest;
+import com.google.cloud.batch.v1alpha.CancelJobResponse;
 import com.google.cloud.batch.v1alpha.CreateJobRequest;
 import com.google.cloud.batch.v1alpha.CreateResourceAllowanceRequest;
 import com.google.cloud.batch.v1alpha.DeleteJobRequest;
@@ -42,6 +44,7 @@ import com.google.cloud.batch.v1alpha.ListTasksResponse;
 import com.google.cloud.batch.v1alpha.OperationMetadata;
 import com.google.cloud.batch.v1alpha.ResourceAllowance;
 import com.google.cloud.batch.v1alpha.Task;
+import com.google.cloud.batch.v1alpha.UpdateJobRequest;
 import com.google.cloud.batch.v1alpha.UpdateResourceAllowanceRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -85,6 +88,19 @@ public abstract class BatchServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteJobRequest, Operation> deleteJobCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteJobCallable()");
+  }
+
+  public OperationCallable<CancelJobRequest, CancelJobResponse, OperationMetadata>
+      cancelJobOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelJobOperationCallable()");
+  }
+
+  public UnaryCallable<CancelJobRequest, Operation> cancelJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelJobCallable()");
+  }
+
+  public UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateJobCallable()");
   }
 
   public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {

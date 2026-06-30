@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.cx.v3beta1;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListLocationsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolVersionsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -38,6 +39,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -93,8 +95,6 @@ public class ToolsClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -143,8 +143,6 @@ public class ToolsClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -347,8 +345,6 @@ public class ToolsClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -395,8 +391,6 @@ public class ToolsClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -444,8 +438,6 @@ public class ToolsClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -454,8 +446,6 @@ public class ToolsClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -490,8 +480,6 @@ public class ToolsClientHttpJsonTest {
               .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
               .setDisplayName("displayName1714148973")
               .setDescription("description-1724546052")
-              .addAllActions(new ArrayList<String>())
-              .addAllSchemas(new ArrayList<String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateTool(tool, updateMask);
@@ -576,6 +564,490 @@ public class ToolsClientHttpJsonTest {
       String name =
           "projects/project-5365/locations/location-5365/agents/agent-5365/tools/tool-5365";
       client.deleteTool(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listToolVersionsTest() throws Exception {
+    ToolVersion responsesElement = ToolVersion.newBuilder().build();
+    ListToolVersionsResponse expectedResponse =
+        ListToolVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllToolVersions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ToolName parent = ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]");
+
+    ListToolVersionsPagedResponse pagedListResponse = client.listToolVersions(parent);
+
+    List<ToolVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getToolVersionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listToolVersionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ToolName parent = ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]");
+      client.listToolVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listToolVersionsTest2() throws Exception {
+    ToolVersion responsesElement = ToolVersion.newBuilder().build();
+    ListToolVersionsResponse expectedResponse =
+        ListToolVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllToolVersions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-7158/locations/location-7158/agents/agent-7158/tools/tool-7158";
+
+    ListToolVersionsPagedResponse pagedListResponse = client.listToolVersions(parent);
+
+    List<ToolVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getToolVersionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listToolVersionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-7158/locations/location-7158/agents/agent-7158/tools/tool-7158";
+      client.listToolVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createToolVersionTest() throws Exception {
+    ToolVersion expectedResponse =
+        ToolVersion.newBuilder()
+            .setName(
+                ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setTool(Tool.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ToolName parent = ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]");
+    ToolVersion toolVersion = ToolVersion.newBuilder().build();
+
+    ToolVersion actualResponse = client.createToolVersion(parent, toolVersion);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createToolVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ToolName parent = ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]");
+      ToolVersion toolVersion = ToolVersion.newBuilder().build();
+      client.createToolVersion(parent, toolVersion);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createToolVersionTest2() throws Exception {
+    ToolVersion expectedResponse =
+        ToolVersion.newBuilder()
+            .setName(
+                ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setTool(Tool.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-7158/locations/location-7158/agents/agent-7158/tools/tool-7158";
+    ToolVersion toolVersion = ToolVersion.newBuilder().build();
+
+    ToolVersion actualResponse = client.createToolVersion(parent, toolVersion);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createToolVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-7158/locations/location-7158/agents/agent-7158/tools/tool-7158";
+      ToolVersion toolVersion = ToolVersion.newBuilder().build();
+      client.createToolVersion(parent, toolVersion);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getToolVersionTest() throws Exception {
+    ToolVersion expectedResponse =
+        ToolVersion.newBuilder()
+            .setName(
+                ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setTool(Tool.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ToolVersionName name =
+        ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]");
+
+    ToolVersion actualResponse = client.getToolVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getToolVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ToolVersionName name =
+          ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]");
+      client.getToolVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getToolVersionTest2() throws Exception {
+    ToolVersion expectedResponse =
+        ToolVersion.newBuilder()
+            .setName(
+                ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setTool(Tool.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-3136/locations/location-3136/agents/agent-3136/tools/tool-3136/versions/version-3136";
+
+    ToolVersion actualResponse = client.getToolVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getToolVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3136/locations/location-3136/agents/agent-3136/tools/tool-3136/versions/version-3136";
+      client.getToolVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteToolVersionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ToolVersionName name =
+        ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]");
+
+    client.deleteToolVersion(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteToolVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ToolVersionName name =
+          ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]");
+      client.deleteToolVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteToolVersionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-3136/locations/location-3136/agents/agent-3136/tools/tool-3136/versions/version-3136";
+
+    client.deleteToolVersion(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteToolVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3136/locations/location-3136/agents/agent-3136/tools/tool-3136/versions/version-3136";
+      client.deleteToolVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void restoreToolVersionTest() throws Exception {
+    RestoreToolVersionResponse expectedResponse =
+        RestoreToolVersionResponse.newBuilder().setTool(Tool.newBuilder().build()).build();
+    mockService.addResponse(expectedResponse);
+
+    ToolVersionName name =
+        ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]");
+
+    RestoreToolVersionResponse actualResponse = client.restoreToolVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void restoreToolVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ToolVersionName name =
+          ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]");
+      client.restoreToolVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void restoreToolVersionTest2() throws Exception {
+    RestoreToolVersionResponse expectedResponse =
+        RestoreToolVersionResponse.newBuilder().setTool(Tool.newBuilder().build()).build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-3136/locations/location-3136/agents/agent-3136/tools/tool-3136/versions/version-3136";
+
+    RestoreToolVersionResponse actualResponse = client.restoreToolVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void restoreToolVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3136/locations/location-3136/agents/agent-3136/tools/tool-3136/versions/version-3136";
+      client.restoreToolVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

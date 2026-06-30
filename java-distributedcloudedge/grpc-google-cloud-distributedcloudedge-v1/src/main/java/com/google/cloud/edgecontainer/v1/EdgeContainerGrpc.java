@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Cloud deployments.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/edgecontainer/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EdgeContainerGrpc {
 
@@ -968,6 +965,19 @@ public final class EdgeContainerGrpc {
     return EdgeContainerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EdgeContainerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EdgeContainerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EdgeContainerBlockingV2Stub>() {
+          @java.lang.Override
+          public EdgeContainerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EdgeContainerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EdgeContainerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1658,6 +1668,308 @@ public final class EdgeContainerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service EdgeContainer.
+   *
+   * <pre>
+   * EdgeContainer API provides management of Kubernetes Clusters on Google Edge
+   * Cloud deployments.
+   * </pre>
+   */
+  public static final class EdgeContainerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EdgeContainerBlockingV2Stub> {
+    private EdgeContainerBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EdgeContainerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EdgeContainerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Clusters in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.ListClustersResponse listClusters(
+        com.google.cloud.edgecontainer.v1.ListClustersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListClustersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Cluster.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.Cluster getCluster(
+        com.google.cloud.edgecontainer.v1.GetClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Cluster in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCluster(
+        com.google.cloud.edgecontainer.v1.CreateClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCluster(
+        com.google.cloud.edgecontainer.v1.UpdateClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrades a single cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation upgradeCluster(
+        com.google.cloud.edgecontainer.v1.UpgradeClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpgradeClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCluster(
+        com.google.cloud.edgecontainer.v1.DeleteClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an access token for a Cluster.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.GenerateAccessTokenResponse generateAccessToken(
+        com.google.cloud.edgecontainer.v1.GenerateAccessTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGenerateAccessTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an offline credential for a Cluster.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse
+        generateOfflineCredential(
+            com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGenerateOfflineCredentialMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists NodePools in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.ListNodePoolsResponse listNodePools(
+        com.google.cloud.edgecontainer.v1.ListNodePoolsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListNodePoolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single NodePool.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.NodePool getNodePool(
+        com.google.cloud.edgecontainer.v1.GetNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new NodePool in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createNodePool(
+        com.google.cloud.edgecontainer.v1.CreateNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single NodePool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateNodePool(
+        com.google.cloud.edgecontainer.v1.UpdateNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single NodePool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteNodePool(
+        com.google.cloud.edgecontainer.v1.DeleteNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Machines in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.ListMachinesResponse listMachines(
+        com.google.cloud.edgecontainer.v1.ListMachinesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListMachinesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Machine.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.Machine getMachine(
+        com.google.cloud.edgecontainer.v1.GetMachineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetMachineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists VPN connections in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.ListVpnConnectionsResponse listVpnConnections(
+        com.google.cloud.edgecontainer.v1.ListVpnConnectionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListVpnConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single VPN connection.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.VpnConnection getVpnConnection(
+        com.google.cloud.edgecontainer.v1.GetVpnConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetVpnConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new VPN connection in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createVpnConnection(
+        com.google.cloud.edgecontainer.v1.CreateVpnConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateVpnConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single VPN connection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteVpnConnection(
+        com.google.cloud.edgecontainer.v1.DeleteVpnConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteVpnConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the server config.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.ServerConfig getServerConfig(
+        com.google.cloud.edgecontainer.v1.GetServerConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetServerConfigMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service EdgeContainer.
    *
    * <pre>
    * EdgeContainer API provides management of Kubernetes Clusters on Google Edge

@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package google.cloud.discoveryengine.v1beta;
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/cloud/discoveryengine/v1beta/common.proto";
+import "google/cloud/discoveryengine/v1beta/feedback.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -32,7 +33,7 @@ option php_namespace = "Google\\Cloud\\DiscoveryEngine\\V1beta";
 option ruby_package = "Google::Cloud::DiscoveryEngine::V1beta";
 
 // UserEvent captures all metadata information Discovery Engine API needs to
-// know about how end users interact with customers' website.
+// know about how end users interact with your website.
 message UserEvent {
   // Required. User event type. Allowed values are:
   //
@@ -53,7 +54,24 @@ message UserEvent {
   //
   // * `media-play`: Start/resume watching a video, playing a song, etc.
   // * `media-complete`: Finished or stopped midway through a video, song, etc.
+  //
+  // Custom conversion value:
+  //
+  // * `conversion`: Customer defined conversion event.
   string event_type = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. Conversion type.
+  //
+  // Required if
+  // [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+  // is `conversion`. This is a customer-defined conversion name in lowercase
+  // letters or numbers separated by "-", such as "watch", "good-visit" etc.
+  //
+  // Do not set the field if
+  // [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+  // is not `conversion`. This mixes the custom conversion event with predefined
+  // events like `search`, `view-item` etc.
+  string conversion_type = 21 [(google.api.field_behavior) = OPTIONAL];
 
   // Required. A unique identifier for tracking visitors.
   //
@@ -73,6 +91,31 @@ message UserEvent {
   // ID](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#clientId)
   // for this field.
   string user_pseudo_id = 2 [(google.api.field_behavior) = REQUIRED];
+
+  // The [Engine][google.cloud.discoveryengine.v1beta.Engine] resource name, in
+  // the form of
+  // `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
+  //
+  // Optional. Only required for
+  // [Engine][google.cloud.discoveryengine.v1beta.Engine] produced user events.
+  // For example, user events from blended search.
+  string engine = 19 [(google.api.resource_reference) = {
+    type: "discoveryengine.googleapis.com/Engine"
+  }];
+
+  // The [DataStore][google.cloud.discoveryengine.v1beta.DataStore] resource
+  // full name, of the form
+  // `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
+  //
+  // Optional. Only required for user events whose data store can't by
+  // determined by
+  // [UserEvent.engine][google.cloud.discoveryengine.v1beta.UserEvent.engine] or
+  // [UserEvent.documents][google.cloud.discoveryengine.v1beta.UserEvent.documents].
+  // If data store is set in the parent of write/import/collect user event
+  // requests, this field can be omitted.
+  string data_store = 20 [(google.api.resource_reference) = {
+    type: "discoveryengine.googleapis.com/DataStore"
+  }];
 
   // Only required for
   // [UserEventService.ImportUserEvents][google.cloud.discoveryengine.v1beta.UserEventService.ImportUserEvents]
@@ -136,8 +179,9 @@ message UserEvent {
   // to this field.
   string attribution_token = 8;
 
-  // The filter syntax consists of an expression language for constructing a
-  // predicate from one or more fields of the documents being filtered.
+  // Optional. The filter syntax consists of an expression language for
+  // constructing a predicate from one or more fields of the documents being
+  // filtered.
   //
   // One example is for `search` events, the associated
   // [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
@@ -153,7 +197,7 @@ message UserEvent {
   //
   // The value must be a UTF-8 encoded string with a length limit of 1,000
   // characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
-  string filter = 9;
+  string filter = 9 [(google.api.field_behavior) = OPTIONAL];
 
   // List of [Document][google.cloud.discoveryengine.v1beta.Document]s
   // associated with this user event.
@@ -196,7 +240,7 @@ message UserEvent {
 
   // A list of identifiers for the independent experiment groups this user event
   // belongs to. This is used to distinguish between user events associated with
-  // different experiment setups on the customer end.
+  // different experiment setups.
   repeated string tag_ids = 15;
 
   // The promotion IDs if this is an event associated with promotions.
@@ -233,6 +277,20 @@ message UserEvent {
 
   // Media-specific info.
   MediaInfo media_info = 18;
+
+  // Optional. List of panels associated with this event.
+  // Used for page-level impression data.
+  repeated PanelInfo panels = 22 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. This field is optional except for the `add-feedback` event types.
+  Feedback feedback = 23 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Represents the entity for customers that may run multiple
+  // different entities, domains, sites or regions, for example, `Google US`,
+  // `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+  // you set `entity` to get better per-entity search, completion, and
+  // prediction results.
+  string entity = 25 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Detailed page information.
@@ -407,7 +465,7 @@ message DocumentInfo {
 
     // The [Document][google.cloud.discoveryengine.v1beta.Document] resource
     // full name, of the form:
-    // `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
+    // `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
     string name = 2 [(google.api.resource_reference) = {
       type: "discoveryengine.googleapis.com/Document"
     }];
@@ -419,7 +477,7 @@ message DocumentInfo {
 
   // Quantity of the Document associated with the user event. Defaults to 1.
   //
-  // For example, this field will be 2 if two quantities of the same Document
+  // For example, this field is 2 if two quantities of the same Document
   // are involved in a `add-to-cart` event.
   //
   // Required for events of the following event types:
@@ -431,6 +489,19 @@ message DocumentInfo {
   // The promotion IDs associated with this Document.
   // Currently, this field is restricted to at most one ID.
   repeated string promotion_ids = 4;
+
+  // Output only. Whether the referenced Document can be found in the data
+  // store.
+  bool joined = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Optional. The conversion value associated with this Document.
+  // Must be set if
+  // [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+  // is "conversion".
+  //
+  // For example, a value of 1000 signifies that 1000 seconds were spent viewing
+  // a Document for the `watch` conversion type.
+  optional float conversion_value = 7 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Detailed panel information associated with a user event.
@@ -452,6 +523,9 @@ message PanelInfo {
   // [panel_position][google.cloud.discoveryengine.v1beta.PanelInfo.panel_position]
   // is set.
   optional int32 total_panels = 5;
+
+  // Optional. The document IDs associated with this panel.
+  repeated DocumentInfo documents = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Media-specific user event information.

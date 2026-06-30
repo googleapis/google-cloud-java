@@ -1,0 +1,27 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-java:1.46.1:1.46.1
+google-cloud-beyondcorp-appconnections:0.50.0:0.50.0
+proto-google-cloud-beyondcorp-appconnections-v1:0.50.0:0.50.0
+grpc-google-cloud-beyondcorp-appconnections-v1:0.50.0:0.50.0
+google-cloud-beyondcorp-appconnectors:0.50.0:0.50.0
+proto-google-cloud-beyondcorp-appconnectors-v1:0.50.0:0.50.0
+grpc-google-cloud-beyondcorp-appconnectors-v1:0.50.0:0.50.0
+google-cloud-beyondcorp-appgateways:0.50.0:0.50.0
+proto-google-cloud-beyondcorp-appgateways-v1:0.50.0:0.50.0
+grpc-google-cloud-beyondcorp-appgateways-v1:0.50.0:0.50.0
+google-cloud-beyondcorp-clientconnectorservices:0.50.0:0.50.0
+proto-google-cloud-beyondcorp-clientconnectorservices-v1:0.50.0:0.50.0
+grpc-google-cloud-beyondcorp-clientconnectorservices-v1:0.50.0:0.50.0
+google-cloud-beyondcorp-clientgateways:0.50.0:0.50.0
+proto-google-cloud-beyondcorp-clientgateways-v1:0.50.0:0.50.0
+grpc-google-cloud-beyondcorp-clientgateways-v1:0.50.0:0.50.0
+google-cloud-bigqueryconnection:2.54.1:2.54.1
+grpc-google-cloud-bigqueryconnection-v1:2.54.1:2.54.1
+grpc-google-cloud-bigqueryconnection-v1beta1:0.62.1:0.62.1
+proto-google-cloud-bigqueryconnection-v1:2.54.1:2.54.1
+proto-google-cloud-bigqueryconnection-v1beta1:0.62.1:0.62.1
+google-cloud-bigquery-data-exchange:2.47.0:2.47.0
+proto-google-cloud-bigquery-data-exchange-v1beta1:2.47.0:2.47.0
+grpc-google-cloud-bigquery-data-exchange-v1beta1:2.47.0:2.47.0

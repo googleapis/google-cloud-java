@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * given Cloud KMS key via CMEK.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/kms/inventory/v1/key_tracking_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class KeyTrackingServiceGrpc {
 
@@ -156,6 +153,19 @@ public final class KeyTrackingServiceGrpc {
     return KeyTrackingServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static KeyTrackingServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<KeyTrackingServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<KeyTrackingServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public KeyTrackingServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new KeyTrackingServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return KeyTrackingServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -199,10 +209,16 @@ public final class KeyTrackingServiceGrpc {
      *
      * <pre>
      * Returns aggregate information about the resources protected by the given
-     * Cloud KMS [CryptoKey][google.cloud.kms.v1.CryptoKey]. Only resources within
-     * the same Cloud organization as the key will be returned. The project that
-     * holds the key must be part of an organization in order for this call to
-     * succeed.
+     * Cloud KMS [CryptoKey][google.cloud.kms.v1.CryptoKey]. By default,
+     * summary of resources within the same Cloud organization as the key will be
+     * returned, which requires the KMS organization service account to be
+     * configured(refer
+     * https://docs.cloud.google.com/kms/docs/view-key-usage#required-roles).
+     * If the KMS organization service account is not configured or key's project
+     * is not part of an organization, set
+     * [fallback_scope][google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest.fallback_scope]
+     * to `FALLBACK_SCOPE_PROJECT` to retrieve a summary of protected resources
+     * within the key's project.
      * </pre>
      */
     default void getProtectedResourcesSummary(
@@ -218,7 +234,8 @@ public final class KeyTrackingServiceGrpc {
      *
      * <pre>
      * Returns metadata about the resources protected by the given Cloud KMS
-     * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization.
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud
+     * organization/project.
      * </pre>
      */
     default void searchProtectedResources(
@@ -273,10 +290,16 @@ public final class KeyTrackingServiceGrpc {
      *
      * <pre>
      * Returns aggregate information about the resources protected by the given
-     * Cloud KMS [CryptoKey][google.cloud.kms.v1.CryptoKey]. Only resources within
-     * the same Cloud organization as the key will be returned. The project that
-     * holds the key must be part of an organization in order for this call to
-     * succeed.
+     * Cloud KMS [CryptoKey][google.cloud.kms.v1.CryptoKey]. By default,
+     * summary of resources within the same Cloud organization as the key will be
+     * returned, which requires the KMS organization service account to be
+     * configured(refer
+     * https://docs.cloud.google.com/kms/docs/view-key-usage#required-roles).
+     * If the KMS organization service account is not configured or key's project
+     * is not part of an organization, set
+     * [fallback_scope][google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest.fallback_scope]
+     * to `FALLBACK_SCOPE_PROJECT` to retrieve a summary of protected resources
+     * within the key's project.
      * </pre>
      */
     public void getProtectedResourcesSummary(
@@ -294,7 +317,8 @@ public final class KeyTrackingServiceGrpc {
      *
      * <pre>
      * Returns metadata about the resources protected by the given Cloud KMS
-     * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization.
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud
+     * organization/project.
      * </pre>
      */
     public void searchProtectedResources(
@@ -311,6 +335,69 @@ public final class KeyTrackingServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service KeyTrackingService.
+   *
+   * <pre>
+   * Returns information about the resources in an org that are protected by a
+   * given Cloud KMS key via CMEK.
+   * </pre>
+   */
+  public static final class KeyTrackingServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<KeyTrackingServiceBlockingV2Stub> {
+    private KeyTrackingServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected KeyTrackingServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new KeyTrackingServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns aggregate information about the resources protected by the given
+     * Cloud KMS [CryptoKey][google.cloud.kms.v1.CryptoKey]. By default,
+     * summary of resources within the same Cloud organization as the key will be
+     * returned, which requires the KMS organization service account to be
+     * configured(refer
+     * https://docs.cloud.google.com/kms/docs/view-key-usage#required-roles).
+     * If the KMS organization service account is not configured or key's project
+     * is not part of an organization, set
+     * [fallback_scope][google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest.fallback_scope]
+     * to `FALLBACK_SCOPE_PROJECT` to retrieve a summary of protected resources
+     * within the key's project.
+     * </pre>
+     */
+    public com.google.cloud.kms.inventory.v1.ProtectedResourcesSummary getProtectedResourcesSummary(
+        com.google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetProtectedResourcesSummaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns metadata about the resources protected by the given Cloud KMS
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud
+     * organization/project.
+     * </pre>
+     */
+    public com.google.cloud.kms.inventory.v1.SearchProtectedResourcesResponse
+        searchProtectedResources(
+            com.google.cloud.kms.inventory.v1.SearchProtectedResourcesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSearchProtectedResourcesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service KeyTrackingService.
    *
    * <pre>
    * Returns information about the resources in an org that are protected by a
@@ -335,10 +422,16 @@ public final class KeyTrackingServiceGrpc {
      *
      * <pre>
      * Returns aggregate information about the resources protected by the given
-     * Cloud KMS [CryptoKey][google.cloud.kms.v1.CryptoKey]. Only resources within
-     * the same Cloud organization as the key will be returned. The project that
-     * holds the key must be part of an organization in order for this call to
-     * succeed.
+     * Cloud KMS [CryptoKey][google.cloud.kms.v1.CryptoKey]. By default,
+     * summary of resources within the same Cloud organization as the key will be
+     * returned, which requires the KMS organization service account to be
+     * configured(refer
+     * https://docs.cloud.google.com/kms/docs/view-key-usage#required-roles).
+     * If the KMS organization service account is not configured or key's project
+     * is not part of an organization, set
+     * [fallback_scope][google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest.fallback_scope]
+     * to `FALLBACK_SCOPE_PROJECT` to retrieve a summary of protected resources
+     * within the key's project.
      * </pre>
      */
     public com.google.cloud.kms.inventory.v1.ProtectedResourcesSummary getProtectedResourcesSummary(
@@ -352,7 +445,8 @@ public final class KeyTrackingServiceGrpc {
      *
      * <pre>
      * Returns metadata about the resources protected by the given Cloud KMS
-     * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization.
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud
+     * organization/project.
      * </pre>
      */
     public com.google.cloud.kms.inventory.v1.SearchProtectedResourcesResponse
@@ -388,10 +482,16 @@ public final class KeyTrackingServiceGrpc {
      *
      * <pre>
      * Returns aggregate information about the resources protected by the given
-     * Cloud KMS [CryptoKey][google.cloud.kms.v1.CryptoKey]. Only resources within
-     * the same Cloud organization as the key will be returned. The project that
-     * holds the key must be part of an organization in order for this call to
-     * succeed.
+     * Cloud KMS [CryptoKey][google.cloud.kms.v1.CryptoKey]. By default,
+     * summary of resources within the same Cloud organization as the key will be
+     * returned, which requires the KMS organization service account to be
+     * configured(refer
+     * https://docs.cloud.google.com/kms/docs/view-key-usage#required-roles).
+     * If the KMS organization service account is not configured or key's project
+     * is not part of an organization, set
+     * [fallback_scope][google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest.fallback_scope]
+     * to `FALLBACK_SCOPE_PROJECT` to retrieve a summary of protected resources
+     * within the key's project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -407,7 +507,8 @@ public final class KeyTrackingServiceGrpc {
      *
      * <pre>
      * Returns metadata about the resources protected by the given Cloud KMS
-     * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization.
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud
+     * organization/project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

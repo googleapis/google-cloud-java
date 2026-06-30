@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,16 @@
 
 package com.google.chat.v1.stub;
 
+import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -36,33 +42,68 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.chat.v1.Attachment;
 import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
+import com.google.chat.v1.CreateCustomEmojiRequest;
 import com.google.chat.v1.CreateMembershipRequest;
 import com.google.chat.v1.CreateMessageRequest;
 import com.google.chat.v1.CreateReactionRequest;
+import com.google.chat.v1.CreateSectionRequest;
 import com.google.chat.v1.CreateSpaceRequest;
+import com.google.chat.v1.CustomEmoji;
+import com.google.chat.v1.DeleteCustomEmojiRequest;
 import com.google.chat.v1.DeleteMembershipRequest;
 import com.google.chat.v1.DeleteMessageRequest;
 import com.google.chat.v1.DeleteReactionRequest;
+import com.google.chat.v1.DeleteSectionRequest;
 import com.google.chat.v1.DeleteSpaceRequest;
 import com.google.chat.v1.FindDirectMessageRequest;
+import com.google.chat.v1.FindGroupChatsRequest;
+import com.google.chat.v1.FindGroupChatsResponse;
 import com.google.chat.v1.GetAttachmentRequest;
+import com.google.chat.v1.GetCustomEmojiRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
+import com.google.chat.v1.GetSpaceEventRequest;
+import com.google.chat.v1.GetSpaceNotificationSettingRequest;
+import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
+import com.google.chat.v1.GetThreadReadStateRequest;
+import com.google.chat.v1.ListCustomEmojisRequest;
+import com.google.chat.v1.ListCustomEmojisResponse;
 import com.google.chat.v1.ListMembershipsRequest;
 import com.google.chat.v1.ListMembershipsResponse;
 import com.google.chat.v1.ListMessagesRequest;
 import com.google.chat.v1.ListMessagesResponse;
 import com.google.chat.v1.ListReactionsRequest;
 import com.google.chat.v1.ListReactionsResponse;
+import com.google.chat.v1.ListSectionItemsRequest;
+import com.google.chat.v1.ListSectionItemsResponse;
+import com.google.chat.v1.ListSectionsRequest;
+import com.google.chat.v1.ListSectionsResponse;
+import com.google.chat.v1.ListSpaceEventsRequest;
+import com.google.chat.v1.ListSpaceEventsResponse;
 import com.google.chat.v1.ListSpacesRequest;
 import com.google.chat.v1.ListSpacesResponse;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
+import com.google.chat.v1.MoveSectionItemRequest;
+import com.google.chat.v1.MoveSectionItemResponse;
+import com.google.chat.v1.PositionSectionRequest;
+import com.google.chat.v1.PositionSectionResponse;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.SearchSpacesRequest;
+import com.google.chat.v1.SearchSpacesResponse;
+import com.google.chat.v1.Section;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
+import com.google.chat.v1.SpaceEvent;
+import com.google.chat.v1.SpaceNotificationSetting;
+import com.google.chat.v1.SpaceReadState;
+import com.google.chat.v1.ThreadReadState;
+import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
+import com.google.chat.v1.UpdateSectionRequest;
+import com.google.chat.v1.UpdateSpaceNotificationSettingRequest;
+import com.google.chat.v1.UpdateSpaceReadStateRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
 import com.google.chat.v1.UploadAttachmentResponse;
@@ -108,6 +149,10 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateMessageRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "createMessageNotificationOptions",
+                                request.getCreateMessageNotificationOptions());
                             serializer.putQueryParam(fields, "messageId", request.getMessageId());
                             serializer.putQueryParam(
                                 fields, "messageReplyOption", request.getMessageReplyOptionValue());
@@ -196,6 +241,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                             serializer.putQueryParam(fields, "showGroups", request.getShowGroups());
                             serializer.putQueryParam(
                                 fields, "showInvited", request.getShowInvited());
+                            serializer.putQueryParam(
+                                fields, "useAdminAccess", request.getUseAdminAccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -230,6 +277,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetMembershipRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "useAdminAccess", request.getUseAdminAccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -459,6 +508,45 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SearchSpacesRequest, SearchSpacesResponse>
+      searchSpacesMethodDescriptor =
+          ApiMethodDescriptor.<SearchSpacesRequest, SearchSpacesResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/SearchSpaces")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SearchSpacesRequest>newBuilder()
+                      .setPath(
+                          "/v1/spaces:search",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchSpacesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchSpacesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "query", request.getQuery());
+                            serializer.putQueryParam(
+                                fields, "useAdminAccess", request.getUseAdminAccess());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SearchSpacesResponse>newBuilder()
+                      .setDefaultInstance(SearchSpacesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetSpaceRequest, Space> getSpaceMethodDescriptor =
       ApiMethodDescriptor.<GetSpaceRequest, Space>newBuilder()
           .setFullMethodName("google.chat.v1.ChatService/GetSpace")
@@ -480,6 +568,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetSpaceRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(
+                            fields, "useAdminAccess", request.getUseAdminAccess());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
@@ -584,6 +674,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                         ProtoRestSerializer<UpdateSpaceRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(
+                            fields, "useAdminAccess", request.getUseAdminAccess());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
@@ -619,6 +711,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<DeleteSpaceRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(
+                            fields, "useAdminAccess", request.getUseAdminAccess());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
@@ -702,6 +796,44 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<FindGroupChatsRequest, FindGroupChatsResponse>
+      findGroupChatsMethodDescriptor =
+          ApiMethodDescriptor.<FindGroupChatsRequest, FindGroupChatsResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/FindGroupChats")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FindGroupChatsRequest>newBuilder()
+                      .setPath(
+                          "/v1/spaces:findGroupChats",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FindGroupChatsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FindGroupChatsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "spaceView", request.getSpaceViewValue());
+                            serializer.putQueryParam(fields, "users", request.getUsersList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FindGroupChatsResponse>newBuilder()
+                      .setDefaultInstance(FindGroupChatsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<CreateMembershipRequest, Membership>
       createMembershipMethodDescriptor =
           ApiMethodDescriptor.<CreateMembershipRequest, Membership>newBuilder()
@@ -724,6 +856,49 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateMembershipRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "useAdminAccess", request.getUseAdminAccess());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("membership", request.getMembership(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Membership>newBuilder()
+                      .setDefaultInstance(Membership.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateMembershipRequest, Membership>
+      updateMembershipMethodDescriptor =
+          ApiMethodDescriptor.<UpdateMembershipRequest, Membership>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/UpdateMembership")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateMembershipRequest>newBuilder()
+                      .setPath(
+                          "/v1/{membership.name=spaces/*/members/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateMembershipRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "membership.name", request.getMembership().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateMembershipRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "useAdminAccess", request.getUseAdminAccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -761,6 +936,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteMembershipRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "useAdminAccess", request.getUseAdminAccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -881,6 +1058,665 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateCustomEmojiRequest, CustomEmoji>
+      createCustomEmojiMethodDescriptor =
+          ApiMethodDescriptor.<CreateCustomEmojiRequest, CustomEmoji>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/CreateCustomEmoji")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateCustomEmojiRequest>newBuilder()
+                      .setPath(
+                          "/v1/customEmojis",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomEmojiRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomEmojiRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("customEmoji", request.getCustomEmoji(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CustomEmoji>newBuilder()
+                      .setDefaultInstance(CustomEmoji.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetCustomEmojiRequest, CustomEmoji>
+      getCustomEmojiMethodDescriptor =
+          ApiMethodDescriptor.<GetCustomEmojiRequest, CustomEmoji>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/GetCustomEmoji")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetCustomEmojiRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=customEmojis/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCustomEmojiRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCustomEmojiRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CustomEmoji>newBuilder()
+                      .setDefaultInstance(CustomEmoji.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListCustomEmojisRequest, ListCustomEmojisResponse>
+      listCustomEmojisMethodDescriptor =
+          ApiMethodDescriptor.<ListCustomEmojisRequest, ListCustomEmojisResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/ListCustomEmojis")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListCustomEmojisRequest>newBuilder()
+                      .setPath(
+                          "/v1/customEmojis",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCustomEmojisRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCustomEmojisRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListCustomEmojisResponse>newBuilder()
+                      .setDefaultInstance(ListCustomEmojisResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteCustomEmojiRequest, Empty>
+      deleteCustomEmojiMethodDescriptor =
+          ApiMethodDescriptor.<DeleteCustomEmojiRequest, Empty>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/DeleteCustomEmoji")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteCustomEmojiRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=customEmojis/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCustomEmojiRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCustomEmojiRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetSpaceReadStateRequest, SpaceReadState>
+      getSpaceReadStateMethodDescriptor =
+          ApiMethodDescriptor.<GetSpaceReadStateRequest, SpaceReadState>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/GetSpaceReadState")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetSpaceReadStateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=users/*/spaces/*/spaceReadState}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSpaceReadStateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSpaceReadStateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SpaceReadState>newBuilder()
+                      .setDefaultInstance(SpaceReadState.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateSpaceReadStateRequest, SpaceReadState>
+      updateSpaceReadStateMethodDescriptor =
+          ApiMethodDescriptor.<UpdateSpaceReadStateRequest, SpaceReadState>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/UpdateSpaceReadState")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateSpaceReadStateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{spaceReadState.name=users/*/spaces/*/spaceReadState}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSpaceReadStateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "spaceReadState.name",
+                                request.getSpaceReadState().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSpaceReadStateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("spaceReadState", request.getSpaceReadState(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SpaceReadState>newBuilder()
+                      .setDefaultInstance(SpaceReadState.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetThreadReadStateRequest, ThreadReadState>
+      getThreadReadStateMethodDescriptor =
+          ApiMethodDescriptor.<GetThreadReadStateRequest, ThreadReadState>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/GetThreadReadState")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetThreadReadStateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=users/*/spaces/*/threads/*/threadReadState}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetThreadReadStateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetThreadReadStateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ThreadReadState>newBuilder()
+                      .setDefaultInstance(ThreadReadState.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetSpaceEventRequest, SpaceEvent>
+      getSpaceEventMethodDescriptor =
+          ApiMethodDescriptor.<GetSpaceEventRequest, SpaceEvent>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/GetSpaceEvent")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetSpaceEventRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=spaces/*/spaceEvents/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSpaceEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSpaceEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SpaceEvent>newBuilder()
+                      .setDefaultInstance(SpaceEvent.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListSpaceEventsRequest, ListSpaceEventsResponse>
+      listSpaceEventsMethodDescriptor =
+          ApiMethodDescriptor.<ListSpaceEventsRequest, ListSpaceEventsResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/ListSpaceEvents")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSpaceEventsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=spaces/*}/spaceEvents",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSpaceEventsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSpaceEventsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListSpaceEventsResponse>newBuilder()
+                      .setDefaultInstance(ListSpaceEventsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/GetSpaceNotificationSetting")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetSpaceNotificationSettingRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=users/*/spaces/*/spaceNotificationSetting}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSpaceNotificationSettingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSpaceNotificationSettingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SpaceNotificationSetting>newBuilder()
+                      .setDefaultInstance(SpaceNotificationSetting.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingMethodDescriptor =
+          ApiMethodDescriptor
+              .<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/UpdateSpaceNotificationSetting")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateSpaceNotificationSettingRequest>newBuilder()
+                      .setPath(
+                          "/v1/{spaceNotificationSetting.name=users/*/spaces/*/spaceNotificationSetting}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSpaceNotificationSettingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "spaceNotificationSetting.name",
+                                request.getSpaceNotificationSetting().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSpaceNotificationSettingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "spaceNotificationSetting",
+                                      request.getSpaceNotificationSetting(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SpaceNotificationSetting>newBuilder()
+                      .setDefaultInstance(SpaceNotificationSetting.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateSectionRequest, Section>
+      createSectionMethodDescriptor =
+          ApiMethodDescriptor.<CreateSectionRequest, Section>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/CreateSection")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateSectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=users/*}/sections",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("section", request.getSection(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Section>newBuilder()
+                      .setDefaultInstance(Section.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteSectionRequest, Empty>
+      deleteSectionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteSectionRequest, Empty>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/DeleteSection")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteSectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=users/*/sections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateSectionRequest, Section>
+      updateSectionMethodDescriptor =
+          ApiMethodDescriptor.<UpdateSectionRequest, Section>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/UpdateSection")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateSectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{section.name=users/*/sections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "section.name", request.getSection().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("section", request.getSection(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Section>newBuilder()
+                      .setDefaultInstance(Section.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListSectionsRequest, ListSectionsResponse>
+      listSectionsMethodDescriptor =
+          ApiMethodDescriptor.<ListSectionsRequest, ListSectionsResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/ListSections")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSectionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=users/*}/sections",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListSectionsResponse>newBuilder()
+                      .setDefaultInstance(ListSectionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<PositionSectionRequest, PositionSectionResponse>
+      positionSectionMethodDescriptor =
+          ApiMethodDescriptor.<PositionSectionRequest, PositionSectionResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/PositionSection")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PositionSectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=users/*/sections/*}:position",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PositionSectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PositionSectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<PositionSectionResponse>newBuilder()
+                      .setDefaultInstance(PositionSectionResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListSectionItemsRequest, ListSectionItemsResponse>
+      listSectionItemsMethodDescriptor =
+          ApiMethodDescriptor.<ListSectionItemsRequest, ListSectionItemsResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/ListSectionItems")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSectionItemsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=users/*/sections/*}/items",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSectionItemsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSectionItemsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListSectionItemsResponse>newBuilder()
+                      .setDefaultInstance(ListSectionItemsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<MoveSectionItemRequest, MoveSectionItemResponse>
+      moveSectionItemMethodDescriptor =
+          ApiMethodDescriptor.<MoveSectionItemRequest, MoveSectionItemResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/MoveSectionItem")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<MoveSectionItemRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=users/*/sections/*/items/*}:move",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveSectionItemRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveSectionItemRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<MoveSectionItemResponse>newBuilder()
+                      .setDefaultInstance(MoveSectionItemResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateMessageRequest, Message> createMessageCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse>
@@ -898,6 +1734,9 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
       uploadAttachmentCallable;
   private final UnaryCallable<ListSpacesRequest, ListSpacesResponse> listSpacesCallable;
   private final UnaryCallable<ListSpacesRequest, ListSpacesPagedResponse> listSpacesPagedCallable;
+  private final UnaryCallable<SearchSpacesRequest, SearchSpacesResponse> searchSpacesCallable;
+  private final UnaryCallable<SearchSpacesRequest, SearchSpacesPagedResponse>
+      searchSpacesPagedCallable;
   private final UnaryCallable<GetSpaceRequest, Space> getSpaceCallable;
   private final UnaryCallable<CreateSpaceRequest, Space> createSpaceCallable;
   private final UnaryCallable<SetUpSpaceRequest, Space> setUpSpaceCallable;
@@ -906,13 +1745,52 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   private final UnaryCallable<CompleteImportSpaceRequest, CompleteImportSpaceResponse>
       completeImportSpaceCallable;
   private final UnaryCallable<FindDirectMessageRequest, Space> findDirectMessageCallable;
+  private final UnaryCallable<FindGroupChatsRequest, FindGroupChatsResponse> findGroupChatsCallable;
+  private final UnaryCallable<FindGroupChatsRequest, FindGroupChatsPagedResponse>
+      findGroupChatsPagedCallable;
   private final UnaryCallable<CreateMembershipRequest, Membership> createMembershipCallable;
+  private final UnaryCallable<UpdateMembershipRequest, Membership> updateMembershipCallable;
   private final UnaryCallable<DeleteMembershipRequest, Membership> deleteMembershipCallable;
   private final UnaryCallable<CreateReactionRequest, Reaction> createReactionCallable;
   private final UnaryCallable<ListReactionsRequest, ListReactionsResponse> listReactionsCallable;
   private final UnaryCallable<ListReactionsRequest, ListReactionsPagedResponse>
       listReactionsPagedCallable;
   private final UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable;
+  private final UnaryCallable<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiCallable;
+  private final UnaryCallable<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiCallable;
+  private final UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisResponse>
+      listCustomEmojisCallable;
+  private final UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisPagedResponse>
+      listCustomEmojisPagedCallable;
+  private final UnaryCallable<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiCallable;
+  private final UnaryCallable<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateCallable;
+  private final UnaryCallable<UpdateSpaceReadStateRequest, SpaceReadState>
+      updateSpaceReadStateCallable;
+  private final UnaryCallable<GetThreadReadStateRequest, ThreadReadState>
+      getThreadReadStateCallable;
+  private final UnaryCallable<GetSpaceEventRequest, SpaceEvent> getSpaceEventCallable;
+  private final UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse>
+      listSpaceEventsCallable;
+  private final UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsPagedResponse>
+      listSpaceEventsPagedCallable;
+  private final UnaryCallable<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingCallable;
+  private final UnaryCallable<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingCallable;
+  private final UnaryCallable<CreateSectionRequest, Section> createSectionCallable;
+  private final UnaryCallable<DeleteSectionRequest, Empty> deleteSectionCallable;
+  private final UnaryCallable<UpdateSectionRequest, Section> updateSectionCallable;
+  private final UnaryCallable<ListSectionsRequest, ListSectionsResponse> listSectionsCallable;
+  private final UnaryCallable<ListSectionsRequest, ListSectionsPagedResponse>
+      listSectionsPagedCallable;
+  private final UnaryCallable<PositionSectionRequest, PositionSectionResponse>
+      positionSectionCallable;
+  private final UnaryCallable<ListSectionItemsRequest, ListSectionItemsResponse>
+      listSectionItemsCallable;
+  private final UnaryCallable<ListSectionItemsRequest, ListSectionItemsPagedResponse>
+      listSectionItemsPagedCallable;
+  private final UnaryCallable<MoveSectionItemRequest, MoveSectionItemResponse>
+      moveSectionItemCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -966,6 +1844,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListMessagesRequest, ListMessagesResponse> listMessagesTransportSettings =
         HttpJsonCallSettings.<ListMessagesRequest, ListMessagesResponse>newBuilder()
@@ -977,6 +1856,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListMembershipsRequest, ListMembershipsResponse>
         listMembershipsTransportSettings =
@@ -989,6 +1869,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetMembershipRequest, Membership> getMembershipTransportSettings =
         HttpJsonCallSettings.<GetMembershipRequest, Membership>newBuilder()
@@ -1000,6 +1881,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetMessageRequest, Message> getMessageTransportSettings =
         HttpJsonCallSettings.<GetMessageRequest, Message>newBuilder()
@@ -1011,6 +1893,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateMessageRequest, Message> updateMessageTransportSettings =
         HttpJsonCallSettings.<UpdateMessageRequest, Message>newBuilder()
@@ -1033,6 +1916,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetAttachmentRequest, Attachment> getAttachmentTransportSettings =
         HttpJsonCallSettings.<GetAttachmentRequest, Attachment>newBuilder()
@@ -1044,6 +1928,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UploadAttachmentRequest, UploadAttachmentResponse>
         uploadAttachmentTransportSettings =
@@ -1056,10 +1941,16 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListSpacesRequest, ListSpacesResponse> listSpacesTransportSettings =
         HttpJsonCallSettings.<ListSpacesRequest, ListSpacesResponse>newBuilder()
             .setMethodDescriptor(listSpacesMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<SearchSpacesRequest, SearchSpacesResponse> searchSpacesTransportSettings =
+        HttpJsonCallSettings.<SearchSpacesRequest, SearchSpacesResponse>newBuilder()
+            .setMethodDescriptor(searchSpacesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetSpaceRequest, Space> getSpaceTransportSettings =
@@ -1072,6 +1963,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateSpaceRequest, Space> createSpaceTransportSettings =
         HttpJsonCallSettings.<CreateSpaceRequest, Space>newBuilder()
@@ -1104,6 +1996,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CompleteImportSpaceRequest, CompleteImportSpaceResponse>
         completeImportSpaceTransportSettings =
@@ -1117,12 +2010,19 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FindDirectMessageRequest, Space> findDirectMessageTransportSettings =
         HttpJsonCallSettings.<FindDirectMessageRequest, Space>newBuilder()
             .setMethodDescriptor(findDirectMessageMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<FindGroupChatsRequest, FindGroupChatsResponse>
+        findGroupChatsTransportSettings =
+            HttpJsonCallSettings.<FindGroupChatsRequest, FindGroupChatsResponse>newBuilder()
+                .setMethodDescriptor(findGroupChatsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<CreateMembershipRequest, Membership> createMembershipTransportSettings =
         HttpJsonCallSettings.<CreateMembershipRequest, Membership>newBuilder()
             .setMethodDescriptor(createMembershipMethodDescriptor)
@@ -1131,6 +2031,18 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<UpdateMembershipRequest, Membership> updateMembershipTransportSettings =
+        HttpJsonCallSettings.<UpdateMembershipRequest, Membership>newBuilder()
+            .setMethodDescriptor(updateMembershipMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("membership.name", String.valueOf(request.getMembership().getName()));
                   return builder.build();
                 })
             .build();
@@ -1144,6 +2056,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateReactionRequest, Reaction> createReactionTransportSettings =
         HttpJsonCallSettings.<CreateReactionRequest, Reaction>newBuilder()
@@ -1155,6 +2068,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListReactionsRequest, ListReactionsResponse>
         listReactionsTransportSettings =
@@ -1167,6 +2081,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteReactionRequest, Empty> deleteReactionTransportSettings =
         HttpJsonCallSettings.<DeleteReactionRequest, Empty>newBuilder()
@@ -1178,7 +2093,223 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiTransportSettings =
+        HttpJsonCallSettings.<CreateCustomEmojiRequest, CustomEmoji>newBuilder()
+            .setMethodDescriptor(createCustomEmojiMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiTransportSettings =
+        HttpJsonCallSettings.<GetCustomEmojiRequest, CustomEmoji>newBuilder()
+            .setMethodDescriptor(getCustomEmojiMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListCustomEmojisRequest, ListCustomEmojisResponse>
+        listCustomEmojisTransportSettings =
+            HttpJsonCallSettings.<ListCustomEmojisRequest, ListCustomEmojisResponse>newBuilder()
+                .setMethodDescriptor(listCustomEmojisMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiTransportSettings =
+        HttpJsonCallSettings.<DeleteCustomEmojiRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteCustomEmojiMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<GetSpaceReadStateRequest, SpaceReadState>
+        getSpaceReadStateTransportSettings =
+            HttpJsonCallSettings.<GetSpaceReadStateRequest, SpaceReadState>newBuilder()
+                .setMethodDescriptor(getSpaceReadStateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<UpdateSpaceReadStateRequest, SpaceReadState>
+        updateSpaceReadStateTransportSettings =
+            HttpJsonCallSettings.<UpdateSpaceReadStateRequest, SpaceReadState>newBuilder()
+                .setMethodDescriptor(updateSpaceReadStateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "space_read_state.name",
+                          String.valueOf(request.getSpaceReadState().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetThreadReadStateRequest, ThreadReadState>
+        getThreadReadStateTransportSettings =
+            HttpJsonCallSettings.<GetThreadReadStateRequest, ThreadReadState>newBuilder()
+                .setMethodDescriptor(getThreadReadStateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventTransportSettings =
+        HttpJsonCallSettings.<GetSpaceEventRequest, SpaceEvent>newBuilder()
+            .setMethodDescriptor(getSpaceEventMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListSpaceEventsRequest, ListSpaceEventsResponse>
+        listSpaceEventsTransportSettings =
+            HttpJsonCallSettings.<ListSpaceEventsRequest, ListSpaceEventsResponse>newBuilder()
+                .setMethodDescriptor(listSpaceEventsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        getSpaceNotificationSettingTransportSettings =
+            HttpJsonCallSettings
+                .<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>newBuilder()
+                .setMethodDescriptor(getSpaceNotificationSettingMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        updateSpaceNotificationSettingTransportSettings =
+            HttpJsonCallSettings
+                .<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>newBuilder()
+                .setMethodDescriptor(updateSpaceNotificationSettingMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "space_notification_setting.name",
+                          String.valueOf(request.getSpaceNotificationSetting().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CreateSectionRequest, Section> createSectionTransportSettings =
+        HttpJsonCallSettings.<CreateSectionRequest, Section>newBuilder()
+            .setMethodDescriptor(createSectionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<DeleteSectionRequest, Empty> deleteSectionTransportSettings =
+        HttpJsonCallSettings.<DeleteSectionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteSectionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<UpdateSectionRequest, Section> updateSectionTransportSettings =
+        HttpJsonCallSettings.<UpdateSectionRequest, Section>newBuilder()
+            .setMethodDescriptor(updateSectionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("section.name", String.valueOf(request.getSection().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListSectionsRequest, ListSectionsResponse> listSectionsTransportSettings =
+        HttpJsonCallSettings.<ListSectionsRequest, ListSectionsResponse>newBuilder()
+            .setMethodDescriptor(listSectionsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<PositionSectionRequest, PositionSectionResponse>
+        positionSectionTransportSettings =
+            HttpJsonCallSettings.<PositionSectionRequest, PositionSectionResponse>newBuilder()
+                .setMethodDescriptor(positionSectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListSectionItemsRequest, ListSectionItemsResponse>
+        listSectionItemsTransportSettings =
+            HttpJsonCallSettings.<ListSectionItemsRequest, ListSectionItemsResponse>newBuilder()
+                .setMethodDescriptor(listSectionItemsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<MoveSectionItemRequest, MoveSectionItemResponse>
+        moveSectionItemTransportSettings =
+            HttpJsonCallSettings.<MoveSectionItemRequest, MoveSectionItemResponse>newBuilder()
+                .setMethodDescriptor(moveSectionItemMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
 
     this.createMessageCallable =
         callableFactory.createUnaryCallable(
@@ -1219,6 +2350,12 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     this.listSpacesPagedCallable =
         callableFactory.createPagedCallable(
             listSpacesTransportSettings, settings.listSpacesSettings(), clientContext);
+    this.searchSpacesCallable =
+        callableFactory.createUnaryCallable(
+            searchSpacesTransportSettings, settings.searchSpacesSettings(), clientContext);
+    this.searchSpacesPagedCallable =
+        callableFactory.createPagedCallable(
+            searchSpacesTransportSettings, settings.searchSpacesSettings(), clientContext);
     this.getSpaceCallable =
         callableFactory.createUnaryCallable(
             getSpaceTransportSettings, settings.getSpaceSettings(), clientContext);
@@ -1244,9 +2381,18 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
             findDirectMessageTransportSettings,
             settings.findDirectMessageSettings(),
             clientContext);
+    this.findGroupChatsCallable =
+        callableFactory.createUnaryCallable(
+            findGroupChatsTransportSettings, settings.findGroupChatsSettings(), clientContext);
+    this.findGroupChatsPagedCallable =
+        callableFactory.createPagedCallable(
+            findGroupChatsTransportSettings, settings.findGroupChatsSettings(), clientContext);
     this.createMembershipCallable =
         callableFactory.createUnaryCallable(
             createMembershipTransportSettings, settings.createMembershipSettings(), clientContext);
+    this.updateMembershipCallable =
+        callableFactory.createUnaryCallable(
+            updateMembershipTransportSettings, settings.updateMembershipSettings(), clientContext);
     this.deleteMembershipCallable =
         callableFactory.createUnaryCallable(
             deleteMembershipTransportSettings, settings.deleteMembershipSettings(), clientContext);
@@ -1262,6 +2408,86 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     this.deleteReactionCallable =
         callableFactory.createUnaryCallable(
             deleteReactionTransportSettings, settings.deleteReactionSettings(), clientContext);
+    this.createCustomEmojiCallable =
+        callableFactory.createUnaryCallable(
+            createCustomEmojiTransportSettings,
+            settings.createCustomEmojiSettings(),
+            clientContext);
+    this.getCustomEmojiCallable =
+        callableFactory.createUnaryCallable(
+            getCustomEmojiTransportSettings, settings.getCustomEmojiSettings(), clientContext);
+    this.listCustomEmojisCallable =
+        callableFactory.createUnaryCallable(
+            listCustomEmojisTransportSettings, settings.listCustomEmojisSettings(), clientContext);
+    this.listCustomEmojisPagedCallable =
+        callableFactory.createPagedCallable(
+            listCustomEmojisTransportSettings, settings.listCustomEmojisSettings(), clientContext);
+    this.deleteCustomEmojiCallable =
+        callableFactory.createUnaryCallable(
+            deleteCustomEmojiTransportSettings,
+            settings.deleteCustomEmojiSettings(),
+            clientContext);
+    this.getSpaceReadStateCallable =
+        callableFactory.createUnaryCallable(
+            getSpaceReadStateTransportSettings,
+            settings.getSpaceReadStateSettings(),
+            clientContext);
+    this.updateSpaceReadStateCallable =
+        callableFactory.createUnaryCallable(
+            updateSpaceReadStateTransportSettings,
+            settings.updateSpaceReadStateSettings(),
+            clientContext);
+    this.getThreadReadStateCallable =
+        callableFactory.createUnaryCallable(
+            getThreadReadStateTransportSettings,
+            settings.getThreadReadStateSettings(),
+            clientContext);
+    this.getSpaceEventCallable =
+        callableFactory.createUnaryCallable(
+            getSpaceEventTransportSettings, settings.getSpaceEventSettings(), clientContext);
+    this.listSpaceEventsCallable =
+        callableFactory.createUnaryCallable(
+            listSpaceEventsTransportSettings, settings.listSpaceEventsSettings(), clientContext);
+    this.listSpaceEventsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSpaceEventsTransportSettings, settings.listSpaceEventsSettings(), clientContext);
+    this.getSpaceNotificationSettingCallable =
+        callableFactory.createUnaryCallable(
+            getSpaceNotificationSettingTransportSettings,
+            settings.getSpaceNotificationSettingSettings(),
+            clientContext);
+    this.updateSpaceNotificationSettingCallable =
+        callableFactory.createUnaryCallable(
+            updateSpaceNotificationSettingTransportSettings,
+            settings.updateSpaceNotificationSettingSettings(),
+            clientContext);
+    this.createSectionCallable =
+        callableFactory.createUnaryCallable(
+            createSectionTransportSettings, settings.createSectionSettings(), clientContext);
+    this.deleteSectionCallable =
+        callableFactory.createUnaryCallable(
+            deleteSectionTransportSettings, settings.deleteSectionSettings(), clientContext);
+    this.updateSectionCallable =
+        callableFactory.createUnaryCallable(
+            updateSectionTransportSettings, settings.updateSectionSettings(), clientContext);
+    this.listSectionsCallable =
+        callableFactory.createUnaryCallable(
+            listSectionsTransportSettings, settings.listSectionsSettings(), clientContext);
+    this.listSectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSectionsTransportSettings, settings.listSectionsSettings(), clientContext);
+    this.positionSectionCallable =
+        callableFactory.createUnaryCallable(
+            positionSectionTransportSettings, settings.positionSectionSettings(), clientContext);
+    this.listSectionItemsCallable =
+        callableFactory.createUnaryCallable(
+            listSectionItemsTransportSettings, settings.listSectionItemsSettings(), clientContext);
+    this.listSectionItemsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSectionItemsTransportSettings, settings.listSectionItemsSettings(), clientContext);
+    this.moveSectionItemCallable =
+        callableFactory.createUnaryCallable(
+            moveSectionItemTransportSettings, settings.moveSectionItemSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1280,6 +2506,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     methodDescriptors.add(getAttachmentMethodDescriptor);
     methodDescriptors.add(uploadAttachmentMethodDescriptor);
     methodDescriptors.add(listSpacesMethodDescriptor);
+    methodDescriptors.add(searchSpacesMethodDescriptor);
     methodDescriptors.add(getSpaceMethodDescriptor);
     methodDescriptors.add(createSpaceMethodDescriptor);
     methodDescriptors.add(setUpSpaceMethodDescriptor);
@@ -1287,11 +2514,31 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     methodDescriptors.add(deleteSpaceMethodDescriptor);
     methodDescriptors.add(completeImportSpaceMethodDescriptor);
     methodDescriptors.add(findDirectMessageMethodDescriptor);
+    methodDescriptors.add(findGroupChatsMethodDescriptor);
     methodDescriptors.add(createMembershipMethodDescriptor);
+    methodDescriptors.add(updateMembershipMethodDescriptor);
     methodDescriptors.add(deleteMembershipMethodDescriptor);
     methodDescriptors.add(createReactionMethodDescriptor);
     methodDescriptors.add(listReactionsMethodDescriptor);
     methodDescriptors.add(deleteReactionMethodDescriptor);
+    methodDescriptors.add(createCustomEmojiMethodDescriptor);
+    methodDescriptors.add(getCustomEmojiMethodDescriptor);
+    methodDescriptors.add(listCustomEmojisMethodDescriptor);
+    methodDescriptors.add(deleteCustomEmojiMethodDescriptor);
+    methodDescriptors.add(getSpaceReadStateMethodDescriptor);
+    methodDescriptors.add(updateSpaceReadStateMethodDescriptor);
+    methodDescriptors.add(getThreadReadStateMethodDescriptor);
+    methodDescriptors.add(getSpaceEventMethodDescriptor);
+    methodDescriptors.add(listSpaceEventsMethodDescriptor);
+    methodDescriptors.add(getSpaceNotificationSettingMethodDescriptor);
+    methodDescriptors.add(updateSpaceNotificationSettingMethodDescriptor);
+    methodDescriptors.add(createSectionMethodDescriptor);
+    methodDescriptors.add(deleteSectionMethodDescriptor);
+    methodDescriptors.add(updateSectionMethodDescriptor);
+    methodDescriptors.add(listSectionsMethodDescriptor);
+    methodDescriptors.add(positionSectionMethodDescriptor);
+    methodDescriptors.add(listSectionItemsMethodDescriptor);
+    methodDescriptors.add(moveSectionItemMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1363,6 +2610,16 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   }
 
   @Override
+  public UnaryCallable<SearchSpacesRequest, SearchSpacesResponse> searchSpacesCallable() {
+    return searchSpacesCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchSpacesRequest, SearchSpacesPagedResponse> searchSpacesPagedCallable() {
+    return searchSpacesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetSpaceRequest, Space> getSpaceCallable() {
     return getSpaceCallable;
   }
@@ -1399,8 +2656,24 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   }
 
   @Override
+  public UnaryCallable<FindGroupChatsRequest, FindGroupChatsResponse> findGroupChatsCallable() {
+    return findGroupChatsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FindGroupChatsRequest, FindGroupChatsPagedResponse>
+      findGroupChatsPagedCallable() {
+    return findGroupChatsPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateMembershipRequest, Membership> createMembershipCallable() {
     return createMembershipCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateMembershipRequest, Membership> updateMembershipCallable() {
+    return updateMembershipCallable;
   }
 
   @Override
@@ -1427,6 +2700,123 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable() {
     return deleteReactionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiCallable() {
+    return createCustomEmojiCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiCallable() {
+    return getCustomEmojiCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisResponse>
+      listCustomEmojisCallable() {
+    return listCustomEmojisCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisPagedResponse>
+      listCustomEmojisPagedCallable() {
+    return listCustomEmojisPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiCallable() {
+    return deleteCustomEmojiCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateCallable() {
+    return getSpaceReadStateCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSpaceReadStateRequest, SpaceReadState> updateSpaceReadStateCallable() {
+    return updateSpaceReadStateCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetThreadReadStateRequest, ThreadReadState> getThreadReadStateCallable() {
+    return getThreadReadStateCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSpaceEventRequest, SpaceEvent> getSpaceEventCallable() {
+    return getSpaceEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse> listSpaceEventsCallable() {
+    return listSpaceEventsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsPagedResponse>
+      listSpaceEventsPagedCallable() {
+    return listSpaceEventsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingCallable() {
+    return getSpaceNotificationSettingCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingCallable() {
+    return updateSpaceNotificationSettingCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSectionRequest, Section> createSectionCallable() {
+    return createSectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSectionRequest, Empty> deleteSectionCallable() {
+    return deleteSectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSectionRequest, Section> updateSectionCallable() {
+    return updateSectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSectionsRequest, ListSectionsResponse> listSectionsCallable() {
+    return listSectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSectionsRequest, ListSectionsPagedResponse> listSectionsPagedCallable() {
+    return listSectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<PositionSectionRequest, PositionSectionResponse> positionSectionCallable() {
+    return positionSectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSectionItemsRequest, ListSectionItemsResponse>
+      listSectionItemsCallable() {
+    return listSectionItemsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSectionItemsRequest, ListSectionItemsPagedResponse>
+      listSectionItemsPagedCallable() {
+    return listSectionItemsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<MoveSectionItemRequest, MoveSectionItemResponse> moveSectionItemCallable() {
+    return moveSectionItemCallable;
   }
 
   @Override

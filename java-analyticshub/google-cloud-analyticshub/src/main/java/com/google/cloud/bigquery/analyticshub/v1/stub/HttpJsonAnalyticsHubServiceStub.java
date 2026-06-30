@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.analyticshub.v1.stub;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListDataExchangesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListListingsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListOrgDataExchangesPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListQueryTemplatesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSharedResourceSubscriptionsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSubscriptionsPagedResponse;
 
@@ -37,14 +38,18 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.bigquery.analyticshub.v1.ApproveQueryTemplateRequest;
 import com.google.cloud.bigquery.analyticshub.v1.CreateDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.CreateListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.CreateQueryTemplateRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DataExchange;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.DeleteQueryTemplateRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.GetQueryTemplateRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesResponse;
@@ -52,16 +57,20 @@ import com.google.cloud.bigquery.analyticshub.v1.ListListingsRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListListingsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesResponse;
+import com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesRequest;
+import com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.Listing;
 import com.google.cloud.bigquery.analyticshub.v1.OperationMetadata;
+import com.google.cloud.bigquery.analyticshub.v1.QueryTemplate;
 import com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionResponse;
 import com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse;
+import com.google.cloud.bigquery.analyticshub.v1.SubmitQueryTemplateRequest;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeResponse;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest;
@@ -69,6 +78,7 @@ import com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse;
 import com.google.cloud.bigquery.analyticshub.v1.Subscription;
 import com.google.cloud.bigquery.analyticshub.v1.UpdateDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.UpdateListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.UpdateQueryTemplateRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -490,6 +500,8 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteListingRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "deleteCommercial", request.getDeleteCommercial());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -928,6 +940,262 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateQueryTemplateRequest, QueryTemplate>
+      createQueryTemplateMethodDescriptor =
+          ApiMethodDescriptor.<CreateQueryTemplateRequest, QueryTemplate>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/CreateQueryTemplate")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateQueryTemplateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/dataExchanges/*}/queryTemplates",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateQueryTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateQueryTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "queryTemplateId", request.getQueryTemplateId());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("queryTemplate", request.getQueryTemplate(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryTemplate>newBuilder()
+                      .setDefaultInstance(QueryTemplate.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetQueryTemplateRequest, QueryTemplate>
+      getQueryTemplateMethodDescriptor =
+          ApiMethodDescriptor.<GetQueryTemplateRequest, QueryTemplate>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/GetQueryTemplate")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetQueryTemplateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/dataExchanges/*/queryTemplates/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetQueryTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetQueryTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryTemplate>newBuilder()
+                      .setDefaultInstance(QueryTemplate.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListQueryTemplatesRequest, ListQueryTemplatesResponse>
+      listQueryTemplatesMethodDescriptor =
+          ApiMethodDescriptor.<ListQueryTemplatesRequest, ListQueryTemplatesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/ListQueryTemplates")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListQueryTemplatesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/dataExchanges/*}/queryTemplates",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListQueryTemplatesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListQueryTemplatesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListQueryTemplatesResponse>newBuilder()
+                      .setDefaultInstance(ListQueryTemplatesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateQueryTemplateRequest, QueryTemplate>
+      updateQueryTemplateMethodDescriptor =
+          ApiMethodDescriptor.<UpdateQueryTemplateRequest, QueryTemplate>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/UpdateQueryTemplate")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateQueryTemplateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{queryTemplate.name=projects/*/locations/*/dataExchanges/*/queryTemplates/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateQueryTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "queryTemplate.name", request.getQueryTemplate().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateQueryTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("queryTemplate", request.getQueryTemplate(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryTemplate>newBuilder()
+                      .setDefaultInstance(QueryTemplate.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteQueryTemplateRequest, Empty>
+      deleteQueryTemplateMethodDescriptor =
+          ApiMethodDescriptor.<DeleteQueryTemplateRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/DeleteQueryTemplate")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteQueryTemplateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/dataExchanges/*/queryTemplates/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteQueryTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteQueryTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<SubmitQueryTemplateRequest, QueryTemplate>
+      submitQueryTemplateMethodDescriptor =
+          ApiMethodDescriptor.<SubmitQueryTemplateRequest, QueryTemplate>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/SubmitQueryTemplate")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SubmitQueryTemplateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/dataExchanges/*/queryTemplates/*}:submit",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SubmitQueryTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SubmitQueryTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryTemplate>newBuilder()
+                      .setDefaultInstance(QueryTemplate.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ApproveQueryTemplateRequest, QueryTemplate>
+      approveQueryTemplateMethodDescriptor =
+          ApiMethodDescriptor.<ApproveQueryTemplateRequest, QueryTemplate>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/ApproveQueryTemplate")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ApproveQueryTemplateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/dataExchanges/*/queryTemplates/*}:approve",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ApproveQueryTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ApproveQueryTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryTemplate>newBuilder()
+                      .setDefaultInstance(QueryTemplate.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListDataExchangesRequest, ListDataExchangesResponse>
       listDataExchangesCallable;
   private final UnaryCallable<ListDataExchangesRequest, ListDataExchangesPagedResponse>
@@ -978,6 +1246,20 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<CreateQueryTemplateRequest, QueryTemplate>
+      createQueryTemplateCallable;
+  private final UnaryCallable<GetQueryTemplateRequest, QueryTemplate> getQueryTemplateCallable;
+  private final UnaryCallable<ListQueryTemplatesRequest, ListQueryTemplatesResponse>
+      listQueryTemplatesCallable;
+  private final UnaryCallable<ListQueryTemplatesRequest, ListQueryTemplatesPagedResponse>
+      listQueryTemplatesPagedCallable;
+  private final UnaryCallable<UpdateQueryTemplateRequest, QueryTemplate>
+      updateQueryTemplateCallable;
+  private final UnaryCallable<DeleteQueryTemplateRequest, Empty> deleteQueryTemplateCallable;
+  private final UnaryCallable<SubmitQueryTemplateRequest, QueryTemplate>
+      submitQueryTemplateCallable;
+  private final UnaryCallable<ApproveQueryTemplateRequest, QueryTemplate>
+      approveQueryTemplateCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -1037,6 +1319,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListOrgDataExchangesRequest, ListOrgDataExchangesResponse>
         listOrgDataExchangesTransportSettings =
@@ -1061,6 +1344,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDataExchangeRequest, DataExchange>
         createDataExchangeTransportSettings =
@@ -1073,6 +1357,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateDataExchangeRequest, DataExchange>
         updateDataExchangeTransportSettings =
@@ -1098,6 +1383,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListListingsRequest, ListListingsResponse> listListingsTransportSettings =
         HttpJsonCallSettings.<ListListingsRequest, ListListingsResponse>newBuilder()
@@ -1109,6 +1395,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetListingRequest, Listing> getListingTransportSettings =
         HttpJsonCallSettings.<GetListingRequest, Listing>newBuilder()
@@ -1120,6 +1407,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateListingRequest, Listing> createListingTransportSettings =
         HttpJsonCallSettings.<CreateListingRequest, Listing>newBuilder()
@@ -1131,6 +1419,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateListingRequest, Listing> updateListingTransportSettings =
         HttpJsonCallSettings.<UpdateListingRequest, Listing>newBuilder()
@@ -1153,6 +1442,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SubscribeListingRequest, SubscribeListingResponse>
         subscribeListingTransportSettings =
@@ -1165,6 +1455,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SubscribeDataExchangeRequest, Operation>
         subscribeDataExchangeTransportSettings =
@@ -1177,6 +1468,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RefreshSubscriptionRequest, Operation>
         refreshSubscriptionTransportSettings =
@@ -1189,6 +1481,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionTransportSettings =
         HttpJsonCallSettings.<GetSubscriptionRequest, Subscription>newBuilder()
@@ -1200,6 +1493,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSubscriptionsRequest, ListSubscriptionsResponse>
         listSubscriptionsTransportSettings =
@@ -1212,6 +1506,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsResponse>
@@ -1227,6 +1522,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     HttpJsonCallSettings<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
         revokeSubscriptionTransportSettings =
@@ -1239,6 +1535,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteSubscriptionRequest, Operation> deleteSubscriptionTransportSettings =
         HttpJsonCallSettings.<DeleteSubscriptionRequest, Operation>newBuilder()
@@ -1250,6 +1547,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1261,6 +1559,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -1272,6 +1571,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1284,6 +1584,97 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
+                .build();
+    HttpJsonCallSettings<CreateQueryTemplateRequest, QueryTemplate>
+        createQueryTemplateTransportSettings =
+            HttpJsonCallSettings.<CreateQueryTemplateRequest, QueryTemplate>newBuilder()
+                .setMethodDescriptor(createQueryTemplateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetQueryTemplateRequest, QueryTemplate> getQueryTemplateTransportSettings =
+        HttpJsonCallSettings.<GetQueryTemplateRequest, QueryTemplate>newBuilder()
+            .setMethodDescriptor(getQueryTemplateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListQueryTemplatesRequest, ListQueryTemplatesResponse>
+        listQueryTemplatesTransportSettings =
+            HttpJsonCallSettings.<ListQueryTemplatesRequest, ListQueryTemplatesResponse>newBuilder()
+                .setMethodDescriptor(listQueryTemplatesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<UpdateQueryTemplateRequest, QueryTemplate>
+        updateQueryTemplateTransportSettings =
+            HttpJsonCallSettings.<UpdateQueryTemplateRequest, QueryTemplate>newBuilder()
+                .setMethodDescriptor(updateQueryTemplateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "query_template.name",
+                          String.valueOf(request.getQueryTemplate().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteQueryTemplateRequest, Empty> deleteQueryTemplateTransportSettings =
+        HttpJsonCallSettings.<DeleteQueryTemplateRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteQueryTemplateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<SubmitQueryTemplateRequest, QueryTemplate>
+        submitQueryTemplateTransportSettings =
+            HttpJsonCallSettings.<SubmitQueryTemplateRequest, QueryTemplate>newBuilder()
+                .setMethodDescriptor(submitQueryTemplateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ApproveQueryTemplateRequest, QueryTemplate>
+        approveQueryTemplateTransportSettings =
+            HttpJsonCallSettings.<ApproveQueryTemplateRequest, QueryTemplate>newBuilder()
+                .setMethodDescriptor(approveQueryTemplateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.listDataExchangesCallable =
@@ -1417,6 +1808,44 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.createQueryTemplateCallable =
+        callableFactory.createUnaryCallable(
+            createQueryTemplateTransportSettings,
+            settings.createQueryTemplateSettings(),
+            clientContext);
+    this.getQueryTemplateCallable =
+        callableFactory.createUnaryCallable(
+            getQueryTemplateTransportSettings, settings.getQueryTemplateSettings(), clientContext);
+    this.listQueryTemplatesCallable =
+        callableFactory.createUnaryCallable(
+            listQueryTemplatesTransportSettings,
+            settings.listQueryTemplatesSettings(),
+            clientContext);
+    this.listQueryTemplatesPagedCallable =
+        callableFactory.createPagedCallable(
+            listQueryTemplatesTransportSettings,
+            settings.listQueryTemplatesSettings(),
+            clientContext);
+    this.updateQueryTemplateCallable =
+        callableFactory.createUnaryCallable(
+            updateQueryTemplateTransportSettings,
+            settings.updateQueryTemplateSettings(),
+            clientContext);
+    this.deleteQueryTemplateCallable =
+        callableFactory.createUnaryCallable(
+            deleteQueryTemplateTransportSettings,
+            settings.deleteQueryTemplateSettings(),
+            clientContext);
+    this.submitQueryTemplateCallable =
+        callableFactory.createUnaryCallable(
+            submitQueryTemplateTransportSettings,
+            settings.submitQueryTemplateSettings(),
+            clientContext);
+    this.approveQueryTemplateCallable =
+        callableFactory.createUnaryCallable(
+            approveQueryTemplateTransportSettings,
+            settings.approveQueryTemplateSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1447,6 +1876,13 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    methodDescriptors.add(createQueryTemplateMethodDescriptor);
+    methodDescriptors.add(getQueryTemplateMethodDescriptor);
+    methodDescriptors.add(listQueryTemplatesMethodDescriptor);
+    methodDescriptors.add(updateQueryTemplateMethodDescriptor);
+    methodDescriptors.add(deleteQueryTemplateMethodDescriptor);
+    methodDescriptors.add(submitQueryTemplateMethodDescriptor);
+    methodDescriptors.add(approveQueryTemplateMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1620,6 +2056,48 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateQueryTemplateRequest, QueryTemplate> createQueryTemplateCallable() {
+    return createQueryTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetQueryTemplateRequest, QueryTemplate> getQueryTemplateCallable() {
+    return getQueryTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQueryTemplatesRequest, ListQueryTemplatesResponse>
+      listQueryTemplatesCallable() {
+    return listQueryTemplatesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQueryTemplatesRequest, ListQueryTemplatesPagedResponse>
+      listQueryTemplatesPagedCallable() {
+    return listQueryTemplatesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateQueryTemplateRequest, QueryTemplate> updateQueryTemplateCallable() {
+    return updateQueryTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteQueryTemplateRequest, Empty> deleteQueryTemplateCallable() {
+    return deleteQueryTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<SubmitQueryTemplateRequest, QueryTemplate> submitQueryTemplateCallable() {
+    return submitQueryTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<ApproveQueryTemplateRequest, QueryTemplate> approveQueryTemplateCallable() {
+    return approveQueryTemplateCallable;
   }
 
   @Override

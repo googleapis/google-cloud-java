@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * of Compute Engine instances.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataproc/v1/clusters.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ClusterControllerGrpc {
 
@@ -395,6 +392,19 @@ public final class ClusterControllerGrpc {
     return ClusterControllerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ClusterControllerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ClusterControllerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ClusterControllerBlockingV2Stub>() {
+          @java.lang.Override
+          public ClusterControllerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ClusterControllerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ClusterControllerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -743,6 +753,148 @@ public final class ClusterControllerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ClusterController.
+   *
+   * <pre>
+   * The ClusterControllerService provides methods to manage clusters
+   * of Compute Engine instances.
+   * </pre>
+   */
+  public static final class ClusterControllerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ClusterControllerBlockingV2Stub> {
+    private ClusterControllerBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ClusterControllerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ClusterControllerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a cluster in a project. The returned
+     * [Operation.metadata][google.longrunning.Operation.metadata] will be
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCluster(
+        com.google.cloud.dataproc.v1.CreateClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a cluster in a project. The returned
+     * [Operation.metadata][google.longrunning.Operation.metadata] will be
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * The cluster must be in a
+     * [`RUNNING`][google.cloud.dataproc.v1.ClusterStatus.State] state or an error
+     * is returned.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCluster(
+        com.google.cloud.dataproc.v1.UpdateClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops a cluster in a project.
+     * </pre>
+     */
+    public com.google.longrunning.Operation stopCluster(
+        com.google.cloud.dataproc.v1.StopClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStopClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a cluster in a project.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startCluster(
+        com.google.cloud.dataproc.v1.StartClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStartClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a cluster in a project. The returned
+     * [Operation.metadata][google.longrunning.Operation.metadata] will be
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCluster(
+        com.google.cloud.dataproc.v1.DeleteClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the resource representation for a cluster in a project.
+     * </pre>
+     */
+    public com.google.cloud.dataproc.v1.Cluster getCluster(
+        com.google.cloud.dataproc.v1.GetClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all regions/{region}/clusters in a project alphabetically.
+     * </pre>
+     */
+    public com.google.cloud.dataproc.v1.ListClustersResponse listClusters(
+        com.google.cloud.dataproc.v1.ListClustersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListClustersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets cluster diagnostic information. The returned
+     * [Operation.metadata][google.longrunning.Operation.metadata] will be
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * After the operation completes,
+     * [Operation.response][google.longrunning.Operation.response]
+     * contains
+     * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
+     * </pre>
+     */
+    public com.google.longrunning.Operation diagnoseCluster(
+        com.google.cloud.dataproc.v1.DiagnoseClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDiagnoseClusterMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ClusterController.
    *
    * <pre>
    * The ClusterControllerService provides methods to manage clusters

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -724,6 +724,7 @@ public class ParticipantsClientTest {
             .addAllEndUserSuggestionResults(new ArrayList<SuggestionResult>())
             .setDtmfParameters(DtmfParameters.newBuilder().build())
             .setDebuggingInfo(CloudConversationDebuggingInfo.newBuilder().build())
+            .setSpeechModel("speechModel1755725671")
             .build();
     mockParticipants.addResponse(expectedResponse);
     StreamingAnalyzeContentRequest request =
@@ -739,6 +740,7 @@ public class ParticipantsClientTest {
             .setCxCurrentPage("cxCurrentPage1596907507")
             .setEnableExtendedStreaming(true)
             .setEnablePartialAutomatedAgentReply(true)
+            .setOutputMultipleUtterances(true)
             .setEnableDebuggingInfo(true)
             .build();
 
@@ -775,6 +777,7 @@ public class ParticipantsClientTest {
             .setCxCurrentPage("cxCurrentPage1596907507")
             .setEnableExtendedStreaming(true)
             .setEnablePartialAutomatedAgentReply(true)
+            .setOutputMultipleUtterances(true)
             .setEnableDebuggingInfo(true)
             .build();
 
@@ -790,6 +793,57 @@ public class ParticipantsClientTest {
 
     try {
       List<StreamingAnalyzeContentResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void bidiStreamingAnalyzeContentTest() throws Exception {
+    BidiStreamingAnalyzeContentResponse expectedResponse =
+        BidiStreamingAnalyzeContentResponse.newBuilder().build();
+    mockParticipants.addResponse(expectedResponse);
+    BidiStreamingAnalyzeContentRequest request =
+        BidiStreamingAnalyzeContentRequest.newBuilder().build();
+
+    MockStreamObserver<BidiStreamingAnalyzeContentResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+        callable = client.bidiStreamingAnalyzeContentCallable();
+    ApiStreamObserver<BidiStreamingAnalyzeContentRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+    requestObserver.onCompleted();
+
+    List<BidiStreamingAnalyzeContentResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void bidiStreamingAnalyzeContentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockParticipants.addException(exception);
+    BidiStreamingAnalyzeContentRequest request =
+        BidiStreamingAnalyzeContentRequest.newBuilder().build();
+
+    MockStreamObserver<BidiStreamingAnalyzeContentResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+        callable = client.bidiStreamingAnalyzeContentCallable();
+    ApiStreamObserver<BidiStreamingAnalyzeContentRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+
+    try {
+      List<BidiStreamingAnalyzeContentResponse> actualResponses = responseObserver.future().get();
       Assert.fail("No exception thrown");
     } catch (ExecutionException e) {
       Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
@@ -1050,6 +1104,77 @@ public class ParticipantsClientTest {
     try {
       String parent = "parent-995424086";
       client.suggestSmartReplies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void suggestKnowledgeAssistTest() throws Exception {
+    SuggestKnowledgeAssistResponse expectedResponse =
+        SuggestKnowledgeAssistResponse.newBuilder()
+            .setKnowledgeAssistAnswer(KnowledgeAssistAnswer.newBuilder().build())
+            .setLatestMessage("latestMessage-1424305536")
+            .setContextSize(1116903569)
+            .addAllAdditionalSuggestedQueryResults(
+                new ArrayList<KnowledgeAssistAnswer.AdditionalSuggestedQueryResult>())
+            .build();
+    mockParticipants.addResponse(expectedResponse);
+
+    SuggestKnowledgeAssistRequest request =
+        SuggestKnowledgeAssistRequest.newBuilder()
+            .setParent(
+                ParticipantName.ofProjectConversationParticipantName(
+                        "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+                    .toString())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .setContextSize(1116903569)
+            .setPreviousSuggestedQuery("previousSuggestedQuery-1914206660")
+            .build();
+
+    SuggestKnowledgeAssistResponse actualResponse = client.suggestKnowledgeAssist(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockParticipants.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SuggestKnowledgeAssistRequest actualRequest =
+        ((SuggestKnowledgeAssistRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getLatestMessage(), actualRequest.getLatestMessage());
+    Assert.assertEquals(request.getContextSize(), actualRequest.getContextSize());
+    Assert.assertEquals(
+        request.getPreviousSuggestedQuery(), actualRequest.getPreviousSuggestedQuery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void suggestKnowledgeAssistExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockParticipants.addException(exception);
+
+    try {
+      SuggestKnowledgeAssistRequest request =
+          SuggestKnowledgeAssistRequest.newBuilder()
+              .setParent(
+                  ParticipantName.ofProjectConversationParticipantName(
+                          "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+                      .toString())
+              .setLatestMessage(
+                  MessageName.ofProjectConversationMessageName(
+                          "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                      .toString())
+              .setContextSize(1116903569)
+              .setPreviousSuggestedQuery("previousSuggestedQuery-1914206660")
+              .build();
+      client.suggestKnowledgeAssist(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

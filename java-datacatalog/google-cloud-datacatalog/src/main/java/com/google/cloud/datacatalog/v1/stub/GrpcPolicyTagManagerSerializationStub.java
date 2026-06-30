@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,7 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReplaceTaxonomyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Taxonomy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
@@ -65,6 +66,7 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
                   ProtoUtils.marshaller(ImportTaxonomiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ImportTaxonomiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportTaxonomiesRequest, ExportTaxonomiesResponse>
@@ -77,6 +79,7 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
                   ProtoUtils.marshaller(ExportTaxonomiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ExportTaxonomiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ReplaceTaxonomyRequest, Taxonomy> replaceTaxonomyCallable;
@@ -141,6 +144,7 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
         importTaxonomiesTransportSettings =
@@ -152,6 +156,7 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ExportTaxonomiesRequest, ExportTaxonomiesResponse>
         exportTaxonomiesTransportSettings =
@@ -163,6 +168,7 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.replaceTaxonomyCallable =

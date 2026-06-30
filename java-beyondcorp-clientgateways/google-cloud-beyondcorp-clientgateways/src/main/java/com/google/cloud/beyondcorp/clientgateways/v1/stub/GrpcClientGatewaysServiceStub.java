@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,6 +70,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                   ProtoUtils.marshaller(ListClientGatewaysRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListClientGatewaysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetClientGatewayRequest, ClientGateway>
@@ -81,6 +82,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetClientGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ClientGateway.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateClientGatewayRequest, Operation>
@@ -92,6 +94,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateClientGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteClientGatewayRequest, Operation>
@@ -103,6 +106,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteClientGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -114,6 +118,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -122,6 +127,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -130,6 +136,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -138,6 +145,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -149,6 +157,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListClientGatewaysRequest, ListClientGatewaysResponse>
@@ -226,6 +235,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetClientGatewayRequest, ClientGateway> getClientGatewayTransportSettings =
         GrpcCallSettings.<GetClientGatewayRequest, ClientGateway>newBuilder()
@@ -236,6 +246,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateClientGatewayRequest, Operation> createClientGatewayTransportSettings =
         GrpcCallSettings.<CreateClientGatewayRequest, Operation>newBuilder()
@@ -246,6 +257,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteClientGatewayRequest, Operation> deleteClientGatewayTransportSettings =
         GrpcCallSettings.<DeleteClientGatewayRequest, Operation>newBuilder()
@@ -256,6 +268,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -286,6 +299,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -296,6 +310,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -307,6 +322,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listClientGatewaysCallable =

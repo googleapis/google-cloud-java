@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,6 +79,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(ListEnvironmentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEnvironmentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEnvironmentRequest, Environment>
@@ -89,6 +90,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Environment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEnvironmentRequest, Operation>
@@ -100,6 +102,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEnvironmentRequest, Operation>
@@ -111,6 +114,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEnvironmentRequest, Empty>
@@ -122,6 +126,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -136,6 +141,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(LookupEnvironmentHistoryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(LookupEnvironmentHistoryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunContinuousTestRequest, Operation>
@@ -147,6 +153,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RunContinuousTestRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -161,6 +168,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(ListContinuousTestResultsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListContinuousTestResultsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeployFlowRequest, Operation> deployFlowMethodDescriptor =
@@ -169,6 +177,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Environments/DeployFlow")
           .setRequestMarshaller(ProtoUtils.marshaller(DeployFlowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -180,6 +189,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -188,6 +198,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
@@ -276,6 +287,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetEnvironmentRequest, Environment> getEnvironmentTransportSettings =
         GrpcCallSettings.<GetEnvironmentRequest, Environment>newBuilder()
@@ -286,6 +298,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEnvironmentRequest, Operation> createEnvironmentTransportSettings =
         GrpcCallSettings.<CreateEnvironmentRequest, Operation>newBuilder()
@@ -296,6 +309,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEnvironmentRequest, Operation> updateEnvironmentTransportSettings =
         GrpcCallSettings.<UpdateEnvironmentRequest, Operation>newBuilder()
@@ -317,6 +331,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse>
         lookupEnvironmentHistoryTransportSettings =
@@ -329,6 +344,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RunContinuousTestRequest, Operation> runContinuousTestTransportSettings =
         GrpcCallSettings.<RunContinuousTestRequest, Operation>newBuilder()
@@ -339,6 +355,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   builder.add("environment", String.valueOf(request.getEnvironment()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEnvironment())
             .build();
     GrpcCallSettings<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse>
         listContinuousTestResultsTransportSettings =
@@ -351,6 +368,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeployFlowRequest, Operation> deployFlowTransportSettings =
         GrpcCallSettings.<DeployFlowRequest, Operation>newBuilder()
@@ -361,6 +379,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   builder.add("environment", String.valueOf(request.getEnvironment()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEnvironment())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

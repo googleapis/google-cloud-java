@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-pom-parent</artifactId>
   <groupId>com.google.cloud</groupId>
-  <version>1.36.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+  <version>1.88.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud POM Parent</name>
   <url>https://github.com/googleapis/google-cloud-java</url>
@@ -15,8 +15,8 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>sdk-platform-java-config</artifactId>
-    <version>3.28.1</version>
-    <relativePath/>
+    <version>3.64.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+    <relativePath>../sdk-platform-java/sdk-platform-java-config</relativePath>
   </parent>
 
   <properties>
@@ -59,6 +59,22 @@
 
   <profiles>
     <profile>
+      <!-- skips all plugins that would have been activated by the Maven lifecycle -->
+      <id>quick-build</id>
+      <properties>
+        <checkstyle.skip>true</checkstyle.skip>
+        <enforcer.skip>true</enforcer.skip>
+        <jacoco.skip>true</jacoco.skip>
+        <clirr.skip>true</clirr.skip>
+        <spotbugs.skip>true</spotbugs.skip>
+        <pmd.skip>true</pmd.skip>
+        <animal.sniffer.skip>true</animal.sniffer.skip>
+        <fmt.skip>true</fmt.skip>
+        <flatten.skip>true</flatten.skip>
+        <mdep.analyze.skip>true</mdep.analyze.skip>
+      </properties>
+    </profile>
+    <profile>
       <!-- Only run checkstyle plugin on Java 11+ (checkstyle artifact only supports Java 11+) -->
       <id>checkstyle-tests</id>
       <activation>
@@ -78,10 +94,23 @@
                 </goals>
                 <configuration>
                   <headerLocation>${checkstyle.header.file}</headerLocation>
+                  <skip>${checkstyle.skip}</skip>
                 </configuration>
               </execution>
             </executions>
           </plugin>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-enforcer-plugin</artifactId>
+              <executions>
+                <execution>
+                  <id>enforce</id>
+                  <goals>
+                    <goal>enforce</goal>
+                  </goals>
+                  </execution>
+                </executions>
+            </plugin>
         </plugins>
       </build>
     </profile>
@@ -104,14 +133,10 @@
 
   <repositories>
     <repository>
-      <id>google-maven-central-copy</id>
-      <name>Google Maven Central copy</name>
-      <url>https://maven-central.storage-download.googleapis.com/maven2</url>
-    </repository>
-    <repository>
       <id>maven-central</id>
       <name>Maven Central</name>
       <url>https://repo1.maven.org/maven2</url>
     </repository>
   </repositories>
 </project>
+

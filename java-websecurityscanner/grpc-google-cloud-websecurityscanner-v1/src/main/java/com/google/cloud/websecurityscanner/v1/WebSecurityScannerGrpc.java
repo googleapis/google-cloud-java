@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * attempts to exercise as many user inputs and event handlers as possible.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/websecurityscanner/v1/web_security_scanner.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class WebSecurityScannerGrpc {
 
@@ -661,6 +658,19 @@ public final class WebSecurityScannerGrpc {
     return WebSecurityScannerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static WebSecurityScannerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<WebSecurityScannerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<WebSecurityScannerBlockingV2Stub>() {
+          @java.lang.Override
+          public WebSecurityScannerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new WebSecurityScannerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return WebSecurityScannerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1155,6 +1165,212 @@ public final class WebSecurityScannerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service WebSecurityScanner.
+   *
+   * <pre>
+   * Web Security Scanner Service identifies security vulnerabilities in web
+   * applications hosted on Google Cloud. It crawls your application, and
+   * attempts to exercise as many user inputs and event handlers as possible.
+   * </pre>
+   */
+  public static final class WebSecurityScannerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<WebSecurityScannerBlockingV2Stub> {
+    private WebSecurityScannerBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected WebSecurityScannerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new WebSecurityScannerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ScanConfig.
+     * </pre>
+     */
+    public com.google.cloud.websecurityscanner.v1.ScanConfig createScanConfig(
+        com.google.cloud.websecurityscanner.v1.CreateScanConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateScanConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing ScanConfig and its child resources.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteScanConfig(
+        com.google.cloud.websecurityscanner.v1.DeleteScanConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteScanConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ScanConfig.
+     * </pre>
+     */
+    public com.google.cloud.websecurityscanner.v1.ScanConfig getScanConfig(
+        com.google.cloud.websecurityscanner.v1.GetScanConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetScanConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ScanConfigs under a given project.
+     * </pre>
+     */
+    public com.google.cloud.websecurityscanner.v1.ListScanConfigsResponse listScanConfigs(
+        com.google.cloud.websecurityscanner.v1.ListScanConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListScanConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ScanConfig. This method support partial update of a ScanConfig.
+     * </pre>
+     */
+    public com.google.cloud.websecurityscanner.v1.ScanConfig updateScanConfig(
+        com.google.cloud.websecurityscanner.v1.UpdateScanConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateScanConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Start a ScanRun according to the given ScanConfig.
+     * </pre>
+     */
+    public com.google.cloud.websecurityscanner.v1.ScanRun startScanRun(
+        com.google.cloud.websecurityscanner.v1.StartScanRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStartScanRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ScanRun.
+     * </pre>
+     */
+    public com.google.cloud.websecurityscanner.v1.ScanRun getScanRun(
+        com.google.cloud.websecurityscanner.v1.GetScanRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetScanRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ScanRuns under a given ScanConfig, in descending order of ScanRun
+     * stop time.
+     * </pre>
+     */
+    public com.google.cloud.websecurityscanner.v1.ListScanRunsResponse listScanRuns(
+        com.google.cloud.websecurityscanner.v1.ListScanRunsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListScanRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops a ScanRun. The stopped ScanRun is returned.
+     * </pre>
+     */
+    public com.google.cloud.websecurityscanner.v1.ScanRun stopScanRun(
+        com.google.cloud.websecurityscanner.v1.StopScanRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStopScanRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List CrawledUrls under a given ScanRun.
+     * </pre>
+     */
+    public com.google.cloud.websecurityscanner.v1.ListCrawledUrlsResponse listCrawledUrls(
+        com.google.cloud.websecurityscanner.v1.ListCrawledUrlsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListCrawledUrlsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Finding.
+     * </pre>
+     */
+    public com.google.cloud.websecurityscanner.v1.Finding getFinding(
+        com.google.cloud.websecurityscanner.v1.GetFindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetFindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List Findings under a given ScanRun.
+     * </pre>
+     */
+    public com.google.cloud.websecurityscanner.v1.ListFindingsResponse listFindings(
+        com.google.cloud.websecurityscanner.v1.ListFindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListFindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all FindingTypeStats under a given ScanRun.
+     * </pre>
+     */
+    public com.google.cloud.websecurityscanner.v1.ListFindingTypeStatsResponse listFindingTypeStats(
+        com.google.cloud.websecurityscanner.v1.ListFindingTypeStatsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListFindingTypeStatsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service WebSecurityScanner.
    *
    * <pre>
    * Web Security Scanner Service identifies security vulnerabilities in web

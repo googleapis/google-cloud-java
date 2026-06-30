@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,6 +108,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFeaturestoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeaturestoreRequest, Featurestore>
@@ -118,6 +119,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFeaturestoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Featurestore.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFeaturestoresRequest, ListFeaturestoresResponse>
@@ -129,6 +131,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   ProtoUtils.marshaller(ListFeaturestoresRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeaturestoresResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFeaturestoreRequest, Operation>
@@ -140,6 +143,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFeaturestoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFeaturestoreRequest, Operation>
@@ -151,6 +155,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFeaturestoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEntityTypeRequest, Operation>
@@ -161,6 +166,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEntityTypeRequest, EntityType>
@@ -171,6 +177,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntityType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEntityTypesRequest, ListEntityTypesResponse>
@@ -182,6 +189,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   ProtoUtils.marshaller(ListEntityTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntityTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEntityTypeRequest, EntityType>
@@ -192,6 +200,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntityType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEntityTypeRequest, Operation>
@@ -202,6 +211,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFeatureRequest, Operation>
@@ -212,6 +222,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFeatureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchCreateFeaturesRequest, Operation>
@@ -223,6 +234,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchCreateFeaturesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeatureRequest, Feature> getFeatureMethodDescriptor =
@@ -231,6 +243,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.FeaturestoreService/GetFeature")
           .setRequestMarshaller(ProtoUtils.marshaller(GetFeatureRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Feature.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListFeaturesRequest, ListFeaturesResponse>
@@ -241,6 +254,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListFeaturesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeaturesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFeatureRequest, Feature>
@@ -251,6 +265,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFeatureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Feature.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFeatureRequest, Operation>
@@ -261,6 +276,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFeatureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportFeatureValuesRequest, Operation>
@@ -272,6 +288,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportFeatureValuesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchReadFeatureValuesRequest, Operation>
@@ -283,6 +300,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchReadFeatureValuesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportFeatureValuesRequest, Operation>
@@ -294,6 +312,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportFeatureValuesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFeatureValuesRequest, Operation>
@@ -305,6 +324,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFeatureValuesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchFeaturesRequest, SearchFeaturesResponse>
@@ -316,6 +336,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   ProtoUtils.marshaller(SearchFeaturesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchFeaturesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -327,6 +348,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -335,6 +357,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -343,6 +366,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -351,6 +375,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -362,6 +387,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateFeaturestoreRequest, Operation> createFeaturestoreCallable;
@@ -500,6 +526,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetFeaturestoreRequest, Featurestore> getFeaturestoreTransportSettings =
         GrpcCallSettings.<GetFeaturestoreRequest, Featurestore>newBuilder()
@@ -510,6 +537,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFeaturestoresRequest, ListFeaturestoresResponse>
         listFeaturestoresTransportSettings =
@@ -521,6 +549,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateFeaturestoreRequest, Operation> updateFeaturestoreTransportSettings =
         GrpcCallSettings.<UpdateFeaturestoreRequest, Operation>newBuilder()
@@ -542,6 +571,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEntityTypeRequest, Operation> createEntityTypeTransportSettings =
         GrpcCallSettings.<CreateEntityTypeRequest, Operation>newBuilder()
@@ -552,6 +582,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeTransportSettings =
         GrpcCallSettings.<GetEntityTypeRequest, EntityType>newBuilder()
@@ -562,6 +593,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEntityTypesRequest, ListEntityTypesResponse>
         listEntityTypesTransportSettings =
@@ -573,6 +605,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateEntityTypeRequest, EntityType> updateEntityTypeTransportSettings =
         GrpcCallSettings.<UpdateEntityTypeRequest, EntityType>newBuilder()
@@ -594,6 +627,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateFeatureRequest, Operation> createFeatureTransportSettings =
         GrpcCallSettings.<CreateFeatureRequest, Operation>newBuilder()
@@ -604,6 +638,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesTransportSettings =
         GrpcCallSettings.<BatchCreateFeaturesRequest, Operation>newBuilder()
@@ -614,6 +649,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetFeatureRequest, Feature> getFeatureTransportSettings =
         GrpcCallSettings.<GetFeatureRequest, Feature>newBuilder()
@@ -624,6 +660,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFeaturesRequest, ListFeaturesResponse> listFeaturesTransportSettings =
         GrpcCallSettings.<ListFeaturesRequest, ListFeaturesResponse>newBuilder()
@@ -634,6 +671,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateFeatureRequest, Feature> updateFeatureTransportSettings =
         GrpcCallSettings.<UpdateFeatureRequest, Feature>newBuilder()
@@ -654,6 +692,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportFeatureValuesRequest, Operation> importFeatureValuesTransportSettings =
         GrpcCallSettings.<ImportFeatureValuesRequest, Operation>newBuilder()
@@ -664,6 +703,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("entity_type", String.valueOf(request.getEntityType()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEntityType())
             .build();
     GrpcCallSettings<BatchReadFeatureValuesRequest, Operation>
         batchReadFeatureValuesTransportSettings =
@@ -675,6 +715,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                       builder.add("featurestore", String.valueOf(request.getFeaturestore()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getFeaturestore())
                 .build();
     GrpcCallSettings<ExportFeatureValuesRequest, Operation> exportFeatureValuesTransportSettings =
         GrpcCallSettings.<ExportFeatureValuesRequest, Operation>newBuilder()
@@ -685,6 +726,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("entity_type", String.valueOf(request.getEntityType()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEntityType())
             .build();
     GrpcCallSettings<DeleteFeatureValuesRequest, Operation> deleteFeatureValuesTransportSettings =
         GrpcCallSettings.<DeleteFeatureValuesRequest, Operation>newBuilder()
@@ -695,6 +737,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("entity_type", String.valueOf(request.getEntityType()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEntityType())
             .build();
     GrpcCallSettings<SearchFeaturesRequest, SearchFeaturesResponse>
         searchFeaturesTransportSettings =
@@ -706,6 +749,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -736,6 +780,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -746,6 +791,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -757,6 +803,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createFeaturestoreCallable =

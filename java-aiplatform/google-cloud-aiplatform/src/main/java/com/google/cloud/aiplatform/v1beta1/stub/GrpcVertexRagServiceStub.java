@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,8 +24,18 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.AskContextsRequest;
+import com.google.cloud.aiplatform.v1beta1.AskContextsResponse;
+import com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsRequest;
+import com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsResponse;
+import com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest;
+import com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse;
+import com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest;
+import com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse;
 import com.google.cloud.aiplatform.v1beta1.RetrieveContextsRequest;
 import com.google.cloud.aiplatform.v1beta1.RetrieveContextsResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -37,6 +47,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -63,6 +74,55 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                   ProtoUtils.marshaller(RetrieveContextsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RetrieveContextsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<AugmentPromptRequest, AugmentPromptResponse>
+      augmentPromptMethodDescriptor =
+          MethodDescriptor.<AugmentPromptRequest, AugmentPromptResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.VertexRagService/AugmentPrompt")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AugmentPromptRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AugmentPromptResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CorroborateContentRequest, CorroborateContentResponse>
+      corroborateContentMethodDescriptor =
+          MethodDescriptor.<CorroborateContentRequest, CorroborateContentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagService/CorroborateContent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CorroborateContentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CorroborateContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<AskContextsRequest, AskContextsResponse>
+      askContextsMethodDescriptor =
+          MethodDescriptor.<AskContextsRequest, AskContextsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.VertexRagService/AskContexts")
+              .setRequestMarshaller(ProtoUtils.marshaller(AskContextsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AskContextsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<AsyncRetrieveContextsRequest, Operation>
+      asyncRetrieveContextsMethodDescriptor =
+          MethodDescriptor.<AsyncRetrieveContextsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagService/AsyncRetrieveContexts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AsyncRetrieveContextsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -74,6 +134,7 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -82,6 +143,7 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -90,6 +152,7 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -98,6 +161,7 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -109,10 +173,22 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<RetrieveContextsRequest, RetrieveContextsResponse>
       retrieveContextsCallable;
+  private final UnaryCallable<AugmentPromptRequest, AugmentPromptResponse> augmentPromptCallable;
+  private final UnaryCallable<CorroborateContentRequest, CorroborateContentResponse>
+      corroborateContentCallable;
+  private final UnaryCallable<AskContextsRequest, AskContextsResponse> askContextsCallable;
+  private final UnaryCallable<AsyncRetrieveContextsRequest, Operation>
+      asyncRetrieveContextsCallable;
+  private final OperationCallable<
+          AsyncRetrieveContextsRequest,
+          AsyncRetrieveContextsResponse,
+          AsyncRetrieveContextsOperationMetadata>
+      asyncRetrieveContextsOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -176,6 +252,53 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<AugmentPromptRequest, AugmentPromptResponse> augmentPromptTransportSettings =
+        GrpcCallSettings.<AugmentPromptRequest, AugmentPromptResponse>newBuilder()
+            .setMethodDescriptor(augmentPromptMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<CorroborateContentRequest, CorroborateContentResponse>
+        corroborateContentTransportSettings =
+            GrpcCallSettings.<CorroborateContentRequest, CorroborateContentResponse>newBuilder()
+                .setMethodDescriptor(corroborateContentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<AskContextsRequest, AskContextsResponse> askContextsTransportSettings =
+        GrpcCallSettings.<AskContextsRequest, AskContextsResponse>newBuilder()
+            .setMethodDescriptor(askContextsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<AsyncRetrieveContextsRequest, Operation>
+        asyncRetrieveContextsTransportSettings =
+            GrpcCallSettings.<AsyncRetrieveContextsRequest, Operation>newBuilder()
+                .setMethodDescriptor(asyncRetrieveContextsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -206,6 +329,7 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -216,6 +340,7 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -227,11 +352,34 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.retrieveContextsCallable =
         callableFactory.createUnaryCallable(
             retrieveContextsTransportSettings, settings.retrieveContextsSettings(), clientContext);
+    this.augmentPromptCallable =
+        callableFactory.createUnaryCallable(
+            augmentPromptTransportSettings, settings.augmentPromptSettings(), clientContext);
+    this.corroborateContentCallable =
+        callableFactory.createUnaryCallable(
+            corroborateContentTransportSettings,
+            settings.corroborateContentSettings(),
+            clientContext);
+    this.askContextsCallable =
+        callableFactory.createUnaryCallable(
+            askContextsTransportSettings, settings.askContextsSettings(), clientContext);
+    this.asyncRetrieveContextsCallable =
+        callableFactory.createUnaryCallable(
+            asyncRetrieveContextsTransportSettings,
+            settings.asyncRetrieveContextsSettings(),
+            clientContext);
+    this.asyncRetrieveContextsOperationCallable =
+        callableFactory.createOperationCallable(
+            asyncRetrieveContextsTransportSettings,
+            settings.asyncRetrieveContextsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -265,6 +413,36 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
   public UnaryCallable<RetrieveContextsRequest, RetrieveContextsResponse>
       retrieveContextsCallable() {
     return retrieveContextsCallable;
+  }
+
+  @Override
+  public UnaryCallable<AugmentPromptRequest, AugmentPromptResponse> augmentPromptCallable() {
+    return augmentPromptCallable;
+  }
+
+  @Override
+  public UnaryCallable<CorroborateContentRequest, CorroborateContentResponse>
+      corroborateContentCallable() {
+    return corroborateContentCallable;
+  }
+
+  @Override
+  public UnaryCallable<AskContextsRequest, AskContextsResponse> askContextsCallable() {
+    return askContextsCallable;
+  }
+
+  @Override
+  public UnaryCallable<AsyncRetrieveContextsRequest, Operation> asyncRetrieveContextsCallable() {
+    return asyncRetrieveContextsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          AsyncRetrieveContextsRequest,
+          AsyncRetrieveContextsResponse,
+          AsyncRetrieveContextsOperationMetadata>
+      asyncRetrieveContextsOperationCallable() {
+    return asyncRetrieveContextsOperationCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for retrieving and updating individual error groups.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/devtools/clouderrorreporting/v1beta1/error_group_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ErrorGroupServiceGrpc {
 
@@ -141,6 +138,19 @@ public final class ErrorGroupServiceGrpc {
           }
         };
     return ErrorGroupServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ErrorGroupServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ErrorGroupServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ErrorGroupServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ErrorGroupServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ErrorGroupServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ErrorGroupServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -282,6 +292,56 @@ public final class ErrorGroupServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ErrorGroupService.
+   *
+   * <pre>
+   * Service for retrieving and updating individual error groups.
+   * </pre>
+   */
+  public static final class ErrorGroupServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ErrorGroupServiceBlockingV2Stub> {
+    private ErrorGroupServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ErrorGroupServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ErrorGroupServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the specified group.
+     * </pre>
+     */
+    public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup getGroup(
+        com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Replace the data for the specified group.
+     * Fails if the group does not exist.
+     * </pre>
+     */
+    public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup updateGroup(
+        com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateGroupMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ErrorGroupService.
    *
    * <pre>
    * Service for retrieving and updating individual error groups.

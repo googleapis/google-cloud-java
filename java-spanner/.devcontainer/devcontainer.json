@@ -1,0 +1,43 @@
+{
+  "name": "Java 11",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      // Use the VARIANT arg to pick a Debian OS version: buster, bullseye
+      // Use bullseye when running on local arm64/Apple Silicon.
+      "VARIANT": "bullseye",
+      // Options
+      "INSTALL_MAVEN": "true",
+      "INSTALL_GRADLE": "false",
+      "NODE_VERSION": "lts/*"
+    }
+  },
+
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Set *default* container specific settings.json values on container create.
+      "settings": {
+        "java.import.gradle.java.home": "/usr/local/sdkman/candidates/java/current",
+        "java.configuration.runtimes": [{
+          "default": true,
+          "name": "JavaSE-11",
+          "path": "/usr/local/sdkman/candidates/java/current"
+        }]
+      },
+
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "bash .devcontainer/postCreate.sh",
+
+  // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "vscode"
+}

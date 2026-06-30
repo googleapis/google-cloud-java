@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -253,7 +253,8 @@ public class EnvironmentName implements ResourceName {
     private Builder(EnvironmentName environmentName) {
       Preconditions.checkArgument(
           Objects.equals(environmentName.pathTemplate, PROJECT_ENVIRONMENT),
-          "toBuilder is only supported when EnvironmentName has the pattern of projects/{project}/agent/environments/{environment}");
+          "toBuilder is only supported when EnvironmentName has the pattern of"
+              + " projects/{project}/agent/environments/{environment}");
       this.project = environmentName.project;
       this.environment = environmentName.environment;
     }

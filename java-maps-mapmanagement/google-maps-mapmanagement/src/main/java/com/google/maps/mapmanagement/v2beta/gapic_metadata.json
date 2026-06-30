@@ -1,0 +1,63 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.maps.mapmanagement.v2beta",
+  "libraryPackage": "com.google.maps.mapmanagement.v2beta",
+  "services": {
+    "MapManagement": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MapManagementClient",
+          "rpcs": {
+            "CreateMapConfig": {
+              "methods": ["createMapConfig", "createMapConfig", "createMapConfig", "createMapConfigCallable"]
+            },
+            "CreateMapContextConfig": {
+              "methods": ["createMapContextConfig", "createMapContextConfig", "createMapContextConfig", "createMapContextConfigCallable"]
+            },
+            "CreateStyleConfig": {
+              "methods": ["createStyleConfig", "createStyleConfig", "createStyleConfig", "createStyleConfigCallable"]
+            },
+            "DeleteMapConfig": {
+              "methods": ["deleteMapConfig", "deleteMapConfig", "deleteMapConfig", "deleteMapConfigCallable"]
+            },
+            "DeleteMapContextConfig": {
+              "methods": ["deleteMapContextConfig", "deleteMapContextConfig", "deleteMapContextConfig", "deleteMapContextConfigCallable"]
+            },
+            "DeleteStyleConfig": {
+              "methods": ["deleteStyleConfig", "deleteStyleConfig", "deleteStyleConfig", "deleteStyleConfigCallable"]
+            },
+            "GetMapConfig": {
+              "methods": ["getMapConfig", "getMapConfig", "getMapConfig", "getMapConfigCallable"]
+            },
+            "GetMapContextConfig": {
+              "methods": ["getMapContextConfig", "getMapContextConfig", "getMapContextConfig", "getMapContextConfigCallable"]
+            },
+            "GetStyleConfig": {
+              "methods": ["getStyleConfig", "getStyleConfig", "getStyleConfig", "getStyleConfigCallable"]
+            },
+            "ListMapConfigs": {
+              "methods": ["listMapConfigs", "listMapConfigs", "listMapConfigs", "listMapConfigsPagedCallable", "listMapConfigsCallable"]
+            },
+            "ListMapContextConfigs": {
+              "methods": ["listMapContextConfigs", "listMapContextConfigs", "listMapContextConfigs", "listMapContextConfigsPagedCallable", "listMapContextConfigsCallable"]
+            },
+            "ListStyleConfigs": {
+              "methods": ["listStyleConfigs", "listStyleConfigs", "listStyleConfigs", "listStyleConfigsPagedCallable", "listStyleConfigsCallable"]
+            },
+            "UpdateMapConfig": {
+              "methods": ["updateMapConfig", "updateMapConfig", "updateMapConfigCallable"]
+            },
+            "UpdateMapContextConfig": {
+              "methods": ["updateMapContextConfig", "updateMapContextConfig", "updateMapContextConfigCallable"]
+            },
+            "UpdateStyleConfig": {
+              "methods": ["updateStyleConfig", "updateStyleConfig", "updateStyleConfigCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

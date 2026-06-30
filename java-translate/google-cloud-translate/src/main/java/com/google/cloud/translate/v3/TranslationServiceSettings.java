@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,11 @@ package com.google.cloud.translate.v3;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtDatasetsPagedResponse;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtFilesPagedResponse;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtSentencesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListDatasetsPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListExamplesPagedResponse;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossariesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossaryEntriesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListModelsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -56,7 +60,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of translateText to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of translateText:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -73,10 +79,47 @@ import javax.annotation.Generated;
  *             .translateTextSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * TranslationServiceSettings translationServiceSettings =
  *     translationServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for batchTranslateText:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * TranslationServiceSettings.Builder translationServiceSettingsBuilder =
+ *     TranslationServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * translationServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -85,6 +128,11 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
   /** Returns the object with the settings used for calls to translateText. */
   public UnaryCallSettings<TranslateTextRequest, TranslateTextResponse> translateTextSettings() {
     return ((TranslationServiceStubSettings) getStubSettings()).translateTextSettings();
+  }
+
+  /** Returns the object with the settings used for calls to romanizeText. */
+  public UnaryCallSettings<RomanizeTextRequest, RomanizeTextResponse> romanizeTextSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).romanizeTextSettings();
   }
 
   /** Returns the object with the settings used for calls to detectLanguage. */
@@ -144,6 +192,17 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
     return ((TranslationServiceStubSettings) getStubSettings()).createGlossaryOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateGlossary. */
+  public UnaryCallSettings<UpdateGlossaryRequest, Operation> updateGlossarySettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).updateGlossarySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGlossary. */
+  public OperationCallSettings<UpdateGlossaryRequest, Glossary, UpdateGlossaryMetadata>
+      updateGlossaryOperationSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).updateGlossaryOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listGlossaries. */
   public PagedCallSettings<
           ListGlossariesRequest, ListGlossariesResponse, ListGlossariesPagedResponse>
@@ -166,6 +225,68 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
           DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationSettings() {
     return ((TranslationServiceStubSettings) getStubSettings()).deleteGlossaryOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGlossaryEntry. */
+  public UnaryCallSettings<GetGlossaryEntryRequest, GlossaryEntry> getGlossaryEntrySettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).getGlossaryEntrySettings();
+  }
+
+  /** Returns the object with the settings used for calls to listGlossaryEntries. */
+  public PagedCallSettings<
+          ListGlossaryEntriesRequest, ListGlossaryEntriesResponse, ListGlossaryEntriesPagedResponse>
+      listGlossaryEntriesSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).listGlossaryEntriesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createGlossaryEntry. */
+  public UnaryCallSettings<CreateGlossaryEntryRequest, GlossaryEntry>
+      createGlossaryEntrySettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).createGlossaryEntrySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGlossaryEntry. */
+  public UnaryCallSettings<UpdateGlossaryEntryRequest, GlossaryEntry>
+      updateGlossaryEntrySettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).updateGlossaryEntrySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteGlossaryEntry. */
+  public UnaryCallSettings<DeleteGlossaryEntryRequest, Empty> deleteGlossaryEntrySettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).deleteGlossaryEntrySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDataset. */
+  public UnaryCallSettings<CreateDatasetRequest, Operation> createDatasetSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).createDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDataset. */
+  public OperationCallSettings<CreateDatasetRequest, Dataset, CreateDatasetMetadata>
+      createDatasetOperationSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).createDatasetOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDataset. */
+  public UnaryCallSettings<GetDatasetRequest, Dataset> getDatasetSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).getDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDatasets. */
+  public PagedCallSettings<ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
+      listDatasetsSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).listDatasetsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataset. */
+  public UnaryCallSettings<DeleteDatasetRequest, Operation> deleteDatasetSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).deleteDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataset. */
+  public OperationCallSettings<DeleteDatasetRequest, Empty, DeleteDatasetMetadata>
+      deleteDatasetOperationSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).deleteDatasetOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createAdaptiveMtDataset. */
@@ -231,6 +352,67 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
           ListAdaptiveMtSentencesPagedResponse>
       listAdaptiveMtSentencesSettings() {
     return ((TranslationServiceStubSettings) getStubSettings()).listAdaptiveMtSentencesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importData. */
+  public UnaryCallSettings<ImportDataRequest, Operation> importDataSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).importDataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importData. */
+  public OperationCallSettings<ImportDataRequest, Empty, ImportDataMetadata>
+      importDataOperationSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).importDataOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportData. */
+  public UnaryCallSettings<ExportDataRequest, Operation> exportDataSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).exportDataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportData. */
+  public OperationCallSettings<ExportDataRequest, Empty, ExportDataMetadata>
+      exportDataOperationSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).exportDataOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listExamples. */
+  public PagedCallSettings<ListExamplesRequest, ListExamplesResponse, ListExamplesPagedResponse>
+      listExamplesSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).listExamplesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createModel. */
+  public UnaryCallSettings<CreateModelRequest, Operation> createModelSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).createModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createModel. */
+  public OperationCallSettings<CreateModelRequest, Model, CreateModelMetadata>
+      createModelOperationSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).createModelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listModels. */
+  public PagedCallSettings<ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
+      listModelsSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).listModelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getModel. */
+  public UnaryCallSettings<GetModelRequest, Model> getModelSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).getModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteModel. */
+  public UnaryCallSettings<DeleteModelRequest, Operation> deleteModelSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).deleteModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteModel. */
+  public OperationCallSettings<DeleteModelRequest, Empty, DeleteModelMetadata>
+      deleteModelOperationSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).deleteModelOperationSettings();
   }
 
   public static final TranslationServiceSettings create(TranslationServiceStubSettings stub)
@@ -351,6 +533,12 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
       return getStubSettingsBuilder().translateTextSettings();
     }
 
+    /** Returns the builder for the settings used for calls to romanizeText. */
+    public UnaryCallSettings.Builder<RomanizeTextRequest, RomanizeTextResponse>
+        romanizeTextSettings() {
+      return getStubSettingsBuilder().romanizeTextSettings();
+    }
+
     /** Returns the builder for the settings used for calls to detectLanguage. */
     public UnaryCallSettings.Builder<DetectLanguageRequest, DetectLanguageResponse>
         detectLanguageSettings() {
@@ -408,6 +596,17 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
       return getStubSettingsBuilder().createGlossaryOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateGlossary. */
+    public UnaryCallSettings.Builder<UpdateGlossaryRequest, Operation> updateGlossarySettings() {
+      return getStubSettingsBuilder().updateGlossarySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGlossary. */
+    public OperationCallSettings.Builder<UpdateGlossaryRequest, Glossary, UpdateGlossaryMetadata>
+        updateGlossaryOperationSettings() {
+      return getStubSettingsBuilder().updateGlossaryOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listGlossaries. */
     public PagedCallSettings.Builder<
             ListGlossariesRequest, ListGlossariesResponse, ListGlossariesPagedResponse>
@@ -430,6 +629,73 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
             DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
         deleteGlossaryOperationSettings() {
       return getStubSettingsBuilder().deleteGlossaryOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGlossaryEntry. */
+    public UnaryCallSettings.Builder<GetGlossaryEntryRequest, GlossaryEntry>
+        getGlossaryEntrySettings() {
+      return getStubSettingsBuilder().getGlossaryEntrySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listGlossaryEntries. */
+    public PagedCallSettings.Builder<
+            ListGlossaryEntriesRequest,
+            ListGlossaryEntriesResponse,
+            ListGlossaryEntriesPagedResponse>
+        listGlossaryEntriesSettings() {
+      return getStubSettingsBuilder().listGlossaryEntriesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createGlossaryEntry. */
+    public UnaryCallSettings.Builder<CreateGlossaryEntryRequest, GlossaryEntry>
+        createGlossaryEntrySettings() {
+      return getStubSettingsBuilder().createGlossaryEntrySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGlossaryEntry. */
+    public UnaryCallSettings.Builder<UpdateGlossaryEntryRequest, GlossaryEntry>
+        updateGlossaryEntrySettings() {
+      return getStubSettingsBuilder().updateGlossaryEntrySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGlossaryEntry. */
+    public UnaryCallSettings.Builder<DeleteGlossaryEntryRequest, Empty>
+        deleteGlossaryEntrySettings() {
+      return getStubSettingsBuilder().deleteGlossaryEntrySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDataset. */
+    public UnaryCallSettings.Builder<CreateDatasetRequest, Operation> createDatasetSettings() {
+      return getStubSettingsBuilder().createDatasetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDataset. */
+    public OperationCallSettings.Builder<CreateDatasetRequest, Dataset, CreateDatasetMetadata>
+        createDatasetOperationSettings() {
+      return getStubSettingsBuilder().createDatasetOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDataset. */
+    public UnaryCallSettings.Builder<GetDatasetRequest, Dataset> getDatasetSettings() {
+      return getStubSettingsBuilder().getDatasetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDatasets. */
+    public PagedCallSettings.Builder<
+            ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
+        listDatasetsSettings() {
+      return getStubSettingsBuilder().listDatasetsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDataset. */
+    public UnaryCallSettings.Builder<DeleteDatasetRequest, Operation> deleteDatasetSettings() {
+      return getStubSettingsBuilder().deleteDatasetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDataset. */
+    public OperationCallSettings.Builder<DeleteDatasetRequest, Empty, DeleteDatasetMetadata>
+        deleteDatasetOperationSettings() {
+      return getStubSettingsBuilder().deleteDatasetOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createAdaptiveMtDataset. */
@@ -499,6 +765,68 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
             ListAdaptiveMtSentencesPagedResponse>
         listAdaptiveMtSentencesSettings() {
       return getStubSettingsBuilder().listAdaptiveMtSentencesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importData. */
+    public UnaryCallSettings.Builder<ImportDataRequest, Operation> importDataSettings() {
+      return getStubSettingsBuilder().importDataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importData. */
+    public OperationCallSettings.Builder<ImportDataRequest, Empty, ImportDataMetadata>
+        importDataOperationSettings() {
+      return getStubSettingsBuilder().importDataOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportData. */
+    public UnaryCallSettings.Builder<ExportDataRequest, Operation> exportDataSettings() {
+      return getStubSettingsBuilder().exportDataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportData. */
+    public OperationCallSettings.Builder<ExportDataRequest, Empty, ExportDataMetadata>
+        exportDataOperationSettings() {
+      return getStubSettingsBuilder().exportDataOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listExamples. */
+    public PagedCallSettings.Builder<
+            ListExamplesRequest, ListExamplesResponse, ListExamplesPagedResponse>
+        listExamplesSettings() {
+      return getStubSettingsBuilder().listExamplesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createModel. */
+    public UnaryCallSettings.Builder<CreateModelRequest, Operation> createModelSettings() {
+      return getStubSettingsBuilder().createModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createModel. */
+    public OperationCallSettings.Builder<CreateModelRequest, Model, CreateModelMetadata>
+        createModelOperationSettings() {
+      return getStubSettingsBuilder().createModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listModels. */
+    public PagedCallSettings.Builder<ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
+        listModelsSettings() {
+      return getStubSettingsBuilder().listModelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getModel. */
+    public UnaryCallSettings.Builder<GetModelRequest, Model> getModelSettings() {
+      return getStubSettingsBuilder().getModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteModel. */
+    public UnaryCallSettings.Builder<DeleteModelRequest, Operation> deleteModelSettings() {
+      return getStubSettingsBuilder().deleteModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteModel. */
+    public OperationCallSettings.Builder<DeleteModelRequest, Empty, DeleteModelMetadata>
+        deleteModelOperationSettings() {
+      return getStubSettingsBuilder().deleteModelOperationSettings();
     }
 
     @Override

@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package google.cloud.securitycenter.v2;
 
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
+import "google/cloud/securitycenter/v2/resource.proto";
 import "google/cloud/securitycenter/v2/valued_resource.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -34,12 +35,13 @@ message Simulation {
   option (google.api.resource) = {
     type: "securitycenter.googleapis.com/Simulation"
     pattern: "organizations/{organization}/simulations/{simulation}"
+    pattern: "organizations/{organization}/locations/{location}/simulations/{simluation}"
     plural: "simulations"
     singular: "simulation"
   };
 
   // Full resource name of the Simulation:
-  // organizations/123/simulations/456
+  // `organizations/123/simulations/456`
   string name = 1;
 
   // Output only. Time simulation was created
@@ -49,4 +51,7 @@ message Simulation {
   // Resource value configurations' metadata used in this simulation. Maximum of
   // 100.
   repeated ResourceValueConfigMetadata resource_value_configs_metadata = 3;
+
+  // Indicates which cloud provider was used in this simulation.
+  CloudProvider cloud_provider = 4;
 }

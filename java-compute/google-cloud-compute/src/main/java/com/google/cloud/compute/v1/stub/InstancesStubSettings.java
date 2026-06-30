@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import static com.google.cloud.compute.v1.InstancesClient.ListReferrersPagedResp
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -35,6 +36,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -46,12 +48,14 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAccessConfigInstanceRequest;
+import com.google.cloud.compute.v1.AddNetworkInterfaceInstanceRequest;
 import com.google.cloud.compute.v1.AddResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.AggregatedListInstancesRequest;
 import com.google.cloud.compute.v1.AttachDiskInstanceRequest;
 import com.google.cloud.compute.v1.BulkInsertInstanceRequest;
 import com.google.cloud.compute.v1.DeleteAccessConfigInstanceRequest;
 import com.google.cloud.compute.v1.DeleteInstanceRequest;
+import com.google.cloud.compute.v1.DeleteNetworkInterfaceInstanceRequest;
 import com.google.cloud.compute.v1.DetachDiskInstanceRequest;
 import com.google.cloud.compute.v1.GetEffectiveFirewallsInstanceRequest;
 import com.google.cloud.compute.v1.GetGuestAttributesInstanceRequest;
@@ -75,6 +79,7 @@ import com.google.cloud.compute.v1.PerformMaintenanceInstanceRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.Reference;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
+import com.google.cloud.compute.v1.ReportHostAsFaultyInstanceRequest;
 import com.google.cloud.compute.v1.ResetInstanceRequest;
 import com.google.cloud.compute.v1.ResumeInstanceRequest;
 import com.google.cloud.compute.v1.Screenshot;
@@ -113,11 +118,10 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
-import java.util.Collections;
+import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -134,7 +138,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -150,12 +156,49 @@ import org.threeten.bp.Duration;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * InstancesStubSettings instancesSettings = instancesSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for addAccessConfig:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * InstancesStubSettings.Builder instancesSettingsBuilder = InstancesStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * instancesSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -168,6 +211,10 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       addAccessConfigSettings;
   private final OperationCallSettings<AddAccessConfigInstanceRequest, Operation, Operation>
       addAccessConfigOperationSettings;
+  private final UnaryCallSettings<AddNetworkInterfaceInstanceRequest, Operation>
+      addNetworkInterfaceSettings;
+  private final OperationCallSettings<AddNetworkInterfaceInstanceRequest, Operation, Operation>
+      addNetworkInterfaceOperationSettings;
   private final UnaryCallSettings<AddResourcePoliciesInstanceRequest, Operation>
       addResourcePoliciesSettings;
   private final OperationCallSettings<AddResourcePoliciesInstanceRequest, Operation, Operation>
@@ -188,6 +235,10 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       deleteAccessConfigSettings;
   private final OperationCallSettings<DeleteAccessConfigInstanceRequest, Operation, Operation>
       deleteAccessConfigOperationSettings;
+  private final UnaryCallSettings<DeleteNetworkInterfaceInstanceRequest, Operation>
+      deleteNetworkInterfaceSettings;
+  private final OperationCallSettings<DeleteNetworkInterfaceInstanceRequest, Operation, Operation>
+      deleteNetworkInterfaceOperationSettings;
   private final UnaryCallSettings<DetachDiskInstanceRequest, Operation> detachDiskSettings;
   private final OperationCallSettings<DetachDiskInstanceRequest, Operation, Operation>
       detachDiskOperationSettings;
@@ -220,6 +271,10 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       removeResourcePoliciesSettings;
   private final OperationCallSettings<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
       removeResourcePoliciesOperationSettings;
+  private final UnaryCallSettings<ReportHostAsFaultyInstanceRequest, Operation>
+      reportHostAsFaultySettings;
+  private final OperationCallSettings<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+      reportHostAsFaultyOperationSettings;
   private final UnaryCallSettings<ResetInstanceRequest, Operation> resetSettings;
   private final OperationCallSettings<ResetInstanceRequest, Operation, Operation>
       resetOperationSettings;
@@ -358,9 +413,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
             @Override
             public Iterable<Map.Entry<String, InstancesScopedList>> extractResources(
                 InstanceAggregatedList payload) {
-              return payload.getItemsMap() == null
-                  ? Collections.<Map.Entry<String, InstancesScopedList>>emptySet()
-                  : payload.getItemsMap().entrySet();
+              return payload.getItemsMap().entrySet();
             }
           };
 
@@ -394,9 +447,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
             @Override
             public Iterable<Instance> extractResources(InstanceList payload) {
-              return payload.getItemsList() == null
-                  ? ImmutableList.<Instance>of()
-                  : payload.getItemsList();
+              return payload.getItemsList();
             }
           };
 
@@ -436,9 +487,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
             @Override
             public Iterable<Reference> extractResources(InstanceListReferrers payload) {
-              return payload.getItemsList() == null
-                  ? ImmutableList.<Reference>of()
-                  : payload.getItemsList();
+              return payload.getItemsList();
             }
           };
 
@@ -510,6 +559,18 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return addAccessConfigOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to addNetworkInterface. */
+  public UnaryCallSettings<AddNetworkInterfaceInstanceRequest, Operation>
+      addNetworkInterfaceSettings() {
+    return addNetworkInterfaceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addNetworkInterface. */
+  public OperationCallSettings<AddNetworkInterfaceInstanceRequest, Operation, Operation>
+      addNetworkInterfaceOperationSettings() {
+    return addNetworkInterfaceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to addResourcePolicies. */
   public UnaryCallSettings<AddResourcePoliciesInstanceRequest, Operation>
       addResourcePoliciesSettings() {
@@ -572,6 +633,18 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
   public OperationCallSettings<DeleteAccessConfigInstanceRequest, Operation, Operation>
       deleteAccessConfigOperationSettings() {
     return deleteAccessConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteNetworkInterface. */
+  public UnaryCallSettings<DeleteNetworkInterfaceInstanceRequest, Operation>
+      deleteNetworkInterfaceSettings() {
+    return deleteNetworkInterfaceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteNetworkInterface. */
+  public OperationCallSettings<DeleteNetworkInterfaceInstanceRequest, Operation, Operation>
+      deleteNetworkInterfaceOperationSettings() {
+    return deleteNetworkInterfaceOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to detachDisk. */
@@ -670,6 +743,18 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
   public OperationCallSettings<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
       removeResourcePoliciesOperationSettings() {
     return removeResourcePoliciesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to reportHostAsFaulty. */
+  public UnaryCallSettings<ReportHostAsFaultyInstanceRequest, Operation>
+      reportHostAsFaultySettings() {
+    return reportHostAsFaultySettings;
+  }
+
+  /** Returns the object with the settings used for calls to reportHostAsFaulty. */
+  public OperationCallSettings<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+      reportHostAsFaultyOperationSettings() {
+    return reportHostAsFaultyOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to reset. */
@@ -989,15 +1074,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -1010,6 +1086,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "compute.googleapis.com:443";
   }
@@ -1069,6 +1146,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
     addAccessConfigSettings = settingsBuilder.addAccessConfigSettings().build();
     addAccessConfigOperationSettings = settingsBuilder.addAccessConfigOperationSettings().build();
+    addNetworkInterfaceSettings = settingsBuilder.addNetworkInterfaceSettings().build();
+    addNetworkInterfaceOperationSettings =
+        settingsBuilder.addNetworkInterfaceOperationSettings().build();
     addResourcePoliciesSettings = settingsBuilder.addResourcePoliciesSettings().build();
     addResourcePoliciesOperationSettings =
         settingsBuilder.addResourcePoliciesOperationSettings().build();
@@ -1082,6 +1162,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     deleteAccessConfigSettings = settingsBuilder.deleteAccessConfigSettings().build();
     deleteAccessConfigOperationSettings =
         settingsBuilder.deleteAccessConfigOperationSettings().build();
+    deleteNetworkInterfaceSettings = settingsBuilder.deleteNetworkInterfaceSettings().build();
+    deleteNetworkInterfaceOperationSettings =
+        settingsBuilder.deleteNetworkInterfaceOperationSettings().build();
     detachDiskSettings = settingsBuilder.detachDiskSettings().build();
     detachDiskOperationSettings = settingsBuilder.detachDiskOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
@@ -1102,6 +1185,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     removeResourcePoliciesSettings = settingsBuilder.removeResourcePoliciesSettings().build();
     removeResourcePoliciesOperationSettings =
         settingsBuilder.removeResourcePoliciesOperationSettings().build();
+    reportHostAsFaultySettings = settingsBuilder.reportHostAsFaultySettings().build();
+    reportHostAsFaultyOperationSettings =
+        settingsBuilder.reportHostAsFaultyOperationSettings().build();
     resetSettings = settingsBuilder.resetSettings().build();
     resetOperationSettings = settingsBuilder.resetOperationSettings().build();
     resumeSettings = settingsBuilder.resumeSettings().build();
@@ -1172,6 +1258,15 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
         settingsBuilder.updateShieldedInstanceConfigOperationSettings().build();
   }
 
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-compute")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
+  }
+
   /** Builder for InstancesStubSettings. */
   public static class Builder extends StubSettings.Builder<InstancesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
@@ -1180,6 +1275,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     private final OperationCallSettings.Builder<
             AddAccessConfigInstanceRequest, Operation, Operation>
         addAccessConfigOperationSettings;
+    private final UnaryCallSettings.Builder<AddNetworkInterfaceInstanceRequest, Operation>
+        addNetworkInterfaceSettings;
+    private final OperationCallSettings.Builder<
+            AddNetworkInterfaceInstanceRequest, Operation, Operation>
+        addNetworkInterfaceOperationSettings;
     private final UnaryCallSettings.Builder<AddResourcePoliciesInstanceRequest, Operation>
         addResourcePoliciesSettings;
     private final OperationCallSettings.Builder<
@@ -1204,6 +1304,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     private final OperationCallSettings.Builder<
             DeleteAccessConfigInstanceRequest, Operation, Operation>
         deleteAccessConfigOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteNetworkInterfaceInstanceRequest, Operation>
+        deleteNetworkInterfaceSettings;
+    private final OperationCallSettings.Builder<
+            DeleteNetworkInterfaceInstanceRequest, Operation, Operation>
+        deleteNetworkInterfaceOperationSettings;
     private final UnaryCallSettings.Builder<DetachDiskInstanceRequest, Operation>
         detachDiskSettings;
     private final OperationCallSettings.Builder<DetachDiskInstanceRequest, Operation, Operation>
@@ -1241,6 +1346,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     private final OperationCallSettings.Builder<
             RemoveResourcePoliciesInstanceRequest, Operation, Operation>
         removeResourcePoliciesOperationSettings;
+    private final UnaryCallSettings.Builder<ReportHostAsFaultyInstanceRequest, Operation>
+        reportHostAsFaultySettings;
+    private final OperationCallSettings.Builder<
+            ReportHostAsFaultyInstanceRequest, Operation, Operation>
+        reportHostAsFaultyOperationSettings;
     private final UnaryCallSettings.Builder<ResetInstanceRequest, Operation> resetSettings;
     private final OperationCallSettings.Builder<ResetInstanceRequest, Operation, Operation>
         resetOperationSettings;
@@ -1377,21 +1487,21 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -1406,6 +1516,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
       addAccessConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       addAccessConfigOperationSettings = OperationCallSettings.newBuilder();
+      addNetworkInterfaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addNetworkInterfaceOperationSettings = OperationCallSettings.newBuilder();
       addResourcePoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       addResourcePoliciesOperationSettings = OperationCallSettings.newBuilder();
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
@@ -1417,6 +1529,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       deleteOperationSettings = OperationCallSettings.newBuilder();
       deleteAccessConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAccessConfigOperationSettings = OperationCallSettings.newBuilder();
+      deleteNetworkInterfaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteNetworkInterfaceOperationSettings = OperationCallSettings.newBuilder();
       detachDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       detachDiskOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1434,6 +1548,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       performMaintenanceOperationSettings = OperationCallSettings.newBuilder();
       removeResourcePoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       removeResourcePoliciesOperationSettings = OperationCallSettings.newBuilder();
+      reportHostAsFaultySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      reportHostAsFaultyOperationSettings = OperationCallSettings.newBuilder();
       resetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       resetOperationSettings = OperationCallSettings.newBuilder();
       resumeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1491,12 +1607,14 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addAccessConfigSettings,
+              addNetworkInterfaceSettings,
               addResourcePoliciesSettings,
               aggregatedListSettings,
               attachDiskSettings,
               bulkInsertSettings,
               deleteSettings,
               deleteAccessConfigSettings,
+              deleteNetworkInterfaceSettings,
               detachDiskSettings,
               getSettings,
               getEffectiveFirewallsSettings,
@@ -1510,6 +1628,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               listReferrersSettings,
               performMaintenanceSettings,
               removeResourcePoliciesSettings,
+              reportHostAsFaultySettings,
               resetSettings,
               resumeSettings,
               sendDiagnosticInterruptSettings,
@@ -1546,6 +1665,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
       addAccessConfigSettings = settings.addAccessConfigSettings.toBuilder();
       addAccessConfigOperationSettings = settings.addAccessConfigOperationSettings.toBuilder();
+      addNetworkInterfaceSettings = settings.addNetworkInterfaceSettings.toBuilder();
+      addNetworkInterfaceOperationSettings =
+          settings.addNetworkInterfaceOperationSettings.toBuilder();
       addResourcePoliciesSettings = settings.addResourcePoliciesSettings.toBuilder();
       addResourcePoliciesOperationSettings =
           settings.addResourcePoliciesOperationSettings.toBuilder();
@@ -1559,6 +1681,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       deleteAccessConfigSettings = settings.deleteAccessConfigSettings.toBuilder();
       deleteAccessConfigOperationSettings =
           settings.deleteAccessConfigOperationSettings.toBuilder();
+      deleteNetworkInterfaceSettings = settings.deleteNetworkInterfaceSettings.toBuilder();
+      deleteNetworkInterfaceOperationSettings =
+          settings.deleteNetworkInterfaceOperationSettings.toBuilder();
       detachDiskSettings = settings.detachDiskSettings.toBuilder();
       detachDiskOperationSettings = settings.detachDiskOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
@@ -1579,6 +1704,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       removeResourcePoliciesSettings = settings.removeResourcePoliciesSettings.toBuilder();
       removeResourcePoliciesOperationSettings =
           settings.removeResourcePoliciesOperationSettings.toBuilder();
+      reportHostAsFaultySettings = settings.reportHostAsFaultySettings.toBuilder();
+      reportHostAsFaultyOperationSettings =
+          settings.reportHostAsFaultyOperationSettings.toBuilder();
       resetSettings = settings.resetSettings.toBuilder();
       resetOperationSettings = settings.resetOperationSettings.toBuilder();
       resumeSettings = settings.resumeSettings.toBuilder();
@@ -1647,12 +1775,14 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addAccessConfigSettings,
+              addNetworkInterfaceSettings,
               addResourcePoliciesSettings,
               aggregatedListSettings,
               attachDiskSettings,
               bulkInsertSettings,
               deleteSettings,
               deleteAccessConfigSettings,
+              deleteNetworkInterfaceSettings,
               detachDiskSettings,
               getSettings,
               getEffectiveFirewallsSettings,
@@ -1666,6 +1796,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               listReferrersSettings,
               performMaintenanceSettings,
               removeResourcePoliciesSettings,
+              reportHostAsFaultySettings,
               resetSettings,
               resumeSettings,
               sendDiagnosticInterruptSettings,
@@ -1715,6 +1846,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .addNetworkInterfaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .addResourcePoliciesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1741,6 +1877,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
       builder
           .deleteAccessConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteNetworkInterfaceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1806,6 +1947,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
       builder
           .removeResourcePoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .reportHostAsFaultySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1964,13 +2110,38 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .addNetworkInterfaceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AddNetworkInterfaceInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -1989,13 +2160,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2013,13 +2184,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2037,13 +2208,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2061,13 +2232,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2086,13 +2257,38 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .deleteNetworkInterfaceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteNetworkInterfaceInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2110,13 +2306,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2134,13 +2330,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2159,13 +2355,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2184,13 +2380,38 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .reportHostAsFaultyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ReportHostAsFaultyInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2208,13 +2429,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2232,13 +2453,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2257,13 +2478,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2282,13 +2503,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2306,13 +2527,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2331,13 +2552,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2355,13 +2576,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2379,13 +2600,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2404,13 +2625,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2428,13 +2649,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2452,13 +2673,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2477,13 +2698,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2502,13 +2723,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2527,13 +2748,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2551,13 +2772,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2576,13 +2797,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2600,13 +2821,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2625,13 +2846,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2649,13 +2870,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2673,13 +2894,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2697,13 +2918,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2722,13 +2943,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2747,13 +2968,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2772,13 +2993,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -2797,13 +3018,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       return builder;
@@ -2834,6 +3055,18 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     public OperationCallSettings.Builder<AddAccessConfigInstanceRequest, Operation, Operation>
         addAccessConfigOperationSettings() {
       return addAccessConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addNetworkInterface. */
+    public UnaryCallSettings.Builder<AddNetworkInterfaceInstanceRequest, Operation>
+        addNetworkInterfaceSettings() {
+      return addNetworkInterfaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addNetworkInterface. */
+    public OperationCallSettings.Builder<AddNetworkInterfaceInstanceRequest, Operation, Operation>
+        addNetworkInterfaceOperationSettings() {
+      return addNetworkInterfaceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to addResourcePolicies. */
@@ -2898,6 +3131,19 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     public OperationCallSettings.Builder<DeleteAccessConfigInstanceRequest, Operation, Operation>
         deleteAccessConfigOperationSettings() {
       return deleteAccessConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNetworkInterface. */
+    public UnaryCallSettings.Builder<DeleteNetworkInterfaceInstanceRequest, Operation>
+        deleteNetworkInterfaceSettings() {
+      return deleteNetworkInterfaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNetworkInterface. */
+    public OperationCallSettings.Builder<
+            DeleteNetworkInterfaceInstanceRequest, Operation, Operation>
+        deleteNetworkInterfaceOperationSettings() {
+      return deleteNetworkInterfaceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to detachDisk. */
@@ -3000,6 +3246,18 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
             RemoveResourcePoliciesInstanceRequest, Operation, Operation>
         removeResourcePoliciesOperationSettings() {
       return removeResourcePoliciesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to reportHostAsFaulty. */
+    public UnaryCallSettings.Builder<ReportHostAsFaultyInstanceRequest, Operation>
+        reportHostAsFaultySettings() {
+      return reportHostAsFaultySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to reportHostAsFaulty. */
+    public OperationCallSettings.Builder<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+        reportHostAsFaultyOperationSettings() {
+      return reportHostAsFaultyOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to reset. */
@@ -3317,15 +3575,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
             UpdateShieldedInstanceConfigInstanceRequest, Operation, Operation>
         updateShieldedInstanceConfigOperationSettings() {
       return updateShieldedInstanceConfigOperationSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

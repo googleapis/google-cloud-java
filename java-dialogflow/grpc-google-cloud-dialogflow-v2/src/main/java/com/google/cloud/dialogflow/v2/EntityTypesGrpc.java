@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [EntityTypes][google.cloud.dialogflow.v2.EntityType].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2/entity_type.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EntityTypesGrpc {
 
@@ -511,6 +508,19 @@ public final class EntityTypesGrpc {
           }
         };
     return EntityTypesStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EntityTypesBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EntityTypesBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EntityTypesBlockingV2Stub>() {
+          @java.lang.Override
+          public EntityTypesBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EntityTypesBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EntityTypesBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -1012,6 +1022,227 @@ public final class EntityTypesGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service EntityTypes.
+   *
+   * <pre>
+   * Service for managing [EntityTypes][google.cloud.dialogflow.v2.EntityType].
+   * </pre>
+   */
+  public static final class EntityTypesBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EntityTypesBlockingV2Stub> {
+    private EntityTypesBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EntityTypesBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EntityTypesBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all entity types in the specified agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.ListEntityTypesResponse listEntityTypes(
+        com.google.cloud.dialogflow.v2.ListEntityTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListEntityTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified entity type.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.EntityType getEntityType(
+        com.google.cloud.dialogflow.v2.GetEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEntityTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an entity type in the specified agent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.EntityType createEntityType(
+        com.google.cloud.dialogflow.v2.CreateEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateEntityTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified entity type.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.EntityType updateEntityType(
+        com.google.cloud.dialogflow.v2.UpdateEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateEntityTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified entity type.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEntityType(
+        com.google.cloud.dialogflow.v2.DeleteEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteEntityTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates/Creates multiple entity types in the specified agent.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`:
+     * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse]
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchUpdateEntityTypes(
+        com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchUpdateEntityTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes entity types in the specified agent.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchDeleteEntityTypes(
+        com.google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchDeleteEntityTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates multiple new entities in the specified entity type.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreateEntities(
+        com.google.cloud.dialogflow.v2.BatchCreateEntitiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchCreateEntitiesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates or creates multiple entities in the specified entity type. This
+     * method does not affect entities in the entity type that aren't explicitly
+     * specified in the request.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchUpdateEntities(
+        com.google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchUpdateEntitiesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes entities in the specified entity type.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchDeleteEntities(
+        com.google.cloud.dialogflow.v2.BatchDeleteEntitiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchDeleteEntitiesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service EntityTypes.
    *
    * <pre>
    * Service for managing [EntityTypes][google.cloud.dialogflow.v2.EntityType].

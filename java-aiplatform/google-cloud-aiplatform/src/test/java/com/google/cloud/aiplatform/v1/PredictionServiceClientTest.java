@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import com.google.protobuf.Value;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -877,6 +878,9 @@ public class PredictionServiceClientTest {
     GenerateContentResponse expectedResponse =
         GenerateContentResponse.newBuilder()
             .addAllCandidates(new ArrayList<Candidate>())
+            .setModelVersion("modelVersion212437359")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setResponseId("responseId-633138884")
             .setPromptFeedback(GenerateContentResponse.PromptFeedback.newBuilder().build())
             .setUsageMetadata(GenerateContentResponse.UsageMetadata.newBuilder().build())
             .build();
@@ -920,6 +924,9 @@ public class PredictionServiceClientTest {
     GenerateContentResponse expectedResponse =
         GenerateContentResponse.newBuilder()
             .addAllCandidates(new ArrayList<Candidate>())
+            .setModelVersion("modelVersion212437359")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setResponseId("responseId-633138884")
             .setPromptFeedback(GenerateContentResponse.PromptFeedback.newBuilder().build())
             .setUsageMetadata(GenerateContentResponse.UsageMetadata.newBuilder().build())
             .build();
@@ -929,8 +936,13 @@ public class PredictionServiceClientTest {
             .setModel("model104069929")
             .addAllContents(new ArrayList<Content>())
             .setSystemInstruction(Content.newBuilder().build())
+            .setCachedContent(
+                CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
             .addAllTools(new ArrayList<Tool>())
+            .setToolConfig(ToolConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .addAllSafetySettings(new ArrayList<SafetySetting>())
+            .setModelArmorConfig(ModelArmorConfig.newBuilder().build())
             .setGenerationConfig(GenerationConfig.newBuilder().build())
             .build();
 
@@ -954,8 +966,13 @@ public class PredictionServiceClientTest {
             .setModel("model104069929")
             .addAllContents(new ArrayList<Content>())
             .setSystemInstruction(Content.newBuilder().build())
+            .setCachedContent(
+                CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
             .addAllTools(new ArrayList<Tool>())
+            .setToolConfig(ToolConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .addAllSafetySettings(new ArrayList<SafetySetting>())
+            .setModelArmorConfig(ModelArmorConfig.newBuilder().build())
             .setGenerationConfig(GenerationConfig.newBuilder().build())
             .build();
 
@@ -972,6 +989,96 @@ public class PredictionServiceClientTest {
       Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void embedContentTest() throws Exception {
+    EmbedContentResponse expectedResponse =
+        EmbedContentResponse.newBuilder()
+            .setEmbedding(EmbedContentResponse.Embedding.newBuilder().build())
+            .setUsageMetadata(UsageMetadata.newBuilder().build())
+            .setTruncated(true)
+            .build();
+    mockPredictionService.addResponse(expectedResponse);
+
+    EndpointName model =
+        EndpointName.ofProjectLocationPublisherModelName(
+            "[PROJECT]", "[LOCATION]", "[PUBLISHER]", "[MODEL]");
+    Content content = Content.newBuilder().build();
+
+    EmbedContentResponse actualResponse = client.embedContent(model, content);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPredictionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EmbedContentRequest actualRequest = ((EmbedContentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(model.toString(), actualRequest.getModel());
+    Assert.assertEquals(content, actualRequest.getContent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void embedContentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPredictionService.addException(exception);
+
+    try {
+      EndpointName model =
+          EndpointName.ofProjectLocationPublisherModelName(
+              "[PROJECT]", "[LOCATION]", "[PUBLISHER]", "[MODEL]");
+      Content content = Content.newBuilder().build();
+      client.embedContent(model, content);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void embedContentTest2() throws Exception {
+    EmbedContentResponse expectedResponse =
+        EmbedContentResponse.newBuilder()
+            .setEmbedding(EmbedContentResponse.Embedding.newBuilder().build())
+            .setUsageMetadata(UsageMetadata.newBuilder().build())
+            .setTruncated(true)
+            .build();
+    mockPredictionService.addResponse(expectedResponse);
+
+    String model = "model104069929";
+    Content content = Content.newBuilder().build();
+
+    EmbedContentResponse actualResponse = client.embedContent(model, content);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPredictionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EmbedContentRequest actualRequest = ((EmbedContentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(model, actualRequest.getModel());
+    Assert.assertEquals(content, actualRequest.getContent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void embedContentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPredictionService.addException(exception);
+
+    try {
+      String model = "model104069929";
+      Content content = Content.newBuilder().build();
+      client.embedContent(model, content);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

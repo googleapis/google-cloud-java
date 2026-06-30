@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ public class SyncGetFunction {
       GetFunctionRequest request =
           GetFunctionRequest.newBuilder()
               .setName(FunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+              .setRevision("revision-260786213")
               .build();
       Function response = functionServiceClient.getFunction(request);
     }

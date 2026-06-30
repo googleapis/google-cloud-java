@@ -1,0 +1,13 @@
+{
+    "project": "xxx",
+    "instance": "xxx",
+    "database": "users",
+    "threads": 4,
+    "iterations": 250,
+    "query": "INSERT INTO GroupMgmt (group_id, grpname) VALUES(?,?)",
+    "writeMetricToFile": false,
+    "queryParams": [
+        {"order": 1, "value": "#i"},
+        {"order": 2, "value": "#s"}
+    ]
+}

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>gapic-libraries-bom</artifactId>
+  <packaging>pom</packaging>
+  <version>{{ monorepo_version }}</version><!-- {x-version-update:google-cloud-java:current} -->
+  <name>Google Cloud Java BOM</name>
+  <description>
+    BOM for the libraries in google-cloud-java repository. Users should not
+    depend on this artifact explicitly because this BOM is an implementation
+    detail of the Libraries BOM.
+  </description>
+
+  <parent>
+    <artifactId>google-cloud-pom-parent</artifactId>
+    <groupId>com.google.cloud</groupId>
+    <version>{{ monorepo_version }}</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../google-cloud-pom-parent/pom.xml</relativePath>
+  </parent>
+
+  <dependencyManagement>
+    <dependencies>
+      {%- for bom_config in bom_configs %}
+      <dependency>
+        <groupId>{{ bom_config.group_id }}</groupId>
+        <artifactId>{{ bom_config.artifact_id }}</artifactId>
+        <version>{{ bom_config.version }}</version><!-- {x-version-update:{{ bom_config.version_annotation }}:current} -->
+        {%- if bom_config.is_import %}
+        <type>pom</type>
+        <scope>import</scope>
+        {%- endif %}
+      </dependency>
+      {%- endfor %}
+    </dependencies>
+  </dependencyManagement>
+</project>

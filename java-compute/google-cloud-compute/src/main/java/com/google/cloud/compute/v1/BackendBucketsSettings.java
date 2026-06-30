@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,9 @@
 
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.BackendBucketsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.BackendBucketsClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.BackendBucketsClient.ListUsablePagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -49,7 +51,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -66,9 +70,46 @@ import javax.annotation.Generated;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * BackendBucketsSettings backendBucketsSettings = backendBucketsSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for addSignedUrlKey:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * BackendBucketsSettings.Builder backendBucketsSettingsBuilder =
+ *     BackendBucketsSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * backendBucketsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -84,6 +125,15 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
   public OperationCallSettings<AddSignedUrlKeyBackendBucketRequest, Operation, Operation>
       addSignedUrlKeyOperationSettings() {
     return ((BackendBucketsStubSettings) getStubSettings()).addSignedUrlKeyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListBackendBucketsRequest,
+          BackendBucketAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).aggregatedListSettings();
   }
 
   /** Returns the object with the settings used for calls to delete. */
@@ -134,6 +184,13 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
   public PagedCallSettings<ListBackendBucketsRequest, BackendBucketList, ListPagedResponse>
       listSettings() {
     return ((BackendBucketsStubSettings) getStubSettings()).listSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listUsable. */
+  public PagedCallSettings<
+          ListUsableBackendBucketsRequest, BackendBucketListUsable, ListUsablePagedResponse>
+      listUsableSettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).listUsableSettings();
   }
 
   /** Returns the object with the settings used for calls to patch. */
@@ -291,6 +348,15 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
       return getStubSettingsBuilder().addSignedUrlKeyOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListBackendBucketsRequest,
+            BackendBucketAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return getStubSettingsBuilder().aggregatedListSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteBackendBucketRequest, Operation> deleteSettings() {
       return getStubSettingsBuilder().deleteSettings();
@@ -342,6 +408,13 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
             ListBackendBucketsRequest, BackendBucketList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listUsable. */
+    public PagedCallSettings.Builder<
+            ListUsableBackendBucketsRequest, BackendBucketListUsable, ListUsablePagedResponse>
+        listUsableSettings() {
+      return getStubSettingsBuilder().listUsableSettings();
     }
 
     /** Returns the builder for the settings used for calls to patch. */

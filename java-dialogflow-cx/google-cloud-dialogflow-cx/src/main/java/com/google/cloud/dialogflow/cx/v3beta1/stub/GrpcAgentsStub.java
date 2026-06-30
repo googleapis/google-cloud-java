@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,6 +74,7 @@ public class GrpcAgentsStub extends AgentsStub {
               .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Agents/ListAgents")
               .setRequestMarshaller(ProtoUtils.marshaller(ListAgentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListAgentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAgentRequest, Agent> getAgentMethodDescriptor =
@@ -82,6 +83,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Agents/GetAgent")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Agent.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateAgentRequest, Agent> createAgentMethodDescriptor =
@@ -90,6 +92,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Agents/CreateAgent")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Agent.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateAgentRequest, Agent> updateAgentMethodDescriptor =
@@ -98,6 +101,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Agents/UpdateAgent")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Agent.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteAgentRequest, Empty> deleteAgentMethodDescriptor =
@@ -106,6 +110,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Agents/DeleteAgent")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ExportAgentRequest, Operation> exportAgentMethodDescriptor =
@@ -114,6 +119,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Agents/ExportAgent")
           .setRequestMarshaller(ProtoUtils.marshaller(ExportAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RestoreAgentRequest, Operation>
@@ -123,6 +129,7 @@ public class GrpcAgentsStub extends AgentsStub {
               .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Agents/RestoreAgent")
               .setRequestMarshaller(ProtoUtils.marshaller(RestoreAgentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ValidateAgentRequest, AgentValidationResult>
@@ -134,6 +141,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   ProtoUtils.marshaller(ValidateAgentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AgentValidationResult.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAgentValidationResultRequest, AgentValidationResult>
@@ -146,6 +154,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   ProtoUtils.marshaller(GetAgentValidationResultRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AgentValidationResult.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGenerativeSettingsRequest, GenerativeSettings>
@@ -156,6 +165,7 @@ public class GrpcAgentsStub extends AgentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetGenerativeSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GenerativeSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateGenerativeSettingsRequest, GenerativeSettings>
@@ -167,6 +177,7 @@ public class GrpcAgentsStub extends AgentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateGenerativeSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GenerativeSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -178,6 +189,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -186,6 +198,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListAgentsRequest, ListAgentsResponse> listAgentsCallable;
@@ -259,6 +272,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAgentRequest, Agent> getAgentTransportSettings =
         GrpcCallSettings.<GetAgentRequest, Agent>newBuilder()
@@ -269,6 +283,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAgentRequest, Agent> createAgentTransportSettings =
         GrpcCallSettings.<CreateAgentRequest, Agent>newBuilder()
@@ -279,6 +294,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAgentRequest, Agent> updateAgentTransportSettings =
         GrpcCallSettings.<UpdateAgentRequest, Agent>newBuilder()
@@ -299,6 +315,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportAgentRequest, Operation> exportAgentTransportSettings =
         GrpcCallSettings.<ExportAgentRequest, Operation>newBuilder()
@@ -309,6 +326,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RestoreAgentRequest, Operation> restoreAgentTransportSettings =
         GrpcCallSettings.<RestoreAgentRequest, Operation>newBuilder()
@@ -319,6 +337,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ValidateAgentRequest, AgentValidationResult> validateAgentTransportSettings =
         GrpcCallSettings.<ValidateAgentRequest, AgentValidationResult>newBuilder()
@@ -329,6 +348,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetAgentValidationResultRequest, AgentValidationResult>
         getAgentValidationResultTransportSettings =
@@ -340,6 +360,7 @@ public class GrpcAgentsStub extends AgentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetGenerativeSettingsRequest, GenerativeSettings>
         getGenerativeSettingsTransportSettings =
@@ -351,6 +372,7 @@ public class GrpcAgentsStub extends AgentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateGenerativeSettingsRequest, GenerativeSettings>
         updateGenerativeSettingsTransportSettings =

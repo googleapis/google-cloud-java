@@ -1,0 +1,255 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.oracledatabase.v1",
+  "libraryPackage": "com.google.cloud.oracledatabase.v1",
+  "services": {
+    "OracleDatabase": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OracleDatabaseClient",
+          "rpcs": {
+            "CreateAutonomousDatabase": {
+              "methods": ["createAutonomousDatabaseAsync", "createAutonomousDatabaseAsync", "createAutonomousDatabaseAsync", "createAutonomousDatabaseOperationCallable", "createAutonomousDatabaseCallable"]
+            },
+            "CreateCloudExadataInfrastructure": {
+              "methods": ["createCloudExadataInfrastructureAsync", "createCloudExadataInfrastructureAsync", "createCloudExadataInfrastructureAsync", "createCloudExadataInfrastructureOperationCallable", "createCloudExadataInfrastructureCallable"]
+            },
+            "CreateCloudVmCluster": {
+              "methods": ["createCloudVmClusterAsync", "createCloudVmClusterAsync", "createCloudVmClusterAsync", "createCloudVmClusterOperationCallable", "createCloudVmClusterCallable"]
+            },
+            "CreateDbSystem": {
+              "methods": ["createDbSystemAsync", "createDbSystemAsync", "createDbSystemAsync", "createDbSystemOperationCallable", "createDbSystemCallable"]
+            },
+            "CreateExadbVmCluster": {
+              "methods": ["createExadbVmClusterAsync", "createExadbVmClusterAsync", "createExadbVmClusterAsync", "createExadbVmClusterOperationCallable", "createExadbVmClusterCallable"]
+            },
+            "CreateExascaleDbStorageVault": {
+              "methods": ["createExascaleDbStorageVaultAsync", "createExascaleDbStorageVaultAsync", "createExascaleDbStorageVaultAsync", "createExascaleDbStorageVaultOperationCallable", "createExascaleDbStorageVaultCallable"]
+            },
+            "CreateGoldengateConnection": {
+              "methods": ["createGoldengateConnectionAsync", "createGoldengateConnectionAsync", "createGoldengateConnectionAsync", "createGoldengateConnectionOperationCallable", "createGoldengateConnectionCallable"]
+            },
+            "CreateGoldengateConnectionAssignment": {
+              "methods": ["createGoldengateConnectionAssignmentAsync", "createGoldengateConnectionAssignmentAsync", "createGoldengateConnectionAssignmentAsync", "createGoldengateConnectionAssignmentOperationCallable", "createGoldengateConnectionAssignmentCallable"]
+            },
+            "CreateGoldengateDeployment": {
+              "methods": ["createGoldengateDeploymentAsync", "createGoldengateDeploymentAsync", "createGoldengateDeploymentAsync", "createGoldengateDeploymentOperationCallable", "createGoldengateDeploymentCallable"]
+            },
+            "CreateOdbNetwork": {
+              "methods": ["createOdbNetworkAsync", "createOdbNetworkAsync", "createOdbNetworkAsync", "createOdbNetworkOperationCallable", "createOdbNetworkCallable"]
+            },
+            "CreateOdbSubnet": {
+              "methods": ["createOdbSubnetAsync", "createOdbSubnetAsync", "createOdbSubnetAsync", "createOdbSubnetOperationCallable", "createOdbSubnetCallable"]
+            },
+            "DeleteAutonomousDatabase": {
+              "methods": ["deleteAutonomousDatabaseAsync", "deleteAutonomousDatabaseAsync", "deleteAutonomousDatabaseAsync", "deleteAutonomousDatabaseOperationCallable", "deleteAutonomousDatabaseCallable"]
+            },
+            "DeleteCloudExadataInfrastructure": {
+              "methods": ["deleteCloudExadataInfrastructureAsync", "deleteCloudExadataInfrastructureAsync", "deleteCloudExadataInfrastructureAsync", "deleteCloudExadataInfrastructureOperationCallable", "deleteCloudExadataInfrastructureCallable"]
+            },
+            "DeleteCloudVmCluster": {
+              "methods": ["deleteCloudVmClusterAsync", "deleteCloudVmClusterAsync", "deleteCloudVmClusterAsync", "deleteCloudVmClusterOperationCallable", "deleteCloudVmClusterCallable"]
+            },
+            "DeleteDbSystem": {
+              "methods": ["deleteDbSystemAsync", "deleteDbSystemAsync", "deleteDbSystemAsync", "deleteDbSystemOperationCallable", "deleteDbSystemCallable"]
+            },
+            "DeleteExadbVmCluster": {
+              "methods": ["deleteExadbVmClusterAsync", "deleteExadbVmClusterAsync", "deleteExadbVmClusterAsync", "deleteExadbVmClusterOperationCallable", "deleteExadbVmClusterCallable"]
+            },
+            "DeleteExascaleDbStorageVault": {
+              "methods": ["deleteExascaleDbStorageVaultAsync", "deleteExascaleDbStorageVaultAsync", "deleteExascaleDbStorageVaultAsync", "deleteExascaleDbStorageVaultOperationCallable", "deleteExascaleDbStorageVaultCallable"]
+            },
+            "DeleteGoldengateConnection": {
+              "methods": ["deleteGoldengateConnectionAsync", "deleteGoldengateConnectionAsync", "deleteGoldengateConnectionAsync", "deleteGoldengateConnectionOperationCallable", "deleteGoldengateConnectionCallable"]
+            },
+            "DeleteGoldengateConnectionAssignment": {
+              "methods": ["deleteGoldengateConnectionAssignmentAsync", "deleteGoldengateConnectionAssignmentAsync", "deleteGoldengateConnectionAssignmentAsync", "deleteGoldengateConnectionAssignmentOperationCallable", "deleteGoldengateConnectionAssignmentCallable"]
+            },
+            "DeleteGoldengateDeployment": {
+              "methods": ["deleteGoldengateDeploymentAsync", "deleteGoldengateDeploymentAsync", "deleteGoldengateDeploymentAsync", "deleteGoldengateDeploymentOperationCallable", "deleteGoldengateDeploymentCallable"]
+            },
+            "DeleteOdbNetwork": {
+              "methods": ["deleteOdbNetworkAsync", "deleteOdbNetworkAsync", "deleteOdbNetworkAsync", "deleteOdbNetworkOperationCallable", "deleteOdbNetworkCallable"]
+            },
+            "DeleteOdbSubnet": {
+              "methods": ["deleteOdbSubnetAsync", "deleteOdbSubnetAsync", "deleteOdbSubnetAsync", "deleteOdbSubnetOperationCallable", "deleteOdbSubnetCallable"]
+            },
+            "FailoverAutonomousDatabase": {
+              "methods": ["failoverAutonomousDatabaseAsync", "failoverAutonomousDatabaseAsync", "failoverAutonomousDatabaseAsync", "failoverAutonomousDatabaseAsync", "failoverAutonomousDatabaseAsync", "failoverAutonomousDatabaseOperationCallable", "failoverAutonomousDatabaseCallable"]
+            },
+            "GenerateAutonomousDatabaseWallet": {
+              "methods": ["generateAutonomousDatabaseWallet", "generateAutonomousDatabaseWallet", "generateAutonomousDatabaseWallet", "generateAutonomousDatabaseWalletCallable"]
+            },
+            "GetAutonomousDatabase": {
+              "methods": ["getAutonomousDatabase", "getAutonomousDatabase", "getAutonomousDatabase", "getAutonomousDatabaseCallable"]
+            },
+            "GetCloudExadataInfrastructure": {
+              "methods": ["getCloudExadataInfrastructure", "getCloudExadataInfrastructure", "getCloudExadataInfrastructure", "getCloudExadataInfrastructureCallable"]
+            },
+            "GetCloudVmCluster": {
+              "methods": ["getCloudVmCluster", "getCloudVmCluster", "getCloudVmCluster", "getCloudVmClusterCallable"]
+            },
+            "GetDatabase": {
+              "methods": ["getDatabase", "getDatabase", "getDatabase", "getDatabaseCallable"]
+            },
+            "GetDbSystem": {
+              "methods": ["getDbSystem", "getDbSystem", "getDbSystem", "getDbSystemCallable"]
+            },
+            "GetExadbVmCluster": {
+              "methods": ["getExadbVmCluster", "getExadbVmCluster", "getExadbVmCluster", "getExadbVmClusterCallable"]
+            },
+            "GetExascaleDbStorageVault": {
+              "methods": ["getExascaleDbStorageVault", "getExascaleDbStorageVault", "getExascaleDbStorageVault", "getExascaleDbStorageVaultCallable"]
+            },
+            "GetGoldengateConnection": {
+              "methods": ["getGoldengateConnection", "getGoldengateConnection", "getGoldengateConnection", "getGoldengateConnectionCallable"]
+            },
+            "GetGoldengateConnectionAssignment": {
+              "methods": ["getGoldengateConnectionAssignment", "getGoldengateConnectionAssignment", "getGoldengateConnectionAssignment", "getGoldengateConnectionAssignmentCallable"]
+            },
+            "GetGoldengateDeployment": {
+              "methods": ["getGoldengateDeployment", "getGoldengateDeployment", "getGoldengateDeployment", "getGoldengateDeploymentCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetOdbNetwork": {
+              "methods": ["getOdbNetwork", "getOdbNetwork", "getOdbNetwork", "getOdbNetworkCallable"]
+            },
+            "GetOdbSubnet": {
+              "methods": ["getOdbSubnet", "getOdbSubnet", "getOdbSubnet", "getOdbSubnetCallable"]
+            },
+            "GetPluggableDatabase": {
+              "methods": ["getPluggableDatabase", "getPluggableDatabase", "getPluggableDatabase", "getPluggableDatabaseCallable"]
+            },
+            "ListAutonomousDatabaseBackups": {
+              "methods": ["listAutonomousDatabaseBackups", "listAutonomousDatabaseBackups", "listAutonomousDatabaseBackups", "listAutonomousDatabaseBackupsPagedCallable", "listAutonomousDatabaseBackupsCallable"]
+            },
+            "ListAutonomousDatabaseCharacterSets": {
+              "methods": ["listAutonomousDatabaseCharacterSets", "listAutonomousDatabaseCharacterSets", "listAutonomousDatabaseCharacterSets", "listAutonomousDatabaseCharacterSetsPagedCallable", "listAutonomousDatabaseCharacterSetsCallable"]
+            },
+            "ListAutonomousDatabases": {
+              "methods": ["listAutonomousDatabases", "listAutonomousDatabases", "listAutonomousDatabases", "listAutonomousDatabasesPagedCallable", "listAutonomousDatabasesCallable"]
+            },
+            "ListAutonomousDbVersions": {
+              "methods": ["listAutonomousDbVersions", "listAutonomousDbVersions", "listAutonomousDbVersions", "listAutonomousDbVersionsPagedCallable", "listAutonomousDbVersionsCallable"]
+            },
+            "ListCloudExadataInfrastructures": {
+              "methods": ["listCloudExadataInfrastructures", "listCloudExadataInfrastructures", "listCloudExadataInfrastructures", "listCloudExadataInfrastructuresPagedCallable", "listCloudExadataInfrastructuresCallable"]
+            },
+            "ListCloudVmClusters": {
+              "methods": ["listCloudVmClusters", "listCloudVmClusters", "listCloudVmClusters", "listCloudVmClustersPagedCallable", "listCloudVmClustersCallable"]
+            },
+            "ListDatabaseCharacterSets": {
+              "methods": ["listDatabaseCharacterSets", "listDatabaseCharacterSets", "listDatabaseCharacterSets", "listDatabaseCharacterSetsPagedCallable", "listDatabaseCharacterSetsCallable"]
+            },
+            "ListDatabases": {
+              "methods": ["listDatabases", "listDatabases", "listDatabases", "listDatabasesPagedCallable", "listDatabasesCallable"]
+            },
+            "ListDbNodes": {
+              "methods": ["listDbNodes", "listDbNodes", "listDbNodes", "listDbNodes", "listDbNodesPagedCallable", "listDbNodesCallable"]
+            },
+            "ListDbServers": {
+              "methods": ["listDbServers", "listDbServers", "listDbServers", "listDbServersPagedCallable", "listDbServersCallable"]
+            },
+            "ListDbSystemInitialStorageSizes": {
+              "methods": ["listDbSystemInitialStorageSizes", "listDbSystemInitialStorageSizes", "listDbSystemInitialStorageSizes", "listDbSystemInitialStorageSizesPagedCallable", "listDbSystemInitialStorageSizesCallable"]
+            },
+            "ListDbSystemShapes": {
+              "methods": ["listDbSystemShapes", "listDbSystemShapes", "listDbSystemShapes", "listDbSystemShapesPagedCallable", "listDbSystemShapesCallable"]
+            },
+            "ListDbSystems": {
+              "methods": ["listDbSystems", "listDbSystems", "listDbSystems", "listDbSystemsPagedCallable", "listDbSystemsCallable"]
+            },
+            "ListDbVersions": {
+              "methods": ["listDbVersions", "listDbVersions", "listDbVersions", "listDbVersionsPagedCallable", "listDbVersionsCallable"]
+            },
+            "ListEntitlements": {
+              "methods": ["listEntitlements", "listEntitlements", "listEntitlements", "listEntitlementsPagedCallable", "listEntitlementsCallable"]
+            },
+            "ListExadbVmClusters": {
+              "methods": ["listExadbVmClusters", "listExadbVmClusters", "listExadbVmClusters", "listExadbVmClustersPagedCallable", "listExadbVmClustersCallable"]
+            },
+            "ListExascaleDbStorageVaults": {
+              "methods": ["listExascaleDbStorageVaults", "listExascaleDbStorageVaults", "listExascaleDbStorageVaults", "listExascaleDbStorageVaultsPagedCallable", "listExascaleDbStorageVaultsCallable"]
+            },
+            "ListGiVersions": {
+              "methods": ["listGiVersions", "listGiVersions", "listGiVersions", "listGiVersionsPagedCallable", "listGiVersionsCallable"]
+            },
+            "ListGoldengateConnectionAssignments": {
+              "methods": ["listGoldengateConnectionAssignments", "listGoldengateConnectionAssignments", "listGoldengateConnectionAssignments", "listGoldengateConnectionAssignmentsPagedCallable", "listGoldengateConnectionAssignmentsCallable"]
+            },
+            "ListGoldengateConnectionTypes": {
+              "methods": ["listGoldengateConnectionTypes", "listGoldengateConnectionTypes", "listGoldengateConnectionTypes", "listGoldengateConnectionTypesPagedCallable", "listGoldengateConnectionTypesCallable"]
+            },
+            "ListGoldengateConnections": {
+              "methods": ["listGoldengateConnections", "listGoldengateConnections", "listGoldengateConnections", "listGoldengateConnectionsPagedCallable", "listGoldengateConnectionsCallable"]
+            },
+            "ListGoldengateDeploymentEnvironments": {
+              "methods": ["listGoldengateDeploymentEnvironments", "listGoldengateDeploymentEnvironments", "listGoldengateDeploymentEnvironments", "listGoldengateDeploymentEnvironmentsPagedCallable", "listGoldengateDeploymentEnvironmentsCallable"]
+            },
+            "ListGoldengateDeploymentTypes": {
+              "methods": ["listGoldengateDeploymentTypes", "listGoldengateDeploymentTypes", "listGoldengateDeploymentTypes", "listGoldengateDeploymentTypesPagedCallable", "listGoldengateDeploymentTypesCallable"]
+            },
+            "ListGoldengateDeploymentVersions": {
+              "methods": ["listGoldengateDeploymentVersions", "listGoldengateDeploymentVersions", "listGoldengateDeploymentVersions", "listGoldengateDeploymentVersionsPagedCallable", "listGoldengateDeploymentVersionsCallable"]
+            },
+            "ListGoldengateDeployments": {
+              "methods": ["listGoldengateDeployments", "listGoldengateDeployments", "listGoldengateDeployments", "listGoldengateDeploymentsPagedCallable", "listGoldengateDeploymentsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListMinorVersions": {
+              "methods": ["listMinorVersions", "listMinorVersions", "listMinorVersions", "listMinorVersionsPagedCallable", "listMinorVersionsCallable"]
+            },
+            "ListOdbNetworks": {
+              "methods": ["listOdbNetworks", "listOdbNetworks", "listOdbNetworks", "listOdbNetworksPagedCallable", "listOdbNetworksCallable"]
+            },
+            "ListOdbSubnets": {
+              "methods": ["listOdbSubnets", "listOdbSubnets", "listOdbSubnets", "listOdbSubnetsPagedCallable", "listOdbSubnetsCallable"]
+            },
+            "ListPluggableDatabases": {
+              "methods": ["listPluggableDatabases", "listPluggableDatabases", "listPluggableDatabases", "listPluggableDatabasesPagedCallable", "listPluggableDatabasesCallable"]
+            },
+            "RemoveVirtualMachineExadbVmCluster": {
+              "methods": ["removeVirtualMachineExadbVmClusterAsync", "removeVirtualMachineExadbVmClusterAsync", "removeVirtualMachineExadbVmClusterAsync", "removeVirtualMachineExadbVmClusterOperationCallable", "removeVirtualMachineExadbVmClusterCallable"]
+            },
+            "RestartAutonomousDatabase": {
+              "methods": ["restartAutonomousDatabaseAsync", "restartAutonomousDatabaseAsync", "restartAutonomousDatabaseAsync", "restartAutonomousDatabaseOperationCallable", "restartAutonomousDatabaseCallable"]
+            },
+            "RestoreAutonomousDatabase": {
+              "methods": ["restoreAutonomousDatabaseAsync", "restoreAutonomousDatabaseAsync", "restoreAutonomousDatabaseAsync", "restoreAutonomousDatabaseOperationCallable", "restoreAutonomousDatabaseCallable"]
+            },
+            "StartAutonomousDatabase": {
+              "methods": ["startAutonomousDatabaseAsync", "startAutonomousDatabaseAsync", "startAutonomousDatabaseAsync", "startAutonomousDatabaseOperationCallable", "startAutonomousDatabaseCallable"]
+            },
+            "StartGoldengateDeployment": {
+              "methods": ["startGoldengateDeploymentAsync", "startGoldengateDeploymentAsync", "startGoldengateDeploymentAsync", "startGoldengateDeploymentOperationCallable", "startGoldengateDeploymentCallable"]
+            },
+            "StopAutonomousDatabase": {
+              "methods": ["stopAutonomousDatabaseAsync", "stopAutonomousDatabaseAsync", "stopAutonomousDatabaseAsync", "stopAutonomousDatabaseOperationCallable", "stopAutonomousDatabaseCallable"]
+            },
+            "StopGoldengateDeployment": {
+              "methods": ["stopGoldengateDeploymentAsync", "stopGoldengateDeploymentAsync", "stopGoldengateDeploymentAsync", "stopGoldengateDeploymentOperationCallable", "stopGoldengateDeploymentCallable"]
+            },
+            "SwitchoverAutonomousDatabase": {
+              "methods": ["switchoverAutonomousDatabaseAsync", "switchoverAutonomousDatabaseAsync", "switchoverAutonomousDatabaseAsync", "switchoverAutonomousDatabaseAsync", "switchoverAutonomousDatabaseAsync", "switchoverAutonomousDatabaseOperationCallable", "switchoverAutonomousDatabaseCallable"]
+            },
+            "TestGoldengateConnectionAssignment": {
+              "methods": ["testGoldengateConnectionAssignment", "testGoldengateConnectionAssignment", "testGoldengateConnectionAssignment", "testGoldengateConnectionAssignmentCallable"]
+            },
+            "UpdateAutonomousDatabase": {
+              "methods": ["updateAutonomousDatabaseAsync", "updateAutonomousDatabaseAsync", "updateAutonomousDatabaseOperationCallable", "updateAutonomousDatabaseCallable"]
+            },
+            "UpdateExadbVmCluster": {
+              "methods": ["updateExadbVmClusterAsync", "updateExadbVmClusterAsync", "updateExadbVmClusterOperationCallable", "updateExadbVmClusterCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

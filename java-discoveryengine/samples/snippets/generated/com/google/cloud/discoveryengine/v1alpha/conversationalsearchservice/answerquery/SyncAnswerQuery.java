@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.cloud.discoveryengine.v1alpha.ConversationalSearchServiceClien
 import com.google.cloud.discoveryengine.v1alpha.Query;
 import com.google.cloud.discoveryengine.v1alpha.ServingConfigName;
 import com.google.cloud.discoveryengine.v1alpha.SessionName;
+import java.util.HashMap;
 
 public class SyncAnswerQuery {
 
@@ -57,6 +58,7 @@ public class SyncAnswerQuery {
                   AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
               .setAsynchronousMode(true)
               .setUserPseudoId("userPseudoId-1155274652")
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       AnswerQueryResponse response = conversationalSearchServiceClient.answerQuery(request);
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -203,6 +203,8 @@ public class DatastreamClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatastream.addResponse(expectedResponse);
 
@@ -250,6 +252,8 @@ public class DatastreamClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatastream.addResponse(expectedResponse);
 
@@ -295,6 +299,8 @@ public class DatastreamClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -355,6 +361,8 @@ public class DatastreamClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -415,6 +423,8 @@ public class DatastreamClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -577,6 +587,9 @@ public class DatastreamClientTest {
     Assert.assertEquals(request.getOracleRdbms(), actualRequest.getOracleRdbms());
     Assert.assertEquals(request.getMysqlRdbms(), actualRequest.getMysqlRdbms());
     Assert.assertEquals(request.getPostgresqlRdbms(), actualRequest.getPostgresqlRdbms());
+    Assert.assertEquals(request.getSqlServerRdbms(), actualRequest.getSqlServerRdbms());
+    Assert.assertEquals(request.getSalesforceOrg(), actualRequest.getSalesforceOrg());
+    Assert.assertEquals(request.getMongodbCluster(), actualRequest.getMongodbCluster());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -701,6 +714,9 @@ public class DatastreamClientTest {
             .setDestinationConfig(DestinationConfig.newBuilder().build())
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
+            .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatastream.addResponse(expectedResponse);
 
@@ -747,6 +763,9 @@ public class DatastreamClientTest {
             .setDestinationConfig(DestinationConfig.newBuilder().build())
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
+            .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatastream.addResponse(expectedResponse);
 
@@ -793,6 +812,9 @@ public class DatastreamClientTest {
             .setDestinationConfig(DestinationConfig.newBuilder().build())
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
+            .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -853,6 +875,9 @@ public class DatastreamClientTest {
             .setDestinationConfig(DestinationConfig.newBuilder().build())
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
+            .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -913,6 +938,9 @@ public class DatastreamClientTest {
             .setDestinationConfig(DestinationConfig.newBuilder().build())
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
+            .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1033,6 +1061,75 @@ public class DatastreamClientTest {
     try {
       String name = "name3373707";
       client.deleteStreamAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void runStreamTest() throws Exception {
+    Stream expectedResponse =
+        Stream.newBuilder()
+            .setName(StreamName.of("[PROJECT]", "[LOCATION]", "[STREAM]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .setDestinationConfig(DestinationConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<Error>())
+            .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
+            .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("runStreamTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDatastream.addResponse(resultOperation);
+
+    RunStreamRequest request =
+        RunStreamRequest.newBuilder()
+            .setName(StreamName.of("[PROJECT]", "[LOCATION]", "[STREAM]").toString())
+            .setCdcStrategy(CdcStrategy.newBuilder().build())
+            .setForce(true)
+            .build();
+
+    Stream actualResponse = client.runStreamAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatastream.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RunStreamRequest actualRequest = ((RunStreamRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getCdcStrategy(), actualRequest.getCdcStrategy());
+    Assert.assertEquals(request.getForce(), actualRequest.getForce());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void runStreamExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatastream.addException(exception);
+
+    try {
+      RunStreamRequest request =
+          RunStreamRequest.newBuilder()
+              .setName(StreamName.of("[PROJECT]", "[LOCATION]", "[STREAM]").toString())
+              .setCdcStrategy(CdcStrategy.newBuilder().build())
+              .setForce(true)
+              .build();
+      client.runStreamAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -1523,7 +1620,10 @@ public class DatastreamClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setError(Error.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1585,7 +1685,10 @@ public class DatastreamClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setError(Error.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1647,7 +1750,10 @@ public class DatastreamClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setError(Error.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .build();
     mockDatastream.addResponse(expectedResponse);
 
@@ -1696,7 +1802,10 @@ public class DatastreamClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setError(Error.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .build();
     mockDatastream.addResponse(expectedResponse);
 

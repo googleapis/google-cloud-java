@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-internal-artifact</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <parent>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-shared-config</artifactId>
+        <version>1.6.0</version>
+        <relativePath/>
+    </parent>
+
+    <name>Google Cloud Internal Artifact for testing</name>
+    <url>https://github.com/googleapis/java-bigtable</url>
+    <description>
+      BOM for Google Cloud Internal Artifact for testing
+    </description>
+
+    <organization>
+      <name>Google LLC</name>
+    </organization>
+
+    <licenses>
+      <license>
+        <name>The Apache Software License, Version 2.0</name>
+        <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        <distribution>repo</distribution>
+      </license>
+    </licenses>
+
+    <dependencyManagement>
+      <dependencies>
+        <!-- this artifact contains com.google.cloud.datastore:datastore-v1-proto-client -->
+        <dependency>
+          <groupId>com.google.cloud</groupId>
+          <artifactId>google-cloud-datastore-bom</artifactId>
+          <version>2.18.1</version>
+          <scope>import</scope>
+          <type>pom</type>
+        </dependency>
+        <!-- this artifact contains com.google.cloud:proto-google-cloud-firestore-bundle-v1 -->
+        <dependency>
+          <groupId>com.google.cloud</groupId>
+          <artifactId>google-cloud-firestore-bom</artifactId>
+          <version>3.16.0</version>
+          <scope>import</scope>
+          <type>pom</type>
+        </dependency>
+        <dependency>
+          <groupId>com.google.cloud</groupId>
+          <artifactId>google-cloud-bigtable-bom</artifactId>
+          <version>2.31.0</version>
+          <scope>import</scope>
+          <type>pom</type>
+        </dependency>
+        <dependency>
+          <groupId>com.google.cloud</groupId>
+          <artifactId>gapic-libraries-bom</artifactId>
+          <version>1.27.0</version>
+          <scope>import</scope>
+          <type>pom</type>
+        </dependency>
+      </dependencies>
+    </dependencyManagement>
+
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <configuration>
+            <skip>true</skip>
+          </configuration>
+        </plugin>
+
+        <!-- Using maven site plugin only as a hook for javadoc:aggregate, don't need the reports -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+
+          <configuration>
+            <generateReports>false</generateReports>
+          </configuration>
+        </plugin>
+      </plugins>
+    </build>
+</project>

@@ -20,7 +20,8 @@ deep-remove-regex:
 - "/java-dialogflow-cx/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-dialogflow-cx/google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v.*/it/ITSystemTest.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v.*/it/ITSystemTest.java"
 
 deep-copy-regex:
 - source: "/google/cloud/dialogflow/cx/(v.*)/.*-java/proto-google-.*/src"

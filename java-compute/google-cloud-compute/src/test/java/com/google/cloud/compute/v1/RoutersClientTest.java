@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,9 @@ package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.RoutersClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.GetNatMappingInfoPagedResponse;
+import static com.google.cloud.compute.v1.RoutersClient.ListBgpRoutesPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.RoutersClient.ListRoutePoliciesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -142,6 +144,7 @@ public class RoutersClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -208,6 +211,81 @@ public class RoutersClientTest {
   }
 
   @Test
+  public void deleteRoutePolicyTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String region = "region-9622";
+    String router = "router-8641";
+
+    Operation actualResponse = client.deleteRoutePolicyAsync(project, region, router).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteRoutePolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String region = "region-9622";
+      String router = "router-8641";
+      client.deleteRoutePolicyAsync(project, region, router).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void getTest() throws Exception {
     Router expectedResponse =
         Router.newBuilder()
@@ -223,6 +301,7 @@ public class RoutersClientTest {
             .setName("name3373707")
             .addAllNats(new ArrayList<RouterNat>())
             .setNetwork("network1843485230")
+            .setParams(RouterParams.newBuilder().build())
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .build();
@@ -370,6 +449,54 @@ public class RoutersClientTest {
   }
 
   @Test
+  public void getRoutePolicyTest() throws Exception {
+    RoutersGetRoutePolicyResponse expectedResponse =
+        RoutersGetRoutePolicyResponse.newBuilder()
+            .setResource(RoutePolicy.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String region = "region-9622";
+    String router = "router-8641";
+
+    RoutersGetRoutePolicyResponse actualResponse = client.getRoutePolicy(project, region, router);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRoutePolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String region = "region-9622";
+      String router = "router-8641";
+      client.getRoutePolicy(project, region, router);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getRouterStatusTest() throws Exception {
     RouterStatusResponse expectedResponse =
         RouterStatusResponse.newBuilder()
@@ -427,6 +554,7 @@ public class RoutersClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -545,6 +673,115 @@ public class RoutersClientTest {
   }
 
   @Test
+  public void listBgpRoutesTest() throws Exception {
+    BgpRoute responsesElement = BgpRoute.newBuilder().build();
+    RoutersListBgpRoutes expectedResponse =
+        RoutersListBgpRoutes.newBuilder()
+            .setNextPageToken("")
+            .addAllResult(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String region = "region-9622";
+    String router = "router-8641";
+
+    ListBgpRoutesPagedResponse pagedListResponse = client.listBgpRoutes(project, region, router);
+
+    List<BgpRoute> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResultList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBgpRoutesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String region = "region-9622";
+      String router = "router-8641";
+      client.listBgpRoutes(project, region, router);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRoutePoliciesTest() throws Exception {
+    RoutePolicy responsesElement = RoutePolicy.newBuilder().build();
+    RoutersListRoutePolicies expectedResponse =
+        RoutersListRoutePolicies.newBuilder()
+            .setNextPageToken("")
+            .addAllResult(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String region = "region-9622";
+    String router = "router-8641";
+
+    ListRoutePoliciesPagedResponse pagedListResponse =
+        client.listRoutePolicies(project, region, router);
+
+    List<RoutePolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResultList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRoutePoliciesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String region = "region-9622";
+      String router = "router-8641";
+      client.listRoutePolicies(project, region, router);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void patchTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
@@ -553,6 +790,7 @@ public class RoutersClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -621,6 +859,84 @@ public class RoutersClientTest {
   }
 
   @Test
+  public void patchRoutePolicyTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String region = "region-9622";
+    String router = "router-8641";
+    RoutePolicy routePolicyResource = RoutePolicy.newBuilder().build();
+
+    Operation actualResponse =
+        client.patchRoutePolicyAsync(project, region, router, routePolicyResource).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void patchRoutePolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String region = "region-9622";
+      String router = "router-8641";
+      RoutePolicy routePolicyResource = RoutePolicy.newBuilder().build();
+      client.patchRoutePolicyAsync(project, region, router, routePolicyResource).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void previewTest() throws Exception {
     RoutersPreviewResponse expectedResponse =
         RoutersPreviewResponse.newBuilder().setResource(Router.newBuilder().build()).build();
@@ -677,6 +993,7 @@ public class RoutersClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -739,6 +1056,84 @@ public class RoutersClientTest {
       String router = "router-8641";
       Router routerResource = Router.newBuilder().build();
       client.updateAsync(project, region, router, routerResource).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateRoutePolicyTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String region = "region-9622";
+    String router = "router-8641";
+    RoutePolicy routePolicyResource = RoutePolicy.newBuilder().build();
+
+    Operation actualResponse =
+        client.updateRoutePolicyAsync(project, region, router, routePolicyResource).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateRoutePolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String region = "region-9622";
+      String router = "router-8641";
+      RoutePolicy routePolicyResource = RoutePolicy.newBuilder().build();
+      client.updateRoutePolicyAsync(project, region, router, routePolicyResource).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

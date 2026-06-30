@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,8 @@
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeatureGroupsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeatureMonitorJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeatureMonitorsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeaturesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListLocationsPagedResponse;
 
@@ -29,23 +31,40 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesResponse;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureGroupOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureGroupRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateFeatureMonitorJobRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateFeatureMonitorOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.CreateFeatureMonitorRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteFeatureGroupRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteFeatureMonitorRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteFeatureRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.Feature;
 import com.google.cloud.aiplatform.v1beta1.FeatureGroup;
+import com.google.cloud.aiplatform.v1beta1.FeatureMonitor;
+import com.google.cloud.aiplatform.v1beta1.FeatureMonitorJob;
 import com.google.cloud.aiplatform.v1beta1.GetFeatureGroupRequest;
+import com.google.cloud.aiplatform.v1beta1.GetFeatureMonitorJobRequest;
+import com.google.cloud.aiplatform.v1beta1.GetFeatureMonitorRequest;
 import com.google.cloud.aiplatform.v1beta1.GetFeatureRequest;
 import com.google.cloud.aiplatform.v1beta1.ListFeatureGroupsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListFeatureGroupsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListFeatureMonitorJobsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListFeatureMonitorJobsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListFeatureMonitorsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListFeatureMonitorsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListFeaturesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListFeaturesResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureGroupOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureGroupRequest;
+import com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -84,6 +103,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFeatureGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeatureGroupRequest, FeatureGroup>
@@ -95,6 +115,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFeatureGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FeatureGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFeatureGroupsRequest, ListFeatureGroupsResponse>
@@ -107,6 +128,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   ProtoUtils.marshaller(ListFeatureGroupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeatureGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFeatureGroupRequest, Operation>
@@ -118,6 +140,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFeatureGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFeatureGroupRequest, Operation>
@@ -129,6 +152,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFeatureGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFeatureRequest, Operation>
@@ -140,6 +164,19 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFeatureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<BatchCreateFeaturesRequest, Operation>
+      batchCreateFeaturesMethodDescriptor =
+          MethodDescriptor.<BatchCreateFeaturesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.FeatureRegistryService/BatchCreateFeatures")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchCreateFeaturesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeatureRequest, Feature> getFeatureMethodDescriptor =
@@ -148,6 +185,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.FeatureRegistryService/GetFeature")
           .setRequestMarshaller(ProtoUtils.marshaller(GetFeatureRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Feature.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListFeaturesRequest, ListFeaturesResponse>
@@ -159,6 +197,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListFeaturesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeaturesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFeatureRequest, Operation>
@@ -170,6 +209,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFeatureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFeatureRequest, Operation>
@@ -181,6 +221,107 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFeatureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateFeatureMonitorRequest, Operation>
+      createFeatureMonitorMethodDescriptor =
+          MethodDescriptor.<CreateFeatureMonitorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.FeatureRegistryService/CreateFeatureMonitor")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateFeatureMonitorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetFeatureMonitorRequest, FeatureMonitor>
+      getFeatureMonitorMethodDescriptor =
+          MethodDescriptor.<GetFeatureMonitorRequest, FeatureMonitor>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.FeatureRegistryService/GetFeatureMonitor")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetFeatureMonitorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(FeatureMonitor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse>
+      listFeatureMonitorsMethodDescriptor =
+          MethodDescriptor.<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.FeatureRegistryService/ListFeatureMonitors")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListFeatureMonitorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListFeatureMonitorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateFeatureMonitorRequest, Operation>
+      updateFeatureMonitorMethodDescriptor =
+          MethodDescriptor.<UpdateFeatureMonitorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.FeatureRegistryService/UpdateFeatureMonitor")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateFeatureMonitorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteFeatureMonitorRequest, Operation>
+      deleteFeatureMonitorMethodDescriptor =
+          MethodDescriptor.<DeleteFeatureMonitorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.FeatureRegistryService/DeleteFeatureMonitor")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteFeatureMonitorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateFeatureMonitorJobRequest, FeatureMonitorJob>
+      createFeatureMonitorJobMethodDescriptor =
+          MethodDescriptor.<CreateFeatureMonitorJobRequest, FeatureMonitorJob>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.FeatureRegistryService/CreateFeatureMonitorJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateFeatureMonitorJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(FeatureMonitorJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetFeatureMonitorJobRequest, FeatureMonitorJob>
+      getFeatureMonitorJobMethodDescriptor =
+          MethodDescriptor.<GetFeatureMonitorJobRequest, FeatureMonitorJob>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.FeatureRegistryService/GetFeatureMonitorJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetFeatureMonitorJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(FeatureMonitorJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListFeatureMonitorJobsRequest, ListFeatureMonitorJobsResponse>
+      listFeatureMonitorJobsMethodDescriptor =
+          MethodDescriptor
+              .<ListFeatureMonitorJobsRequest, ListFeatureMonitorJobsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.FeatureRegistryService/ListFeatureMonitorJobs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListFeatureMonitorJobsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListFeatureMonitorJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -192,6 +333,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -200,6 +342,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -208,6 +351,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -216,6 +360,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -227,6 +372,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateFeatureGroupRequest, Operation> createFeatureGroupCallable;
@@ -248,6 +394,12 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
   private final UnaryCallable<CreateFeatureRequest, Operation> createFeatureCallable;
   private final OperationCallable<CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
       createFeatureOperationCallable;
+  private final UnaryCallable<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesCallable;
+  private final OperationCallable<
+          BatchCreateFeaturesRequest,
+          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesOperationCallable;
   private final UnaryCallable<GetFeatureRequest, Feature> getFeatureCallable;
   private final UnaryCallable<ListFeaturesRequest, ListFeaturesResponse> listFeaturesCallable;
   private final UnaryCallable<ListFeaturesRequest, ListFeaturesPagedResponse>
@@ -258,6 +410,30 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
   private final UnaryCallable<DeleteFeatureRequest, Operation> deleteFeatureCallable;
   private final OperationCallable<DeleteFeatureRequest, Empty, DeleteOperationMetadata>
       deleteFeatureOperationCallable;
+  private final UnaryCallable<CreateFeatureMonitorRequest, Operation> createFeatureMonitorCallable;
+  private final OperationCallable<
+          CreateFeatureMonitorRequest, FeatureMonitor, CreateFeatureMonitorOperationMetadata>
+      createFeatureMonitorOperationCallable;
+  private final UnaryCallable<GetFeatureMonitorRequest, FeatureMonitor> getFeatureMonitorCallable;
+  private final UnaryCallable<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse>
+      listFeatureMonitorsCallable;
+  private final UnaryCallable<ListFeatureMonitorsRequest, ListFeatureMonitorsPagedResponse>
+      listFeatureMonitorsPagedCallable;
+  private final UnaryCallable<UpdateFeatureMonitorRequest, Operation> updateFeatureMonitorCallable;
+  private final OperationCallable<
+          UpdateFeatureMonitorRequest, FeatureMonitor, UpdateFeatureMonitorOperationMetadata>
+      updateFeatureMonitorOperationCallable;
+  private final UnaryCallable<DeleteFeatureMonitorRequest, Operation> deleteFeatureMonitorCallable;
+  private final OperationCallable<DeleteFeatureMonitorRequest, Empty, DeleteOperationMetadata>
+      deleteFeatureMonitorOperationCallable;
+  private final UnaryCallable<CreateFeatureMonitorJobRequest, FeatureMonitorJob>
+      createFeatureMonitorJobCallable;
+  private final UnaryCallable<GetFeatureMonitorJobRequest, FeatureMonitorJob>
+      getFeatureMonitorJobCallable;
+  private final UnaryCallable<ListFeatureMonitorJobsRequest, ListFeatureMonitorJobsResponse>
+      listFeatureMonitorJobsCallable;
+  private final UnaryCallable<ListFeatureMonitorJobsRequest, ListFeatureMonitorJobsPagedResponse>
+      listFeatureMonitorJobsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -320,6 +496,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetFeatureGroupRequest, FeatureGroup> getFeatureGroupTransportSettings =
         GrpcCallSettings.<GetFeatureGroupRequest, FeatureGroup>newBuilder()
@@ -330,6 +507,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFeatureGroupsRequest, ListFeatureGroupsResponse>
         listFeatureGroupsTransportSettings =
@@ -341,6 +519,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateFeatureGroupRequest, Operation> updateFeatureGroupTransportSettings =
         GrpcCallSettings.<UpdateFeatureGroupRequest, Operation>newBuilder()
@@ -362,6 +541,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateFeatureRequest, Operation> createFeatureTransportSettings =
         GrpcCallSettings.<CreateFeatureRequest, Operation>newBuilder()
@@ -372,6 +552,18 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesTransportSettings =
+        GrpcCallSettings.<BatchCreateFeaturesRequest, Operation>newBuilder()
+            .setMethodDescriptor(batchCreateFeaturesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetFeatureRequest, Feature> getFeatureTransportSettings =
         GrpcCallSettings.<GetFeatureRequest, Feature>newBuilder()
@@ -382,6 +574,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFeaturesRequest, ListFeaturesResponse> listFeaturesTransportSettings =
         GrpcCallSettings.<ListFeaturesRequest, ListFeaturesResponse>newBuilder()
@@ -392,6 +585,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateFeatureRequest, Operation> updateFeatureTransportSettings =
         GrpcCallSettings.<UpdateFeatureRequest, Operation>newBuilder()
@@ -412,7 +606,102 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<CreateFeatureMonitorRequest, Operation> createFeatureMonitorTransportSettings =
+        GrpcCallSettings.<CreateFeatureMonitorRequest, Operation>newBuilder()
+            .setMethodDescriptor(createFeatureMonitorMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<GetFeatureMonitorRequest, FeatureMonitor> getFeatureMonitorTransportSettings =
+        GrpcCallSettings.<GetFeatureMonitorRequest, FeatureMonitor>newBuilder()
+            .setMethodDescriptor(getFeatureMonitorMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse>
+        listFeatureMonitorsTransportSettings =
+            GrpcCallSettings.<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse>newBuilder()
+                .setMethodDescriptor(listFeatureMonitorsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateFeatureMonitorRequest, Operation> updateFeatureMonitorTransportSettings =
+        GrpcCallSettings.<UpdateFeatureMonitorRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateFeatureMonitorMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "feature_monitor.name",
+                      String.valueOf(request.getFeatureMonitor().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteFeatureMonitorRequest, Operation> deleteFeatureMonitorTransportSettings =
+        GrpcCallSettings.<DeleteFeatureMonitorRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteFeatureMonitorMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<CreateFeatureMonitorJobRequest, FeatureMonitorJob>
+        createFeatureMonitorJobTransportSettings =
+            GrpcCallSettings.<CreateFeatureMonitorJobRequest, FeatureMonitorJob>newBuilder()
+                .setMethodDescriptor(createFeatureMonitorJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetFeatureMonitorJobRequest, FeatureMonitorJob>
+        getFeatureMonitorJobTransportSettings =
+            GrpcCallSettings.<GetFeatureMonitorJobRequest, FeatureMonitorJob>newBuilder()
+                .setMethodDescriptor(getFeatureMonitorJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListFeatureMonitorJobsRequest, ListFeatureMonitorJobsResponse>
+        listFeatureMonitorJobsTransportSettings =
+            GrpcCallSettings
+                .<ListFeatureMonitorJobsRequest, ListFeatureMonitorJobsResponse>newBuilder()
+                .setMethodDescriptor(listFeatureMonitorJobsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -442,6 +731,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -452,6 +742,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -463,6 +754,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createFeatureGroupCallable =
@@ -520,6 +812,17 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
             settings.createFeatureOperationSettings(),
             clientContext,
             operationsStub);
+    this.batchCreateFeaturesCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateFeaturesTransportSettings,
+            settings.batchCreateFeaturesSettings(),
+            clientContext);
+    this.batchCreateFeaturesOperationCallable =
+        callableFactory.createOperationCallable(
+            batchCreateFeaturesTransportSettings,
+            settings.batchCreateFeaturesOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getFeatureCallable =
         callableFactory.createUnaryCallable(
             getFeatureTransportSettings, settings.getFeatureSettings(), clientContext);
@@ -547,6 +850,74 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
             settings.deleteFeatureOperationSettings(),
             clientContext,
             operationsStub);
+    this.createFeatureMonitorCallable =
+        callableFactory.createUnaryCallable(
+            createFeatureMonitorTransportSettings,
+            settings.createFeatureMonitorSettings(),
+            clientContext);
+    this.createFeatureMonitorOperationCallable =
+        callableFactory.createOperationCallable(
+            createFeatureMonitorTransportSettings,
+            settings.createFeatureMonitorOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getFeatureMonitorCallable =
+        callableFactory.createUnaryCallable(
+            getFeatureMonitorTransportSettings,
+            settings.getFeatureMonitorSettings(),
+            clientContext);
+    this.listFeatureMonitorsCallable =
+        callableFactory.createUnaryCallable(
+            listFeatureMonitorsTransportSettings,
+            settings.listFeatureMonitorsSettings(),
+            clientContext);
+    this.listFeatureMonitorsPagedCallable =
+        callableFactory.createPagedCallable(
+            listFeatureMonitorsTransportSettings,
+            settings.listFeatureMonitorsSettings(),
+            clientContext);
+    this.updateFeatureMonitorCallable =
+        callableFactory.createUnaryCallable(
+            updateFeatureMonitorTransportSettings,
+            settings.updateFeatureMonitorSettings(),
+            clientContext);
+    this.updateFeatureMonitorOperationCallable =
+        callableFactory.createOperationCallable(
+            updateFeatureMonitorTransportSettings,
+            settings.updateFeatureMonitorOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteFeatureMonitorCallable =
+        callableFactory.createUnaryCallable(
+            deleteFeatureMonitorTransportSettings,
+            settings.deleteFeatureMonitorSettings(),
+            clientContext);
+    this.deleteFeatureMonitorOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteFeatureMonitorTransportSettings,
+            settings.deleteFeatureMonitorOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.createFeatureMonitorJobCallable =
+        callableFactory.createUnaryCallable(
+            createFeatureMonitorJobTransportSettings,
+            settings.createFeatureMonitorJobSettings(),
+            clientContext);
+    this.getFeatureMonitorJobCallable =
+        callableFactory.createUnaryCallable(
+            getFeatureMonitorJobTransportSettings,
+            settings.getFeatureMonitorJobSettings(),
+            clientContext);
+    this.listFeatureMonitorJobsCallable =
+        callableFactory.createUnaryCallable(
+            listFeatureMonitorJobsTransportSettings,
+            settings.listFeatureMonitorJobsSettings(),
+            clientContext);
+    this.listFeatureMonitorJobsPagedCallable =
+        callableFactory.createPagedCallable(
+            listFeatureMonitorJobsTransportSettings,
+            settings.listFeatureMonitorJobsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -640,6 +1011,20 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
   }
 
   @Override
+  public UnaryCallable<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesCallable() {
+    return batchCreateFeaturesCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BatchCreateFeaturesRequest,
+          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesOperationCallable() {
+    return batchCreateFeaturesOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetFeatureRequest, Feature> getFeatureCallable() {
     return getFeatureCallable;
   }
@@ -674,6 +1059,82 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
   public OperationCallable<DeleteFeatureRequest, Empty, DeleteOperationMetadata>
       deleteFeatureOperationCallable() {
     return deleteFeatureOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateFeatureMonitorRequest, Operation> createFeatureMonitorCallable() {
+    return createFeatureMonitorCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateFeatureMonitorRequest, FeatureMonitor, CreateFeatureMonitorOperationMetadata>
+      createFeatureMonitorOperationCallable() {
+    return createFeatureMonitorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetFeatureMonitorRequest, FeatureMonitor> getFeatureMonitorCallable() {
+    return getFeatureMonitorCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse>
+      listFeatureMonitorsCallable() {
+    return listFeatureMonitorsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFeatureMonitorsRequest, ListFeatureMonitorsPagedResponse>
+      listFeatureMonitorsPagedCallable() {
+    return listFeatureMonitorsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateFeatureMonitorRequest, Operation> updateFeatureMonitorCallable() {
+    return updateFeatureMonitorCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateFeatureMonitorRequest, FeatureMonitor, UpdateFeatureMonitorOperationMetadata>
+      updateFeatureMonitorOperationCallable() {
+    return updateFeatureMonitorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteFeatureMonitorRequest, Operation> deleteFeatureMonitorCallable() {
+    return deleteFeatureMonitorCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteFeatureMonitorRequest, Empty, DeleteOperationMetadata>
+      deleteFeatureMonitorOperationCallable() {
+    return deleteFeatureMonitorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateFeatureMonitorJobRequest, FeatureMonitorJob>
+      createFeatureMonitorJobCallable() {
+    return createFeatureMonitorJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetFeatureMonitorJobRequest, FeatureMonitorJob>
+      getFeatureMonitorJobCallable() {
+    return getFeatureMonitorJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFeatureMonitorJobsRequest, ListFeatureMonitorJobsResponse>
+      listFeatureMonitorJobsCallable() {
+    return listFeatureMonitorJobsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFeatureMonitorJobsRequest, ListFeatureMonitorJobsPagedResponse>
+      listFeatureMonitorJobsPagedCallable() {
+    return listFeatureMonitorJobsPagedCallable;
   }
 
   @Override

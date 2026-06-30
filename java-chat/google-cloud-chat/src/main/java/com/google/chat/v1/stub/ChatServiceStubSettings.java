@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,21 @@
 
 package com.google.chat.v1.stub;
 
+import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -37,6 +44,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -49,33 +57,69 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.chat.v1.Attachment;
 import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
+import com.google.chat.v1.CreateCustomEmojiRequest;
 import com.google.chat.v1.CreateMembershipRequest;
 import com.google.chat.v1.CreateMessageRequest;
 import com.google.chat.v1.CreateReactionRequest;
+import com.google.chat.v1.CreateSectionRequest;
 import com.google.chat.v1.CreateSpaceRequest;
+import com.google.chat.v1.CustomEmoji;
+import com.google.chat.v1.DeleteCustomEmojiRequest;
 import com.google.chat.v1.DeleteMembershipRequest;
 import com.google.chat.v1.DeleteMessageRequest;
 import com.google.chat.v1.DeleteReactionRequest;
+import com.google.chat.v1.DeleteSectionRequest;
 import com.google.chat.v1.DeleteSpaceRequest;
 import com.google.chat.v1.FindDirectMessageRequest;
+import com.google.chat.v1.FindGroupChatsRequest;
+import com.google.chat.v1.FindGroupChatsResponse;
 import com.google.chat.v1.GetAttachmentRequest;
+import com.google.chat.v1.GetCustomEmojiRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
+import com.google.chat.v1.GetSpaceEventRequest;
+import com.google.chat.v1.GetSpaceNotificationSettingRequest;
+import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
+import com.google.chat.v1.GetThreadReadStateRequest;
+import com.google.chat.v1.ListCustomEmojisRequest;
+import com.google.chat.v1.ListCustomEmojisResponse;
 import com.google.chat.v1.ListMembershipsRequest;
 import com.google.chat.v1.ListMembershipsResponse;
 import com.google.chat.v1.ListMessagesRequest;
 import com.google.chat.v1.ListMessagesResponse;
 import com.google.chat.v1.ListReactionsRequest;
 import com.google.chat.v1.ListReactionsResponse;
+import com.google.chat.v1.ListSectionItemsRequest;
+import com.google.chat.v1.ListSectionItemsResponse;
+import com.google.chat.v1.ListSectionsRequest;
+import com.google.chat.v1.ListSectionsResponse;
+import com.google.chat.v1.ListSpaceEventsRequest;
+import com.google.chat.v1.ListSpaceEventsResponse;
 import com.google.chat.v1.ListSpacesRequest;
 import com.google.chat.v1.ListSpacesResponse;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
+import com.google.chat.v1.MoveSectionItemRequest;
+import com.google.chat.v1.MoveSectionItemResponse;
+import com.google.chat.v1.PositionSectionRequest;
+import com.google.chat.v1.PositionSectionResponse;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.SearchSpacesRequest;
+import com.google.chat.v1.SearchSpacesResponse;
+import com.google.chat.v1.Section;
+import com.google.chat.v1.SectionItem;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
+import com.google.chat.v1.SpaceEvent;
+import com.google.chat.v1.SpaceNotificationSetting;
+import com.google.chat.v1.SpaceReadState;
+import com.google.chat.v1.ThreadReadState;
+import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
+import com.google.chat.v1.UpdateSectionRequest;
+import com.google.chat.v1.UpdateSpaceNotificationSettingRequest;
+import com.google.chat.v1.UpdateSpaceReadStateRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
 import com.google.chat.v1.UploadAttachmentResponse;
@@ -85,9 +129,9 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -104,7 +148,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createMessage to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createMessage:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -121,17 +167,43 @@ import org.threeten.bp.Duration;
  *             .createMessageSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ChatServiceStubSettings chatServiceSettings = chatServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/chat.admin.delete")
+          .add("https://www.googleapis.com/auth/chat.admin.memberships")
+          .add("https://www.googleapis.com/auth/chat.admin.memberships.readonly")
+          .add("https://www.googleapis.com/auth/chat.admin.spaces")
+          .add("https://www.googleapis.com/auth/chat.admin.spaces.readonly")
+          .add("https://www.googleapis.com/auth/chat.app.delete")
+          .add("https://www.googleapis.com/auth/chat.app.memberships")
+          .add("https://www.googleapis.com/auth/chat.app.memberships.readonly")
+          .add("https://www.googleapis.com/auth/chat.app.messages.readonly")
+          .add("https://www.googleapis.com/auth/chat.app.spaces")
+          .add("https://www.googleapis.com/auth/chat.app.spaces.create")
+          .add("https://www.googleapis.com/auth/chat.app.spaces.readonly")
           .add("https://www.googleapis.com/auth/chat.bot")
+          .add("https://www.googleapis.com/auth/chat.customemojis")
+          .add("https://www.googleapis.com/auth/chat.customemojis.readonly")
           .add("https://www.googleapis.com/auth/chat.delete")
           .add("https://www.googleapis.com/auth/chat.import")
           .add("https://www.googleapis.com/auth/chat.memberships")
@@ -146,6 +218,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           .add("https://www.googleapis.com/auth/chat.spaces")
           .add("https://www.googleapis.com/auth/chat.spaces.create")
           .add("https://www.googleapis.com/auth/chat.spaces.readonly")
+          .add("https://www.googleapis.com/auth/chat.users.readstate")
+          .add("https://www.googleapis.com/auth/chat.users.readstate.readonly")
+          .add("https://www.googleapis.com/auth/chat.users.sections")
+          .add("https://www.googleapis.com/auth/chat.users.sections.readonly")
+          .add("https://www.googleapis.com/auth/chat.users.spacesettings")
           .build();
 
   private final UnaryCallSettings<CreateMessageRequest, Message> createMessageSettings;
@@ -164,6 +241,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       uploadAttachmentSettings;
   private final PagedCallSettings<ListSpacesRequest, ListSpacesResponse, ListSpacesPagedResponse>
       listSpacesSettings;
+  private final PagedCallSettings<
+          SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+      searchSpacesSettings;
   private final UnaryCallSettings<GetSpaceRequest, Space> getSpaceSettings;
   private final UnaryCallSettings<CreateSpaceRequest, Space> createSpaceSettings;
   private final UnaryCallSettings<SetUpSpaceRequest, Space> setUpSpaceSettings;
@@ -172,13 +252,50 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
   private final UnaryCallSettings<CompleteImportSpaceRequest, CompleteImportSpaceResponse>
       completeImportSpaceSettings;
   private final UnaryCallSettings<FindDirectMessageRequest, Space> findDirectMessageSettings;
+  private final PagedCallSettings<
+          FindGroupChatsRequest, FindGroupChatsResponse, FindGroupChatsPagedResponse>
+      findGroupChatsSettings;
   private final UnaryCallSettings<CreateMembershipRequest, Membership> createMembershipSettings;
+  private final UnaryCallSettings<UpdateMembershipRequest, Membership> updateMembershipSettings;
   private final UnaryCallSettings<DeleteMembershipRequest, Membership> deleteMembershipSettings;
   private final UnaryCallSettings<CreateReactionRequest, Reaction> createReactionSettings;
   private final PagedCallSettings<
           ListReactionsRequest, ListReactionsResponse, ListReactionsPagedResponse>
       listReactionsSettings;
   private final UnaryCallSettings<DeleteReactionRequest, Empty> deleteReactionSettings;
+  private final UnaryCallSettings<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiSettings;
+  private final UnaryCallSettings<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiSettings;
+  private final PagedCallSettings<
+          ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>
+      listCustomEmojisSettings;
+  private final UnaryCallSettings<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiSettings;
+  private final UnaryCallSettings<GetSpaceReadStateRequest, SpaceReadState>
+      getSpaceReadStateSettings;
+  private final UnaryCallSettings<UpdateSpaceReadStateRequest, SpaceReadState>
+      updateSpaceReadStateSettings;
+  private final UnaryCallSettings<GetThreadReadStateRequest, ThreadReadState>
+      getThreadReadStateSettings;
+  private final UnaryCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings;
+  private final PagedCallSettings<
+          ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
+      listSpaceEventsSettings;
+  private final UnaryCallSettings<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingSettings;
+  private final UnaryCallSettings<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingSettings;
+  private final UnaryCallSettings<CreateSectionRequest, Section> createSectionSettings;
+  private final UnaryCallSettings<DeleteSectionRequest, Empty> deleteSectionSettings;
+  private final UnaryCallSettings<UpdateSectionRequest, Section> updateSectionSettings;
+  private final PagedCallSettings<
+          ListSectionsRequest, ListSectionsResponse, ListSectionsPagedResponse>
+      listSectionsSettings;
+  private final UnaryCallSettings<PositionSectionRequest, PositionSectionResponse>
+      positionSectionSettings;
+  private final PagedCallSettings<
+          ListSectionItemsRequest, ListSectionItemsResponse, ListSectionItemsPagedResponse>
+      listSectionItemsSettings;
+  private final UnaryCallSettings<MoveSectionItemRequest, MoveSectionItemResponse>
+      moveSectionItemSettings;
 
   private static final PagedListDescriptor<ListMessagesRequest, ListMessagesResponse, Message>
       LIST_MESSAGES_PAGE_STR_DESC =
@@ -210,9 +327,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
             @Override
             public Iterable<Message> extractResources(ListMessagesResponse payload) {
-              return payload.getMessagesList() == null
-                  ? ImmutableList.<Message>of()
-                  : payload.getMessagesList();
+              return payload.getMessagesList();
             }
           };
 
@@ -249,9 +364,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
             @Override
             public Iterable<Membership> extractResources(ListMembershipsResponse payload) {
-              return payload.getMembershipsList() == null
-                  ? ImmutableList.<Membership>of()
-                  : payload.getMembershipsList();
+              return payload.getMembershipsList();
             }
           };
 
@@ -285,9 +398,76 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
             @Override
             public Iterable<Space> extractResources(ListSpacesResponse payload) {
-              return payload.getSpacesList() == null
-                  ? ImmutableList.<Space>of()
-                  : payload.getSpacesList();
+              return payload.getSpacesList();
+            }
+          };
+
+  private static final PagedListDescriptor<SearchSpacesRequest, SearchSpacesResponse, Space>
+      SEARCH_SPACES_PAGE_STR_DESC =
+          new PagedListDescriptor<SearchSpacesRequest, SearchSpacesResponse, Space>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchSpacesRequest injectToken(SearchSpacesRequest payload, String token) {
+              return SearchSpacesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchSpacesRequest injectPageSize(SearchSpacesRequest payload, int pageSize) {
+              return SearchSpacesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchSpacesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchSpacesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Space> extractResources(SearchSpacesResponse payload) {
+              return payload.getSpacesList();
+            }
+          };
+
+  private static final PagedListDescriptor<FindGroupChatsRequest, FindGroupChatsResponse, Space>
+      FIND_GROUP_CHATS_PAGE_STR_DESC =
+          new PagedListDescriptor<FindGroupChatsRequest, FindGroupChatsResponse, Space>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public FindGroupChatsRequest injectToken(FindGroupChatsRequest payload, String token) {
+              return FindGroupChatsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public FindGroupChatsRequest injectPageSize(
+                FindGroupChatsRequest payload, int pageSize) {
+              return FindGroupChatsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(FindGroupChatsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(FindGroupChatsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Space> extractResources(FindGroupChatsResponse payload) {
+              return payload.getSpacesList();
             }
           };
 
@@ -321,9 +501,154 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
             @Override
             public Iterable<Reaction> extractResources(ListReactionsResponse payload) {
-              return payload.getReactionsList() == null
-                  ? ImmutableList.<Reaction>of()
-                  : payload.getReactionsList();
+              return payload.getReactionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji>
+      LIST_CUSTOM_EMOJIS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListCustomEmojisRequest injectToken(
+                ListCustomEmojisRequest payload, String token) {
+              return ListCustomEmojisRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListCustomEmojisRequest injectPageSize(
+                ListCustomEmojisRequest payload, int pageSize) {
+              return ListCustomEmojisRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListCustomEmojisRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListCustomEmojisResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CustomEmoji> extractResources(ListCustomEmojisResponse payload) {
+              return payload.getCustomEmojisList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent>
+      LIST_SPACE_EVENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSpaceEventsRequest injectToken(
+                ListSpaceEventsRequest payload, String token) {
+              return ListSpaceEventsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSpaceEventsRequest injectPageSize(
+                ListSpaceEventsRequest payload, int pageSize) {
+              return ListSpaceEventsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSpaceEventsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSpaceEventsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SpaceEvent> extractResources(ListSpaceEventsResponse payload) {
+              return payload.getSpaceEventsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListSectionsRequest, ListSectionsResponse, Section>
+      LIST_SECTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSectionsRequest, ListSectionsResponse, Section>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSectionsRequest injectToken(ListSectionsRequest payload, String token) {
+              return ListSectionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSectionsRequest injectPageSize(ListSectionsRequest payload, int pageSize) {
+              return ListSectionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSectionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSectionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Section> extractResources(ListSectionsResponse payload) {
+              return payload.getSectionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListSectionItemsRequest, ListSectionItemsResponse, SectionItem>
+      LIST_SECTION_ITEMS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSectionItemsRequest, ListSectionItemsResponse, SectionItem>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSectionItemsRequest injectToken(
+                ListSectionItemsRequest payload, String token) {
+              return ListSectionItemsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSectionItemsRequest injectPageSize(
+                ListSectionItemsRequest payload, int pageSize) {
+              return ListSectionItemsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSectionItemsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSectionItemsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SectionItem> extractResources(ListSectionItemsResponse payload) {
+              return payload.getSectionItemsList();
             }
           };
 
@@ -379,6 +704,40 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           };
 
   private static final PagedListResponseFactory<
+          SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+      SEARCH_SPACES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>() {
+            @Override
+            public ApiFuture<SearchSpacesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchSpacesRequest, SearchSpacesResponse> callable,
+                SearchSpacesRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchSpacesResponse> futureResponse) {
+              PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> pageContext =
+                  PageContext.create(callable, SEARCH_SPACES_PAGE_STR_DESC, request, context);
+              return SearchSpacesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          FindGroupChatsRequest, FindGroupChatsResponse, FindGroupChatsPagedResponse>
+      FIND_GROUP_CHATS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              FindGroupChatsRequest, FindGroupChatsResponse, FindGroupChatsPagedResponse>() {
+            @Override
+            public ApiFuture<FindGroupChatsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<FindGroupChatsRequest, FindGroupChatsResponse> callable,
+                FindGroupChatsRequest request,
+                ApiCallContext context,
+                ApiFuture<FindGroupChatsResponse> futureResponse) {
+              PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> pageContext =
+                  PageContext.create(callable, FIND_GROUP_CHATS_PAGE_STR_DESC, request, context);
+              return FindGroupChatsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListReactionsRequest, ListReactionsResponse, ListReactionsPagedResponse>
       LIST_REACTIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -392,6 +751,78 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               PageContext<ListReactionsRequest, ListReactionsResponse, Reaction> pageContext =
                   PageContext.create(callable, LIST_REACTIONS_PAGE_STR_DESC, request, context);
               return ListReactionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>
+      LIST_CUSTOM_EMOJIS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>() {
+            @Override
+            public ApiFuture<ListCustomEmojisPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisResponse> callable,
+                ListCustomEmojisRequest request,
+                ApiCallContext context,
+                ApiFuture<ListCustomEmojisResponse> futureResponse) {
+              PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CUSTOM_EMOJIS_PAGE_STR_DESC, request, context);
+              return ListCustomEmojisPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
+      LIST_SPACE_EVENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSpaceEventsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse> callable,
+                ListSpaceEventsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSpaceEventsResponse> futureResponse) {
+              PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> pageContext =
+                  PageContext.create(callable, LIST_SPACE_EVENTS_PAGE_STR_DESC, request, context);
+              return ListSpaceEventsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSectionsRequest, ListSectionsResponse, ListSectionsPagedResponse>
+      LIST_SECTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSectionsRequest, ListSectionsResponse, ListSectionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSectionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSectionsRequest, ListSectionsResponse> callable,
+                ListSectionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSectionsResponse> futureResponse) {
+              PageContext<ListSectionsRequest, ListSectionsResponse, Section> pageContext =
+                  PageContext.create(callable, LIST_SECTIONS_PAGE_STR_DESC, request, context);
+              return ListSectionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSectionItemsRequest, ListSectionItemsResponse, ListSectionItemsPagedResponse>
+      LIST_SECTION_ITEMS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSectionItemsRequest, ListSectionItemsResponse, ListSectionItemsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSectionItemsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSectionItemsRequest, ListSectionItemsResponse> callable,
+                ListSectionItemsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSectionItemsResponse> futureResponse) {
+              PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SECTION_ITEMS_PAGE_STR_DESC, request, context);
+              return ListSectionItemsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -450,6 +881,12 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     return listSpacesSettings;
   }
 
+  /** Returns the object with the settings used for calls to searchSpaces. */
+  public PagedCallSettings<SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+      searchSpacesSettings() {
+    return searchSpacesSettings;
+  }
+
   /** Returns the object with the settings used for calls to getSpace. */
   public UnaryCallSettings<GetSpaceRequest, Space> getSpaceSettings() {
     return getSpaceSettings;
@@ -486,9 +923,21 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     return findDirectMessageSettings;
   }
 
+  /** Returns the object with the settings used for calls to findGroupChats. */
+  public PagedCallSettings<
+          FindGroupChatsRequest, FindGroupChatsResponse, FindGroupChatsPagedResponse>
+      findGroupChatsSettings() {
+    return findGroupChatsSettings;
+  }
+
   /** Returns the object with the settings used for calls to createMembership. */
   public UnaryCallSettings<CreateMembershipRequest, Membership> createMembershipSettings() {
     return createMembershipSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateMembership. */
+  public UnaryCallSettings<UpdateMembershipRequest, Membership> updateMembershipSettings() {
+    return updateMembershipSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteMembership. */
@@ -512,6 +961,109 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     return deleteReactionSettings;
   }
 
+  /** Returns the object with the settings used for calls to createCustomEmoji. */
+  public UnaryCallSettings<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiSettings() {
+    return createCustomEmojiSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getCustomEmoji. */
+  public UnaryCallSettings<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiSettings() {
+    return getCustomEmojiSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listCustomEmojis. */
+  public PagedCallSettings<
+          ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>
+      listCustomEmojisSettings() {
+    return listCustomEmojisSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomEmoji. */
+  public UnaryCallSettings<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiSettings() {
+    return deleteCustomEmojiSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSpaceReadState. */
+  public UnaryCallSettings<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateSettings() {
+    return getSpaceReadStateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSpaceReadState. */
+  public UnaryCallSettings<UpdateSpaceReadStateRequest, SpaceReadState>
+      updateSpaceReadStateSettings() {
+    return updateSpaceReadStateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getThreadReadState. */
+  public UnaryCallSettings<GetThreadReadStateRequest, ThreadReadState>
+      getThreadReadStateSettings() {
+    return getThreadReadStateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSpaceEvent. */
+  public UnaryCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings() {
+    return getSpaceEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSpaceEvents. */
+  public PagedCallSettings<
+          ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
+      listSpaceEventsSettings() {
+    return listSpaceEventsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSpaceNotificationSetting. */
+  public UnaryCallSettings<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingSettings() {
+    return getSpaceNotificationSettingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSpaceNotificationSetting. */
+  public UnaryCallSettings<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingSettings() {
+    return updateSpaceNotificationSettingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createSection. */
+  public UnaryCallSettings<CreateSectionRequest, Section> createSectionSettings() {
+    return createSectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSection. */
+  public UnaryCallSettings<DeleteSectionRequest, Empty> deleteSectionSettings() {
+    return deleteSectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSection. */
+  public UnaryCallSettings<UpdateSectionRequest, Section> updateSectionSettings() {
+    return updateSectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSections. */
+  public PagedCallSettings<ListSectionsRequest, ListSectionsResponse, ListSectionsPagedResponse>
+      listSectionsSettings() {
+    return listSectionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to positionSection. */
+  public UnaryCallSettings<PositionSectionRequest, PositionSectionResponse>
+      positionSectionSettings() {
+    return positionSectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSectionItems. */
+  public PagedCallSettings<
+          ListSectionItemsRequest, ListSectionItemsResponse, ListSectionItemsPagedResponse>
+      listSectionItemsSettings() {
+    return listSectionItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to moveSectionItem. */
+  public UnaryCallSettings<MoveSectionItemRequest, MoveSectionItemResponse>
+      moveSectionItemSettings() {
+    return moveSectionItemSettings;
+  }
+
   public ChatServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -528,15 +1080,6 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -549,6 +1092,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "chat.googleapis.com:443";
   }
@@ -641,6 +1185,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     getAttachmentSettings = settingsBuilder.getAttachmentSettings().build();
     uploadAttachmentSettings = settingsBuilder.uploadAttachmentSettings().build();
     listSpacesSettings = settingsBuilder.listSpacesSettings().build();
+    searchSpacesSettings = settingsBuilder.searchSpacesSettings().build();
     getSpaceSettings = settingsBuilder.getSpaceSettings().build();
     createSpaceSettings = settingsBuilder.createSpaceSettings().build();
     setUpSpaceSettings = settingsBuilder.setUpSpaceSettings().build();
@@ -648,11 +1193,42 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     deleteSpaceSettings = settingsBuilder.deleteSpaceSettings().build();
     completeImportSpaceSettings = settingsBuilder.completeImportSpaceSettings().build();
     findDirectMessageSettings = settingsBuilder.findDirectMessageSettings().build();
+    findGroupChatsSettings = settingsBuilder.findGroupChatsSettings().build();
     createMembershipSettings = settingsBuilder.createMembershipSettings().build();
+    updateMembershipSettings = settingsBuilder.updateMembershipSettings().build();
     deleteMembershipSettings = settingsBuilder.deleteMembershipSettings().build();
     createReactionSettings = settingsBuilder.createReactionSettings().build();
     listReactionsSettings = settingsBuilder.listReactionsSettings().build();
     deleteReactionSettings = settingsBuilder.deleteReactionSettings().build();
+    createCustomEmojiSettings = settingsBuilder.createCustomEmojiSettings().build();
+    getCustomEmojiSettings = settingsBuilder.getCustomEmojiSettings().build();
+    listCustomEmojisSettings = settingsBuilder.listCustomEmojisSettings().build();
+    deleteCustomEmojiSettings = settingsBuilder.deleteCustomEmojiSettings().build();
+    getSpaceReadStateSettings = settingsBuilder.getSpaceReadStateSettings().build();
+    updateSpaceReadStateSettings = settingsBuilder.updateSpaceReadStateSettings().build();
+    getThreadReadStateSettings = settingsBuilder.getThreadReadStateSettings().build();
+    getSpaceEventSettings = settingsBuilder.getSpaceEventSettings().build();
+    listSpaceEventsSettings = settingsBuilder.listSpaceEventsSettings().build();
+    getSpaceNotificationSettingSettings =
+        settingsBuilder.getSpaceNotificationSettingSettings().build();
+    updateSpaceNotificationSettingSettings =
+        settingsBuilder.updateSpaceNotificationSettingSettings().build();
+    createSectionSettings = settingsBuilder.createSectionSettings().build();
+    deleteSectionSettings = settingsBuilder.deleteSectionSettings().build();
+    updateSectionSettings = settingsBuilder.updateSectionSettings().build();
+    listSectionsSettings = settingsBuilder.listSectionsSettings().build();
+    positionSectionSettings = settingsBuilder.positionSectionSettings().build();
+    listSectionItemsSettings = settingsBuilder.listSectionItemsSettings().build();
+    moveSectionItemSettings = settingsBuilder.moveSectionItemSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-chat")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for ChatServiceStubSettings. */
@@ -675,6 +1251,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     private final PagedCallSettings.Builder<
             ListSpacesRequest, ListSpacesResponse, ListSpacesPagedResponse>
         listSpacesSettings;
+    private final PagedCallSettings.Builder<
+            SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+        searchSpacesSettings;
     private final UnaryCallSettings.Builder<GetSpaceRequest, Space> getSpaceSettings;
     private final UnaryCallSettings.Builder<CreateSpaceRequest, Space> createSpaceSettings;
     private final UnaryCallSettings.Builder<SetUpSpaceRequest, Space> setUpSpaceSettings;
@@ -684,8 +1263,13 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
         completeImportSpaceSettings;
     private final UnaryCallSettings.Builder<FindDirectMessageRequest, Space>
         findDirectMessageSettings;
+    private final PagedCallSettings.Builder<
+            FindGroupChatsRequest, FindGroupChatsResponse, FindGroupChatsPagedResponse>
+        findGroupChatsSettings;
     private final UnaryCallSettings.Builder<CreateMembershipRequest, Membership>
         createMembershipSettings;
+    private final UnaryCallSettings.Builder<UpdateMembershipRequest, Membership>
+        updateMembershipSettings;
     private final UnaryCallSettings.Builder<DeleteMembershipRequest, Membership>
         deleteMembershipSettings;
     private final UnaryCallSettings.Builder<CreateReactionRequest, Reaction> createReactionSettings;
@@ -693,6 +1277,44 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
             ListReactionsRequest, ListReactionsResponse, ListReactionsPagedResponse>
         listReactionsSettings;
     private final UnaryCallSettings.Builder<DeleteReactionRequest, Empty> deleteReactionSettings;
+    private final UnaryCallSettings.Builder<CreateCustomEmojiRequest, CustomEmoji>
+        createCustomEmojiSettings;
+    private final UnaryCallSettings.Builder<GetCustomEmojiRequest, CustomEmoji>
+        getCustomEmojiSettings;
+    private final PagedCallSettings.Builder<
+            ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>
+        listCustomEmojisSettings;
+    private final UnaryCallSettings.Builder<DeleteCustomEmojiRequest, Empty>
+        deleteCustomEmojiSettings;
+    private final UnaryCallSettings.Builder<GetSpaceReadStateRequest, SpaceReadState>
+        getSpaceReadStateSettings;
+    private final UnaryCallSettings.Builder<UpdateSpaceReadStateRequest, SpaceReadState>
+        updateSpaceReadStateSettings;
+    private final UnaryCallSettings.Builder<GetThreadReadStateRequest, ThreadReadState>
+        getThreadReadStateSettings;
+    private final UnaryCallSettings.Builder<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings;
+    private final PagedCallSettings.Builder<
+            ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
+        listSpaceEventsSettings;
+    private final UnaryCallSettings.Builder<
+            GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        getSpaceNotificationSettingSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        updateSpaceNotificationSettingSettings;
+    private final UnaryCallSettings.Builder<CreateSectionRequest, Section> createSectionSettings;
+    private final UnaryCallSettings.Builder<DeleteSectionRequest, Empty> deleteSectionSettings;
+    private final UnaryCallSettings.Builder<UpdateSectionRequest, Section> updateSectionSettings;
+    private final PagedCallSettings.Builder<
+            ListSectionsRequest, ListSectionsResponse, ListSectionsPagedResponse>
+        listSectionsSettings;
+    private final UnaryCallSettings.Builder<PositionSectionRequest, PositionSectionResponse>
+        positionSectionSettings;
+    private final PagedCallSettings.Builder<
+            ListSectionItemsRequest, ListSectionItemsResponse, ListSectionItemsPagedResponse>
+        listSectionItemsSettings;
+    private final UnaryCallSettings.Builder<MoveSectionItemRequest, MoveSectionItemResponse>
+        moveSectionItemSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -712,13 +1334,13 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(30000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(30000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -741,6 +1363,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getAttachmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       uploadAttachmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSpacesSettings = PagedCallSettings.newBuilder(LIST_SPACES_PAGE_STR_FACT);
+      searchSpacesSettings = PagedCallSettings.newBuilder(SEARCH_SPACES_PAGE_STR_FACT);
       getSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setUpSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -748,11 +1371,31 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       deleteSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       completeImportSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       findDirectMessageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      findGroupChatsSettings = PagedCallSettings.newBuilder(FIND_GROUP_CHATS_PAGE_STR_FACT);
       createMembershipSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateMembershipSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteMembershipSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createReactionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listReactionsSettings = PagedCallSettings.newBuilder(LIST_REACTIONS_PAGE_STR_FACT);
       deleteReactionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createCustomEmojiSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getCustomEmojiSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listCustomEmojisSettings = PagedCallSettings.newBuilder(LIST_CUSTOM_EMOJIS_PAGE_STR_FACT);
+      deleteCustomEmojiSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSpaceReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSpaceReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getThreadReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSpaceEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSpaceEventsSettings = PagedCallSettings.newBuilder(LIST_SPACE_EVENTS_PAGE_STR_FACT);
+      getSpaceNotificationSettingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSpaceNotificationSettingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createSectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSectionsSettings = PagedCallSettings.newBuilder(LIST_SECTIONS_PAGE_STR_FACT);
+      positionSectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSectionItemsSettings = PagedCallSettings.newBuilder(LIST_SECTION_ITEMS_PAGE_STR_FACT);
+      moveSectionItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -766,6 +1409,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               getAttachmentSettings,
               uploadAttachmentSettings,
               listSpacesSettings,
+              searchSpacesSettings,
               getSpaceSettings,
               createSpaceSettings,
               setUpSpaceSettings,
@@ -773,11 +1417,31 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               deleteSpaceSettings,
               completeImportSpaceSettings,
               findDirectMessageSettings,
+              findGroupChatsSettings,
               createMembershipSettings,
+              updateMembershipSettings,
               deleteMembershipSettings,
               createReactionSettings,
               listReactionsSettings,
-              deleteReactionSettings);
+              deleteReactionSettings,
+              createCustomEmojiSettings,
+              getCustomEmojiSettings,
+              listCustomEmojisSettings,
+              deleteCustomEmojiSettings,
+              getSpaceReadStateSettings,
+              updateSpaceReadStateSettings,
+              getThreadReadStateSettings,
+              getSpaceEventSettings,
+              listSpaceEventsSettings,
+              getSpaceNotificationSettingSettings,
+              updateSpaceNotificationSettingSettings,
+              createSectionSettings,
+              deleteSectionSettings,
+              updateSectionSettings,
+              listSectionsSettings,
+              positionSectionSettings,
+              listSectionItemsSettings,
+              moveSectionItemSettings);
       initDefaults(this);
     }
 
@@ -794,6 +1458,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getAttachmentSettings = settings.getAttachmentSettings.toBuilder();
       uploadAttachmentSettings = settings.uploadAttachmentSettings.toBuilder();
       listSpacesSettings = settings.listSpacesSettings.toBuilder();
+      searchSpacesSettings = settings.searchSpacesSettings.toBuilder();
       getSpaceSettings = settings.getSpaceSettings.toBuilder();
       createSpaceSettings = settings.createSpaceSettings.toBuilder();
       setUpSpaceSettings = settings.setUpSpaceSettings.toBuilder();
@@ -801,11 +1466,33 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       deleteSpaceSettings = settings.deleteSpaceSettings.toBuilder();
       completeImportSpaceSettings = settings.completeImportSpaceSettings.toBuilder();
       findDirectMessageSettings = settings.findDirectMessageSettings.toBuilder();
+      findGroupChatsSettings = settings.findGroupChatsSettings.toBuilder();
       createMembershipSettings = settings.createMembershipSettings.toBuilder();
+      updateMembershipSettings = settings.updateMembershipSettings.toBuilder();
       deleteMembershipSettings = settings.deleteMembershipSettings.toBuilder();
       createReactionSettings = settings.createReactionSettings.toBuilder();
       listReactionsSettings = settings.listReactionsSettings.toBuilder();
       deleteReactionSettings = settings.deleteReactionSettings.toBuilder();
+      createCustomEmojiSettings = settings.createCustomEmojiSettings.toBuilder();
+      getCustomEmojiSettings = settings.getCustomEmojiSettings.toBuilder();
+      listCustomEmojisSettings = settings.listCustomEmojisSettings.toBuilder();
+      deleteCustomEmojiSettings = settings.deleteCustomEmojiSettings.toBuilder();
+      getSpaceReadStateSettings = settings.getSpaceReadStateSettings.toBuilder();
+      updateSpaceReadStateSettings = settings.updateSpaceReadStateSettings.toBuilder();
+      getThreadReadStateSettings = settings.getThreadReadStateSettings.toBuilder();
+      getSpaceEventSettings = settings.getSpaceEventSettings.toBuilder();
+      listSpaceEventsSettings = settings.listSpaceEventsSettings.toBuilder();
+      getSpaceNotificationSettingSettings =
+          settings.getSpaceNotificationSettingSettings.toBuilder();
+      updateSpaceNotificationSettingSettings =
+          settings.updateSpaceNotificationSettingSettings.toBuilder();
+      createSectionSettings = settings.createSectionSettings.toBuilder();
+      deleteSectionSettings = settings.deleteSectionSettings.toBuilder();
+      updateSectionSettings = settings.updateSectionSettings.toBuilder();
+      listSectionsSettings = settings.listSectionsSettings.toBuilder();
+      positionSectionSettings = settings.positionSectionSettings.toBuilder();
+      listSectionItemsSettings = settings.listSectionItemsSettings.toBuilder();
+      moveSectionItemSettings = settings.moveSectionItemSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -819,6 +1506,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               getAttachmentSettings,
               uploadAttachmentSettings,
               listSpacesSettings,
+              searchSpacesSettings,
               getSpaceSettings,
               createSpaceSettings,
               setUpSpaceSettings,
@@ -826,11 +1514,31 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               deleteSpaceSettings,
               completeImportSpaceSettings,
               findDirectMessageSettings,
+              findGroupChatsSettings,
               createMembershipSettings,
+              updateMembershipSettings,
               deleteMembershipSettings,
               createReactionSettings,
               listReactionsSettings,
-              deleteReactionSettings);
+              deleteReactionSettings,
+              createCustomEmojiSettings,
+              getCustomEmojiSettings,
+              listCustomEmojisSettings,
+              deleteCustomEmojiSettings,
+              getSpaceReadStateSettings,
+              updateSpaceReadStateSettings,
+              getThreadReadStateSettings,
+              getSpaceEventSettings,
+              listSpaceEventsSettings,
+              getSpaceNotificationSettingSettings,
+              updateSpaceNotificationSettingSettings,
+              createSectionSettings,
+              deleteSectionSettings,
+              updateSectionSettings,
+              listSectionsSettings,
+              positionSectionSettings,
+              listSectionItemsSettings,
+              moveSectionItemSettings);
     }
 
     private static Builder createDefault() {
@@ -909,6 +1617,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .searchSpacesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .getSpaceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -944,7 +1657,17 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .findGroupChatsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .createMembershipSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateMembershipSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -965,6 +1688,96 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
       builder
           .deleteReactionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createCustomEmojiSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getCustomEmojiSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listCustomEmojisSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteCustomEmojiSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSpaceReadStateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateSpaceReadStateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getThreadReadStateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSpaceEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSpaceEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSpaceNotificationSettingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateSpaceNotificationSettingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createSectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteSectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateSectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSectionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .positionSectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSectionItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .moveSectionItemSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1042,6 +1855,13 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       return listSpacesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to searchSpaces. */
+    public PagedCallSettings.Builder<
+            SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+        searchSpacesSettings() {
+      return searchSpacesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getSpace. */
     public UnaryCallSettings.Builder<GetSpaceRequest, Space> getSpaceSettings() {
       return getSpaceSettings;
@@ -1078,10 +1898,23 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       return findDirectMessageSettings;
     }
 
+    /** Returns the builder for the settings used for calls to findGroupChats. */
+    public PagedCallSettings.Builder<
+            FindGroupChatsRequest, FindGroupChatsResponse, FindGroupChatsPagedResponse>
+        findGroupChatsSettings() {
+      return findGroupChatsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createMembership. */
     public UnaryCallSettings.Builder<CreateMembershipRequest, Membership>
         createMembershipSettings() {
       return createMembershipSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateMembership. */
+    public UnaryCallSettings.Builder<UpdateMembershipRequest, Membership>
+        updateMembershipSettings() {
+      return updateMembershipSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteMembership. */
@@ -1107,13 +1940,111 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       return deleteReactionSettings;
     }
 
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
+    /** Returns the builder for the settings used for calls to createCustomEmoji. */
+    public UnaryCallSettings.Builder<CreateCustomEmojiRequest, CustomEmoji>
+        createCustomEmojiSettings() {
+      return createCustomEmojiSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getCustomEmoji. */
+    public UnaryCallSettings.Builder<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiSettings() {
+      return getCustomEmojiSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomEmojis. */
+    public PagedCallSettings.Builder<
+            ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>
+        listCustomEmojisSettings() {
+      return listCustomEmojisSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCustomEmoji. */
+    public UnaryCallSettings.Builder<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiSettings() {
+      return deleteCustomEmojiSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSpaceReadState. */
+    public UnaryCallSettings.Builder<GetSpaceReadStateRequest, SpaceReadState>
+        getSpaceReadStateSettings() {
+      return getSpaceReadStateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSpaceReadState. */
+    public UnaryCallSettings.Builder<UpdateSpaceReadStateRequest, SpaceReadState>
+        updateSpaceReadStateSettings() {
+      return updateSpaceReadStateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getThreadReadState. */
+    public UnaryCallSettings.Builder<GetThreadReadStateRequest, ThreadReadState>
+        getThreadReadStateSettings() {
+      return getThreadReadStateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSpaceEvent. */
+    public UnaryCallSettings.Builder<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings() {
+      return getSpaceEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSpaceEvents. */
+    public PagedCallSettings.Builder<
+            ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
+        listSpaceEventsSettings() {
+      return listSpaceEventsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSpaceNotificationSetting. */
+    public UnaryCallSettings.Builder<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        getSpaceNotificationSettingSettings() {
+      return getSpaceNotificationSettingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSpaceNotificationSetting. */
+    public UnaryCallSettings.Builder<
+            UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        updateSpaceNotificationSettingSettings() {
+      return updateSpaceNotificationSettingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createSection. */
+    public UnaryCallSettings.Builder<CreateSectionRequest, Section> createSectionSettings() {
+      return createSectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSection. */
+    public UnaryCallSettings.Builder<DeleteSectionRequest, Empty> deleteSectionSettings() {
+      return deleteSectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSection. */
+    public UnaryCallSettings.Builder<UpdateSectionRequest, Section> updateSectionSettings() {
+      return updateSectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSections. */
+    public PagedCallSettings.Builder<
+            ListSectionsRequest, ListSectionsResponse, ListSectionsPagedResponse>
+        listSectionsSettings() {
+      return listSectionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to positionSection. */
+    public UnaryCallSettings.Builder<PositionSectionRequest, PositionSectionResponse>
+        positionSectionSettings() {
+      return positionSectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSectionItems. */
+    public PagedCallSettings.Builder<
+            ListSectionItemsRequest, ListSectionItemsResponse, ListSectionItemsPagedResponse>
+        listSectionItemsSettings() {
+      return listSectionItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to moveSectionItem. */
+    public UnaryCallSettings.Builder<MoveSectionItemRequest, MoveSectionItemResponse>
+        moveSectionItemSettings() {
+      return moveSectionItemSettings;
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -202,6 +202,10 @@ public class ParallelstoreClientHttpJsonTest {
             .addAllAccessPoints(new ArrayList<String>())
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
+            .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -255,6 +259,10 @@ public class ParallelstoreClientHttpJsonTest {
             .addAllAccessPoints(new ArrayList<String>())
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
+            .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -308,6 +316,10 @@ public class ParallelstoreClientHttpJsonTest {
             .addAllAccessPoints(new ArrayList<String>())
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
+            .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -370,6 +382,10 @@ public class ParallelstoreClientHttpJsonTest {
             .addAllAccessPoints(new ArrayList<String>())
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
+            .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -432,6 +448,10 @@ public class ParallelstoreClientHttpJsonTest {
             .addAllAccessPoints(new ArrayList<String>())
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
+            .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -453,6 +473,10 @@ public class ParallelstoreClientHttpJsonTest {
             .addAllAccessPoints(new ArrayList<String>())
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
+            .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -494,6 +518,10 @@ public class ParallelstoreClientHttpJsonTest {
               .addAllAccessPoints(new ArrayList<String>())
               .setNetwork("network1843485230")
               .setReservedIpRange("reservedIpRange575015950")
+              .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+              .setFileStripeLevel(FileStripeLevel.forNumber(0))
+              .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+              .setDeploymentType(DeploymentType.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInstanceAsync(instance, updateMask).get();
@@ -587,6 +615,122 @@ public class ParallelstoreClientHttpJsonTest {
     try {
       String name = "projects/project-9412/locations/location-9412/instances/instance-9412";
       client.deleteInstanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void importDataTest() throws Exception {
+    ImportDataResponse expectedResponse = ImportDataResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importDataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ImportDataRequest request =
+        ImportDataRequest.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setRequestId("requestId693933066")
+            .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
+            .build();
+
+    ImportDataResponse actualResponse = client.importDataAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importDataExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ImportDataRequest request =
+          ImportDataRequest.newBuilder()
+              .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .setRequestId("requestId693933066")
+              .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+              .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
+              .build();
+      client.importDataAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void exportDataTest() throws Exception {
+    ExportDataResponse expectedResponse = ExportDataResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportDataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExportDataRequest request =
+        ExportDataRequest.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setRequestId("requestId693933066")
+            .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
+            .build();
+
+    ExportDataResponse actualResponse = client.exportDataAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportDataExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExportDataRequest request =
+          ExportDataRequest.newBuilder()
+              .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .setRequestId("requestId693933066")
+              .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+              .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
+              .build();
+      client.exportDataAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

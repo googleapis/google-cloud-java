@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import "google/api/client.proto";
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/cloud/dialogflow/v2/audio_config.proto";
+import "google/cloud/dialogflow/v2/generator.proto";
 import "google/cloud/dialogflow/v2/participant.proto";
 import "google/longrunning/operations.proto";
 import "google/protobuf/duration.proto";
@@ -28,7 +29,6 @@ import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
 
-option cc_enable_arenas = true;
 option csharp_namespace = "Google.Cloud.Dialogflow.V2";
 option go_package = "cloud.google.com/go/dialogflow/apiv2/dialogflowpb;dialogflowpb";
 option java_multiple_files = true;
@@ -74,7 +74,9 @@ service ConversationProfiles {
 
   // Creates a conversation profile in the specified project.
   //
-  // [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+  // [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+  // and
+  // [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
   // aren't populated in the response. You can retrieve them via
   // [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
   // API.
@@ -93,7 +95,9 @@ service ConversationProfiles {
 
   // Updates the specified conversation profile.
   //
-  // [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+  // [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+  // and
+  // [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
   // aren't populated in the response. You can retrieve them via
   // [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
   // API.
@@ -236,6 +240,18 @@ message ConversationProfile {
   // format of [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]
   NotificationConfig new_message_event_notification_config = 8;
 
+  // Optional. Configuration for publishing transcription intermediate results.
+  // Event will be sent in format of
+  // [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]. If
+  // configured, the following information will be populated as
+  // [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] Pub/Sub
+  // message attributes:
+  // - "participant_id"
+  // - "participant_role"
+  // - "message_id"
+  NotificationConfig new_recognition_result_notification_config = 21
+      [(google.api.field_behavior) = OPTIONAL];
+
   // Settings for speech transcription.
   SpeechToTextConfig stt_config = 9;
 
@@ -245,6 +261,9 @@ message ConversationProfile {
   // This should be a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
   // language tag. Example: "en-US".
   string language_code = 10;
+
+  // Optional. Configuration for SIP connections.
+  SipConfig sip_config = 16 [(google.api.field_behavior) = OPTIONAL];
 
   // The time zone of this conversational profile from the
   // [time zone database](https://www.iana.org/time-zones), e.g.,
@@ -422,9 +441,51 @@ message HumanAgentAssistantConfig {
     bool disable_agent_query_logging = 14
         [(google.api.field_behavior) = OPTIONAL];
 
+    // Optional. Enable query suggestion even if we can't find its answer.
+    // By default, queries are suggested only if we find its answer.
+    // Supported features: KNOWLEDGE_ASSIST
+    bool enable_query_suggestion_when_no_answer = 15
+        [(google.api.field_behavior) = OPTIONAL];
+
     // Optional. Enable including conversation context during query answer
     // generation. Supported features: KNOWLEDGE_SEARCH.
     bool enable_conversation_augmented_query = 16
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Enable query suggestion only.
+    // Supported features: KNOWLEDGE_ASSIST
+    bool enable_query_suggestion_only = 17
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Enable returning detailed reasons for suggestion results.
+    //
+    // For example, with this field disabled, Knowledge Search feature returns
+    // NotFound error when no answer is found for the input query. Enabling this
+    // field will change the behavior to return an OK response with
+    // detailed information indicating the lack of results.
+    //
+    // Supported features: KNOWLEDGE_SEARCH, KNOWLEDGE_ASSIST
+    bool enable_response_debug_info = 18
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Settings for Responsible AI checks.
+    // Supported features:  KNOWLEDGE_ASSIST
+    RaiSettings rai_settings = 19 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. The trigger event for suggestion.
+    // If unspecified, it will be `CUSTOMER_MESSAGE`.
+    // Supported features: KNOWLEDGE_ASSIST
+    // For KNOWLEDGE_ASSIST, these four trigger events are supported:
+    // 1. TRIGGER_EVENT_UNSPECIFIED
+    // 2. END_OF_UTTERANCE
+    // 3. CUSTOMER_MESSAGE
+    // 4. AGENT_MESSAGE
+    TriggerEvent suggestion_trigger_event = 20
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. If true, disable appending available search context to the
+    // search query. Supported features: KNOWLEDGE_ASSIST
+    bool disable_query_search_context = 21
         [(google.api.field_behavior) = OPTIONAL];
 
     // Settings of suggestion trigger.
@@ -459,6 +520,44 @@ message HumanAgentAssistantConfig {
     // same participant based on the same context will be grouped into a single
     // Pub/Sub event or StreamingAnalyzeContentResponse.
     bool group_suggestion_responses = 3;
+
+    // Optional. List of various generator resource names used in the
+    // conversation profile.
+    repeated string generators = 4 [
+      (google.api.field_behavior) = OPTIONAL,
+      (google.api.resource_reference) = {
+        type: "dialogflow.googleapis.com/Generator"
+      }
+    ];
+
+    // Optional. When disable_high_latency_features_sync_delivery is true and
+    // using the AnalyzeContent API, we will not deliver the responses from high
+    // latency features in the API response. The
+    // human_agent_assistant_config.notification_config must be configured and
+    // enable_event_based_suggestion must be set to true to receive the
+    // responses from high latency features in Pub/Sub. High latency feature(s):
+    // KNOWLEDGE_ASSIST
+    bool disable_high_latency_features_sync_delivery = 5
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Enable skipping event based suggestion if the suggestion is
+    // empty.
+    //
+    // For example, with this field disabled, Knowledge Assist feature sends
+    // a Pub/Sub message when there are no suggestions. Enabling this field
+    // will change the behavior to skip the Pub/Sub message in this situation.
+    bool skip_empty_event_based_suggestion = 6
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. If true,
+    // use unredacted transcript data (Supported features: AI_COACH) and
+    // use unredacted ingested context (Supported features: All Agent Assist
+    // features)
+    bool use_unredacted_conversation_data = 8
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. If true, enable asynchronous execution of tools.
+    bool enable_async_tool_call = 9 [(google.api.field_behavior) = OPTIONAL];
   }
 
   // Config for suggestion query.
@@ -638,12 +737,16 @@ message HumanAgentAssistantConfig {
     // Optional. The customized sections chosen to return when requesting a
     // summary of a conversation.
     Sections sections = 8 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. The number of recent messages to include in the context.
+    // Supported features: KNOWLEDGE_ASSIST.
+    int32 context_size = 9 [(google.api.field_behavior) = OPTIONAL];
   }
 
   // Custom conversation models used in agent assist feature.
   //
   // Supported feature: ARTICLE_SUGGESTION, SMART_COMPOSE, SMART_REPLY,
-  // CONVERSATION_SUMMARIZATION.
+  // CONVERSATION_SUMMARIZATION
   message ConversationModelConfig {
     // Conversation model resource name. Format: `projects/<Project
     // ID>/conversationModels/<Model ID>`.
@@ -654,11 +757,12 @@ message HumanAgentAssistantConfig {
     // Version of current baseline model. It will be ignored if
     // [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
     // is set. Valid versions are:
-    //   Article Suggestion baseline model:
-    //     - 0.9
-    //     - 1.0 (default)
-    //   Summarization baseline model:
-    //     - 1.0
+    //
+    // - Article Suggestion baseline model:
+    //   - 0.9
+    //   - 1.0 (default)
+    // - Summarization baseline model:
+    //   - 1.0
     string baseline_model_version = 8;
   }
 
@@ -700,6 +804,31 @@ message HumanAgentAssistantConfig {
     // If Pub/Sub notification is configured, result will be in
     // [ConversationEvent.new_message_payload.SentimentAnalysisResult][google.cloud.dialogflow.v2.ConversationEvent.new_message_payload].
     bool enable_sentiment_analysis = 3;
+
+    // Optional. Enables sentiment analysis for audio input and conversation
+    // messages. If unspecified, defaults to false. If this flag is set to true,
+    // other 'enable_sentiment_analysis' fields will be ignored.
+    //
+    // Sentiment analysis inspects user input and identifies the prevailing
+    // subjective opinion, especially to determine a user's attitude as
+    // positive, negative, or neutral.
+    // https://cloud.google.com/natural-language/docs/basics#sentiment_analysis
+    // For
+    // [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent]
+    // method, result will be in
+    // [StreamingAnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.message].
+    // For
+    // [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent]
+    // method, result will be in
+    // [AnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2.AnalyzeContentResponse.message]
+    // For
+    // [Conversations.ListMessages][google.cloud.dialogflow.v2.Conversations.ListMessages]
+    // method, result will be in
+    // [ListMessagesResponse.messages.SentimentAnalysisResult][google.cloud.dialogflow.v2.ListMessagesResponse.messages]
+    // If Pub/Sub notification is configured, result will be in
+    // [ConversationEvent.new_message_payload.SentimentAnalysisResult][google.cloud.dialogflow.v2.ConversationEvent.new_message_payload].
+    bool enable_sentiment_analysis_v3 = 5
+        [(google.api.field_behavior) = OPTIONAL];
   }
 
   // Pub/Sub topic on which to publish new agent assistant events.
@@ -724,7 +853,7 @@ message HumanAgentAssistantConfig {
 // Currently, this feature is not general available, please contact Google
 // to get access.
 message HumanAgentHandoffConfig {
-  // Configuration specific to LivePerson (https://www.liveperson.com).
+  // Configuration specific to [LivePerson](https://www.liveperson.com).
   message LivePersonConfig {
     // Required. Account number of the LivePerson account to connect. This is
     // the account number you input at the login page.
@@ -751,7 +880,7 @@ message HumanAgentHandoffConfig {
 
   // Required. Specifies which agent service to connect for human agent handoff.
   oneof agent_service {
-    // Uses LivePerson (https://www.liveperson.com).
+    // Uses [LivePerson](https://www.liveperson.com).
     LivePersonConfig live_person_config = 1;
 
     // Uses Salesforce Live Agent.
@@ -804,6 +933,36 @@ message LoggingConfig {
   bool enable_stackdriver_logging = 3;
 }
 
+// Defines the SIP configuration.
+message SipConfig {
+  // Asks Dialogflow Telephony to create the conversation provided in the SIP
+  // header on the fly when the call comes in.
+  bool create_conversation_on_the_fly = 1;
+
+  // Starts the conversation with inactive SDP directives
+  bool inactive_start = 3;
+
+  // Max duration for audio recording.
+  // Overrides the default value of 15 min.
+  // Max value is 8 hours.
+  google.protobuf.Duration max_audio_recording_duration = 4;
+
+  // Allows interactions with a Dialogflow virtual agent even if the call is
+  // connected for SIPREC purposes.
+  bool allow_virtual_agent_interaction = 5;
+
+  // Keeps the conversation running even if the call is disconnected.
+  bool keep_conversation_running = 6;
+
+  // List of inbound call leg headers to be copied to outbound call legs created
+  // later.
+  repeated string copy_inbound_call_leg_headers = 8;
+
+  // Ignores any media direction in the reINVITE SDP offer. Reuse the previous
+  // media direction.
+  bool ignore_reinvite_media_direction = 9;
+}
+
 // The type of Human Agent Assistant API suggestion to perform, and the maximum
 // number of results to return for that type. Multiple `Feature` objects can
 // be specified in the `features` list.
@@ -822,8 +981,14 @@ message SuggestionFeature {
     // Run smart reply model for chat.
     SMART_REPLY = 3;
 
+    // Run conversation summarization model for chat.
+    CONVERSATION_SUMMARIZATION = 8;
+
     // Run knowledge search with text input from agent or text generated query.
     KNOWLEDGE_SEARCH = 14;
+
+    // Run knowledge assist with automatic query generation.
+    KNOWLEDGE_ASSIST = 15;
   }
 
   // Type of Human Agent Assistant API feature to request.
@@ -831,7 +996,7 @@ message SuggestionFeature {
 }
 
 // The request message for
-// [ConversationProfiles.SetSuggestionFeature][].
+// [ConversationProfiles.SetSuggestionFeatureConfig][google.cloud.dialogflow.v2.ConversationProfiles.SetSuggestionFeatureConfig].
 message SetSuggestionFeatureConfigRequest {
   // Required. The Conversation Profile to add or update the suggestion feature
   // config. Format: `projects/<Project ID>/locations/<Location
@@ -848,7 +1013,8 @@ message SetSuggestionFeatureConfigRequest {
       3 [(google.api.field_behavior) = REQUIRED];
 }
 
-// The request message for [ConversationProfiles.ClearFeature][].
+// The request message for
+// [ConversationProfiles.ClearSuggestionFeatureConfig][google.cloud.dialogflow.v2.ConversationProfiles.ClearSuggestionFeatureConfig].
 message ClearSuggestionFeatureConfigRequest {
   // Required. The Conversation Profile to add or update the suggestion feature
   // config. Format: `projects/<Project ID>/locations/<Location
@@ -865,7 +1031,8 @@ message ClearSuggestionFeatureConfigRequest {
       [(google.api.field_behavior) = REQUIRED];
 }
 
-// Metadata for a [ConversationProfile.SetSuggestionFeatureConfig][]
+// Metadata for a
+// [ConversationProfiles.SetSuggestionFeatureConfig][google.cloud.dialogflow.v2.ConversationProfiles.SetSuggestionFeatureConfig]
 // operation.
 message SetSuggestionFeatureConfigOperationMetadata {
   // The resource name of the conversation profile. Format:
@@ -886,7 +1053,8 @@ message SetSuggestionFeatureConfigOperationMetadata {
   google.protobuf.Timestamp create_time = 4;
 }
 
-// Metadata for a [ConversationProfile.ClearSuggestionFeatureConfig][]
+// Metadata for a
+// [ConversationProfiles.ClearSuggestionFeatureConfig][google.cloud.dialogflow.v2.ConversationProfiles.ClearSuggestionFeatureConfig]
 // operation.
 message ClearSuggestionFeatureConfigOperationMetadata {
   // The resource name of the conversation profile. Format:

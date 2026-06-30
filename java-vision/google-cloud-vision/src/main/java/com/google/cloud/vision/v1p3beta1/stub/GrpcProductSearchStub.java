@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,6 +83,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProductSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListProductSetsRequest, ListProductSetsResponse>
@@ -94,6 +95,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(ListProductSetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProductSetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProductSetRequest, ProductSet>
@@ -104,6 +106,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProductSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateProductSetRequest, ProductSet>
@@ -114,6 +117,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProductSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProductSetRequest, Empty>
@@ -124,6 +128,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateProductRequest, Product>
@@ -134,6 +139,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateProductRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListProductsRequest, ListProductsResponse>
@@ -144,6 +150,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListProductsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProductsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProductRequest, Product> getProductMethodDescriptor =
@@ -152,6 +159,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
           .setFullMethodName("google.cloud.vision.v1p3beta1.ProductSearch/GetProduct")
           .setRequestMarshaller(ProtoUtils.marshaller(GetProductRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateProductRequest, Product>
@@ -162,6 +170,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProductRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProductRequest, Empty> deleteProductMethodDescriptor =
@@ -170,6 +179,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
           .setFullMethodName("google.cloud.vision.v1p3beta1.ProductSearch/DeleteProduct")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteProductRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateReferenceImageRequest, ReferenceImage>
@@ -180,6 +190,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReferenceImageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReferenceImage.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteReferenceImageRequest, Empty>
@@ -190,6 +201,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteReferenceImageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReferenceImagesRequest, ListReferenceImagesResponse>
@@ -201,6 +213,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(ListReferenceImagesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReferenceImagesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReferenceImageRequest, ReferenceImage>
@@ -211,6 +224,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetReferenceImageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReferenceImage.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddProductToProductSetRequest, Empty>
@@ -222,6 +236,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AddProductToProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveProductFromProductSetRequest, Empty>
@@ -233,6 +248,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RemoveProductFromProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -247,6 +263,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(ListProductsInProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProductsInProductSetResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportProductSetsRequest, Operation>
@@ -257,6 +274,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportProductSetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateProductSetRequest, ProductSet> createProductSetCallable;
@@ -346,6 +364,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListProductSetsRequest, ListProductSetsResponse>
         listProductSetsTransportSettings =
@@ -357,6 +376,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetProductSetRequest, ProductSet> getProductSetTransportSettings =
         GrpcCallSettings.<GetProductSetRequest, ProductSet>newBuilder()
@@ -367,6 +387,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateProductSetRequest, ProductSet> updateProductSetTransportSettings =
         GrpcCallSettings.<UpdateProductSetRequest, ProductSet>newBuilder()
@@ -388,6 +409,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateProductRequest, Product> createProductTransportSettings =
         GrpcCallSettings.<CreateProductRequest, Product>newBuilder()
@@ -398,6 +420,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
         GrpcCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
@@ -408,6 +431,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetProductRequest, Product> getProductTransportSettings =
         GrpcCallSettings.<GetProductRequest, Product>newBuilder()
@@ -418,6 +442,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateProductRequest, Product> updateProductTransportSettings =
         GrpcCallSettings.<UpdateProductRequest, Product>newBuilder()
@@ -438,6 +463,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateReferenceImageRequest, ReferenceImage>
         createReferenceImageTransportSettings =
@@ -449,6 +475,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageTransportSettings =
         GrpcCallSettings.<DeleteReferenceImageRequest, Empty>newBuilder()
@@ -459,6 +486,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListReferenceImagesRequest, ListReferenceImagesResponse>
         listReferenceImagesTransportSettings =
@@ -470,6 +498,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetReferenceImageRequest, ReferenceImage> getReferenceImageTransportSettings =
         GrpcCallSettings.<GetReferenceImageRequest, ReferenceImage>newBuilder()
@@ -480,6 +509,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<AddProductToProductSetRequest, Empty> addProductToProductSetTransportSettings =
         GrpcCallSettings.<AddProductToProductSetRequest, Empty>newBuilder()
@@ -490,6 +520,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RemoveProductFromProductSetRequest, Empty>
         removeProductFromProductSetTransportSettings =
@@ -501,6 +532,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListProductsInProductSetRequest, ListProductsInProductSetResponse>
         listProductsInProductSetTransportSettings =
@@ -513,6 +545,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ImportProductSetsRequest, Operation> importProductSetsTransportSettings =
         GrpcCallSettings.<ImportProductSetsRequest, Operation>newBuilder()
@@ -523,6 +556,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createProductSetCallable =

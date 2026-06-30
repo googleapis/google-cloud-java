@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,6 +129,44 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> deleteJobOperationCallable()
  *           <li><p> deleteJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CancelJob</td>
+ *      <td><p> Cancel a Job.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cancelJobAsync(CancelJobRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> cancelJobAsync(JobName name)
+ *           <li><p> cancelJobAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cancelJobOperationCallable()
+ *           <li><p> cancelJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateJob</td>
+ *      <td><p> Update a Job.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateJob(UpdateJobRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateJob(Job job, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -805,6 +843,241 @@ public class BatchServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteJobRequest, Operation> deleteJobCallable() {
     return stub.deleteJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancel a Job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   CancelJobResponse response = batchServiceClient.cancelJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Job name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CancelJobResponse, OperationMetadata> cancelJobAsync(JobName name) {
+    CancelJobRequest request =
+        CancelJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return cancelJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancel a Job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   String name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString();
+   *   CancelJobResponse response = batchServiceClient.cancelJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Job name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CancelJobResponse, OperationMetadata> cancelJobAsync(String name) {
+    CancelJobRequest request = CancelJobRequest.newBuilder().setName(name).build();
+    return cancelJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancel a Job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   CancelJobRequest request =
+   *       CancelJobRequest.newBuilder()
+   *           .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   CancelJobResponse response = batchServiceClient.cancelJobAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CancelJobResponse, OperationMetadata> cancelJobAsync(
+      CancelJobRequest request) {
+    return cancelJobOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancel a Job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   CancelJobRequest request =
+   *       CancelJobRequest.newBuilder()
+   *           .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<CancelJobResponse, OperationMetadata> future =
+   *       batchServiceClient.cancelJobOperationCallable().futureCall(request);
+   *   // Do something.
+   *   CancelJobResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CancelJobRequest, CancelJobResponse, OperationMetadata>
+      cancelJobOperationCallable() {
+    return stub.cancelJobOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancel a Job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   CancelJobRequest request =
+   *       CancelJobRequest.newBuilder()
+   *           .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = batchServiceClient.cancelJobCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelJobRequest, Operation> cancelJobCallable() {
+    return stub.cancelJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a Job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   Job job = Job.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Job response = batchServiceClient.updateJob(job, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param job Required. The Job to update. Only fields specified in `updateMask` are updated.
+   * @param updateMask Required. Mask of fields to update.
+   *     <p>The `jobs.patch` method can only be used while a job is in the `QUEUED`, `SCHEDULED`, or
+   *     `RUNNING` state and currently only supports increasing the value of the first `taskCount`
+   *     field in the job's `taskGroups` field. Therefore, you must set the value of `updateMask` to
+   *     `taskGroups`. Any other job fields in the update request will be ignored.
+   *     <p>For example, to update a job's `taskCount` to `2`, set `updateMask` to `taskGroups` and
+   *     use the following request body: ``` { "taskGroups":[{ "taskCount": 2 }] } ```
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Job updateJob(Job job, FieldMask updateMask) {
+    UpdateJobRequest request =
+        UpdateJobRequest.newBuilder().setJob(job).setUpdateMask(updateMask).build();
+    return updateJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a Job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   UpdateJobRequest request =
+   *       UpdateJobRequest.newBuilder()
+   *           .setJob(Job.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Job response = batchServiceClient.updateJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Job updateJob(UpdateJobRequest request) {
+    return updateJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a Job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   UpdateJobRequest request =
+   *       UpdateJobRequest.newBuilder()
+   *           .setJob(Job.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Job> future = batchServiceClient.updateJobCallable().futureCall(request);
+   *   // Do something.
+   *   Job response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
+    return stub.updateJobCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

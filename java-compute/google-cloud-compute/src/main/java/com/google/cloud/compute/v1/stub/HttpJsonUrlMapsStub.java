@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListUrlMapsRequest;
 import com.google.cloud.compute.v1.DeleteUrlMapRequest;
 import com.google.cloud.compute.v1.GetUrlMapRequest;
@@ -42,6 +43,8 @@ import com.google.cloud.compute.v1.ListUrlMapsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchUrlMapRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsUrlMapRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateUrlMapRequest;
 import com.google.cloud.compute.v1.UrlMap;
 import com.google.cloud.compute.v1.UrlMapList;
@@ -415,6 +418,46 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
               })
           .build();
 
+  private static final ApiMethodDescriptor<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor.<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.UrlMaps/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsUrlMapRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/urlMaps/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<UpdateUrlMapRequest, Operation> updateMethodDescriptor =
       ApiMethodDescriptor.<UpdateUrlMapRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.UrlMaps/Update")
@@ -524,6 +567,8 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
   private final UnaryCallable<ListUrlMapsRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchUrlMapRequest, Operation> patchCallable;
   private final OperationCallable<PatchUrlMapRequest, Operation, Operation> patchOperationCallable;
+  private final UnaryCallable<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
   private final UnaryCallable<UpdateUrlMapRequest, Operation> updateCallable;
   private final OperationCallable<UpdateUrlMapRequest, Operation, Operation>
       updateOperationCallable;
@@ -532,6 +577,27 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/urlMaps/{url_map}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/urlMaps/{url_map}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate INVALIDATE_CACHE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/urlMaps/{url_map}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/urlMaps/{url_map}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/urlMaps/{resource}");
+  private static final PathTemplate UPDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/urlMaps/{url_map}");
+  private static final PathTemplate VALIDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/urlMaps/{url_map}");
 
   public static final HttpJsonUrlMapsStub create(UrlMapsStubSettings settings) throws IOException {
     return new HttpJsonUrlMapsStub(settings, ClientContext.create(settings));
@@ -582,6 +648,13 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteUrlMapRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteUrlMapRequest, Operation>newBuilder()
@@ -593,6 +666,13 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("url_map", String.valueOf(request.getUrlMap()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("url_map", String.valueOf(request.getUrlMap()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetUrlMapRequest, UrlMap> getTransportSettings =
@@ -606,6 +686,13 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   builder.add("url_map", String.valueOf(request.getUrlMap()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("url_map", String.valueOf(request.getUrlMap()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertUrlMapRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertUrlMapRequest, Operation>newBuilder()
@@ -616,6 +703,12 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<InvalidateCacheUrlMapRequest, Operation> invalidateCacheTransportSettings =
@@ -629,6 +722,13 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   builder.add("url_map", String.valueOf(request.getUrlMap()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("url_map", String.valueOf(request.getUrlMap()));
+                  return INVALIDATE_CACHE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListUrlMapsRequest, UrlMapList> listTransportSettings =
         HttpJsonCallSettings.<ListUrlMapsRequest, UrlMapList>newBuilder()
@@ -639,6 +739,12 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<PatchUrlMapRequest, Operation> patchTransportSettings =
@@ -652,7 +758,36 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   builder.add("url_map", String.valueOf(request.getUrlMap()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("url_map", String.valueOf(request.getUrlMap()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
+    HttpJsonCallSettings<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
     HttpJsonCallSettings<UpdateUrlMapRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateUrlMapRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
@@ -663,6 +798,13 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("url_map", String.valueOf(request.getUrlMap()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("url_map", String.valueOf(request.getUrlMap()));
+                  return UPDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ValidateUrlMapRequest, UrlMapsValidateResponse> validateTransportSettings =
@@ -675,6 +817,13 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("url_map", String.valueOf(request.getUrlMap()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("url_map", String.valueOf(request.getUrlMap()));
+                  return VALIDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 
@@ -729,6 +878,11 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
@@ -756,6 +910,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
     methodDescriptors.add(invalidateCacheMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     methodDescriptors.add(validateMethodDescriptor);
     return methodDescriptors;
@@ -827,6 +982,12 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
   @Override
   public OperationCallable<PatchUrlMapRequest, Operation, Operation> patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

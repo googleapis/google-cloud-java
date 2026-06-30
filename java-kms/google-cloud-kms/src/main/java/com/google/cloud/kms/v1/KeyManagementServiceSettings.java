@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListCryptoKeysP
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListImportJobsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListKeyRingsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListRetiredResourcesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -31,6 +32,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -44,6 +46,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -63,7 +67,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getKeyRing to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getKeyRing:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -80,10 +86,47 @@ import javax.annotation.Generated;
  *             .getKeyRingSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * KeyManagementServiceSettings keyManagementServiceSettings =
  *     keyManagementServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for deleteCryptoKey:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * KeyManagementServiceSettings.Builder keyManagementServiceSettingsBuilder =
+ *     KeyManagementServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * keyManagementServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -118,6 +161,15 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     return ((KeyManagementServiceStubSettings) getStubSettings()).listImportJobsSettings();
   }
 
+  /** Returns the object with the settings used for calls to listRetiredResources. */
+  public PagedCallSettings<
+          ListRetiredResourcesRequest,
+          ListRetiredResourcesResponse,
+          ListRetiredResourcesPagedResponse>
+      listRetiredResourcesSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).listRetiredResourcesSettings();
+  }
+
   /** Returns the object with the settings used for calls to getKeyRing. */
   public UnaryCallSettings<GetKeyRingRequest, KeyRing> getKeyRingSettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).getKeyRingSettings();
@@ -144,6 +196,12 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     return ((KeyManagementServiceStubSettings) getStubSettings()).getImportJobSettings();
   }
 
+  /** Returns the object with the settings used for calls to getRetiredResource. */
+  public UnaryCallSettings<GetRetiredResourceRequest, RetiredResource>
+      getRetiredResourceSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).getRetiredResourceSettings();
+  }
+
   /** Returns the object with the settings used for calls to createKeyRing. */
   public UnaryCallSettings<CreateKeyRingRequest, KeyRing> createKeyRingSettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).createKeyRingSettings();
@@ -158,6 +216,31 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
   public UnaryCallSettings<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
       createCryptoKeyVersionSettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).createCryptoKeyVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCryptoKey. */
+  public UnaryCallSettings<DeleteCryptoKeyRequest, Operation> deleteCryptoKeySettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).deleteCryptoKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCryptoKey. */
+  public OperationCallSettings<DeleteCryptoKeyRequest, Empty, DeleteCryptoKeyMetadata>
+      deleteCryptoKeyOperationSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings())
+        .deleteCryptoKeyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCryptoKeyVersion. */
+  public UnaryCallSettings<DeleteCryptoKeyVersionRequest, Operation>
+      deleteCryptoKeyVersionSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).deleteCryptoKeyVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCryptoKeyVersion. */
+  public OperationCallSettings<DeleteCryptoKeyVersionRequest, Empty, DeleteCryptoKeyVersionMetadata>
+      deleteCryptoKeyVersionOperationSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings())
+        .deleteCryptoKeyVersionOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to importCryptoKeyVersion. */
@@ -240,6 +323,11 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
   /** Returns the object with the settings used for calls to macVerify. */
   public UnaryCallSettings<MacVerifyRequest, MacVerifyResponse> macVerifySettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).macVerifySettings();
+  }
+
+  /** Returns the object with the settings used for calls to decapsulate. */
+  public UnaryCallSettings<DecapsulateRequest, DecapsulateResponse> decapsulateSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).decapsulateSettings();
   }
 
   /** Returns the object with the settings used for calls to generateRandomBytes. */
@@ -418,6 +506,15 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
       return getStubSettingsBuilder().listImportJobsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listRetiredResources. */
+    public PagedCallSettings.Builder<
+            ListRetiredResourcesRequest,
+            ListRetiredResourcesResponse,
+            ListRetiredResourcesPagedResponse>
+        listRetiredResourcesSettings() {
+      return getStubSettingsBuilder().listRetiredResourcesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getKeyRing. */
     public UnaryCallSettings.Builder<GetKeyRingRequest, KeyRing> getKeyRingSettings() {
       return getStubSettingsBuilder().getKeyRingSettings();
@@ -444,6 +541,12 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
       return getStubSettingsBuilder().getImportJobSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getRetiredResource. */
+    public UnaryCallSettings.Builder<GetRetiredResourceRequest, RetiredResource>
+        getRetiredResourceSettings() {
+      return getStubSettingsBuilder().getRetiredResourceSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createKeyRing. */
     public UnaryCallSettings.Builder<CreateKeyRingRequest, KeyRing> createKeyRingSettings() {
       return getStubSettingsBuilder().createKeyRingSettings();
@@ -458,6 +561,30 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     public UnaryCallSettings.Builder<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
         createCryptoKeyVersionSettings() {
       return getStubSettingsBuilder().createCryptoKeyVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCryptoKey. */
+    public UnaryCallSettings.Builder<DeleteCryptoKeyRequest, Operation> deleteCryptoKeySettings() {
+      return getStubSettingsBuilder().deleteCryptoKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCryptoKey. */
+    public OperationCallSettings.Builder<DeleteCryptoKeyRequest, Empty, DeleteCryptoKeyMetadata>
+        deleteCryptoKeyOperationSettings() {
+      return getStubSettingsBuilder().deleteCryptoKeyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCryptoKeyVersion. */
+    public UnaryCallSettings.Builder<DeleteCryptoKeyVersionRequest, Operation>
+        deleteCryptoKeyVersionSettings() {
+      return getStubSettingsBuilder().deleteCryptoKeyVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCryptoKeyVersion. */
+    public OperationCallSettings.Builder<
+            DeleteCryptoKeyVersionRequest, Empty, DeleteCryptoKeyVersionMetadata>
+        deleteCryptoKeyVersionOperationSettings() {
+      return getStubSettingsBuilder().deleteCryptoKeyVersionOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to importCryptoKeyVersion. */
@@ -540,6 +667,12 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     /** Returns the builder for the settings used for calls to macVerify. */
     public UnaryCallSettings.Builder<MacVerifyRequest, MacVerifyResponse> macVerifySettings() {
       return getStubSettingsBuilder().macVerifySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to decapsulate. */
+    public UnaryCallSettings.Builder<DecapsulateRequest, DecapsulateResponse>
+        decapsulateSettings() {
+      return getStubSettingsBuilder().decapsulateSettings();
     }
 
     /** Returns the builder for the settings used for calls to generateRandomBytes. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,15 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 
 // [START aiplatform_v1beta1_generated_EvaluationService_EvaluateInstances_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.aiplatform.v1beta1.AutoraterConfig;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse;
+import com.google.cloud.aiplatform.v1beta1.EvaluationInstance;
 import com.google.cloud.aiplatform.v1beta1.EvaluationServiceClient;
 import com.google.cloud.aiplatform.v1beta1.LocationName;
+import com.google.cloud.aiplatform.v1beta1.Metric;
+import com.google.cloud.aiplatform.v1beta1.MetricSource;
+import java.util.ArrayList;
 
 public class AsyncEvaluateInstances {
 
@@ -39,6 +44,10 @@ public class AsyncEvaluateInstances {
       EvaluateInstancesRequest request =
           EvaluateInstancesRequest.newBuilder()
               .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .addAllMetrics(new ArrayList<Metric>())
+              .addAllMetricSources(new ArrayList<MetricSource>())
+              .setInstance(EvaluationInstance.newBuilder().build())
+              .setAutoraterConfig(AutoraterConfig.newBuilder().build())
               .build();
       ApiFuture<EvaluateInstancesResponse> future =
           evaluationServiceClient.evaluateInstancesCallable().futureCall(request);

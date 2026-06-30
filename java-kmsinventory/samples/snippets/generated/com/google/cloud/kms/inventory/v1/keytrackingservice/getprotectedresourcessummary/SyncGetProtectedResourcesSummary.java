@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.kms.inventory.v1.samples;
 
 // [START kmsinventory_v1_generated_KeyTrackingService_GetProtectedResourcesSummary_sync]
+import com.google.cloud.kms.inventory.v1.FallbackScope;
 import com.google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest;
 import com.google.cloud.kms.inventory.v1.KeyTrackingServiceClient;
 import com.google.cloud.kms.inventory.v1.ProtectedResourcesSummary;
@@ -41,6 +42,7 @@ public class SyncGetProtectedResourcesSummary {
                   ProtectedResourcesSummaryName.ofProjectLocationKeyRingCryptoKeyName(
                           "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                       .toString())
+              .setFallbackScope(FallbackScope.forNumber(0))
               .build();
       ProtectedResourcesSummary response =
           keyTrackingServiceClient.getProtectedResourcesSummary(request);

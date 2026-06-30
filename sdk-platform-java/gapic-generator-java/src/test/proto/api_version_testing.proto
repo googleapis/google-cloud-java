@@ -1,0 +1,264 @@
+// Copyright 2018 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/api/field_info.proto";
+import "google/api/resource.proto";
+import "google/longrunning/operations.proto";
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+import "google/rpc/status.proto";
+
+package google.api.version.test.v1;
+
+option java_package = "com.google.api.version.test";
+option java_multiple_files = true;
+option java_outer_classname = "ApiVersionTestingOuterClass";
+
+option (google.api.resource_definition) = {
+  type: "showcase.googleapis.com/AnythingGoes"
+  pattern: "*"
+};
+// This proto is used to test scenarios related to api_version feature.
+// api_version is set on service level, so this proto includes various services
+// to test different scenarios.
+
+// This service is used to test when api_version string is provided.
+service EchoWithVersion {
+  // This service is meant to only run locally on the port 7469 (keypad digits
+  // for "show").
+  option (google.api.default_host) = "localhost:7469";
+  option (google.api.api_version) = "fake_version";
+  option (google.api.oauth_scopes) =
+      "https://www.googleapis.com/auth/cloud-platform";
+
+  // This method simply echos the request. This method is showcases unary rpcs.
+  rpc EchoWithVersionMethod(EchoRequest) returns (EchoResponse) {
+    option (google.api.http) = {
+      post: "/v1beta1/echo:echo"
+      body: "*"
+    };
+    option (google.api.method_signature) = "content";
+    option (google.api.method_signature) = "error";
+    option (google.api.method_signature) = "content,severity";
+    option (google.api.method_signature) = "name";
+    option (google.api.method_signature) = "parent";
+    option (google.api.method_signature) = "";
+  }
+}
+
+// This service is used to test when api_version is not provided.
+service EchoWithoutVersion {
+  // This service is meant to only run locally on the port 7469 (keypad digits
+  // for "show").
+  option (google.api.default_host) = "localhost:7469";
+  option (google.api.oauth_scopes) =
+    "https://www.googleapis.com/auth/cloud-platform";
+
+  // This method simply echos the request. This method is showcases unary rpcs.
+  rpc Echo(EchoRequest) returns (EchoResponse) {
+    option (google.api.http) = {
+      post: "/v1beta1/echo:echo"
+      body: "*"
+    };
+    option (google.api.method_signature) = "content";
+    option (google.api.method_signature) = "error";
+    option (google.api.method_signature) = "content,severity";
+    option (google.api.method_signature) = "name";
+    option (google.api.method_signature) = "parent";
+    option (google.api.method_signature) = "";
+  }
+}
+
+// This service is to test api_version is empty.
+service EchoWithEmptyVersion {
+  // This service is meant to only run locally on the port 7469 (keypad digits
+  // for "show").
+  option (google.api.default_host) = "localhost:7469";
+  option (google.api.api_version) = "";
+  option (google.api.oauth_scopes) =
+    "https://www.googleapis.com/auth/cloud-platform";
+
+  // This method simply echos the request. This method is showcases unary rpcs.
+  rpc Echo(EchoRequest) returns (EchoResponse) {
+    option (google.api.http) = {
+      post: "/v1beta1/echo:echo"
+      body: "*"
+    };
+    option (google.api.method_signature) = "content";
+    option (google.api.method_signature) = "error";
+    option (google.api.method_signature) = "content,severity";
+    option (google.api.method_signature) = "name";
+    option (google.api.method_signature) = "parent";
+    option (google.api.method_signature) = "";
+  }
+}
+
+// A severity enum used to test enum capabilities in GAPIC surfaces
+enum Severity {
+  UNNECESSARY = 0;
+  NECESSARY = 1;
+  URGENT = 2;
+  CRITICAL = 3;
+}
+
+message Foobar {
+  option (google.api.resource) = {
+    type: "showcase.googleapis.com/Foobar"
+    pattern: "projects/{project}/foobars/{foobar}"
+    pattern: "projects/{project}/chocolate/variants/{variant}/foobars/{foobar}"
+    pattern: "foobars/{foobar}"
+    pattern: "bar_foos/{bar_foo}/foobars/{foobar}"
+    pattern: "*"
+  };
+
+  string name = 1;
+  string info = 2;
+}
+
+// The request message used for the Echo, Collect and Chat methods.
+// If content or opt are set in this message then the request will succeed.
+// If status is set in this message
+// then the status will be returned as an error.
+message EchoRequest {
+  string name = 5 [
+    (google.api.resource_reference).type = "showcase.googleapis.com/Foobar",
+    (google.api.field_behavior) = REQUIRED
+  ];
+
+  string parent = 6 [
+    (google.api.resource_reference).child_type =
+        "showcase.googleapis.com/AnythingGoes",
+    (google.api.field_behavior) = REQUIRED
+  ];
+
+  oneof response {
+    // The content to be echoed by the server.
+    string content = 1;
+
+    // The error to be thrown by the server.
+    google.rpc.Status error = 2;
+  }
+
+  // The severity to be echoed by the server.
+  Severity severity = 3;
+
+  Foobar foobar = 4;
+}
+
+// The response message for the Echo methods.
+message EchoResponse {
+  // The content specified in the request.
+  string content = 1;
+
+  // The severity specified in the request.
+  Severity severity = 2;
+}
+
+// Tests name collisions with java.lang.Object.
+message Object {
+  // The content specified in the request.
+  string content = 1;
+}
+
+// The request message for the Expand method.
+message ExpandRequest {
+  // The content that will be split into words and returned on the stream.
+  string content = 1;
+
+  // The error that is thrown after all words are sent on the stream.
+  google.rpc.Status error = 2;
+
+  string info = 3;
+
+}
+
+// The request for the PagedExpand method.
+message PagedExpandRequest {
+  // The string to expand.
+  string content = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // The amount of words to returned in each page.
+  int32 page_size = 2;
+
+  // The position of the page to be returned.
+  string page_token = 3;
+}
+
+// The response for the PagedExpand method.
+message PagedExpandResponse {
+  // The words that were expanded.
+  repeated EchoResponse responses = 1;
+
+  // The next page token.
+  string next_page_token = 2;
+}
+
+// The request for Wait method.
+message WaitRequest {
+  oneof end {
+    // The time that this operation will complete.
+    google.protobuf.Timestamp end_time = 1;
+
+    // The duration of this operation.
+    google.protobuf.Duration ttl = 4;
+  }
+
+  oneof response {
+    // The error that will be returned by the server. If this code is specified
+    // to be the OK rpc code, an empty response will be returned.
+    google.rpc.Status error = 2;
+
+    // The response to be returned on operation completion.
+    WaitResponse success = 3;
+  }
+}
+
+// The result of the Wait operation.
+message WaitResponse {
+  // This content of the result.
+  string content = 1;
+}
+
+// The metadata for Wait operation.
+message WaitMetadata {
+  // The time that this operation will complete.
+  google.protobuf.Timestamp end_time = 1;
+}
+
+// The request for Block method.
+message BlockRequest {
+  // The amount of time to block before returning a response.
+  google.protobuf.Duration response_delay = 1;
+
+  oneof response {
+    // The error that will be returned by the server. If this code is specified
+    // to be the OK rpc code, an empty response will be returned.
+    google.rpc.Status error = 2;
+
+    // The response to be returned that will signify successful method call.
+    BlockResponse success = 3;
+  }
+}
+
+// The response for Block method.
+message BlockResponse {
+  // This content can contain anything, the server will not depend on a value
+  // here.
+  string content = 1;
+}

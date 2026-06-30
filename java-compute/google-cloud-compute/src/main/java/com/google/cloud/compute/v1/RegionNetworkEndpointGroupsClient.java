@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -145,7 +145,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Insert</td>
- *      <td><p> Creates a network endpoint group in the specified project using the parameters that are included in the request.</td>
+ *      <td><p> Creates a network endpoint group in the specified project using the parameters that are included in the request.
+ * <p>  Note: Use the following APIs to manage network endpoint groups:
+ * <p>     -    To manage NEGs with zonal scope (such as zonal NEGs, hybrid connectivity    NEGs): zonal    API    -    To manage NEGs with regional scope (such as regional internet NEGs,    serverless NEGs, Private Service Connect NEGs): regional    API    -    To manage NEGs with global scope (such as global internet NEGs):global    API</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -880,6 +882,13 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * Creates a network endpoint group in the specified project using the parameters that are
    * included in the request.
    *
+   * <p>Note: Use the following APIs to manage network endpoint groups:
+   *
+   * <p>- To manage NEGs with zonal scope (such as zonal NEGs, hybrid connectivity NEGs): zonal API
+   * - To manage NEGs with regional scope (such as regional internet NEGs, serverless NEGs, Private
+   * Service Connect NEGs): regional API - To manage NEGs with global scope (such as global internet
+   * NEGs):global API
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -922,6 +931,13 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * Creates a network endpoint group in the specified project using the parameters that are
    * included in the request.
    *
+   * <p>Note: Use the following APIs to manage network endpoint groups:
+   *
+   * <p>- To manage NEGs with zonal scope (such as zonal NEGs, hybrid connectivity NEGs): zonal API
+   * - To manage NEGs with regional scope (such as regional internet NEGs, serverless NEGs, Private
+   * Service Connect NEGs): regional API - To manage NEGs with global scope (such as global internet
+   * NEGs):global API
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -956,6 +972,13 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * Creates a network endpoint group in the specified project using the parameters that are
    * included in the request.
    *
+   * <p>Note: Use the following APIs to manage network endpoint groups:
+   *
+   * <p>- To manage NEGs with zonal scope (such as zonal NEGs, hybrid connectivity NEGs): zonal API
+   * - To manage NEGs with regional scope (such as regional internet NEGs, serverless NEGs, Private
+   * Service Connect NEGs): regional API - To manage NEGs with global scope (such as global internet
+   * NEGs):global API
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -989,6 +1012,13 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
   /**
    * Creates a network endpoint group in the specified project using the parameters that are
    * included in the request.
+   *
+   * <p>Note: Use the following APIs to manage network endpoint groups:
+   *
+   * <p>- To manage NEGs with zonal scope (such as zonal NEGs, hybrid connectivity NEGs): zonal API
+   * - To manage NEGs with regional scope (such as regional internet NEGs, serverless NEGs, Private
+   * Service Connect NEGs): regional API - To manage NEGs with global scope (such as global internet
+   * NEGs):global API
    *
    * <p>Sample code:
    *
@@ -1043,7 +1073,7 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param region The name of the region where the network endpoint group is located. It should
+   * @param region The name of theregion where the network endpoint group is located. It should
    *     comply with RFC1035.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1207,7 +1237,7 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param region The name of the region where the network endpoint group is located. It should
+   * @param region The name of theregion where the network endpoint group is located. It should
    *     comply with RFC1035.
    * @param networkEndpointGroup The name of the network endpoint group from which you want to
    *     generate a list of included network endpoints. It should comply with RFC1035.

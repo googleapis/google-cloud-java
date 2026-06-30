@@ -1,0 +1,59 @@
+private static final BatchingDescriptor<PublishRequest, PublishResponse> PUBLISH_BATCHING_DESC = new BatchingDescriptor<PublishRequest, PublishResponse>() {
+@Override
+public PartitionKey getBatchPartitionKey(PublishRequest request) {
+return new PartitionKey(request.getTopic());
+}
+
+@Override
+public RequestBuilder<PublishRequest> getRequestBuilder() {
+return new RequestBuilder<PublishRequest>() {
+private PublishRequest.Builder builder;
+@Override
+public void appendRequest(PublishRequest request) {
+if (builder == null) {
+builder = request.toBuilder();
+} else {
+builder.addAllMessages(request.getMessagesList());
+}
+}
+
+@Override
+public PublishRequest build() {
+return builder.build();
+}
+
+};
+}
+
+@Override
+public void splitResponse(PublishResponse batchResponse, Collection<? extends BatchedRequestIssuer<PublishResponse>> batch) {
+int batchMessageIndex = 0;
+for (BatchedRequestIssuer<PublishResponse> responder : batch) {
+List<String> subresponseElements = new ArrayList<>();
+long subresponseCount = responder.getMessageCount();
+for (int i = 0; i < subresponseCount; i++) {
+subresponseElements.add(batchResponse.getMessageIds(batchMessageIndex++));
+}
+PublishResponse response = PublishResponse.newBuilder().addAllMessageIds(subresponseElements).build();
+responder.setResponse(response);
+}
+}
+
+@Override
+public void splitException(Throwable throwable, Collection<? extends BatchedRequestIssuer<PublishResponse>> batch) {
+for (BatchedRequestIssuer<PublishResponse> responder : batch) {
+responder.setException(throwable);
+}
+}
+
+@Override
+public long countElements(PublishRequest request) {
+return request.getMessagesCount();
+}
+
+@Override
+public long countBytes(PublishRequest request) {
+return request.getSerializedSize();
+}
+
+}

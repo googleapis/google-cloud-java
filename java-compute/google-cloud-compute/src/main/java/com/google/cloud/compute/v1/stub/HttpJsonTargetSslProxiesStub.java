@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteTargetSslProxyRequest;
 import com.google.cloud.compute.v1.GetTargetSslProxyRequest;
 import com.google.cloud.compute.v1.InsertTargetSslProxyRequest;
@@ -45,6 +46,8 @@ import com.google.cloud.compute.v1.SetSslCertificatesTargetSslProxyRequest;
 import com.google.cloud.compute.v1.SetSslPolicyTargetSslProxyRequest;
 import com.google.cloud.compute.v1.TargetSslProxy;
 import com.google.cloud.compute.v1.TargetSslProxyList;
+import com.google.cloud.compute.v1.TestIamPermissionsTargetSslProxyRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -537,6 +540,48 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsTargetSslProxyRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsTargetSslProxyRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsTargetSslProxyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/targetSslProxies/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsTargetSslProxyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsTargetSslProxyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<DeleteTargetSslProxyRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteTargetSslProxyRequest, Operation, Operation>
       deleteOperationCallable;
@@ -565,10 +610,33 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
   private final UnaryCallable<SetSslPolicyTargetSslProxyRequest, Operation> setSslPolicyCallable;
   private final OperationCallable<SetSslPolicyTargetSslProxyRequest, Operation, Operation>
       setSslPolicyOperationCallable;
+  private final UnaryCallable<TestIamPermissionsTargetSslProxyRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetSslProxies/{target_ssl_proxy}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetSslProxies/{target_ssl_proxy}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate SET_BACKEND_SERVICE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetSslProxies/{target_ssl_proxy}");
+  private static final PathTemplate SET_CERTIFICATE_MAP_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetSslProxies/{target_ssl_proxy}");
+  private static final PathTemplate SET_PROXY_HEADER_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetSslProxies/{target_ssl_proxy}");
+  private static final PathTemplate SET_SSL_CERTIFICATES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetSslProxies/{target_ssl_proxy}");
+  private static final PathTemplate SET_SSL_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetSslProxies/{target_ssl_proxy}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetSslProxies/{resource}");
 
   public static final HttpJsonTargetSslProxiesStub create(TargetSslProxiesStubSettings settings)
       throws IOException {
@@ -622,6 +690,14 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                   builder.add("target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetTargetSslProxyRequest, TargetSslProxy> getTransportSettings =
         HttpJsonCallSettings.<GetTargetSslProxyRequest, TargetSslProxy>newBuilder()
@@ -634,6 +710,14 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                   builder.add("target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertTargetSslProxyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertTargetSslProxyRequest, Operation>newBuilder()
@@ -645,6 +729,12 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListTargetSslProxiesRequest, TargetSslProxyList> listTransportSettings =
         HttpJsonCallSettings.<ListTargetSslProxiesRequest, TargetSslProxyList>newBuilder()
@@ -655,6 +745,12 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetBackendServiceTargetSslProxyRequest, Operation>
@@ -669,6 +765,15 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                       builder.add("target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
+                      return SET_BACKEND_SERVICE_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetCertificateMapTargetSslProxyRequest, Operation>
         setCertificateMapTransportSettings =
@@ -681,6 +786,15 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
+                      return SET_CERTIFICATE_MAP_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<SetProxyHeaderTargetSslProxyRequest, Operation>
@@ -695,6 +809,15 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                       builder.add("target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
+                      return SET_PROXY_HEADER_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetSslCertificatesTargetSslProxyRequest, Operation>
         setSslCertificatesTransportSettings =
@@ -708,6 +831,15 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                       builder.add("target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
+                      return SET_SSL_CERTIFICATES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetSslPolicyTargetSslProxyRequest, Operation>
         setSslPolicyTransportSettings =
@@ -720,6 +852,37 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
+                      return SET_SSL_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
+    HttpJsonCallSettings<TestIamPermissionsTargetSslProxyRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsTargetSslProxyRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 
@@ -801,6 +964,11 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
             settings.setSslPolicyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -818,6 +986,7 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
     methodDescriptors.add(setProxyHeaderMethodDescriptor);
     methodDescriptors.add(setSslCertificatesMethodDescriptor);
     methodDescriptors.add(setSslPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -914,6 +1083,12 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
   public OperationCallable<SetSslPolicyTargetSslProxyRequest, Operation, Operation>
       setSslPolicyOperationCallable() {
     return setSslPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsTargetSslProxyRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

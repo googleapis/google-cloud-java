@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -171,6 +171,36 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ValidateDirectoryService</td>
+ *      <td><p> ValidateDirectoryService does a connectivity check for a directory service policy attached to the storage pool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> validateDirectoryServiceAsync(ValidateDirectoryServiceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> validateDirectoryServiceOperationCallable()
+ *           <li><p> validateDirectoryServiceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SwitchActiveReplicaZone</td>
+ *      <td><p> This operation will switch the active/replica zone for a regional storagePool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> switchActiveReplicaZoneAsync(SwitchActiveReplicaZoneRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> switchActiveReplicaZoneOperationCallable()
+ *           <li><p> switchActiveReplicaZoneCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListVolumes</td>
  *      <td><p> Lists Volumes in a given project.</td>
  *      <td>
@@ -280,6 +310,21 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> revertVolumeOperationCallable()
  *           <li><p> revertVolumeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> EstablishVolumePeering</td>
+ *      <td><p> Establish volume peering. This is used to establish cluster and svm peerings between the GCNV and OnPrem clusters.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> establishVolumePeeringAsync(EstablishVolumePeeringRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> establishVolumePeeringOperationCallable()
+ *           <li><p> establishVolumePeeringCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -750,6 +795,36 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> EstablishPeering</td>
+ *      <td><p> Establish replication peering.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> establishPeeringAsync(EstablishPeeringRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> establishPeeringOperationCallable()
+ *           <li><p> establishPeeringCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SyncReplication</td>
+ *      <td><p> Syncs the replication. This will invoke one time volume data transfer from source to destination.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> syncReplicationAsync(SyncReplicationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> syncReplicationOperationCallable()
+ *           <li><p> syncReplicationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateBackupVault</td>
  *      <td><p> Creates new backup vault</td>
  *      <td>
@@ -1044,8 +1119,277 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListQuotaRules</td>
+ *      <td><p> Returns list of all quota rules in a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listQuotaRules(ListQuotaRulesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listQuotaRules(VolumeName parent)
+ *           <li><p> listQuotaRules(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listQuotaRulesPagedCallable()
+ *           <li><p> listQuotaRulesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetQuotaRule</td>
+ *      <td><p> Returns details of the specified quota rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getQuotaRule(GetQuotaRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getQuotaRule(QuotaRuleName name)
+ *           <li><p> getQuotaRule(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getQuotaRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateQuotaRule</td>
+ *      <td><p> Creates a new quota rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createQuotaRuleAsync(CreateQuotaRuleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createQuotaRuleAsync(VolumeName parent, QuotaRule quotaRule, String quotaRuleId)
+ *           <li><p> createQuotaRuleAsync(String parent, QuotaRule quotaRule, String quotaRuleId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createQuotaRuleOperationCallable()
+ *           <li><p> createQuotaRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateQuotaRule</td>
+ *      <td><p> Updates a quota rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateQuotaRuleAsync(UpdateQuotaRuleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateQuotaRuleAsync(QuotaRule quotaRule, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateQuotaRuleOperationCallable()
+ *           <li><p> updateQuotaRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteQuotaRule</td>
+ *      <td><p> Deletes a quota rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteQuotaRuleAsync(DeleteQuotaRuleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteQuotaRuleAsync(QuotaRuleName name)
+ *           <li><p> deleteQuotaRuleAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteQuotaRuleOperationCallable()
+ *           <li><p> deleteQuotaRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RestoreBackupFiles</td>
+ *      <td><p> Restore files from a backup to a volume.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> restoreBackupFilesAsync(RestoreBackupFilesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> restoreBackupFilesOperationCallable()
+ *           <li><p> restoreBackupFilesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListHostGroups</td>
+ *      <td><p> Returns a list of host groups in a `location`. Use `-` as location to list host groups across all locations.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listHostGroups(ListHostGroupsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listHostGroups(LocationName parent)
+ *           <li><p> listHostGroups(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listHostGroupsPagedCallable()
+ *           <li><p> listHostGroupsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetHostGroup</td>
+ *      <td><p> Returns details of the specified host group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getHostGroup(GetHostGroupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getHostGroup(HostGroupName name)
+ *           <li><p> getHostGroup(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getHostGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateHostGroup</td>
+ *      <td><p> Creates a new host group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createHostGroupAsync(CreateHostGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createHostGroupAsync(LocationName parent, HostGroup hostGroup, String hostGroupId)
+ *           <li><p> createHostGroupAsync(String parent, HostGroup hostGroup, String hostGroupId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createHostGroupOperationCallable()
+ *           <li><p> createHostGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateHostGroup</td>
+ *      <td><p> Updates an existing host group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateHostGroupAsync(UpdateHostGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateHostGroupAsync(HostGroup hostGroup, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateHostGroupOperationCallable()
+ *           <li><p> updateHostGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteHostGroup</td>
+ *      <td><p> Deletes a host group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteHostGroupAsync(DeleteHostGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteHostGroupAsync(HostGroupName name)
+ *           <li><p> deleteHostGroupAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteHostGroupOperationCallable()
+ *           <li><p> deleteHostGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExecuteOntapPost</td>
+ *      <td><p> `ExecuteOntapPost` dispatches the ONTAP `POST` request to the `StoragePool` cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> executeOntapPost(ExecuteOntapPostRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> executeOntapPostCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExecuteOntapGet</td>
+ *      <td><p> `ExecuteOntapGet` dispatches the ONTAP `GET` request to the `StoragePool` cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> executeOntapGet(ExecuteOntapGetRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> executeOntapGetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExecuteOntapDelete</td>
+ *      <td><p> `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the `StoragePool` cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> executeOntapDelete(ExecuteOntapDeleteRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> executeOntapDeleteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExecuteOntapPatch</td>
+ *      <td><p> `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the `StoragePool` cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> executeOntapPatch(ExecuteOntapPatchRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> executeOntapPatchCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1391,8 +1735,9 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param storagePool Required. The required parameters to create a new storage pool.
-   * @param storagePoolId Required. Id of the requesting storage pool If auto-generating Id
-   *     server-side, remove this field and id from the method_signature of Create RPC
+   * @param storagePoolId Required. Id of the requesting storage pool. Must be unique within the
+   *     parent resource. Must contain only letters, numbers and hyphen, with the first character a
+   *     letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<StoragePool, OperationMetadata> createStoragePoolAsync(
@@ -1429,8 +1774,9 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param storagePool Required. The required parameters to create a new storage pool.
-   * @param storagePoolId Required. Id of the requesting storage pool If auto-generating Id
-   *     server-side, remove this field and id from the method_signature of Create RPC
+   * @param storagePoolId Required. Id of the requesting storage pool. Must be unique within the
+   *     parent resource. Must contain only letters, numbers and hyphen, with the first character a
+   *     letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<StoragePool, OperationMetadata> createStoragePoolAsync(
@@ -1910,6 +2256,186 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * ValidateDirectoryService does a connectivity check for a directory service policy attached to
+   * the storage pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ValidateDirectoryServiceRequest request =
+   *       ValidateDirectoryServiceRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setDirectoryServiceType(DirectoryServiceType.forNumber(0))
+   *           .build();
+   *   netAppClient.validateDirectoryServiceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> validateDirectoryServiceAsync(
+      ValidateDirectoryServiceRequest request) {
+    return validateDirectoryServiceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ValidateDirectoryService does a connectivity check for a directory service policy attached to
+   * the storage pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ValidateDirectoryServiceRequest request =
+   *       ValidateDirectoryServiceRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setDirectoryServiceType(DirectoryServiceType.forNumber(0))
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       netAppClient.validateDirectoryServiceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationCallable() {
+    return stub.validateDirectoryServiceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ValidateDirectoryService does a connectivity check for a directory service policy attached to
+   * the storage pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ValidateDirectoryServiceRequest request =
+   *       ValidateDirectoryServiceRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setDirectoryServiceType(DirectoryServiceType.forNumber(0))
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       netAppClient.validateDirectoryServiceCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceCallable() {
+    return stub.validateDirectoryServiceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This operation will switch the active/replica zone for a regional storagePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SwitchActiveReplicaZoneRequest request =
+   *       SwitchActiveReplicaZoneRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .build();
+   *   StoragePool response = netAppClient.switchActiveReplicaZoneAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<StoragePool, OperationMetadata> switchActiveReplicaZoneAsync(
+      SwitchActiveReplicaZoneRequest request) {
+    return switchActiveReplicaZoneOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This operation will switch the active/replica zone for a regional storagePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SwitchActiveReplicaZoneRequest request =
+   *       SwitchActiveReplicaZoneRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .build();
+   *   OperationFuture<StoragePool, OperationMetadata> future =
+   *       netAppClient.switchActiveReplicaZoneOperationCallable().futureCall(request);
+   *   // Do something.
+   *   StoragePool response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationCallable() {
+    return stub.switchActiveReplicaZoneOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This operation will switch the active/replica zone for a regional storagePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SwitchActiveReplicaZoneRequest request =
+   *       SwitchActiveReplicaZoneRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       netAppClient.switchActiveReplicaZoneCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneCallable() {
+    return stub.switchActiveReplicaZoneCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists Volumes in a given project.
    *
    * <p>Sample code:
@@ -2205,8 +2731,9 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param volume Required. The volume being created.
-   * @param volumeId Required. Id of the requesting volume If auto-generating Id server-side, remove
-   *     this field and Id from the method_signature of Create RPC
+   * @param volumeId Required. Id of the requesting volume. Must be unique within the parent
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Volume, OperationMetadata> createVolumeAsync(
@@ -2242,8 +2769,9 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param volume Required. The volume being created.
-   * @param volumeId Required. Id of the requesting volume If auto-generating Id server-side, remove
-   *     this field and Id from the method_signature of Create RPC
+   * @param volumeId Required. Id of the requesting volume. Must be unique within the parent
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Volume, OperationMetadata> createVolumeAsync(
@@ -2703,6 +3231,108 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Establish volume peering. This is used to establish cluster and svm peerings between the GCNV
+   * and OnPrem clusters.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishVolumePeeringRequest request =
+   *       EstablishVolumePeeringRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   Volume response = netAppClient.establishVolumePeeringAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Volume, OperationMetadata> establishVolumePeeringAsync(
+      EstablishVolumePeeringRequest request) {
+    return establishVolumePeeringOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Establish volume peering. This is used to establish cluster and svm peerings between the GCNV
+   * and OnPrem clusters.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishVolumePeeringRequest request =
+   *       EstablishVolumePeeringRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   OperationFuture<Volume, OperationMetadata> future =
+   *       netAppClient.establishVolumePeeringOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Volume response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+      establishVolumePeeringOperationCallable() {
+    return stub.establishVolumePeeringOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Establish volume peering. This is used to establish cluster and svm peerings between the GCNV
+   * and OnPrem clusters.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishVolumePeeringRequest request =
+   *       EstablishVolumePeeringRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       netAppClient.establishVolumePeeringCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EstablishVolumePeeringRequest, Operation>
+      establishVolumePeeringCallable() {
+    return stub.establishVolumePeeringCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Returns descriptions of all snapshots for a volume.
    *
    * <p>Sample code:
@@ -3005,9 +3635,9 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. The NetApp volume to create the snapshots of, in the format
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * @param snapshot Required. A snapshot resource
-   * @param snapshotId Required. ID of the snapshot to create. This value must start with a
-   *     lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and cannot
-   *     end with a hyphen.
+   * @param snapshotId Required. ID of the snapshot to create. Must be unique within the parent
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Snapshot, OperationMetadata> createSnapshotAsync(
@@ -3044,9 +3674,9 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. The NetApp volume to create the snapshots of, in the format
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * @param snapshot Required. A snapshot resource
-   * @param snapshotId Required. ID of the snapshot to create. This value must start with a
-   *     lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and cannot
-   *     end with a hyphen.
+   * @param snapshotId Required. ID of the snapshot to create. Must be unique within the parent
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Snapshot, OperationMetadata> createSnapshotAsync(
@@ -3727,7 +4357,9 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param activeDirectory Required. Fields of the to be created active directory.
-   * @param activeDirectoryId Required. ID of the active directory to create.
+   * @param activeDirectoryId Required. ID of the active directory to create. Must be unique within
+   *     the parent resource. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter , the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ActiveDirectory, OperationMetadata> createActiveDirectoryAsync(
@@ -3764,7 +4396,9 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param activeDirectory Required. Fields of the to be created active directory.
-   * @param activeDirectoryId Required. ID of the active directory to create.
+   * @param activeDirectoryId Required. ID of the active directory to create. Must be unique within
+   *     the parent resource. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter , the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ActiveDirectory, OperationMetadata> createActiveDirectoryAsync(
@@ -4340,8 +4974,9 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param kmsConfig Required. The required parameters to create a new KmsConfig.
-   * @param kmsConfigId Required. Id of the requesting KmsConfig If auto-generating Id server-side,
-   *     remove this field and id from the method_signature of Create RPC
+   * @param kmsConfigId Required. Id of the requesting KmsConfig. Must be unique within the parent
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<KmsConfig, OperationMetadata> createKmsConfigAsync(
@@ -4377,8 +5012,9 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param kmsConfig Required. The required parameters to create a new KmsConfig.
-   * @param kmsConfigId Required. Id of the requesting KmsConfig If auto-generating Id server-side,
-   *     remove this field and id from the method_signature of Create RPC
+   * @param kmsConfigId Required. Id of the requesting KmsConfig. Must be unique within the parent
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<KmsConfig, OperationMetadata> createKmsConfigAsync(
@@ -5310,9 +5946,9 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. The NetApp volume to create the replications of, in the format
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * @param replication Required. A replication resource
-   * @param replicationId Required. ID of the replication to create. This value must start with a
-   *     lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and cannot
-   *     end with a hyphen.
+   * @param replicationId Required. ID of the replication to create. Must be unique within the
+   *     parent resource. Must contain only letters, numbers and hyphen, with the first character a
+   *     letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Replication, OperationMetadata> createReplicationAsync(
@@ -5350,9 +5986,9 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. The NetApp volume to create the replications of, in the format
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * @param replication Required. A replication resource
-   * @param replicationId Required. ID of the replication to create. This value must start with a
-   *     lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and cannot
-   *     end with a hyphen.
+   * @param replicationId Required. ID of the replication to create. Must be unique within the
+   *     parent resource. Must contain only letters, numbers and hyphen, with the first character a
+   *     letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Replication, OperationMetadata> createReplicationAsync(
@@ -6010,6 +6646,203 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Establish replication peering.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishPeeringRequest request =
+   *       EstablishPeeringRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   Replication response = netAppClient.establishPeeringAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Replication, OperationMetadata> establishPeeringAsync(
+      EstablishPeeringRequest request) {
+    return establishPeeringOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Establish replication peering.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishPeeringRequest request =
+   *       EstablishPeeringRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   OperationFuture<Replication, OperationMetadata> future =
+   *       netAppClient.establishPeeringOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Replication response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationCallable() {
+    return stub.establishPeeringOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Establish replication peering.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishPeeringRequest request =
+   *       EstablishPeeringRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.establishPeeringCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EstablishPeeringRequest, Operation> establishPeeringCallable() {
+    return stub.establishPeeringCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Syncs the replication. This will invoke one time volume data transfer from source to
+   * destination.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SyncReplicationRequest request =
+   *       SyncReplicationRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .build();
+   *   Replication response = netAppClient.syncReplicationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Replication, OperationMetadata> syncReplicationAsync(
+      SyncReplicationRequest request) {
+    return syncReplicationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Syncs the replication. This will invoke one time volume data transfer from source to
+   * destination.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SyncReplicationRequest request =
+   *       SyncReplicationRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Replication, OperationMetadata> future =
+   *       netAppClient.syncReplicationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Replication response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationCallable() {
+    return stub.syncReplicationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Syncs the replication. This will invoke one time volume data transfer from source to
+   * destination.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SyncReplicationRequest request =
+   *       SyncReplicationRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.syncReplicationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SyncReplicationRequest, Operation> syncReplicationCallable() {
+    return stub.syncReplicationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates new backup vault
    *
    * <p>Sample code:
@@ -6033,10 +6866,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}`
    * @param backupVault Required. A backupVault resource
    * @param backupVaultId Required. The ID to use for the backupVault. The ID must be unique within
-   *     the specified location. The max supported length is 63 characters. This value must start
-   *     with a lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and
-   *     cannot end with a hyphen. Values that do not match this pattern will trigger an
-   *     INVALID_ARGUMENT error.
+   *     the specified location. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupVault, OperationMetadata> createBackupVaultAsync(
@@ -6075,10 +6906,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}`
    * @param backupVault Required. A backupVault resource
    * @param backupVaultId Required. The ID to use for the backupVault. The ID must be unique within
-   *     the specified location. The max supported length is 63 characters. This value must start
-   *     with a lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and
-   *     cannot end with a hyphen. Values that do not match this pattern will trigger an
-   *     INVALID_ARGUMENT error.
+   *     the specified location. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupVault, OperationMetadata> createBackupVaultAsync(
@@ -6758,9 +7587,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/backupVaults/{backup_vault_id}`
    * @param backup Required. A backup resource
    * @param backupId Required. The ID to use for the backup. The ID must be unique within the
-   *     specified backupVault. This value must start with a lowercase letter followed by up to 62
-   *     lowercase letters, numbers, or hyphens, and cannot end with a hyphen. Values that do not
-   *     match this pattern will trigger an INVALID_ARGUMENT error.
+   *     specified backupVault. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Backup, OperationMetadata> createBackupAsync(
@@ -6800,9 +7628,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/backupVaults/{backup_vault_id}`
    * @param backup Required. A backup resource
    * @param backupId Required. The ID to use for the backup. The ID must be unique within the
-   *     specified backupVault. This value must start with a lowercase letter followed by up to 62
-   *     lowercase letters, numbers, or hyphens, and cannot end with a hyphen. Values that do not
-   *     match this pattern will trigger an INVALID_ARGUMENT error.
+   *     specified backupVault. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Backup, OperationMetadata> createBackupAsync(
@@ -7493,8 +8320,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}`
    * @param backupPolicy Required. A backupPolicy resource
    * @param backupPolicyId Required. The ID to use for the backup policy. The ID must be unique
-   *     within the specified location. This value must start with a lowercase letter followed by up
-   *     to 62 lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
+   *     within the specified location. Must contain only letters, numbers and hyphen, with the
+   *     first character a letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupPolicy, OperationMetadata> createBackupPolicyAsync(
@@ -7533,8 +8360,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}`
    * @param backupPolicy Required. A backupPolicy resource
    * @param backupPolicyId Required. The ID to use for the backup policy. The ID must be unique
-   *     within the specified location. This value must start with a lowercase letter followed by up
-   *     to 62 lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
+   *     within the specified location. Must contain only letters, numbers and hyphen, with the
+   *     first character a letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupPolicy, OperationMetadata> createBackupPolicyAsync(
@@ -8191,7 +9018,1773 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Returns list of all quota rules in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+   *   for (QuotaRule element : netAppClient.listQuotaRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListQuotaRulesRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQuotaRulesPagedResponse listQuotaRules(VolumeName parent) {
+    ListQuotaRulesRequest request =
+        ListQuotaRulesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listQuotaRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all quota rules in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
+   *   for (QuotaRule element : netAppClient.listQuotaRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListQuotaRulesRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQuotaRulesPagedResponse listQuotaRules(String parent) {
+    ListQuotaRulesRequest request = ListQuotaRulesRequest.newBuilder().setParent(parent).build();
+    return listQuotaRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all quota rules in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListQuotaRulesRequest request =
+   *       ListQuotaRulesRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (QuotaRule element : netAppClient.listQuotaRules(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQuotaRulesPagedResponse listQuotaRules(ListQuotaRulesRequest request) {
+    return listQuotaRulesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all quota rules in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListQuotaRulesRequest request =
+   *       ListQuotaRulesRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<QuotaRule> future = netAppClient.listQuotaRulesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (QuotaRule element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesPagedResponse>
+      listQuotaRulesPagedCallable() {
+    return stub.listQuotaRulesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all quota rules in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListQuotaRulesRequest request =
+   *       ListQuotaRulesRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListQuotaRulesResponse response = netAppClient.listQuotaRulesCallable().call(request);
+   *     for (QuotaRule element : response.getQuotaRulesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesResponse>
+      listQuotaRulesCallable() {
+    return stub.listQuotaRulesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   QuotaRuleName name = QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]");
+   *   QuotaRule response = netAppClient.getQuotaRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the quota rule
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QuotaRule getQuotaRule(QuotaRuleName name) {
+    GetQuotaRuleRequest request =
+        GetQuotaRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getQuotaRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name =
+   *       QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]").toString();
+   *   QuotaRule response = netAppClient.getQuotaRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the quota rule
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QuotaRule getQuotaRule(String name) {
+    GetQuotaRuleRequest request = GetQuotaRuleRequest.newBuilder().setName(name).build();
+    return getQuotaRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetQuotaRuleRequest request =
+   *       GetQuotaRuleRequest.newBuilder()
+   *           .setName(
+   *               QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]")
+   *                   .toString())
+   *           .build();
+   *   QuotaRule response = netAppClient.getQuotaRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QuotaRule getQuotaRule(GetQuotaRuleRequest request) {
+    return getQuotaRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetQuotaRuleRequest request =
+   *       GetQuotaRuleRequest.newBuilder()
+   *           .setName(
+   *               QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<QuotaRule> future = netAppClient.getQuotaRuleCallable().futureCall(request);
+   *   // Do something.
+   *   QuotaRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetQuotaRuleRequest, QuotaRule> getQuotaRuleCallable() {
+    return stub.getQuotaRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+   *   QuotaRule quotaRule = QuotaRule.newBuilder().build();
+   *   String quotaRuleId = "quotaRuleId1476739535";
+   *   QuotaRule response = netAppClient.createQuotaRuleAsync(parent, quotaRule, quotaRuleId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for CreateQuotaRuleRequest
+   * @param quotaRule Required. Fields of the to be created quota rule.
+   * @param quotaRuleId Required. ID of the quota rule to create. Must be unique within the parent
+   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
+   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
+   *     character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QuotaRule, OperationMetadata> createQuotaRuleAsync(
+      VolumeName parent, QuotaRule quotaRule, String quotaRuleId) {
+    CreateQuotaRuleRequest request =
+        CreateQuotaRuleRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setQuotaRule(quotaRule)
+            .setQuotaRuleId(quotaRuleId)
+            .build();
+    return createQuotaRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
+   *   QuotaRule quotaRule = QuotaRule.newBuilder().build();
+   *   String quotaRuleId = "quotaRuleId1476739535";
+   *   QuotaRule response = netAppClient.createQuotaRuleAsync(parent, quotaRule, quotaRuleId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for CreateQuotaRuleRequest
+   * @param quotaRule Required. Fields of the to be created quota rule.
+   * @param quotaRuleId Required. ID of the quota rule to create. Must be unique within the parent
+   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
+   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
+   *     character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QuotaRule, OperationMetadata> createQuotaRuleAsync(
+      String parent, QuotaRule quotaRule, String quotaRuleId) {
+    CreateQuotaRuleRequest request =
+        CreateQuotaRuleRequest.newBuilder()
+            .setParent(parent)
+            .setQuotaRule(quotaRule)
+            .setQuotaRuleId(quotaRuleId)
+            .build();
+    return createQuotaRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateQuotaRuleRequest request =
+   *       CreateQuotaRuleRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .setQuotaRuleId("quotaRuleId1476739535")
+   *           .build();
+   *   QuotaRule response = netAppClient.createQuotaRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QuotaRule, OperationMetadata> createQuotaRuleAsync(
+      CreateQuotaRuleRequest request) {
+    return createQuotaRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateQuotaRuleRequest request =
+   *       CreateQuotaRuleRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .setQuotaRuleId("quotaRuleId1476739535")
+   *           .build();
+   *   OperationFuture<QuotaRule, OperationMetadata> future =
+   *       netAppClient.createQuotaRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   QuotaRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationCallable() {
+    return stub.createQuotaRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateQuotaRuleRequest request =
+   *       CreateQuotaRuleRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .setQuotaRuleId("quotaRuleId1476739535")
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.createQuotaRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateQuotaRuleRequest, Operation> createQuotaRuleCallable() {
+    return stub.createQuotaRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   QuotaRule quotaRule = QuotaRule.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   QuotaRule response = netAppClient.updateQuotaRuleAsync(quotaRule, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param quotaRule Required. The quota rule being updated
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     Quota Rule resource by the update. The fields specified in the update_mask are relative to
+   *     the resource, not the full request. A field will be overwritten if it is in the mask. If
+   *     the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QuotaRule, OperationMetadata> updateQuotaRuleAsync(
+      QuotaRule quotaRule, FieldMask updateMask) {
+    UpdateQuotaRuleRequest request =
+        UpdateQuotaRuleRequest.newBuilder()
+            .setQuotaRule(quotaRule)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateQuotaRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateQuotaRuleRequest request =
+   *       UpdateQuotaRuleRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .build();
+   *   QuotaRule response = netAppClient.updateQuotaRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QuotaRule, OperationMetadata> updateQuotaRuleAsync(
+      UpdateQuotaRuleRequest request) {
+    return updateQuotaRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateQuotaRuleRequest request =
+   *       UpdateQuotaRuleRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .build();
+   *   OperationFuture<QuotaRule, OperationMetadata> future =
+   *       netAppClient.updateQuotaRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   QuotaRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationCallable() {
+    return stub.updateQuotaRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateQuotaRuleRequest request =
+   *       UpdateQuotaRuleRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.updateQuotaRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateQuotaRuleRequest, Operation> updateQuotaRuleCallable() {
+    return stub.updateQuotaRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   QuotaRuleName name = QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]");
+   *   netAppClient.deleteQuotaRuleAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the quota rule.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteQuotaRuleAsync(QuotaRuleName name) {
+    DeleteQuotaRuleRequest request =
+        DeleteQuotaRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteQuotaRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name =
+   *       QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]").toString();
+   *   netAppClient.deleteQuotaRuleAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the quota rule.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteQuotaRuleAsync(String name) {
+    DeleteQuotaRuleRequest request = DeleteQuotaRuleRequest.newBuilder().setName(name).build();
+    return deleteQuotaRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteQuotaRuleRequest request =
+   *       DeleteQuotaRuleRequest.newBuilder()
+   *           .setName(
+   *               QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]")
+   *                   .toString())
+   *           .build();
+   *   netAppClient.deleteQuotaRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteQuotaRuleAsync(
+      DeleteQuotaRuleRequest request) {
+    return deleteQuotaRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteQuotaRuleRequest request =
+   *       DeleteQuotaRuleRequest.newBuilder()
+   *           .setName(
+   *               QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       netAppClient.deleteQuotaRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationCallable() {
+    return stub.deleteQuotaRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteQuotaRuleRequest request =
+   *       DeleteQuotaRuleRequest.newBuilder()
+   *           .setName(
+   *               QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.deleteQuotaRuleCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleCallable() {
+    return stub.deleteQuotaRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restore files from a backup to a volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   RestoreBackupFilesRequest request =
+   *       RestoreBackupFilesRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setBackup(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]").toString())
+   *           .addAllFileList(new ArrayList<String>())
+   *           .setRestoreDestinationPath("restoreDestinationPath-1614668571")
+   *           .build();
+   *   RestoreBackupFilesResponse response = netAppClient.restoreBackupFilesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreBackupFilesResponse, OperationMetadata>
+      restoreBackupFilesAsync(RestoreBackupFilesRequest request) {
+    return restoreBackupFilesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restore files from a backup to a volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   RestoreBackupFilesRequest request =
+   *       RestoreBackupFilesRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setBackup(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]").toString())
+   *           .addAllFileList(new ArrayList<String>())
+   *           .setRestoreDestinationPath("restoreDestinationPath-1614668571")
+   *           .build();
+   *   OperationFuture<RestoreBackupFilesResponse, OperationMetadata> future =
+   *       netAppClient.restoreBackupFilesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RestoreBackupFilesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+      restoreBackupFilesOperationCallable() {
+    return stub.restoreBackupFilesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restore files from a backup to a volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   RestoreBackupFilesRequest request =
+   *       RestoreBackupFilesRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setBackup(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]").toString())
+   *           .addAllFileList(new ArrayList<String>())
+   *           .setRestoreDestinationPath("restoreDestinationPath-1614668571")
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.restoreBackupFilesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RestoreBackupFilesRequest, Operation> restoreBackupFilesCallable() {
+    return stub.restoreBackupFilesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of host groups in a `location`. Use `-` as location to list host groups across
+   * all locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (HostGroup element : netAppClient.listHostGroups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListHostGroupsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListHostGroupsPagedResponse listHostGroups(LocationName parent) {
+    ListHostGroupsRequest request =
+        ListHostGroupsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listHostGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of host groups in a `location`. Use `-` as location to list host groups across
+   * all locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (HostGroup element : netAppClient.listHostGroups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListHostGroupsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListHostGroupsPagedResponse listHostGroups(String parent) {
+    ListHostGroupsRequest request = ListHostGroupsRequest.newBuilder().setParent(parent).build();
+    return listHostGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of host groups in a `location`. Use `-` as location to list host groups across
+   * all locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListHostGroupsRequest request =
+   *       ListHostGroupsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (HostGroup element : netAppClient.listHostGroups(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListHostGroupsPagedResponse listHostGroups(ListHostGroupsRequest request) {
+    return listHostGroupsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of host groups in a `location`. Use `-` as location to list host groups across
+   * all locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListHostGroupsRequest request =
+   *       ListHostGroupsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<HostGroup> future = netAppClient.listHostGroupsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (HostGroup element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListHostGroupsRequest, ListHostGroupsPagedResponse>
+      listHostGroupsPagedCallable() {
+    return stub.listHostGroupsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of host groups in a `location`. Use `-` as location to list host groups across
+   * all locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListHostGroupsRequest request =
+   *       ListHostGroupsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListHostGroupsResponse response = netAppClient.listHostGroupsCallable().call(request);
+   *     for (HostGroup element : response.getHostGroupsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListHostGroupsRequest, ListHostGroupsResponse>
+      listHostGroupsCallable() {
+    return stub.listHostGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   HostGroupName name = HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]");
+   *   HostGroup response = netAppClient.getHostGroup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the host group. Format:
+   *     `projects/{project_number}/locations/{location_id}/hostGroups/{host_group_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HostGroup getHostGroup(HostGroupName name) {
+    GetHostGroupRequest request =
+        GetHostGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getHostGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name = HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString();
+   *   HostGroup response = netAppClient.getHostGroup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the host group. Format:
+   *     `projects/{project_number}/locations/{location_id}/hostGroups/{host_group_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HostGroup getHostGroup(String name) {
+    GetHostGroupRequest request = GetHostGroupRequest.newBuilder().setName(name).build();
+    return getHostGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetHostGroupRequest request =
+   *       GetHostGroupRequest.newBuilder()
+   *           .setName(HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString())
+   *           .build();
+   *   HostGroup response = netAppClient.getHostGroup(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HostGroup getHostGroup(GetHostGroupRequest request) {
+    return getHostGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetHostGroupRequest request =
+   *       GetHostGroupRequest.newBuilder()
+   *           .setName(HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString())
+   *           .build();
+   *   ApiFuture<HostGroup> future = netAppClient.getHostGroupCallable().futureCall(request);
+   *   // Do something.
+   *   HostGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetHostGroupRequest, HostGroup> getHostGroupCallable() {
+    return stub.getHostGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   HostGroup hostGroup = HostGroup.newBuilder().build();
+   *   String hostGroupId = "hostGroupId-1975725774";
+   *   HostGroup response = netAppClient.createHostGroupAsync(parent, hostGroup, hostGroupId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for CreateHostGroupRequest
+   * @param hostGroup Required. Fields of the host group to create.
+   * @param hostGroupId Required. ID of the host group to create. Must be unique within the parent
+   *     resource. Must contain only letters, numbers, and hyphen, with the first character a letter
+   *     or underscore, the last a letter or underscore or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<HostGroup, OperationMetadata> createHostGroupAsync(
+      LocationName parent, HostGroup hostGroup, String hostGroupId) {
+    CreateHostGroupRequest request =
+        CreateHostGroupRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setHostGroup(hostGroup)
+            .setHostGroupId(hostGroupId)
+            .build();
+    return createHostGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   HostGroup hostGroup = HostGroup.newBuilder().build();
+   *   String hostGroupId = "hostGroupId-1975725774";
+   *   HostGroup response = netAppClient.createHostGroupAsync(parent, hostGroup, hostGroupId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for CreateHostGroupRequest
+   * @param hostGroup Required. Fields of the host group to create.
+   * @param hostGroupId Required. ID of the host group to create. Must be unique within the parent
+   *     resource. Must contain only letters, numbers, and hyphen, with the first character a letter
+   *     or underscore, the last a letter or underscore or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<HostGroup, OperationMetadata> createHostGroupAsync(
+      String parent, HostGroup hostGroup, String hostGroupId) {
+    CreateHostGroupRequest request =
+        CreateHostGroupRequest.newBuilder()
+            .setParent(parent)
+            .setHostGroup(hostGroup)
+            .setHostGroupId(hostGroupId)
+            .build();
+    return createHostGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateHostGroupRequest request =
+   *       CreateHostGroupRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setHostGroup(HostGroup.newBuilder().build())
+   *           .setHostGroupId("hostGroupId-1975725774")
+   *           .build();
+   *   HostGroup response = netAppClient.createHostGroupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<HostGroup, OperationMetadata> createHostGroupAsync(
+      CreateHostGroupRequest request) {
+    return createHostGroupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateHostGroupRequest request =
+   *       CreateHostGroupRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setHostGroup(HostGroup.newBuilder().build())
+   *           .setHostGroupId("hostGroupId-1975725774")
+   *           .build();
+   *   OperationFuture<HostGroup, OperationMetadata> future =
+   *       netAppClient.createHostGroupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   HostGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateHostGroupRequest, HostGroup, OperationMetadata>
+      createHostGroupOperationCallable() {
+    return stub.createHostGroupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateHostGroupRequest request =
+   *       CreateHostGroupRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setHostGroup(HostGroup.newBuilder().build())
+   *           .setHostGroupId("hostGroupId-1975725774")
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.createHostGroupCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateHostGroupRequest, Operation> createHostGroupCallable() {
+    return stub.createHostGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   HostGroup hostGroup = HostGroup.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   HostGroup response = netAppClient.updateHostGroupAsync(hostGroup, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param hostGroup Required. The host group to update. The host group's `name` field is used to
+   *     identify the host group. Format:
+   *     `projects/{project_number}/locations/{location_id}/hostGroups/{host_group_id}`.
+   * @param updateMask Optional. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<HostGroup, OperationMetadata> updateHostGroupAsync(
+      HostGroup hostGroup, FieldMask updateMask) {
+    UpdateHostGroupRequest request =
+        UpdateHostGroupRequest.newBuilder()
+            .setHostGroup(hostGroup)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateHostGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateHostGroupRequest request =
+   *       UpdateHostGroupRequest.newBuilder()
+   *           .setHostGroup(HostGroup.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   HostGroup response = netAppClient.updateHostGroupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<HostGroup, OperationMetadata> updateHostGroupAsync(
+      UpdateHostGroupRequest request) {
+    return updateHostGroupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateHostGroupRequest request =
+   *       UpdateHostGroupRequest.newBuilder()
+   *           .setHostGroup(HostGroup.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<HostGroup, OperationMetadata> future =
+   *       netAppClient.updateHostGroupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   HostGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+      updateHostGroupOperationCallable() {
+    return stub.updateHostGroupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateHostGroupRequest request =
+   *       UpdateHostGroupRequest.newBuilder()
+   *           .setHostGroup(HostGroup.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.updateHostGroupCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateHostGroupRequest, Operation> updateHostGroupCallable() {
+    return stub.updateHostGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   HostGroupName name = HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]");
+   *   netAppClient.deleteHostGroupAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the host group. Format:
+   *     `projects/{project_number}/locations/{location_id}/hostGroups/{host_group_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteHostGroupAsync(HostGroupName name) {
+    DeleteHostGroupRequest request =
+        DeleteHostGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteHostGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name = HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString();
+   *   netAppClient.deleteHostGroupAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the host group. Format:
+   *     `projects/{project_number}/locations/{location_id}/hostGroups/{host_group_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteHostGroupAsync(String name) {
+    DeleteHostGroupRequest request = DeleteHostGroupRequest.newBuilder().setName(name).build();
+    return deleteHostGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteHostGroupRequest request =
+   *       DeleteHostGroupRequest.newBuilder()
+   *           .setName(HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString())
+   *           .build();
+   *   netAppClient.deleteHostGroupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteHostGroupAsync(
+      DeleteHostGroupRequest request) {
+    return deleteHostGroupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteHostGroupRequest request =
+   *       DeleteHostGroupRequest.newBuilder()
+   *           .setName(HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       netAppClient.deleteHostGroupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteHostGroupRequest, Empty, OperationMetadata>
+      deleteHostGroupOperationCallable() {
+    return stub.deleteHostGroupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteHostGroupRequest request =
+   *       DeleteHostGroupRequest.newBuilder()
+   *           .setName(HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.deleteHostGroupCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteHostGroupRequest, Operation> deleteHostGroupCallable() {
+    return stub.deleteHostGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapPost` dispatches the ONTAP `POST` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapPostRequest request =
+   *       ExecuteOntapPostRequest.newBuilder()
+   *           .setBody(Struct.newBuilder().build())
+   *           .setOntapPath("ontapPath-1869187159")
+   *           .build();
+   *   ExecuteOntapPostResponse response = netAppClient.executeOntapPost(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteOntapPostResponse executeOntapPost(ExecuteOntapPostRequest request) {
+    return executeOntapPostCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapPost` dispatches the ONTAP `POST` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapPostRequest request =
+   *       ExecuteOntapPostRequest.newBuilder()
+   *           .setBody(Struct.newBuilder().build())
+   *           .setOntapPath("ontapPath-1869187159")
+   *           .build();
+   *   ApiFuture<ExecuteOntapPostResponse> future =
+   *       netAppClient.executeOntapPostCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteOntapPostResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostCallable() {
+    return stub.executeOntapPostCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapGet` dispatches the ONTAP `GET` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapGetRequest request =
+   *       ExecuteOntapGetRequest.newBuilder().setOntapPath("ontapPath-1869187159").build();
+   *   ExecuteOntapGetResponse response = netAppClient.executeOntapGet(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteOntapGetResponse executeOntapGet(ExecuteOntapGetRequest request) {
+    return executeOntapGetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapGet` dispatches the ONTAP `GET` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapGetRequest request =
+   *       ExecuteOntapGetRequest.newBuilder().setOntapPath("ontapPath-1869187159").build();
+   *   ApiFuture<ExecuteOntapGetResponse> future =
+   *       netAppClient.executeOntapGetCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteOntapGetResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+      executeOntapGetCallable() {
+    return stub.executeOntapGetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapDeleteRequest request =
+   *       ExecuteOntapDeleteRequest.newBuilder().setOntapPath("ontapPath-1869187159").build();
+   *   ExecuteOntapDeleteResponse response = netAppClient.executeOntapDelete(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteOntapDeleteResponse executeOntapDelete(ExecuteOntapDeleteRequest request) {
+    return executeOntapDeleteCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapDeleteRequest request =
+   *       ExecuteOntapDeleteRequest.newBuilder().setOntapPath("ontapPath-1869187159").build();
+   *   ApiFuture<ExecuteOntapDeleteResponse> future =
+   *       netAppClient.executeOntapDeleteCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteOntapDeleteResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteCallable() {
+    return stub.executeOntapDeleteCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapPatchRequest request =
+   *       ExecuteOntapPatchRequest.newBuilder()
+   *           .setBody(Struct.newBuilder().build())
+   *           .setOntapPath("ontapPath-1869187159")
+   *           .build();
+   *   ExecuteOntapPatchResponse response = netAppClient.executeOntapPatch(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteOntapPatchResponse executeOntapPatch(ExecuteOntapPatchRequest request) {
+    return executeOntapPatchCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapPatchRequest request =
+   *       ExecuteOntapPatchRequest.newBuilder()
+   *           .setBody(Struct.newBuilder().build())
+   *           .setOntapPath("ontapPath-1869187159")
+   *           .build();
+   *   ApiFuture<ExecuteOntapPatchResponse> future =
+   *       netAppClient.executeOntapPatchCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteOntapPatchResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchCallable() {
+    return stub.executeOntapPatchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -8226,6 +10819,18 @@ public class NetAppClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -8258,6 +10863,18 @@ public class NetAppClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -9063,6 +11680,158 @@ public class NetAppClient implements BackgroundResource {
     protected ListBackupPoliciesFixedSizeCollection createCollection(
         List<ListBackupPoliciesPage> pages, int collectionSize) {
       return new ListBackupPoliciesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListQuotaRulesPagedResponse
+      extends AbstractPagedListResponse<
+          ListQuotaRulesRequest,
+          ListQuotaRulesResponse,
+          QuotaRule,
+          ListQuotaRulesPage,
+          ListQuotaRulesFixedSizeCollection> {
+
+    public static ApiFuture<ListQuotaRulesPagedResponse> createAsync(
+        PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
+        ApiFuture<ListQuotaRulesResponse> futureResponse) {
+      ApiFuture<ListQuotaRulesPage> futurePage =
+          ListQuotaRulesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListQuotaRulesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListQuotaRulesPagedResponse(ListQuotaRulesPage page) {
+      super(page, ListQuotaRulesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListQuotaRulesPage
+      extends AbstractPage<
+          ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule, ListQuotaRulesPage> {
+
+    private ListQuotaRulesPage(
+        PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
+        ListQuotaRulesResponse response) {
+      super(context, response);
+    }
+
+    private static ListQuotaRulesPage createEmptyPage() {
+      return new ListQuotaRulesPage(null, null);
+    }
+
+    @Override
+    protected ListQuotaRulesPage createPage(
+        PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
+        ListQuotaRulesResponse response) {
+      return new ListQuotaRulesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListQuotaRulesPage> createPageAsync(
+        PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
+        ApiFuture<ListQuotaRulesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListQuotaRulesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListQuotaRulesRequest,
+          ListQuotaRulesResponse,
+          QuotaRule,
+          ListQuotaRulesPage,
+          ListQuotaRulesFixedSizeCollection> {
+
+    private ListQuotaRulesFixedSizeCollection(List<ListQuotaRulesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListQuotaRulesFixedSizeCollection createEmptyCollection() {
+      return new ListQuotaRulesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListQuotaRulesFixedSizeCollection createCollection(
+        List<ListQuotaRulesPage> pages, int collectionSize) {
+      return new ListQuotaRulesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListHostGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListHostGroupsRequest,
+          ListHostGroupsResponse,
+          HostGroup,
+          ListHostGroupsPage,
+          ListHostGroupsFixedSizeCollection> {
+
+    public static ApiFuture<ListHostGroupsPagedResponse> createAsync(
+        PageContext<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup> context,
+        ApiFuture<ListHostGroupsResponse> futureResponse) {
+      ApiFuture<ListHostGroupsPage> futurePage =
+          ListHostGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListHostGroupsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListHostGroupsPagedResponse(ListHostGroupsPage page) {
+      super(page, ListHostGroupsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListHostGroupsPage
+      extends AbstractPage<
+          ListHostGroupsRequest, ListHostGroupsResponse, HostGroup, ListHostGroupsPage> {
+
+    private ListHostGroupsPage(
+        PageContext<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup> context,
+        ListHostGroupsResponse response) {
+      super(context, response);
+    }
+
+    private static ListHostGroupsPage createEmptyPage() {
+      return new ListHostGroupsPage(null, null);
+    }
+
+    @Override
+    protected ListHostGroupsPage createPage(
+        PageContext<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup> context,
+        ListHostGroupsResponse response) {
+      return new ListHostGroupsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListHostGroupsPage> createPageAsync(
+        PageContext<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup> context,
+        ApiFuture<ListHostGroupsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListHostGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListHostGroupsRequest,
+          ListHostGroupsResponse,
+          HostGroup,
+          ListHostGroupsPage,
+          ListHostGroupsFixedSizeCollection> {
+
+    private ListHostGroupsFixedSizeCollection(List<ListHostGroupsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListHostGroupsFixedSizeCollection createEmptyCollection() {
+      return new ListHostGroupsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListHostGroupsFixedSizeCollection createCollection(
+        List<ListHostGroupsPage> pages, int collectionSize) {
+      return new ListHostGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
 

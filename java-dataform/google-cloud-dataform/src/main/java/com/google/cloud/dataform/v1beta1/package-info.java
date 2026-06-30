@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,8 +33,8 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (DataformClient dataformClient = DataformClient.create()) {
- *   RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
- *   Repository response = dataformClient.getRepository(name);
+ *   TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+ *   TeamFolder response = dataformClient.getTeamFolder(name);
  * }
  * }</pre>
  */

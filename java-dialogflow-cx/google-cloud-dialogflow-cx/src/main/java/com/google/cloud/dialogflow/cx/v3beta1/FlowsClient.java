@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -265,7 +265,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -441,8 +443,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create a flow for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to create a flow for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param flow Required. The flow to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -477,8 +479,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create a flow for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to create a flow for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param flow Required. The flow to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -571,8 +573,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the flow to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * @param name Required. The name of the flow to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteFlow(FlowName name) {
@@ -599,8 +601,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the flow to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * @param name Required. The name of the flow to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteFlow(String name) {
@@ -685,8 +687,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent containing the flows. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent containing the flows. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFlowsPagedResponse listFlows(AgentName parent) {
@@ -715,8 +717,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent containing the flows. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent containing the flows. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFlowsPagedResponse listFlows(String parent) {
@@ -846,8 +848,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the flow to get. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * @param name Required. The name of the flow to get. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Flow getFlow(FlowName name) {
@@ -874,8 +876,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the flow to get. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * @param name Required. The name of the flow to get. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Flow getFlow(String name) {
@@ -1068,8 +1070,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The flow to train. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * @param name Required. The flow to train. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> trainFlowAsync(FlowName name) {
@@ -1108,8 +1110,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The flow to train. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * @param name Required. The flow to train. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> trainFlowAsync(String name) {
@@ -1316,9 +1318,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The flow name. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-   *     ID&gt;/validationResult`.
+   * @param name Required. The flow name. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/validationResult`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FlowValidationResult getFlowValidationResult(FlowValidationResultName name) {
@@ -1349,9 +1350,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The flow name. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-   *     ID&gt;/validationResult`.
+   * @param name Required. The flow name. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/validationResult`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FlowValidationResult getFlowValidationResult(String name) {
@@ -1675,6 +1675,18 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1708,6 +1720,18 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1740,6 +1764,18 @@ public class FlowsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

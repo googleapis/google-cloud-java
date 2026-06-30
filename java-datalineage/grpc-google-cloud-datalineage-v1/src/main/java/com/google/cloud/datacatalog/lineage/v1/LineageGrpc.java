@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * example, when table data is based on data from multiple tables.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/datacatalog/lineage/v1/lineage.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LineageGrpc {
 
@@ -823,6 +820,55 @@ public final class LineageGrpc {
     return getBatchSearchLinkProcessesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest,
+          com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse>
+      getSearchLineageStreamingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchLineageStreaming",
+      requestType = com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest.class,
+      responseType = com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest,
+          com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse>
+      getSearchLineageStreamingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest,
+            com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse>
+        getSearchLineageStreamingMethod;
+    if ((getSearchLineageStreamingMethod = LineageGrpc.getSearchLineageStreamingMethod) == null) {
+      synchronized (LineageGrpc.class) {
+        if ((getSearchLineageStreamingMethod = LineageGrpc.getSearchLineageStreamingMethod)
+            == null) {
+          LineageGrpc.getSearchLineageStreamingMethod =
+              getSearchLineageStreamingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest,
+                          com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SearchLineageStreaming"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LineageMethodDescriptorSupplier("SearchLineageStreaming"))
+                      .build();
+        }
+      }
+    }
+    return getSearchLineageStreamingMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static LineageStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<LineageStub> factory =
@@ -833,6 +879,19 @@ public final class LineageGrpc {
           }
         };
     return LineageStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static LineageBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<LineageBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LineageBlockingV2Stub>() {
+          @java.lang.Override
+          public LineageBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LineageBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return LineageBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -1143,6 +1202,43 @@ public final class LineageGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getBatchSearchLinkProcessesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a streaming response of lineage links connected to the requested
+     * assets by performing a breadth-first search in the given direction. Links
+     * represent the data flow between **source** (upstream) and **target**
+     * (downstream) assets in transformation pipelines. Links are stored in the
+     * same project as the Lineage Events that create them. This method retrieves
+     * links from all valid locations provided in the request. This method
+     * supports Column-Level Lineage (CLL) along with wildcard support to retrieve
+     * all CLL for an Entity FQN.
+     * Following permissions are required to retrieve links:
+     * * `datalineage.events.get` permission for the project where the link is
+     * stored for entity-level lineage.
+     * * `datalineage.events.getFields` permission for the project where the link
+     * is stored for column-level lineage.
+     * This method also returns processes that created the links if explicitly
+     * requested by setting
+     * [max_process_per_link](google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest.limits.max_process_per_link)
+     * is non-zero and full process details are requested via
+     * `links.processes.process` in the
+     * [FieldMask](https://developers.google.com/workspace/docs/api/how-tos/field-masks#read_with_a_field_mask).
+     * Permission required to retrieve processes:
+     * * `datalineage.processes.get` permission for the project where the process
+     * is stored.
+     * </pre>
+     */
+    default void searchLineageStreaming(
+        com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSearchLineageStreamingMethod(), responseObserver);
     }
   }
 
@@ -1481,10 +1577,373 @@ public final class LineageGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a streaming response of lineage links connected to the requested
+     * assets by performing a breadth-first search in the given direction. Links
+     * represent the data flow between **source** (upstream) and **target**
+     * (downstream) assets in transformation pipelines. Links are stored in the
+     * same project as the Lineage Events that create them. This method retrieves
+     * links from all valid locations provided in the request. This method
+     * supports Column-Level Lineage (CLL) along with wildcard support to retrieve
+     * all CLL for an Entity FQN.
+     * Following permissions are required to retrieve links:
+     * * `datalineage.events.get` permission for the project where the link is
+     * stored for entity-level lineage.
+     * * `datalineage.events.getFields` permission for the project where the link
+     * is stored for column-level lineage.
+     * This method also returns processes that created the links if explicitly
+     * requested by setting
+     * [max_process_per_link](google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest.limits.max_process_per_link)
+     * is non-zero and full process details are requested via
+     * `links.processes.process` in the
+     * [FieldMask](https://developers.google.com/workspace/docs/api/how-tos/field-masks#read_with_a_field_mask).
+     * Permission required to retrieve processes:
+     * * `datalineage.processes.get` permission for the project where the process
+     * is stored.
+     * </pre>
+     */
+    public void searchLineageStreaming(
+        com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getSearchLineageStreamingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Lineage.
+   *
+   * <pre>
+   * Lineage is used to track data flows between assets over time. You can
+   * create [LineageEvents][google.cloud.datacatalog.lineage.v1.LineageEvent]
+   * to record lineage between multiple sources and a single target, for
+   * example, when table data is based on data from multiple tables.
+   * </pre>
+   */
+  public static final class LineageBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<LineageBlockingV2Stub> {
+    private LineageBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected LineageBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new LineageBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new lineage events together with their parents: process and run.
+     * Updates the process and run if they already exist.
+     * Mapped from Open Lineage specification:
+     * https://github.com/OpenLineage/OpenLineage/blob/main/spec/OpenLineage.json.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventResponse
+        processOpenLineageRunEvent(
+            com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getProcessOpenLineageRunEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new process.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Process createProcess(
+        com.google.cloud.datacatalog.lineage.v1.CreateProcessRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateProcessMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a process.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Process updateProcess(
+        com.google.cloud.datacatalog.lineage.v1.UpdateProcessRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateProcessMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of the specified process.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Process getProcess(
+        com.google.cloud.datacatalog.lineage.v1.GetProcessRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetProcessMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List processes in the given project and location. List order is descending
+     * by insertion time.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.ListProcessesResponse listProcesses(
+        com.google.cloud.datacatalog.lineage.v1.ListProcessesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListProcessesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the process with the specified name.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteProcess(
+        com.google.cloud.datacatalog.lineage.v1.DeleteProcessRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteProcessMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new run.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Run createRun(
+        com.google.cloud.datacatalog.lineage.v1.CreateRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a run.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Run updateRun(
+        com.google.cloud.datacatalog.lineage.v1.UpdateRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of the specified run.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Run getRun(
+        com.google.cloud.datacatalog.lineage.v1.GetRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists runs in the given project and location. List order is descending by
+     * `start_time`.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.ListRunsResponse listRuns(
+        com.google.cloud.datacatalog.lineage.v1.ListRunsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the run with the specified name.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRun(
+        com.google.cloud.datacatalog.lineage.v1.DeleteRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new lineage event.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.LineageEvent createLineageEvent(
+        com.google.cloud.datacatalog.lineage.v1.CreateLineageEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateLineageEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a specified lineage event.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.LineageEvent getLineageEvent(
+        com.google.cloud.datacatalog.lineage.v1.GetLineageEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetLineageEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists lineage events in the given project and location. The list order is
+     * not defined.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.ListLineageEventsResponse listLineageEvents(
+        com.google.cloud.datacatalog.lineage.v1.ListLineageEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListLineageEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the lineage event with the specified name.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteLineageEvent(
+        com.google.cloud.datacatalog.lineage.v1.DeleteLineageEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteLineageEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a list of links connected to a specific asset.
+     * Links represent the data flow between **source** (upstream)
+     * and **target** (downstream) assets in transformation pipelines.
+     * Links are stored in the same project as the Lineage Events that create
+     * them.
+     * You can retrieve links in every project where you have the
+     * `datalineage.events.get` permission. The project provided in the URL
+     * is used for Billing and Quota.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.SearchLinksResponse searchLinks(
+        com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSearchLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve information about LineageProcesses associated with specific
+     * links. LineageProcesses are transformation pipelines that result in data
+     * flowing from **source** to **target** assets. Links between assets
+     * represent this operation.
+     * If you have specific link names, you can use this method to
+     * verify which LineageProcesses contribute to creating those links.
+     * See the
+     * [SearchLinks][google.cloud.datacatalog.lineage.v1.Lineage.SearchLinks]
+     * method for more information on how to retrieve link name.
+     * You can retrieve the LineageProcess information in every project where you
+     * have the `datalineage.events.get` permission. The project provided in the
+     * URL is used for Billing and Quota.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesResponse
+        batchSearchLinkProcesses(
+            com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchSearchLinkProcessesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a streaming response of lineage links connected to the requested
+     * assets by performing a breadth-first search in the given direction. Links
+     * represent the data flow between **source** (upstream) and **target**
+     * (downstream) assets in transformation pipelines. Links are stored in the
+     * same project as the Lineage Events that create them. This method retrieves
+     * links from all valid locations provided in the request. This method
+     * supports Column-Level Lineage (CLL) along with wildcard support to retrieve
+     * all CLL for an Entity FQN.
+     * Following permissions are required to retrieve links:
+     * * `datalineage.events.get` permission for the project where the link is
+     * stored for entity-level lineage.
+     * * `datalineage.events.getFields` permission for the project where the link
+     * is stored for column-level lineage.
+     * This method also returns processes that created the links if explicitly
+     * requested by setting
+     * [max_process_per_link](google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest.limits.max_process_per_link)
+     * is non-zero and full process details are requested via
+     * `links.processes.process` in the
+     * [FieldMask](https://developers.google.com/workspace/docs/api/how-tos/field-masks#read_with_a_field_mask).
+     * Permission required to retrieve processes:
+     * * `datalineage.processes.get` permission for the project where the process
+     * is stored.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            ?, com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse>
+        searchLineageStreaming(
+            com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getSearchLineageStreamingMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Lineage.
    *
    * <pre>
    * Lineage is used to track data flows between assets over time. You can
@@ -1749,6 +2208,42 @@ public final class LineageGrpc {
             com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchSearchLinkProcessesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a streaming response of lineage links connected to the requested
+     * assets by performing a breadth-first search in the given direction. Links
+     * represent the data flow between **source** (upstream) and **target**
+     * (downstream) assets in transformation pipelines. Links are stored in the
+     * same project as the Lineage Events that create them. This method retrieves
+     * links from all valid locations provided in the request. This method
+     * supports Column-Level Lineage (CLL) along with wildcard support to retrieve
+     * all CLL for an Entity FQN.
+     * Following permissions are required to retrieve links:
+     * * `datalineage.events.get` permission for the project where the link is
+     * stored for entity-level lineage.
+     * * `datalineage.events.getFields` permission for the project where the link
+     * is stored for column-level lineage.
+     * This method also returns processes that created the links if explicitly
+     * requested by setting
+     * [max_process_per_link](google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest.limits.max_process_per_link)
+     * is non-zero and full process details are requested via
+     * `links.processes.process` in the
+     * [FieldMask](https://developers.google.com/workspace/docs/api/how-tos/field-masks#read_with_a_field_mask).
+     * Permission required to retrieve processes:
+     * * `datalineage.processes.get` permission for the project where the process
+     * is stored.
+     * </pre>
+     */
+    public java.util.Iterator<
+            com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse>
+        searchLineageStreaming(
+            com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getSearchLineageStreamingMethod(), getCallOptions(), request);
     }
   }
 
@@ -2055,6 +2550,7 @@ public final class LineageGrpc {
   private static final int METHODID_DELETE_LINEAGE_EVENT = 14;
   private static final int METHODID_SEARCH_LINKS = 15;
   private static final int METHODID_BATCH_SEARCH_LINK_PROCESSES = 16;
+  private static final int METHODID_SEARCH_LINEAGE_STREAMING = 17;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2176,6 +2672,13 @@ public final class LineageGrpc {
               (com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SEARCH_LINEAGE_STREAMING:
+          serviceImpl.searchLineageStreaming(
+              (com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse>)
                   responseObserver);
           break;
         default:
@@ -2309,6 +2812,13 @@ public final class LineageGrpc {
                     com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest,
                     com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesResponse>(
                     service, METHODID_BATCH_SEARCH_LINK_PROCESSES)))
+        .addMethod(
+            getSearchLineageStreamingMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest,
+                    com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse>(
+                    service, METHODID_SEARCH_LINEAGE_STREAMING)))
         .build();
   }
 
@@ -2375,6 +2885,7 @@ public final class LineageGrpc {
                       .addMethod(getDeleteLineageEventMethod())
                       .addMethod(getSearchLinksMethod())
                       .addMethod(getBatchSearchLinkProcessesMethod())
+                      .addMethod(getSearchLineageStreamingMethod())
                       .build();
         }
       }

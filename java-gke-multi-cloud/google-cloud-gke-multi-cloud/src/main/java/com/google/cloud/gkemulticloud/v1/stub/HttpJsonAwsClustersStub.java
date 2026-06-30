@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,7 +78,10 @@ import javax.annotation.Generated;
  * REST stub implementation for the AwsClusters service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class HttpJsonAwsClustersStub extends AwsClustersStub {
   private static final TypeRegistry typeRegistry =
@@ -821,6 +824,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateAwsClusterRequest, Operation> updateAwsClusterTransportSettings =
         HttpJsonCallSettings.<UpdateAwsClusterRequest, Operation>newBuilder()
@@ -844,6 +848,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAwsClustersRequest, ListAwsClustersResponse>
         listAwsClustersTransportSettings =
@@ -856,6 +861,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteAwsClusterRequest, Operation> deleteAwsClusterTransportSettings =
         HttpJsonCallSettings.<DeleteAwsClusterRequest, Operation>newBuilder()
@@ -867,6 +873,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
         generateAwsClusterAgentTokenTransportSettings =
@@ -881,6 +888,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                       builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAwsCluster())
                 .build();
     HttpJsonCallSettings<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
         generateAwsAccessTokenTransportSettings =
@@ -894,6 +902,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                       builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAwsCluster())
                 .build();
     HttpJsonCallSettings<CreateAwsNodePoolRequest, Operation> createAwsNodePoolTransportSettings =
         HttpJsonCallSettings.<CreateAwsNodePoolRequest, Operation>newBuilder()
@@ -905,6 +914,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateAwsNodePoolRequest, Operation> updateAwsNodePoolTransportSettings =
         HttpJsonCallSettings.<UpdateAwsNodePoolRequest, Operation>newBuilder()
@@ -929,6 +939,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolTransportSettings =
         HttpJsonCallSettings.<GetAwsNodePoolRequest, AwsNodePool>newBuilder()
@@ -940,6 +951,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse>
         listAwsNodePoolsTransportSettings =
@@ -952,6 +964,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteAwsNodePoolRequest, Operation> deleteAwsNodePoolTransportSettings =
         HttpJsonCallSettings.<DeleteAwsNodePoolRequest, Operation>newBuilder()
@@ -963,6 +976,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
         getAwsOpenIdConfigTransportSettings =
@@ -975,6 +989,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                       builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAwsCluster())
                 .build();
     HttpJsonCallSettings<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>
         getAwsJsonWebKeysTransportSettings =
@@ -987,6 +1002,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                       builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAwsCluster())
                 .build();
     HttpJsonCallSettings<GetAwsServerConfigRequest, AwsServerConfig>
         getAwsServerConfigTransportSettings =
@@ -999,6 +1015,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createAwsClusterCallable =

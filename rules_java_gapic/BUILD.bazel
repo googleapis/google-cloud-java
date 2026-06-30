@@ -1,0 +1,21 @@
+load("@rules_pkg//pkg:pkg.bzl", "pkg_tar")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(glob(["resources/**/*"]))
+
+pkg_tar(
+    name = "gradlew",
+    extension = "tar.gz",
+    files = {
+        "resources/gradle/gradle/wrapper/gradle-wrapper.jar": "gradle/wrapper/gradle-wrapper.jar",
+        "resources/gradle/gradle/wrapper/gradle-wrapper.properties": "gradle/wrapper/gradle-wrapper.properties",
+        "resources/gradle/gradle.properties": "gradle.properties",
+        "resources/gradle/gradlew": "gradlew",
+        "resources/gradle/gradlew.bat": "gradlew.bat",
+    },
+    mode = "644",
+    modes = {
+        "gradlew": "555",
+    },
+)

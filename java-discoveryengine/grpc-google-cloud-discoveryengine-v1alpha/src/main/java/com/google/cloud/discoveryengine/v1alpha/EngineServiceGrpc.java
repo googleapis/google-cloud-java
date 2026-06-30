@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * configuration.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/engine_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EngineServiceGrpc {
 
@@ -415,6 +412,19 @@ public final class EngineServiceGrpc {
     return EngineServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EngineServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EngineServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EngineServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public EngineServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EngineServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EngineServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -751,6 +761,146 @@ public final class EngineServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service EngineService.
+   *
+   * <pre>
+   * Service for managing [Engine][google.cloud.discoveryengine.v1alpha.Engine]
+   * configuration.
+   * </pre>
+   */
+  public static final class EngineServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EngineServiceBlockingV2Stub> {
+    private EngineServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EngineServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EngineServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Engine][google.cloud.discoveryengine.v1alpha.Engine].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEngine(
+        com.google.cloud.discoveryengine.v1alpha.CreateEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Engine][google.cloud.discoveryengine.v1alpha.Engine].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteEngine(
+        com.google.cloud.discoveryengine.v1alpha.DeleteEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an [Engine][google.cloud.discoveryengine.v1alpha.Engine]
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Engine updateEngine(
+        com.google.cloud.discoveryengine.v1alpha.UpdateEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a [Engine][google.cloud.discoveryengine.v1alpha.Engine].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Engine getEngine(
+        com.google.cloud.discoveryengine.v1alpha.GetEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the [Engine][google.cloud.discoveryengine.v1alpha.Engine]s
+     * associated with the project.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.ListEnginesResponse listEngines(
+        com.google.cloud.discoveryengine.v1alpha.ListEnginesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListEnginesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses the training of an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Engine pauseEngine(
+        com.google.cloud.discoveryengine.v1alpha.PauseEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getPauseEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes the training of an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Engine resumeEngine(
+        com.google.cloud.discoveryengine.v1alpha.ResumeEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getResumeEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunes an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    public com.google.longrunning.Operation tuneEngine(
+        com.google.cloud.discoveryengine.v1alpha.TuneEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTuneEngineMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service EngineService.
    *
    * <pre>
    * Service for managing [Engine][google.cloud.discoveryengine.v1alpha.Engine]

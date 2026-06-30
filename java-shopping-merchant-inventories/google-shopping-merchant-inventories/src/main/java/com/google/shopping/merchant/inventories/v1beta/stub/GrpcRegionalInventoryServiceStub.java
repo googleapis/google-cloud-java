@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,7 @@ public class GrpcRegionalInventoryServiceStub extends RegionalInventoryServiceSt
                   ProtoUtils.marshaller(ListRegionalInventoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRegionalInventoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InsertRegionalInventoryRequest, RegionalInventory>
@@ -71,6 +72,7 @@ public class GrpcRegionalInventoryServiceStub extends RegionalInventoryServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InsertRegionalInventoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RegionalInventory.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRegionalInventoryRequest, Empty>
@@ -82,6 +84,7 @@ public class GrpcRegionalInventoryServiceStub extends RegionalInventoryServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRegionalInventoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListRegionalInventoriesRequest, ListRegionalInventoriesResponse>
@@ -149,6 +152,7 @@ public class GrpcRegionalInventoryServiceStub extends RegionalInventoryServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<InsertRegionalInventoryRequest, RegionalInventory>
         insertRegionalInventoryTransportSettings =
@@ -160,6 +164,7 @@ public class GrpcRegionalInventoryServiceStub extends RegionalInventoryServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteRegionalInventoryRequest, Empty>
         deleteRegionalInventoryTransportSettings =
@@ -171,6 +176,7 @@ public class GrpcRegionalInventoryServiceStub extends RegionalInventoryServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.listRegionalInventoriesCallable =

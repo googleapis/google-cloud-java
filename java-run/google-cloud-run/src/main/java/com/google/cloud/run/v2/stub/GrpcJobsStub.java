@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,7 @@ public class GrpcJobsStub extends JobsStub {
           .setFullMethodName("google.cloud.run.v2.Jobs/CreateJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
@@ -71,6 +72,7 @@ public class GrpcJobsStub extends JobsStub {
           .setFullMethodName("google.cloud.run.v2.Jobs/GetJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
@@ -80,6 +82,7 @@ public class GrpcJobsStub extends JobsStub {
               .setFullMethodName("google.cloud.run.v2.Jobs/ListJobs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateJobRequest, Operation> updateJobMethodDescriptor =
@@ -88,6 +91,7 @@ public class GrpcJobsStub extends JobsStub {
           .setFullMethodName("google.cloud.run.v2.Jobs/UpdateJob")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteJobRequest, Operation> deleteJobMethodDescriptor =
@@ -96,6 +100,7 @@ public class GrpcJobsStub extends JobsStub {
           .setFullMethodName("google.cloud.run.v2.Jobs/DeleteJob")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RunJobRequest, Operation> runJobMethodDescriptor =
@@ -104,6 +109,7 @@ public class GrpcJobsStub extends JobsStub {
           .setFullMethodName("google.cloud.run.v2.Jobs/RunJob")
           .setRequestMarshaller(ProtoUtils.marshaller(RunJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -112,6 +118,7 @@ public class GrpcJobsStub extends JobsStub {
           .setFullMethodName("google.cloud.run.v2.Jobs/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -120,6 +127,7 @@ public class GrpcJobsStub extends JobsStub {
           .setFullMethodName("google.cloud.run.v2.Jobs/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -131,6 +139,7 @@ public class GrpcJobsStub extends JobsStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateJobRequest, Operation> createJobCallable;
@@ -209,6 +218,7 @@ public class GrpcJobsStub extends JobsStub {
                   builder.add(request.getParent(), "location", CREATE_JOB_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
         GrpcCallSettings.<GetJobRequest, Job>newBuilder()
@@ -219,6 +229,7 @@ public class GrpcJobsStub extends JobsStub {
                   builder.add(request.getName(), "location", GET_JOB_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         GrpcCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -229,6 +240,7 @@ public class GrpcJobsStub extends JobsStub {
                   builder.add(request.getParent(), "location", LIST_JOBS_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateJobRequest, Operation> updateJobTransportSettings =
         GrpcCallSettings.<UpdateJobRequest, Operation>newBuilder()
@@ -251,6 +263,7 @@ public class GrpcJobsStub extends JobsStub {
                   builder.add(request.getName(), "location", DELETE_JOB_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RunJobRequest, Operation> runJobTransportSettings =
         GrpcCallSettings.<RunJobRequest, Operation>newBuilder()
@@ -261,6 +274,7 @@ public class GrpcJobsStub extends JobsStub {
                   builder.add(request.getName(), "location", RUN_JOB_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -271,6 +285,7 @@ public class GrpcJobsStub extends JobsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -281,6 +296,7 @@ public class GrpcJobsStub extends JobsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -292,6 +308,7 @@ public class GrpcJobsStub extends JobsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createJobCallable =

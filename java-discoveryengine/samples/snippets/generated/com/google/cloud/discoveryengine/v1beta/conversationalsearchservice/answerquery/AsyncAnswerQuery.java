@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.cloud.discoveryengine.v1beta.ConversationalSearchServiceClient
 import com.google.cloud.discoveryengine.v1beta.Query;
 import com.google.cloud.discoveryengine.v1beta.ServingConfigName;
 import com.google.cloud.discoveryengine.v1beta.SessionName;
+import java.util.HashMap;
 
 public class AsyncAnswerQuery {
 
@@ -52,12 +53,15 @@ public class AsyncAnswerQuery {
                       .toString())
               .setSafetySpec(AnswerQueryRequest.SafetySpec.newBuilder().build())
               .setRelatedQuestionsSpec(AnswerQueryRequest.RelatedQuestionsSpec.newBuilder().build())
+              .setGroundingSpec(AnswerQueryRequest.GroundingSpec.newBuilder().build())
               .setAnswerGenerationSpec(AnswerQueryRequest.AnswerGenerationSpec.newBuilder().build())
               .setSearchSpec(AnswerQueryRequest.SearchSpec.newBuilder().build())
               .setQueryUnderstandingSpec(
                   AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
               .setAsynchronousMode(true)
               .setUserPseudoId("userPseudoId-1155274652")
+              .putAllUserLabels(new HashMap<String, String>())
+              .setEndUserSpec(AnswerQueryRequest.EndUserSpec.newBuilder().build())
               .build();
       ApiFuture<AnswerQueryResponse> future =
           conversationalSearchServiceClient.answerQueryCallable().futureCall(request);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,6 +70,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCollectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAnnotationRequest, Operation>
@@ -81,6 +82,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAnnotationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAnnotationRequest, Annotation>
@@ -92,6 +94,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAnnotationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Annotation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCollectorsRequest, ListCollectorsResponse>
@@ -104,6 +107,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   ProtoUtils.marshaller(ListCollectorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCollectorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCollectorRequest, Collector>
@@ -114,6 +118,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   "google.cloud.rapidmigrationassessment.v1.RapidMigrationAssessment/GetCollector")
               .setRequestMarshaller(ProtoUtils.marshaller(GetCollectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Collector.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCollectorRequest, Operation>
@@ -125,6 +130,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCollectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCollectorRequest, Operation>
@@ -136,6 +142,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCollectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResumeCollectorRequest, Operation>
@@ -147,6 +154,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResumeCollectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RegisterCollectorRequest, Operation>
@@ -158,6 +166,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RegisterCollectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PauseCollectorRequest, Operation>
@@ -169,6 +178,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PauseCollectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -180,6 +190,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -188,6 +199,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateCollectorRequest, Operation> createCollectorCallable;
@@ -275,6 +287,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateAnnotationRequest, Operation> createAnnotationTransportSettings =
         GrpcCallSettings.<CreateAnnotationRequest, Operation>newBuilder()
@@ -285,6 +298,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAnnotationRequest, Annotation> getAnnotationTransportSettings =
         GrpcCallSettings.<GetAnnotationRequest, Annotation>newBuilder()
@@ -295,6 +309,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCollectorsRequest, ListCollectorsResponse>
         listCollectorsTransportSettings =
@@ -306,6 +321,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCollectorRequest, Collector> getCollectorTransportSettings =
         GrpcCallSettings.<GetCollectorRequest, Collector>newBuilder()
@@ -316,6 +332,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateCollectorRequest, Operation> updateCollectorTransportSettings =
         GrpcCallSettings.<UpdateCollectorRequest, Operation>newBuilder()
@@ -336,6 +353,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResumeCollectorRequest, Operation> resumeCollectorTransportSettings =
         GrpcCallSettings.<ResumeCollectorRequest, Operation>newBuilder()
@@ -346,6 +364,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RegisterCollectorRequest, Operation> registerCollectorTransportSettings =
         GrpcCallSettings.<RegisterCollectorRequest, Operation>newBuilder()
@@ -356,6 +375,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PauseCollectorRequest, Operation> pauseCollectorTransportSettings =
         GrpcCallSettings.<PauseCollectorRequest, Operation>newBuilder()
@@ -366,6 +386,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

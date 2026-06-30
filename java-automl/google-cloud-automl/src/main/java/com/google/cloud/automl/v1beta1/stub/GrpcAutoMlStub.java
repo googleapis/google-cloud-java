@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,6 +93,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDatasetRequest, Dataset> getDatasetMethodDescriptor =
@@ -101,6 +102,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/GetDataset")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDatasetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListDatasetsRequest, ListDatasetsResponse>
@@ -111,6 +113,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListDatasetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatasetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDatasetRequest, Dataset>
@@ -121,6 +124,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDatasetRequest, Operation>
@@ -131,6 +135,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportDataRequest, Operation> importDataMethodDescriptor =
@@ -139,6 +144,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/ImportData")
           .setRequestMarshaller(ProtoUtils.marshaller(ImportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ExportDataRequest, Operation> exportDataMethodDescriptor =
@@ -147,6 +153,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/ExportData")
           .setRequestMarshaller(ProtoUtils.marshaller(ExportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetAnnotationSpecRequest, AnnotationSpec>
@@ -157,6 +164,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAnnotationSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AnnotationSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTableSpecRequest, TableSpec>
@@ -166,6 +174,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/GetTableSpec")
               .setRequestMarshaller(ProtoUtils.marshaller(GetTableSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TableSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTableSpecsRequest, ListTableSpecsResponse>
@@ -177,6 +186,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   ProtoUtils.marshaller(ListTableSpecsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTableSpecsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTableSpecRequest, TableSpec>
@@ -187,6 +197,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTableSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TableSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetColumnSpecRequest, ColumnSpec>
@@ -197,6 +208,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetColumnSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ColumnSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListColumnSpecsRequest, ListColumnSpecsResponse>
@@ -208,6 +220,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   ProtoUtils.marshaller(ListColumnSpecsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListColumnSpecsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateColumnSpecRequest, ColumnSpec>
@@ -218,6 +231,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateColumnSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ColumnSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateModelRequest, Operation> createModelMethodDescriptor =
@@ -226,6 +240,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/CreateModel")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetModelRequest, Model> getModelMethodDescriptor =
@@ -234,6 +249,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/GetModel")
           .setRequestMarshaller(ProtoUtils.marshaller(GetModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListModelsRequest, ListModelsResponse>
@@ -243,6 +259,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/ListModels")
               .setRequestMarshaller(ProtoUtils.marshaller(ListModelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListModelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteModelRequest, Operation> deleteModelMethodDescriptor =
@@ -251,6 +268,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/DeleteModel")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeployModelRequest, Operation> deployModelMethodDescriptor =
@@ -259,6 +277,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/DeployModel")
           .setRequestMarshaller(ProtoUtils.marshaller(DeployModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UndeployModelRequest, Operation>
@@ -269,6 +288,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeployModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportModelRequest, Operation> exportModelMethodDescriptor =
@@ -277,6 +297,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/ExportModel")
           .setRequestMarshaller(ProtoUtils.marshaller(ExportModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ExportEvaluatedExamplesRequest, Operation>
@@ -287,6 +308,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportEvaluatedExamplesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetModelEvaluationRequest, ModelEvaluation>
@@ -297,6 +319,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetModelEvaluationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ModelEvaluation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
@@ -308,6 +331,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   ProtoUtils.marshaller(ListModelEvaluationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListModelEvaluationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateDatasetRequest, Dataset> createDatasetCallable;
@@ -414,6 +438,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetDatasetRequest, Dataset> getDatasetTransportSettings =
         GrpcCallSettings.<GetDatasetRequest, Dataset>newBuilder()
@@ -424,6 +449,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
         GrpcCallSettings.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
@@ -434,6 +460,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDatasetRequest, Dataset> updateDatasetTransportSettings =
         GrpcCallSettings.<UpdateDatasetRequest, Dataset>newBuilder()
@@ -454,6 +481,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportDataRequest, Operation> importDataTransportSettings =
         GrpcCallSettings.<ImportDataRequest, Operation>newBuilder()
@@ -464,6 +492,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportDataRequest, Operation> exportDataTransportSettings =
         GrpcCallSettings.<ExportDataRequest, Operation>newBuilder()
@@ -474,6 +503,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecTransportSettings =
         GrpcCallSettings.<GetAnnotationSpecRequest, AnnotationSpec>newBuilder()
@@ -484,6 +514,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetTableSpecRequest, TableSpec> getTableSpecTransportSettings =
         GrpcCallSettings.<GetTableSpecRequest, TableSpec>newBuilder()
@@ -494,6 +525,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTableSpecsRequest, ListTableSpecsResponse>
         listTableSpecsTransportSettings =
@@ -505,6 +537,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateTableSpecRequest, TableSpec> updateTableSpecTransportSettings =
         GrpcCallSettings.<UpdateTableSpecRequest, TableSpec>newBuilder()
@@ -525,6 +558,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListColumnSpecsRequest, ListColumnSpecsResponse>
         listColumnSpecsTransportSettings =
@@ -536,6 +570,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateColumnSpecRequest, ColumnSpec> updateColumnSpecTransportSettings =
         GrpcCallSettings.<UpdateColumnSpecRequest, ColumnSpec>newBuilder()
@@ -557,6 +592,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetModelRequest, Model> getModelTransportSettings =
         GrpcCallSettings.<GetModelRequest, Model>newBuilder()
@@ -567,6 +603,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListModelsRequest, ListModelsResponse> listModelsTransportSettings =
         GrpcCallSettings.<ListModelsRequest, ListModelsResponse>newBuilder()
@@ -577,6 +614,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteModelRequest, Operation> deleteModelTransportSettings =
         GrpcCallSettings.<DeleteModelRequest, Operation>newBuilder()
@@ -587,6 +625,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeployModelRequest, Operation> deployModelTransportSettings =
         GrpcCallSettings.<DeployModelRequest, Operation>newBuilder()
@@ -597,6 +636,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeployModelRequest, Operation> undeployModelTransportSettings =
         GrpcCallSettings.<UndeployModelRequest, Operation>newBuilder()
@@ -607,6 +647,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportModelRequest, Operation> exportModelTransportSettings =
         GrpcCallSettings.<ExportModelRequest, Operation>newBuilder()
@@ -617,6 +658,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportEvaluatedExamplesRequest, Operation>
         exportEvaluatedExamplesTransportSettings =
@@ -628,6 +670,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetModelEvaluationRequest, ModelEvaluation>
         getModelEvaluationTransportSettings =
@@ -639,6 +682,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
         listModelEvaluationsTransportSettings =
@@ -650,6 +694,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createDatasetCallable =

@@ -8,9 +8,6 @@ Java idiomatic client for [Infrastructure Manager API][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 
 ## Quickstart
 
@@ -23,7 +20,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.37.0</version>
+      <version>26.83.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -35,32 +32,31 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-infra-manager</artifactId>
   </dependency>
+</dependencies>
 ```
 
 If you are using Maven without the BOM, add this to your dependencies:
 
-<!-- {x-version-update-start:google-cloud-infra-manager:released} -->
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-infra-manager</artifactId>
-  <version>0.18.0</version>
+  <version>0.70.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-infra-manager:0.18.0'
+implementation 'com.google.cloud:google-cloud-infra-manager:0.70.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-infra-manager" % "0.18.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-infra-manager" % "0.70.0"
 ```
-<!-- {x-version-update-end} -->
 
 ## Authentication
 
@@ -156,9 +152,6 @@ and on [google-cloud-java][g-c-j].
 This library follows [Semantic Versioning](http://semver.org/).
 
 
-It is currently in major version zero (``0.y.z``), which means that anything may change at any time
-and the public API should not be considered stable.
-
 
 ## Contributing
 
@@ -176,32 +169,13 @@ information.
 
 Apache 2.0 - See [LICENSE][license] for more information.
 
-## CI Status
-
-Java Version | Status
------------- | ------
-Java 8 | [![Kokoro CI][kokoro-badge-image-2]][kokoro-badge-link-2]
-Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
-Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
-Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
-
 Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://cloud.google.com/infrastructure-manager/docs/overview
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-infra-manager/latest/overview
-[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.svg
-[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.html
-[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8.svg
-[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8.html
-[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-osx.svg
-[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-osx.html
-[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-win.svg
-[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-win.html
-[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.svg
-[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
-[stability-image]: https://img.shields.io/badge/stability-preview-yellow
+[stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-infra-manager.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-infra-manager/0.18.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-infra-manager/0.70.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
@@ -214,7 +188,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [code-of-conduct]: https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
-[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=infra-manager.googleapis.com
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=config.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
 

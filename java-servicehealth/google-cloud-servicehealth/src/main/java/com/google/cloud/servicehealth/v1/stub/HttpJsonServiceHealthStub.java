@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -429,6 +429,7 @@ public class HttpJsonServiceHealthStub extends ServiceHealthStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetEventRequest, Event> getEventTransportSettings =
         HttpJsonCallSettings.<GetEventRequest, Event>newBuilder()
@@ -440,6 +441,7 @@ public class HttpJsonServiceHealthStub extends ServiceHealthStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListOrganizationEventsRequest, ListOrganizationEventsResponse>
         listOrganizationEventsTransportSettings =
@@ -453,6 +455,7 @@ public class HttpJsonServiceHealthStub extends ServiceHealthStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetOrganizationEventRequest, OrganizationEvent>
         getOrganizationEventTransportSettings =
@@ -465,6 +468,7 @@ public class HttpJsonServiceHealthStub extends ServiceHealthStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListOrganizationImpactsRequest, ListOrganizationImpactsResponse>
         listOrganizationImpactsTransportSettings =
@@ -478,6 +482,7 @@ public class HttpJsonServiceHealthStub extends ServiceHealthStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetOrganizationImpactRequest, OrganizationImpact>
         getOrganizationImpactTransportSettings =
@@ -490,6 +495,7 @@ public class HttpJsonServiceHealthStub extends ServiceHealthStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

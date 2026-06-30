@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -256,7 +256,8 @@ public class AccessApprovalSettingsName implements ResourceName {
     private Builder(AccessApprovalSettingsName accessApprovalSettingsName) {
       Preconditions.checkArgument(
           Objects.equals(accessApprovalSettingsName.pathTemplate, PROJECT),
-          "toBuilder is only supported when AccessApprovalSettingsName has the pattern of projects/{project}/accessApprovalSettings");
+          "toBuilder is only supported when AccessApprovalSettingsName has the pattern of"
+              + " projects/{project}/accessApprovalSettings");
       this.project = accessApprovalSettingsName.project;
     }
 

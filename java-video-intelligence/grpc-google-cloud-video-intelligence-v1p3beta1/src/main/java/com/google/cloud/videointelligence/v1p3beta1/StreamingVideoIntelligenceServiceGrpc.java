@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service that implements streaming Video Intelligence API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/videointelligence/v1p3beta1/video_intelligence.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class StreamingVideoIntelligenceServiceGrpc {
 
@@ -103,6 +100,21 @@ public final class StreamingVideoIntelligenceServiceGrpc {
           }
         };
     return StreamingVideoIntelligenceServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static StreamingVideoIntelligenceServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<StreamingVideoIntelligenceServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<
+            StreamingVideoIntelligenceServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public StreamingVideoIntelligenceServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new StreamingVideoIntelligenceServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return StreamingVideoIntelligenceServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -223,6 +235,46 @@ public final class StreamingVideoIntelligenceServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service
+   * StreamingVideoIntelligenceService.
+   *
+   * <pre>
+   * Service that implements streaming Video Intelligence API.
+   * </pre>
+   */
+  public static final class StreamingVideoIntelligenceServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<StreamingVideoIntelligenceServiceBlockingV2Stub> {
+    private StreamingVideoIntelligenceServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected StreamingVideoIntelligenceServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new StreamingVideoIntelligenceServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs video annotation with bidirectional streaming: emitting results
+     * while sending video/audio bytes.
+     * This method is only available via the gRPC API (not REST).
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest,
+            com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse>
+        streamingAnnotateVideo() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamingAnnotateVideoMethod(), getCallOptions());
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
    * StreamingVideoIntelligenceService.
    *
    * <pre>

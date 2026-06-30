@@ -1,0 +1,8 @@
+{
+  "methodConfig": [
+    {
+      "name": [{"service": "google.testdata.v1.DeprecatedService"}],
+      "timeout": "60s"
+    }
+  ]
+}

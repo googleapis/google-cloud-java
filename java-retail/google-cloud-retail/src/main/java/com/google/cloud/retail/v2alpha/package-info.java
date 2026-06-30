@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Retail API
+ * A client to Vertex AI Search for commerce API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
@@ -41,6 +41,29 @@
  *           .build();
  *   ExportAnalyticsMetricsResponse response =
  *       analyticsServiceClient.exportAnalyticsMetricsAsync(request).get();
+ * }
+ * }</pre>
+ *
+ * <p>======================= BranchServiceClient =======================
+ *
+ * <p>Service Description: Service for [Branch][google.cloud.retail.v2alpha.Branch] Management
+ *
+ * <p>[Branch][google.cloud.retail.v2alpha.Branch]es are automatically created when a
+ * [Catalog][google.cloud.retail.v2alpha.Catalog] is created. There are fixed three branches in each
+ * catalog, and may use [ListBranches][google.cloud.retail.v2alpha.BranchService.ListBranches]
+ * method to get the details of all branches.
+ *
+ * <p>Sample for BranchServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (BranchServiceClient branchServiceClient = BranchServiceClient.create()) {
+ *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+ *   ListBranchesResponse response = branchServiceClient.listBranches(parent);
  * }
  * }</pre>
  *
@@ -112,6 +135,70 @@
  *   Control control = Control.newBuilder().build();
  *   String controlId = "controlId-395080872";
  *   Control response = controlServiceClient.createControl(parent, control, controlId);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ConversationalSearchServiceClient =======================
+ *
+ * <p>Service Description: Service for retail conversational search.
+ *
+ * <p>This feature is only available for users who have Retail Conversational Search enabled. Enable
+ * Retail Conversational Search on Cloud Console before using this feature.
+ *
+ * <p>Sample for ConversationalSearchServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+ *     ConversationalSearchServiceClient.create()) {
+ *   ConversationalSearchRequest request =
+ *       ConversationalSearchRequest.newBuilder()
+ *           .setPlacement("placement1792938725")
+ *           .setBranch(
+ *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+ *           .setQuery("query107944136")
+ *           .addAllPageCategories(new ArrayList<String>())
+ *           .setConversationId("conversationId-1676095234")
+ *           .setSearchParams(ConversationalSearchRequest.SearchParams.newBuilder().build())
+ *           .setVisitorId("visitorId1880545833")
+ *           .setUserInfo(UserInfo.newBuilder().build())
+ *           .setConversationalFilteringSpec(
+ *               ConversationalSearchRequest.ConversationalFilteringSpec.newBuilder().build())
+ *           .putAllUserLabels(new HashMap<String, String>())
+ *           .addAllSafetySettings(new ArrayList<SafetySetting>())
+ *           .build();
+ *   ServerStream<ConversationalSearchResponse> stream =
+ *       conversationalSearchServiceClient.conversationalSearchCallable().call(request);
+ *   for (ConversationalSearchResponse response : stream) {
+ *     // Do something when a response is received.
+ *   }
+ * }
+ * }</pre>
+ *
+ * <p>======================= GenerativeQuestionServiceClient =======================
+ *
+ * <p>Service Description: Service for managing LLM generated questions in search serving.
+ *
+ * <p>Sample for GenerativeQuestionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (GenerativeQuestionServiceClient generativeQuestionServiceClient =
+ *     GenerativeQuestionServiceClient.create()) {
+ *   GenerativeQuestionsFeatureConfig generativeQuestionsFeatureConfig =
+ *       GenerativeQuestionsFeatureConfig.newBuilder().build();
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   GenerativeQuestionsFeatureConfig response =
+ *       generativeQuestionServiceClient.updateGenerativeQuestionsFeatureConfig(
+ *           generativeQuestionsFeatureConfig, updateMask);
  * }
  * }</pre>
  *
@@ -215,6 +302,24 @@
  * }
  * }</pre>
  *
+ * <p>======================= ProjectServiceClient =======================
+ *
+ * <p>Service Description: Service for settings at Project level.
+ *
+ * <p>Sample for ProjectServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ProjectServiceClient projectServiceClient = ProjectServiceClient.create()) {
+ *   RetailProjectName name = RetailProjectName.of("[PROJECT]");
+ *   Project response = projectServiceClient.getProject(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= SearchServiceClient =======================
  *
  * <p>Service Description: Service for search.
@@ -250,11 +355,19 @@
  *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
  *           .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
  *           .addAllVariantRollupKeys(new ArrayList<String>())
+ *           .setExperimentId("experimentId-404563464")
  *           .addAllPageCategories(new ArrayList<String>())
  *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
  *           .putAllLabels(new HashMap<String, String>())
  *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
  *           .setEntity("entity-1298275357")
+ *           .setConversationalSearchSpec(
+ *               SearchRequest.ConversationalSearchSpec.newBuilder().build())
+ *           .setTileNavigationSpec(SearchRequest.TileNavigationSpec.newBuilder().build())
+ *           .setLanguageCode("languageCode-2092349083")
+ *           .setRegionCode("regionCode-1991004415")
+ *           .setPlaceId("placeId-494224254")
+ *           .putAllUserAttributes(new HashMap<String, StringList>())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);

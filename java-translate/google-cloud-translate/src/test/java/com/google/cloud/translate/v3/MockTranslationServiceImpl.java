@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,6 +82,27 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
   }
 
   @Override
+  public void romanizeText(
+      RomanizeTextRequest request, StreamObserver<RomanizeTextResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RomanizeTextResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RomanizeTextResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RomanizeText, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RomanizeTextResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void detectLanguage(
       DetectLanguageRequest request, StreamObserver<DetectLanguageResponse> responseObserver) {
     Object response = responses.poll();
@@ -116,7 +137,8 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetSupportedLanguages, expected %s or %s",
+                  "Unrecognized response type %s for method GetSupportedLanguages, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SupportedLanguages.class.getName(),
                   Exception.class.getName())));
@@ -180,7 +202,8 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchTranslateDocument, expected %s or %s",
+                  "Unrecognized response type %s for method BatchTranslateDocument, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -202,6 +225,27 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateGlossary, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateGlossary(
+      UpdateGlossaryRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateGlossary, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -271,6 +315,195 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
   }
 
   @Override
+  public void getGlossaryEntry(
+      GetGlossaryEntryRequest request, StreamObserver<GlossaryEntry> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GlossaryEntry) {
+      requests.add(request);
+      responseObserver.onNext(((GlossaryEntry) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGlossaryEntry, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GlossaryEntry.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listGlossaryEntries(
+      ListGlossaryEntriesRequest request,
+      StreamObserver<ListGlossaryEntriesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListGlossaryEntriesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListGlossaryEntriesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListGlossaryEntries, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListGlossaryEntriesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createGlossaryEntry(
+      CreateGlossaryEntryRequest request, StreamObserver<GlossaryEntry> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GlossaryEntry) {
+      requests.add(request);
+      responseObserver.onNext(((GlossaryEntry) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateGlossaryEntry, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GlossaryEntry.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateGlossaryEntry(
+      UpdateGlossaryEntryRequest request, StreamObserver<GlossaryEntry> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GlossaryEntry) {
+      requests.add(request);
+      responseObserver.onNext(((GlossaryEntry) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateGlossaryEntry, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GlossaryEntry.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteGlossaryEntry(
+      DeleteGlossaryEntryRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteGlossaryEntry, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createDataset(
+      CreateDatasetRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDataset, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDataset(GetDatasetRequest request, StreamObserver<Dataset> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Dataset) {
+      requests.add(request);
+      responseObserver.onNext(((Dataset) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDataset, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Dataset.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDatasets(
+      ListDatasetsRequest request, StreamObserver<ListDatasetsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDatasetsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDatasetsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDatasets, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDatasetsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteDataset(
+      DeleteDatasetRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDataset, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createAdaptiveMtDataset(
       CreateAdaptiveMtDatasetRequest request, StreamObserver<AdaptiveMtDataset> responseObserver) {
     Object response = responses.poll();
@@ -284,7 +517,8 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateAdaptiveMtDataset, expected %s or %s",
+                  "Unrecognized response type %s for method CreateAdaptiveMtDataset, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   AdaptiveMtDataset.class.getName(),
                   Exception.class.getName())));
@@ -305,7 +539,8 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteAdaptiveMtDataset, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteAdaptiveMtDataset, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -326,7 +561,8 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetAdaptiveMtDataset, expected %s or %s",
+                  "Unrecognized response type %s for method GetAdaptiveMtDataset, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   AdaptiveMtDataset.class.getName(),
                   Exception.class.getName())));
@@ -348,7 +584,8 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListAdaptiveMtDatasets, expected %s or %s",
+                  "Unrecognized response type %s for method ListAdaptiveMtDatasets, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAdaptiveMtDatasetsResponse.class.getName(),
                   Exception.class.getName())));
@@ -412,7 +649,8 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteAdaptiveMtFile, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteAdaptiveMtFile, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -434,7 +672,8 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ImportAdaptiveMtFile, expected %s or %s",
+                  "Unrecognized response type %s for method ImportAdaptiveMtFile, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ImportAdaptiveMtFileResponse.class.getName(),
                   Exception.class.getName())));
@@ -478,9 +717,152 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListAdaptiveMtSentences, expected %s or %s",
+                  "Unrecognized response type %s for method ListAdaptiveMtSentences, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAdaptiveMtSentencesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void importData(ImportDataRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ImportData, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void exportData(ExportDataRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExportData, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listExamples(
+      ListExamplesRequest request, StreamObserver<ListExamplesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListExamplesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListExamplesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListExamples, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListExamplesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createModel(CreateModelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listModels(
+      ListModelsRequest request, StreamObserver<ListModelsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListModelsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListModelsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListModels, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListModelsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getModel(GetModelRequest request, StreamObserver<Model> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Model) {
+      requests.add(request);
+      responseObserver.onNext(((Model) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Model.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteModel(DeleteModelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

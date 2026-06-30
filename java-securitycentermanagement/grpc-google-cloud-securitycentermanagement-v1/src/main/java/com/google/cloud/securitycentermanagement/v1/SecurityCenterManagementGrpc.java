@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/securitycentermanagement/v1/security_center_management.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SecurityCenterManagementGrpc {
 
@@ -1208,6 +1205,173 @@ public final class SecurityCenterManagementGrpc {
     return getValidateEventThreatDetectionCustomModuleMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest,
+          com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+      getGetSecurityCenterServiceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSecurityCenterService",
+      requestType =
+          com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest.class,
+      responseType = com.google.cloud.securitycentermanagement.v1.SecurityCenterService.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest,
+          com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+      getGetSecurityCenterServiceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest,
+            com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+        getGetSecurityCenterServiceMethod;
+    if ((getGetSecurityCenterServiceMethod =
+            SecurityCenterManagementGrpc.getGetSecurityCenterServiceMethod)
+        == null) {
+      synchronized (SecurityCenterManagementGrpc.class) {
+        if ((getGetSecurityCenterServiceMethod =
+                SecurityCenterManagementGrpc.getGetSecurityCenterServiceMethod)
+            == null) {
+          SecurityCenterManagementGrpc.getGetSecurityCenterServiceMethod =
+              getGetSecurityCenterServiceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycentermanagement.v1
+                              .GetSecurityCenterServiceRequest,
+                          com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetSecurityCenterService"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycentermanagement.v1
+                                  .GetSecurityCenterServiceRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycentermanagement.v1.SecurityCenterService
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterManagementMethodDescriptorSupplier(
+                              "GetSecurityCenterService"))
+                      .build();
+        }
+      }
+    }
+    return getGetSecurityCenterServiceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest,
+          com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse>
+      getListSecurityCenterServicesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSecurityCenterServices",
+      requestType =
+          com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest.class,
+      responseType =
+          com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest,
+          com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse>
+      getListSecurityCenterServicesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest,
+            com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse>
+        getListSecurityCenterServicesMethod;
+    if ((getListSecurityCenterServicesMethod =
+            SecurityCenterManagementGrpc.getListSecurityCenterServicesMethod)
+        == null) {
+      synchronized (SecurityCenterManagementGrpc.class) {
+        if ((getListSecurityCenterServicesMethod =
+                SecurityCenterManagementGrpc.getListSecurityCenterServicesMethod)
+            == null) {
+          SecurityCenterManagementGrpc.getListSecurityCenterServicesMethod =
+              getListSecurityCenterServicesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycentermanagement.v1
+                              .ListSecurityCenterServicesRequest,
+                          com.google.cloud.securitycentermanagement.v1
+                              .ListSecurityCenterServicesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListSecurityCenterServices"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycentermanagement.v1
+                                  .ListSecurityCenterServicesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycentermanagement.v1
+                                  .ListSecurityCenterServicesResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterManagementMethodDescriptorSupplier(
+                              "ListSecurityCenterServices"))
+                      .build();
+        }
+      }
+    }
+    return getListSecurityCenterServicesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest,
+          com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+      getUpdateSecurityCenterServiceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSecurityCenterService",
+      requestType =
+          com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest.class,
+      responseType = com.google.cloud.securitycentermanagement.v1.SecurityCenterService.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest,
+          com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+      getUpdateSecurityCenterServiceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest,
+            com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+        getUpdateSecurityCenterServiceMethod;
+    if ((getUpdateSecurityCenterServiceMethod =
+            SecurityCenterManagementGrpc.getUpdateSecurityCenterServiceMethod)
+        == null) {
+      synchronized (SecurityCenterManagementGrpc.class) {
+        if ((getUpdateSecurityCenterServiceMethod =
+                SecurityCenterManagementGrpc.getUpdateSecurityCenterServiceMethod)
+            == null) {
+          SecurityCenterManagementGrpc.getUpdateSecurityCenterServiceMethod =
+              getUpdateSecurityCenterServiceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycentermanagement.v1
+                              .UpdateSecurityCenterServiceRequest,
+                          com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateSecurityCenterService"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycentermanagement.v1
+                                  .UpdateSecurityCenterServiceRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycentermanagement.v1.SecurityCenterService
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterManagementMethodDescriptorSupplier(
+                              "UpdateSecurityCenterService"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSecurityCenterServiceMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static SecurityCenterManagementStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SecurityCenterManagementStub> factory =
@@ -1219,6 +1383,19 @@ public final class SecurityCenterManagementGrpc {
           }
         };
     return SecurityCenterManagementStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SecurityCenterManagementBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SecurityCenterManagementBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SecurityCenterManagementBlockingV2Stub>() {
+          @java.lang.Override
+          public SecurityCenterManagementBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SecurityCenterManagementBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SecurityCenterManagementBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -1262,10 +1439,11 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the
-     * given parent. This includes resident modules defined at the scope of the
-     * parent, and inherited modules, inherited from CRM ancestors (no
-     * descendants).
+     * Returns a list of all
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
      * </pre>
      */
     default void listEffectiveSecurityHealthAnalyticsCustomModules(
@@ -1284,7 +1462,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Gets details of a single EffectiveSecurityHealthAnalyticsCustomModule.
+     * Gets details of a single
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule].
      * </pre>
      */
     default void getEffectiveSecurityHealthAnalyticsCustomModule(
@@ -1303,9 +1482,11 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all SecurityHealthAnalyticsCustomModules for the given
-     * parent. This includes resident modules defined at the scope of the parent,
-     * and inherited modules, inherited from CRM ancestors (no descendants).
+     * Returns a list of all
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
      * </pre>
      */
     default void listSecurityHealthAnalyticsCustomModules(
@@ -1323,8 +1504,10 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all resident SecurityHealthAnalyticsCustomModules under
-     * the given CRM parent and all of the parent's CRM descendants.
+     * Returns a list of all resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources under the given organization, folder, or project and all of its
+     * descendants.
      * </pre>
      */
     default void listDescendantSecurityHealthAnalyticsCustomModules(
@@ -1343,7 +1526,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Retrieves a SecurityHealthAnalyticsCustomModule.
+     * Retrieves a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule].
      * </pre>
      */
     default void getSecurityHealthAnalyticsCustomModule(
@@ -1360,10 +1544,12 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the
-     * given CRM parent, and also creates inherited
-     * SecurityHealthAnalyticsCustomModules for all CRM descendants of the given
-     * parent. These modules are enabled by default.
+     * Creates a resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * at the scope of the given organization, folder, or project, and also
+     * creates inherited `SecurityHealthAnalyticsCustomModule` resources for all
+     * folders and projects that are descendants of the given parent. These
+     * modules are enabled by default.
      * </pre>
      */
     default void createSecurityHealthAnalyticsCustomModule(
@@ -1381,11 +1567,13 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Updates the SecurityHealthAnalyticsCustomModule under the given name based
-     * on the given update mask. Updating the enablement state is supported on
-     * both resident and inherited modules (though resident modules cannot have an
-     * enablement state of "inherited"). Updating the display name and custom
-     * config of a module is supported on resident modules only.
+     * Updates the
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * under the given name based on the given update mask. Updating the
+     * enablement state is supported on both resident and inherited modules
+     * (though resident modules cannot have an enablement state of "inherited").
+     * Updating the display name and custom configuration of a module is supported
+     * on resident modules only.
      * </pre>
      */
     default void updateSecurityHealthAnalyticsCustomModule(
@@ -1403,9 +1591,10 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its
-     * descendants in the CRM hierarchy. This method is only supported for
-     * resident custom modules.
+     * Deletes the specified
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * and all of its descendants in the resource hierarchy. This method is only
+     * supported for resident custom modules.
      * </pre>
      */
     default void deleteSecurityHealthAnalyticsCustomModule(
@@ -1421,7 +1610,9 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+     * Simulates the result of using a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * to check a resource.
      * </pre>
      */
     default void simulateSecurityHealthAnalyticsCustomModule(
@@ -1461,13 +1652,17 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Gets an effective ETD custom module. Retrieves the effective module at the
-     * given level. The difference between an EffectiveCustomModule and a
-     * CustomModule is that the fields for an EffectiveCustomModule are computed
-     * from ancestors if needed. For example, the enablement_state for a
-     * CustomModule can be either ENABLED, DISABLED, or INHERITED. Where as the
-     * enablement_state for an EffectiveCustomModule is always computed to ENABLED
-     * or DISABLED (the effective enablement_state).
+     * Gets the effective Event Threat Detection custom module at the given level.
+     * The difference between an
+     * [EffectiveEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule]
+     * and an
+     * [EventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule]
+     * is that the fields for an `EffectiveEventThreatDetectionCustomModule` are
+     * computed from ancestors if needed. For example, the enablement state for an
+     * `EventThreatDetectionCustomModule` can be `ENABLED`, `DISABLED`, or
+     * `INHERITED`. In contrast, the enablement state for an
+     * `EffectiveEventThreatDetectionCustomModule` is always computed as `ENABLED`
+     * or `DISABLED`.
      * </pre>
      */
     default void getEffectiveEventThreatDetectionCustomModule(
@@ -1486,9 +1681,9 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Lists all Event Threat Detection custom modules for the given
-     * Resource Manager parent. This includes resident modules defined at the
-     * scope of the parent along with modules inherited from ancestors.
+     * Lists all Event Threat Detection custom modules for the given organization,
+     * folder, or project. This includes resident modules defined at the scope of
+     * the parent along with modules inherited from ancestors.
      * </pre>
      */
     default void listEventThreatDetectionCustomModules(
@@ -1506,8 +1701,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Lists all resident Event Threat Detection custom modules under the
-     * given Resource Manager parent and its descendants.
+     * Lists all resident Event Threat Detection custom modules for the given
+     * organization, folder, or project and its descendants.
      * </pre>
      */
     default void listDescendantEventThreatDetectionCustomModules(
@@ -1544,9 +1739,9 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Creates a resident Event Threat Detection custom module at the scope of the
-     * given Resource Manager parent, and also creates inherited custom modules
-     * for all descendants of the given parent. These modules are enabled by
-     * default.
+     * given organization, folder, or project, and creates inherited custom
+     * modules for all descendants of the given parent. These modules are enabled
+     * by default.
      * </pre>
      */
     default void createEventThreatDetectionCustomModule(
@@ -1586,8 +1781,8 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Deletes the specified Event Threat Detection custom module and all of its
-     * descendants in the Resource Manager hierarchy. This method is only
-     * supported for resident custom modules.
+     * descendants in the resource hierarchy. This method is only supported for
+     * resident custom modules.
      * </pre>
      */
     default void deleteEventThreatDetectionCustomModule(
@@ -1614,6 +1809,55 @@ public final class SecurityCenterManagementGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getValidateEventThreatDetectionCustomModuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets service settings for the specified Security Command Center service.
+     * </pre>
+     */
+    default void getSecurityCenterService(
+        com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSecurityCenterServiceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all Security Command Center services for the given
+     * parent.
+     * </pre>
+     */
+    default void listSecurityCenterServices(
+        com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSecurityCenterServicesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Security Command Center service using the given update mask.
+     * </pre>
+     */
+    default void updateSecurityCenterService(
+        com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSecurityCenterServiceMethod(), responseObserver);
     }
   }
 
@@ -1656,10 +1900,11 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the
-     * given parent. This includes resident modules defined at the scope of the
-     * parent, and inherited modules, inherited from CRM ancestors (no
-     * descendants).
+     * Returns a list of all
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
      * </pre>
      */
     public void listEffectiveSecurityHealthAnalyticsCustomModules(
@@ -1682,7 +1927,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Gets details of a single EffectiveSecurityHealthAnalyticsCustomModule.
+     * Gets details of a single
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule].
      * </pre>
      */
     public void getEffectiveSecurityHealthAnalyticsCustomModule(
@@ -1705,9 +1951,11 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all SecurityHealthAnalyticsCustomModules for the given
-     * parent. This includes resident modules defined at the scope of the parent,
-     * and inherited modules, inherited from CRM ancestors (no descendants).
+     * Returns a list of all
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
      * </pre>
      */
     public void listSecurityHealthAnalyticsCustomModules(
@@ -1728,8 +1976,10 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all resident SecurityHealthAnalyticsCustomModules under
-     * the given CRM parent and all of the parent's CRM descendants.
+     * Returns a list of all resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources under the given organization, folder, or project and all of its
+     * descendants.
      * </pre>
      */
     public void listDescendantSecurityHealthAnalyticsCustomModules(
@@ -1752,7 +2002,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Retrieves a SecurityHealthAnalyticsCustomModule.
+     * Retrieves a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule].
      * </pre>
      */
     public void getSecurityHealthAnalyticsCustomModule(
@@ -1771,10 +2022,12 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the
-     * given CRM parent, and also creates inherited
-     * SecurityHealthAnalyticsCustomModules for all CRM descendants of the given
-     * parent. These modules are enabled by default.
+     * Creates a resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * at the scope of the given organization, folder, or project, and also
+     * creates inherited `SecurityHealthAnalyticsCustomModule` resources for all
+     * folders and projects that are descendants of the given parent. These
+     * modules are enabled by default.
      * </pre>
      */
     public void createSecurityHealthAnalyticsCustomModule(
@@ -1795,11 +2048,13 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Updates the SecurityHealthAnalyticsCustomModule under the given name based
-     * on the given update mask. Updating the enablement state is supported on
-     * both resident and inherited modules (though resident modules cannot have an
-     * enablement state of "inherited"). Updating the display name and custom
-     * config of a module is supported on resident modules only.
+     * Updates the
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * under the given name based on the given update mask. Updating the
+     * enablement state is supported on both resident and inherited modules
+     * (though resident modules cannot have an enablement state of "inherited").
+     * Updating the display name and custom configuration of a module is supported
+     * on resident modules only.
      * </pre>
      */
     public void updateSecurityHealthAnalyticsCustomModule(
@@ -1820,9 +2075,10 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its
-     * descendants in the CRM hierarchy. This method is only supported for
-     * resident custom modules.
+     * Deletes the specified
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * and all of its descendants in the resource hierarchy. This method is only
+     * supported for resident custom modules.
      * </pre>
      */
     public void deleteSecurityHealthAnalyticsCustomModule(
@@ -1841,7 +2097,9 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+     * Simulates the result of using a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * to check a resource.
      * </pre>
      */
     public void simulateSecurityHealthAnalyticsCustomModule(
@@ -1887,13 +2145,17 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Gets an effective ETD custom module. Retrieves the effective module at the
-     * given level. The difference between an EffectiveCustomModule and a
-     * CustomModule is that the fields for an EffectiveCustomModule are computed
-     * from ancestors if needed. For example, the enablement_state for a
-     * CustomModule can be either ENABLED, DISABLED, or INHERITED. Where as the
-     * enablement_state for an EffectiveCustomModule is always computed to ENABLED
-     * or DISABLED (the effective enablement_state).
+     * Gets the effective Event Threat Detection custom module at the given level.
+     * The difference between an
+     * [EffectiveEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule]
+     * and an
+     * [EventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule]
+     * is that the fields for an `EffectiveEventThreatDetectionCustomModule` are
+     * computed from ancestors if needed. For example, the enablement state for an
+     * `EventThreatDetectionCustomModule` can be `ENABLED`, `DISABLED`, or
+     * `INHERITED`. In contrast, the enablement state for an
+     * `EffectiveEventThreatDetectionCustomModule` is always computed as `ENABLED`
+     * or `DISABLED`.
      * </pre>
      */
     public void getEffectiveEventThreatDetectionCustomModule(
@@ -1915,9 +2177,9 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Lists all Event Threat Detection custom modules for the given
-     * Resource Manager parent. This includes resident modules defined at the
-     * scope of the parent along with modules inherited from ancestors.
+     * Lists all Event Threat Detection custom modules for the given organization,
+     * folder, or project. This includes resident modules defined at the scope of
+     * the parent along with modules inherited from ancestors.
      * </pre>
      */
     public void listEventThreatDetectionCustomModules(
@@ -1937,8 +2199,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Lists all resident Event Threat Detection custom modules under the
-     * given Resource Manager parent and its descendants.
+     * Lists all resident Event Threat Detection custom modules for the given
+     * organization, folder, or project and its descendants.
      * </pre>
      */
     public void listDescendantEventThreatDetectionCustomModules(
@@ -1981,9 +2243,9 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Creates a resident Event Threat Detection custom module at the scope of the
-     * given Resource Manager parent, and also creates inherited custom modules
-     * for all descendants of the given parent. These modules are enabled by
-     * default.
+     * given organization, folder, or project, and creates inherited custom
+     * modules for all descendants of the given parent. These modules are enabled
+     * by default.
      * </pre>
      */
     public void createEventThreatDetectionCustomModule(
@@ -2027,8 +2289,8 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Deletes the specified Event Threat Detection custom module and all of its
-     * descendants in the Resource Manager hierarchy. This method is only
-     * supported for resident custom modules.
+     * descendants in the resource hierarchy. This method is only supported for
+     * resident custom modules.
      * </pre>
      */
     public void deleteEventThreatDetectionCustomModule(
@@ -2061,10 +2323,548 @@ public final class SecurityCenterManagementGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets service settings for the specified Security Command Center service.
+     * </pre>
+     */
+    public void getSecurityCenterService(
+        com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSecurityCenterServiceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all Security Command Center services for the given
+     * parent.
+     * </pre>
+     */
+    public void listSecurityCenterServices(
+        com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSecurityCenterServicesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Security Command Center service using the given update mask.
+     * </pre>
+     */
+    public void updateSecurityCenterService(
+        com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSecurityCenterServiceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SecurityCenterManagement.
+   *
+   * <pre>
+   * Service describing handlers for resources
+   * </pre>
+   */
+  public static final class SecurityCenterManagementBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SecurityCenterManagementBlockingV2Stub> {
+    private SecurityCenterManagementBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SecurityCenterManagementBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SecurityCenterManagementBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1
+            .ListEffectiveSecurityHealthAnalyticsCustomModulesResponse
+        listEffectiveSecurityHealthAnalyticsCustomModules(
+            com.google.cloud.securitycentermanagement.v1
+                    .ListEffectiveSecurityHealthAnalyticsCustomModulesRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getListEffectiveSecurityHealthAnalyticsCustomModulesMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule].
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule
+        getEffectiveSecurityHealthAnalyticsCustomModule(
+            com.google.cloud.securitycentermanagement.v1
+                    .GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1
+            .ListSecurityHealthAnalyticsCustomModulesResponse
+        listSecurityHealthAnalyticsCustomModules(
+            com.google.cloud.securitycentermanagement.v1
+                    .ListSecurityHealthAnalyticsCustomModulesRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getListSecurityHealthAnalyticsCustomModulesMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources under the given organization, folder, or project and all of its
+     * descendants.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1
+            .ListDescendantSecurityHealthAnalyticsCustomModulesResponse
+        listDescendantSecurityHealthAnalyticsCustomModules(
+            com.google.cloud.securitycentermanagement.v1
+                    .ListDescendantSecurityHealthAnalyticsCustomModulesRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getListDescendantSecurityHealthAnalyticsCustomModulesMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule].
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule
+        getSecurityHealthAnalyticsCustomModule(
+            com.google.cloud.securitycentermanagement.v1
+                    .GetSecurityHealthAnalyticsCustomModuleRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getGetSecurityHealthAnalyticsCustomModuleMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * at the scope of the given organization, folder, or project, and also
+     * creates inherited `SecurityHealthAnalyticsCustomModule` resources for all
+     * folders and projects that are descendants of the given parent. These
+     * modules are enabled by default.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule
+        createSecurityHealthAnalyticsCustomModule(
+            com.google.cloud.securitycentermanagement.v1
+                    .CreateSecurityHealthAnalyticsCustomModuleRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getCreateSecurityHealthAnalyticsCustomModuleMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * under the given name based on the given update mask. Updating the
+     * enablement state is supported on both resident and inherited modules
+     * (though resident modules cannot have an enablement state of "inherited").
+     * Updating the display name and custom configuration of a module is supported
+     * on resident modules only.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule
+        updateSecurityHealthAnalyticsCustomModule(
+            com.google.cloud.securitycentermanagement.v1
+                    .UpdateSecurityHealthAnalyticsCustomModuleRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getUpdateSecurityHealthAnalyticsCustomModuleMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * and all of its descendants in the resource hierarchy. This method is only
+     * supported for resident custom modules.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSecurityHealthAnalyticsCustomModule(
+        com.google.cloud.securitycentermanagement.v1
+                .DeleteSecurityHealthAnalyticsCustomModuleRequest
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getDeleteSecurityHealthAnalyticsCustomModuleMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Simulates the result of using a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * to check a resource.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1
+            .SimulateSecurityHealthAnalyticsCustomModuleResponse
+        simulateSecurityHealthAnalyticsCustomModule(
+            com.google.cloud.securitycentermanagement.v1
+                    .SimulateSecurityHealthAnalyticsCustomModuleRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getSimulateSecurityHealthAnalyticsCustomModuleMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all effective Event Threat Detection custom modules for the
+     * given parent. This includes resident modules defined at the scope of the
+     * parent along with modules inherited from its ancestors.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1
+            .ListEffectiveEventThreatDetectionCustomModulesResponse
+        listEffectiveEventThreatDetectionCustomModules(
+            com.google.cloud.securitycentermanagement.v1
+                    .ListEffectiveEventThreatDetectionCustomModulesRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getListEffectiveEventThreatDetectionCustomModulesMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the effective Event Threat Detection custom module at the given level.
+     * The difference between an
+     * [EffectiveEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule]
+     * and an
+     * [EventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule]
+     * is that the fields for an `EffectiveEventThreatDetectionCustomModule` are
+     * computed from ancestors if needed. For example, the enablement state for an
+     * `EventThreatDetectionCustomModule` can be `ENABLED`, `DISABLED`, or
+     * `INHERITED`. In contrast, the enablement state for an
+     * `EffectiveEventThreatDetectionCustomModule` is always computed as `ENABLED`
+     * or `DISABLED`.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule
+        getEffectiveEventThreatDetectionCustomModule(
+            com.google.cloud.securitycentermanagement.v1
+                    .GetEffectiveEventThreatDetectionCustomModuleRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getGetEffectiveEventThreatDetectionCustomModuleMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Event Threat Detection custom modules for the given organization,
+     * folder, or project. This includes resident modules defined at the scope of
+     * the parent along with modules inherited from ancestors.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1
+            .ListEventThreatDetectionCustomModulesResponse
+        listEventThreatDetectionCustomModules(
+            com.google.cloud.securitycentermanagement.v1
+                    .ListEventThreatDetectionCustomModulesRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getListEventThreatDetectionCustomModulesMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all resident Event Threat Detection custom modules for the given
+     * organization, folder, or project and its descendants.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1
+            .ListDescendantEventThreatDetectionCustomModulesResponse
+        listDescendantEventThreatDetectionCustomModules(
+            com.google.cloud.securitycentermanagement.v1
+                    .ListDescendantEventThreatDetectionCustomModulesRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getListDescendantEventThreatDetectionCustomModulesMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Event Threat Detection custom module.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule
+        getEventThreatDetectionCustomModule(
+            com.google.cloud.securitycentermanagement.v1.GetEventThreatDetectionCustomModuleRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEventThreatDetectionCustomModuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a resident Event Threat Detection custom module at the scope of the
+     * given organization, folder, or project, and creates inherited custom
+     * modules for all descendants of the given parent. These modules are enabled
+     * by default.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule
+        createEventThreatDetectionCustomModule(
+            com.google.cloud.securitycentermanagement.v1
+                    .CreateEventThreatDetectionCustomModuleRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getCreateEventThreatDetectionCustomModuleMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Event Threat Detection custom module with the given name based
+     * on the given update mask. Updating the enablement state is supported for
+     * both resident and inherited modules (though resident modules cannot have an
+     * enablement state of "inherited"). Updating the display name or
+     * configuration of a module is supported for resident modules only. The type
+     * of a module cannot be changed.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule
+        updateEventThreatDetectionCustomModule(
+            com.google.cloud.securitycentermanagement.v1
+                    .UpdateEventThreatDetectionCustomModuleRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getUpdateEventThreatDetectionCustomModuleMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified Event Threat Detection custom module and all of its
+     * descendants in the resource hierarchy. This method is only supported for
+     * resident custom modules.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEventThreatDetectionCustomModule(
+        com.google.cloud.securitycentermanagement.v1.DeleteEventThreatDetectionCustomModuleRequest
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getDeleteEventThreatDetectionCustomModuleMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Validates the given Event Threat Detection custom module.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1
+            .ValidateEventThreatDetectionCustomModuleResponse
+        validateEventThreatDetectionCustomModule(
+            com.google.cloud.securitycentermanagement.v1
+                    .ValidateEventThreatDetectionCustomModuleRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getValidateEventThreatDetectionCustomModuleMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets service settings for the specified Security Command Center service.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.SecurityCenterService
+        getSecurityCenterService(
+            com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetSecurityCenterServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all Security Command Center services for the given
+     * parent.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse
+        listSecurityCenterServices(
+            com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListSecurityCenterServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Security Command Center service using the given update mask.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.SecurityCenterService
+        updateSecurityCenterService(
+            com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateSecurityCenterServiceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * SecurityCenterManagement.
    *
    * <pre>
    * Service describing handlers for resources
@@ -2087,10 +2887,11 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the
-     * given parent. This includes resident modules defined at the scope of the
-     * parent, and inherited modules, inherited from CRM ancestors (no
-     * descendants).
+     * Returns a list of all
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1
@@ -2110,7 +2911,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Gets details of a single EffectiveSecurityHealthAnalyticsCustomModule.
+     * Gets details of a single
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule].
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule
@@ -2129,9 +2931,11 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all SecurityHealthAnalyticsCustomModules for the given
-     * parent. This includes resident modules defined at the scope of the parent,
-     * and inherited modules, inherited from CRM ancestors (no descendants).
+     * Returns a list of all
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1
@@ -2151,8 +2955,10 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all resident SecurityHealthAnalyticsCustomModules under
-     * the given CRM parent and all of the parent's CRM descendants.
+     * Returns a list of all resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources under the given organization, folder, or project and all of its
+     * descendants.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1
@@ -2172,7 +2978,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Retrieves a SecurityHealthAnalyticsCustomModule.
+     * Retrieves a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule].
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule
@@ -2191,10 +2998,12 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the
-     * given CRM parent, and also creates inherited
-     * SecurityHealthAnalyticsCustomModules for all CRM descendants of the given
-     * parent. These modules are enabled by default.
+     * Creates a resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * at the scope of the given organization, folder, or project, and also
+     * creates inherited `SecurityHealthAnalyticsCustomModule` resources for all
+     * folders and projects that are descendants of the given parent. These
+     * modules are enabled by default.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule
@@ -2213,11 +3022,13 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Updates the SecurityHealthAnalyticsCustomModule under the given name based
-     * on the given update mask. Updating the enablement state is supported on
-     * both resident and inherited modules (though resident modules cannot have an
-     * enablement state of "inherited"). Updating the display name and custom
-     * config of a module is supported on resident modules only.
+     * Updates the
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * under the given name based on the given update mask. Updating the
+     * enablement state is supported on both resident and inherited modules
+     * (though resident modules cannot have an enablement state of "inherited").
+     * Updating the display name and custom configuration of a module is supported
+     * on resident modules only.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule
@@ -2236,9 +3047,10 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its
-     * descendants in the CRM hierarchy. This method is only supported for
-     * resident custom modules.
+     * Deletes the specified
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * and all of its descendants in the resource hierarchy. This method is only
+     * supported for resident custom modules.
      * </pre>
      */
     public com.google.protobuf.Empty deleteSecurityHealthAnalyticsCustomModule(
@@ -2256,7 +3068,9 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+     * Simulates the result of using a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * to check a resource.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1
@@ -2298,13 +3112,17 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Gets an effective ETD custom module. Retrieves the effective module at the
-     * given level. The difference between an EffectiveCustomModule and a
-     * CustomModule is that the fields for an EffectiveCustomModule are computed
-     * from ancestors if needed. For example, the enablement_state for a
-     * CustomModule can be either ENABLED, DISABLED, or INHERITED. Where as the
-     * enablement_state for an EffectiveCustomModule is always computed to ENABLED
-     * or DISABLED (the effective enablement_state).
+     * Gets the effective Event Threat Detection custom module at the given level.
+     * The difference between an
+     * [EffectiveEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule]
+     * and an
+     * [EventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule]
+     * is that the fields for an `EffectiveEventThreatDetectionCustomModule` are
+     * computed from ancestors if needed. For example, the enablement state for an
+     * `EventThreatDetectionCustomModule` can be `ENABLED`, `DISABLED`, or
+     * `INHERITED`. In contrast, the enablement state for an
+     * `EffectiveEventThreatDetectionCustomModule` is always computed as `ENABLED`
+     * or `DISABLED`.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule
@@ -2323,9 +3141,9 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Lists all Event Threat Detection custom modules for the given
-     * Resource Manager parent. This includes resident modules defined at the
-     * scope of the parent along with modules inherited from ancestors.
+     * Lists all Event Threat Detection custom modules for the given organization,
+     * folder, or project. This includes resident modules defined at the scope of
+     * the parent along with modules inherited from ancestors.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1
@@ -2345,8 +3163,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Lists all resident Event Threat Detection custom modules under the
-     * given Resource Manager parent and its descendants.
+     * Lists all resident Event Threat Detection custom modules for the given
+     * organization, folder, or project and its descendants.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1
@@ -2382,9 +3200,9 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Creates a resident Event Threat Detection custom module at the scope of the
-     * given Resource Manager parent, and also creates inherited custom modules
-     * for all descendants of the given parent. These modules are enabled by
-     * default.
+     * given organization, folder, or project, and creates inherited custom
+     * modules for all descendants of the given parent. These modules are enabled
+     * by default.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule
@@ -2428,8 +3246,8 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Deletes the specified Event Threat Detection custom module and all of its
-     * descendants in the Resource Manager hierarchy. This method is only
-     * supported for resident custom modules.
+     * descendants in the resource hierarchy. This method is only supported for
+     * resident custom modules.
      * </pre>
      */
     public com.google.protobuf.Empty deleteEventThreatDetectionCustomModule(
@@ -2461,6 +3279,51 @@ public final class SecurityCenterManagementGrpc {
           getCallOptions(),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets service settings for the specified Security Command Center service.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.SecurityCenterService
+        getSecurityCenterService(
+            com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSecurityCenterServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all Security Command Center services for the given
+     * parent.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse
+        listSecurityCenterServices(
+            com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSecurityCenterServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Security Command Center service using the given update mask.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.SecurityCenterService
+        updateSecurityCenterService(
+            com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSecurityCenterServiceMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2488,10 +3351,11 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the
-     * given parent. This includes resident modules defined at the scope of the
-     * parent, and inherited modules, inherited from CRM ancestors (no
-     * descendants).
+     * Returns a list of all
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2512,7 +3376,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Gets details of a single EffectiveSecurityHealthAnalyticsCustomModule.
+     * Gets details of a single
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2533,9 +3398,11 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all SecurityHealthAnalyticsCustomModules for the given
-     * parent. This includes resident modules defined at the scope of the parent,
-     * and inherited modules, inherited from CRM ancestors (no descendants).
+     * Returns a list of all
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2555,8 +3422,10 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all resident SecurityHealthAnalyticsCustomModules under
-     * the given CRM parent and all of the parent's CRM descendants.
+     * Returns a list of all resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources under the given organization, folder, or project and all of its
+     * descendants.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2577,7 +3446,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Retrieves a SecurityHealthAnalyticsCustomModule.
+     * Retrieves a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2595,10 +3465,12 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the
-     * given CRM parent, and also creates inherited
-     * SecurityHealthAnalyticsCustomModules for all CRM descendants of the given
-     * parent. These modules are enabled by default.
+     * Creates a resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * at the scope of the given organization, folder, or project, and also
+     * creates inherited `SecurityHealthAnalyticsCustomModule` resources for all
+     * folders and projects that are descendants of the given parent. These
+     * modules are enabled by default.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2617,11 +3489,13 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Updates the SecurityHealthAnalyticsCustomModule under the given name based
-     * on the given update mask. Updating the enablement state is supported on
-     * both resident and inherited modules (though resident modules cannot have an
-     * enablement state of "inherited"). Updating the display name and custom
-     * config of a module is supported on resident modules only.
+     * Updates the
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * under the given name based on the given update mask. Updating the
+     * enablement state is supported on both resident and inherited modules
+     * (though resident modules cannot have an enablement state of "inherited").
+     * Updating the display name and custom configuration of a module is supported
+     * on resident modules only.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2640,9 +3514,10 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its
-     * descendants in the CRM hierarchy. This method is only supported for
-     * resident custom modules.
+     * Deletes the specified
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * and all of its descendants in the resource hierarchy. This method is only
+     * supported for resident custom modules.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2660,7 +3535,9 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+     * Simulates the result of using a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * to check a resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2702,13 +3579,17 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Gets an effective ETD custom module. Retrieves the effective module at the
-     * given level. The difference between an EffectiveCustomModule and a
-     * CustomModule is that the fields for an EffectiveCustomModule are computed
-     * from ancestors if needed. For example, the enablement_state for a
-     * CustomModule can be either ENABLED, DISABLED, or INHERITED. Where as the
-     * enablement_state for an EffectiveCustomModule is always computed to ENABLED
-     * or DISABLED (the effective enablement_state).
+     * Gets the effective Event Threat Detection custom module at the given level.
+     * The difference between an
+     * [EffectiveEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule]
+     * and an
+     * [EventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule]
+     * is that the fields for an `EffectiveEventThreatDetectionCustomModule` are
+     * computed from ancestors if needed. For example, the enablement state for an
+     * `EventThreatDetectionCustomModule` can be `ENABLED`, `DISABLED`, or
+     * `INHERITED`. In contrast, the enablement state for an
+     * `EffectiveEventThreatDetectionCustomModule` is always computed as `ENABLED`
+     * or `DISABLED`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2727,9 +3608,9 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Lists all Event Threat Detection custom modules for the given
-     * Resource Manager parent. This includes resident modules defined at the
-     * scope of the parent along with modules inherited from ancestors.
+     * Lists all Event Threat Detection custom modules for the given organization,
+     * folder, or project. This includes resident modules defined at the scope of
+     * the parent along with modules inherited from ancestors.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2748,8 +3629,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Lists all resident Event Threat Detection custom modules under the
-     * given Resource Manager parent and its descendants.
+     * Lists all resident Event Threat Detection custom modules for the given
+     * organization, folder, or project and its descendants.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2788,9 +3669,9 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Creates a resident Event Threat Detection custom module at the scope of the
-     * given Resource Manager parent, and also creates inherited custom modules
-     * for all descendants of the given parent. These modules are enabled by
-     * default.
+     * given organization, folder, or project, and creates inherited custom
+     * modules for all descendants of the given parent. These modules are enabled
+     * by default.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2832,8 +3713,8 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Deletes the specified Event Threat Detection custom module and all of its
-     * descendants in the Resource Manager hierarchy. This method is only
-     * supported for resident custom modules.
+     * descendants in the resource hierarchy. This method is only supported for
+     * resident custom modules.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2865,6 +3746,54 @@ public final class SecurityCenterManagementGrpc {
               .newCall(getValidateEventThreatDetectionCustomModuleMethod(), getCallOptions()),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets service settings for the specified Security Command Center service.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+        getSecurityCenterService(
+            com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSecurityCenterServiceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all Security Command Center services for the given
+     * parent.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse>
+        listSecurityCenterServices(
+            com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSecurityCenterServicesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Security Command Center service using the given update mask.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+        updateSecurityCenterService(
+            com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSecurityCenterServiceMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_EFFECTIVE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES = 0;
@@ -2885,6 +3814,9 @@ public final class SecurityCenterManagementGrpc {
   private static final int METHODID_UPDATE_EVENT_THREAT_DETECTION_CUSTOM_MODULE = 15;
   private static final int METHODID_DELETE_EVENT_THREAT_DETECTION_CUSTOM_MODULE = 16;
   private static final int METHODID_VALIDATE_EVENT_THREAT_DETECTION_CUSTOM_MODULE = 17;
+  private static final int METHODID_GET_SECURITY_CENTER_SERVICE = 18;
+  private static final int METHODID_LIST_SECURITY_CENTER_SERVICES = 19;
+  private static final int METHODID_UPDATE_SECURITY_CENTER_SERVICE = 20;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3077,6 +4009,31 @@ public final class SecurityCenterManagementGrpc {
                           .ValidateEventThreatDetectionCustomModuleResponse>)
                   responseObserver);
           break;
+        case METHODID_GET_SECURITY_CENTER_SERVICE:
+          serviceImpl.getSecurityCenterService(
+              (com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securitycentermanagement.v1.SecurityCenterService>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SECURITY_CENTER_SERVICES:
+          serviceImpl.listSecurityCenterServices(
+              (com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securitycentermanagement.v1
+                          .ListSecurityCenterServicesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_SECURITY_CENTER_SERVICE:
+          serviceImpl.updateSecurityCenterService(
+              (com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securitycentermanagement.v1.SecurityCenterService>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -3252,6 +4209,28 @@ public final class SecurityCenterManagementGrpc {
                     com.google.cloud.securitycentermanagement.v1
                         .ValidateEventThreatDetectionCustomModuleResponse>(
                     service, METHODID_VALIDATE_EVENT_THREAT_DETECTION_CUSTOM_MODULE)))
+        .addMethod(
+            getGetSecurityCenterServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest,
+                    com.google.cloud.securitycentermanagement.v1.SecurityCenterService>(
+                    service, METHODID_GET_SECURITY_CENTER_SERVICE)))
+        .addMethod(
+            getListSecurityCenterServicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest,
+                    com.google.cloud.securitycentermanagement.v1
+                        .ListSecurityCenterServicesResponse>(
+                    service, METHODID_LIST_SECURITY_CENTER_SERVICES)))
+        .addMethod(
+            getUpdateSecurityCenterServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest,
+                    com.google.cloud.securitycentermanagement.v1.SecurityCenterService>(
+                    service, METHODID_UPDATE_SECURITY_CENTER_SERVICE)))
         .build();
   }
 
@@ -3322,6 +4301,9 @@ public final class SecurityCenterManagementGrpc {
                       .addMethod(getUpdateEventThreatDetectionCustomModuleMethod())
                       .addMethod(getDeleteEventThreatDetectionCustomModuleMethod())
                       .addMethod(getValidateEventThreatDetectionCustomModuleMethod())
+                      .addMethod(getGetSecurityCenterServiceMethod())
+                      .addMethod(getListSecurityCenterServicesMethod())
+                      .addMethod(getUpdateSecurityCenterServiceMethod())
                       .build();
         }
       }

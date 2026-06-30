@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,9 @@
 package com.google.cloud.discoveryengine.v1alpha.stub.samples;
 
 // [START discoveryengine_v1alpha_generated_SearchTuningServiceStubSettings_TrainCustomModel_sync]
+import com.google.api.gax.longrunning.OperationalTimedPollAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import com.google.cloud.discoveryengine.v1alpha.stub.SearchTuningServiceStubSettings;
 import java.time.Duration;
 
@@ -34,17 +37,18 @@ public class SyncTrainCustomModel {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     SearchTuningServiceStubSettings.Builder searchTuningServiceSettingsBuilder =
         SearchTuningServiceStubSettings.newBuilder();
-    searchTuningServiceSettingsBuilder
-        .trainCustomModelSettings()
-        .setRetrySettings(
-            searchTuningServiceSettingsBuilder
-                .trainCustomModelSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
+    TimedRetryAlgorithm timedRetryAlgorithm =
+        OperationalTimedPollAlgorithm.create(
+            RetrySettings.newBuilder()
+                .setInitialRetryDelayDuration(Duration.ofMillis(500))
+                .setRetryDelayMultiplier(1.5)
+                .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+                .setTotalTimeoutDuration(Duration.ofHours(24))
                 .build());
-    SearchTuningServiceStubSettings searchTuningServiceSettings =
-        searchTuningServiceSettingsBuilder.build();
+    searchTuningServiceSettingsBuilder
+        .createClusterOperationSettings()
+        .setPollingAlgorithm(timedRetryAlgorithm)
+        .build();
   }
 }
 // [END discoveryengine_v1alpha_generated_SearchTuningServiceStubSettings_TrainCustomModel_sync]

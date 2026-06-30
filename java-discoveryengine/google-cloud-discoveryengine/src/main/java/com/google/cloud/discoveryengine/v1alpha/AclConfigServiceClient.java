@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,7 +58,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateAclConfig</td>
- *      <td><p> Default Acl Configuration for use in a location of a customer's project. Updates will only reflect to new data stores. Existing data stores will still use the old value.</td>
+ *      <td><p> Default ACL configuration for use in a location of a customer's project. Updates will only reflect to new data stores. Existing data stores will still use the old value.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -200,7 +200,7 @@ public class AclConfigServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Default Acl Configuration for use in a location of a customer's project. Updates will only
+   * Default ACL configuration for use in a location of a customer's project. Updates will only
    * reflect to new data stores. Existing data stores will still use the old value.
    *
    * <p>Sample code:
@@ -227,7 +227,7 @@ public class AclConfigServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Default Acl Configuration for use in a location of a customer's project. Updates will only
+   * Default ACL configuration for use in a location of a customer's project. Updates will only
    * reflect to new data stores. Existing data stores will still use the old value.
    *
    * <p>Sample code:

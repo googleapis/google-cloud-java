@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Google Analytics reporting data service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/analytics/data/v1alpha/analytics_data_api.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AlphaAnalyticsDataGrpc {
 
@@ -177,57 +174,6 @@ public final class AlphaAnalyticsDataGrpc {
       }
     }
     return getQueryAudienceListMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.data.v1alpha.SheetExportAudienceListRequest,
-          com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>
-      getSheetExportAudienceListMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SheetExportAudienceList",
-      requestType = com.google.analytics.data.v1alpha.SheetExportAudienceListRequest.class,
-      responseType = com.google.analytics.data.v1alpha.SheetExportAudienceListResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.data.v1alpha.SheetExportAudienceListRequest,
-          com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>
-      getSheetExportAudienceListMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.data.v1alpha.SheetExportAudienceListRequest,
-            com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>
-        getSheetExportAudienceListMethod;
-    if ((getSheetExportAudienceListMethod = AlphaAnalyticsDataGrpc.getSheetExportAudienceListMethod)
-        == null) {
-      synchronized (AlphaAnalyticsDataGrpc.class) {
-        if ((getSheetExportAudienceListMethod =
-                AlphaAnalyticsDataGrpc.getSheetExportAudienceListMethod)
-            == null) {
-          AlphaAnalyticsDataGrpc.getSheetExportAudienceListMethod =
-              getSheetExportAudienceListMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.data.v1alpha.SheetExportAudienceListRequest,
-                          com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "SheetExportAudienceList"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.data.v1alpha.SheetExportAudienceListRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.data.v1alpha.SheetExportAudienceListResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AlphaAnalyticsDataMethodDescriptorSupplier("SheetExportAudienceList"))
-                      .build();
-        }
-      }
-    }
-    return getSheetExportAudienceListMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -483,6 +429,339 @@ public final class AlphaAnalyticsDataGrpc {
     return getListRecurringAudienceListsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest,
+          com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>
+      getGetPropertyQuotasSnapshotMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPropertyQuotasSnapshot",
+      requestType = com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest.class,
+      responseType = com.google.analytics.data.v1alpha.PropertyQuotasSnapshot.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest,
+          com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>
+      getGetPropertyQuotasSnapshotMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest,
+            com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>
+        getGetPropertyQuotasSnapshotMethod;
+    if ((getGetPropertyQuotasSnapshotMethod =
+            AlphaAnalyticsDataGrpc.getGetPropertyQuotasSnapshotMethod)
+        == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getGetPropertyQuotasSnapshotMethod =
+                AlphaAnalyticsDataGrpc.getGetPropertyQuotasSnapshotMethod)
+            == null) {
+          AlphaAnalyticsDataGrpc.getGetPropertyQuotasSnapshotMethod =
+              getGetPropertyQuotasSnapshotMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest,
+                          com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetPropertyQuotasSnapshot"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.PropertyQuotasSnapshot
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier(
+                              "GetPropertyQuotasSnapshot"))
+                      .build();
+        }
+      }
+    }
+    return getGetPropertyQuotasSnapshotMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.CreateReportTaskRequest,
+          com.google.longrunning.Operation>
+      getCreateReportTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateReportTask",
+      requestType = com.google.analytics.data.v1alpha.CreateReportTaskRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.CreateReportTaskRequest,
+          com.google.longrunning.Operation>
+      getCreateReportTaskMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.CreateReportTaskRequest,
+            com.google.longrunning.Operation>
+        getCreateReportTaskMethod;
+    if ((getCreateReportTaskMethod = AlphaAnalyticsDataGrpc.getCreateReportTaskMethod) == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getCreateReportTaskMethod = AlphaAnalyticsDataGrpc.getCreateReportTaskMethod)
+            == null) {
+          AlphaAnalyticsDataGrpc.getCreateReportTaskMethod =
+              getCreateReportTaskMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.CreateReportTaskRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateReportTask"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.CreateReportTaskRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier("CreateReportTask"))
+                      .build();
+        }
+      }
+    }
+    return getCreateReportTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.QueryReportTaskRequest,
+          com.google.analytics.data.v1alpha.QueryReportTaskResponse>
+      getQueryReportTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "QueryReportTask",
+      requestType = com.google.analytics.data.v1alpha.QueryReportTaskRequest.class,
+      responseType = com.google.analytics.data.v1alpha.QueryReportTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.QueryReportTaskRequest,
+          com.google.analytics.data.v1alpha.QueryReportTaskResponse>
+      getQueryReportTaskMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.QueryReportTaskRequest,
+            com.google.analytics.data.v1alpha.QueryReportTaskResponse>
+        getQueryReportTaskMethod;
+    if ((getQueryReportTaskMethod = AlphaAnalyticsDataGrpc.getQueryReportTaskMethod) == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getQueryReportTaskMethod = AlphaAnalyticsDataGrpc.getQueryReportTaskMethod) == null) {
+          AlphaAnalyticsDataGrpc.getQueryReportTaskMethod =
+              getQueryReportTaskMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.QueryReportTaskRequest,
+                          com.google.analytics.data.v1alpha.QueryReportTaskResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "QueryReportTask"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.QueryReportTaskRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.QueryReportTaskResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier("QueryReportTask"))
+                      .build();
+        }
+      }
+    }
+    return getQueryReportTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.GetReportTaskRequest,
+          com.google.analytics.data.v1alpha.ReportTask>
+      getGetReportTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetReportTask",
+      requestType = com.google.analytics.data.v1alpha.GetReportTaskRequest.class,
+      responseType = com.google.analytics.data.v1alpha.ReportTask.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.GetReportTaskRequest,
+          com.google.analytics.data.v1alpha.ReportTask>
+      getGetReportTaskMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.GetReportTaskRequest,
+            com.google.analytics.data.v1alpha.ReportTask>
+        getGetReportTaskMethod;
+    if ((getGetReportTaskMethod = AlphaAnalyticsDataGrpc.getGetReportTaskMethod) == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getGetReportTaskMethod = AlphaAnalyticsDataGrpc.getGetReportTaskMethod) == null) {
+          AlphaAnalyticsDataGrpc.getGetReportTaskMethod =
+              getGetReportTaskMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.GetReportTaskRequest,
+                          com.google.analytics.data.v1alpha.ReportTask>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetReportTask"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.GetReportTaskRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.ReportTask.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier("GetReportTask"))
+                      .build();
+        }
+      }
+    }
+    return getGetReportTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.ListReportTasksRequest,
+          com.google.analytics.data.v1alpha.ListReportTasksResponse>
+      getListReportTasksMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListReportTasks",
+      requestType = com.google.analytics.data.v1alpha.ListReportTasksRequest.class,
+      responseType = com.google.analytics.data.v1alpha.ListReportTasksResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.ListReportTasksRequest,
+          com.google.analytics.data.v1alpha.ListReportTasksResponse>
+      getListReportTasksMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.ListReportTasksRequest,
+            com.google.analytics.data.v1alpha.ListReportTasksResponse>
+        getListReportTasksMethod;
+    if ((getListReportTasksMethod = AlphaAnalyticsDataGrpc.getListReportTasksMethod) == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getListReportTasksMethod = AlphaAnalyticsDataGrpc.getListReportTasksMethod) == null) {
+          AlphaAnalyticsDataGrpc.getListReportTasksMethod =
+              getListReportTasksMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.ListReportTasksRequest,
+                          com.google.analytics.data.v1alpha.ListReportTasksResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListReportTasks"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.ListReportTasksRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.ListReportTasksResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier("ListReportTasks"))
+                      .build();
+        }
+      }
+    }
+    return getListReportTasksMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.RunReportRequest,
+          com.google.analytics.data.v1alpha.RunReportResponse>
+      getRunReportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RunReport",
+      requestType = com.google.analytics.data.v1alpha.RunReportRequest.class,
+      responseType = com.google.analytics.data.v1alpha.RunReportResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.RunReportRequest,
+          com.google.analytics.data.v1alpha.RunReportResponse>
+      getRunReportMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.RunReportRequest,
+            com.google.analytics.data.v1alpha.RunReportResponse>
+        getRunReportMethod;
+    if ((getRunReportMethod = AlphaAnalyticsDataGrpc.getRunReportMethod) == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getRunReportMethod = AlphaAnalyticsDataGrpc.getRunReportMethod) == null) {
+          AlphaAnalyticsDataGrpc.getRunReportMethod =
+              getRunReportMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.RunReportRequest,
+                          com.google.analytics.data.v1alpha.RunReportResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RunReport"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.RunReportRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.RunReportResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier("RunReport"))
+                      .build();
+        }
+      }
+    }
+    return getRunReportMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.GetMetadataRequest,
+          com.google.analytics.data.v1alpha.Metadata>
+      getGetMetadataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMetadata",
+      requestType = com.google.analytics.data.v1alpha.GetMetadataRequest.class,
+      responseType = com.google.analytics.data.v1alpha.Metadata.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.GetMetadataRequest,
+          com.google.analytics.data.v1alpha.Metadata>
+      getGetMetadataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.GetMetadataRequest,
+            com.google.analytics.data.v1alpha.Metadata>
+        getGetMetadataMethod;
+    if ((getGetMetadataMethod = AlphaAnalyticsDataGrpc.getGetMetadataMethod) == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getGetMetadataMethod = AlphaAnalyticsDataGrpc.getGetMetadataMethod) == null) {
+          AlphaAnalyticsDataGrpc.getGetMetadataMethod =
+              getGetMetadataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.GetMetadataRequest,
+                          com.google.analytics.data.v1alpha.Metadata>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMetadata"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.GetMetadataRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.Metadata.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier("GetMetadata"))
+                      .build();
+        }
+      }
+    }
+    return getGetMetadataMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AlphaAnalyticsDataStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AlphaAnalyticsDataStub> factory =
@@ -494,6 +773,19 @@ public final class AlphaAnalyticsDataGrpc {
           }
         };
     return AlphaAnalyticsDataStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AlphaAnalyticsDataBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AlphaAnalyticsDataBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AlphaAnalyticsDataBlockingV2Stub>() {
+          @java.lang.Override
+          public AlphaAnalyticsDataBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AlphaAnalyticsDataBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AlphaAnalyticsDataBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -627,37 +919,6 @@ public final class AlphaAnalyticsDataGrpc {
      *
      *
      * <pre>
-     * Exports an audience list of users to a Google Sheet. After creating an
-     * audience, the users are not immediately available for listing. First, a
-     * request to `CreateAudienceList` is necessary to create an audience list of
-     * users, and then second, this method is used to export those users in the
-     * audience list to a Google Sheet.
-     * See [Creating an Audience
-     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
-     * for an introduction to Audience Lists with examples.
-     * Audiences in Google Analytics 4 allow you to segment your users in the ways
-     * that are important to your business. To learn more, see
-     * https://support.google.com/analytics/answer/9267572.
-     * This method is introduced at alpha stability with the intention of
-     * gathering feedback on syntax and capabilities before entering beta. To give
-     * your feedback on this API, complete the
-     * [Google Analytics Audience Export API
-     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
-     * </pre>
-     */
-    default void sheetExportAudienceList(
-        com.google.analytics.data.v1alpha.SheetExportAudienceListRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getSheetExportAudienceListMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Gets configuration metadata about a specific audience list. This method
      * can be used to understand an audience list after it has been created.
      * See [Creating an Audience
@@ -782,6 +1043,136 @@ public final class AlphaAnalyticsDataGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListRecurringAudienceListsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get all property quotas organized by quota category for a given property.
+     * This will charge 1 property quota from the category with the most quota.
+     * </pre>
+     */
+    default void getPropertyQuotasSnapshot(
+        com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetPropertyQuotasSnapshotMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the creation of a report task. This method quickly
+     * returns a report task and initiates a long running
+     * asynchronous request to form a customized report of your Google Analytics
+     * event data.
+     * A report task will be retained and available for querying for 72 hours
+     * after it has been created.
+     * A report task created by one user can be listed and queried by all users
+     * who have access to the property.
+     * </pre>
+     */
+    default void createReportTask(
+        com.google.analytics.data.v1alpha.CreateReportTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateReportTaskMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a report task's content. After requesting the `CreateReportTask`,
+     * you are able to retrieve the report content once the report is
+     * ACTIVE. This method will return an error if the report task's state is not
+     * `ACTIVE`. A query response will return the tabular row &amp; column values of
+     * the report.
+     * </pre>
+     */
+    default void queryReportTask(
+        com.google.analytics.data.v1alpha.QueryReportTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.QueryReportTaskResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getQueryReportTaskMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets report metadata about a specific report task. After creating a report
+     * task, use this method to check its processing state or inspect its
+     * report definition.
+     * </pre>
+     */
+    default void getReportTask(
+        com.google.analytics.data.v1alpha.GetReportTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.ReportTask>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetReportTaskMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all report tasks for a property.
+     * </pre>
+     */
+    default void listReportTasks(
+        com.google.analytics.data.v1alpha.ListReportTasksRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.ListReportTasksResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListReportTasksMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized report of your Google Analytics event data. Reports
+     * contain statistics derived from data collected by the Google Analytics
+     * tracking code. The data returned from the API is as a table with columns
+     * for the requested dimensions and metrics. Metrics are individual
+     * measurements of user activity on your property, such as active users or
+     * event count. Dimensions break down metrics across some common criteria,
+     * such as country or event name.
+     * </pre>
+     */
+    default void runReport(
+        com.google.analytics.data.v1alpha.RunReportRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.RunReportResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunReportMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns metadata for dimensions and metrics available in reporting methods.
+     * Used to explore the dimensions and metrics. In this method, a Google
+     * Analytics property identifier is specified in the request, and
+     * the metadata response includes Custom dimensions and metrics as well as
+     * Universal metadata.
+     * For example if a custom metric with parameter name `levels_unlocked` is
+     * registered to a property, the Metadata response will contain
+     * `customEvent:levels_unlocked`. Universal metadata are dimensions and
+     * metrics applicable to any property such as `country` and `totalUsers`.
+     * </pre>
+     */
+    default void getMetadata(
+        com.google.analytics.data.v1alpha.GetMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.Metadata> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetMetadataMethod(), responseObserver);
     }
   }
 
@@ -912,39 +1303,6 @@ public final class AlphaAnalyticsDataGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getQueryAudienceListMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Exports an audience list of users to a Google Sheet. After creating an
-     * audience, the users are not immediately available for listing. First, a
-     * request to `CreateAudienceList` is necessary to create an audience list of
-     * users, and then second, this method is used to export those users in the
-     * audience list to a Google Sheet.
-     * See [Creating an Audience
-     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
-     * for an introduction to Audience Lists with examples.
-     * Audiences in Google Analytics 4 allow you to segment your users in the ways
-     * that are important to your business. To learn more, see
-     * https://support.google.com/analytics/answer/9267572.
-     * This method is introduced at alpha stability with the intention of
-     * gathering feedback on syntax and capabilities before entering beta. To give
-     * your feedback on this API, complete the
-     * [Google Analytics Audience Export API
-     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
-     * </pre>
-     */
-    public void sheetExportAudienceList(
-        com.google.analytics.data.v1alpha.SheetExportAudienceListRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getSheetExportAudienceListMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1088,10 +1446,512 @@ public final class AlphaAnalyticsDataGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get all property quotas organized by quota category for a given property.
+     * This will charge 1 property quota from the category with the most quota.
+     * </pre>
+     */
+    public void getPropertyQuotasSnapshot(
+        com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPropertyQuotasSnapshotMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the creation of a report task. This method quickly
+     * returns a report task and initiates a long running
+     * asynchronous request to form a customized report of your Google Analytics
+     * event data.
+     * A report task will be retained and available for querying for 72 hours
+     * after it has been created.
+     * A report task created by one user can be listed and queried by all users
+     * who have access to the property.
+     * </pre>
+     */
+    public void createReportTask(
+        com.google.analytics.data.v1alpha.CreateReportTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateReportTaskMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a report task's content. After requesting the `CreateReportTask`,
+     * you are able to retrieve the report content once the report is
+     * ACTIVE. This method will return an error if the report task's state is not
+     * `ACTIVE`. A query response will return the tabular row &amp; column values of
+     * the report.
+     * </pre>
+     */
+    public void queryReportTask(
+        com.google.analytics.data.v1alpha.QueryReportTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.QueryReportTaskResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getQueryReportTaskMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets report metadata about a specific report task. After creating a report
+     * task, use this method to check its processing state or inspect its
+     * report definition.
+     * </pre>
+     */
+    public void getReportTask(
+        com.google.analytics.data.v1alpha.GetReportTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.ReportTask>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetReportTaskMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all report tasks for a property.
+     * </pre>
+     */
+    public void listReportTasks(
+        com.google.analytics.data.v1alpha.ListReportTasksRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.ListReportTasksResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListReportTasksMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized report of your Google Analytics event data. Reports
+     * contain statistics derived from data collected by the Google Analytics
+     * tracking code. The data returned from the API is as a table with columns
+     * for the requested dimensions and metrics. Metrics are individual
+     * measurements of user activity on your property, such as active users or
+     * event count. Dimensions break down metrics across some common criteria,
+     * such as country or event name.
+     * </pre>
+     */
+    public void runReport(
+        com.google.analytics.data.v1alpha.RunReportRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.RunReportResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRunReportMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns metadata for dimensions and metrics available in reporting methods.
+     * Used to explore the dimensions and metrics. In this method, a Google
+     * Analytics property identifier is specified in the request, and
+     * the metadata response includes Custom dimensions and metrics as well as
+     * Universal metadata.
+     * For example if a custom metric with parameter name `levels_unlocked` is
+     * registered to a property, the Metadata response will contain
+     * `customEvent:levels_unlocked`. Universal metadata are dimensions and
+     * metrics applicable to any property such as `country` and `totalUsers`.
+     * </pre>
+     */
+    public void getMetadata(
+        com.google.analytics.data.v1alpha.GetMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.Metadata> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMetadataMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AlphaAnalyticsData.
+   *
+   * <pre>
+   * Google Analytics reporting data service.
+   * </pre>
+   */
+  public static final class AlphaAnalyticsDataBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AlphaAnalyticsDataBlockingV2Stub> {
+    private AlphaAnalyticsDataBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AlphaAnalyticsDataBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AlphaAnalyticsDataBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized funnel report of your Google Analytics event data. The
+     * data returned from the API is as a table with columns for the requested
+     * dimensions and metrics.
+     * Funnel exploration lets you visualize the steps your users take to complete
+     * a task and quickly see how well they are succeeding or failing at each
+     * step. For example, how do prospects become shoppers and then become buyers?
+     * How do one time buyers become repeat buyers? With this information, you can
+     * improve inefficient or abandoned customer journeys. To learn more, see [GA4
+     * Funnel Explorations](https://support.google.com/analytics/answer/9327974).
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the [Google Analytics Data API Funnel
+     * Reporting
+     * Feedback](https://docs.google.com/forms/d/e/1FAIpQLSdwOlQDJAUoBiIgUZZ3S_Lwi8gr7Bb0k1jhvc-DEg7Rol3UjA/viewform).
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.RunFunnelReportResponse runFunnelReport(
+        com.google.analytics.data.v1alpha.RunFunnelReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRunFunnelReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an audience list for later retrieval. This method quickly returns
+     * the audience list's resource name and initiates a long running asynchronous
+     * request to form an audience list. To list the users in an audience list,
+     * first create the audience list through this method and then send the
+     * audience resource name to the `QueryAudienceList` method.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
+     * An audience list is a snapshot of the users currently in the audience at
+     * the time of audience list creation. Creating audience lists for one
+     * audience on different days will return different results as users enter and
+     * exit the audience.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572. Audience lists contain
+     * the users in each audience.
+     * This method is available at beta stability at
+     * [audienceExports.create](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/create).
+     * To give your feedback on this API, complete the [Google Analytics Audience
+     * Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAudienceList(
+        com.google.analytics.data.v1alpha.CreateAudienceListRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAudienceListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves an audience list of users. After creating an audience, the users
+     * are not immediately available for listing. First, a request to
+     * `CreateAudienceList` is necessary to create an audience list of users, and
+     * then second, this method is used to retrieve the users in the audience
+     * list.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572.
+     * This method is available at beta stability at
+     * [audienceExports.query](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/query).
+     * To give your feedback on this API, complete the [Google Analytics Audience
+     * Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.QueryAudienceListResponse queryAudienceList(
+        com.google.analytics.data.v1alpha.QueryAudienceListRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getQueryAudienceListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets configuration metadata about a specific audience list. This method
+     * can be used to understand an audience list after it has been created.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
+     * This method is available at beta stability at
+     * [audienceExports.get](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/get).
+     * To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.AudienceList getAudienceList(
+        com.google.analytics.data.v1alpha.GetAudienceListRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAudienceListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all audience lists for a property. This method can be used for you to
+     * find and reuse existing audience lists rather than creating unnecessary new
+     * audience lists. The same audience can have multiple audience lists that
+     * represent the list of users that were in an audience on different days.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
+     * This method is available at beta stability at
+     * [audienceExports.list](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/list).
+     * To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.ListAudienceListsResponse listAudienceLists(
+        com.google.analytics.data.v1alpha.ListAudienceListsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAudienceListsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a recurring audience list. Recurring audience lists produces new
+     * audience lists each day. Audience lists are users in an audience at the
+     * time of the list's creation.
+     * A recurring audience list ensures that you have audience list based on the
+     * most recent data available for use each day. If you manually create
+     * audience list, you don't know when an audience list based on an additional
+     * day's data is available. This recurring audience list automates the
+     * creation of an audience list when an additional day's data is available.
+     * You will consume fewer quota tokens by using recurring audience list versus
+     * manually creating audience list at various times of day trying to guess
+     * when an additional day's data is ready.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.RecurringAudienceList createRecurringAudienceList(
+        com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateRecurringAudienceListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets configuration metadata about a specific recurring audience list. This
+     * method can be used to understand a recurring audience list's state after it
+     * has been created. For example, a recurring audience list resource will
+     * generate audience list instances for each day, and this method can be used
+     * to get the resource name of the most recent audience list instance.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.RecurringAudienceList getRecurringAudienceList(
+        com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetRecurringAudienceListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all recurring audience lists for a property. This method can be used
+     * for you to find and reuse existing recurring audience lists rather than
+     * creating unnecessary new recurring audience lists. The same audience can
+     * have multiple recurring audience lists that represent different dimension
+     * combinations; for example, just the dimension `deviceId` or both the
+     * dimensions `deviceId` and `userId`.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse
+        listRecurringAudienceLists(
+            com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListRecurringAudienceListsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get all property quotas organized by quota category for a given property.
+     * This will charge 1 property quota from the category with the most quota.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.PropertyQuotasSnapshot getPropertyQuotasSnapshot(
+        com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetPropertyQuotasSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the creation of a report task. This method quickly
+     * returns a report task and initiates a long running
+     * asynchronous request to form a customized report of your Google Analytics
+     * event data.
+     * A report task will be retained and available for querying for 72 hours
+     * after it has been created.
+     * A report task created by one user can be listed and queried by all users
+     * who have access to the property.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createReportTask(
+        com.google.analytics.data.v1alpha.CreateReportTaskRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateReportTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a report task's content. After requesting the `CreateReportTask`,
+     * you are able to retrieve the report content once the report is
+     * ACTIVE. This method will return an error if the report task's state is not
+     * `ACTIVE`. A query response will return the tabular row &amp; column values of
+     * the report.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.QueryReportTaskResponse queryReportTask(
+        com.google.analytics.data.v1alpha.QueryReportTaskRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getQueryReportTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets report metadata about a specific report task. After creating a report
+     * task, use this method to check its processing state or inspect its
+     * report definition.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.ReportTask getReportTask(
+        com.google.analytics.data.v1alpha.GetReportTaskRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetReportTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all report tasks for a property.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.ListReportTasksResponse listReportTasks(
+        com.google.analytics.data.v1alpha.ListReportTasksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListReportTasksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized report of your Google Analytics event data. Reports
+     * contain statistics derived from data collected by the Google Analytics
+     * tracking code. The data returned from the API is as a table with columns
+     * for the requested dimensions and metrics. Metrics are individual
+     * measurements of user activity on your property, such as active users or
+     * event count. Dimensions break down metrics across some common criteria,
+     * such as country or event name.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.RunReportResponse runReport(
+        com.google.analytics.data.v1alpha.RunReportRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRunReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns metadata for dimensions and metrics available in reporting methods.
+     * Used to explore the dimensions and metrics. In this method, a Google
+     * Analytics property identifier is specified in the request, and
+     * the metadata response includes Custom dimensions and metrics as well as
+     * Universal metadata.
+     * For example if a custom metric with parameter name `levels_unlocked` is
+     * registered to a property, the Metadata response will contain
+     * `customEvent:levels_unlocked`. Universal metadata are dimensions and
+     * metrics applicable to any property such as `country` and `totalUsers`.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.Metadata getMetadata(
+        com.google.analytics.data.v1alpha.GetMetadataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetMetadataMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AlphaAnalyticsData.
    *
    * <pre>
    * Google Analytics reporting data service.
@@ -1193,35 +2053,6 @@ public final class AlphaAnalyticsDataGrpc {
         com.google.analytics.data.v1alpha.QueryAudienceListRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getQueryAudienceListMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Exports an audience list of users to a Google Sheet. After creating an
-     * audience, the users are not immediately available for listing. First, a
-     * request to `CreateAudienceList` is necessary to create an audience list of
-     * users, and then second, this method is used to export those users in the
-     * audience list to a Google Sheet.
-     * See [Creating an Audience
-     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
-     * for an introduction to Audience Lists with examples.
-     * Audiences in Google Analytics 4 allow you to segment your users in the ways
-     * that are important to your business. To learn more, see
-     * https://support.google.com/analytics/answer/9267572.
-     * This method is introduced at alpha stability with the intention of
-     * gathering feedback on syntax and capabilities before entering beta. To give
-     * your feedback on this API, complete the
-     * [Google Analytics Audience Export API
-     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
-     * </pre>
-     */
-    public com.google.analytics.data.v1alpha.SheetExportAudienceListResponse
-        sheetExportAudienceList(
-            com.google.analytics.data.v1alpha.SheetExportAudienceListRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSheetExportAudienceListMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1343,6 +2174,125 @@ public final class AlphaAnalyticsDataGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListRecurringAudienceListsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get all property quotas organized by quota category for a given property.
+     * This will charge 1 property quota from the category with the most quota.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.PropertyQuotasSnapshot getPropertyQuotasSnapshot(
+        com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPropertyQuotasSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the creation of a report task. This method quickly
+     * returns a report task and initiates a long running
+     * asynchronous request to form a customized report of your Google Analytics
+     * event data.
+     * A report task will be retained and available for querying for 72 hours
+     * after it has been created.
+     * A report task created by one user can be listed and queried by all users
+     * who have access to the property.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createReportTask(
+        com.google.analytics.data.v1alpha.CreateReportTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReportTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a report task's content. After requesting the `CreateReportTask`,
+     * you are able to retrieve the report content once the report is
+     * ACTIVE. This method will return an error if the report task's state is not
+     * `ACTIVE`. A query response will return the tabular row &amp; column values of
+     * the report.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.QueryReportTaskResponse queryReportTask(
+        com.google.analytics.data.v1alpha.QueryReportTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryReportTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets report metadata about a specific report task. After creating a report
+     * task, use this method to check its processing state or inspect its
+     * report definition.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.ReportTask getReportTask(
+        com.google.analytics.data.v1alpha.GetReportTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReportTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all report tasks for a property.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.ListReportTasksResponse listReportTasks(
+        com.google.analytics.data.v1alpha.ListReportTasksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReportTasksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized report of your Google Analytics event data. Reports
+     * contain statistics derived from data collected by the Google Analytics
+     * tracking code. The data returned from the API is as a table with columns
+     * for the requested dimensions and metrics. Metrics are individual
+     * measurements of user activity on your property, such as active users or
+     * event count. Dimensions break down metrics across some common criteria,
+     * such as country or event name.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.RunReportResponse runReport(
+        com.google.analytics.data.v1alpha.RunReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns metadata for dimensions and metrics available in reporting methods.
+     * Used to explore the dimensions and metrics. In this method, a Google
+     * Analytics property identifier is specified in the request, and
+     * the metadata response includes Custom dimensions and metrics as well as
+     * Universal metadata.
+     * For example if a custom metric with parameter name `levels_unlocked` is
+     * registered to a property, the Metadata response will contain
+     * `customEvent:levels_unlocked`. Universal metadata are dimensions and
+     * metrics applicable to any property such as `country` and `totalUsers`.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.Metadata getMetadata(
+        com.google.analytics.data.v1alpha.GetMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMetadataMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1449,36 +2399,6 @@ public final class AlphaAnalyticsDataGrpc {
         queryAudienceList(com.google.analytics.data.v1alpha.QueryAudienceListRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getQueryAudienceListMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Exports an audience list of users to a Google Sheet. After creating an
-     * audience, the users are not immediately available for listing. First, a
-     * request to `CreateAudienceList` is necessary to create an audience list of
-     * users, and then second, this method is used to export those users in the
-     * audience list to a Google Sheet.
-     * See [Creating an Audience
-     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
-     * for an introduction to Audience Lists with examples.
-     * Audiences in Google Analytics 4 allow you to segment your users in the ways
-     * that are important to your business. To learn more, see
-     * https://support.google.com/analytics/answer/9267572.
-     * This method is introduced at alpha stability with the intention of
-     * gathering feedback on syntax and capabilities before entering beta. To give
-     * your feedback on this API, complete the
-     * [Google Analytics Audience Export API
-     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>
-        sheetExportAudienceList(
-            com.google.analytics.data.v1alpha.SheetExportAudienceListRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getSheetExportAudienceListMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1607,17 +2527,149 @@ public final class AlphaAnalyticsDataGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListRecurringAudienceListsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get all property quotas organized by quota category for a given property.
+     * This will charge 1 property quota from the category with the most quota.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>
+        getPropertyQuotasSnapshot(
+            com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPropertyQuotasSnapshotMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the creation of a report task. This method quickly
+     * returns a report task and initiates a long running
+     * asynchronous request to form a customized report of your Google Analytics
+     * event data.
+     * A report task will be retained and available for querying for 72 hours
+     * after it has been created.
+     * A report task created by one user can be listed and queried by all users
+     * who have access to the property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createReportTask(com.google.analytics.data.v1alpha.CreateReportTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateReportTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a report task's content. After requesting the `CreateReportTask`,
+     * you are able to retrieve the report content once the report is
+     * ACTIVE. This method will return an error if the report task's state is not
+     * `ACTIVE`. A query response will return the tabular row &amp; column values of
+     * the report.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.QueryReportTaskResponse>
+        queryReportTask(com.google.analytics.data.v1alpha.QueryReportTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getQueryReportTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets report metadata about a specific report task. After creating a report
+     * task, use this method to check its processing state or inspect its
+     * report definition.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.ReportTask>
+        getReportTask(com.google.analytics.data.v1alpha.GetReportTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetReportTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all report tasks for a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.ListReportTasksResponse>
+        listReportTasks(com.google.analytics.data.v1alpha.ListReportTasksRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListReportTasksMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized report of your Google Analytics event data. Reports
+     * contain statistics derived from data collected by the Google Analytics
+     * tracking code. The data returned from the API is as a table with columns
+     * for the requested dimensions and metrics. Metrics are individual
+     * measurements of user activity on your property, such as active users or
+     * event count. Dimensions break down metrics across some common criteria,
+     * such as country or event name.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.RunReportResponse>
+        runReport(com.google.analytics.data.v1alpha.RunReportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRunReportMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns metadata for dimensions and metrics available in reporting methods.
+     * Used to explore the dimensions and metrics. In this method, a Google
+     * Analytics property identifier is specified in the request, and
+     * the metadata response includes Custom dimensions and metrics as well as
+     * Universal metadata.
+     * For example if a custom metric with parameter name `levels_unlocked` is
+     * registered to a property, the Metadata response will contain
+     * `customEvent:levels_unlocked`. Universal metadata are dimensions and
+     * metrics applicable to any property such as `country` and `totalUsers`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.Metadata>
+        getMetadata(com.google.analytics.data.v1alpha.GetMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMetadataMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_RUN_FUNNEL_REPORT = 0;
   private static final int METHODID_CREATE_AUDIENCE_LIST = 1;
   private static final int METHODID_QUERY_AUDIENCE_LIST = 2;
-  private static final int METHODID_SHEET_EXPORT_AUDIENCE_LIST = 3;
-  private static final int METHODID_GET_AUDIENCE_LIST = 4;
-  private static final int METHODID_LIST_AUDIENCE_LISTS = 5;
-  private static final int METHODID_CREATE_RECURRING_AUDIENCE_LIST = 6;
-  private static final int METHODID_GET_RECURRING_AUDIENCE_LIST = 7;
-  private static final int METHODID_LIST_RECURRING_AUDIENCE_LISTS = 8;
+  private static final int METHODID_GET_AUDIENCE_LIST = 3;
+  private static final int METHODID_LIST_AUDIENCE_LISTS = 4;
+  private static final int METHODID_CREATE_RECURRING_AUDIENCE_LIST = 5;
+  private static final int METHODID_GET_RECURRING_AUDIENCE_LIST = 6;
+  private static final int METHODID_LIST_RECURRING_AUDIENCE_LISTS = 7;
+  private static final int METHODID_GET_PROPERTY_QUOTAS_SNAPSHOT = 8;
+  private static final int METHODID_CREATE_REPORT_TASK = 9;
+  private static final int METHODID_QUERY_REPORT_TASK = 10;
+  private static final int METHODID_GET_REPORT_TASK = 11;
+  private static final int METHODID_LIST_REPORT_TASKS = 12;
+  private static final int METHODID_RUN_REPORT = 13;
+  private static final int METHODID_GET_METADATA = 14;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1655,13 +2707,6 @@ public final class AlphaAnalyticsDataGrpc {
                       com.google.analytics.data.v1alpha.QueryAudienceListResponse>)
                   responseObserver);
           break;
-        case METHODID_SHEET_EXPORT_AUDIENCE_LIST:
-          serviceImpl.sheetExportAudienceList(
-              (com.google.analytics.data.v1alpha.SheetExportAudienceListRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>)
-                  responseObserver);
-          break;
         case METHODID_GET_AUDIENCE_LIST:
           serviceImpl.getAudienceList(
               (com.google.analytics.data.v1alpha.GetAudienceListRequest) request,
@@ -1692,6 +2737,50 @@ public final class AlphaAnalyticsDataGrpc {
               (com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_PROPERTY_QUOTAS_SNAPSHOT:
+          serviceImpl.getPropertyQuotasSnapshot(
+              (com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_REPORT_TASK:
+          serviceImpl.createReportTask(
+              (com.google.analytics.data.v1alpha.CreateReportTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_QUERY_REPORT_TASK:
+          serviceImpl.queryReportTask(
+              (com.google.analytics.data.v1alpha.QueryReportTaskRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.data.v1alpha.QueryReportTaskResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_REPORT_TASK:
+          serviceImpl.getReportTask(
+              (com.google.analytics.data.v1alpha.GetReportTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.ReportTask>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_REPORT_TASKS:
+          serviceImpl.listReportTasks(
+              (com.google.analytics.data.v1alpha.ListReportTasksRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.data.v1alpha.ListReportTasksResponse>)
+                  responseObserver);
+          break;
+        case METHODID_RUN_REPORT:
+          serviceImpl.runReport(
+              (com.google.analytics.data.v1alpha.RunReportRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.RunReportResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_METADATA:
+          serviceImpl.getMetadata(
+              (com.google.analytics.data.v1alpha.GetMetadataRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.Metadata>)
                   responseObserver);
           break;
         default:
@@ -1733,13 +2822,6 @@ public final class AlphaAnalyticsDataGrpc {
                     com.google.analytics.data.v1alpha.QueryAudienceListResponse>(
                     service, METHODID_QUERY_AUDIENCE_LIST)))
         .addMethod(
-            getSheetExportAudienceListMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.data.v1alpha.SheetExportAudienceListRequest,
-                    com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>(
-                    service, METHODID_SHEET_EXPORT_AUDIENCE_LIST)))
-        .addMethod(
             getGetAudienceListMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1774,6 +2856,53 @@ public final class AlphaAnalyticsDataGrpc {
                     com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest,
                     com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse>(
                     service, METHODID_LIST_RECURRING_AUDIENCE_LISTS)))
+        .addMethod(
+            getGetPropertyQuotasSnapshotMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest,
+                    com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>(
+                    service, METHODID_GET_PROPERTY_QUOTAS_SNAPSHOT)))
+        .addMethod(
+            getCreateReportTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.CreateReportTaskRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_REPORT_TASK)))
+        .addMethod(
+            getQueryReportTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.QueryReportTaskRequest,
+                    com.google.analytics.data.v1alpha.QueryReportTaskResponse>(
+                    service, METHODID_QUERY_REPORT_TASK)))
+        .addMethod(
+            getGetReportTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.GetReportTaskRequest,
+                    com.google.analytics.data.v1alpha.ReportTask>(
+                    service, METHODID_GET_REPORT_TASK)))
+        .addMethod(
+            getListReportTasksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.ListReportTasksRequest,
+                    com.google.analytics.data.v1alpha.ListReportTasksResponse>(
+                    service, METHODID_LIST_REPORT_TASKS)))
+        .addMethod(
+            getRunReportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.RunReportRequest,
+                    com.google.analytics.data.v1alpha.RunReportResponse>(
+                    service, METHODID_RUN_REPORT)))
+        .addMethod(
+            getGetMetadataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.GetMetadataRequest,
+                    com.google.analytics.data.v1alpha.Metadata>(service, METHODID_GET_METADATA)))
         .build();
   }
 
@@ -1828,12 +2957,18 @@ public final class AlphaAnalyticsDataGrpc {
                       .addMethod(getRunFunnelReportMethod())
                       .addMethod(getCreateAudienceListMethod())
                       .addMethod(getQueryAudienceListMethod())
-                      .addMethod(getSheetExportAudienceListMethod())
                       .addMethod(getGetAudienceListMethod())
                       .addMethod(getListAudienceListsMethod())
                       .addMethod(getCreateRecurringAudienceListMethod())
                       .addMethod(getGetRecurringAudienceListMethod())
                       .addMethod(getListRecurringAudienceListsMethod())
+                      .addMethod(getGetPropertyQuotasSnapshotMethod())
+                      .addMethod(getCreateReportTaskMethod())
+                      .addMethod(getQueryReportTaskMethod())
+                      .addMethod(getGetReportTaskMethod())
+                      .addMethod(getListReportTasksMethod())
+                      .addMethod(getRunReportMethod())
+                      .addMethod(getGetMetadataMethod())
                       .build();
         }
       }

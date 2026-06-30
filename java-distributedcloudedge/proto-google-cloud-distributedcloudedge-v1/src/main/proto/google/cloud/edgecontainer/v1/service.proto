@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,13 +22,17 @@ import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/cloud/edgecontainer/v1/resources.proto";
 import "google/longrunning/operations.proto";
+import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
 
+option csharp_namespace = "Google.Cloud.EdgeContainer.V1";
 option go_package = "cloud.google.com/go/edgecontainer/apiv1/edgecontainerpb;edgecontainerpb";
 option java_multiple_files = true;
 option java_outer_classname = "ServiceProto";
 option java_package = "com.google.cloud.edgecontainer.v1";
+option php_namespace = "Google\\Cloud\\EdgeContainer\\V1";
+option ruby_package = "Google::Cloud::EdgeContainer::V1";
 
 // EdgeContainer API provides management of Kubernetes Clusters on Google Edge
 // Cloud deployments.
@@ -255,6 +259,15 @@ service EdgeContainer {
 
 // Long-running operation metadata for Edge Container API methods.
 message OperationMetadata {
+  // Indicates the reason for the status of the operation.
+  enum StatusReason {
+    // Reason unknown.
+    STATUS_REASON_UNSPECIFIED = 0;
+
+    // The cluster upgrade is currently paused.
+    UPGRADE_PAUSED = 1;
+  }
+
   // The time the operation was created.
   google.protobuf.Timestamp create_time = 1;
 
@@ -282,6 +295,9 @@ message OperationMetadata {
   // Warnings that do not block the operation, but still hold relevant
   // information for the end user to receive.
   repeated string warnings = 8;
+
+  // Machine-readable status of the operation, if any.
+  StatusReason status_reason = 9;
 }
 
 // Lists clusters in a location.

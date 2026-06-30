@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * administer any SSL certificates applicable to their authorized domains.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/appengine/v1/appengine.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AuthorizedCertificatesGrpc {
 
@@ -307,6 +304,19 @@ public final class AuthorizedCertificatesGrpc {
     return AuthorizedCertificatesStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AuthorizedCertificatesBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AuthorizedCertificatesBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AuthorizedCertificatesBlockingV2Stub>() {
+          @java.lang.Override
+          public AuthorizedCertificatesBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AuthorizedCertificatesBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AuthorizedCertificatesBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -552,6 +562,102 @@ public final class AuthorizedCertificatesGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AuthorizedCertificates.
+   *
+   * <pre>
+   * Manages SSL certificates a user is authorized to administer. A user can
+   * administer any SSL certificates applicable to their authorized domains.
+   * </pre>
+   */
+  public static final class AuthorizedCertificatesBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AuthorizedCertificatesBlockingV2Stub> {
+    private AuthorizedCertificatesBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AuthorizedCertificatesBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AuthorizedCertificatesBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all SSL certificates the user is authorized to administer.
+     * </pre>
+     */
+    public com.google.appengine.v1.ListAuthorizedCertificatesResponse listAuthorizedCertificates(
+        com.google.appengine.v1.ListAuthorizedCertificatesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAuthorizedCertificatesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the specified SSL certificate.
+     * </pre>
+     */
+    public com.google.appengine.v1.AuthorizedCertificate getAuthorizedCertificate(
+        com.google.appengine.v1.GetAuthorizedCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAuthorizedCertificateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Uploads the specified SSL certificate.
+     * </pre>
+     */
+    public com.google.appengine.v1.AuthorizedCertificate createAuthorizedCertificate(
+        com.google.appengine.v1.CreateAuthorizedCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAuthorizedCertificateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified SSL certificate. To renew a certificate and maintain
+     * its existing domain mappings, update `certificate_data` with a new
+     * certificate. The new certificate must be applicable to the same domains as
+     * the original certificate. The certificate `display_name` may also be
+     * updated.
+     * </pre>
+     */
+    public com.google.appengine.v1.AuthorizedCertificate updateAuthorizedCertificate(
+        com.google.appengine.v1.UpdateAuthorizedCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAuthorizedCertificateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified SSL certificate.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAuthorizedCertificate(
+        com.google.appengine.v1.DeleteAuthorizedCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteAuthorizedCertificateMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AuthorizedCertificates.
    *
    * <pre>
    * Manages SSL certificates a user is authorized to administer. A user can

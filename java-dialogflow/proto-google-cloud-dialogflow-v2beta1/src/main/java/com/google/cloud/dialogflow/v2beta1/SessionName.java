@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -376,7 +376,8 @@ public class SessionName implements ResourceName {
     private Builder(SessionName sessionName) {
       Preconditions.checkArgument(
           Objects.equals(sessionName.pathTemplate, PROJECT_SESSION),
-          "toBuilder is only supported when SessionName has the pattern of projects/{project}/agent/sessions/{session}");
+          "toBuilder is only supported when SessionName has the pattern of"
+              + " projects/{project}/agent/sessions/{session}");
       this.project = sessionName.project;
       this.session = sessionName.session;
     }

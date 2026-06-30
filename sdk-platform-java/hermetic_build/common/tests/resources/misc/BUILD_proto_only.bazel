@@ -1,0 +1,16 @@
+java_gapic_assembly_gradle_pkg(
+    name = "google-api-java",
+    transport = "grpc+rest",
+    deps = [
+        "annotations_proto",
+        "auth_proto",
+        "backend_proto",
+        "billing_proto",
+        "client_proto",
+        "config_change_proto",
+        "consumer_proto",
+        "context_proto",
+        "control_proto",
+        "distribution_proto",
+    ],
+)

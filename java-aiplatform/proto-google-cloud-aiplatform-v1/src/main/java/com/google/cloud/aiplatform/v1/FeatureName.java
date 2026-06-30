@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -372,7 +372,8 @@ public class FeatureName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               featureName.pathTemplate, PROJECT_LOCATION_FEATURESTORE_ENTITY_TYPE_FEATURE),
-          "toBuilder is only supported when FeatureName has the pattern of projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}");
+          "toBuilder is only supported when FeatureName has the pattern of"
+              + " projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}");
       this.project = featureName.project;
       this.location = featureName.location;
       this.featurestore = featureName.featurestore;

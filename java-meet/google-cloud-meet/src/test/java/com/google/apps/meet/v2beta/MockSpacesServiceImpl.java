@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -120,6 +120,29 @@ public class MockSpacesServiceImpl extends SpacesServiceImplBase {
   }
 
   @Override
+  public void connectActiveConference(
+      ConnectActiveConferenceRequest request,
+      StreamObserver<ConnectActiveConferenceResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ConnectActiveConferenceResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ConnectActiveConferenceResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ConnectActiveConference, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ConnectActiveConferenceResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void endActiveConference(
       EndActiveConferenceRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.poll();
@@ -134,6 +157,87 @@ public class MockSpacesServiceImpl extends SpacesServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method EndActiveConference, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createMember(CreateMemberRequest request, StreamObserver<Member> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Member) {
+      requests.add(request);
+      responseObserver.onNext(((Member) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateMember, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Member.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getMember(GetMemberRequest request, StreamObserver<Member> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Member) {
+      requests.add(request);
+      responseObserver.onNext(((Member) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMember, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Member.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listMembers(
+      ListMembersRequest request, StreamObserver<ListMembersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListMembersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListMembersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMembers, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListMembersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteMember(DeleteMemberRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteMember, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

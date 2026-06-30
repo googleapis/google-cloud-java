@@ -25,6 +25,9 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "ListWorkflowRevisions": {
+              "methods": ["listWorkflowRevisions", "listWorkflowRevisionsPagedCallable", "listWorkflowRevisionsCallable"]
+            },
             "ListWorkflows": {
               "methods": ["listWorkflows", "listWorkflows", "listWorkflows", "listWorkflowsPagedCallable", "listWorkflowsCallable"]
             },

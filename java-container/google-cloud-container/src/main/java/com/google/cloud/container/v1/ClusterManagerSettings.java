@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,9 +19,11 @@ package com.google.cloud.container.v1;
 import static com.google.cloud.container.v1.ClusterManagerClient.ListUsableSubnetworksPagedResponse;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
@@ -33,12 +35,15 @@ import com.google.container.v1.CancelOperationRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
+import com.google.container.v1.ClusterUpgradeInfo;
 import com.google.container.v1.CompleteIPRotationRequest;
 import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.CreateClusterRequest;
 import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
+import com.google.container.v1.FetchClusterUpgradeInfoRequest;
+import com.google.container.v1.FetchNodePoolUpgradeInfoRequest;
 import com.google.container.v1.GetClusterRequest;
 import com.google.container.v1.GetJSONWebKeysRequest;
 import com.google.container.v1.GetJSONWebKeysResponse;
@@ -54,6 +59,7 @@ import com.google.container.v1.ListOperationsResponse;
 import com.google.container.v1.ListUsableSubnetworksRequest;
 import com.google.container.v1.ListUsableSubnetworksResponse;
 import com.google.container.v1.NodePool;
+import com.google.container.v1.NodePoolUpgradeInfo;
 import com.google.container.v1.Operation;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
 import com.google.container.v1.ServerConfig;
@@ -93,7 +99,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of listClusters to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of listClusters:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -110,10 +118,21 @@ import javax.annotation.Generated;
  *             .listClustersSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ClusterManagerSettings clusterManagerSettings = clusterManagerSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class ClusterManagerSettings extends ClientSettings<ClusterManagerSettings> {
@@ -302,6 +321,18 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     return ((ClusterManagerStubSettings) getStubSettings()).checkAutopilotCompatibilitySettings();
   }
 
+  /** Returns the object with the settings used for calls to fetchClusterUpgradeInfo. */
+  public UnaryCallSettings<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoSettings() {
+    return ((ClusterManagerStubSettings) getStubSettings()).fetchClusterUpgradeInfoSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchNodePoolUpgradeInfo. */
+  public UnaryCallSettings<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoSettings() {
+    return ((ClusterManagerStubSettings) getStubSettings()).fetchNodePoolUpgradeInfoSettings();
+  }
+
   public static final ClusterManagerSettings create(ClusterManagerStubSettings stub)
       throws IOException {
     return new ClusterManagerSettings.Builder(stub.toBuilder()).build();
@@ -327,9 +358,16 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     return ClusterManagerStubSettings.defaultCredentialsProviderBuilder();
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
+  /** Returns a builder for the default gRPC ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     return ClusterManagerStubSettings.defaultGrpcTransportProviderBuilder();
+  }
+
+  /** Returns a builder for the default REST ChannelProvider for this service. */
+  @BetaApi
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
+    return ClusterManagerStubSettings.defaultHttpJsonTransportProviderBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
@@ -340,9 +378,14 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     return ClusterManagerStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
-  /** Returns a new builder for this class. */
+  /** Returns a new gRPC builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
+  }
+
+  /** Returns a new REST builder for this class. */
+  public static Builder newHttpJsonBuilder() {
+    return Builder.createHttpJsonDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -380,6 +423,10 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
 
     private static Builder createDefault() {
       return new Builder(ClusterManagerStubSettings.newBuilder());
+    }
+
+    private static Builder createHttpJsonDefault() {
+      return new Builder(ClusterManagerStubSettings.newHttpJsonBuilder());
     }
 
     public ClusterManagerStubSettings.Builder getStubSettingsBuilder() {
@@ -591,6 +638,18 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
             CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
         checkAutopilotCompatibilitySettings() {
       return getStubSettingsBuilder().checkAutopilotCompatibilitySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchClusterUpgradeInfo. */
+    public UnaryCallSettings.Builder<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+        fetchClusterUpgradeInfoSettings() {
+      return getStubSettingsBuilder().fetchClusterUpgradeInfoSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchNodePoolUpgradeInfo. */
+    public UnaryCallSettings.Builder<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+        fetchNodePoolUpgradeInfoSettings() {
+      return getStubSettingsBuilder().fetchNodePoolUpgradeInfoSettings();
     }
 
     @Override

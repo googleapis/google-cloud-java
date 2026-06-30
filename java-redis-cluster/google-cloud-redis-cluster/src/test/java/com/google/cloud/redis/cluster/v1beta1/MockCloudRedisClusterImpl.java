@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -157,6 +157,222 @@ public class MockCloudRedisClusterImpl extends CloudRedisClusterImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateCluster, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getClusterCertificateAuthority(
+      GetClusterCertificateAuthorityRequest request,
+      StreamObserver<CertificateAuthority> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CertificateAuthority) {
+      requests.add(request);
+      responseObserver.onNext(((CertificateAuthority) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetClusterCertificateAuthority,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CertificateAuthority.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getSharedRegionalCertificateAuthority(
+      GetSharedRegionalCertificateAuthorityRequest request,
+      StreamObserver<SharedRegionalCertificateAuthority> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SharedRegionalCertificateAuthority) {
+      requests.add(request);
+      responseObserver.onNext(((SharedRegionalCertificateAuthority) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSharedRegionalCertificateAuthority,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SharedRegionalCertificateAuthority.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void rescheduleClusterMaintenance(
+      RescheduleClusterMaintenanceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RescheduleClusterMaintenance, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listBackupCollections(
+      ListBackupCollectionsRequest request,
+      StreamObserver<ListBackupCollectionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListBackupCollectionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListBackupCollectionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBackupCollections, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListBackupCollectionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getBackupCollection(
+      GetBackupCollectionRequest request, StreamObserver<BackupCollection> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BackupCollection) {
+      requests.add(request);
+      responseObserver.onNext(((BackupCollection) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBackupCollection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BackupCollection.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listBackups(
+      ListBackupsRequest request, StreamObserver<ListBackupsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListBackupsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListBackupsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBackups, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListBackupsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getBackup(GetBackupRequest request, StreamObserver<Backup> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Backup) {
+      requests.add(request);
+      responseObserver.onNext(((Backup) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBackup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Backup.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteBackup(
+      DeleteBackupRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteBackup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void exportBackup(
+      ExportBackupRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExportBackup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void backupCluster(
+      BackupClusterRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BackupCluster, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

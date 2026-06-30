@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * BinAuthz Attestor verification
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/binaryauthorization/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ValidationHelperV1Grpc {
 
@@ -112,6 +109,19 @@ public final class ValidationHelperV1Grpc {
           }
         };
     return ValidationHelperV1Stub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ValidationHelperV1BlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ValidationHelperV1BlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ValidationHelperV1BlockingV2Stub>() {
+          @java.lang.Override
+          public ValidationHelperV1BlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ValidationHelperV1BlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ValidationHelperV1BlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -232,6 +242,46 @@ public final class ValidationHelperV1Grpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ValidationHelperV1.
+   *
+   * <pre>
+   * BinAuthz Attestor verification
+   * </pre>
+   */
+  public static final class ValidationHelperV1BlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ValidationHelperV1BlockingV2Stub> {
+    private ValidationHelperV1BlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ValidationHelperV1BlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ValidationHelperV1BlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns whether the given Attestation for the given image URI
+     * was signed by the given Attestor
+     * </pre>
+     */
+    public com.google.protos.google.cloud.binaryauthorization.v1.Service
+            .ValidateAttestationOccurrenceResponse
+        validateAttestationOccurrence(
+            com.google.protos.google.cloud.binaryauthorization.v1.Service
+                    .ValidateAttestationOccurrenceRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getValidateAttestationOccurrenceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ValidationHelperV1.
    *
    * <pre>
    * BinAuthz Attestor verification

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ public class GrpcKeyTrackingServiceStub extends KeyTrackingServiceStub {
                   ProtoUtils.marshaller(GetProtectedResourcesSummaryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ProtectedResourcesSummary.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -70,6 +71,7 @@ public class GrpcKeyTrackingServiceStub extends KeyTrackingServiceStub {
                   ProtoUtils.marshaller(SearchProtectedResourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchProtectedResourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetProtectedResourcesSummaryRequest, ProtectedResourcesSummary>
@@ -135,6 +137,7 @@ public class GrpcKeyTrackingServiceStub extends KeyTrackingServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SearchProtectedResourcesRequest, SearchProtectedResourcesResponse>
         searchProtectedResourcesTransportSettings =
@@ -147,6 +150,7 @@ public class GrpcKeyTrackingServiceStub extends KeyTrackingServiceStub {
                       builder.add("scope", String.valueOf(request.getScope()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getScope())
                 .build();
 
     this.getProtectedResourcesSummaryCallable =

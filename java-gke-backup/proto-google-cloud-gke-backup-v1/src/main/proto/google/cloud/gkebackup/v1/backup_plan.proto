@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -156,6 +156,13 @@ message BackupPlan {
     //
     // Default (empty): Config backup artifacts will not be encrypted.
     EncryptionKey encryption_key = 6 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. If false, Backups will fail when Backup for GKE detects
+    // Kubernetes configuration that is non-standard or
+    // requires additional setup to restore.
+    //
+    // Default: False
+    bool permissive_mode = 7 [(google.api.field_behavior) = OPTIONAL];
   }
 
   // State
@@ -259,7 +266,8 @@ message BackupPlan {
   State state = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. Human-readable description of why BackupPlan is in the current
-  // `state`
+  // `state`. This field is only meant for human readability and should not be
+  // used programmatically as this field is not guaranteed to be consistent.
   string state_reason = 15 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. A number that represents the current risk level of this
@@ -270,6 +278,24 @@ message BackupPlan {
   // Output only. Human-readable description of why the BackupPlan is in the
   // current rpo_risk_level and action items if any.
   string rpo_risk_reason = 17 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. The fully qualified name of the BackupChannel to be used to
+  // create a backup. This field is set only if the cluster being backed up is
+  // in a different project.
+  // `projects/*/locations/*/backupChannels/*`
+  string backup_channel = 18 [
+    (google.api.field_behavior) = OUTPUT_ONLY,
+    (google.api.resource_reference) = {
+      type: "gkebackup.googleapis.com/BackupChannel"
+    }
+  ];
+
+  // Output only. Completion time of the last successful Backup. This is sourced
+  // from a successful Backup's complete_time field. This field is added to
+  // maintain consistency with BackupPlanBinding to display last successful
+  // backup time.
+  google.protobuf.Timestamp last_successful_backup_time = 19
+      [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Defines RPO scheduling configuration for automatically creating
@@ -309,8 +335,10 @@ message ExclusionWindow {
   // UTC.
   google.type.TimeOfDay start_time = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Required. Specifies duration of the window. Restrictions for duration based
-  // on the recurrence type to allow some time for backup to happen:
+  // Required. Specifies duration of the window.
+  // Duration must be >= 5 minutes and < (target RPO - 20 minutes).
+  // Additional restrictions based on the recurrence type to allow some time for
+  // backup to happen:
   // - single_occurrence_date:  no restriction, but UI may warn about this when
   // duration >= target RPO
   // - daily window: duration < 24 hours

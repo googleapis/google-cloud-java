@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,6 +107,10 @@ public class FlowsClientTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .addAllInputParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .addAllOutputParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+            .setLocked(true)
             .build();
     mockFlows.addResponse(expectedResponse);
 
@@ -156,6 +160,10 @@ public class FlowsClientTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .addAllInputParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .addAllOutputParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+            .setLocked(true)
             .build();
     mockFlows.addResponse(expectedResponse);
 
@@ -361,6 +369,10 @@ public class FlowsClientTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .addAllInputParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .addAllOutputParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+            .setLocked(true)
             .build();
     mockFlows.addResponse(expectedResponse);
 
@@ -407,6 +419,10 @@ public class FlowsClientTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .addAllInputParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .addAllOutputParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+            .setLocked(true)
             .build();
     mockFlows.addResponse(expectedResponse);
 
@@ -453,6 +469,10 @@ public class FlowsClientTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .addAllInputParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .addAllOutputParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+            .setLocked(true)
             .build();
     mockFlows.addResponse(expectedResponse);
 

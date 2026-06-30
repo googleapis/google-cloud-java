@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing site search related resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/site_search_engine_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SiteSearchEngineServiceGrpc {
 
@@ -638,6 +635,113 @@ public final class SiteSearchEngineServiceGrpc {
     return getFetchDomainVerificationStatusMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest,
+          com.google.longrunning.Operation>
+      getSetUriPatternDocumentDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetUriPatternDocumentData",
+      requestType = com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest,
+          com.google.longrunning.Operation>
+      getSetUriPatternDocumentDataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest,
+            com.google.longrunning.Operation>
+        getSetUriPatternDocumentDataMethod;
+    if ((getSetUriPatternDocumentDataMethod =
+            SiteSearchEngineServiceGrpc.getSetUriPatternDocumentDataMethod)
+        == null) {
+      synchronized (SiteSearchEngineServiceGrpc.class) {
+        if ((getSetUriPatternDocumentDataMethod =
+                SiteSearchEngineServiceGrpc.getSetUriPatternDocumentDataMethod)
+            == null) {
+          SiteSearchEngineServiceGrpc.getSetUriPatternDocumentDataMethod =
+              getSetUriPatternDocumentDataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SetUriPatternDocumentData"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1alpha
+                                  .SetUriPatternDocumentDataRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SiteSearchEngineServiceMethodDescriptorSupplier(
+                              "SetUriPatternDocumentData"))
+                      .build();
+        }
+      }
+    }
+    return getSetUriPatternDocumentDataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest,
+          com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse>
+      getGetUriPatternDocumentDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetUriPatternDocumentData",
+      requestType = com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest.class,
+      responseType =
+          com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest,
+          com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse>
+      getGetUriPatternDocumentDataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest,
+            com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse>
+        getGetUriPatternDocumentDataMethod;
+    if ((getGetUriPatternDocumentDataMethod =
+            SiteSearchEngineServiceGrpc.getGetUriPatternDocumentDataMethod)
+        == null) {
+      synchronized (SiteSearchEngineServiceGrpc.class) {
+        if ((getGetUriPatternDocumentDataMethod =
+                SiteSearchEngineServiceGrpc.getGetUriPatternDocumentDataMethod)
+            == null) {
+          SiteSearchEngineServiceGrpc.getGetUriPatternDocumentDataMethod =
+              getGetUriPatternDocumentDataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest,
+                          com.google.cloud.discoveryengine.v1alpha
+                              .GetUriPatternDocumentDataResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetUriPatternDocumentData"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1alpha
+                                  .GetUriPatternDocumentDataRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1alpha
+                                  .GetUriPatternDocumentDataResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SiteSearchEngineServiceMethodDescriptorSupplier(
+                              "GetUriPatternDocumentData"))
+                      .build();
+        }
+      }
+    }
+    return getGetUriPatternDocumentDataMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static SiteSearchEngineServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SiteSearchEngineServiceStub> factory =
@@ -649,6 +753,19 @@ public final class SiteSearchEngineServiceGrpc {
           }
         };
     return SiteSearchEngineServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SiteSearchEngineServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SiteSearchEngineServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SiteSearchEngineServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SiteSearchEngineServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SiteSearchEngineServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SiteSearchEngineServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -867,6 +984,38 @@ public final class SiteSearchEngineServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getFetchDomainVerificationStatusMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the URI Pattern to Document data mapping for an Advanced Site Search
+     * DataStore.
+     * </pre>
+     */
+    default void setUriPatternDocumentData(
+        com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetUriPatternDocumentDataMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the URI Pattern to Document data mapping for an Advanced Site Search
+     * DataStore.
+     * </pre>
+     */
+    default void getUriPatternDocumentData(
+        com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetUriPatternDocumentDataMethod(), responseObserver);
     }
   }
 
@@ -1109,10 +1258,274 @@ public final class SiteSearchEngineServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the URI Pattern to Document data mapping for an Advanced Site Search
+     * DataStore.
+     * </pre>
+     */
+    public void setUriPatternDocumentData(
+        com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetUriPatternDocumentDataMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the URI Pattern to Document data mapping for an Advanced Site Search
+     * DataStore.
+     * </pre>
+     */
+    public void getUriPatternDocumentData(
+        com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetUriPatternDocumentDataMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SiteSearchEngineService.
+   *
+   * <pre>
+   * Service for managing site search related resources.
+   * </pre>
+   */
+  public static final class SiteSearchEngineServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SiteSearchEngineServiceBlockingV2Stub> {
+    private SiteSearchEngineServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SiteSearchEngineServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SiteSearchEngineServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the
+     * [SiteSearchEngine][google.cloud.discoveryengine.v1alpha.SiteSearchEngine].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.SiteSearchEngine getSiteSearchEngine(
+        com.google.cloud.discoveryengine.v1alpha.GetSiteSearchEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetSiteSearchEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTargetSite(
+        com.google.cloud.discoveryengine.v1alpha.CreateTargetSiteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateTargetSiteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite] in a
+     * batch.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreateTargetSites(
+        com.google.cloud.discoveryengine.v1alpha.BatchCreateTargetSitesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchCreateTargetSitesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.TargetSite getTargetSite(
+        com.google.cloud.discoveryengine.v1alpha.GetTargetSiteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTargetSiteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite].
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTargetSite(
+        com.google.cloud.discoveryengine.v1alpha.UpdateTargetSiteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateTargetSiteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTargetSite(
+        com.google.cloud.discoveryengine.v1alpha.DeleteTargetSiteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTargetSiteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a list of
+     * [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite]s.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.ListTargetSitesResponse listTargetSites(
+        com.google.cloud.discoveryengine.v1alpha.ListTargetSitesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTargetSitesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade from basic site search to advanced site search.
+     * </pre>
+     */
+    public com.google.longrunning.Operation enableAdvancedSiteSearch(
+        com.google.cloud.discoveryengine.v1alpha.EnableAdvancedSiteSearchRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getEnableAdvancedSiteSearchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Downgrade from advanced site search to basic site search.
+     * </pre>
+     */
+    public com.google.longrunning.Operation disableAdvancedSiteSearch(
+        com.google.cloud.discoveryengine.v1alpha.DisableAdvancedSiteSearchRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDisableAdvancedSiteSearchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Request on-demand recrawl for a list of URIs.
+     * </pre>
+     */
+    public com.google.longrunning.Operation recrawlUris(
+        com.google.cloud.discoveryengine.v1alpha.RecrawlUrisRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRecrawlUrisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verify target sites' ownership and validity.
+     * This API sends all the target sites under site search engine for
+     * verification.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchVerifyTargetSites(
+        com.google.cloud.discoveryengine.v1alpha.BatchVerifyTargetSitesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchVerifyTargetSitesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of target sites with its domain verification status.
+     * This method can only be called under data store with BASIC_SITE_SEARCH
+     * state at the moment.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusResponse
+        fetchDomainVerificationStatus(
+            com.google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchDomainVerificationStatusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the URI Pattern to Document data mapping for an Advanced Site Search
+     * DataStore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation setUriPatternDocumentData(
+        com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSetUriPatternDocumentDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the URI Pattern to Document data mapping for an Advanced Site Search
+     * DataStore.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse
+        getUriPatternDocumentData(
+            com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetUriPatternDocumentDataMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SiteSearchEngineService.
    *
    * <pre>
    * Service for managing site search related resources.
@@ -1293,6 +1706,35 @@ public final class SiteSearchEngineServiceGrpc {
             com.google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFetchDomainVerificationStatusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the URI Pattern to Document data mapping for an Advanced Site Search
+     * DataStore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation setUriPatternDocumentData(
+        com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetUriPatternDocumentDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the URI Pattern to Document data mapping for an Advanced Site Search
+     * DataStore.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse
+        getUriPatternDocumentData(
+            com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUriPatternDocumentDataMethod(), getCallOptions(), request);
     }
   }
 
@@ -1490,6 +1932,37 @@ public final class SiteSearchEngineServiceGrpc {
           getChannel().newCall(getFetchDomainVerificationStatusMethod(), getCallOptions()),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the URI Pattern to Document data mapping for an Advanced Site Search
+     * DataStore.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        setUriPatternDocumentData(
+            com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetUriPatternDocumentDataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the URI Pattern to Document data mapping for an Advanced Site Search
+     * DataStore.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse>
+        getUriPatternDocumentData(
+            com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetUriPatternDocumentDataMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_SITE_SEARCH_ENGINE = 0;
@@ -1504,6 +1977,8 @@ public final class SiteSearchEngineServiceGrpc {
   private static final int METHODID_RECRAWL_URIS = 9;
   private static final int METHODID_BATCH_VERIFY_TARGET_SITES = 10;
   private static final int METHODID_FETCH_DOMAIN_VERIFICATION_STATUS = 11;
+  private static final int METHODID_SET_URI_PATTERN_DOCUMENT_DATA = 12;
+  private static final int METHODID_GET_URI_PATTERN_DOCUMENT_DATA = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1589,6 +2064,18 @@ public final class SiteSearchEngineServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.discoveryengine.v1alpha
                           .FetchDomainVerificationStatusResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SET_URI_PATTERN_DOCUMENT_DATA:
+          serviceImpl.setUriPatternDocumentData(
+              (com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_URI_PATTERN_DOCUMENT_DATA:
+          serviceImpl.getUriPatternDocumentData(
+              (com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse>)
                   responseObserver);
           break;
         default:
@@ -1687,6 +2174,20 @@ public final class SiteSearchEngineServiceGrpc {
                     com.google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusRequest,
                     com.google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusResponse>(
                     service, METHODID_FETCH_DOMAIN_VERIFICATION_STATUS)))
+        .addMethod(
+            getSetUriPatternDocumentDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_SET_URI_PATTERN_DOCUMENT_DATA)))
+        .addMethod(
+            getGetUriPatternDocumentDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest,
+                    com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse>(
+                    service, METHODID_GET_URI_PATTERN_DOCUMENT_DATA)))
         .build();
   }
 
@@ -1750,6 +2251,8 @@ public final class SiteSearchEngineServiceGrpc {
                       .addMethod(getRecrawlUrisMethod())
                       .addMethod(getBatchVerifyTargetSitesMethod())
                       .addMethod(getFetchDomainVerificationStatusMethod())
+                      .addMethod(getSetUriPatternDocumentDataMethod())
+                      .addMethod(getGetUriPatternDocumentDataMethod())
                       .build();
         }
       }

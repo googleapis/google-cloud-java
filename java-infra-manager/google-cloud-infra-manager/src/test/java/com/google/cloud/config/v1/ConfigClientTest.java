@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,13 @@
 
 package com.google.cloud.config.v1;
 
+import static com.google.cloud.config.v1.ConfigClient.ListDeploymentGroupRevisionsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListDeploymentGroupsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceChangesPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceDriftsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
@@ -221,6 +225,8 @@ public class ConfigClientTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -276,6 +282,8 @@ public class ConfigClientTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -331,6 +339,8 @@ public class ConfigClientTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -401,6 +411,8 @@ public class ConfigClientTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -471,6 +483,8 @@ public class ConfigClientTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -537,6 +551,8 @@ public class ConfigClientTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -600,6 +616,8 @@ public class ConfigClientTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -750,6 +768,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidationResults("quotaValidationResults-1396407899")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -804,6 +823,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidationResults("quotaValidationResults-1396407899")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -1270,6 +1290,8 @@ public class ConfigClientTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1333,6 +1355,8 @@ public class ConfigClientTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1396,6 +1420,8 @@ public class ConfigClientTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1462,6 +1488,8 @@ public class ConfigClientTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1609,6 +1637,10 @@ public class ConfigClientTest {
             .setErrorLogs("errorLogs329304023")
             .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
             .setLogs("logs3327407")
+            .setTfVersion("tfVersion182968838")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1670,6 +1702,10 @@ public class ConfigClientTest {
             .setErrorLogs("errorLogs329304023")
             .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
             .setLogs("logs3327407")
+            .setTfVersion("tfVersion182968838")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1731,6 +1767,10 @@ public class ConfigClientTest {
             .setErrorLogs("errorLogs329304023")
             .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
             .setLogs("logs3327407")
+            .setTfVersion("tfVersion182968838")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -1781,6 +1821,10 @@ public class ConfigClientTest {
             .setErrorLogs("errorLogs329304023")
             .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
             .setLogs("logs3327407")
+            .setTfVersion("tfVersion182968838")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -1919,6 +1963,10 @@ public class ConfigClientTest {
             .setErrorLogs("errorLogs329304023")
             .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
             .setLogs("logs3327407")
+            .setTfVersion("tfVersion182968838")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1977,6 +2025,10 @@ public class ConfigClientTest {
             .setErrorLogs("errorLogs329304023")
             .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
             .setLogs("logs3327407")
+            .setTfVersion("tfVersion182968838")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2234,6 +2286,1393 @@ public class ConfigClientTest {
     try {
       String name = "name3373707";
       client.getTerraformVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listResourceChangesTest() throws Exception {
+    ResourceChange responsesElement = ResourceChange.newBuilder().build();
+    ListResourceChangesResponse expectedResponse =
+        ListResourceChangesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceChanges(Arrays.asList(responsesElement))
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    PreviewName parent = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+
+    ListResourceChangesPagedResponse pagedListResponse = client.listResourceChanges(parent);
+
+    List<ResourceChange> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceChangesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListResourceChangesRequest actualRequest = ((ListResourceChangesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listResourceChangesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      PreviewName parent = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+      client.listResourceChanges(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listResourceChangesTest2() throws Exception {
+    ResourceChange responsesElement = ResourceChange.newBuilder().build();
+    ListResourceChangesResponse expectedResponse =
+        ListResourceChangesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceChanges(Arrays.asList(responsesElement))
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListResourceChangesPagedResponse pagedListResponse = client.listResourceChanges(parent);
+
+    List<ResourceChange> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceChangesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListResourceChangesRequest actualRequest = ((ListResourceChangesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listResourceChangesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listResourceChanges(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getResourceChangeTest() throws Exception {
+    ResourceChange expectedResponse =
+        ResourceChange.newBuilder()
+            .setName(
+                ResourceChangeName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_CHANGE]")
+                    .toString())
+            .setTerraformInfo(ResourceChangeTerraformInfo.newBuilder().build())
+            .addAllPropertyChanges(new ArrayList<PropertyChange>())
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    ResourceChangeName name =
+        ResourceChangeName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_CHANGE]");
+
+    ResourceChange actualResponse = client.getResourceChange(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetResourceChangeRequest actualRequest = ((GetResourceChangeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getResourceChangeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      ResourceChangeName name =
+          ResourceChangeName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_CHANGE]");
+      client.getResourceChange(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getResourceChangeTest2() throws Exception {
+    ResourceChange expectedResponse =
+        ResourceChange.newBuilder()
+            .setName(
+                ResourceChangeName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_CHANGE]")
+                    .toString())
+            .setTerraformInfo(ResourceChangeTerraformInfo.newBuilder().build())
+            .addAllPropertyChanges(new ArrayList<PropertyChange>())
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ResourceChange actualResponse = client.getResourceChange(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetResourceChangeRequest actualRequest = ((GetResourceChangeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getResourceChangeExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getResourceChange(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listResourceDriftsTest() throws Exception {
+    ResourceDrift responsesElement = ResourceDrift.newBuilder().build();
+    ListResourceDriftsResponse expectedResponse =
+        ListResourceDriftsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceDrifts(Arrays.asList(responsesElement))
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    PreviewName parent = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+
+    ListResourceDriftsPagedResponse pagedListResponse = client.listResourceDrifts(parent);
+
+    List<ResourceDrift> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceDriftsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListResourceDriftsRequest actualRequest = ((ListResourceDriftsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listResourceDriftsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      PreviewName parent = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+      client.listResourceDrifts(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listResourceDriftsTest2() throws Exception {
+    ResourceDrift responsesElement = ResourceDrift.newBuilder().build();
+    ListResourceDriftsResponse expectedResponse =
+        ListResourceDriftsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceDrifts(Arrays.asList(responsesElement))
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListResourceDriftsPagedResponse pagedListResponse = client.listResourceDrifts(parent);
+
+    List<ResourceDrift> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceDriftsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListResourceDriftsRequest actualRequest = ((ListResourceDriftsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listResourceDriftsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listResourceDrifts(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getResourceDriftTest() throws Exception {
+    ResourceDrift expectedResponse =
+        ResourceDrift.newBuilder()
+            .setName(
+                ResourceDriftName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_DRIFT]")
+                    .toString())
+            .setTerraformInfo(ResourceDriftTerraformInfo.newBuilder().build())
+            .addAllPropertyDrifts(new ArrayList<PropertyDrift>())
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    ResourceDriftName name =
+        ResourceDriftName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_DRIFT]");
+
+    ResourceDrift actualResponse = client.getResourceDrift(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetResourceDriftRequest actualRequest = ((GetResourceDriftRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getResourceDriftExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      ResourceDriftName name =
+          ResourceDriftName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_DRIFT]");
+      client.getResourceDrift(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getResourceDriftTest2() throws Exception {
+    ResourceDrift expectedResponse =
+        ResourceDrift.newBuilder()
+            .setName(
+                ResourceDriftName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_DRIFT]")
+                    .toString())
+            .setTerraformInfo(ResourceDriftTerraformInfo.newBuilder().build())
+            .addAllPropertyDrifts(new ArrayList<PropertyDrift>())
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ResourceDrift actualResponse = client.getResourceDrift(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetResourceDriftRequest actualRequest = ((GetResourceDriftRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getResourceDriftExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getResourceDrift(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutoMigrationConfigTest() throws Exception {
+    AutoMigrationConfig expectedResponse =
+        AutoMigrationConfig.newBuilder()
+            .setName(AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAutoMigrationEnabled(true)
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    AutoMigrationConfigName name = AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]");
+
+    AutoMigrationConfig actualResponse = client.getAutoMigrationConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAutoMigrationConfigRequest actualRequest =
+        ((GetAutoMigrationConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAutoMigrationConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      AutoMigrationConfigName name = AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]");
+      client.getAutoMigrationConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutoMigrationConfigTest2() throws Exception {
+    AutoMigrationConfig expectedResponse =
+        AutoMigrationConfig.newBuilder()
+            .setName(AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAutoMigrationEnabled(true)
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AutoMigrationConfig actualResponse = client.getAutoMigrationConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAutoMigrationConfigRequest actualRequest =
+        ((GetAutoMigrationConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAutoMigrationConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAutoMigrationConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAutoMigrationConfigTest() throws Exception {
+    AutoMigrationConfig expectedResponse =
+        AutoMigrationConfig.newBuilder()
+            .setName(AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAutoMigrationEnabled(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateAutoMigrationConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfig.addResponse(resultOperation);
+
+    AutoMigrationConfig autoMigrationConfig = AutoMigrationConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AutoMigrationConfig actualResponse =
+        client.updateAutoMigrationConfigAsync(autoMigrationConfig, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAutoMigrationConfigRequest actualRequest =
+        ((UpdateAutoMigrationConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(autoMigrationConfig, actualRequest.getAutoMigrationConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateAutoMigrationConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      AutoMigrationConfig autoMigrationConfig = AutoMigrationConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAutoMigrationConfigAsync(autoMigrationConfig, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getDeploymentGroupTest() throws Exception {
+    DeploymentGroup expectedResponse =
+        DeploymentGroup.newBuilder()
+            .setName(
+                DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setStateDescription("stateDescription-1173318997")
+            .addAllDeploymentUnits(new ArrayList<DeploymentUnit>())
+            .setProvisioningStateDescription("provisioningStateDescription1181429688")
+            .setProvisioningError(Status.newBuilder().build())
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    DeploymentGroupName name =
+        DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]");
+
+    DeploymentGroup actualResponse = client.getDeploymentGroup(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDeploymentGroupRequest actualRequest = ((GetDeploymentGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDeploymentGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      DeploymentGroupName name =
+          DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]");
+      client.getDeploymentGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDeploymentGroupTest2() throws Exception {
+    DeploymentGroup expectedResponse =
+        DeploymentGroup.newBuilder()
+            .setName(
+                DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setStateDescription("stateDescription-1173318997")
+            .addAllDeploymentUnits(new ArrayList<DeploymentUnit>())
+            .setProvisioningStateDescription("provisioningStateDescription1181429688")
+            .setProvisioningError(Status.newBuilder().build())
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    DeploymentGroup actualResponse = client.getDeploymentGroup(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDeploymentGroupRequest actualRequest = ((GetDeploymentGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDeploymentGroupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDeploymentGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDeploymentGroupTest() throws Exception {
+    DeploymentGroup expectedResponse =
+        DeploymentGroup.newBuilder()
+            .setName(
+                DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setStateDescription("stateDescription-1173318997")
+            .addAllDeploymentUnits(new ArrayList<DeploymentUnit>())
+            .setProvisioningStateDescription("provisioningStateDescription1181429688")
+            .setProvisioningError(Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDeploymentGroupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfig.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    DeploymentGroup deploymentGroup = DeploymentGroup.newBuilder().build();
+    String deploymentGroupId = "deploymentGroupId717062517";
+
+    DeploymentGroup actualResponse =
+        client.createDeploymentGroupAsync(parent, deploymentGroup, deploymentGroupId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDeploymentGroupRequest actualRequest =
+        ((CreateDeploymentGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(deploymentGroup, actualRequest.getDeploymentGroup());
+    Assert.assertEquals(deploymentGroupId, actualRequest.getDeploymentGroupId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDeploymentGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      DeploymentGroup deploymentGroup = DeploymentGroup.newBuilder().build();
+      String deploymentGroupId = "deploymentGroupId717062517";
+      client.createDeploymentGroupAsync(parent, deploymentGroup, deploymentGroupId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createDeploymentGroupTest2() throws Exception {
+    DeploymentGroup expectedResponse =
+        DeploymentGroup.newBuilder()
+            .setName(
+                DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setStateDescription("stateDescription-1173318997")
+            .addAllDeploymentUnits(new ArrayList<DeploymentUnit>())
+            .setProvisioningStateDescription("provisioningStateDescription1181429688")
+            .setProvisioningError(Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDeploymentGroupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfig.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    DeploymentGroup deploymentGroup = DeploymentGroup.newBuilder().build();
+    String deploymentGroupId = "deploymentGroupId717062517";
+
+    DeploymentGroup actualResponse =
+        client.createDeploymentGroupAsync(parent, deploymentGroup, deploymentGroupId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDeploymentGroupRequest actualRequest =
+        ((CreateDeploymentGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(deploymentGroup, actualRequest.getDeploymentGroup());
+    Assert.assertEquals(deploymentGroupId, actualRequest.getDeploymentGroupId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDeploymentGroupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      DeploymentGroup deploymentGroup = DeploymentGroup.newBuilder().build();
+      String deploymentGroupId = "deploymentGroupId717062517";
+      client.createDeploymentGroupAsync(parent, deploymentGroup, deploymentGroupId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateDeploymentGroupTest() throws Exception {
+    DeploymentGroup expectedResponse =
+        DeploymentGroup.newBuilder()
+            .setName(
+                DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setStateDescription("stateDescription-1173318997")
+            .addAllDeploymentUnits(new ArrayList<DeploymentUnit>())
+            .setProvisioningStateDescription("provisioningStateDescription1181429688")
+            .setProvisioningError(Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateDeploymentGroupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfig.addResponse(resultOperation);
+
+    DeploymentGroup deploymentGroup = DeploymentGroup.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DeploymentGroup actualResponse =
+        client.updateDeploymentGroupAsync(deploymentGroup, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDeploymentGroupRequest actualRequest =
+        ((UpdateDeploymentGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(deploymentGroup, actualRequest.getDeploymentGroup());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDeploymentGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      DeploymentGroup deploymentGroup = DeploymentGroup.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDeploymentGroupAsync(deploymentGroup, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteDeploymentGroupTest() throws Exception {
+    DeploymentGroup expectedResponse =
+        DeploymentGroup.newBuilder()
+            .setName(
+                DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setStateDescription("stateDescription-1173318997")
+            .addAllDeploymentUnits(new ArrayList<DeploymentUnit>())
+            .setProvisioningStateDescription("provisioningStateDescription1181429688")
+            .setProvisioningError(Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDeploymentGroupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfig.addResponse(resultOperation);
+
+    DeploymentGroupName name =
+        DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]");
+
+    DeploymentGroup actualResponse = client.deleteDeploymentGroupAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDeploymentGroupRequest actualRequest =
+        ((DeleteDeploymentGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDeploymentGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      DeploymentGroupName name =
+          DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]");
+      client.deleteDeploymentGroupAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteDeploymentGroupTest2() throws Exception {
+    DeploymentGroup expectedResponse =
+        DeploymentGroup.newBuilder()
+            .setName(
+                DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setStateDescription("stateDescription-1173318997")
+            .addAllDeploymentUnits(new ArrayList<DeploymentUnit>())
+            .setProvisioningStateDescription("provisioningStateDescription1181429688")
+            .setProvisioningError(Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDeploymentGroupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfig.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    DeploymentGroup actualResponse = client.deleteDeploymentGroupAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDeploymentGroupRequest actualRequest =
+        ((DeleteDeploymentGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDeploymentGroupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteDeploymentGroupAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listDeploymentGroupsTest() throws Exception {
+    DeploymentGroup responsesElement = DeploymentGroup.newBuilder().build();
+    ListDeploymentGroupsResponse expectedResponse =
+        ListDeploymentGroupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDeploymentGroups(Arrays.asList(responsesElement))
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDeploymentGroupsPagedResponse pagedListResponse = client.listDeploymentGroups(parent);
+
+    List<DeploymentGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDeploymentGroupsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDeploymentGroupsRequest actualRequest =
+        ((ListDeploymentGroupsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDeploymentGroupsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDeploymentGroups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDeploymentGroupsTest2() throws Exception {
+    DeploymentGroup responsesElement = DeploymentGroup.newBuilder().build();
+    ListDeploymentGroupsResponse expectedResponse =
+        ListDeploymentGroupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDeploymentGroups(Arrays.asList(responsesElement))
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDeploymentGroupsPagedResponse pagedListResponse = client.listDeploymentGroups(parent);
+
+    List<DeploymentGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDeploymentGroupsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDeploymentGroupsRequest actualRequest =
+        ((ListDeploymentGroupsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDeploymentGroupsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDeploymentGroups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void provisionDeploymentGroupTest() throws Exception {
+    DeploymentGroup expectedResponse =
+        DeploymentGroup.newBuilder()
+            .setName(
+                DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setStateDescription("stateDescription-1173318997")
+            .addAllDeploymentUnits(new ArrayList<DeploymentUnit>())
+            .setProvisioningStateDescription("provisioningStateDescription1181429688")
+            .setProvisioningError(Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("provisionDeploymentGroupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfig.addResponse(resultOperation);
+
+    DeploymentGroupName name =
+        DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]");
+
+    DeploymentGroup actualResponse = client.provisionDeploymentGroupAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ProvisionDeploymentGroupRequest actualRequest =
+        ((ProvisionDeploymentGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void provisionDeploymentGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      DeploymentGroupName name =
+          DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]");
+      client.provisionDeploymentGroupAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void provisionDeploymentGroupTest2() throws Exception {
+    DeploymentGroup expectedResponse =
+        DeploymentGroup.newBuilder()
+            .setName(
+                DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setStateDescription("stateDescription-1173318997")
+            .addAllDeploymentUnits(new ArrayList<DeploymentUnit>())
+            .setProvisioningStateDescription("provisioningStateDescription1181429688")
+            .setProvisioningError(Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("provisionDeploymentGroupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfig.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    DeploymentGroup actualResponse = client.provisionDeploymentGroupAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ProvisionDeploymentGroupRequest actualRequest =
+        ((ProvisionDeploymentGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void provisionDeploymentGroupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.provisionDeploymentGroupAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deprovisionDeploymentGroupTest() throws Exception {
+    DeploymentGroup expectedResponse =
+        DeploymentGroup.newBuilder()
+            .setName(
+                DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setStateDescription("stateDescription-1173318997")
+            .addAllDeploymentUnits(new ArrayList<DeploymentUnit>())
+            .setProvisioningStateDescription("provisioningStateDescription1181429688")
+            .setProvisioningError(Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deprovisionDeploymentGroupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfig.addResponse(resultOperation);
+
+    DeploymentGroupName name =
+        DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]");
+
+    DeploymentGroup actualResponse = client.deprovisionDeploymentGroupAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeprovisionDeploymentGroupRequest actualRequest =
+        ((DeprovisionDeploymentGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deprovisionDeploymentGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      DeploymentGroupName name =
+          DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]");
+      client.deprovisionDeploymentGroupAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deprovisionDeploymentGroupTest2() throws Exception {
+    DeploymentGroup expectedResponse =
+        DeploymentGroup.newBuilder()
+            .setName(
+                DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setStateDescription("stateDescription-1173318997")
+            .addAllDeploymentUnits(new ArrayList<DeploymentUnit>())
+            .setProvisioningStateDescription("provisioningStateDescription1181429688")
+            .setProvisioningError(Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deprovisionDeploymentGroupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfig.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    DeploymentGroup actualResponse = client.deprovisionDeploymentGroupAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeprovisionDeploymentGroupRequest actualRequest =
+        ((DeprovisionDeploymentGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deprovisionDeploymentGroupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deprovisionDeploymentGroupAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getDeploymentGroupRevisionTest() throws Exception {
+    DeploymentGroupRevision expectedResponse =
+        DeploymentGroupRevision.newBuilder()
+            .setName(
+                DeploymentGroupRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]", "[REVISION]")
+                    .toString())
+            .setSnapshot(DeploymentGroup.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAlternativeIds(new ArrayList<String>())
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    DeploymentGroupRevisionName name =
+        DeploymentGroupRevisionName.of(
+            "[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]", "[REVISION]");
+
+    DeploymentGroupRevision actualResponse = client.getDeploymentGroupRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDeploymentGroupRevisionRequest actualRequest =
+        ((GetDeploymentGroupRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDeploymentGroupRevisionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      DeploymentGroupRevisionName name =
+          DeploymentGroupRevisionName.of(
+              "[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]", "[REVISION]");
+      client.getDeploymentGroupRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDeploymentGroupRevisionTest2() throws Exception {
+    DeploymentGroupRevision expectedResponse =
+        DeploymentGroupRevision.newBuilder()
+            .setName(
+                DeploymentGroupRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]", "[REVISION]")
+                    .toString())
+            .setSnapshot(DeploymentGroup.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAlternativeIds(new ArrayList<String>())
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    DeploymentGroupRevision actualResponse = client.getDeploymentGroupRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDeploymentGroupRevisionRequest actualRequest =
+        ((GetDeploymentGroupRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDeploymentGroupRevisionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDeploymentGroupRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDeploymentGroupRevisionsTest() throws Exception {
+    DeploymentGroupRevision responsesElement = DeploymentGroupRevision.newBuilder().build();
+    ListDeploymentGroupRevisionsResponse expectedResponse =
+        ListDeploymentGroupRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDeploymentGroupRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    DeploymentGroupName parent =
+        DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]");
+
+    ListDeploymentGroupRevisionsPagedResponse pagedListResponse =
+        client.listDeploymentGroupRevisions(parent);
+
+    List<DeploymentGroupRevision> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getDeploymentGroupRevisionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDeploymentGroupRevisionsRequest actualRequest =
+        ((ListDeploymentGroupRevisionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDeploymentGroupRevisionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      DeploymentGroupName parent =
+          DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]");
+      client.listDeploymentGroupRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDeploymentGroupRevisionsTest2() throws Exception {
+    DeploymentGroupRevision responsesElement = DeploymentGroupRevision.newBuilder().build();
+    ListDeploymentGroupRevisionsResponse expectedResponse =
+        ListDeploymentGroupRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDeploymentGroupRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDeploymentGroupRevisionsPagedResponse pagedListResponse =
+        client.listDeploymentGroupRevisions(parent);
+
+    List<DeploymentGroupRevision> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getDeploymentGroupRevisionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDeploymentGroupRevisionsRequest actualRequest =
+        ((ListDeploymentGroupRevisionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDeploymentGroupRevisionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDeploymentGroupRevisions(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

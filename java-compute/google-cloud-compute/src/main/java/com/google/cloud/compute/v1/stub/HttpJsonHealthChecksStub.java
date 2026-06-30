@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListHealthChecksRequest;
 import com.google.cloud.compute.v1.DeleteHealthCheckRequest;
 import com.google.cloud.compute.v1.GetHealthCheckRequest;
@@ -44,6 +45,8 @@ import com.google.cloud.compute.v1.ListHealthChecksRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchHealthCheckRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsHealthCheckRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateHealthCheckRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -374,6 +377,48 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.HealthChecks/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsHealthCheckRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/healthChecks/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsHealthCheckRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsHealthCheckRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<UpdateHealthCheckRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateHealthCheckRequest, Operation>newBuilder()
@@ -446,6 +491,8 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
   private final UnaryCallable<PatchHealthCheckRequest, Operation> patchCallable;
   private final OperationCallable<PatchHealthCheckRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
   private final UnaryCallable<UpdateHealthCheckRequest, Operation> updateCallable;
   private final OperationCallable<UpdateHealthCheckRequest, Operation, Operation>
       updateOperationCallable;
@@ -453,6 +500,23 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/healthChecks/{health_check}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/healthChecks/{health_check}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/healthChecks/{health_check}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/healthChecks/{resource}");
+  private static final PathTemplate UPDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/healthChecks/{health_check}");
 
   public static final HttpJsonHealthChecksStub create(HealthChecksStubSettings settings)
       throws IOException {
@@ -507,6 +571,13 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteHealthCheckRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteHealthCheckRequest, Operation>newBuilder()
@@ -518,6 +589,14 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                   builder.add("health_check", String.valueOf(request.getHealthCheck()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "health_check", String.valueOf(request.getHealthCheck()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetHealthCheckRequest, HealthCheck> getTransportSettings =
@@ -531,6 +610,14 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "health_check", String.valueOf(request.getHealthCheck()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertHealthCheckRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertHealthCheckRequest, Operation>newBuilder()
@@ -542,6 +629,12 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListHealthChecksRequest, HealthCheckList> listTransportSettings =
         HttpJsonCallSettings.<ListHealthChecksRequest, HealthCheckList>newBuilder()
@@ -552,6 +645,12 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<PatchHealthCheckRequest, Operation> patchTransportSettings =
@@ -565,7 +664,37 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "health_check", String.valueOf(request.getHealthCheck()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
+    HttpJsonCallSettings<TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
     HttpJsonCallSettings<UpdateHealthCheckRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateHealthCheckRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
@@ -576,6 +705,14 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                   builder.add("health_check", String.valueOf(request.getHealthCheck()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "health_check", String.valueOf(request.getHealthCheck()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return UPDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 
@@ -621,6 +758,11 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
@@ -644,6 +786,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
@@ -705,6 +848,12 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
   @Override
   public OperationCallable<PatchHealthCheckRequest, Operation, Operation> patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

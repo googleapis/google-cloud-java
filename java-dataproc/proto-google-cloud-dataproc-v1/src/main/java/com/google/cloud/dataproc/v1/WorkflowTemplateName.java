@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -300,7 +300,8 @@ public class WorkflowTemplateName implements ResourceName {
     private Builder(WorkflowTemplateName workflowTemplateName) {
       Preconditions.checkArgument(
           Objects.equals(workflowTemplateName.pathTemplate, PROJECT_REGION_WORKFLOW_TEMPLATE),
-          "toBuilder is only supported when WorkflowTemplateName has the pattern of projects/{project}/regions/{region}/workflowTemplates/{workflow_template}");
+          "toBuilder is only supported when WorkflowTemplateName has the pattern of"
+              + " projects/{project}/regions/{region}/workflowTemplates/{workflow_template}");
       this.project = workflowTemplateName.project;
       this.region = workflowTemplateName.region;
       this.workflowTemplate = workflowTemplateName.workflowTemplate;

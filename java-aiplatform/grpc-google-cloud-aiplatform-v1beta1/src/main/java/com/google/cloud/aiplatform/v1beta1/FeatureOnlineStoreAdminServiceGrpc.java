@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * FeatureOnlineStore.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/feature_online_store_admin_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FeatureOnlineStoreAdminServiceGrpc {
 
@@ -717,6 +714,20 @@ public final class FeatureOnlineStoreAdminServiceGrpc {
     return FeatureOnlineStoreAdminServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static FeatureOnlineStoreAdminServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<FeatureOnlineStoreAdminServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<FeatureOnlineStoreAdminServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public FeatureOnlineStoreAdminServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new FeatureOnlineStoreAdminServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return FeatureOnlineStoreAdminServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1208,6 +1219,213 @@ public final class FeatureOnlineStoreAdminServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service FeatureOnlineStoreAdminService.
+   *
+   * <pre>
+   * The service that handles CRUD and List for resources for
+   * FeatureOnlineStore.
+   * </pre>
+   */
+  public static final class FeatureOnlineStoreAdminServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<FeatureOnlineStoreAdminServiceBlockingV2Stub> {
+    private FeatureOnlineStoreAdminServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected FeatureOnlineStoreAdminServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new FeatureOnlineStoreAdminServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new FeatureOnlineStore in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createFeatureOnlineStore(
+        com.google.cloud.aiplatform.v1beta1.CreateFeatureOnlineStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateFeatureOnlineStoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single FeatureOnlineStore.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore getFeatureOnlineStore(
+        com.google.cloud.aiplatform.v1beta1.GetFeatureOnlineStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetFeatureOnlineStoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists FeatureOnlineStores in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListFeatureOnlineStoresResponse
+        listFeatureOnlineStores(
+            com.google.cloud.aiplatform.v1beta1.ListFeatureOnlineStoresRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListFeatureOnlineStoresMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single FeatureOnlineStore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateFeatureOnlineStore(
+        com.google.cloud.aiplatform.v1beta1.UpdateFeatureOnlineStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateFeatureOnlineStoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single FeatureOnlineStore. The FeatureOnlineStore must not
+     * contain any FeatureViews.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteFeatureOnlineStore(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureOnlineStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteFeatureOnlineStoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new FeatureView in a given FeatureOnlineStore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createFeatureView(
+        com.google.cloud.aiplatform.v1beta1.CreateFeatureViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateFeatureViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single FeatureView.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureView getFeatureView(
+        com.google.cloud.aiplatform.v1beta1.GetFeatureViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetFeatureViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists FeatureViews in a given FeatureOnlineStore.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListFeatureViewsResponse listFeatureViews(
+        com.google.cloud.aiplatform.v1beta1.ListFeatureViewsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListFeatureViewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single FeatureView.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateFeatureView(
+        com.google.cloud.aiplatform.v1beta1.UpdateFeatureViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateFeatureViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single FeatureView.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteFeatureView(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteFeatureViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers on-demand sync for the FeatureView.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.SyncFeatureViewResponse syncFeatureView(
+        com.google.cloud.aiplatform.v1beta1.SyncFeatureViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSyncFeatureViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single FeatureViewSync.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureViewSync getFeatureViewSync(
+        com.google.cloud.aiplatform.v1beta1.GetFeatureViewSyncRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetFeatureViewSyncMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists FeatureViewSyncs in a given FeatureView.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListFeatureViewSyncsResponse listFeatureViewSyncs(
+        com.google.cloud.aiplatform.v1beta1.ListFeatureViewSyncsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListFeatureViewSyncsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * FeatureOnlineStoreAdminService.
    *
    * <pre>
    * The service that handles CRUD and List for resources for

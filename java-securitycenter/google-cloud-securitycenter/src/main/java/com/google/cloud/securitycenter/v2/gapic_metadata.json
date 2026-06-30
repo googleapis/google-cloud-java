@@ -11,7 +11,7 @@
           "libraryClient": "SecurityCenterClient",
           "rpcs": {
             "BatchCreateResourceValueConfigs": {
-              "methods": ["batchCreateResourceValueConfigs", "batchCreateResourceValueConfigs", "batchCreateResourceValueConfigs", "batchCreateResourceValueConfigsCallable"]
+              "methods": ["batchCreateResourceValueConfigs", "batchCreateResourceValueConfigs", "batchCreateResourceValueConfigs", "batchCreateResourceValueConfigs", "batchCreateResourceValueConfigsCallable"]
             },
             "BulkMuteFindings": {
               "methods": ["bulkMuteFindingsAsync", "bulkMuteFindingsAsync", "bulkMuteFindingsAsync", "bulkMuteFindingsOperationCallable", "bulkMuteFindingsCallable"]
@@ -71,7 +71,7 @@
               "methods": ["groupFindings", "groupFindings", "groupFindings", "groupFindingsPagedCallable", "groupFindingsCallable"]
             },
             "ListAttackPaths": {
-              "methods": ["listAttackPaths", "listAttackPaths", "listAttackPaths", "listAttackPathsPagedCallable", "listAttackPathsCallable"]
+              "methods": ["listAttackPaths", "listAttackPaths", "listAttackPaths", "listAttackPaths", "listAttackPathsPagedCallable", "listAttackPathsCallable"]
             },
             "ListBigQueryExports": {
               "methods": ["listBigQueryExports", "listBigQueryExports", "listBigQueryExports", "listBigQueryExports", "listBigQueryExports", "listBigQueryExportsPagedCallable", "listBigQueryExportsCallable"]
@@ -86,7 +86,7 @@
               "methods": ["listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigsPagedCallable", "listNotificationConfigsCallable"]
             },
             "ListResourceValueConfigs": {
-              "methods": ["listResourceValueConfigs", "listResourceValueConfigs", "listResourceValueConfigs", "listResourceValueConfigsPagedCallable", "listResourceValueConfigsCallable"]
+              "methods": ["listResourceValueConfigs", "listResourceValueConfigs", "listResourceValueConfigs", "listResourceValueConfigs", "listResourceValueConfigsPagedCallable", "listResourceValueConfigsCallable"]
             },
             "ListSources": {
               "methods": ["listSources", "listSources", "listSources", "listSources", "listSources", "listSourcesPagedCallable", "listSourcesCallable"]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.VizierService/CreateStudy")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateStudyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Study.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetStudyRequest, Study> getStudyMethodDescriptor =
@@ -92,6 +93,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.VizierService/GetStudy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetStudyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Study.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListStudiesRequest, ListStudiesResponse>
@@ -102,6 +104,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListStudiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListStudiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteStudyRequest, Empty> deleteStudyMethodDescriptor =
@@ -110,6 +113,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.VizierService/DeleteStudy")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteStudyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<LookupStudyRequest, Study> lookupStudyMethodDescriptor =
@@ -118,6 +122,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.VizierService/LookupStudy")
           .setRequestMarshaller(ProtoUtils.marshaller(LookupStudyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Study.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SuggestTrialsRequest, Operation>
@@ -128,6 +133,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SuggestTrialsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTrialRequest, Trial> createTrialMethodDescriptor =
@@ -136,6 +142,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.VizierService/CreateTrial")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTrialRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Trial.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetTrialRequest, Trial> getTrialMethodDescriptor =
@@ -144,6 +151,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.VizierService/GetTrial")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTrialRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Trial.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListTrialsRequest, ListTrialsResponse>
@@ -153,6 +161,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1.VizierService/ListTrials")
               .setRequestMarshaller(ProtoUtils.marshaller(ListTrialsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTrialsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddTrialMeasurementRequest, Trial>
@@ -163,6 +172,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AddTrialMeasurementRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Trial.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CompleteTrialRequest, Trial> completeTrialMethodDescriptor =
@@ -171,6 +181,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.VizierService/CompleteTrial")
           .setRequestMarshaller(ProtoUtils.marshaller(CompleteTrialRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Trial.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteTrialRequest, Empty> deleteTrialMethodDescriptor =
@@ -179,6 +190,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.VizierService/DeleteTrial")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTrialRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CheckTrialEarlyStoppingStateRequest, Operation>
@@ -190,6 +202,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CheckTrialEarlyStoppingStateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopTrialRequest, Trial> stopTrialMethodDescriptor =
@@ -198,6 +211,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.VizierService/StopTrial")
           .setRequestMarshaller(ProtoUtils.marshaller(StopTrialRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Trial.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListOptimalTrialsRequest, ListOptimalTrialsResponse>
@@ -209,6 +223,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   ProtoUtils.marshaller(ListOptimalTrialsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOptimalTrialsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -220,6 +235,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -228,6 +244,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -236,6 +253,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -244,6 +262,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -255,6 +274,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateStudyRequest, Study> createStudyCallable;
@@ -345,6 +365,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetStudyRequest, Study> getStudyTransportSettings =
         GrpcCallSettings.<GetStudyRequest, Study>newBuilder()
@@ -355,6 +376,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListStudiesRequest, ListStudiesResponse> listStudiesTransportSettings =
         GrpcCallSettings.<ListStudiesRequest, ListStudiesResponse>newBuilder()
@@ -365,6 +387,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteStudyRequest, Empty> deleteStudyTransportSettings =
         GrpcCallSettings.<DeleteStudyRequest, Empty>newBuilder()
@@ -375,6 +398,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<LookupStudyRequest, Study> lookupStudyTransportSettings =
         GrpcCallSettings.<LookupStudyRequest, Study>newBuilder()
@@ -385,6 +409,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SuggestTrialsRequest, Operation> suggestTrialsTransportSettings =
         GrpcCallSettings.<SuggestTrialsRequest, Operation>newBuilder()
@@ -395,6 +420,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateTrialRequest, Trial> createTrialTransportSettings =
         GrpcCallSettings.<CreateTrialRequest, Trial>newBuilder()
@@ -405,6 +431,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTrialRequest, Trial> getTrialTransportSettings =
         GrpcCallSettings.<GetTrialRequest, Trial>newBuilder()
@@ -415,6 +442,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTrialsRequest, ListTrialsResponse> listTrialsTransportSettings =
         GrpcCallSettings.<ListTrialsRequest, ListTrialsResponse>newBuilder()
@@ -425,6 +453,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<AddTrialMeasurementRequest, Trial> addTrialMeasurementTransportSettings =
         GrpcCallSettings.<AddTrialMeasurementRequest, Trial>newBuilder()
@@ -435,6 +464,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("trial_name", String.valueOf(request.getTrialName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getTrialName())
             .build();
     GrpcCallSettings<CompleteTrialRequest, Trial> completeTrialTransportSettings =
         GrpcCallSettings.<CompleteTrialRequest, Trial>newBuilder()
@@ -445,6 +475,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteTrialRequest, Empty> deleteTrialTransportSettings =
         GrpcCallSettings.<DeleteTrialRequest, Empty>newBuilder()
@@ -455,6 +486,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CheckTrialEarlyStoppingStateRequest, Operation>
         checkTrialEarlyStoppingStateTransportSettings =
@@ -466,6 +498,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                       builder.add("trial_name", String.valueOf(request.getTrialName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTrialName())
                 .build();
     GrpcCallSettings<StopTrialRequest, Trial> stopTrialTransportSettings =
         GrpcCallSettings.<StopTrialRequest, Trial>newBuilder()
@@ -476,6 +509,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListOptimalTrialsRequest, ListOptimalTrialsResponse>
         listOptimalTrialsTransportSettings =
@@ -487,6 +521,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -517,6 +552,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -527,6 +563,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -538,6 +575,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createStudyCallable =

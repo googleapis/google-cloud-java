@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ import "google/cloud/aiplatform/v1/content.proto";
 import "google/cloud/aiplatform/v1/explanation.proto";
 import "google/cloud/aiplatform/v1/tool.proto";
 import "google/cloud/aiplatform/v1/types.proto";
+import "google/cloud/aiplatform/v1/usage_metadata.proto";
 import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
 
 option csharp_namespace = "Google.Cloud.AIPlatform.V1";
 option go_package = "cloud.google.com/go/aiplatform/apiv1/aiplatformpb;aiplatformpb";
@@ -39,7 +41,8 @@ option ruby_package = "Google::Cloud::AIPlatform::V1";
 service PredictionService {
   option (google.api.default_host) = "aiplatform.googleapis.com";
   option (google.api.oauth_scopes) =
-      "https://www.googleapis.com/auth/cloud-platform";
+      "https://www.googleapis.com/auth/cloud-platform,"
+      "https://www.googleapis.com/auth/cloud-platform.read-only";
 
   // Perform an online prediction.
   rpc Predict(PredictRequest) returns (PredictResponse) {
@@ -173,6 +176,14 @@ service PredictionService {
         post: "/v1/{model=projects/*/locations/*/publishers/*/models/*}:generateContent"
         body: "*"
       }
+      additional_bindings {
+        post: "/v1/{model=endpoints/*}:generateContent"
+        body: "*"
+      }
+      additional_bindings {
+        post: "/v1/{model=publishers/*/models/*}:generateContent"
+        body: "*"
+      }
     };
     option (google.api.method_signature) = "model,contents";
   }
@@ -187,8 +198,25 @@ service PredictionService {
         post: "/v1/{model=projects/*/locations/*/publishers/*/models/*}:streamGenerateContent"
         body: "*"
       }
+      additional_bindings {
+        post: "/v1/{model=endpoints/*}:streamGenerateContent"
+        body: "*"
+      }
+      additional_bindings {
+        post: "/v1/{model=publishers/*/models/*}:streamGenerateContent"
+        body: "*"
+      }
     };
     option (google.api.method_signature) = "model,contents";
+  }
+
+  // Embed content with multimodal inputs.
+  rpc EmbedContent(EmbedContentRequest) returns (EmbedContentResponse) {
+    option (google.api.http) = {
+      post: "/v1/{model=projects/*/locations/*/publishers/*/models/*}:embedContent"
+      body: "*"
+    };
+    option (google.api.method_signature) = "model,content";
   }
 }
 
@@ -223,6 +251,10 @@ message PredictRequest {
   // [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
   // [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
   google.protobuf.Value parameters = 3;
+
+  // Optional. The user labels for Imagen billing usage only. Only Imagen
+  // supports labels. For other use cases, it will be ignored.
+  map<string, string> labels = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Response message for
@@ -610,18 +642,37 @@ message CountTokensRequest {
     }
   ];
 
-  // Required. The name of the publisher model requested to serve the
+  // Optional. The name of the publisher model requested to serve the
   // prediction. Format:
   // `projects/{project}/locations/{location}/publishers/*/models/*`
-  string model = 3 [(google.api.field_behavior) = REQUIRED];
+  string model = 3 [(google.api.field_behavior) = OPTIONAL];
 
-  // Required. The instances that are the input to token counting call.
+  // Optional. The instances that are the input to token counting call.
   // Schema is identical to the prediction schema of the underlying model.
   repeated google.protobuf.Value instances = 2
-      [(google.api.field_behavior) = REQUIRED];
+      [(google.api.field_behavior) = OPTIONAL];
 
-  // Required. Input content.
-  repeated Content contents = 4 [(google.api.field_behavior) = REQUIRED];
+  // Optional. Input content.
+  repeated Content contents = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The user provided system instructions for the model.
+  // Note: only text should be used in parts and content in each part will be in
+  // a separate paragraph.
+  optional Content system_instruction = 5
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. A list of `Tools` the model may use to generate the next
+  // response.
+  //
+  // A `Tool` is a piece of code that enables the system to interact with
+  // external systems to perform an action, or set of actions, outside of
+  // knowledge and scope of the model.
+  repeated Tool tools = 6 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Generation config that the model will use to generate the
+  // response.
+  optional GenerationConfig generation_config = 7
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Response message for [PredictionService.CountTokens][].
@@ -632,13 +683,22 @@ message CountTokensResponse {
   // The total number of billable characters counted across all instances from
   // the request.
   int32 total_billable_characters = 2;
+
+  // Output only. List of modalities that were processed in the request input.
+  repeated ModalityTokenCount prompt_tokens_details = 3
+      [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Request message for [PredictionService.GenerateContent].
 message GenerateContentRequest {
-  // Required. The name of the publisher model requested to serve the
-  // prediction. Format:
+  // Required. The fully qualified name of the publisher model or tuned model
+  // endpoint to use.
+  //
+  // Publisher model format:
   // `projects/{project}/locations/{location}/publishers/*/models/*`
+  //
+  // Tuned model endpoint format:
+  // `projects/{project}/locations/{location}/endpoints/{endpoint}`
   string model = 5 [(google.api.field_behavior) = REQUIRED];
 
   // Required. The content of the current conversation with the model.
@@ -654,6 +714,18 @@ message GenerateContentRequest {
   optional Content system_instruction = 8
       [(google.api.field_behavior) = OPTIONAL];
 
+  // Optional. The name of the cached content used as context to serve the
+  // prediction. Note: only used in explicit caching, where users can have
+  // control over caching (e.g. what content to cache) and enjoy guaranteed cost
+  // savings. Format:
+  // `projects/{project}/locations/{location}/cachedContents/{cachedContent}`
+  string cached_content = 9 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.resource_reference) = {
+      type: "aiplatform.googleapis.com/CachedContent"
+    }
+  ];
+
   // Optional. A list of `Tools` the model may use to generate the next
   // response.
   //
@@ -662,9 +734,27 @@ message GenerateContentRequest {
   // knowledge and scope of the model.
   repeated Tool tools = 6 [(google.api.field_behavior) = OPTIONAL];
 
+  // Optional. Tool config. This config is shared for all tools provided in the
+  // request.
+  ToolConfig tool_config = 7 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The labels with user-defined metadata for the request. It is used
+  // for billing and reporting only.
+  //
+  // Label keys and values can be no longer than 63 characters
+  // (Unicode codepoints) and can only contain lowercase letters, numeric
+  // characters, underscores, and dashes. International characters are allowed.
+  // Label values are optional. Label keys must start with a letter.
+  map<string, string> labels = 10 [(google.api.field_behavior) = OPTIONAL];
+
   // Optional. Per request settings for blocking unsafe content.
   // Enforced on GenerateContentResponse.candidates.
   repeated SafetySetting safety_settings = 3
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Settings for prompt and response sanitization using the Model
+  // Armor service. If supplied, safety_settings must not be supplied.
+  ModelArmorConfig model_armor_config = 11
       [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Generation config.
@@ -693,6 +783,12 @@ message GenerateContentResponse {
 
       // Candidates blocked due to prohibited content.
       PROHIBITED_CONTENT = 4;
+
+      // The user prompt was blocked by Model Armor.
+      MODEL_ARMOR = 5;
+
+      // The user prompt was blocked due to jailbreak.
+      JAILBREAK = 6;
     }
 
     // Output only. Blocked reason.
@@ -708,17 +804,80 @@ message GenerateContentResponse {
 
   // Usage metadata about response(s).
   message UsageMetadata {
-    // Number of tokens in the request.
+    // The type of traffic that this request was processed with, indicating
+    // which quota is consumed.
+    enum TrafficType {
+      // Unspecified request traffic type.
+      TRAFFIC_TYPE_UNSPECIFIED = 0;
+
+      // The request was processed using Pay-As-You-Go quota.
+      ON_DEMAND = 1;
+
+      // Type for Priority Pay-As-You-Go traffic.
+      ON_DEMAND_PRIORITY = 3;
+
+      // Type for Flex traffic.
+      ON_DEMAND_FLEX = 4;
+
+      // Type for Provisioned Throughput traffic.
+      PROVISIONED_THROUGHPUT = 2;
+    }
+
+    // Number of tokens in the request. When `cached_content` is set, this is
+    // still the total effective prompt size meaning this includes the number of
+    // tokens in the cached content.
     int32 prompt_token_count = 1;
 
     // Number of tokens in the response(s).
     int32 candidates_token_count = 2;
 
+    // Output only. Number of tokens present in thoughts output.
+    int32 thoughts_token_count = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+    // Total token count for prompt and response candidates.
     int32 total_token_count = 3;
+
+    // Output only. Number of tokens in the cached part in the input (the cached
+    // content).
+    int32 cached_content_token_count = 5
+        [(google.api.field_behavior) = OUTPUT_ONLY];
+
+    // Output only. List of modalities that were processed in the request input.
+    repeated ModalityTokenCount prompt_tokens_details = 9
+        [(google.api.field_behavior) = OUTPUT_ONLY];
+
+    // Output only. List of modalities of the cached content in the request
+    // input.
+    repeated ModalityTokenCount cache_tokens_details = 10
+        [(google.api.field_behavior) = OUTPUT_ONLY];
+
+    // Output only. List of modalities that were returned in the response.
+    repeated ModalityTokenCount candidates_tokens_details = 11
+        [(google.api.field_behavior) = OUTPUT_ONLY];
+
+    // Output only. A detailed breakdown by modality of the token counts from
+    // the results of tool executions, which are provided back to the model as
+    // input.
+    repeated ModalityTokenCount tool_use_prompt_tokens_details = 12
+        [(google.api.field_behavior) = OUTPUT_ONLY];
+
+    // Output only. The traffic type for this request.
+    TrafficType traffic_type = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
   }
 
   // Output only. Generated candidates.
   repeated Candidate candidates = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. The model version used to generate the response.
+  string model_version = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. Timestamp when the request is made to the server.
+  google.protobuf.Timestamp create_time = 12
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. response_id is used to identify each response. It is the
+  // encoding of the event_id.
+  string response_id = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. Content filter results for a prompt sent in the request.
   // Note: Sent only in the first stream chunk.
@@ -728,4 +887,125 @@ message GenerateContentResponse {
 
   // Usage metadata about the response(s).
   UsageMetadata usage_metadata = 4;
+}
+
+// Request message for
+// [PredictionService.EmbedContent][google.cloud.aiplatform.v1.PredictionService.EmbedContent].
+message EmbedContentRequest {
+  // Configurations for the EmbedContent API.
+  message EmbedContentConfig {
+    // Optional. The title for the text.
+    //
+    // Only applicable to text-only embedding models.
+    optional string title = 1 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. The task type of the embedding.
+    //
+    // Only applicable to text-only embedding models.
+    optional EmbeddingTaskType task_type = 2
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Whether to silently truncate the input content if it's longer
+    // than the maximum sequence length.
+    //
+    // Only applicable to text-only embedding models.
+    optional bool auto_truncate = 3 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Reduced dimension for the output embedding. If set, excessive
+    // values in the output embedding are truncated from the end.
+    optional int32 output_dimensionality = 4
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Whether to enable OCR for document content.
+    optional bool document_ocr = 5 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Whether to extract audio from video content.
+    optional bool audio_track_extraction = 6
+        [(google.api.field_behavior) = OPTIONAL];
+  }
+
+  // Represents a downstream task the embeddings will be used for.
+  enum EmbeddingTaskType {
+    // Unset value, which will default to one of the other enum values.
+    UNSPECIFIED = 0;
+
+    // Specifies the given text is a query in a search/retrieval setting.
+    RETRIEVAL_QUERY = 2;
+
+    // Specifies the given text is a document from the corpus being searched.
+    RETRIEVAL_DOCUMENT = 3;
+
+    // Specifies the given text will be used for STS.
+    SEMANTIC_SIMILARITY = 4;
+
+    // Specifies that the given text will be classified.
+    CLASSIFICATION = 5;
+
+    // Specifies that the embeddings will be used for clustering.
+    CLUSTERING = 6;
+
+    // Specifies that the embeddings will be used for question answering.
+    QUESTION_ANSWERING = 7;
+
+    // Specifies that the embeddings will be used for fact verification.
+    FACT_VERIFICATION = 8;
+
+    // Specifies that the embeddings will be used for code retrieval.
+    CODE_RETRIEVAL_QUERY = 9;
+  }
+
+  // Required. The name of the publisher model requested to serve the
+  // prediction. Format:
+  // `projects/{project}/locations/{location}/publishers/*/models/*`
+  optional string model = 1 [(google.api.resource_reference) = {
+    type: "aiplatform.googleapis.com/Endpoint"
+  }];
+
+  // Required. Input content to be embedded.
+  optional Content content = 2;
+
+  // Optional. Deprecated: Please use EmbedContentConfig.title instead.
+  // The title for the text.
+  optional string title = 4
+      [deprecated = true, (google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Deprecated: Please use EmbedContentConfig.task_type instead.
+  // The task type of the embedding.
+  optional EmbeddingTaskType task_type = 5
+      [deprecated = true, (google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Deprecated: Please use EmbedContentConfig.output_dimensionality
+  // instead. Reduced dimension for the output embedding. If set, excessive
+  // values in the output embedding are truncated from the end.
+  optional int32 output_dimensionality = 6
+      [deprecated = true, (google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Deprecated: Please use EmbedContentConfig.auto_truncate instead.
+  // Whether to silently truncate the input content if it's longer
+  // than the maximum sequence length.
+  optional bool auto_truncate = 7
+      [deprecated = true, (google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Configuration for the EmbedContent request.
+  optional EmbedContentConfig embed_content_config = 8
+      [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Response message for
+// [PredictionService.EmbedContent][google.cloud.aiplatform.v1.PredictionService.EmbedContent].
+message EmbedContentResponse {
+  // A list of floats representing an embedding.
+  message Embedding {
+    // Embedding vector values.
+    repeated float values = 1;
+  }
+
+  // The embedding generated from the input content.
+  Embedding embedding = 1;
+
+  // Usage metadata about the response(s).
+  UsageMetadata usage_metadata = 2;
+
+  // Whether the input content was truncated before generating the embedding.
+  bool truncated = 4;
 }

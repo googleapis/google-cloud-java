@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,9 +42,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Provides methods to manage Cloud Certificate Manager entities.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/certificatemanager/v1/certificate_manager.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CertificateManagerGrpc {
 
@@ -1513,6 +1510,19 @@ public final class CertificateManagerGrpc {
     return CertificateManagerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CertificateManagerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CertificateManagerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CertificateManagerBlockingV2Stub>() {
+          @java.lang.Override
+          public CertificateManagerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CertificateManagerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CertificateManagerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2551,6 +2561,457 @@ public final class CertificateManagerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CertificateManager.
+   *
+   * <pre>
+   * API Overview
+   * Certificates Manager API allows customers to see and manage all their TLS
+   * certificates.
+   * Certificates Manager API service provides methods to manage certificates,
+   * group them into collections, and create serving configuration that can be
+   * easily applied to other Cloud resources e.g. Target Proxies.
+   * Data Model
+   * The Certificates Manager service exposes the following resources:
+   * * `Certificate` that describes a single TLS certificate.
+   * * `CertificateMap` that describes a collection of certificates that can be
+   * attached to a target resource.
+   * * `CertificateMapEntry` that describes a single configuration entry that
+   * consists of a SNI and a group of certificates. It's a subresource of
+   * CertificateMap.
+   * Certificate, CertificateMap and CertificateMapEntry IDs
+   * have to fully match the regexp `[a-z0-9-]{1,63}`. In other words,
+   * - only lower case letters, digits, and hyphen are allowed
+   * - length of the resource ID has to be in [1,63] range.
+   * Provides methods to manage Cloud Certificate Manager entities.
+   * </pre>
+   */
+  public static final class CertificateManagerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CertificateManagerBlockingV2Stub> {
+    private CertificateManagerBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CertificateManagerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CertificateManagerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Certificates in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.ListCertificatesResponse listCertificates(
+        com.google.cloud.certificatemanager.v1.ListCertificatesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListCertificatesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Certificate.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.Certificate getCertificate(
+        com.google.cloud.certificatemanager.v1.GetCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetCertificateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Certificate in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCertificate(
+        com.google.cloud.certificatemanager.v1.CreateCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateCertificateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Certificate.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCertificate(
+        com.google.cloud.certificatemanager.v1.UpdateCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateCertificateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Certificate.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCertificate(
+        com.google.cloud.certificatemanager.v1.DeleteCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteCertificateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CertificateMaps in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.ListCertificateMapsResponse listCertificateMaps(
+        com.google.cloud.certificatemanager.v1.ListCertificateMapsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListCertificateMapsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CertificateMap.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.CertificateMap getCertificateMap(
+        com.google.cloud.certificatemanager.v1.GetCertificateMapRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetCertificateMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CertificateMap in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCertificateMap(
+        com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateCertificateMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CertificateMap.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCertificateMap(
+        com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateCertificateMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single CertificateMap. A Certificate Map can't be deleted
+     * if it contains Certificate Map Entries. Remove all the entries from
+     * the map before calling this method.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCertificateMap(
+        com.google.cloud.certificatemanager.v1.DeleteCertificateMapRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteCertificateMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CertificateMapEntries in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesResponse
+        listCertificateMapEntries(
+            com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListCertificateMapEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CertificateMapEntry.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.CertificateMapEntry getCertificateMapEntry(
+        com.google.cloud.certificatemanager.v1.GetCertificateMapEntryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetCertificateMapEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CertificateMapEntry in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCertificateMapEntry(
+        com.google.cloud.certificatemanager.v1.CreateCertificateMapEntryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateCertificateMapEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CertificateMapEntry.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCertificateMapEntry(
+        com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateCertificateMapEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single CertificateMapEntry.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCertificateMapEntry(
+        com.google.cloud.certificatemanager.v1.DeleteCertificateMapEntryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteCertificateMapEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DnsAuthorizations in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsResponse
+        listDnsAuthorizations(
+            com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDnsAuthorizationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DnsAuthorization.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.DnsAuthorization getDnsAuthorization(
+        com.google.cloud.certificatemanager.v1.GetDnsAuthorizationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDnsAuthorizationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new DnsAuthorization in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDnsAuthorization(
+        com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateDnsAuthorizationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DnsAuthorization.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDnsAuthorization(
+        com.google.cloud.certificatemanager.v1.UpdateDnsAuthorizationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDnsAuthorizationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DnsAuthorization.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDnsAuthorization(
+        com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteDnsAuthorizationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CertificateIssuanceConfigs in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse
+        listCertificateIssuanceConfigs(
+            com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListCertificateIssuanceConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CertificateIssuanceConfig.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig
+        getCertificateIssuanceConfig(
+            com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetCertificateIssuanceConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CertificateIssuanceConfig in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCertificateIssuanceConfig(
+        com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateCertificateIssuanceConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single CertificateIssuanceConfig.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCertificateIssuanceConfig(
+        com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteCertificateIssuanceConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TrustConfigs in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse listTrustConfigs(
+        com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTrustConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single TrustConfig.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.TrustConfig getTrustConfig(
+        com.google.cloud.certificatemanager.v1.GetTrustConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTrustConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new TrustConfig in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTrustConfig(
+        com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateTrustConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a TrustConfig.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTrustConfig(
+        com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateTrustConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single TrustConfig.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTrustConfig(
+        com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTrustConfigMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CertificateManager.
    *
    * <pre>
    * API Overview

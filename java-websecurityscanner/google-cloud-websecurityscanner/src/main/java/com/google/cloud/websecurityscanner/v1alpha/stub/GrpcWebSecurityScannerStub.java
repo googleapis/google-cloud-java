@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateScanConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ScanConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteScanConfigRequest, Empty>
@@ -87,6 +88,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteScanConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetScanConfigRequest, ScanConfig>
@@ -98,6 +100,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetScanConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ScanConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListScanConfigsRequest, ListScanConfigsResponse>
@@ -110,6 +113,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   ProtoUtils.marshaller(ListScanConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListScanConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateScanConfigRequest, ScanConfig>
@@ -121,6 +125,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateScanConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ScanConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StartScanRunRequest, ScanRun> startScanRunMethodDescriptor =
@@ -130,6 +135,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner/StartScanRun")
           .setRequestMarshaller(ProtoUtils.marshaller(StartScanRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ScanRun.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetScanRunRequest, ScanRun> getScanRunMethodDescriptor =
@@ -139,6 +145,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner/GetScanRun")
           .setRequestMarshaller(ProtoUtils.marshaller(GetScanRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ScanRun.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListScanRunsRequest, ListScanRunsResponse>
@@ -150,6 +157,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListScanRunsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListScanRunsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopScanRunRequest, ScanRun> stopScanRunMethodDescriptor =
@@ -159,6 +167,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner/StopScanRun")
           .setRequestMarshaller(ProtoUtils.marshaller(StopScanRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ScanRun.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListCrawledUrlsRequest, ListCrawledUrlsResponse>
@@ -171,6 +180,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   ProtoUtils.marshaller(ListCrawledUrlsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCrawledUrlsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFindingRequest, Finding> getFindingMethodDescriptor =
@@ -180,6 +190,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner/GetFinding")
           .setRequestMarshaller(ProtoUtils.marshaller(GetFindingRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListFindingsRequest, ListFindingsResponse>
@@ -191,6 +202,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListFindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>
@@ -203,6 +215,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   ProtoUtils.marshaller(ListFindingTypeStatsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFindingTypeStatsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateScanConfigRequest, ScanConfig> createScanConfigCallable;
@@ -283,6 +296,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteScanConfigRequest, Empty> deleteScanConfigTransportSettings =
         GrpcCallSettings.<DeleteScanConfigRequest, Empty>newBuilder()
@@ -293,6 +307,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetScanConfigRequest, ScanConfig> getScanConfigTransportSettings =
         GrpcCallSettings.<GetScanConfigRequest, ScanConfig>newBuilder()
@@ -303,6 +318,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListScanConfigsRequest, ListScanConfigsResponse>
         listScanConfigsTransportSettings =
@@ -314,6 +330,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateScanConfigRequest, ScanConfig> updateScanConfigTransportSettings =
         GrpcCallSettings.<UpdateScanConfigRequest, ScanConfig>newBuilder()
@@ -335,6 +352,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetScanRunRequest, ScanRun> getScanRunTransportSettings =
         GrpcCallSettings.<GetScanRunRequest, ScanRun>newBuilder()
@@ -345,6 +363,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListScanRunsRequest, ListScanRunsResponse> listScanRunsTransportSettings =
         GrpcCallSettings.<ListScanRunsRequest, ListScanRunsResponse>newBuilder()
@@ -355,6 +374,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<StopScanRunRequest, ScanRun> stopScanRunTransportSettings =
         GrpcCallSettings.<StopScanRunRequest, ScanRun>newBuilder()
@@ -365,6 +385,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCrawledUrlsRequest, ListCrawledUrlsResponse>
         listCrawledUrlsTransportSettings =
@@ -376,6 +397,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetFindingRequest, Finding> getFindingTransportSettings =
         GrpcCallSettings.<GetFindingRequest, Finding>newBuilder()
@@ -386,6 +408,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
         GrpcCallSettings.<ListFindingsRequest, ListFindingsResponse>newBuilder()
@@ -396,6 +419,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>
         listFindingTypeStatsTransportSettings =
@@ -407,6 +431,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createScanConfigCallable =

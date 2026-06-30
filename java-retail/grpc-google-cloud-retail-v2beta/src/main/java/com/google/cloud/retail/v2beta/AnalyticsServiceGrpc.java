@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Retail recommendation business metric is currently not available.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2beta/analytics_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AnalyticsServiceGrpc {
 
@@ -96,6 +93,19 @@ public final class AnalyticsServiceGrpc {
           }
         };
     return AnalyticsServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AnalyticsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AnalyticsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AnalyticsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public AnalyticsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AnalyticsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AnalyticsServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -210,6 +220,44 @@ public final class AnalyticsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AnalyticsService.
+   *
+   * <pre>
+   * Service for managing &amp; accessing retail search business metric.
+   * Retail recommendation business metric is currently not available.
+   * </pre>
+   */
+  public static final class AnalyticsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AnalyticsServiceBlockingV2Stub> {
+    private AnalyticsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AnalyticsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AnalyticsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports analytics metrics.
+     * `Operation.response` is of type `ExportAnalyticsMetricsResponse`.
+     * `Operation.metadata` is of type `ExportMetadata`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportAnalyticsMetrics(
+        com.google.cloud.retail.v2beta.ExportAnalyticsMetricsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportAnalyticsMetricsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AnalyticsService.
    *
    * <pre>
    * Service for managing &amp; accessing retail search business metric.

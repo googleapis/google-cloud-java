@@ -1,5 +1,269 @@
 # Changelog
 
+## 2.96.0 (None)
+
+* No change
+
+
+## 2.95.0 (2026-03-11)
+
+* No change
+
+
+## 2.94.0 (2026-02-25)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.57.0 ([#11956](https://github.com/googleapis/google-cloud-java/issues/11956)) ([62b97e1](https://github.com/googleapis/google-cloud-java/commit/62b97e108eee0f8649c53cef400774f4fca4ffab))
+
+
+## 2.91.0 (2026-01-29)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.56.0 ([#11879](https://github.com/googleapis/google-cloud-java/issues/11879)) ([ac1f018](https://github.com/googleapis/google-cloud-java/commit/ac1f0182ac5b405ca164ac867c8c042322736bef))
+
+
+## 2.90.0 (2026-01-15)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.55.1 ([#11863](https://github.com/googleapis/google-cloud-java/issues/11863)) ([50cda6e](https://github.com/googleapis/google-cloud-java/commit/50cda6ec7be56bf1900737a6aaf12fc494be20c2))
+
+
+## 2.89.0 (2025-12-16)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.54.2 ([#11819](https://github.com/googleapis/google-cloud-java/issues/11819)) ([f32924a](https://github.com/googleapis/google-cloud-java/commit/f32924af0899a0b34646e88ffa8c527163b3bb24))
+
+
+## 2.86.0 (2025-10-21)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.53.0 ([#11776](https://github.com/googleapis/google-cloud-java/issues/11776)) ([e4a2892](https://github.com/googleapis/google-cloud-java/commit/e4a2892c8f7d51e3c3bec551f922b42f70a880d8))
+
+
+## 2.85.0 (2025-10-13)
+
+* No change
+
+
+## 2.84.0 (2025-10-07)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.3 ([#11755](https://github.com/googleapis/google-cloud-java/issues/11755)) ([b117bc3](https://github.com/googleapis/google-cloud-java/commit/b117bc3d8d04ccc3c1f5586b73e1718ff46b23e6))
+
+
+## 2.83.0 (2025-09-22)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.2 ([#11747](https://github.com/googleapis/google-cloud-java/issues/11747)) ([deb0ed9](https://github.com/googleapis/google-cloud-java/commit/deb0ed92d7c3279e0e26ba8b22463cb77131fa10))
+
+
+## 2.82.0 (2025-09-11)
+
+### Features
+
+* add GCE to DeploymentPlatform enum ([75896ab](https://github.com/googleapis/google-cloud-java/commit/75896ab07163a97a12a067dab9c255b014285a22))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.1 ([#11738](https://github.com/googleapis/google-cloud-java/issues/11738)) ([b17cf6d](https://github.com/googleapis/google-cloud-java/commit/b17cf6de63b9cabcd44b6fc21b57c187b321ae8f))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.1 ([#11738](https://github.com/googleapis/google-cloud-java/issues/11738)) ([b17cf6d](https://github.com/googleapis/google-cloud-java/commit/b17cf6de63b9cabcd44b6fc21b57c187b321ae8f))
+
+
+## 2.81.0 (2025-08-25)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.0 ([#11727](https://github.com/googleapis/google-cloud-java/issues/11727)) ([31d8698](https://github.com/googleapis/google-cloud-java/commit/31d86980d0e27e0a948727d778cf46fbcf227239))
+
+
+## 2.80.0 (2025-08-13)
+
+* No change
+
+
+## 2.79.0 (2025-08-08)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.51.0 ([#11695](https://github.com/googleapis/google-cloud-java/issues/11695)) ([b82ce00](https://github.com/googleapis/google-cloud-java/commit/b82ce005c30551b8714099b7219b71bda85aa3a5))
+
+
+## 2.78.0 (2025-07-30)
+
+* No change
+
+
+## 2.77.0 (2025-07-28)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.2 ([#11680](https://github.com/googleapis/google-cloud-java/issues/11680)) ([d1b99a7](https://github.com/googleapis/google-cloud-java/commit/d1b99a706daa10c487b56edbb5170b41530628ca))
+
+
+## 2.76.0 (2025-07-11)
+
+### Features
+
+* Add AffectedResources proto ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.1 ([#11655](https://github.com/googleapis/google-cloud-java/issues/11655)) ([9b34528](https://github.com/googleapis/google-cloud-java/commit/9b34528f85043049e3349fffc30bb2dbfe01836c))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.1 ([#11655](https://github.com/googleapis/google-cloud-java/issues/11655)) ([9b34528](https://github.com/googleapis/google-cloud-java/commit/9b34528f85043049e3349fffc30bb2dbfe01836c))
+
+
+## 2.75.0 (2025-06-25)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.0 ([#11624](https://github.com/googleapis/google-cloud-java/issues/11624)) ([a19f457](https://github.com/googleapis/google-cloud-java/commit/a19f457d10f15437ac26ce379048ff8b3cc6be5d))
+
+
+## 2.73.0 (2025-06-16)
+
+* No change
+
+
+## 2.72.0 (2025-06-04)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.49.0 ([#11603](https://github.com/googleapis/google-cloud-java/issues/11603)) ([3ea506d](https://github.com/googleapis/google-cloud-java/commit/3ea506d86a54fae209e9971af7b4a8aa1f5997b9))
+
+
+## 2.70.0 (2025-05-06)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.46.3 ([#11531](https://github.com/googleapis/google-cloud-java/issues/11531)) ([5f9a9e7](https://github.com/googleapis/google-cloud-java/commit/5f9a9e73df5e44ae38a8d18780873b7896d31c04))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.47.0 ([#11561](https://github.com/googleapis/google-cloud-java/issues/11561)) ([9e84230](https://github.com/googleapis/google-cloud-java/commit/9e842300aa2e3e654785cc929aef0d6bb9a1a0a9))
+
+
+## 2.67.0 (2025-02-26)
+
+### Features
+
+* added more information about DDoS attack in cloud armor proto ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.44.0 ([#11456](https://github.com/googleapis/google-cloud-java/issues/11456)) ([6b0ad6f](https://github.com/googleapis/google-cloud-java/commit/6b0ad6f8243cc60de7ee608237fa61445f0b0526))
+
+
+## 2.66.0 (2025-02-11)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.43.0 ([#11426](https://github.com/googleapis/google-cloud-java/issues/11426)) ([afdc294](https://github.com/googleapis/google-cloud-java/commit/afdc2944304a077ce4cbdd8c7675f1ca707b2be0))
+
+
+## 2.65.0 (2025-01-29)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.42.0 ([#11410](https://github.com/googleapis/google-cloud-java/issues/11410)) ([34dfd0d](https://github.com/googleapis/google-cloud-java/commit/34dfd0dc9c5ca042aca0778e8d34b2ca072bfeb1))
+
+
+## 2.64.0 (2025-01-09)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.41.1 ([#11382](https://github.com/googleapis/google-cloud-java/issues/11382)) ([a4fd23c](https://github.com/googleapis/google-cloud-java/commit/a4fd23ce1dfa364959de1e97e3b769996f3c7d0d))
+
+
+## 2.63.0 (2024-12-13)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.41.0 ([#11349](https://github.com/googleapis/google-cloud-java/issues/11349)) ([9bb6334](https://github.com/googleapis/google-cloud-java/commit/9bb6334458fdec53ba9fdec501de534d6516f102))
+
+
+## 2.62.0 (2024-11-18)
+
+### Features
+
+* make client libraries GA for SCC v2 ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+
+
+
+## 2.61.0 (2024-10-28)
+
+* No change
+
+
+## 2.60.0 (2024-10-09)
+
+* No change
+
+
+## 2.58.0 (2024-09-26)
+
+* No change
+
+
+## 2.57.0 (2024-09-11)
+
+* No change
+
+
+## 2.56.0 (2024-08-21)
+
+### Features
+
+* enable Dynamic Mute ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* enable Dynamic Mute ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+
+
+
+## 2.55.0 (2024-07-31)
+
+### Features
+
+* added cloud provider field to list findings response ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* added cloud provider field to list findings response ([f1438e5](https://github.com/googleapis/google-cloud-java/commit/f1438e5d2077b245f2167e57fc5af104ad34283b))
+
+
+
+## 2.54.0 (2024-06-27)
+
+### Features
+
+* Add toxic_combination and group_memberships fields to finding ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* Add toxic_combination and group_memberships fields to finding ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+
+
+
+## 2.53.0 (None)
+
+* No change
+
+
+## 2.52.0 (2024-05-23)
+
+* No change
+
+
+## 2.51.0 (2024-05-08)
+
+* No change
+
+
+## 2.50.0 (2024-04-25)
+
+### Features
+
+* Add cloud_armor field to finding's list of attributes ([53294e2](https://github.com/googleapis/google-cloud-java/commit/53294e2cbb04e445bf691afbbfc17336a0d06921))
+* Fixed backtick and double quotes mismatch in security_marks.proto ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+
+
+
 ## 2.49.0 (2024-04-04)
 
 * No change

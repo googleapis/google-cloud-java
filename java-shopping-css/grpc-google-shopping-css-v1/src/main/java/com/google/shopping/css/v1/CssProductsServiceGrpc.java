@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * internally).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/css/v1/css_products.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CssProductsServiceGrpc {
 
@@ -136,6 +133,19 @@ public final class CssProductsServiceGrpc {
           }
         };
     return CssProductsServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CssProductsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CssProductsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CssProductsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public CssProductsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CssProductsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CssProductsServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -293,6 +303,61 @@ public final class CssProductsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CssProductsService.
+   *
+   * <pre>
+   * Service for doing get and list on Css Products(a.k.a Aggregate Offers
+   * internally).
+   * </pre>
+   */
+  public static final class CssProductsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CssProductsServiceBlockingV2Stub> {
+    private CssProductsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CssProductsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CssProductsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the processed CSS Product from your CSS Center account. After
+     * inserting, updating, or deleting a product input, it may take several
+     * minutes before the updated final product can be retrieved.
+     * </pre>
+     */
+    public com.google.shopping.css.v1.CssProduct getCssProduct(
+        com.google.shopping.css.v1.GetCssProductRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetCssProductMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the processed CSS Products in your CSS Center account. The response
+     * might contain fewer items than specified by pageSize. Rely on pageToken to
+     * determine if there are more items to be requested.
+     * After inserting, updating, or deleting a CSS product input, it may
+     * take several minutes before the updated processed CSS product can be
+     * retrieved.
+     * </pre>
+     */
+    public com.google.shopping.css.v1.ListCssProductsResponse listCssProducts(
+        com.google.shopping.css.v1.ListCssProductsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListCssProductsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CssProductsService.
    *
    * <pre>
    * Service for doing get and list on Css Products(a.k.a Aggregate Offers

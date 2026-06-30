@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDocumentSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DocumentSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDocumentSchemaRequest, DocumentSchema>
@@ -68,6 +69,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDocumentSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DocumentSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDocumentSchemaRequest, DocumentSchema>
@@ -79,6 +81,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDocumentSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DocumentSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDocumentSchemaRequest, Empty>
@@ -90,6 +93,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDocumentSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDocumentSchemasRequest, ListDocumentSchemasResponse>
@@ -102,6 +106,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
                   ProtoUtils.marshaller(ListDocumentSchemasRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDocumentSchemasResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateDocumentSchemaRequest, DocumentSchema>
@@ -169,6 +174,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateDocumentSchemaRequest, DocumentSchema>
         updateDocumentSchemaTransportSettings =
@@ -180,6 +186,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetDocumentSchemaRequest, DocumentSchema> getDocumentSchemaTransportSettings =
         GrpcCallSettings.<GetDocumentSchemaRequest, DocumentSchema>newBuilder()
@@ -190,6 +197,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteDocumentSchemaRequest, Empty> deleteDocumentSchemaTransportSettings =
         GrpcCallSettings.<DeleteDocumentSchemaRequest, Empty>newBuilder()
@@ -200,6 +208,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDocumentSchemasRequest, ListDocumentSchemasResponse>
         listDocumentSchemasTransportSettings =
@@ -211,6 +220,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createDocumentSchemaCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,6 +78,8 @@ public class HttpJsonKeyTrackingServiceStub extends KeyTrackingServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetProtectedResourcesSummaryRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "fallbackScope", request.getFallbackScopeValue());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -110,6 +112,7 @@ public class HttpJsonKeyTrackingServiceStub extends KeyTrackingServiceStub {
                             serializer.putPathParam(fields, "scope", request.getScope());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{scope=projects/*}/protectedResources:search")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -196,6 +199,7 @@ public class HttpJsonKeyTrackingServiceStub extends KeyTrackingServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SearchProtectedResourcesRequest, SearchProtectedResourcesResponse>
         searchProtectedResourcesTransportSettings =
@@ -209,6 +213,7 @@ public class HttpJsonKeyTrackingServiceStub extends KeyTrackingServiceStub {
                       builder.add("scope", String.valueOf(request.getScope()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getScope())
                 .build();
 
     this.getProtectedResourcesSummaryCallable =

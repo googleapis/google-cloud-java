@@ -4,13 +4,13 @@
   "product_documentation": "https://cloud.google.com/infrastructure-manager/docs/overview",
   "api_description": "Creates and manages Google Cloud Platform resources and infrastructure.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-infra-manager/latest/overview",
-  "release_level": "preview",
+  "release_level": "stable",
   "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-infra-manager",
   "distribution_name": "com.google.cloud:google-cloud-infra-manager",
-  "api_id": "infra-manager.googleapis.com",
+  "api_id": "config.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }

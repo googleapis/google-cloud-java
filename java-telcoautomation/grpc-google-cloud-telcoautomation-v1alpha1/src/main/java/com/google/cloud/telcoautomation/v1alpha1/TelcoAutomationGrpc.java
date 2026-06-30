@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * functions.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/telcoautomation/v1alpha1/telcoautomation.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TelcoAutomationGrpc {
 
@@ -1822,6 +1819,19 @@ public final class TelcoAutomationGrpc {
     return TelcoAutomationStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TelcoAutomationBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TelcoAutomationBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TelcoAutomationBlockingV2Stub>() {
+          @java.lang.Override
+          public TelcoAutomationBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TelcoAutomationBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TelcoAutomationBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -3084,6 +3094,552 @@ public final class TelcoAutomationGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TelcoAutomation.
+   *
+   * <pre>
+   * TelcoAutomation Service manages the control plane cluster a.k.a.
+   * Orchestration Cluster (GKE cluster with config controller) of TNA. It also
+   * exposes blueprint APIs which manages the lifecycle of blueprints that control
+   * the infrastructure setup (e.g GDCE clusters) and deployment of network
+   * functions.
+   * </pre>
+   */
+  public static final class TelcoAutomationBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TelcoAutomationBlockingV2Stub> {
+    private TelcoAutomationBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TelcoAutomationBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TelcoAutomationBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists OrchestrationClusters in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.ListOrchestrationClustersResponse
+        listOrchestrationClusters(
+            com.google.cloud.telcoautomation.v1alpha1.ListOrchestrationClustersRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListOrchestrationClustersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single OrchestrationCluster.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.OrchestrationCluster getOrchestrationCluster(
+        com.google.cloud.telcoautomation.v1alpha1.GetOrchestrationClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetOrchestrationClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new OrchestrationCluster in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createOrchestrationCluster(
+        com.google.cloud.telcoautomation.v1alpha1.CreateOrchestrationClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateOrchestrationClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single OrchestrationCluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteOrchestrationCluster(
+        com.google.cloud.telcoautomation.v1alpha1.DeleteOrchestrationClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteOrchestrationClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists EdgeSlms in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.ListEdgeSlmsResponse listEdgeSlms(
+        com.google.cloud.telcoautomation.v1alpha1.ListEdgeSlmsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListEdgeSlmsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single EdgeSlm.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.EdgeSlm getEdgeSlm(
+        com.google.cloud.telcoautomation.v1alpha1.GetEdgeSlmRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEdgeSlmMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new EdgeSlm in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEdgeSlm(
+        com.google.cloud.telcoautomation.v1alpha1.CreateEdgeSlmRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateEdgeSlmMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single EdgeSlm.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteEdgeSlm(
+        com.google.cloud.telcoautomation.v1alpha1.DeleteEdgeSlmRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteEdgeSlmMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a blueprint.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.Blueprint createBlueprint(
+        com.google.cloud.telcoautomation.v1alpha1.CreateBlueprintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateBlueprintMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a blueprint.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.Blueprint updateBlueprint(
+        com.google.cloud.telcoautomation.v1alpha1.UpdateBlueprintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateBlueprintMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the requested blueprint.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.Blueprint getBlueprint(
+        com.google.cloud.telcoautomation.v1alpha1.GetBlueprintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetBlueprintMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a blueprint and all its revisions.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteBlueprint(
+        com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteBlueprintMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all blueprints.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.ListBlueprintsResponse listBlueprints(
+        com.google.cloud.telcoautomation.v1alpha1.ListBlueprintsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListBlueprintsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Approves a blueprint and commits a new revision.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.Blueprint approveBlueprint(
+        com.google.cloud.telcoautomation.v1alpha1.ApproveBlueprintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getApproveBlueprintMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Proposes a blueprint for approval of changes.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.Blueprint proposeBlueprint(
+        com.google.cloud.telcoautomation.v1alpha1.ProposeBlueprintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getProposeBlueprintMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rejects a blueprint revision proposal and flips it back to Draft state.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.Blueprint rejectBlueprint(
+        com.google.cloud.telcoautomation.v1alpha1.RejectBlueprintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRejectBlueprintMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List blueprint revisions of a given blueprint.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.ListBlueprintRevisionsResponse
+        listBlueprintRevisions(
+            com.google.cloud.telcoautomation.v1alpha1.ListBlueprintRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListBlueprintRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches across blueprint revisions.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.SearchBlueprintRevisionsResponse
+        searchBlueprintRevisions(
+            com.google.cloud.telcoautomation.v1alpha1.SearchBlueprintRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSearchBlueprintRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches across deployment revisions.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.SearchDeploymentRevisionsResponse
+        searchDeploymentRevisions(
+            com.google.cloud.telcoautomation.v1alpha1.SearchDeploymentRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSearchDeploymentRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Discards the changes in a blueprint and reverts the blueprint to the last
+     * approved blueprint revision. No changes take place if a blueprint does not
+     * have revisions.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.DiscardBlueprintChangesResponse
+        discardBlueprintChanges(
+            com.google.cloud.telcoautomation.v1alpha1.DiscardBlueprintChangesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDiscardBlueprintChangesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the blueprints in TNA's public catalog. Default page size = 20,
+     * Max Page Size = 100.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.ListPublicBlueprintsResponse
+        listPublicBlueprints(
+            com.google.cloud.telcoautomation.v1alpha1.ListPublicBlueprintsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListPublicBlueprintsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the requested public blueprint.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.PublicBlueprint getPublicBlueprint(
+        com.google.cloud.telcoautomation.v1alpha1.GetPublicBlueprintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetPublicBlueprintMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a deployment.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.Deployment createDeployment(
+        com.google.cloud.telcoautomation.v1alpha1.CreateDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a deployment.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.Deployment updateDeployment(
+        com.google.cloud.telcoautomation.v1alpha1.UpdateDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the requested deployment.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.Deployment getDeployment(
+        com.google.cloud.telcoautomation.v1alpha1.GetDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes the deployment by marking it as DELETING. Post which deployment and
+     * it's revisions gets deleted.
+     * </pre>
+     */
+    public com.google.protobuf.Empty removeDeployment(
+        com.google.cloud.telcoautomation.v1alpha1.RemoveDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRemoveDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all deployments.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.ListDeploymentsResponse listDeployments(
+        com.google.cloud.telcoautomation.v1alpha1.ListDeploymentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDeploymentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List deployment revisions of a given deployment.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.ListDeploymentRevisionsResponse
+        listDeploymentRevisions(
+            com.google.cloud.telcoautomation.v1alpha1.ListDeploymentRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDeploymentRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Discards the changes in a deployment and reverts the deployment to the last
+     * approved deployment revision. No changes take place if a deployment does
+     * not have revisions.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.DiscardDeploymentChangesResponse
+        discardDeploymentChanges(
+            com.google.cloud.telcoautomation.v1alpha1.DiscardDeploymentChangesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDiscardDeploymentChangesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Applies the deployment's YAML files to the parent orchestration cluster.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.Deployment applyDeployment(
+        com.google.cloud.telcoautomation.v1alpha1.ApplyDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getApplyDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the requested deployment status.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.ComputeDeploymentStatusResponse
+        computeDeploymentStatus(
+            com.google.cloud.telcoautomation.v1alpha1.ComputeDeploymentStatusRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getComputeDeploymentStatusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rollback the active deployment to the given past approved deployment
+     * revision.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.Deployment rollbackDeployment(
+        com.google.cloud.telcoautomation.v1alpha1.RollbackDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRollbackDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the requested hydrated deployment.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.HydratedDeployment getHydratedDeployment(
+        com.google.cloud.telcoautomation.v1alpha1.GetHydratedDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetHydratedDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all hydrated deployments present under a deployment.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.ListHydratedDeploymentsResponse
+        listHydratedDeployments(
+            com.google.cloud.telcoautomation.v1alpha1.ListHydratedDeploymentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListHydratedDeploymentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a hydrated deployment.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.HydratedDeployment updateHydratedDeployment(
+        com.google.cloud.telcoautomation.v1alpha1.UpdateHydratedDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateHydratedDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Applies a hydrated deployment to a workload cluster.
+     * </pre>
+     */
+    public com.google.cloud.telcoautomation.v1alpha1.HydratedDeployment applyHydratedDeployment(
+        com.google.cloud.telcoautomation.v1alpha1.ApplyHydratedDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getApplyHydratedDeploymentMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service TelcoAutomation.
    *
    * <pre>
    * TelcoAutomation Service manages the control plane cluster a.k.a.

@@ -10,7 +10,7 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-video-transcoder",
   "distribution_name": "com.google.cloud:google-cloud-video-transcoder",
-  "api_id": "video-transcoder.googleapis.com",
+  "api_id": "transcoder.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true,
   "rest_documentation": "https://cloud.google.com/transcoder/docs/reference/rest",

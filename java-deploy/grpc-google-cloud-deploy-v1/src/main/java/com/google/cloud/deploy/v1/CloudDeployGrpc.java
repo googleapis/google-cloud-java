@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * on Google Cloud Platform via Skaffold (https://skaffold.dev).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/deploy/v1/cloud_deploy.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudDeployGrpc {
 
@@ -951,6 +948,228 @@ public final class CloudDeployGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.CreateDeployPolicyRequest, com.google.longrunning.Operation>
+      getCreateDeployPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDeployPolicy",
+      requestType = com.google.cloud.deploy.v1.CreateDeployPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.CreateDeployPolicyRequest, com.google.longrunning.Operation>
+      getCreateDeployPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.CreateDeployPolicyRequest, com.google.longrunning.Operation>
+        getCreateDeployPolicyMethod;
+    if ((getCreateDeployPolicyMethod = CloudDeployGrpc.getCreateDeployPolicyMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getCreateDeployPolicyMethod = CloudDeployGrpc.getCreateDeployPolicyMethod) == null) {
+          CloudDeployGrpc.getCreateDeployPolicyMethod =
+              getCreateDeployPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.CreateDeployPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateDeployPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.CreateDeployPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("CreateDeployPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getCreateDeployPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.UpdateDeployPolicyRequest, com.google.longrunning.Operation>
+      getUpdateDeployPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDeployPolicy",
+      requestType = com.google.cloud.deploy.v1.UpdateDeployPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.UpdateDeployPolicyRequest, com.google.longrunning.Operation>
+      getUpdateDeployPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.UpdateDeployPolicyRequest, com.google.longrunning.Operation>
+        getUpdateDeployPolicyMethod;
+    if ((getUpdateDeployPolicyMethod = CloudDeployGrpc.getUpdateDeployPolicyMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getUpdateDeployPolicyMethod = CloudDeployGrpc.getUpdateDeployPolicyMethod) == null) {
+          CloudDeployGrpc.getUpdateDeployPolicyMethod =
+              getUpdateDeployPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.UpdateDeployPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateDeployPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.UpdateDeployPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("UpdateDeployPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDeployPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.DeleteDeployPolicyRequest, com.google.longrunning.Operation>
+      getDeleteDeployPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDeployPolicy",
+      requestType = com.google.cloud.deploy.v1.DeleteDeployPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.DeleteDeployPolicyRequest, com.google.longrunning.Operation>
+      getDeleteDeployPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.DeleteDeployPolicyRequest, com.google.longrunning.Operation>
+        getDeleteDeployPolicyMethod;
+    if ((getDeleteDeployPolicyMethod = CloudDeployGrpc.getDeleteDeployPolicyMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getDeleteDeployPolicyMethod = CloudDeployGrpc.getDeleteDeployPolicyMethod) == null) {
+          CloudDeployGrpc.getDeleteDeployPolicyMethod =
+              getDeleteDeployPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.DeleteDeployPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteDeployPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.DeleteDeployPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("DeleteDeployPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteDeployPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.ListDeployPoliciesRequest,
+          com.google.cloud.deploy.v1.ListDeployPoliciesResponse>
+      getListDeployPoliciesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDeployPolicies",
+      requestType = com.google.cloud.deploy.v1.ListDeployPoliciesRequest.class,
+      responseType = com.google.cloud.deploy.v1.ListDeployPoliciesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.ListDeployPoliciesRequest,
+          com.google.cloud.deploy.v1.ListDeployPoliciesResponse>
+      getListDeployPoliciesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.ListDeployPoliciesRequest,
+            com.google.cloud.deploy.v1.ListDeployPoliciesResponse>
+        getListDeployPoliciesMethod;
+    if ((getListDeployPoliciesMethod = CloudDeployGrpc.getListDeployPoliciesMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getListDeployPoliciesMethod = CloudDeployGrpc.getListDeployPoliciesMethod) == null) {
+          CloudDeployGrpc.getListDeployPoliciesMethod =
+              getListDeployPoliciesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.ListDeployPoliciesRequest,
+                          com.google.cloud.deploy.v1.ListDeployPoliciesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDeployPolicies"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.ListDeployPoliciesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.ListDeployPoliciesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("ListDeployPolicies"))
+                      .build();
+        }
+      }
+    }
+    return getListDeployPoliciesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.GetDeployPolicyRequest,
+          com.google.cloud.deploy.v1.DeployPolicy>
+      getGetDeployPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDeployPolicy",
+      requestType = com.google.cloud.deploy.v1.GetDeployPolicyRequest.class,
+      responseType = com.google.cloud.deploy.v1.DeployPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.GetDeployPolicyRequest,
+          com.google.cloud.deploy.v1.DeployPolicy>
+      getGetDeployPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.GetDeployPolicyRequest,
+            com.google.cloud.deploy.v1.DeployPolicy>
+        getGetDeployPolicyMethod;
+    if ((getGetDeployPolicyMethod = CloudDeployGrpc.getGetDeployPolicyMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getGetDeployPolicyMethod = CloudDeployGrpc.getGetDeployPolicyMethod) == null) {
+          CloudDeployGrpc.getGetDeployPolicyMethod =
+              getGetDeployPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.GetDeployPolicyRequest,
+                          com.google.cloud.deploy.v1.DeployPolicy>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDeployPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.GetDeployPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.DeployPolicy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("GetDeployPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getGetDeployPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.deploy.v1.ApproveRolloutRequest,
           com.google.cloud.deploy.v1.ApproveRolloutResponse>
       getApproveRolloutMethod;
@@ -1841,6 +2060,19 @@ public final class CloudDeployGrpc {
     return CloudDeployStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CloudDeployBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CloudDeployBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudDeployBlockingV2Stub>() {
+          @java.lang.Override
+          public CloudDeployBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudDeployBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CloudDeployBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2161,6 +2393,77 @@ public final class CloudDeployGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getAbandonReleaseMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new DeployPolicy in a given project and location.
+     * </pre>
+     */
+    default void createDeployPolicy(
+        com.google.cloud.deploy.v1.CreateDeployPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateDeployPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DeployPolicy.
+     * </pre>
+     */
+    default void updateDeployPolicy(
+        com.google.cloud.deploy.v1.UpdateDeployPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDeployPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DeployPolicy.
+     * </pre>
+     */
+    default void deleteDeployPolicy(
+        com.google.cloud.deploy.v1.DeleteDeployPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteDeployPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DeployPolicies in a given project and location.
+     * </pre>
+     */
+    default void listDeployPolicies(
+        com.google.cloud.deploy.v1.ListDeployPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.ListDeployPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDeployPoliciesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DeployPolicy.
+     * </pre>
+     */
+    default void getDeployPolicy(
+        com.google.cloud.deploy.v1.GetDeployPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.DeployPolicy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDeployPolicyMethod(), responseObserver);
     }
 
     /**
@@ -2814,6 +3117,87 @@ public final class CloudDeployGrpc {
      *
      *
      * <pre>
+     * Creates a new DeployPolicy in a given project and location.
+     * </pre>
+     */
+    public void createDeployPolicy(
+        com.google.cloud.deploy.v1.CreateDeployPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateDeployPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DeployPolicy.
+     * </pre>
+     */
+    public void updateDeployPolicy(
+        com.google.cloud.deploy.v1.UpdateDeployPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDeployPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DeployPolicy.
+     * </pre>
+     */
+    public void deleteDeployPolicy(
+        com.google.cloud.deploy.v1.DeleteDeployPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDeployPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DeployPolicies in a given project and location.
+     * </pre>
+     */
+    public void listDeployPolicies(
+        com.google.cloud.deploy.v1.ListDeployPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.ListDeployPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDeployPoliciesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DeployPolicy.
+     * </pre>
+     */
+    public void getDeployPolicy(
+        com.google.cloud.deploy.v1.GetDeployPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.DeployPolicy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDeployPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Approves a Rollout.
      * </pre>
      */
@@ -3142,6 +3526,631 @@ public final class CloudDeployGrpc {
    * on Google Cloud Platform via Skaffold (https://skaffold.dev).
    * </pre>
    */
+  public static final class CloudDeployBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CloudDeployBlockingV2Stub> {
+    private CloudDeployBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CloudDeployBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CloudDeployBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DeliveryPipelines in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse listDeliveryPipelines(
+        com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDeliveryPipelinesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DeliveryPipeline.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.DeliveryPipeline getDeliveryPipeline(
+        com.google.cloud.deploy.v1.GetDeliveryPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDeliveryPipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new DeliveryPipeline in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDeliveryPipeline(
+        com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateDeliveryPipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DeliveryPipeline.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDeliveryPipeline(
+        com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDeliveryPipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DeliveryPipeline.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDeliveryPipeline(
+        com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteDeliveryPipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Targets in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListTargetsResponse listTargets(
+        com.google.cloud.deploy.v1.ListTargetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTargetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a `Rollout` to roll back the specified target.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.RollbackTargetResponse rollbackTarget(
+        com.google.cloud.deploy.v1.RollbackTargetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRollbackTargetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Target.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.Target getTarget(
+        com.google.cloud.deploy.v1.GetTargetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTargetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Target in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTarget(
+        com.google.cloud.deploy.v1.CreateTargetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateTargetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Target.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTarget(
+        com.google.cloud.deploy.v1.UpdateTargetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateTargetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Target.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTarget(
+        com.google.cloud.deploy.v1.DeleteTargetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTargetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomTargetTypes in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListCustomTargetTypesResponse listCustomTargetTypes(
+        com.google.cloud.deploy.v1.ListCustomTargetTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListCustomTargetTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CustomTargetType.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.CustomTargetType getCustomTargetType(
+        com.google.cloud.deploy.v1.GetCustomTargetTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetCustomTargetTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CustomTargetType in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCustomTargetType(
+        com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateCustomTargetTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single CustomTargetType.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCustomTargetType(
+        com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateCustomTargetTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single CustomTargetType.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCustomTargetType(
+        com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteCustomTargetTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Releases in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListReleasesResponse listReleases(
+        com.google.cloud.deploy.v1.ListReleasesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListReleasesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Release.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.Release getRelease(
+        com.google.cloud.deploy.v1.GetReleaseRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetReleaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Release in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRelease(
+        com.google.cloud.deploy.v1.CreateReleaseRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateReleaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Abandons a Release in the Delivery Pipeline.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.AbandonReleaseResponse abandonRelease(
+        com.google.cloud.deploy.v1.AbandonReleaseRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAbandonReleaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new DeployPolicy in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDeployPolicy(
+        com.google.cloud.deploy.v1.CreateDeployPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateDeployPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DeployPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDeployPolicy(
+        com.google.cloud.deploy.v1.UpdateDeployPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDeployPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DeployPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDeployPolicy(
+        com.google.cloud.deploy.v1.DeleteDeployPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteDeployPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DeployPolicies in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListDeployPoliciesResponse listDeployPolicies(
+        com.google.cloud.deploy.v1.ListDeployPoliciesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDeployPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DeployPolicy.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.DeployPolicy getDeployPolicy(
+        com.google.cloud.deploy.v1.GetDeployPolicyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDeployPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Approves a Rollout.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ApproveRolloutResponse approveRollout(
+        com.google.cloud.deploy.v1.ApproveRolloutRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getApproveRolloutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Advances a Rollout in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.AdvanceRolloutResponse advanceRollout(
+        com.google.cloud.deploy.v1.AdvanceRolloutRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAdvanceRolloutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a Rollout in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.CancelRolloutResponse cancelRollout(
+        com.google.cloud.deploy.v1.CancelRolloutRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelRolloutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Rollouts in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListRolloutsResponse listRollouts(
+        com.google.cloud.deploy.v1.ListRolloutsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListRolloutsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Rollout.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.Rollout getRollout(
+        com.google.cloud.deploy.v1.GetRolloutRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetRolloutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Rollout in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRollout(
+        com.google.cloud.deploy.v1.CreateRolloutRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateRolloutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Ignores the specified Job in a Rollout.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.IgnoreJobResponse ignoreJob(
+        com.google.cloud.deploy.v1.IgnoreJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getIgnoreJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retries the specified Job in a Rollout.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.RetryJobResponse retryJob(
+        com.google.cloud.deploy.v1.RetryJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRetryJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists JobRuns in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListJobRunsResponse listJobRuns(
+        com.google.cloud.deploy.v1.ListJobRunsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListJobRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single JobRun.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.JobRun getJobRun(
+        com.google.cloud.deploy.v1.GetJobRunRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetJobRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Terminates a Job Run in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.TerminateJobRunResponse terminateJobRun(
+        com.google.cloud.deploy.v1.TerminateJobRunRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTerminateJobRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the configuration for a location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.Config getConfig(
+        com.google.cloud.deploy.v1.GetConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Automation in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAutomation(
+        com.google.cloud.deploy.v1.CreateAutomationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAutomationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Automation resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAutomation(
+        com.google.cloud.deploy.v1.UpdateAutomationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAutomationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Automation resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAutomation(
+        com.google.cloud.deploy.v1.DeleteAutomationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteAutomationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Automation.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.Automation getAutomation(
+        com.google.cloud.deploy.v1.GetAutomationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAutomationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Automations in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListAutomationsResponse listAutomations(
+        com.google.cloud.deploy.v1.ListAutomationsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAutomationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AutomationRun.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.AutomationRun getAutomationRun(
+        com.google.cloud.deploy.v1.GetAutomationRunRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAutomationRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AutomationRuns in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListAutomationRunsResponse listAutomationRuns(
+        com.google.cloud.deploy.v1.ListAutomationRunsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAutomationRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an AutomationRun. The `state` of the `AutomationRun` after
+     * cancelling is `CANCELLED`. `CancelAutomationRun` can be called on
+     * AutomationRun in the state `IN_PROGRESS` and `PENDING`; AutomationRun
+     * in a different state returns an `FAILED_PRECONDITION` error.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.CancelAutomationRunResponse cancelAutomationRun(
+        com.google.cloud.deploy.v1.CancelAutomationRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelAutomationRunMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CloudDeploy.
+   *
+   * <pre>
+   * CloudDeploy service creates and manages Continuous Delivery operations
+   * on Google Cloud Platform via Skaffold (https://skaffold.dev).
+   * </pre>
+   */
   public static final class CloudDeployBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<CloudDeployBlockingStub> {
     private CloudDeployBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -3412,6 +4421,71 @@ public final class CloudDeployGrpc {
         com.google.cloud.deploy.v1.AbandonReleaseRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAbandonReleaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new DeployPolicy in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDeployPolicy(
+        com.google.cloud.deploy.v1.CreateDeployPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDeployPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DeployPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDeployPolicy(
+        com.google.cloud.deploy.v1.UpdateDeployPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDeployPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DeployPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDeployPolicy(
+        com.google.cloud.deploy.v1.DeleteDeployPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDeployPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DeployPolicies in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListDeployPoliciesResponse listDeployPolicies(
+        com.google.cloud.deploy.v1.ListDeployPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDeployPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DeployPolicy.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.DeployPolicy getDeployPolicy(
+        com.google.cloud.deploy.v1.GetDeployPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDeployPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3970,6 +5044,73 @@ public final class CloudDeployGrpc {
      *
      *
      * <pre>
+     * Creates a new DeployPolicy in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createDeployPolicy(com.google.cloud.deploy.v1.CreateDeployPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateDeployPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DeployPolicy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateDeployPolicy(com.google.cloud.deploy.v1.UpdateDeployPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDeployPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DeployPolicy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteDeployPolicy(com.google.cloud.deploy.v1.DeleteDeployPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDeployPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DeployPolicies in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.deploy.v1.ListDeployPoliciesResponse>
+        listDeployPolicies(com.google.cloud.deploy.v1.ListDeployPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDeployPoliciesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DeployPolicy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.deploy.v1.DeployPolicy>
+        getDeployPolicy(com.google.cloud.deploy.v1.GetDeployPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDeployPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Approves a Rollout.
      * </pre>
      */
@@ -4262,26 +5403,31 @@ public final class CloudDeployGrpc {
   private static final int METHODID_GET_RELEASE = 17;
   private static final int METHODID_CREATE_RELEASE = 18;
   private static final int METHODID_ABANDON_RELEASE = 19;
-  private static final int METHODID_APPROVE_ROLLOUT = 20;
-  private static final int METHODID_ADVANCE_ROLLOUT = 21;
-  private static final int METHODID_CANCEL_ROLLOUT = 22;
-  private static final int METHODID_LIST_ROLLOUTS = 23;
-  private static final int METHODID_GET_ROLLOUT = 24;
-  private static final int METHODID_CREATE_ROLLOUT = 25;
-  private static final int METHODID_IGNORE_JOB = 26;
-  private static final int METHODID_RETRY_JOB = 27;
-  private static final int METHODID_LIST_JOB_RUNS = 28;
-  private static final int METHODID_GET_JOB_RUN = 29;
-  private static final int METHODID_TERMINATE_JOB_RUN = 30;
-  private static final int METHODID_GET_CONFIG = 31;
-  private static final int METHODID_CREATE_AUTOMATION = 32;
-  private static final int METHODID_UPDATE_AUTOMATION = 33;
-  private static final int METHODID_DELETE_AUTOMATION = 34;
-  private static final int METHODID_GET_AUTOMATION = 35;
-  private static final int METHODID_LIST_AUTOMATIONS = 36;
-  private static final int METHODID_GET_AUTOMATION_RUN = 37;
-  private static final int METHODID_LIST_AUTOMATION_RUNS = 38;
-  private static final int METHODID_CANCEL_AUTOMATION_RUN = 39;
+  private static final int METHODID_CREATE_DEPLOY_POLICY = 20;
+  private static final int METHODID_UPDATE_DEPLOY_POLICY = 21;
+  private static final int METHODID_DELETE_DEPLOY_POLICY = 22;
+  private static final int METHODID_LIST_DEPLOY_POLICIES = 23;
+  private static final int METHODID_GET_DEPLOY_POLICY = 24;
+  private static final int METHODID_APPROVE_ROLLOUT = 25;
+  private static final int METHODID_ADVANCE_ROLLOUT = 26;
+  private static final int METHODID_CANCEL_ROLLOUT = 27;
+  private static final int METHODID_LIST_ROLLOUTS = 28;
+  private static final int METHODID_GET_ROLLOUT = 29;
+  private static final int METHODID_CREATE_ROLLOUT = 30;
+  private static final int METHODID_IGNORE_JOB = 31;
+  private static final int METHODID_RETRY_JOB = 32;
+  private static final int METHODID_LIST_JOB_RUNS = 33;
+  private static final int METHODID_GET_JOB_RUN = 34;
+  private static final int METHODID_TERMINATE_JOB_RUN = 35;
+  private static final int METHODID_GET_CONFIG = 36;
+  private static final int METHODID_CREATE_AUTOMATION = 37;
+  private static final int METHODID_UPDATE_AUTOMATION = 38;
+  private static final int METHODID_DELETE_AUTOMATION = 39;
+  private static final int METHODID_GET_AUTOMATION = 40;
+  private static final int METHODID_LIST_AUTOMATIONS = 41;
+  private static final int METHODID_GET_AUTOMATION_RUN = 42;
+  private static final int METHODID_LIST_AUTOMATION_RUNS = 43;
+  private static final int METHODID_CANCEL_AUTOMATION_RUN = 44;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4408,6 +5554,33 @@ public final class CloudDeployGrpc {
           serviceImpl.abandonRelease(
               (com.google.cloud.deploy.v1.AbandonReleaseRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.AbandonReleaseResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_DEPLOY_POLICY:
+          serviceImpl.createDeployPolicy(
+              (com.google.cloud.deploy.v1.CreateDeployPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_DEPLOY_POLICY:
+          serviceImpl.updateDeployPolicy(
+              (com.google.cloud.deploy.v1.UpdateDeployPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_DEPLOY_POLICY:
+          serviceImpl.deleteDeployPolicy(
+              (com.google.cloud.deploy.v1.DeleteDeployPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_DEPLOY_POLICIES:
+          serviceImpl.listDeployPolicies(
+              (com.google.cloud.deploy.v1.ListDeployPoliciesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.ListDeployPoliciesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_DEPLOY_POLICY:
+          serviceImpl.getDeployPolicy(
+              (com.google.cloud.deploy.v1.GetDeployPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.DeployPolicy>)
                   responseObserver);
           break;
         case METHODID_APPROVE_ROLLOUT:
@@ -4670,6 +5843,37 @@ public final class CloudDeployGrpc {
                     com.google.cloud.deploy.v1.AbandonReleaseResponse>(
                     service, METHODID_ABANDON_RELEASE)))
         .addMethod(
+            getCreateDeployPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.CreateDeployPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_DEPLOY_POLICY)))
+        .addMethod(
+            getUpdateDeployPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.UpdateDeployPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_DEPLOY_POLICY)))
+        .addMethod(
+            getDeleteDeployPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.DeleteDeployPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_DEPLOY_POLICY)))
+        .addMethod(
+            getListDeployPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.ListDeployPoliciesRequest,
+                    com.google.cloud.deploy.v1.ListDeployPoliciesResponse>(
+                    service, METHODID_LIST_DEPLOY_POLICIES)))
+        .addMethod(
+            getGetDeployPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.GetDeployPolicyRequest,
+                    com.google.cloud.deploy.v1.DeployPolicy>(service, METHODID_GET_DEPLOY_POLICY)))
+        .addMethod(
             getApproveRolloutMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4870,6 +6074,11 @@ public final class CloudDeployGrpc {
                       .addMethod(getGetReleaseMethod())
                       .addMethod(getCreateReleaseMethod())
                       .addMethod(getAbandonReleaseMethod())
+                      .addMethod(getCreateDeployPolicyMethod())
+                      .addMethod(getUpdateDeployPolicyMethod())
+                      .addMethod(getDeleteDeployPolicyMethod())
+                      .addMethod(getListDeployPoliciesMethod())
+                      .addMethod(getGetDeployPolicyMethod())
                       .addMethod(getApproveRolloutMethod())
                       .addMethod(getAdvanceRolloutMethod())
                       .addMethod(getCancelRolloutMethod())

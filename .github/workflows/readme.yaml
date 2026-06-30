@@ -23,10 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository_owner == 'googleapis'
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v4
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
       with:
-        python-version: '3.7'
+        python-version: '3.11'
         architecture: 'x64'
     - run: python3 -m pip install --require-hashes -r .github/requirements.txt
     - run: python3 generate-readme.py

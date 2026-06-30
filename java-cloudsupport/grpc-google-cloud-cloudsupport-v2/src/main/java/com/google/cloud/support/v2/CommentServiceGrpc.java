@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service to manage comments on cases.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/support/v2/comment_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CommentServiceGrpc {
 
@@ -124,6 +121,47 @@ public final class CommentServiceGrpc {
     return getCreateCommentMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.support.v2.GetCommentRequest, com.google.cloud.support.v2.Comment>
+      getGetCommentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetComment",
+      requestType = com.google.cloud.support.v2.GetCommentRequest.class,
+      responseType = com.google.cloud.support.v2.Comment.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.support.v2.GetCommentRequest, com.google.cloud.support.v2.Comment>
+      getGetCommentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.support.v2.GetCommentRequest, com.google.cloud.support.v2.Comment>
+        getGetCommentMethod;
+    if ((getGetCommentMethod = CommentServiceGrpc.getGetCommentMethod) == null) {
+      synchronized (CommentServiceGrpc.class) {
+        if ((getGetCommentMethod = CommentServiceGrpc.getGetCommentMethod) == null) {
+          CommentServiceGrpc.getGetCommentMethod =
+              getGetCommentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.support.v2.GetCommentRequest,
+                          com.google.cloud.support.v2.Comment>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetComment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.support.v2.GetCommentRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.support.v2.Comment.getDefaultInstance()))
+                      .setSchemaDescriptor(new CommentServiceMethodDescriptorSupplier("GetComment"))
+                      .build();
+        }
+      }
+    }
+    return getGetCommentMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CommentServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CommentServiceStub> factory =
@@ -135,6 +173,19 @@ public final class CommentServiceGrpc {
           }
         };
     return CommentServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CommentServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CommentServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CommentServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public CommentServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CommentServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CommentServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -178,7 +229,7 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all Comments associated with the Case object.
+     * List all the comments associated with a case.
      * </pre>
      */
     default void listComments(
@@ -193,8 +244,8 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Add a new comment to the specified Case.
-     * The comment object must have the following fields set: body.
+     * Add a new comment to a case.
+     * The comment must have the following fields set: `body`.
      * </pre>
      */
     default void createComment(
@@ -202,6 +253,41 @@ public final class CommentServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.support.v2.Comment> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateCommentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a comment.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * comment="projects/some-project/cases/43595344/comments/234567890"
+     * curl &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$comment"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = supportApiService.cases().comments().get(
+     *     name="projects/some-project/cases/43595344/comments/234567890",
+     * )
+     * print(request.execute())
+     * ```
+     * </pre>
+     */
+    default void getComment(
+        com.google.cloud.support.v2.GetCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.support.v2.Comment> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCommentMethod(), responseObserver);
     }
   }
 
@@ -243,7 +329,7 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all Comments associated with the Case object.
+     * List all the comments associated with a case.
      * </pre>
      */
     public void listComments(
@@ -260,8 +346,8 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Add a new comment to the specified Case.
-     * The comment object must have the following fields set: body.
+     * Add a new comment to a case.
+     * The comment must have the following fields set: `body`.
      * </pre>
      */
     public void createComment(
@@ -272,10 +358,128 @@ public final class CommentServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a comment.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * comment="projects/some-project/cases/43595344/comments/234567890"
+     * curl &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$comment"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = supportApiService.cases().comments().get(
+     *     name="projects/some-project/cases/43595344/comments/234567890",
+     * )
+     * print(request.execute())
+     * ```
+     * </pre>
+     */
+    public void getComment(
+        com.google.cloud.support.v2.GetCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.support.v2.Comment> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCommentMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CommentService.
+   *
+   * <pre>
+   * A service to manage comments on cases.
+   * </pre>
+   */
+  public static final class CommentServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CommentServiceBlockingV2Stub> {
+    private CommentServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CommentServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CommentServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all the comments associated with a case.
+     * </pre>
+     */
+    public com.google.cloud.support.v2.ListCommentsResponse listComments(
+        com.google.cloud.support.v2.ListCommentsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListCommentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add a new comment to a case.
+     * The comment must have the following fields set: `body`.
+     * </pre>
+     */
+    public com.google.cloud.support.v2.Comment createComment(
+        com.google.cloud.support.v2.CreateCommentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a comment.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * comment="projects/some-project/cases/43595344/comments/234567890"
+     * curl &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$comment"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = supportApiService.cases().comments().get(
+     *     name="projects/some-project/cases/43595344/comments/234567890",
+     * )
+     * print(request.execute())
+     * ```
+     * </pre>
+     */
+    public com.google.cloud.support.v2.Comment getComment(
+        com.google.cloud.support.v2.GetCommentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetCommentMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CommentService.
    *
    * <pre>
    * A service to manage comments on cases.
@@ -297,7 +501,7 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all Comments associated with the Case object.
+     * List all the comments associated with a case.
      * </pre>
      */
     public com.google.cloud.support.v2.ListCommentsResponse listComments(
@@ -310,14 +514,49 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Add a new comment to the specified Case.
-     * The comment object must have the following fields set: body.
+     * Add a new comment to a case.
+     * The comment must have the following fields set: `body`.
      * </pre>
      */
     public com.google.cloud.support.v2.Comment createComment(
         com.google.cloud.support.v2.CreateCommentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a comment.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * comment="projects/some-project/cases/43595344/comments/234567890"
+     * curl &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$comment"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = supportApiService.cases().comments().get(
+     *     name="projects/some-project/cases/43595344/comments/234567890",
+     * )
+     * print(request.execute())
+     * ```
+     * </pre>
+     */
+    public com.google.cloud.support.v2.Comment getComment(
+        com.google.cloud.support.v2.GetCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCommentMethod(), getCallOptions(), request);
     }
   }
 
@@ -344,7 +583,7 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all Comments associated with the Case object.
+     * List all the comments associated with a case.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -358,8 +597,8 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Add a new comment to the specified Case.
-     * The comment object must have the following fields set: body.
+     * Add a new comment to a case.
+     * The comment must have the following fields set: `body`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.support.v2.Comment>
@@ -367,10 +606,46 @@ public final class CommentServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateCommentMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a comment.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * comment="projects/some-project/cases/43595344/comments/234567890"
+     * curl &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$comment"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = supportApiService.cases().comments().get(
+     *     name="projects/some-project/cases/43595344/comments/234567890",
+     * )
+     * print(request.execute())
+     * ```
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.support.v2.Comment>
+        getComment(com.google.cloud.support.v2.GetCommentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCommentMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_COMMENTS = 0;
   private static final int METHODID_CREATE_COMMENT = 1;
+  private static final int METHODID_GET_COMMENT = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -398,6 +673,11 @@ public final class CommentServiceGrpc {
         case METHODID_CREATE_COMMENT:
           serviceImpl.createComment(
               (com.google.cloud.support.v2.CreateCommentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.support.v2.Comment>) responseObserver);
+          break;
+        case METHODID_GET_COMMENT:
+          serviceImpl.getComment(
+              (com.google.cloud.support.v2.GetCommentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.support.v2.Comment>) responseObserver);
           break;
         default:
@@ -431,6 +711,12 @@ public final class CommentServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.support.v2.CreateCommentRequest,
                     com.google.cloud.support.v2.Comment>(service, METHODID_CREATE_COMMENT)))
+        .addMethod(
+            getGetCommentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.support.v2.GetCommentRequest,
+                    com.google.cloud.support.v2.Comment>(service, METHODID_GET_COMMENT)))
         .build();
   }
 
@@ -484,6 +770,7 @@ public final class CommentServiceGrpc {
                       .setSchemaDescriptor(new CommentServiceFileDescriptorSupplier())
                       .addMethod(getListCommentsMethod())
                       .addMethod(getCreateCommentMethod())
+                      .addMethod(getGetCommentMethod())
                       .build();
         }
       }

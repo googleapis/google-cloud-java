@@ -21,6 +21,9 @@ deep-remove-regex:
 - "/java-translate/google-.*/src/com/google/cloud/translate/v3beta1"
 
 
+deep-preserve-regex:
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+
 deep-copy-regex:
 - source: "/google/cloud/translate/(v.*)/.*-java/proto-google-.*/src/main/java/com/google/cloud/translate"
   dest: "/owl-bot-staging/java-translate/$1/proto-google-cloud-translate-$1/src/main/java/com/google/cloud/translate"

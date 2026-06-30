@@ -26,7 +26,7 @@
               "methods": ["getProtectedResourcesSummary", "getProtectedResourcesSummary", "getProtectedResourcesSummary", "getProtectedResourcesSummaryCallable"]
             },
             "SearchProtectedResources": {
-              "methods": ["searchProtectedResources", "searchProtectedResources", "searchProtectedResources", "searchProtectedResources", "searchProtectedResources", "searchProtectedResourcesPagedCallable", "searchProtectedResourcesCallable"]
+              "methods": ["searchProtectedResources", "searchProtectedResources", "searchProtectedResources", "searchProtectedResources", "searchProtectedResources", "searchProtectedResources", "searchProtectedResources", "searchProtectedResourcesPagedCallable", "searchProtectedResourcesCallable"]
             }
           }
         }

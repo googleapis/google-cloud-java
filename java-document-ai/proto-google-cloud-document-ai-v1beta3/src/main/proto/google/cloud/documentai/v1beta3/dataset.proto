@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -69,9 +69,6 @@ message Dataset {
   // Configuration specific to an unmanaged dataset.
   message UnmanagedDatasetConfig {}
 
-  // Configuration specific to spanner-based indexing.
-  message SpannerIndexingConfig {}
-
   // Different states of a dataset.
   enum State {
     // Default unspecified enum, should not be used.
@@ -106,14 +103,6 @@ message Dataset {
         [(google.api.field_behavior) = OPTIONAL];
   }
 
-  oneof indexing_source {
-    // Optional. A lightweight indexing source with low latency and high
-    // reliability, but lacking advanced features like CMEK and content-based
-    // search.
-    SpannerIndexingConfig spanner_indexing_config = 4
-        [(google.api.field_behavior) = OPTIONAL];
-  }
-
   // Dataset resource name.
   // Format:
   // `projects/{project}/locations/{location}/processors/{processor}/dataset`
@@ -121,6 +110,12 @@ message Dataset {
 
   // Required. State of the dataset. Ignored when updating dataset.
   State state = 2 [(google.api.field_behavior) = REQUIRED];
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzs = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzi = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Document Identifier.
@@ -168,6 +163,12 @@ message DatasetSchema {
 
   // Optional. Schema of the dataset.
   DocumentSchema document_schema = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzs = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzi = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Dataset documents that the batch operation will be applied to.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,9 @@ import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.ColumnDataProfile;
 import com.google.privacy.dlp.v2.ColumnDataProfileName;
+import com.google.privacy.dlp.v2.Connection;
+import com.google.privacy.dlp.v2.ConnectionName;
+import com.google.privacy.dlp.v2.CreateConnectionRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -41,21 +44,28 @@ import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
 import com.google.privacy.dlp.v2.DeidentifyTemplateName;
+import com.google.privacy.dlp.v2.DeleteConnectionRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
+import com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.DeleteTableDataProfileRequest;
 import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DiscoveryConfigName;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpJobName;
+import com.google.privacy.dlp.v2.FileStoreDataProfile;
+import com.google.privacy.dlp.v2.FileStoreDataProfileName;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
+import com.google.privacy.dlp.v2.GetConnectionRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
+import com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
 import com.google.privacy.dlp.v2.GetProjectDataProfileRequest;
@@ -73,12 +83,16 @@ import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.JobTriggerName;
 import com.google.privacy.dlp.v2.ListColumnDataProfilesRequest;
 import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
+import com.google.privacy.dlp.v2.ListConnectionsRequest;
+import com.google.privacy.dlp.v2.ListConnectionsResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListInfoTypesResponse;
 import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
@@ -102,11 +116,14 @@ import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
 import com.google.privacy.dlp.v2.RiskAnalysisJobConfig;
+import com.google.privacy.dlp.v2.SearchConnectionsRequest;
+import com.google.privacy.dlp.v2.SearchConnectionsResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.StoredInfoTypeConfig;
 import com.google.privacy.dlp.v2.StoredInfoTypeName;
 import com.google.privacy.dlp.v2.TableDataProfile;
 import com.google.privacy.dlp.v2.TableDataProfileName;
+import com.google.privacy.dlp.v2.UpdateConnectionRequest;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
@@ -121,13 +138,9 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: The Cloud Data Loss Prevention (DLP) API is a service that allows clients to
- * detect the presence of Personally Identifiable Information (PII) and other privacy-sensitive data
- * in user-supplied, unstructured data streams, like text blocks or images. The service also
- * includes methods for sensitive data redaction and scheduling of data scans on Google Cloud
- * Platform based data sets.
- *
- * <p>To learn more about concepts and find how-to guides see
+ * Service Description: Sensitive Data Protection provides access to a powerful sensitive data
+ * inspection, classification, and de-identification platform that works on text, images, and Google
+ * Cloud storage repositories. To learn more about concepts and find how-to guides see
  * https://cloud.google.com/sensitive-data-protection/docs/.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
@@ -181,7 +194,8 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> RedactImage</td>
  *      <td><p> Redacts potentially sensitive info from an image. This method has limits on input size, processing time, and output size. See https://cloud.google.com/sensitive-data-protection/docs/redacting-sensitive-data-images to learn more.
- * <p>  When no InfoTypes or CustomInfoTypes are specified in this request, the system will automatically choose what detectors to run. By default this may be all types, but may change over time as detectors are updated.</td>
+ * <p>  When no InfoTypes or CustomInfoTypes are specified in this request, the system will automatically choose what detectors to run. By default this may be all types, but may change over time as detectors are updated.
+ * <p>  Only the first frame of each multiframe image is redacted. Metadata and other frames are omitted in the response.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -224,7 +238,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListInfoTypes</td>
- *      <td><p> Returns a list of the sensitive information types that DLP API supports. See https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference to learn more.</td>
+ *      <td><p> Returns a list of the sensitive information types that the DLP API supports. See https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -872,7 +886,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListProjectDataProfiles</td>
- *      <td><p> Lists data profiles for an organization.</td>
+ *      <td><p> Lists project data profiles for an organization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -893,7 +907,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListTableDataProfiles</td>
- *      <td><p> Lists data profiles for an organization.</td>
+ *      <td><p> Lists table data profiles for an organization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -914,7 +928,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListColumnDataProfiles</td>
- *      <td><p> Lists data profiles for an organization.</td>
+ *      <td><p> Lists column data profiles for an organization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -949,6 +963,65 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getProjectDataProfileCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListFileStoreDataProfiles</td>
+ *      <td><p> Lists file store data profiles for an organization.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listFileStoreDataProfiles(ListFileStoreDataProfilesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listFileStoreDataProfiles(LocationName parent)
+ *           <li><p> listFileStoreDataProfiles(OrganizationLocationName parent)
+ *           <li><p> listFileStoreDataProfiles(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listFileStoreDataProfilesPagedCallable()
+ *           <li><p> listFileStoreDataProfilesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetFileStoreDataProfile</td>
+ *      <td><p> Gets a file store data profile.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getFileStoreDataProfile(GetFileStoreDataProfileRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getFileStoreDataProfile(ProjectDataProfileName name)
+ *           <li><p> getFileStoreDataProfile(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getFileStoreDataProfileCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteFileStoreDataProfile</td>
+ *      <td><p> Delete a FileStoreDataProfile. Will not prevent the profile from being regenerated if the resource is still included in a discovery configuration.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteFileStoreDataProfile(DeleteFileStoreDataProfileRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteFileStoreDataProfile(FileStoreDataProfileName name)
+ *           <li><p> deleteFileStoreDataProfile(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteFileStoreDataProfileCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -991,6 +1064,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> DeleteTableDataProfile</td>
+ *      <td><p> Delete a TableDataProfile. Will not prevent the profile from being regenerated if the table is still included in a discovery configuration.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteTableDataProfile(DeleteTableDataProfileRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteTableDataProfile(TableDataProfileName name)
+ *           <li><p> deleteTableDataProfile(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteTableDataProfileCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> HybridInspectDlpJob</td>
  *      <td><p> Inspect hybrid content and store findings to a job. To review the findings, inspect the job. Inspection will occur asynchronously.</td>
  *      <td>
@@ -1020,6 +1112,125 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> finishDlpJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateConnection</td>
+ *      <td><p> Create a Connection to an external data source.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createConnection(CreateConnectionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createConnection(LocationName parent, Connection connection)
+ *           <li><p> createConnection(OrganizationLocationName parent, Connection connection)
+ *           <li><p> createConnection(String parent, Connection connection)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createConnectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetConnection</td>
+ *      <td><p> Get a Connection by name.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getConnection(GetConnectionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getConnection(ConnectionName name)
+ *           <li><p> getConnection(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getConnectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListConnections</td>
+ *      <td><p> Lists Connections in a parent. Use SearchConnections to see all connections within an organization.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listConnections(ListConnectionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listConnections(LocationName parent)
+ *           <li><p> listConnections(OrganizationLocationName parent)
+ *           <li><p> listConnections(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listConnectionsPagedCallable()
+ *           <li><p> listConnectionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SearchConnections</td>
+ *      <td><p> Searches for Connections in a parent.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchConnections(SearchConnectionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> searchConnections(LocationName parent)
+ *           <li><p> searchConnections(OrganizationLocationName parent)
+ *           <li><p> searchConnections(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchConnectionsPagedCallable()
+ *           <li><p> searchConnectionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteConnection</td>
+ *      <td><p> Delete a Connection.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteConnection(DeleteConnectionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteConnection(ConnectionName name)
+ *           <li><p> deleteConnection(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteConnectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateConnection</td>
+ *      <td><p> Update a Connection.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateConnection(UpdateConnectionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateConnection(ConnectionName name)
+ *           <li><p> updateConnection(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1219,6 +1430,9 @@ public class DlpServiceClient implements BackgroundResource {
    * automatically choose what detectors to run. By default this may be all types, but may change
    * over time as detectors are updated.
    *
+   * <p>Only the first frame of each multiframe image is redacted. Metadata and other frames are
+   * omitted in the response.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1236,6 +1450,8 @@ public class DlpServiceClient implements BackgroundResource {
    *           .addAllImageRedactionConfigs(new ArrayList<RedactImageRequest.ImageRedactionConfig>())
    *           .setIncludeFindings(true)
    *           .setByteItem(ByteContentItem.newBuilder().build())
+   *           .setInspectTemplate("inspectTemplate-2053620050")
+   *           .setDeidentifyTemplate("deidentifyTemplate-2141929945")
    *           .build();
    *   RedactImageResponse response = dlpServiceClient.redactImage(request);
    * }
@@ -1259,6 +1475,9 @@ public class DlpServiceClient implements BackgroundResource {
    * automatically choose what detectors to run. By default this may be all types, but may change
    * over time as detectors are updated.
    *
+   * <p>Only the first frame of each multiframe image is redacted. Metadata and other frames are
+   * omitted in the response.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1276,6 +1495,8 @@ public class DlpServiceClient implements BackgroundResource {
    *           .addAllImageRedactionConfigs(new ArrayList<RedactImageRequest.ImageRedactionConfig>())
    *           .setIncludeFindings(true)
    *           .setByteItem(ByteContentItem.newBuilder().build())
+   *           .setInspectTemplate("inspectTemplate-2053620050")
+   *           .setDeidentifyTemplate("deidentifyTemplate-2141929945")
    *           .build();
    *   ApiFuture<RedactImageResponse> future =
    *       dlpServiceClient.redactImageCallable().futureCall(request);
@@ -1446,7 +1667,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of the sensitive information types that DLP API supports. See
+   * Returns a list of the sensitive information types that the DLP API supports. See
    * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference to learn more.
    *
    * <p>Sample code:
@@ -1465,7 +1686,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent The parent resource name.
    *     <p>The format of this value is as follows:
-   *     <p>locations/&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     <p>`locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInfoTypesResponse listInfoTypes(String parent) {
@@ -1475,7 +1696,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of the sensitive information types that DLP API supports. See
+   * Returns a list of the sensitive information types that the DLP API supports. See
    * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference to learn more.
    *
    * <p>Sample code:
@@ -1507,7 +1728,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of the sensitive information types that DLP API supports. See
+   * Returns a list of the sensitive information types that the DLP API supports. See
    * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference to learn more.
    *
    * <p>Sample code:
@@ -1562,14 +1783,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -1611,14 +1828,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -1660,14 +1873,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -1709,14 +1918,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -1758,14 +1963,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -1864,8 +2065,8 @@ public class DlpServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   InspectTemplateName name =
-   *       InspectTemplateName.ofOrganizationInspectTemplateName(
-   *           "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *       InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *           "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
    *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   InspectTemplate response =
@@ -1951,8 +2152,8 @@ public class DlpServiceClient implements BackgroundResource {
    *   UpdateInspectTemplateRequest request =
    *       UpdateInspectTemplateRequest.newBuilder()
    *           .setName(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+   *               InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
    *                   .toString())
    *           .setInspectTemplate(InspectTemplate.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
@@ -1985,8 +2186,8 @@ public class DlpServiceClient implements BackgroundResource {
    *   UpdateInspectTemplateRequest request =
    *       UpdateInspectTemplateRequest.newBuilder()
    *           .setName(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+   *               InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
    *                   .toString())
    *           .setInspectTemplate(InspectTemplate.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
@@ -2018,8 +2219,8 @@ public class DlpServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   InspectTemplateName name =
-   *       InspectTemplateName.ofOrganizationInspectTemplateName(
-   *           "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *       InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *           "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
    *   InspectTemplate response = dlpServiceClient.getInspectTemplate(name);
    * }
    * }</pre>
@@ -2087,8 +2288,8 @@ public class DlpServiceClient implements BackgroundResource {
    *   GetInspectTemplateRequest request =
    *       GetInspectTemplateRequest.newBuilder()
    *           .setName(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+   *               InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
    *                   .toString())
    *           .build();
    *   InspectTemplate response = dlpServiceClient.getInspectTemplate(request);
@@ -2119,8 +2320,8 @@ public class DlpServiceClient implements BackgroundResource {
    *   GetInspectTemplateRequest request =
    *       GetInspectTemplateRequest.newBuilder()
    *           .setName(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+   *               InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
    *                   .toString())
    *           .build();
    *   ApiFuture<InspectTemplate> future =
@@ -2160,14 +2361,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -2206,14 +2403,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -2253,14 +2446,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -2299,14 +2488,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -2345,14 +2530,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -2494,8 +2675,8 @@ public class DlpServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   InspectTemplateName name =
-   *       InspectTemplateName.ofOrganizationInspectTemplateName(
-   *           "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *       InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *           "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
    *   dlpServiceClient.deleteInspectTemplate(name);
    * }
    * }</pre>
@@ -2563,8 +2744,8 @@ public class DlpServiceClient implements BackgroundResource {
    *   DeleteInspectTemplateRequest request =
    *       DeleteInspectTemplateRequest.newBuilder()
    *           .setName(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+   *               InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
    *                   .toString())
    *           .build();
    *   dlpServiceClient.deleteInspectTemplate(request);
@@ -2595,8 +2776,8 @@ public class DlpServiceClient implements BackgroundResource {
    *   DeleteInspectTemplateRequest request =
    *       DeleteInspectTemplateRequest.newBuilder()
    *           .setName(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+   *               InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
    *                   .toString())
    *           .build();
    *   ApiFuture<Empty> future =
@@ -2636,14 +2817,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -2686,14 +2863,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -2736,14 +2909,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -2786,14 +2955,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -2836,14 +3001,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -3241,14 +3402,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -3288,14 +3445,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -3336,14 +3489,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -3384,14 +3533,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -3431,14 +3576,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -3722,10 +3863,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -3765,10 +3904,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -3808,10 +3945,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -4300,10 +4435,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -4341,10 +4474,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -4382,10 +4513,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -4710,8 +4839,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Parent resource name.
-   *     <p>The format of this value is as follows:
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization):
+   *     <p>+ Projects scope: `projects/{project_id}/locations/{location_id}` + Organizations scope:
+   *     `organizations/{org_id}/locations/{location_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -4748,8 +4879,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Parent resource name.
-   *     <p>The format of this value is as follows:
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization):
+   *     <p>+ Projects scope: `projects/{project_id}/locations/{location_id}` + Organizations scope:
+   *     `organizations/{org_id}/locations/{location_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -5112,8 +5245,7 @@ public class DlpServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Parent resource name.
-   *     <p>The format of this value is as follows:
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     <p>The format of this value is as follows: `projects/{project_id}/locations/{location_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -5148,8 +5280,7 @@ public class DlpServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Parent resource name.
-   *     <p>The format of this value is as follows:
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     <p>The format of this value is as follows: `projects/{project_id}/locations/{location_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -5418,10 +5549,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -5465,10 +5594,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -5513,10 +5640,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -5560,10 +5685,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -5608,10 +5731,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -5652,10 +5773,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -5765,10 +5884,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -5807,10 +5924,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -5849,10 +5964,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -6305,14 +6418,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -6354,14 +6463,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -6403,14 +6508,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -6452,14 +6553,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -6501,14 +6598,10 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}` +
+   *     Organizations scope, location specified: `organizations/{org_id}/locations/{location_id}` +
+   *     Organizations scope, no location specified (defaults to global): `organizations/{org_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -6910,10 +7003,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -6953,10 +7044,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -6997,10 +7086,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -7040,10 +7127,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -7083,10 +7168,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
    *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
-   *     <p>+ Projects scope, location specified:&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>+ Projects scope, location specified: `projects/{project_id}/locations/{location_id}` +
+   *     Projects scope, no location specified (defaults to global): `projects/{project_id}`
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -7352,7 +7435,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists project data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7384,7 +7467,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists project data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7417,7 +7500,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists project data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7447,7 +7530,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists project data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7483,7 +7566,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists project data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7518,7 +7601,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists project data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7560,7 +7643,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists table data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7592,7 +7675,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists table data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7625,7 +7708,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists table data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7655,7 +7738,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists table data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7691,7 +7774,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists table data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7726,7 +7809,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists table data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7768,7 +7851,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists column data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7801,7 +7884,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists column data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7835,7 +7918,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists column data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7866,7 +7949,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists column data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7902,7 +7985,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists column data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -7937,7 +8020,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists data profiles for an organization.
+   * Lists column data profiles for an organization.
    *
    * <p>Sample code:
    *
@@ -8101,6 +8184,474 @@ public class DlpServiceClient implements BackgroundResource {
   public final UnaryCallable<GetProjectDataProfileRequest, ProjectDataProfile>
       getProjectDataProfileCallable() {
     return stub.getProjectDataProfileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists file store data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (FileStoreDataProfile element :
+   *       dlpServiceClient.listFileStoreDataProfiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project, for example
+   *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFileStoreDataProfilesPagedResponse listFileStoreDataProfiles(
+      LocationName parent) {
+    ListFileStoreDataProfilesRequest request =
+        ListFileStoreDataProfilesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listFileStoreDataProfiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists file store data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (FileStoreDataProfile element :
+   *       dlpServiceClient.listFileStoreDataProfiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project, for example
+   *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFileStoreDataProfilesPagedResponse listFileStoreDataProfiles(
+      OrganizationLocationName parent) {
+    ListFileStoreDataProfilesRequest request =
+        ListFileStoreDataProfilesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listFileStoreDataProfiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists file store data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
+   *   for (FileStoreDataProfile element :
+   *       dlpServiceClient.listFileStoreDataProfiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project, for example
+   *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFileStoreDataProfilesPagedResponse listFileStoreDataProfiles(String parent) {
+    ListFileStoreDataProfilesRequest request =
+        ListFileStoreDataProfilesRequest.newBuilder().setParent(parent).build();
+    return listFileStoreDataProfiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists file store data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListFileStoreDataProfilesRequest request =
+   *       ListFileStoreDataProfilesRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (FileStoreDataProfile element :
+   *       dlpServiceClient.listFileStoreDataProfiles(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFileStoreDataProfilesPagedResponse listFileStoreDataProfiles(
+      ListFileStoreDataProfilesRequest request) {
+    return listFileStoreDataProfilesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists file store data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListFileStoreDataProfilesRequest request =
+   *       ListFileStoreDataProfilesRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<FileStoreDataProfile> future =
+   *       dlpServiceClient.listFileStoreDataProfilesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (FileStoreDataProfile element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesPagedResponse>
+      listFileStoreDataProfilesPagedCallable() {
+    return stub.listFileStoreDataProfilesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists file store data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListFileStoreDataProfilesRequest request =
+   *       ListFileStoreDataProfilesRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListFileStoreDataProfilesResponse response =
+   *         dlpServiceClient.listFileStoreDataProfilesCallable().call(request);
+   *     for (FileStoreDataProfile element : response.getFileStoreDataProfilesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+      listFileStoreDataProfilesCallable() {
+    return stub.listFileStoreDataProfilesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a file store data profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectDataProfileName name =
+   *       ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+   *           "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]");
+   *   FileStoreDataProfile response = dlpServiceClient.getFileStoreDataProfile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name, for example
+   *     `organizations/12345/locations/us/fileStoreDataProfiles/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FileStoreDataProfile getFileStoreDataProfile(ProjectDataProfileName name) {
+    GetFileStoreDataProfileRequest request =
+        GetFileStoreDataProfileRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getFileStoreDataProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a file store data profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name =
+   *       ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]")
+   *           .toString();
+   *   FileStoreDataProfile response = dlpServiceClient.getFileStoreDataProfile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name, for example
+   *     `organizations/12345/locations/us/fileStoreDataProfiles/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FileStoreDataProfile getFileStoreDataProfile(String name) {
+    GetFileStoreDataProfileRequest request =
+        GetFileStoreDataProfileRequest.newBuilder().setName(name).build();
+    return getFileStoreDataProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a file store data profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   GetFileStoreDataProfileRequest request =
+   *       GetFileStoreDataProfileRequest.newBuilder()
+   *           .setName(
+   *               ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]")
+   *                   .toString())
+   *           .build();
+   *   FileStoreDataProfile response = dlpServiceClient.getFileStoreDataProfile(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FileStoreDataProfile getFileStoreDataProfile(
+      GetFileStoreDataProfileRequest request) {
+    return getFileStoreDataProfileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a file store data profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   GetFileStoreDataProfileRequest request =
+   *       GetFileStoreDataProfileRequest.newBuilder()
+   *           .setName(
+   *               ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<FileStoreDataProfile> future =
+   *       dlpServiceClient.getFileStoreDataProfileCallable().futureCall(request);
+   *   // Do something.
+   *   FileStoreDataProfile response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileCallable() {
+    return stub.getFileStoreDataProfileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a FileStoreDataProfile. Will not prevent the profile from being regenerated if the
+   * resource is still included in a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   FileStoreDataProfileName name =
+   *       FileStoreDataProfileName.ofOrganizationLocationFileStoreDataProfileName(
+   *           "[ORGANIZATION]", "[LOCATION]", "[FILE_STORE_DATA_PROFILE]");
+   *   dlpServiceClient.deleteFileStoreDataProfile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the file store data profile.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFileStoreDataProfile(FileStoreDataProfileName name) {
+    DeleteFileStoreDataProfileRequest request =
+        DeleteFileStoreDataProfileRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteFileStoreDataProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a FileStoreDataProfile. Will not prevent the profile from being regenerated if the
+   * resource is still included in a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name =
+   *       FileStoreDataProfileName.ofOrganizationLocationFileStoreDataProfileName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[FILE_STORE_DATA_PROFILE]")
+   *           .toString();
+   *   dlpServiceClient.deleteFileStoreDataProfile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the file store data profile.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFileStoreDataProfile(String name) {
+    DeleteFileStoreDataProfileRequest request =
+        DeleteFileStoreDataProfileRequest.newBuilder().setName(name).build();
+    deleteFileStoreDataProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a FileStoreDataProfile. Will not prevent the profile from being regenerated if the
+   * resource is still included in a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DeleteFileStoreDataProfileRequest request =
+   *       DeleteFileStoreDataProfileRequest.newBuilder()
+   *           .setName(
+   *               FileStoreDataProfileName.ofOrganizationLocationFileStoreDataProfileName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[FILE_STORE_DATA_PROFILE]")
+   *                   .toString())
+   *           .build();
+   *   dlpServiceClient.deleteFileStoreDataProfile(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFileStoreDataProfile(DeleteFileStoreDataProfileRequest request) {
+    deleteFileStoreDataProfileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a FileStoreDataProfile. Will not prevent the profile from being regenerated if the
+   * resource is still included in a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DeleteFileStoreDataProfileRequest request =
+   *       DeleteFileStoreDataProfileRequest.newBuilder()
+   *           .setName(
+   *               FileStoreDataProfileName.ofOrganizationLocationFileStoreDataProfileName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[FILE_STORE_DATA_PROFILE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       dlpServiceClient.deleteFileStoreDataProfileCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileCallable() {
+    return stub.deleteFileStoreDataProfileCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -8357,6 +8908,134 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Delete a TableDataProfile. Will not prevent the profile from being regenerated if the table is
+   * still included in a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   TableDataProfileName name =
+   *       TableDataProfileName.ofOrganizationLocationTableDataProfileName(
+   *           "[ORGANIZATION]", "[LOCATION]", "[TABLE_DATA_PROFILE]");
+   *   dlpServiceClient.deleteTableDataProfile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the table data profile.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTableDataProfile(TableDataProfileName name) {
+    DeleteTableDataProfileRequest request =
+        DeleteTableDataProfileRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteTableDataProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a TableDataProfile. Will not prevent the profile from being regenerated if the table is
+   * still included in a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name =
+   *       TableDataProfileName.ofOrganizationLocationTableDataProfileName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[TABLE_DATA_PROFILE]")
+   *           .toString();
+   *   dlpServiceClient.deleteTableDataProfile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the table data profile.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTableDataProfile(String name) {
+    DeleteTableDataProfileRequest request =
+        DeleteTableDataProfileRequest.newBuilder().setName(name).build();
+    deleteTableDataProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a TableDataProfile. Will not prevent the profile from being regenerated if the table is
+   * still included in a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DeleteTableDataProfileRequest request =
+   *       DeleteTableDataProfileRequest.newBuilder()
+   *           .setName(
+   *               TableDataProfileName.ofOrganizationLocationTableDataProfileName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[TABLE_DATA_PROFILE]")
+   *                   .toString())
+   *           .build();
+   *   dlpServiceClient.deleteTableDataProfile(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTableDataProfile(DeleteTableDataProfileRequest request) {
+    deleteTableDataProfileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a TableDataProfile. Will not prevent the profile from being regenerated if the table is
+   * still included in a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DeleteTableDataProfileRequest request =
+   *       DeleteTableDataProfileRequest.newBuilder()
+   *           .setName(
+   *               TableDataProfileName.ofOrganizationLocationTableDataProfileName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[TABLE_DATA_PROFILE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       dlpServiceClient.deleteTableDataProfileCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteTableDataProfileRequest, Empty>
+      deleteTableDataProfileCallable() {
+    return stub.deleteTableDataProfileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Inspect hybrid content and store findings to a job. To review the findings, inspect the job.
    * Inspection will occur asynchronously.
    *
@@ -8540,6 +9219,939 @@ public class DlpServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable() {
     return stub.finishDlpJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a Connection to an external data source.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Connection connection = Connection.newBuilder().build();
+   *   Connection response = dlpServiceClient.createConnection(parent, connection);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization):
+   *     <p>+ Projects scope: `projects/{project_id}/locations/{location_id}` + Organizations scope:
+   *     `organizations/{org_id}/locations/{location_id}`
+   * @param connection Required. The connection resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Connection createConnection(LocationName parent, Connection connection) {
+    CreateConnectionRequest request =
+        CreateConnectionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setConnection(connection)
+            .build();
+    return createConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a Connection to an external data source.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   Connection connection = Connection.newBuilder().build();
+   *   Connection response = dlpServiceClient.createConnection(parent, connection);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization):
+   *     <p>+ Projects scope: `projects/{project_id}/locations/{location_id}` + Organizations scope:
+   *     `organizations/{org_id}/locations/{location_id}`
+   * @param connection Required. The connection resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Connection createConnection(OrganizationLocationName parent, Connection connection) {
+    CreateConnectionRequest request =
+        CreateConnectionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setConnection(connection)
+            .build();
+    return createConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a Connection to an external data source.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Connection connection = Connection.newBuilder().build();
+   *   Connection response = dlpServiceClient.createConnection(parent, connection);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization):
+   *     <p>+ Projects scope: `projects/{project_id}/locations/{location_id}` + Organizations scope:
+   *     `organizations/{org_id}/locations/{location_id}`
+   * @param connection Required. The connection resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Connection createConnection(String parent, Connection connection) {
+    CreateConnectionRequest request =
+        CreateConnectionRequest.newBuilder().setParent(parent).setConnection(connection).build();
+    return createConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a Connection to an external data source.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   CreateConnectionRequest request =
+   *       CreateConnectionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setConnection(Connection.newBuilder().build())
+   *           .build();
+   *   Connection response = dlpServiceClient.createConnection(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Connection createConnection(CreateConnectionRequest request) {
+    return createConnectionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a Connection to an external data source.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   CreateConnectionRequest request =
+   *       CreateConnectionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setConnection(Connection.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Connection> future =
+   *       dlpServiceClient.createConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   Connection response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateConnectionRequest, Connection> createConnectionCallable() {
+    return stub.createConnectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a Connection by name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ConnectionName name =
+   *       ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+   *   Connection response = dlpServiceClient.getConnection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name in the format:
+   *     `projects/{project}/locations/{location}/connections/{connection}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Connection getConnection(ConnectionName name) {
+    GetConnectionRequest request =
+        GetConnectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a Connection by name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name =
+   *       ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]")
+   *           .toString();
+   *   Connection response = dlpServiceClient.getConnection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name in the format:
+   *     `projects/{project}/locations/{location}/connections/{connection}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Connection getConnection(String name) {
+    GetConnectionRequest request = GetConnectionRequest.newBuilder().setName(name).build();
+    return getConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a Connection by name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   GetConnectionRequest request =
+   *       GetConnectionRequest.newBuilder()
+   *           .setName(
+   *               ConnectionName.ofProjectLocationConnectionName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+   *                   .toString())
+   *           .build();
+   *   Connection response = dlpServiceClient.getConnection(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Connection getConnection(GetConnectionRequest request) {
+    return getConnectionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a Connection by name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   GetConnectionRequest request =
+   *       GetConnectionRequest.newBuilder()
+   *           .setName(
+   *               ConnectionName.ofProjectLocationConnectionName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Connection> future = dlpServiceClient.getConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   Connection response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetConnectionRequest, Connection> getConnectionCallable() {
+    return stub.getConnectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Connections in a parent. Use SearchConnections to see all connections within an
+   * organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Connection element : dlpServiceClient.listConnections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project, for example,
+   *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListConnectionsPagedResponse listConnections(LocationName parent) {
+    ListConnectionsRequest request =
+        ListConnectionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listConnections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Connections in a parent. Use SearchConnections to see all connections within an
+   * organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (Connection element : dlpServiceClient.listConnections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project, for example,
+   *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListConnectionsPagedResponse listConnections(OrganizationLocationName parent) {
+    ListConnectionsRequest request =
+        ListConnectionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listConnections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Connections in a parent. Use SearchConnections to see all connections within an
+   * organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Connection element : dlpServiceClient.listConnections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project, for example,
+   *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListConnectionsPagedResponse listConnections(String parent) {
+    ListConnectionsRequest request = ListConnectionsRequest.newBuilder().setParent(parent).build();
+    return listConnections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Connections in a parent. Use SearchConnections to see all connections within an
+   * organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListConnectionsRequest request =
+   *       ListConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (Connection element : dlpServiceClient.listConnections(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListConnectionsPagedResponse listConnections(ListConnectionsRequest request) {
+    return listConnectionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Connections in a parent. Use SearchConnections to see all connections within an
+   * organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListConnectionsRequest request =
+   *       ListConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Connection> future =
+   *       dlpServiceClient.listConnectionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Connection element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListConnectionsRequest, ListConnectionsPagedResponse>
+      listConnectionsPagedCallable() {
+    return stub.listConnectionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Connections in a parent. Use SearchConnections to see all connections within an
+   * organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListConnectionsRequest request =
+   *       ListConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListConnectionsResponse response = dlpServiceClient.listConnectionsCallable().call(request);
+   *     for (Connection element : response.getConnectionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListConnectionsRequest, ListConnectionsResponse>
+      listConnectionsCallable() {
+    return stub.listConnectionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for Connections in a parent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Connection element : dlpServiceClient.searchConnections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project with a wildcard location,
+   *     for example, `organizations/433245324/locations/-` or `projects/project-id/locations/-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchConnectionsPagedResponse searchConnections(LocationName parent) {
+    SearchConnectionsRequest request =
+        SearchConnectionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return searchConnections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for Connections in a parent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (Connection element : dlpServiceClient.searchConnections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project with a wildcard location,
+   *     for example, `organizations/433245324/locations/-` or `projects/project-id/locations/-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchConnectionsPagedResponse searchConnections(OrganizationLocationName parent) {
+    SearchConnectionsRequest request =
+        SearchConnectionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return searchConnections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for Connections in a parent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Connection element : dlpServiceClient.searchConnections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project with a wildcard location,
+   *     for example, `organizations/433245324/locations/-` or `projects/project-id/locations/-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchConnectionsPagedResponse searchConnections(String parent) {
+    SearchConnectionsRequest request =
+        SearchConnectionsRequest.newBuilder().setParent(parent).build();
+    return searchConnections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for Connections in a parent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   SearchConnectionsRequest request =
+   *       SearchConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (Connection element : dlpServiceClient.searchConnections(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchConnectionsPagedResponse searchConnections(SearchConnectionsRequest request) {
+    return searchConnectionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for Connections in a parent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   SearchConnectionsRequest request =
+   *       SearchConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Connection> future =
+   *       dlpServiceClient.searchConnectionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Connection element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchConnectionsRequest, SearchConnectionsPagedResponse>
+      searchConnectionsPagedCallable() {
+    return stub.searchConnectionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for Connections in a parent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   SearchConnectionsRequest request =
+   *       SearchConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     SearchConnectionsResponse response =
+   *         dlpServiceClient.searchConnectionsCallable().call(request);
+   *     for (Connection element : response.getConnectionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchConnectionsRequest, SearchConnectionsResponse>
+      searchConnectionsCallable() {
+    return stub.searchConnectionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a Connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ConnectionName name =
+   *       ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+   *   dlpServiceClient.deleteConnection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the Connection to be deleted, in the format:
+   *     `projects/{project}/locations/{location}/connections/{connection}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteConnection(ConnectionName name) {
+    DeleteConnectionRequest request =
+        DeleteConnectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a Connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name =
+   *       ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]")
+   *           .toString();
+   *   dlpServiceClient.deleteConnection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the Connection to be deleted, in the format:
+   *     `projects/{project}/locations/{location}/connections/{connection}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteConnection(String name) {
+    DeleteConnectionRequest request = DeleteConnectionRequest.newBuilder().setName(name).build();
+    deleteConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a Connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DeleteConnectionRequest request =
+   *       DeleteConnectionRequest.newBuilder()
+   *           .setName(
+   *               ConnectionName.ofProjectLocationConnectionName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+   *                   .toString())
+   *           .build();
+   *   dlpServiceClient.deleteConnection(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteConnection(DeleteConnectionRequest request) {
+    deleteConnectionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a Connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DeleteConnectionRequest request =
+   *       DeleteConnectionRequest.newBuilder()
+   *           .setName(
+   *               ConnectionName.ofProjectLocationConnectionName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future = dlpServiceClient.deleteConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable() {
+    return stub.deleteConnectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a Connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ConnectionName name =
+   *       ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+   *   Connection response = dlpServiceClient.updateConnection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name in the format:
+   *     `projects/{project}/locations/{location}/connections/{connection}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Connection updateConnection(ConnectionName name) {
+    UpdateConnectionRequest request =
+        UpdateConnectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return updateConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a Connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name =
+   *       ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]")
+   *           .toString();
+   *   Connection response = dlpServiceClient.updateConnection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name in the format:
+   *     `projects/{project}/locations/{location}/connections/{connection}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Connection updateConnection(String name) {
+    UpdateConnectionRequest request = UpdateConnectionRequest.newBuilder().setName(name).build();
+    return updateConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a Connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   UpdateConnectionRequest request =
+   *       UpdateConnectionRequest.newBuilder()
+   *           .setName(
+   *               ConnectionName.ofProjectLocationConnectionName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+   *                   .toString())
+   *           .setConnection(Connection.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Connection response = dlpServiceClient.updateConnection(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Connection updateConnection(UpdateConnectionRequest request) {
+    return updateConnectionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a Connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   UpdateConnectionRequest request =
+   *       UpdateConnectionRequest.newBuilder()
+   *           .setName(
+   *               ConnectionName.ofProjectLocationConnectionName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+   *                   .toString())
+   *           .setConnection(Connection.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Connection> future =
+   *       dlpServiceClient.updateConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   Connection response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateConnectionRequest, Connection> updateConnectionCallable() {
+    return stub.updateConnectionCallable();
   }
 
   @Override
@@ -9319,6 +10931,256 @@ public class DlpServiceClient implements BackgroundResource {
     protected ListColumnDataProfilesFixedSizeCollection createCollection(
         List<ListColumnDataProfilesPage> pages, int collectionSize) {
       return new ListColumnDataProfilesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListFileStoreDataProfilesPagedResponse
+      extends AbstractPagedListResponse<
+          ListFileStoreDataProfilesRequest,
+          ListFileStoreDataProfilesResponse,
+          FileStoreDataProfile,
+          ListFileStoreDataProfilesPage,
+          ListFileStoreDataProfilesFixedSizeCollection> {
+
+    public static ApiFuture<ListFileStoreDataProfilesPagedResponse> createAsync(
+        PageContext<
+                ListFileStoreDataProfilesRequest,
+                ListFileStoreDataProfilesResponse,
+                FileStoreDataProfile>
+            context,
+        ApiFuture<ListFileStoreDataProfilesResponse> futureResponse) {
+      ApiFuture<ListFileStoreDataProfilesPage> futurePage =
+          ListFileStoreDataProfilesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListFileStoreDataProfilesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListFileStoreDataProfilesPagedResponse(ListFileStoreDataProfilesPage page) {
+      super(page, ListFileStoreDataProfilesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListFileStoreDataProfilesPage
+      extends AbstractPage<
+          ListFileStoreDataProfilesRequest,
+          ListFileStoreDataProfilesResponse,
+          FileStoreDataProfile,
+          ListFileStoreDataProfilesPage> {
+
+    private ListFileStoreDataProfilesPage(
+        PageContext<
+                ListFileStoreDataProfilesRequest,
+                ListFileStoreDataProfilesResponse,
+                FileStoreDataProfile>
+            context,
+        ListFileStoreDataProfilesResponse response) {
+      super(context, response);
+    }
+
+    private static ListFileStoreDataProfilesPage createEmptyPage() {
+      return new ListFileStoreDataProfilesPage(null, null);
+    }
+
+    @Override
+    protected ListFileStoreDataProfilesPage createPage(
+        PageContext<
+                ListFileStoreDataProfilesRequest,
+                ListFileStoreDataProfilesResponse,
+                FileStoreDataProfile>
+            context,
+        ListFileStoreDataProfilesResponse response) {
+      return new ListFileStoreDataProfilesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListFileStoreDataProfilesPage> createPageAsync(
+        PageContext<
+                ListFileStoreDataProfilesRequest,
+                ListFileStoreDataProfilesResponse,
+                FileStoreDataProfile>
+            context,
+        ApiFuture<ListFileStoreDataProfilesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListFileStoreDataProfilesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListFileStoreDataProfilesRequest,
+          ListFileStoreDataProfilesResponse,
+          FileStoreDataProfile,
+          ListFileStoreDataProfilesPage,
+          ListFileStoreDataProfilesFixedSizeCollection> {
+
+    private ListFileStoreDataProfilesFixedSizeCollection(
+        List<ListFileStoreDataProfilesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListFileStoreDataProfilesFixedSizeCollection createEmptyCollection() {
+      return new ListFileStoreDataProfilesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListFileStoreDataProfilesFixedSizeCollection createCollection(
+        List<ListFileStoreDataProfilesPage> pages, int collectionSize) {
+      return new ListFileStoreDataProfilesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListConnectionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListConnectionsRequest,
+          ListConnectionsResponse,
+          Connection,
+          ListConnectionsPage,
+          ListConnectionsFixedSizeCollection> {
+
+    public static ApiFuture<ListConnectionsPagedResponse> createAsync(
+        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        ApiFuture<ListConnectionsResponse> futureResponse) {
+      ApiFuture<ListConnectionsPage> futurePage =
+          ListConnectionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListConnectionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListConnectionsPagedResponse(ListConnectionsPage page) {
+      super(page, ListConnectionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListConnectionsPage
+      extends AbstractPage<
+          ListConnectionsRequest, ListConnectionsResponse, Connection, ListConnectionsPage> {
+
+    private ListConnectionsPage(
+        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        ListConnectionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListConnectionsPage createEmptyPage() {
+      return new ListConnectionsPage(null, null);
+    }
+
+    @Override
+    protected ListConnectionsPage createPage(
+        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        ListConnectionsResponse response) {
+      return new ListConnectionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListConnectionsPage> createPageAsync(
+        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        ApiFuture<ListConnectionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListConnectionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListConnectionsRequest,
+          ListConnectionsResponse,
+          Connection,
+          ListConnectionsPage,
+          ListConnectionsFixedSizeCollection> {
+
+    private ListConnectionsFixedSizeCollection(
+        List<ListConnectionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListConnectionsFixedSizeCollection createEmptyCollection() {
+      return new ListConnectionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListConnectionsFixedSizeCollection createCollection(
+        List<ListConnectionsPage> pages, int collectionSize) {
+      return new ListConnectionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SearchConnectionsPagedResponse
+      extends AbstractPagedListResponse<
+          SearchConnectionsRequest,
+          SearchConnectionsResponse,
+          Connection,
+          SearchConnectionsPage,
+          SearchConnectionsFixedSizeCollection> {
+
+    public static ApiFuture<SearchConnectionsPagedResponse> createAsync(
+        PageContext<SearchConnectionsRequest, SearchConnectionsResponse, Connection> context,
+        ApiFuture<SearchConnectionsResponse> futureResponse) {
+      ApiFuture<SearchConnectionsPage> futurePage =
+          SearchConnectionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new SearchConnectionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private SearchConnectionsPagedResponse(SearchConnectionsPage page) {
+      super(page, SearchConnectionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchConnectionsPage
+      extends AbstractPage<
+          SearchConnectionsRequest, SearchConnectionsResponse, Connection, SearchConnectionsPage> {
+
+    private SearchConnectionsPage(
+        PageContext<SearchConnectionsRequest, SearchConnectionsResponse, Connection> context,
+        SearchConnectionsResponse response) {
+      super(context, response);
+    }
+
+    private static SearchConnectionsPage createEmptyPage() {
+      return new SearchConnectionsPage(null, null);
+    }
+
+    @Override
+    protected SearchConnectionsPage createPage(
+        PageContext<SearchConnectionsRequest, SearchConnectionsResponse, Connection> context,
+        SearchConnectionsResponse response) {
+      return new SearchConnectionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchConnectionsPage> createPageAsync(
+        PageContext<SearchConnectionsRequest, SearchConnectionsResponse, Connection> context,
+        ApiFuture<SearchConnectionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchConnectionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchConnectionsRequest,
+          SearchConnectionsResponse,
+          Connection,
+          SearchConnectionsPage,
+          SearchConnectionsFixedSizeCollection> {
+
+    private SearchConnectionsFixedSizeCollection(
+        List<SearchConnectionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchConnectionsFixedSizeCollection createEmptyCollection() {
+      return new SearchConnectionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchConnectionsFixedSizeCollection createCollection(
+        List<SearchConnectionsPage> pages, int collectionSize) {
+      return new SearchConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

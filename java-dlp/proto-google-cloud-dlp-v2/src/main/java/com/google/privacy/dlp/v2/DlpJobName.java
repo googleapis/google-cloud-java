@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -253,7 +253,8 @@ public class DlpJobName implements ResourceName {
     private Builder(DlpJobName dlpJobName) {
       Preconditions.checkArgument(
           Objects.equals(dlpJobName.pathTemplate, PROJECT_DLP_JOB),
-          "toBuilder is only supported when DlpJobName has the pattern of projects/{project}/dlpJobs/{dlp_job}");
+          "toBuilder is only supported when DlpJobName has the pattern of"
+              + " projects/{project}/dlpJobs/{dlp_job}");
       this.project = dlpJobName.project;
       this.dlpJob = dlpJobName.dlpJob;
     }

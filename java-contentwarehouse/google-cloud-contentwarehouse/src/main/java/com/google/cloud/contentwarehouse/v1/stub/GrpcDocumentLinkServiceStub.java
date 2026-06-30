@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,7 @@ public class GrpcDocumentLinkServiceStub extends DocumentLinkServiceStub {
                   ProtoUtils.marshaller(ListLinkedTargetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLinkedTargetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLinkedSourcesRequest, ListLinkedSourcesResponse>
@@ -70,6 +71,7 @@ public class GrpcDocumentLinkServiceStub extends DocumentLinkServiceStub {
                   ProtoUtils.marshaller(ListLinkedSourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLinkedSourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDocumentLinkRequest, DocumentLink>
@@ -81,6 +83,7 @@ public class GrpcDocumentLinkServiceStub extends DocumentLinkServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDocumentLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DocumentLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDocumentLinkRequest, Empty>
@@ -92,6 +95,7 @@ public class GrpcDocumentLinkServiceStub extends DocumentLinkServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDocumentLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListLinkedTargetsRequest, ListLinkedTargetsResponse>
@@ -157,6 +161,7 @@ public class GrpcDocumentLinkServiceStub extends DocumentLinkServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLinkedSourcesRequest, ListLinkedSourcesResponse>
         listLinkedSourcesTransportSettings =
@@ -168,6 +173,7 @@ public class GrpcDocumentLinkServiceStub extends DocumentLinkServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateDocumentLinkRequest, DocumentLink> createDocumentLinkTransportSettings =
         GrpcCallSettings.<CreateDocumentLinkRequest, DocumentLink>newBuilder()
@@ -178,6 +184,7 @@ public class GrpcDocumentLinkServiceStub extends DocumentLinkServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteDocumentLinkRequest, Empty> deleteDocumentLinkTransportSettings =
         GrpcCallSettings.<DeleteDocumentLinkRequest, Empty>newBuilder()
@@ -188,6 +195,7 @@ public class GrpcDocumentLinkServiceStub extends DocumentLinkServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listLinkedTargetsCallable =

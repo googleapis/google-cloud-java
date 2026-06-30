@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages versions of a service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/appengine/v1/appengine.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class VersionsGrpc {
 
@@ -250,6 +247,19 @@ public final class VersionsGrpc {
           }
         };
     return VersionsStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static VersionsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<VersionsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<VersionsBlockingV2Stub>() {
+          @java.lang.Override
+          public VersionsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new VersionsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return VersionsBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -524,6 +534,116 @@ public final class VersionsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Versions.
+   *
+   * <pre>
+   * Manages versions of a service.
+   * </pre>
+   */
+  public static final class VersionsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<VersionsBlockingV2Stub> {
+    private VersionsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected VersionsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new VersionsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the versions of a service.
+     * </pre>
+     */
+    public com.google.appengine.v1.ListVersionsResponse listVersions(
+        com.google.appengine.v1.ListVersionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the specified Version resource.
+     * By default, only a `BASIC_VIEW` will be returned.
+     * Specify the `FULL_VIEW` parameter to get the full resource.
+     * </pre>
+     */
+    public com.google.appengine.v1.Version getVersion(
+        com.google.appengine.v1.GetVersionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys code and resource files to a new version.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createVersion(
+        com.google.appengine.v1.CreateVersionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified Version resource.
+     * You can specify the following fields depending on the App Engine
+     * environment and type of scaling that the version resource uses:
+     * **Standard environment**
+     * * [`instance_class`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.instance_class)
+     * *automatic scaling* in the standard environment:
+     * * [`automatic_scaling.min_idle_instances`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.automatic_scaling)
+     * * [`automatic_scaling.max_idle_instances`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.automatic_scaling)
+     * * [`automaticScaling.standard_scheduler_settings.max_instances`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StandardSchedulerSettings)
+     * * [`automaticScaling.standard_scheduler_settings.min_instances`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StandardSchedulerSettings)
+     * * [`automaticScaling.standard_scheduler_settings.target_cpu_utilization`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StandardSchedulerSettings)
+     * * [`automaticScaling.standard_scheduler_settings.target_throughput_utilization`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StandardSchedulerSettings)
+     * *basic scaling* or *manual scaling* in the standard environment:
+     * * [`serving_status`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.serving_status)
+     * * [`manual_scaling.instances`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#manualscaling)
+     * **Flexible environment**
+     * * [`serving_status`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.serving_status)
+     * *automatic scaling* in the flexible environment:
+     * * [`automatic_scaling.min_total_instances`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.automatic_scaling)
+     * * [`automatic_scaling.max_total_instances`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.automatic_scaling)
+     * * [`automatic_scaling.cool_down_period_sec`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.automatic_scaling)
+     * * [`automatic_scaling.cpu_utilization.target_utilization`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.automatic_scaling)
+     * *manual scaling* in the flexible environment:
+     * * [`manual_scaling.instances`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#manualscaling)
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateVersion(
+        com.google.appengine.v1.UpdateVersionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing Version resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteVersion(
+        com.google.appengine.v1.DeleteVersionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteVersionMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Versions.
    *
    * <pre>
    * Manages versions of a service.

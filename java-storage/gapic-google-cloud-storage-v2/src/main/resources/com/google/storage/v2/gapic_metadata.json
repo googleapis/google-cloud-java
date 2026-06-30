@@ -1,0 +1,90 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.storage.v2",
+  "libraryPackage": "com.google.storage.v2",
+  "services": {
+    "Storage": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StorageClient",
+          "rpcs": {
+            "BidiReadObject": {
+              "methods": ["bidiReadObjectCallable"]
+            },
+            "BidiWriteObject": {
+              "methods": ["bidiWriteObjectCallable"]
+            },
+            "CancelResumableWrite": {
+              "methods": ["cancelResumableWrite", "cancelResumableWrite", "cancelResumableWriteCallable"]
+            },
+            "ComposeObject": {
+              "methods": ["composeObject", "composeObjectCallable"]
+            },
+            "CreateBucket": {
+              "methods": ["createBucket", "createBucket", "createBucket", "createBucketCallable"]
+            },
+            "DeleteBucket": {
+              "methods": ["deleteBucket", "deleteBucket", "deleteBucket", "deleteBucketCallable"]
+            },
+            "DeleteObject": {
+              "methods": ["deleteObject", "deleteObject", "deleteObject", "deleteObject", "deleteObject", "deleteObjectCallable"]
+            },
+            "GetBucket": {
+              "methods": ["getBucket", "getBucket", "getBucket", "getBucketCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetObject": {
+              "methods": ["getObject", "getObject", "getObject", "getObject", "getObject", "getObjectCallable"]
+            },
+            "ListBuckets": {
+              "methods": ["listBuckets", "listBuckets", "listBuckets", "listBucketsPagedCallable", "listBucketsCallable"]
+            },
+            "ListObjects": {
+              "methods": ["listObjects", "listObjects", "listObjects", "listObjectsPagedCallable", "listObjectsCallable"]
+            },
+            "LockBucketRetentionPolicy": {
+              "methods": ["lockBucketRetentionPolicy", "lockBucketRetentionPolicy", "lockBucketRetentionPolicy", "lockBucketRetentionPolicyCallable"]
+            },
+            "MoveObject": {
+              "methods": ["moveObject", "moveObject", "moveObject", "moveObjectCallable"]
+            },
+            "QueryWriteStatus": {
+              "methods": ["queryWriteStatus", "queryWriteStatus", "queryWriteStatusCallable"]
+            },
+            "ReadObject": {
+              "methods": ["readObjectCallable"]
+            },
+            "RestoreObject": {
+              "methods": ["restoreObject", "restoreObject", "restoreObject", "restoreObjectCallable"]
+            },
+            "RewriteObject": {
+              "methods": ["rewriteObject", "rewriteObjectCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "StartResumableWrite": {
+              "methods": ["startResumableWrite", "startResumableWriteCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateBucket": {
+              "methods": ["updateBucket", "updateBucket", "updateBucketCallable"]
+            },
+            "UpdateObject": {
+              "methods": ["updateObject", "updateObject", "updateObjectCallable"]
+            },
+            "WriteObject": {
+              "methods": ["writeObjectCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

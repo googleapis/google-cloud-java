@@ -1,0 +1,78 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.asset.v1",
+  "libraryPackage": "com.google.cloud.asset.v1",
+  "services": {
+    "AssetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AssetServiceClient",
+          "rpcs": {
+            "AnalyzeIamPolicy": {
+              "methods": ["analyzeIamPolicy", "analyzeIamPolicyCallable"]
+            },
+            "AnalyzeIamPolicyLongrunning": {
+              "methods": ["analyzeIamPolicyLongrunningAsync", "analyzeIamPolicyLongrunningOperationCallable", "analyzeIamPolicyLongrunningCallable"]
+            },
+            "AnalyzeMove": {
+              "methods": ["analyzeMove", "analyzeMoveCallable"]
+            },
+            "BatchGetAssetsHistory": {
+              "methods": ["batchGetAssetsHistory", "batchGetAssetsHistoryCallable"]
+            },
+            "BatchGetEffectiveIamPolicies": {
+              "methods": ["batchGetEffectiveIamPolicies", "batchGetEffectiveIamPoliciesCallable"]
+            },
+            "CreateFeed": {
+              "methods": ["createFeed", "createFeed", "createFeedCallable"]
+            },
+            "CreateSavedQuery": {
+              "methods": ["createSavedQuery", "createSavedQuery", "createSavedQuery", "createSavedQuery", "createSavedQuery", "createSavedQueryCallable"]
+            },
+            "DeleteFeed": {
+              "methods": ["deleteFeed", "deleteFeed", "deleteFeed", "deleteFeedCallable"]
+            },
+            "DeleteSavedQuery": {
+              "methods": ["deleteSavedQuery", "deleteSavedQuery", "deleteSavedQuery", "deleteSavedQueryCallable"]
+            },
+            "ExportAssets": {
+              "methods": ["exportAssetsAsync", "exportAssetsOperationCallable", "exportAssetsCallable"]
+            },
+            "GetFeed": {
+              "methods": ["getFeed", "getFeed", "getFeed", "getFeedCallable"]
+            },
+            "GetSavedQuery": {
+              "methods": ["getSavedQuery", "getSavedQuery", "getSavedQuery", "getSavedQueryCallable"]
+            },
+            "ListAssets": {
+              "methods": ["listAssets", "listAssets", "listAssets", "listAssetsPagedCallable", "listAssetsCallable"]
+            },
+            "ListFeeds": {
+              "methods": ["listFeeds", "listFeeds", "listFeedsCallable"]
+            },
+            "ListSavedQueries": {
+              "methods": ["listSavedQueries", "listSavedQueries", "listSavedQueries", "listSavedQueries", "listSavedQueries", "listSavedQueriesPagedCallable", "listSavedQueriesCallable"]
+            },
+            "QueryAssets": {
+              "methods": ["queryAssets", "queryAssetsCallable"]
+            },
+            "SearchAllIamPolicies": {
+              "methods": ["searchAllIamPolicies", "searchAllIamPolicies", "searchAllIamPoliciesPagedCallable", "searchAllIamPoliciesCallable"]
+            },
+            "SearchAllResources": {
+              "methods": ["searchAllResources", "searchAllResources", "searchAllResourcesPagedCallable", "searchAllResourcesCallable"]
+            },
+            "UpdateFeed": {
+              "methods": ["updateFeed", "updateFeed", "updateFeedCallable"]
+            },
+            "UpdateSavedQuery": {
+              "methods": ["updateSavedQuery", "updateSavedQuery", "updateSavedQueryCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

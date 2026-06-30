@@ -1,0 +1,21 @@
+{
+  "api_shortname": "spanner",
+  "name_pretty": "Cloud Spanner",
+  "product_documentation": "https://cloud.google.com/spanner/docs/",
+  "api_description": "is a fully managed, mission-critical,  relational database service that offers transactional consistency at global scale, schemas, SQL (ANSI 2011 with extensions), and automatic, synchronous replication for high availability. Be sure to activate the Cloud Spanner API on the Developer's Console to use Cloud Spanner from your project.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-spanner/latest/history",
+  "release_level": "stable",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-spanner",
+  "distribution_name": "com.google.cloud:google-cloud-spanner",
+  "api_id": "spanner.googleapis.com",
+  "library_type": "GAPIC_COMBO",
+  "requires_billing": true,
+  "codeowner_team": "@googleapis/spanner-team",
+  "excluded_poms": "google-cloud-spanner-bom,google-cloud-spanner",
+  "issue_tracker": "https://issuetracker.google.com/issues?q=componentid:190851%2B%20status:open",
+  "recommended_package": "com.google.cloud.spanner",
+  "min_java_version": 8
+}

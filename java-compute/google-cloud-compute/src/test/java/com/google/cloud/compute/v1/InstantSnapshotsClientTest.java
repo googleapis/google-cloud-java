@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -143,6 +143,7 @@ public class InstantSnapshotsClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -221,6 +222,7 @@ public class InstantSnapshotsClientTest {
             .setLabelFingerprint("labelFingerprint379449680")
             .putAllLabels(new HashMap<String, String>())
             .setName("name3373707")
+            .setParams(InstantSnapshotParams.newBuilder().build())
             .setRegion("region-934795532")
             .setResourceStatus(InstantSnapshotResourceStatus.newBuilder().build())
             .setSatisfiesPzi(true)
@@ -229,6 +231,8 @@ public class InstantSnapshotsClientTest {
             .setSelfLinkWithId("selfLinkWithId-776809081")
             .setSourceDisk("sourceDisk-1111923624")
             .setSourceDiskId("sourceDiskId888256403")
+            .setSourceInstantSnapshotGroup("sourceInstantSnapshotGroup-2079519883")
+            .setSourceInstantSnapshotGroupId("sourceInstantSnapshotGroupId-1258812560")
             .setStatus("status-892481550")
             .setZone("zone3744684")
             .build();
@@ -282,7 +286,6 @@ public class InstantSnapshotsClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -336,6 +339,7 @@ public class InstantSnapshotsClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -461,7 +465,6 @@ public class InstantSnapshotsClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -518,6 +521,7 @@ public class InstantSnapshotsClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)

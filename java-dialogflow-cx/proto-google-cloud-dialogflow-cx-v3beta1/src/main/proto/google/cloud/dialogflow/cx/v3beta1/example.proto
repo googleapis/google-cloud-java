@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,12 +20,11 @@ import "google/api/annotations.proto";
 import "google/api/client.proto";
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
+import "google/cloud/dialogflow/cx/v3beta1/trace.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
-import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
-option cc_enable_arenas = true;
 option csharp_namespace = "Google.Cloud.Dialogflow.Cx.V3Beta1";
 option go_package = "cloud.google.com/go/dialogflow/cx/apiv3beta1/cxpb;cxpb";
 option java_multiple_files = true;
@@ -87,8 +86,8 @@ service Examples {
 // [Examples.CreateExample][google.cloud.dialogflow.cx.v3beta1.Examples.CreateExample].
 message CreateExampleRequest {
   // Required. The playbook to create an example for.
-  // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-  // ID>/playbooks/<Playbook ID>`.
+  // Format:
+  // `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/playbooks/<PlaybookID>`.
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -104,8 +103,8 @@ message CreateExampleRequest {
 // [Examples.DeleteExample][google.cloud.dialogflow.cx.v3beta1.Examples.DeleteExample].
 message DeleteExampleRequest {
   // Required. The name of the example to delete.
-  // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-  // ID>/playbooks/<Playbook ID>/examples/<Example ID>`.
+  // Format:
+  // `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/playbooks/<PlaybookID>/examples/<ExampleID>`.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -118,8 +117,8 @@ message DeleteExampleRequest {
 // [Examples.ListExamples][google.cloud.dialogflow.cx.v3beta1.Examples.ListExamples].
 message ListExamplesRequest {
   // Required. The playbook to list the examples from.
-  // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-  // ID>/playbooks/<Playbook ID>`.
+  // Format:
+  // `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/playbooks/<PlaybookID>`.
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -136,7 +135,7 @@ message ListExamplesRequest {
   string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. The language to list examples for.
-  // If not specified, the agent's default language is used.
+  // If not specified, list all examples under the playbook.
   // Note: languages must be enabled in the agent before they can be used.
   string language_code = 4 [(google.api.field_behavior) = OPTIONAL];
 }
@@ -159,8 +158,8 @@ message ListExamplesResponse {
 // [Examples.GetExample][google.cloud.dialogflow.cx.v3beta1.Examples.GetExample].
 message GetExampleRequest {
   // Required. The name of the example.
-  // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-  // ID>/playbooks/<Playbook ID>/examples/<Example ID>`.
+  // Format:
+  // `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/playbooks/<PlaybookID>/examples/<ExampleID>`.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -194,8 +193,8 @@ message Example {
   };
 
   // The unique identifier of the playbook example.
-  // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-  // ID>/playbooks/<Playbook ID>/examples/<Example ID>`.
+  // Format:
+  // `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/playbooks/<PlaybookID>/examples/<ExampleID>`.
   string name = 1;
 
   // Optional. The input to the playbook in the example.
@@ -233,157 +232,6 @@ message Example {
   // Optional. The language code of the example.
   // If not specified, the agent's default language is used.
   // Note: languages must be enabled in the agent before they can be used.
+  // Note: example's language code is not currently used in dialogflow agents.
   string language_code = 13 [(google.api.field_behavior) = OPTIONAL];
-}
-
-// Input of the playbook.
-message PlaybookInput {
-  // Optional. Summary string of the preceding conversation for the child
-  // playbook invocation.
-  string preceding_conversation_summary = 1
-      [(google.api.field_behavior) = OPTIONAL];
-
-  // Optional. A list of input parameters for the invocation.
-  repeated ActionParameter parameters = 2
-      [(google.api.field_behavior) = OPTIONAL];
-}
-
-// Output of the playbook.
-message PlaybookOutput {
-  // Optional. Summary string of the execution result of the child playbook.
-  string execution_summary = 1 [(google.api.field_behavior) = OPTIONAL];
-
-  // Optional. A list of output parameters for the invocation.
-  repeated ActionParameter parameters = 3
-      [(google.api.field_behavior) = OPTIONAL];
-}
-
-// Action performed by end user or Dialogflow agent in the conversation.
-message Action {
-  // Action details.
-  oneof action {
-    // Optional. Agent obtained a message from the customer.
-    UserUtterance user_utterance = 1 [(google.api.field_behavior) = OPTIONAL];
-
-    // Optional. Action performed by the agent as a message.
-    AgentUtterance agent_utterance = 2 [(google.api.field_behavior) = OPTIONAL];
-
-    // Optional. Action performed on behalf of the agent by calling a plugin
-    // tool.
-    ToolUse tool_use = 3 [(google.api.field_behavior) = OPTIONAL];
-
-    // Optional. Action performed on behalf of the agent by invoking a child
-    // playbook.
-    PlaybookInvocation playbook_invocation = 4
-        [(google.api.field_behavior) = OPTIONAL];
-
-    // Optional. Action performed on behalf of the agent by invoking a CX flow.
-    FlowInvocation flow_invocation = 5 [(google.api.field_behavior) = OPTIONAL];
-  }
-}
-
-// UserUtterance represents one message sent by the customer.
-message UserUtterance {
-  // Required. Message content in text.
-  string text = 1 [(google.api.field_behavior) = REQUIRED];
-}
-
-// AgentUtterance represents one message sent by the agent.
-message AgentUtterance {
-  // Required. Message content in text.
-  string text = 1 [(google.api.field_behavior) = REQUIRED];
-}
-
-// Stores metadata of the invocation of an action supported by a tool.
-message ToolUse {
-  // Required. The [tool][google.cloud.dialogflow.cx.v3beta1.Tool] that should
-  // be used. Format: `projects/<Project ID>/locations/<Location
-  // ID>/agents/<Agent ID>/tools/<Tool ID>`.
-  string tool = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference) = { type: "dialogflow.googleapis.com/Tool" }
-  ];
-
-  // Optional. Name of the action to be called during the tool use.
-  string action = 2 [(google.api.field_behavior) = OPTIONAL];
-
-  // A list of input parameters for the action.
-  repeated ActionParameter input_parameters = 3;
-
-  // A list of output parameters generated by the action.
-  repeated ActionParameter output_parameters = 4;
-}
-
-// Parameter associated with action.
-message ActionParameter {
-  // Required. Name of the parameter.
-  string name = 1 [(google.api.field_behavior) = REQUIRED];
-
-  // Required. Value of the parameter.
-  google.protobuf.Value value = 2 [(google.api.field_behavior) = REQUIRED];
-}
-
-// Stores metadata of the invocation of a child playbook.
-// Next Id: 5
-message PlaybookInvocation {
-  // Required. The unique identifier of the playbook.
-  // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-  // ID>/playbooks/<Playbook ID>`.
-  string playbook = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference) = {
-      type: "dialogflow.googleapis.com/Playbook"
-    }
-  ];
-
-  // Optional. Input of the child playbook invocation.
-  PlaybookInput playbook_input = 2 [(google.api.field_behavior) = OPTIONAL];
-
-  // Optional. Output of the child playbook invocation.
-  PlaybookOutput playbook_output = 3 [(google.api.field_behavior) = OPTIONAL];
-
-  // Required. Playbook invocation's output state.
-  OutputState playbook_state = 4 [(google.api.field_behavior) = REQUIRED];
-}
-
-// Stores metadata of the invocation of a CX flow.
-// Next Id: 7
-message FlowInvocation {
-  // Required. The unique identifier of the flow.
-  // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-  // flows/<Flow ID>`.
-  string flow = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference) = { type: "dialogflow.googleapis.com/Flow" }
-  ];
-
-  // A list of input parameters for the flow invocation.
-  repeated ActionParameter input_parameters = 2;
-
-  // A list of output parameters generated by the flow invocation.
-  repeated ActionParameter output_parameters = 3;
-
-  // Required. Flow invocation's output state.
-  OutputState flow_state = 4 [(google.api.field_behavior) = REQUIRED];
-}
-
-// Output state.
-enum OutputState {
-  // Unspecified output.
-  OUTPUT_STATE_UNSPECIFIED = 0;
-
-  // Succeeded.
-  OUTPUT_STATE_OK = 1;
-
-  // Cancelled.
-  OUTPUT_STATE_CANCELLED = 2;
-
-  // Failed.
-  OUTPUT_STATE_FAILED = 3;
-
-  // Escalated.
-  OUTPUT_STATE_ESCALATED = 4;
-
-  // Pending.
-  OUTPUT_STATE_PENDING = 5;
 }

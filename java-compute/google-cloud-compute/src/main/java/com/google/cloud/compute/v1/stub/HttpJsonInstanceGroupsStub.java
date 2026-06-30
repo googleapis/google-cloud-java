@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AddInstancesInstanceGroupRequest;
 import com.google.cloud.compute.v1.AggregatedListInstanceGroupsRequest;
 import com.google.cloud.compute.v1.DeleteInstanceGroupRequest;
@@ -49,6 +50,8 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.RemoveInstancesInstanceGroupRequest;
 import com.google.cloud.compute.v1.SetNamedPortsInstanceGroupRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsInstanceGroupRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -567,6 +570,49 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsInstanceGroupRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroups/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsInstanceGroupRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instanceGroups/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsInstanceGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsInstanceGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<AddInstancesInstanceGroupRequest, Operation> addInstancesCallable;
   private final OperationCallable<AddInstancesInstanceGroupRequest, Operation, Operation>
       addInstancesOperationCallable;
@@ -594,10 +640,33 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
   private final UnaryCallable<SetNamedPortsInstanceGroupRequest, Operation> setNamedPortsCallable;
   private final OperationCallable<SetNamedPortsInstanceGroupRequest, Operation, Operation>
       setNamedPortsOperationCallable;
+  private final UnaryCallable<TestIamPermissionsInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate ADD_INSTANCES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/instanceGroups/{instance_group}");
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/instanceGroups/{instance_group}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/instanceGroups/{instance_group}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate LIST_INSTANCES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/instanceGroups/{instance_group}");
+  private static final PathTemplate REMOVE_INSTANCES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/instanceGroups/{instance_group}");
+  private static final PathTemplate SET_NAMED_PORTS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/instanceGroups/{instance_group}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/instanceGroups/{resource}");
 
   public static final HttpJsonInstanceGroupsStub create(InstanceGroupsStubSettings settings)
       throws IOException {
@@ -652,6 +721,15 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group", String.valueOf(request.getInstanceGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return ADD_INSTANCES_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<AggregatedListInstanceGroupsRequest, InstanceGroupAggregatedList>
         aggregatedListTransportSettings =
@@ -664,6 +742,13 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<DeleteInstanceGroupRequest, Operation> deleteTransportSettings =
@@ -678,6 +763,15 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "instance_group", String.valueOf(request.getInstanceGroup()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetInstanceGroupRequest, InstanceGroup> getTransportSettings =
         HttpJsonCallSettings.<GetInstanceGroupRequest, InstanceGroup>newBuilder()
@@ -691,6 +785,15 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "instance_group", String.valueOf(request.getInstanceGroup()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertInstanceGroupRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertInstanceGroupRequest, Operation>newBuilder()
@@ -703,6 +806,13 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListInstanceGroupsRequest, InstanceGroupList> listTransportSettings =
         HttpJsonCallSettings.<ListInstanceGroupsRequest, InstanceGroupList>newBuilder()
@@ -714,6 +824,13 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListInstancesInstanceGroupsRequest, InstanceGroupsListInstances>
@@ -730,6 +847,16 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group", String.valueOf(request.getInstanceGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return LIST_INSTANCES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<RemoveInstancesInstanceGroupRequest, Operation>
         removeInstancesTransportSettings =
@@ -744,6 +871,16 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group", String.valueOf(request.getInstanceGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return REMOVE_INSTANCES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetNamedPortsInstanceGroupRequest, Operation>
         setNamedPortsTransportSettings =
@@ -757,6 +894,40 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group", String.valueOf(request.getInstanceGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return SET_NAMED_PORTS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
+    HttpJsonCallSettings<TestIamPermissionsInstanceGroupRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsInstanceGroupRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 
@@ -826,6 +997,11 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
             settings.setNamedPortsOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -843,6 +1019,7 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
     methodDescriptors.add(listInstancesMethodDescriptor);
     methodDescriptors.add(removeInstancesMethodDescriptor);
     methodDescriptors.add(setNamedPortsMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -938,6 +1115,12 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
   public OperationCallable<SetNamedPortsInstanceGroupRequest, Operation, Operation>
       setNamedPortsOperationCallable() {
     return setNamedPortsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

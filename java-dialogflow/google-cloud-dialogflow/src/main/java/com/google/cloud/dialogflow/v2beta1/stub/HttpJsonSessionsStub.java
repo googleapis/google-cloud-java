@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -226,6 +226,7 @@ public class HttpJsonSessionsStub extends SessionsStub {
                   builder.add("session", String.valueOf(request.getSession()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSession())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -302,7 +303,8 @@ public class HttpJsonSessionsStub extends SessionsStub {
   public BidiStreamingCallable<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamingDetectIntentCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: streamingDetectIntentCallable(). REST transport is not implemented for"
+            + " this method yet.");
   }
 
   @Override

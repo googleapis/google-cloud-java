@@ -1,0 +1,91 @@
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+name: java-shared-config downstream (dependencies)
+env:
+  BUILD_SUBDIR: java-shared-config
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'java-shared-config/**'
+  dependencies:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [11]
+        repo:
+        - java-bigquery
+        - java-bigquerystorage
+        - java-spanner
+        - java-storage
+        - java-pubsub
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+    - uses: actions/setup-java@v4
+      with:
+        distribution: zulu
+        java-version: ${{matrix.java}}
+    - run: java -version
+    - run: sudo apt-get update -y
+    - run: sudo apt-get install libxml2-utils
+    - name: Install java-shared-dependencies and common dependencies
+      run: |
+        .kokoro/build.sh
+      env:
+        JOB_TYPE: install
+    - name: Pre-build dependencies
+      run: |
+        LIB_DIR="${{matrix.repo}}"
+        LIB_NAME="google-cloud-${LIB_DIR#java-}"
+        TARGET_PATH="${LIB_DIR}/${LIB_NAME}"
+        # Check if target matches standard structure (e.g. java-bigquery/google-cloud-bigquery)
+        if [ ! -d "${TARGET_PATH}" ]; then
+          # Fallback 1: Look for any google-cloud-* directory, excluding samples, retrofit, or BOMs (e.g. java-storage-nio/google-cloud-nio)
+          ALT_PATH=$(find "${LIB_DIR}" -maxdepth 1 -type d -name "google-cloud-*" ! -name "*-bom" ! -name "*-parent" ! -name "*-deps-bom" ! -name "*-examples" ! -name "*samples" ! -name "*-retrofit" | head -n 1)
+          if [ -n "${ALT_PATH}" ]; then
+            TARGET_PATH="${ALT_PATH}"
+          else
+            # Fallback 2: Assume single-module project where pom.xml is in the root directory (e.g. java-logging-logback)
+            TARGET_PATH="${LIB_DIR}"
+          fi
+        fi
+        mvn install -pl ${TARGET_PATH} -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
+    - run: .kokoro/client-library-check.sh ${{matrix.repo}} dependencies
+
+  flatten-plugin-check:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+    - uses: actions/setup-java@v4
+      with:
+        distribution: zulu
+        java-version: 11
+    - run: java -version
+    - run: sudo apt-get update -y
+    - run: sudo apt-get install libxml2-utils
+    - name: Install java-shared-dependencies and common dependencies
+      run: |
+        .kokoro/build.sh
+      env:
+        JOB_TYPE: install
+    - name: Pre-build dependencies
+      run: mvn install -pl java-storage/google-cloud-storage -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
+    - run: .kokoro/client-library-check.sh java-storage flatten-plugin
+      env:
+        EXPECTED_DEPENDENCIES_LIST: java-storage-expected-flattened-dependencies.txt

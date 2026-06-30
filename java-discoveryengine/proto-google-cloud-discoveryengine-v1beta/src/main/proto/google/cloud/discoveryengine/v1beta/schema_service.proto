@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -38,7 +38,9 @@ option ruby_package = "Google::Cloud::DiscoveryEngine::V1beta";
 service SchemaService {
   option (google.api.default_host) = "discoveryengine.googleapis.com";
   option (google.api.oauth_scopes) =
-      "https://www.googleapis.com/auth/cloud-platform";
+      "https://www.googleapis.com/auth/cloud-platform,"
+      "https://www.googleapis.com/auth/discoveryengine.readwrite,"
+      "https://www.googleapis.com/auth/discoveryengine.serving.readwrite";
 
   // Gets a [Schema][google.cloud.discoveryengine.v1beta.Schema].
   rpc GetSchema(GetSchemaRequest) returns (Schema) {
@@ -142,9 +144,9 @@ message ListSchemasRequest {
   // to return. The service may return fewer than this value.
   //
   // If unspecified, at most 100
-  // [Schema][google.cloud.discoveryengine.v1beta.Schema]s will be returned.
+  // [Schema][google.cloud.discoveryengine.v1beta.Schema]s are returned.
   //
-  // The maximum value is 1000; values above 1000 will be coerced to 1000.
+  // The maximum value is 1000; values above 1000 are set to 1000.
   int32 page_size = 2;
 
   // A page token, received from a previous
@@ -189,7 +191,7 @@ message CreateSchemaRequest {
   Schema schema = 2 [(google.api.field_behavior) = REQUIRED];
 
   // Required. The ID to use for the
-  // [Schema][google.cloud.discoveryengine.v1beta.Schema], which will become the
+  // [Schema][google.cloud.discoveryengine.v1beta.Schema], which becomes the
   // final component of the
   // [Schema.name][google.cloud.discoveryengine.v1beta.Schema.name].
   //
@@ -209,8 +211,8 @@ message UpdateSchemaRequest {
 
   // If set to true, and the
   // [Schema][google.cloud.discoveryengine.v1beta.Schema] is not found, a new
-  // [Schema][google.cloud.discoveryengine.v1beta.Schema] will be created. In
-  // this situation, `update_mask` is ignored.
+  // [Schema][google.cloud.discoveryengine.v1beta.Schema] is created. In this
+  // situation, `update_mask` is ignored.
   bool allow_missing = 3;
 }
 

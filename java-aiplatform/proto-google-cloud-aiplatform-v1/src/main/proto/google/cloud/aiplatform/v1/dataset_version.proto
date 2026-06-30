@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -36,8 +36,16 @@ message DatasetVersion {
     pattern: "projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}"
   };
 
-  // Output only. The resource name of the DatasetVersion.
-  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Output only. Identifier. The resource name of the DatasetVersion.
+  // Format:
+  // `projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}`
+  string name = 1 [
+    (google.api.field_behavior) = OUTPUT_ONLY,
+    (google.api.field_behavior) = IDENTIFIER,
+    (google.api.resource_reference) = {
+      type: "aiplatform.googleapis.com/DatasetVersion"
+    }
+  ];
 
   // Output only. Timestamp when this DatasetVersion was created.
   google.protobuf.Timestamp create_time = 2
@@ -64,4 +72,14 @@ message DatasetVersion {
     (google.api.field_behavior) = OUTPUT_ONLY,
     (google.api.field_behavior) = REQUIRED
   ];
+
+  // Output only. Reference to the public base model last used by the dataset
+  // version. Only set for prompt dataset versions.
+  string model_reference = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzs = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzi = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
 }

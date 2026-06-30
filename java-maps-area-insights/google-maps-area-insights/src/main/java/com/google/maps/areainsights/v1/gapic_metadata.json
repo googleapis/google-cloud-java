@@ -1,0 +1,21 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.maps.areainsights.v1",
+  "libraryPackage": "com.google.maps.areainsights.v1",
+  "services": {
+    "AreaInsights": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AreaInsightsClient",
+          "rpcs": {
+            "ComputeInsights": {
+              "methods": ["computeInsights", "computeInsightsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

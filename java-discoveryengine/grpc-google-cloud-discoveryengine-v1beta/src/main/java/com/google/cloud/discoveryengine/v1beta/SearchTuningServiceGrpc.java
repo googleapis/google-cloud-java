@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for search tuning.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1beta/search_tuning_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SearchTuningServiceGrpc {
 
@@ -83,6 +80,54 @@ public final class SearchTuningServiceGrpc {
     return getTrainCustomModelMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.ListCustomModelsRequest,
+          com.google.cloud.discoveryengine.v1beta.ListCustomModelsResponse>
+      getListCustomModelsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCustomModels",
+      requestType = com.google.cloud.discoveryengine.v1beta.ListCustomModelsRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1beta.ListCustomModelsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.ListCustomModelsRequest,
+          com.google.cloud.discoveryengine.v1beta.ListCustomModelsResponse>
+      getListCustomModelsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.ListCustomModelsRequest,
+            com.google.cloud.discoveryengine.v1beta.ListCustomModelsResponse>
+        getListCustomModelsMethod;
+    if ((getListCustomModelsMethod = SearchTuningServiceGrpc.getListCustomModelsMethod) == null) {
+      synchronized (SearchTuningServiceGrpc.class) {
+        if ((getListCustomModelsMethod = SearchTuningServiceGrpc.getListCustomModelsMethod)
+            == null) {
+          SearchTuningServiceGrpc.getListCustomModelsMethod =
+              getListCustomModelsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.ListCustomModelsRequest,
+                          com.google.cloud.discoveryengine.v1beta.ListCustomModelsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCustomModels"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.ListCustomModelsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.ListCustomModelsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SearchTuningServiceMethodDescriptorSupplier("ListCustomModels"))
+                      .build();
+        }
+      }
+    }
+    return getListCustomModelsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static SearchTuningServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SearchTuningServiceStub> factory =
@@ -94,6 +139,19 @@ public final class SearchTuningServiceGrpc {
           }
         };
     return SearchTuningServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SearchTuningServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SearchTuningServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SearchTuningServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SearchTuningServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SearchTuningServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SearchTuningServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -145,6 +203,22 @@ public final class SearchTuningServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTrainCustomModelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a list of all the custom models.
+     * </pre>
+     */
+    default void listCustomModels(
+        com.google.cloud.discoveryengine.v1beta.ListCustomModelsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.discoveryengine.v1beta.ListCustomModelsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListCustomModelsMethod(), responseObserver);
     }
   }
 
@@ -198,10 +272,77 @@ public final class SearchTuningServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a list of all the custom models.
+     * </pre>
+     */
+    public void listCustomModels(
+        com.google.cloud.discoveryengine.v1beta.ListCustomModelsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.discoveryengine.v1beta.ListCustomModelsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCustomModelsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SearchTuningService.
+   *
+   * <pre>
+   * Service for search tuning.
+   * </pre>
+   */
+  public static final class SearchTuningServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SearchTuningServiceBlockingV2Stub> {
+    private SearchTuningServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SearchTuningServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SearchTuningServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Trains a custom model.
+     * </pre>
+     */
+    public com.google.longrunning.Operation trainCustomModel(
+        com.google.cloud.discoveryengine.v1beta.TrainCustomModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTrainCustomModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a list of all the custom models.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.ListCustomModelsResponse listCustomModels(
+        com.google.cloud.discoveryengine.v1beta.ListCustomModelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListCustomModelsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SearchTuningService.
    *
    * <pre>
    * Service for search tuning.
@@ -231,6 +372,19 @@ public final class SearchTuningServiceGrpc {
         com.google.cloud.discoveryengine.v1beta.TrainCustomModelRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTrainCustomModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a list of all the custom models.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.ListCustomModelsResponse listCustomModels(
+        com.google.cloud.discoveryengine.v1beta.ListCustomModelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomModelsMethod(), getCallOptions(), request);
     }
   }
 
@@ -266,9 +420,24 @@ public final class SearchTuningServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTrainCustomModelMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a list of all the custom models.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1beta.ListCustomModelsResponse>
+        listCustomModels(com.google.cloud.discoveryengine.v1beta.ListCustomModelsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCustomModelsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_TRAIN_CUSTOM_MODEL = 0;
+  private static final int METHODID_LIST_CUSTOM_MODELS = 1;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -291,6 +460,13 @@ public final class SearchTuningServiceGrpc {
           serviceImpl.trainCustomModel(
               (com.google.cloud.discoveryengine.v1beta.TrainCustomModelRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_CUSTOM_MODELS:
+          serviceImpl.listCustomModels(
+              (com.google.cloud.discoveryengine.v1beta.ListCustomModelsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.discoveryengine.v1beta.ListCustomModelsResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -316,6 +492,13 @@ public final class SearchTuningServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.discoveryengine.v1beta.TrainCustomModelRequest,
                     com.google.longrunning.Operation>(service, METHODID_TRAIN_CUSTOM_MODEL)))
+        .addMethod(
+            getListCustomModelsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.ListCustomModelsRequest,
+                    com.google.cloud.discoveryengine.v1beta.ListCustomModelsResponse>(
+                    service, METHODID_LIST_CUSTOM_MODELS)))
         .build();
   }
 
@@ -368,6 +551,7 @@ public final class SearchTuningServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new SearchTuningServiceFileDescriptorSupplier())
                       .addMethod(getTrainCustomModelMethod())
+                      .addMethod(getListCustomModelsMethod())
                       .build();
         }
       }

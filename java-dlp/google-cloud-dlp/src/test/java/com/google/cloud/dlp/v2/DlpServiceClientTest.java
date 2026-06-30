@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,14 +17,17 @@
 package com.google.cloud.dlp.v2;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListColumnDataProfilesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListConnectionsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListFileStoreDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListProjectDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListStoredInfoTypesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListTableDataProfilesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.SearchConnectionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -36,11 +39,16 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.privacy.dlp.v2.ActionDetails;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
+import com.google.privacy.dlp.v2.BigQueryTable;
 import com.google.privacy.dlp.v2.ByteContentItem;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.ColumnDataProfile;
 import com.google.privacy.dlp.v2.ColumnDataProfileName;
+import com.google.privacy.dlp.v2.Connection;
+import com.google.privacy.dlp.v2.ConnectionName;
+import com.google.privacy.dlp.v2.ConnectionState;
 import com.google.privacy.dlp.v2.ContentItem;
+import com.google.privacy.dlp.v2.CreateConnectionRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -56,25 +64,35 @@ import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
 import com.google.privacy.dlp.v2.DeidentifyTemplateName;
+import com.google.privacy.dlp.v2.DeleteConnectionRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
+import com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.DeleteTableDataProfileRequest;
 import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DiscoveryConfigName;
 import com.google.privacy.dlp.v2.DiscoveryTarget;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpJobName;
 import com.google.privacy.dlp.v2.DlpJobType;
+import com.google.privacy.dlp.v2.Domain;
 import com.google.privacy.dlp.v2.EncryptionStatus;
 import com.google.privacy.dlp.v2.Error;
+import com.google.privacy.dlp.v2.FileClusterSummary;
+import com.google.privacy.dlp.v2.FileStoreDataProfile;
+import com.google.privacy.dlp.v2.FileStoreDataProfileName;
+import com.google.privacy.dlp.v2.FileStoreInfoTypeSummary;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
+import com.google.privacy.dlp.v2.GetConnectionRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
+import com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
 import com.google.privacy.dlp.v2.GetProjectDataProfileRequest;
@@ -96,12 +114,16 @@ import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.JobTriggerName;
 import com.google.privacy.dlp.v2.ListColumnDataProfilesRequest;
 import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
+import com.google.privacy.dlp.v2.ListConnectionsRequest;
+import com.google.privacy.dlp.v2.ListConnectionsResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListInfoTypesResponse;
 import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
@@ -118,7 +140,9 @@ import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.NullPercentageLevel;
 import com.google.privacy.dlp.v2.OrganizationLocationName;
 import com.google.privacy.dlp.v2.OrganizationName;
+import com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation;
 import com.google.privacy.dlp.v2.OtherInfoTypeSummary;
+import com.google.privacy.dlp.v2.ProcessingLocation;
 import com.google.privacy.dlp.v2.ProfileStatus;
 import com.google.privacy.dlp.v2.ProjectDataProfile;
 import com.google.privacy.dlp.v2.ProjectDataProfileName;
@@ -127,8 +151,11 @@ import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
+import com.google.privacy.dlp.v2.RelatedResource;
 import com.google.privacy.dlp.v2.ResourceVisibility;
 import com.google.privacy.dlp.v2.RiskAnalysisJobConfig;
+import com.google.privacy.dlp.v2.SearchConnectionsRequest;
+import com.google.privacy.dlp.v2.SearchConnectionsResponse;
 import com.google.privacy.dlp.v2.SensitivityScore;
 import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.StoredInfoTypeConfig;
@@ -136,13 +163,16 @@ import com.google.privacy.dlp.v2.StoredInfoTypeName;
 import com.google.privacy.dlp.v2.StoredInfoTypeVersion;
 import com.google.privacy.dlp.v2.TableDataProfile;
 import com.google.privacy.dlp.v2.TableDataProfileName;
+import com.google.privacy.dlp.v2.Tag;
 import com.google.privacy.dlp.v2.TransformationOverview;
 import com.google.privacy.dlp.v2.UniquenessScoreLevel;
+import com.google.privacy.dlp.v2.UpdateConnectionRequest;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateJobTriggerRequest;
 import com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.Value;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
@@ -273,6 +303,8 @@ public class DlpServiceClientTest {
             .addAllImageRedactionConfigs(new ArrayList<RedactImageRequest.ImageRedactionConfig>())
             .setIncludeFindings(true)
             .setByteItem(ByteContentItem.newBuilder().build())
+            .setInspectTemplate("inspectTemplate-2053620050")
+            .setDeidentifyTemplate("deidentifyTemplate-2141929945")
             .build();
 
     RedactImageResponse actualResponse = client.redactImage(request);
@@ -289,6 +321,8 @@ public class DlpServiceClientTest {
         request.getImageRedactionConfigsList(), actualRequest.getImageRedactionConfigsList());
     Assert.assertEquals(request.getIncludeFindings(), actualRequest.getIncludeFindings());
     Assert.assertEquals(request.getByteItem(), actualRequest.getByteItem());
+    Assert.assertEquals(request.getInspectTemplate(), actualRequest.getInspectTemplate());
+    Assert.assertEquals(request.getDeidentifyTemplate(), actualRequest.getDeidentifyTemplate());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -309,6 +343,8 @@ public class DlpServiceClientTest {
               .addAllImageRedactionConfigs(new ArrayList<RedactImageRequest.ImageRedactionConfig>())
               .setIncludeFindings(true)
               .setByteItem(ByteContentItem.newBuilder().build())
+              .setInspectTemplate("inspectTemplate-2053620050")
+              .setDeidentifyTemplate("deidentifyTemplate-2141929945")
               .build();
       client.redactImage(request);
       Assert.fail("No exception raised");
@@ -738,8 +774,8 @@ public class DlpServiceClientTest {
     InspectTemplate expectedResponse =
         InspectTemplate.newBuilder()
             .setName(
-                InspectTemplateName.ofOrganizationInspectTemplateName(
-                        "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                InspectTemplateName.ofProjectLocationInspectTemplateName(
+                        "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -750,8 +786,8 @@ public class DlpServiceClientTest {
     mockDlpService.addResponse(expectedResponse);
 
     InspectTemplateName name =
-        InspectTemplateName.ofOrganizationInspectTemplateName(
-            "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+        InspectTemplateName.ofProjectLocationInspectTemplateName(
+            "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
     InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -780,8 +816,8 @@ public class DlpServiceClientTest {
 
     try {
       InspectTemplateName name =
-          InspectTemplateName.ofOrganizationInspectTemplateName(
-              "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+          InspectTemplateName.ofProjectLocationInspectTemplateName(
+              "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
       InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInspectTemplate(name, inspectTemplate, updateMask);
@@ -796,8 +832,8 @@ public class DlpServiceClientTest {
     InspectTemplate expectedResponse =
         InspectTemplate.newBuilder()
             .setName(
-                InspectTemplateName.ofOrganizationInspectTemplateName(
-                        "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                InspectTemplateName.ofProjectLocationInspectTemplateName(
+                        "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -850,8 +886,8 @@ public class DlpServiceClientTest {
     InspectTemplate expectedResponse =
         InspectTemplate.newBuilder()
             .setName(
-                InspectTemplateName.ofOrganizationInspectTemplateName(
-                        "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                InspectTemplateName.ofProjectLocationInspectTemplateName(
+                        "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -862,8 +898,8 @@ public class DlpServiceClientTest {
     mockDlpService.addResponse(expectedResponse);
 
     InspectTemplateName name =
-        InspectTemplateName.ofOrganizationInspectTemplateName(
-            "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+        InspectTemplateName.ofProjectLocationInspectTemplateName(
+            "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
 
     InspectTemplate actualResponse = client.getInspectTemplate(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -886,8 +922,8 @@ public class DlpServiceClientTest {
 
     try {
       InspectTemplateName name =
-          InspectTemplateName.ofOrganizationInspectTemplateName(
-              "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+          InspectTemplateName.ofProjectLocationInspectTemplateName(
+              "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
       client.getInspectTemplate(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -900,8 +936,8 @@ public class DlpServiceClientTest {
     InspectTemplate expectedResponse =
         InspectTemplate.newBuilder()
             .setName(
-                InspectTemplateName.ofOrganizationInspectTemplateName(
-                        "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                InspectTemplateName.ofProjectLocationInspectTemplateName(
+                        "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -1172,8 +1208,8 @@ public class DlpServiceClientTest {
     mockDlpService.addResponse(expectedResponse);
 
     InspectTemplateName name =
-        InspectTemplateName.ofOrganizationInspectTemplateName(
-            "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+        InspectTemplateName.ofProjectLocationInspectTemplateName(
+            "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
 
     client.deleteInspectTemplate(name);
 
@@ -1196,8 +1232,8 @@ public class DlpServiceClientTest {
 
     try {
       InspectTemplateName name =
-          InspectTemplateName.ofOrganizationInspectTemplateName(
-              "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+          InspectTemplateName.ofProjectLocationInspectTemplateName(
+              "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
       client.deleteInspectTemplate(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2679,6 +2715,7 @@ public class DlpServiceClientTest {
                 DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
             .setDisplayName("displayName1714148973")
             .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .setOtherCloudStartingLocation(OtherCloudDiscoveryStartingLocation.newBuilder().build())
             .addAllInspectTemplates(new ArrayList<String>())
             .addAllActions(new ArrayList<DataProfileAction>())
             .addAllTargets(new ArrayList<DiscoveryTarget>())
@@ -2686,6 +2723,7 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastRunTime(Timestamp.newBuilder().build())
+            .setProcessingLocation(ProcessingLocation.newBuilder().build())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -2731,6 +2769,7 @@ public class DlpServiceClientTest {
                 DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
             .setDisplayName("displayName1714148973")
             .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .setOtherCloudStartingLocation(OtherCloudDiscoveryStartingLocation.newBuilder().build())
             .addAllInspectTemplates(new ArrayList<String>())
             .addAllActions(new ArrayList<DataProfileAction>())
             .addAllTargets(new ArrayList<DiscoveryTarget>())
@@ -2738,6 +2777,7 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastRunTime(Timestamp.newBuilder().build())
+            .setProcessingLocation(ProcessingLocation.newBuilder().build())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -2783,6 +2823,7 @@ public class DlpServiceClientTest {
                 DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
             .setDisplayName("displayName1714148973")
             .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .setOtherCloudStartingLocation(OtherCloudDiscoveryStartingLocation.newBuilder().build())
             .addAllInspectTemplates(new ArrayList<String>())
             .addAllActions(new ArrayList<DataProfileAction>())
             .addAllTargets(new ArrayList<DiscoveryTarget>())
@@ -2790,6 +2831,7 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastRunTime(Timestamp.newBuilder().build())
+            .setProcessingLocation(ProcessingLocation.newBuilder().build())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -2841,6 +2883,7 @@ public class DlpServiceClientTest {
                 DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
             .setDisplayName("displayName1714148973")
             .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .setOtherCloudStartingLocation(OtherCloudDiscoveryStartingLocation.newBuilder().build())
             .addAllInspectTemplates(new ArrayList<String>())
             .addAllActions(new ArrayList<DataProfileAction>())
             .addAllTargets(new ArrayList<DiscoveryTarget>())
@@ -2848,6 +2891,7 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastRunTime(Timestamp.newBuilder().build())
+            .setProcessingLocation(ProcessingLocation.newBuilder().build())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -2897,6 +2941,7 @@ public class DlpServiceClientTest {
                 DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
             .setDisplayName("displayName1714148973")
             .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .setOtherCloudStartingLocation(OtherCloudDiscoveryStartingLocation.newBuilder().build())
             .addAllInspectTemplates(new ArrayList<String>())
             .addAllActions(new ArrayList<DataProfileAction>())
             .addAllTargets(new ArrayList<DiscoveryTarget>())
@@ -2904,6 +2949,7 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastRunTime(Timestamp.newBuilder().build())
+            .setProcessingLocation(ProcessingLocation.newBuilder().build())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -2947,6 +2993,7 @@ public class DlpServiceClientTest {
                 DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
             .setDisplayName("displayName1714148973")
             .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .setOtherCloudStartingLocation(OtherCloudDiscoveryStartingLocation.newBuilder().build())
             .addAllInspectTemplates(new ArrayList<String>())
             .addAllActions(new ArrayList<DataProfileAction>())
             .addAllTargets(new ArrayList<DiscoveryTarget>())
@@ -2954,6 +3001,7 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastRunTime(Timestamp.newBuilder().build())
+            .setProcessingLocation(ProcessingLocation.newBuilder().build())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -4913,6 +4961,8 @@ public class DlpServiceClientTest {
             .setSensitivityScore(SensitivityScore.newBuilder().build())
             .setDataRiskLevel(DataRiskLevel.newBuilder().build())
             .setProfileStatus(ProfileStatus.newBuilder().build())
+            .setTableDataProfileCount(330585909)
+            .setFileStoreDataProfileCount(-332405595)
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -4964,6 +5014,8 @@ public class DlpServiceClientTest {
             .setSensitivityScore(SensitivityScore.newBuilder().build())
             .setDataRiskLevel(DataRiskLevel.newBuilder().build())
             .setProfileStatus(ProfileStatus.newBuilder().build())
+            .setTableDataProfileCount(330585909)
+            .setFileStoreDataProfileCount(-332405595)
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -4992,6 +5044,356 @@ public class DlpServiceClientTest {
     try {
       String name = "name3373707";
       client.getProjectDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFileStoreDataProfilesTest() throws Exception {
+    FileStoreDataProfile responsesElement = FileStoreDataProfile.newBuilder().build();
+    ListFileStoreDataProfilesResponse expectedResponse =
+        ListFileStoreDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFileStoreDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListFileStoreDataProfilesPagedResponse pagedListResponse =
+        client.listFileStoreDataProfiles(parent);
+
+    List<FileStoreDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFileStoreDataProfilesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFileStoreDataProfilesRequest actualRequest =
+        ((ListFileStoreDataProfilesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFileStoreDataProfilesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listFileStoreDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFileStoreDataProfilesTest2() throws Exception {
+    FileStoreDataProfile responsesElement = FileStoreDataProfile.newBuilder().build();
+    ListFileStoreDataProfilesResponse expectedResponse =
+        ListFileStoreDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFileStoreDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    ListFileStoreDataProfilesPagedResponse pagedListResponse =
+        client.listFileStoreDataProfiles(parent);
+
+    List<FileStoreDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFileStoreDataProfilesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFileStoreDataProfilesRequest actualRequest =
+        ((ListFileStoreDataProfilesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFileStoreDataProfilesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listFileStoreDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFileStoreDataProfilesTest3() throws Exception {
+    FileStoreDataProfile responsesElement = FileStoreDataProfile.newBuilder().build();
+    ListFileStoreDataProfilesResponse expectedResponse =
+        ListFileStoreDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFileStoreDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListFileStoreDataProfilesPagedResponse pagedListResponse =
+        client.listFileStoreDataProfiles(parent);
+
+    List<FileStoreDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFileStoreDataProfilesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFileStoreDataProfilesRequest actualRequest =
+        ((ListFileStoreDataProfilesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFileStoreDataProfilesExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listFileStoreDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFileStoreDataProfileTest() throws Exception {
+    FileStoreDataProfile expectedResponse =
+        FileStoreDataProfile.newBuilder()
+            .setName(
+                FileStoreDataProfileName.ofOrganizationLocationFileStoreDataProfileName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FILE_STORE_DATA_PROFILE]")
+                    .toString())
+            .setDataSourceType(DataSourceType.newBuilder().build())
+            .setProjectDataProfile("projectDataProfile-1125465658")
+            .setProjectId("projectId-894832108")
+            .setFileStoreLocation("fileStoreLocation-896168038")
+            .addAllDataStorageLocations(new ArrayList<String>())
+            .setLocationType("locationType-58277745")
+            .setFileStorePath("fileStorePath1037045386")
+            .setFullResource("fullResource-1464972355")
+            .setConfigSnapshot(DataProfileConfigSnapshot.newBuilder().build())
+            .setProfileStatus(ProfileStatus.newBuilder().build())
+            .setProfileLastGenerated(Timestamp.newBuilder().build())
+            .setResourceVisibility(ResourceVisibility.forNumber(0))
+            .setSensitivityScore(SensitivityScore.newBuilder().build())
+            .setDataRiskLevel(DataRiskLevel.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setLastModifiedTime(Timestamp.newBuilder().build())
+            .addAllFileClusterSummaries(new ArrayList<FileClusterSummary>())
+            .putAllResourceAttributes(new HashMap<String, Value>())
+            .putAllResourceLabels(new HashMap<String, String>())
+            .addAllFileStoreInfoTypeSummaries(new ArrayList<FileStoreInfoTypeSummary>())
+            .setSampleFindingsTable(BigQueryTable.newBuilder().build())
+            .setFileStoreIsEmpty(true)
+            .addAllTags(new ArrayList<Tag>())
+            .addAllRelatedResources(new ArrayList<RelatedResource>())
+            .addAllDomains(new ArrayList<Domain>())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    ProjectDataProfileName name =
+        ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+            "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]");
+
+    FileStoreDataProfile actualResponse = client.getFileStoreDataProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFileStoreDataProfileRequest actualRequest =
+        ((GetFileStoreDataProfileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFileStoreDataProfileExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      ProjectDataProfileName name =
+          ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+              "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]");
+      client.getFileStoreDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFileStoreDataProfileTest2() throws Exception {
+    FileStoreDataProfile expectedResponse =
+        FileStoreDataProfile.newBuilder()
+            .setName(
+                FileStoreDataProfileName.ofOrganizationLocationFileStoreDataProfileName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FILE_STORE_DATA_PROFILE]")
+                    .toString())
+            .setDataSourceType(DataSourceType.newBuilder().build())
+            .setProjectDataProfile("projectDataProfile-1125465658")
+            .setProjectId("projectId-894832108")
+            .setFileStoreLocation("fileStoreLocation-896168038")
+            .addAllDataStorageLocations(new ArrayList<String>())
+            .setLocationType("locationType-58277745")
+            .setFileStorePath("fileStorePath1037045386")
+            .setFullResource("fullResource-1464972355")
+            .setConfigSnapshot(DataProfileConfigSnapshot.newBuilder().build())
+            .setProfileStatus(ProfileStatus.newBuilder().build())
+            .setProfileLastGenerated(Timestamp.newBuilder().build())
+            .setResourceVisibility(ResourceVisibility.forNumber(0))
+            .setSensitivityScore(SensitivityScore.newBuilder().build())
+            .setDataRiskLevel(DataRiskLevel.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setLastModifiedTime(Timestamp.newBuilder().build())
+            .addAllFileClusterSummaries(new ArrayList<FileClusterSummary>())
+            .putAllResourceAttributes(new HashMap<String, Value>())
+            .putAllResourceLabels(new HashMap<String, String>())
+            .addAllFileStoreInfoTypeSummaries(new ArrayList<FileStoreInfoTypeSummary>())
+            .setSampleFindingsTable(BigQueryTable.newBuilder().build())
+            .setFileStoreIsEmpty(true)
+            .addAllTags(new ArrayList<Tag>())
+            .addAllRelatedResources(new ArrayList<RelatedResource>())
+            .addAllDomains(new ArrayList<Domain>())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    FileStoreDataProfile actualResponse = client.getFileStoreDataProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFileStoreDataProfileRequest actualRequest =
+        ((GetFileStoreDataProfileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFileStoreDataProfileExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getFileStoreDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFileStoreDataProfileTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    FileStoreDataProfileName name =
+        FileStoreDataProfileName.ofOrganizationLocationFileStoreDataProfileName(
+            "[ORGANIZATION]", "[LOCATION]", "[FILE_STORE_DATA_PROFILE]");
+
+    client.deleteFileStoreDataProfile(name);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFileStoreDataProfileRequest actualRequest =
+        ((DeleteFileStoreDataProfileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFileStoreDataProfileExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      FileStoreDataProfileName name =
+          FileStoreDataProfileName.ofOrganizationLocationFileStoreDataProfileName(
+              "[ORGANIZATION]", "[LOCATION]", "[FILE_STORE_DATA_PROFILE]");
+      client.deleteFileStoreDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFileStoreDataProfileTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteFileStoreDataProfile(name);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFileStoreDataProfileRequest actualRequest =
+        ((DeleteFileStoreDataProfileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFileStoreDataProfileExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteFileStoreDataProfile(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -5030,6 +5432,10 @@ public class DlpServiceClientTest {
             .setProfileLastGenerated(Timestamp.newBuilder().build())
             .putAllResourceLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setSampleFindingsTable(BigQueryTable.newBuilder().build())
+            .addAllTags(new ArrayList<Tag>())
+            .addAllRelatedResources(new ArrayList<RelatedResource>())
+            .addAllDomains(new ArrayList<Domain>())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -5099,6 +5505,10 @@ public class DlpServiceClientTest {
             .setProfileLastGenerated(Timestamp.newBuilder().build())
             .putAllResourceLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setSampleFindingsTable(BigQueryTable.newBuilder().build())
+            .addAllTags(new ArrayList<Tag>())
+            .addAllRelatedResources(new ArrayList<RelatedResource>())
+            .addAllDomains(new ArrayList<Domain>())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -5253,6 +5663,80 @@ public class DlpServiceClientTest {
   }
 
   @Test
+  public void deleteTableDataProfileTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    TableDataProfileName name =
+        TableDataProfileName.ofOrganizationLocationTableDataProfileName(
+            "[ORGANIZATION]", "[LOCATION]", "[TABLE_DATA_PROFILE]");
+
+    client.deleteTableDataProfile(name);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTableDataProfileRequest actualRequest =
+        ((DeleteTableDataProfileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteTableDataProfileExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      TableDataProfileName name =
+          TableDataProfileName.ofOrganizationLocationTableDataProfileName(
+              "[ORGANIZATION]", "[LOCATION]", "[TABLE_DATA_PROFILE]");
+      client.deleteTableDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteTableDataProfileTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteTableDataProfile(name);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTableDataProfileRequest actualRequest =
+        ((DeleteTableDataProfileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteTableDataProfileExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteTableDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void hybridInspectDlpJobTest() throws Exception {
     HybridInspectResponse expectedResponse = HybridInspectResponse.newBuilder().build();
     mockDlpService.addResponse(expectedResponse);
@@ -5362,6 +5846,654 @@ public class DlpServiceClientTest {
                       .toString())
               .build();
       client.finishDlpJob(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createConnectionTest() throws Exception {
+    Connection expectedResponse =
+        Connection.newBuilder()
+            .setName(
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
+            .setState(ConnectionState.forNumber(0))
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Connection connection = Connection.newBuilder().build();
+
+    Connection actualResponse = client.createConnection(parent, connection);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateConnectionRequest actualRequest = ((CreateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(connection, actualRequest.getConnection());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Connection connection = Connection.newBuilder().build();
+      client.createConnection(parent, connection);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createConnectionTest2() throws Exception {
+    Connection expectedResponse =
+        Connection.newBuilder()
+            .setName(
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
+            .setState(ConnectionState.forNumber(0))
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+    Connection connection = Connection.newBuilder().build();
+
+    Connection actualResponse = client.createConnection(parent, connection);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateConnectionRequest actualRequest = ((CreateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(connection, actualRequest.getConnection());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      Connection connection = Connection.newBuilder().build();
+      client.createConnection(parent, connection);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createConnectionTest3() throws Exception {
+    Connection expectedResponse =
+        Connection.newBuilder()
+            .setName(
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
+            .setState(ConnectionState.forNumber(0))
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Connection connection = Connection.newBuilder().build();
+
+    Connection actualResponse = client.createConnection(parent, connection);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateConnectionRequest actualRequest = ((CreateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(connection, actualRequest.getConnection());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createConnectionExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Connection connection = Connection.newBuilder().build();
+      client.createConnection(parent, connection);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getConnectionTest() throws Exception {
+    Connection expectedResponse =
+        Connection.newBuilder()
+            .setName(
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
+            .setState(ConnectionState.forNumber(0))
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    ConnectionName name =
+        ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+
+    Connection actualResponse = client.getConnection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetConnectionRequest actualRequest = ((GetConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      ConnectionName name =
+          ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+      client.getConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getConnectionTest2() throws Exception {
+    Connection expectedResponse =
+        Connection.newBuilder()
+            .setName(
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
+            .setState(ConnectionState.forNumber(0))
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Connection actualResponse = client.getConnection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetConnectionRequest actualRequest = ((GetConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listConnectionsTest() throws Exception {
+    Connection responsesElement = Connection.newBuilder().build();
+    ListConnectionsResponse expectedResponse =
+        ListConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllConnections(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListConnectionsPagedResponse pagedListResponse = client.listConnections(parent);
+
+    List<Connection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getConnectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListConnectionsRequest actualRequest = ((ListConnectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listConnectionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listConnectionsTest2() throws Exception {
+    Connection responsesElement = Connection.newBuilder().build();
+    ListConnectionsResponse expectedResponse =
+        ListConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllConnections(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    ListConnectionsPagedResponse pagedListResponse = client.listConnections(parent);
+
+    List<Connection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getConnectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListConnectionsRequest actualRequest = ((ListConnectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listConnectionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listConnectionsTest3() throws Exception {
+    Connection responsesElement = Connection.newBuilder().build();
+    ListConnectionsResponse expectedResponse =
+        ListConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllConnections(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListConnectionsPagedResponse pagedListResponse = client.listConnections(parent);
+
+    List<Connection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getConnectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListConnectionsRequest actualRequest = ((ListConnectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listConnectionsExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchConnectionsTest() throws Exception {
+    Connection responsesElement = Connection.newBuilder().build();
+    SearchConnectionsResponse expectedResponse =
+        SearchConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllConnections(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    SearchConnectionsPagedResponse pagedListResponse = client.searchConnections(parent);
+
+    List<Connection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getConnectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchConnectionsRequest actualRequest = ((SearchConnectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchConnectionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.searchConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchConnectionsTest2() throws Exception {
+    Connection responsesElement = Connection.newBuilder().build();
+    SearchConnectionsResponse expectedResponse =
+        SearchConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllConnections(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    SearchConnectionsPagedResponse pagedListResponse = client.searchConnections(parent);
+
+    List<Connection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getConnectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchConnectionsRequest actualRequest = ((SearchConnectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchConnectionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.searchConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchConnectionsTest3() throws Exception {
+    Connection responsesElement = Connection.newBuilder().build();
+    SearchConnectionsResponse expectedResponse =
+        SearchConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllConnections(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    SearchConnectionsPagedResponse pagedListResponse = client.searchConnections(parent);
+
+    List<Connection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getConnectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchConnectionsRequest actualRequest = ((SearchConnectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchConnectionsExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.searchConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteConnectionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    ConnectionName name =
+        ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+
+    client.deleteConnection(name);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteConnectionRequest actualRequest = ((DeleteConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      ConnectionName name =
+          ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+      client.deleteConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteConnectionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteConnection(name);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteConnectionRequest actualRequest = ((DeleteConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateConnectionTest() throws Exception {
+    Connection expectedResponse =
+        Connection.newBuilder()
+            .setName(
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
+            .setState(ConnectionState.forNumber(0))
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    ConnectionName name =
+        ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+
+    Connection actualResponse = client.updateConnection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateConnectionRequest actualRequest = ((UpdateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      ConnectionName name =
+          ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+      client.updateConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateConnectionTest2() throws Exception {
+    Connection expectedResponse =
+        Connection.newBuilder()
+            .setName(
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
+            .setState(ConnectionState.forNumber(0))
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Connection actualResponse = client.updateConnection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateConnectionRequest actualRequest = ((UpdateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.updateConnection(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

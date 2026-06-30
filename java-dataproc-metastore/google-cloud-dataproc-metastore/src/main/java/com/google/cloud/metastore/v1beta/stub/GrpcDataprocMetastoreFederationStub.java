@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,6 +73,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
                   ProtoUtils.marshaller(ListFederationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFederationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFederationRequest, Federation>
@@ -84,6 +85,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFederationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Federation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFederationRequest, Operation>
@@ -95,6 +97,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFederationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFederationRequest, Operation>
@@ -106,6 +109,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFederationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFederationRequest, Operation>
@@ -117,6 +121,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFederationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -128,6 +133,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -136,6 +142,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -144,6 +151,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -152,6 +160,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -163,6 +172,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListFederationsRequest, ListFederationsResponse>
@@ -245,6 +255,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetFederationRequest, Federation> getFederationTransportSettings =
         GrpcCallSettings.<GetFederationRequest, Federation>newBuilder()
@@ -255,6 +266,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateFederationRequest, Operation> createFederationTransportSettings =
         GrpcCallSettings.<CreateFederationRequest, Operation>newBuilder()
@@ -265,6 +277,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateFederationRequest, Operation> updateFederationTransportSettings =
         GrpcCallSettings.<UpdateFederationRequest, Operation>newBuilder()
@@ -285,6 +298,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -315,6 +329,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -325,6 +340,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -336,6 +352,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listFederationsCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,9 @@ import com.google.cloud.discoveryengine.v1beta.TuneEngineMetadata;
 import com.google.cloud.discoveryengine.v1beta.TuneEngineRequest;
 import com.google.cloud.discoveryengine.v1beta.TuneEngineResponse;
 import com.google.cloud.discoveryengine.v1beta.UpdateEngineRequest;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -66,6 +69,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
               .setFullMethodName("google.cloud.discoveryengine.v1beta.EngineService/CreateEngine")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateEngineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEngineRequest, Operation>
@@ -75,6 +79,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
               .setFullMethodName("google.cloud.discoveryengine.v1beta.EngineService/DeleteEngine")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteEngineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEngineRequest, Engine> updateEngineMethodDescriptor =
@@ -83,6 +88,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1beta.EngineService/UpdateEngine")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateEngineRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Engine.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetEngineRequest, Engine> getEngineMethodDescriptor =
@@ -91,6 +97,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1beta.EngineService/GetEngine")
           .setRequestMarshaller(ProtoUtils.marshaller(GetEngineRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Engine.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListEnginesRequest, ListEnginesResponse>
@@ -101,6 +108,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListEnginesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEnginesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PauseEngineRequest, Engine> pauseEngineMethodDescriptor =
@@ -109,6 +117,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1beta.EngineService/PauseEngine")
           .setRequestMarshaller(ProtoUtils.marshaller(PauseEngineRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Engine.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ResumeEngineRequest, Engine> resumeEngineMethodDescriptor =
@@ -117,6 +126,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1beta.EngineService/ResumeEngine")
           .setRequestMarshaller(ProtoUtils.marshaller(ResumeEngineRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Engine.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TuneEngineRequest, Operation> tuneEngineMethodDescriptor =
@@ -125,6 +135,25 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1beta.EngineService/TuneEngine")
           .setRequestMarshaller(ProtoUtils.marshaller(TuneEngineRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.discoveryengine.v1beta.EngineService/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.discoveryengine.v1beta.EngineService/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateEngineRequest, Operation> createEngineCallable;
@@ -143,6 +172,8 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
   private final UnaryCallable<TuneEngineRequest, Operation> tuneEngineCallable;
   private final OperationCallable<TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
       tuneEngineOperationCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -195,6 +226,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteEngineRequest, Operation> deleteEngineTransportSettings =
         GrpcCallSettings.<DeleteEngineRequest, Operation>newBuilder()
@@ -205,6 +237,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateEngineRequest, Engine> updateEngineTransportSettings =
         GrpcCallSettings.<UpdateEngineRequest, Engine>newBuilder()
@@ -225,6 +258,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEnginesRequest, ListEnginesResponse> listEnginesTransportSettings =
         GrpcCallSettings.<ListEnginesRequest, ListEnginesResponse>newBuilder()
@@ -235,6 +269,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<PauseEngineRequest, Engine> pauseEngineTransportSettings =
         GrpcCallSettings.<PauseEngineRequest, Engine>newBuilder()
@@ -245,6 +280,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResumeEngineRequest, Engine> resumeEngineTransportSettings =
         GrpcCallSettings.<ResumeEngineRequest, Engine>newBuilder()
@@ -255,6 +291,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<TuneEngineRequest, Operation> tuneEngineTransportSettings =
         GrpcCallSettings.<TuneEngineRequest, Operation>newBuilder()
@@ -265,6 +302,29 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
 
     this.createEngineCallable =
@@ -312,6 +372,12 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
             settings.tuneEngineOperationSettings(),
             clientContext,
             operationsStub);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -382,6 +448,16 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
   public OperationCallable<TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
       tuneEngineOperationCallable() {
     return tuneEngineOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
   }
 
   @Override

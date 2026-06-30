@@ -10,11 +10,20 @@
         "grpc": {
           "libraryClient": "StorageInsightsClient",
           "rpcs": {
+            "CreateDatasetConfig": {
+              "methods": ["createDatasetConfigAsync", "createDatasetConfigAsync", "createDatasetConfigAsync", "createDatasetConfigOperationCallable", "createDatasetConfigCallable"]
+            },
             "CreateReportConfig": {
               "methods": ["createReportConfig", "createReportConfig", "createReportConfig", "createReportConfigCallable"]
             },
+            "DeleteDatasetConfig": {
+              "methods": ["deleteDatasetConfigAsync", "deleteDatasetConfigAsync", "deleteDatasetConfigAsync", "deleteDatasetConfigOperationCallable", "deleteDatasetConfigCallable"]
+            },
             "DeleteReportConfig": {
               "methods": ["deleteReportConfig", "deleteReportConfig", "deleteReportConfig", "deleteReportConfigCallable"]
+            },
+            "GetDatasetConfig": {
+              "methods": ["getDatasetConfig", "getDatasetConfig", "getDatasetConfig", "getDatasetConfigCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
@@ -25,6 +34,12 @@
             "GetReportDetail": {
               "methods": ["getReportDetail", "getReportDetail", "getReportDetail", "getReportDetailCallable"]
             },
+            "LinkDataset": {
+              "methods": ["linkDatasetAsync", "linkDatasetAsync", "linkDatasetAsync", "linkDatasetOperationCallable", "linkDatasetCallable"]
+            },
+            "ListDatasetConfigs": {
+              "methods": ["listDatasetConfigs", "listDatasetConfigs", "listDatasetConfigs", "listDatasetConfigsPagedCallable", "listDatasetConfigsCallable"]
+            },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
@@ -33,6 +48,12 @@
             },
             "ListReportDetails": {
               "methods": ["listReportDetails", "listReportDetails", "listReportDetails", "listReportDetailsPagedCallable", "listReportDetailsCallable"]
+            },
+            "UnlinkDataset": {
+              "methods": ["unlinkDatasetAsync", "unlinkDatasetAsync", "unlinkDatasetAsync", "unlinkDatasetOperationCallable", "unlinkDatasetCallable"]
+            },
+            "UpdateDatasetConfig": {
+              "methods": ["updateDatasetConfigAsync", "updateDatasetConfigAsync", "updateDatasetConfigOperationCallable", "updateDatasetConfigCallable"]
             },
             "UpdateReportConfig": {
               "methods": ["updateReportConfig", "updateReportConfig", "updateReportConfigCallable"]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
           .setFullMethodName("google.cloud.talent.v4beta1.TenantService/CreateTenant")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tenant.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetTenantRequest, Tenant> getTenantMethodDescriptor =
@@ -64,6 +65,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
           .setFullMethodName("google.cloud.talent.v4beta1.TenantService/GetTenant")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tenant.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateTenantRequest, Tenant> updateTenantMethodDescriptor =
@@ -72,6 +74,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
           .setFullMethodName("google.cloud.talent.v4beta1.TenantService/UpdateTenant")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tenant.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteTenantRequest, Empty> deleteTenantMethodDescriptor =
@@ -80,6 +83,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
           .setFullMethodName("google.cloud.talent.v4beta1.TenantService/DeleteTenant")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListTenantsRequest, ListTenantsResponse>
@@ -90,6 +94,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListTenantsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTenantsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateTenantRequest, Tenant> createTenantCallable;
@@ -151,6 +156,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTenantRequest, Tenant> getTenantTransportSettings =
         GrpcCallSettings.<GetTenantRequest, Tenant>newBuilder()
@@ -161,6 +167,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateTenantRequest, Tenant> updateTenantTransportSettings =
         GrpcCallSettings.<UpdateTenantRequest, Tenant>newBuilder()
@@ -181,6 +188,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTenantsRequest, ListTenantsResponse> listTenantsTransportSettings =
         GrpcCallSettings.<ListTenantsRequest, ListTenantsResponse>newBuilder()
@@ -191,6 +199,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createTenantCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,7 +81,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CollectUserEvent</td>
- *      <td><p> Writes a single user event from the browser. This uses a GET request to due to browser restriction of POST-ing to a 3rd party domain.
+ *      <td><p> Writes a single user event from the browser.
+ * <p>  For larger user event payload over 16 KB, the POST method should be used instead, otherwise a 400 Bad Request error is returned.
  * <p>  This method is used only by the Retail API JavaScript pixel and Google Tag Manager. Users should not call this method directly.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -122,6 +123,22 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> importUserEventsOperationCallable()
  *           <li><p> importUserEventsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExportUserEvents</td>
+ *      <td><p> Exports user events.
+ * <p>  `Operation.response` is of type `ExportResponse`. `Operation.metadata` is of type `ExportMetadata`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportUserEventsAsync(ExportUserEventsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportUserEventsOperationCallable()
+ *           <li><p> exportUserEventsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -336,8 +353,10 @@ public class UserEventServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Writes a single user event from the browser. This uses a GET request to due to browser
-   * restriction of POST-ing to a 3rd party domain.
+   * Writes a single user event from the browser.
+   *
+   * <p>For larger user event payload over 16 KB, the POST method should be used instead, otherwise
+   * a 400 Bad Request error is returned.
    *
    * <p>This method is used only by the Retail API JavaScript pixel and Google Tag Manager. Users
    * should not call this method directly.
@@ -372,8 +391,10 @@ public class UserEventServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Writes a single user event from the browser. This uses a GET request to due to browser
-   * restriction of POST-ing to a 3rd party domain.
+   * Writes a single user event from the browser.
+   *
+   * <p>For larger user event payload over 16 KB, the POST method should be used instead, otherwise
+   * a 400 Bad Request error is returned.
    *
    * <p>This method is used only by the Retail API JavaScript pixel and Google Tag Manager. Users
    * should not call this method directly.
@@ -607,6 +628,108 @@ public class UserEventServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ImportUserEventsRequest, Operation> importUserEventsCallable() {
     return stub.importUserEventsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports user events.
+   *
+   * <p>`Operation.response` is of type `ExportResponse`. `Operation.metadata` is of type
+   * `ExportMetadata`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   ExportUserEventsRequest request =
+   *       ExportUserEventsRequest.newBuilder()
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ExportUserEventsResponse response =
+   *       userEventServiceClient.exportUserEventsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportUserEventsResponse, ExportMetadata> exportUserEventsAsync(
+      ExportUserEventsRequest request) {
+    return exportUserEventsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports user events.
+   *
+   * <p>`Operation.response` is of type `ExportResponse`. `Operation.metadata` is of type
+   * `ExportMetadata`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   ExportUserEventsRequest request =
+   *       ExportUserEventsRequest.newBuilder()
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   OperationFuture<ExportUserEventsResponse, ExportMetadata> future =
+   *       userEventServiceClient.exportUserEventsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportUserEventsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ExportUserEventsRequest, ExportUserEventsResponse, ExportMetadata>
+      exportUserEventsOperationCallable() {
+    return stub.exportUserEventsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports user events.
+   *
+   * <p>`Operation.response` is of type `ExportResponse`. `Operation.metadata` is of type
+   * `ExportMetadata`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   ExportUserEventsRequest request =
+   *       ExportUserEventsRequest.newBuilder()
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       userEventServiceClient.exportUserEventsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportUserEventsRequest, Operation> exportUserEventsCallable() {
+    return stub.exportUserEventsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

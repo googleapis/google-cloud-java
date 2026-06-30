@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Project][google.cloud.discoveryengine.v1alpha.Project].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/project_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ProjectServiceGrpc {
 
@@ -189,6 +186,19 @@ public final class ProjectServiceGrpc {
           }
         };
     return ProjectServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ProjectServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ProjectServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ProjectServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ProjectServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ProjectServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ProjectServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -376,6 +386,77 @@ public final class ProjectServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ProjectService.
+   *
+   * <pre>
+   * Service for operations on the
+   * [Project][google.cloud.discoveryengine.v1alpha.Project].
+   * </pre>
+   */
+  public static final class ProjectServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ProjectServiceBlockingV2Stub> {
+    private ProjectServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ProjectServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ProjectServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a [Project][google.cloud.discoveryengine.v1alpha.Project].
+     * Returns NOT_FOUND when the project is not yet created.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Project getProject(
+        com.google.cloud.discoveryengine.v1alpha.GetProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetProjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions the project resource. During the
+     * process, related systems will get prepared and initialized.
+     * Caller must read the [Terms for data
+     * use](https://cloud.google.com/retail/data-use-terms), and optionally
+     * specify in request to provide consent to that service terms.
+     * </pre>
+     */
+    public com.google.longrunning.Operation provisionProject(
+        com.google.cloud.discoveryengine.v1alpha.ProvisionProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getProvisionProjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates service terms for this project.
+     * This method can be used to retroactively accept the latest terms.
+     * Terms available for update:
+     * * [Terms for data use](https://cloud.google.com/retail/data-use-terms)
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Project reportConsentChange(
+        com.google.cloud.discoveryengine.v1alpha.ReportConsentChangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getReportConsentChangeMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ProjectService.
    *
    * <pre>
    * Service for operations on the

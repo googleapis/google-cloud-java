@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListTargetInstancesRequest;
 import com.google.cloud.compute.v1.DeleteTargetInstanceRequest;
 import com.google.cloud.compute.v1.GetTargetInstanceRequest;
@@ -44,6 +45,8 @@ import com.google.cloud.compute.v1.SetSecurityPolicyTargetInstanceRequest;
 import com.google.cloud.compute.v1.TargetInstance;
 import com.google.cloud.compute.v1.TargetInstanceAggregatedList;
 import com.google.cloud.compute.v1.TargetInstanceList;
+import com.google.cloud.compute.v1.TestIamPermissionsTargetInstanceRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -383,6 +386,49 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsTargetInstanceRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsTargetInstanceRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.TargetInstances/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsTargetInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/targetInstances/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsTargetInstanceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsTargetInstanceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<AggregatedListTargetInstancesRequest, TargetInstanceAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListTargetInstancesRequest, AggregatedListPagedResponse>
@@ -400,10 +446,27 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
       setSecurityPolicyCallable;
   private final OperationCallable<SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
       setSecurityPolicyOperationCallable;
+  private final UnaryCallable<TestIamPermissionsTargetInstanceRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/targetInstances/{target_instance}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/targetInstances/{target_instance}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate SET_SECURITY_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/targetInstances/{target_instance}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/targetInstances/{resource}");
 
   public static final HttpJsonTargetInstancesStub create(TargetInstancesStubSettings settings)
       throws IOException {
@@ -457,6 +520,13 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteTargetInstanceRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteTargetInstanceRequest, Operation>newBuilder()
@@ -469,6 +539,15 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
                   builder.add("target_instance", String.valueOf(request.getTargetInstance()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_instance", String.valueOf(request.getTargetInstance()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetTargetInstanceRequest, TargetInstance> getTransportSettings =
@@ -483,6 +562,15 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_instance", String.valueOf(request.getTargetInstance()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertTargetInstanceRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertTargetInstanceRequest, Operation>newBuilder()
@@ -495,6 +583,13 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListTargetInstancesRequest, TargetInstanceList> listTransportSettings =
         HttpJsonCallSettings.<ListTargetInstancesRequest, TargetInstanceList>newBuilder()
@@ -506,6 +601,13 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetSecurityPolicyTargetInstanceRequest, Operation>
@@ -520,6 +622,40 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
                       builder.add("target_instance", String.valueOf(request.getTargetInstance()));
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "target_instance", String.valueOf(request.getTargetInstance()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return SET_SECURITY_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
+    HttpJsonCallSettings<TestIamPermissionsTargetInstanceRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsTargetInstanceRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 
@@ -567,6 +703,11 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
             settings.setSecurityPolicyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -581,6 +722,7 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(setSecurityPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -643,6 +785,12 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
   public OperationCallable<SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
       setSecurityPolicyOperationCallable() {
     return setSecurityPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsTargetInstanceRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

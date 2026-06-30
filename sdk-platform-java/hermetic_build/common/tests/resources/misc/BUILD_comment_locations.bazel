@@ -1,0 +1,5 @@
+proto_library_with_info(
+  deps = [
+    # "//google/cloud/location:location_proto",
+  ]
+)

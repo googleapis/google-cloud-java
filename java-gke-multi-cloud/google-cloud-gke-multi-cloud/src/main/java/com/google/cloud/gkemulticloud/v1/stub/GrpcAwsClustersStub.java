@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,7 +67,10 @@ import javax.annotation.Generated;
  * gRPC stub implementation for the AwsClusters service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class GrpcAwsClustersStub extends AwsClustersStub {
   private static final MethodDescriptor<CreateAwsClusterRequest, Operation>
@@ -78,6 +81,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAwsClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAwsClusterRequest, Operation>
@@ -88,6 +92,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAwsClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAwsClusterRequest, AwsCluster>
@@ -98,6 +103,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAwsClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AwsCluster.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAwsClustersRequest, ListAwsClustersResponse>
@@ -109,6 +115,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   ProtoUtils.marshaller(ListAwsClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAwsClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAwsClusterRequest, Operation>
@@ -119,6 +126,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAwsClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -134,6 +142,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   ProtoUtils.marshaller(GenerateAwsClusterAgentTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateAwsClusterAgentTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -147,6 +156,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   ProtoUtils.marshaller(GenerateAwsAccessTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateAwsAccessTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAwsNodePoolRequest, Operation>
@@ -157,6 +167,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAwsNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAwsNodePoolRequest, Operation>
@@ -167,6 +178,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAwsNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RollbackAwsNodePoolUpdateRequest, Operation>
@@ -178,6 +190,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RollbackAwsNodePoolUpdateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAwsNodePoolRequest, AwsNodePool>
@@ -188,6 +201,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAwsNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AwsNodePool.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse>
@@ -199,6 +213,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   ProtoUtils.marshaller(ListAwsNodePoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAwsNodePoolsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAwsNodePoolRequest, Operation>
@@ -209,6 +224,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAwsNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
@@ -219,6 +235,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAwsOpenIdConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AwsOpenIdConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>
@@ -229,6 +246,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAwsJsonWebKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AwsJsonWebKeys.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAwsServerConfigRequest, AwsServerConfig>
@@ -239,6 +257,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAwsServerConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AwsServerConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateAwsClusterRequest, Operation> createAwsClusterCallable;
@@ -335,6 +354,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAwsClusterRequest, Operation> updateAwsClusterTransportSettings =
         GrpcCallSettings.<UpdateAwsClusterRequest, Operation>newBuilder()
@@ -356,6 +376,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAwsClustersRequest, ListAwsClustersResponse>
         listAwsClustersTransportSettings =
@@ -367,6 +388,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAwsClusterRequest, Operation> deleteAwsClusterTransportSettings =
         GrpcCallSettings.<DeleteAwsClusterRequest, Operation>newBuilder()
@@ -377,6 +399,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
         generateAwsClusterAgentTokenTransportSettings =
@@ -390,6 +413,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                       builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAwsCluster())
                 .build();
     GrpcCallSettings<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
         generateAwsAccessTokenTransportSettings =
@@ -402,6 +426,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                       builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAwsCluster())
                 .build();
     GrpcCallSettings<CreateAwsNodePoolRequest, Operation> createAwsNodePoolTransportSettings =
         GrpcCallSettings.<CreateAwsNodePoolRequest, Operation>newBuilder()
@@ -412,6 +437,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAwsNodePoolRequest, Operation> updateAwsNodePoolTransportSettings =
         GrpcCallSettings.<UpdateAwsNodePoolRequest, Operation>newBuilder()
@@ -434,6 +460,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolTransportSettings =
         GrpcCallSettings.<GetAwsNodePoolRequest, AwsNodePool>newBuilder()
@@ -444,6 +471,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse>
         listAwsNodePoolsTransportSettings =
@@ -455,6 +483,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAwsNodePoolRequest, Operation> deleteAwsNodePoolTransportSettings =
         GrpcCallSettings.<DeleteAwsNodePoolRequest, Operation>newBuilder()
@@ -465,6 +494,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
         getAwsOpenIdConfigTransportSettings =
@@ -476,6 +506,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                       builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAwsCluster())
                 .build();
     GrpcCallSettings<GetAwsJsonWebKeysRequest, AwsJsonWebKeys> getAwsJsonWebKeysTransportSettings =
         GrpcCallSettings.<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>newBuilder()
@@ -486,6 +517,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getAwsCluster())
             .build();
     GrpcCallSettings<GetAwsServerConfigRequest, AwsServerConfig>
         getAwsServerConfigTransportSettings =
@@ -497,6 +529,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createAwsClusterCallable =

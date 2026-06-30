@@ -1,0 +1,89 @@
+// Copyright 2023 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/longrunning/operations.proto";
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
+
+package google.showcase.v1beta1;
+
+option java_package = "com.google.test.collisions";
+option java_multiple_files = true;
+
+// This service exercises scenarios where short names of types
+// exhibit ambiguity or collide with other types
+service Collisions {
+
+  option (google.api.default_host) = "localhost:7469";
+
+  rpc shouldUseSamePackageTypesLro(Request) returns (google.longrunning.Operation) {
+    option (google.longrunning.operation_info) = {
+      // collision with google.protobuf.DescriptorProtos.GeneratedCodeInfo.Annotation
+      response_type: "Annotation"
+      // collision with google.cloud.location.Location;
+      metadata_type: "Location"
+    };
+  }
+
+  rpc shortNameMatchShouldThrowLro(Request) returns (google.longrunning.Operation) {
+    option (google.longrunning.operation_info) = {
+      // collision with google.protobuf.DescriptorProtos.GeneratedCodeInfo.Annotation
+      response_type: "Annotation"
+      // collision with google.protobuf.DescriptorProtos.ExtensionRangeOptions.Declaration
+      // not a valid short name specification (no such type exist in same package)
+      metadata_type: "Declaration"
+    };
+  }
+
+  rpc fullNameForDifferentPackageLro(Request) returns (google.longrunning.Operation) {
+    option (google.longrunning.operation_info) = {
+      // fully qualified name should match google.cloud.location.Location
+      response_type: "google.cloud.location.Location"
+      // short name only should match Location message defined below
+      metadata_type: "Location"
+    };
+  }
+}
+
+message Request {
+  string name = 1;
+  Annotation annotation = 2;
+  Location location = 3;
+}
+
+message Annotation {
+  string name = 1;
+}
+
+message Location {
+  string name = 1;
+}
+
+message Resource {
+  option (google.api.resource) = {
+    type: "config.googleapis.com/Resource"
+    pattern: "projects/{project}/locations/{location}/deployments/{deployment}/revisions/{revision}/resources/{resource}"
+  };
+
+  // Resource name of the Resource.
+  // Format:
+  // `projects/{project}/locations/{location}/deployments/{deployment}/revisions/{revision}/resources/{resource}`
+  string name = 1 [
+    (google.api.field_behavior) = OUTPUT_ONLY
+  ];
+}

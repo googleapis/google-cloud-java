@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,7 +84,10 @@ import javax.annotation.Generated;
  * REST stub implementation for the AzureClusters service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class HttpJsonAzureClustersStub extends AzureClustersStub {
   private static final TypeRegistry typeRegistry =
@@ -427,6 +430,8 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                                 fields, "allowMissing", request.getAllowMissing());
                             serializer.putQueryParam(fields, "etag", request.getEtag());
                             serializer.putQueryParam(
+                                fields, "ignoreErrors", request.getIgnoreErrors());
+                            serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
                             return fields;
                           })
@@ -702,6 +707,8 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                                 fields, "allowMissing", request.getAllowMissing());
                             serializer.putQueryParam(fields, "etag", request.getEtag());
                             serializer.putQueryParam(
+                                fields, "ignoreErrors", request.getIgnoreErrors());
+                            serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
                             return fields;
                           })
@@ -949,6 +956,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetAzureClientRequest, AzureClient> getAzureClientTransportSettings =
         HttpJsonCallSettings.<GetAzureClientRequest, AzureClient>newBuilder()
@@ -960,6 +968,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAzureClientsRequest, ListAzureClientsResponse>
         listAzureClientsTransportSettings =
@@ -972,6 +981,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteAzureClientRequest, Operation> deleteAzureClientTransportSettings =
         HttpJsonCallSettings.<DeleteAzureClientRequest, Operation>newBuilder()
@@ -983,6 +993,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateAzureClusterRequest, Operation> createAzureClusterTransportSettings =
         HttpJsonCallSettings.<CreateAzureClusterRequest, Operation>newBuilder()
@@ -994,6 +1005,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateAzureClusterRequest, Operation> updateAzureClusterTransportSettings =
         HttpJsonCallSettings.<UpdateAzureClusterRequest, Operation>newBuilder()
@@ -1017,6 +1029,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAzureClustersRequest, ListAzureClustersResponse>
         listAzureClustersTransportSettings =
@@ -1029,6 +1042,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteAzureClusterRequest, Operation> deleteAzureClusterTransportSettings =
         HttpJsonCallSettings.<DeleteAzureClusterRequest, Operation>newBuilder()
@@ -1040,6 +1054,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<
             GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
@@ -1055,6 +1070,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                       builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAzureCluster())
                 .build();
     HttpJsonCallSettings<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
         generateAzureAccessTokenTransportSettings =
@@ -1068,6 +1084,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                       builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAzureCluster())
                 .build();
     HttpJsonCallSettings<CreateAzureNodePoolRequest, Operation>
         createAzureNodePoolTransportSettings =
@@ -1080,6 +1097,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateAzureNodePoolRequest, Operation>
         updateAzureNodePoolTransportSettings =
@@ -1105,6 +1123,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAzureNodePoolsRequest, ListAzureNodePoolsResponse>
         listAzureNodePoolsTransportSettings =
@@ -1117,6 +1136,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteAzureNodePoolRequest, Operation>
         deleteAzureNodePoolTransportSettings =
@@ -1129,6 +1149,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
         getAzureOpenIdConfigTransportSettings =
@@ -1141,6 +1162,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                       builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAzureCluster())
                 .build();
     HttpJsonCallSettings<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
         getAzureJsonWebKeysTransportSettings =
@@ -1153,6 +1175,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                       builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAzureCluster())
                 .build();
     HttpJsonCallSettings<GetAzureServerConfigRequest, AzureServerConfig>
         getAzureServerConfigTransportSettings =
@@ -1165,6 +1188,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createAzureClientCallable =

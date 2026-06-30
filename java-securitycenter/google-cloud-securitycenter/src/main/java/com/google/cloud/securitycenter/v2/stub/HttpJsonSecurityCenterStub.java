@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -153,6 +153,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{parent=organizations/*/locations/*}/resourceValueConfigs:batchCreate")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -561,6 +563,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{name=organizations/*/locations/*/resourceValueConfigs/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -632,6 +636,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v2/{name=organizations/*/locations/*/simulations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -666,6 +671,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{name=organizations/*/locations/*/simulations/*/valuedResources/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -816,6 +823,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{name=organizations/*/locations/*/resourceValueConfigs/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -927,8 +936,11 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             return fields;
                           })
                       .setAdditionalPaths(
+                          "/v2/{parent=organizations/*}/attackPaths",
                           "/v2/{parent=organizations/*/simulations/*/valuedResources/*}/attackPaths",
-                          "/v2/{parent=organizations/*/simulations/*/attackExposureResults/*}/attackPaths")
+                          "/v2/{parent=organizations/*/locations/*/simulations/*/valuedResources/*}/attackPaths",
+                          "/v2/{parent=organizations/*/simulations/*/attackExposureResults/*}/attackPaths",
+                          "/v2/{parent=organizations/*/locations/*/simulations/*/attackExposureResults/*}/attackPaths")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -1138,6 +1150,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{parent=organizations/*/locations/*}/resourceValueConfigs")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -1214,7 +1228,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v2/{parent=organizations/*/simulations/*/attackExposureResults/*}/valuedResources")
+                          "/v2/{parent=organizations/*/simulations/*/attackExposureResults/*}/valuedResources",
+                          "/v2/{parent=organizations/*}/valuedResources")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -1645,6 +1660,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                                 request.getResourceValueConfig().getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{resourceValueConfig.name=organizations/*/locations/*/resourceValueConfigs/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -1950,6 +1967,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BulkMuteFindingsRequest, Operation> bulkMuteFindingsTransportSettings =
         HttpJsonCallSettings.<BulkMuteFindingsRequest, Operation>newBuilder()
@@ -1961,6 +1979,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateBigQueryExportRequest, BigQueryExport>
         createBigQueryExportTransportSettings =
@@ -1973,6 +1992,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateFindingRequest, Finding> createFindingTransportSettings =
         HttpJsonCallSettings.<CreateFindingRequest, Finding>newBuilder()
@@ -1984,6 +2004,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateMuteConfigRequest, MuteConfig> createMuteConfigTransportSettings =
         HttpJsonCallSettings.<CreateMuteConfigRequest, MuteConfig>newBuilder()
@@ -1997,6 +2018,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add(request.getParent(), "location", CREATE_MUTE_CONFIG_2_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateNotificationConfigRequest, NotificationConfig>
         createNotificationConfigTransportSettings =
@@ -2009,6 +2031,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateSourceRequest, Source> createSourceTransportSettings =
         HttpJsonCallSettings.<CreateSourceRequest, Source>newBuilder()
@@ -2020,6 +2043,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteBigQueryExportRequest, Empty> deleteBigQueryExportTransportSettings =
         HttpJsonCallSettings.<DeleteBigQueryExportRequest, Empty>newBuilder()
@@ -2031,6 +2055,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteMuteConfigRequest, Empty> deleteMuteConfigTransportSettings =
         HttpJsonCallSettings.<DeleteMuteConfigRequest, Empty>newBuilder()
@@ -2044,6 +2069,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add(request.getName(), "location", DELETE_MUTE_CONFIG_2_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteNotificationConfigRequest, Empty>
         deleteNotificationConfigTransportSettings =
@@ -2056,6 +2082,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteResourceValueConfigRequest, Empty>
         deleteResourceValueConfigTransportSettings =
@@ -2068,6 +2095,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetBigQueryExportRequest, BigQueryExport>
         getBigQueryExportTransportSettings =
@@ -2080,6 +2108,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetSimulationRequest, Simulation> getSimulationTransportSettings =
         HttpJsonCallSettings.<GetSimulationRequest, Simulation>newBuilder()
@@ -2091,6 +2120,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetValuedResourceRequest, ValuedResource>
         getValuedResourceTransportSettings =
@@ -2103,6 +2133,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -2114,6 +2145,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetMuteConfigRequest, MuteConfig> getMuteConfigTransportSettings =
         HttpJsonCallSettings.<GetMuteConfigRequest, MuteConfig>newBuilder()
@@ -2127,6 +2159,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add(request.getName(), "location", GET_MUTE_CONFIG_2_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetNotificationConfigRequest, NotificationConfig>
         getNotificationConfigTransportSettings =
@@ -2139,6 +2172,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetResourceValueConfigRequest, ResourceValueConfig>
         getResourceValueConfigTransportSettings =
@@ -2151,6 +2185,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetSourceRequest, Source> getSourceTransportSettings =
         HttpJsonCallSettings.<GetSourceRequest, Source>newBuilder()
@@ -2162,6 +2197,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GroupFindingsRequest, GroupFindingsResponse>
         groupFindingsTransportSettings =
@@ -2174,6 +2210,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListAttackPathsRequest, ListAttackPathsResponse>
         listAttackPathsTransportSettings =
@@ -2186,6 +2223,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListBigQueryExportsRequest, ListBigQueryExportsResponse>
         listBigQueryExportsTransportSettings =
@@ -2199,6 +2237,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
         HttpJsonCallSettings.<ListFindingsRequest, ListFindingsResponse>newBuilder()
@@ -2210,6 +2249,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListMuteConfigsRequest, ListMuteConfigsResponse>
         listMuteConfigsTransportSettings =
@@ -2227,6 +2267,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                           request.getParent(), "location", LIST_MUTE_CONFIGS_2_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
         listNotificationConfigsTransportSettings =
@@ -2240,6 +2281,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListResourceValueConfigsRequest, ListResourceValueConfigsResponse>
         listResourceValueConfigsTransportSettings =
@@ -2253,6 +2295,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListSourcesRequest, ListSourcesResponse> listSourcesTransportSettings =
         HttpJsonCallSettings.<ListSourcesRequest, ListSourcesResponse>newBuilder()
@@ -2264,6 +2307,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListValuedResourcesRequest, ListValuedResourcesResponse>
         listValuedResourcesTransportSettings =
@@ -2277,6 +2321,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SetFindingStateRequest, Finding> setFindingStateTransportSettings =
         HttpJsonCallSettings.<SetFindingStateRequest, Finding>newBuilder()
@@ -2288,6 +2333,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -2299,6 +2345,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetMuteRequest, Finding> setMuteTransportSettings =
         HttpJsonCallSettings.<SetMuteRequest, Finding>newBuilder()
@@ -2310,6 +2357,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -2322,6 +2370,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     HttpJsonCallSettings<UpdateBigQueryExportRequest, BigQueryExport>
         updateBigQueryExportTransportSettings =

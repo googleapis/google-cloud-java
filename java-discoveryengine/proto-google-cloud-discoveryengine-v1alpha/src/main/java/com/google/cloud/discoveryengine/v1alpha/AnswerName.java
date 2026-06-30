@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -467,7 +467,8 @@ public class AnswerName implements ResourceName {
     private Builder(AnswerName answerName) {
       Preconditions.checkArgument(
           Objects.equals(answerName.pathTemplate, PROJECT_LOCATION_DATA_STORE_SESSION_ANSWER),
-          "toBuilder is only supported when AnswerName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/sessions/{session}/answers/{answer}");
+          "toBuilder is only supported when AnswerName has the pattern of"
+              + " projects/{project}/locations/{location}/dataStores/{data_store}/sessions/{session}/answers/{answer}");
       this.project = answerName.project;
       this.location = answerName.location;
       this.dataStore = answerName.dataStore;

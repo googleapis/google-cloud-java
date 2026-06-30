@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -232,7 +232,8 @@ public class TransferConfigName implements ResourceName {
     private Builder(TransferConfigName transferConfigName) {
       Preconditions.checkArgument(
           Objects.equals(transferConfigName.pathTemplate, PROJECT_TRANSFER_CONFIG),
-          "toBuilder is only supported when TransferConfigName has the pattern of projects/{project}/transferConfigs/{transfer_config}");
+          "toBuilder is only supported when TransferConfigName has the pattern of"
+              + " projects/{project}/transferConfigs/{transfer_config}");
       this.project = transferConfigName.project;
       this.transferConfig = transferConfigName.transferConfig;
     }

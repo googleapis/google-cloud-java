@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.shopping.merchant.quota.v1",
+  "libraryPackage": "com.google.shopping.merchant.quota.v1",
+  "services": {
+    "AccountLimitsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AccountLimitsServiceClient",
+          "rpcs": {
+            "GetAccountLimit": {
+              "methods": ["getAccountLimit", "getAccountLimit", "getAccountLimit", "getAccountLimitCallable"]
+            },
+            "ListAccountLimits": {
+              "methods": ["listAccountLimits", "listAccountLimits", "listAccountLimits", "listAccountLimitsPagedCallable", "listAccountLimitsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "QuotaService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "QuotaServiceClient",
+          "rpcs": {
+            "ListQuotaGroups": {
+              "methods": ["listQuotaGroups", "listQuotaGroups", "listQuotaGroups", "listQuotaGroupsPagedCallable", "listQuotaGroupsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

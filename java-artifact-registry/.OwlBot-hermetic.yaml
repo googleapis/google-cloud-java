@@ -19,6 +19,9 @@ deep-remove-regex:
 - "/java-artifact-registry/google-.*/src"
 - "/java-artifact-registry/samples/snippets/generated"
 
+deep-preserve-regex:
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+
 deep-copy-regex:
 - source: "/google/devtools/artifactregistry/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-artifact-registry/$1/proto-google-cloud-artifact-registry-$1/src"

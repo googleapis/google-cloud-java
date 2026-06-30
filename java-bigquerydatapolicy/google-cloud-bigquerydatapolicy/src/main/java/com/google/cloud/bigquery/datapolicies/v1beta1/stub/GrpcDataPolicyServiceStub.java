@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataPolicyRequest, DataPolicy>
@@ -75,6 +76,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataPolicyRequest, Empty>
@@ -86,6 +88,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataPolicyRequest, DataPolicy>
@@ -97,6 +100,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataPoliciesRequest, ListDataPoliciesResponse>
@@ -109,6 +113,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                   ProtoUtils.marshaller(ListDataPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -118,6 +123,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
               "google.cloud.bigquery.datapolicies.v1beta1.DataPolicyService/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -127,6 +133,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
               "google.cloud.bigquery.datapolicies.v1beta1.DataPolicyService/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -139,6 +146,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateDataPolicyRequest, DataPolicy> createDataPolicyCallable;
@@ -207,6 +215,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDataPolicyRequest, DataPolicy> updateDataPolicyTransportSettings =
         GrpcCallSettings.<UpdateDataPolicyRequest, DataPolicy>newBuilder()
@@ -228,6 +237,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetDataPolicyRequest, DataPolicy> getDataPolicyTransportSettings =
         GrpcCallSettings.<GetDataPolicyRequest, DataPolicy>newBuilder()
@@ -238,6 +248,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDataPoliciesRequest, ListDataPoliciesResponse>
         listDataPoliciesTransportSettings =
@@ -249,6 +260,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -259,6 +271,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -269,6 +282,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -280,6 +294,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createDataPolicyCallable =

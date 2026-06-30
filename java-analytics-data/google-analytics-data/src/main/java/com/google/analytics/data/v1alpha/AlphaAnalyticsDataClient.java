@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -140,28 +140,6 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
- *      <td><p> SheetExportAudienceList</td>
- *      <td><p> Exports an audience list of users to a Google Sheet. After creating an audience, the users are not immediately available for listing. First, a request to `CreateAudienceList` is necessary to create an audience list of users, and then second, this method is used to export those users in the audience list to a Google Sheet.
- * <p>  See [Creating an Audience List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics) for an introduction to Audience Lists with examples.
- * <p>  Audiences in Google Analytics 4 allow you to segment your users in the ways that are important to your business. To learn more, see https://support.google.com/analytics/answer/9267572.
- * <p>  This method is introduced at alpha stability with the intention of gathering feedback on syntax and capabilities before entering beta. To give your feedback on this API, complete the [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> sheetExportAudienceList(SheetExportAudienceListRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li><p> sheetExportAudienceList(AudienceListName name)
- *           <li><p> sheetExportAudienceList(String name)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> sheetExportAudienceListCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
  *      <td><p> GetAudienceList</td>
  *      <td><p> Gets configuration metadata about a specific audience list. This method can be used to understand an audience list after it has been created.
  * <p>  See [Creating an Audience List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics) for an introduction to Audience Lists with examples.
@@ -263,6 +241,138 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listRecurringAudienceListsPagedCallable()
  *           <li><p> listRecurringAudienceListsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetPropertyQuotasSnapshot</td>
+ *      <td><p> Get all property quotas organized by quota category for a given property. This will charge 1 property quota from the category with the most quota.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getPropertyQuotasSnapshot(GetPropertyQuotasSnapshotRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getPropertyQuotasSnapshot(PropertyQuotasSnapshotName name)
+ *           <li><p> getPropertyQuotasSnapshot(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getPropertyQuotasSnapshotCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateReportTask</td>
+ *      <td><p> Initiates the creation of a report task. This method quickly returns a report task and initiates a long running asynchronous request to form a customized report of your Google Analytics event data.
+ * <p>  A report task will be retained and available for querying for 72 hours after it has been created.
+ * <p>  A report task created by one user can be listed and queried by all users who have access to the property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createReportTaskAsync(CreateReportTaskRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createReportTaskAsync(PropertyName parent, ReportTask reportTask)
+ *           <li><p> createReportTaskAsync(String parent, ReportTask reportTask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createReportTaskOperationCallable()
+ *           <li><p> createReportTaskCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> QueryReportTask</td>
+ *      <td><p> Retrieves a report task's content. After requesting the `CreateReportTask`, you are able to retrieve the report content once the report is ACTIVE. This method will return an error if the report task's state is not `ACTIVE`. A query response will return the tabular row &amp; column values of the report.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> queryReportTask(QueryReportTaskRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> queryReportTask(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> queryReportTaskCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetReportTask</td>
+ *      <td><p> Gets report metadata about a specific report task. After creating a report task, use this method to check its processing state or inspect its report definition.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getReportTask(GetReportTaskRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getReportTask(ReportTaskName name)
+ *           <li><p> getReportTask(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getReportTaskCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListReportTasks</td>
+ *      <td><p> Lists all report tasks for a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listReportTasks(ListReportTasksRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listReportTasks(PropertyName parent)
+ *           <li><p> listReportTasks(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listReportTasksPagedCallable()
+ *           <li><p> listReportTasksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RunReport</td>
+ *      <td><p> Returns a customized report of your Google Analytics event data. Reports contain statistics derived from data collected by the Google Analytics tracking code. The data returned from the API is as a table with columns for the requested dimensions and metrics. Metrics are individual measurements of user activity on your property, such as active users or event count. Dimensions break down metrics across some common criteria, such as country or event name.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> runReport(RunReportRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> runReportCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetMetadata</td>
+ *      <td><p> Returns metadata for dimensions and metrics available in reporting methods. Used to explore the dimensions and metrics. In this method, a Google Analytics property identifier is specified in the request, and the metadata response includes Custom dimensions and metrics as well as Universal metadata.
+ * <p>  For example if a custom metric with parameter name `levels_unlocked` is registered to a property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata are dimensions and metrics applicable to any property such as `country` and `totalUsers`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getMetadata(GetMetadataRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getMetadata(MetadataName name)
+ *           <li><p> getMetadata(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getMetadataCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -895,189 +1005,6 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
   public final UnaryCallable<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListCallable() {
     return stub.queryAudienceListCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Exports an audience list of users to a Google Sheet. After creating an audience, the users are
-   * not immediately available for listing. First, a request to `CreateAudienceList` is necessary to
-   * create an audience list of users, and then second, this method is used to export those users in
-   * the audience list to a Google Sheet.
-   *
-   * <p>See [Creating an Audience
-   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
-   * for an introduction to Audience Lists with examples.
-   *
-   * <p>Audiences in Google Analytics 4 allow you to segment your users in the ways that are
-   * important to your business. To learn more, see
-   * https://support.google.com/analytics/answer/9267572.
-   *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-   *   AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
-   *   SheetExportAudienceListResponse response =
-   *       alphaAnalyticsDataClient.sheetExportAudienceList(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the audience list to retrieve users from. Format:
-   *     `properties/{property}/audienceLists/{audience_list}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SheetExportAudienceListResponse sheetExportAudienceList(AudienceListName name) {
-    SheetExportAudienceListRequest request =
-        SheetExportAudienceListRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return sheetExportAudienceList(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Exports an audience list of users to a Google Sheet. After creating an audience, the users are
-   * not immediately available for listing. First, a request to `CreateAudienceList` is necessary to
-   * create an audience list of users, and then second, this method is used to export those users in
-   * the audience list to a Google Sheet.
-   *
-   * <p>See [Creating an Audience
-   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
-   * for an introduction to Audience Lists with examples.
-   *
-   * <p>Audiences in Google Analytics 4 allow you to segment your users in the ways that are
-   * important to your business. To learn more, see
-   * https://support.google.com/analytics/answer/9267572.
-   *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-   *   String name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString();
-   *   SheetExportAudienceListResponse response =
-   *       alphaAnalyticsDataClient.sheetExportAudienceList(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the audience list to retrieve users from. Format:
-   *     `properties/{property}/audienceLists/{audience_list}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SheetExportAudienceListResponse sheetExportAudienceList(String name) {
-    SheetExportAudienceListRequest request =
-        SheetExportAudienceListRequest.newBuilder().setName(name).build();
-    return sheetExportAudienceList(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Exports an audience list of users to a Google Sheet. After creating an audience, the users are
-   * not immediately available for listing. First, a request to `CreateAudienceList` is necessary to
-   * create an audience list of users, and then second, this method is used to export those users in
-   * the audience list to a Google Sheet.
-   *
-   * <p>See [Creating an Audience
-   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
-   * for an introduction to Audience Lists with examples.
-   *
-   * <p>Audiences in Google Analytics 4 allow you to segment your users in the ways that are
-   * important to your business. To learn more, see
-   * https://support.google.com/analytics/answer/9267572.
-   *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-   *   SheetExportAudienceListRequest request =
-   *       SheetExportAudienceListRequest.newBuilder()
-   *           .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
-   *           .setOffset(-1019779949)
-   *           .setLimit(102976443)
-   *           .build();
-   *   SheetExportAudienceListResponse response =
-   *       alphaAnalyticsDataClient.sheetExportAudienceList(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SheetExportAudienceListResponse sheetExportAudienceList(
-      SheetExportAudienceListRequest request) {
-    return sheetExportAudienceListCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Exports an audience list of users to a Google Sheet. After creating an audience, the users are
-   * not immediately available for listing. First, a request to `CreateAudienceList` is necessary to
-   * create an audience list of users, and then second, this method is used to export those users in
-   * the audience list to a Google Sheet.
-   *
-   * <p>See [Creating an Audience
-   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
-   * for an introduction to Audience Lists with examples.
-   *
-   * <p>Audiences in Google Analytics 4 allow you to segment your users in the ways that are
-   * important to your business. To learn more, see
-   * https://support.google.com/analytics/answer/9267572.
-   *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-   *   SheetExportAudienceListRequest request =
-   *       SheetExportAudienceListRequest.newBuilder()
-   *           .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
-   *           .setOffset(-1019779949)
-   *           .setLimit(102976443)
-   *           .build();
-   *   ApiFuture<SheetExportAudienceListResponse> future =
-   *       alphaAnalyticsDataClient.sheetExportAudienceListCallable().futureCall(request);
-   *   // Do something.
-   *   SheetExportAudienceListResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-      sheetExportAudienceListCallable() {
-    return stub.sheetExportAudienceListCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2001,6 +1928,939 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
     return stub.listRecurringAudienceListsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get all property quotas organized by quota category for a given property. This will charge 1
+   * property quota from the category with the most quota.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   PropertyQuotasSnapshotName name = PropertyQuotasSnapshotName.of("[PROPERTY]");
+   *   PropertyQuotasSnapshot response = alphaAnalyticsDataClient.getPropertyQuotasSnapshot(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Quotas from this property will be listed in the response. Format:
+   *     `properties/{property}/propertyQuotasSnapshot`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PropertyQuotasSnapshot getPropertyQuotasSnapshot(PropertyQuotasSnapshotName name) {
+    GetPropertyQuotasSnapshotRequest request =
+        GetPropertyQuotasSnapshotRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getPropertyQuotasSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get all property quotas organized by quota category for a given property. This will charge 1
+   * property quota from the category with the most quota.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   String name = PropertyQuotasSnapshotName.of("[PROPERTY]").toString();
+   *   PropertyQuotasSnapshot response = alphaAnalyticsDataClient.getPropertyQuotasSnapshot(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Quotas from this property will be listed in the response. Format:
+   *     `properties/{property}/propertyQuotasSnapshot`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PropertyQuotasSnapshot getPropertyQuotasSnapshot(String name) {
+    GetPropertyQuotasSnapshotRequest request =
+        GetPropertyQuotasSnapshotRequest.newBuilder().setName(name).build();
+    return getPropertyQuotasSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get all property quotas organized by quota category for a given property. This will charge 1
+   * property quota from the category with the most quota.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   GetPropertyQuotasSnapshotRequest request =
+   *       GetPropertyQuotasSnapshotRequest.newBuilder()
+   *           .setName(PropertyQuotasSnapshotName.of("[PROPERTY]").toString())
+   *           .build();
+   *   PropertyQuotasSnapshot response = alphaAnalyticsDataClient.getPropertyQuotasSnapshot(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PropertyQuotasSnapshot getPropertyQuotasSnapshot(
+      GetPropertyQuotasSnapshotRequest request) {
+    return getPropertyQuotasSnapshotCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get all property quotas organized by quota category for a given property. This will charge 1
+   * property quota from the category with the most quota.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   GetPropertyQuotasSnapshotRequest request =
+   *       GetPropertyQuotasSnapshotRequest.newBuilder()
+   *           .setName(PropertyQuotasSnapshotName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<PropertyQuotasSnapshot> future =
+   *       alphaAnalyticsDataClient.getPropertyQuotasSnapshotCallable().futureCall(request);
+   *   // Do something.
+   *   PropertyQuotasSnapshot response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
+      getPropertyQuotasSnapshotCallable() {
+    return stub.getPropertyQuotasSnapshotCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates the creation of a report task. This method quickly returns a report task and
+   * initiates a long running asynchronous request to form a customized report of your Google
+   * Analytics event data.
+   *
+   * <p>A report task will be retained and available for querying for 72 hours after it has been
+   * created.
+   *
+   * <p>A report task created by one user can be listed and queried by all users who have access to
+   * the property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   ReportTask reportTask = ReportTask.newBuilder().build();
+   *   ReportTask response =
+   *       alphaAnalyticsDataClient.createReportTaskAsync(parent, reportTask).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this report task will be created. Format:
+   *     `properties/{propertyId}`
+   * @param reportTask Required. The report task configuration to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ReportTask, ReportTaskMetadata> createReportTaskAsync(
+      PropertyName parent, ReportTask reportTask) {
+    CreateReportTaskRequest request =
+        CreateReportTaskRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setReportTask(reportTask)
+            .build();
+    return createReportTaskAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates the creation of a report task. This method quickly returns a report task and
+   * initiates a long running asynchronous request to form a customized report of your Google
+   * Analytics event data.
+   *
+   * <p>A report task will be retained and available for querying for 72 hours after it has been
+   * created.
+   *
+   * <p>A report task created by one user can be listed and queried by all users who have access to
+   * the property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   ReportTask reportTask = ReportTask.newBuilder().build();
+   *   ReportTask response =
+   *       alphaAnalyticsDataClient.createReportTaskAsync(parent, reportTask).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this report task will be created. Format:
+   *     `properties/{propertyId}`
+   * @param reportTask Required. The report task configuration to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ReportTask, ReportTaskMetadata> createReportTaskAsync(
+      String parent, ReportTask reportTask) {
+    CreateReportTaskRequest request =
+        CreateReportTaskRequest.newBuilder().setParent(parent).setReportTask(reportTask).build();
+    return createReportTaskAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates the creation of a report task. This method quickly returns a report task and
+   * initiates a long running asynchronous request to form a customized report of your Google
+   * Analytics event data.
+   *
+   * <p>A report task will be retained and available for querying for 72 hours after it has been
+   * created.
+   *
+   * <p>A report task created by one user can be listed and queried by all users who have access to
+   * the property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   CreateReportTaskRequest request =
+   *       CreateReportTaskRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setReportTask(ReportTask.newBuilder().build())
+   *           .build();
+   *   ReportTask response = alphaAnalyticsDataClient.createReportTaskAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ReportTask, ReportTaskMetadata> createReportTaskAsync(
+      CreateReportTaskRequest request) {
+    return createReportTaskOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates the creation of a report task. This method quickly returns a report task and
+   * initiates a long running asynchronous request to form a customized report of your Google
+   * Analytics event data.
+   *
+   * <p>A report task will be retained and available for querying for 72 hours after it has been
+   * created.
+   *
+   * <p>A report task created by one user can be listed and queried by all users who have access to
+   * the property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   CreateReportTaskRequest request =
+   *       CreateReportTaskRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setReportTask(ReportTask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ReportTask, ReportTaskMetadata> future =
+   *       alphaAnalyticsDataClient.createReportTaskOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ReportTask response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateReportTaskRequest, ReportTask, ReportTaskMetadata>
+      createReportTaskOperationCallable() {
+    return stub.createReportTaskOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates the creation of a report task. This method quickly returns a report task and
+   * initiates a long running asynchronous request to form a customized report of your Google
+   * Analytics event data.
+   *
+   * <p>A report task will be retained and available for querying for 72 hours after it has been
+   * created.
+   *
+   * <p>A report task created by one user can be listed and queried by all users who have access to
+   * the property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   CreateReportTaskRequest request =
+   *       CreateReportTaskRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setReportTask(ReportTask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       alphaAnalyticsDataClient.createReportTaskCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateReportTaskRequest, Operation> createReportTaskCallable() {
+    return stub.createReportTaskCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a report task's content. After requesting the `CreateReportTask`, you are able to
+   * retrieve the report content once the report is ACTIVE. This method will return an error if the
+   * report task's state is not `ACTIVE`. A query response will return the tabular row &amp; column
+   * values of the report.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   String name = "name3373707";
+   *   QueryReportTaskResponse response = alphaAnalyticsDataClient.queryReportTask(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The report source name. Format:
+   *     `properties/{property}/reportTasks/{report}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryReportTaskResponse queryReportTask(String name) {
+    QueryReportTaskRequest request = QueryReportTaskRequest.newBuilder().setName(name).build();
+    return queryReportTask(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a report task's content. After requesting the `CreateReportTask`, you are able to
+   * retrieve the report content once the report is ACTIVE. This method will return an error if the
+   * report task's state is not `ACTIVE`. A query response will return the tabular row &amp; column
+   * values of the report.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   QueryReportTaskRequest request =
+   *       QueryReportTaskRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setOffset(-1019779949)
+   *           .setLimit(102976443)
+   *           .build();
+   *   QueryReportTaskResponse response = alphaAnalyticsDataClient.queryReportTask(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryReportTaskResponse queryReportTask(QueryReportTaskRequest request) {
+    return queryReportTaskCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a report task's content. After requesting the `CreateReportTask`, you are able to
+   * retrieve the report content once the report is ACTIVE. This method will return an error if the
+   * report task's state is not `ACTIVE`. A query response will return the tabular row &amp; column
+   * values of the report.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   QueryReportTaskRequest request =
+   *       QueryReportTaskRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setOffset(-1019779949)
+   *           .setLimit(102976443)
+   *           .build();
+   *   ApiFuture<QueryReportTaskResponse> future =
+   *       alphaAnalyticsDataClient.queryReportTaskCallable().futureCall(request);
+   *   // Do something.
+   *   QueryReportTaskResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryReportTaskRequest, QueryReportTaskResponse>
+      queryReportTaskCallable() {
+    return stub.queryReportTaskCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets report metadata about a specific report task. After creating a report task, use this
+   * method to check its processing state or inspect its report definition.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   ReportTaskName name = ReportTaskName.of("[PROPERTY]", "[REPORT_TASK]");
+   *   ReportTask response = alphaAnalyticsDataClient.getReportTask(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The report task resource name. Format:
+   *     `properties/{property}/reportTasks/{report_task}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportTask getReportTask(ReportTaskName name) {
+    GetReportTaskRequest request =
+        GetReportTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getReportTask(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets report metadata about a specific report task. After creating a report task, use this
+   * method to check its processing state or inspect its report definition.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   String name = ReportTaskName.of("[PROPERTY]", "[REPORT_TASK]").toString();
+   *   ReportTask response = alphaAnalyticsDataClient.getReportTask(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The report task resource name. Format:
+   *     `properties/{property}/reportTasks/{report_task}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportTask getReportTask(String name) {
+    GetReportTaskRequest request = GetReportTaskRequest.newBuilder().setName(name).build();
+    return getReportTask(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets report metadata about a specific report task. After creating a report task, use this
+   * method to check its processing state or inspect its report definition.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   GetReportTaskRequest request =
+   *       GetReportTaskRequest.newBuilder()
+   *           .setName(ReportTaskName.of("[PROPERTY]", "[REPORT_TASK]").toString())
+   *           .build();
+   *   ReportTask response = alphaAnalyticsDataClient.getReportTask(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportTask getReportTask(GetReportTaskRequest request) {
+    return getReportTaskCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets report metadata about a specific report task. After creating a report task, use this
+   * method to check its processing state or inspect its report definition.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   GetReportTaskRequest request =
+   *       GetReportTaskRequest.newBuilder()
+   *           .setName(ReportTaskName.of("[PROPERTY]", "[REPORT_TASK]").toString())
+   *           .build();
+   *   ApiFuture<ReportTask> future =
+   *       alphaAnalyticsDataClient.getReportTaskCallable().futureCall(request);
+   *   // Do something.
+   *   ReportTask response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetReportTaskRequest, ReportTask> getReportTaskCallable() {
+    return stub.getReportTaskCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all report tasks for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (ReportTask element : alphaAnalyticsDataClient.listReportTasks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. All report tasks for this property will be listed in the response.
+   *     Format: `properties/{property}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListReportTasksPagedResponse listReportTasks(PropertyName parent) {
+    ListReportTasksRequest request =
+        ListReportTasksRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listReportTasks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all report tasks for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (ReportTask element : alphaAnalyticsDataClient.listReportTasks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. All report tasks for this property will be listed in the response.
+   *     Format: `properties/{property}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListReportTasksPagedResponse listReportTasks(String parent) {
+    ListReportTasksRequest request = ListReportTasksRequest.newBuilder().setParent(parent).build();
+    return listReportTasks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all report tasks for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   ListReportTasksRequest request =
+   *       ListReportTasksRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ReportTask element : alphaAnalyticsDataClient.listReportTasks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListReportTasksPagedResponse listReportTasks(ListReportTasksRequest request) {
+    return listReportTasksPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all report tasks for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   ListReportTasksRequest request =
+   *       ListReportTasksRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ReportTask> future =
+   *       alphaAnalyticsDataClient.listReportTasksPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ReportTask element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListReportTasksRequest, ListReportTasksPagedResponse>
+      listReportTasksPagedCallable() {
+    return stub.listReportTasksPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all report tasks for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   ListReportTasksRequest request =
+   *       ListReportTasksRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListReportTasksResponse response =
+   *         alphaAnalyticsDataClient.listReportTasksCallable().call(request);
+   *     for (ReportTask element : response.getReportTasksList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListReportTasksRequest, ListReportTasksResponse>
+      listReportTasksCallable() {
+    return stub.listReportTasksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a customized report of your Google Analytics event data. Reports contain statistics
+   * derived from data collected by the Google Analytics tracking code. The data returned from the
+   * API is as a table with columns for the requested dimensions and metrics. Metrics are individual
+   * measurements of user activity on your property, such as active users or event count. Dimensions
+   * break down metrics across some common criteria, such as country or event name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   RunReportRequest request =
+   *       RunReportRequest.newBuilder()
+   *           .setProperty("property-993141291")
+   *           .addAllDimensions(new ArrayList<Dimension>())
+   *           .addAllMetrics(new ArrayList<Metric>())
+   *           .addAllDateRanges(new ArrayList<DateRange>())
+   *           .setDimensionFilter(FilterExpression.newBuilder().build())
+   *           .setMetricFilter(FilterExpression.newBuilder().build())
+   *           .setOffset(-1019779949)
+   *           .setLimit(102976443)
+   *           .addAllMetricAggregations(new ArrayList<MetricAggregation>())
+   *           .addAllOrderBys(new ArrayList<OrderBy>())
+   *           .setCurrencyCode("currencyCode1004773790")
+   *           .setCohortSpec(CohortSpec.newBuilder().build())
+   *           .setKeepEmptyRows(true)
+   *           .setReturnPropertyQuota(true)
+   *           .addAllComparisons(new ArrayList<Comparison>())
+   *           .setConversionSpec(ConversionSpec.newBuilder().build())
+   *           .build();
+   *   RunReportResponse response = alphaAnalyticsDataClient.runReport(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RunReportResponse runReport(RunReportRequest request) {
+    return runReportCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a customized report of your Google Analytics event data. Reports contain statistics
+   * derived from data collected by the Google Analytics tracking code. The data returned from the
+   * API is as a table with columns for the requested dimensions and metrics. Metrics are individual
+   * measurements of user activity on your property, such as active users or event count. Dimensions
+   * break down metrics across some common criteria, such as country or event name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   RunReportRequest request =
+   *       RunReportRequest.newBuilder()
+   *           .setProperty("property-993141291")
+   *           .addAllDimensions(new ArrayList<Dimension>())
+   *           .addAllMetrics(new ArrayList<Metric>())
+   *           .addAllDateRanges(new ArrayList<DateRange>())
+   *           .setDimensionFilter(FilterExpression.newBuilder().build())
+   *           .setMetricFilter(FilterExpression.newBuilder().build())
+   *           .setOffset(-1019779949)
+   *           .setLimit(102976443)
+   *           .addAllMetricAggregations(new ArrayList<MetricAggregation>())
+   *           .addAllOrderBys(new ArrayList<OrderBy>())
+   *           .setCurrencyCode("currencyCode1004773790")
+   *           .setCohortSpec(CohortSpec.newBuilder().build())
+   *           .setKeepEmptyRows(true)
+   *           .setReturnPropertyQuota(true)
+   *           .addAllComparisons(new ArrayList<Comparison>())
+   *           .setConversionSpec(ConversionSpec.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RunReportResponse> future =
+   *       alphaAnalyticsDataClient.runReportCallable().futureCall(request);
+   *   // Do something.
+   *   RunReportResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable() {
+    return stub.runReportCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
+   * dimensions and metrics. In this method, a Google Analytics property identifier is specified in
+   * the request, and the metadata response includes Custom dimensions and metrics as well as
+   * Universal metadata.
+   *
+   * <p>For example if a custom metric with parameter name `levels_unlocked` is registered to a
+   * property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata
+   * are dimensions and metrics applicable to any property such as `country` and `totalUsers`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   MetadataName name = MetadataName.of("[PROPERTY]");
+   *   Metadata response = alphaAnalyticsDataClient.getMetadata(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the metadata to retrieve. This name field is
+   *     specified in the URL path and not URL parameters. Property is a numeric Google Analytics
+   *     property identifier. To learn more, see [where to find your Property
+   *     ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+   *     <p>Example: properties/1234/metadata
+   *     <p>Set the Property ID to 0 for dimensions and metrics common to all properties. In this
+   *     special mode, this method will not return custom dimensions and metrics.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Metadata getMetadata(MetadataName name) {
+    GetMetadataRequest request =
+        GetMetadataRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
+   * dimensions and metrics. In this method, a Google Analytics property identifier is specified in
+   * the request, and the metadata response includes Custom dimensions and metrics as well as
+   * Universal metadata.
+   *
+   * <p>For example if a custom metric with parameter name `levels_unlocked` is registered to a
+   * property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata
+   * are dimensions and metrics applicable to any property such as `country` and `totalUsers`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   String name = MetadataName.of("[PROPERTY]").toString();
+   *   Metadata response = alphaAnalyticsDataClient.getMetadata(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the metadata to retrieve. This name field is
+   *     specified in the URL path and not URL parameters. Property is a numeric Google Analytics
+   *     property identifier. To learn more, see [where to find your Property
+   *     ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+   *     <p>Example: properties/1234/metadata
+   *     <p>Set the Property ID to 0 for dimensions and metrics common to all properties. In this
+   *     special mode, this method will not return custom dimensions and metrics.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Metadata getMetadata(String name) {
+    GetMetadataRequest request = GetMetadataRequest.newBuilder().setName(name).build();
+    return getMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
+   * dimensions and metrics. In this method, a Google Analytics property identifier is specified in
+   * the request, and the metadata response includes Custom dimensions and metrics as well as
+   * Universal metadata.
+   *
+   * <p>For example if a custom metric with parameter name `levels_unlocked` is registered to a
+   * property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata
+   * are dimensions and metrics applicable to any property such as `country` and `totalUsers`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   GetMetadataRequest request =
+   *       GetMetadataRequest.newBuilder().setName(MetadataName.of("[PROPERTY]").toString()).build();
+   *   Metadata response = alphaAnalyticsDataClient.getMetadata(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Metadata getMetadata(GetMetadataRequest request) {
+    return getMetadataCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
+   * dimensions and metrics. In this method, a Google Analytics property identifier is specified in
+   * the request, and the metadata response includes Custom dimensions and metrics as well as
+   * Universal metadata.
+   *
+   * <p>For example if a custom metric with parameter name `levels_unlocked` is registered to a
+   * property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata
+   * are dimensions and metrics applicable to any property such as `country` and `totalUsers`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   GetMetadataRequest request =
+   *       GetMetadataRequest.newBuilder().setName(MetadataName.of("[PROPERTY]").toString()).build();
+   *   ApiFuture<Metadata> future =
+   *       alphaAnalyticsDataClient.getMetadataCallable().futureCall(request);
+   *   // Do something.
+   *   Metadata response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable() {
+    return stub.getMetadataCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -2204,6 +3064,83 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
     protected ListRecurringAudienceListsFixedSizeCollection createCollection(
         List<ListRecurringAudienceListsPage> pages, int collectionSize) {
       return new ListRecurringAudienceListsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListReportTasksPagedResponse
+      extends AbstractPagedListResponse<
+          ListReportTasksRequest,
+          ListReportTasksResponse,
+          ReportTask,
+          ListReportTasksPage,
+          ListReportTasksFixedSizeCollection> {
+
+    public static ApiFuture<ListReportTasksPagedResponse> createAsync(
+        PageContext<ListReportTasksRequest, ListReportTasksResponse, ReportTask> context,
+        ApiFuture<ListReportTasksResponse> futureResponse) {
+      ApiFuture<ListReportTasksPage> futurePage =
+          ListReportTasksPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListReportTasksPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListReportTasksPagedResponse(ListReportTasksPage page) {
+      super(page, ListReportTasksFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListReportTasksPage
+      extends AbstractPage<
+          ListReportTasksRequest, ListReportTasksResponse, ReportTask, ListReportTasksPage> {
+
+    private ListReportTasksPage(
+        PageContext<ListReportTasksRequest, ListReportTasksResponse, ReportTask> context,
+        ListReportTasksResponse response) {
+      super(context, response);
+    }
+
+    private static ListReportTasksPage createEmptyPage() {
+      return new ListReportTasksPage(null, null);
+    }
+
+    @Override
+    protected ListReportTasksPage createPage(
+        PageContext<ListReportTasksRequest, ListReportTasksResponse, ReportTask> context,
+        ListReportTasksResponse response) {
+      return new ListReportTasksPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListReportTasksPage> createPageAsync(
+        PageContext<ListReportTasksRequest, ListReportTasksResponse, ReportTask> context,
+        ApiFuture<ListReportTasksResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListReportTasksFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListReportTasksRequest,
+          ListReportTasksResponse,
+          ReportTask,
+          ListReportTasksPage,
+          ListReportTasksFixedSizeCollection> {
+
+    private ListReportTasksFixedSizeCollection(
+        List<ListReportTasksPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListReportTasksFixedSizeCollection createEmptyCollection() {
+      return new ListReportTasksFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListReportTasksFixedSizeCollection createCollection(
+        List<ListReportTasksPage> pages, int collectionSize) {
+      return new ListReportTasksFixedSizeCollection(pages, collectionSize);
     }
   }
 }

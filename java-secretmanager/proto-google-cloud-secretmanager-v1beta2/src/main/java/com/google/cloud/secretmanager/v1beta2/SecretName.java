@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -253,7 +253,8 @@ public class SecretName implements ResourceName {
     private Builder(SecretName secretName) {
       Preconditions.checkArgument(
           Objects.equals(secretName.pathTemplate, PROJECT_SECRET),
-          "toBuilder is only supported when SecretName has the pattern of projects/{project}/secrets/{secret}");
+          "toBuilder is only supported when SecretName has the pattern of"
+              + " projects/{project}/secrets/{secret}");
       this.project = secretName.project;
       this.secret = secretName.secret;
     }

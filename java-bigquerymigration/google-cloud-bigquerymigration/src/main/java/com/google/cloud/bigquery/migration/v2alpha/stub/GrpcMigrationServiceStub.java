@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMigrationWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MigrationWorkflow.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMigrationWorkflowRequest, MigrationWorkflow>
@@ -75,6 +76,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMigrationWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MigrationWorkflow.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -89,6 +91,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                   ProtoUtils.marshaller(ListMigrationWorkflowsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMigrationWorkflowsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMigrationWorkflowRequest, Empty>
@@ -100,6 +103,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMigrationWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StartMigrationWorkflowRequest, Empty>
@@ -111,6 +115,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StartMigrationWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMigrationSubtaskRequest, MigrationSubtask>
@@ -122,6 +127,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMigrationSubtaskRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MigrationSubtask.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMigrationSubtasksRequest, ListMigrationSubtasksResponse>
@@ -134,6 +140,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                   ProtoUtils.marshaller(ListMigrationSubtasksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMigrationSubtasksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateMigrationWorkflowRequest, MigrationWorkflow>
@@ -208,6 +215,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMigrationWorkflowRequest, MigrationWorkflow>
         getMigrationWorkflowTransportSettings =
@@ -219,6 +227,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse>
         listMigrationWorkflowsTransportSettings =
@@ -231,6 +240,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteMigrationWorkflowRequest, Empty>
         deleteMigrationWorkflowTransportSettings =
@@ -242,6 +252,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<StartMigrationWorkflowRequest, Empty> startMigrationWorkflowTransportSettings =
         GrpcCallSettings.<StartMigrationWorkflowRequest, Empty>newBuilder()
@@ -252,6 +263,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetMigrationSubtaskRequest, MigrationSubtask>
         getMigrationSubtaskTransportSettings =
@@ -263,6 +275,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListMigrationSubtasksRequest, ListMigrationSubtasksResponse>
         listMigrationSubtasksTransportSettings =
@@ -275,6 +288,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createMigrationWorkflowCallable =

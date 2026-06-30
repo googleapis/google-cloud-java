@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for LLM related utility functions.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/llm_utility_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LlmUtilityServiceGrpc {
 
@@ -141,6 +138,19 @@ public final class LlmUtilityServiceGrpc {
           }
         };
     return LlmUtilityServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static LlmUtilityServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<LlmUtilityServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LlmUtilityServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public LlmUtilityServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LlmUtilityServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return LlmUtilityServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -283,6 +293,54 @@ public final class LlmUtilityServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LlmUtilityService.
+   *
+   * <pre>
+   * Service for LLM related utility functions.
+   * </pre>
+   */
+  public static final class LlmUtilityServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<LlmUtilityServiceBlockingV2Stub> {
+    private LlmUtilityServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected LlmUtilityServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new LlmUtilityServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform a token counting.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.CountTokensResponse countTokens(
+        com.google.cloud.aiplatform.v1.CountTokensRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCountTokensMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Return a list of tokens based on the input text.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ComputeTokensResponse computeTokens(
+        com.google.cloud.aiplatform.v1.ComputeTokensRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getComputeTokensMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service LlmUtilityService.
    *
    * <pre>
    * Service for LLM related utility functions.

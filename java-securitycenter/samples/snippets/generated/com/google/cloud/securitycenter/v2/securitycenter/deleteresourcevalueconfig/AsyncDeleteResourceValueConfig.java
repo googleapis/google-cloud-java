@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,8 @@ public class AsyncDeleteResourceValueConfig {
       DeleteResourceValueConfigRequest request =
           DeleteResourceValueConfigRequest.newBuilder()
               .setName(
-                  ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+                  ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+                          "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
                       .toString())
               .build();
       ApiFuture<Empty> future =

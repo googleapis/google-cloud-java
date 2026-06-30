@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import static com.google.cloud.gkemulticloud.v1.AzureClustersClient.ListAzureNod
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -39,6 +40,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -87,9 +89,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -106,7 +108,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getAzureClient to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getAzureClient:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -123,12 +127,53 @@ import org.threeten.bp.Duration;
  *             .getAzureClientSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * AzureClustersStubSettings azureClustersSettings = azureClustersSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createAzureClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * AzureClustersStubSettings.Builder azureClustersSettingsBuilder =
+ *     AzureClustersStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * azureClustersSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -219,9 +264,7 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
 
             @Override
             public Iterable<AzureClient> extractResources(ListAzureClientsResponse payload) {
-              return payload.getAzureClientsList() == null
-                  ? ImmutableList.<AzureClient>of()
-                  : payload.getAzureClientsList();
+              return payload.getAzureClientsList();
             }
           };
 
@@ -259,9 +302,7 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
 
             @Override
             public Iterable<AzureCluster> extractResources(ListAzureClustersResponse payload) {
-              return payload.getAzureClustersList() == null
-                  ? ImmutableList.<AzureCluster>of()
-                  : payload.getAzureClustersList();
+              return payload.getAzureClustersList();
             }
           };
 
@@ -299,9 +340,7 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
 
             @Override
             public Iterable<AzureNodePool> extractResources(ListAzureNodePoolsResponse payload) {
-              return payload.getAzureNodePoolsList() == null
-                  ? ImmutableList.<AzureNodePool>of()
-                  : payload.getAzureNodePoolsList();
+              return payload.getAzureNodePoolsList();
             }
           };
 
@@ -366,7 +405,12 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
             }
           };
 
-  /** Returns the object with the settings used for calls to createAzureClient. */
+  /**
+   * Returns the object with the settings used for calls to createAzureClient.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateAzureClientRequest, Operation> createAzureClientSettings() {
     return createAzureClientSettings;
   }
@@ -377,19 +421,34 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return createAzureClientOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAzureClient. */
+  /**
+   * Returns the object with the settings used for calls to getAzureClient.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAzureClientRequest, AzureClient> getAzureClientSettings() {
     return getAzureClientSettings;
   }
 
-  /** Returns the object with the settings used for calls to listAzureClients. */
+  /**
+   * Returns the object with the settings used for calls to listAzureClients.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListAzureClientsRequest, ListAzureClientsResponse, ListAzureClientsPagedResponse>
       listAzureClientsSettings() {
     return listAzureClientsSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteAzureClient. */
+  /**
+   * Returns the object with the settings used for calls to deleteAzureClient.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteAzureClientRequest, Operation> deleteAzureClientSettings() {
     return deleteAzureClientSettings;
   }
@@ -400,7 +459,12 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return deleteAzureClientOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to createAzureCluster. */
+  /**
+   * Returns the object with the settings used for calls to createAzureCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateAzureClusterRequest, Operation> createAzureClusterSettings() {
     return createAzureClusterSettings;
   }
@@ -411,7 +475,12 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return createAzureClusterOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateAzureCluster. */
+  /**
+   * Returns the object with the settings used for calls to updateAzureCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateAzureClusterRequest, Operation> updateAzureClusterSettings() {
     return updateAzureClusterSettings;
   }
@@ -422,19 +491,34 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return updateAzureClusterOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAzureCluster. */
+  /**
+   * Returns the object with the settings used for calls to getAzureCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAzureClusterRequest, AzureCluster> getAzureClusterSettings() {
     return getAzureClusterSettings;
   }
 
-  /** Returns the object with the settings used for calls to listAzureClusters. */
+  /**
+   * Returns the object with the settings used for calls to listAzureClusters.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListAzureClustersRequest, ListAzureClustersResponse, ListAzureClustersPagedResponse>
       listAzureClustersSettings() {
     return listAzureClustersSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteAzureCluster. */
+  /**
+   * Returns the object with the settings used for calls to deleteAzureCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteAzureClusterRequest, Operation> deleteAzureClusterSettings() {
     return deleteAzureClusterSettings;
   }
@@ -445,20 +529,35 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return deleteAzureClusterOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to generateAzureClusterAgentToken. */
+  /**
+   * Returns the object with the settings used for calls to generateAzureClusterAgentToken.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<
           GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
       generateAzureClusterAgentTokenSettings() {
     return generateAzureClusterAgentTokenSettings;
   }
 
-  /** Returns the object with the settings used for calls to generateAzureAccessToken. */
+  /**
+   * Returns the object with the settings used for calls to generateAzureAccessToken.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
       generateAzureAccessTokenSettings() {
     return generateAzureAccessTokenSettings;
   }
 
-  /** Returns the object with the settings used for calls to createAzureNodePool. */
+  /**
+   * Returns the object with the settings used for calls to createAzureNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateAzureNodePoolRequest, Operation> createAzureNodePoolSettings() {
     return createAzureNodePoolSettings;
   }
@@ -469,7 +568,12 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return createAzureNodePoolOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateAzureNodePool. */
+  /**
+   * Returns the object with the settings used for calls to updateAzureNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateAzureNodePoolRequest, Operation> updateAzureNodePoolSettings() {
     return updateAzureNodePoolSettings;
   }
@@ -480,19 +584,34 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return updateAzureNodePoolOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAzureNodePool. */
+  /**
+   * Returns the object with the settings used for calls to getAzureNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAzureNodePoolRequest, AzureNodePool> getAzureNodePoolSettings() {
     return getAzureNodePoolSettings;
   }
 
-  /** Returns the object with the settings used for calls to listAzureNodePools. */
+  /**
+   * Returns the object with the settings used for calls to listAzureNodePools.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListAzureNodePoolsRequest, ListAzureNodePoolsResponse, ListAzureNodePoolsPagedResponse>
       listAzureNodePoolsSettings() {
     return listAzureNodePoolsSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteAzureNodePool. */
+  /**
+   * Returns the object with the settings used for calls to deleteAzureNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteAzureNodePoolRequest, Operation> deleteAzureNodePoolSettings() {
     return deleteAzureNodePoolSettings;
   }
@@ -503,19 +622,34 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return deleteAzureNodePoolOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAzureOpenIdConfig. */
+  /**
+   * Returns the object with the settings used for calls to getAzureOpenIdConfig.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
       getAzureOpenIdConfigSettings() {
     return getAzureOpenIdConfigSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAzureJsonWebKeys. */
+  /**
+   * Returns the object with the settings used for calls to getAzureJsonWebKeys.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
       getAzureJsonWebKeysSettings() {
     return getAzureJsonWebKeysSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAzureServerConfig. */
+  /**
+   * Returns the object with the settings used for calls to getAzureServerConfig.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAzureServerConfigRequest, AzureServerConfig>
       getAzureServerConfigSettings() {
     return getAzureServerConfigSettings;
@@ -537,15 +671,6 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -558,6 +683,7 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "gkemulticloud.googleapis.com:443";
   }
@@ -678,6 +804,15 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     getAzureServerConfigSettings = settingsBuilder.getAzureServerConfigSettings().build();
   }
 
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-gke-multi-cloud")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
+  }
+
   /** Builder for AzureClustersStubSettings. */
   public static class Builder extends StubSettings.Builder<AzureClustersStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
@@ -767,21 +902,21 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -1043,13 +1178,13 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1067,13 +1202,13 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1091,13 +1226,13 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1115,13 +1250,13 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1139,13 +1274,13 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1163,13 +1298,13 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1187,13 +1322,13 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1211,13 +1346,13 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1238,7 +1373,12 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to createAzureClient. */
+    /**
+     * Returns the builder for the settings used for calls to createAzureClient.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateAzureClientRequest, Operation>
         createAzureClientSettings() {
       return createAzureClientSettings;
@@ -1250,19 +1390,34 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return createAzureClientOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAzureClient. */
+    /**
+     * Returns the builder for the settings used for calls to getAzureClient.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAzureClientRequest, AzureClient> getAzureClientSettings() {
       return getAzureClientSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listAzureClients. */
+    /**
+     * Returns the builder for the settings used for calls to listAzureClients.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListAzureClientsRequest, ListAzureClientsResponse, ListAzureClientsPagedResponse>
         listAzureClientsSettings() {
       return listAzureClientsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteAzureClient. */
+    /**
+     * Returns the builder for the settings used for calls to deleteAzureClient.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteAzureClientRequest, Operation>
         deleteAzureClientSettings() {
       return deleteAzureClientSettings;
@@ -1274,7 +1429,12 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return deleteAzureClientOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createAzureCluster. */
+    /**
+     * Returns the builder for the settings used for calls to createAzureCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateAzureClusterRequest, Operation>
         createAzureClusterSettings() {
       return createAzureClusterSettings;
@@ -1286,7 +1446,12 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return createAzureClusterOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateAzureCluster. */
+    /**
+     * Returns the builder for the settings used for calls to updateAzureCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateAzureClusterRequest, Operation>
         updateAzureClusterSettings() {
       return updateAzureClusterSettings;
@@ -1298,20 +1463,35 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return updateAzureClusterOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAzureCluster. */
+    /**
+     * Returns the builder for the settings used for calls to getAzureCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAzureClusterRequest, AzureCluster>
         getAzureClusterSettings() {
       return getAzureClusterSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listAzureClusters. */
+    /**
+     * Returns the builder for the settings used for calls to listAzureClusters.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListAzureClustersRequest, ListAzureClustersResponse, ListAzureClustersPagedResponse>
         listAzureClustersSettings() {
       return listAzureClustersSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteAzureCluster. */
+    /**
+     * Returns the builder for the settings used for calls to deleteAzureCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteAzureClusterRequest, Operation>
         deleteAzureClusterSettings() {
       return deleteAzureClusterSettings;
@@ -1323,21 +1503,36 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return deleteAzureClusterOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to generateAzureClusterAgentToken. */
+    /**
+     * Returns the builder for the settings used for calls to generateAzureClusterAgentToken.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<
             GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
         generateAzureClusterAgentTokenSettings() {
       return generateAzureClusterAgentTokenSettings;
     }
 
-    /** Returns the builder for the settings used for calls to generateAzureAccessToken. */
+    /**
+     * Returns the builder for the settings used for calls to generateAzureAccessToken.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<
             GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
         generateAzureAccessTokenSettings() {
       return generateAzureAccessTokenSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createAzureNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to createAzureNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateAzureNodePoolRequest, Operation>
         createAzureNodePoolSettings() {
       return createAzureNodePoolSettings;
@@ -1350,7 +1545,12 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return createAzureNodePoolOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateAzureNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to updateAzureNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateAzureNodePoolRequest, Operation>
         updateAzureNodePoolSettings() {
       return updateAzureNodePoolSettings;
@@ -1363,20 +1563,35 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return updateAzureNodePoolOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAzureNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to getAzureNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAzureNodePoolRequest, AzureNodePool>
         getAzureNodePoolSettings() {
       return getAzureNodePoolSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listAzureNodePools. */
+    /**
+     * Returns the builder for the settings used for calls to listAzureNodePools.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListAzureNodePoolsRequest, ListAzureNodePoolsResponse, ListAzureNodePoolsPagedResponse>
         listAzureNodePoolsSettings() {
       return listAzureNodePoolsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteAzureNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to deleteAzureNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteAzureNodePoolRequest, Operation>
         deleteAzureNodePoolSettings() {
       return deleteAzureNodePoolSettings;
@@ -1388,31 +1603,37 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return deleteAzureNodePoolOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAzureOpenIdConfig. */
+    /**
+     * Returns the builder for the settings used for calls to getAzureOpenIdConfig.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
         getAzureOpenIdConfigSettings() {
       return getAzureOpenIdConfigSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAzureJsonWebKeys. */
+    /**
+     * Returns the builder for the settings used for calls to getAzureJsonWebKeys.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
         getAzureJsonWebKeysSettings() {
       return getAzureJsonWebKeysSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAzureServerConfig. */
+    /**
+     * Returns the builder for the settings used for calls to getAzureServerConfig.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAzureServerConfigRequest, AzureServerConfig>
         getAzureServerConfigSettings() {
       return getAzureServerConfigSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

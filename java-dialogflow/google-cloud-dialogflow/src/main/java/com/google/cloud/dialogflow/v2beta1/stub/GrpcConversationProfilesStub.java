@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,6 +73,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
                   ProtoUtils.marshaller(ListConversationProfilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConversationProfilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConversationProfileRequest, ConversationProfile>
@@ -85,6 +86,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
                   ProtoUtils.marshaller(GetConversationProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ConversationProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateConversationProfileRequest, ConversationProfile>
@@ -97,6 +99,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
                   ProtoUtils.marshaller(CreateConversationProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ConversationProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConversationProfileRequest, ConversationProfile>
@@ -109,6 +112,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
                   ProtoUtils.marshaller(UpdateConversationProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ConversationProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConversationProfileRequest, Empty>
@@ -120,6 +124,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConversationProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetSuggestionFeatureConfigRequest, Operation>
@@ -131,6 +136,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetSuggestionFeatureConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ClearSuggestionFeatureConfigRequest, Operation>
@@ -142,6 +148,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ClearSuggestionFeatureConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -153,6 +160,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -161,6 +169,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListConversationProfilesRequest, ListConversationProfilesResponse>
@@ -250,6 +259,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetConversationProfileRequest, ConversationProfile>
         getConversationProfileTransportSettings =
@@ -261,6 +271,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateConversationProfileRequest, ConversationProfile>
         createConversationProfileTransportSettings =
@@ -272,6 +283,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateConversationProfileRequest, ConversationProfile>
         updateConversationProfileTransportSettings =
@@ -296,6 +308,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SetSuggestionFeatureConfigRequest, Operation>
         setSuggestionFeatureConfigTransportSettings =

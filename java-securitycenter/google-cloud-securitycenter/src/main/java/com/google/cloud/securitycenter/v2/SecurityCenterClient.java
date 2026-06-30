@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,7 +59,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
- *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+ *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
  *   List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
  *   BatchCreateResourceValueConfigsResponse response =
  *       securityCenterClient.batchCreateResourceValueConfigs(parent, requests);
@@ -82,6 +82,7 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
+ *           <li><p> batchCreateResourceValueConfigs(OrganizationLocationName parent, List&lt;CreateResourceValueConfigRequest&gt; requests)
  *           <li><p> batchCreateResourceValueConfigs(OrganizationName parent, List&lt;CreateResourceValueConfigRequest&gt; requests)
  *           <li><p> batchCreateResourceValueConfigs(String parent, List&lt;CreateResourceValueConfigRequest&gt; requests)
  *           <li><p> batchCreateResourceValueConfigs(BatchCreateResourceValueConfigsRequest request)
@@ -476,6 +477,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> listAttackPaths(OrganizationValuedResourceName parent)
  *           <li><p> listAttackPaths(ValuedResourceName parent)
  *           <li><p> listAttackPaths(String parent)
  *      </ul>
@@ -587,6 +589,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> listResourceValueConfigs(OrganizationLocationName parent)
  *           <li><p> listResourceValueConfigs(OrganizationName parent)
  *           <li><p> listResourceValueConfigs(String parent)
  *      </ul>
@@ -1003,6 +1006,42 @@ public class SecurityCenterClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
+   *   BatchCreateResourceValueConfigsResponse response =
+   *       securityCenterClient.batchCreateResourceValueConfigs(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new ResourceValueConfig's parent. The parent field
+   *     in the CreateResourceValueConfigRequest messages must either be empty or match this field.
+   * @param requests Required. The resource value configs to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateResourceValueConfigsResponse batchCreateResourceValueConfigs(
+      OrganizationLocationName parent, List<CreateResourceValueConfigRequest> requests) {
+    BatchCreateResourceValueConfigsRequest request =
+        BatchCreateResourceValueConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchCreateResourceValueConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ResourceValueConfig for an organization. Maps user's tags to difference resource
+   * values for use by the attack path simulation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
    *   List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
    *   BatchCreateResourceValueConfigsResponse response =
@@ -1314,9 +1353,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the parent resource of the new BigQuery export. Its format
-   *     is "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     is `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @param bigQueryExport Required. The BigQuery export being created.
    * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
    *     scope. It must consist of only lowercase letters, numbers, and hyphens, must start with a
@@ -1356,9 +1395,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the parent resource of the new BigQuery export. Its format
-   *     is "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     is `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @param bigQueryExport Required. The BigQuery export being created.
    * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
    *     scope. It must consist of only lowercase letters, numbers, and hyphens, must start with a
@@ -1398,9 +1437,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the parent resource of the new BigQuery export. Its format
-   *     is "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     is `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @param bigQueryExport Required. The BigQuery export being created.
    * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
    *     scope. It must consist of only lowercase letters, numbers, and hyphens, must start with a
@@ -1440,9 +1479,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the parent resource of the new BigQuery export. Its format
-   *     is "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     is `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @param bigQueryExport Required. The BigQuery export being created.
    * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
    *     scope. It must consist of only lowercase letters, numbers, and hyphens, must start with a
@@ -1687,9 +1726,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new mute configs's parent. Its format is
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @param muteConfig Required. The mute config being created.
    * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
    *     It must consist of only lowercase letters, numbers, and hyphens, must start with a letter,
@@ -1728,9 +1767,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new mute configs's parent. Its format is
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @param muteConfig Required. The mute config being created.
    * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
    *     It must consist of only lowercase letters, numbers, and hyphens, must start with a letter,
@@ -1769,9 +1808,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new mute configs's parent. Its format is
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @param muteConfig Required. The mute config being created.
    * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
    *     It must consist of only lowercase letters, numbers, and hyphens, must start with a letter,
@@ -1810,9 +1849,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new mute configs's parent. Its format is
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @param muteConfig Required. The mute config being created.
    * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
    *     It must consist of only lowercase letters, numbers, and hyphens, must start with a letter,
@@ -1851,9 +1890,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new mute configs's parent. Its format is
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @param muteConfig Required. The mute config being created.
    * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
    *     It must consist of only lowercase letters, numbers, and hyphens, must start with a letter,
@@ -1892,9 +1931,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new mute configs's parent. Its format is
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @param muteConfig Required. The mute config being created.
    * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
    *     It must consist of only lowercase letters, numbers, and hyphens, must start with a letter,
@@ -1933,9 +1972,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new mute configs's parent. Its format is
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @param muteConfig Required. The mute config being created.
    * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
    *     It must consist of only lowercase letters, numbers, and hyphens, must start with a letter,
@@ -2035,9 +2074,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new notification config's parent. Its format is
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @param notificationConfig Required. The notification config being created. The name and the
    *     service account will be ignored as they are both output only fields on this resource.
    * @param configId Required. Unique identifier provided by the client within the parent scope. It
@@ -2078,9 +2117,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new notification config's parent. Its format is
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @param notificationConfig Required. The notification config being created. The name and the
    *     service account will be ignored as they are both output only fields on this resource.
    * @param configId Required. Unique identifier provided by the client within the parent scope. It
@@ -2121,9 +2160,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new notification config's parent. Its format is
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @param notificationConfig Required. The notification config being created. The name and the
    *     service account will be ignored as they are both output only fields on this resource.
    * @param configId Required. Unique identifier provided by the client within the parent scope. It
@@ -2164,9 +2203,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new notification config's parent. Its format is
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @param notificationConfig Required. The notification config being created. The name and the
    *     service account will be ignored as they are both output only fields on this resource.
    * @param configId Required. Unique identifier provided by the client within the parent scope. It
@@ -2267,7 +2306,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new source's parent. Its format should be
-   *     "organizations/[organization_id]".
+   *     `organizations/[organization_id]`.
    * @param source Required. The Source being created, only the display_name and description will be
    *     used. All other fields will be ignored.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2301,7 +2340,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new source's parent. Its format should be
-   *     "organizations/[organization_id]".
+   *     `organizations/[organization_id]`.
    * @param source Required. The Source being created, only the display_name and description will be
    *     used. All other fields will be ignored.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2776,7 +2815,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ResourceValueConfigName name =
-   *       ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+   *       ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+   *           "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
    *   securityCenterClient.deleteResourceValueConfig(name);
    * }
    * }</pre>
@@ -2806,7 +2846,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   String name =
-   *       ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString();
+   *       ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+   *               "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+   *           .toString();
    *   securityCenterClient.deleteResourceValueConfig(name);
    * }
    * }</pre>
@@ -2836,7 +2878,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *   DeleteResourceValueConfigRequest request =
    *       DeleteResourceValueConfigRequest.newBuilder()
    *           .setName(
-   *               ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+   *               ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+   *                       "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
    *                   .toString())
    *           .build();
    *   securityCenterClient.deleteResourceValueConfig(request);
@@ -2866,7 +2909,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *   DeleteResourceValueConfigRequest request =
    *       DeleteResourceValueConfigRequest.newBuilder()
    *           .setName(
-   *               ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+   *               ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+   *                       "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
    *                   .toString())
    *           .build();
    *   ApiFuture<Empty> future =
@@ -3024,14 +3068,15 @@ public class SecurityCenterClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SimulationName name = SimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+   *   SimulationName name =
+   *       SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]");
    *   Simulation response = securityCenterClient.getSimulation(name);
    * }
    * }</pre>
    *
    * @param name Required. The organization name or simulation name of this simulation
-   *     <p>Valid format: "organizations/{organization}/simulations/latest"
-   *     "organizations/{organization}/simulations/{simulation}"
+   *     <p>Valid format: `organizations/{organization}/simulations/latest`
+   *     `organizations/{organization}/simulations/{simulation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Simulation getSimulation(SimulationName name) {
@@ -3053,14 +3098,15 @@ public class SecurityCenterClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String name = SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString();
+   *   String name =
+   *       SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]").toString();
    *   Simulation response = securityCenterClient.getSimulation(name);
    * }
    * }</pre>
    *
    * @param name Required. The organization name or simulation name of this simulation
-   *     <p>Valid format: "organizations/{organization}/simulations/latest"
-   *     "organizations/{organization}/simulations/{simulation}"
+   *     <p>Valid format: `organizations/{organization}/simulations/latest`
+   *     `organizations/{organization}/simulations/{simulation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Simulation getSimulation(String name) {
@@ -3083,7 +3129,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GetSimulationRequest request =
    *       GetSimulationRequest.newBuilder()
-   *           .setName(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+   *           .setName(
+   *               SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]")
+   *                   .toString())
    *           .build();
    *   Simulation response = securityCenterClient.getSimulation(request);
    * }
@@ -3111,7 +3159,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GetSimulationRequest request =
    *       GetSimulationRequest.newBuilder()
-   *           .setName(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+   *           .setName(
+   *               SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<Simulation> future =
    *       securityCenterClient.getSimulationCallable().futureCall(request);
@@ -3138,14 +3188,15 @@ public class SecurityCenterClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ValuedResourceName name =
-   *       ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+   *       ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+   *           "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
    *   ValuedResource response = securityCenterClient.getValuedResource(name);
    * }
    * }</pre>
    *
    * @param name Required. The name of this valued resource
    *     <p>Valid format:
-   *     "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+   *     `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ValuedResource getValuedResource(ValuedResourceName name) {
@@ -3170,14 +3221,16 @@ public class SecurityCenterClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   String name =
-   *       ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]").toString();
+   *       ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+   *               "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+   *           .toString();
    *   ValuedResource response = securityCenterClient.getValuedResource(name);
    * }
    * }</pre>
    *
    * @param name Required. The name of this valued resource
    *     <p>Valid format:
-   *     "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+   *     `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ValuedResource getValuedResource(String name) {
@@ -3201,7 +3254,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *   GetValuedResourceRequest request =
    *       GetValuedResourceRequest.newBuilder()
    *           .setName(
-   *               ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+   *               ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+   *                       "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
    *                   .toString())
    *           .build();
    *   ValuedResource response = securityCenterClient.getValuedResource(request);
@@ -3231,7 +3285,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *   GetValuedResourceRequest request =
    *       GetValuedResourceRequest.newBuilder()
    *           .setName(
-   *               ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+   *               ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+   *                       "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
    *                   .toString())
    *           .build();
    *   ApiFuture<ValuedResource> future =
@@ -3638,7 +3693,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ResourceValueConfigName name =
-   *       ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+   *       ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+   *           "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
    *   ResourceValueConfig response = securityCenterClient.getResourceValueConfig(name);
    * }
    * }</pre>
@@ -3669,7 +3725,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   String name =
-   *       ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString();
+   *       ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+   *               "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+   *           .toString();
    *   ResourceValueConfig response = securityCenterClient.getResourceValueConfig(name);
    * }
    * }</pre>
@@ -3700,7 +3758,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *   GetResourceValueConfigRequest request =
    *       GetResourceValueConfigRequest.newBuilder()
    *           .setName(
-   *               ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+   *               ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+   *                       "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
    *                   .toString())
    *           .build();
    *   ResourceValueConfig response = securityCenterClient.getResourceValueConfig(request);
@@ -3730,7 +3789,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *   GetResourceValueConfigRequest request =
    *       GetResourceValueConfigRequest.newBuilder()
    *           .setName(
-   *               ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+   *               ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+   *                       "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
    *                   .toString())
    *           .build();
    *   ApiFuture<ResourceValueConfig> future =
@@ -3764,7 +3824,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Relative resource name of the source. Its format is
-   *     "organizations/[organization_id]/source/[source_id]".
+   *     `organizations/[organization_id]/source/[source_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Source getSource(SourceName name) {
@@ -3792,7 +3852,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Relative resource name of the source. Its format is
-   *     "organizations/[organization_id]/source/[source_id]".
+   *     `organizations/[organization_id]/source/[source_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Source getSource(String name) {
@@ -3905,15 +3965,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param groupBy Required. Expression that defines what assets fields to use for grouping. The
    *     string value should follow SQL syntax: comma separated list of fields. For example:
    *     "parent,resource_name".
-   *     <p>The following fields are supported:
-   *     <ul>
-   *       <li>resource_name
-   *       <li>category
-   *       <li>state
-   *       <li>parent
-   *       <li>severity
-   *     </ul>
-   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GroupFindingsPagedResponse groupFindings(SourceName parent, String groupBy) {
@@ -3975,15 +4026,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param groupBy Required. Expression that defines what assets fields to use for grouping. The
    *     string value should follow SQL syntax: comma separated list of fields. For example:
    *     "parent,resource_name".
-   *     <p>The following fields are supported:
-   *     <ul>
-   *       <li>resource_name
-   *       <li>category
-   *       <li>state
-   *       <li>parent
-   *       <li>severity
-   *     </ul>
-   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GroupFindingsPagedResponse groupFindings(String parent, String groupBy) {
@@ -4150,8 +4192,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ValuedResourceName parent =
-   *       ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+   *   OrganizationValuedResourceName parent =
+   *       OrganizationValuedResourceName.of(
+   *           "[ORGANIZATION]", "[LOCATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
    *   for (AttackPath element : securityCenterClient.listAttackPaths(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -4159,10 +4202,47 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Name of parent to list attack paths.
-   *     <p>Valid formats: "organizations/{organization}",
-   *     "organizations/{organization}/simulations/{simulation}"
-   *     "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}"
-   *     "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+   *     <p>Valid formats: `organizations/{organization}`,
+   *     `organizations/{organization}/simulations/{simulation}`
+   *     `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
+   *     `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAttackPathsPagedResponse listAttackPaths(OrganizationValuedResourceName parent) {
+    ListAttackPathsRequest request =
+        ListAttackPathsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAttackPaths(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the attack paths for a set of simulation results or valued resources and filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ValuedResourceName parent =
+   *       ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+   *           "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+   *   for (AttackPath element : securityCenterClient.listAttackPaths(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of parent to list attack paths.
+   *     <p>Valid formats: `organizations/{organization}`,
+   *     `organizations/{organization}/simulations/{simulation}`
+   *     `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
+   *     `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAttackPathsPagedResponse listAttackPaths(ValuedResourceName parent) {
@@ -4187,7 +4267,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   String parent =
-   *       ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]").toString();
+   *       ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+   *               "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+   *           .toString();
    *   for (AttackPath element : securityCenterClient.listAttackPaths(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -4195,10 +4277,10 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Name of parent to list attack paths.
-   *     <p>Valid formats: "organizations/{organization}",
-   *     "organizations/{organization}/simulations/{simulation}"
-   *     "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}"
-   *     "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+   *     <p>Valid formats: `organizations/{organization}`,
+   *     `organizations/{organization}/simulations/{simulation}`
+   *     `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
+   *     `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAttackPathsPagedResponse listAttackPaths(String parent) {
@@ -4222,7 +4304,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *   ListAttackPathsRequest request =
    *       ListAttackPathsRequest.newBuilder()
    *           .setParent(
-   *               ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+   *               ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+   *                       "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageToken("pageToken873572522")
@@ -4257,7 +4340,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *   ListAttackPathsRequest request =
    *       ListAttackPathsRequest.newBuilder()
    *           .setParent(
-   *               ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+   *               ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+   *                       "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageToken("pageToken873572522")
@@ -4293,7 +4377,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *   ListAttackPathsRequest request =
    *       ListAttackPathsRequest.newBuilder()
    *           .setParent(
-   *               ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+   *               ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+   *                       "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageToken("pageToken873572522")
@@ -4344,9 +4429,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns the collection of BigQuery exports. Its format
-   *     is "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     is `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBigQueryExportsPagedResponse listBigQueryExports(FolderLocationName parent) {
@@ -4381,9 +4466,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns the collection of BigQuery exports. Its format
-   *     is "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     is `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBigQueryExportsPagedResponse listBigQueryExports(LocationName parent) {
@@ -4418,9 +4503,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns the collection of BigQuery exports. Its format
-   *     is "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     is `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBigQueryExportsPagedResponse listBigQueryExports(
@@ -4456,9 +4541,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns the collection of BigQuery exports. Its format
-   *     is "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]", or
-   *     "projects/[project_id]/locations/[location_id]".
+   *     is `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`, or
+   *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBigQueryExportsPagedResponse listBigQueryExports(String parent) {
@@ -4845,10 +4930,10 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns the collection of mute configs. Its format is
-   *     "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]",
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]",
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]", "folders/[folder_id]`, `projects/[project_id]`,
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`,
+   *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMuteConfigsPagedResponse listMuteConfigs(FolderLocationName parent) {
@@ -4880,10 +4965,10 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns the collection of mute configs. Its format is
-   *     "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]",
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]",
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]", "folders/[folder_id]`, `projects/[project_id]`,
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`,
+   *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMuteConfigsPagedResponse listMuteConfigs(FolderName parent) {
@@ -4915,10 +5000,10 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns the collection of mute configs. Its format is
-   *     "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]",
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]",
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]", "folders/[folder_id]`, `projects/[project_id]`,
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`,
+   *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMuteConfigsPagedResponse listMuteConfigs(LocationName parent) {
@@ -4950,10 +5035,10 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns the collection of mute configs. Its format is
-   *     "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]",
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]",
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]", "folders/[folder_id]`, `projects/[project_id]`,
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`,
+   *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMuteConfigsPagedResponse listMuteConfigs(OrganizationLocationName parent) {
@@ -4985,10 +5070,10 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns the collection of mute configs. Its format is
-   *     "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]",
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]",
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]", "folders/[folder_id]`, `projects/[project_id]`,
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`,
+   *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMuteConfigsPagedResponse listMuteConfigs(OrganizationName parent) {
@@ -5020,10 +5105,10 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns the collection of mute configs. Its format is
-   *     "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]",
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]",
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]", "folders/[folder_id]`, `projects/[project_id]`,
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`,
+   *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMuteConfigsPagedResponse listMuteConfigs(ProjectName parent) {
@@ -5055,10 +5140,10 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns the collection of mute configs. Its format is
-   *     "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]",
-   *     "organizations/[organization_id]/locations/[location_id]",
-   *     "folders/[folder_id]/locations/[location_id]",
-   *     "projects/[project_id]/locations/[location_id]".
+   *     `organizations/[organization_id]", "folders/[folder_id]`, `projects/[project_id]`,
+   *     `organizations/[organization_id]/locations/[location_id]`,
+   *     `folders/[folder_id]/locations/[location_id]`,
+   *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMuteConfigsPagedResponse listMuteConfigs(String parent) {
@@ -5431,6 +5516,40 @@ public class SecurityCenterClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (ResourceValueConfig element :
+   *       securityCenterClient.listResourceValueConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns the collection of resource value configs. Its
+   *     format is `organizations/[organization_id]`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListResourceValueConfigsPagedResponse listResourceValueConfigs(
+      OrganizationLocationName parent) {
+    ListResourceValueConfigsRequest request =
+        ListResourceValueConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listResourceValueConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all ResourceValueConfigs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
    *   for (ResourceValueConfig element :
    *       securityCenterClient.listResourceValueConfigs(parent).iterateAll()) {
@@ -5440,7 +5559,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns the collection of resource value configs. Its
-   *     format is "organizations/[organization_id]"
+   *     format is `organizations/[organization_id]`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListResourceValueConfigsPagedResponse listResourceValueConfigs(
@@ -5474,7 +5593,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns the collection of resource value configs. Its
-   *     format is "organizations/[organization_id]"
+   *     format is `organizations/[organization_id]`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListResourceValueConfigsPagedResponse listResourceValueConfigs(String parent) {
@@ -5611,7 +5730,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent of sources to list. Its format should be
-   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   *     `organizations/[organization_id]`, `folders/[folder_id]`, or `projects/[project_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSourcesPagedResponse listSources(FolderName parent) {
@@ -5643,7 +5762,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent of sources to list. Its format should be
-   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   *     `organizations/[organization_id]`, `folders/[folder_id]`, or `projects/[project_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSourcesPagedResponse listSources(OrganizationName parent) {
@@ -5675,7 +5794,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent of sources to list. Its format should be
-   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   *     `organizations/[organization_id]`, `folders/[folder_id]`, or `projects/[project_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSourcesPagedResponse listSources(ProjectName parent) {
@@ -5707,7 +5826,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent of sources to list. Its format should be
-   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   *     `organizations/[organization_id]`, `folders/[folder_id]`, or `projects/[project_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSourcesPagedResponse listSources(String parent) {
@@ -5831,7 +5950,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SimulationName parent = SimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+   *   SimulationName parent =
+   *       SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]");
    *   for (ValuedResource element : securityCenterClient.listValuedResources(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -5839,9 +5959,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Name of parent to list exposed resources.
-   *     <p>Valid formats: "organizations/{organization}",
-   *     "organizations/{organization}/simulations/{simulation}"
-   *     "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}"
+   *     <p>Valid formats: `organizations/{organization}`,
+   *     `organizations/{organization}/simulations/{simulation}`
+   *     `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListValuedResourcesPagedResponse listValuedResources(SimulationName parent) {
@@ -5865,7 +5985,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String parent = SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString();
+   *   String parent =
+   *       SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]").toString();
    *   for (ValuedResource element : securityCenterClient.listValuedResources(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -5873,9 +5994,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Name of parent to list exposed resources.
-   *     <p>Valid formats: "organizations/{organization}",
-   *     "organizations/{organization}/simulations/{simulation}"
-   *     "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}"
+   *     <p>Valid formats: `organizations/{organization}`,
+   *     `organizations/{organization}/simulations/{simulation}`
+   *     `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListValuedResourcesPagedResponse listValuedResources(String parent) {
@@ -5899,7 +6020,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListValuedResourcesRequest request =
    *       ListValuedResourcesRequest.newBuilder()
-   *           .setParent(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+   *           .setParent(
+   *               SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]")
+   *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -5935,7 +6058,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListValuedResourcesRequest request =
    *       ListValuedResourcesRequest.newBuilder()
-   *           .setParent(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+   *           .setParent(
+   *               SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]")
+   *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -5970,7 +6095,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListValuedResourcesRequest request =
    *       ListValuedResourcesRequest.newBuilder()
-   *           .setParent(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+   *           .setParent(
+   *               SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]")
+   *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -7049,6 +7176,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param resourceValueConfig Required. The resource value config being updated.
    * @param updateMask The list of fields to be updated. If empty all mutable fields will be
    *     updated.
+   *     <p>To update nested fields, include the top level field in the mask For example, to update
+   *     gcp_metadata.resource_type, include the "gcp_metadata" field mask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ResourceValueConfig updateResourceValueConfig(

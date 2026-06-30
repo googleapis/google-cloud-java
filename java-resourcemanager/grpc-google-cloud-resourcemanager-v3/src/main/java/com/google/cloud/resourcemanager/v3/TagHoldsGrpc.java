@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * so that TagHolds can be managed in the same location as their usage.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/resourcemanager/v3/tag_holds.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TagHoldsGrpc {
 
@@ -185,6 +182,19 @@ public final class TagHoldsGrpc {
           }
         };
     return TagHoldsStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TagHoldsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TagHoldsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TagHoldsBlockingV2Stub>() {
+          @java.lang.Override
+          public TagHoldsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TagHoldsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TagHoldsBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -366,6 +376,73 @@ public final class TagHoldsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TagHolds.
+   *
+   * <pre>
+   * Allow users to create and manage TagHolds for TagValues. TagHolds represent
+   * the use of a Tag Value that is not captured by TagBindings but
+   * should still block TagValue deletion (such as a reference in a policy
+   * condition). This service provides isolated failure domains by cloud location
+   * so that TagHolds can be managed in the same location as their usage.
+   * </pre>
+   */
+  public static final class TagHoldsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TagHoldsBlockingV2Stub> {
+    private TagHoldsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TagHoldsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TagHoldsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a TagHold. Returns ALREADY_EXISTS if a TagHold with the same
+     * resource and origin exists under the same TagValue.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTagHold(
+        com.google.cloud.resourcemanager.v3.CreateTagHoldRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateTagHoldMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a TagHold.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTagHold(
+        com.google.cloud.resourcemanager.v3.DeleteTagHoldRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTagHoldMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TagHolds under a TagValue.
+     * </pre>
+     */
+    public com.google.cloud.resourcemanager.v3.ListTagHoldsResponse listTagHolds(
+        com.google.cloud.resourcemanager.v3.ListTagHoldsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTagHoldsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service TagHolds.
    *
    * <pre>
    * Allow users to create and manage TagHolds for TagValues. TagHolds represent

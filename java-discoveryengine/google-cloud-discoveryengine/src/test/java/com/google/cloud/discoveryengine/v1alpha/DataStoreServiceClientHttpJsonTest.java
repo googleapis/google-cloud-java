@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,8 +96,10 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setIdpConfig(IdpConfig.newBuilder().build())
             .setAclEnabled(true)
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
@@ -161,8 +163,10 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setIdpConfig(IdpConfig.newBuilder().build())
             .setAclEnabled(true)
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
@@ -226,8 +230,10 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setIdpConfig(IdpConfig.newBuilder().build())
             .setAclEnabled(true)
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
@@ -284,8 +290,10 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setIdpConfig(IdpConfig.newBuilder().build())
             .setAclEnabled(true)
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
@@ -532,8 +540,10 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setIdpConfig(IdpConfig.newBuilder().build())
             .setAclEnabled(true)
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
@@ -550,8 +560,10 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setIdpConfig(IdpConfig.newBuilder().build())
             .setAclEnabled(true)
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
@@ -594,8 +606,10 @@ public class DataStoreServiceClientHttpJsonTest {
               .addAllSolutionTypes(new ArrayList<SolutionType>())
               .setDefaultSchemaId("defaultSchemaId1300415485")
               .setCreateTime(Timestamp.newBuilder().build())
+              .setLanguageInfo(LanguageInfo.newBuilder().build())
               .setIdpConfig(IdpConfig.newBuilder().build())
               .setAclEnabled(true)
+              .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
               .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
               .setStartingSchema(Schema.newBuilder().build())
               .build();

@@ -1,0 +1,112 @@
+// Copyright 2025 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+package google.cloud.bigquery.v2;
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/wrappers.proto";
+
+option java_outer_classname = "JobProto";
+option java_package = "com.google.cloud.bigquery.v2";
+
+service JobService {
+  option (google.api.default_host) = "bigquery.googleapis.com";
+  option (google.api.oauth_scopes) =
+  "https://www.googleapis.com/auth/bigquery,"
+    "https://www.googleapis.com/auth/cloud-platform,"
+    "https://www.googleapis.com/auth/cloud-platform.read-only,"
+    "https://www.googleapis.com/auth/devstorage.full_control,"
+    "https://www.googleapis.com/auth/devstorage.read_only,"
+    "https://www.googleapis.com/auth/devstorage.read_write";
+
+  // Requests the deletion of the metadata of a job. This call returns when the
+  // job's metadata is deleted.
+  rpc DeleteJob(DeleteJobRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/bigquery/v2/projects/{project_id=*}/jobs/{job_id=*}/delete"
+    };
+  }
+
+  // Lists all jobs that you started in the specified project. Job information
+  // is available for a six month period after creation. The job list is sorted
+  // in reverse chronological order, by job creation time. Requires the Can View
+  // project role, or the Is Owner project role if you set the allUsers
+  // property.
+  rpc ListJobs(ListJobsRequest) returns (JobList) {
+    option (google.api.http) = {
+      get: "/bigquery/v2/projects/{project_id=*}/jobs"
+    };
+  }
+}
+
+// Simplified BigQuery Jobs service ListJobsRequest for testing.
+message ListJobsRequest {
+  // Project ID of the jobs to list.
+  string project_id = 1;
+
+  // The maximum number of results to return in a single response page.
+  // Leverage the page tokens to iterate through the entire collection.
+  google.protobuf.Int32Value max_results = 3;
+
+  // Page token, returned by a previous call, to request the next page of
+  // results.
+  string page_token = 6;
+}
+
+// Describes the format of a jobs deletion request.
+message DeleteJobRequest {
+  // Required. Project ID of the job for which metadata is to be deleted.
+  string project_id = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Required. Job ID of the job for which metadata is to be deleted. If this is
+  // a parent job which has child jobs, the metadata from all child jobs will be
+  // deleted as well. Direct deletion of the metadata of child jobs is not
+  // allowed.
+  string job_id = 2 [(google.api.field_behavior) = REQUIRED];
+
+  // The geographic location of the job. Required.
+  //
+  // For more information, see how to
+  // [specify
+  // locations](https://cloud.google.com/bigquery/docs/locations#specify_locations).
+  string location = 3;
+}
+
+// Simplified ListFormatJob for testing.
+message ListFormatJob {
+  // Unique opaque ID of the job.
+  string id = 1;
+}
+
+// Simplified JobList response for testing.
+message JobList {
+  // A hash of this page of results.
+  string etag = 1;
+
+  // The resource type of the response.
+  string kind = 2;
+
+  // A token to request the next page of results.
+  string next_page_token = 3;
+
+  // List of jobs that were requested.
+  repeated ListFormatJob jobs = 4;
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.datacatalog.lineage.configmanagement.v1",
+  "libraryPackage": "com.google.cloud.datacatalog.lineage.configmanagement.v1",
+  "services": {
+    "ConfigManagementService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConfigManagementServiceClient",
+          "rpcs": {
+            "GetConfig": {
+              "methods": ["getConfig", "getConfig", "getConfig", "getConfigCallable"]
+            },
+            "UpdateConfig": {
+              "methods": ["updateConfig", "updateConfig", "updateConfigCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

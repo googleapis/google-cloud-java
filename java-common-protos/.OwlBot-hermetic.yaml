@@ -1,0 +1,71 @@
+# Copyright 2021 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+deep-remove-regex:
+- "/java-common-protos/grpc-google-.*/src"
+- "/java-common-protos/proto-google-.*/src"
+- "/java-common-protos/google-.*/src"
+
+deep-preserve-regex:
+- "/java-common-protos/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
+deep-copy-regex:
+- source: "/google/api/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-common-protos/v1/proto-google-common-protos/src"
+
+- source: "/google/cloud/audit/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-common-protos/v1/proto-google-common-protos/src"
+
+# For geo common protos
+- source: "/google/geo/type/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-common-protos/v1/proto-google-common-protos/src"
+
+# For shopping common protos
+- source: "/google/shopping/type/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-common-protos/v1/proto-google-common-protos/src"
+
+# It is only used once in https://github.com/googleapis/googleapis/blob/master/google/chat/v1/BUILD.bazel#L47,
+# and technically not a common proto, maybe a violation of AIP-215 if it is not.
+# However, it's better to put it here so that we don't have to manually add it to BUILD.bazel file and hermetic build scripts.
+- source: "/google/apps/card/v1/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-common-protos/v1/proto-google-common-protos/src"
+
+- source: "/google/logging/type/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-common-protos/v1/proto-google-common-protos/src"
+
+- source: "/google/longrunning/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-common-protos/v1/proto-google-common-protos/src"
+
+- source: "/google/rpc/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-common-protos/v1/proto-google-common-protos/src"
+
+- source: "/google/rpc/context/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-common-protos/v1/proto-google-common-protos/src"
+
+- source: "/google/type/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-common-protos/v1/proto-google-common-protos/src"
+
+- source: "/google/cloud/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-common-protos/v1/proto-google-common-protos/src"
+
+- source: "/google/cloud/location/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-common-protos/v1/proto-google-common-protos/src"
+
+- source: "/google/cloud/location/.*-java/grpc-google-.*/src"
+  dest: "/owl-bot-staging/java-common-protos/v1/grpc-google-common-protos/src"
+
+- source: "/google/longrunning/.*-java/grpc-google-.*/src"
+  dest: "/owl-bot-staging/java-common-protos/v1/grpc-google-common-protos/src"
+api-name: common-protos

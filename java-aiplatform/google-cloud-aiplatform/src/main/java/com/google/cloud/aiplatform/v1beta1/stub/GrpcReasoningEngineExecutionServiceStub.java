@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,16 +18,25 @@ package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionServiceClient.ListLocationsPagedResponse;
 
+import com.google.api.HttpBody;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest;
+import com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineResponse;
+import com.google.cloud.aiplatform.v1beta1.CancelAsyncQueryReasoningEngineRequest;
+import com.google.cloud.aiplatform.v1beta1.CancelAsyncQueryReasoningEngineResponse;
 import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -37,6 +46,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -63,6 +73,49 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
                   ProtoUtils.marshaller(QueryReasoningEngineRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryReasoningEngineResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<StreamQueryReasoningEngineRequest, HttpBody>
+      streamQueryReasoningEngineMethodDescriptor =
+          MethodDescriptor.<StreamQueryReasoningEngineRequest, HttpBody>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionService/StreamQueryReasoningEngine")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StreamQueryReasoningEngineRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<AsyncQueryReasoningEngineRequest, Operation>
+      asyncQueryReasoningEngineMethodDescriptor =
+          MethodDescriptor.<AsyncQueryReasoningEngineRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionService/AsyncQueryReasoningEngine")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AsyncQueryReasoningEngineRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+      cancelAsyncQueryReasoningEngineMethodDescriptor =
+          MethodDescriptor
+              .<CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionService/CancelAsyncQueryReasoningEngine")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      CancelAsyncQueryReasoningEngineRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      CancelAsyncQueryReasoningEngineResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -74,6 +127,7 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -82,6 +136,7 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -90,6 +145,7 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -98,6 +154,7 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -109,10 +166,23 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<QueryReasoningEngineRequest, QueryReasoningEngineResponse>
       queryReasoningEngineCallable;
+  private final ServerStreamingCallable<StreamQueryReasoningEngineRequest, HttpBody>
+      streamQueryReasoningEngineCallable;
+  private final UnaryCallable<AsyncQueryReasoningEngineRequest, Operation>
+      asyncQueryReasoningEngineCallable;
+  private final OperationCallable<
+          AsyncQueryReasoningEngineRequest,
+          AsyncQueryReasoningEngineResponse,
+          AsyncQueryReasoningEngineOperationMetadata>
+      asyncQueryReasoningEngineOperationCallable;
+  private final UnaryCallable<
+          CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+      cancelAsyncQueryReasoningEngineCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -179,6 +249,46 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<StreamQueryReasoningEngineRequest, HttpBody>
+        streamQueryReasoningEngineTransportSettings =
+            GrpcCallSettings.<StreamQueryReasoningEngineRequest, HttpBody>newBuilder()
+                .setMethodDescriptor(streamQueryReasoningEngineMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<AsyncQueryReasoningEngineRequest, Operation>
+        asyncQueryReasoningEngineTransportSettings =
+            GrpcCallSettings.<AsyncQueryReasoningEngineRequest, Operation>newBuilder()
+                .setMethodDescriptor(asyncQueryReasoningEngineMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<
+            CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+        cancelAsyncQueryReasoningEngineTransportSettings =
+            GrpcCallSettings
+                .<CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+                    newBuilder()
+                .setMethodDescriptor(cancelAsyncQueryReasoningEngineMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -209,6 +319,7 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -219,6 +330,7 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -230,12 +342,34 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.queryReasoningEngineCallable =
         callableFactory.createUnaryCallable(
             queryReasoningEngineTransportSettings,
             settings.queryReasoningEngineSettings(),
+            clientContext);
+    this.streamQueryReasoningEngineCallable =
+        callableFactory.createServerStreamingCallable(
+            streamQueryReasoningEngineTransportSettings,
+            settings.streamQueryReasoningEngineSettings(),
+            clientContext);
+    this.asyncQueryReasoningEngineCallable =
+        callableFactory.createUnaryCallable(
+            asyncQueryReasoningEngineTransportSettings,
+            settings.asyncQueryReasoningEngineSettings(),
+            clientContext);
+    this.asyncQueryReasoningEngineOperationCallable =
+        callableFactory.createOperationCallable(
+            asyncQueryReasoningEngineTransportSettings,
+            settings.asyncQueryReasoningEngineOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.cancelAsyncQueryReasoningEngineCallable =
+        callableFactory.createUnaryCallable(
+            cancelAsyncQueryReasoningEngineTransportSettings,
+            settings.cancelAsyncQueryReasoningEngineSettings(),
             clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
@@ -270,6 +404,34 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
   public UnaryCallable<QueryReasoningEngineRequest, QueryReasoningEngineResponse>
       queryReasoningEngineCallable() {
     return queryReasoningEngineCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<StreamQueryReasoningEngineRequest, HttpBody>
+      streamQueryReasoningEngineCallable() {
+    return streamQueryReasoningEngineCallable;
+  }
+
+  @Override
+  public UnaryCallable<AsyncQueryReasoningEngineRequest, Operation>
+      asyncQueryReasoningEngineCallable() {
+    return asyncQueryReasoningEngineCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          AsyncQueryReasoningEngineRequest,
+          AsyncQueryReasoningEngineResponse,
+          AsyncQueryReasoningEngineOperationMetadata>
+      asyncQueryReasoningEngineOperationCallable() {
+    return asyncQueryReasoningEngineOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+      cancelAsyncQueryReasoningEngineCallable() {
+    return cancelAsyncQueryReasoningEngineCallable;
   }
 
   @Override

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void createBackupSchedule(com.google.firestore.admin.v1.CreateBackupScheduleRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void deleteBackup(com.google.firestore.admin.v1.DeleteBackupRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void deleteBackupSchedule(com.google.firestore.admin.v1.DeleteBackupScheduleRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void getBackup(com.google.firestore.admin.v1.GetBackupRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void getBackupSchedule(com.google.firestore.admin.v1.GetBackupScheduleRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void listBackupSchedules(com.google.firestore.admin.v1.ListBackupSchedulesRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void listBackups(com.google.firestore.admin.v1.ListBackupsRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void restoreDatabase(com.google.firestore.admin.v1.RestoreDatabaseRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void updateBackupSchedule(com.google.firestore.admin.v1.UpdateBackupScheduleRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void bulkDeleteDocuments(com.google.firestore.admin.v1.BulkDeleteDocumentsRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void createUserCreds(com.google.firestore.admin.v1.CreateUserCredsRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void deleteUserCreds(com.google.firestore.admin.v1.DeleteUserCredsRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void disableUserCreds(com.google.firestore.admin.v1.DisableUserCredsRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void enableUserCreds(com.google.firestore.admin.v1.EnableUserCredsRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void getUserCreds(com.google.firestore.admin.v1.GetUserCredsRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void listUserCreds(com.google.firestore.admin.v1.ListUserCredsRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>void resetUserPassword(com.google.firestore.admin.v1.ResetUserPasswordRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+    <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>*</method>
+  </difference>
+</differences>

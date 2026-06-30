@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -309,7 +309,8 @@ public class ProjectDataProfileName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               projectDataProfileName.pathTemplate, ORGANIZATION_LOCATION_PROJECT_DATA_PROFILE),
-          "toBuilder is only supported when ProjectDataProfileName has the pattern of organizations/{organization}/locations/{location}/projectDataProfiles/{project_data_profile}");
+          "toBuilder is only supported when ProjectDataProfileName has the pattern of"
+              + " organizations/{organization}/locations/{location}/projectDataProfiles/{project_data_profile}");
       this.organization = projectDataProfileName.organization;
       this.location = projectDataProfileName.location;
       this.projectDataProfile = projectDataProfileName.projectDataProfile;

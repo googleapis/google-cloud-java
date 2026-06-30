@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,20 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> AdvancedCompleteQuery</td>
+ *      <td><p> Completes the user input with advanced keyword suggestions.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> advancedCompleteQuery(AdvancedCompleteQueryRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> advancedCompleteQueryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ImportSuggestionDenyListEntries</td>
  *      <td><p> Imports all [SuggestionDenyListEntry][google.cloud.discoveryengine.v1beta.SuggestionDenyListEntry] for a DataStore.</td>
  *      <td>
@@ -110,6 +124,50 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> purgeSuggestionDenyListEntriesOperationCallable()
  *           <li><p> purgeSuggestionDenyListEntriesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ImportCompletionSuggestions</td>
+ *      <td><p> Imports [CompletionSuggestion][google.cloud.discoveryengine.v1beta.CompletionSuggestion]s for a DataStore.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> importCompletionSuggestionsAsync(ImportCompletionSuggestionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> importCompletionSuggestionsOperationCallable()
+ *           <li><p> importCompletionSuggestionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PurgeCompletionSuggestions</td>
+ *      <td><p> Permanently deletes all [CompletionSuggestion][google.cloud.discoveryengine.v1beta.CompletionSuggestion]s for a DataStore.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> purgeCompletionSuggestionsAsync(PurgeCompletionSuggestionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> purgeCompletionSuggestionsOperationCallable()
+ *           <li><p> purgeCompletionSuggestionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RemoveSuggestion</td>
+ *      <td><p> Removes the search history suggestion in an engine for a user. This will remove the suggestion from being returned in the [AdvancedCompleteQueryResponse.recent_search_suggestions][google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.recent_search_suggestions] for this user. If the user searches the same suggestion again, the new history will override and suggest this suggestion again.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> removeSuggestion(RemoveSuggestionRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> removeSuggestionCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -315,6 +373,91 @@ public class CompletionServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable() {
     return stub.completeQueryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Completes the user input with advanced keyword suggestions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   AdvancedCompleteQueryRequest request =
+   *       AdvancedCompleteQueryRequest.newBuilder()
+   *           .setCompletionConfig(
+   *               CompletionConfigName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setQuery("query107944136")
+   *           .setQueryModel("queryModel-184930495")
+   *           .setUserPseudoId("userPseudoId-1155274652")
+   *           .setUserInfo(UserInfo.newBuilder().build())
+   *           .setIncludeTailSuggestions(true)
+   *           .setBoostSpec(AdvancedCompleteQueryRequest.BoostSpec.newBuilder().build())
+   *           .addAllSuggestionTypes(new ArrayList<AdvancedCompleteQueryRequest.SuggestionType>())
+   *           .addAllSuggestionTypeSpecs(
+   *               new ArrayList<AdvancedCompleteQueryRequest.SuggestionTypeSpec>())
+   *           .addAllExperimentIds(new ArrayList<String>())
+   *           .build();
+   *   AdvancedCompleteQueryResponse response =
+   *       completionServiceClient.advancedCompleteQuery(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AdvancedCompleteQueryResponse advancedCompleteQuery(
+      AdvancedCompleteQueryRequest request) {
+    return advancedCompleteQueryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Completes the user input with advanced keyword suggestions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   AdvancedCompleteQueryRequest request =
+   *       AdvancedCompleteQueryRequest.newBuilder()
+   *           .setCompletionConfig(
+   *               CompletionConfigName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setQuery("query107944136")
+   *           .setQueryModel("queryModel-184930495")
+   *           .setUserPseudoId("userPseudoId-1155274652")
+   *           .setUserInfo(UserInfo.newBuilder().build())
+   *           .setIncludeTailSuggestions(true)
+   *           .setBoostSpec(AdvancedCompleteQueryRequest.BoostSpec.newBuilder().build())
+   *           .addAllSuggestionTypes(new ArrayList<AdvancedCompleteQueryRequest.SuggestionType>())
+   *           .addAllSuggestionTypeSpecs(
+   *               new ArrayList<AdvancedCompleteQueryRequest.SuggestionTypeSpec>())
+   *           .addAllExperimentIds(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<AdvancedCompleteQueryResponse> future =
+   *       completionServiceClient.advancedCompleteQueryCallable().futureCall(request);
+   *   // Do something.
+   *   AdvancedCompleteQueryResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+      advancedCompleteQueryCallable() {
+    return stub.advancedCompleteQueryCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -537,6 +680,303 @@ public class CompletionServiceClient implements BackgroundResource {
   public final UnaryCallable<PurgeSuggestionDenyListEntriesRequest, Operation>
       purgeSuggestionDenyListEntriesCallable() {
     return stub.purgeSuggestionDenyListEntriesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports [CompletionSuggestion][google.cloud.discoveryengine.v1beta.CompletionSuggestion]s for a
+   * DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   ImportCompletionSuggestionsRequest request =
+   *       ImportCompletionSuggestionsRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
+   *           .build();
+   *   ImportCompletionSuggestionsResponse response =
+   *       completionServiceClient.importCompletionSuggestionsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          ImportCompletionSuggestionsResponse, ImportCompletionSuggestionsMetadata>
+      importCompletionSuggestionsAsync(ImportCompletionSuggestionsRequest request) {
+    return importCompletionSuggestionsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports [CompletionSuggestion][google.cloud.discoveryengine.v1beta.CompletionSuggestion]s for a
+   * DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   ImportCompletionSuggestionsRequest request =
+   *       ImportCompletionSuggestionsRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ImportCompletionSuggestionsResponse, ImportCompletionSuggestionsMetadata>
+   *       future =
+   *           completionServiceClient
+   *               .importCompletionSuggestionsOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   ImportCompletionSuggestionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ImportCompletionSuggestionsRequest,
+          ImportCompletionSuggestionsResponse,
+          ImportCompletionSuggestionsMetadata>
+      importCompletionSuggestionsOperationCallable() {
+    return stub.importCompletionSuggestionsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports [CompletionSuggestion][google.cloud.discoveryengine.v1beta.CompletionSuggestion]s for a
+   * DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   ImportCompletionSuggestionsRequest request =
+   *       ImportCompletionSuggestionsRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       completionServiceClient.importCompletionSuggestionsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportCompletionSuggestionsRequest, Operation>
+      importCompletionSuggestionsCallable() {
+    return stub.importCompletionSuggestionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes all
+   * [CompletionSuggestion][google.cloud.discoveryengine.v1beta.CompletionSuggestion]s for a
+   * DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   PurgeCompletionSuggestionsRequest request =
+   *       PurgeCompletionSuggestionsRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .build();
+   *   PurgeCompletionSuggestionsResponse response =
+   *       completionServiceClient.purgeCompletionSuggestionsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          PurgeCompletionSuggestionsResponse, PurgeCompletionSuggestionsMetadata>
+      purgeCompletionSuggestionsAsync(PurgeCompletionSuggestionsRequest request) {
+    return purgeCompletionSuggestionsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes all
+   * [CompletionSuggestion][google.cloud.discoveryengine.v1beta.CompletionSuggestion]s for a
+   * DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   PurgeCompletionSuggestionsRequest request =
+   *       PurgeCompletionSuggestionsRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<PurgeCompletionSuggestionsResponse, PurgeCompletionSuggestionsMetadata>
+   *       future =
+   *           completionServiceClient
+   *               .purgeCompletionSuggestionsOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   PurgeCompletionSuggestionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          PurgeCompletionSuggestionsRequest,
+          PurgeCompletionSuggestionsResponse,
+          PurgeCompletionSuggestionsMetadata>
+      purgeCompletionSuggestionsOperationCallable() {
+    return stub.purgeCompletionSuggestionsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes all
+   * [CompletionSuggestion][google.cloud.discoveryengine.v1beta.CompletionSuggestion]s for a
+   * DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   PurgeCompletionSuggestionsRequest request =
+   *       PurgeCompletionSuggestionsRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       completionServiceClient.purgeCompletionSuggestionsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PurgeCompletionSuggestionsRequest, Operation>
+      purgeCompletionSuggestionsCallable() {
+    return stub.purgeCompletionSuggestionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes the search history suggestion in an engine for a user. This will remove the suggestion
+   * from being returned in the
+   * [AdvancedCompleteQueryResponse.recent_search_suggestions][google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.recent_search_suggestions]
+   * for this user. If the user searches the same suggestion again, the new history will override
+   * and suggest this suggestion again.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   RemoveSuggestionRequest request =
+   *       RemoveSuggestionRequest.newBuilder()
+   *           .setCompletionConfig(
+   *               CompletionConfigName.ofProjectLocationCollectionEngineName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]")
+   *                   .toString())
+   *           .setUserPseudoId("userPseudoId-1155274652")
+   *           .setUserInfo(UserInfo.newBuilder().build())
+   *           .setRemoveTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   RemoveSuggestionResponse response = completionServiceClient.removeSuggestion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RemoveSuggestionResponse removeSuggestion(RemoveSuggestionRequest request) {
+    return removeSuggestionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes the search history suggestion in an engine for a user. This will remove the suggestion
+   * from being returned in the
+   * [AdvancedCompleteQueryResponse.recent_search_suggestions][google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.recent_search_suggestions]
+   * for this user. If the user searches the same suggestion again, the new history will override
+   * and suggest this suggestion again.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   RemoveSuggestionRequest request =
+   *       RemoveSuggestionRequest.newBuilder()
+   *           .setCompletionConfig(
+   *               CompletionConfigName.ofProjectLocationCollectionEngineName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]")
+   *                   .toString())
+   *           .setUserPseudoId("userPseudoId-1155274652")
+   *           .setUserInfo(UserInfo.newBuilder().build())
+   *           .setRemoveTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RemoveSuggestionResponse> future =
+   *       completionServiceClient.removeSuggestionCallable().futureCall(request);
+   *   // Do something.
+   *   RemoveSuggestionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RemoveSuggestionRequest, RemoveSuggestionResponse>
+      removeSuggestionCallable() {
+    return stub.removeSuggestionCallable();
   }
 
   @Override

@@ -1,0 +1,31 @@
+description = 'GRPC library for {{name}}'
+group = 'com.google.api.grpc'
+version = (version == 'unspecified') ? '0.0.0-SNAPSHOT' : version
+
+compileJava.options.encoding = 'UTF-8'
+javadoc.options.encoding = 'UTF-8'
+
+dependencies {
+  implementation 'io.grpc:grpc-stub:{{version.io_grpc}}'
+  implementation 'io.grpc:grpc-protobuf:{{version.io_grpc}}'
+
+  // TODO: remove when dropping Java 8 support.
+  // https://github.com/googleapis/gapic-generator-java/issues/888
+  implementation '{{maven.javax_annotation_javax_annotation_api}}'
+
+  {{extra_deps}}
+}
+
+task javadocJar(type: Jar) {
+  classifier = 'javadoc'
+  from javadoc
+}
+
+task sourcesJar(type: Jar) {
+  classifier = 'sources'
+  from sourceSets.main.allSource
+}
+
+artifacts {
+  archives javadocJar, sourcesJar
+}

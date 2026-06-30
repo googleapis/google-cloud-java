@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,8 @@ package com.google.cloud.video.livestream.v1;
 
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListClipsPagedResponse;
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListDvrSessionsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListLocationsPagedResponse;
@@ -106,12 +108,17 @@ public class LivestreamServiceClientHttpJsonTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
             .setTimecodeConfig(TimecodeConfig.newBuilder().build())
             .addAllEncryptions(new ArrayList<Encryption>())
             .setInputConfig(InputConfig.newBuilder().build())
+            .setRetentionConfig(RetentionConfig.newBuilder().build())
+            .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -174,12 +181,17 @@ public class LivestreamServiceClientHttpJsonTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
             .setTimecodeConfig(TimecodeConfig.newBuilder().build())
             .addAllEncryptions(new ArrayList<Encryption>())
             .setInputConfig(InputConfig.newBuilder().build())
+            .setRetentionConfig(RetentionConfig.newBuilder().build())
+            .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -342,12 +354,17 @@ public class LivestreamServiceClientHttpJsonTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
             .setTimecodeConfig(TimecodeConfig.newBuilder().build())
             .addAllEncryptions(new ArrayList<Encryption>())
             .setInputConfig(InputConfig.newBuilder().build())
+            .setRetentionConfig(RetentionConfig.newBuilder().build())
+            .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -401,12 +418,17 @@ public class LivestreamServiceClientHttpJsonTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
             .setTimecodeConfig(TimecodeConfig.newBuilder().build())
             .addAllEncryptions(new ArrayList<Encryption>())
             .setInputConfig(InputConfig.newBuilder().build())
+            .setRetentionConfig(RetentionConfig.newBuilder().build())
+            .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -550,12 +572,17 @@ public class LivestreamServiceClientHttpJsonTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
             .setTimecodeConfig(TimecodeConfig.newBuilder().build())
             .addAllEncryptions(new ArrayList<Encryption>())
             .setInputConfig(InputConfig.newBuilder().build())
+            .setRetentionConfig(RetentionConfig.newBuilder().build())
+            .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -577,12 +604,17 @@ public class LivestreamServiceClientHttpJsonTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
             .setTimecodeConfig(TimecodeConfig.newBuilder().build())
             .addAllEncryptions(new ArrayList<Encryption>())
             .setInputConfig(InputConfig.newBuilder().build())
+            .setRetentionConfig(RetentionConfig.newBuilder().build())
+            .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -624,12 +656,17 @@ public class LivestreamServiceClientHttpJsonTest {
               .addAllElementaryStreams(new ArrayList<ElementaryStream>())
               .addAllMuxStreams(new ArrayList<MuxStream>())
               .addAllManifests(new ArrayList<Manifest>())
+              .addAllDistributionStreams(new ArrayList<DistributionStream>())
+              .addAllDistributions(new ArrayList<Distribution>())
               .addAllSpriteSheets(new ArrayList<SpriteSheet>())
               .setStreamingError(Status.newBuilder().build())
               .setLogConfig(LogConfig.newBuilder().build())
               .setTimecodeConfig(TimecodeConfig.newBuilder().build())
               .addAllEncryptions(new ArrayList<Encryption>())
               .setInputConfig(InputConfig.newBuilder().build())
+              .setRetentionConfig(RetentionConfig.newBuilder().build())
+              .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+              .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateChannelAsync(channel, updateMask).get();
@@ -817,6 +854,202 @@ public class LivestreamServiceClientHttpJsonTest {
     try {
       String name = "projects/project-3296/locations/location-3296/channels/channel-3296";
       client.stopChannelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void startDistributionTest() throws Exception {
+    ChannelOperationResponse expectedResponse = ChannelOperationResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startDistributionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+    List<String> distributionKeys = new ArrayList<>();
+
+    ChannelOperationResponse actualResponse =
+        client.startDistributionAsync(name, distributionKeys).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void startDistributionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+      List<String> distributionKeys = new ArrayList<>();
+      client.startDistributionAsync(name, distributionKeys).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void startDistributionTest2() throws Exception {
+    ChannelOperationResponse expectedResponse = ChannelOperationResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startDistributionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-3296/locations/location-3296/channels/channel-3296";
+    List<String> distributionKeys = new ArrayList<>();
+
+    ChannelOperationResponse actualResponse =
+        client.startDistributionAsync(name, distributionKeys).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void startDistributionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3296/locations/location-3296/channels/channel-3296";
+      List<String> distributionKeys = new ArrayList<>();
+      client.startDistributionAsync(name, distributionKeys).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void stopDistributionTest() throws Exception {
+    ChannelOperationResponse expectedResponse = ChannelOperationResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopDistributionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+    List<String> distributionKeys = new ArrayList<>();
+
+    ChannelOperationResponse actualResponse =
+        client.stopDistributionAsync(name, distributionKeys).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void stopDistributionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+      List<String> distributionKeys = new ArrayList<>();
+      client.stopDistributionAsync(name, distributionKeys).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void stopDistributionTest2() throws Exception {
+    ChannelOperationResponse expectedResponse = ChannelOperationResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopDistributionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-3296/locations/location-3296/channels/channel-3296";
+    List<String> distributionKeys = new ArrayList<>();
+
+    ChannelOperationResponse actualResponse =
+        client.stopDistributionAsync(name, distributionKeys).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void stopDistributionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3296/locations/location-3296/channels/channel-3296";
+      List<String> distributionKeys = new ArrayList<>();
+      client.stopDistributionAsync(name, distributionKeys).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -1313,6 +1546,96 @@ public class LivestreamServiceClientHttpJsonTest {
   }
 
   @Test
+  public void previewInputTest() throws Exception {
+    PreviewInputResponse expectedResponse =
+        PreviewInputResponse.newBuilder()
+            .setUri("uri116076")
+            .setBearerToken("bearerToken1995160344")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    InputName name = InputName.of("[PROJECT]", "[LOCATION]", "[INPUT]");
+
+    PreviewInputResponse actualResponse = client.previewInput(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void previewInputExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InputName name = InputName.of("[PROJECT]", "[LOCATION]", "[INPUT]");
+      client.previewInput(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void previewInputTest2() throws Exception {
+    PreviewInputResponse expectedResponse =
+        PreviewInputResponse.newBuilder()
+            .setUri("uri116076")
+            .setBearerToken("bearerToken1995160344")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-1641/locations/location-1641/inputs/input-1641";
+
+    PreviewInputResponse actualResponse = client.previewInput(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void previewInputExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1641/locations/location-1641/inputs/input-1641";
+      client.previewInput(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createEventTest() throws Exception {
     Event expectedResponse =
         Event.newBuilder()
@@ -1701,6 +2024,933 @@ public class LivestreamServiceClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void listClipsTest() throws Exception {
+    Clip responsesElement = Clip.newBuilder().build();
+    ListClipsResponse expectedResponse =
+        ListClipsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllClips(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+
+    ListClipsPagedResponse pagedListResponse = client.listClips(parent);
+
+    List<Clip> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getClipsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listClipsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+      client.listClips(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listClipsTest2() throws Exception {
+    Clip responsesElement = Clip.newBuilder().build();
+    ListClipsResponse expectedResponse =
+        ListClipsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllClips(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-367/locations/location-367/channels/channel-367";
+
+    ListClipsPagedResponse pagedListResponse = client.listClips(parent);
+
+    List<Clip> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getClipsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listClipsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-367/locations/location-367/channels/channel-367";
+      client.listClips(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getClipTest() throws Exception {
+    Clip expectedResponse =
+        Clip.newBuilder()
+            .setName(ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setOutputUri("outputUri-2119300949")
+            .setError(Status.newBuilder().build())
+            .addAllSlices(new ArrayList<Clip.Slice>())
+            .addAllClipManifests(new ArrayList<Clip.ClipManifest>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ClipName name = ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]");
+
+    Clip actualResponse = client.getClip(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getClipExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClipName name = ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]");
+      client.getClip(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getClipTest2() throws Exception {
+    Clip expectedResponse =
+        Clip.newBuilder()
+            .setName(ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setOutputUri("outputUri-2119300949")
+            .setError(Status.newBuilder().build())
+            .addAllSlices(new ArrayList<Clip.Slice>())
+            .addAllClipManifests(new ArrayList<Clip.ClipManifest>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-7679/locations/location-7679/channels/channel-7679/clips/clip-7679";
+
+    Clip actualResponse = client.getClip(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getClipExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7679/locations/location-7679/channels/channel-7679/clips/clip-7679";
+      client.getClip(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createClipTest() throws Exception {
+    Clip expectedResponse =
+        Clip.newBuilder()
+            .setName(ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setOutputUri("outputUri-2119300949")
+            .setError(Status.newBuilder().build())
+            .addAllSlices(new ArrayList<Clip.Slice>())
+            .addAllClipManifests(new ArrayList<Clip.ClipManifest>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createClipTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+    Clip clip = Clip.newBuilder().build();
+    String clipId = "clipId-1357703029";
+
+    Clip actualResponse = client.createClipAsync(parent, clip, clipId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createClipExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+      Clip clip = Clip.newBuilder().build();
+      String clipId = "clipId-1357703029";
+      client.createClipAsync(parent, clip, clipId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createClipTest2() throws Exception {
+    Clip expectedResponse =
+        Clip.newBuilder()
+            .setName(ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setOutputUri("outputUri-2119300949")
+            .setError(Status.newBuilder().build())
+            .addAllSlices(new ArrayList<Clip.Slice>())
+            .addAllClipManifests(new ArrayList<Clip.ClipManifest>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createClipTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-367/locations/location-367/channels/channel-367";
+    Clip clip = Clip.newBuilder().build();
+    String clipId = "clipId-1357703029";
+
+    Clip actualResponse = client.createClipAsync(parent, clip, clipId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createClipExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-367/locations/location-367/channels/channel-367";
+      Clip clip = Clip.newBuilder().build();
+      String clipId = "clipId-1357703029";
+      client.createClipAsync(parent, clip, clipId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteClipTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteClipTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ClipName name = ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]");
+
+    client.deleteClipAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteClipExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClipName name = ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]");
+      client.deleteClipAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteClipTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteClipTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-7679/locations/location-7679/channels/channel-7679/clips/clip-7679";
+
+    client.deleteClipAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteClipExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7679/locations/location-7679/channels/channel-7679/clips/clip-7679";
+      client.deleteClipAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createDvrSessionTest() throws Exception {
+    DvrSession expectedResponse =
+        DvrSession.newBuilder()
+            .setName(
+                DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setError(Status.newBuilder().build())
+            .addAllDvrManifests(new ArrayList<DvrSession.DvrManifest>())
+            .addAllDvrWindows(new ArrayList<DvrSession.DvrWindow>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDvrSessionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+    DvrSession dvrSession = DvrSession.newBuilder().build();
+    String dvrSessionId = "dvrSessionId120568849";
+
+    DvrSession actualResponse =
+        client.createDvrSessionAsync(parent, dvrSession, dvrSessionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDvrSessionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+      DvrSession dvrSession = DvrSession.newBuilder().build();
+      String dvrSessionId = "dvrSessionId120568849";
+      client.createDvrSessionAsync(parent, dvrSession, dvrSessionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createDvrSessionTest2() throws Exception {
+    DvrSession expectedResponse =
+        DvrSession.newBuilder()
+            .setName(
+                DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setError(Status.newBuilder().build())
+            .addAllDvrManifests(new ArrayList<DvrSession.DvrManifest>())
+            .addAllDvrWindows(new ArrayList<DvrSession.DvrWindow>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDvrSessionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-367/locations/location-367/channels/channel-367";
+    DvrSession dvrSession = DvrSession.newBuilder().build();
+    String dvrSessionId = "dvrSessionId120568849";
+
+    DvrSession actualResponse =
+        client.createDvrSessionAsync(parent, dvrSession, dvrSessionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDvrSessionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-367/locations/location-367/channels/channel-367";
+      DvrSession dvrSession = DvrSession.newBuilder().build();
+      String dvrSessionId = "dvrSessionId120568849";
+      client.createDvrSessionAsync(parent, dvrSession, dvrSessionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listDvrSessionsTest() throws Exception {
+    DvrSession responsesElement = DvrSession.newBuilder().build();
+    ListDvrSessionsResponse expectedResponse =
+        ListDvrSessionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDvrSessions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+
+    ListDvrSessionsPagedResponse pagedListResponse = client.listDvrSessions(parent);
+
+    List<DvrSession> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDvrSessionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDvrSessionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+      client.listDvrSessions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDvrSessionsTest2() throws Exception {
+    DvrSession responsesElement = DvrSession.newBuilder().build();
+    ListDvrSessionsResponse expectedResponse =
+        ListDvrSessionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDvrSessions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-367/locations/location-367/channels/channel-367";
+
+    ListDvrSessionsPagedResponse pagedListResponse = client.listDvrSessions(parent);
+
+    List<DvrSession> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDvrSessionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDvrSessionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-367/locations/location-367/channels/channel-367";
+      client.listDvrSessions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDvrSessionTest() throws Exception {
+    DvrSession expectedResponse =
+        DvrSession.newBuilder()
+            .setName(
+                DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setError(Status.newBuilder().build())
+            .addAllDvrManifests(new ArrayList<DvrSession.DvrManifest>())
+            .addAllDvrWindows(new ArrayList<DvrSession.DvrWindow>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DvrSessionName name =
+        DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]");
+
+    DvrSession actualResponse = client.getDvrSession(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDvrSessionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DvrSessionName name =
+          DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]");
+      client.getDvrSession(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDvrSessionTest2() throws Exception {
+    DvrSession expectedResponse =
+        DvrSession.newBuilder()
+            .setName(
+                DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setError(Status.newBuilder().build())
+            .addAllDvrManifests(new ArrayList<DvrSession.DvrManifest>())
+            .addAllDvrWindows(new ArrayList<DvrSession.DvrWindow>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-7321/locations/location-7321/channels/channel-7321/dvrSessions/dvrSession-7321";
+
+    DvrSession actualResponse = client.getDvrSession(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDvrSessionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7321/locations/location-7321/channels/channel-7321/dvrSessions/dvrSession-7321";
+      client.getDvrSession(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDvrSessionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDvrSessionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DvrSessionName name =
+        DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]");
+
+    client.deleteDvrSessionAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDvrSessionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DvrSessionName name =
+          DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]");
+      client.deleteDvrSessionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteDvrSessionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDvrSessionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-7321/locations/location-7321/channels/channel-7321/dvrSessions/dvrSession-7321";
+
+    client.deleteDvrSessionAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDvrSessionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7321/locations/location-7321/channels/channel-7321/dvrSessions/dvrSession-7321";
+      client.deleteDvrSessionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateDvrSessionTest() throws Exception {
+    DvrSession expectedResponse =
+        DvrSession.newBuilder()
+            .setName(
+                DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setError(Status.newBuilder().build())
+            .addAllDvrManifests(new ArrayList<DvrSession.DvrManifest>())
+            .addAllDvrWindows(new ArrayList<DvrSession.DvrWindow>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateDvrSessionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DvrSession dvrSession =
+        DvrSession.newBuilder()
+            .setName(
+                DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setError(Status.newBuilder().build())
+            .addAllDvrManifests(new ArrayList<DvrSession.DvrManifest>())
+            .addAllDvrWindows(new ArrayList<DvrSession.DvrWindow>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DvrSession actualResponse = client.updateDvrSessionAsync(dvrSession, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateDvrSessionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DvrSession dvrSession =
+          DvrSession.newBuilder()
+              .setName(
+                  DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+                      .toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setError(Status.newBuilder().build())
+              .addAllDvrManifests(new ArrayList<DvrSession.DvrManifest>())
+              .addAllDvrWindows(new ArrayList<DvrSession.DvrWindow>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDvrSessionAsync(dvrSession, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

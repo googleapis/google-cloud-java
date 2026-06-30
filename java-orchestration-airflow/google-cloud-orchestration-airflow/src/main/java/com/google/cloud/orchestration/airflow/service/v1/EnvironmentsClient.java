@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -207,7 +207,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListWorkloads</td>
  *      <td><p> Lists workloads in a Cloud Composer environment. Workload is a unit that runs a single Composer component.
- * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ * <p>  This method is supported for Cloud Composer environments in versions composer-2.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -226,9 +226,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CheckUpgrade</td>
+ *      <td><p> Check if an upgrade operation on the environment will succeed.
+ * <p>  In case of problems detailed info can be found in the returned Operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> checkUpgradeAsync(CheckUpgradeRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> checkUpgradeOperationCallable()
+ *           <li><p> checkUpgradeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateUserWorkloadsSecret</td>
  *      <td><p> Creates a user workloads Secret.
- * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -248,7 +264,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> GetUserWorkloadsSecret</td>
  *      <td><p> Gets an existing user workloads Secret. Values of the "data" field in the response are cleared.
- * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -268,7 +284,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListUserWorkloadsSecrets</td>
  *      <td><p> Lists user workloads Secrets.
- * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -289,7 +305,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> UpdateUserWorkloadsSecret</td>
  *      <td><p> Updates a user workloads Secret.
- * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -308,7 +324,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> DeleteUserWorkloadsSecret</td>
  *      <td><p> Deletes a user workloads Secret.
- * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -328,7 +344,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> CreateUserWorkloadsConfigMap</td>
  *      <td><p> Creates a user workloads ConfigMap.
- * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -348,7 +364,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> GetUserWorkloadsConfigMap</td>
  *      <td><p> Gets an existing user workloads ConfigMap.
- * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -368,7 +384,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListUserWorkloadsConfigMaps</td>
  *      <td><p> Lists user workloads ConfigMaps.
- * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -389,7 +405,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> UpdateUserWorkloadsConfigMap</td>
  *      <td><p> Updates a user workloads ConfigMap.
- * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -408,7 +424,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> DeleteUserWorkloadsConfigMap</td>
  *      <td><p> Deletes a user workloads ConfigMap.
- * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1460,7 +1476,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * component.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-2.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1497,7 +1513,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * component.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-2.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1531,7 +1547,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * component.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-2.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1569,7 +1585,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * component.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-2.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1607,7 +1623,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * component.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-2.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1646,10 +1662,104 @@ public class EnvironmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Check if an upgrade operation on the environment will succeed.
+   *
+   * <p>In case of problems detailed info can be found in the returned Operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   CheckUpgradeRequest request =
+   *       CheckUpgradeRequest.newBuilder()
+   *           .setEnvironment("environment-85904877")
+   *           .setImageVersion("imageVersion949870333")
+   *           .build();
+   *   CheckUpgradeResponse response = environmentsClient.checkUpgradeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CheckUpgradeResponse, OperationMetadata> checkUpgradeAsync(
+      CheckUpgradeRequest request) {
+    return checkUpgradeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Check if an upgrade operation on the environment will succeed.
+   *
+   * <p>In case of problems detailed info can be found in the returned Operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   CheckUpgradeRequest request =
+   *       CheckUpgradeRequest.newBuilder()
+   *           .setEnvironment("environment-85904877")
+   *           .setImageVersion("imageVersion949870333")
+   *           .build();
+   *   OperationFuture<CheckUpgradeResponse, OperationMetadata> future =
+   *       environmentsClient.checkUpgradeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   CheckUpgradeResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+      checkUpgradeOperationCallable() {
+    return stub.checkUpgradeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Check if an upgrade operation on the environment will succeed.
+   *
+   * <p>In case of problems detailed info can be found in the returned Operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   CheckUpgradeRequest request =
+   *       CheckUpgradeRequest.newBuilder()
+   *           .setEnvironment("environment-85904877")
+   *           .setImageVersion("imageVersion949870333")
+   *           .build();
+   *   ApiFuture<Operation> future = environmentsClient.checkUpgradeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CheckUpgradeRequest, Operation> checkUpgradeCallable() {
+    return stub.checkUpgradeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a user workloads Secret.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1687,7 +1797,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Creates a user workloads Secret.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1725,7 +1835,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Creates a user workloads Secret.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1758,7 +1868,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Creates a user workloads Secret.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1791,7 +1901,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Gets an existing user workloads Secret. Values of the "data" field in the response are cleared.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1826,7 +1936,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Gets an existing user workloads Secret. Values of the "data" field in the response are cleared.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1860,7 +1970,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Gets an existing user workloads Secret. Values of the "data" field in the response are cleared.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1894,7 +2004,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Gets an existing user workloads Secret. Values of the "data" field in the response are cleared.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1929,7 +2039,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Lists user workloads Secrets.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1966,7 +2076,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Lists user workloads Secrets.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2000,7 +2110,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Lists user workloads Secrets.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2037,7 +2147,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Lists user workloads Secrets.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2073,7 +2183,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Lists user workloads Secrets.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2116,7 +2226,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Updates a user workloads Secret.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2150,7 +2260,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Updates a user workloads Secret.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2182,7 +2292,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Updates a user workloads Secret.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2214,7 +2324,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Deletes a user workloads Secret.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2249,7 +2359,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Deletes a user workloads Secret.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2283,7 +2393,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Deletes a user workloads Secret.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2317,7 +2427,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Deletes a user workloads Secret.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2352,7 +2462,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Creates a user workloads ConfigMap.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2390,7 +2500,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Creates a user workloads ConfigMap.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2428,7 +2538,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Creates a user workloads ConfigMap.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2461,7 +2571,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Creates a user workloads ConfigMap.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2494,7 +2604,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Gets an existing user workloads ConfigMap.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2529,7 +2639,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Gets an existing user workloads ConfigMap.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2563,7 +2673,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Gets an existing user workloads ConfigMap.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2598,7 +2708,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Gets an existing user workloads ConfigMap.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2633,7 +2743,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Lists user workloads ConfigMaps.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2670,7 +2780,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Lists user workloads ConfigMaps.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2704,7 +2814,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Lists user workloads ConfigMaps.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2741,7 +2851,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Lists user workloads ConfigMaps.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2778,7 +2888,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Lists user workloads ConfigMaps.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2822,7 +2932,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Updates a user workloads ConfigMap.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2856,7 +2966,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Updates a user workloads ConfigMap.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2888,7 +2998,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Updates a user workloads ConfigMap.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2920,7 +3030,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Deletes a user workloads ConfigMap.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2955,7 +3065,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Deletes a user workloads ConfigMap.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -2989,7 +3099,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Deletes a user workloads ConfigMap.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -3023,7 +3133,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Deletes a user workloads ConfigMap.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-3-airflow-&#42;.&#42;.&#42;-build.&#42; and newer.
    *
    * <p>Sample code:
    *

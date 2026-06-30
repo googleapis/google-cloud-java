@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.Address;
 import com.google.cloud.compute.v1.AddressList;
 import com.google.cloud.compute.v1.DeleteGlobalAddressRequest;
@@ -42,6 +43,8 @@ import com.google.cloud.compute.v1.MoveGlobalAddressRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.SetLabelsGlobalAddressRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsGlobalAddressRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -354,6 +357,48 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsGlobalAddressRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsGlobalAddressRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.GlobalAddresses/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsGlobalAddressRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/addresses/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsGlobalAddressRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsGlobalAddressRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<DeleteGlobalAddressRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteGlobalAddressRequest, Operation, Operation>
       deleteOperationCallable;
@@ -369,10 +414,27 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
   private final UnaryCallable<SetLabelsGlobalAddressRequest, Operation> setLabelsCallable;
   private final OperationCallable<SetLabelsGlobalAddressRequest, Operation, Operation>
       setLabelsOperationCallable;
+  private final UnaryCallable<TestIamPermissionsGlobalAddressRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/addresses/{address}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/addresses/{address}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate MOVE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/addresses/{address}");
+  private static final PathTemplate SET_LABELS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/addresses/{resource}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/addresses/{resource}");
 
   public static final HttpJsonGlobalAddressesStub create(GlobalAddressesStubSettings settings)
       throws IOException {
@@ -426,6 +488,13 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("address", String.valueOf(request.getAddress()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetGlobalAddressRequest, Address> getTransportSettings =
         HttpJsonCallSettings.<GetGlobalAddressRequest, Address>newBuilder()
@@ -438,6 +507,13 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("address", String.valueOf(request.getAddress()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertGlobalAddressRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertGlobalAddressRequest, Operation>newBuilder()
@@ -449,6 +525,12 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListGlobalAddressesRequest, AddressList> listTransportSettings =
         HttpJsonCallSettings.<ListGlobalAddressesRequest, AddressList>newBuilder()
@@ -459,6 +541,12 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<MoveGlobalAddressRequest, Operation> moveTransportSettings =
@@ -472,6 +560,13 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("address", String.valueOf(request.getAddress()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return MOVE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<SetLabelsGlobalAddressRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsGlobalAddressRequest, Operation>newBuilder()
@@ -484,7 +579,36 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return SET_LABELS_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
+    HttpJsonCallSettings<TestIamPermissionsGlobalAddressRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsGlobalAddressRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
@@ -531,6 +655,11 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
             settings.setLabelsOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -545,6 +674,7 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(moveMethodDescriptor);
     methodDescriptors.add(setLabelsMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -604,6 +734,12 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
   public OperationCallable<SetLabelsGlobalAddressRequest, Operation, Operation>
       setLabelsOperationCallable() {
     return setLabelsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsGlobalAddressRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

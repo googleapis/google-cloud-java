@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,6 +90,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{parent=projects/*/locations/*}/secrets")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -127,6 +128,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{parent=projects/*/locations/*}/secrets")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -166,6 +168,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{parent=projects/*/locations/*/secrets/*}:addVersion")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -202,6 +206,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                         serializer.putPathParam(fields, "name", request.getName());
                         return fields;
                       })
+                  .setAdditionalPaths("/v1/{name=projects/*/locations/*/secrets/*}")
                   .setQueryParamsExtractor(
                       request -> {
                         Map<String, List<String>> fields = new HashMap<>();
@@ -237,6 +242,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                                 fields, "secret.name", request.getSecret().getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{secret.name=projects/*/locations/*/secrets/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -275,6 +281,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*/secrets/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -311,6 +318,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{parent=projects/*/locations/*/secrets/*}/versions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -349,6 +357,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*/secrets/*/versions/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -384,6 +393,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/secrets/*/versions/*}:access")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -419,6 +430,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/secrets/*/versions/*}:disable")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -457,6 +470,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/secrets/*/versions/*}:enable")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -495,6 +510,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/secrets/*/versions/*}:destroy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -532,6 +549,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "resource", request.getResource());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/secrets/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -569,6 +588,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "resource", request.getResource());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/secrets/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -605,6 +626,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "resource", request.getResource());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/secrets/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -705,6 +728,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateSecretRequest, Secret> createSecretTransportSettings =
         HttpJsonCallSettings.<CreateSecretRequest, Secret>newBuilder()
@@ -716,6 +740,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<AddSecretVersionRequest, SecretVersion> addSecretVersionTransportSettings =
         HttpJsonCallSettings.<AddSecretVersionRequest, SecretVersion>newBuilder()
@@ -727,6 +752,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetSecretRequest, Secret> getSecretTransportSettings =
         HttpJsonCallSettings.<GetSecretRequest, Secret>newBuilder()
@@ -738,6 +764,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateSecretRequest, Secret> updateSecretTransportSettings =
         HttpJsonCallSettings.<UpdateSecretRequest, Secret>newBuilder()
@@ -760,6 +787,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSecretVersionsRequest, ListSecretVersionsResponse>
         listSecretVersionsTransportSettings =
@@ -772,6 +800,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetSecretVersionRequest, SecretVersion> getSecretVersionTransportSettings =
         HttpJsonCallSettings.<GetSecretVersionRequest, SecretVersion>newBuilder()
@@ -783,6 +812,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<AccessSecretVersionRequest, AccessSecretVersionResponse>
         accessSecretVersionTransportSettings =
@@ -796,6 +826,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DisableSecretVersionRequest, SecretVersion>
         disableSecretVersionTransportSettings =
@@ -808,6 +839,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<EnableSecretVersionRequest, SecretVersion>
         enableSecretVersionTransportSettings =
@@ -820,6 +852,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DestroySecretVersionRequest, SecretVersion>
         destroySecretVersionTransportSettings =
@@ -832,6 +865,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -843,6 +877,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -854,6 +889,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -866,6 +902,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listSecretsCallable =

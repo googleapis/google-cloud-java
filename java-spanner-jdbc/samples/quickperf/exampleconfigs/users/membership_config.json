@@ -1,0 +1,9 @@
+{
+    "project": "xxx",
+    "instance": "xxx",
+    "database": "users",
+    "threads": 1,
+    "iterations": 100,
+    "query": "INSERT INTO membership(user_id, group_id, enrolled) VALUES((SELECT user_id FROM Users TABLESAMPLE RESERVOIR (1 ROWS)), (SELECT group_id FROM GroupMgmt TABLESAMPLE RESERVOIR (1 ROWS)), CURRENT_TIMESTAMP())",
+    "writeMetricToFile": false
+}

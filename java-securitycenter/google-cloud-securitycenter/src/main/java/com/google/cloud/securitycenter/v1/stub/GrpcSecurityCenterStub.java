@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,14 +19,20 @@ package com.google.cloud.securitycenter.v1.stub;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAttackPathsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListResourceValueConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListValuedResourcesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -36,54 +42,79 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.securitycenter.v1.BatchCreateResourceValueConfigsRequest;
+import com.google.cloud.securitycenter.v1.BatchCreateResourceValueConfigsResponse;
 import com.google.cloud.securitycenter.v1.BigQueryExport;
 import com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest;
 import com.google.cloud.securitycenter.v1.BulkMuteFindingsResponse;
 import com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest;
+import com.google.cloud.securitycenter.v1.CreateEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.CreateFindingRequest;
 import com.google.cloud.securitycenter.v1.CreateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
 import com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest;
+import com.google.cloud.securitycenter.v1.DeleteEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
+import com.google.cloud.securitycenter.v1.DeleteResourceValueConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.EffectiveEventThreatDetectionCustomModule;
 import com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModule;
+import com.google.cloud.securitycenter.v1.EventThreatDetectionCustomModule;
 import com.google.cloud.securitycenter.v1.ExternalSystem;
 import com.google.cloud.securitycenter.v1.Finding;
 import com.google.cloud.securitycenter.v1.GetBigQueryExportRequest;
+import com.google.cloud.securitycenter.v1.GetEffectiveEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.GetEffectiveSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.GetEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.GetMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest;
+import com.google.cloud.securitycenter.v1.GetResourceValueConfigRequest;
 import com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.GetSimulationRequest;
 import com.google.cloud.securitycenter.v1.GetSourceRequest;
+import com.google.cloud.securitycenter.v1.GetValuedResourceRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsResponse;
 import com.google.cloud.securitycenter.v1.GroupFindingsRequest;
 import com.google.cloud.securitycenter.v1.GroupFindingsResponse;
 import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse;
+import com.google.cloud.securitycenter.v1.ListAttackPathsRequest;
+import com.google.cloud.securitycenter.v1.ListAttackPathsResponse;
 import com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest;
 import com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse;
+import com.google.cloud.securitycenter.v1.ListDescendantEventThreatDetectionCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListDescendantEventThreatDetectionCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListDescendantSecurityHealthAnalyticsCustomModulesRequest;
 import com.google.cloud.securitycenter.v1.ListDescendantSecurityHealthAnalyticsCustomModulesResponse;
+import com.google.cloud.securitycenter.v1.ListEffectiveEventThreatDetectionCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListEffectiveEventThreatDetectionCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesRequest;
 import com.google.cloud.securitycenter.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesResponse;
+import com.google.cloud.securitycenter.v1.ListEventThreatDetectionCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListEventThreatDetectionCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse;
+import com.google.cloud.securitycenter.v1.ListResourceValueConfigsRequest;
+import com.google.cloud.securitycenter.v1.ListResourceValueConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest;
 import com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListSourcesRequest;
 import com.google.cloud.securitycenter.v1.ListSourcesResponse;
+import com.google.cloud.securitycenter.v1.ListValuedResourcesRequest;
+import com.google.cloud.securitycenter.v1.ListValuedResourcesResponse;
 import com.google.cloud.securitycenter.v1.MuteConfig;
 import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.OrganizationSettings;
+import com.google.cloud.securitycenter.v1.ResourceValueConfig;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
 import com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule;
@@ -92,16 +123,22 @@ import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
 import com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse;
+import com.google.cloud.securitycenter.v1.Simulation;
 import com.google.cloud.securitycenter.v1.Source;
 import com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest;
+import com.google.cloud.securitycenter.v1.UpdateEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest;
 import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
 import com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest;
+import com.google.cloud.securitycenter.v1.UpdateResourceValueConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.UpdateSecurityMarksRequest;
 import com.google.cloud.securitycenter.v1.UpdateSourceRequest;
+import com.google.cloud.securitycenter.v1.ValidateEventThreatDetectionCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.ValidateEventThreatDetectionCustomModuleResponse;
+import com.google.cloud.securitycenter.v1.ValuedResource;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -132,6 +169,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BulkMuteFindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -149,6 +187,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       CreateSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SecurityHealthAnalyticsCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSourceRequest, Source> createSourceMethodDescriptor =
@@ -157,6 +196,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/CreateSource")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateFindingRequest, Finding>
@@ -167,6 +207,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMuteConfigRequest, MuteConfig>
@@ -177,6 +218,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMuteConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MuteConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateNotificationConfigRequest, NotificationConfig>
@@ -188,6 +230,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NotificationConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMuteConfigRequest, Empty>
@@ -198,6 +241,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMuteConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNotificationConfigRequest, Empty>
@@ -209,6 +253,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
@@ -221,6 +266,29 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(
                       DeleteSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetSimulationRequest, Simulation>
+      getSimulationMethodDescriptor =
+          MethodDescriptor.<GetSimulationRequest, Simulation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/GetSimulation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSimulationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Simulation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetValuedResourceRequest, ValuedResource>
+      getValuedResourceMethodDescriptor =
+          MethodDescriptor.<GetValuedResourceRequest, ValuedResource>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/GetValuedResource")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetValuedResourceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ValuedResource.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBigQueryExportRequest, BigQueryExport>
@@ -231,6 +299,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBigQueryExportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BigQueryExport.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -239,6 +308,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetMuteConfigRequest, MuteConfig>
@@ -249,6 +319,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMuteConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MuteConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNotificationConfigRequest, NotificationConfig>
@@ -260,6 +331,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NotificationConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetOrganizationSettingsRequest, OrganizationSettings>
@@ -272,6 +344,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(GetOrganizationSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OrganizationSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -291,6 +364,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       EffectiveSecurityHealthAnalyticsCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -307,6 +381,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       GetSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SecurityHealthAnalyticsCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSourceRequest, Source> getSourceMethodDescriptor =
@@ -315,6 +390,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/GetSource")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GroupAssetsRequest, GroupAssetsResponse>
@@ -325,6 +401,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GroupAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GroupAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GroupFindingsRequest, GroupFindingsResponse>
@@ -336,6 +413,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(GroupFindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GroupFindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAssetsRequest, ListAssetsResponse>
@@ -345,6 +423,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/ListAssets")
               .setRequestMarshaller(ProtoUtils.marshaller(ListAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -366,6 +445,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(
                       ListDescendantSecurityHealthAnalyticsCustomModulesResponse
                           .getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFindingsRequest, ListFindingsResponse>
@@ -376,6 +456,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListFindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMuteConfigsRequest, ListMuteConfigsResponse>
@@ -387,6 +468,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListMuteConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMuteConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -401,6 +483,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListNotificationConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNotificationConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -422,6 +505,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(
                       ListEffectiveSecurityHealthAnalyticsCustomModulesResponse
                           .getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -441,6 +525,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListSecurityHealthAnalyticsCustomModulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSourcesRequest, ListSourcesResponse>
@@ -451,6 +536,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunAssetDiscoveryRequest, Operation>
@@ -461,6 +547,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RunAssetDiscoveryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetFindingStateRequest, Finding>
@@ -471,6 +558,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetFindingStateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetMuteRequest, Finding> setMuteMethodDescriptor =
@@ -479,6 +567,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/SetMute")
           .setRequestMarshaller(ProtoUtils.marshaller(SetMuteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -487,6 +576,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -498,6 +588,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -517,6 +608,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       SimulateSecurityHealthAnalyticsCustomModuleResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateExternalSystemRequest, ExternalSystem>
@@ -528,6 +620,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateExternalSystemRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ExternalSystem.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFindingRequest, Finding>
@@ -538,6 +631,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateMuteConfigRequest, MuteConfig>
@@ -548,6 +642,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateMuteConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MuteConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateNotificationConfigRequest, NotificationConfig>
@@ -559,6 +654,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NotificationConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateOrganizationSettingsRequest, OrganizationSettings>
@@ -571,6 +667,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(UpdateOrganizationSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OrganizationSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -588,6 +685,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       UpdateSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SecurityHealthAnalyticsCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSourceRequest, Source> updateSourceMethodDescriptor =
@@ -596,6 +694,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/UpdateSource")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSecurityMarksRequest, SecurityMarks>
@@ -607,6 +706,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSecurityMarksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecurityMarks.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBigQueryExportRequest, BigQueryExport>
@@ -618,6 +718,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBigQueryExportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BigQueryExport.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBigQueryExportRequest, Empty>
@@ -629,6 +730,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBigQueryExportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBigQueryExportRequest, BigQueryExport>
@@ -640,6 +742,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBigQueryExportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BigQueryExport.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBigQueryExportsRequest, ListBigQueryExportsResponse>
@@ -652,6 +755,267 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListBigQueryExportsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBigQueryExportsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      createEventThreatDetectionCustomModuleMethodDescriptor =
+          MethodDescriptor
+              .<CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/CreateEventThreatDetectionCustomModule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      CreateEventThreatDetectionCustomModuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(EventThreatDetectionCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteEventThreatDetectionCustomModuleRequest, Empty>
+      deleteEventThreatDetectionCustomModuleMethodDescriptor =
+          MethodDescriptor.<DeleteEventThreatDetectionCustomModuleRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/DeleteEventThreatDetectionCustomModule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      DeleteEventThreatDetectionCustomModuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      getEventThreatDetectionCustomModuleMethodDescriptor =
+          MethodDescriptor
+              .<GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/GetEventThreatDetectionCustomModule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetEventThreatDetectionCustomModuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(EventThreatDetectionCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListDescendantEventThreatDetectionCustomModulesRequest,
+          ListDescendantEventThreatDetectionCustomModulesResponse>
+      listDescendantEventThreatDetectionCustomModulesMethodDescriptor =
+          MethodDescriptor
+              .<ListDescendantEventThreatDetectionCustomModulesRequest,
+                  ListDescendantEventThreatDetectionCustomModulesResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListDescendantEventThreatDetectionCustomModules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListDescendantEventThreatDetectionCustomModulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListDescendantEventThreatDetectionCustomModulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListEventThreatDetectionCustomModulesRequest,
+          ListEventThreatDetectionCustomModulesResponse>
+      listEventThreatDetectionCustomModulesMethodDescriptor =
+          MethodDescriptor
+              .<ListEventThreatDetectionCustomModulesRequest,
+                  ListEventThreatDetectionCustomModulesResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListEventThreatDetectionCustomModules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListEventThreatDetectionCustomModulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListEventThreatDetectionCustomModulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      updateEventThreatDetectionCustomModuleMethodDescriptor =
+          MethodDescriptor
+              .<UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/UpdateEventThreatDetectionCustomModule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      UpdateEventThreatDetectionCustomModuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(EventThreatDetectionCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ValidateEventThreatDetectionCustomModuleRequest,
+          ValidateEventThreatDetectionCustomModuleResponse>
+      validateEventThreatDetectionCustomModuleMethodDescriptor =
+          MethodDescriptor
+              .<ValidateEventThreatDetectionCustomModuleRequest,
+                  ValidateEventThreatDetectionCustomModuleResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ValidateEventThreatDetectionCustomModule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ValidateEventThreatDetectionCustomModuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ValidateEventThreatDetectionCustomModuleResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          GetEffectiveEventThreatDetectionCustomModuleRequest,
+          EffectiveEventThreatDetectionCustomModule>
+      getEffectiveEventThreatDetectionCustomModuleMethodDescriptor =
+          MethodDescriptor
+              .<GetEffectiveEventThreatDetectionCustomModuleRequest,
+                  EffectiveEventThreatDetectionCustomModule>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/GetEffectiveEventThreatDetectionCustomModule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetEffectiveEventThreatDetectionCustomModuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      EffectiveEventThreatDetectionCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListEffectiveEventThreatDetectionCustomModulesRequest,
+          ListEffectiveEventThreatDetectionCustomModulesResponse>
+      listEffectiveEventThreatDetectionCustomModulesMethodDescriptor =
+          MethodDescriptor
+              .<ListEffectiveEventThreatDetectionCustomModulesRequest,
+                  ListEffectiveEventThreatDetectionCustomModulesResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListEffectiveEventThreatDetectionCustomModules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListEffectiveEventThreatDetectionCustomModulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListEffectiveEventThreatDetectionCustomModulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+      batchCreateResourceValueConfigsMethodDescriptor =
+          MethodDescriptor
+              .<BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/BatchCreateResourceValueConfigs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      BatchCreateResourceValueConfigsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      BatchCreateResourceValueConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteResourceValueConfigRequest, Empty>
+      deleteResourceValueConfigMethodDescriptor =
+          MethodDescriptor.<DeleteResourceValueConfigRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/DeleteResourceValueConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteResourceValueConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetResourceValueConfigRequest, ResourceValueConfig>
+      getResourceValueConfigMethodDescriptor =
+          MethodDescriptor.<GetResourceValueConfigRequest, ResourceValueConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/GetResourceValueConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetResourceValueConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ResourceValueConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListResourceValueConfigsRequest, ListResourceValueConfigsResponse>
+      listResourceValueConfigsMethodDescriptor =
+          MethodDescriptor
+              .<ListResourceValueConfigsRequest, ListResourceValueConfigsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListResourceValueConfigs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListResourceValueConfigsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListResourceValueConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateResourceValueConfigRequest, ResourceValueConfig>
+      updateResourceValueConfigMethodDescriptor =
+          MethodDescriptor.<UpdateResourceValueConfigRequest, ResourceValueConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/UpdateResourceValueConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateResourceValueConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ResourceValueConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListValuedResourcesRequest, ListValuedResourcesResponse>
+      listValuedResourcesMethodDescriptor =
+          MethodDescriptor.<ListValuedResourcesRequest, ListValuedResourcesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListValuedResources")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListValuedResourcesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListValuedResourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListAttackPathsRequest, ListAttackPathsResponse>
+      listAttackPathsMethodDescriptor =
+          MethodDescriptor.<ListAttackPathsRequest, ListAttackPathsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/ListAttackPaths")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAttackPathsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAttackPathsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<BulkMuteFindingsRequest, Operation> bulkMuteFindingsCallable;
@@ -670,6 +1034,8 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
       deleteNotificationConfigCallable;
   private final UnaryCallable<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
       deleteSecurityHealthAnalyticsCustomModuleCallable;
+  private final UnaryCallable<GetSimulationRequest, Simulation> getSimulationCallable;
+  private final UnaryCallable<GetValuedResourceRequest, ValuedResource> getValuedResourceCallable;
   private final UnaryCallable<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<GetMuteConfigRequest, MuteConfig> getMuteConfigCallable;
@@ -766,6 +1132,71 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
       listBigQueryExportsCallable;
   private final UnaryCallable<ListBigQueryExportsRequest, ListBigQueryExportsPagedResponse>
       listBigQueryExportsPagedCallable;
+  private final UnaryCallable<
+          CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      createEventThreatDetectionCustomModuleCallable;
+  private final UnaryCallable<DeleteEventThreatDetectionCustomModuleRequest, Empty>
+      deleteEventThreatDetectionCustomModuleCallable;
+  private final UnaryCallable<
+          GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      getEventThreatDetectionCustomModuleCallable;
+  private final UnaryCallable<
+          ListDescendantEventThreatDetectionCustomModulesRequest,
+          ListDescendantEventThreatDetectionCustomModulesResponse>
+      listDescendantEventThreatDetectionCustomModulesCallable;
+  private final UnaryCallable<
+          ListDescendantEventThreatDetectionCustomModulesRequest,
+          ListDescendantEventThreatDetectionCustomModulesPagedResponse>
+      listDescendantEventThreatDetectionCustomModulesPagedCallable;
+  private final UnaryCallable<
+          ListEventThreatDetectionCustomModulesRequest,
+          ListEventThreatDetectionCustomModulesResponse>
+      listEventThreatDetectionCustomModulesCallable;
+  private final UnaryCallable<
+          ListEventThreatDetectionCustomModulesRequest,
+          ListEventThreatDetectionCustomModulesPagedResponse>
+      listEventThreatDetectionCustomModulesPagedCallable;
+  private final UnaryCallable<
+          UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      updateEventThreatDetectionCustomModuleCallable;
+  private final UnaryCallable<
+          ValidateEventThreatDetectionCustomModuleRequest,
+          ValidateEventThreatDetectionCustomModuleResponse>
+      validateEventThreatDetectionCustomModuleCallable;
+  private final UnaryCallable<
+          GetEffectiveEventThreatDetectionCustomModuleRequest,
+          EffectiveEventThreatDetectionCustomModule>
+      getEffectiveEventThreatDetectionCustomModuleCallable;
+  private final UnaryCallable<
+          ListEffectiveEventThreatDetectionCustomModulesRequest,
+          ListEffectiveEventThreatDetectionCustomModulesResponse>
+      listEffectiveEventThreatDetectionCustomModulesCallable;
+  private final UnaryCallable<
+          ListEffectiveEventThreatDetectionCustomModulesRequest,
+          ListEffectiveEventThreatDetectionCustomModulesPagedResponse>
+      listEffectiveEventThreatDetectionCustomModulesPagedCallable;
+  private final UnaryCallable<
+          BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+      batchCreateResourceValueConfigsCallable;
+  private final UnaryCallable<DeleteResourceValueConfigRequest, Empty>
+      deleteResourceValueConfigCallable;
+  private final UnaryCallable<GetResourceValueConfigRequest, ResourceValueConfig>
+      getResourceValueConfigCallable;
+  private final UnaryCallable<ListResourceValueConfigsRequest, ListResourceValueConfigsResponse>
+      listResourceValueConfigsCallable;
+  private final UnaryCallable<
+          ListResourceValueConfigsRequest, ListResourceValueConfigsPagedResponse>
+      listResourceValueConfigsPagedCallable;
+  private final UnaryCallable<UpdateResourceValueConfigRequest, ResourceValueConfig>
+      updateResourceValueConfigCallable;
+  private final UnaryCallable<ListValuedResourcesRequest, ListValuedResourcesResponse>
+      listValuedResourcesCallable;
+  private final UnaryCallable<ListValuedResourcesRequest, ListValuedResourcesPagedResponse>
+      listValuedResourcesPagedCallable;
+  private final UnaryCallable<ListAttackPathsRequest, ListAttackPathsResponse>
+      listAttackPathsCallable;
+  private final UnaryCallable<ListAttackPathsRequest, ListAttackPathsPagedResponse>
+      listAttackPathsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -820,6 +1251,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<
             CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
@@ -835,6 +1267,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateSourceRequest, Source> createSourceTransportSettings =
         GrpcCallSettings.<CreateSourceRequest, Source>newBuilder()
@@ -845,6 +1278,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateFindingRequest, Finding> createFindingTransportSettings =
         GrpcCallSettings.<CreateFindingRequest, Finding>newBuilder()
@@ -855,6 +1289,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateMuteConfigRequest, MuteConfig> createMuteConfigTransportSettings =
         GrpcCallSettings.<CreateMuteConfigRequest, MuteConfig>newBuilder()
@@ -865,6 +1300,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateNotificationConfigRequest, NotificationConfig>
         createNotificationConfigTransportSettings =
@@ -876,6 +1312,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteMuteConfigRequest, Empty> deleteMuteConfigTransportSettings =
         GrpcCallSettings.<DeleteMuteConfigRequest, Empty>newBuilder()
@@ -886,6 +1323,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteNotificationConfigRequest, Empty>
         deleteNotificationConfigTransportSettings =
@@ -897,6 +1335,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
         deleteSecurityHealthAnalyticsCustomModuleTransportSettings =
@@ -908,7 +1347,30 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
+    GrpcCallSettings<GetSimulationRequest, Simulation> getSimulationTransportSettings =
+        GrpcCallSettings.<GetSimulationRequest, Simulation>newBuilder()
+            .setMethodDescriptor(getSimulationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<GetValuedResourceRequest, ValuedResource> getValuedResourceTransportSettings =
+        GrpcCallSettings.<GetValuedResourceRequest, ValuedResource>newBuilder()
+            .setMethodDescriptor(getValuedResourceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     GrpcCallSettings<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportTransportSettings =
         GrpcCallSettings.<GetBigQueryExportRequest, BigQueryExport>newBuilder()
             .setMethodDescriptor(getBigQueryExportMethodDescriptor)
@@ -918,6 +1380,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -928,6 +1391,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetMuteConfigRequest, MuteConfig> getMuteConfigTransportSettings =
         GrpcCallSettings.<GetMuteConfigRequest, MuteConfig>newBuilder()
@@ -938,6 +1402,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetNotificationConfigRequest, NotificationConfig>
         getNotificationConfigTransportSettings =
@@ -949,6 +1414,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
         getOrganizationSettingsTransportSettings =
@@ -960,6 +1426,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
@@ -977,6 +1444,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
@@ -992,6 +1460,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetSourceRequest, Source> getSourceTransportSettings =
         GrpcCallSettings.<GetSourceRequest, Source>newBuilder()
@@ -1002,6 +1471,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GroupAssetsRequest, GroupAssetsResponse> groupAssetsTransportSettings =
         GrpcCallSettings.<GroupAssetsRequest, GroupAssetsResponse>newBuilder()
@@ -1012,6 +1482,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GroupFindingsRequest, GroupFindingsResponse> groupFindingsTransportSettings =
         GrpcCallSettings.<GroupFindingsRequest, GroupFindingsResponse>newBuilder()
@@ -1022,6 +1493,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         GrpcCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
@@ -1032,6 +1504,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<
             ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
@@ -1049,6 +1522,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
         GrpcCallSettings.<ListFindingsRequest, ListFindingsResponse>newBuilder()
@@ -1059,6 +1533,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListMuteConfigsRequest, ListMuteConfigsResponse>
         listMuteConfigsTransportSettings =
@@ -1070,6 +1545,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
         listNotificationConfigsTransportSettings =
@@ -1082,6 +1558,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
@@ -1099,6 +1576,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             ListSecurityHealthAnalyticsCustomModulesRequest,
@@ -1115,6 +1593,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListSourcesRequest, ListSourcesResponse> listSourcesTransportSettings =
         GrpcCallSettings.<ListSourcesRequest, ListSourcesResponse>newBuilder()
@@ -1125,6 +1604,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RunAssetDiscoveryRequest, Operation> runAssetDiscoveryTransportSettings =
         GrpcCallSettings.<RunAssetDiscoveryRequest, Operation>newBuilder()
@@ -1135,6 +1615,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SetFindingStateRequest, Finding> setFindingStateTransportSettings =
         GrpcCallSettings.<SetFindingStateRequest, Finding>newBuilder()
@@ -1145,6 +1626,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SetMuteRequest, Finding> setMuteTransportSettings =
         GrpcCallSettings.<SetMuteRequest, Finding>newBuilder()
@@ -1155,6 +1637,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -1165,6 +1648,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1176,6 +1660,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<
             SimulateSecurityHealthAnalyticsCustomModuleRequest,
@@ -1304,6 +1789,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteBigQueryExportRequest, Empty> deleteBigQueryExportTransportSettings =
         GrpcCallSettings.<DeleteBigQueryExportRequest, Empty>newBuilder()
@@ -1314,6 +1800,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateBigQueryExportRequest, BigQueryExport>
         updateBigQueryExportTransportSettings =
@@ -1338,6 +1825,239 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<
+            CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+        createEventThreatDetectionCustomModuleTransportSettings =
+            GrpcCallSettings
+                .<CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+                    newBuilder()
+                .setMethodDescriptor(createEventThreatDetectionCustomModuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<DeleteEventThreatDetectionCustomModuleRequest, Empty>
+        deleteEventThreatDetectionCustomModuleTransportSettings =
+            GrpcCallSettings.<DeleteEventThreatDetectionCustomModuleRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteEventThreatDetectionCustomModuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+        getEventThreatDetectionCustomModuleTransportSettings =
+            GrpcCallSettings
+                .<GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+                    newBuilder()
+                .setMethodDescriptor(getEventThreatDetectionCustomModuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<
+            ListDescendantEventThreatDetectionCustomModulesRequest,
+            ListDescendantEventThreatDetectionCustomModulesResponse>
+        listDescendantEventThreatDetectionCustomModulesTransportSettings =
+            GrpcCallSettings
+                .<ListDescendantEventThreatDetectionCustomModulesRequest,
+                    ListDescendantEventThreatDetectionCustomModulesResponse>
+                    newBuilder()
+                .setMethodDescriptor(
+                    listDescendantEventThreatDetectionCustomModulesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<
+            ListEventThreatDetectionCustomModulesRequest,
+            ListEventThreatDetectionCustomModulesResponse>
+        listEventThreatDetectionCustomModulesTransportSettings =
+            GrpcCallSettings
+                .<ListEventThreatDetectionCustomModulesRequest,
+                    ListEventThreatDetectionCustomModulesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listEventThreatDetectionCustomModulesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<
+            UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+        updateEventThreatDetectionCustomModuleTransportSettings =
+            GrpcCallSettings
+                .<UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+                    newBuilder()
+                .setMethodDescriptor(updateEventThreatDetectionCustomModuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "event_threat_detection_custom_module.name",
+                          String.valueOf(request.getEventThreatDetectionCustomModule().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            ValidateEventThreatDetectionCustomModuleRequest,
+            ValidateEventThreatDetectionCustomModuleResponse>
+        validateEventThreatDetectionCustomModuleTransportSettings =
+            GrpcCallSettings
+                .<ValidateEventThreatDetectionCustomModuleRequest,
+                    ValidateEventThreatDetectionCustomModuleResponse>
+                    newBuilder()
+                .setMethodDescriptor(validateEventThreatDetectionCustomModuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<
+            GetEffectiveEventThreatDetectionCustomModuleRequest,
+            EffectiveEventThreatDetectionCustomModule>
+        getEffectiveEventThreatDetectionCustomModuleTransportSettings =
+            GrpcCallSettings
+                .<GetEffectiveEventThreatDetectionCustomModuleRequest,
+                    EffectiveEventThreatDetectionCustomModule>
+                    newBuilder()
+                .setMethodDescriptor(getEffectiveEventThreatDetectionCustomModuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<
+            ListEffectiveEventThreatDetectionCustomModulesRequest,
+            ListEffectiveEventThreatDetectionCustomModulesResponse>
+        listEffectiveEventThreatDetectionCustomModulesTransportSettings =
+            GrpcCallSettings
+                .<ListEffectiveEventThreatDetectionCustomModulesRequest,
+                    ListEffectiveEventThreatDetectionCustomModulesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listEffectiveEventThreatDetectionCustomModulesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<
+            BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+        batchCreateResourceValueConfigsTransportSettings =
+            GrpcCallSettings
+                .<BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchCreateResourceValueConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<DeleteResourceValueConfigRequest, Empty>
+        deleteResourceValueConfigTransportSettings =
+            GrpcCallSettings.<DeleteResourceValueConfigRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteResourceValueConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<GetResourceValueConfigRequest, ResourceValueConfig>
+        getResourceValueConfigTransportSettings =
+            GrpcCallSettings.<GetResourceValueConfigRequest, ResourceValueConfig>newBuilder()
+                .setMethodDescriptor(getResourceValueConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListResourceValueConfigsRequest, ListResourceValueConfigsResponse>
+        listResourceValueConfigsTransportSettings =
+            GrpcCallSettings
+                .<ListResourceValueConfigsRequest, ListResourceValueConfigsResponse>newBuilder()
+                .setMethodDescriptor(listResourceValueConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateResourceValueConfigRequest, ResourceValueConfig>
+        updateResourceValueConfigTransportSettings =
+            GrpcCallSettings.<UpdateResourceValueConfigRequest, ResourceValueConfig>newBuilder()
+                .setMethodDescriptor(updateResourceValueConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "resource_value_config.name",
+                          String.valueOf(request.getResourceValueConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListValuedResourcesRequest, ListValuedResourcesResponse>
+        listValuedResourcesTransportSettings =
+            GrpcCallSettings.<ListValuedResourcesRequest, ListValuedResourcesResponse>newBuilder()
+                .setMethodDescriptor(listValuedResourcesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<ListAttackPathsRequest, ListAttackPathsResponse>
+        listAttackPathsTransportSettings =
+            GrpcCallSettings.<ListAttackPathsRequest, ListAttackPathsResponse>newBuilder()
+                .setMethodDescriptor(listAttackPathsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.bulkMuteFindingsCallable =
@@ -1380,6 +2100,14 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
         callableFactory.createUnaryCallable(
             deleteSecurityHealthAnalyticsCustomModuleTransportSettings,
             settings.deleteSecurityHealthAnalyticsCustomModuleSettings(),
+            clientContext);
+    this.getSimulationCallable =
+        callableFactory.createUnaryCallable(
+            getSimulationTransportSettings, settings.getSimulationSettings(), clientContext);
+    this.getValuedResourceCallable =
+        callableFactory.createUnaryCallable(
+            getValuedResourceTransportSettings,
+            settings.getValuedResourceSettings(),
             clientContext);
     this.getBigQueryExportCallable =
         callableFactory.createUnaryCallable(
@@ -1580,6 +2308,112 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
             listBigQueryExportsTransportSettings,
             settings.listBigQueryExportsSettings(),
             clientContext);
+    this.createEventThreatDetectionCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            createEventThreatDetectionCustomModuleTransportSettings,
+            settings.createEventThreatDetectionCustomModuleSettings(),
+            clientContext);
+    this.deleteEventThreatDetectionCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteEventThreatDetectionCustomModuleTransportSettings,
+            settings.deleteEventThreatDetectionCustomModuleSettings(),
+            clientContext);
+    this.getEventThreatDetectionCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            getEventThreatDetectionCustomModuleTransportSettings,
+            settings.getEventThreatDetectionCustomModuleSettings(),
+            clientContext);
+    this.listDescendantEventThreatDetectionCustomModulesCallable =
+        callableFactory.createUnaryCallable(
+            listDescendantEventThreatDetectionCustomModulesTransportSettings,
+            settings.listDescendantEventThreatDetectionCustomModulesSettings(),
+            clientContext);
+    this.listDescendantEventThreatDetectionCustomModulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDescendantEventThreatDetectionCustomModulesTransportSettings,
+            settings.listDescendantEventThreatDetectionCustomModulesSettings(),
+            clientContext);
+    this.listEventThreatDetectionCustomModulesCallable =
+        callableFactory.createUnaryCallable(
+            listEventThreatDetectionCustomModulesTransportSettings,
+            settings.listEventThreatDetectionCustomModulesSettings(),
+            clientContext);
+    this.listEventThreatDetectionCustomModulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listEventThreatDetectionCustomModulesTransportSettings,
+            settings.listEventThreatDetectionCustomModulesSettings(),
+            clientContext);
+    this.updateEventThreatDetectionCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            updateEventThreatDetectionCustomModuleTransportSettings,
+            settings.updateEventThreatDetectionCustomModuleSettings(),
+            clientContext);
+    this.validateEventThreatDetectionCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            validateEventThreatDetectionCustomModuleTransportSettings,
+            settings.validateEventThreatDetectionCustomModuleSettings(),
+            clientContext);
+    this.getEffectiveEventThreatDetectionCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            getEffectiveEventThreatDetectionCustomModuleTransportSettings,
+            settings.getEffectiveEventThreatDetectionCustomModuleSettings(),
+            clientContext);
+    this.listEffectiveEventThreatDetectionCustomModulesCallable =
+        callableFactory.createUnaryCallable(
+            listEffectiveEventThreatDetectionCustomModulesTransportSettings,
+            settings.listEffectiveEventThreatDetectionCustomModulesSettings(),
+            clientContext);
+    this.listEffectiveEventThreatDetectionCustomModulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listEffectiveEventThreatDetectionCustomModulesTransportSettings,
+            settings.listEffectiveEventThreatDetectionCustomModulesSettings(),
+            clientContext);
+    this.batchCreateResourceValueConfigsCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateResourceValueConfigsTransportSettings,
+            settings.batchCreateResourceValueConfigsSettings(),
+            clientContext);
+    this.deleteResourceValueConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteResourceValueConfigTransportSettings,
+            settings.deleteResourceValueConfigSettings(),
+            clientContext);
+    this.getResourceValueConfigCallable =
+        callableFactory.createUnaryCallable(
+            getResourceValueConfigTransportSettings,
+            settings.getResourceValueConfigSettings(),
+            clientContext);
+    this.listResourceValueConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listResourceValueConfigsTransportSettings,
+            settings.listResourceValueConfigsSettings(),
+            clientContext);
+    this.listResourceValueConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listResourceValueConfigsTransportSettings,
+            settings.listResourceValueConfigsSettings(),
+            clientContext);
+    this.updateResourceValueConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateResourceValueConfigTransportSettings,
+            settings.updateResourceValueConfigSettings(),
+            clientContext);
+    this.listValuedResourcesCallable =
+        callableFactory.createUnaryCallable(
+            listValuedResourcesTransportSettings,
+            settings.listValuedResourcesSettings(),
+            clientContext);
+    this.listValuedResourcesPagedCallable =
+        callableFactory.createPagedCallable(
+            listValuedResourcesTransportSettings,
+            settings.listValuedResourcesSettings(),
+            clientContext);
+    this.listAttackPathsCallable =
+        callableFactory.createUnaryCallable(
+            listAttackPathsTransportSettings, settings.listAttackPathsSettings(), clientContext);
+    this.listAttackPathsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAttackPathsTransportSettings, settings.listAttackPathsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1642,6 +2476,16 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   public UnaryCallable<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
       deleteSecurityHealthAnalyticsCustomModuleCallable() {
     return deleteSecurityHealthAnalyticsCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSimulationRequest, Simulation> getSimulationCallable() {
+    return getSimulationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetValuedResourceRequest, ValuedResource> getValuedResourceCallable() {
+    return getValuedResourceCallable;
   }
 
   @Override
@@ -1922,6 +2766,156 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   public UnaryCallable<ListBigQueryExportsRequest, ListBigQueryExportsPagedResponse>
       listBigQueryExportsPagedCallable() {
     return listBigQueryExportsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      createEventThreatDetectionCustomModuleCallable() {
+    return createEventThreatDetectionCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteEventThreatDetectionCustomModuleRequest, Empty>
+      deleteEventThreatDetectionCustomModuleCallable() {
+    return deleteEventThreatDetectionCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      getEventThreatDetectionCustomModuleCallable() {
+    return getEventThreatDetectionCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDescendantEventThreatDetectionCustomModulesRequest,
+          ListDescendantEventThreatDetectionCustomModulesResponse>
+      listDescendantEventThreatDetectionCustomModulesCallable() {
+    return listDescendantEventThreatDetectionCustomModulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDescendantEventThreatDetectionCustomModulesRequest,
+          ListDescendantEventThreatDetectionCustomModulesPagedResponse>
+      listDescendantEventThreatDetectionCustomModulesPagedCallable() {
+    return listDescendantEventThreatDetectionCustomModulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListEventThreatDetectionCustomModulesRequest,
+          ListEventThreatDetectionCustomModulesResponse>
+      listEventThreatDetectionCustomModulesCallable() {
+    return listEventThreatDetectionCustomModulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListEventThreatDetectionCustomModulesRequest,
+          ListEventThreatDetectionCustomModulesPagedResponse>
+      listEventThreatDetectionCustomModulesPagedCallable() {
+    return listEventThreatDetectionCustomModulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      updateEventThreatDetectionCustomModuleCallable() {
+    return updateEventThreatDetectionCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ValidateEventThreatDetectionCustomModuleRequest,
+          ValidateEventThreatDetectionCustomModuleResponse>
+      validateEventThreatDetectionCustomModuleCallable() {
+    return validateEventThreatDetectionCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetEffectiveEventThreatDetectionCustomModuleRequest,
+          EffectiveEventThreatDetectionCustomModule>
+      getEffectiveEventThreatDetectionCustomModuleCallable() {
+    return getEffectiveEventThreatDetectionCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListEffectiveEventThreatDetectionCustomModulesRequest,
+          ListEffectiveEventThreatDetectionCustomModulesResponse>
+      listEffectiveEventThreatDetectionCustomModulesCallable() {
+    return listEffectiveEventThreatDetectionCustomModulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListEffectiveEventThreatDetectionCustomModulesRequest,
+          ListEffectiveEventThreatDetectionCustomModulesPagedResponse>
+      listEffectiveEventThreatDetectionCustomModulesPagedCallable() {
+    return listEffectiveEventThreatDetectionCustomModulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+      batchCreateResourceValueConfigsCallable() {
+    return batchCreateResourceValueConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteResourceValueConfigRequest, Empty>
+      deleteResourceValueConfigCallable() {
+    return deleteResourceValueConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetResourceValueConfigRequest, ResourceValueConfig>
+      getResourceValueConfigCallable() {
+    return getResourceValueConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceValueConfigsRequest, ListResourceValueConfigsResponse>
+      listResourceValueConfigsCallable() {
+    return listResourceValueConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceValueConfigsRequest, ListResourceValueConfigsPagedResponse>
+      listResourceValueConfigsPagedCallable() {
+    return listResourceValueConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateResourceValueConfigRequest, ResourceValueConfig>
+      updateResourceValueConfigCallable() {
+    return updateResourceValueConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListValuedResourcesRequest, ListValuedResourcesResponse>
+      listValuedResourcesCallable() {
+    return listValuedResourcesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListValuedResourcesRequest, ListValuedResourcesPagedResponse>
+      listValuedResourcesPagedCallable() {
+    return listValuedResourcesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAttackPathsRequest, ListAttackPathsResponse> listAttackPathsCallable() {
+    return listAttackPathsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAttackPathsRequest, ListAttackPathsPagedResponse>
+      listAttackPathsPagedCallable() {
+    return listAttackPathsPagedCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The Registry service allows teams to manage descriptions of APIs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/apigeeregistry/v1/registry_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RegistryGrpc {
 
@@ -1645,6 +1642,19 @@ public final class RegistryGrpc {
     return RegistryStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static RegistryBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<RegistryBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RegistryBlockingV2Stub>() {
+          @java.lang.Override
+          public RegistryBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RegistryBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return RegistryBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2814,6 +2824,530 @@ public final class RegistryGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Registry.
+   *
+   * <pre>
+   * The Registry service allows teams to manage descriptions of APIs.
+   * </pre>
+   */
+  public static final class RegistryBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<RegistryBlockingV2Stub> {
+    private RegistryBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected RegistryBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new RegistryBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns matching APIs.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ListApisResponse listApis(
+        com.google.cloud.apigeeregistry.v1.ListApisRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListApisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a specified API.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.Api getApi(
+        com.google.cloud.apigeeregistry.v1.GetApiRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetApiMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a specified API.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.Api createApi(
+        com.google.cloud.apigeeregistry.v1.CreateApiRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateApiMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Used to modify a specified API.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.Api updateApi(
+        com.google.cloud.apigeeregistry.v1.UpdateApiRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateApiMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a specified API and all of the resources that it
+     * owns.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteApi(
+        com.google.cloud.apigeeregistry.v1.DeleteApiRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteApiMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns matching versions.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ListApiVersionsResponse listApiVersions(
+        com.google.cloud.apigeeregistry.v1.ListApiVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListApiVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a specified version.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ApiVersion getApiVersion(
+        com.google.cloud.apigeeregistry.v1.GetApiVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetApiVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a specified version.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ApiVersion createApiVersion(
+        com.google.cloud.apigeeregistry.v1.CreateApiVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateApiVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Used to modify a specified version.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ApiVersion updateApiVersion(
+        com.google.cloud.apigeeregistry.v1.UpdateApiVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateApiVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a specified version and all of the resources that
+     * it owns.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteApiVersion(
+        com.google.cloud.apigeeregistry.v1.DeleteApiVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteApiVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns matching specs.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ListApiSpecsResponse listApiSpecs(
+        com.google.cloud.apigeeregistry.v1.ListApiSpecsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListApiSpecsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a specified spec.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ApiSpec getApiSpec(
+        com.google.cloud.apigeeregistry.v1.GetApiSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetApiSpecMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the contents of a specified spec.
+     * If specs are stored with GZip compression, the default behavior
+     * is to return the spec uncompressed (the mime_type response field
+     * indicates the exact format returned).
+     * </pre>
+     */
+    public com.google.api.HttpBody getApiSpecContents(
+        com.google.cloud.apigeeregistry.v1.GetApiSpecContentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetApiSpecContentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a specified spec.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ApiSpec createApiSpec(
+        com.google.cloud.apigeeregistry.v1.CreateApiSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateApiSpecMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Used to modify a specified spec.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ApiSpec updateApiSpec(
+        com.google.cloud.apigeeregistry.v1.UpdateApiSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateApiSpecMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a specified spec, all revisions, and all child
+     * resources (e.g., artifacts).
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteApiSpec(
+        com.google.cloud.apigeeregistry.v1.DeleteApiSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteApiSpecMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a tag to a specified revision of a spec.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ApiSpec tagApiSpecRevision(
+        com.google.cloud.apigeeregistry.v1.TagApiSpecRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTagApiSpecRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all revisions of a spec.
+     * Revisions are returned in descending order of revision creation time.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ListApiSpecRevisionsResponse listApiSpecRevisions(
+        com.google.cloud.apigeeregistry.v1.ListApiSpecRevisionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListApiSpecRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the current revision to a specified prior revision.
+     * Note that this creates a new revision with a new revision ID.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ApiSpec rollbackApiSpec(
+        com.google.cloud.apigeeregistry.v1.RollbackApiSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRollbackApiSpecMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a revision of a spec.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ApiSpec deleteApiSpecRevision(
+        com.google.cloud.apigeeregistry.v1.DeleteApiSpecRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteApiSpecRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns matching deployments.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ListApiDeploymentsResponse listApiDeployments(
+        com.google.cloud.apigeeregistry.v1.ListApiDeploymentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListApiDeploymentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a specified deployment.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ApiDeployment getApiDeployment(
+        com.google.cloud.apigeeregistry.v1.GetApiDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetApiDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a specified deployment.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ApiDeployment createApiDeployment(
+        com.google.cloud.apigeeregistry.v1.CreateApiDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateApiDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Used to modify a specified deployment.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ApiDeployment updateApiDeployment(
+        com.google.cloud.apigeeregistry.v1.UpdateApiDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateApiDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a specified deployment, all revisions, and all
+     * child resources (e.g., artifacts).
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteApiDeployment(
+        com.google.cloud.apigeeregistry.v1.DeleteApiDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteApiDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a tag to a specified revision of a
+     * deployment.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ApiDeployment tagApiDeploymentRevision(
+        com.google.cloud.apigeeregistry.v1.TagApiDeploymentRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTagApiDeploymentRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all revisions of a deployment.
+     * Revisions are returned in descending order of revision creation time.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ListApiDeploymentRevisionsResponse
+        listApiDeploymentRevisions(
+            com.google.cloud.apigeeregistry.v1.ListApiDeploymentRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListApiDeploymentRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the current revision to a specified prior
+     * revision. Note that this creates a new revision with a new revision ID.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ApiDeployment rollbackApiDeployment(
+        com.google.cloud.apigeeregistry.v1.RollbackApiDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRollbackApiDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a revision of a deployment.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ApiDeployment deleteApiDeploymentRevision(
+        com.google.cloud.apigeeregistry.v1.DeleteApiDeploymentRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteApiDeploymentRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns matching artifacts.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.ListArtifactsResponse listArtifacts(
+        com.google.cloud.apigeeregistry.v1.ListArtifactsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListArtifactsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a specified artifact.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.Artifact getArtifact(
+        com.google.cloud.apigeeregistry.v1.GetArtifactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetArtifactMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the contents of a specified artifact.
+     * If artifacts are stored with GZip compression, the default behavior
+     * is to return the artifact uncompressed (the mime_type response field
+     * indicates the exact format returned).
+     * </pre>
+     */
+    public com.google.api.HttpBody getArtifactContents(
+        com.google.cloud.apigeeregistry.v1.GetArtifactContentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetArtifactContentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a specified artifact.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.Artifact createArtifact(
+        com.google.cloud.apigeeregistry.v1.CreateArtifactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateArtifactMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Used to replace a specified artifact.
+     * </pre>
+     */
+    public com.google.cloud.apigeeregistry.v1.Artifact replaceArtifact(
+        com.google.cloud.apigeeregistry.v1.ReplaceArtifactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getReplaceArtifactMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a specified artifact.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteArtifact(
+        com.google.cloud.apigeeregistry.v1.DeleteArtifactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteArtifactMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Registry.
    *
    * <pre>
    * The Registry service allows teams to manage descriptions of APIs.

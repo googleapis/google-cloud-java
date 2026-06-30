@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dataplex.v1.CancelDataScanJobRequest;
+import com.google.cloud.dataplex.v1.CancelDataScanJobResponse;
 import com.google.cloud.dataplex.v1.CreateDataScanRequest;
 import com.google.cloud.dataplex.v1.DataScan;
 import com.google.cloud.dataplex.v1.DataScanJob;
@@ -57,6 +59,11 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableMap;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -192,6 +199,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteDataScanRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "force", request.getForce());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -389,6 +397,43 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobMethodDescriptor =
+          ApiMethodDescriptor.<CancelDataScanJobRequest, CancelDataScanJobResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.DataScanService/CancelDataScanJob")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CancelDataScanJobRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/dataScans/*/jobs/*}:cancel",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelDataScanJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelDataScanJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CancelDataScanJobResponse>newBuilder()
+                      .setDefaultInstance(CancelDataScanJobResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<
           GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
       generateDataQualityRulesMethodDescriptor =
@@ -499,6 +544,174 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SetIamPolicyRequest, Policy>
+      setIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/lakes/*}:setIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataScans/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataAttributeBindings/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryTypes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryLinkTypes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/aspectTypes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryGroups/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/governanceRules/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/categories/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/changeRequests/*}:setIamPolicy",
+                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataDomains/*}:setIamPolicy")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetIamPolicyRequest, Policy>
+      getIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/lakes/*}:getIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataScans/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataAttributeBindings/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryTypes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryLinkTypes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/aspectTypes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryGroups/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/governanceRules/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/categories/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/changeRequests/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:getIamPolicy",
+                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataDomains/*}:getIamPolicy")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/lakes/*}:testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataScans/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataAttributeBindings/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/entryTypes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/entryLinkTypes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/aspectTypes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/entryGroups/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/governanceRules/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/categories/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/changeRequests/*}:testIamPermissions",
+                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataDomains/*}:testIamPermissions")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestIamPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateDataScanRequest, Operation> createDataScanCallable;
   private final OperationCallable<CreateDataScanRequest, DataScan, OperationMetadata>
       createDataScanOperationCallable;
@@ -518,12 +731,18 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
       listDataScanJobsCallable;
   private final UnaryCallable<ListDataScanJobsRequest, ListDataScanJobsPagedResponse>
       listDataScanJobsPagedCallable;
+  private final UnaryCallable<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobCallable;
   private final UnaryCallable<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
       generateDataQualityRulesCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
   private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -577,21 +796,38 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                     "google.longrunning.Operations.CancelOperation",
                     HttpRule.newBuilder()
                         .setPost("/v1/{name=projects/*/locations/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=organizations/*/locations/*/operations/*}:cancel")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.DeleteOperation",
                     HttpRule.newBuilder()
                         .setDelete("/v1/{name=projects/*/locations/*/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete("/v1/{name=organizations/*/locations/*/operations/*}")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet("/v1/{name=projects/*/locations/*/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=organizations/*/locations/*/operations/*}")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.ListOperations",
                     HttpRule.newBuilder()
                         .setGet("/v1/{name=projects/*/locations/*}/operations")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=organizations/*/locations/*}/operations")
+                                .build())
                         .build())
                 .build());
 
@@ -605,6 +841,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateDataScanRequest, Operation> updateDataScanTransportSettings =
         HttpJsonCallSettings.<UpdateDataScanRequest, Operation>newBuilder()
@@ -627,6 +864,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetDataScanRequest, DataScan> getDataScanTransportSettings =
         HttpJsonCallSettings.<GetDataScanRequest, DataScan>newBuilder()
@@ -638,6 +876,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDataScansRequest, ListDataScansResponse>
         listDataScansTransportSettings =
@@ -650,6 +889,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<RunDataScanRequest, RunDataScanResponse> runDataScanTransportSettings =
         HttpJsonCallSettings.<RunDataScanRequest, RunDataScanResponse>newBuilder()
@@ -661,6 +901,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetDataScanJobRequest, DataScanJob> getDataScanJobTransportSettings =
         HttpJsonCallSettings.<GetDataScanJobRequest, DataScanJob>newBuilder()
@@ -672,6 +913,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDataScanJobsRequest, ListDataScanJobsResponse>
         listDataScanJobsTransportSettings =
@@ -684,6 +926,20 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<CancelDataScanJobRequest, CancelDataScanJobResponse>
+        cancelDataScanJobTransportSettings =
+            HttpJsonCallSettings.<CancelDataScanJobRequest, CancelDataScanJobResponse>newBuilder()
+                .setMethodDescriptor(cancelDataScanJobMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
         generateDataQualityRulesTransportSettings =
@@ -721,6 +977,43 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
+    HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
+    HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getResource())
+                .build();
 
     this.createDataScanCallable =
         callableFactory.createUnaryCallable(
@@ -770,6 +1063,11 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
     this.listDataScanJobsPagedCallable =
         callableFactory.createPagedCallable(
             listDataScanJobsTransportSettings, settings.listDataScanJobsSettings(), clientContext);
+    this.cancelDataScanJobCallable =
+        callableFactory.createUnaryCallable(
+            cancelDataScanJobTransportSettings,
+            settings.cancelDataScanJobSettings(),
+            clientContext);
     this.generateDataQualityRulesCallable =
         callableFactory.createUnaryCallable(
             generateDataQualityRulesTransportSettings,
@@ -784,6 +1082,17 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
     this.getLocationCallable =
         callableFactory.createUnaryCallable(
             getLocationTransportSettings, settings.getLocationSettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -800,9 +1109,13 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
     methodDescriptors.add(runDataScanMethodDescriptor);
     methodDescriptors.add(getDataScanJobMethodDescriptor);
     methodDescriptors.add(listDataScanJobsMethodDescriptor);
+    methodDescriptors.add(cancelDataScanJobMethodDescriptor);
     methodDescriptors.add(generateDataQualityRulesMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -882,6 +1195,12 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
   }
 
   @Override
+  public UnaryCallable<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobCallable() {
+    return cancelDataScanJobCallable;
+  }
+
+  @Override
   public UnaryCallable<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
       generateDataQualityRulesCallable() {
     return generateDataQualityRulesCallable;
@@ -901,6 +1220,22 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
   @Override
   public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     return getLocationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

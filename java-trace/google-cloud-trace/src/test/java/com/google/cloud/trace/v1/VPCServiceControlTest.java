@@ -47,10 +47,12 @@ public class VPCServiceControlTest {
   @BeforeClass
   public static void setUpClass() {
     Assume.assumeTrue(
-        "GOOGLE_CLOUD_TESTS_VPCSC_OUTSIDE_PERIMETER_PROJECT environment variable needs to be set to a GCP project that is outside the VPC perimeter",
+        "GOOGLE_CLOUD_TESTS_VPCSC_OUTSIDE_PERIMETER_PROJECT environment variable needs to be set to"
+            + " a GCP project that is outside the VPC perimeter",
         PROJECT_OUTSIDE != null && !PROJECT_OUTSIDE.isEmpty());
     Assume.assumeTrue(
-        "PROJECT_ID environment variable needs to be set to a GCP project that is inside the VPC perimeter",
+        "PROJECT_ID environment variable needs to be set to a GCP project that is inside the VPC"
+            + " perimeter",
         PROJECT_INSIDE != null && !PROJECT_INSIDE.isEmpty());
   }
 

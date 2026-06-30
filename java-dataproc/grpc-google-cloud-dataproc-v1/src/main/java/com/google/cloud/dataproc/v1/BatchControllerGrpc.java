@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The BatchController provides methods to manage batch workloads.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataproc/v1/batches.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BatchControllerGrpc {
 
@@ -218,6 +215,19 @@ public final class BatchControllerGrpc {
     return BatchControllerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static BatchControllerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BatchControllerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BatchControllerBlockingV2Stub>() {
+          @java.lang.Override
+          public BatchControllerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BatchControllerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return BatchControllerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -301,8 +311,10 @@ public final class BatchControllerGrpc {
      *
      *
      * <pre>
-     * Deletes the batch workload resource. If the batch is not in terminal state,
-     * the delete fails and the response returns `FAILED_PRECONDITION`.
+     * Deletes the batch workload resource. If the batch is not in a
+     * `CANCELLED`, `SUCCEEDED` or `FAILED`
+     * [`State`][google.cloud.dataproc.v1.Batch.State], the delete operation fails
+     * and the response returns `FAILED_PRECONDITION`.
      * </pre>
      */
     default void deleteBatch(
@@ -398,8 +410,10 @@ public final class BatchControllerGrpc {
      *
      *
      * <pre>
-     * Deletes the batch workload resource. If the batch is not in terminal state,
-     * the delete fails and the response returns `FAILED_PRECONDITION`.
+     * Deletes the batch workload resource. If the batch is not in a
+     * `CANCELLED`, `SUCCEEDED` or `FAILED`
+     * [`State`][google.cloud.dataproc.v1.Batch.State], the delete operation fails
+     * and the response returns `FAILED_PRECONDITION`.
      * </pre>
      */
     public void deleteBatch(
@@ -414,6 +428,82 @@ public final class BatchControllerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service BatchController.
+   *
+   * <pre>
+   * The BatchController provides methods to manage batch workloads.
+   * </pre>
+   */
+  public static final class BatchControllerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BatchControllerBlockingV2Stub> {
+    private BatchControllerBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BatchControllerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BatchControllerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a batch workload that executes asynchronously.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBatch(
+        com.google.cloud.dataproc.v1.CreateBatchRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateBatchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the batch workload resource representation.
+     * </pre>
+     */
+    public com.google.cloud.dataproc.v1.Batch getBatch(
+        com.google.cloud.dataproc.v1.GetBatchRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetBatchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists batch workloads.
+     * </pre>
+     */
+    public com.google.cloud.dataproc.v1.ListBatchesResponse listBatches(
+        com.google.cloud.dataproc.v1.ListBatchesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListBatchesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the batch workload resource. If the batch is not in a
+     * `CANCELLED`, `SUCCEEDED` or `FAILED`
+     * [`State`][google.cloud.dataproc.v1.Batch.State], the delete operation fails
+     * and the response returns `FAILED_PRECONDITION`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteBatch(
+        com.google.cloud.dataproc.v1.DeleteBatchRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteBatchMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service BatchController.
    *
    * <pre>
    * The BatchController provides methods to manage batch workloads.
@@ -474,8 +564,10 @@ public final class BatchControllerGrpc {
      *
      *
      * <pre>
-     * Deletes the batch workload resource. If the batch is not in terminal state,
-     * the delete fails and the response returns `FAILED_PRECONDITION`.
+     * Deletes the batch workload resource. If the batch is not in a
+     * `CANCELLED`, `SUCCEEDED` or `FAILED`
+     * [`State`][google.cloud.dataproc.v1.Batch.State], the delete operation fails
+     * and the response returns `FAILED_PRECONDITION`.
      * </pre>
      */
     public com.google.protobuf.Empty deleteBatch(
@@ -548,8 +640,10 @@ public final class BatchControllerGrpc {
      *
      *
      * <pre>
-     * Deletes the batch workload resource. If the batch is not in terminal state,
-     * the delete fails and the response returns `FAILED_PRECONDITION`.
+     * Deletes the batch workload resource. If the batch is not in a
+     * `CANCELLED`, `SUCCEEDED` or `FAILED`
+     * [`State`][google.cloud.dataproc.v1.Batch.State], the delete operation fails
+     * and the response returns `FAILED_PRECONDITION`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

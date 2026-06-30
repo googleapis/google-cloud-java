@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,9 @@ package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListRagCorporaPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListRagDataSchemasPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListRagFilesPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListRagMetadataPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -63,7 +65,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getRagCorpus to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getRagCorpus:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -80,10 +84,47 @@ import javax.annotation.Generated;
  *             .getRagCorpusSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * VertexRagDataServiceSettings vertexRagDataServiceSettings =
  *     vertexRagDataServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createRagCorpus:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * VertexRagDataServiceSettings.Builder vertexRagDataServiceSettingsBuilder =
+ *     VertexRagDataServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * vertexRagDataServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
@@ -100,6 +141,18 @@ public class VertexRagDataServiceSettings extends ClientSettings<VertexRagDataSe
       createRagCorpusOperationSettings() {
     return ((VertexRagDataServiceStubSettings) getStubSettings())
         .createRagCorpusOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateRagCorpus. */
+  public UnaryCallSettings<UpdateRagCorpusRequest, Operation> updateRagCorpusSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).updateRagCorpusSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateRagCorpus. */
+  public OperationCallSettings<UpdateRagCorpusRequest, RagCorpus, UpdateRagCorpusOperationMetadata>
+      updateRagCorpusOperationSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings())
+        .updateRagCorpusOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getRagCorpus. */
@@ -163,6 +216,136 @@ public class VertexRagDataServiceSettings extends ClientSettings<VertexRagDataSe
   public OperationCallSettings<DeleteRagFileRequest, Empty, DeleteOperationMetadata>
       deleteRagFileOperationSettings() {
     return ((VertexRagDataServiceStubSettings) getStubSettings()).deleteRagFileOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateRagEngineConfig. */
+  public UnaryCallSettings<UpdateRagEngineConfigRequest, Operation>
+      updateRagEngineConfigSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).updateRagEngineConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateRagEngineConfig. */
+  public OperationCallSettings<
+          UpdateRagEngineConfigRequest, RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+      updateRagEngineConfigOperationSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings())
+        .updateRagEngineConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getRagEngineConfig. */
+  public UnaryCallSettings<GetRagEngineConfigRequest, RagEngineConfig>
+      getRagEngineConfigSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).getRagEngineConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createRagDataSchema. */
+  public UnaryCallSettings<CreateRagDataSchemaRequest, RagDataSchema>
+      createRagDataSchemaSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).createRagDataSchemaSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateRagDataSchemas. */
+  public UnaryCallSettings<BatchCreateRagDataSchemasRequest, Operation>
+      batchCreateRagDataSchemasSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings())
+        .batchCreateRagDataSchemasSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateRagDataSchemas. */
+  public OperationCallSettings<
+          BatchCreateRagDataSchemasRequest,
+          BatchCreateRagDataSchemasResponse,
+          BatchCreateRagDataSchemasOperationMetadata>
+      batchCreateRagDataSchemasOperationSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings())
+        .batchCreateRagDataSchemasOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getRagDataSchema. */
+  public UnaryCallSettings<GetRagDataSchemaRequest, RagDataSchema> getRagDataSchemaSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).getRagDataSchemaSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listRagDataSchemas. */
+  public PagedCallSettings<
+          ListRagDataSchemasRequest, ListRagDataSchemasResponse, ListRagDataSchemasPagedResponse>
+      listRagDataSchemasSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).listRagDataSchemasSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteRagDataSchema. */
+  public UnaryCallSettings<DeleteRagDataSchemaRequest, Empty> deleteRagDataSchemaSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).deleteRagDataSchemaSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteRagDataSchemas. */
+  public UnaryCallSettings<BatchDeleteRagDataSchemasRequest, Operation>
+      batchDeleteRagDataSchemasSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings())
+        .batchDeleteRagDataSchemasSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteRagDataSchemas. */
+  public OperationCallSettings<BatchDeleteRagDataSchemasRequest, Empty, DeleteOperationMetadata>
+      batchDeleteRagDataSchemasOperationSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings())
+        .batchDeleteRagDataSchemasOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createRagMetadata. */
+  public UnaryCallSettings<CreateRagMetadataRequest, RagMetadata> createRagMetadataSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).createRagMetadataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateRagMetadata. */
+  public UnaryCallSettings<BatchCreateRagMetadataRequest, Operation>
+      batchCreateRagMetadataSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).batchCreateRagMetadataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateRagMetadata. */
+  public OperationCallSettings<
+          BatchCreateRagMetadataRequest,
+          BatchCreateRagMetadataResponse,
+          BatchCreateRagMetadataOperationMetadata>
+      batchCreateRagMetadataOperationSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings())
+        .batchCreateRagMetadataOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateRagMetadata. */
+  public UnaryCallSettings<UpdateRagMetadataRequest, RagMetadata> updateRagMetadataSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).updateRagMetadataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getRagMetadata. */
+  public UnaryCallSettings<GetRagMetadataRequest, RagMetadata> getRagMetadataSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).getRagMetadataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listRagMetadata. */
+  public PagedCallSettings<
+          ListRagMetadataRequest, ListRagMetadataResponse, ListRagMetadataPagedResponse>
+      listRagMetadataSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).listRagMetadataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteRagMetadata. */
+  public UnaryCallSettings<DeleteRagMetadataRequest, Empty> deleteRagMetadataSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).deleteRagMetadataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteRagMetadata. */
+  public UnaryCallSettings<BatchDeleteRagMetadataRequest, Operation>
+      batchDeleteRagMetadataSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).batchDeleteRagMetadataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteRagMetadata. */
+  public OperationCallSettings<BatchDeleteRagMetadataRequest, Empty, DeleteOperationMetadata>
+      batchDeleteRagMetadataOperationSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings())
+        .batchDeleteRagMetadataOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -301,6 +484,18 @@ public class VertexRagDataServiceSettings extends ClientSettings<VertexRagDataSe
       return getStubSettingsBuilder().createRagCorpusOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateRagCorpus. */
+    public UnaryCallSettings.Builder<UpdateRagCorpusRequest, Operation> updateRagCorpusSettings() {
+      return getStubSettingsBuilder().updateRagCorpusSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRagCorpus. */
+    public OperationCallSettings.Builder<
+            UpdateRagCorpusRequest, RagCorpus, UpdateRagCorpusOperationMetadata>
+        updateRagCorpusOperationSettings() {
+      return getStubSettingsBuilder().updateRagCorpusOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getRagCorpus. */
     public UnaryCallSettings.Builder<GetRagCorpusRequest, RagCorpus> getRagCorpusSettings() {
       return getStubSettingsBuilder().getRagCorpusSettings();
@@ -363,6 +558,135 @@ public class VertexRagDataServiceSettings extends ClientSettings<VertexRagDataSe
     public OperationCallSettings.Builder<DeleteRagFileRequest, Empty, DeleteOperationMetadata>
         deleteRagFileOperationSettings() {
       return getStubSettingsBuilder().deleteRagFileOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRagEngineConfig. */
+    public UnaryCallSettings.Builder<UpdateRagEngineConfigRequest, Operation>
+        updateRagEngineConfigSettings() {
+      return getStubSettingsBuilder().updateRagEngineConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRagEngineConfig. */
+    public OperationCallSettings.Builder<
+            UpdateRagEngineConfigRequest, RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+        updateRagEngineConfigOperationSettings() {
+      return getStubSettingsBuilder().updateRagEngineConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getRagEngineConfig. */
+    public UnaryCallSettings.Builder<GetRagEngineConfigRequest, RagEngineConfig>
+        getRagEngineConfigSettings() {
+      return getStubSettingsBuilder().getRagEngineConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createRagDataSchema. */
+    public UnaryCallSettings.Builder<CreateRagDataSchemaRequest, RagDataSchema>
+        createRagDataSchemaSettings() {
+      return getStubSettingsBuilder().createRagDataSchemaSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateRagDataSchemas. */
+    public UnaryCallSettings.Builder<BatchCreateRagDataSchemasRequest, Operation>
+        batchCreateRagDataSchemasSettings() {
+      return getStubSettingsBuilder().batchCreateRagDataSchemasSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateRagDataSchemas. */
+    public OperationCallSettings.Builder<
+            BatchCreateRagDataSchemasRequest,
+            BatchCreateRagDataSchemasResponse,
+            BatchCreateRagDataSchemasOperationMetadata>
+        batchCreateRagDataSchemasOperationSettings() {
+      return getStubSettingsBuilder().batchCreateRagDataSchemasOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getRagDataSchema. */
+    public UnaryCallSettings.Builder<GetRagDataSchemaRequest, RagDataSchema>
+        getRagDataSchemaSettings() {
+      return getStubSettingsBuilder().getRagDataSchemaSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listRagDataSchemas. */
+    public PagedCallSettings.Builder<
+            ListRagDataSchemasRequest, ListRagDataSchemasResponse, ListRagDataSchemasPagedResponse>
+        listRagDataSchemasSettings() {
+      return getStubSettingsBuilder().listRagDataSchemasSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRagDataSchema. */
+    public UnaryCallSettings.Builder<DeleteRagDataSchemaRequest, Empty>
+        deleteRagDataSchemaSettings() {
+      return getStubSettingsBuilder().deleteRagDataSchemaSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteRagDataSchemas. */
+    public UnaryCallSettings.Builder<BatchDeleteRagDataSchemasRequest, Operation>
+        batchDeleteRagDataSchemasSettings() {
+      return getStubSettingsBuilder().batchDeleteRagDataSchemasSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteRagDataSchemas. */
+    public OperationCallSettings.Builder<
+            BatchDeleteRagDataSchemasRequest, Empty, DeleteOperationMetadata>
+        batchDeleteRagDataSchemasOperationSettings() {
+      return getStubSettingsBuilder().batchDeleteRagDataSchemasOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createRagMetadata. */
+    public UnaryCallSettings.Builder<CreateRagMetadataRequest, RagMetadata>
+        createRagMetadataSettings() {
+      return getStubSettingsBuilder().createRagMetadataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateRagMetadata. */
+    public UnaryCallSettings.Builder<BatchCreateRagMetadataRequest, Operation>
+        batchCreateRagMetadataSettings() {
+      return getStubSettingsBuilder().batchCreateRagMetadataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateRagMetadata. */
+    public OperationCallSettings.Builder<
+            BatchCreateRagMetadataRequest,
+            BatchCreateRagMetadataResponse,
+            BatchCreateRagMetadataOperationMetadata>
+        batchCreateRagMetadataOperationSettings() {
+      return getStubSettingsBuilder().batchCreateRagMetadataOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRagMetadata. */
+    public UnaryCallSettings.Builder<UpdateRagMetadataRequest, RagMetadata>
+        updateRagMetadataSettings() {
+      return getStubSettingsBuilder().updateRagMetadataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getRagMetadata. */
+    public UnaryCallSettings.Builder<GetRagMetadataRequest, RagMetadata> getRagMetadataSettings() {
+      return getStubSettingsBuilder().getRagMetadataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listRagMetadata. */
+    public PagedCallSettings.Builder<
+            ListRagMetadataRequest, ListRagMetadataResponse, ListRagMetadataPagedResponse>
+        listRagMetadataSettings() {
+      return getStubSettingsBuilder().listRagMetadataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRagMetadata. */
+    public UnaryCallSettings.Builder<DeleteRagMetadataRequest, Empty> deleteRagMetadataSettings() {
+      return getStubSettingsBuilder().deleteRagMetadataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteRagMetadata. */
+    public UnaryCallSettings.Builder<BatchDeleteRagMetadataRequest, Operation>
+        batchDeleteRagMetadataSettings() {
+      return getStubSettingsBuilder().batchDeleteRagMetadataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteRagMetadata. */
+    public OperationCallSettings.Builder<
+            BatchDeleteRagMetadataRequest, Empty, DeleteOperationMetadata>
+        batchDeleteRagMetadataOperationSettings() {
+      return getStubSettingsBuilder().batchDeleteRagMetadataOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

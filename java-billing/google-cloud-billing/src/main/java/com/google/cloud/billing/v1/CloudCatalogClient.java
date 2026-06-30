@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -352,7 +352,7 @@ public class CloudCatalogClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the service. Example: "services/DA34-426B-A397"
+   * @param parent Required. The name of the service. Example: "services/6F81-5844-456A"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSkusPagedResponse listSkus(ServiceName parent) {
@@ -381,7 +381,7 @@ public class CloudCatalogClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the service. Example: "services/DA34-426B-A397"
+   * @param parent Required. The name of the service. Example: "services/6F81-5844-456A"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSkusPagedResponse listSkus(String parent) {

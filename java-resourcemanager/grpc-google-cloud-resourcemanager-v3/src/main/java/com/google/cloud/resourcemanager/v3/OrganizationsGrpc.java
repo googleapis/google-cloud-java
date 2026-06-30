@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Allows users to manage their organization resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/resourcemanager/v3/organizations.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class OrganizationsGrpc {
 
@@ -264,6 +261,19 @@ public final class OrganizationsGrpc {
           }
         };
     return OrganizationsStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static OrganizationsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<OrganizationsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<OrganizationsBlockingV2Stub>() {
+          @java.lang.Override
+          public OrganizationsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new OrganizationsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return OrganizationsBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -529,6 +539,109 @@ public final class OrganizationsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Organizations.
+   *
+   * <pre>
+   * Allows users to manage their organization resources.
+   * </pre>
+   */
+  public static final class OrganizationsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<OrganizationsBlockingV2Stub> {
+    private OrganizationsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected OrganizationsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new OrganizationsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches an organization resource identified by the specified resource name.
+     * </pre>
+     */
+    public com.google.cloud.resourcemanager.v3.Organization getOrganization(
+        com.google.cloud.resourcemanager.v3.GetOrganizationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetOrganizationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches organization resources that are visible to the user and satisfy
+     * the specified filter. This method returns organizations in an unspecified
+     * order. New organizations do not necessarily appear at the end of the
+     * results, and may take a small amount of time to appear.
+     * Search will only return organizations on which the user has the permission
+     * `resourcemanager.organizations.get`
+     * </pre>
+     */
+    public com.google.cloud.resourcemanager.v3.SearchOrganizationsResponse searchOrganizations(
+        com.google.cloud.resourcemanager.v3.SearchOrganizationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSearchOrganizationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for an organization resource. The policy may
+     * be empty if no such policy or resource exists. The `resource` field should
+     * be the organization's resource name, for example: "organizations/123".
+     * Authorization requires the IAM permission
+     * `resourcemanager.organizations.getIamPolicy` on the specified organization.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on an organization resource. Replaces any
+     * existing policy. The `resource` field should be the organization's resource
+     * name, for example: "organizations/123".
+     * Authorization requires the IAM permission
+     * `resourcemanager.organizations.setIamPolicy` on the specified organization.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the permissions that a caller has on the specified organization.
+     * The `resource` field should be the organization's resource name,
+     * for example: "organizations/123".
+     * There are no permissions required for making this API call.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Organizations.
    *
    * <pre>
    * Allows users to manage their organization resources.

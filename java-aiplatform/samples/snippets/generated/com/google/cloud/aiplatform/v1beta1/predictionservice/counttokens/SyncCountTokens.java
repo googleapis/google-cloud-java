@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,9 @@ import com.google.cloud.aiplatform.v1beta1.Content;
 import com.google.cloud.aiplatform.v1beta1.CountTokensRequest;
 import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
 import com.google.cloud.aiplatform.v1beta1.EndpointName;
+import com.google.cloud.aiplatform.v1beta1.GenerationConfig;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
+import com.google.cloud.aiplatform.v1beta1.Tool;
 import com.google.protobuf.Value;
 import java.util.ArrayList;
 
@@ -47,6 +49,9 @@ public class SyncCountTokens {
               .setModel("model104069929")
               .addAllInstances(new ArrayList<Value>())
               .addAllContents(new ArrayList<Content>())
+              .setSystemInstruction(Content.newBuilder().build())
+              .addAllTools(new ArrayList<Tool>())
+              .setGenerationConfig(GenerationConfig.newBuilder().build())
               .build();
       CountTokensResponse response = predictionServiceClient.countTokens(request);
     }

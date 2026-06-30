@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.SearchDat
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -40,6 +41,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -52,6 +54,12 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.Annotation;
 import com.google.cloud.aiplatform.v1beta1.AnnotationSpec;
+import com.google.cloud.aiplatform.v1beta1.AssembleDataOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.AssembleDataRequest;
+import com.google.cloud.aiplatform.v1beta1.AssembleDataResponse;
+import com.google.cloud.aiplatform.v1beta1.AssessDataOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.AssessDataRequest;
+import com.google.cloud.aiplatform.v1beta1.AssessDataResponse;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetVersionOperationMetadata;
@@ -89,6 +97,7 @@ import com.google.cloud.aiplatform.v1beta1.SavedQuery;
 import com.google.cloud.aiplatform.v1beta1.SearchDataItemsRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchDataItemsResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateDatasetRequest;
+import com.google.cloud.aiplatform.v1beta1.UpdateDatasetVersionRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -105,9 +114,9 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -124,7 +133,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getDataset to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getDataset:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -141,13 +152,51 @@ import org.threeten.bp.Duration;
  *             .getDatasetSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * DatasetServiceStubSettings datasetServiceSettings = datasetServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createDataset:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * DatasetServiceStubSettings.Builder datasetServiceSettingsBuilder =
+ *     DatasetServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * datasetServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -177,6 +226,8 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
   private final OperationCallSettings<
           CreateDatasetVersionRequest, DatasetVersion, CreateDatasetVersionOperationMetadata>
       createDatasetVersionOperationSettings;
+  private final UnaryCallSettings<UpdateDatasetVersionRequest, DatasetVersion>
+      updateDatasetVersionSettings;
   private final UnaryCallSettings<DeleteDatasetVersionRequest, Operation>
       deleteDatasetVersionSettings;
   private final OperationCallSettings<DeleteDatasetVersionRequest, Empty, DeleteOperationMetadata>
@@ -208,6 +259,14 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
   private final PagedCallSettings<
           ListAnnotationsRequest, ListAnnotationsResponse, ListAnnotationsPagedResponse>
       listAnnotationsSettings;
+  private final UnaryCallSettings<AssessDataRequest, Operation> assessDataSettings;
+  private final OperationCallSettings<
+          AssessDataRequest, AssessDataResponse, AssessDataOperationMetadata>
+      assessDataOperationSettings;
+  private final UnaryCallSettings<AssembleDataRequest, Operation> assembleDataSettings;
+  private final OperationCallSettings<
+          AssembleDataRequest, AssembleDataResponse, AssembleDataOperationMetadata>
+      assembleDataOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -247,9 +306,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<Dataset> extractResources(ListDatasetsResponse payload) {
-              return payload.getDatasetsList() == null
-                  ? ImmutableList.<Dataset>of()
-                  : payload.getDatasetsList();
+              return payload.getDatasetsList();
             }
           };
 
@@ -287,9 +344,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<DatasetVersion> extractResources(ListDatasetVersionsResponse payload) {
-              return payload.getDatasetVersionsList() == null
-                  ? ImmutableList.<DatasetVersion>of()
-                  : payload.getDatasetVersionsList();
+              return payload.getDatasetVersionsList();
             }
           };
 
@@ -323,9 +378,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<DataItem> extractResources(ListDataItemsResponse payload) {
-              return payload.getDataItemsList() == null
-                  ? ImmutableList.<DataItem>of()
-                  : payload.getDataItemsList();
+              return payload.getDataItemsList();
             }
           };
 
@@ -362,9 +415,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<DataItemView> extractResources(SearchDataItemsResponse payload) {
-              return payload.getDataItemViewsList() == null
-                  ? ImmutableList.<DataItemView>of()
-                  : payload.getDataItemViewsList();
+              return payload.getDataItemViewsList();
             }
           };
 
@@ -401,9 +452,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<SavedQuery> extractResources(ListSavedQueriesResponse payload) {
-              return payload.getSavedQueriesList() == null
-                  ? ImmutableList.<SavedQuery>of()
-                  : payload.getSavedQueriesList();
+              return payload.getSavedQueriesList();
             }
           };
 
@@ -440,9 +489,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<Annotation> extractResources(ListAnnotationsResponse payload) {
-              return payload.getAnnotationsList() == null
-                  ? ImmutableList.<Annotation>of()
-                  : payload.getAnnotationsList();
+              return payload.getAnnotationsList();
             }
           };
 
@@ -476,9 +523,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -681,6 +726,12 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     return createDatasetVersionOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateDatasetVersion. */
+  public UnaryCallSettings<UpdateDatasetVersionRequest, DatasetVersion>
+      updateDatasetVersionSettings() {
+    return updateDatasetVersionSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteDatasetVersion. */
   public UnaryCallSettings<DeleteDatasetVersionRequest, Operation> deleteDatasetVersionSettings() {
     return deleteDatasetVersionSettings;
@@ -760,6 +811,29 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     return listAnnotationsSettings;
   }
 
+  /** Returns the object with the settings used for calls to assessData. */
+  public UnaryCallSettings<AssessDataRequest, Operation> assessDataSettings() {
+    return assessDataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to assessData. */
+  public OperationCallSettings<AssessDataRequest, AssessDataResponse, AssessDataOperationMetadata>
+      assessDataOperationSettings() {
+    return assessDataOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to assembleData. */
+  public UnaryCallSettings<AssembleDataRequest, Operation> assembleDataSettings() {
+    return assembleDataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to assembleData. */
+  public OperationCallSettings<
+          AssembleDataRequest, AssembleDataResponse, AssembleDataOperationMetadata>
+      assembleDataOperationSettings() {
+    return assembleDataOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -798,15 +872,6 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -819,6 +884,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "aiplatform.googleapis.com:443";
   }
@@ -890,6 +956,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     createDatasetVersionSettings = settingsBuilder.createDatasetVersionSettings().build();
     createDatasetVersionOperationSettings =
         settingsBuilder.createDatasetVersionOperationSettings().build();
+    updateDatasetVersionSettings = settingsBuilder.updateDatasetVersionSettings().build();
     deleteDatasetVersionSettings = settingsBuilder.deleteDatasetVersionSettings().build();
     deleteDatasetVersionOperationSettings =
         settingsBuilder.deleteDatasetVersionOperationSettings().build();
@@ -905,11 +972,24 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     deleteSavedQueryOperationSettings = settingsBuilder.deleteSavedQueryOperationSettings().build();
     getAnnotationSpecSettings = settingsBuilder.getAnnotationSpecSettings().build();
     listAnnotationsSettings = settingsBuilder.listAnnotationsSettings().build();
+    assessDataSettings = settingsBuilder.assessDataSettings().build();
+    assessDataOperationSettings = settingsBuilder.assessDataOperationSettings().build();
+    assembleDataSettings = settingsBuilder.assembleDataSettings().build();
+    assembleDataOperationSettings = settingsBuilder.assembleDataOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-aiplatform")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for DatasetServiceStubSettings. */
@@ -941,6 +1021,8 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     private final OperationCallSettings.Builder<
             CreateDatasetVersionRequest, DatasetVersion, CreateDatasetVersionOperationMetadata>
         createDatasetVersionOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateDatasetVersionRequest, DatasetVersion>
+        updateDatasetVersionSettings;
     private final UnaryCallSettings.Builder<DeleteDatasetVersionRequest, Operation>
         deleteDatasetVersionSettings;
     private final OperationCallSettings.Builder<
@@ -977,6 +1059,14 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     private final PagedCallSettings.Builder<
             ListAnnotationsRequest, ListAnnotationsResponse, ListAnnotationsPagedResponse>
         listAnnotationsSettings;
+    private final UnaryCallSettings.Builder<AssessDataRequest, Operation> assessDataSettings;
+    private final OperationCallSettings.Builder<
+            AssessDataRequest, AssessDataResponse, AssessDataOperationMetadata>
+        assessDataOperationSettings;
+    private final UnaryCallSettings.Builder<AssembleDataRequest, Operation> assembleDataSettings;
+    private final OperationCallSettings.Builder<
+            AssembleDataRequest, AssembleDataResponse, AssembleDataOperationMetadata>
+        assembleDataOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1004,10 +1094,10 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(5000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(5000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(5000L))
               .build();
       definitions.put("no_retry_0_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
@@ -1035,6 +1125,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
       exportDataOperationSettings = OperationCallSettings.newBuilder();
       createDatasetVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createDatasetVersionOperationSettings = OperationCallSettings.newBuilder();
+      updateDatasetVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteDatasetVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteDatasetVersionOperationSettings = OperationCallSettings.newBuilder();
       getDatasetVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1049,6 +1140,10 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
       deleteSavedQueryOperationSettings = OperationCallSettings.newBuilder();
       getAnnotationSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAnnotationsSettings = PagedCallSettings.newBuilder(LIST_ANNOTATIONS_PAGE_STR_FACT);
+      assessDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      assessDataOperationSettings = OperationCallSettings.newBuilder();
+      assembleDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      assembleDataOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1065,6 +1160,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
               importDataSettings,
               exportDataSettings,
               createDatasetVersionSettings,
+              updateDatasetVersionSettings,
               deleteDatasetVersionSettings,
               getDatasetVersionSettings,
               listDatasetVersionsSettings,
@@ -1075,6 +1171,8 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
               deleteSavedQuerySettings,
               getAnnotationSpecSettings,
               listAnnotationsSettings,
+              assessDataSettings,
+              assembleDataSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1100,6 +1198,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
       createDatasetVersionSettings = settings.createDatasetVersionSettings.toBuilder();
       createDatasetVersionOperationSettings =
           settings.createDatasetVersionOperationSettings.toBuilder();
+      updateDatasetVersionSettings = settings.updateDatasetVersionSettings.toBuilder();
       deleteDatasetVersionSettings = settings.deleteDatasetVersionSettings.toBuilder();
       deleteDatasetVersionOperationSettings =
           settings.deleteDatasetVersionOperationSettings.toBuilder();
@@ -1115,6 +1214,10 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
       deleteSavedQueryOperationSettings = settings.deleteSavedQueryOperationSettings.toBuilder();
       getAnnotationSpecSettings = settings.getAnnotationSpecSettings.toBuilder();
       listAnnotationsSettings = settings.listAnnotationsSettings.toBuilder();
+      assessDataSettings = settings.assessDataSettings.toBuilder();
+      assessDataOperationSettings = settings.assessDataOperationSettings.toBuilder();
+      assembleDataSettings = settings.assembleDataSettings.toBuilder();
+      assembleDataOperationSettings = settings.assembleDataOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1131,6 +1234,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
               importDataSettings,
               exportDataSettings,
               createDatasetVersionSettings,
+              updateDatasetVersionSettings,
               deleteDatasetVersionSettings,
               getDatasetVersionSettings,
               listDatasetVersionsSettings,
@@ -1141,6 +1245,8 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
               deleteSavedQuerySettings,
               getAnnotationSpecSettings,
               listAnnotationsSettings,
+              assessDataSettings,
+              assembleDataSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1202,6 +1308,11 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .updateDatasetVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .deleteDatasetVersionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -1252,6 +1363,16 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .assessDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .assembleDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -1292,13 +1413,13 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1316,13 +1437,13 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1340,13 +1461,13 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1364,13 +1485,13 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1389,13 +1510,13 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1413,13 +1534,13 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1438,13 +1559,13 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1462,13 +1583,62 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .assessDataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<AssessDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AssessDataResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  AssessDataOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .assembleDataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AssembleDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AssembleDataResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  AssembleDataOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1566,6 +1736,12 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
       return createDatasetVersionOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateDatasetVersion. */
+    public UnaryCallSettings.Builder<UpdateDatasetVersionRequest, DatasetVersion>
+        updateDatasetVersionSettings() {
+      return updateDatasetVersionSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteDatasetVersion. */
     public UnaryCallSettings.Builder<DeleteDatasetVersionRequest, Operation>
         deleteDatasetVersionSettings() {
@@ -1653,6 +1829,30 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
       return listAnnotationsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to assessData. */
+    public UnaryCallSettings.Builder<AssessDataRequest, Operation> assessDataSettings() {
+      return assessDataSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to assessData. */
+    public OperationCallSettings.Builder<
+            AssessDataRequest, AssessDataResponse, AssessDataOperationMetadata>
+        assessDataOperationSettings() {
+      return assessDataOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to assembleData. */
+    public UnaryCallSettings.Builder<AssembleDataRequest, Operation> assembleDataSettings() {
+      return assembleDataSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to assembleData. */
+    public OperationCallSettings.Builder<
+            AssembleDataRequest, AssembleDataResponse, AssembleDataOperationMetadata>
+        assembleDataOperationSettings() {
+      return assembleDataOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listLocations. */
     public PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -1679,15 +1879,6 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

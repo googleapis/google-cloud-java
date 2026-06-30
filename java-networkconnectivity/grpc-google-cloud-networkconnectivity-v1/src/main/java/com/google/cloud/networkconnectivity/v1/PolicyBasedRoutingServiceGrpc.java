@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * policies for Layer 4 traffic traversing through the connected service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/networkconnectivity/v1/policy_based_routing.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PolicyBasedRoutingServiceGrpc {
 
@@ -259,6 +256,19 @@ public final class PolicyBasedRoutingServiceGrpc {
     return PolicyBasedRoutingServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static PolicyBasedRoutingServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<PolicyBasedRoutingServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PolicyBasedRoutingServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public PolicyBasedRoutingServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PolicyBasedRoutingServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return PolicyBasedRoutingServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -301,7 +311,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Lists PolicyBasedRoutes in a given project and location.
+     * Lists policy-based routes in a given project and location.
      * </pre>
      */
     default void listPolicyBasedRoutes(
@@ -317,7 +327,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single PolicyBasedRoute.
+     * Gets details of a single policy-based route.
      * </pre>
      */
     default void getPolicyBasedRoute(
@@ -332,7 +342,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new PolicyBasedRoute in a given project and location.
+     * Creates a new policy-based route in a given project and location.
      * </pre>
      */
     default void createPolicyBasedRoute(
@@ -346,7 +356,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a single PolicyBasedRoute.
+     * Deletes a single policy-based route.
      * </pre>
      */
     default void deletePolicyBasedRoute(
@@ -399,7 +409,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Lists PolicyBasedRoutes in a given project and location.
+     * Lists policy-based routes in a given project and location.
      * </pre>
      */
     public void listPolicyBasedRoutes(
@@ -417,7 +427,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single PolicyBasedRoute.
+     * Gets details of a single policy-based route.
      * </pre>
      */
     public void getPolicyBasedRoute(
@@ -434,7 +444,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new PolicyBasedRoute in a given project and location.
+     * Creates a new policy-based route in a given project and location.
      * </pre>
      */
     public void createPolicyBasedRoute(
@@ -450,7 +460,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a single PolicyBasedRoute.
+     * Deletes a single policy-based route.
      * </pre>
      */
     public void deletePolicyBasedRoute(
@@ -465,6 +475,86 @@ public final class PolicyBasedRoutingServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service PolicyBasedRoutingService.
+   *
+   * <pre>
+   * Policy-Based Routing allows GCP customers to specify flexibile routing
+   * policies for Layer 4 traffic traversing through the connected service.
+   * </pre>
+   */
+  public static final class PolicyBasedRoutingServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<PolicyBasedRoutingServiceBlockingV2Stub> {
+    private PolicyBasedRoutingServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected PolicyBasedRoutingServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new PolicyBasedRoutingServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists policy-based routes in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1.ListPolicyBasedRoutesResponse
+        listPolicyBasedRoutes(
+            com.google.cloud.networkconnectivity.v1.ListPolicyBasedRoutesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListPolicyBasedRoutesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single policy-based route.
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1.PolicyBasedRoute getPolicyBasedRoute(
+        com.google.cloud.networkconnectivity.v1.GetPolicyBasedRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetPolicyBasedRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new policy-based route in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createPolicyBasedRoute(
+        com.google.cloud.networkconnectivity.v1.CreatePolicyBasedRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreatePolicyBasedRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single policy-based route.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePolicyBasedRoute(
+        com.google.cloud.networkconnectivity.v1.DeletePolicyBasedRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeletePolicyBasedRouteMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * PolicyBasedRoutingService.
    *
    * <pre>
    * Policy-Based Routing allows GCP customers to specify flexibile routing
@@ -488,7 +578,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Lists PolicyBasedRoutes in a given project and location.
+     * Lists policy-based routes in a given project and location.
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.ListPolicyBasedRoutesResponse
@@ -502,7 +592,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single PolicyBasedRoute.
+     * Gets details of a single policy-based route.
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.PolicyBasedRoute getPolicyBasedRoute(
@@ -515,7 +605,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new PolicyBasedRoute in a given project and location.
+     * Creates a new policy-based route in a given project and location.
      * </pre>
      */
     public com.google.longrunning.Operation createPolicyBasedRoute(
@@ -528,7 +618,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a single PolicyBasedRoute.
+     * Deletes a single policy-based route.
      * </pre>
      */
     public com.google.longrunning.Operation deletePolicyBasedRoute(
@@ -564,7 +654,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Lists PolicyBasedRoutes in a given project and location.
+     * Lists policy-based routes in a given project and location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -579,7 +669,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single PolicyBasedRoute.
+     * Gets details of a single policy-based route.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -594,7 +684,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new PolicyBasedRoute in a given project and location.
+     * Creates a new policy-based route in a given project and location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -608,7 +698,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a single PolicyBasedRoute.
+     * Deletes a single policy-based route.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

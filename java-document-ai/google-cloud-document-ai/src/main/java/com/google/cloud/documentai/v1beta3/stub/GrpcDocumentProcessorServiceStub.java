@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,6 +116,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   "google.cloud.documentai.v1beta3.DocumentProcessorService/ProcessDocument")
               .setRequestMarshaller(ProtoUtils.marshaller(ProcessRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProcessResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchProcessRequest, Operation>
@@ -126,6 +127,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   "google.cloud.documentai.v1beta3.DocumentProcessorService/BatchProcessDocuments")
               .setRequestMarshaller(ProtoUtils.marshaller(BatchProcessRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchProcessorTypesRequest, FetchProcessorTypesResponse>
@@ -138,6 +140,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   ProtoUtils.marshaller(FetchProcessorTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchProcessorTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListProcessorTypesRequest, ListProcessorTypesResponse>
@@ -150,6 +153,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   ProtoUtils.marshaller(ListProcessorTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProcessorTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProcessorTypeRequest, ProcessorType>
@@ -161,6 +165,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetProcessorTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProcessorType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListProcessorsRequest, ListProcessorsResponse>
@@ -173,6 +178,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   ProtoUtils.marshaller(ListProcessorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProcessorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProcessorRequest, Processor>
@@ -183,6 +189,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   "google.cloud.documentai.v1beta3.DocumentProcessorService/GetProcessor")
               .setRequestMarshaller(ProtoUtils.marshaller(GetProcessorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Processor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TrainProcessorVersionRequest, Operation>
@@ -194,6 +201,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(TrainProcessorVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProcessorVersionRequest, ProcessorVersion>
@@ -205,6 +213,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetProcessorVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProcessorVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListProcessorVersionsRequest, ListProcessorVersionsResponse>
@@ -217,6 +226,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   ProtoUtils.marshaller(ListProcessorVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProcessorVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProcessorVersionRequest, Operation>
@@ -228,6 +238,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteProcessorVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeployProcessorVersionRequest, Operation>
@@ -239,6 +250,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeployProcessorVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeployProcessorVersionRequest, Operation>
@@ -250,6 +262,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeployProcessorVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateProcessorRequest, Processor>
@@ -261,6 +274,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateProcessorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Processor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProcessorRequest, Operation>
@@ -272,6 +286,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteProcessorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EnableProcessorRequest, Operation>
@@ -283,6 +298,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EnableProcessorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DisableProcessorRequest, Operation>
@@ -294,6 +310,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DisableProcessorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetDefaultProcessorVersionRequest, Operation>
@@ -305,6 +322,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetDefaultProcessorVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReviewDocumentRequest, Operation>
@@ -316,6 +334,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReviewDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EvaluateProcessorVersionRequest, Operation>
@@ -327,6 +346,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EvaluateProcessorVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEvaluationRequest, Evaluation>
@@ -338,6 +358,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEvaluationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Evaluation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEvaluationsRequest, ListEvaluationsResponse>
@@ -350,6 +371,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   ProtoUtils.marshaller(ListEvaluationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEvaluationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportProcessorVersionRequest, Operation>
@@ -361,6 +383,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportProcessorVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -372,6 +395,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -380,6 +404,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ProcessRequest, ProcessResponse> processDocumentCallable;
@@ -530,6 +555,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchProcessRequest, Operation> batchProcessDocumentsTransportSettings =
         GrpcCallSettings.<BatchProcessRequest, Operation>newBuilder()
@@ -540,6 +566,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<FetchProcessorTypesRequest, FetchProcessorTypesResponse>
         fetchProcessorTypesTransportSettings =
@@ -551,6 +578,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListProcessorTypesRequest, ListProcessorTypesResponse>
         listProcessorTypesTransportSettings =
@@ -562,6 +590,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetProcessorTypeRequest, ProcessorType> getProcessorTypeTransportSettings =
         GrpcCallSettings.<GetProcessorTypeRequest, ProcessorType>newBuilder()
@@ -572,6 +601,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListProcessorsRequest, ListProcessorsResponse>
         listProcessorsTransportSettings =
@@ -583,6 +613,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetProcessorRequest, Processor> getProcessorTransportSettings =
         GrpcCallSettings.<GetProcessorRequest, Processor>newBuilder()
@@ -593,6 +624,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<TrainProcessorVersionRequest, Operation>
         trainProcessorVersionTransportSettings =
@@ -604,6 +636,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetProcessorVersionRequest, ProcessorVersion>
         getProcessorVersionTransportSettings =
@@ -615,6 +648,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListProcessorVersionsRequest, ListProcessorVersionsResponse>
         listProcessorVersionsTransportSettings =
@@ -627,6 +661,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteProcessorVersionRequest, Operation>
         deleteProcessorVersionTransportSettings =
@@ -638,6 +673,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeployProcessorVersionRequest, Operation>
         deployProcessorVersionTransportSettings =
@@ -649,6 +685,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UndeployProcessorVersionRequest, Operation>
         undeployProcessorVersionTransportSettings =
@@ -660,6 +697,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateProcessorRequest, Processor> createProcessorTransportSettings =
         GrpcCallSettings.<CreateProcessorRequest, Processor>newBuilder()
@@ -670,6 +708,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteProcessorRequest, Operation> deleteProcessorTransportSettings =
         GrpcCallSettings.<DeleteProcessorRequest, Operation>newBuilder()
@@ -680,6 +719,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<EnableProcessorRequest, Operation> enableProcessorTransportSettings =
         GrpcCallSettings.<EnableProcessorRequest, Operation>newBuilder()
@@ -690,6 +730,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DisableProcessorRequest, Operation> disableProcessorTransportSettings =
         GrpcCallSettings.<DisableProcessorRequest, Operation>newBuilder()
@@ -700,6 +741,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SetDefaultProcessorVersionRequest, Operation>
         setDefaultProcessorVersionTransportSettings =
@@ -711,6 +753,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("processor", String.valueOf(request.getProcessor()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProcessor())
                 .build();
     GrpcCallSettings<ReviewDocumentRequest, Operation> reviewDocumentTransportSettings =
         GrpcCallSettings.<ReviewDocumentRequest, Operation>newBuilder()
@@ -722,6 +765,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       "human_review_config", String.valueOf(request.getHumanReviewConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getHumanReviewConfig())
             .build();
     GrpcCallSettings<EvaluateProcessorVersionRequest, Operation>
         evaluateProcessorVersionTransportSettings =
@@ -734,6 +778,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                           "processor_version", String.valueOf(request.getProcessorVersion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProcessorVersion())
                 .build();
     GrpcCallSettings<GetEvaluationRequest, Evaluation> getEvaluationTransportSettings =
         GrpcCallSettings.<GetEvaluationRequest, Evaluation>newBuilder()
@@ -744,6 +789,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEvaluationsRequest, ListEvaluationsResponse>
         listEvaluationsTransportSettings =
@@ -755,6 +801,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ImportProcessorVersionRequest, Operation>
         importProcessorVersionTransportSettings =
@@ -766,6 +813,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProcessorVersionSource())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,6 +79,8 @@ public class HttpJsonRevisionsStub extends RevisionsStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{name=projects/*/locations/*/workerPools/*/revisions/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -113,6 +115,8 @@ public class HttpJsonRevisionsStub extends RevisionsStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{parent=projects/*/locations/*/workerPools/*}/revisions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -151,6 +155,8 @@ public class HttpJsonRevisionsStub extends RevisionsStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{name=projects/*/locations/*/workerPools/*/revisions/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -268,6 +274,7 @@ public class HttpJsonRevisionsStub extends RevisionsStub {
                   builder.add(request.getName(), "location", GET_REVISION_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRevisionsRequest, ListRevisionsResponse>
         listRevisionsTransportSettings =
@@ -280,6 +287,7 @@ public class HttpJsonRevisionsStub extends RevisionsStub {
                       builder.add(request.getParent(), "location", LIST_REVISIONS_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteRevisionRequest, Operation> deleteRevisionTransportSettings =
         HttpJsonCallSettings.<DeleteRevisionRequest, Operation>newBuilder()
@@ -291,6 +299,7 @@ public class HttpJsonRevisionsStub extends RevisionsStub {
                   builder.add(request.getName(), "location", DELETE_REVISION_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getRevisionCallable =

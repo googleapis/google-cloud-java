@@ -5,7 +5,7 @@
   "api_description": "are Google's custom-developed application-specific integrated circuits (ASICs) used to accelerate machine learning workloads.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-tpu/latest/overview",
   "release_level": "stable",
-  "transport": "grpc",
+  "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-tpu",

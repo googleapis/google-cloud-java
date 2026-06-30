@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import static com.google.cloud.discoveryengine.v1beta.SiteSearchEngineServiceCli
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -38,6 +39,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -54,8 +56,12 @@ import com.google.cloud.discoveryengine.v1beta.BatchCreateTargetSitesResponse;
 import com.google.cloud.discoveryengine.v1beta.BatchVerifyTargetSitesMetadata;
 import com.google.cloud.discoveryengine.v1beta.BatchVerifyTargetSitesRequest;
 import com.google.cloud.discoveryengine.v1beta.BatchVerifyTargetSitesResponse;
+import com.google.cloud.discoveryengine.v1beta.CreateSitemapMetadata;
+import com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest;
 import com.google.cloud.discoveryengine.v1beta.CreateTargetSiteMetadata;
 import com.google.cloud.discoveryengine.v1beta.CreateTargetSiteRequest;
+import com.google.cloud.discoveryengine.v1beta.DeleteSitemapMetadata;
+import com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest;
 import com.google.cloud.discoveryengine.v1beta.DeleteTargetSiteMetadata;
 import com.google.cloud.discoveryengine.v1beta.DeleteTargetSiteRequest;
 import com.google.cloud.discoveryengine.v1beta.DisableAdvancedSiteSearchMetadata;
@@ -66,6 +72,8 @@ import com.google.cloud.discoveryengine.v1beta.EnableAdvancedSiteSearchRequest;
 import com.google.cloud.discoveryengine.v1beta.EnableAdvancedSiteSearchResponse;
 import com.google.cloud.discoveryengine.v1beta.FetchDomainVerificationStatusRequest;
 import com.google.cloud.discoveryengine.v1beta.FetchDomainVerificationStatusResponse;
+import com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest;
+import com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse;
 import com.google.cloud.discoveryengine.v1beta.GetSiteSearchEngineRequest;
 import com.google.cloud.discoveryengine.v1beta.GetTargetSiteRequest;
 import com.google.cloud.discoveryengine.v1beta.ListTargetSitesRequest;
@@ -74,6 +82,7 @@ import com.google.cloud.discoveryengine.v1beta.RecrawlUrisMetadata;
 import com.google.cloud.discoveryengine.v1beta.RecrawlUrisRequest;
 import com.google.cloud.discoveryengine.v1beta.RecrawlUrisResponse;
 import com.google.cloud.discoveryengine.v1beta.SiteSearchEngine;
+import com.google.cloud.discoveryengine.v1beta.Sitemap;
 import com.google.cloud.discoveryengine.v1beta.TargetSite;
 import com.google.cloud.discoveryengine.v1beta.UpdateTargetSiteMetadata;
 import com.google.cloud.discoveryengine.v1beta.UpdateTargetSiteRequest;
@@ -84,9 +93,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -104,7 +113,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getSiteSearchEngine to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getSiteSearchEngine:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -121,19 +132,61 @@ import org.threeten.bp.Duration;
  *             .getSiteSearchEngineSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * SiteSearchEngineServiceStubSettings siteSearchEngineServiceSettings =
  *     siteSearchEngineServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createTargetSite:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * SiteSearchEngineServiceStubSettings.Builder siteSearchEngineServiceSettingsBuilder =
+ *     SiteSearchEngineServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * siteSearchEngineServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class SiteSearchEngineServiceStubSettings
     extends StubSettings<SiteSearchEngineServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/discoveryengine.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.serving.readwrite")
+          .build();
 
   private final UnaryCallSettings<GetSiteSearchEngineRequest, SiteSearchEngine>
       getSiteSearchEngineSettings;
@@ -157,6 +210,14 @@ public class SiteSearchEngineServiceStubSettings
   private final PagedCallSettings<
           ListTargetSitesRequest, ListTargetSitesResponse, ListTargetSitesPagedResponse>
       listTargetSitesSettings;
+  private final UnaryCallSettings<CreateSitemapRequest, Operation> createSitemapSettings;
+  private final OperationCallSettings<CreateSitemapRequest, Sitemap, CreateSitemapMetadata>
+      createSitemapOperationSettings;
+  private final UnaryCallSettings<DeleteSitemapRequest, Operation> deleteSitemapSettings;
+  private final OperationCallSettings<DeleteSitemapRequest, Empty, DeleteSitemapMetadata>
+      deleteSitemapOperationSettings;
+  private final UnaryCallSettings<FetchSitemapsRequest, FetchSitemapsResponse>
+      fetchSitemapsSettings;
   private final UnaryCallSettings<EnableAdvancedSiteSearchRequest, Operation>
       enableAdvancedSiteSearchSettings;
   private final OperationCallSettings<
@@ -220,9 +281,7 @@ public class SiteSearchEngineServiceStubSettings
 
             @Override
             public Iterable<TargetSite> extractResources(ListTargetSitesResponse payload) {
-              return payload.getTargetSitesList() == null
-                  ? ImmutableList.<TargetSite>of()
-                  : payload.getTargetSitesList();
+              return payload.getTargetSitesList();
             }
           };
 
@@ -267,9 +326,7 @@ public class SiteSearchEngineServiceStubSettings
             @Override
             public Iterable<TargetSite> extractResources(
                 FetchDomainVerificationStatusResponse payload) {
-              return payload.getTargetSitesList() == null
-                  ? ImmutableList.<TargetSite>of()
-                  : payload.getTargetSitesList();
+              return payload.getTargetSitesList();
             }
           };
 
@@ -388,6 +445,33 @@ public class SiteSearchEngineServiceStubSettings
     return listTargetSitesSettings;
   }
 
+  /** Returns the object with the settings used for calls to createSitemap. */
+  public UnaryCallSettings<CreateSitemapRequest, Operation> createSitemapSettings() {
+    return createSitemapSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createSitemap. */
+  public OperationCallSettings<CreateSitemapRequest, Sitemap, CreateSitemapMetadata>
+      createSitemapOperationSettings() {
+    return createSitemapOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSitemap. */
+  public UnaryCallSettings<DeleteSitemapRequest, Operation> deleteSitemapSettings() {
+    return deleteSitemapSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSitemap. */
+  public OperationCallSettings<DeleteSitemapRequest, Empty, DeleteSitemapMetadata>
+      deleteSitemapOperationSettings() {
+    return deleteSitemapOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchSitemaps. */
+  public UnaryCallSettings<FetchSitemapsRequest, FetchSitemapsResponse> fetchSitemapsSettings() {
+    return fetchSitemapsSettings;
+  }
+
   /** Returns the object with the settings used for calls to enableAdvancedSiteSearch. */
   public UnaryCallSettings<EnableAdvancedSiteSearchRequest, Operation>
       enableAdvancedSiteSearchSettings() {
@@ -469,15 +553,6 @@ public class SiteSearchEngineServiceStubSettings
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -490,6 +565,7 @@ public class SiteSearchEngineServiceStubSettings
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "discoveryengine.googleapis.com:443";
   }
@@ -584,6 +660,11 @@ public class SiteSearchEngineServiceStubSettings
     deleteTargetSiteSettings = settingsBuilder.deleteTargetSiteSettings().build();
     deleteTargetSiteOperationSettings = settingsBuilder.deleteTargetSiteOperationSettings().build();
     listTargetSitesSettings = settingsBuilder.listTargetSitesSettings().build();
+    createSitemapSettings = settingsBuilder.createSitemapSettings().build();
+    createSitemapOperationSettings = settingsBuilder.createSitemapOperationSettings().build();
+    deleteSitemapSettings = settingsBuilder.deleteSitemapSettings().build();
+    deleteSitemapOperationSettings = settingsBuilder.deleteSitemapOperationSettings().build();
+    fetchSitemapsSettings = settingsBuilder.fetchSitemapsSettings().build();
     enableAdvancedSiteSearchSettings = settingsBuilder.enableAdvancedSiteSearchSettings().build();
     enableAdvancedSiteSearchOperationSettings =
         settingsBuilder.enableAdvancedSiteSearchOperationSettings().build();
@@ -597,6 +678,15 @@ public class SiteSearchEngineServiceStubSettings
         settingsBuilder.batchVerifyTargetSitesOperationSettings().build();
     fetchDomainVerificationStatusSettings =
         settingsBuilder.fetchDomainVerificationStatusSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-discoveryengine")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for SiteSearchEngineServiceStubSettings. */
@@ -631,6 +721,15 @@ public class SiteSearchEngineServiceStubSettings
     private final PagedCallSettings.Builder<
             ListTargetSitesRequest, ListTargetSitesResponse, ListTargetSitesPagedResponse>
         listTargetSitesSettings;
+    private final UnaryCallSettings.Builder<CreateSitemapRequest, Operation> createSitemapSettings;
+    private final OperationCallSettings.Builder<
+            CreateSitemapRequest, Sitemap, CreateSitemapMetadata>
+        createSitemapOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteSitemapRequest, Operation> deleteSitemapSettings;
+    private final OperationCallSettings.Builder<DeleteSitemapRequest, Empty, DeleteSitemapMetadata>
+        deleteSitemapOperationSettings;
+    private final UnaryCallSettings.Builder<FetchSitemapsRequest, FetchSitemapsResponse>
+        fetchSitemapsSettings;
     private final UnaryCallSettings.Builder<EnableAdvancedSiteSearchRequest, Operation>
         enableAdvancedSiteSearchSettings;
     private final OperationCallSettings.Builder<
@@ -699,6 +798,11 @@ public class SiteSearchEngineServiceStubSettings
       deleteTargetSiteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteTargetSiteOperationSettings = OperationCallSettings.newBuilder();
       listTargetSitesSettings = PagedCallSettings.newBuilder(LIST_TARGET_SITES_PAGE_STR_FACT);
+      createSitemapSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createSitemapOperationSettings = OperationCallSettings.newBuilder();
+      deleteSitemapSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSitemapOperationSettings = OperationCallSettings.newBuilder();
+      fetchSitemapsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       enableAdvancedSiteSearchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       enableAdvancedSiteSearchOperationSettings = OperationCallSettings.newBuilder();
       disableAdvancedSiteSearchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -719,6 +823,9 @@ public class SiteSearchEngineServiceStubSettings
               updateTargetSiteSettings,
               deleteTargetSiteSettings,
               listTargetSitesSettings,
+              createSitemapSettings,
+              deleteSitemapSettings,
+              fetchSitemapsSettings,
               enableAdvancedSiteSearchSettings,
               disableAdvancedSiteSearchSettings,
               recrawlUrisSettings,
@@ -742,6 +849,11 @@ public class SiteSearchEngineServiceStubSettings
       deleteTargetSiteSettings = settings.deleteTargetSiteSettings.toBuilder();
       deleteTargetSiteOperationSettings = settings.deleteTargetSiteOperationSettings.toBuilder();
       listTargetSitesSettings = settings.listTargetSitesSettings.toBuilder();
+      createSitemapSettings = settings.createSitemapSettings.toBuilder();
+      createSitemapOperationSettings = settings.createSitemapOperationSettings.toBuilder();
+      deleteSitemapSettings = settings.deleteSitemapSettings.toBuilder();
+      deleteSitemapOperationSettings = settings.deleteSitemapOperationSettings.toBuilder();
+      fetchSitemapsSettings = settings.fetchSitemapsSettings.toBuilder();
       enableAdvancedSiteSearchSettings = settings.enableAdvancedSiteSearchSettings.toBuilder();
       enableAdvancedSiteSearchOperationSettings =
           settings.enableAdvancedSiteSearchOperationSettings.toBuilder();
@@ -765,6 +877,9 @@ public class SiteSearchEngineServiceStubSettings
               updateTargetSiteSettings,
               deleteTargetSiteSettings,
               listTargetSitesSettings,
+              createSitemapSettings,
+              deleteSitemapSettings,
+              fetchSitemapsSettings,
               enableAdvancedSiteSearchSettings,
               disableAdvancedSiteSearchSettings,
               recrawlUrisSettings,
@@ -833,6 +948,21 @@ public class SiteSearchEngineServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .createSitemapSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteSitemapSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchSitemapsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .enableAdvancedSiteSearchSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -872,13 +1002,13 @@ public class SiteSearchEngineServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -898,13 +1028,13 @@ public class SiteSearchEngineServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -922,13 +1052,13 @@ public class SiteSearchEngineServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -946,13 +1076,61 @@ public class SiteSearchEngineServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createSitemapOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateSitemapRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Sitemap.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(CreateSitemapMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteSitemapOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteSitemapRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteSitemapMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -972,13 +1150,13 @@ public class SiteSearchEngineServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -999,13 +1177,13 @@ public class SiteSearchEngineServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1022,13 +1200,13 @@ public class SiteSearchEngineServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1048,13 +1226,13 @@ public class SiteSearchEngineServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1146,6 +1324,34 @@ public class SiteSearchEngineServiceStubSettings
       return listTargetSitesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createSitemap. */
+    public UnaryCallSettings.Builder<CreateSitemapRequest, Operation> createSitemapSettings() {
+      return createSitemapSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createSitemap. */
+    public OperationCallSettings.Builder<CreateSitemapRequest, Sitemap, CreateSitemapMetadata>
+        createSitemapOperationSettings() {
+      return createSitemapOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSitemap. */
+    public UnaryCallSettings.Builder<DeleteSitemapRequest, Operation> deleteSitemapSettings() {
+      return deleteSitemapSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSitemap. */
+    public OperationCallSettings.Builder<DeleteSitemapRequest, Empty, DeleteSitemapMetadata>
+        deleteSitemapOperationSettings() {
+      return deleteSitemapOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchSitemaps. */
+    public UnaryCallSettings.Builder<FetchSitemapsRequest, FetchSitemapsResponse>
+        fetchSitemapsSettings() {
+      return fetchSitemapsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to enableAdvancedSiteSearch. */
     public UnaryCallSettings.Builder<EnableAdvancedSiteSearchRequest, Operation>
         enableAdvancedSiteSearchSettings() {
@@ -1210,15 +1416,6 @@ public class SiteSearchEngineServiceStubSettings
             FetchDomainVerificationStatusPagedResponse>
         fetchDomainVerificationStatusSettings() {
       return fetchDomainVerificationStatusSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

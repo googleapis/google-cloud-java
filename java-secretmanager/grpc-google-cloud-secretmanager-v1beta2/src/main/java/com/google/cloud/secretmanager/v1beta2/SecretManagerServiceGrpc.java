@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * * [SecretVersion][google.cloud.secretmanager.v1beta2.SecretVersion]
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/secretmanager/v1beta2/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SecretManagerServiceGrpc {
 
@@ -749,6 +746,19 @@ public final class SecretManagerServiceGrpc {
     return SecretManagerServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SecretManagerServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SecretManagerServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SecretManagerServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SecretManagerServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SecretManagerServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SecretManagerServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1390,6 +1400,277 @@ public final class SecretManagerServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SecretManagerService.
+   *
+   * <pre>
+   * Secret Manager Service
+   * Manages secrets and operations using those secrets. Implements a REST
+   * model with the following objects:
+   * * [Secret][google.cloud.secretmanager.v1beta2.Secret]
+   * * [SecretVersion][google.cloud.secretmanager.v1beta2.SecretVersion]
+   * </pre>
+   */
+  public static final class SecretManagerServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SecretManagerServiceBlockingV2Stub> {
+    private SecretManagerServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SecretManagerServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SecretManagerServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Secrets][google.cloud.secretmanager.v1beta2.Secret].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta2.ListSecretsResponse listSecrets(
+        com.google.cloud.secretmanager.v1beta2.ListSecretsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListSecretsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new [Secret][google.cloud.secretmanager.v1beta2.Secret]
+     * containing no
+     * [SecretVersions][google.cloud.secretmanager.v1beta2.SecretVersion].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta2.Secret createSecret(
+        com.google.cloud.secretmanager.v1beta2.CreateSecretRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new
+     * [SecretVersion][google.cloud.secretmanager.v1beta2.SecretVersion]
+     * containing secret data and attaches it to an existing
+     * [Secret][google.cloud.secretmanager.v1beta2.Secret].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta2.SecretVersion addSecretVersion(
+        com.google.cloud.secretmanager.v1beta2.AddSecretVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAddSecretVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata for a given
+     * [Secret][google.cloud.secretmanager.v1beta2.Secret].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta2.Secret getSecret(
+        com.google.cloud.secretmanager.v1beta2.GetSecretRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates metadata of an existing
+     * [Secret][google.cloud.secretmanager.v1beta2.Secret].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta2.Secret updateSecret(
+        com.google.cloud.secretmanager.v1beta2.UpdateSecretRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Secret][google.cloud.secretmanager.v1beta2.Secret].
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSecret(
+        com.google.cloud.secretmanager.v1beta2.DeleteSecretRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [SecretVersions][google.cloud.secretmanager.v1beta2.SecretVersion].
+     * This call does not return secret data.
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta2.ListSecretVersionsResponse listSecretVersions(
+        com.google.cloud.secretmanager.v1beta2.ListSecretVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListSecretVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata for a
+     * [SecretVersion][google.cloud.secretmanager.v1beta2.SecretVersion].
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+     * created [SecretVersion][google.cloud.secretmanager.v1beta2.SecretVersion].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta2.SecretVersion getSecretVersion(
+        com.google.cloud.secretmanager.v1beta2.GetSecretVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetSecretVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accesses a
+     * [SecretVersion][google.cloud.secretmanager.v1beta2.SecretVersion]. This
+     * call returns the secret data.
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+     * created [SecretVersion][google.cloud.secretmanager.v1beta2.SecretVersion].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta2.AccessSecretVersionResponse accessSecretVersion(
+        com.google.cloud.secretmanager.v1beta2.AccessSecretVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAccessSecretVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables a
+     * [SecretVersion][google.cloud.secretmanager.v1beta2.SecretVersion].
+     * Sets the [state][google.cloud.secretmanager.v1beta2.SecretVersion.state] of
+     * the [SecretVersion][google.cloud.secretmanager.v1beta2.SecretVersion] to
+     * [DISABLED][google.cloud.secretmanager.v1beta2.SecretVersion.State.DISABLED].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta2.SecretVersion disableSecretVersion(
+        com.google.cloud.secretmanager.v1beta2.DisableSecretVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDisableSecretVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables a
+     * [SecretVersion][google.cloud.secretmanager.v1beta2.SecretVersion].
+     * Sets the [state][google.cloud.secretmanager.v1beta2.SecretVersion.state] of
+     * the [SecretVersion][google.cloud.secretmanager.v1beta2.SecretVersion] to
+     * [ENABLED][google.cloud.secretmanager.v1beta2.SecretVersion.State.ENABLED].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta2.SecretVersion enableSecretVersion(
+        com.google.cloud.secretmanager.v1beta2.EnableSecretVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getEnableSecretVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Destroys a
+     * [SecretVersion][google.cloud.secretmanager.v1beta2.SecretVersion].
+     * Sets the [state][google.cloud.secretmanager.v1beta2.SecretVersion.state] of
+     * the [SecretVersion][google.cloud.secretmanager.v1beta2.SecretVersion] to
+     * [DESTROYED][google.cloud.secretmanager.v1beta2.SecretVersion.State.DESTROYED]
+     * and irrevocably destroys the secret data.
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta2.SecretVersion destroySecretVersion(
+        com.google.cloud.secretmanager.v1beta2.DestroySecretVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDestroySecretVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on the specified secret. Replaces any
+     * existing policy.
+     * Permissions on
+     * [SecretVersions][google.cloud.secretmanager.v1beta2.SecretVersion] are
+     * enforced according to the policy set on the associated
+     * [Secret][google.cloud.secretmanager.v1beta2.Secret].
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a secret.
+     * Returns empty policy if the secret exists and does not have a policy set.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that a caller has for the specified secret.
+     * If the secret does not exist, this call returns an empty set of
+     * permissions, not a NOT_FOUND error.
+     * Note: This operation is designed to be used for building permission-aware
+     * UIs and command-line tools, not for authorization checking. This operation
+     * may "fail open" without warning.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SecretManagerService.
    *
    * <pre>
    * Secret Manager Service

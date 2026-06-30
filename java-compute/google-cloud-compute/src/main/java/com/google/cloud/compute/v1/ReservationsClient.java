@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedList</td>
- *      <td><p> Retrieves an aggregated list of reservations. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td><p> Retrieves an aggregated list of reservations.
+ * <p>  To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to `true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -142,7 +143,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Insert</td>
- *      <td><p> Creates a new reservation. For more information, read Reserving zonal resources.</td>
+ *      <td><p> Creates a new reservation. For more information, readReserving zonal resources.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -179,8 +180,27 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> PerformMaintenance</td>
+ *      <td><p> Perform maintenance on an extended reservation</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceAsync(PerformMaintenanceReservationRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceAsync(String project, String zone, String reservation, ReservationsPerformMaintenanceRequest reservationsPerformMaintenanceRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceOperationCallable()
+ *           <li><p> performMaintenanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> Resize</td>
- *      <td><p> Resizes the reservation (applicable to standalone reservations only). For more information, read Modifying reservations.</td>
+ *      <td><p> Resizes the reservation (applicable to standalone reservations only). For more information, readModifying reservations.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -344,8 +364,10 @@ public class ReservationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of reservations. To prevent failure, Google recommends that you
-   * set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of reservations.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -375,8 +397,10 @@ public class ReservationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of reservations. To prevent failure, Google recommends that you
-   * set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of reservations.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -415,8 +439,10 @@ public class ReservationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of reservations. To prevent failure, Google recommends that you
-   * set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of reservations.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -454,8 +480,10 @@ public class ReservationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of reservations. To prevent failure, Google recommends that you
-   * set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of reservations.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -822,7 +850,7 @@ public class ReservationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new reservation. For more information, read Reserving zonal resources.
+   * Creates a new reservation. For more information, readReserving zonal resources.
    *
    * <p>Sample code:
    *
@@ -858,7 +886,7 @@ public class ReservationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new reservation. For more information, read Reserving zonal resources.
+   * Creates a new reservation. For more information, readReserving zonal resources.
    *
    * <p>Sample code:
    *
@@ -889,7 +917,7 @@ public class ReservationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new reservation. For more information, read Reserving zonal resources.
+   * Creates a new reservation. For more information, readReserving zonal resources.
    *
    * <p>Sample code:
    *
@@ -921,7 +949,7 @@ public class ReservationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new reservation. For more information, read Reserving zonal resources.
+   * Creates a new reservation. For more information, readReserving zonal resources.
    *
    * <p>Sample code:
    *
@@ -1099,8 +1127,159 @@ public class ReservationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Perform maintenance on an extended reservation
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String reservation = "reservation-1563081780";
+   *   ReservationsPerformMaintenanceRequest reservationsPerformMaintenanceRequestResource =
+   *       ReservationsPerformMaintenanceRequest.newBuilder().build();
+   *   Operation response =
+   *       reservationsClient
+   *           .performMaintenanceAsync(
+   *               project, zone, reservation, reservationsPerformMaintenanceRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone Name of the zone for this request. Zone name should conform to RFC1035.
+   * @param reservation The name of the reservation. Name should conform to RFC1035 or be a resource
+   *     ID.
+   * @param reservationsPerformMaintenanceRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> performMaintenanceAsync(
+      String project,
+      String zone,
+      String reservation,
+      ReservationsPerformMaintenanceRequest reservationsPerformMaintenanceRequestResource) {
+    PerformMaintenanceReservationRequest request =
+        PerformMaintenanceReservationRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setReservation(reservation)
+            .setReservationsPerformMaintenanceRequestResource(
+                reservationsPerformMaintenanceRequestResource)
+            .build();
+    return performMaintenanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform maintenance on an extended reservation
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
+   *   PerformMaintenanceReservationRequest request =
+   *       PerformMaintenanceReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservation("reservation-1563081780")
+   *           .setReservationsPerformMaintenanceRequestResource(
+   *               ReservationsPerformMaintenanceRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = reservationsClient.performMaintenanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> performMaintenanceAsync(
+      PerformMaintenanceReservationRequest request) {
+    return performMaintenanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform maintenance on an extended reservation
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
+   *   PerformMaintenanceReservationRequest request =
+   *       PerformMaintenanceReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservation("reservation-1563081780")
+   *           .setReservationsPerformMaintenanceRequestResource(
+   *               ReservationsPerformMaintenanceRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       reservationsClient.performMaintenanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PerformMaintenanceReservationRequest, Operation, Operation>
+      performMaintenanceOperationCallable() {
+    return stub.performMaintenanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform maintenance on an extended reservation
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
+   *   PerformMaintenanceReservationRequest request =
+   *       PerformMaintenanceReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservation("reservation-1563081780")
+   *           .setReservationsPerformMaintenanceRequestResource(
+   *               ReservationsPerformMaintenanceRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       reservationsClient.performMaintenanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PerformMaintenanceReservationRequest, Operation>
+      performMaintenanceCallable() {
+    return stub.performMaintenanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Resizes the reservation (applicable to standalone reservations only). For more information,
-   * read Modifying reservations.
+   * readModifying reservations.
    *
    * <p>Sample code:
    *
@@ -1147,7 +1326,7 @@ public class ReservationsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resizes the reservation (applicable to standalone reservations only). For more information,
-   * read Modifying reservations.
+   * readModifying reservations.
    *
    * <p>Sample code:
    *
@@ -1180,7 +1359,7 @@ public class ReservationsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resizes the reservation (applicable to standalone reservations only). For more information,
-   * read Modifying reservations.
+   * readModifying reservations.
    *
    * <p>Sample code:
    *
@@ -1214,7 +1393,7 @@ public class ReservationsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resizes the reservation (applicable to standalone reservations only). For more information,
-   * read Modifying reservations.
+   * readModifying reservations.
    *
    * <p>Sample code:
    *

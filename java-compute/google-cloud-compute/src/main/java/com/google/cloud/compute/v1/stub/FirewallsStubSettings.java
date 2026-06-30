@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.FirewallsClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -33,6 +34,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -51,15 +53,17 @@ import com.google.cloud.compute.v1.InsertFirewallRequest;
 import com.google.cloud.compute.v1.ListFirewallsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchFirewallRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsFirewallRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateFirewallRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -76,7 +80,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -92,12 +98,49 @@ import org.threeten.bp.Duration;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * FirewallsStubSettings firewallsSettings = firewallsSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for delete:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * FirewallsStubSettings.Builder firewallsSettingsBuilder = FirewallsStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * firewallsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -118,6 +161,8 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
   private final UnaryCallSettings<PatchFirewallRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchFirewallRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<TestIamPermissionsFirewallRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
   private final UnaryCallSettings<UpdateFirewallRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateFirewallRequest, Operation, Operation>
       updateOperationSettings;
@@ -152,9 +197,7 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
 
             @Override
             public Iterable<Firewall> extractResources(FirewallList payload) {
-              return payload.getItemsList() == null
-                  ? ImmutableList.<Firewall>of()
-                  : payload.getItemsList();
+              return payload.getItemsList();
             }
           };
 
@@ -217,6 +260,12 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
     return patchOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsFirewallRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateFirewallRequest, Operation> updateSettings() {
     return updateSettings;
@@ -239,15 +288,6 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -260,6 +300,7 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "compute.googleapis.com:443";
   }
@@ -325,8 +366,18 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-compute")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for FirewallsStubSettings. */
@@ -344,6 +395,9 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
     private final UnaryCallSettings.Builder<PatchFirewallRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchFirewallRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsFirewallRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private final UnaryCallSettings.Builder<UpdateFirewallRequest, Operation> updateSettings;
     private final OperationCallSettings.Builder<UpdateFirewallRequest, Operation, Operation>
         updateOperationSettings;
@@ -370,21 +424,21 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -405,6 +459,7 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
 
@@ -415,6 +470,7 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
               insertSettings,
               listSettings,
               patchSettings,
+              testIamPermissionsSettings,
               updateSettings);
       initDefaults(this);
     }
@@ -430,6 +486,7 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
@@ -440,6 +497,7 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
               insertSettings,
               listSettings,
               patchSettings,
+              testIamPermissionsSettings,
               updateSettings);
     }
 
@@ -482,6 +540,11 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .updateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -501,13 +564,13 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -525,13 +588,13 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -549,13 +612,13 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -573,13 +636,13 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       return builder;
@@ -644,6 +707,12 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
       return patchOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsFirewallRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to update. */
     public UnaryCallSettings.Builder<UpdateFirewallRequest, Operation> updateSettings() {
       return updateSettings;
@@ -653,15 +722,6 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
     public OperationCallSettings.Builder<UpdateFirewallRequest, Operation, Operation>
         updateOperationSettings() {
       return updateOperationSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

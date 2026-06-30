@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.discoveryengine.v1beta.stub.HttpJsonRankServiceStub;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -87,6 +88,7 @@ public class RankServiceClientHttpJsonTest {
             .setQuery("query107944136")
             .addAllRecords(new ArrayList<RankingRecord>())
             .setIgnoreRecordDetailsInResponse(true)
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
 
     RankResponse actualResponse = client.rank(request);
@@ -124,6 +126,7 @@ public class RankServiceClientHttpJsonTest {
               .setQuery("query107944136")
               .addAllRecords(new ArrayList<RankingRecord>())
               .setIgnoreRecordDetailsInResponse(true)
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       client.rank(request);
       Assert.fail("No exception raised");

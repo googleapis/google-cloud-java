@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dataplex.v1.CancelDataScanJobRequest;
+import com.google.cloud.dataplex.v1.CancelDataScanJobResponse;
 import com.google.cloud.dataplex.v1.CreateDataScanRequest;
 import com.google.cloud.dataplex.v1.DataScan;
 import com.google.cloud.dataplex.v1.DataScanJob;
@@ -48,6 +50,11 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -73,6 +80,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataScanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataScanRequest, Operation>
@@ -83,6 +91,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataScanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataScanRequest, Operation>
@@ -93,6 +102,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataScanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataScanRequest, DataScan> getDataScanMethodDescriptor =
@@ -101,6 +111,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataScanService/GetDataScan")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDataScanRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(DataScan.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListDataScansRequest, ListDataScansResponse>
@@ -112,6 +123,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   ProtoUtils.marshaller(ListDataScansRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataScansResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunDataScanRequest, RunDataScanResponse>
@@ -122,6 +134,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(RunDataScanRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RunDataScanResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataScanJobRequest, DataScanJob>
@@ -132,6 +145,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataScanJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataScanJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataScanJobsRequest, ListDataScanJobsResponse>
@@ -143,6 +157,19 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   ProtoUtils.marshaller(ListDataScanJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataScanJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobMethodDescriptor =
+          MethodDescriptor.<CancelDataScanJobRequest, CancelDataScanJobResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.DataScanService/CancelDataScanJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CancelDataScanJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CancelDataScanJobResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -157,6 +184,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   ProtoUtils.marshaller(GenerateDataQualityRulesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateDataQualityRulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -168,6 +196,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -176,7 +205,38 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private final UnaryCallable<CreateDataScanRequest, Operation> createDataScanCallable;
   private final OperationCallable<CreateDataScanRequest, DataScan, OperationMetadata>
@@ -197,12 +257,18 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
       listDataScanJobsCallable;
   private final UnaryCallable<ListDataScanJobsRequest, ListDataScanJobsPagedResponse>
       listDataScanJobsPagedCallable;
+  private final UnaryCallable<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobCallable;
   private final UnaryCallable<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
       generateDataQualityRulesCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
   private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -257,6 +323,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDataScanRequest, Operation> updateDataScanTransportSettings =
         GrpcCallSettings.<UpdateDataScanRequest, Operation>newBuilder()
@@ -277,6 +344,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetDataScanRequest, DataScan> getDataScanTransportSettings =
         GrpcCallSettings.<GetDataScanRequest, DataScan>newBuilder()
@@ -287,6 +355,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDataScansRequest, ListDataScansResponse> listDataScansTransportSettings =
         GrpcCallSettings.<ListDataScansRequest, ListDataScansResponse>newBuilder()
@@ -297,6 +366,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RunDataScanRequest, RunDataScanResponse> runDataScanTransportSettings =
         GrpcCallSettings.<RunDataScanRequest, RunDataScanResponse>newBuilder()
@@ -307,6 +377,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetDataScanJobRequest, DataScanJob> getDataScanJobTransportSettings =
         GrpcCallSettings.<GetDataScanJobRequest, DataScanJob>newBuilder()
@@ -317,6 +388,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDataScanJobsRequest, ListDataScanJobsResponse>
         listDataScanJobsTransportSettings =
@@ -328,6 +400,19 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<CancelDataScanJobRequest, CancelDataScanJobResponse>
+        cancelDataScanJobTransportSettings =
+            GrpcCallSettings.<CancelDataScanJobRequest, CancelDataScanJobResponse>newBuilder()
+                .setMethodDescriptor(cancelDataScanJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
         generateDataQualityRulesTransportSettings =
@@ -361,6 +446,40 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getResource())
+                .build();
 
     this.createDataScanCallable =
         callableFactory.createUnaryCallable(
@@ -410,6 +529,11 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
     this.listDataScanJobsPagedCallable =
         callableFactory.createPagedCallable(
             listDataScanJobsTransportSettings, settings.listDataScanJobsSettings(), clientContext);
+    this.cancelDataScanJobCallable =
+        callableFactory.createUnaryCallable(
+            cancelDataScanJobTransportSettings,
+            settings.cancelDataScanJobSettings(),
+            clientContext);
     this.generateDataQualityRulesCallable =
         callableFactory.createUnaryCallable(
             generateDataQualityRulesTransportSettings,
@@ -424,6 +548,17 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
     this.getLocationCallable =
         callableFactory.createUnaryCallable(
             getLocationTransportSettings, settings.getLocationSettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -505,6 +640,12 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
   }
 
   @Override
+  public UnaryCallable<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobCallable() {
+    return cancelDataScanJobCallable;
+  }
+
+  @Override
   public UnaryCallable<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
       generateDataQualityRulesCallable() {
     return generateDataQualityRulesCallable;
@@ -524,6 +665,22 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
   @Override
   public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     return getLocationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

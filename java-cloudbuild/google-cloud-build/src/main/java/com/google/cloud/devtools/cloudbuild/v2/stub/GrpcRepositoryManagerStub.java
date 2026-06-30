@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,6 +82,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConnectionRequest, Connection>
@@ -92,6 +93,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListConnectionsRequest, ListConnectionsResponse>
@@ -103,6 +105,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   ProtoUtils.marshaller(ListConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConnectionRequest, Operation>
@@ -113,6 +116,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConnectionRequest, Operation>
@@ -123,6 +127,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRepositoryRequest, Operation>
@@ -133,6 +138,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchCreateRepositoriesRequest, Operation>
@@ -144,6 +150,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchCreateRepositoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRepositoryRequest, Repository>
@@ -154,6 +161,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Repository.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRepositoriesRequest, ListRepositoriesResponse>
@@ -165,6 +173,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   ProtoUtils.marshaller(ListRepositoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRepositoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRepositoryRequest, Operation>
@@ -175,6 +184,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchReadWriteTokenRequest, FetchReadWriteTokenResponse>
@@ -187,6 +197,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   ProtoUtils.marshaller(FetchReadWriteTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchReadWriteTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchReadTokenRequest, FetchReadTokenResponse>
@@ -198,6 +209,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   ProtoUtils.marshaller(FetchReadTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchReadTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -212,6 +224,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   ProtoUtils.marshaller(FetchLinkableRepositoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchLinkableRepositoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchGitRefsRequest, FetchGitRefsResponse>
@@ -222,6 +235,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(FetchGitRefsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchGitRefsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -230,6 +244,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -238,6 +253,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -249,6 +265,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateConnectionRequest, Operation> createConnectionCallable;
@@ -348,6 +365,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetConnectionRequest, Connection> getConnectionTransportSettings =
         GrpcCallSettings.<GetConnectionRequest, Connection>newBuilder()
@@ -358,6 +376,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListConnectionsRequest, ListConnectionsResponse>
         listConnectionsTransportSettings =
@@ -369,6 +388,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateConnectionRequest, Operation> updateConnectionTransportSettings =
         GrpcCallSettings.<UpdateConnectionRequest, Operation>newBuilder()
@@ -389,6 +409,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateRepositoryRequest, Operation> createRepositoryTransportSettings =
         GrpcCallSettings.<CreateRepositoryRequest, Operation>newBuilder()
@@ -399,6 +420,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchCreateRepositoriesRequest, Operation>
         batchCreateRepositoriesTransportSettings =
@@ -410,6 +432,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRepositoryRequest, Repository> getRepositoryTransportSettings =
         GrpcCallSettings.<GetRepositoryRequest, Repository>newBuilder()
@@ -420,6 +443,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRepositoriesRequest, ListRepositoriesResponse>
         listRepositoriesTransportSettings =
@@ -431,6 +455,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteRepositoryRequest, Operation> deleteRepositoryTransportSettings =
         GrpcCallSettings.<DeleteRepositoryRequest, Operation>newBuilder()
@@ -441,6 +466,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<FetchReadWriteTokenRequest, FetchReadWriteTokenResponse>
         fetchReadWriteTokenTransportSettings =
@@ -452,6 +478,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("repository", String.valueOf(request.getRepository()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRepository())
                 .build();
     GrpcCallSettings<FetchReadTokenRequest, FetchReadTokenResponse>
         fetchReadTokenTransportSettings =
@@ -463,6 +490,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("repository", String.valueOf(request.getRepository()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRepository())
                 .build();
     GrpcCallSettings<FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesResponse>
         fetchLinkableRepositoriesTransportSettings =
@@ -475,6 +503,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("connection", String.valueOf(request.getConnection()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConnection())
                 .build();
     GrpcCallSettings<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsTransportSettings =
         GrpcCallSettings.<FetchGitRefsRequest, FetchGitRefsResponse>newBuilder()
@@ -485,6 +514,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("repository", String.valueOf(request.getRepository()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRepository())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -495,6 +525,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -505,6 +536,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -516,6 +548,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createConnectionCallable =
